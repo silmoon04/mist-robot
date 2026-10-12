@@ -6,6 +6,7 @@ A four-legged robot using STS3215 servos and a Xiaomi Mi 9 SE mounted vertically
 
 ## Start here
 
+- [Paused simulation project: directions for continuing on the MSI RTX 4080 laptop](DIRECTIONS.md), with [portable checkpoints and work history](https://github.com/silmoon04/mist-robot/releases/tag/mist-locomotion-handoff-2026-10-12).
 - [Current illustrated assembly and inspection checklist](design/assembly_handoff_20261008/Inspection_And_Assembly.html) (download and open locally for the interactive HTML).
 - [Current fourth-leg instructions](design/fourth_leg_20260917/print/START_HERE.txt).
 - [Mechanical requirements](design/single_leg_r7_wide_joints_20260914/REQUIREMENTS.md).

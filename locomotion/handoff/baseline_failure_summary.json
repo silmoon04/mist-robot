@@ -1,0 +1,459 @@
+{
+  "receipt": "locomotion/runs/final_baseline_all.json",
+  "counts": {
+    "total": 239,
+    "passed": 20,
+    "failure:path": 214,
+    "failure:velocity": 217,
+    "failure:tracking": 20,
+    "failure:yaw": 61,
+    "failure:no_nonfoot_ground_contact": 1,
+    "failure:yaw_rate": 6,
+    "failure:progress": 18,
+    "failure:saturation": 1,
+    "failure:duration": 1,
+    "failure:complete": 1,
+    "failure:no_sensor_fault": 1
+  },
+  "groups": {
+    "terrain": {
+      "flat": {
+        "total": 104,
+        "passed": 10,
+        "failure:path": 93,
+        "failure:velocity": 93,
+        "failure:tracking": 10,
+        "failure:yaw": 24,
+        "failure:progress": 8,
+        "failure:saturation": 1,
+        "failure:duration": 1,
+        "failure:complete": 1,
+        "failure:no_sensor_fault": 1
+      },
+      "low_friction": {
+        "total": 45,
+        "passed": 4,
+        "failure:path": 41,
+        "failure:velocity": 40,
+        "failure:no_nonfoot_ground_contact": 1,
+        "failure:yaw": 15,
+        "failure:tracking": 1,
+        "failure:yaw_rate": 6,
+        "failure:progress": 4
+      },
+      "slope": {
+        "total": 45,
+        "passed": 3,
+        "failure:progress": 4,
+        "failure:path": 40,
+        "failure:velocity": 42,
+        "failure:tracking": 1,
+        "failure:yaw": 12
+      },
+      "rough": {
+        "total": 45,
+        "passed": 3,
+        "failure:velocity": 42,
+        "failure:path": 40,
+        "failure:tracking": 8,
+        "failure:yaw": 10,
+        "failure:progress": 2
+      }
+    },
+    "sensor": {
+      "mpu6050": {
+        "total": 131,
+        "passed": 11,
+        "failure:path": 118,
+        "failure:velocity": 118,
+        "failure:yaw": 30,
+        "failure:yaw_rate": 3,
+        "failure:progress": 12,
+        "failure:tracking": 13,
+        "failure:saturation": 1,
+        "failure:duration": 1,
+        "failure:complete": 1,
+        "failure:no_sensor_fault": 1
+      },
+      "none": {
+        "total": 72,
+        "passed": 7,
+        "failure:path": 64,
+        "failure:velocity": 65,
+        "failure:tracking": 6,
+        "failure:yaw": 19,
+        "failure:no_nonfoot_ground_contact": 1,
+        "failure:progress": 3,
+        "failure:yaw_rate": 3
+      },
+      "phone": {
+        "total": 36,
+        "passed": 2,
+        "failure:path": 32,
+        "failure:velocity": 34,
+        "failure:yaw": 12,
+        "failure:progress": 3,
+        "failure:tracking": 1
+      }
+    },
+    "payload": {
+      "0.0": {
+        "total": 72,
+        "passed": 6,
+        "failure:path": 65,
+        "failure:velocity": 65,
+        "failure:tracking": 7,
+        "failure:yaw": 18,
+        "failure:no_nonfoot_ground_contact": 1,
+        "failure:yaw_rate": 2,
+        "failure:progress": 1
+      },
+      "0.155": {
+        "total": 165,
+        "passed": 14,
+        "failure:path": 147,
+        "failure:velocity": 150,
+        "failure:yaw": 43,
+        "failure:progress": 17,
+        "failure:yaw_rate": 4,
+        "failure:tracking": 13,
+        "failure:saturation": 1,
+        "failure:duration": 1,
+        "failure:complete": 1,
+        "failure:no_sensor_fault": 1
+      },
+      "0.08": {
+        "total": 1,
+        "passed": 0,
+        "failure:path": 1,
+        "failure:velocity": 1
+      },
+      "0.25": {
+        "total": 1,
+        "passed": 0,
+        "failure:path": 1,
+        "failure:velocity": 1
+      }
+    },
+    "command": {
+      "stop": {
+        "total": 26,
+        "passed": 20,
+        "failure:path": 1,
+        "failure:velocity": 4,
+        "failure:tracking": 1
+      },
+      "forward": {
+        "total": 31,
+        "passed": 0,
+        "failure:path": 31,
+        "failure:velocity": 31,
+        "failure:progress": 4,
+        "failure:tracking": 3,
+        "failure:saturation": 1,
+        "failure:duration": 1,
+        "failure:complete": 1,
+        "failure:no_sensor_fault": 1
+      },
+      "backward": {
+        "total": 26,
+        "passed": 0,
+        "failure:path": 26,
+        "failure:velocity": 26,
+        "failure:tracking": 5,
+        "failure:progress": 7,
+        "failure:yaw_rate": 1
+      },
+      "left": {
+        "total": 26,
+        "passed": 0,
+        "failure:path": 26,
+        "failure:velocity": 26,
+        "failure:yaw": 2,
+        "failure:progress": 4,
+        "failure:yaw_rate": 1,
+        "failure:tracking": 2
+      },
+      "right": {
+        "total": 26,
+        "passed": 0,
+        "failure:path": 26,
+        "failure:velocity": 26,
+        "failure:no_nonfoot_ground_contact": 1,
+        "failure:yaw": 2,
+        "failure:tracking": 3,
+        "failure:progress": 3
+      },
+      "clockwise": {
+        "total": 26,
+        "passed": 0,
+        "failure:path": 26,
+        "failure:velocity": 26,
+        "failure:yaw": 26,
+        "failure:tracking": 2
+      },
+      "counterclockwise": {
+        "total": 26,
+        "passed": 0,
+        "failure:path": 26,
+        "failure:velocity": 26,
+        "failure:yaw": 26,
+        "failure:yaw_rate": 2,
+        "failure:tracking": 2
+      },
+      "combined": {
+        "total": 26,
+        "passed": 0,
+        "failure:path": 26,
+        "failure:velocity": 26,
+        "failure:yaw_rate": 1,
+        "failure:yaw": 4,
+        "failure:tracking": 1
+      },
+      "transient": {
+        "total": 26,
+        "passed": 0,
+        "failure:path": 26,
+        "failure:velocity": 26,
+        "failure:yaw_rate": 1,
+        "failure:yaw": 1,
+        "failure:tracking": 1
+      }
+    }
+  },
+  "failed_examples": [
+    {
+      "case_id": "flat-forward-bare-mpu6050",
+      "checks": [
+        "path",
+        "velocity"
+      ],
+      "metrics": {
+        "duration_s": 19.2,
+        "progress_m": 0.1433311860600744,
+        "command_distance_m": 0.192,
+        "body_velocity_rmse_m_s": 0.0515841939194573,
+        "yaw_rate_rmse_rad_s": 0.016131197161735472,
+        "peak_path_error_m": 0.06254226356066964,
+        "peak_yaw_error_rad": 0.029770136962708825,
+        "peak_tilt_rad": 0.02236658167110594,
+        "peak_tracking_error_rad": 0.04629254475032676,
+        "saturation_fraction": 0.0031423611111111426
+      }
+    },
+    {
+      "case_id": "flat-forward-bare-none",
+      "checks": [
+        "path",
+        "velocity"
+      ],
+      "metrics": {
+        "duration_s": 19.2,
+        "progress_m": 0.1267325539794766,
+        "command_distance_m": 0.192,
+        "body_velocity_rmse_m_s": 0.051967969615448195,
+        "yaw_rate_rmse_rad_s": 0.016614675462695388,
+        "peak_path_error_m": 0.0759589638548477,
+        "peak_yaw_error_rad": 0.023293361155163773,
+        "peak_tilt_rad": 0.008289335935126532,
+        "peak_tracking_error_rad": 0.04894970032514285,
+        "saturation_fraction": 0.0025260416666666816
+      }
+    },
+    {
+      "case_id": "flat-backward-bare-mpu6050",
+      "checks": [
+        "path",
+        "velocity"
+      ],
+      "metrics": {
+        "duration_s": 19.2,
+        "progress_m": 0.13035538207195876,
+        "command_distance_m": 0.192,
+        "body_velocity_rmse_m_s": 0.0491862336629038,
+        "yaw_rate_rmse_rad_s": 0.02069482305038923,
+        "peak_path_error_m": 0.0784264675830979,
+        "peak_yaw_error_rad": 0.043115499827497815,
+        "peak_tilt_rad": 0.013046692133771638,
+        "peak_tracking_error_rad": 0.051439617034408656,
+        "saturation_fraction": 0.0003515624999999996
+      }
+    },
+    {
+      "case_id": "flat-backward-bare-none",
+      "checks": [
+        "path",
+        "velocity",
+        "tracking"
+      ],
+      "metrics": {
+        "duration_s": 19.2,
+        "progress_m": 0.12041932234881259,
+        "command_distance_m": 0.192,
+        "body_velocity_rmse_m_s": 0.05382691918545999,
+        "yaw_rate_rmse_rad_s": 0.03633459264676234,
+        "peak_path_error_m": 0.08934031045803666,
+        "peak_yaw_error_rad": 0.04657648398763592,
+        "peak_tilt_rad": 0.1301918625638678,
+        "peak_tracking_error_rad": 0.35289846288542054,
+        "saturation_fraction": 0.05608506944444838
+      }
+    },
+    {
+      "case_id": "flat-left-bare-mpu6050",
+      "checks": [
+        "path",
+        "velocity"
+      ],
+      "metrics": {
+        "duration_s": 19.2,
+        "progress_m": 0.11933192034479506,
+        "command_distance_m": 0.192,
+        "body_velocity_rmse_m_s": 0.04866453383747739,
+        "yaw_rate_rmse_rad_s": 0.01662437094580685,
+        "peak_path_error_m": 0.08276576222776104,
+        "peak_yaw_error_rad": 0.03194725357931033,
+        "peak_tilt_rad": 0.011018016839452218,
+        "peak_tracking_error_rad": 0.057755247739755385,
+        "saturation_fraction": 0.00011718749999999998
+      }
+    },
+    {
+      "case_id": "flat-left-bare-none",
+      "checks": [
+        "path",
+        "velocity"
+      ],
+      "metrics": {
+        "duration_s": 19.2,
+        "progress_m": 0.12186978958304151,
+        "command_distance_m": 0.192,
+        "body_velocity_rmse_m_s": 0.050987879660630085,
+        "yaw_rate_rmse_rad_s": 0.019246886478830848,
+        "peak_path_error_m": 0.08209629900491264,
+        "peak_yaw_error_rad": 0.03565138137590628,
+        "peak_tilt_rad": 0.009088044876729567,
+        "peak_tracking_error_rad": 0.048099241841702584,
+        "saturation_fraction": 0.02509548611110913
+      }
+    },
+    {
+      "case_id": "flat-right-bare-mpu6050",
+      "checks": [
+        "path",
+        "velocity"
+      ],
+      "metrics": {
+        "duration_s": 19.2,
+        "progress_m": 0.09816129948763164,
+        "command_distance_m": 0.192,
+        "body_velocity_rmse_m_s": 0.050022753004601385,
+        "yaw_rate_rmse_rad_s": 0.0230054306240755,
+        "peak_path_error_m": 0.10562020198112121,
+        "peak_yaw_error_rad": 0.11016902427698333,
+        "peak_tilt_rad": 0.02834559934325516,
+        "peak_tracking_error_rad": 0.056659413852115,
+        "saturation_fraction": 0.039223090277778844
+      }
+    },
+    {
+      "case_id": "flat-right-bare-none",
+      "checks": [
+        "path",
+        "velocity"
+      ],
+      "metrics": {
+        "duration_s": 19.2,
+        "progress_m": 0.1296636805396719,
+        "command_distance_m": 0.192,
+        "body_velocity_rmse_m_s": 0.05016260457045234,
+        "yaw_rate_rmse_rad_s": 0.015027032682576207,
+        "peak_path_error_m": 0.07548710415205691,
+        "peak_yaw_error_rad": 0.03412214079318026,
+        "peak_tilt_rad": 0.009006201237575135,
+        "peak_tracking_error_rad": 0.056337685334482045,
+        "saturation_fraction": 0.0007204861111111126
+      }
+    },
+    {
+      "case_id": "flat-clockwise-bare-mpu6050",
+      "checks": [
+        "path",
+        "velocity",
+        "yaw"
+      ],
+      "metrics": {
+        "duration_s": 19.2,
+        "progress_m": 0.0,
+        "command_distance_m": 0.0,
+        "body_velocity_rmse_m_s": 0.05139540293149244,
+        "yaw_rate_rmse_rad_s": 0.026753050886329396,
+        "peak_path_error_m": 0.028766566888255848,
+        "peak_yaw_error_rad": 0.3080663419837406,
+        "peak_tilt_rad": 0.026824838553051962,
+        "peak_tracking_error_rad": 0.05311666337674411,
+        "saturation_fraction": 0.002552083333333353
+      }
+    },
+    {
+      "case_id": "flat-clockwise-bare-none",
+      "checks": [
+        "path",
+        "velocity",
+        "yaw"
+      ],
+      "metrics": {
+        "duration_s": 19.2,
+        "progress_m": 0.0,
+        "command_distance_m": 0.0,
+        "body_velocity_rmse_m_s": 0.051133958264451475,
+        "yaw_rate_rmse_rad_s": 0.024174007724873655,
+        "peak_path_error_m": 0.027408338022297047,
+        "peak_yaw_error_rad": 0.3024023783241249,
+        "peak_tilt_rad": 0.007833220710186184,
+        "peak_tracking_error_rad": 0.04794666472217401,
+        "saturation_fraction": 0.00575520833333323
+      }
+    },
+    {
+      "case_id": "flat-counterclockwise-bare-mpu6050",
+      "checks": [
+        "path",
+        "velocity",
+        "yaw"
+      ],
+      "metrics": {
+        "duration_s": 19.2,
+        "progress_m": 0.0,
+        "command_distance_m": 0.0,
+        "body_velocity_rmse_m_s": 0.051859315974278154,
+        "yaw_rate_rmse_rad_s": 0.023494538570583364,
+        "peak_path_error_m": 0.027167976688695767,
+        "peak_yaw_error_rad": 0.27987150580215886,
+        "peak_tilt_rad": 0.015313958922123174,
+        "peak_tracking_error_rad": 0.052848670824854366,
+        "saturation_fraction": 0.005017361111111057
+      }
+    },
+    {
+      "case_id": "flat-counterclockwise-bare-none",
+      "checks": [
+        "path",
+        "velocity",
+        "yaw"
+      ],
+      "metrics": {
+        "duration_s": 19.2,
+        "progress_m": 0.0,
+        "command_distance_m": 0.0,
+        "body_velocity_rmse_m_s": 0.05041296976200093,
+        "yaw_rate_rmse_rad_s": 0.025220326315882464,
+        "peak_path_error_m": 0.0215614100673242,
+        "peak_yaw_error_rad": 0.3281632000648628,
+        "peak_tilt_rad": 0.0093680294271602,
+        "peak_tracking_error_rad": 0.0516965253771528,
+        "saturation_fraction": 0.005980902777777665
+      }
+    }
+  ]
+}

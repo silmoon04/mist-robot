@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="mist_r7_fixed_test_leg">
+  <compiler angle="radian" />
+
+  <option timestep="0.001" />
+
+  <worldbody>
+    <body name="base_mount">
+      <inertial pos="-0.0318104 -4.90755e-05 -0.0239316" quat="-0.000216412 0.643332 -0.000543989 0.765587" mass="0.156549" diaginertia="0.000257049 0.000208719 8.15204e-05" />
+      <geom name="base_mount_base_mount_proxy_0" size="0.0295 0.0205 0.016" pos="-0.014 0 -0.017" type="box" rgba="0.22 0.58 0.6 1" />
+      <body name="coxa">
+        <inertial pos="0.0554526 -0.000326227 -0.00741118" quat="0.597476 0.381437 0.37247 0.598994" mass="0.116188" diaginertia="0.000131592 0.000113172 3.41138e-05" />
+        <joint name="yaw" pos="0 0 0" axis="0 0 1" range="-0.959931 0.959931" actuatorfrcrange="-0.588 0.588" damping="0.015" />
+        <geom name="coxa_coxa_proxy_0" size="0.039 0.012 0.009" pos="0.039 0 0" type="box" rgba="0.22 0.58 0.6 1" />
+        <geom name="coxa_coxa_proxy_1" size="0.0275 0.02 0.0135" pos="0.067 0 -0.01" type="box" rgba="0.22 0.58 0.6 1" />
+        <body name="femur" pos="0.082 0 0">
+          <inertial pos="0.0633652 -0.00129831 0.00193497" quat="-0.000908151 0.704901 0.0300596 0.708668" mass="0.124916" diaginertia="0.000123315 0.000113582 3.78744e-05" />
+          <joint name="hip" pos="0 0 0" axis="0 1 0" range="-0.523599 1.13446" actuatorfrcrange="-0.588 0.588" damping="0.015" />
+          <geom name="femur_femur_proxy_0" size="0.043 0.012 0.009" pos="0.043 0 0" type="box" rgba="0.22 0.58 0.6 1" />
+          <geom name="femur_femur_proxy_1" size="0.0235 0.0205 0.0135" pos="0.075 0 0.01" type="box" rgba="0.22 0.58 0.6 1" />
+          <body name="tibia" pos="0.09 0 0">
+            <inertial pos="0.0414754 -0.00169475 0.00029917" quat="-0.0212696 0.709852 0.0222285 0.703679" mass="0.0493049" diaginertia="5.54769e-05 4.56846e-05 1.32876e-05" />
+            <joint name="knee" pos="0 0 0" axis="0 1 0" range="0.0872665 2.00713" actuatorfrcrange="-0.588 0.588" damping="0.015" />
+            <geom name="tibia_tibia_proxy_0" size="0.046 0.0085 0.007" pos="0.048 0 0" type="box" rgba="0.22 0.58 0.6 1" />
+            <body name="toe" pos="0.105 0 0">
+              <inertial pos="0 0 0" mass="0" diaginertia="0 0 0" />
+              <geom name="toe_toe_sphere" size="0.005" />
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+
+  <contact>
+    <exclude body1="base_mount" body2="coxa" />
+    <exclude body1="coxa" body2="femur" />
+    <exclude body1="femur" body2="tibia" />
+    <exclude body1="tibia" body2="toe" />
+  </contact>
+<keyframe><key name="neutral" qpos="0.0 0.5235987755982988 1.413716694115407" /></keyframe></mujoco>

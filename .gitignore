@@ -9,3 +9,8 @@
 *.gcode
 brain/memory/
 brain/results/
+
+# Local locomotion runtimes/build caches; portable evidence lives in release assets.
+**/.pio/
+**/.pytest_cache/
+locomotion/runs/**/*.pkl

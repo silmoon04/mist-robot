@@ -1,0 +1,41 @@
+...............................F............................ [ 67%]
+..................F..........                                            [100%]
+=================================== FAILURES ===================================
+___________ ExportTests.test_geometry_config_cannot_diverge_from_cad ___________
+ValueError: exporter supports only the fixed R7 geometry
+
+During handling of the above exception, another exception occurred:
+
+self = <test_model.ExportTests testMethod=test_geometry_config_cannot_diverge_from_cad>
+
+    def test_geometry_config_cannot_diverge_from_cad(self):
+        config = load_config()
+        config["geometry"]["coxa_m"] = .084
+>       with self.assertRaisesRegex(ValueError, "differ from the source CAD"):
+E       AssertionError: "differ from the source CAD" does not match "exporter supports only the fixed R7 geometry"
+
+outputs/mist-robot/locomotion/tests/test_model.py:113: AssertionError
+____________________ RemoteTests.test_timeout_latches_fault ____________________
+
+self = <hardware.test_bridge.RemoteTests testMethod=test_timeout_latches_fault>
+
+    def test_timeout_latches_fault(self):
+>       self.bridge.handle({"op": "arm", "intent_generation": bridge.intent_generation})
+                                                              ^^^^^^
+E       NameError: name 'bridge' is not defined
+
+outputs/mist-robot/locomotion/hardware/test_bridge.py:107: NameError
+=============================== warnings summary ===============================
+outputs/mist-robot/locomotion/tests/test_env.py::test_gym_and_seeded_reset
+  /home/silmoon/Documents/Codex/2026-10-12/can-you-go-into-my-github/work/py311/lib/python3.11/site-packages/gymnasium/utils/env_checker.py:311: UserWarning: [33mWARN: A Box observation space minimum value is -infinity. This is probably too low.[0m
+    logger.warn(
+
+outputs/mist-robot/locomotion/tests/test_env.py::test_gym_and_seeded_reset
+  /home/silmoon/Documents/Codex/2026-10-12/can-you-go-into-my-github/work/py311/lib/python3.11/site-packages/gymnasium/utils/env_checker.py:315: UserWarning: [33mWARN: A Box observation space maximum value is infinity. This is probably too high.[0m
+    logger.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED outputs/mist-robot/locomotion/tests/test_model.py::ExportTests::test_geometry_config_cannot_diverge_from_cad
+FAILED outputs/mist-robot/locomotion/hardware/test_bridge.py::RemoteTests::test_timeout_latches_fault
+2 failed, 87 passed, 2 warnings, 12 subtests passed in 20.18s

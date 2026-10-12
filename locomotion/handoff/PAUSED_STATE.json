@@ -1,0 +1,104 @@
+{
+  "schema": 1,
+  "paused_at_utc": "2026-10-12T19:19:41.837128+00:00",
+  "status": "paused_at_user_request",
+  "thread_id": "01a13128-fff0-7fe2-84ac-03f82f5fde29",
+  "source_commit": "00e8a07c9a89219976bbca4b4d4531c6495f6ccc",
+  "source_fingerprint": "8793d43d546c95c6fd695860305f96a0627e49be9ec81779e313b63d1b92e8c1",
+  "checkpoints": {
+    "ppo": {
+      "path": "locomotion/runs/ppo_51200/checkpoint_51200.zip",
+      "sha256": "fd87de4860fd2fff8e941bbe27a05c47efa667d50a37063285b57607e919f01a",
+      "sidecar": "locomotion/runs/ppo_51200/checkpoint_51200.provenance.json",
+      "sidecar_sha256": "e7685745138fb77472cedc14fdba80f01c7ef69bcc8192a5161d1e42ddda5ef1",
+      "replay": null,
+      "replay_sha256": null,
+      "recorded_timesteps": 51200,
+      "optimizer_updates": 245,
+      "continuation_seed": 1042,
+      "validation": [
+        {
+          "path": "locomotion/runs/ppo_51200/evaluation_initial_0.json",
+          "sha256": "0ac1a339d36e04a413e8e4e49ce751c2add4398d1284f541a799fb809e878e79",
+          "label": "initial",
+          "episodes": 72,
+          "strict_passes": 6,
+          "eligible": false,
+          "fall_fraction": 0.0
+        },
+        {
+          "path": "locomotion/runs/ppo_51200/evaluation_periodic_51200.json",
+          "sha256": "06a16d3c33e45d1d9d452a78242bacb0949b376f5f5a7fdab137c8eea92f9035",
+          "label": "periodic",
+          "episodes": 72,
+          "strict_passes": 6,
+          "eligible": false,
+          "fall_fraction": 0.0
+        }
+      ],
+      "interrupted_during": "final validation",
+      "final_checkpoint_written": false,
+      "final_summary_written": false,
+      "hardware_qualified": false
+    },
+    "sac": {
+      "path": "locomotion/runs/sac_51200/checkpoint_51200.zip",
+      "sha256": "93cfc7e5c2829edd194444eded4489c3b573fe36fb457e1d28157b488e286f26",
+      "sidecar": "locomotion/runs/sac_51200/checkpoint_51200.provenance.json",
+      "sidecar_sha256": "6e04b24a316d20b6696f49f6b73501b14f0d2317121d8f32b058c372b06d86b2",
+      "replay": "locomotion/runs/sac_51200/checkpoint_51200_replay_buffer.pkl",
+      "replay_sha256": "27fe0177c4da937f2a8b007fb9e14c3f661a5eb2efeeae9956c9485b436c6f34",
+      "recorded_timesteps": 51200,
+      "optimizer_updates": 25343,
+      "continuation_seed": 1042,
+      "validation": [
+        {
+          "path": "locomotion/runs/sac_51200/evaluation_initial_0.json",
+          "sha256": "1e940d9e35ef3ecb7e6a915748239b43a4257aa5ffcb5a9496678fcdf22436f8",
+          "label": "initial",
+          "episodes": 72,
+          "strict_passes": 6,
+          "eligible": false,
+          "fall_fraction": 0.0
+        },
+        {
+          "path": "locomotion/runs/sac_51200/evaluation_periodic_51200.json",
+          "sha256": "062fe570b6b4713245be86adf7ce5b7aa5c3f599cd643f4db297488205a25cb5",
+          "label": "periodic",
+          "episodes": 72,
+          "strict_passes": 0,
+          "eligible": false,
+          "fall_fraction": 0.0
+        }
+      ],
+      "interrupted_during": "final validation",
+      "final_checkpoint_written": false,
+      "final_summary_written": false,
+      "hardware_qualified": false
+    }
+  },
+  "baseline": {
+    "cases": 239,
+    "passes": 20,
+    "passed_command": "stop only",
+    "falls": 0,
+    "moving_cases_passed": 0,
+    "receipt": "locomotion/runs/final_baseline_all.json"
+  },
+  "pending": [
+    "MSI environment inspection and CUDA verification",
+    "untouched 131-case MPU policy evaluations",
+    "known sensitivity NumPy-scalar serializer correction, then audited diagnostic migration if needed",
+    "final training summaries/reporting for interrupted runs",
+    "multi-seed million-step training",
+    "controller velocity/path/yaw correction on development seeds",
+    "physical mass/motor/sensor identification and R7 calibration",
+    "GPU physics backend ports"
+  ],
+  "serializer_patch_applied": false,
+  "checkpoint_migration_applied": false,
+  "training_queue_status": "prepared_only_not_scheduled",
+  "active_experiments": [],
+  "hardware_flashed": false,
+  "hardware_motors_actuated": false
+}

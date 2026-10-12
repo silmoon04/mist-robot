@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "profile_id": "r7_direct_baseline",
+  "profile_sha256": "73be695ac7bf9d045ae87585d1d93a5faf669f1e30aa00074ba981f81a1bbe66",
+  "source_sha256": {
+    "urdf": "1ce3ee65a598bcd7e5421ce744238739672ec68c9274d7665e320cc990ae9741",
+    "manifest": "e3fff543f2d2772b04354bfcd5ac6bee7a74c3d0dfb167cdc2e043ddab16e15c",
+    "config": "c57df57f4befdba83cd479d35a9fcd7c067b8c2df5ca6d785c77ba054015677b"
+  },
+  "status": "pending",
+  "provenance": {
+    "measured_at_utc": null,
+    "operator": null,
+    "instrument": null,
+    "procedure": null,
+    "conditions": {
+      "supply_voltage_v": null,
+      "ambient_temperature_c": null,
+      "duration_s": null,
+      "load_description": null
+    },
+    "evidence": []
+  },
+  "measurements": {
+    "geometry_m": {
+      "coxa_m": null,
+      "femur_m": null,
+      "tibia_m": null
+    },
+    "link_masses_kg": {
+      "base_mount": null,
+      "coxa": null,
+      "femur": null,
+      "tibia": null
+    },
+    "actuator": {
+      "continuous_torque_nm": null,
+      "no_load_speed_rad_s": null,
+      "latency_s": null
+    },
+    "joint_zero_offset_rad": [
+      null,
+      null,
+      null
+    ],
+    "joint_direction": [
+      null,
+      null,
+      null
+    ],
+    "body_com_m": [
+      null,
+      null,
+      null
+    ]
+  },
+  "notes": "Pending values are not measurements. Keep raw evidence and its SHA-256 hash. This record does not change config.json or enable hardware deployment."
+}

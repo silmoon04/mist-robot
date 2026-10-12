@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "profile_id": "r7_direct_baseline",
+  "family": "direct_yaw_pitch_pitch",
+  "transmission": "direct",
+  "geometry": {
+    "coxa_m": 0.082,
+    "femur_m": 0.09,
+    "tibia_m": 0.105,
+    "limits_deg": [
+      [
+        -55,
+        55
+      ],
+      [
+        -30,
+        65
+      ],
+      [
+        5,
+        115
+      ]
+    ],
+    "neutral_deg": [
+      0,
+      30,
+      81
+    ]
+  },
+  "joints": {
+    "yaw": "yaw",
+    "hip": "hip",
+    "knee": "knee"
+  },
+  "toe_reference": {
+    "link": "tibia",
+    "xyz_m": [
+      0.105,
+      0,
+      0
+    ],
+    "basis": "cad_manifest_lengths"
+  },
+  "sources": {
+    "urdf": {
+      "path": "../../design/single_leg_r7_wide_joints_20260914/output/Single_Leg_R7.urdf",
+      "sha256": "1ce3ee65a598bcd7e5421ce744238739672ec68c9274d7665e320cc990ae9741"
+    },
+    "manifest": {
+      "path": "../../design/single_leg_r7_wide_joints_20260914/output/manifest.json",
+      "sha256": "e3fff543f2d2772b04354bfcd5ac6bee7a74c3d0dfb167cdc2e043ddab16e15c"
+    },
+    "config": {
+      "path": "../config.json",
+      "sha256": "c57df57f4befdba83cd479d35a9fcd7c067b8c2df5ca6d785c77ba054015677b",
+      "source_root": "../.."
+    }
+  },
+  "declared_link_masses_kg": {
+    "base_mount": 0.15654936271041547,
+    "coxa": 0.11618827437852595,
+    "femur": 0.12491601583063594,
+    "tibia": 0.049304916675112435
+  },
+  "calibration": {
+    "status": "pending",
+    "record": null,
+    "notes": "Source inertials are CAD-derived; actuator, printed mass and joint calibration still need measurements."
+  }
+}

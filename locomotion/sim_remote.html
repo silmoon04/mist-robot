@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MIST simulation remote</title>
+<style>
+body{margin:0;background:#eef2f4;color:#18303c;font:16px system-ui}main{max-width:1100px;margin:auto;padding:24px}h1{margin:0;font-size:28px}p{line-height:1.5}.note{padding:12px 16px;background:#fff3d7;border-left:4px solid #c68b2e}.grid{display:grid;grid-template-columns:1fr 300px;gap:20px}section{background:white;border-radius:12px;padding:18px}img{width:100%;border-radius:8px;background:#ddd}label{display:block;margin:12px 0}select,input,button{font:inherit}select,input{padding:6px;max-width:100%}button{cursor:pointer;border:0;border-radius:7px;padding:10px 14px;background:#315b6e;color:white}.pad{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:18px 0}.pad button{min-height:54px;touch-action:none}.stop{background:#a73535}pre{font-size:13px;white-space:pre-wrap}#fault{color:#b12626;font-weight:600}small{color:#586e78}@media(max-width:800px){.grid{grid-template-columns:1fr}}
+</style><main>
+<h1>MIST simulation remote</h1><p>R7 direct-drive legs · CAD preview · headless CPU physics</p>
+<p class="note">This controls the simulation. Gaits and development policies still need evaluation and measured hardware calibration. Hold a direction or use W/A/S/D. Release to stop.</p>
+<div class="grid"><section><img id="view" alt="Live assembled robot simulation"><div id="fault"></div><pre id="state">Connecting…</pre></section>
+<section><label>Surface <select id="terrain"><option value="flat">Flat rigid floor</option><option value="low_friction">Low friction floor</option><option value="slope">Gentle slope</option><option value="rough">3 mm rigid heightfield</option></select></label>
+<label>Phone <select id="payload"><option value=".155">Mi 9 SE attached, 155 g</option><option value="0">Phone absent</option></select></label>
+<label>Controller <select id="controller"><option value="ik">IK crawl reference</option><option value="ppo">PPO development checkpoint</option><option value="sac">SAC development checkpoint</option></select></label>
+<label>Sensor <select id="sensor"><option value="mpu6050">MPU6050 estimate</option><option value="phone">Phone, attached payload required</option><option value="none">Open loop</option></select></label><label>Sensor profile JSON <input id="sensorprofile" value="{}"></label><label>Checkpoint path <input id="checkpoint" placeholder="Absolute path to final.zip"></label>
+<label><input id="randomize" type="checkbox"> Randomize mass, COM and motors</label><label>Seed <input id="seed" type="number" value="42"></label><button id="reset">Reset simulation</button>
+<label>Speed <input id="speed" type="range" min=".002" max=".012" step=".001" value=".01"><span id="speedval">0.010 m/s</span></label>
+<div class="pad"><span></span><button data-dir="forward">Forward</button><span></span><button data-dir="left">Left</button><button id="stop" class="stop">Stop</button><button data-dir="right">Right</button><span></span><button data-dir="backward">Backward</button><span></span></div>
+<small>Body +X forward, +Y left. The command watchdog stops motion after 350 ms without updates.</small>
+<hr><p>Single-leg IK, target relative to the yaw axis in mm:</p><input id="xyz" value="122.3, 0, -143.0"><button id="ik">Solve IK</button><pre id="ikout"></pre>
+<p><a href="http://127.0.0.1:8130" target="_blank">ESP32 commissioning remote</a></p><small>Separate calibrated interface; it starts in dry-run mode.</small></section></div></main>
+<script>
+const $=id=>document.getElementById(id);let dir=null,busy=false;
+async function post(path,data){const r=await fetch(path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});const j=await r.json();if(!r.ok)throw Error(j.error);return j}
+const directions={forward:[1,0,0],backward:[-1,0,0],left:[0,1,0],right:[0,-1,0]};
+async function command(){try{const c=(directions[dir]||[0,0,0]).map(x=>x*+$('speed').value);await post('/api/command',{command:c})}catch(e){$('fault').textContent=e.message}}
+document.querySelectorAll('[data-dir]').forEach(b=>{b.onpointerdown=e=>{b.setPointerCapture(e.pointerId);dir=b.dataset.dir;command()};b.onpointerup=b.onpointercancel=()=>{dir=null;command()}});
+$('stop').onclick=()=>{dir=null;command()};document.addEventListener('visibilitychange',()=>{dir=null;command()});window.onblur=()=>{dir=null;command()};
+const keys={w:'forward',s:'backward',a:'left',d:'right'};window.onkeydown=e=>{if(e.target.tagName==='INPUT')return;if(keys[e.key]){dir=keys[e.key];command()}if(e.key===' '){dir=null;command()}};window.onkeyup=e=>{if(keys[e.key]){dir=null;command()}};
+setInterval(()=>{if(dir)command()},100);$('speed').oninput=()=>{$('speedval').textContent=(+$('speed').value).toFixed(3)+' m/s'};
+$('reset').onclick=async()=>{dir=null;try{await post('/api/reset',{terrain:$('terrain').value,payload:+$('payload').value,randomize:$('randomize').checked,seed:+$('seed').value,controller:$('controller').value,sensor_mode:$('sensor').value,sensor_profile:JSON.parse($('sensorprofile').value),checkpoint:$('checkpoint').value});$('fault').textContent=''}catch(e){$('fault').textContent=e.message}};
+$('ik').onclick=async()=>{try{const j=await post('/api/ik',{foot_mm:$('xyz').value.split(',').map(Number)});$('ikout').textContent='yaw, hip, knee: '+j.q_deg.map(x=>x.toFixed(2)).join(', ')+' degrees'}catch(e){$('ikout').textContent=e.message}};
+setInterval(async()=>{if(busy)return;busy=true;try{const j=await (await fetch('/api/state')).json();$('view').src='data:image/jpeg;base64,'+j.image;const i=j.info;$('state').textContent=`Time ${i.time_s.toFixed(1)} s | ${j.controller} | ${j.policy_status} | seed ${j.seed}\nSensor ${j.sensor.mode}: ${j.sensor.valid?'valid':'unavailable'}\nCommand ${i.command.map(x=>x.toFixed(3)).join(', ')}\nTilt ${(i.rpy[0]*180/Math.PI).toFixed(1)} / ${(i.rpy[1]*180/Math.PI).toFixed(1)} deg\nMotor saturation ${(i.torque_saturation_fraction*100).toFixed(1)}% | IK rejections ${i.ik_rejections}\nPhone ${i.phone_mass_kg} kg | ${i.terrain}`;if(j.fell)$('fault').textContent=j.error||'Episode stopped (fall or sensor fault). Reset to continue.'}catch(e){$('fault').textContent=e.message}finally{busy=false}},200);
+</script></html>

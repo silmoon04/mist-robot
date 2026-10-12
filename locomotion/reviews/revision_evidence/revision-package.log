@@ -1,0 +1,27 @@
+pybullet build time: Jan 29 2025 23:17:20
+Using cpu device
+Evaluation initial at 0: mean_reward=1.3418, termination_fraction=0.000
+--------------------------
+| time/              |   |
+|    fps             | 7 |
+|    iterations      | 1 |
+|    time_elapsed    | 0 |
+|    total_timesteps | 2 |
+--------------------------
+Evaluation final at 2: mean_reward=1.3412, termination_fraction=0.000
+{
+  "algorithm": "ppo",
+  "status": "novice_pipeline_smoke_test",
+  "hardware_qualified": false,
+  "interrupted": false,
+  "requested_additional_timesteps": 2,
+  "expected_additional_timesteps": 2,
+  "optimizer_updates": 5,
+  "actual_additional_timesteps": 2,
+  "total_timesteps": 2,
+  "elapsed_seconds_including_evaluation": 5.5493903800379485,
+  "end_to_end_timesteps_per_second": 0.36039994720759283,
+  "best_validation_reward": null,
+  "checkpoint": "/home/silmoon/Documents/Codex/2026-10-12/can-you-go-into-my-github/work/revision_package_smoke/final.zip",
+  "limitation": "Checkpoint selection uses these fixed validation seeds. Run a separate untouched test suite before comparing policies or deployment."
+}

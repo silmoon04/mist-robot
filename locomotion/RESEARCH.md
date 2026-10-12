@@ -1,0 +1,50 @@
+# Simulation and training choices
+
+Research checked against primary documentation on 12 October 2026.
+
+Use PyBullet DIRECT for the first working MIST pipeline. The repository already contains R7 CAD and a single-leg URDF, and the existing simulation code uses PyBullet. This makes joint, collision and assembly comparisons easier. MuJoCo is the preferred next backend for independent dynamics checks and larger training work. Neither engine makes estimated hardware parameters become measured ones.
+
+## Laptop and remote options
+
+The initial inspected laptop has an i5-9300H, about 24 GB RAM and a GTX1650 mobile GPU. This hardware comparison describes that machine; reassess it for a replacement computer. CUDA availability must be tested in the installed framework. Missing `nvidia-smi` does not establish that the GPU is unusable. Record actual simulation throughput, worker scaling and framework device detection before selecting a training budget.
+
+| Platform | Practical role | Evidence and limits |
+| --- | --- | --- |
+| PyBullet | Current CPU physics, single leg, full robot, SB3 training | `DIRECT` has no GUI requirement; software image rendering is available. The default engine uses CPU physics. [Official quickstart](https://github.com/bulletphysics/bullet3/blob/master/docs/pybullet_quickstart_guide/PyBulletQuickstartGuide.md.html). |
+| MuJoCo | Next CPU backend and independent model check | The Python wheel includes the engine. Rendering supports EGL or OSMesa. Physics can run without a renderer. [Python installation](https://mujoco.readthedocs.io/en/stable/python.html), [rendering backends](https://mujoco.readthedocs.io/en/3.2.2/programming/). |
+| MJX | Batched accelerator training on a supplied GPU host | MJX supports JAX and Warp implementations. MJX-JAX targets many parallel scenes and can be 10 times slower than CPU MuJoCo for one scene. Published high-end benchmarks are not GTX1650 measurements. [Official MJX documentation](https://mujoco.readthedocs.io/en/stable/mjx.html). |
+| Genesis | Optional CPU/CUDA experiment after a driver check | CPU and CUDA backends are supported. The official Go2 PPO example is deliberately minimal. An MIST adaptation still needs calibrated actuators and matched tests. [Installation](https://genesis-world.readthedocs.io/en/latest/user_guide/overview/installation.html), [locomotion example](https://genesis-world.readthedocs.io/en/v1.4.0/user_guide/policy_training/examples/locomotion.html). |
+| Isaac Sim / standard Isaac Lab | Remote RTX workstation option | Current minimum lists 32 GB RAM, RTX4080 and 16 GB VRAM; GPUs without RT cores are unsupported. Isaac Lab training needs additional memory. This is unsuitable for the inspected laptop. [Isaac Sim requirements](https://docs.isaacsim.omniverse.nvidia.com/latest/installation/requirements.html), [Isaac Lab installation](https://isaac-sim.github.io/IsaacLab/develop/source/setup/installation/index.html). |
+| Gazebo Sim | Later ROS and sensor integration | Server-only simulation is supported. EGL supports rendering without X. More integration work is needed than for the present Python learning loop. [Server-only mode](https://github.com/gazebosim/docs/blob/master/common/get_started.md), [headless rendering](https://gazebosim.org/api/sim/7/headless_rendering.html). |
+
+CPU is the policy-training default as well. SB3 recommends CPU for PPO with an MLP and suggests process-based vector environments when useful. Benchmark 1, 2 and 4 workers. `--device cuda` is optional and fails clearly if PyTorch cannot use CUDA; PyBullet physics remains on CPU. SAC provides an off-policy continuous-action comparison. A small network on a small batch may run faster on CPU. [PPO guidance](https://stable-baselines3.readthedocs.io/en/master/modules/ppo.html), [SAC documentation](https://stable-baselines3.readthedocs.io/en/master/modules/sac.html).
+
+For an eventual MJX job, match JAX and driver versions. Current JAX documentation requires Linux driver 525 or newer for CUDA12, or 580 or newer for CUDA13. Confirm the actual GPU and driver before choosing wheels. [JAX installation](https://docs.jax.dev/en/latest/installation.html).
+
+Initial throughput and smoke evidence was retired after model/frame corrections and a timestep-convergence review. Reproduce the final CPU benchmark with `scripts/benchmark.py --steps 2000 --warmup 100`. Short rollout measurements exclude policy optimization and do not predict sustained training time; the laptop may throttle on a long run. An explicit CUDA request was checked and failed clearly because the installed PyTorch build could not use CUDA.
+
+## Hardware fidelity
+
+STS3215 is a family name. FEETECH lists a 7.4 V C001 and a 12 V C018. Confirm the fitted model and supply voltage. For C018 at 12 V the manufacturer gives 55 +/- 1 g, 0.222 s/60 degrees no-load speed, 30 kg cm peak stall torque, 10 kg cm rated torque, 2.7 A stall current and half-duplex serial communication up to 1 Mbps. These correspond to about 4.72 rad/s, 2.94 Nm peak and 0.981 Nm rated torque. Peak stall torque is unsuitable as an unlimited sustainable torque bound. [Variant catalogue](https://www.feetechrc.com/products.html?keyword=STS3215), [C018 specifications](https://www.feetechrc.com/525603.html).
+
+Model delayed, quantized and slew-limited position commands, bounded PD torque, motor friction, deadband and voltage-dependent capability. The encoder step is about `2*pi/4096` radians. Loaded speed, PD gains, backlash, latency, compliance and thermal response remain estimates until measured on the actual leg. Record step and sine responses with known loads before claiming accurate motor emulation. Sim-to-real quadruped work found that actuator and latency mismatch could defeat domain randomization. [Tan et al., 2018](https://arxiv.org/abs/1804.10332).
+
+The present environment uses 1000 Hz physics and 50 Hz control. A six-second simulated single-leg sweep compared 240, 1000 and 2000 Hz at zero and 0.25 kg equivalent toe loads. The 240 Hz step caused explicit-PD damping instability and was rejected. Tracking RMSE at 1000 and 2000 Hz agreed closely; loaded knee RMSE was 0.0248545 versus 0.0248881 rad. Some unloaded torque/velocity ripple still differed, so this supports tracking convergence for that test, not exact electrical or contact dynamics. The toe load was a downward force, without added payload inertia.
+
+Use the real sensor interface in the actor observation: IMU-derived gravity/angular rate, servo positions/velocity, command, previous actions and gait phase/history. Perfect world velocity and exact simulator contact can be used for reward and evaluation, but require an equivalent physical estimator or sensor before becoming actor inputs.
+
+Randomize plausible uncertainty in mass, inertia, COM, foot friction, torque capability, servo gains, voltage, latency and observation noise. Add the phone as a mass at its actual mounting position, including its inertia; removing it changes all three. Scale link inertia consistently when scaling mass. Keep identified parameters near their measurements and widen uncertain parameters through sensitivity tests. Unnecessary randomization can produce conservative policies, and does not fix incorrect control design. [Dynamics Randomization Revisited](https://arxiv.org/abs/2011.02404).
+
+Flat ground, low friction, a gentle slope and small height variations are useful initial cases. A friction coefficient cannot fully represent carpet deformation, sand, mud or loose gravel. Without vision or terrain sensors, blind locomotion also has a finite disturbance and obstacle envelope.
+
+## Prepared learning workflow
+
+`train.py` compares PPO and SAC on a 12-action bounded residual controller. The environment maps normalized actions to at most +/-0.10 rad around the IK crawl. Observations and action spaces are read from `MistEnv`; the trainer does not hardcode their dimensions. Checkpoints include periodic, best-validation and final models. SAC also saves replay buffers by default.
+
+Run `scripts/train_smoke.sh` in a Python environment containing the locomotion requirements. It trains 2048 steps per algorithm on CPU and evaluates all four cardinal commands with a phone absent and a 0.155 kg phone present. Outputs are explicitly labelled novice pipeline smoke tests. This verifies execution and checkpoint handling; it cannot establish convergence or real-world walking reliability.
+
+`training_queue.json` prepares six one-million-step runs: PPO and SAC at seeds 42, 43 and 44. It does not reserve a provider or schedule a paid job. `scripts/run_job.py --job ppo-seed42 --print-command` shows one portable command. Use `--device cuda` only after CUDA is available. Full jobs sample flat, low-friction, slope and rough terrain at reset with default weights 0.5, 0.2, 0.15 and 0.15. They validate all four directions across those terrains and both phone configurations at 0.01 m/s, within the initial training command range. This is a fixed terrain mixture, not an automatic difficulty curriculum.
+
+Training seeds and fixed validation seeds are separate. Checkpoint selection uses mean reward on that validation suite, so those seeds are not a final test set. Compare selected policies with a new untouched suite and report fall fraction, commanded-velocity error, drift, torque saturation and tracking error. PPO may round the requested budget up to a complete rollout; compare actual timesteps recorded in `training_summary.json`. A resumed run adds timesteps, restores the model and optional replay buffer, and reseeds environments. It is not a bit-for-bit continuation because live environment and RNG states are not checkpointed. The trainer records source/config hashes and rejects validation/checkpointing if those files change during a run.
+
+The model files, synthetic mass estimates, approximated servos and short checkpoints remain hardware-unvalidated. Reliable transfer requires measured dimensions, link masses, joint zeros, actuator responses and sensor timing, then supported low-speed hardware tests with the same command limits.

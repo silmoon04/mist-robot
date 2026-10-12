@@ -1,0 +1,99 @@
+{
+  "requested_models": {
+    "implementation_and_review": "gpt-6.1-sol",
+    "batch_critique": "gpt-6-astra",
+    "batch_revision": "gpt-6-astra"
+  },
+  "concurrency_limit": 4,
+  "batch_size": 10,
+  "status": "paused_at_user_request",
+  "sol_agents": [
+    {
+      "name": "sol01_upgrade_research",
+      "role": "upgrade implementation",
+      "status": "complete"
+    },
+    {
+      "name": "sol02_profiles",
+      "role": "design profile implementation",
+      "status": "complete"
+    },
+    {
+      "name": "sol03_sim_review",
+      "role": "simulation critique",
+      "status": "complete"
+    },
+    {
+      "name": "sol04_sensor_sim",
+      "role": "sensor simulation implementation",
+      "status": "complete"
+    },
+    {
+      "name": "sol05_upgrade_review",
+      "role": "upgrade critique",
+      "status": "complete"
+    },
+    {
+      "name": "sol06_profiles_review",
+      "role": "design profile critique",
+      "status": "complete"
+    },
+    {
+      "name": "sol07_hardware_review",
+      "role": "hardware critique",
+      "status": "complete"
+    },
+    {
+      "name": "sol08_training_review",
+      "role": "training critique",
+      "status": "complete"
+    },
+    {
+      "name": "sol09_sensitivity",
+      "role": "validation implementation",
+      "status": "complete"
+    },
+    {
+      "name": "sol10_integration_review",
+      "role": "integration critique",
+      "status": "complete"
+    }
+  ],
+  "astra_agents": [
+    {
+      "name": "astra_batch_critic",
+      "role": "critique ten-agent batch",
+      "status": "complete"
+    },
+    {
+      "name": "astra_batch_reviser",
+      "role": "revise and verify batch",
+      "status": "complete"
+    }
+  ],
+  "release_gate": "Frozen source, full focused test suite, actuator integration convergence, matched training budgets and untouched evaluation results. Real-world reliability stays unvalidated until physical calibration.",
+  "initial_parallel_work": {
+    "agents": [
+      "sim_research",
+      "hardware_audit",
+      "model_builder"
+    ],
+    "status": "complete",
+    "model": "inherited model before explicit user model request",
+    "key_results": [
+      "downloaded and restored CAD",
+      "R7 URDF assembly and kinematics",
+      "ESP32 and sensor adapters compiled/tested",
+      "PPO/SAC trainer and portable jobs",
+      "independent frame, timestep, friction and controller review fixes"
+    ]
+  },
+  "batch_complete": true,
+  "pause": {
+    "checkpoint_source_fingerprint": "8793d43d546c95c6fd695860305f96a0627e49be9ec81779e313b63d1b92e8c1",
+    "both_recorded_training_steps": 51200,
+    "final_validation": "interrupted; periodic receipts preserved",
+    "new_CUDA_setup_followup": "interrupted before script creation",
+    "followup_analysis": "baseline and shift ablation complete"
+  }
+}

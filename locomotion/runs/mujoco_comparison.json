@@ -1,0 +1,87 @@
+{
+  "models": {
+    "single_leg": "/home/silmoon/Documents/Codex/2026-10-12/can-you-go-into-my-github/outputs/mist-robot/locomotion/models/mujoco/single_leg.xml",
+    "quadruped": "/home/silmoon/Documents/Codex/2026-10-12/can-you-go-into-my-github/outputs/mist-robot/locomotion/models/mujoco/quadruped.xml"
+  },
+  "comparisons": [
+    {
+      "mujoco_version": "3.3.7",
+      "duration_s": 3.0,
+      "load_kg": 0.0,
+      "physics_dt_s": 0.001,
+      "fk_error_m": 3.925231146709438e-17,
+      "mujoco_mass_kg": 0.4469585695946898,
+      "source_mass_kg": 0.4469585695946898,
+      "finite": true,
+      "joint_trajectory_difference_rmse_rad": [
+        1.0143807693009979e-05,
+        2.3355553835621904e-05,
+        0.0006807493028199396
+      ],
+      "bullet_tracking_rmse_rad": [
+        0.025662050520493633,
+        0.01964232813911521,
+        0.011697288663640712
+      ],
+      "mujoco_tracking_rmse_rad": [
+        0.025655642428422838,
+        0.019648227824637557,
+        0.01178504551547101
+      ],
+      "scope": "fixed-leg rigid-body comparison with adjacent-link contacts excluded; contact solver and real motor fidelity are not established"
+    },
+    {
+      "mujoco_version": "3.3.7",
+      "duration_s": 3.0,
+      "load_kg": 0.1,
+      "physics_dt_s": 0.001,
+      "fk_error_m": 3.925231146709438e-17,
+      "mujoco_mass_kg": 0.4469585695946898,
+      "source_mass_kg": 0.4469585695946898,
+      "finite": true,
+      "joint_trajectory_difference_rmse_rad": [
+        7.733943353833175e-06,
+        1.683294308458133e-05,
+        0.0001591965430675475
+      ],
+      "bullet_tracking_rmse_rad": [
+        0.02566106099366925,
+        0.02359546078615638,
+        0.013326673783162964
+      ],
+      "mujoco_tracking_rmse_rad": [
+        0.02565766171043933,
+        0.02359255268278422,
+        0.01334426373598938
+      ],
+      "scope": "fixed-leg rigid-body comparison with adjacent-link contacts excluded; contact solver and real motor fidelity are not established"
+    },
+    {
+      "mujoco_version": "3.3.7",
+      "duration_s": 3.0,
+      "load_kg": 0.25,
+      "physics_dt_s": 0.001,
+      "fk_error_m": 3.925231146709438e-17,
+      "mujoco_mass_kg": 0.4469585695946898,
+      "source_mass_kg": 0.4469585695946898,
+      "finite": true,
+      "joint_trajectory_difference_rmse_rad": [
+        8.988526768104078e-06,
+        2.014670455961706e-05,
+        0.0001951391395664717
+      ],
+      "bullet_tracking_rmse_rad": [
+        0.025660573072036664,
+        0.029716347998303593,
+        0.022953442029797506
+      ],
+      "mujoco_tracking_rmse_rad": [
+        0.02565440224574566,
+        0.029719966809633947,
+        0.022937271466365667
+      ],
+      "scope": "fixed-leg rigid-body comparison with adjacent-link contacts excluded; contact solver and real motor fidelity are not established"
+    }
+  ],
+  "status": "independent CPU leg comparison and MJCF export; no GPU training port or hardware validation"
+}

@@ -1,0 +1,157 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="mist_r7_four_leg_provisional">
+  <compiler angle="radian" />
+  <option timestep="0.001" />
+  <worldbody>
+    <body name="body" pos="0 0 0.11402594478220618">
+      <inertial pos="-0.00105326 -5.84964e-05 0.0335389" quat="0.31286 0.632802 0.638358 0.306887" mass="0.981711" diaginertia="0.00219355 0.00206863 0.00192166" />
+      <geom name="body_hub_proxy" size="0.079 0.092 0.006" pos="0 0 0.006" type="box" rgba="0.3 0.6 0.65 1" friction="0.8 0 0" />
+      <body name="FL_base_mount" pos="0.053033 0.053033 0.038" quat="0.92388 0 0 0.382683">
+        <inertial pos="-0.0129523 -8.78431e-05 -0.0155916" quat="-0.0426628 0.705319 -0.0397702 0.706486" mass="0.0874599" diaginertia="3.28881e-05 3.20152e-05 1.52221e-05" />
+        <geom name="FL_base_mount_base_mount_proxy_0" size="0.0295 0.0205 0.016" pos="-0.014 0 -0.017" type="box" rgba="0.18 0.23 0.25 1" friction="0.8 0 0" />
+        <body name="FL_coxa">
+          <inertial pos="0.0554526 -0.000326227 -0.00741118" quat="0.597476 0.381437 0.37247 0.598994" mass="0.116188" diaginertia="0.000131592 0.000113172 3.41138e-05" />
+          <joint name="FL_yaw" pos="0 0 0" axis="0 0 1" range="-0.959931 0.959931" actuatorfrcrange="-0.588 0.588" damping="0.015" />
+          <geom name="FL_coxa_coxa_proxy_0" size="0.039 0.012 0.009" pos="0.039 0 0" type="box" rgba="0.22 0.58 0.6 1" friction="0.8 0 0" />
+          <geom name="FL_coxa_coxa_proxy_1" size="0.0275 0.02 0.0135" pos="0.067 0 -0.01" type="box" rgba="0.22 0.58 0.6 1" friction="0.8 0 0" />
+          <body name="FL_femur" pos="0.082 0 0">
+            <inertial pos="0.0633652 -0.00129831 0.00193497" quat="-0.000908151 0.704901 0.0300596 0.708668" mass="0.124916" diaginertia="0.000123315 0.000113582 3.78744e-05" />
+            <joint name="FL_hip" pos="0 0 0" axis="0 1 0" range="-0.523599 1.13446" actuatorfrcrange="-0.588 0.588" damping="0.015" />
+            <geom name="FL_femur_femur_proxy_0" size="0.043 0.012 0.009" pos="0.043 0 0" type="box" rgba="0.22 0.58 0.6 1" friction="0.8 0 0" />
+            <geom name="FL_femur_femur_proxy_1" size="0.0235 0.0205 0.0135" pos="0.075 0 0.01" type="box" rgba="0.22 0.58 0.6 1" friction="0.8 0 0" />
+            <body name="FL_tibia" pos="0.09 0 0">
+              <inertial pos="0.0414754 -0.00169475 0.00029917" quat="-0.0212696 0.709852 0.0222285 0.703679" mass="0.0493049" diaginertia="5.54769e-05 4.56846e-05 1.32876e-05" />
+              <joint name="FL_knee" pos="0 0 0" axis="0 1 0" range="0.0872665 2.00713" actuatorfrcrange="-0.588 0.588" damping="0.015" />
+              <geom name="FL_tibia_tibia_proxy_0" size="0.046 0.0085 0.007" pos="0.048 0 0" type="box" rgba="0.22 0.58 0.6 1" friction="0.8 0 0" />
+              <body name="FL_toe" pos="0.105 0 0">
+                <inertial pos="0 0 0" mass="0" diaginertia="0 0 0" />
+                <geom name="FL_toe_FL_toe_sphere" size="0.005" friction="0.8 0 0" />
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="FR_base_mount" pos="0.053033 -0.053033 0.038" quat="0.92388 0 0 -0.382683">
+        <inertial pos="-0.0129523 -8.78431e-05 -0.0155916" quat="-0.0426628 0.705319 -0.0397702 0.706486" mass="0.0874599" diaginertia="3.28881e-05 3.20152e-05 1.52221e-05" />
+        <geom name="FR_base_mount_base_mount_proxy_0" size="0.0295 0.0205 0.016" pos="-0.014 0 -0.017" type="box" rgba="0.18 0.23 0.25 1" friction="0.8 0 0" />
+        <body name="FR_coxa">
+          <inertial pos="0.0554526 -0.000326227 -0.00741118" quat="0.597476 0.381437 0.37247 0.598994" mass="0.116188" diaginertia="0.000131592 0.000113172 3.41138e-05" />
+          <joint name="FR_yaw" pos="0 0 0" axis="0 0 1" range="-0.959931 0.959931" actuatorfrcrange="-0.588 0.588" damping="0.015" />
+          <geom name="FR_coxa_coxa_proxy_0" size="0.039 0.012 0.009" pos="0.039 0 0" type="box" rgba="0.22 0.58 0.6 1" friction="0.8 0 0" />
+          <geom name="FR_coxa_coxa_proxy_1" size="0.0275 0.02 0.0135" pos="0.067 0 -0.01" type="box" rgba="0.22 0.58 0.6 1" friction="0.8 0 0" />
+          <body name="FR_femur" pos="0.082 0 0">
+            <inertial pos="0.0633652 -0.00129831 0.00193497" quat="-0.000908151 0.704901 0.0300596 0.708668" mass="0.124916" diaginertia="0.000123315 0.000113582 3.78744e-05" />
+            <joint name="FR_hip" pos="0 0 0" axis="0 1 0" range="-0.523599 1.13446" actuatorfrcrange="-0.588 0.588" damping="0.015" />
+            <geom name="FR_femur_femur_proxy_0" size="0.043 0.012 0.009" pos="0.043 0 0" type="box" rgba="0.22 0.58 0.6 1" friction="0.8 0 0" />
+            <geom name="FR_femur_femur_proxy_1" size="0.0235 0.0205 0.0135" pos="0.075 0 0.01" type="box" rgba="0.22 0.58 0.6 1" friction="0.8 0 0" />
+            <body name="FR_tibia" pos="0.09 0 0">
+              <inertial pos="0.0414754 -0.00169475 0.00029917" quat="-0.0212696 0.709852 0.0222285 0.703679" mass="0.0493049" diaginertia="5.54769e-05 4.56846e-05 1.32876e-05" />
+              <joint name="FR_knee" pos="0 0 0" axis="0 1 0" range="0.0872665 2.00713" actuatorfrcrange="-0.588 0.588" damping="0.015" />
+              <geom name="FR_tibia_tibia_proxy_0" size="0.046 0.0085 0.007" pos="0.048 0 0" type="box" rgba="0.22 0.58 0.6 1" friction="0.8 0 0" />
+              <body name="FR_toe" pos="0.105 0 0">
+                <inertial pos="0 0 0" mass="0" diaginertia="0 0 0" />
+                <geom name="FR_toe_FR_toe_sphere" size="0.005" friction="0.8 0 0" />
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="RL_base_mount" pos="-0.053033 0.053033 0.038" quat="0.382683 0 0 0.92388">
+        <inertial pos="-0.0129523 -8.78431e-05 -0.0155916" quat="-0.0426628 0.705319 -0.0397702 0.706486" mass="0.0874599" diaginertia="3.28881e-05 3.20152e-05 1.52221e-05" />
+        <geom name="RL_base_mount_base_mount_proxy_0" size="0.0295 0.0205 0.016" pos="-0.014 0 -0.017" type="box" rgba="0.18 0.23 0.25 1" friction="0.8 0 0" />
+        <body name="RL_coxa">
+          <inertial pos="0.0554526 -0.000326227 -0.00741118" quat="0.597476 0.381437 0.37247 0.598994" mass="0.116188" diaginertia="0.000131592 0.000113172 3.41138e-05" />
+          <joint name="RL_yaw" pos="0 0 0" axis="0 0 1" range="-0.959931 0.959931" actuatorfrcrange="-0.588 0.588" damping="0.015" />
+          <geom name="RL_coxa_coxa_proxy_0" size="0.039 0.012 0.009" pos="0.039 0 0" type="box" rgba="0.22 0.58 0.6 1" friction="0.8 0 0" />
+          <geom name="RL_coxa_coxa_proxy_1" size="0.0275 0.02 0.0135" pos="0.067 0 -0.01" type="box" rgba="0.22 0.58 0.6 1" friction="0.8 0 0" />
+          <body name="RL_femur" pos="0.082 0 0">
+            <inertial pos="0.0633652 -0.00129831 0.00193497" quat="-0.000908151 0.704901 0.0300596 0.708668" mass="0.124916" diaginertia="0.000123315 0.000113582 3.78744e-05" />
+            <joint name="RL_hip" pos="0 0 0" axis="0 1 0" range="-0.523599 1.13446" actuatorfrcrange="-0.588 0.588" damping="0.015" />
+            <geom name="RL_femur_femur_proxy_0" size="0.043 0.012 0.009" pos="0.043 0 0" type="box" rgba="0.22 0.58 0.6 1" friction="0.8 0 0" />
+            <geom name="RL_femur_femur_proxy_1" size="0.0235 0.0205 0.0135" pos="0.075 0 0.01" type="box" rgba="0.22 0.58 0.6 1" friction="0.8 0 0" />
+            <body name="RL_tibia" pos="0.09 0 0">
+              <inertial pos="0.0414754 -0.00169475 0.00029917" quat="-0.0212696 0.709852 0.0222285 0.703679" mass="0.0493049" diaginertia="5.54769e-05 4.56846e-05 1.32876e-05" />
+              <joint name="RL_knee" pos="0 0 0" axis="0 1 0" range="0.0872665 2.00713" actuatorfrcrange="-0.588 0.588" damping="0.015" />
+              <geom name="RL_tibia_tibia_proxy_0" size="0.046 0.0085 0.007" pos="0.048 0 0" type="box" rgba="0.22 0.58 0.6 1" friction="0.8 0 0" />
+              <body name="RL_toe" pos="0.105 0 0">
+                <inertial pos="0 0 0" mass="0" diaginertia="0 0 0" />
+                <geom name="RL_toe_RL_toe_sphere" size="0.005" friction="0.8 0 0" />
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="RR_base_mount" pos="-0.053033 -0.053033 0.038" quat="0.382683 0 0 -0.92388">
+        <inertial pos="-0.0129523 -8.78431e-05 -0.0155916" quat="-0.0426628 0.705319 -0.0397702 0.706486" mass="0.0874599" diaginertia="3.28881e-05 3.20152e-05 1.52221e-05" />
+        <geom name="RR_base_mount_base_mount_proxy_0" size="0.0295 0.0205 0.016" pos="-0.014 0 -0.017" type="box" rgba="0.18 0.23 0.25 1" friction="0.8 0 0" />
+        <body name="RR_coxa">
+          <inertial pos="0.0554526 -0.000326227 -0.00741118" quat="0.597476 0.381437 0.37247 0.598994" mass="0.116188" diaginertia="0.000131592 0.000113172 3.41138e-05" />
+          <joint name="RR_yaw" pos="0 0 0" axis="0 0 1" range="-0.959931 0.959931" actuatorfrcrange="-0.588 0.588" damping="0.015" />
+          <geom name="RR_coxa_coxa_proxy_0" size="0.039 0.012 0.009" pos="0.039 0 0" type="box" rgba="0.22 0.58 0.6 1" friction="0.8 0 0" />
+          <geom name="RR_coxa_coxa_proxy_1" size="0.0275 0.02 0.0135" pos="0.067 0 -0.01" type="box" rgba="0.22 0.58 0.6 1" friction="0.8 0 0" />
+          <body name="RR_femur" pos="0.082 0 0">
+            <inertial pos="0.0633652 -0.00129831 0.00193497" quat="-0.000908151 0.704901 0.0300596 0.708668" mass="0.124916" diaginertia="0.000123315 0.000113582 3.78744e-05" />
+            <joint name="RR_hip" pos="0 0 0" axis="0 1 0" range="-0.523599 1.13446" actuatorfrcrange="-0.588 0.588" damping="0.015" />
+            <geom name="RR_femur_femur_proxy_0" size="0.043 0.012 0.009" pos="0.043 0 0" type="box" rgba="0.22 0.58 0.6 1" friction="0.8 0 0" />
+            <geom name="RR_femur_femur_proxy_1" size="0.0235 0.0205 0.0135" pos="0.075 0 0.01" type="box" rgba="0.22 0.58 0.6 1" friction="0.8 0 0" />
+            <body name="RR_tibia" pos="0.09 0 0">
+              <inertial pos="0.0414754 -0.00169475 0.00029917" quat="-0.0212696 0.709852 0.0222285 0.703679" mass="0.0493049" diaginertia="5.54769e-05 4.56846e-05 1.32876e-05" />
+              <joint name="RR_knee" pos="0 0 0" axis="0 1 0" range="0.0872665 2.00713" actuatorfrcrange="-0.588 0.588" damping="0.015" />
+              <geom name="RR_tibia_tibia_proxy_0" size="0.046 0.0085 0.007" pos="0.048 0 0" type="box" rgba="0.22 0.58 0.6 1" friction="0.8 0 0" />
+              <body name="RR_toe" pos="0.105 0 0">
+                <inertial pos="0 0 0" mass="0" diaginertia="0 0 0" />
+                <geom name="RR_toe_RR_toe_sphere" size="0.005" friction="0.8 0 0" />
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="phone" pos="0.003725 0 0.15125">
+        <inertial pos="0 0 0" quat="0.707107 0.707107 0 0" mass="0.155" diaginertia="0.000345217 0.000281735 6.4916e-05" />
+        <geom name="phone_phone_proxy" size="0.003725 0.07375 0.03525" type="box" rgba="0.05 0.05 0.07 1" friction="0.8 0 0" />
+      </body>
+      <freejoint name="root_free" />
+    </body>
+    <geom name="floor" type="plane" size="3 3 .1" friction="0.8 0 0" />
+  </worldbody>
+  <contact>
+    <exclude body1="body" body2="FL_base_mount" />
+    <exclude body1="body" body2="FR_base_mount" />
+    <exclude body1="body" body2="RL_base_mount" />
+    <exclude body1="body" body2="RR_base_mount" />
+    <exclude body1="body" body2="phone" />
+    <exclude body1="FL_base_mount" body2="FL_coxa" />
+    <exclude body1="FL_coxa" body2="FL_femur" />
+    <exclude body1="FL_femur" body2="FL_tibia" />
+    <exclude body1="FL_tibia" body2="FL_toe" />
+    <exclude body1="FR_base_mount" body2="FR_coxa" />
+    <exclude body1="FR_coxa" body2="FR_femur" />
+    <exclude body1="FR_femur" body2="FR_tibia" />
+    <exclude body1="FR_tibia" body2="FR_toe" />
+    <exclude body1="RL_base_mount" body2="RL_coxa" />
+    <exclude body1="RL_coxa" body2="RL_femur" />
+    <exclude body1="RL_femur" body2="RL_tibia" />
+    <exclude body1="RL_tibia" body2="RL_toe" />
+    <exclude body1="RR_base_mount" body2="RR_coxa" />
+    <exclude body1="RR_coxa" body2="RR_femur" />
+    <exclude body1="RR_femur" body2="RR_tibia" />
+    <exclude body1="RR_tibia" body2="RR_toe" />
+  </contact>
+  <actuator>
+    <motor name="FL_yaw_motor" joint="FL_yaw" gear="1" ctrllimited="true" ctrlrange="-0.588 0.588" />
+    <motor name="FL_hip_motor" joint="FL_hip" gear="1" ctrllimited="true" ctrlrange="-0.588 0.588" />
+    <motor name="FL_knee_motor" joint="FL_knee" gear="1" ctrllimited="true" ctrlrange="-0.588 0.588" />
+    <motor name="FR_yaw_motor" joint="FR_yaw" gear="1" ctrllimited="true" ctrlrange="-0.588 0.588" />
+    <motor name="FR_hip_motor" joint="FR_hip" gear="1" ctrllimited="true" ctrlrange="-0.588 0.588" />
+    <motor name="FR_knee_motor" joint="FR_knee" gear="1" ctrllimited="true" ctrlrange="-0.588 0.588" />
+    <motor name="RL_yaw_motor" joint="RL_yaw" gear="1" ctrllimited="true" ctrlrange="-0.588 0.588" />
+    <motor name="RL_hip_motor" joint="RL_hip" gear="1" ctrllimited="true" ctrlrange="-0.588 0.588" />
+    <motor name="RL_knee_motor" joint="RL_knee" gear="1" ctrllimited="true" ctrlrange="-0.588 0.588" />
+    <motor name="RR_yaw_motor" joint="RR_yaw" gear="1" ctrllimited="true" ctrlrange="-0.588 0.588" />
+    <motor name="RR_hip_motor" joint="RR_hip" gear="1" ctrllimited="true" ctrlrange="-0.588 0.588" />
+    <motor name="RR_knee_motor" joint="RR_knee" gear="1" ctrllimited="true" ctrlrange="-0.588 0.588" />
+  </actuator>
+  <keyframe>
+    <key name="standing" qpos="0.0 0.0 0.11402594478220618 1.0 0.0 0.0 0.0 0.0 0.5235987755982988 1.413716694115407 0.0 0.5235987755982988 1.413716694115407 0.0 0.5235987755982988 1.413716694115407 0.0 0.5235987755982988 1.413716694115407" />
+  </keyframe>
+</mujoco>

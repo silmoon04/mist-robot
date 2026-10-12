@@ -1,0 +1,29 @@
+# Sol05 upgrade review
+
+Reviewed `locomotion/UPGRADE.md` and `locomotion/machine_profiles.json` on 12 October 2026 against the official sources linked below. I also checked the setup script, Torch lock entry, device guard and command interfaces. I did not inspect or benchmark the planned laptop, install GPU frameworks or change the reviewed files.
+
+The hardware, backend and driver claims pass this review. No P0, P1 or P2 finding. One P3 documentation improvement would make the future CUDA setup easier to follow.
+
+## P3: spell out the CPU-to-CUDA environment handoff
+
+`UPGRADE.md:24` says "`train.py --device cuda` changes the SB3 policy device only"; lines 37 and 74 require separate environments and framework checks. The JSON CUDA probe correctly requires a CUDA-enabled PyTorch build. These statements are accurate, but the upgrade guide does not explicitly connect them to the repository's CPU-only installation: `scripts/setup_cpu.sh:7-8,12-13` installs `torch==2.8.0+cpu`, and `requirements.lock.txt:32` pins that same build. A working NVIDIA driver alone cannot make that environment run a CUDA policy. `train.py:87-94` prevents silent fallback, so this omission cannot quietly produce a valid-looking GPU result.
+
+Suggested addition near the version gates: "The CPU setup and CPU lock install `torch==2.8.0+cpu`. For a CUDA policy probe, create a separate environment with an official CUDA-enabled Torch build and the locomotion dependencies. Do not install the CPU lock into it. Verify `torch.version.cuda`, a tensor allocation and a synchronized operation before using `--device cuda`."
+
+PyTorch's [official 2.8 installation matrix](https://pytorch.org/get-started/previous-versions/#v280) lists distinct CPU, CUDA 12.6, 12.8 and 12.9 wheels. Its [2.8 release notes](https://github.com/pytorch/pytorch/releases/tag/v2.8.0) remove Maxwell and Pascal from the 12.8/12.9 binaries and direct those architectures to 12.6. Neither the current Turing GPU nor planned Ada GPU belongs to that removed group. This establishes an architecture gate, not a tested driver/wheel installation on either laptop.
+
+## Claims checked
+
+| Location and claim | Official evidence and verdict |
+| --- | --- |
+| `UPGRADE.md:16-18`; planned JSON profile: 12 GB dedicated VRAM, third-generation RT cores, 60 to 150 W specification range | [NVIDIA laptop comparison](https://www.nvidia.com/en-us/geforce/laptops/compare/) gives these values for the RTX 4080 Laptop GPU and identifies RTX 40 laptop GPUs as Ada with compute capability 8.9. The guide correctly distinguishes the laptop card from the desktop card and requires OEM/device inspection. |
+| `UPGRADE.md:29-31,42`; JSON Isaac floor and snapshot | [Isaac Lab main installation](https://isaac-sim.github.io/IsaacLab/main/source/setup/installation/index.html) states 32 GB RAM, 16 GB VRAM, recommended Sim 5.1.0, Python 3.11 for Sim 5.X and Linux driver 580.65.06 or later. [Isaac Sim latest requirements](https://docs.isaacsim.omniverse.nvidia.com/latest/installation/requirements.html) separately lists RTX 4080, 32 GB RAM, 16 GB VRAM, 50 GB SSD and tested Linux/Windows drivers 595.58.03/595.97; Lab training requires additional memory and non-RT GPUs are unsupported. Both documents preserve the branch distinction. The 12 GB card is correctly below the cited VRAM floor. |
+| `UPGRADE.md:39-40`; JSON JAX/Warp snapshots | [JAX installation](https://docs.jax.dev/en/latest/installation.html) requires Linux driver 525 or newer for CUDA 12 and 580 or newer for CUDA 13; native Windows NVIDIA GPU is unsupported and WSL2 is experimental. [Warp latest installation](https://nvidia.github.io/warp/latest/user_guide/installation.html), currently 1.19.0.dev1, states default CUDA 13.4 wheels need R580 and Turing or newer, while CUDA 12 wheels need R525. The values match. They are correctly labelled documentation snapshots rather than one reproducible stack. |
+| `UPGRADE.md:25-28,33`: CPU reference versus GPU physics ports | [MJX documentation](https://mujoco.readthedocs.io/en/stable/mjx.html) says MJX-JAX is suited to large parallel batches and can lose to native CPU MuJoCo for one scene. [MuJoCo Warp](https://mujoco.readthedocs.io/en/stable/mjwarp/) distinguishes throughput from native MuJoCo's single-step latency. [Genesis installation](https://genesis-world.readthedocs.io/en/latest/user_guide/overview/installation.html) lists Python 3.10 to 3.13, platform-specific PyTorch installation and a matching CUDA driver. The guide does not claim that installing these packages replaces `MistEnv`, nor invent vendor RAM/VRAM minima. |
+| `UPGRADE.md:33,50-54`; JSON CPU and GPU probes | [SB3 PPO documentation](https://stable-baselines3.readthedocs.io/en/master/modules/ppo.html) recommends CPU for PPO without a CNN and explains that rollout size is `n_steps * n_envs`. The guide preserves that worker-count distinction. Worker counts 1/2/4/8, GPU batches 16/64/256/512 and the 20 percent free-VRAM margin are labelled proposed project settings, not measured capacity or vendor requirements. No speedup, runtime or new-hardware result is claimed. |
+
+## Local checks
+
+`machine_profiles.json` parses successfully. Every listed CPU `train_arguments` option exists in `train.py`, and the stated PPO/SAC defaults match the trainer. The exact CPU `run_job.py --job ppo-seed42 --n-envs 4 --device cpu --print-command` example generates a valid command without launching training. The benchmark accepts the proposed worker lists; its measurements exclude policy optimization, consistent with `UPGRADE.md:64`. The document requires a sustained mixed-terrain training check before extrapolating queue runtime.
+
+The profiles remain advisory, carry `new_device_tested: false`, leave runtime and throughput null, and provide no Isaac training batch. These limits should remain in the final handoff.

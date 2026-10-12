@@ -1,0 +1,62 @@
+{
+  "date": "2026-10-12",
+  "scope": "software interlocks, sensor replay, HTTP dry-run and real ESP32 compilation; no connected hardware",
+  "unit_tests": {
+    "status": "pass",
+    "full_suite_count": 100,
+    "subtests": 12,
+    "runner": "PYTHONPATH=<repo> python -m pytest locomotion/tests locomotion/hardware/test_bridge.py locomotion/hardware/test_sensors.py -q",
+    "evidence": "../reviews/revision_evidence/revision-tests-final.log"
+  },
+  "http_remote": {
+    "status": "pass",
+    "checks": [
+      "loopback page",
+      "intent arm",
+      "position-target crawl",
+      "disarm",
+      "delayed arm refused",
+      "estop",
+      "clear"
+    ],
+    "physical_device": false
+  },
+  "remote_javascript": {
+    "status": "pass",
+    "runner": "node --check on extracted hardware and simulation scripts"
+  },
+  "firmware": {
+    "status": "pass",
+    "runner": "pio run -e esp32dev -e esp32dev_mpu6050",
+    "platform": "espressif32@6.12.0",
+    "FTServo_revision": "64922cda46e56b21b8c1d9e830d936a1941645ae",
+    "ArduinoJson": "6.21.5",
+    "esp32dev": {
+      "flash_bytes": 277957,
+      "ram_bytes": 21616
+    },
+    "esp32dev_mpu6050": {
+      "flash_bytes": 296465,
+      "ram_bytes": 21960
+    },
+    "calibration": "unconfigured; arming refused by shipped profile",
+    "uploaded": false,
+    "build_log": "../reviews/revision_evidence/revision-firmware.log"
+  },
+  "source_sha256": {
+    ".gitignore": "03773718656deeac1648b8908600d3d1e66d5a57ce156682d92cdbdc45a81476",
+    "README.md": "62d421cdf540ec54eba629f0dec24739e10ad8031fbdddc78c970c3ab7d3b72b",
+    "__init__.py": "d0147b1c4400b914e926026c8218b369f34b35e2dbecee4e02f9c28f1ab1ee54",
+    "bridge.py": "fc250c900b7f94124b8a22f7f75b53ff820a5eaf054d76d54d8f80e1057bd94c",
+    "calibration.example.json": "7b4519eeaab029c31db1887919c62c6ba465365596586145fb0779c7cca0d72d",
+    "esp32/.gitignore": "692b1af4436043e2e965c8d563bbf90d648cda3a6afa9bba38e1c38af1d38919",
+    "esp32/include/calibration_profile.h": "fd3331d40b30a94bf342d72def51391cac09109d8fc7ba1db098c29215fcc7a0",
+    "esp32/platformio.ini": "9a49c399cd219fb0ea8236cbc52782cacbd12ac8a56949664f8e6eae7e4df6e6",
+    "esp32/src/main.cpp": "874a99bf4aa6febc977922eeca4e70e6b72343c7920ca441976c378a0edd00ad",
+    "remote.html": "7faee9147686b9dba13c99e285ef27a5a7904bc850f75c0be9858a4adc18f6f9",
+    "sensor_mount.example.json": "9691a74a145b85073b3fb231cdd1482fc287e0e450fd346db5db5ae2ed2f1720",
+    "sensors.py": "0a869ff5e358c7ad94fb7d45e8237863373c3eb35e10518213a791e3d4bb567b",
+    "test_bridge.py": "e7aa6b635c886aee0bf5d0f81145c0a28426170a078bb9be2b487ac0b29bf34f",
+    "test_sensors.py": "08eefa9d35e58c7435a0925fc198879e453f2692d3b4ad3eab319920cf588c1a"
+  }
+}

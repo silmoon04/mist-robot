@@ -1,0 +1,310 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="mist_r7_fixed_test_leg">
+  <link name="base_mount">
+    <visual name="yaw_case_saddle">
+      <geometry>
+        <mesh filename="../../design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/yaw_case_saddle.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="yaw_case_saddle_colour">
+        <color rgba="0.22 0.58 0.60 1" />
+      </material>
+    </visual>
+    <visual name="case_cap_yaw">
+      <geometry>
+        <mesh filename="../../design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/case_cap_yaw.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="case_cap_yaw_colour">
+        <color rgba="0.22 0.58 0.60 1" />
+      </material>
+    </visual>
+    <visual name="servo_yaw">
+      <geometry>
+        <mesh filename="../../design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/servo_yaw.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="servo_yaw_colour">
+        <color rgba="0.18 0.23 0.25 1" />
+      </material>
+    </visual>
+    <visual name="bench_mounting_plate">
+      <geometry>
+        <mesh filename="../../design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/bench_mounting_plate.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="bench_mounting_plate_colour">
+        <color rgba="0.22 0.58 0.60 1" />
+      </material>
+    </visual>
+    <inertial>
+      <origin xyz="-0.03181038563164084 -4.9075545814887306e-05 -0.023931630508960546" />
+      <mass value="0.15654936271041547" />
+      <inertia ixx="8.672821644569633e-05" ixy="7.806166264533957e-08" ixz="-2.9782332326370206e-05" iyy="0.00020871868933529337" iyz="-3.694922418017422e-08" izz="0.0002518412264048065" />
+    </inertial>
+    <collision name="base_mount_proxy_0">
+      <origin xyz="-0.014 0 -0.017" rpy="0 0 0" />
+      <geometry>
+        <box size="0.059 0.041 0.032" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="coxa">
+    <visual name="coxa_upper_and_hip_saddle">
+      <geometry>
+        <mesh filename="../../design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/coxa_upper_and_hip_saddle.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="coxa_upper_and_hip_saddle_colour">
+        <color rgba="0.22 0.58 0.60 1" />
+      </material>
+    </visual>
+    <visual name="coxa_lower_auxiliary_arm">
+      <geometry>
+        <mesh filename="../../design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/coxa_lower_auxiliary_arm.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="coxa_lower_auxiliary_arm_colour">
+        <color rgba="0.22 0.58 0.60 1" />
+      </material>
+    </visual>
+    <visual name="case_cap_hip">
+      <geometry>
+        <mesh filename="../../design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/case_cap_hip.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="case_cap_hip_colour">
+        <color rgba="0.22 0.58 0.60 1" />
+      </material>
+    </visual>
+    <visual name="servo_hip">
+      <geometry>
+        <mesh filename="../../design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/servo_hip.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="servo_hip_colour">
+        <color rgba="0.18 0.23 0.25 1" />
+      </material>
+    </visual>
+    <visual name="horn_yaw_main">
+      <geometry>
+        <mesh filename="../../design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/horn_yaw_main.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="horn_yaw_main_colour">
+        <color rgba="0.22 0.58 0.60 1" />
+      </material>
+    </visual>
+    <visual name="horn_yaw_auxiliary">
+      <geometry>
+        <mesh filename="../../design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/horn_yaw_auxiliary.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="horn_yaw_auxiliary_colour">
+        <color rgba="0.22 0.58 0.60 1" />
+      </material>
+    </visual>
+    <visual name="yaw_auxiliary_spacer_1">
+      <geometry>
+        <mesh filename="../../design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/yaw_auxiliary_spacer_1.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="yaw_auxiliary_spacer_1_colour">
+        <color rgba="0.22 0.58 0.60 1" />
+      </material>
+    </visual>
+    <visual name="yaw_auxiliary_spacer_2">
+      <geometry>
+        <mesh filename="../../design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/yaw_auxiliary_spacer_2.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="yaw_auxiliary_spacer_2_colour">
+        <color rgba="0.22 0.58 0.60 1" />
+      </material>
+    </visual>
+    <visual name="yaw_auxiliary_spacer_3">
+      <geometry>
+        <mesh filename="../../design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/yaw_auxiliary_spacer_3.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="yaw_auxiliary_spacer_3_colour">
+        <color rgba="0.22 0.58 0.60 1" />
+      </material>
+    </visual>
+    <visual name="yaw_auxiliary_spacer_4">
+      <geometry>
+        <mesh filename="../../design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/yaw_auxiliary_spacer_4.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="yaw_auxiliary_spacer_4_colour">
+        <color rgba="0.22 0.58 0.60 1" />
+      </material>
+    </visual>
+    <inertial>
+      <origin xyz="0.055452587774020255 -0.00032622706613614225 -0.007411181974307129" />
+      <mass value="0.11618827437852595" />
+      <inertia ixx="4.884448832271316e-05" ixy="7.745356217217634e-07" ixz="-3.0773868545057644e-05" iyy="0.0001315815648874679" iyz="5.456770085067065e-07" izz="9.845169734911079e-05" />
+    </inertial>
+    <collision name="coxa_proxy_0">
+      <origin xyz="0.039 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.078 0.024 0.018" />
+      </geometry>
+    </collision>
+    <collision name="coxa_proxy_1">
+      <origin xyz="0.067 0 -0.01" rpy="0 0 0" />
+      <geometry>
+        <box size="0.055 0.04 0.027" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="femur">
+    <visual name="femur_main_and_knee_saddle">
+      <geometry>
+        <mesh filename="../../design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/femur_main_and_knee_saddle.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="femur_main_and_knee_saddle_colour">
+        <color rgba="0.22 0.58 0.60 1" />
+      </material>
+    </visual>
+    <visual name="femur_auxiliary_cheek">
+      <geometry>
+        <mesh filename="../../design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/femur_auxiliary_cheek.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="femur_auxiliary_cheek_colour">
+        <color rgba="0.22 0.58 0.60 1" />
+      </material>
+    </visual>
+    <visual name="case_cap_knee">
+      <geometry>
+        <mesh filename="../../design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/case_cap_knee.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="case_cap_knee_colour">
+        <color rgba="0.22 0.58 0.60 1" />
+      </material>
+    </visual>
+    <visual name="servo_knee">
+      <geometry>
+        <mesh filename="../../design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/servo_knee.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="servo_knee_colour">
+        <color rgba="0.18 0.23 0.25 1" />
+      </material>
+    </visual>
+    <visual name="horn_hip_main">
+      <geometry>
+        <mesh filename="../../design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/horn_hip_main.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="horn_hip_main_colour">
+        <color rgba="0.22 0.58 0.60 1" />
+      </material>
+    </visual>
+    <visual name="horn_hip_auxiliary">
+      <geometry>
+        <mesh filename="../../design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/horn_hip_auxiliary.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="horn_hip_auxiliary_colour">
+        <color rgba="0.22 0.58 0.60 1" />
+      </material>
+    </visual>
+    <inertial>
+      <origin xyz="0.0633651760426129 -0.001298314040615189 0.001934967497040738" />
+      <mass value="0.12491601583063594" />
+      <inertia ixx="3.8022032231092195e-05" ixy="-3.321671674319615e-06" ixz="-3.950552346680719e-07" iyy="0.00011345261288137595" iyz="3.8489769422451107e-07" izz="0.00012329667234778685" />
+    </inertial>
+    <collision name="femur_proxy_0">
+      <origin xyz="0.043 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.08599999999999999 0.024 0.018" />
+      </geometry>
+    </collision>
+    <collision name="femur_proxy_1">
+      <origin xyz="0.075 0 0.01" rpy="0 0 0" />
+      <geometry>
+        <box size="0.047 0.041 0.027" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="tibia">
+    <visual name="tibia_curved_main_and_foot">
+      <geometry>
+        <mesh filename="../../design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/tibia_curved_main_and_foot.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="tibia_curved_main_and_foot_colour">
+        <color rgba="0.22 0.58 0.60 1" />
+      </material>
+    </visual>
+    <visual name="tibia_auxiliary_cheek">
+      <geometry>
+        <mesh filename="../../design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/tibia_auxiliary_cheek.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="tibia_auxiliary_cheek_colour">
+        <color rgba="0.22 0.58 0.60 1" />
+      </material>
+    </visual>
+    <visual name="horn_knee_main">
+      <geometry>
+        <mesh filename="../../design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/horn_knee_main.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="horn_knee_main_colour">
+        <color rgba="0.22 0.58 0.60 1" />
+      </material>
+    </visual>
+    <visual name="horn_knee_auxiliary">
+      <geometry>
+        <mesh filename="../../design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/horn_knee_auxiliary.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="horn_knee_auxiliary_colour">
+        <color rgba="0.22 0.58 0.60 1" />
+      </material>
+    </visual>
+    <inertial>
+      <origin xyz="0.0414753995760796 -0.001694745710956234 0.0002991704986421671" />
+      <mass value="0.049304916675112435" />
+      <inertia ixx="1.341332884585064e-05" ixy="-1.987778173156809e-06" ixz="3.6852256179443966e-07" iyy="4.556212902457954e-05" iyz="3.336425043941025e-08" izz="5.547369214215767e-05" />
+    </inertial>
+    <collision name="tibia_proxy_0">
+      <origin xyz="0.048 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.092 0.017 0.014" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="yaw" type="revolute">
+    <parent link="base_mount" />
+    <child link="coxa" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit lower="-0.9599310885968813" upper="0.9599310885968813" effort="0.588" velocity="4.717" />
+    <dynamics damping="0.015" friction="0.0" />
+  </joint>
+  <joint name="hip" type="revolute">
+    <parent link="coxa" />
+    <child link="femur" />
+    <origin xyz=".082 0 0" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-0.5235987755982988" upper="1.1344640137963142" effort="0.588" velocity="4.717" />
+    <dynamics damping="0.015" friction="0.0" />
+  </joint>
+  <joint name="knee" type="revolute">
+    <parent link="femur" />
+    <child link="tibia" />
+    <origin xyz=".090 0 0" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="0.08726646259971647" upper="2.007128639793479" effort="0.588" velocity="4.717" />
+    <dynamics damping="0.015" friction="0.0" />
+  </joint>
+  <link name="toe">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0" />
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+    </inertial>
+    <collision name="toe_sphere">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <sphere radius="0.005" />
+      </geometry>
+    </collision>
+    <visual name="toe_contact">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <sphere radius="0.005" />
+      </geometry>
+      <material name="toe_contact_material">
+        <color rgba="0.15 0.15 0.15 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="toe_fixed" type="fixed">
+    <parent link="tibia" />
+    <child link="toe" />
+    <origin xyz="0.105 0 0" rpy="0 0 0" />
+  </joint>
+</robot>

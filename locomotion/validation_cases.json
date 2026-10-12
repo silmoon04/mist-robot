@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "seed_base": 9100000,
+  "phone_mass_kg": 0.155,
+  "terrains": [
+    "flat",
+    "low_friction",
+    "slope",
+    "rough"
+  ],
+  "sensors": [
+    "mpu6050",
+    "phone",
+    "none"
+  ],
+  "held_out_variations": [
+    {
+      "name": "light",
+      "overrides": {
+        "mass_scale": 0.75
+      }
+    },
+    {
+      "name": "heavy",
+      "overrides": {
+        "mass_scale": 1.25
+      }
+    },
+    {
+      "name": "com-front",
+      "overrides": {
+        "body_com_shift_m": [
+          0.025,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "name": "com-left",
+      "overrides": {
+        "body_com_shift_m": [
+          0,
+          0.025,
+          0
+        ]
+      }
+    },
+    {
+      "name": "motor-weak-low-voltage",
+      "overrides": {
+        "motor_strength": 0.75,
+        "voltage_v": 9.5,
+        "motor_delay_s": 0.05
+      }
+    },
+    {
+      "name": "motor-strong-high-voltage",
+      "overrides": {
+        "motor_strength": 1.25,
+        "voltage_v": 13.0
+      }
+    }
+  ]
+}

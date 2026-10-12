@@ -1,0 +1,241 @@
+{
+  "schema_version": 1,
+  "units": "metres, kilograms, seconds, radians, Newton metres",
+  "joint_order": [
+    "FL_yaw",
+    "FL_hip",
+    "FL_knee",
+    "FR_yaw",
+    "FR_hip",
+    "FR_knee",
+    "RL_yaw",
+    "RL_hip",
+    "RL_knee",
+    "RR_yaw",
+    "RR_hip",
+    "RR_knee"
+  ],
+  "geometry": {
+    "coxa_m": 0.082,
+    "femur_m": 0.09,
+    "tibia_m": 0.105,
+    "toe_radius_m": 0.005,
+    "yaw_mount_radius_m": 0.075,
+    "yaw_origin_z_m": 0.038,
+    "mount_yaw_deg": {
+      "FL": 45,
+      "FR": -45,
+      "RL": 135,
+      "RR": -135
+    },
+    "neutral_deg": [
+      0,
+      30,
+      81
+    ],
+    "limits_deg": [
+      [
+        -55,
+        55
+      ],
+      [
+        -30,
+        65
+      ],
+      [
+        5,
+        115
+      ]
+    ],
+    "axis_convention": "Body +X forward, +Y left, +Z up. Leg +X points radially out. Yaw rotates about +Z; hip and knee rotate about +Y, so positive pitch lowers the foot. Foot coordinates refer to the spherical toe centre."
+  },
+  "actuator": {
+    "model": "Feetech STS3215 ST-3215-C018 12 V assumed from repository inventory",
+    "torque_limit_nm": 0.588,
+    "rated_torque_nm": 0.981,
+    "stall_torque_nm": 2.942,
+    "no_load_speed_rad_s": 4.717,
+    "command_speed_rad_s": 1.8,
+    "kp_nm_rad": [
+      3.0,
+      8.0,
+      6.0
+    ],
+    "kd_nm_s_rad": [
+      0.25,
+      0.4,
+      0.15
+    ],
+    "viscous_damping_nm_s_rad": 0.015,
+    "coulomb_friction_nm": 0.006,
+    "position_deadband_rad": 0.004363323129985824,
+    "position_quantization_rad": 0.0015339807878856412,
+    "latency_s": 0.02,
+    "command_period_s": 0.02,
+    "thermal_proxy": {
+      "ambient_c": 25,
+      "heating_c_s_at_rated_torque": 3.0,
+      "cooling_s_inv": 0.07,
+      "derate_start_c": 55,
+      "zero_torque_c": 70,
+      "status": "Estimated first-order temperature proxy. These values have not been identified from winding, case or servo telemetry measurements."
+    },
+    "torque_speed_model": "Saturate at torque_limit_nm, further limited by stall_torque_nm * max(0, 1 - abs(qdot)/no_load_speed_rad_s). This is a conservative approximation; electrical, thermal, backlash and internal firmware dynamics require bench identification.",
+    "calibration_status": "No measured continuous torque or internal controller response supplied. The 0.588 Nm initial limit is an analysis choice; it is 60 percent of the recorded 0.981 Nm rated torque.",
+    "nominal_voltage_v": 12.0
+  },
+  "body": {
+    "hub_solid_pla_mass_kg": 0.15171110347611672,
+    "hub_collision_box_m": [
+      0.158,
+      0.184,
+      0.012
+    ],
+    "battery_mass_kg": 0.174,
+    "battery_size_m": [
+      0.104,
+      0.0345,
+      0.0245
+    ],
+    "battery_com_m": [
+      0,
+      0,
+      0.02425
+    ],
+    "electronics_harness_mass_kg": 0.54,
+    "electronics_harness_size_m": [
+      0.12,
+      0.1,
+      0.028
+    ],
+    "electronics_harness_com_m": [
+      0,
+      0,
+      0.028
+    ],
+    "phone_mount_mass_kg": 0.055,
+    "phone_mount_size_m": [
+      0.017,
+      0.156,
+      0.101
+    ],
+    "phone_mount_com_m": [
+      -0.006,
+      0,
+      0.142
+    ],
+    "phone_pan_servo_mass_kg": 0.055,
+    "phone_pan_servo_size_m": [
+      0.0452,
+      0.0247,
+      0.035
+    ],
+    "phone_pan_servo_com_m": [
+      -0.0128,
+      0,
+      0.084
+    ],
+    "phone_pan_horn_mass_kg": 0.006,
+    "phone_pan_horn_size_m": [
+      0.02,
+      0.02,
+      0.0035
+    ],
+    "phone_pan_horn_com_m": [
+      0,
+      0,
+      0.101
+    ],
+    "body_com_shift_m": [
+      0,
+      0,
+      0
+    ],
+    "phone_mass_kg": 0.155,
+    "phone_size_m": [
+      0.00745,
+      0.1475,
+      0.0705
+    ],
+    "phone_com_m": [
+      0.003725,
+      0,
+      0.15125
+    ],
+    "phone_pose_notes": "R5 phone.py places an upright landscape phone with its screen toward +X and long edge along Y. PAN_Z is 98 mm and PHONE_BOTTOM is 18 mm above that pan origin. The source envelope centre is therefore [3.725, 0, 151.25] mm. Pan is locked for walking. The R5 phone mounting assembly is unvalidated on the revised main hub; servo/cradle proxies here are payload assumptions, not a manufacturing assembly.",
+    "mass_notes": "Hub uses the main_hub_20260915 solid volume at the repository PLA density, not measured printed mass. Battery 174 g and phone 155 g follow MIST_AVAILABLE_PARTS.md. Electronics/harness 540 g is the midpoint of the July 480 to 600 g allowance; its location is unmeasured. Phone frame/straps 55 g is an estimate; pan servo 55 g and horn 6 g follow the R5 phone CAD contract. The frame, servo and horn remain fitted when the phone is absent. Replace these masses and centres with scale and balance measurements."
+  },
+  "simulation": {
+    "physics_hz": 1000,
+    "control_hz": 50,
+    "foot_friction": 0.8,
+    "contact_restitution": 0.0,
+    "collision_model": "Primitive boxes approximate each rigid link. Only the spherical toe is intended to touch the ground. CAD meshes are used for visuals; the collisions do not prove mechanical clearance or stress.",
+    "sensor_model": "Joint encoder angle/velocity and body IMU are available to the controller. Simulator contact and world pose may be used for scoring, not as required deployed sensing. The current hardware IMU arrangement needs validation.",
+    "integration_note": "Explicit bounded PD servo dynamics require a converged physics timestep. Single-leg tests at 1000 and 2000 Hz agree; 240 Hz introduced damping instability and was rejected."
+  },
+  "randomization": {
+    "link_mass_scale": [
+      0.85,
+      1.15
+    ],
+    "body_mass_scale": [
+      0.85,
+      1.15
+    ],
+    "body_com_xy_m": [
+      -0.015,
+      0.015
+    ],
+    "phone_presence_probability": 0.5,
+    "phone_offset_xy_m": [
+      -0.02,
+      0.02
+    ],
+    "torque_scale": [
+      0.85,
+      1.15
+    ],
+    "motor_latency_s": [
+      0.008,
+      0.04
+    ],
+    "voltage_v": [
+      10,
+      12.6
+    ],
+    "kp_scale": [
+      0.8,
+      1.2
+    ],
+    "deadband_deg": [
+      0.1,
+      0.5
+    ],
+    "friction": [
+      0.45,
+      1.1
+    ],
+    "encoder_noise_std_rad": 0.003,
+    "roughness_height_m": [
+      -0.003,
+      0.003
+    ],
+    "slope_deg": [
+      -3,
+      3
+    ],
+    "notes": "These are training ranges, not measured tolerances or a real-world capability claim. Use separate held-out seeds and include limits beyond these ranges during evaluation.",
+    "encoder_velocity_noise_std_rad_s": 0.02
+  },
+  "sources": {
+    "leg_urdf": "design/single_leg_r7_wide_joints_20260914/output/Single_Leg_R7.urdf",
+    "leg_manifest": "design/single_leg_r7_wide_joints_20260914/output/manifest.json",
+    "hub_report": "design/main_hub_20260915/output/Hub_Check.json",
+    "hub_cad": "design/main_hub_20260915/output/Main_Hub_4Leg.stl",
+    "component_inventory": "docs/mist/MIST_AVAILABLE_PARTS.md",
+    "mass_budget": "docs/mist/MIST_MATERIAL_DIMENSIONS_MASS.md",
+    "phone_pose": "design/hexapod_phone_quad_r5_20260912/cad/phone.py",
+    "assembly_scope": "The hub source references print_dfm_20260914 legs. This simulation uses the R7 URDF, whose later DFM changes are not incorporated in that URDF. Joint lengths and hub mounting frames match the source CAD contracts; final manufactured parts, fasteners, cables and inter-leg clearance still need checking."
+  }
+}
