@@ -1,6 +1,6 @@
 {
-  "recorded_utc": "2026-10-12T20:54:31.222529+00:00",
-  "status": "MSI runtime verified; controller development remains unqualified",
+  "recorded_utc": "2026-10-12T22:32:05.211150+00:00",
+  "status": "MSI runtime and simulation/dry-run remotes verified; hardware under construction; walking unqualified",
   "windows_host": {
     "model": "MSI Stealth 16 AI Studio A1VHG",
     "cpu": "Intel Core Ultra 9 185H",
@@ -135,6 +135,11 @@
     }
   },
   "hardware_qualified": false,
+  "hardware_assembly": {
+    "status": "under_construction",
+    "source": "User reply in this chat on 12 October 2026: im building it rn",
+    "loaded_measurements_started": false
+  },
   "workspaces": {
     "windows": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\output\\mist-locomotion-msi\\repo",
     "wsl": "/home/hssil/mist-locomotion-msi/repo"
@@ -186,7 +191,10 @@
     "frozen_pytest": 99,
     "pytest_subtests": 12,
     "hardware_unittest": 21,
-    "helper_unittest": 21
+    "helper_unittest": 21,
+    "remote_ui_node": 13,
+    "remote_session_unittest": 5,
+    "support_transfer_unittest": 7
   },
   "saved_policy_final": {
     "ppo": {
@@ -1278,5 +1286,40 @@
         }
       }
     ]
+  },
+  "remote_interface": {
+    "simulation_url": "http://127.0.0.1:8131/",
+    "joint_preview_url": "http://127.0.0.1:8130/",
+    "launcher": "locomotion/Start MIST Remote.cmd",
+    "guide": "locomotion/REMOTE_GUIDE.md",
+    "verification_receipt": "locomotion/runs/msi_20261012/remote_ui/verification.json",
+    "verification_sha256": "6b5762ac3fe79fb0d3b49d8f922d099971c60fddc9241f34e464a12f1ef8f4ed",
+    "serial_port_supplied": false,
+    "review": "locomotion/reviews/msi_remote_ui/REVIEW.md"
+  },
+  "support_transfer_pilot": {
+    "status": "completed; regressed dynamic tracking and saturation; candidate not promoted",
+    "paired_steps": 480,
+    "command": "backward",
+    "payload_kg": 0.155,
+    "seed": 1154976095502900,
+    "expanded_960_suite": false,
+    "velocity_rmse_m_s": {
+      "reference": 0.017963,
+      "candidate": 0.020554
+    },
+    "saturation_fraction": {
+      "reference": 0.003446,
+      "candidate": 0.036918
+    },
+    "review": "locomotion/reviews/msi_support_transfer_audit.md",
+    "receipt_sha256": {
+      "dev_support_static_01.json": "d2ca986b083e1d3c9e03ac8441c0546bc76b6e2bf05eba53bab4884a3f4aff10",
+      "dev_support_backward480_01.json": "bd76c94e06c026e3eb00903a2dcbf8af0977b9efa1bce97bf6536cb98ce3c37e",
+      "dev_support_backward480_02.json": "18b0b2ac700f308cb7b6f0b2b292f8e35c5fa314ef805e83b155744ffba2de90",
+      "dev_support_backward480_02_analysis.json": "f1a7e9ebc445854f18bf0feb523aa563813508cf44f48377aa14432026cf8ad3",
+      "dev_support_backward480_02_mechanism.json": "c1ca4c10a64fdaab9a202da731d572341fc4e762c906de9f617312c480672962"
+    },
+    "next_action": "Diagnose saved front-contact loss, torque headroom and whole-body COM assumption before another intervention"
   }
 }

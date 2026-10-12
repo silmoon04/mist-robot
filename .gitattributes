@@ -7,3 +7,5 @@ locomotion/handoff/MSI_STATE.json linguist-generated=true
 locomotion/runs/msi_20261012/**/monitor_*.monitor.csv whitespace=trailing-space,space-before-tab,cr-at-eol
 # NVIDIA's raw driver receipt retains its formatter's trailing spaces.
 locomotion/reports/msi_cuda_20261012/nvidia-smi.txt -whitespace
+# PowerShell's launcher receipt retains its recorded CRLF bytes.
+locomotion/runs/msi_20261012/remote_ui/launcher_checks.json whitespace=trailing-space,space-before-tab,cr-at-eol

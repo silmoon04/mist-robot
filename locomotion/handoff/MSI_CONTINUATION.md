@@ -19,6 +19,8 @@ export MIST_PYTHON="$PWD/.venv-locomotion/bin/python"
 
 The simulation remote is at `http://127.0.0.1:8131`. It displays the R7 assembly and simulated sensors. The shipped physical calibration remains unconfigured.
 
+The user is building the R7 now. Hardware measurements wait until assembly. For the Windows launcher and simulation/dry-run interface controls, see [REMOTE_GUIDE.md](../REMOTE_GUIDE.md). UI changes preserve the frozen simulation backend and experiment sources.
+
 ## Verified frozen evidence
 
 The release simulation archive SHA-256 is `2775f145610f7a15dbea87ced4c27cbda5427a55bf1ca650a1f303f200a3534f`. Archive validation and relocation passed with 213 payload files, all 55 required sources, and a reset/step producing the 47-value observation. Saved PPO/SAC checkpoints and the matching SAC replay verified against their provenance sidecars.
@@ -74,12 +76,24 @@ A 48-case, full-duration factorial comparison then isolated smaller body shift a
 
 The gain reduced cardinal peak path errors to roughly 1.7–2.0 cm at 5 mm shift, but backward/lateral velocity RMSE rose to 0.017–0.021 m/s. The smaller shift worsened support-sensitive cases. Forward plus yaw improvement does not establish reliable four-direction walking. Preserve these failed cases when investigating support transfer; simply increasing gain or shrinking shift is insufficient.
 
+## Planned support-transfer trial
+
+The implemented reference changes only the common planned body shift, fitting a bounded periodic cubic spline with a NumPy active-set QP. Its inputs are requested command, planned foot geometry/phase and declared payload. It retains the 5 mm-reference clearance/gain contract, cycle, lift, swing order, attitude compensation, sensors and actuator settings. Solver failure is explicit. All twelve command/payload cases pass the sampled nominal static audit, including IK limits, periodic C2 shift continuity and moment balance. Attitude corners can still invalidate nominal feasibility; this is not a robustness qualification.
+
+The matched backward/.155 kg pilot completed 480 steps per case using development seed `1154976095502900`. Planned negative-force rows disappeared, but velocity RMSE increased from .017963 to .020554 m/s, peak path error from .017752 to .021440 m and saturation from .003446 to .036918. Front scheduled-stance contact worsened. Both cases fail the original velocity and duration criteria. The candidate is not promoted and the 960-step expansion did not run.
+
+The saved-target torque estimate places candidate peak knee demand at .5744 N m against the uncalibrated .588 N m cap, leaving .014 N m before dynamic error. This supports investigating actuator demand and transfer dynamics; it does not justify increasing the cap. The original v1 wrapper's initialization error and completed reference are preserved. V2 repairs declared-payload initialization, and its reference results and traces match v1 exactly. Seven supporting tests passed. See [the independent support-transfer audit](../reviews/msi_support_transfer_audit.md), `../runs/msi_20261012/dev_support_static_01.json`, and the paired `dev_support_backward480_02.json` with its saved analysis and mechanism receipts.
+
+## Remote interface
+
+Both remotes now have readable state and telemetry, held direction controls, visible stop actions, setup error feedback and single-leg IK. The simulation retains its light teal CAD view; the joint preview retains its dark teal layout and distinguishes requested angles from physical feedback. Keyboard shortcuts leave editable fields alone. Serialized command queues ensure a late movement or arm reply cannot override a newer stop. The Windows launcher has a desktop shortcut, waits for actual service readiness, reuses an existing session and stops only its owned processes.
+
+The local launcher starts no serial connection and supplies no measured calibration. Hardware remains under construction. The control regressions and live-browser evidence are recorded in [the remote UI review](../reviews/msi_remote_ui/REVIEW.md); operating instructions are in [REMOTE_GUIDE.md](../REMOTE_GUIDE.md).
+
 ## Next action
 
 Read [MSI_NEXT_CONTRACT.md](MSI_NEXT_CONTRACT.md) before new training or hardware integration. It identifies command-filter, joint telemetry, observation ordering and sensor-estimator timing differences that a new source/config contract must represent.
 
-Continue from [the support diagnosis](../reviews/msi_support_diagnosis.md). The planned three-foot solve requires negative forces in 36.8% of backward swing samples and 19.7% of lateral samples at 5 mm shift/gain 1.15. The shift decays before touchdown; a static held-shift counterfactual reduces that deficit, but has no implemented or tested transition.
-
-The next causal pair should change only the planned support-transfer reference: establish feasible support before lift and retain it through touchdown, using planned geometry with smooth position/velocity transitions. Compare backward motion with the phone first, saving contact/servo traces. Retain gain, cycle, lift, leg order, sensors and motor settings for that pair. Promote a controller only after development/validation evidence justifies a deliberately frozen new experiment, including surfaces and coupled weight/motor/sensor variation. Start fresh training for changed dynamics or observations.
+Continue from [the support-transfer audit](../reviews/msi_support_transfer_audit.md). The static support deficit was corrected, but that correction was insufficient for dynamic contact and tracking. Diagnose front-leg contact loss, torque headroom and the whole-body COM assumption using the saved traces before selecting another single-variable intervention. No larger controller sweep or training is justified by this pilot. Promote a controller only after development/validation evidence justifies a deliberately frozen new experiment, including surfaces and coupled weight/motor/sensor variation. Start fresh training for changed dynamics or observations.
 
 The reviewed sensitivity serializer migration remains unapplied. Use its narrow migration workflow only after source-bound jobs finish; it cannot convert old checkpoints to a changed controller. Physical walking still requires the R7 mass, actuator, calibration and sensor measurements in the next-contract document.

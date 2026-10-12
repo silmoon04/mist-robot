@@ -17,7 +17,7 @@ sys.path.insert(0, str(REPO))
 from locomotion.provenance import source_hashes
 
 SKIP = {'__pycache__', '.pytest_cache', '.mypy_cache', '.ruff_cache', '.pio',
-        '.git', '.venv', '.venv-locomotion', 'venv', 'work', 'retired'}
+        '.git', '.venv', '.venv-locomotion', 'venv', 'work', 'retired', '.remote-session'}
 PREFIX = 'mist-robot'
 MANIFEST = 'PACKAGE_MANIFEST.json'
 

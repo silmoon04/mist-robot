@@ -1,0 +1,290 @@
+{
+  "schema": 1,
+  "suite_role": "read_only_development_trace_analysis",
+  "receipt": "locomotion/runs/msi_20261012/dev_support_backward480_02.json",
+  "receipt_sha256": "18b0b2ac700f308cb7b6f0b2b292f8e35c5fa314ef805e83b155744ffba2de90",
+  "definitions": {
+    "steady_command_window_s": [
+      6.4,
+      9.6
+    ],
+    "steady_command_interval": "[6.4,9.6); 160 held targets, one complete cycle",
+    "velocity_rmse": "sqrt(mean(sum((body_velocity[:2]-requested_command[:2])**2))) from saved 50Hz truth traces; diagnostic only",
+    "path": "integrate original requested body-frame command using previous saved yaw, matching original acceptance convention",
+    "contact_endpoint": "last 200Hz contact sample in each 50Hz saved trace, not all original contact samples",
+    "mainstance": "own commanded phase[0,.73), contact normal force>.1N",
+    "negative_load": "raw planned force<-1e-8N",
+    "slew": "absolute difference between successive pre-env-clip biased targets divided by.02s; actual servo saturation is separate"
+  },
+  "outcome": "Nominal load-feasibility signal confirmed; dynamic tracking and saturation regress. No full-suite expansion.",
+  "results": [
+    {
+      "variant": "clearance_shift005_gain115",
+      "case": {
+        "terrain": "flat",
+        "payload": 0.155,
+        "command_name": "backward",
+        "repeat": 0,
+        "randomize": false,
+        "variant": "clearance_shift005_gain115",
+        "seed": 1154976095502900,
+        "steps": 480,
+        "contact_stride": 5,
+        "save_trace": true
+      },
+      "screen_passed": false,
+      "independent_full_velocity_rmse_m_s": 0.017963073859508107,
+      "independent_full_peak_path_error_m": 0.01775201399172613,
+      "original_acceptance": {
+        "passed": false,
+        "checks": {
+          "duration": false,
+          "complete": true,
+          "finite": true,
+          "no_falls": true,
+          "no_sensor_fault": true,
+          "no_body_ground_contact": true,
+          "no_nonfoot_ground_contact": true,
+          "progress": true,
+          "path": true,
+          "velocity": false,
+          "yaw_rate": true,
+          "yaw": true,
+          "tilt": true,
+          "tracking": true,
+          "saturation": true
+        },
+        "metrics": {
+          "duration_s": 9.6,
+          "progress_m": 0.08214815087511802,
+          "command_distance_m": 0.096,
+          "body_velocity_rmse_m_s": 0.017963073859508107,
+          "yaw_rate_rmse_rad_s": 0.01822039039898188,
+          "peak_path_error_m": 0.01775201399172613,
+          "peak_yaw_error_rad": 0.024048499165105312,
+          "peak_tilt_rad": 0.04379531220877715,
+          "peak_tracking_error_rad": 0.043902608515160445,
+          "saturation_fraction": 0.0034461805555555426
+        },
+        "criteria": {
+          "min_duration_s": 19.2,
+          "min_progress_fraction": 0.5,
+          "max_sideways_m": 0.03,
+          "max_yaw_error_rad": 0.2,
+          "max_tilt_rad": 0.35,
+          "max_stop_displacement_m": 0.02,
+          "max_velocity_rmse_m_s": 0.015,
+          "max_yaw_rate_rmse_rad_s": 0.06,
+          "max_tracking_error_rad": 0.25,
+          "max_saturation_fraction": 0.25,
+          "contact_force_threshold_n": 0.1
+        },
+        "acceptance_version": "simulation-walking-v2"
+      },
+      "steady": {
+        "sample_count": 160,
+        "start_time_s": 6.4,
+        "end_time_s": 9.600000000000001,
+        "whole_cycles": 1,
+        "mean_velocity_bias_m_s": [
+          -0.0006343877208738465,
+          0.0011723296832216292
+        ],
+        "velocity_error_ripple_rms_m_s": 0.017897240084903277,
+        "body_velocity_rmse_m_s": 0.017946810505580838,
+        "mean_yaw_rate_bias_rad_s": -0.0015216108908089544,
+        "yaw_rate_error_ripple_rms_rad_s": 0.01725557924255533
+      },
+      "ik_rejections": 0,
+      "steady_raw_min_n": -0.5970825265168509,
+      "steady_negative_load_steps_fraction": 0.14375,
+      "steady_negative_load_sum_mean_n": 0.040307897515841885,
+      "steady_peak_clipped_moment_nm": 0.08118320619788011,
+      "steady_rms_clipped_moment_nm": 0.02375360200675549,
+      "peak_biased_control_rate_rad_s": 2.346352219176795,
+      "joint_target_increment_fraction_above_1p8": 0.0013917884481558804,
+      "contact": {
+        "FL": {
+          "mainstance_loaded_50hz": 0.9743589743589743,
+          "mainstance_loaded_original_200hz": 0.9444444444444444,
+          "landing_loaded_original_200hz": 1.0
+        },
+        "FR": {
+          "mainstance_loaded_50hz": 0.8803418803418803,
+          "mainstance_loaded_original_200hz": 0.9038461538461539,
+          "landing_loaded_original_200hz": 0.9375
+        },
+        "RL": {
+          "mainstance_loaded_50hz": 0.8034188034188035,
+          "mainstance_loaded_original_200hz": 0.7991452991452992,
+          "landing_loaded_original_200hz": 0.3125
+        },
+        "RR": {
+          "mainstance_loaded_50hz": 0.7948717948717948,
+          "mainstance_loaded_original_200hz": 0.7948717948717948,
+          "landing_loaded_original_200hz": 0.3125
+        }
+      },
+      "loaded_contact_50hz_during_planned_swing": {
+        "FL": {
+          "FL": 0.16666666666666666,
+          "FR": 1.0,
+          "RL": 1.0,
+          "RR": 0.041666666666666664
+        },
+        "FR": {
+          "FL": 1.0,
+          "FR": 0.041666666666666664,
+          "RL": 0.08333333333333333,
+          "RR": 1.0
+        },
+        "RL": {
+          "FL": 1.0,
+          "FR": 0.4583333333333333,
+          "RL": 0.041666666666666664,
+          "RR": 1.0
+        },
+        "RR": {
+          "FL": 0.9166666666666666,
+          "FR": 1.0,
+          "RL": 1.0,
+          "RR": 0.041666666666666664
+        }
+      }
+    },
+    {
+      "variant": "planned_support_gain115",
+      "case": {
+        "terrain": "flat",
+        "payload": 0.155,
+        "command_name": "backward",
+        "repeat": 0,
+        "randomize": false,
+        "variant": "planned_support_gain115",
+        "seed": 1154976095502900,
+        "steps": 480,
+        "contact_stride": 5,
+        "save_trace": true
+      },
+      "screen_passed": false,
+      "independent_full_velocity_rmse_m_s": 0.020553627289890762,
+      "independent_full_peak_path_error_m": 0.021440290234270083,
+      "original_acceptance": {
+        "passed": false,
+        "checks": {
+          "duration": false,
+          "complete": true,
+          "finite": true,
+          "no_falls": true,
+          "no_sensor_fault": true,
+          "no_body_ground_contact": true,
+          "no_nonfoot_ground_contact": true,
+          "progress": true,
+          "path": true,
+          "velocity": false,
+          "yaw_rate": true,
+          "yaw": true,
+          "tilt": true,
+          "tracking": true,
+          "saturation": true
+        },
+        "metrics": {
+          "duration_s": 9.6,
+          "progress_m": 0.10030530763266632,
+          "command_distance_m": 0.096,
+          "body_velocity_rmse_m_s": 0.020553627289890762,
+          "yaw_rate_rmse_rad_s": 0.02316525907936978,
+          "peak_path_error_m": 0.021440290234270083,
+          "peak_yaw_error_rad": 0.0235660030995725,
+          "peak_tilt_rad": 0.03440907517731957,
+          "peak_tracking_error_rad": 0.043902608515160445,
+          "saturation_fraction": 0.03691840277777824
+        },
+        "criteria": {
+          "min_duration_s": 19.2,
+          "min_progress_fraction": 0.5,
+          "max_sideways_m": 0.03,
+          "max_yaw_error_rad": 0.2,
+          "max_tilt_rad": 0.35,
+          "max_stop_displacement_m": 0.02,
+          "max_velocity_rmse_m_s": 0.015,
+          "max_yaw_rate_rmse_rad_s": 0.06,
+          "max_tracking_error_rad": 0.25,
+          "max_saturation_fraction": 0.25,
+          "contact_force_threshold_n": 0.1
+        },
+        "acceptance_version": "simulation-walking-v2"
+      },
+      "steady": {
+        "sample_count": 160,
+        "start_time_s": 6.4,
+        "end_time_s": 9.600000000000001,
+        "whole_cycles": 1,
+        "mean_velocity_bias_m_s": [
+          -0.0014848965277339137,
+          6.231248015317488e-05
+        ],
+        "velocity_error_ripple_rms_m_s": 0.01872376176488439,
+        "body_velocity_rmse_m_s": 0.01878265303867922,
+        "mean_yaw_rate_bias_rad_s": -0.0009322442675590105,
+        "yaw_rate_error_ripple_rms_rad_s": 0.021641176780637428
+      },
+      "ik_rejections": 0,
+      "steady_raw_min_n": 0.0,
+      "steady_negative_load_steps_fraction": 0.0,
+      "steady_negative_load_sum_mean_n": 0.0,
+      "steady_peak_clipped_moment_nm": 1.1102230246251565e-15,
+      "steady_rms_clipped_moment_nm": 5.225129940167369e-16,
+      "peak_biased_control_rate_rad_s": 2.3815921976782506,
+      "joint_target_increment_fraction_above_1p8": 0.0012178148921363954,
+      "contact": {
+        "FL": {
+          "mainstance_loaded_50hz": 0.8461538461538461,
+          "mainstance_loaded_original_200hz": 0.8076923076923077,
+          "landing_loaded_original_200hz": 1.0
+        },
+        "FR": {
+          "mainstance_loaded_50hz": 0.8290598290598291,
+          "mainstance_loaded_original_200hz": 0.8226495726495726,
+          "landing_loaded_original_200hz": 0.9375
+        },
+        "RL": {
+          "mainstance_loaded_50hz": 0.7948717948717948,
+          "mainstance_loaded_original_200hz": 0.8205128205128205,
+          "landing_loaded_original_200hz": 0.625
+        },
+        "RR": {
+          "mainstance_loaded_50hz": 0.8205128205128205,
+          "mainstance_loaded_original_200hz": 0.8226495726495726,
+          "landing_loaded_original_200hz": 0.4375
+        }
+      },
+      "loaded_contact_50hz_during_planned_swing": {
+        "FL": {
+          "FL": 0.08333333333333333,
+          "FR": 1.0,
+          "RL": 1.0,
+          "RR": 0.16666666666666666
+        },
+        "FR": {
+          "FL": 1.0,
+          "FR": 0.041666666666666664,
+          "RL": 0.041666666666666664,
+          "RR": 1.0
+        },
+        "RL": {
+          "FL": 1.0,
+          "FR": 0.25,
+          "RL": 0.041666666666666664,
+          "RR": 1.0
+        },
+        "RR": {
+          "FL": 0.3333333333333333,
+          "FR": 1.0,
+          "RL": 1.0,
+          "RR": 0.041666666666666664
+        }
+      }
+    }
+  ]
+}
