@@ -1,0 +1,59 @@
+{
+  "id": "speaking-warm",
+  "tool": "built-in image_gen",
+  "images": [
+    {
+      "id": "speaking-warm__1",
+      "file": "images/speaking-warm-1.png",
+      "prompt": "prompts/speaking-warm-1.txt",
+      "generatedSource": "C:\\Users\\hssil\\.codex\\generated_images\\01a0ef9e-2988-7551-91f7-4f5ee5e2a923\\exec-ef9f77c8-85d0-4b86-9e96-36e538f63440.png",
+      "sha256": "1bc8462946718453275a78245ca76ff07d060f9bbf0bbe110fd3234cdaa01188",
+      "width": 1254,
+      "height": 1254,
+      "qa": {
+        "singleFace": true,
+        "mistIdentity": true,
+        "noStrayMarks": true,
+        "inspectedWithViewImage": true,
+        "nativeBytesCopied": true
+      },
+      "limitations": "Compared with the shared anchor, mouth bounding-box centre is 3.5 px higher and smile width is 17 px greater; eye centres differ by at most 0.5 px. This is a shape reference, not a completed viseme set or animation."
+    },
+    {
+      "id": "speaking-warm__2",
+      "file": "images/speaking-warm-2.png",
+      "prompt": "prompts/speaking-warm-2.txt",
+      "generatedSource": "C:\\Users\\hssil\\.codex\\generated_images\\01a0ef9e-2988-7551-91f7-4f5ee5e2a923\\exec-777f41d5-2c8b-41b8-8dd4-ba5cf1dbf376.png",
+      "sha256": "3246482135dc1161570beeaf83028be54594de2f7ff65b84e534cbd070b06903",
+      "width": 1254,
+      "height": 1254,
+      "qa": {
+        "singleFace": true,
+        "mistIdentity": true,
+        "noStrayMarks": true,
+        "inspectedWithViewImage": true,
+        "nativeBytesCopied": true
+      },
+      "limitations": "Mouth bounding-box centre is 2 px higher than pose 1. Both eye bounds match pose 1 at the measured bright-cyan threshold. This compact aperture is a shape reference."
+    },
+    {
+      "id": "speaking-warm__3",
+      "file": "images/speaking-warm-3.png",
+      "prompt": "prompts/speaking-warm-3.txt",
+      "generatedSource": "C:\\Users\\hssil\\.codex\\generated_images\\01a0ef9e-2988-7551-91f7-4f5ee5e2a923\\exec-9223b614-2e61-4c72-9b77-b7ea6aa2dbff.png",
+      "sha256": "76d8f8976a3e6c14c9ce4192b158bff0646a005544f7cb52fc41ca9108ee2d26",
+      "width": 1254,
+      "height": 1254,
+      "qa": {
+        "singleFace": true,
+        "mistIdentity": true,
+        "noStrayMarks": true,
+        "inspectedWithViewImage": true,
+        "nativeBytesCopied": true
+      },
+      "limitations": "Mouth bounding-box centre is 5.5 px higher than pose 1; horizontal centre varies by 0.5 px. Right-eye bounding box contracts by 1 px at its right edge, causing a measured 0.5 px centre variation. No visible whole-face drift."
+    }
+  ],
+  "qaSummary": "All three selected images visually inspected individually and together. Read-only bright-cyan component analysis confirms exactly three components per image, stable eye centres within 0.5 px across the trio, distinct compact closed/soft-vowel/rounded-vowel mouth silhouettes, and no teeth, tongue, protrusions or stray cyan marks.",
+  "limitations": "Three key-pose shape references for audio-driven warm speech only. They are not a repeating speech loop, complete viseme set, or twelve-frame animation. Exact pixel invariance is not claimed: generated eye contours vary by 1 px across the trio and mouth bounding-box vertical centres vary by up to 5.5 px. The native 1254×1254 image dimensions and faint anchor texture are preserved."
+}

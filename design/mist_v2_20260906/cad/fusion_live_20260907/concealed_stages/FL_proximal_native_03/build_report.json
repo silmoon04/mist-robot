@@ -1,0 +1,22 @@
+{
+  "status": "failed",
+  "leg": "FL",
+  "started_unix": 1788783228.6581361,
+  "native_execution": true,
+  "physical_fit_validated": false,
+  "production_release": false,
+  "physical_materials_assigned": false,
+  "features_created": 61,
+  "document": "MIST concealed wheel drive - native assembly",
+  "source_sha256": {
+    "native_parts.py": "35be01e974f1bf1c75681001ea51f80f5fb965e27c7779263194b3c0ee5dc038",
+    "purchased_step.py": "7545a69c308dc33bb8f0b1b308590e9e3113f47fd54c4f5ddd244758cb378405",
+    "concealed_native_replay.py": "19d2c7b7e31d797b2579850b37ef1a2f0d93e1755526a597eacccdb46d10e222"
+  },
+  "part": "Y01_fixed_mount_bridge",
+  "index": 0,
+  "reused": false,
+  "last_feature": "Y01_fixed_mount_bridge_23_cut",
+  "error": "Traceback (most recent call last):\n  File \"C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\mist_v2_20260906\\cad\\fusion_live_20260907\\build_concealed_stage.py\", line 78, in run\n    result=replay.build_leg(design.rootComponent,specs[request['leg']],request['palette'],record_part,\n                            extend=request.get('extend',False))\n  File \"C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\mist_v2_20260906\\cad\\fusion_live_20260907\\concealed_native_replay.py\", line 160, in build_leg\n    native.place_occurrence(outer,target_matrix)\n    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\mist_v2_20260906\\cad\\native_parts.py\", line 50, in place_occurrence\n    occurrence.transform2 = matrix\n    ^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users/hssil/AppData/Local/Autodesk/webdeploy/production/61bf25b220a2d0307c84c301e65a59ac225d9a1e/Api/Python/packages\\adsk\\fusion.py\", line 50481, in _set_transform2\n    return _fusion.Occurrence__set_transform2(self, value)\n           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\nRuntimeError: 3 : transform overrides can only be set on Occurrence proxy from root component\n",
+  "elapsed_s": 16.987510442733765
+}

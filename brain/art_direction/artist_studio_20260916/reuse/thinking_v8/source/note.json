@@ -1,0 +1,243 @@
+{
+  "name": "note",
+  "generator": "built-in image_gen",
+  "source_original_unchanged": true,
+  "generated_source_path": "C:\\Users\\hssil\\.codex\\generated_images\\01a0d42d-4d7a-7c10-a08f-43b3d035ab48\\exec-0067272c-5a57-446f-a9a1-e0e198502f9c.png",
+  "width": 1536,
+  "height": 1024,
+  "mode": "RGBA",
+  "grid": {
+    "columns": 6,
+    "rows": 4,
+    "cell_width": 256,
+    "cell_height": 256,
+    "order": "row-major"
+  },
+  "frame_count": 24,
+  "phases": {
+    "enter": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "loop": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "exit": [
+      20,
+      21,
+      22,
+      23
+    ]
+  },
+  "sha256": "347e2e372fab19183055c033a8275ad6b5b4efcb09f84a40d7e4f953643abae1",
+  "exact_prompt_path": "../prompts/note-continuity.txt",
+  "exact_prompt": "Use case: precise-object-edit.\nEdit the attached 1536 by 1024 transparent RGBA notepad/pen sprite sheet. Preserve the EXACT six-column four-row layout, all 24 drawings, original cell positions and native alpha. Cyan outline only, no opaque backdrop or haze. Preserve every pen, spiral and page pose.\nTargeted continuity correction: the completed FIRST writing line must remain on the paper while the second writing line is being drawn. It has mistakenly vanished in row3 columns1,2,3,4 (zero-index frames12,13,14,15). Add the same completed FIRST slightly wavy horizontal writing stroke near the top third of the paper to EACH of these four cels. Its location relative to the pad must match the first writing line in row2 columns5 and6. Leave the lower writing line and pen in row3 columns1,2,3,4 exactly where they are. The first line must stay visible unchanged until carried away by the page flip at row3 column6.\nAlso preserve a full-length consistent pen in every cel. Drawings row3 col1..col4 must read as one finished upper line plus the pen progressively extending a lower line. Keep all other cels and all existing motion poses unchanged. No faces, labels, frame numbers, success ticks, shadows or scenery. One clean native-transparent PNG.",
+  "prompt_history": [
+    "../prompts/note.txt",
+    "../prompts/note-retry.txt",
+    "../prompts/note-continuity.txt"
+  ],
+  "reference_path": "C:\\Users\\hssil\\.codex\\generated_images\\01a0d42d-4d7a-7c10-a08f-43b3d035ab48\\exec-d153ae2e-0ed7-4ef3-9973-ec3d8e3fe82b.png",
+  "alpha": {
+    "minimum": 0,
+    "maximum": 254,
+    "zero_pixels": 1178291,
+    "total_pixels": 1572864
+  },
+  "pixel_unique_cells": 24,
+  "pixel_unique_active_cells": 16,
+  "cell_alpha_bounds_at_128": [
+    [
+      72,
+      152,
+      211,
+      241
+    ],
+    [
+      59,
+      114,
+      222,
+      240
+    ],
+    [
+      38,
+      39,
+      234,
+      237
+    ],
+    [
+      45,
+      66,
+      223,
+      237
+    ],
+    [
+      47,
+      65,
+      194,
+      237
+    ],
+    [
+      53,
+      61,
+      216,
+      236
+    ],
+    [
+      55,
+      69,
+      227,
+      227
+    ],
+    [
+      53,
+      70,
+      237,
+      227
+    ],
+    [
+      48,
+      70,
+      232,
+      227
+    ],
+    [
+      44,
+      23,
+      229,
+      227
+    ],
+    [
+      48,
+      70,
+      211,
+      227
+    ],
+    [
+      54,
+      70,
+      200,
+      227
+    ],
+    [
+      55,
+      60,
+      202,
+      216
+    ],
+    [
+      53,
+      60,
+      202,
+      216
+    ],
+    [
+      49,
+      60,
+      198,
+      216
+    ],
+    [
+      48,
+      60,
+      233,
+      216
+    ],
+    [
+      50,
+      14,
+      229,
+      215
+    ],
+    [
+      44,
+      2,
+      228,
+      217
+    ],
+    [
+      59,
+      28,
+      204,
+      201
+    ],
+    [
+      53,
+      36,
+      201,
+      200
+    ],
+    [
+      48,
+      3,
+      230,
+      198
+    ],
+    [
+      62,
+      73,
+      223,
+      198
+    ],
+    [
+      66,
+      84,
+      220,
+      198
+    ],
+    [
+      79,
+      106,
+      216,
+      197
+    ]
+  ],
+  "inspection": {
+    "summary": "All cels include the pen. The first written line persists during second-line writing and leaves only with the page flip. Twenty-four visible drawings. Registration, first-stroke pop and pen scale drift remain.",
+    "semantic_active_pose_audit": [
+      "4: blank page, pen angled over first-line start.",
+      "5: first writing line appears while pen moves to its right end; the initial stroke is longer than requested.",
+      "6: first line and pen advance slightly right.",
+      "7: first line grows farther right with pen tip.",
+      "8: pen advances and lowers slightly at first-line end.",
+      "9: pen lifts above-right for repositioning.",
+      "10: pen descends and turns toward the lower line.",
+      "11: pen moves left to second-line start.",
+      "12: short lower line appears; upper line remains.",
+      "13: lower line and pen advance right; upper line remains.",
+      "14: lower line and pen advance farther right; upper line remains.",
+      "15: lower line reaches full width and pen lifts right; upper line remains.",
+      "16: pen lifts above-right and page bottom corner curls.",
+      "17: marked page flips around the top binding; blank page appears beneath.",
+      "18: marked sheet is almost behind the pad; pen arcs back left over the blank page.",
+      "19: marked sheet finishes disappearing behind pad; pen settles over blank page, approaching starting pose."
+    ],
+    "limitations": [
+      "Sixteen active drawings show distinct pen/ink/page states; none omit the pen. Pen length and angle vary somewhat during repositioning.",
+      "The first stroke appears nearly complete at frame5 instead of growing from a very short stroke. This makes the 4-to5 transition abrupt.",
+      "The pad baseline drifts upward across active source rows: alpha128 bottom237,227,216,200. Direct fixed-cell playback visibly moves the pad at row boundaries, including an approximately37px last-to-first loop offset. Registration needs review during extraction.",
+      "The page-flip has two drawn stages plus a settling page edge. It is readable but not a fully interpolated physical turn.",
+      "Cyan strokes are heavier than the requested 3px and include a fine darker contour in raw RGB.",
+      "Transparent pixels retain teal RGB values; rendering must honor alpha."
+    ],
+    "meets_all_motion_requirements": false,
+    "pending_generation_calls": 0
+  }
+}

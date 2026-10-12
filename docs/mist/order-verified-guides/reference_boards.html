@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MIST photographic sorting guides</title>
+<style>
+  :root {
+    --ink:#17202a; --muted:#5f6b76; --paper:#f4f6f7; --card:#fff;
+    --line:#cbd3da; --seen:#13795b; --ordered:#2563a9; --wait:#b7791f;
+    --missing:#b42318; --extra:#6b7280; --raw:#b42318; --logic:#0f766e;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:#2e343b;font-family:Arial,Helvetica,sans-serif;color:var(--ink)}
+  .board{
+    width:1536px;height:1024px;background:var(--paper);position:relative;overflow:hidden;
+    margin:30px auto;box-shadow:0 18px 48px rgba(0,0,0,.35);padding:34px 42px 30px;
+  }
+  header{height:92px;border-bottom:4px solid var(--ink);display:flex;justify-content:space-between;gap:24px}
+  h1{margin:0;font-size:43px;line-height:1.02;letter-spacing:-1px}
+  .sub{margin-top:8px;color:var(--muted);font-size:18px}
+  .legend{display:flex;align-items:flex-start;justify-content:flex-end;gap:8px;flex-wrap:wrap;width:510px}
+  .badge{display:inline-block;border-radius:999px;padding:6px 11px;color:#fff;font-size:13px;font-weight:800;letter-spacing:.4px}
+  .seen{background:var(--seen)} .ordered{background:var(--ordered)} .wait{background:var(--wait)}
+  .missing{background:var(--missing)} .extra{background:var(--extra)}
+  .photo-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(4,1fr);gap:12px;height:842px;padding-top:14px}
+  .card{background:var(--card);border:2px solid var(--line);border-radius:13px;overflow:hidden;position:relative;min-width:0}
+  .card .status{position:absolute;z-index:2;top:9px;left:9px;box-shadow:0 2px 7px rgba(0,0,0,.25)}
+  .card .source{position:absolute;z-index:2;top:10px;right:10px;background:rgba(23,32,42,.86);color:#fff;border-radius:5px;padding:4px 7px;font-size:11px;font-weight:800}
+  .pic{height:126px;background:#dfe4e8;position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+  .pic img{width:100%;height:100%;object-fit:cover;display:block}
+  .pic.placeholder{display:flex;align-items:center;justify-content:center;text-align:center;color:#7a4b00;font-weight:900;font-size:22px;background:repeating-linear-gradient(-45deg,#fff7df,#fff7df 16px,#ffedbd 16px,#ffedbd 32px)}
+  .pic.placeholder.red{color:#8b1e16;background:repeating-linear-gradient(-45deg,#fff0ef,#fff0ef 16px,#fbd1cd 16px,#fbd1cd 32px)}
+  .card h3{margin:9px 11px 2px;font-size:17px;line-height:1.07}
+  .card p{margin:4px 11px 8px;color:var(--muted);font-size:12.5px;line-height:1.25}
+  .warning{color:var(--missing)!important;font-weight:800}
+  .board-foot{position:absolute;bottom:10px;left:42px;right:42px;display:flex;justify-content:space-between;color:#6b7280;font-size:12px}
+  .group-body{height:842px;padding-top:18px;display:grid;grid-template-columns:2fr 1.08fr;gap:18px}
+  .group-cards{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:246px;gap:14px}
+  .group-cards .pic{height:164px}.group-cards h3{font-size:19px}.group-cards p{font-size:13px}
+  .side{display:flex;flex-direction:column;gap:14px}
+  .box{background:#fff;border:2px solid var(--line);border-radius:13px;padding:17px 18px}
+  .box h2{font-size:21px;margin:0 0 10px}
+  .box ul{margin:0;padding-left:20px;font-size:16px;line-height:1.42}
+  .box li{margin:7px 0}
+  .gate{border-color:#d2a128;background:#fff8df}
+  .danger{border-color:#d4554a;background:#fff1f0}
+  .flow{display:grid;gap:8px}
+  .flowline{display:flex;align-items:center;gap:7px;font-size:14px;font-weight:800}
+  .node{background:#fff;border:2px solid #b8c1ca;border-radius:8px;padding:8px 10px;text-align:center;flex:1}
+  .arrow{font-size:23px;color:#69737d}.raw .node{border-color:#c75248}.logic .node{border-color:#3b8d84}
+  .note{font-size:13px;color:var(--muted);line-height:1.35}
+  .master-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:16px;height:760px;padding-top:18px}
+  .master-card{background:#fff;border:2px solid var(--line);border-radius:14px;padding:16px;position:relative}
+  .master-card h2{font-size:25px;margin:0 0 10px}.master-card p{font-size:15px;line-height:1.35;margin:8px 0}
+  .thumbs{height:130px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+  .thumbs img{width:100%;height:130px;object-fit:cover;border-radius:8px;border:1px solid var(--line)}
+  .global-gates{height:78px;margin-top:15px;display:flex;gap:13px}
+  .global-gates>div{flex:1;border:3px solid var(--missing);background:#fff0ef;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:900;text-align:center;padding:9px}
+  .count{font-weight:900;color:var(--ink)}
+  .smallcaps{font-size:12px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
+  .redline{color:var(--missing);font-weight:900}
+  .greenline{color:var(--seen);font-weight:900}
+  #atlas h1{font-size:34px;white-space:nowrap}
+  #master h1{font-size:39px;white-space:nowrap}
+  #master .legend{width:210px}
+</style>
+</head>
+<body>
+
+<section class="board" id="atlas">
+  <header>
+    <div><h1>MIST item atlas — what your parts actually look like</h1><div class="sub">Real crops from your 8K video and close-up photos · status is kept separate from the order ledger</div></div>
+    <div class="legend"><span class="badge seen">SEEN</span><span class="badge ordered">ORDER LEDGER</span><span class="badge wait">NOT LOCATED / VERIFY</span><span class="badge missing">MISSING</span><span class="badge extra">EXTRA / WRONG TYPE</span></div>
+  </header>
+  <div class="photo-grid">
+    <article class="card"><span class="badge seen status">SEEN</span><span class="source">VIDEO</span><div class="pic"><img src="work/video_frames/full_frames/00s_servo_power_overview.jpg" style="object-position:58% 88%"></div><h3>Feetech C018 servo boxes</h3><p>Target <b>18</b>: 16 installed + 2 spares. Boxes are visible; open one and confirm each servo label says 12 V / 30 kg / ST-3215-C018.</p></article>
+    <article class="card"><span class="badge seen status">SEEN</span><span class="source">VIDEO</span><div class="pic"><img src="work/video_frames/full_frames/22s_logic_boards.jpg" style="object-position:73% 31%"></div><h3>FE-URT-1</h3><p>Exposed <b>red PCB</b>, white bus sockets, blue screw terminal and USB. Bench tool only; it is not the black/white box drawn before.</p></article>
+    <article class="card"><span class="badge seen status">SEEN</span><span class="source">VIDEO</span><div class="pic"><img src="work/video_frames/full_frames/22s_logic_boards.jpg" style="object-position:69% 64%"></div><h3>Bus Servo Adapter A</h3><p>Small <b>black PCB</b> with barrel jack, green terminal, yellow jumper and two visible white bus ports. Signal/common reference—not the leg-current path.</p></article>
+    <article class="card"><span class="badge seen status">SEEN</span><span class="source">VIDEO</span><div class="pic"><img src="work/video_frames/full_frames/22s_logic_boards.jpg" style="object-position:42% 88%"></div><h3>ESP32 WROOM DevKit</h3><p>Long black DevKit with metal WROOM shield and USB-C. The separate camera board is an extra device, not proof of the servo C018 option.</p></article>
+
+    <article class="card"><span class="badge seen status">SEEN ×2</span><span class="source">USER PHOTO</span><div class="pic"><img src="work/reference_photos/hoovo_pack_label.jpg" style="object-position:54% 46%"></div><h3>HOOVO LiPo packs</h3><p>3S · 2200 mAh · 11.1 V nominal · 50 C · XT60. Keep both as stock, but connect or charge only one pack at a time.</p></article>
+    <article class="card"><span class="badge seen status">SEEN</span><span class="source">USER PHOTO</span><div class="pic"><img src="work/reference_photos/b6neo_charging.jpg" style="object-position:49% 43%"></div><h3>SKYRC B6 Neo</h3><p>Compact red/cyan charger with colour screen and three black buttons. Your close-up confirms LiHV/3S was selected—use normal <b>LiPo 3S balance</b>, not LiHV.</p></article>
+    <article class="card"><span class="badge wait status">SEEN / VERIFY</span><span class="source">VIDEO</span><div class="pic"><img src="work/video_frames/full_frames/53s_all_items_overview.jpg" style="object-position:66% 28%"></div><h3>5 V UBEC modules</h3><p>Several small exposed modules with red/black leads are visible. Verify each output is 4.9–5.2 V before any ESP32 connection.</p></article>
+    <article class="card"><span class="badge seen status">SEEN</span><span class="source">VIDEO</span><div class="pic"><img src="work/video_frames/full_frames/53s_all_items_overview.jpg" style="object-position:54% 16%"></div><h3>XT60 → 8×XT30 PDB</h3><p>Narrow row-style power distributor—not the invented square black block. It distributes raw 3S; it does not regulate voltage.</p></article>
+
+    <article class="card"><span class="badge seen status">SEEN</span><span class="source">VIDEO</span><div class="pic"><img src="work/video_frames/full_frames/53s_all_items_overview.jpg" style="object-position:60% 67%"></div><h3>XT pigtails + silicone wire</h3><p>Yellow XT30/XT60 connectors and heavy red/black leads are visible. Confirm the wire labels: 12, 14 and 16 AWG.</p></article>
+    <article class="card"><span class="badge seen status">SEEN</span><span class="source">VIDEO</span><div class="pic"><img src="work/video_frames/full_frames/53s_all_items_overview.jpg" style="object-position:29% 42%"></div><h3>Blade fuses + holders</h3><p>Standard fuse assortment and loose holders/leads are visible. Physically match holder size; use 30 A main and 15 A per leg only after the guide checks.</p></article>
+    <article class="card"><span class="badge wait status">SEEN / MATCH</span><span class="source">VIDEO</span><div class="pic"><img src="work/video_frames/full_frames/53s_all_items_overview.jpg" style="object-position:63% 55%"></div><h3>Smoke stopper</h3><p>Present, but exact product body is not clear enough for a definitive close-up match. Static first-power checks only; not for real motion/load.</p></article>
+    <article class="card"><span class="badge extra status">WRONG FOR BUS</span><span class="source">VIDEO</span><div class="pic"><img src="work/video_frames/full_frames/53s_all_items_overview.jpg" style="object-position:45% 69%"></div><h3>Generic PWM servo leads</h3><p class="warning">Large bag of red/white/black leads with black housings. Keep separate: these do NOT count as Feetech 5264 bus cables.</p></article>
+
+    <article class="card"><span class="badge wait status">CANDIDATE — VERIFY</span><span class="source">VIDEO 34 S</span><div class="pic"><img src="work/video_frames/crops/34s_xt60_heatshrink_and_servo_cables.jpg" style="object-position:75% 88%"></div><h3>Likely Feetech 5264 bus leads</h3><p>The white tray holds many long black flat leads with small white keyed housings. Verify one plug fits without force and confirm pin order/continuity before power. Keep separate from the generic PWM bag.</p></article>
+    <article class="card"><span class="badge seen status">SEEN</span><span class="source">VIDEO</span><div class="pic"><img src="work/video_frames/full_frames/34s_cables_heatshrink.jpg" style="object-position:55% 32%"></div><h3>Heat-shrink + connector bags</h3><p>Bagged pigtails and black heat-shrink are visible. Loose parts are not a finished harness—joins still need to be fabricated and checked.</p></article>
+    <article class="card"><span class="badge wait status">NEEDS BATTERY</span><span class="source">VIDEO</span><div class="pic"><img src="work/video_frames/full_frames/53s_all_items_overview.jpg" style="object-position:60% 72%"></div><h3>ANENG SZ308 multimeter</h3><p>Red meter is physically present. Fit its specified <b>PP3/6F22 9 V</b> battery and prove continuity/DC voltage before powered wiring.</p></article>
+    <article class="card"><span class="badge wait status">PARTIAL</span><span class="source">VIDEO + USER</span><div class="pic"><img src="work/video_frames/full_frames/53s_all_items_overview.jpg" style="object-position:48% 47%"></div><h3>Fasteners and tools</h3><p>M2 lengths are present but thread type/count needs checking. <span class="redline">M3 ×6/8/10/12/16 + M3 nylocs are missing.</span> M4 is not currently required.</p></article>
+  </div>
+  <div class="board-foot"><span>Photo evidence ≠ completed electrical verification.</span><span>NOT TO SCALE · no product has been redrawn</span></div>
+</section>
+
+<section class="board" id="group-charge">
+  <header><div><h1>Group 1 — charging and LiPo safety</h1><div class="sub">The delivered charger and pack appearance, using your close-up photos</div></div><div class="legend"><span class="badge seen">SEEN</span><span class="badge wait">METER NEEDS 9 V</span></div></header>
+  <div class="group-body">
+    <div class="group-cards">
+      <article class="card"><span class="badge seen status">PACK A + B</span><div class="pic"><img src="work/reference_photos/hoovo_pack_label.jpg" style="object-position:52% 45%"></div><h3>2 × HOOVO 3S 2200 mAh</h3><p>Inventory picture may show two; connection picture must show one.</p></article>
+      <article class="card"><span class="badge seen status">SEEN</span><div class="pic"><img src="work/reference_photos/b6neo_charging.jpg" style="object-position:48% 42%"></div><h3>SKYRC B6 Neo</h3><p>Red/cyan charger; colour screen; three black buttons.</p></article>
+      <article class="card"><span class="badge seen status">SEEN</span><div class="pic"><img src="work/reference_photos/b6neo_xt60_and_balance.jpg" style="object-position:48% 52%"></div><h3>XT60 main + 3S balance lead</h3><p>Both are required for balance charging.</p></article>
+      <article class="card"><span class="badge ordered status">OWNED</span><div class="pic placeholder">ANKER 317<br>100 W USB-C PD</div><h3>Charger input supply</h3><p>Use the owned 100 W PD charger and 5 A e-marked cable.</p></article>
+      <article class="card"><span class="badge seen status">SEEN</span><div class="pic"><img src="work/video_frames/full_frames/53s_all_items_overview.jpg" style="object-position:83% 9%"></div><h3>LiPo guard bag</h3><p>One pack at a time; stay present while charging.</p></article>
+      <article class="card"><span class="badge wait status">FIX FIRST</span><div class="pic"><img src="work/video_frames/full_frames/53s_all_items_overview.jpg" style="object-position:60% 72%"></div><h3>Working multimeter</h3><p>Install PP3/6F22 9 V battery before pack/polarity checks.</p></article>
+    </div>
+    <aside class="side">
+      <div class="box gate"><h2>Correct first-charge settings</h2><ul><li><b>Battery type:</b> LiPo, not LiHV</li><li><b>Cell count:</b> 3S</li><li><b>Mode:</b> balance charge</li><li><b>Current:</b> 2.2 A maximum</li><li><b>Full:</b> 12.6 V</li></ul></div>
+      <div class="box"><h2>One connected path</h2><div class="flow raw"><div class="flowline"><span class="node">Anker PD</span><span class="arrow">→</span><span class="node">B6 Neo</span></div><div class="flowline"><span class="node">ONE HOOVO</span><span class="arrow">→</span><span class="node">XT60 + balance</span></div></div></div>
+      <div class="box danger"><h2>Do not</h2><ul><li>Do not charge on the bed or carpet.</li><li>Do not connect both LiPos.</li><li>Do not leave charging unattended.</li><li>Do not continue with a swollen/damaged pack.</li></ul></div>
+    </aside>
+  </div>
+  <div class="board-foot"><span>Actual red/cyan B6 Neo and HOOVO label shown.</span><span>Group 1</span></div>
+</section>
+
+<section class="board" id="group-trunk">
+  <header><div><h1>Group 2 — raw 3S main trunk</h1><div class="sub">These are loose parts to fabricate and verify—not a ready-made plug chain</div></div><div class="legend"><span class="badge seen">SEEN</span><span class="badge wait">VERIFY / FABRICATE</span></div></header>
+  <div class="group-body">
+    <div class="group-cards">
+      <article class="card"><span class="badge seen status">SEEN</span><div class="pic"><img src="work/reference_photos/hoovo_pack_label.jpg" style="object-position:52% 45%"></div><h3>One HOOVO XT60 pack</h3><p>Raw 3S: roughly 9.9–12.6 V.</p></article>
+      <article class="card"><span class="badge ordered status">ORDER LEDGER</span><div class="pic placeholder">XT90-S<br>ANTI-SPARK</div><h3>Main disconnect</h3><p>Confirm the received cable gauge, length and connector gender.</p></article>
+      <article class="card"><span class="badge seen status">SEEN</span><div class="pic"><img src="work/video_frames/full_frames/53s_all_items_overview.jpg" style="object-position:32% 37%"></div><h3>30 A main fuse + holder</h3><p>Standard blade size must physically match the holder.</p></article>
+      <article class="card"><span class="badge wait status">TEMPORARY</span><div class="pic"><img src="work/video_frames/full_frames/53s_all_items_overview.jpg" style="object-position:63% 55%"></div><h3>Smoke stopper</h3><p>Static first-power path only; bypass before motion/load.</p></article>
+      <article class="card"><span class="badge seen status">SEEN</span><div class="pic"><img src="work/video_frames/full_frames/53s_all_items_overview.jpg" style="object-position:54% 16%"></div><h3>XT60 → 8×XT30 PDB</h3><p>Narrow row-style distributor. Meter every raw-3S output.</p></article>
+      <article class="card"><span class="badge seen status">SEEN / CHECK GAUGE</span><div class="pic"><img src="work/video_frames/full_frames/53s_all_items_overview.jpg" style="object-position:60% 67%"></div><h3>12/14 AWG silicone + pigtails</h3><p>Red/black heavy wire; labels and lengths still need checking.</p></article>
+    </div>
+    <aside class="side">
+      <div class="box"><h2>Conceptual power order</h2><div class="flow raw"><div class="flowline"><span class="node">LiPo</span><span class="arrow">→</span><span class="node">XT90-S</span></div><div class="flowline"><span class="node">30 A fuse</span><span class="arrow">→</span><span class="node">PDB</span></div></div><p class="note">This is electrical order only. XT60, XT90-S and bare fuse-holder leads do not automatically mate. Use verified adapters or soldered, insulated joins.</p></div>
+      <div class="box gate"><h2>Fabricate / verify</h2><ul><li>Connector gender and polarity</li><li>12/14 AWG label</li><li>Heat-shrunk solder joins</li><li>PDB polarity on every XT30</li></ul></div>
+      <div class="box danger"><h2>Raw 3S only</h2><ul><li>No ESP32 directly on this rail.</li><li>No sensor/5 V device on XT30 or XT60.</li><li>Smoke stopper does not stay in for movement.</li></ul></div>
+    </aside>
+  </div>
+  <div class="board-foot"><span>No XT60-to-XT90 direct-mating claim is made.</span><span>Group 2</span></div>
+</section>
+
+<section class="board" id="group-legs">
+  <header><div><h1>Group 3 — four leg kits</h1><div class="sub">A likely 5264 bundle is in the white tray; identify one lead before sorting four per leg</div></div><div class="legend"><span class="badge seen">SEEN</span><span class="badge wait">CANDIDATE — VERIFY</span></div></header>
+  <div class="group-body">
+    <div class="group-cards">
+      <article class="card"><span class="badge seen status">BOXES SEEN</span><div class="pic"><img src="work/video_frames/full_frames/00s_servo_power_overview.jpg" style="object-position:58% 88%"></div><h3>Per tray: 4 × C018</h3><p>Coxa, femur, tibia, wheel. Confirm physical labels before raw 3S.</p></article>
+      <article class="card"><span class="badge wait status">CANDIDATE — VERIFY</span><div class="pic"><img src="work/video_frames/crops/34s_xt60_heatshrink_and_servo_cables.jpg" style="object-position:75% 88%"></div><h3>Likely Feetech 5264 leads</h3><p>Long black flat leads with small white keyed housings are visible. Verify key, fit and pin order before assigning four to each leg.</p></article>
+      <article class="card"><span class="badge seen status">SEEN</span><div class="pic"><img src="work/video_frames/full_frames/53s_all_items_overview.jpg" style="object-position:54% 55%"></div><h3>XT30 + 16 AWG branch</h3><p>One protected raw-3S branch per leg.</p></article>
+      <article class="card"><span class="badge seen status">SEEN</span><div class="pic"><img src="work/video_frames/full_frames/53s_all_items_overview.jpg" style="object-position:65% 33%"></div><h3>15 A fuse + 4700 µF cap</h3><p>One holder/fuse and one 25 V capacitor per leg; capacitor is parallel, not inline.</p></article>
+      <article class="card"><span class="badge extra status">KEEP SEPARATE</span><div class="pic"><img src="work/video_frames/full_frames/53s_all_items_overview.jpg" style="object-position:45% 69%"></div><h3>Generic PWM leads</h3><p class="warning">Wrong connector family for the STS3215 bus.</p></article>
+      <article class="card"><span class="badge seen status">SEEN</span><div class="pic"><img src="work/video_frames/full_frames/53s_all_items_overview.jpg" style="object-position:21% 90%"></div><h3>2 spare servos: IDs 17–18</h3><p>Test and label; no fifth leg branch is required.</p></article>
+    </div>
+    <aside class="side">
+      <div class="box gate"><h2>Make four labelled trays</h2><ul><li><b>FL:</b> IDs 1–4</li><li><b>FR:</b> IDs 5–8</li><li><b>RR:</b> IDs 9–12</li><li><b>RL:</b> IDs 13–16</li></ul></div>
+      <div class="box"><h2>Each tray receives</h2><ul><li>4 servos + 4 positively verified 5264 leads</li><li>1 XT30 branch path</li><li>1 holder + 15 A fuse</li><li>16 AWG red/black route wire</li><li>1 × 4700 µF 25 V capacitor</li></ul></div>
+      <div class="box danger"><h2>Gate</h2><p class="redline">Take one black/white lead from the tray. Verify connector key, no-force fit and pin order before starting the four leg harnesses.</p></div>
+    </aside>
+  </div>
+  <div class="board-foot"><span>Candidate cables are shown from the video, but are not labelled confirmed until physically checked.</span><span>Group 3</span></div>
+</section>
+
+<section class="board" id="group-logic">
+  <header><div><h1>Group 4 — 5 V logic and servo signal</h1><div class="sub">Actual delivered board colours and port layouts from the video</div></div><div class="legend"><span class="badge seen">SEEN</span><span class="badge wait">VERIFY 5 V</span></div></header>
+  <div class="group-body">
+    <div class="group-cards">
+      <article class="card"><span class="badge wait status">VERIFY OUTPUT</span><div class="pic"><img src="work/video_frames/full_frames/53s_all_items_overview.jpg" style="object-position:66% 28%"></div><h3>FPV 5 A UBEC modules</h3><p>Small exposed modules; verify 4.9–5.2 V with a working meter.</p></article>
+      <article class="card"><span class="badge seen status">SEEN</span><div class="pic"><img src="work/video_frames/full_frames/22s_logic_boards.jpg" style="object-position:42% 88%"></div><h3>ESP32 WROOM USB-C</h3><p>Main controller. Use one power source at a time by default.</p></article>
+      <article class="card"><span class="badge seen status">SEEN</span><div class="pic"><img src="work/video_frames/full_frames/22s_logic_boards.jpg" style="object-position:69% 64%"></div><h3>Bus Servo Adapter A</h3><p>Black PCB, barrel jack, green terminal, yellow jumper, two visible white bus sockets.</p></article>
+      <article class="card"><span class="badge seen status">SEEN</span><div class="pic"><img src="work/video_frames/full_frames/22s_logic_boards.jpg" style="object-position:30% 91%"></div><h3>Optional ESP camera board</h3><p>Separate accessory. Its board marking must not be confused with the servo option code.</p></article>
+      <article class="card"><span class="badge ordered status">ORDER LEDGER</span><div class="pic placeholder">VL53L0X<br>OPTIONAL SENSOR</div><h3>VL53L0X</h3><p>Optional; not required for first servo commissioning.</p></article>
+      <article class="card"><span class="badge seen status">PRESENT / TEST</span><div class="pic"><img src="work/video_frames/full_frames/00s_servo_power_overview.jpg" style="object-position:25% 30%"></div><h3>USB data + jumpers</h3><p>Prove COM/data operation; charging LEDs alone are not enough.</p></article>
+    </div>
+    <aside class="side">
+      <div class="box"><h2>Correct voltage domains</h2><div class="flow logic"><div class="flowline"><span class="node">RAW 3S</span><span class="arrow">→</span><span class="node">UBEC</span></div><div class="flowline"><span class="node">VERIFIED 5 V</span><span class="arrow">→</span><span class="node">ESP32/sensors</span></div><div class="flowline"><span class="node">ESP32 UART</span><span class="arrow">→</span><span class="node">Adapter A</span></div></div></div>
+      <div class="box gate"><h2>Common reference</h2><p>Raw power, UBEC, ESP32, adapter and servo grounds share the required common reference. Signal mapping comes from the board markings/docs, not from wire colour guesses.</p></div>
+      <div class="box danger"><h2>Never</h2><ul><li>Do not carry leg servo current through the ESP32.</li><li>Do not carry leg servo current through Adapter A.</li><li>Do not attach raw 3S to a 5 V pin.</li></ul></div>
+    </aside>
+  </div>
+  <div class="board-foot"><span>Actual red FE-URT board is in Group 5, not here.</span><span>Group 4</span></div>
+</section>
+
+<section class="board" id="group-intake">
+  <header><div><h1>Group 5 — one-servo intake bench</h1><div class="sub">Use the real red FE-URT-1; powered testing waits for a positively identified lead and working meter</div></div><div class="legend"><span class="badge seen">SEEN</span><span class="badge wait">VERIFY FIRST</span></div></header>
+  <div class="group-body">
+    <div class="group-cards">
+      <article class="card"><span class="badge seen status">SEEN</span><div class="pic"><img src="work/video_frames/full_frames/22s_logic_boards.jpg" style="object-position:73% 31%"></div><h3>Red FE-URT-1 board</h3><p>USB powers adapter logic; external power is still required for the servo.</p></article>
+      <article class="card"><span class="badge seen status">BOXES SEEN</span><div class="pic"><img src="work/video_frames/full_frames/00s_servo_power_overview.jpg" style="object-position:58% 88%"></div><h3>Exactly one C018 servo</h3><p>No horn fitted for first read/register/small sweep.</p></article>
+      <article class="card"><span class="badge wait status">CANDIDATE — VERIFY</span><div class="pic"><img src="work/video_frames/crops/34s_xt60_heatshrink_and_servo_cables.jpg" style="object-position:75% 88%"></div><h3>Likely 5264 servo bus cable</h3><p>Select one black flat lead with white keyed ends. Do not force it; verify its pin order. Generic PWM lead is not acceptable.</p></article>
+      <article class="card"><span class="badge seen status">PRESENT / TEST</span><div class="pic"><img src="work/video_frames/full_frames/00s_servo_power_overview.jpg" style="object-position:25% 30%"></div><h3>PC USB data cable</h3><p>Correct plug for FE-URT-1; prove USB data enumeration.</p></article>
+      <article class="card"><span class="badge seen status">SEEN</span><div class="pic"><img src="work/reference_photos/hoovo_pack_label.jpg" style="object-position:52% 45%"></div><h3>Protected external 3S</h3><p>One HOOVO pack, 5 A/7.5 A fuse if available, plus smoke stopper for static first power.</p></article>
+      <article class="card"><span class="badge wait status">NEEDS 9 V</span><div class="pic"><img src="work/video_frames/full_frames/53s_all_items_overview.jpg" style="object-position:60% 72%"></div><h3>Working multimeter</h3><p>Required for voltage, polarity and continuity. The light-up screwdriver is not a substitute.</p></article>
+    </div>
+    <aside class="side">
+      <div class="box"><h2>Logical arrangement</h2><div class="flow"><div class="flowline"><span class="node">Windows PC</span><span class="arrow">→</span><span class="node">FE-URT-1</span></div><div class="flowline"><span class="node">5264 lead</span><span class="arrow">→</span><span class="node">ONE servo</span></div><div class="flowline"><span class="node">Protected 3S</span><span class="arrow">→</span><span class="node">Servo V+/GND</span></div></div></div>
+      <div class="box gate"><h2>Current blockers</h2><ul><li>Identify one candidate black/white lead</li><li>Verify connector fit and pin order</li><li>Install meter battery and prove it works</li><li>Confirm low-current fuse and FE-URT USB data</li></ul></div>
+      <div class="box danger"><h2>Do not test through ESP32 yet</h2><p>The ESP32 comes later through Bus Servo Adapter A, verified 5 V logic and common ground. It never powers the C018 motor.</p></div>
+    </aside>
+  </div>
+  <div class="board-foot"><span>One servo · no horn · no breadboard required.</span><span>Group 5</span></div>
+</section>
+
+<section class="board" id="group-mechanical">
+  <header><div><h1>Group 6 — mechanical hardware and tools</h1><div class="sub">Keep present/verify, missing, and not-needed-yet in separate bins</div></div><div class="legend"><span class="badge seen">PRESENT</span><span class="badge wait">VERIFY</span><span class="badge missing">MISSING</span></div></header>
+  <div class="group-body">
+    <div class="group-cards">
+      <article class="card"><span class="badge wait status">VERIFY THREAD + COUNT</span><div class="pic"><img src="work/video_frames/full_frames/53s_all_items_overview.jpg" style="object-position:48% 47%"></div><h3>M2 assortment</h3><p>Lengths 4/5/6/8/10/12/16/20 reported. Verify they are machine screws; prioritise enough ×6 and ×8.</p></article>
+      <article class="card"><span class="badge missing status">MISSING</span><div class="pic placeholder red">M3 ×6 / 8 / 10 / 12 / 16<br>+ M3 NYLOC NUTS</div><h3>M3 hardware</h3><p>Required for final mechanics. Add M3 washers as needed.</p></article>
+      <article class="card"><span class="badge wait status">CHECK SIZES</span><div class="pic"><img src="work/video_frames/full_frames/34s_cables_heatshrink.jpg" style="object-position:40% 84%"></div><h3>Existing folding key/tool set</h3><p>Check for 1.5, 2.0, 2.5 and 3.0 mm metric hex sizes before buying more.</p></article>
+      <article class="card"><span class="badge wait status">NEEDS BATTERY</span><div class="pic"><img src="work/video_frames/full_frames/53s_all_items_overview.jpg" style="object-position:60% 72%"></div><h3>ANENG multimeter</h3><p>Buy/install one PP3/6F22 9 V battery specified by the meter.</p></article>
+      <article class="card"><span class="badge seen status">SEEN</span><div class="pic"><img src="work/video_frames/full_frames/00s_servo_power_overview.jpg" style="object-position:58% 45%"></div><h3>Soldering/measurement tools</h3><p>Iron, stand, solder, wick, cutters/stripper, caliper and scales are visible or recorded. Use a non-flammable hot-work surface.</p></article>
+      <article class="card"><span class="badge wait status">LOCATE</span><div class="pic placeholder">20 mm HOOK-AND-LOOP<br>BATTERY STRAPS</div><h3>Battery/phone retention</h3><p>Use proper straps; double-sided tape alone is not adequate LiPo retention.</p></article>
+    </div>
+    <aside class="side">
+      <div class="box gate"><h2>Buy / locate next</h2><ul><li>PP3/6F22 9 V meter battery</li><li>M3 machine screws + nylocs</li><li>20 mm hook-and-loop straps</li><li>Any missing metric hex sizes</li></ul></div>
+      <div class="box"><h2>Do not buy yet</h2><ul><li>M4 hardware—no current guide requirement</li><li>Breadboard—not required for servo intake</li><li>More generic PWM servo leads</li></ul></div>
+      <div class="box danger"><h2>Tool distinction</h2><p>The illuminated/non-contact electrician screwdriver cannot measure low-voltage DC, continuity, polarity or UBEC output. It does not replace the ANENG meter.</p></div>
+    </aside>
+  </div>
+  <div class="board-foot"><span>Check existing tools before duplicating them.</span><span>Group 6</span></div>
+</section>
+
+<section class="board" id="master">
+  <header><div><h1>MIST master sorting map — photographic revision</h1><div class="sub">Six bins/trays; tools stay off the robot; candidate or unverified items stay visibly amber</div></div><div class="legend"><span class="badge seen">SEEN</span><span class="badge wait">GATE</span></div></header>
+  <div class="master-grid">
+    <article class="master-card"><h2>1 · Charge + LiPo</h2><div class="thumbs"><img src="work/reference_photos/hoovo_pack_label.jpg" style="object-position:52% 45%"><img src="work/reference_photos/b6neo_charging.jpg" style="object-position:48% 42%"><img src="work/reference_photos/b6neo_xt60_and_balance.jpg" style="object-position:48% 52%"></div><p><span class="count">2</span> packs in stock; <span class="count">1</span> connected at a time. B6 Neo + main lead + balance lead + LiPo bag.</p><span class="badge seen">SEEN</span></article>
+    <article class="master-card"><h2>2 · Raw 3S trunk</h2><div class="thumbs"><img src="work/video_frames/full_frames/53s_all_items_overview.jpg" style="object-position:60% 67%"><img src="work/video_frames/full_frames/53s_all_items_overview.jpg" style="object-position:32% 37%"><img src="work/video_frames/full_frames/53s_all_items_overview.jpg" style="object-position:54% 16%"></div><p>XT90-S + 30 A fuse + PDB + heavy wire. <b>Fabricate verified joins;</b> do not assume every connector mates.</p><span class="badge wait">VERIFY / FABRICATE</span></article>
+    <article class="master-card"><h2>3 · Four leg kits</h2><div class="thumbs"><img src="work/video_frames/full_frames/00s_servo_power_overview.jpg" style="object-position:58% 88%"><img src="work/video_frames/crops/34s_xt60_heatshrink_and_servo_cables.jpg" style="object-position:75% 88%"><img src="work/video_frames/full_frames/53s_all_items_overview.jpg" style="object-position:54% 55%"></div><p>FL 1–4 · FR 5–8 · RR 9–12 · RL 13–16. Each tray: 4 servos, 4 positively verified 5264 leads, XT30, fuse, cap, 16 AWG.</p><span class="badge wait">5264 CANDIDATE — VERIFY</span></article>
+    <article class="master-card"><h2>4 · 5 V logic + signal</h2><div class="thumbs"><img src="work/video_frames/full_frames/53s_all_items_overview.jpg" style="object-position:66% 28%"><img src="work/video_frames/full_frames/22s_logic_boards.jpg" style="object-position:42% 88%"><img src="work/video_frames/full_frames/22s_logic_boards.jpg" style="object-position:69% 64%"></div><p>UBEC → verified 5 V → ESP32. ESP32 UART → black Adapter A. Common reference; no leg current through either board.</p><span class="badge wait">METER 5 V FIRST</span></article>
+    <article class="master-card"><h2>5 · Servo intake</h2><div class="thumbs"><img src="work/video_frames/full_frames/22s_logic_boards.jpg" style="object-position:73% 31%"><img src="work/video_frames/full_frames/00s_servo_power_overview.jpg" style="object-position:58% 88%"><img src="work/video_frames/crops/34s_xt60_heatshrink_and_servo_cables.jpg" style="object-position:75% 88%"></div><p>Red FE-URT-1 + one servo + one positively verified 5264 + USB data + protected 3S. No horn. ESP32 later.</p><span class="badge wait">CABLE + METER GATE</span></article>
+    <article class="master-card"><h2>6 · Mechanical + tools</h2><div class="thumbs"><img src="work/video_frames/full_frames/53s_all_items_overview.jpg" style="object-position:48% 47%"><img src="work/video_frames/full_frames/53s_all_items_overview.jpg" style="object-position:60% 72%"><img src="work/video_frames/full_frames/00s_servo_power_overview.jpg" style="object-position:58% 45%"></div><p>M2 present/verify. M3 screws + nylocs missing. Meter needs 9 V. M4 and breadboard are not current blockers.</p><span class="badge wait">PARTIAL</span></article>
+  </div>
+  <div class="global-gates"><div>GATE 1 · VERIFY ONE WHITE-ENDED BLACK LEAD AS 5264</div><div>GATE 2 · INSTALL PP3/6F22 9 V IN MULTIMETER</div></div>
+  <div class="board-foot"><span>16 installed servos · 2 tested spares · charger and FE-URT stay bench-only.</span><span>Master map</span></div>
+</section>
+
+</body>
+</html>

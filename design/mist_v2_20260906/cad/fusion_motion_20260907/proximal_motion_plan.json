@@ -1,0 +1,4425 @@
+{
+  "schema_version": 1,
+  "units": {
+    "position": "mm",
+    "physical_angle": "deg",
+    "native_length": "cm",
+    "native_angle": "rad"
+  },
+  "groups": {
+    "body": [
+      "body/B01_structural_lower_deck",
+      "body/B02_battery_rail_R",
+      "body/B02_battery_rail_L",
+      "body/H01_battery_HOOVO_3S_REFERENCE",
+      "body/B03_core_post_RR_lower",
+      "body/B03_core_post_RR_upper",
+      "body/B03_core_post_RL_lower",
+      "body/B03_core_post_RL_upper",
+      "body/B03_core_post_FR_lower",
+      "body/B03_core_post_FR_upper",
+      "body/B03_core_post_FL_lower",
+      "body/B03_core_post_FL_upper",
+      "body/B04_phone_and_electronics_deck",
+      "body/H02_brain_phone_ENVELOPE",
+      "body/B05_upper_core_ring",
+      "body/B06_lower_shell_front",
+      "body/B06_lower_shell_rear",
+      "body/B07_upper_shell_front",
+      "body/B07_upper_shell_rear",
+      "body/B08_lower_white_trim",
+      "body/B09_dark_waist_band",
+      "body/B10_lid_twin_rim",
+      "body/B11_shallow_lid",
+      "body/B12_lid_bridge_handle",
+      "body/B13_face_phone_cassette",
+      "body/H03_face_phone_Mi9SE_REFERENCE",
+      "body/B14_square_face_bezel",
+      "body/H04_face_display_ACTIVE_AREA_GUIDE",
+      "body/H05_eye_R",
+      "body/H05_eye_L",
+      "body/H06_mouth",
+      "body/B15_secondary_dark_panel",
+      "body/B16_rear_connector_guard",
+      "FL/Y01_fixed_mount_bridge",
+      "FL/Y12_deck_M4_-25_-22",
+      "FL/Y13_deck_washer_-25_-22",
+      "FL/Y14_deck_M4_nut_-25_-22",
+      "FL/Y12_deck_M4_-25_22",
+      "FL/Y13_deck_washer_-25_22",
+      "FL/Y14_deck_M4_nut_-25_22",
+      "FL/Y12_deck_M4_-5_-22",
+      "FL/Y13_deck_washer_-5_-22",
+      "FL/Y14_deck_M4_nut_-5_-22",
+      "FL/Y12_deck_M4_-5_22",
+      "FL/Y13_deck_washer_-5_22",
+      "FL/Y14_deck_M4_nut_-5_22",
+      "FL/Y02_608_housing_lower",
+      "FL/Y03_608_lower",
+      "FL/Y02_608_housing_upper",
+      "FL/Y03_608_upper",
+      "FL/Y04_fixed_standoff_-11_-8",
+      "FL/Y04_fixed_standoff_-11_8",
+      "FL/Y04_fixed_standoff_11_-8",
+      "FL/Y04_fixed_standoff_11_8",
+      "FL/S01_C018_yaw_CASE",
+      "FL/Y09_servo_clamp_cap",
+      "FL/Y10_captured_TPU_pad",
+      "FL/Y11_cap_M3_13.6_-25.5",
+      "FL/Y11_cap_M3_13.6_25.5",
+      "FL/Y11_cap_M3_64.73_-12",
+      "FL/Y11_cap_M3_64.73_12",
+      "FR/Y01_fixed_mount_bridge",
+      "FR/Y12_deck_M4_-25_-22",
+      "FR/Y13_deck_washer_-25_-22",
+      "FR/Y14_deck_M4_nut_-25_-22",
+      "FR/Y12_deck_M4_-25_22",
+      "FR/Y13_deck_washer_-25_22",
+      "FR/Y14_deck_M4_nut_-25_22",
+      "FR/Y12_deck_M4_-5_-22",
+      "FR/Y13_deck_washer_-5_-22",
+      "FR/Y14_deck_M4_nut_-5_-22",
+      "FR/Y12_deck_M4_-5_22",
+      "FR/Y13_deck_washer_-5_22",
+      "FR/Y14_deck_M4_nut_-5_22",
+      "FR/Y02_608_housing_lower",
+      "FR/Y03_608_lower",
+      "FR/Y02_608_housing_upper",
+      "FR/Y03_608_upper",
+      "FR/Y04_fixed_standoff_-11_-8",
+      "FR/Y04_fixed_standoff_-11_8",
+      "FR/Y04_fixed_standoff_11_-8",
+      "FR/Y04_fixed_standoff_11_8",
+      "FR/S01_C018_yaw_CASE",
+      "FR/Y09_servo_clamp_cap",
+      "FR/Y10_captured_TPU_pad",
+      "FR/Y11_cap_M3_13.6_-25.5",
+      "FR/Y11_cap_M3_13.6_25.5",
+      "FR/Y11_cap_M3_64.73_-12",
+      "FR/Y11_cap_M3_64.73_12",
+      "RL/Y01_fixed_mount_bridge",
+      "RL/Y12_deck_M4_-25_-22",
+      "RL/Y13_deck_washer_-25_-22",
+      "RL/Y14_deck_M4_nut_-25_-22",
+      "RL/Y12_deck_M4_-25_22",
+      "RL/Y13_deck_washer_-25_22",
+      "RL/Y14_deck_M4_nut_-25_22",
+      "RL/Y12_deck_M4_-5_-22",
+      "RL/Y13_deck_washer_-5_-22",
+      "RL/Y14_deck_M4_nut_-5_-22",
+      "RL/Y12_deck_M4_-5_22",
+      "RL/Y13_deck_washer_-5_22",
+      "RL/Y14_deck_M4_nut_-5_22",
+      "RL/Y02_608_housing_lower",
+      "RL/Y03_608_lower",
+      "RL/Y02_608_housing_upper",
+      "RL/Y03_608_upper",
+      "RL/Y04_fixed_standoff_-11_-8",
+      "RL/Y04_fixed_standoff_-11_8",
+      "RL/Y04_fixed_standoff_11_-8",
+      "RL/Y04_fixed_standoff_11_8",
+      "RL/S01_C018_yaw_CASE",
+      "RL/Y09_servo_clamp_cap",
+      "RL/Y10_captured_TPU_pad",
+      "RL/Y11_cap_M3_13.6_-25.5",
+      "RL/Y11_cap_M3_13.6_25.5",
+      "RL/Y11_cap_M3_64.73_-12",
+      "RL/Y11_cap_M3_64.73_12",
+      "RR/Y01_fixed_mount_bridge",
+      "RR/Y12_deck_M4_-25_-22",
+      "RR/Y13_deck_washer_-25_-22",
+      "RR/Y14_deck_M4_nut_-25_-22",
+      "RR/Y12_deck_M4_-25_22",
+      "RR/Y13_deck_washer_-25_22",
+      "RR/Y14_deck_M4_nut_-25_22",
+      "RR/Y12_deck_M4_-5_-22",
+      "RR/Y13_deck_washer_-5_-22",
+      "RR/Y14_deck_M4_nut_-5_-22",
+      "RR/Y12_deck_M4_-5_22",
+      "RR/Y13_deck_washer_-5_22",
+      "RR/Y14_deck_M4_nut_-5_22",
+      "RR/Y02_608_housing_lower",
+      "RR/Y03_608_lower",
+      "RR/Y02_608_housing_upper",
+      "RR/Y03_608_upper",
+      "RR/Y04_fixed_standoff_-11_-8",
+      "RR/Y04_fixed_standoff_-11_8",
+      "RR/Y04_fixed_standoff_11_-8",
+      "RR/Y04_fixed_standoff_11_8",
+      "RR/S01_C018_yaw_CASE",
+      "RR/Y09_servo_clamp_cap",
+      "RR/Y10_captured_TPU_pad",
+      "RR/Y11_cap_M3_13.6_-25.5",
+      "RR/Y11_cap_M3_13.6_25.5",
+      "RR/Y11_cap_M3_64.73_-12",
+      "RR/Y11_cap_M3_64.73_12"
+    ],
+    "FL/yaw": [
+      "FL/Y05_metal_yaw_shaft",
+      "FL/Y06_yaw_output_40T",
+      "FL/H01_687_0",
+      "FL/H02_bearing_tower_0",
+      "FL/H14_tower_to_coxa_M3_0",
+      "FL/H15_tower_M3_nut_0",
+      "FL/H03_bearing_keeper_0",
+      "FL/H04_keeper_bolt_0_-9.1",
+      "FL/H04_keeper_bolt_0_9.1",
+      "FL/H01_687_1",
+      "FL/H02_bearing_tower_1",
+      "FL/H14_tower_to_coxa_M3_1",
+      "FL/H15_tower_M3_nut_1",
+      "FL/H03_bearing_keeper_1",
+      "FL/H04_keeper_bolt_1_-9.1",
+      "FL/H04_keeper_bolt_1_9.1",
+      "FL/S02_C018_H_CASE",
+      "FL/H08_servo_saddle",
+      "FL/H11_saddle_to_coxa_M3_-31",
+      "FL/H11_saddle_to_coxa_M3_-24",
+      "FL/H10_servo_clamp_cap",
+      "FL/H12_captured_TPU_pad",
+      "FL/H13_cap_M3_15.5_-95",
+      "FL/H13_cap_M3_15.5_-67",
+      "FL/H13_cap_M3_64.73_-95",
+      "FL/H13_cap_M3_64.73_-67",
+      "FL/PF01_hip_only_coxa"
+    ],
+    "FL/yaw_motor_rotor": [
+      "FL/Y07_yaw_input_20T",
+      "FL/Y08_factory_horn"
+    ],
+    "FL/femur": [
+      "FL/H05_hip_metal_trunnion",
+      "FL/H06_output_40T",
+      "FL/F01_femur_cheek_drive",
+      "FL/F01_femur_cheek_belt",
+      "FL/F02_femur_cross_spacer_-9_-85",
+      "FL/F03_femur_tie_-9_-85",
+      "FL/F02_femur_cross_spacer_9_-85",
+      "FL/F03_femur_tie_9_-85",
+      "FL/F05_purchased_belt_PITCH_RIBBON",
+      "FL/F06_knee_608_0",
+      "FL/F07_knee_bearing_keeper_0",
+      "FL/F08_knee_keeper_M3_0_-13.5",
+      "FL/F08_knee_keeper_M3_0_13.5",
+      "FL/F06_knee_608_1",
+      "FL/F07_knee_bearing_keeper_1",
+      "FL/F08_knee_keeper_M3_1_-13.5",
+      "FL/F08_knee_keeper_M3_1_13.5",
+      "FL/PF02_sliding_carriage",
+      "FL/PF04_627_0",
+      "FL/PF05_input_keeper_0",
+      "FL/PF04_627_1",
+      "FL/PF05_input_keeper_1",
+      "FL/PF10_C018_knee_CASE",
+      "FL/RT_slider_spreader_-18.0_22.0",
+      "FL/RT_slider_M4x20_-18.0_22.0",
+      "FL/RT_slider_spreader_18.0_22.0",
+      "FL/RT_slider_M4x20_18.0_22.0",
+      "FL/RT_slider_spreader_-18.0_56.0",
+      "FL/RT_slider_M4x20_-18.0_56.0",
+      "FL/RT_slider_spreader_18.0_56.0",
+      "FL/RT_slider_M4x20_18.0_56.0",
+      "FL/RT_M4_coupling_nut",
+      "FL/RT_M4_adjuster_jam_nut",
+      "FL/RT_carriage_tip_pad",
+      "FL/RT_fixed_nut_load_plate",
+      "FL/RT_M4x30_adjuster"
+    ],
+    "FL/hip_motor_rotor": [
+      "FL/H07_input_20T",
+      "FL/H09_factory_horn"
+    ],
+    "FL/tibia": [
+      "FL/T01_knee_metal_shaft",
+      "FL/T02_tibia_main_cheek",
+      "FL/T03_tibia_outer_cheek",
+      "FL/T04_tibia_cross_spacer_-9_-48",
+      "FL/T05_tibia_tie_-9_-48",
+      "FL/T04_tibia_cross_spacer_9_-48",
+      "FL/T05_tibia_tie_9_-48",
+      "FL/T04_tibia_cross_spacer_-9_-75",
+      "FL/T05_tibia_tie_-9_-75",
+      "FL/T04_tibia_cross_spacer_9_-75",
+      "FL/T05_tibia_tie_9_-75",
+      "FL/W01_wheel_626_0",
+      "FL/W01_wheel_626_1",
+      "FL/W05_FIT0493_motor_CASE",
+      "FL/W07_motor_mount_cradle",
+      "FL/W08_motor_brace_M3_-9",
+      "FL/W08_motor_brace_M3_9",
+      "FL/PF07_knee_A_pulley",
+      "FL/RT_knee_face_sleeve_0",
+      "FL/RT_knee_M4x14_face_0",
+      "FL/RT_knee_face_sleeve_1",
+      "FL/RT_knee_M4x14_face_1",
+      "FL/RT_knee_face_sleeve_2",
+      "FL/RT_knee_M4x14_face_2",
+      "FL/RT_knee_face_sleeve_3",
+      "FL/RT_knee_M4x14_face_3",
+      "FL/RT_knee_inner_spacer_0",
+      "FL/RT_knee_inner_spacer_1",
+      "FL/RT_knee_inner_spacer_2",
+      "FL/RT_knee_inner_spacer_3",
+      "FL/RT_knee_end_washer_low",
+      "FL/RT_knee_M3x8_end_low",
+      "FL/RT_knee_end_washer_high",
+      "FL/RT_knee_M3x8_end_high"
+    ],
+    "FL/wheel": [
+      "FL/W02_6mm_wheel_axle",
+      "FL/W03_wheel_hub",
+      "FL/W04_tire_ENVELOPE",
+      "FL/W06_FIT0493_4mmD_SHAFT",
+      "FL/W09_6to4mm_coupling_ENVELOPE"
+    ],
+    "FL/knee_input_rotor": [
+      "FL/PF06_input_shaft",
+      "FL/PF07_input_A_pulley",
+      "FL/PF08_metal_50T_output",
+      "FL/RT_input_M4x14_face_0",
+      "FL/RT_input_M4x14_face_1",
+      "FL/RT_input_M4x14_face_2",
+      "FL/RT_input_M4x14_face_3",
+      "FL/RT_input_inner_spacer_0",
+      "FL/RT_input_inner_spacer_1",
+      "FL/RT_input_inner_spacer_2",
+      "FL/RT_input_inner_spacer_3",
+      "FL/RT_input_end_washer_low",
+      "FL/RT_input_M3x8_end_low",
+      "FL/RT_input_end_washer_high",
+      "FL/RT_input_M3x8_end_high",
+      "FL/PF13_input_face_standoff_0",
+      "FL/PF13_input_face_standoff_1",
+      "FL/PF13_input_face_standoff_2",
+      "FL/PF13_input_face_standoff_3",
+      "FL/PF14_input_central_spacer"
+    ],
+    "FL/knee_motor_rotor": [
+      "FL/PF09_metal_25T_pinion",
+      "FL/PF11_factory_horn"
+    ],
+    "FR/yaw": [
+      "FR/Y05_metal_yaw_shaft",
+      "FR/Y06_yaw_output_40T",
+      "FR/H01_687_0",
+      "FR/H02_bearing_tower_0",
+      "FR/H14_tower_to_coxa_M3_0",
+      "FR/H15_tower_M3_nut_0",
+      "FR/H03_bearing_keeper_0",
+      "FR/H04_keeper_bolt_0_-9.1",
+      "FR/H04_keeper_bolt_0_9.1",
+      "FR/H01_687_1",
+      "FR/H02_bearing_tower_1",
+      "FR/H14_tower_to_coxa_M3_1",
+      "FR/H15_tower_M3_nut_1",
+      "FR/H03_bearing_keeper_1",
+      "FR/H04_keeper_bolt_1_-9.1",
+      "FR/H04_keeper_bolt_1_9.1",
+      "FR/S02_C018_H_CASE",
+      "FR/H08_servo_saddle",
+      "FR/H11_saddle_to_coxa_M3_-31",
+      "FR/H11_saddle_to_coxa_M3_-24",
+      "FR/H10_servo_clamp_cap",
+      "FR/H12_captured_TPU_pad",
+      "FR/H13_cap_M3_15.5_-95",
+      "FR/H13_cap_M3_15.5_-67",
+      "FR/H13_cap_M3_64.73_-95",
+      "FR/H13_cap_M3_64.73_-67",
+      "FR/PF01_hip_only_coxa"
+    ],
+    "FR/yaw_motor_rotor": [
+      "FR/Y07_yaw_input_20T",
+      "FR/Y08_factory_horn"
+    ],
+    "FR/femur": [
+      "FR/H05_hip_metal_trunnion",
+      "FR/H06_output_40T",
+      "FR/F01_femur_cheek_drive",
+      "FR/F01_femur_cheek_belt",
+      "FR/F02_femur_cross_spacer_-9_-85",
+      "FR/F03_femur_tie_-9_-85",
+      "FR/F02_femur_cross_spacer_9_-85",
+      "FR/F03_femur_tie_9_-85",
+      "FR/F05_purchased_belt_PITCH_RIBBON",
+      "FR/F06_knee_608_0",
+      "FR/F07_knee_bearing_keeper_0",
+      "FR/F08_knee_keeper_M3_0_-13.5",
+      "FR/F08_knee_keeper_M3_0_13.5",
+      "FR/F06_knee_608_1",
+      "FR/F07_knee_bearing_keeper_1",
+      "FR/F08_knee_keeper_M3_1_-13.5",
+      "FR/F08_knee_keeper_M3_1_13.5",
+      "FR/PF02_sliding_carriage",
+      "FR/PF04_627_0",
+      "FR/PF05_input_keeper_0",
+      "FR/PF04_627_1",
+      "FR/PF05_input_keeper_1",
+      "FR/PF10_C018_knee_CASE",
+      "FR/RT_slider_spreader_-18.0_22.0",
+      "FR/RT_slider_M4x20_-18.0_22.0",
+      "FR/RT_slider_spreader_18.0_22.0",
+      "FR/RT_slider_M4x20_18.0_22.0",
+      "FR/RT_slider_spreader_-18.0_56.0",
+      "FR/RT_slider_M4x20_-18.0_56.0",
+      "FR/RT_slider_spreader_18.0_56.0",
+      "FR/RT_slider_M4x20_18.0_56.0",
+      "FR/RT_M4_coupling_nut",
+      "FR/RT_M4_adjuster_jam_nut",
+      "FR/RT_carriage_tip_pad",
+      "FR/RT_fixed_nut_load_plate",
+      "FR/RT_M4x30_adjuster"
+    ],
+    "FR/hip_motor_rotor": [
+      "FR/H07_input_20T",
+      "FR/H09_factory_horn"
+    ],
+    "FR/tibia": [
+      "FR/T01_knee_metal_shaft",
+      "FR/T02_tibia_main_cheek",
+      "FR/T03_tibia_outer_cheek",
+      "FR/T04_tibia_cross_spacer_-9_-48",
+      "FR/T05_tibia_tie_-9_-48",
+      "FR/T04_tibia_cross_spacer_9_-48",
+      "FR/T05_tibia_tie_9_-48",
+      "FR/T04_tibia_cross_spacer_-9_-75",
+      "FR/T05_tibia_tie_-9_-75",
+      "FR/T04_tibia_cross_spacer_9_-75",
+      "FR/T05_tibia_tie_9_-75",
+      "FR/W01_wheel_626_0",
+      "FR/W01_wheel_626_1",
+      "FR/W05_FIT0493_motor_CASE",
+      "FR/W07_motor_mount_cradle",
+      "FR/W08_motor_brace_M3_-9",
+      "FR/W08_motor_brace_M3_9",
+      "FR/PF07_knee_A_pulley",
+      "FR/RT_knee_face_sleeve_0",
+      "FR/RT_knee_M4x14_face_0",
+      "FR/RT_knee_face_sleeve_1",
+      "FR/RT_knee_M4x14_face_1",
+      "FR/RT_knee_face_sleeve_2",
+      "FR/RT_knee_M4x14_face_2",
+      "FR/RT_knee_face_sleeve_3",
+      "FR/RT_knee_M4x14_face_3",
+      "FR/RT_knee_inner_spacer_0",
+      "FR/RT_knee_inner_spacer_1",
+      "FR/RT_knee_inner_spacer_2",
+      "FR/RT_knee_inner_spacer_3",
+      "FR/RT_knee_end_washer_low",
+      "FR/RT_knee_M3x8_end_low",
+      "FR/RT_knee_end_washer_high",
+      "FR/RT_knee_M3x8_end_high"
+    ],
+    "FR/wheel": [
+      "FR/W02_6mm_wheel_axle",
+      "FR/W03_wheel_hub",
+      "FR/W04_tire_ENVELOPE",
+      "FR/W06_FIT0493_4mmD_SHAFT",
+      "FR/W09_6to4mm_coupling_ENVELOPE"
+    ],
+    "FR/knee_input_rotor": [
+      "FR/PF06_input_shaft",
+      "FR/PF07_input_A_pulley",
+      "FR/PF08_metal_50T_output",
+      "FR/RT_input_M4x14_face_0",
+      "FR/RT_input_M4x14_face_1",
+      "FR/RT_input_M4x14_face_2",
+      "FR/RT_input_M4x14_face_3",
+      "FR/RT_input_inner_spacer_0",
+      "FR/RT_input_inner_spacer_1",
+      "FR/RT_input_inner_spacer_2",
+      "FR/RT_input_inner_spacer_3",
+      "FR/RT_input_end_washer_low",
+      "FR/RT_input_M3x8_end_low",
+      "FR/RT_input_end_washer_high",
+      "FR/RT_input_M3x8_end_high",
+      "FR/PF13_input_face_standoff_0",
+      "FR/PF13_input_face_standoff_1",
+      "FR/PF13_input_face_standoff_2",
+      "FR/PF13_input_face_standoff_3",
+      "FR/PF14_input_central_spacer"
+    ],
+    "FR/knee_motor_rotor": [
+      "FR/PF09_metal_25T_pinion",
+      "FR/PF11_factory_horn"
+    ],
+    "RL/yaw": [
+      "RL/Y05_metal_yaw_shaft",
+      "RL/Y06_yaw_output_40T",
+      "RL/H01_687_0",
+      "RL/H02_bearing_tower_0",
+      "RL/H14_tower_to_coxa_M3_0",
+      "RL/H15_tower_M3_nut_0",
+      "RL/H03_bearing_keeper_0",
+      "RL/H04_keeper_bolt_0_-9.1",
+      "RL/H04_keeper_bolt_0_9.1",
+      "RL/H01_687_1",
+      "RL/H02_bearing_tower_1",
+      "RL/H14_tower_to_coxa_M3_1",
+      "RL/H15_tower_M3_nut_1",
+      "RL/H03_bearing_keeper_1",
+      "RL/H04_keeper_bolt_1_-9.1",
+      "RL/H04_keeper_bolt_1_9.1",
+      "RL/S02_C018_H_CASE",
+      "RL/H08_servo_saddle",
+      "RL/H11_saddle_to_coxa_M3_-31",
+      "RL/H11_saddle_to_coxa_M3_-24",
+      "RL/H10_servo_clamp_cap",
+      "RL/H12_captured_TPU_pad",
+      "RL/H13_cap_M3_15.5_-95",
+      "RL/H13_cap_M3_15.5_-67",
+      "RL/H13_cap_M3_64.73_-95",
+      "RL/H13_cap_M3_64.73_-67",
+      "RL/PF01_hip_only_coxa"
+    ],
+    "RL/yaw_motor_rotor": [
+      "RL/Y07_yaw_input_20T",
+      "RL/Y08_factory_horn"
+    ],
+    "RL/femur": [
+      "RL/H05_hip_metal_trunnion",
+      "RL/H06_output_40T",
+      "RL/F01_femur_cheek_drive",
+      "RL/F01_femur_cheek_belt",
+      "RL/F02_femur_cross_spacer_-9_-85",
+      "RL/F03_femur_tie_-9_-85",
+      "RL/F02_femur_cross_spacer_9_-85",
+      "RL/F03_femur_tie_9_-85",
+      "RL/F05_purchased_belt_PITCH_RIBBON",
+      "RL/F06_knee_608_0",
+      "RL/F07_knee_bearing_keeper_0",
+      "RL/F08_knee_keeper_M3_0_-13.5",
+      "RL/F08_knee_keeper_M3_0_13.5",
+      "RL/F06_knee_608_1",
+      "RL/F07_knee_bearing_keeper_1",
+      "RL/F08_knee_keeper_M3_1_-13.5",
+      "RL/F08_knee_keeper_M3_1_13.5",
+      "RL/PF02_sliding_carriage",
+      "RL/PF04_627_0",
+      "RL/PF05_input_keeper_0",
+      "RL/PF04_627_1",
+      "RL/PF05_input_keeper_1",
+      "RL/PF10_C018_knee_CASE",
+      "RL/RT_slider_spreader_-18.0_22.0",
+      "RL/RT_slider_M4x20_-18.0_22.0",
+      "RL/RT_slider_spreader_18.0_22.0",
+      "RL/RT_slider_M4x20_18.0_22.0",
+      "RL/RT_slider_spreader_-18.0_56.0",
+      "RL/RT_slider_M4x20_-18.0_56.0",
+      "RL/RT_slider_spreader_18.0_56.0",
+      "RL/RT_slider_M4x20_18.0_56.0",
+      "RL/RT_M4_coupling_nut",
+      "RL/RT_M4_adjuster_jam_nut",
+      "RL/RT_carriage_tip_pad",
+      "RL/RT_fixed_nut_load_plate",
+      "RL/RT_M4x30_adjuster"
+    ],
+    "RL/hip_motor_rotor": [
+      "RL/H07_input_20T",
+      "RL/H09_factory_horn"
+    ],
+    "RL/tibia": [
+      "RL/T01_knee_metal_shaft",
+      "RL/T02_tibia_main_cheek",
+      "RL/T03_tibia_outer_cheek",
+      "RL/T04_tibia_cross_spacer_-9_-48",
+      "RL/T05_tibia_tie_-9_-48",
+      "RL/T04_tibia_cross_spacer_9_-48",
+      "RL/T05_tibia_tie_9_-48",
+      "RL/T04_tibia_cross_spacer_-9_-75",
+      "RL/T05_tibia_tie_-9_-75",
+      "RL/T04_tibia_cross_spacer_9_-75",
+      "RL/T05_tibia_tie_9_-75",
+      "RL/W01_wheel_626_0",
+      "RL/W01_wheel_626_1",
+      "RL/W05_FIT0493_motor_CASE",
+      "RL/W07_motor_mount_cradle",
+      "RL/W08_motor_brace_M3_-9",
+      "RL/W08_motor_brace_M3_9",
+      "RL/PF07_knee_A_pulley",
+      "RL/RT_knee_face_sleeve_0",
+      "RL/RT_knee_M4x14_face_0",
+      "RL/RT_knee_face_sleeve_1",
+      "RL/RT_knee_M4x14_face_1",
+      "RL/RT_knee_face_sleeve_2",
+      "RL/RT_knee_M4x14_face_2",
+      "RL/RT_knee_face_sleeve_3",
+      "RL/RT_knee_M4x14_face_3",
+      "RL/RT_knee_inner_spacer_0",
+      "RL/RT_knee_inner_spacer_1",
+      "RL/RT_knee_inner_spacer_2",
+      "RL/RT_knee_inner_spacer_3",
+      "RL/RT_knee_end_washer_low",
+      "RL/RT_knee_M3x8_end_low",
+      "RL/RT_knee_end_washer_high",
+      "RL/RT_knee_M3x8_end_high"
+    ],
+    "RL/wheel": [
+      "RL/W02_6mm_wheel_axle",
+      "RL/W03_wheel_hub",
+      "RL/W04_tire_ENVELOPE",
+      "RL/W06_FIT0493_4mmD_SHAFT",
+      "RL/W09_6to4mm_coupling_ENVELOPE"
+    ],
+    "RL/knee_input_rotor": [
+      "RL/PF06_input_shaft",
+      "RL/PF07_input_A_pulley",
+      "RL/PF08_metal_50T_output",
+      "RL/RT_input_M4x14_face_0",
+      "RL/RT_input_M4x14_face_1",
+      "RL/RT_input_M4x14_face_2",
+      "RL/RT_input_M4x14_face_3",
+      "RL/RT_input_inner_spacer_0",
+      "RL/RT_input_inner_spacer_1",
+      "RL/RT_input_inner_spacer_2",
+      "RL/RT_input_inner_spacer_3",
+      "RL/RT_input_end_washer_low",
+      "RL/RT_input_M3x8_end_low",
+      "RL/RT_input_end_washer_high",
+      "RL/RT_input_M3x8_end_high",
+      "RL/PF13_input_face_standoff_0",
+      "RL/PF13_input_face_standoff_1",
+      "RL/PF13_input_face_standoff_2",
+      "RL/PF13_input_face_standoff_3",
+      "RL/PF14_input_central_spacer"
+    ],
+    "RL/knee_motor_rotor": [
+      "RL/PF09_metal_25T_pinion",
+      "RL/PF11_factory_horn"
+    ],
+    "RR/yaw": [
+      "RR/Y05_metal_yaw_shaft",
+      "RR/Y06_yaw_output_40T",
+      "RR/H01_687_0",
+      "RR/H02_bearing_tower_0",
+      "RR/H14_tower_to_coxa_M3_0",
+      "RR/H15_tower_M3_nut_0",
+      "RR/H03_bearing_keeper_0",
+      "RR/H04_keeper_bolt_0_-9.1",
+      "RR/H04_keeper_bolt_0_9.1",
+      "RR/H01_687_1",
+      "RR/H02_bearing_tower_1",
+      "RR/H14_tower_to_coxa_M3_1",
+      "RR/H15_tower_M3_nut_1",
+      "RR/H03_bearing_keeper_1",
+      "RR/H04_keeper_bolt_1_-9.1",
+      "RR/H04_keeper_bolt_1_9.1",
+      "RR/S02_C018_H_CASE",
+      "RR/H08_servo_saddle",
+      "RR/H11_saddle_to_coxa_M3_-31",
+      "RR/H11_saddle_to_coxa_M3_-24",
+      "RR/H10_servo_clamp_cap",
+      "RR/H12_captured_TPU_pad",
+      "RR/H13_cap_M3_15.5_-95",
+      "RR/H13_cap_M3_15.5_-67",
+      "RR/H13_cap_M3_64.73_-95",
+      "RR/H13_cap_M3_64.73_-67",
+      "RR/PF01_hip_only_coxa"
+    ],
+    "RR/yaw_motor_rotor": [
+      "RR/Y07_yaw_input_20T",
+      "RR/Y08_factory_horn"
+    ],
+    "RR/femur": [
+      "RR/H05_hip_metal_trunnion",
+      "RR/H06_output_40T",
+      "RR/F01_femur_cheek_drive",
+      "RR/F01_femur_cheek_belt",
+      "RR/F02_femur_cross_spacer_-9_-85",
+      "RR/F03_femur_tie_-9_-85",
+      "RR/F02_femur_cross_spacer_9_-85",
+      "RR/F03_femur_tie_9_-85",
+      "RR/F05_purchased_belt_PITCH_RIBBON",
+      "RR/F06_knee_608_0",
+      "RR/F07_knee_bearing_keeper_0",
+      "RR/F08_knee_keeper_M3_0_-13.5",
+      "RR/F08_knee_keeper_M3_0_13.5",
+      "RR/F06_knee_608_1",
+      "RR/F07_knee_bearing_keeper_1",
+      "RR/F08_knee_keeper_M3_1_-13.5",
+      "RR/F08_knee_keeper_M3_1_13.5",
+      "RR/PF02_sliding_carriage",
+      "RR/PF04_627_0",
+      "RR/PF05_input_keeper_0",
+      "RR/PF04_627_1",
+      "RR/PF05_input_keeper_1",
+      "RR/PF10_C018_knee_CASE",
+      "RR/RT_slider_spreader_-18.0_22.0",
+      "RR/RT_slider_M4x20_-18.0_22.0",
+      "RR/RT_slider_spreader_18.0_22.0",
+      "RR/RT_slider_M4x20_18.0_22.0",
+      "RR/RT_slider_spreader_-18.0_56.0",
+      "RR/RT_slider_M4x20_-18.0_56.0",
+      "RR/RT_slider_spreader_18.0_56.0",
+      "RR/RT_slider_M4x20_18.0_56.0",
+      "RR/RT_M4_coupling_nut",
+      "RR/RT_M4_adjuster_jam_nut",
+      "RR/RT_carriage_tip_pad",
+      "RR/RT_fixed_nut_load_plate",
+      "RR/RT_M4x30_adjuster"
+    ],
+    "RR/hip_motor_rotor": [
+      "RR/H07_input_20T",
+      "RR/H09_factory_horn"
+    ],
+    "RR/tibia": [
+      "RR/T01_knee_metal_shaft",
+      "RR/T02_tibia_main_cheek",
+      "RR/T03_tibia_outer_cheek",
+      "RR/T04_tibia_cross_spacer_-9_-48",
+      "RR/T05_tibia_tie_-9_-48",
+      "RR/T04_tibia_cross_spacer_9_-48",
+      "RR/T05_tibia_tie_9_-48",
+      "RR/T04_tibia_cross_spacer_-9_-75",
+      "RR/T05_tibia_tie_-9_-75",
+      "RR/T04_tibia_cross_spacer_9_-75",
+      "RR/T05_tibia_tie_9_-75",
+      "RR/W01_wheel_626_0",
+      "RR/W01_wheel_626_1",
+      "RR/W05_FIT0493_motor_CASE",
+      "RR/W07_motor_mount_cradle",
+      "RR/W08_motor_brace_M3_-9",
+      "RR/W08_motor_brace_M3_9",
+      "RR/PF07_knee_A_pulley",
+      "RR/RT_knee_face_sleeve_0",
+      "RR/RT_knee_M4x14_face_0",
+      "RR/RT_knee_face_sleeve_1",
+      "RR/RT_knee_M4x14_face_1",
+      "RR/RT_knee_face_sleeve_2",
+      "RR/RT_knee_M4x14_face_2",
+      "RR/RT_knee_face_sleeve_3",
+      "RR/RT_knee_M4x14_face_3",
+      "RR/RT_knee_inner_spacer_0",
+      "RR/RT_knee_inner_spacer_1",
+      "RR/RT_knee_inner_spacer_2",
+      "RR/RT_knee_inner_spacer_3",
+      "RR/RT_knee_end_washer_low",
+      "RR/RT_knee_M3x8_end_low",
+      "RR/RT_knee_end_washer_high",
+      "RR/RT_knee_M3x8_end_high"
+    ],
+    "RR/wheel": [
+      "RR/W02_6mm_wheel_axle",
+      "RR/W03_wheel_hub",
+      "RR/W04_tire_ENVELOPE",
+      "RR/W06_FIT0493_4mmD_SHAFT",
+      "RR/W09_6to4mm_coupling_ENVELOPE"
+    ],
+    "RR/knee_input_rotor": [
+      "RR/PF06_input_shaft",
+      "RR/PF07_input_A_pulley",
+      "RR/PF08_metal_50T_output",
+      "RR/RT_input_M4x14_face_0",
+      "RR/RT_input_M4x14_face_1",
+      "RR/RT_input_M4x14_face_2",
+      "RR/RT_input_M4x14_face_3",
+      "RR/RT_input_inner_spacer_0",
+      "RR/RT_input_inner_spacer_1",
+      "RR/RT_input_inner_spacer_2",
+      "RR/RT_input_inner_spacer_3",
+      "RR/RT_input_end_washer_low",
+      "RR/RT_input_M3x8_end_low",
+      "RR/RT_input_end_washer_high",
+      "RR/RT_input_M3x8_end_high",
+      "RR/PF13_input_face_standoff_0",
+      "RR/PF13_input_face_standoff_1",
+      "RR/PF13_input_face_standoff_2",
+      "RR/PF13_input_face_standoff_3",
+      "RR/PF14_input_central_spacer"
+    ],
+    "RR/knee_motor_rotor": [
+      "RR/PF09_metal_25T_pinion",
+      "RR/PF11_factory_horn"
+    ]
+  },
+  "parts": {
+    "body/B01_structural_lower_deck": {
+      "group": "body",
+      "role": "body",
+      "part_name": "B01_structural_lower_deck"
+    },
+    "body/B02_battery_rail_R": {
+      "group": "body",
+      "role": "body",
+      "part_name": "B02_battery_rail_R"
+    },
+    "body/B02_battery_rail_L": {
+      "group": "body",
+      "role": "body",
+      "part_name": "B02_battery_rail_L"
+    },
+    "body/H01_battery_HOOVO_3S_REFERENCE": {
+      "group": "body",
+      "role": "body",
+      "part_name": "H01_battery_HOOVO_3S_REFERENCE"
+    },
+    "body/B03_core_post_RR_lower": {
+      "group": "body",
+      "role": "body",
+      "part_name": "B03_core_post_RR_lower"
+    },
+    "body/B03_core_post_RR_upper": {
+      "group": "body",
+      "role": "body",
+      "part_name": "B03_core_post_RR_upper"
+    },
+    "body/B03_core_post_RL_lower": {
+      "group": "body",
+      "role": "body",
+      "part_name": "B03_core_post_RL_lower"
+    },
+    "body/B03_core_post_RL_upper": {
+      "group": "body",
+      "role": "body",
+      "part_name": "B03_core_post_RL_upper"
+    },
+    "body/B03_core_post_FR_lower": {
+      "group": "body",
+      "role": "body",
+      "part_name": "B03_core_post_FR_lower"
+    },
+    "body/B03_core_post_FR_upper": {
+      "group": "body",
+      "role": "body",
+      "part_name": "B03_core_post_FR_upper"
+    },
+    "body/B03_core_post_FL_lower": {
+      "group": "body",
+      "role": "body",
+      "part_name": "B03_core_post_FL_lower"
+    },
+    "body/B03_core_post_FL_upper": {
+      "group": "body",
+      "role": "body",
+      "part_name": "B03_core_post_FL_upper"
+    },
+    "body/B04_phone_and_electronics_deck": {
+      "group": "body",
+      "role": "body",
+      "part_name": "B04_phone_and_electronics_deck"
+    },
+    "body/H02_brain_phone_ENVELOPE": {
+      "group": "body",
+      "role": "body",
+      "part_name": "H02_brain_phone_ENVELOPE"
+    },
+    "body/B05_upper_core_ring": {
+      "group": "body",
+      "role": "body",
+      "part_name": "B05_upper_core_ring"
+    },
+    "body/B06_lower_shell_front": {
+      "group": "body",
+      "role": "body",
+      "part_name": "B06_lower_shell_front"
+    },
+    "body/B06_lower_shell_rear": {
+      "group": "body",
+      "role": "body",
+      "part_name": "B06_lower_shell_rear"
+    },
+    "body/B07_upper_shell_front": {
+      "group": "body",
+      "role": "body",
+      "part_name": "B07_upper_shell_front"
+    },
+    "body/B07_upper_shell_rear": {
+      "group": "body",
+      "role": "body",
+      "part_name": "B07_upper_shell_rear"
+    },
+    "body/B08_lower_white_trim": {
+      "group": "body",
+      "role": "body",
+      "part_name": "B08_lower_white_trim"
+    },
+    "body/B09_dark_waist_band": {
+      "group": "body",
+      "role": "body",
+      "part_name": "B09_dark_waist_band"
+    },
+    "body/B10_lid_twin_rim": {
+      "group": "body",
+      "role": "body",
+      "part_name": "B10_lid_twin_rim"
+    },
+    "body/B11_shallow_lid": {
+      "group": "body",
+      "role": "body",
+      "part_name": "B11_shallow_lid"
+    },
+    "body/B12_lid_bridge_handle": {
+      "group": "body",
+      "role": "body",
+      "part_name": "B12_lid_bridge_handle"
+    },
+    "body/B13_face_phone_cassette": {
+      "group": "body",
+      "role": "body",
+      "part_name": "B13_face_phone_cassette"
+    },
+    "body/H03_face_phone_Mi9SE_REFERENCE": {
+      "group": "body",
+      "role": "body",
+      "part_name": "H03_face_phone_Mi9SE_REFERENCE"
+    },
+    "body/B14_square_face_bezel": {
+      "group": "body",
+      "role": "body",
+      "part_name": "B14_square_face_bezel"
+    },
+    "body/H04_face_display_ACTIVE_AREA_GUIDE": {
+      "group": "body",
+      "role": "body",
+      "part_name": "H04_face_display_ACTIVE_AREA_GUIDE"
+    },
+    "body/H05_eye_R": {
+      "group": "body",
+      "role": "body",
+      "part_name": "H05_eye_R"
+    },
+    "body/H05_eye_L": {
+      "group": "body",
+      "role": "body",
+      "part_name": "H05_eye_L"
+    },
+    "body/H06_mouth": {
+      "group": "body",
+      "role": "body",
+      "part_name": "H06_mouth"
+    },
+    "body/B15_secondary_dark_panel": {
+      "group": "body",
+      "role": "body",
+      "part_name": "B15_secondary_dark_panel"
+    },
+    "body/B16_rear_connector_guard": {
+      "group": "body",
+      "role": "body",
+      "part_name": "B16_rear_connector_guard"
+    },
+    "FL/Y01_fixed_mount_bridge": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y01_fixed_mount_bridge"
+    },
+    "FL/Y12_deck_M4_-25_-22": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y12_deck_M4_-25_-22"
+    },
+    "FL/Y13_deck_washer_-25_-22": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y13_deck_washer_-25_-22"
+    },
+    "FL/Y14_deck_M4_nut_-25_-22": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y14_deck_M4_nut_-25_-22"
+    },
+    "FL/Y12_deck_M4_-25_22": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y12_deck_M4_-25_22"
+    },
+    "FL/Y13_deck_washer_-25_22": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y13_deck_washer_-25_22"
+    },
+    "FL/Y14_deck_M4_nut_-25_22": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y14_deck_M4_nut_-25_22"
+    },
+    "FL/Y12_deck_M4_-5_-22": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y12_deck_M4_-5_-22"
+    },
+    "FL/Y13_deck_washer_-5_-22": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y13_deck_washer_-5_-22"
+    },
+    "FL/Y14_deck_M4_nut_-5_-22": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y14_deck_M4_nut_-5_-22"
+    },
+    "FL/Y12_deck_M4_-5_22": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y12_deck_M4_-5_22"
+    },
+    "FL/Y13_deck_washer_-5_22": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y13_deck_washer_-5_22"
+    },
+    "FL/Y14_deck_M4_nut_-5_22": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y14_deck_M4_nut_-5_22"
+    },
+    "FL/Y02_608_housing_lower": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y02_608_housing_lower"
+    },
+    "FL/Y03_608_lower": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y03_608_lower"
+    },
+    "FL/Y02_608_housing_upper": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y02_608_housing_upper"
+    },
+    "FL/Y03_608_upper": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y03_608_upper"
+    },
+    "FL/Y04_fixed_standoff_-11_-8": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y04_fixed_standoff_-11_-8"
+    },
+    "FL/Y04_fixed_standoff_-11_8": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y04_fixed_standoff_-11_8"
+    },
+    "FL/Y04_fixed_standoff_11_-8": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y04_fixed_standoff_11_-8"
+    },
+    "FL/Y04_fixed_standoff_11_8": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y04_fixed_standoff_11_8"
+    },
+    "FL/Y05_metal_yaw_shaft": {
+      "group": "FL/yaw",
+      "role": "yaw",
+      "part_name": "Y05_metal_yaw_shaft"
+    },
+    "FL/Y06_yaw_output_40T": {
+      "group": "FL/yaw",
+      "role": "yaw",
+      "part_name": "Y06_yaw_output_40T"
+    },
+    "FL/Y07_yaw_input_20T": {
+      "group": "FL/yaw_motor_rotor",
+      "role": "internal_rotor",
+      "part_name": "Y07_yaw_input_20T"
+    },
+    "FL/S01_C018_yaw_CASE": {
+      "group": "body",
+      "role": "body",
+      "part_name": "S01_C018_yaw_CASE"
+    },
+    "FL/Y08_factory_horn": {
+      "group": "FL/yaw_motor_rotor",
+      "role": "internal_rotor",
+      "part_name": "Y08_factory_horn"
+    },
+    "FL/Y09_servo_clamp_cap": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y09_servo_clamp_cap"
+    },
+    "FL/Y10_captured_TPU_pad": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y10_captured_TPU_pad"
+    },
+    "FL/Y11_cap_M3_13.6_-25.5": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y11_cap_M3_13.6_-25.5"
+    },
+    "FL/Y11_cap_M3_13.6_25.5": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y11_cap_M3_13.6_25.5"
+    },
+    "FL/Y11_cap_M3_64.73_-12": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y11_cap_M3_64.73_-12"
+    },
+    "FL/Y11_cap_M3_64.73_12": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y11_cap_M3_64.73_12"
+    },
+    "FL/H01_687_0": {
+      "group": "FL/yaw",
+      "role": "yaw",
+      "part_name": "H01_687_0"
+    },
+    "FL/H02_bearing_tower_0": {
+      "group": "FL/yaw",
+      "role": "yaw",
+      "part_name": "H02_bearing_tower_0"
+    },
+    "FL/H14_tower_to_coxa_M3_0": {
+      "group": "FL/yaw",
+      "role": "yaw",
+      "part_name": "H14_tower_to_coxa_M3_0"
+    },
+    "FL/H15_tower_M3_nut_0": {
+      "group": "FL/yaw",
+      "role": "yaw",
+      "part_name": "H15_tower_M3_nut_0"
+    },
+    "FL/H03_bearing_keeper_0": {
+      "group": "FL/yaw",
+      "role": "yaw",
+      "part_name": "H03_bearing_keeper_0"
+    },
+    "FL/H04_keeper_bolt_0_-9.1": {
+      "group": "FL/yaw",
+      "role": "yaw",
+      "part_name": "H04_keeper_bolt_0_-9.1"
+    },
+    "FL/H04_keeper_bolt_0_9.1": {
+      "group": "FL/yaw",
+      "role": "yaw",
+      "part_name": "H04_keeper_bolt_0_9.1"
+    },
+    "FL/H01_687_1": {
+      "group": "FL/yaw",
+      "role": "yaw",
+      "part_name": "H01_687_1"
+    },
+    "FL/H02_bearing_tower_1": {
+      "group": "FL/yaw",
+      "role": "yaw",
+      "part_name": "H02_bearing_tower_1"
+    },
+    "FL/H14_tower_to_coxa_M3_1": {
+      "group": "FL/yaw",
+      "role": "yaw",
+      "part_name": "H14_tower_to_coxa_M3_1"
+    },
+    "FL/H15_tower_M3_nut_1": {
+      "group": "FL/yaw",
+      "role": "yaw",
+      "part_name": "H15_tower_M3_nut_1"
+    },
+    "FL/H03_bearing_keeper_1": {
+      "group": "FL/yaw",
+      "role": "yaw",
+      "part_name": "H03_bearing_keeper_1"
+    },
+    "FL/H04_keeper_bolt_1_-9.1": {
+      "group": "FL/yaw",
+      "role": "yaw",
+      "part_name": "H04_keeper_bolt_1_-9.1"
+    },
+    "FL/H04_keeper_bolt_1_9.1": {
+      "group": "FL/yaw",
+      "role": "yaw",
+      "part_name": "H04_keeper_bolt_1_9.1"
+    },
+    "FL/H05_hip_metal_trunnion": {
+      "group": "FL/femur",
+      "role": "femur",
+      "part_name": "H05_hip_metal_trunnion"
+    },
+    "FL/H06_output_40T": {
+      "group": "FL/femur",
+      "role": "femur",
+      "part_name": "H06_output_40T"
+    },
+    "FL/H07_input_20T": {
+      "group": "FL/hip_motor_rotor",
+      "role": "internal_rotor",
+      "part_name": "H07_input_20T"
+    },
+    "FL/S02_C018_H_CASE": {
+      "group": "FL/yaw",
+      "role": "yaw",
+      "part_name": "S02_C018_H_CASE"
+    },
+    "FL/H09_factory_horn": {
+      "group": "FL/hip_motor_rotor",
+      "role": "internal_rotor",
+      "part_name": "H09_factory_horn"
+    },
+    "FL/H08_servo_saddle": {
+      "group": "FL/yaw",
+      "role": "yaw",
+      "part_name": "H08_servo_saddle"
+    },
+    "FL/H11_saddle_to_coxa_M3_-31": {
+      "group": "FL/yaw",
+      "role": "yaw",
+      "part_name": "H11_saddle_to_coxa_M3_-31"
+    },
+    "FL/H11_saddle_to_coxa_M3_-24": {
+      "group": "FL/yaw",
+      "role": "yaw",
+      "part_name": "H11_saddle_to_coxa_M3_-24"
+    },
+    "FL/H10_servo_clamp_cap": {
+      "group": "FL/yaw",
+      "role": "yaw",
+      "part_name": "H10_servo_clamp_cap"
+    },
+    "FL/H12_captured_TPU_pad": {
+      "group": "FL/yaw",
+      "role": "yaw",
+      "part_name": "H12_captured_TPU_pad"
+    },
+    "FL/H13_cap_M3_15.5_-95": {
+      "group": "FL/yaw",
+      "role": "yaw",
+      "part_name": "H13_cap_M3_15.5_-95"
+    },
+    "FL/H13_cap_M3_15.5_-67": {
+      "group": "FL/yaw",
+      "role": "yaw",
+      "part_name": "H13_cap_M3_15.5_-67"
+    },
+    "FL/H13_cap_M3_64.73_-95": {
+      "group": "FL/yaw",
+      "role": "yaw",
+      "part_name": "H13_cap_M3_64.73_-95"
+    },
+    "FL/H13_cap_M3_64.73_-67": {
+      "group": "FL/yaw",
+      "role": "yaw",
+      "part_name": "H13_cap_M3_64.73_-67"
+    },
+    "FL/F01_femur_cheek_drive": {
+      "group": "FL/femur",
+      "role": "femur",
+      "part_name": "F01_femur_cheek_drive"
+    },
+    "FL/F01_femur_cheek_belt": {
+      "group": "FL/femur",
+      "role": "femur",
+      "part_name": "F01_femur_cheek_belt"
+    },
+    "FL/F02_femur_cross_spacer_-9_-85": {
+      "group": "FL/femur",
+      "role": "femur",
+      "part_name": "F02_femur_cross_spacer_-9_-85"
+    },
+    "FL/F03_femur_tie_-9_-85": {
+      "group": "FL/femur",
+      "role": "femur",
+      "part_name": "F03_femur_tie_-9_-85"
+    },
+    "FL/F02_femur_cross_spacer_9_-85": {
+      "group": "FL/femur",
+      "role": "femur",
+      "part_name": "F02_femur_cross_spacer_9_-85"
+    },
+    "FL/F03_femur_tie_9_-85": {
+      "group": "FL/femur",
+      "role": "femur",
+      "part_name": "F03_femur_tie_9_-85"
+    },
+    "FL/F05_purchased_belt_PITCH_RIBBON": {
+      "group": "FL/femur",
+      "role": "femur",
+      "part_name": "F05_purchased_belt_PITCH_RIBBON"
+    },
+    "FL/F06_knee_608_0": {
+      "group": "FL/femur",
+      "role": "femur",
+      "part_name": "F06_knee_608_0"
+    },
+    "FL/F07_knee_bearing_keeper_0": {
+      "group": "FL/femur",
+      "role": "femur",
+      "part_name": "F07_knee_bearing_keeper_0"
+    },
+    "FL/F08_knee_keeper_M3_0_-13.5": {
+      "group": "FL/femur",
+      "role": "femur",
+      "part_name": "F08_knee_keeper_M3_0_-13.5"
+    },
+    "FL/F08_knee_keeper_M3_0_13.5": {
+      "group": "FL/femur",
+      "role": "femur",
+      "part_name": "F08_knee_keeper_M3_0_13.5"
+    },
+    "FL/F06_knee_608_1": {
+      "group": "FL/femur",
+      "role": "femur",
+      "part_name": "F06_knee_608_1"
+    },
+    "FL/F07_knee_bearing_keeper_1": {
+      "group": "FL/femur",
+      "role": "femur",
+      "part_name": "F07_knee_bearing_keeper_1"
+    },
+    "FL/F08_knee_keeper_M3_1_-13.5": {
+      "group": "FL/femur",
+      "role": "femur",
+      "part_name": "F08_knee_keeper_M3_1_-13.5"
+    },
+    "FL/F08_knee_keeper_M3_1_13.5": {
+      "group": "FL/femur",
+      "role": "femur",
+      "part_name": "F08_knee_keeper_M3_1_13.5"
+    },
+    "FL/T01_knee_metal_shaft": {
+      "group": "FL/tibia",
+      "role": "tibia",
+      "part_name": "T01_knee_metal_shaft"
+    },
+    "FL/T02_tibia_main_cheek": {
+      "group": "FL/tibia",
+      "role": "tibia",
+      "part_name": "T02_tibia_main_cheek"
+    },
+    "FL/T03_tibia_outer_cheek": {
+      "group": "FL/tibia",
+      "role": "tibia",
+      "part_name": "T03_tibia_outer_cheek"
+    },
+    "FL/T04_tibia_cross_spacer_-9_-48": {
+      "group": "FL/tibia",
+      "role": "tibia",
+      "part_name": "T04_tibia_cross_spacer_-9_-48"
+    },
+    "FL/T05_tibia_tie_-9_-48": {
+      "group": "FL/tibia",
+      "role": "tibia",
+      "part_name": "T05_tibia_tie_-9_-48"
+    },
+    "FL/T04_tibia_cross_spacer_9_-48": {
+      "group": "FL/tibia",
+      "role": "tibia",
+      "part_name": "T04_tibia_cross_spacer_9_-48"
+    },
+    "FL/T05_tibia_tie_9_-48": {
+      "group": "FL/tibia",
+      "role": "tibia",
+      "part_name": "T05_tibia_tie_9_-48"
+    },
+    "FL/T04_tibia_cross_spacer_-9_-75": {
+      "group": "FL/tibia",
+      "role": "tibia",
+      "part_name": "T04_tibia_cross_spacer_-9_-75"
+    },
+    "FL/T05_tibia_tie_-9_-75": {
+      "group": "FL/tibia",
+      "role": "tibia",
+      "part_name": "T05_tibia_tie_-9_-75"
+    },
+    "FL/T04_tibia_cross_spacer_9_-75": {
+      "group": "FL/tibia",
+      "role": "tibia",
+      "part_name": "T04_tibia_cross_spacer_9_-75"
+    },
+    "FL/T05_tibia_tie_9_-75": {
+      "group": "FL/tibia",
+      "role": "tibia",
+      "part_name": "T05_tibia_tie_9_-75"
+    },
+    "FL/W01_wheel_626_0": {
+      "group": "FL/tibia",
+      "role": "tibia",
+      "part_name": "W01_wheel_626_0"
+    },
+    "FL/W01_wheel_626_1": {
+      "group": "FL/tibia",
+      "role": "tibia",
+      "part_name": "W01_wheel_626_1"
+    },
+    "FL/W02_6mm_wheel_axle": {
+      "group": "FL/wheel",
+      "role": "wheel",
+      "part_name": "W02_6mm_wheel_axle"
+    },
+    "FL/W03_wheel_hub": {
+      "group": "FL/wheel",
+      "role": "wheel",
+      "part_name": "W03_wheel_hub"
+    },
+    "FL/W04_tire_ENVELOPE": {
+      "group": "FL/wheel",
+      "role": "wheel",
+      "part_name": "W04_tire_ENVELOPE"
+    },
+    "FL/W05_FIT0493_motor_CASE": {
+      "group": "FL/tibia",
+      "role": "tibia",
+      "part_name": "W05_FIT0493_motor_CASE"
+    },
+    "FL/W06_FIT0493_4mmD_SHAFT": {
+      "group": "FL/wheel",
+      "role": "wheel",
+      "part_name": "W06_FIT0493_4mmD_SHAFT"
+    },
+    "FL/W07_motor_mount_cradle": {
+      "group": "FL/tibia",
+      "role": "tibia",
+      "part_name": "W07_motor_mount_cradle"
+    },
+    "FL/W08_motor_brace_M3_-9": {
+      "group": "FL/tibia",
+      "role": "tibia",
+      "part_name": "W08_motor_brace_M3_-9"
+    },
+    "FL/W08_motor_brace_M3_9": {
+      "group": "FL/tibia",
+      "role": "tibia",
+      "part_name": "W08_motor_brace_M3_9"
+    },
+    "FL/W09_6to4mm_coupling_ENVELOPE": {
+      "group": "FL/wheel",
+      "role": "wheel",
+      "part_name": "W09_6to4mm_coupling_ENVELOPE"
+    },
+    "FL/PF01_hip_only_coxa": {
+      "group": "FL/yaw",
+      "role": "yaw",
+      "part_name": "PF01_hip_only_coxa"
+    },
+    "FL/PF02_sliding_carriage": {
+      "group": "FL/femur",
+      "role": "femur",
+      "part_name": "PF02_sliding_carriage"
+    },
+    "FL/PF04_627_0": {
+      "group": "FL/femur",
+      "role": "femur",
+      "part_name": "PF04_627_0"
+    },
+    "FL/PF05_input_keeper_0": {
+      "group": "FL/femur",
+      "role": "femur",
+      "part_name": "PF05_input_keeper_0"
+    },
+    "FL/PF04_627_1": {
+      "group": "FL/femur",
+      "role": "femur",
+      "part_name": "PF04_627_1"
+    },
+    "FL/PF05_input_keeper_1": {
+      "group": "FL/femur",
+      "role": "femur",
+      "part_name": "PF05_input_keeper_1"
+    },
+    "FL/PF06_input_shaft": {
+      "group": "FL/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "PF06_input_shaft"
+    },
+    "FL/PF07_input_A_pulley": {
+      "group": "FL/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "PF07_input_A_pulley"
+    },
+    "FL/PF07_knee_A_pulley": {
+      "group": "FL/tibia",
+      "role": "tibia",
+      "part_name": "PF07_knee_A_pulley"
+    },
+    "FL/PF08_metal_50T_output": {
+      "group": "FL/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "PF08_metal_50T_output"
+    },
+    "FL/PF09_metal_25T_pinion": {
+      "group": "FL/knee_motor_rotor",
+      "role": "internal_rotor",
+      "part_name": "PF09_metal_25T_pinion"
+    },
+    "FL/PF10_C018_knee_CASE": {
+      "group": "FL/femur",
+      "role": "femur",
+      "part_name": "PF10_C018_knee_CASE"
+    },
+    "FL/PF11_factory_horn": {
+      "group": "FL/knee_motor_rotor",
+      "role": "internal_rotor",
+      "part_name": "PF11_factory_horn"
+    },
+    "FL/RT_input_M4x14_face_0": {
+      "group": "FL/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "RT_input_M4x14_face_0"
+    },
+    "FL/RT_input_M4x14_face_1": {
+      "group": "FL/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "RT_input_M4x14_face_1"
+    },
+    "FL/RT_input_M4x14_face_2": {
+      "group": "FL/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "RT_input_M4x14_face_2"
+    },
+    "FL/RT_input_M4x14_face_3": {
+      "group": "FL/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "RT_input_M4x14_face_3"
+    },
+    "FL/RT_knee_face_sleeve_0": {
+      "group": "FL/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_face_sleeve_0"
+    },
+    "FL/RT_knee_M4x14_face_0": {
+      "group": "FL/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_M4x14_face_0"
+    },
+    "FL/RT_knee_face_sleeve_1": {
+      "group": "FL/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_face_sleeve_1"
+    },
+    "FL/RT_knee_M4x14_face_1": {
+      "group": "FL/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_M4x14_face_1"
+    },
+    "FL/RT_knee_face_sleeve_2": {
+      "group": "FL/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_face_sleeve_2"
+    },
+    "FL/RT_knee_M4x14_face_2": {
+      "group": "FL/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_M4x14_face_2"
+    },
+    "FL/RT_knee_face_sleeve_3": {
+      "group": "FL/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_face_sleeve_3"
+    },
+    "FL/RT_knee_M4x14_face_3": {
+      "group": "FL/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_M4x14_face_3"
+    },
+    "FL/RT_input_inner_spacer_0": {
+      "group": "FL/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "RT_input_inner_spacer_0"
+    },
+    "FL/RT_input_inner_spacer_1": {
+      "group": "FL/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "RT_input_inner_spacer_1"
+    },
+    "FL/RT_input_inner_spacer_2": {
+      "group": "FL/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "RT_input_inner_spacer_2"
+    },
+    "FL/RT_input_inner_spacer_3": {
+      "group": "FL/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "RT_input_inner_spacer_3"
+    },
+    "FL/RT_input_end_washer_low": {
+      "group": "FL/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "RT_input_end_washer_low"
+    },
+    "FL/RT_input_M3x8_end_low": {
+      "group": "FL/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "RT_input_M3x8_end_low"
+    },
+    "FL/RT_input_end_washer_high": {
+      "group": "FL/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "RT_input_end_washer_high"
+    },
+    "FL/RT_input_M3x8_end_high": {
+      "group": "FL/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "RT_input_M3x8_end_high"
+    },
+    "FL/RT_knee_inner_spacer_0": {
+      "group": "FL/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_inner_spacer_0"
+    },
+    "FL/RT_knee_inner_spacer_1": {
+      "group": "FL/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_inner_spacer_1"
+    },
+    "FL/RT_knee_inner_spacer_2": {
+      "group": "FL/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_inner_spacer_2"
+    },
+    "FL/RT_knee_inner_spacer_3": {
+      "group": "FL/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_inner_spacer_3"
+    },
+    "FL/RT_knee_end_washer_low": {
+      "group": "FL/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_end_washer_low"
+    },
+    "FL/RT_knee_M3x8_end_low": {
+      "group": "FL/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_M3x8_end_low"
+    },
+    "FL/RT_knee_end_washer_high": {
+      "group": "FL/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_end_washer_high"
+    },
+    "FL/RT_knee_M3x8_end_high": {
+      "group": "FL/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_M3x8_end_high"
+    },
+    "FL/RT_slider_spreader_-18.0_22.0": {
+      "group": "FL/femur",
+      "role": "femur",
+      "part_name": "RT_slider_spreader_-18.0_22.0"
+    },
+    "FL/RT_slider_M4x20_-18.0_22.0": {
+      "group": "FL/femur",
+      "role": "femur",
+      "part_name": "RT_slider_M4x20_-18.0_22.0"
+    },
+    "FL/RT_slider_spreader_18.0_22.0": {
+      "group": "FL/femur",
+      "role": "femur",
+      "part_name": "RT_slider_spreader_18.0_22.0"
+    },
+    "FL/RT_slider_M4x20_18.0_22.0": {
+      "group": "FL/femur",
+      "role": "femur",
+      "part_name": "RT_slider_M4x20_18.0_22.0"
+    },
+    "FL/RT_slider_spreader_-18.0_56.0": {
+      "group": "FL/femur",
+      "role": "femur",
+      "part_name": "RT_slider_spreader_-18.0_56.0"
+    },
+    "FL/RT_slider_M4x20_-18.0_56.0": {
+      "group": "FL/femur",
+      "role": "femur",
+      "part_name": "RT_slider_M4x20_-18.0_56.0"
+    },
+    "FL/RT_slider_spreader_18.0_56.0": {
+      "group": "FL/femur",
+      "role": "femur",
+      "part_name": "RT_slider_spreader_18.0_56.0"
+    },
+    "FL/RT_slider_M4x20_18.0_56.0": {
+      "group": "FL/femur",
+      "role": "femur",
+      "part_name": "RT_slider_M4x20_18.0_56.0"
+    },
+    "FL/RT_M4_coupling_nut": {
+      "group": "FL/femur",
+      "role": "femur",
+      "part_name": "RT_M4_coupling_nut"
+    },
+    "FL/RT_M4_adjuster_jam_nut": {
+      "group": "FL/femur",
+      "role": "femur",
+      "part_name": "RT_M4_adjuster_jam_nut"
+    },
+    "FL/RT_carriage_tip_pad": {
+      "group": "FL/femur",
+      "role": "femur",
+      "part_name": "RT_carriage_tip_pad"
+    },
+    "FL/RT_fixed_nut_load_plate": {
+      "group": "FL/femur",
+      "role": "femur",
+      "part_name": "RT_fixed_nut_load_plate"
+    },
+    "FL/RT_M4x30_adjuster": {
+      "group": "FL/femur",
+      "role": "femur",
+      "part_name": "RT_M4x30_adjuster"
+    },
+    "FL/PF13_input_face_standoff_0": {
+      "group": "FL/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "PF13_input_face_standoff_0"
+    },
+    "FL/PF13_input_face_standoff_1": {
+      "group": "FL/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "PF13_input_face_standoff_1"
+    },
+    "FL/PF13_input_face_standoff_2": {
+      "group": "FL/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "PF13_input_face_standoff_2"
+    },
+    "FL/PF13_input_face_standoff_3": {
+      "group": "FL/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "PF13_input_face_standoff_3"
+    },
+    "FL/PF14_input_central_spacer": {
+      "group": "FL/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "PF14_input_central_spacer"
+    },
+    "FR/Y01_fixed_mount_bridge": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y01_fixed_mount_bridge"
+    },
+    "FR/Y12_deck_M4_-25_-22": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y12_deck_M4_-25_-22"
+    },
+    "FR/Y13_deck_washer_-25_-22": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y13_deck_washer_-25_-22"
+    },
+    "FR/Y14_deck_M4_nut_-25_-22": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y14_deck_M4_nut_-25_-22"
+    },
+    "FR/Y12_deck_M4_-25_22": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y12_deck_M4_-25_22"
+    },
+    "FR/Y13_deck_washer_-25_22": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y13_deck_washer_-25_22"
+    },
+    "FR/Y14_deck_M4_nut_-25_22": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y14_deck_M4_nut_-25_22"
+    },
+    "FR/Y12_deck_M4_-5_-22": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y12_deck_M4_-5_-22"
+    },
+    "FR/Y13_deck_washer_-5_-22": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y13_deck_washer_-5_-22"
+    },
+    "FR/Y14_deck_M4_nut_-5_-22": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y14_deck_M4_nut_-5_-22"
+    },
+    "FR/Y12_deck_M4_-5_22": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y12_deck_M4_-5_22"
+    },
+    "FR/Y13_deck_washer_-5_22": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y13_deck_washer_-5_22"
+    },
+    "FR/Y14_deck_M4_nut_-5_22": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y14_deck_M4_nut_-5_22"
+    },
+    "FR/Y02_608_housing_lower": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y02_608_housing_lower"
+    },
+    "FR/Y03_608_lower": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y03_608_lower"
+    },
+    "FR/Y02_608_housing_upper": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y02_608_housing_upper"
+    },
+    "FR/Y03_608_upper": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y03_608_upper"
+    },
+    "FR/Y04_fixed_standoff_-11_-8": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y04_fixed_standoff_-11_-8"
+    },
+    "FR/Y04_fixed_standoff_-11_8": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y04_fixed_standoff_-11_8"
+    },
+    "FR/Y04_fixed_standoff_11_-8": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y04_fixed_standoff_11_-8"
+    },
+    "FR/Y04_fixed_standoff_11_8": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y04_fixed_standoff_11_8"
+    },
+    "FR/Y05_metal_yaw_shaft": {
+      "group": "FR/yaw",
+      "role": "yaw",
+      "part_name": "Y05_metal_yaw_shaft"
+    },
+    "FR/Y06_yaw_output_40T": {
+      "group": "FR/yaw",
+      "role": "yaw",
+      "part_name": "Y06_yaw_output_40T"
+    },
+    "FR/Y07_yaw_input_20T": {
+      "group": "FR/yaw_motor_rotor",
+      "role": "internal_rotor",
+      "part_name": "Y07_yaw_input_20T"
+    },
+    "FR/S01_C018_yaw_CASE": {
+      "group": "body",
+      "role": "body",
+      "part_name": "S01_C018_yaw_CASE"
+    },
+    "FR/Y08_factory_horn": {
+      "group": "FR/yaw_motor_rotor",
+      "role": "internal_rotor",
+      "part_name": "Y08_factory_horn"
+    },
+    "FR/Y09_servo_clamp_cap": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y09_servo_clamp_cap"
+    },
+    "FR/Y10_captured_TPU_pad": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y10_captured_TPU_pad"
+    },
+    "FR/Y11_cap_M3_13.6_-25.5": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y11_cap_M3_13.6_-25.5"
+    },
+    "FR/Y11_cap_M3_13.6_25.5": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y11_cap_M3_13.6_25.5"
+    },
+    "FR/Y11_cap_M3_64.73_-12": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y11_cap_M3_64.73_-12"
+    },
+    "FR/Y11_cap_M3_64.73_12": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y11_cap_M3_64.73_12"
+    },
+    "FR/H01_687_0": {
+      "group": "FR/yaw",
+      "role": "yaw",
+      "part_name": "H01_687_0"
+    },
+    "FR/H02_bearing_tower_0": {
+      "group": "FR/yaw",
+      "role": "yaw",
+      "part_name": "H02_bearing_tower_0"
+    },
+    "FR/H14_tower_to_coxa_M3_0": {
+      "group": "FR/yaw",
+      "role": "yaw",
+      "part_name": "H14_tower_to_coxa_M3_0"
+    },
+    "FR/H15_tower_M3_nut_0": {
+      "group": "FR/yaw",
+      "role": "yaw",
+      "part_name": "H15_tower_M3_nut_0"
+    },
+    "FR/H03_bearing_keeper_0": {
+      "group": "FR/yaw",
+      "role": "yaw",
+      "part_name": "H03_bearing_keeper_0"
+    },
+    "FR/H04_keeper_bolt_0_-9.1": {
+      "group": "FR/yaw",
+      "role": "yaw",
+      "part_name": "H04_keeper_bolt_0_-9.1"
+    },
+    "FR/H04_keeper_bolt_0_9.1": {
+      "group": "FR/yaw",
+      "role": "yaw",
+      "part_name": "H04_keeper_bolt_0_9.1"
+    },
+    "FR/H01_687_1": {
+      "group": "FR/yaw",
+      "role": "yaw",
+      "part_name": "H01_687_1"
+    },
+    "FR/H02_bearing_tower_1": {
+      "group": "FR/yaw",
+      "role": "yaw",
+      "part_name": "H02_bearing_tower_1"
+    },
+    "FR/H14_tower_to_coxa_M3_1": {
+      "group": "FR/yaw",
+      "role": "yaw",
+      "part_name": "H14_tower_to_coxa_M3_1"
+    },
+    "FR/H15_tower_M3_nut_1": {
+      "group": "FR/yaw",
+      "role": "yaw",
+      "part_name": "H15_tower_M3_nut_1"
+    },
+    "FR/H03_bearing_keeper_1": {
+      "group": "FR/yaw",
+      "role": "yaw",
+      "part_name": "H03_bearing_keeper_1"
+    },
+    "FR/H04_keeper_bolt_1_-9.1": {
+      "group": "FR/yaw",
+      "role": "yaw",
+      "part_name": "H04_keeper_bolt_1_-9.1"
+    },
+    "FR/H04_keeper_bolt_1_9.1": {
+      "group": "FR/yaw",
+      "role": "yaw",
+      "part_name": "H04_keeper_bolt_1_9.1"
+    },
+    "FR/H05_hip_metal_trunnion": {
+      "group": "FR/femur",
+      "role": "femur",
+      "part_name": "H05_hip_metal_trunnion"
+    },
+    "FR/H06_output_40T": {
+      "group": "FR/femur",
+      "role": "femur",
+      "part_name": "H06_output_40T"
+    },
+    "FR/H07_input_20T": {
+      "group": "FR/hip_motor_rotor",
+      "role": "internal_rotor",
+      "part_name": "H07_input_20T"
+    },
+    "FR/S02_C018_H_CASE": {
+      "group": "FR/yaw",
+      "role": "yaw",
+      "part_name": "S02_C018_H_CASE"
+    },
+    "FR/H09_factory_horn": {
+      "group": "FR/hip_motor_rotor",
+      "role": "internal_rotor",
+      "part_name": "H09_factory_horn"
+    },
+    "FR/H08_servo_saddle": {
+      "group": "FR/yaw",
+      "role": "yaw",
+      "part_name": "H08_servo_saddle"
+    },
+    "FR/H11_saddle_to_coxa_M3_-31": {
+      "group": "FR/yaw",
+      "role": "yaw",
+      "part_name": "H11_saddle_to_coxa_M3_-31"
+    },
+    "FR/H11_saddle_to_coxa_M3_-24": {
+      "group": "FR/yaw",
+      "role": "yaw",
+      "part_name": "H11_saddle_to_coxa_M3_-24"
+    },
+    "FR/H10_servo_clamp_cap": {
+      "group": "FR/yaw",
+      "role": "yaw",
+      "part_name": "H10_servo_clamp_cap"
+    },
+    "FR/H12_captured_TPU_pad": {
+      "group": "FR/yaw",
+      "role": "yaw",
+      "part_name": "H12_captured_TPU_pad"
+    },
+    "FR/H13_cap_M3_15.5_-95": {
+      "group": "FR/yaw",
+      "role": "yaw",
+      "part_name": "H13_cap_M3_15.5_-95"
+    },
+    "FR/H13_cap_M3_15.5_-67": {
+      "group": "FR/yaw",
+      "role": "yaw",
+      "part_name": "H13_cap_M3_15.5_-67"
+    },
+    "FR/H13_cap_M3_64.73_-95": {
+      "group": "FR/yaw",
+      "role": "yaw",
+      "part_name": "H13_cap_M3_64.73_-95"
+    },
+    "FR/H13_cap_M3_64.73_-67": {
+      "group": "FR/yaw",
+      "role": "yaw",
+      "part_name": "H13_cap_M3_64.73_-67"
+    },
+    "FR/F01_femur_cheek_drive": {
+      "group": "FR/femur",
+      "role": "femur",
+      "part_name": "F01_femur_cheek_drive"
+    },
+    "FR/F01_femur_cheek_belt": {
+      "group": "FR/femur",
+      "role": "femur",
+      "part_name": "F01_femur_cheek_belt"
+    },
+    "FR/F02_femur_cross_spacer_-9_-85": {
+      "group": "FR/femur",
+      "role": "femur",
+      "part_name": "F02_femur_cross_spacer_-9_-85"
+    },
+    "FR/F03_femur_tie_-9_-85": {
+      "group": "FR/femur",
+      "role": "femur",
+      "part_name": "F03_femur_tie_-9_-85"
+    },
+    "FR/F02_femur_cross_spacer_9_-85": {
+      "group": "FR/femur",
+      "role": "femur",
+      "part_name": "F02_femur_cross_spacer_9_-85"
+    },
+    "FR/F03_femur_tie_9_-85": {
+      "group": "FR/femur",
+      "role": "femur",
+      "part_name": "F03_femur_tie_9_-85"
+    },
+    "FR/F05_purchased_belt_PITCH_RIBBON": {
+      "group": "FR/femur",
+      "role": "femur",
+      "part_name": "F05_purchased_belt_PITCH_RIBBON"
+    },
+    "FR/F06_knee_608_0": {
+      "group": "FR/femur",
+      "role": "femur",
+      "part_name": "F06_knee_608_0"
+    },
+    "FR/F07_knee_bearing_keeper_0": {
+      "group": "FR/femur",
+      "role": "femur",
+      "part_name": "F07_knee_bearing_keeper_0"
+    },
+    "FR/F08_knee_keeper_M3_0_-13.5": {
+      "group": "FR/femur",
+      "role": "femur",
+      "part_name": "F08_knee_keeper_M3_0_-13.5"
+    },
+    "FR/F08_knee_keeper_M3_0_13.5": {
+      "group": "FR/femur",
+      "role": "femur",
+      "part_name": "F08_knee_keeper_M3_0_13.5"
+    },
+    "FR/F06_knee_608_1": {
+      "group": "FR/femur",
+      "role": "femur",
+      "part_name": "F06_knee_608_1"
+    },
+    "FR/F07_knee_bearing_keeper_1": {
+      "group": "FR/femur",
+      "role": "femur",
+      "part_name": "F07_knee_bearing_keeper_1"
+    },
+    "FR/F08_knee_keeper_M3_1_-13.5": {
+      "group": "FR/femur",
+      "role": "femur",
+      "part_name": "F08_knee_keeper_M3_1_-13.5"
+    },
+    "FR/F08_knee_keeper_M3_1_13.5": {
+      "group": "FR/femur",
+      "role": "femur",
+      "part_name": "F08_knee_keeper_M3_1_13.5"
+    },
+    "FR/T01_knee_metal_shaft": {
+      "group": "FR/tibia",
+      "role": "tibia",
+      "part_name": "T01_knee_metal_shaft"
+    },
+    "FR/T02_tibia_main_cheek": {
+      "group": "FR/tibia",
+      "role": "tibia",
+      "part_name": "T02_tibia_main_cheek"
+    },
+    "FR/T03_tibia_outer_cheek": {
+      "group": "FR/tibia",
+      "role": "tibia",
+      "part_name": "T03_tibia_outer_cheek"
+    },
+    "FR/T04_tibia_cross_spacer_-9_-48": {
+      "group": "FR/tibia",
+      "role": "tibia",
+      "part_name": "T04_tibia_cross_spacer_-9_-48"
+    },
+    "FR/T05_tibia_tie_-9_-48": {
+      "group": "FR/tibia",
+      "role": "tibia",
+      "part_name": "T05_tibia_tie_-9_-48"
+    },
+    "FR/T04_tibia_cross_spacer_9_-48": {
+      "group": "FR/tibia",
+      "role": "tibia",
+      "part_name": "T04_tibia_cross_spacer_9_-48"
+    },
+    "FR/T05_tibia_tie_9_-48": {
+      "group": "FR/tibia",
+      "role": "tibia",
+      "part_name": "T05_tibia_tie_9_-48"
+    },
+    "FR/T04_tibia_cross_spacer_-9_-75": {
+      "group": "FR/tibia",
+      "role": "tibia",
+      "part_name": "T04_tibia_cross_spacer_-9_-75"
+    },
+    "FR/T05_tibia_tie_-9_-75": {
+      "group": "FR/tibia",
+      "role": "tibia",
+      "part_name": "T05_tibia_tie_-9_-75"
+    },
+    "FR/T04_tibia_cross_spacer_9_-75": {
+      "group": "FR/tibia",
+      "role": "tibia",
+      "part_name": "T04_tibia_cross_spacer_9_-75"
+    },
+    "FR/T05_tibia_tie_9_-75": {
+      "group": "FR/tibia",
+      "role": "tibia",
+      "part_name": "T05_tibia_tie_9_-75"
+    },
+    "FR/W01_wheel_626_0": {
+      "group": "FR/tibia",
+      "role": "tibia",
+      "part_name": "W01_wheel_626_0"
+    },
+    "FR/W01_wheel_626_1": {
+      "group": "FR/tibia",
+      "role": "tibia",
+      "part_name": "W01_wheel_626_1"
+    },
+    "FR/W02_6mm_wheel_axle": {
+      "group": "FR/wheel",
+      "role": "wheel",
+      "part_name": "W02_6mm_wheel_axle"
+    },
+    "FR/W03_wheel_hub": {
+      "group": "FR/wheel",
+      "role": "wheel",
+      "part_name": "W03_wheel_hub"
+    },
+    "FR/W04_tire_ENVELOPE": {
+      "group": "FR/wheel",
+      "role": "wheel",
+      "part_name": "W04_tire_ENVELOPE"
+    },
+    "FR/W05_FIT0493_motor_CASE": {
+      "group": "FR/tibia",
+      "role": "tibia",
+      "part_name": "W05_FIT0493_motor_CASE"
+    },
+    "FR/W06_FIT0493_4mmD_SHAFT": {
+      "group": "FR/wheel",
+      "role": "wheel",
+      "part_name": "W06_FIT0493_4mmD_SHAFT"
+    },
+    "FR/W07_motor_mount_cradle": {
+      "group": "FR/tibia",
+      "role": "tibia",
+      "part_name": "W07_motor_mount_cradle"
+    },
+    "FR/W08_motor_brace_M3_-9": {
+      "group": "FR/tibia",
+      "role": "tibia",
+      "part_name": "W08_motor_brace_M3_-9"
+    },
+    "FR/W08_motor_brace_M3_9": {
+      "group": "FR/tibia",
+      "role": "tibia",
+      "part_name": "W08_motor_brace_M3_9"
+    },
+    "FR/W09_6to4mm_coupling_ENVELOPE": {
+      "group": "FR/wheel",
+      "role": "wheel",
+      "part_name": "W09_6to4mm_coupling_ENVELOPE"
+    },
+    "FR/PF01_hip_only_coxa": {
+      "group": "FR/yaw",
+      "role": "yaw",
+      "part_name": "PF01_hip_only_coxa"
+    },
+    "FR/PF02_sliding_carriage": {
+      "group": "FR/femur",
+      "role": "femur",
+      "part_name": "PF02_sliding_carriage"
+    },
+    "FR/PF04_627_0": {
+      "group": "FR/femur",
+      "role": "femur",
+      "part_name": "PF04_627_0"
+    },
+    "FR/PF05_input_keeper_0": {
+      "group": "FR/femur",
+      "role": "femur",
+      "part_name": "PF05_input_keeper_0"
+    },
+    "FR/PF04_627_1": {
+      "group": "FR/femur",
+      "role": "femur",
+      "part_name": "PF04_627_1"
+    },
+    "FR/PF05_input_keeper_1": {
+      "group": "FR/femur",
+      "role": "femur",
+      "part_name": "PF05_input_keeper_1"
+    },
+    "FR/PF06_input_shaft": {
+      "group": "FR/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "PF06_input_shaft"
+    },
+    "FR/PF07_input_A_pulley": {
+      "group": "FR/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "PF07_input_A_pulley"
+    },
+    "FR/PF07_knee_A_pulley": {
+      "group": "FR/tibia",
+      "role": "tibia",
+      "part_name": "PF07_knee_A_pulley"
+    },
+    "FR/PF08_metal_50T_output": {
+      "group": "FR/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "PF08_metal_50T_output"
+    },
+    "FR/PF09_metal_25T_pinion": {
+      "group": "FR/knee_motor_rotor",
+      "role": "internal_rotor",
+      "part_name": "PF09_metal_25T_pinion"
+    },
+    "FR/PF10_C018_knee_CASE": {
+      "group": "FR/femur",
+      "role": "femur",
+      "part_name": "PF10_C018_knee_CASE"
+    },
+    "FR/PF11_factory_horn": {
+      "group": "FR/knee_motor_rotor",
+      "role": "internal_rotor",
+      "part_name": "PF11_factory_horn"
+    },
+    "FR/RT_input_M4x14_face_0": {
+      "group": "FR/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "RT_input_M4x14_face_0"
+    },
+    "FR/RT_input_M4x14_face_1": {
+      "group": "FR/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "RT_input_M4x14_face_1"
+    },
+    "FR/RT_input_M4x14_face_2": {
+      "group": "FR/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "RT_input_M4x14_face_2"
+    },
+    "FR/RT_input_M4x14_face_3": {
+      "group": "FR/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "RT_input_M4x14_face_3"
+    },
+    "FR/RT_knee_face_sleeve_0": {
+      "group": "FR/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_face_sleeve_0"
+    },
+    "FR/RT_knee_M4x14_face_0": {
+      "group": "FR/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_M4x14_face_0"
+    },
+    "FR/RT_knee_face_sleeve_1": {
+      "group": "FR/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_face_sleeve_1"
+    },
+    "FR/RT_knee_M4x14_face_1": {
+      "group": "FR/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_M4x14_face_1"
+    },
+    "FR/RT_knee_face_sleeve_2": {
+      "group": "FR/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_face_sleeve_2"
+    },
+    "FR/RT_knee_M4x14_face_2": {
+      "group": "FR/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_M4x14_face_2"
+    },
+    "FR/RT_knee_face_sleeve_3": {
+      "group": "FR/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_face_sleeve_3"
+    },
+    "FR/RT_knee_M4x14_face_3": {
+      "group": "FR/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_M4x14_face_3"
+    },
+    "FR/RT_input_inner_spacer_0": {
+      "group": "FR/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "RT_input_inner_spacer_0"
+    },
+    "FR/RT_input_inner_spacer_1": {
+      "group": "FR/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "RT_input_inner_spacer_1"
+    },
+    "FR/RT_input_inner_spacer_2": {
+      "group": "FR/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "RT_input_inner_spacer_2"
+    },
+    "FR/RT_input_inner_spacer_3": {
+      "group": "FR/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "RT_input_inner_spacer_3"
+    },
+    "FR/RT_input_end_washer_low": {
+      "group": "FR/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "RT_input_end_washer_low"
+    },
+    "FR/RT_input_M3x8_end_low": {
+      "group": "FR/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "RT_input_M3x8_end_low"
+    },
+    "FR/RT_input_end_washer_high": {
+      "group": "FR/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "RT_input_end_washer_high"
+    },
+    "FR/RT_input_M3x8_end_high": {
+      "group": "FR/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "RT_input_M3x8_end_high"
+    },
+    "FR/RT_knee_inner_spacer_0": {
+      "group": "FR/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_inner_spacer_0"
+    },
+    "FR/RT_knee_inner_spacer_1": {
+      "group": "FR/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_inner_spacer_1"
+    },
+    "FR/RT_knee_inner_spacer_2": {
+      "group": "FR/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_inner_spacer_2"
+    },
+    "FR/RT_knee_inner_spacer_3": {
+      "group": "FR/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_inner_spacer_3"
+    },
+    "FR/RT_knee_end_washer_low": {
+      "group": "FR/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_end_washer_low"
+    },
+    "FR/RT_knee_M3x8_end_low": {
+      "group": "FR/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_M3x8_end_low"
+    },
+    "FR/RT_knee_end_washer_high": {
+      "group": "FR/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_end_washer_high"
+    },
+    "FR/RT_knee_M3x8_end_high": {
+      "group": "FR/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_M3x8_end_high"
+    },
+    "FR/RT_slider_spreader_-18.0_22.0": {
+      "group": "FR/femur",
+      "role": "femur",
+      "part_name": "RT_slider_spreader_-18.0_22.0"
+    },
+    "FR/RT_slider_M4x20_-18.0_22.0": {
+      "group": "FR/femur",
+      "role": "femur",
+      "part_name": "RT_slider_M4x20_-18.0_22.0"
+    },
+    "FR/RT_slider_spreader_18.0_22.0": {
+      "group": "FR/femur",
+      "role": "femur",
+      "part_name": "RT_slider_spreader_18.0_22.0"
+    },
+    "FR/RT_slider_M4x20_18.0_22.0": {
+      "group": "FR/femur",
+      "role": "femur",
+      "part_name": "RT_slider_M4x20_18.0_22.0"
+    },
+    "FR/RT_slider_spreader_-18.0_56.0": {
+      "group": "FR/femur",
+      "role": "femur",
+      "part_name": "RT_slider_spreader_-18.0_56.0"
+    },
+    "FR/RT_slider_M4x20_-18.0_56.0": {
+      "group": "FR/femur",
+      "role": "femur",
+      "part_name": "RT_slider_M4x20_-18.0_56.0"
+    },
+    "FR/RT_slider_spreader_18.0_56.0": {
+      "group": "FR/femur",
+      "role": "femur",
+      "part_name": "RT_slider_spreader_18.0_56.0"
+    },
+    "FR/RT_slider_M4x20_18.0_56.0": {
+      "group": "FR/femur",
+      "role": "femur",
+      "part_name": "RT_slider_M4x20_18.0_56.0"
+    },
+    "FR/RT_M4_coupling_nut": {
+      "group": "FR/femur",
+      "role": "femur",
+      "part_name": "RT_M4_coupling_nut"
+    },
+    "FR/RT_M4_adjuster_jam_nut": {
+      "group": "FR/femur",
+      "role": "femur",
+      "part_name": "RT_M4_adjuster_jam_nut"
+    },
+    "FR/RT_carriage_tip_pad": {
+      "group": "FR/femur",
+      "role": "femur",
+      "part_name": "RT_carriage_tip_pad"
+    },
+    "FR/RT_fixed_nut_load_plate": {
+      "group": "FR/femur",
+      "role": "femur",
+      "part_name": "RT_fixed_nut_load_plate"
+    },
+    "FR/RT_M4x30_adjuster": {
+      "group": "FR/femur",
+      "role": "femur",
+      "part_name": "RT_M4x30_adjuster"
+    },
+    "FR/PF13_input_face_standoff_0": {
+      "group": "FR/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "PF13_input_face_standoff_0"
+    },
+    "FR/PF13_input_face_standoff_1": {
+      "group": "FR/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "PF13_input_face_standoff_1"
+    },
+    "FR/PF13_input_face_standoff_2": {
+      "group": "FR/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "PF13_input_face_standoff_2"
+    },
+    "FR/PF13_input_face_standoff_3": {
+      "group": "FR/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "PF13_input_face_standoff_3"
+    },
+    "FR/PF14_input_central_spacer": {
+      "group": "FR/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "PF14_input_central_spacer"
+    },
+    "RL/Y01_fixed_mount_bridge": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y01_fixed_mount_bridge"
+    },
+    "RL/Y12_deck_M4_-25_-22": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y12_deck_M4_-25_-22"
+    },
+    "RL/Y13_deck_washer_-25_-22": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y13_deck_washer_-25_-22"
+    },
+    "RL/Y14_deck_M4_nut_-25_-22": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y14_deck_M4_nut_-25_-22"
+    },
+    "RL/Y12_deck_M4_-25_22": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y12_deck_M4_-25_22"
+    },
+    "RL/Y13_deck_washer_-25_22": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y13_deck_washer_-25_22"
+    },
+    "RL/Y14_deck_M4_nut_-25_22": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y14_deck_M4_nut_-25_22"
+    },
+    "RL/Y12_deck_M4_-5_-22": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y12_deck_M4_-5_-22"
+    },
+    "RL/Y13_deck_washer_-5_-22": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y13_deck_washer_-5_-22"
+    },
+    "RL/Y14_deck_M4_nut_-5_-22": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y14_deck_M4_nut_-5_-22"
+    },
+    "RL/Y12_deck_M4_-5_22": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y12_deck_M4_-5_22"
+    },
+    "RL/Y13_deck_washer_-5_22": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y13_deck_washer_-5_22"
+    },
+    "RL/Y14_deck_M4_nut_-5_22": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y14_deck_M4_nut_-5_22"
+    },
+    "RL/Y02_608_housing_lower": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y02_608_housing_lower"
+    },
+    "RL/Y03_608_lower": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y03_608_lower"
+    },
+    "RL/Y02_608_housing_upper": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y02_608_housing_upper"
+    },
+    "RL/Y03_608_upper": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y03_608_upper"
+    },
+    "RL/Y04_fixed_standoff_-11_-8": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y04_fixed_standoff_-11_-8"
+    },
+    "RL/Y04_fixed_standoff_-11_8": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y04_fixed_standoff_-11_8"
+    },
+    "RL/Y04_fixed_standoff_11_-8": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y04_fixed_standoff_11_-8"
+    },
+    "RL/Y04_fixed_standoff_11_8": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y04_fixed_standoff_11_8"
+    },
+    "RL/Y05_metal_yaw_shaft": {
+      "group": "RL/yaw",
+      "role": "yaw",
+      "part_name": "Y05_metal_yaw_shaft"
+    },
+    "RL/Y06_yaw_output_40T": {
+      "group": "RL/yaw",
+      "role": "yaw",
+      "part_name": "Y06_yaw_output_40T"
+    },
+    "RL/Y07_yaw_input_20T": {
+      "group": "RL/yaw_motor_rotor",
+      "role": "internal_rotor",
+      "part_name": "Y07_yaw_input_20T"
+    },
+    "RL/S01_C018_yaw_CASE": {
+      "group": "body",
+      "role": "body",
+      "part_name": "S01_C018_yaw_CASE"
+    },
+    "RL/Y08_factory_horn": {
+      "group": "RL/yaw_motor_rotor",
+      "role": "internal_rotor",
+      "part_name": "Y08_factory_horn"
+    },
+    "RL/Y09_servo_clamp_cap": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y09_servo_clamp_cap"
+    },
+    "RL/Y10_captured_TPU_pad": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y10_captured_TPU_pad"
+    },
+    "RL/Y11_cap_M3_13.6_-25.5": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y11_cap_M3_13.6_-25.5"
+    },
+    "RL/Y11_cap_M3_13.6_25.5": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y11_cap_M3_13.6_25.5"
+    },
+    "RL/Y11_cap_M3_64.73_-12": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y11_cap_M3_64.73_-12"
+    },
+    "RL/Y11_cap_M3_64.73_12": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y11_cap_M3_64.73_12"
+    },
+    "RL/H01_687_0": {
+      "group": "RL/yaw",
+      "role": "yaw",
+      "part_name": "H01_687_0"
+    },
+    "RL/H02_bearing_tower_0": {
+      "group": "RL/yaw",
+      "role": "yaw",
+      "part_name": "H02_bearing_tower_0"
+    },
+    "RL/H14_tower_to_coxa_M3_0": {
+      "group": "RL/yaw",
+      "role": "yaw",
+      "part_name": "H14_tower_to_coxa_M3_0"
+    },
+    "RL/H15_tower_M3_nut_0": {
+      "group": "RL/yaw",
+      "role": "yaw",
+      "part_name": "H15_tower_M3_nut_0"
+    },
+    "RL/H03_bearing_keeper_0": {
+      "group": "RL/yaw",
+      "role": "yaw",
+      "part_name": "H03_bearing_keeper_0"
+    },
+    "RL/H04_keeper_bolt_0_-9.1": {
+      "group": "RL/yaw",
+      "role": "yaw",
+      "part_name": "H04_keeper_bolt_0_-9.1"
+    },
+    "RL/H04_keeper_bolt_0_9.1": {
+      "group": "RL/yaw",
+      "role": "yaw",
+      "part_name": "H04_keeper_bolt_0_9.1"
+    },
+    "RL/H01_687_1": {
+      "group": "RL/yaw",
+      "role": "yaw",
+      "part_name": "H01_687_1"
+    },
+    "RL/H02_bearing_tower_1": {
+      "group": "RL/yaw",
+      "role": "yaw",
+      "part_name": "H02_bearing_tower_1"
+    },
+    "RL/H14_tower_to_coxa_M3_1": {
+      "group": "RL/yaw",
+      "role": "yaw",
+      "part_name": "H14_tower_to_coxa_M3_1"
+    },
+    "RL/H15_tower_M3_nut_1": {
+      "group": "RL/yaw",
+      "role": "yaw",
+      "part_name": "H15_tower_M3_nut_1"
+    },
+    "RL/H03_bearing_keeper_1": {
+      "group": "RL/yaw",
+      "role": "yaw",
+      "part_name": "H03_bearing_keeper_1"
+    },
+    "RL/H04_keeper_bolt_1_-9.1": {
+      "group": "RL/yaw",
+      "role": "yaw",
+      "part_name": "H04_keeper_bolt_1_-9.1"
+    },
+    "RL/H04_keeper_bolt_1_9.1": {
+      "group": "RL/yaw",
+      "role": "yaw",
+      "part_name": "H04_keeper_bolt_1_9.1"
+    },
+    "RL/H05_hip_metal_trunnion": {
+      "group": "RL/femur",
+      "role": "femur",
+      "part_name": "H05_hip_metal_trunnion"
+    },
+    "RL/H06_output_40T": {
+      "group": "RL/femur",
+      "role": "femur",
+      "part_name": "H06_output_40T"
+    },
+    "RL/H07_input_20T": {
+      "group": "RL/hip_motor_rotor",
+      "role": "internal_rotor",
+      "part_name": "H07_input_20T"
+    },
+    "RL/S02_C018_H_CASE": {
+      "group": "RL/yaw",
+      "role": "yaw",
+      "part_name": "S02_C018_H_CASE"
+    },
+    "RL/H09_factory_horn": {
+      "group": "RL/hip_motor_rotor",
+      "role": "internal_rotor",
+      "part_name": "H09_factory_horn"
+    },
+    "RL/H08_servo_saddle": {
+      "group": "RL/yaw",
+      "role": "yaw",
+      "part_name": "H08_servo_saddle"
+    },
+    "RL/H11_saddle_to_coxa_M3_-31": {
+      "group": "RL/yaw",
+      "role": "yaw",
+      "part_name": "H11_saddle_to_coxa_M3_-31"
+    },
+    "RL/H11_saddle_to_coxa_M3_-24": {
+      "group": "RL/yaw",
+      "role": "yaw",
+      "part_name": "H11_saddle_to_coxa_M3_-24"
+    },
+    "RL/H10_servo_clamp_cap": {
+      "group": "RL/yaw",
+      "role": "yaw",
+      "part_name": "H10_servo_clamp_cap"
+    },
+    "RL/H12_captured_TPU_pad": {
+      "group": "RL/yaw",
+      "role": "yaw",
+      "part_name": "H12_captured_TPU_pad"
+    },
+    "RL/H13_cap_M3_15.5_-95": {
+      "group": "RL/yaw",
+      "role": "yaw",
+      "part_name": "H13_cap_M3_15.5_-95"
+    },
+    "RL/H13_cap_M3_15.5_-67": {
+      "group": "RL/yaw",
+      "role": "yaw",
+      "part_name": "H13_cap_M3_15.5_-67"
+    },
+    "RL/H13_cap_M3_64.73_-95": {
+      "group": "RL/yaw",
+      "role": "yaw",
+      "part_name": "H13_cap_M3_64.73_-95"
+    },
+    "RL/H13_cap_M3_64.73_-67": {
+      "group": "RL/yaw",
+      "role": "yaw",
+      "part_name": "H13_cap_M3_64.73_-67"
+    },
+    "RL/F01_femur_cheek_drive": {
+      "group": "RL/femur",
+      "role": "femur",
+      "part_name": "F01_femur_cheek_drive"
+    },
+    "RL/F01_femur_cheek_belt": {
+      "group": "RL/femur",
+      "role": "femur",
+      "part_name": "F01_femur_cheek_belt"
+    },
+    "RL/F02_femur_cross_spacer_-9_-85": {
+      "group": "RL/femur",
+      "role": "femur",
+      "part_name": "F02_femur_cross_spacer_-9_-85"
+    },
+    "RL/F03_femur_tie_-9_-85": {
+      "group": "RL/femur",
+      "role": "femur",
+      "part_name": "F03_femur_tie_-9_-85"
+    },
+    "RL/F02_femur_cross_spacer_9_-85": {
+      "group": "RL/femur",
+      "role": "femur",
+      "part_name": "F02_femur_cross_spacer_9_-85"
+    },
+    "RL/F03_femur_tie_9_-85": {
+      "group": "RL/femur",
+      "role": "femur",
+      "part_name": "F03_femur_tie_9_-85"
+    },
+    "RL/F05_purchased_belt_PITCH_RIBBON": {
+      "group": "RL/femur",
+      "role": "femur",
+      "part_name": "F05_purchased_belt_PITCH_RIBBON"
+    },
+    "RL/F06_knee_608_0": {
+      "group": "RL/femur",
+      "role": "femur",
+      "part_name": "F06_knee_608_0"
+    },
+    "RL/F07_knee_bearing_keeper_0": {
+      "group": "RL/femur",
+      "role": "femur",
+      "part_name": "F07_knee_bearing_keeper_0"
+    },
+    "RL/F08_knee_keeper_M3_0_-13.5": {
+      "group": "RL/femur",
+      "role": "femur",
+      "part_name": "F08_knee_keeper_M3_0_-13.5"
+    },
+    "RL/F08_knee_keeper_M3_0_13.5": {
+      "group": "RL/femur",
+      "role": "femur",
+      "part_name": "F08_knee_keeper_M3_0_13.5"
+    },
+    "RL/F06_knee_608_1": {
+      "group": "RL/femur",
+      "role": "femur",
+      "part_name": "F06_knee_608_1"
+    },
+    "RL/F07_knee_bearing_keeper_1": {
+      "group": "RL/femur",
+      "role": "femur",
+      "part_name": "F07_knee_bearing_keeper_1"
+    },
+    "RL/F08_knee_keeper_M3_1_-13.5": {
+      "group": "RL/femur",
+      "role": "femur",
+      "part_name": "F08_knee_keeper_M3_1_-13.5"
+    },
+    "RL/F08_knee_keeper_M3_1_13.5": {
+      "group": "RL/femur",
+      "role": "femur",
+      "part_name": "F08_knee_keeper_M3_1_13.5"
+    },
+    "RL/T01_knee_metal_shaft": {
+      "group": "RL/tibia",
+      "role": "tibia",
+      "part_name": "T01_knee_metal_shaft"
+    },
+    "RL/T02_tibia_main_cheek": {
+      "group": "RL/tibia",
+      "role": "tibia",
+      "part_name": "T02_tibia_main_cheek"
+    },
+    "RL/T03_tibia_outer_cheek": {
+      "group": "RL/tibia",
+      "role": "tibia",
+      "part_name": "T03_tibia_outer_cheek"
+    },
+    "RL/T04_tibia_cross_spacer_-9_-48": {
+      "group": "RL/tibia",
+      "role": "tibia",
+      "part_name": "T04_tibia_cross_spacer_-9_-48"
+    },
+    "RL/T05_tibia_tie_-9_-48": {
+      "group": "RL/tibia",
+      "role": "tibia",
+      "part_name": "T05_tibia_tie_-9_-48"
+    },
+    "RL/T04_tibia_cross_spacer_9_-48": {
+      "group": "RL/tibia",
+      "role": "tibia",
+      "part_name": "T04_tibia_cross_spacer_9_-48"
+    },
+    "RL/T05_tibia_tie_9_-48": {
+      "group": "RL/tibia",
+      "role": "tibia",
+      "part_name": "T05_tibia_tie_9_-48"
+    },
+    "RL/T04_tibia_cross_spacer_-9_-75": {
+      "group": "RL/tibia",
+      "role": "tibia",
+      "part_name": "T04_tibia_cross_spacer_-9_-75"
+    },
+    "RL/T05_tibia_tie_-9_-75": {
+      "group": "RL/tibia",
+      "role": "tibia",
+      "part_name": "T05_tibia_tie_-9_-75"
+    },
+    "RL/T04_tibia_cross_spacer_9_-75": {
+      "group": "RL/tibia",
+      "role": "tibia",
+      "part_name": "T04_tibia_cross_spacer_9_-75"
+    },
+    "RL/T05_tibia_tie_9_-75": {
+      "group": "RL/tibia",
+      "role": "tibia",
+      "part_name": "T05_tibia_tie_9_-75"
+    },
+    "RL/W01_wheel_626_0": {
+      "group": "RL/tibia",
+      "role": "tibia",
+      "part_name": "W01_wheel_626_0"
+    },
+    "RL/W01_wheel_626_1": {
+      "group": "RL/tibia",
+      "role": "tibia",
+      "part_name": "W01_wheel_626_1"
+    },
+    "RL/W02_6mm_wheel_axle": {
+      "group": "RL/wheel",
+      "role": "wheel",
+      "part_name": "W02_6mm_wheel_axle"
+    },
+    "RL/W03_wheel_hub": {
+      "group": "RL/wheel",
+      "role": "wheel",
+      "part_name": "W03_wheel_hub"
+    },
+    "RL/W04_tire_ENVELOPE": {
+      "group": "RL/wheel",
+      "role": "wheel",
+      "part_name": "W04_tire_ENVELOPE"
+    },
+    "RL/W05_FIT0493_motor_CASE": {
+      "group": "RL/tibia",
+      "role": "tibia",
+      "part_name": "W05_FIT0493_motor_CASE"
+    },
+    "RL/W06_FIT0493_4mmD_SHAFT": {
+      "group": "RL/wheel",
+      "role": "wheel",
+      "part_name": "W06_FIT0493_4mmD_SHAFT"
+    },
+    "RL/W07_motor_mount_cradle": {
+      "group": "RL/tibia",
+      "role": "tibia",
+      "part_name": "W07_motor_mount_cradle"
+    },
+    "RL/W08_motor_brace_M3_-9": {
+      "group": "RL/tibia",
+      "role": "tibia",
+      "part_name": "W08_motor_brace_M3_-9"
+    },
+    "RL/W08_motor_brace_M3_9": {
+      "group": "RL/tibia",
+      "role": "tibia",
+      "part_name": "W08_motor_brace_M3_9"
+    },
+    "RL/W09_6to4mm_coupling_ENVELOPE": {
+      "group": "RL/wheel",
+      "role": "wheel",
+      "part_name": "W09_6to4mm_coupling_ENVELOPE"
+    },
+    "RL/PF01_hip_only_coxa": {
+      "group": "RL/yaw",
+      "role": "yaw",
+      "part_name": "PF01_hip_only_coxa"
+    },
+    "RL/PF02_sliding_carriage": {
+      "group": "RL/femur",
+      "role": "femur",
+      "part_name": "PF02_sliding_carriage"
+    },
+    "RL/PF04_627_0": {
+      "group": "RL/femur",
+      "role": "femur",
+      "part_name": "PF04_627_0"
+    },
+    "RL/PF05_input_keeper_0": {
+      "group": "RL/femur",
+      "role": "femur",
+      "part_name": "PF05_input_keeper_0"
+    },
+    "RL/PF04_627_1": {
+      "group": "RL/femur",
+      "role": "femur",
+      "part_name": "PF04_627_1"
+    },
+    "RL/PF05_input_keeper_1": {
+      "group": "RL/femur",
+      "role": "femur",
+      "part_name": "PF05_input_keeper_1"
+    },
+    "RL/PF06_input_shaft": {
+      "group": "RL/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "PF06_input_shaft"
+    },
+    "RL/PF07_input_A_pulley": {
+      "group": "RL/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "PF07_input_A_pulley"
+    },
+    "RL/PF07_knee_A_pulley": {
+      "group": "RL/tibia",
+      "role": "tibia",
+      "part_name": "PF07_knee_A_pulley"
+    },
+    "RL/PF08_metal_50T_output": {
+      "group": "RL/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "PF08_metal_50T_output"
+    },
+    "RL/PF09_metal_25T_pinion": {
+      "group": "RL/knee_motor_rotor",
+      "role": "internal_rotor",
+      "part_name": "PF09_metal_25T_pinion"
+    },
+    "RL/PF10_C018_knee_CASE": {
+      "group": "RL/femur",
+      "role": "femur",
+      "part_name": "PF10_C018_knee_CASE"
+    },
+    "RL/PF11_factory_horn": {
+      "group": "RL/knee_motor_rotor",
+      "role": "internal_rotor",
+      "part_name": "PF11_factory_horn"
+    },
+    "RL/RT_input_M4x14_face_0": {
+      "group": "RL/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "RT_input_M4x14_face_0"
+    },
+    "RL/RT_input_M4x14_face_1": {
+      "group": "RL/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "RT_input_M4x14_face_1"
+    },
+    "RL/RT_input_M4x14_face_2": {
+      "group": "RL/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "RT_input_M4x14_face_2"
+    },
+    "RL/RT_input_M4x14_face_3": {
+      "group": "RL/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "RT_input_M4x14_face_3"
+    },
+    "RL/RT_knee_face_sleeve_0": {
+      "group": "RL/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_face_sleeve_0"
+    },
+    "RL/RT_knee_M4x14_face_0": {
+      "group": "RL/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_M4x14_face_0"
+    },
+    "RL/RT_knee_face_sleeve_1": {
+      "group": "RL/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_face_sleeve_1"
+    },
+    "RL/RT_knee_M4x14_face_1": {
+      "group": "RL/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_M4x14_face_1"
+    },
+    "RL/RT_knee_face_sleeve_2": {
+      "group": "RL/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_face_sleeve_2"
+    },
+    "RL/RT_knee_M4x14_face_2": {
+      "group": "RL/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_M4x14_face_2"
+    },
+    "RL/RT_knee_face_sleeve_3": {
+      "group": "RL/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_face_sleeve_3"
+    },
+    "RL/RT_knee_M4x14_face_3": {
+      "group": "RL/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_M4x14_face_3"
+    },
+    "RL/RT_input_inner_spacer_0": {
+      "group": "RL/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "RT_input_inner_spacer_0"
+    },
+    "RL/RT_input_inner_spacer_1": {
+      "group": "RL/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "RT_input_inner_spacer_1"
+    },
+    "RL/RT_input_inner_spacer_2": {
+      "group": "RL/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "RT_input_inner_spacer_2"
+    },
+    "RL/RT_input_inner_spacer_3": {
+      "group": "RL/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "RT_input_inner_spacer_3"
+    },
+    "RL/RT_input_end_washer_low": {
+      "group": "RL/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "RT_input_end_washer_low"
+    },
+    "RL/RT_input_M3x8_end_low": {
+      "group": "RL/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "RT_input_M3x8_end_low"
+    },
+    "RL/RT_input_end_washer_high": {
+      "group": "RL/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "RT_input_end_washer_high"
+    },
+    "RL/RT_input_M3x8_end_high": {
+      "group": "RL/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "RT_input_M3x8_end_high"
+    },
+    "RL/RT_knee_inner_spacer_0": {
+      "group": "RL/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_inner_spacer_0"
+    },
+    "RL/RT_knee_inner_spacer_1": {
+      "group": "RL/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_inner_spacer_1"
+    },
+    "RL/RT_knee_inner_spacer_2": {
+      "group": "RL/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_inner_spacer_2"
+    },
+    "RL/RT_knee_inner_spacer_3": {
+      "group": "RL/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_inner_spacer_3"
+    },
+    "RL/RT_knee_end_washer_low": {
+      "group": "RL/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_end_washer_low"
+    },
+    "RL/RT_knee_M3x8_end_low": {
+      "group": "RL/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_M3x8_end_low"
+    },
+    "RL/RT_knee_end_washer_high": {
+      "group": "RL/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_end_washer_high"
+    },
+    "RL/RT_knee_M3x8_end_high": {
+      "group": "RL/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_M3x8_end_high"
+    },
+    "RL/RT_slider_spreader_-18.0_22.0": {
+      "group": "RL/femur",
+      "role": "femur",
+      "part_name": "RT_slider_spreader_-18.0_22.0"
+    },
+    "RL/RT_slider_M4x20_-18.0_22.0": {
+      "group": "RL/femur",
+      "role": "femur",
+      "part_name": "RT_slider_M4x20_-18.0_22.0"
+    },
+    "RL/RT_slider_spreader_18.0_22.0": {
+      "group": "RL/femur",
+      "role": "femur",
+      "part_name": "RT_slider_spreader_18.0_22.0"
+    },
+    "RL/RT_slider_M4x20_18.0_22.0": {
+      "group": "RL/femur",
+      "role": "femur",
+      "part_name": "RT_slider_M4x20_18.0_22.0"
+    },
+    "RL/RT_slider_spreader_-18.0_56.0": {
+      "group": "RL/femur",
+      "role": "femur",
+      "part_name": "RT_slider_spreader_-18.0_56.0"
+    },
+    "RL/RT_slider_M4x20_-18.0_56.0": {
+      "group": "RL/femur",
+      "role": "femur",
+      "part_name": "RT_slider_M4x20_-18.0_56.0"
+    },
+    "RL/RT_slider_spreader_18.0_56.0": {
+      "group": "RL/femur",
+      "role": "femur",
+      "part_name": "RT_slider_spreader_18.0_56.0"
+    },
+    "RL/RT_slider_M4x20_18.0_56.0": {
+      "group": "RL/femur",
+      "role": "femur",
+      "part_name": "RT_slider_M4x20_18.0_56.0"
+    },
+    "RL/RT_M4_coupling_nut": {
+      "group": "RL/femur",
+      "role": "femur",
+      "part_name": "RT_M4_coupling_nut"
+    },
+    "RL/RT_M4_adjuster_jam_nut": {
+      "group": "RL/femur",
+      "role": "femur",
+      "part_name": "RT_M4_adjuster_jam_nut"
+    },
+    "RL/RT_carriage_tip_pad": {
+      "group": "RL/femur",
+      "role": "femur",
+      "part_name": "RT_carriage_tip_pad"
+    },
+    "RL/RT_fixed_nut_load_plate": {
+      "group": "RL/femur",
+      "role": "femur",
+      "part_name": "RT_fixed_nut_load_plate"
+    },
+    "RL/RT_M4x30_adjuster": {
+      "group": "RL/femur",
+      "role": "femur",
+      "part_name": "RT_M4x30_adjuster"
+    },
+    "RL/PF13_input_face_standoff_0": {
+      "group": "RL/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "PF13_input_face_standoff_0"
+    },
+    "RL/PF13_input_face_standoff_1": {
+      "group": "RL/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "PF13_input_face_standoff_1"
+    },
+    "RL/PF13_input_face_standoff_2": {
+      "group": "RL/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "PF13_input_face_standoff_2"
+    },
+    "RL/PF13_input_face_standoff_3": {
+      "group": "RL/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "PF13_input_face_standoff_3"
+    },
+    "RL/PF14_input_central_spacer": {
+      "group": "RL/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "PF14_input_central_spacer"
+    },
+    "RR/Y01_fixed_mount_bridge": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y01_fixed_mount_bridge"
+    },
+    "RR/Y12_deck_M4_-25_-22": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y12_deck_M4_-25_-22"
+    },
+    "RR/Y13_deck_washer_-25_-22": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y13_deck_washer_-25_-22"
+    },
+    "RR/Y14_deck_M4_nut_-25_-22": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y14_deck_M4_nut_-25_-22"
+    },
+    "RR/Y12_deck_M4_-25_22": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y12_deck_M4_-25_22"
+    },
+    "RR/Y13_deck_washer_-25_22": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y13_deck_washer_-25_22"
+    },
+    "RR/Y14_deck_M4_nut_-25_22": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y14_deck_M4_nut_-25_22"
+    },
+    "RR/Y12_deck_M4_-5_-22": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y12_deck_M4_-5_-22"
+    },
+    "RR/Y13_deck_washer_-5_-22": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y13_deck_washer_-5_-22"
+    },
+    "RR/Y14_deck_M4_nut_-5_-22": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y14_deck_M4_nut_-5_-22"
+    },
+    "RR/Y12_deck_M4_-5_22": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y12_deck_M4_-5_22"
+    },
+    "RR/Y13_deck_washer_-5_22": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y13_deck_washer_-5_22"
+    },
+    "RR/Y14_deck_M4_nut_-5_22": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y14_deck_M4_nut_-5_22"
+    },
+    "RR/Y02_608_housing_lower": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y02_608_housing_lower"
+    },
+    "RR/Y03_608_lower": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y03_608_lower"
+    },
+    "RR/Y02_608_housing_upper": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y02_608_housing_upper"
+    },
+    "RR/Y03_608_upper": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y03_608_upper"
+    },
+    "RR/Y04_fixed_standoff_-11_-8": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y04_fixed_standoff_-11_-8"
+    },
+    "RR/Y04_fixed_standoff_-11_8": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y04_fixed_standoff_-11_8"
+    },
+    "RR/Y04_fixed_standoff_11_-8": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y04_fixed_standoff_11_-8"
+    },
+    "RR/Y04_fixed_standoff_11_8": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y04_fixed_standoff_11_8"
+    },
+    "RR/Y05_metal_yaw_shaft": {
+      "group": "RR/yaw",
+      "role": "yaw",
+      "part_name": "Y05_metal_yaw_shaft"
+    },
+    "RR/Y06_yaw_output_40T": {
+      "group": "RR/yaw",
+      "role": "yaw",
+      "part_name": "Y06_yaw_output_40T"
+    },
+    "RR/Y07_yaw_input_20T": {
+      "group": "RR/yaw_motor_rotor",
+      "role": "internal_rotor",
+      "part_name": "Y07_yaw_input_20T"
+    },
+    "RR/S01_C018_yaw_CASE": {
+      "group": "body",
+      "role": "body",
+      "part_name": "S01_C018_yaw_CASE"
+    },
+    "RR/Y08_factory_horn": {
+      "group": "RR/yaw_motor_rotor",
+      "role": "internal_rotor",
+      "part_name": "Y08_factory_horn"
+    },
+    "RR/Y09_servo_clamp_cap": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y09_servo_clamp_cap"
+    },
+    "RR/Y10_captured_TPU_pad": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y10_captured_TPU_pad"
+    },
+    "RR/Y11_cap_M3_13.6_-25.5": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y11_cap_M3_13.6_-25.5"
+    },
+    "RR/Y11_cap_M3_13.6_25.5": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y11_cap_M3_13.6_25.5"
+    },
+    "RR/Y11_cap_M3_64.73_-12": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y11_cap_M3_64.73_-12"
+    },
+    "RR/Y11_cap_M3_64.73_12": {
+      "group": "body",
+      "role": "body",
+      "part_name": "Y11_cap_M3_64.73_12"
+    },
+    "RR/H01_687_0": {
+      "group": "RR/yaw",
+      "role": "yaw",
+      "part_name": "H01_687_0"
+    },
+    "RR/H02_bearing_tower_0": {
+      "group": "RR/yaw",
+      "role": "yaw",
+      "part_name": "H02_bearing_tower_0"
+    },
+    "RR/H14_tower_to_coxa_M3_0": {
+      "group": "RR/yaw",
+      "role": "yaw",
+      "part_name": "H14_tower_to_coxa_M3_0"
+    },
+    "RR/H15_tower_M3_nut_0": {
+      "group": "RR/yaw",
+      "role": "yaw",
+      "part_name": "H15_tower_M3_nut_0"
+    },
+    "RR/H03_bearing_keeper_0": {
+      "group": "RR/yaw",
+      "role": "yaw",
+      "part_name": "H03_bearing_keeper_0"
+    },
+    "RR/H04_keeper_bolt_0_-9.1": {
+      "group": "RR/yaw",
+      "role": "yaw",
+      "part_name": "H04_keeper_bolt_0_-9.1"
+    },
+    "RR/H04_keeper_bolt_0_9.1": {
+      "group": "RR/yaw",
+      "role": "yaw",
+      "part_name": "H04_keeper_bolt_0_9.1"
+    },
+    "RR/H01_687_1": {
+      "group": "RR/yaw",
+      "role": "yaw",
+      "part_name": "H01_687_1"
+    },
+    "RR/H02_bearing_tower_1": {
+      "group": "RR/yaw",
+      "role": "yaw",
+      "part_name": "H02_bearing_tower_1"
+    },
+    "RR/H14_tower_to_coxa_M3_1": {
+      "group": "RR/yaw",
+      "role": "yaw",
+      "part_name": "H14_tower_to_coxa_M3_1"
+    },
+    "RR/H15_tower_M3_nut_1": {
+      "group": "RR/yaw",
+      "role": "yaw",
+      "part_name": "H15_tower_M3_nut_1"
+    },
+    "RR/H03_bearing_keeper_1": {
+      "group": "RR/yaw",
+      "role": "yaw",
+      "part_name": "H03_bearing_keeper_1"
+    },
+    "RR/H04_keeper_bolt_1_-9.1": {
+      "group": "RR/yaw",
+      "role": "yaw",
+      "part_name": "H04_keeper_bolt_1_-9.1"
+    },
+    "RR/H04_keeper_bolt_1_9.1": {
+      "group": "RR/yaw",
+      "role": "yaw",
+      "part_name": "H04_keeper_bolt_1_9.1"
+    },
+    "RR/H05_hip_metal_trunnion": {
+      "group": "RR/femur",
+      "role": "femur",
+      "part_name": "H05_hip_metal_trunnion"
+    },
+    "RR/H06_output_40T": {
+      "group": "RR/femur",
+      "role": "femur",
+      "part_name": "H06_output_40T"
+    },
+    "RR/H07_input_20T": {
+      "group": "RR/hip_motor_rotor",
+      "role": "internal_rotor",
+      "part_name": "H07_input_20T"
+    },
+    "RR/S02_C018_H_CASE": {
+      "group": "RR/yaw",
+      "role": "yaw",
+      "part_name": "S02_C018_H_CASE"
+    },
+    "RR/H09_factory_horn": {
+      "group": "RR/hip_motor_rotor",
+      "role": "internal_rotor",
+      "part_name": "H09_factory_horn"
+    },
+    "RR/H08_servo_saddle": {
+      "group": "RR/yaw",
+      "role": "yaw",
+      "part_name": "H08_servo_saddle"
+    },
+    "RR/H11_saddle_to_coxa_M3_-31": {
+      "group": "RR/yaw",
+      "role": "yaw",
+      "part_name": "H11_saddle_to_coxa_M3_-31"
+    },
+    "RR/H11_saddle_to_coxa_M3_-24": {
+      "group": "RR/yaw",
+      "role": "yaw",
+      "part_name": "H11_saddle_to_coxa_M3_-24"
+    },
+    "RR/H10_servo_clamp_cap": {
+      "group": "RR/yaw",
+      "role": "yaw",
+      "part_name": "H10_servo_clamp_cap"
+    },
+    "RR/H12_captured_TPU_pad": {
+      "group": "RR/yaw",
+      "role": "yaw",
+      "part_name": "H12_captured_TPU_pad"
+    },
+    "RR/H13_cap_M3_15.5_-95": {
+      "group": "RR/yaw",
+      "role": "yaw",
+      "part_name": "H13_cap_M3_15.5_-95"
+    },
+    "RR/H13_cap_M3_15.5_-67": {
+      "group": "RR/yaw",
+      "role": "yaw",
+      "part_name": "H13_cap_M3_15.5_-67"
+    },
+    "RR/H13_cap_M3_64.73_-95": {
+      "group": "RR/yaw",
+      "role": "yaw",
+      "part_name": "H13_cap_M3_64.73_-95"
+    },
+    "RR/H13_cap_M3_64.73_-67": {
+      "group": "RR/yaw",
+      "role": "yaw",
+      "part_name": "H13_cap_M3_64.73_-67"
+    },
+    "RR/F01_femur_cheek_drive": {
+      "group": "RR/femur",
+      "role": "femur",
+      "part_name": "F01_femur_cheek_drive"
+    },
+    "RR/F01_femur_cheek_belt": {
+      "group": "RR/femur",
+      "role": "femur",
+      "part_name": "F01_femur_cheek_belt"
+    },
+    "RR/F02_femur_cross_spacer_-9_-85": {
+      "group": "RR/femur",
+      "role": "femur",
+      "part_name": "F02_femur_cross_spacer_-9_-85"
+    },
+    "RR/F03_femur_tie_-9_-85": {
+      "group": "RR/femur",
+      "role": "femur",
+      "part_name": "F03_femur_tie_-9_-85"
+    },
+    "RR/F02_femur_cross_spacer_9_-85": {
+      "group": "RR/femur",
+      "role": "femur",
+      "part_name": "F02_femur_cross_spacer_9_-85"
+    },
+    "RR/F03_femur_tie_9_-85": {
+      "group": "RR/femur",
+      "role": "femur",
+      "part_name": "F03_femur_tie_9_-85"
+    },
+    "RR/F05_purchased_belt_PITCH_RIBBON": {
+      "group": "RR/femur",
+      "role": "femur",
+      "part_name": "F05_purchased_belt_PITCH_RIBBON"
+    },
+    "RR/F06_knee_608_0": {
+      "group": "RR/femur",
+      "role": "femur",
+      "part_name": "F06_knee_608_0"
+    },
+    "RR/F07_knee_bearing_keeper_0": {
+      "group": "RR/femur",
+      "role": "femur",
+      "part_name": "F07_knee_bearing_keeper_0"
+    },
+    "RR/F08_knee_keeper_M3_0_-13.5": {
+      "group": "RR/femur",
+      "role": "femur",
+      "part_name": "F08_knee_keeper_M3_0_-13.5"
+    },
+    "RR/F08_knee_keeper_M3_0_13.5": {
+      "group": "RR/femur",
+      "role": "femur",
+      "part_name": "F08_knee_keeper_M3_0_13.5"
+    },
+    "RR/F06_knee_608_1": {
+      "group": "RR/femur",
+      "role": "femur",
+      "part_name": "F06_knee_608_1"
+    },
+    "RR/F07_knee_bearing_keeper_1": {
+      "group": "RR/femur",
+      "role": "femur",
+      "part_name": "F07_knee_bearing_keeper_1"
+    },
+    "RR/F08_knee_keeper_M3_1_-13.5": {
+      "group": "RR/femur",
+      "role": "femur",
+      "part_name": "F08_knee_keeper_M3_1_-13.5"
+    },
+    "RR/F08_knee_keeper_M3_1_13.5": {
+      "group": "RR/femur",
+      "role": "femur",
+      "part_name": "F08_knee_keeper_M3_1_13.5"
+    },
+    "RR/T01_knee_metal_shaft": {
+      "group": "RR/tibia",
+      "role": "tibia",
+      "part_name": "T01_knee_metal_shaft"
+    },
+    "RR/T02_tibia_main_cheek": {
+      "group": "RR/tibia",
+      "role": "tibia",
+      "part_name": "T02_tibia_main_cheek"
+    },
+    "RR/T03_tibia_outer_cheek": {
+      "group": "RR/tibia",
+      "role": "tibia",
+      "part_name": "T03_tibia_outer_cheek"
+    },
+    "RR/T04_tibia_cross_spacer_-9_-48": {
+      "group": "RR/tibia",
+      "role": "tibia",
+      "part_name": "T04_tibia_cross_spacer_-9_-48"
+    },
+    "RR/T05_tibia_tie_-9_-48": {
+      "group": "RR/tibia",
+      "role": "tibia",
+      "part_name": "T05_tibia_tie_-9_-48"
+    },
+    "RR/T04_tibia_cross_spacer_9_-48": {
+      "group": "RR/tibia",
+      "role": "tibia",
+      "part_name": "T04_tibia_cross_spacer_9_-48"
+    },
+    "RR/T05_tibia_tie_9_-48": {
+      "group": "RR/tibia",
+      "role": "tibia",
+      "part_name": "T05_tibia_tie_9_-48"
+    },
+    "RR/T04_tibia_cross_spacer_-9_-75": {
+      "group": "RR/tibia",
+      "role": "tibia",
+      "part_name": "T04_tibia_cross_spacer_-9_-75"
+    },
+    "RR/T05_tibia_tie_-9_-75": {
+      "group": "RR/tibia",
+      "role": "tibia",
+      "part_name": "T05_tibia_tie_-9_-75"
+    },
+    "RR/T04_tibia_cross_spacer_9_-75": {
+      "group": "RR/tibia",
+      "role": "tibia",
+      "part_name": "T04_tibia_cross_spacer_9_-75"
+    },
+    "RR/T05_tibia_tie_9_-75": {
+      "group": "RR/tibia",
+      "role": "tibia",
+      "part_name": "T05_tibia_tie_9_-75"
+    },
+    "RR/W01_wheel_626_0": {
+      "group": "RR/tibia",
+      "role": "tibia",
+      "part_name": "W01_wheel_626_0"
+    },
+    "RR/W01_wheel_626_1": {
+      "group": "RR/tibia",
+      "role": "tibia",
+      "part_name": "W01_wheel_626_1"
+    },
+    "RR/W02_6mm_wheel_axle": {
+      "group": "RR/wheel",
+      "role": "wheel",
+      "part_name": "W02_6mm_wheel_axle"
+    },
+    "RR/W03_wheel_hub": {
+      "group": "RR/wheel",
+      "role": "wheel",
+      "part_name": "W03_wheel_hub"
+    },
+    "RR/W04_tire_ENVELOPE": {
+      "group": "RR/wheel",
+      "role": "wheel",
+      "part_name": "W04_tire_ENVELOPE"
+    },
+    "RR/W05_FIT0493_motor_CASE": {
+      "group": "RR/tibia",
+      "role": "tibia",
+      "part_name": "W05_FIT0493_motor_CASE"
+    },
+    "RR/W06_FIT0493_4mmD_SHAFT": {
+      "group": "RR/wheel",
+      "role": "wheel",
+      "part_name": "W06_FIT0493_4mmD_SHAFT"
+    },
+    "RR/W07_motor_mount_cradle": {
+      "group": "RR/tibia",
+      "role": "tibia",
+      "part_name": "W07_motor_mount_cradle"
+    },
+    "RR/W08_motor_brace_M3_-9": {
+      "group": "RR/tibia",
+      "role": "tibia",
+      "part_name": "W08_motor_brace_M3_-9"
+    },
+    "RR/W08_motor_brace_M3_9": {
+      "group": "RR/tibia",
+      "role": "tibia",
+      "part_name": "W08_motor_brace_M3_9"
+    },
+    "RR/W09_6to4mm_coupling_ENVELOPE": {
+      "group": "RR/wheel",
+      "role": "wheel",
+      "part_name": "W09_6to4mm_coupling_ENVELOPE"
+    },
+    "RR/PF01_hip_only_coxa": {
+      "group": "RR/yaw",
+      "role": "yaw",
+      "part_name": "PF01_hip_only_coxa"
+    },
+    "RR/PF02_sliding_carriage": {
+      "group": "RR/femur",
+      "role": "femur",
+      "part_name": "PF02_sliding_carriage"
+    },
+    "RR/PF04_627_0": {
+      "group": "RR/femur",
+      "role": "femur",
+      "part_name": "PF04_627_0"
+    },
+    "RR/PF05_input_keeper_0": {
+      "group": "RR/femur",
+      "role": "femur",
+      "part_name": "PF05_input_keeper_0"
+    },
+    "RR/PF04_627_1": {
+      "group": "RR/femur",
+      "role": "femur",
+      "part_name": "PF04_627_1"
+    },
+    "RR/PF05_input_keeper_1": {
+      "group": "RR/femur",
+      "role": "femur",
+      "part_name": "PF05_input_keeper_1"
+    },
+    "RR/PF06_input_shaft": {
+      "group": "RR/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "PF06_input_shaft"
+    },
+    "RR/PF07_input_A_pulley": {
+      "group": "RR/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "PF07_input_A_pulley"
+    },
+    "RR/PF07_knee_A_pulley": {
+      "group": "RR/tibia",
+      "role": "tibia",
+      "part_name": "PF07_knee_A_pulley"
+    },
+    "RR/PF08_metal_50T_output": {
+      "group": "RR/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "PF08_metal_50T_output"
+    },
+    "RR/PF09_metal_25T_pinion": {
+      "group": "RR/knee_motor_rotor",
+      "role": "internal_rotor",
+      "part_name": "PF09_metal_25T_pinion"
+    },
+    "RR/PF10_C018_knee_CASE": {
+      "group": "RR/femur",
+      "role": "femur",
+      "part_name": "PF10_C018_knee_CASE"
+    },
+    "RR/PF11_factory_horn": {
+      "group": "RR/knee_motor_rotor",
+      "role": "internal_rotor",
+      "part_name": "PF11_factory_horn"
+    },
+    "RR/RT_input_M4x14_face_0": {
+      "group": "RR/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "RT_input_M4x14_face_0"
+    },
+    "RR/RT_input_M4x14_face_1": {
+      "group": "RR/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "RT_input_M4x14_face_1"
+    },
+    "RR/RT_input_M4x14_face_2": {
+      "group": "RR/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "RT_input_M4x14_face_2"
+    },
+    "RR/RT_input_M4x14_face_3": {
+      "group": "RR/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "RT_input_M4x14_face_3"
+    },
+    "RR/RT_knee_face_sleeve_0": {
+      "group": "RR/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_face_sleeve_0"
+    },
+    "RR/RT_knee_M4x14_face_0": {
+      "group": "RR/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_M4x14_face_0"
+    },
+    "RR/RT_knee_face_sleeve_1": {
+      "group": "RR/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_face_sleeve_1"
+    },
+    "RR/RT_knee_M4x14_face_1": {
+      "group": "RR/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_M4x14_face_1"
+    },
+    "RR/RT_knee_face_sleeve_2": {
+      "group": "RR/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_face_sleeve_2"
+    },
+    "RR/RT_knee_M4x14_face_2": {
+      "group": "RR/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_M4x14_face_2"
+    },
+    "RR/RT_knee_face_sleeve_3": {
+      "group": "RR/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_face_sleeve_3"
+    },
+    "RR/RT_knee_M4x14_face_3": {
+      "group": "RR/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_M4x14_face_3"
+    },
+    "RR/RT_input_inner_spacer_0": {
+      "group": "RR/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "RT_input_inner_spacer_0"
+    },
+    "RR/RT_input_inner_spacer_1": {
+      "group": "RR/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "RT_input_inner_spacer_1"
+    },
+    "RR/RT_input_inner_spacer_2": {
+      "group": "RR/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "RT_input_inner_spacer_2"
+    },
+    "RR/RT_input_inner_spacer_3": {
+      "group": "RR/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "RT_input_inner_spacer_3"
+    },
+    "RR/RT_input_end_washer_low": {
+      "group": "RR/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "RT_input_end_washer_low"
+    },
+    "RR/RT_input_M3x8_end_low": {
+      "group": "RR/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "RT_input_M3x8_end_low"
+    },
+    "RR/RT_input_end_washer_high": {
+      "group": "RR/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "RT_input_end_washer_high"
+    },
+    "RR/RT_input_M3x8_end_high": {
+      "group": "RR/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "RT_input_M3x8_end_high"
+    },
+    "RR/RT_knee_inner_spacer_0": {
+      "group": "RR/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_inner_spacer_0"
+    },
+    "RR/RT_knee_inner_spacer_1": {
+      "group": "RR/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_inner_spacer_1"
+    },
+    "RR/RT_knee_inner_spacer_2": {
+      "group": "RR/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_inner_spacer_2"
+    },
+    "RR/RT_knee_inner_spacer_3": {
+      "group": "RR/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_inner_spacer_3"
+    },
+    "RR/RT_knee_end_washer_low": {
+      "group": "RR/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_end_washer_low"
+    },
+    "RR/RT_knee_M3x8_end_low": {
+      "group": "RR/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_M3x8_end_low"
+    },
+    "RR/RT_knee_end_washer_high": {
+      "group": "RR/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_end_washer_high"
+    },
+    "RR/RT_knee_M3x8_end_high": {
+      "group": "RR/tibia",
+      "role": "tibia",
+      "part_name": "RT_knee_M3x8_end_high"
+    },
+    "RR/RT_slider_spreader_-18.0_22.0": {
+      "group": "RR/femur",
+      "role": "femur",
+      "part_name": "RT_slider_spreader_-18.0_22.0"
+    },
+    "RR/RT_slider_M4x20_-18.0_22.0": {
+      "group": "RR/femur",
+      "role": "femur",
+      "part_name": "RT_slider_M4x20_-18.0_22.0"
+    },
+    "RR/RT_slider_spreader_18.0_22.0": {
+      "group": "RR/femur",
+      "role": "femur",
+      "part_name": "RT_slider_spreader_18.0_22.0"
+    },
+    "RR/RT_slider_M4x20_18.0_22.0": {
+      "group": "RR/femur",
+      "role": "femur",
+      "part_name": "RT_slider_M4x20_18.0_22.0"
+    },
+    "RR/RT_slider_spreader_-18.0_56.0": {
+      "group": "RR/femur",
+      "role": "femur",
+      "part_name": "RT_slider_spreader_-18.0_56.0"
+    },
+    "RR/RT_slider_M4x20_-18.0_56.0": {
+      "group": "RR/femur",
+      "role": "femur",
+      "part_name": "RT_slider_M4x20_-18.0_56.0"
+    },
+    "RR/RT_slider_spreader_18.0_56.0": {
+      "group": "RR/femur",
+      "role": "femur",
+      "part_name": "RT_slider_spreader_18.0_56.0"
+    },
+    "RR/RT_slider_M4x20_18.0_56.0": {
+      "group": "RR/femur",
+      "role": "femur",
+      "part_name": "RT_slider_M4x20_18.0_56.0"
+    },
+    "RR/RT_M4_coupling_nut": {
+      "group": "RR/femur",
+      "role": "femur",
+      "part_name": "RT_M4_coupling_nut"
+    },
+    "RR/RT_M4_adjuster_jam_nut": {
+      "group": "RR/femur",
+      "role": "femur",
+      "part_name": "RT_M4_adjuster_jam_nut"
+    },
+    "RR/RT_carriage_tip_pad": {
+      "group": "RR/femur",
+      "role": "femur",
+      "part_name": "RT_carriage_tip_pad"
+    },
+    "RR/RT_fixed_nut_load_plate": {
+      "group": "RR/femur",
+      "role": "femur",
+      "part_name": "RT_fixed_nut_load_plate"
+    },
+    "RR/RT_M4x30_adjuster": {
+      "group": "RR/femur",
+      "role": "femur",
+      "part_name": "RT_M4x30_adjuster"
+    },
+    "RR/PF13_input_face_standoff_0": {
+      "group": "RR/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "PF13_input_face_standoff_0"
+    },
+    "RR/PF13_input_face_standoff_1": {
+      "group": "RR/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "PF13_input_face_standoff_1"
+    },
+    "RR/PF13_input_face_standoff_2": {
+      "group": "RR/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "PF13_input_face_standoff_2"
+    },
+    "RR/PF13_input_face_standoff_3": {
+      "group": "RR/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "PF13_input_face_standoff_3"
+    },
+    "RR/PF14_input_central_spacer": {
+      "group": "RR/knee_input_rotor",
+      "role": "internal_rotor",
+      "part_name": "PF14_input_central_spacer"
+    }
+  },
+  "joints": [
+    {
+      "name": "FL_yaw",
+      "parent_group": "body",
+      "child_group": "FL/yaw",
+      "centre_world_mm": [
+        72.8319984622144,
+        72.8319984622144,
+        0
+      ],
+      "axis_world": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "built_physical_deg": -45.0,
+      "physical_limits_deg": [
+        -100,
+        100
+      ],
+      "continuous": false
+    },
+    {
+      "name": "FL_hip",
+      "parent_group": "FL/yaw",
+      "child_group": "FL/femur",
+      "centre_world_mm": [
+        107.8319984622144,
+        102.8319984622144,
+        0.0
+      ],
+      "axis_world": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "built_physical_deg": 58.04300403950684,
+      "physical_limits_deg": [
+        -40,
+        125
+      ],
+      "continuous": false
+    },
+    {
+      "name": "FL_knee",
+      "parent_group": "FL/femur",
+      "child_group": "FL/tibia",
+      "centre_world_mm": [
+        226.19015890245288,
+        102.8319984622144,
+        -73.83492301887205
+      ],
+      "axis_world": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "built_physical_deg": -84.71670736904682,
+      "physical_limits_deg": [
+        -150,
+        -15
+      ],
+      "continuous": false
+    },
+    {
+      "name": "FL_wheel",
+      "parent_group": "FL/tibia",
+      "child_group": "FL/wheel",
+      "centre_world_mm": [
+        167.83199846221436,
+        102.8319984622144,
+        -190.0
+      ],
+      "axis_world": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "built_physical_deg": 0.0,
+      "physical_limits_deg": null,
+      "continuous": true
+    },
+    {
+      "name": "FR_yaw",
+      "parent_group": "body",
+      "child_group": "FR/yaw",
+      "centre_world_mm": [
+        72.8319984622144,
+        -72.8319984622144,
+        0
+      ],
+      "axis_world": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "built_physical_deg": 45.0,
+      "physical_limits_deg": [
+        -100,
+        100
+      ],
+      "continuous": false
+    },
+    {
+      "name": "FR_hip",
+      "parent_group": "FR/yaw",
+      "child_group": "FR/femur",
+      "centre_world_mm": [
+        107.8319984622144,
+        -102.8319984622144,
+        0.0
+      ],
+      "axis_world": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "built_physical_deg": 58.04300403950684,
+      "physical_limits_deg": [
+        -40,
+        125
+      ],
+      "continuous": false
+    },
+    {
+      "name": "FR_knee",
+      "parent_group": "FR/femur",
+      "child_group": "FR/tibia",
+      "centre_world_mm": [
+        226.19015890245288,
+        -102.8319984622144,
+        -73.83492301887205
+      ],
+      "axis_world": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "built_physical_deg": -84.71670736904682,
+      "physical_limits_deg": [
+        -150,
+        -15
+      ],
+      "continuous": false
+    },
+    {
+      "name": "FR_wheel",
+      "parent_group": "FR/tibia",
+      "child_group": "FR/wheel",
+      "centre_world_mm": [
+        167.83199846221436,
+        -102.8319984622144,
+        -190.0
+      ],
+      "axis_world": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "built_physical_deg": 0.0,
+      "physical_limits_deg": null,
+      "continuous": true
+    },
+    {
+      "name": "RL_yaw",
+      "parent_group": "body",
+      "child_group": "RL/yaw",
+      "centre_world_mm": [
+        -72.83199846221439,
+        72.8319984622144,
+        0
+      ],
+      "axis_world": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "built_physical_deg": 45.0,
+      "physical_limits_deg": [
+        -100,
+        100
+      ],
+      "continuous": false
+    },
+    {
+      "name": "RL_hip",
+      "parent_group": "RL/yaw",
+      "child_group": "RL/femur",
+      "centre_world_mm": [
+        -107.83199846221439,
+        102.8319984622144,
+        0.0
+      ],
+      "axis_world": [
+        1.2246467991473532e-16,
+        1.0,
+        0.0
+      ],
+      "built_physical_deg": 58.04300403950684,
+      "physical_limits_deg": [
+        -40,
+        125
+      ],
+      "continuous": false
+    },
+    {
+      "name": "RL_knee",
+      "parent_group": "RL/femur",
+      "child_group": "RL/tibia",
+      "centre_world_mm": [
+        -226.19015890245288,
+        102.83199846221441,
+        -73.83492301887205
+      ],
+      "axis_world": [
+        1.2246467991473532e-16,
+        1.0,
+        0.0
+      ],
+      "built_physical_deg": -84.71670736904682,
+      "physical_limits_deg": [
+        -150,
+        -15
+      ],
+      "continuous": false
+    },
+    {
+      "name": "RL_wheel",
+      "parent_group": "RL/tibia",
+      "child_group": "RL/wheel",
+      "centre_world_mm": [
+        -167.83199846221436,
+        102.8319984622144,
+        -190.0
+      ],
+      "axis_world": [
+        1.2246467991473532e-16,
+        1.0,
+        0.0
+      ],
+      "built_physical_deg": 0.0,
+      "physical_limits_deg": null,
+      "continuous": true
+    },
+    {
+      "name": "RR_yaw",
+      "parent_group": "body",
+      "child_group": "RR/yaw",
+      "centre_world_mm": [
+        -72.83199846221439,
+        -72.8319984622144,
+        0
+      ],
+      "axis_world": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "built_physical_deg": -45.0,
+      "physical_limits_deg": [
+        -100,
+        100
+      ],
+      "continuous": false
+    },
+    {
+      "name": "RR_hip",
+      "parent_group": "RR/yaw",
+      "child_group": "RR/femur",
+      "centre_world_mm": [
+        -107.83199846221439,
+        -102.8319984622144,
+        0.0
+      ],
+      "axis_world": [
+        -1.2246467991473532e-16,
+        1.0,
+        0.0
+      ],
+      "built_physical_deg": 58.04300403950684,
+      "physical_limits_deg": [
+        -40,
+        125
+      ],
+      "continuous": false
+    },
+    {
+      "name": "RR_knee",
+      "parent_group": "RR/femur",
+      "child_group": "RR/tibia",
+      "centre_world_mm": [
+        -226.19015890245288,
+        -102.83199846221441,
+        -73.83492301887205
+      ],
+      "axis_world": [
+        -1.2246467991473532e-16,
+        1.0,
+        0.0
+      ],
+      "built_physical_deg": -84.71670736904682,
+      "physical_limits_deg": [
+        -150,
+        -15
+      ],
+      "continuous": false
+    },
+    {
+      "name": "RR_wheel",
+      "parent_group": "RR/tibia",
+      "child_group": "RR/wheel",
+      "centre_world_mm": [
+        -167.83199846221436,
+        -102.8319984622144,
+        -190.0
+      ],
+      "axis_world": [
+        -1.2246467991473532e-16,
+        1.0,
+        0.0
+      ],
+      "built_physical_deg": 0.0,
+      "physical_limits_deg": null,
+      "continuous": true
+    }
+  ],
+  "fixed_phase_rotor_attachments": {
+    "FL/yaw_motor_rotor": "body",
+    "FL/hip_motor_rotor": "FL/yaw",
+    "FL/knee_input_rotor": "FL/femur",
+    "FL/knee_motor_rotor": "FL/femur",
+    "FR/yaw_motor_rotor": "body",
+    "FR/hip_motor_rotor": "FR/yaw",
+    "FR/knee_input_rotor": "FR/femur",
+    "FR/knee_motor_rotor": "FR/femur",
+    "RL/yaw_motor_rotor": "body",
+    "RL/hip_motor_rotor": "RL/yaw",
+    "RL/knee_input_rotor": "RL/femur",
+    "RL/knee_motor_rotor": "RL/femur",
+    "RR/yaw_motor_rotor": "body",
+    "RR/hip_motor_rotor": "RR/yaw",
+    "RR/knee_input_rotor": "RR/femur",
+    "RR/knee_motor_rotor": "RR/femur"
+  },
+  "transmission_metadata": {
+    "topology": "proximal_femur_relative_knee",
+    "motor_coordinate_equation": "s=[2*yaw,2*hip,2*knee]; normalized actuator directions require commissioning",
+    "ratios": [
+      2.0,
+      2.0,
+      2.0
+    ],
+    "efficiency": [
+      0.85,
+      0.85,
+      0.85
+    ],
+    "output_backlash_full_width_deg": [
+      0.5,
+      0.6,
+      0.6
+    ],
+    "output_stiffness_nm_per_rad": [
+      150,
+      120,
+      100
+    ],
+    "output_viscous_friction_nm_s_per_rad": [
+      0.008,
+      0.01,
+      0.01
+    ],
+    "motor_travel_limits_deg": [
+      [
+        -175,
+        175
+      ],
+      [
+        -175,
+        175
+      ],
+      [
+        -175,
+        175
+      ]
+    ],
+    "provenance": "Design assumptions pending packaging and loaded reversal/deflection/efficiency measurement; motor travel is usable span around calibrated neutral, not absolute zero.",
+    "remote_belt": {
+      "pitch_mm": 3,
+      "pulley_teeth": 32,
+      "width_mm": 9,
+      "pitch_length_mm": 375
+    },
+    "knee_motor_mount": "femur"
+  },
+  "native_execution": false,
+  "transmission_mates_created": false,
+  "full_motion_verified": false,
+  "limitations": [
+    "Bearing races stay with their declared envelope group.",
+    "Internal rotors keep their assembled phase relative to their housing; no gear or belt mates.",
+    "Rigid groups do not model print compliance, backlash, cable flex or structural strength."
+  ],
+  "plan_sha256": "41e08706d426d6a213371c45ce0b878acdfd995f3b4df9f05307b0478e1af909"
+}

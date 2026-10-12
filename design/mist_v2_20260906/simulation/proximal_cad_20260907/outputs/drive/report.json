@@ -1,0 +1,63 @@
+{
+  "case": "drive",
+  "status": "PASS_IN_MODEL",
+  "criteria": {
+    "did_not_fall": true,
+    "joint_tracking_rms": true,
+    "continuous_motor_rms": true,
+    "reachable_targets": true,
+    "motor_travel_limits": true,
+    "no_nonwheel_ground_support": true,
+    "coarse_self_collision": true,
+    "forward_distance_2m": true
+  },
+  "mass_kg": 7.1081600633875714,
+  "duration_s": 8,
+  "dt_s": 0.001,
+  "base_displacement_m": [
+    5.063315206673859,
+    -0.01772454971322877,
+    -0.004491488122540882
+  ],
+  "max_tilt_deg": 0.2604164351615857,
+  "joint_tracking_rms_deg": 1.9235498163376814,
+  "max_servo_rms_nm": 0.5995015234557,
+  "servo_continuous_limit_nm": 0.7281437625000001,
+  "servo_peak_limit_nm": 1.3349302312500002,
+  "motor_saturation_fraction": 0.003,
+  "unreachable_target_fraction": 0.0,
+  "motor_travel_violation_fraction": 0.0,
+  "min_sampled_support_margin_m": 0.09081068383737086,
+  "max_wheel_normal_force_n": 91.69180329840263,
+  "wheel_lateral_velocity_rms_m_s": 0.01576566256913301,
+  "self_collision_samples": 0,
+  "self_collision_examples": [],
+  "base_contact_samples": 0,
+  "fixed_base": false,
+  "limitations": [
+    "Unmeasured backlash, compliance, friction, servo dynamics, thermal duty and mass estimates.",
+    "Command play hysteresis and reduced series stiffness do not model true load-side gap engagement under force reversal. Rotor/reflected gearbox inertia omitted.",
+    "Simple boxes/cylinders, selected adjacent self collisions excluded; no printed-part stress or wire model.",
+    "Step test is a scripted challenge; a failure may concern controller and geometry, not a proof no controller exists.",
+    "No sensor perception, obstacle avoidance planner, stair-nose or tire deformation model."
+  ],
+  "max_actual_wheel_clearance_m": [
+    0.0009975676238354117,
+    0.0009987390078125893,
+    0.0009974256831903963,
+    0.0009941773391739586
+  ],
+  "foot_tracking_rms_m": [
+    0.0052243299334215,
+    0.005237344860348022,
+    0.005000595413355736,
+    0.005014439603696426
+  ],
+  "obstacle_contact_samples": 0,
+  "minimum_obstacle_gap_m": null,
+  "source_sha256": {
+    "run_sim.py": "4e0d61802a5d74074deb67e4abbfccb0d8fda5b1ce1787f2bc2ec3a7b74a9d24",
+    "model.py": "d7fc5c843553da04feebf93f0bf59be60033e4f52c858117bfea95e23de59619"
+  },
+  "parameters_sha256": "5151bd4e9a7b522723679c0173374f89c710de35dbe0d748a2213c0601c935b6"
+}

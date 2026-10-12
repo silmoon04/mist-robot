@@ -1,0 +1,24 @@
+Emotion mouth renderer contract
+
+atlas.mouthFamilies maps each of the 40 face IDs to its assigned mouth asset.
+If that map exists, the renderer never guesses a family from a face name.
+The public helper mouthAssetForFace(faceId, atlas) returns the same assignment
+used by production and the studio. Legacy atlases without a map retain the
+previous neutral/smile mapping.
+
+During live speech, an expression change queues the assigned family. A held
+vowel keeps its current family until the next actual viseme boundary or a
+rest/MBP closure, or a quiet amplitude below 0.35 after 150 ms. If the cue is
+still unchanged, the first 15 fps tick at or after 400 ms changes the emotional
+family while keeping that same viseme. Scheduling adds at most one 66.7 ms
+frame. The latter change can be visible during a sustained vowel; it prevents
+the previous emotion persisting indefinitely. No silent closure is inserted.
+Geometry keeps moving while the family is pending. Only one mouth is drawn;
+the TTS clock is not reset. Retargeting to a different family starts a new
+bounded pending target. Stop or interruption clears that pending state.
+Inspector pose overrides show the assigned family directly without changing
+the live speech-family state. A new utterance and stopped speech reset the
+pending family to the current expression. Canonical rests stay unchanged.
+
+Nonhappy families resolve SMILE cues to their own EE or wide_close drawing,
+so a generic speech cue cannot insert a happy mouth into an angry/sad face.

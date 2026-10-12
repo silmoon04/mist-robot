@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "checkedAt": "2026-09-23T23:06:14.074Z",
+  "runtimeSha256": "bf98617fe07d4146372c31cefdf2e17534c703f06e3caa301dc6ba61c09e4e00",
+  "rendererSha256": "3a600d7b08f15bf96c5a74ee353bc01403c09b7bf744e12f9c7c62485ee60f5a",
+  "referenceRendererSha256": "9ade474f61fc9a6f3eee260b6bb07ef4adc2a4e6f56cae3a4871acbc531563ff",
+  "manifestSha256": "c4d67775ced473b6e2f7d5c9b6fca33357c842ece92603a3a8744e8e227ea571",
+  "counts": {
+    "samples": 800,
+    "paths": 2013,
+    "originalRasterCels": 444,
+    "generatedEyeCels": 0,
+    "expressions": 40,
+    "activities": 9
+  },
+  "checks": [
+    "All forty face IDs preserve the verified v5 original paths, raster eye cels, placements, and transition visuals",
+    "All forty blinks and sampled expression transitions match the verified original renderer",
+    "Activities may move or uniformly scale the whole face, but cannot distort one eye, alter eye/mouth proportions, or change source art",
+    "No generated replacement eye cel is painted"
+  ],
+  "limits": [
+    "This compares recorded canvas paths, original source-cel draw calls, and transforms. Pixel antialiasing and subjective appearance are left to browser review."
+  ]
+}

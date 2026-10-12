@@ -1,0 +1,98 @@
+{
+  "id": "available-blink",
+  "tool": "built-in image_gen",
+  "reviewType": "three-static-key-poses-per-animation",
+  "images": [
+    {
+      "id": "available-blink__1",
+      "file": "images/available-blink-1.png",
+      "prompt": "prompts/available-blink-1-cleanup.txt",
+      "generatedSource": "C:\\Users\\hssil\\.codex\\generated_images\\01a0ef76-47cc-7940-9084-f53886c82ef9\\exec-52cd0697-256a-455b-931b-d3e81118a496.png",
+      "sha256": "1560396A896484D9007FA230F4971FE0DEABEB5735965476A04D310A130F1F0C",
+      "width": 1254,
+      "height": 1254,
+      "qa": {
+        "singleFace": true,
+        "mistIdentity": true,
+        "noStrayMarks": true,
+        "inspected": true
+      },
+      "limitations": [
+        "Native output is 1254×1254 despite requested 1024×1024; retained without code resizing.",
+        "Nominal hex palette and requested pixel geometry are approximate; faint generated texture persists despite a targeted flat-colour cleanup."
+      ]
+    },
+    {
+      "id": "available-blink__2",
+      "file": "images/available-blink-2.png",
+      "prompt": "prompts/available-blink-2.txt",
+      "generatedSource": "C:\\Users\\hssil\\.codex\\generated_images\\01a0ef76-47cc-7940-9084-f53886c82ef9\\exec-7d73249f-36b6-4ac4-b21c-8178449458bb.png",
+      "sha256": "CB944885D399BEFA8A08126A6CFA42BBF6FA12541149E3063E5BE070F035269B",
+      "width": 1254,
+      "height": 1254,
+      "qa": {
+        "singleFace": true,
+        "mistIdentity": true,
+        "noStrayMarks": true,
+        "inspected": true,
+        "lowerLids": true,
+        "noEyeRotation": true
+      },
+      "limitations": [
+        "Generated concept edit visually preserves the mouth, eye spacing and lower eye arcs; exact pixel equality is not asserted.",
+        "Palette/background inherit the anchor's slight generated texture."
+      ]
+    },
+    {
+      "id": "available-blink__3",
+      "file": "images/available-blink-3.png",
+      "prompt": "prompts/available-blink-3.txt",
+      "generatedSource": "C:\\Users\\hssil\\.codex\\generated_images\\01a0ef76-47cc-7940-9084-f53886c82ef9\\exec-62badb8b-9f8b-4f72-9431-21cc42352653.png",
+      "sha256": "6C0F406EC91B6116BBF70F1CE3741C82176B4BE6E0B6C038E1392E369B3171DD",
+      "width": 1254,
+      "height": 1254,
+      "qa": {
+        "singleFace": true,
+        "mistIdentity": true,
+        "noStrayMarks": true,
+        "inspected": true,
+        "closedLids": true,
+        "noEyeRotation": true
+      },
+      "limitations": [
+        "Two gently curved closed lid strokes preserve the original centres and mouth visually; exact pixel equality is not asserted.",
+        "Palette/background inherit the anchor's slight generated texture."
+      ]
+    }
+  ],
+  "references": {
+    "primaryAnchor": "images/available-blink-1.png",
+    "likedSheets": [
+      "../mist_game_faces_20260929/sheets/later-alligator-sweet-geraldine.png",
+      "../mist_game_faces_20260929/sheets/isat-odile-mixed-affect.png",
+      "../mist_game_faces_20260929/sheets/cuphead-jake-clark-process.png"
+    ],
+    "roles": {
+      "anchorGeneration": "Later Alligator upper-left attentive face is primary identity; Odile and Cuphead are supporting shape-language references.",
+      "poses2and3": "Selected anchor is edit target and primary identity reference."
+    }
+  },
+  "attempts": [
+    {
+      "poseId": "available-blink__1",
+      "prompt": "prompts/available-blink-1.txt",
+      "generatedSource": "C:\\Users\\hssil\\.codex\\generated_images\\01a0ef76-47cc-7940-9084-f53886c82ef9\\exec-c003753c-fbea-40c4-b015-0f95b4f27530.png",
+      "file": "images/available-blink-1-draft.png",
+      "sha256": "9324E881241E9890CEDC237DFD50FE6C1B029255148C526C6CE15881959B46D8",
+      "width": 1254,
+      "height": 1254,
+      "selected": false,
+      "reason": "Smile was wider than requested; targeted cleanup selected instead."
+    }
+  ],
+  "limitations": [
+    "Three separately generated static key poses, not a completed animation; no timing, in-between frames or runtime integration is claimed.",
+    "No image was resized, redrawn or edited with code. Project assets are exact copied ImageGen artifacts.",
+    "Independent generated edits may retain subtle texture and small drawing variations; production animation continuity remains future work."
+  ]
+}

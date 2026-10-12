@@ -1,0 +1,22 @@
+{
+  "status": "failed",
+  "leg": "FL",
+  "started_unix": 1788783018.7813277,
+  "native_execution": true,
+  "physical_fit_validated": false,
+  "production_release": false,
+  "physical_materials_assigned": false,
+  "features_created": 13,
+  "document": "MIST concealed wheel drive - native assembly",
+  "source_sha256": {
+    "native_parts.py": "ec5fee836616f120bb3125ef877ff2323ecd2fbe959fd8082d6ec178498f53d0",
+    "purchased_step.py": "7545a69c308dc33bb8f0b1b308590e9e3113f47fd54c4f5ddd244758cb378405",
+    "concealed_native_replay.py": "bfe91763f979bd4120592febfebd9721e07272359220a7908ea1599a12e528df"
+  },
+  "part": "Y01_fixed_mount_bridge",
+  "index": 0,
+  "reused": false,
+  "last_feature": "Y01_fixed_mount_bridge_5 placement",
+  "error": "Traceback (most recent call last):\n  File \"C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\mist_v2_20260906\\cad\\fusion_live_20260907\\build_concealed_stage.py\", line 78, in run\n    result=replay.build_leg(design.rootComponent,specs[request['leg']],request['palette'],record_part,\n                            extend=request.get('extend',False))\n  File \"C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\mist_v2_20260906\\cad\\fusion_live_20260907\\concealed_native_replay.py\", line 137, in build_leg\n    body=build_part(outer.component,part)\n  File \"C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\mist_v2_20260906\\cad\\fusion_live_20260907\\concealed_native_replay.py\", line 73, in build_part\n    target=native.union(component,target,[tool],name+'_join')\n  File \"C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\mist_v2_20260906\\cad\\native_parts.py\", line 357, in union\n    return _combine(component, target, tools, name,\n                    adsk.fusion.FeatureOperations.JoinFeatureOperation)\n  File \"C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\mist_v2_20260906\\cad\\native_parts.py\", line 344, in _combine\n    result = _feature_body(combines.add(feature_input), name)\n  File \"C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\mist_v2_20260906\\cad\\fusion_live_20260907\\build_concealed_stage.py\", line 67, in record_feature\n    body=original(feature,name)\n  File \"C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\mist_v2_20260906\\cad\\native_parts.py\", line 149, in _feature_body\n    raise RuntimeError(\"{}: expected one body, got {}\".format(name, feature.bodies.count))\nRuntimeError: Y01_fixed_mount_bridge_5_join: expected one body, got 2\n",
+  "elapsed_s": 2.6050209999084473
+}

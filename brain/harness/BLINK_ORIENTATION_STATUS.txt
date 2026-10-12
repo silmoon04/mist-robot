@@ -1,0 +1,12 @@
+Published blink direction correction, renderer 1.4.0.
+SHA-256: 9ade474f61fc9a6f3eee260b6bb07ef4adc2a4e6f56cae3a4871acbc531563ff
+
+The open-eye contour and closing direction are registered separately. Early stroke phases trim the original path with rounded caps, preserving its lower curve. Round eyes keep their main connected visible curve; other families retain their visible strokes. Narrow and closed drawings compensate for the source image angle. Original closed arcs and bars keep their contour through a small squeeze. Transition bridges preserve the intended curve. Resting artwork and source PNG bytes are unchanged.
+
+Browser review accepted faces 09, 31, 27, 02 and 35, including 35 to 09 at 8/9 progress. The flat lower cut and detached reopening fragment from intermediate candidates were rejected and corrected.
+
+Owner checks pass 80 closing directions, 616 held poses, 26 preserved contours, four emitted-path fragment regressions and two reflection checks. General renderer, cadence and mouth-family checks pass.
+
+Independent identity and orientation checks pass all 40 resting faces and 80 eyes. Independent motion checks pass 110 closing/reopening contours, 80 mirrored eyes, 240 transition bridges, 1,560 directed transitions, 87,680 sampled states, 320 interruptions and 14 cancellation cases. Actual painting remains 15 fps with the audio clock unchanged.
+
+Current reports must match the hash above. V4 and intermediate v5 reports are historical evidence. The final browser review and source hashes are recorded in QUALITY_REVIEW_V5.md and the current reports.

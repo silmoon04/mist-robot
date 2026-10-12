@@ -1,0 +1,151 @@
+{
+  "status": "nominal_pose_static_screen_not_runtime_or_release",
+  "baseline": {
+    "path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\mist_v2_20260906\\cad\\leg_proximal_20260907\\output_candidate\\leg_geometry_report.json",
+    "sha256": "6eb16f526239fcb64b52d29b171c6e0a213683a6cd7da0355804a2b4689871c0",
+    "assigned_total_kg": 7.108160063387575,
+    "FL_mass_kg": 1.3438925625589355,
+    "moving_limb_mass_kg_four_legs": 4.658952979784906,
+    "pose_deg": {
+      "yaw": -45,
+      "hip": 58.04300403950684,
+      "knee": -84.71670736904682,
+      "heading": 0
+    },
+    "coefficients": {
+      "hip": {
+        "slope_Nm_per_kg": -0.11541176470588228,
+        "constant_selfweight_Nm": 0.29857436102361606
+      },
+      "knee": {
+        "slope_Nm_per_kg": 0.11225363802328234,
+        "constant_selfweight_Nm": -0.0952764909154526
+      }
+    }
+  },
+  "candidate": {
+    "path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\mist_v2_20260906\\cad\\concealed_wheel_drive_20260907\\output_oem_checkpoint\\leg_geometry_report.json",
+    "sha256": "676360badb1427c509544576d50ba5be773c31f2e159f17666cbae79d82dbc92",
+    "assigned_total_kg": null,
+    "FL_mass_kg": 1.5408736066521558,
+    "moving_limb_mass_kg_four_legs": 5.446877156157787,
+    "pose_deg": {
+      "yaw": -45,
+      "hip": 62.15716526622748,
+      "knee": -89.06153061991775,
+      "heading": 0
+    },
+    "coefficients": {
+      "hip": {
+        "slope_Nm_per_kg": -0.11541176470588238,
+        "constant_selfweight_Nm": 0.4299686395814965
+      },
+      "knee": {
+        "slope_Nm_per_kg": 0.12185630290672127,
+        "constant_selfweight_Nm": -0.12070632344877341
+      }
+    }
+  },
+  "candidate_total_mass_used_kg": 7.896084239760456,
+  "candidate_total_is_FL_projection": true,
+  "assumed_motor_to_joint_gain": 1.7,
+  "gravity_m_s2": 9.81,
+  "continuous_motor_cap_Nm": 0.7281437625,
+  "peak_motor_cap_Nm": 1.33493023125,
+  "reserve_definition": "Demand no greater than80%ofassumedcap",
+  "old_nominal": [
+    {
+      "case": "three_contact_continuous",
+      "target_motor_torque_Nm": 0.58251501,
+      "axes": [
+        {
+          "joint": "hip",
+          "torque_Nm_at_current_mass": -0.52179093570382,
+          "uniform_all_mass_target_kg": 7.935381102051408,
+          "fixed_limb_base_change_target_kg": 7.634311573599124
+        },
+        {
+          "joint": "knee",
+          "torque_Nm_at_current_mass": 0.7026403358516078,
+          "uniform_all_mass_target_kg": 5.892929453569371,
+          "fixed_limb_base_change_target_kg": 6.0380359412037325
+        }
+      ],
+      "governing_uniform_target_kg": 5.892929453569371,
+      "governing_base_change_target_kg": 6.0380359412037325,
+      "implied_base_mass_kg": 1.3790829614188267
+    },
+    {
+      "case": "unrun_two_contact_1p5_peak",
+      "target_motor_torque_Nm": 1.067944185,
+      "axes": [
+        {
+          "joint": "hip",
+          "torque_Nm_at_current_mass": -1.5472475566131152,
+          "uniform_all_mass_target_kg": 4.906207913076789,
+          "fixed_limb_base_change_target_kg": 5.262388782965565
+        },
+        {
+          "joint": "knee",
+          "torque_Nm_at_current_mass": 1.7000363693104334,
+          "uniform_all_mass_target_kg": 4.465268121777354,
+          "fixed_limb_base_change_target_kg": 4.605525274524351
+        }
+      ],
+      "governing_uniform_target_kg": 4.465268121777354,
+      "governing_base_change_target_kg": 4.605525274524351,
+      "implied_base_mass_kg": -0.05342770526055496
+    }
+  ],
+  "new_nominal": [
+    {
+      "case": "three_contact_continuous",
+      "target_motor_torque_Nm": 0.58251501,
+      "axes": [
+        {
+          "joint": "hip",
+          "torque_Nm_at_current_mass": -0.48133237679556345,
+          "uniform_all_mass_target_kg": 9.555948886103064,
+          "fixed_limb_base_change_target_kg": 8.77279410952367
+        },
+        {
+          "joint": "knee",
+          "torque_Nm_at_current_mass": 0.8414813094484647,
+          "uniform_all_mass_target_kg": 5.466060313210796,
+          "fixed_limb_base_change_target_kg": 5.770906524113704
+        }
+      ],
+      "governing_uniform_target_kg": 5.466060313210796,
+      "governing_base_change_target_kg": 5.770906524113704,
+      "implied_base_mass_kg": 0.32402936795591675
+    },
+    {
+      "case": "unrun_two_contact_1p5_peak",
+      "target_motor_torque_Nm": 1.067944185,
+      "axes": [
+        {
+          "joint": "hip",
+          "torque_Nm_at_current_mass": -1.620458647266888,
+          "uniform_all_mass_target_kg": 5.20382131462901,
+          "fixed_limb_base_change_target_kg": 5.76838102115425
+        },
+        {
+          "joint": "knee",
+          "torque_Nm_at_current_mass": 2.0442158505700125,
+          "uniform_all_mass_target_kg": 4.125091411345319,
+          "fixed_limb_base_change_target_kg": 4.335345011004617
+        }
+      ],
+      "governing_uniform_target_kg": 4.125091411345319,
+      "governing_base_change_target_kg": 4.335345011004617,
+      "implied_base_mass_kg": -1.11153214515317
+    }
+  ],
+  "limitations": [
+    "Vertical wheel forces only; three equivalent contacts, or unrun two contacts with1.5 multiplier.",
+    "Nominal CAD pose, without compliance, inertia, terrain, uneven contact loads or measured motor behaviour.",
+    "Uniform targets hypothetically scale every mass; fixed-limb targets change only base mass.",
+    "Symmetric coaxial rotor COMs are treated as their declared link; internal rotor inertias are irrelevant to this static screen.",
+    "Candidate still contains assembly interferences and incomplete interfaces."
+  ]
+}

@@ -1,0 +1,903 @@
+{
+  "status": "pass",
+  "source_manifest_hash": "ce504f86e7779430ae50394041a0d02d92c47ab61b77c710cbcfba79fbdd9470",
+  "aggregate_hash": "01cc1953619571307f23be8bad3e27cca371c89b778abeccf662b6ad8fd42468",
+  "rebind": {
+    "reason": "Corrected rounded peripheral deck reliefs provide the final R5 interface clearance. Only body_deck geometry changed.",
+    "previous_aggregate_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\manufacturing\\slicing_r5\\output\\previous_revision_a0a035fb1d54\\production_mass_properties.json",
+    "previous_aggregate_hash": "9d9fef130140a455467bf12aff2f4c03b238939e5271ddd73df812d69cd350a4",
+    "previous_source_manifest_hash": "a0a035fb1d548dc73a90a74d7324299ebef63f7c52f1e1f36abd404992b075fa",
+    "changed_skus": [
+      "body_deck"
+    ],
+    "resliced_sku_count": 1,
+    "reused_production_sku_count": 33,
+    "old_deck": {
+      "source_stl_hash": "a990b17b4f077a0c45cdc4841844c0105a92107f9dd15c4efc4290d294b6b465",
+      "mass_kg": 0.08707493608183182,
+      "com_mm": [
+        89.20026709950541,
+        102.85793665168615,
+        2.008544072410222
+      ],
+      "inertia_kg_m2": [
+        [
+          0.0001992014250192875,
+          -6.227569218898803e-08,
+          -1.0311847083987635e-10
+        ],
+        [
+          -6.227569218898815e-08,
+          0.00019537065924057938,
+          9.527548374005976e-10
+        ],
+        [
+          -1.0311847083982105e-10,
+          9.527548374006775e-10,
+          0.00039429193589287704
+        ]
+      ],
+      "estimated_print_time_s": 32124.575999
+    },
+    "new_deck": {
+      "source_stl_hash": "5adb28864924d444e7f9fbd789fd68f843a7a10b6d34b4d2b4fc34a22f02bb19",
+      "mass_kg": 0.08568098026969581,
+      "com_mm": [
+        89.2007229376617,
+        102.85735829377292,
+        2.00852930404423
+      ],
+      "inertia_kg_m2": [
+        [
+          0.00019495391508450577,
+          -6.81552138734692e-08,
+          -4.731934895336228e-11
+        ],
+        [
+          -6.815521387347036e-08,
+          0.00018725609015903707,
+          9.219300682539405e-10
+        ],
+        [
+          -4.731934895336934e-11,
+          9.219300682538919e-10,
+          0.0003819345411955343
+        ]
+      ],
+      "estimated_print_time_s": 31480.921076
+    },
+    "input_validation": {
+      "status": "pass",
+      "validated_utc": "2026-09-12T20:08:15.005404+00:00",
+      "validation_mode": "new_manifest_file_hash_validation",
+      "new_manifest_readiness": "provided_by_caller",
+      "old_aggregate_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\manufacturing\\slicing_r5\\output\\production_mass_properties.json",
+      "old_aggregate_sha256": "9d9fef130140a455467bf12aff2f4c03b238939e5271ddd73df812d69cd350a4",
+      "old_manifest_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\manufacturing\\slicing_r5\\output\\source_assembly_manifest.json",
+      "old_manifest_sha256": "a0a035fb1d548dc73a90a74d7324299ebef63f7c52f1e1f36abd404992b075fa",
+      "new_manifest_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\assembly_manifest.json",
+      "new_manifest_sha256": "ce504f86e7779430ae50394041a0d02d92c47ab61b77c710cbcfba79fbdd9470",
+      "allowed_changed_skus": [
+        "body_deck"
+      ],
+      "errors": [],
+      "part_names_added": [],
+      "part_names_removed": [],
+      "production_sku_count": 34,
+      "expected_unchanged_sku_count": 33,
+      "named_assembly_part_count": 135,
+      "print_to_link_transform_changes": [],
+      "sku_checks": [
+        {
+          "sku": "battery_tray",
+          "quantity": 1,
+          "stl_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\print_stl\\battery_tray.stl",
+          "old_sliced_stl_sha256": "603534a0da593c6d7e4e19f7cf19902f45bcff364d569805d6fb87035c838446",
+          "new_stl_sha256": "603534a0da593c6d7e4e19f7cf19902f45bcff364d569805d6fb87035c838446",
+          "stl_bytes_changed": false,
+          "change_permitted": false,
+          "old_print_rotation": [
+            0,
+            0,
+            0
+          ],
+          "new_print_rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "sku": "body_deck",
+          "quantity": 1,
+          "stl_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\print_stl\\body_deck.stl",
+          "old_sliced_stl_sha256": "a990b17b4f077a0c45cdc4841844c0105a92107f9dd15c4efc4290d294b6b465",
+          "new_stl_sha256": "5adb28864924d444e7f9fbd789fd68f843a7a10b6d34b4d2b4fc34a22f02bb19",
+          "stl_bytes_changed": true,
+          "change_permitted": true,
+          "old_print_rotation": [
+            0,
+            0,
+            0
+          ],
+          "new_print_rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "sku": "case_cap_hip",
+          "quantity": 4,
+          "stl_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\print_stl\\case_cap_hip.stl",
+          "old_sliced_stl_sha256": "07214bbd8f56404fc5d16642c07fb3103373f4fd7a5a25e97e8ac9f9aab39f8a",
+          "new_stl_sha256": "07214bbd8f56404fc5d16642c07fb3103373f4fd7a5a25e97e8ac9f9aab39f8a",
+          "stl_bytes_changed": false,
+          "change_permitted": false,
+          "old_print_rotation": [
+            0,
+            0,
+            0
+          ],
+          "new_print_rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "sku": "case_cap_knee",
+          "quantity": 4,
+          "stl_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\print_stl\\case_cap_knee.stl",
+          "old_sliced_stl_sha256": "9d926173d96257e6473c5430ba0e05cac2bb52dffd2a07d9f5a29c3103bc328c",
+          "new_stl_sha256": "9d926173d96257e6473c5430ba0e05cac2bb52dffd2a07d9f5a29c3103bc328c",
+          "stl_bytes_changed": false,
+          "change_permitted": false,
+          "old_print_rotation": [
+            0,
+            0,
+            0
+          ],
+          "new_print_rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "sku": "case_cap_yaw",
+          "quantity": 4,
+          "stl_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\print_stl\\case_cap_yaw.stl",
+          "old_sliced_stl_sha256": "ba7a100b8b5196e6753f648ed50467291f1f49b6f6e39ed0bb6870916fe67a57",
+          "new_stl_sha256": "ba7a100b8b5196e6753f648ed50467291f1f49b6f6e39ed0bb6870916fe67a57",
+          "stl_bytes_changed": false,
+          "change_permitted": false,
+          "old_print_rotation": [
+            90,
+            0,
+            0
+          ],
+          "new_print_rotation": [
+            90,
+            0,
+            0
+          ]
+        },
+        {
+          "sku": "coxa_lower_auxiliary_arm",
+          "quantity": 4,
+          "stl_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\print_stl\\coxa_lower_auxiliary_arm.stl",
+          "old_sliced_stl_sha256": "4a2774ba90cd3cd3f0fdca26ae39872e8b87dfebd063e86bbd4f10f99ea42686",
+          "new_stl_sha256": "4a2774ba90cd3cd3f0fdca26ae39872e8b87dfebd063e86bbd4f10f99ea42686",
+          "stl_bytes_changed": false,
+          "change_permitted": false,
+          "old_print_rotation": [
+            0,
+            0,
+            0
+          ],
+          "new_print_rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "sku": "coxa_upper_and_hip_saddle",
+          "quantity": 4,
+          "stl_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\print_stl\\coxa_upper_and_hip_saddle.stl",
+          "old_sliced_stl_sha256": "f70dd9f6fdd0b770bd1bd562c55632172a816529a25bcb934a9e27a546d9b03c",
+          "new_stl_sha256": "f70dd9f6fdd0b770bd1bd562c55632172a816529a25bcb934a9e27a546d9b03c",
+          "stl_bytes_changed": false,
+          "change_permitted": false,
+          "old_print_rotation": [
+            90,
+            0,
+            0
+          ],
+          "new_print_rotation": [
+            90,
+            0,
+            0
+          ]
+        },
+        {
+          "sku": "esp32_tray",
+          "quantity": 1,
+          "stl_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\print_stl\\esp32_tray.stl",
+          "old_sliced_stl_sha256": "727b4441b5ece9b36628398fd7405fd698ee13750fca56b95528e17610352961",
+          "new_stl_sha256": "727b4441b5ece9b36628398fd7405fd698ee13750fca56b95528e17610352961",
+          "stl_bytes_changed": false,
+          "change_permitted": false,
+          "old_print_rotation": [
+            0,
+            0,
+            0
+          ],
+          "new_print_rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "sku": "femur_auxiliary_cheek",
+          "quantity": 4,
+          "stl_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\print_stl\\femur_auxiliary_cheek.stl",
+          "old_sliced_stl_sha256": "0589771fd1d3407636a95b663ad5f0ae3ff43c7778c417b353e6fdb195e88703",
+          "new_stl_sha256": "0589771fd1d3407636a95b663ad5f0ae3ff43c7778c417b353e6fdb195e88703",
+          "stl_bytes_changed": false,
+          "change_permitted": false,
+          "old_print_rotation": [
+            90,
+            0,
+            0
+          ],
+          "new_print_rotation": [
+            90,
+            0,
+            0
+          ]
+        },
+        {
+          "sku": "femur_main_and_knee_saddle",
+          "quantity": 4,
+          "stl_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\print_stl\\femur_main_and_knee_saddle.stl",
+          "old_sliced_stl_sha256": "130ff26972778fc78ace4a9e7e7bec9f9a08b0042790b6ebc00673bc59a00ee3",
+          "new_stl_sha256": "130ff26972778fc78ace4a9e7e7bec9f9a08b0042790b6ebc00673bc59a00ee3",
+          "stl_bytes_changed": false,
+          "change_permitted": false,
+          "old_print_rotation": [
+            -90,
+            0,
+            0
+          ],
+          "new_print_rotation": [
+            -90,
+            0,
+            0
+          ]
+        },
+        {
+          "sku": "hex_faceted_cover",
+          "quantity": 1,
+          "stl_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\print_stl\\hex_faceted_cover.stl",
+          "old_sliced_stl_sha256": "936a54e250a9e793c1971f663cccdbb5ea059b2246f9ed32b52f21b22d2dc755",
+          "new_stl_sha256": "936a54e250a9e793c1971f663cccdbb5ea059b2246f9ed32b52f21b22d2dc755",
+          "stl_bytes_changed": false,
+          "change_permitted": false,
+          "old_print_rotation": [
+            180,
+            0,
+            0
+          ],
+          "new_print_rotation": [
+            180,
+            0,
+            0
+          ]
+        },
+        {
+          "sku": "pan_cover_spacer_1",
+          "quantity": 1,
+          "stl_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\print_stl\\pan_cover_spacer_1.stl",
+          "old_sliced_stl_sha256": "3ce66418a3977fa44637c34de2ecd635f676789f21a6663e12a0a5b7ea02084b",
+          "new_stl_sha256": "3ce66418a3977fa44637c34de2ecd635f676789f21a6663e12a0a5b7ea02084b",
+          "stl_bytes_changed": false,
+          "change_permitted": false,
+          "old_print_rotation": [
+            0,
+            0,
+            0
+          ],
+          "new_print_rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "sku": "pan_cover_spacer_2",
+          "quantity": 1,
+          "stl_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\print_stl\\pan_cover_spacer_2.stl",
+          "old_sliced_stl_sha256": "3ce66418a3977fa44637c34de2ecd635f676789f21a6663e12a0a5b7ea02084b",
+          "new_stl_sha256": "3ce66418a3977fa44637c34de2ecd635f676789f21a6663e12a0a5b7ea02084b",
+          "stl_bytes_changed": false,
+          "change_permitted": false,
+          "old_print_rotation": [
+            0,
+            0,
+            0
+          ],
+          "new_print_rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "sku": "pan_cover_spacer_3",
+          "quantity": 1,
+          "stl_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\print_stl\\pan_cover_spacer_3.stl",
+          "old_sliced_stl_sha256": "3ce66418a3977fa44637c34de2ecd635f676789f21a6663e12a0a5b7ea02084b",
+          "new_stl_sha256": "3ce66418a3977fa44637c34de2ecd635f676789f21a6663e12a0a5b7ea02084b",
+          "stl_bytes_changed": false,
+          "change_permitted": false,
+          "old_print_rotation": [
+            0,
+            0,
+            0
+          ],
+          "new_print_rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "sku": "pan_cover_spacer_4",
+          "quantity": 1,
+          "stl_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\print_stl\\pan_cover_spacer_4.stl",
+          "old_sliced_stl_sha256": "3ce66418a3977fa44637c34de2ecd635f676789f21a6663e12a0a5b7ea02084b",
+          "new_stl_sha256": "3ce66418a3977fa44637c34de2ecd635f676789f21a6663e12a0a5b7ea02084b",
+          "stl_bytes_changed": false,
+          "change_permitted": false,
+          "old_print_rotation": [
+            0,
+            0,
+            0
+          ],
+          "new_print_rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "sku": "phone_cradle_foot_left",
+          "quantity": 1,
+          "stl_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\print_stl\\phone_cradle_foot_left.stl",
+          "old_sliced_stl_sha256": "f383e019d7845814156dedb37e1b2feaa29f2fa84ad9e59a8958453b38ff6a0a",
+          "new_stl_sha256": "f383e019d7845814156dedb37e1b2feaa29f2fa84ad9e59a8958453b38ff6a0a",
+          "stl_bytes_changed": false,
+          "change_permitted": false,
+          "old_print_rotation": [
+            90,
+            0,
+            0
+          ],
+          "new_print_rotation": [
+            90,
+            0,
+            0
+          ]
+        },
+        {
+          "sku": "phone_cradle_foot_right",
+          "quantity": 1,
+          "stl_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\print_stl\\phone_cradle_foot_right.stl",
+          "old_sliced_stl_sha256": "a9a581b34e4bd3deabef61ce97877a8ea8765a100cf17a0ed01fb89daf48a288",
+          "new_stl_sha256": "a9a581b34e4bd3deabef61ce97877a8ea8765a100cf17a0ed01fb89daf48a288",
+          "stl_bytes_changed": false,
+          "change_permitted": false,
+          "old_print_rotation": [
+            90,
+            0,
+            0
+          ],
+          "new_print_rotation": [
+            90,
+            0,
+            0
+          ]
+        },
+        {
+          "sku": "phone_cradle_lower_clip_left",
+          "quantity": 1,
+          "stl_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\print_stl\\phone_cradle_lower_clip_left.stl",
+          "old_sliced_stl_sha256": "4db781092904fd35511c35968b307e2960a0bda0de63ba019b689b1d421a994a",
+          "new_stl_sha256": "4db781092904fd35511c35968b307e2960a0bda0de63ba019b689b1d421a994a",
+          "stl_bytes_changed": false,
+          "change_permitted": false,
+          "old_print_rotation": [
+            0,
+            90,
+            0
+          ],
+          "new_print_rotation": [
+            0,
+            90,
+            0
+          ]
+        },
+        {
+          "sku": "phone_cradle_lower_clip_right",
+          "quantity": 1,
+          "stl_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\print_stl\\phone_cradle_lower_clip_right.stl",
+          "old_sliced_stl_sha256": "e2b774fdbb8bcbc2da909ee0a43575577253e3c248cf7fdee7f92e922521a886",
+          "new_stl_sha256": "e2b774fdbb8bcbc2da909ee0a43575577253e3c248cf7fdee7f92e922521a886",
+          "stl_bytes_changed": false,
+          "change_permitted": false,
+          "old_print_rotation": [
+            0,
+            90,
+            0
+          ],
+          "new_print_rotation": [
+            0,
+            90,
+            0
+          ]
+        },
+        {
+          "sku": "phone_cradle_rear_frame",
+          "quantity": 1,
+          "stl_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\print_stl\\phone_cradle_rear_frame.stl",
+          "old_sliced_stl_sha256": "d726550ab902c617177201b8e7626db48ad59ac3650e966428288e1127d050b9",
+          "new_stl_sha256": "d726550ab902c617177201b8e7626db48ad59ac3650e966428288e1127d050b9",
+          "stl_bytes_changed": false,
+          "change_permitted": false,
+          "old_print_rotation": [
+            0,
+            -90,
+            0
+          ],
+          "new_print_rotation": [
+            0,
+            -90,
+            0
+          ]
+        },
+        {
+          "sku": "phone_cradle_top_cap",
+          "quantity": 1,
+          "stl_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\print_stl\\phone_cradle_top_cap.stl",
+          "old_sliced_stl_sha256": "c18801c2e640b04a32f9267109c076504d48f801d0323b9a62ef383ee141ea70",
+          "new_stl_sha256": "c18801c2e640b04a32f9267109c076504d48f801d0323b9a62ef383ee141ea70",
+          "stl_bytes_changed": false,
+          "change_permitted": false,
+          "old_print_rotation": [
+            180,
+            0,
+            0
+          ],
+          "new_print_rotation": [
+            180,
+            0,
+            0
+          ]
+        },
+        {
+          "sku": "phone_pan_hub",
+          "quantity": 1,
+          "stl_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\print_stl\\phone_pan_hub.stl",
+          "old_sliced_stl_sha256": "92c72911c1c91508e596bf86d895ca00e4d9cd029e23eefa747c3330bb5501cf",
+          "new_stl_sha256": "92c72911c1c91508e596bf86d895ca00e4d9cd029e23eefa747c3330bb5501cf",
+          "stl_bytes_changed": false,
+          "change_permitted": false,
+          "old_print_rotation": [
+            0,
+            0,
+            0
+          ],
+          "new_print_rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "sku": "phone_pan_servo_cap",
+          "quantity": 1,
+          "stl_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\print_stl\\phone_pan_servo_cap.stl",
+          "old_sliced_stl_sha256": "ef7357722f95d5ff5722eaccdbb5954a12ea13cb510b8c9dfcad75597d1a843d",
+          "new_stl_sha256": "ef7357722f95d5ff5722eaccdbb5954a12ea13cb510b8c9dfcad75597d1a843d",
+          "stl_bytes_changed": false,
+          "change_permitted": false,
+          "old_print_rotation": [
+            180,
+            0,
+            0
+          ],
+          "new_print_rotation": [
+            180,
+            0,
+            0
+          ]
+        },
+        {
+          "sku": "phone_pan_servo_saddle",
+          "quantity": 1,
+          "stl_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\print_stl\\phone_pan_servo_saddle.stl",
+          "old_sliced_stl_sha256": "aa079dad57ddb0871e10a65cb4b85bc074500f72f8fe1de02a43bd1ba20e85f6",
+          "new_stl_sha256": "aa079dad57ddb0871e10a65cb4b85bc074500f72f8fe1de02a43bd1ba20e85f6",
+          "stl_bytes_changed": false,
+          "change_permitted": false,
+          "old_print_rotation": [
+            0,
+            0,
+            0
+          ],
+          "new_print_rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "sku": "power_distribution_tray",
+          "quantity": 1,
+          "stl_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\print_stl\\power_distribution_tray.stl",
+          "old_sliced_stl_sha256": "4e0da230e71bea122fc7b0cc088031b26fbb5927c3e58f82ebc1764d97271d41",
+          "new_stl_sha256": "4e0da230e71bea122fc7b0cc088031b26fbb5927c3e58f82ebc1764d97271d41",
+          "stl_bytes_changed": false,
+          "change_permitted": false,
+          "old_print_rotation": [
+            180,
+            0,
+            45
+          ],
+          "new_print_rotation": [
+            180,
+            0,
+            45
+          ]
+        },
+        {
+          "sku": "servo_bus_adapter_tray",
+          "quantity": 1,
+          "stl_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\print_stl\\servo_bus_adapter_tray.stl",
+          "old_sliced_stl_sha256": "e9b4d020afaf338d1f078ba94c581d056bf2374fc835a8603b2e02986a6b7999",
+          "new_stl_sha256": "e9b4d020afaf338d1f078ba94c581d056bf2374fc835a8603b2e02986a6b7999",
+          "stl_bytes_changed": false,
+          "change_permitted": false,
+          "old_print_rotation": [
+            0,
+            0,
+            0
+          ],
+          "new_print_rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "sku": "tibia_auxiliary_cheek",
+          "quantity": 4,
+          "stl_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\print_stl\\tibia_auxiliary_cheek.stl",
+          "old_sliced_stl_sha256": "889c1710a4e182e42eaca52cf938de438aa12c05258669d5edb841ab4b776b32",
+          "new_stl_sha256": "889c1710a4e182e42eaca52cf938de438aa12c05258669d5edb841ab4b776b32",
+          "stl_bytes_changed": false,
+          "change_permitted": false,
+          "old_print_rotation": [
+            90,
+            0,
+            0
+          ],
+          "new_print_rotation": [
+            90,
+            0,
+            0
+          ]
+        },
+        {
+          "sku": "tibia_curved_main_and_foot",
+          "quantity": 4,
+          "stl_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\print_stl\\tibia_curved_main_and_foot.stl",
+          "old_sliced_stl_sha256": "843aed3223cc36c6d5f7523f5830007fac3a613fc26f95990be94b43859e3aa7",
+          "new_stl_sha256": "843aed3223cc36c6d5f7523f5830007fac3a613fc26f95990be94b43859e3aa7",
+          "stl_bytes_changed": false,
+          "change_permitted": false,
+          "old_print_rotation": [
+            -90,
+            0,
+            0
+          ],
+          "new_print_rotation": [
+            -90,
+            0,
+            0
+          ]
+        },
+        {
+          "sku": "ubec_tray",
+          "quantity": 1,
+          "stl_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\print_stl\\ubec_tray.stl",
+          "old_sliced_stl_sha256": "ad33b247cc5e0f8958b107632fca3e57dfe0ef7f93806b2e682bd91130c343ea",
+          "new_stl_sha256": "ad33b247cc5e0f8958b107632fca3e57dfe0ef7f93806b2e682bd91130c343ea",
+          "stl_bytes_changed": false,
+          "change_permitted": false,
+          "old_print_rotation": [
+            180,
+            0,
+            0
+          ],
+          "new_print_rotation": [
+            180,
+            0,
+            0
+          ]
+        },
+        {
+          "sku": "yaw_auxiliary_spacer_1",
+          "quantity": 4,
+          "stl_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\print_stl\\yaw_auxiliary_spacer_1.stl",
+          "old_sliced_stl_sha256": "76eae4d6cfe9611f405b4b844d253368211e40da73b23727d7d420e0c25e3a86",
+          "new_stl_sha256": "76eae4d6cfe9611f405b4b844d253368211e40da73b23727d7d420e0c25e3a86",
+          "stl_bytes_changed": false,
+          "change_permitted": false,
+          "old_print_rotation": [
+            0,
+            0,
+            0
+          ],
+          "new_print_rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "sku": "yaw_auxiliary_spacer_2",
+          "quantity": 4,
+          "stl_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\print_stl\\yaw_auxiliary_spacer_2.stl",
+          "old_sliced_stl_sha256": "76eae4d6cfe9611f405b4b844d253368211e40da73b23727d7d420e0c25e3a86",
+          "new_stl_sha256": "76eae4d6cfe9611f405b4b844d253368211e40da73b23727d7d420e0c25e3a86",
+          "stl_bytes_changed": false,
+          "change_permitted": false,
+          "old_print_rotation": [
+            0,
+            0,
+            0
+          ],
+          "new_print_rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "sku": "yaw_auxiliary_spacer_3",
+          "quantity": 4,
+          "stl_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\print_stl\\yaw_auxiliary_spacer_3.stl",
+          "old_sliced_stl_sha256": "3602472470bee190351a33e77d9d8b394ec228b379e70e88d5302f5dcb88e81c",
+          "new_stl_sha256": "3602472470bee190351a33e77d9d8b394ec228b379e70e88d5302f5dcb88e81c",
+          "stl_bytes_changed": false,
+          "change_permitted": false,
+          "old_print_rotation": [
+            0,
+            0,
+            0
+          ],
+          "new_print_rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "sku": "yaw_auxiliary_spacer_4",
+          "quantity": 4,
+          "stl_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\print_stl\\yaw_auxiliary_spacer_4.stl",
+          "old_sliced_stl_sha256": "3602472470bee190351a33e77d9d8b394ec228b379e70e88d5302f5dcb88e81c",
+          "new_stl_sha256": "3602472470bee190351a33e77d9d8b394ec228b379e70e88d5302f5dcb88e81c",
+          "stl_bytes_changed": false,
+          "change_permitted": false,
+          "old_print_rotation": [
+            0,
+            0,
+            0
+          ],
+          "new_print_rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "sku": "yaw_case_saddle",
+          "quantity": 4,
+          "stl_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\print_stl\\yaw_case_saddle.stl",
+          "old_sliced_stl_sha256": "ac4612018e8a0ccf1af1ce294ebfc54ee79cf865ffc54faf44d5b8411ba3651c",
+          "new_stl_sha256": "ac4612018e8a0ccf1af1ce294ebfc54ee79cf865ffc54faf44d5b8411ba3651c",
+          "stl_bytes_changed": false,
+          "change_permitted": false,
+          "old_print_rotation": [
+            0,
+            0,
+            0
+          ],
+          "new_print_rotation": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "changed_skus": [
+        "body_deck"
+      ],
+      "unchanged_skus": [
+        "battery_tray",
+        "case_cap_hip",
+        "case_cap_knee",
+        "case_cap_yaw",
+        "coxa_lower_auxiliary_arm",
+        "coxa_upper_and_hip_saddle",
+        "esp32_tray",
+        "femur_auxiliary_cheek",
+        "femur_main_and_knee_saddle",
+        "hex_faceted_cover",
+        "pan_cover_spacer_1",
+        "pan_cover_spacer_2",
+        "pan_cover_spacer_3",
+        "pan_cover_spacer_4",
+        "phone_cradle_foot_left",
+        "phone_cradle_foot_right",
+        "phone_cradle_lower_clip_left",
+        "phone_cradle_lower_clip_right",
+        "phone_cradle_rear_frame",
+        "phone_cradle_top_cap",
+        "phone_pan_hub",
+        "phone_pan_servo_cap",
+        "phone_pan_servo_saddle",
+        "power_distribution_tray",
+        "servo_bus_adapter_tray",
+        "tibia_auxiliary_cheek",
+        "tibia_curved_main_and_foot",
+        "ubec_tray",
+        "yaw_auxiliary_spacer_1",
+        "yaw_auxiliary_spacer_2",
+        "yaw_auxiliary_spacer_3",
+        "yaw_auxiliary_spacer_4",
+        "yaw_case_saddle"
+      ],
+      "non_permitted_stl_changes": [],
+      "requires_reslice_skus": [
+        "body_deck"
+      ],
+      "deck_hash_difference": {
+        "sku": "body_deck",
+        "quantity": 1,
+        "stl_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\print_stl\\body_deck.stl",
+        "old_sliced_stl_sha256": "a990b17b4f077a0c45cdc4841844c0105a92107f9dd15c4efc4290d294b6b465",
+        "new_stl_sha256": "5adb28864924d444e7f9fbd789fd68f843a7a10b6d34b4d2b4fc34a22f02bb19",
+        "stl_bytes_changed": true,
+        "change_permitted": true,
+        "old_print_rotation": [
+          0,
+          0,
+          0
+        ],
+        "new_print_rotation": [
+          0,
+          0,
+          0
+        ]
+      },
+      "piece_count": 76,
+      "revisions": {
+        "old_aggregate": "hex_quad_r5_inward_hip_straight_tibia",
+        "old_manifest": "hex_quad_r5_inward_hip_straight_tibia",
+        "new_manifest": "hex_quad_r5_inward_hip_straight_tibia",
+        "old_parameters": "hex_quad_r5_inward_hip_straight_tibia",
+        "new_parameters": "hex_quad_r5_inward_hip_straight_tibia"
+      },
+      "metadata_changes": [
+        {
+          "path": "/printable_mass_solid_kg",
+          "change": "changed",
+          "old": 1.2370552499864813,
+          "new": 1.235229634054843
+        },
+        {
+          "path": "/source_hashes/body.py",
+          "change": "changed",
+          "old": "fff64ceda3bc477633112f3e4783d1a00f489f9388cde5141c36c42d37f11d15",
+          "new": "794d6fd9ee5acc21f5078d3664a6f9d4adac3bdc7c171f42620f8f40f25f879f"
+        },
+        {
+          "path": "/total_mass_kg",
+          "change": "changed",
+          "old": 2.937960732569977,
+          "new": 2.9361351166383387
+        }
+      ],
+      "joint_limit_metadata_changes": [],
+      "source_code_hash_changes": [
+        {
+          "path": "/source_hashes/body.py",
+          "change": "changed",
+          "old": "fff64ceda3bc477633112f3e4783d1a00f489f9388cde5141c36c42d37f11d15",
+          "new": "794d6fd9ee5acc21f5078d3664a6f9d4adac3bdc7c171f42620f8f40f25f879f"
+        }
+      ],
+      "metadata_review_note": "Metadata changes are reported for caller review. This gate does not authorize changes to joint limits or attest to URDF files outside the supplied manifests.",
+      "link_metadata_changes": [
+        {
+          "path": "/links/base/com_mm",
+          "change": "changed",
+          "old": [
+            -1.4649373056002037,
+            1.0727967162491823,
+            19.878544602913312
+          ],
+          "new": [
+            -1.4670509736070891,
+            1.0743445886996696,
+            19.904340456150436
+          ]
+        },
+        {
+          "path": "/links/base/inertia_kg_m2/ixx",
+          "change": "changed",
+          "old": 0.002958903992423923,
+          "new": 0.002952861054638895
+        },
+        {
+          "path": "/links/base/inertia_kg_m2/ixy",
+          "change": "changed",
+          "old": -2.120080564430533e-06,
+          "new": -2.122953805440349e-06
+        },
+        {
+          "path": "/links/base/inertia_kg_m2/ixz",
+          "change": "changed",
+          "old": 7.474250277740215e-05,
+          "new": 7.469461917860752e-05
+        },
+        {
+          "path": "/links/base/inertia_kg_m2/iyy",
+          "change": "changed",
+          "old": 0.0032059758878398,
+          "new": 0.0031949124173798814
+        },
+        {
+          "path": "/links/base/inertia_kg_m2/iyz",
+          "change": "changed",
+          "old": 8.590212923505312e-06,
+          "new": 8.625278838853848e-06
+        },
+        {
+          "path": "/links/base/inertia_kg_m2/izz",
+          "change": "changed",
+          "old": 0.004183860707802163,
+          "new": 0.0041679279401455995
+        },
+        {
+          "path": "/links/base/mass_kg",
+          "change": "changed",
+          "old": 1.2671202957218757,
+          "new": 1.2652946797902374
+        }
+      ],
+      "all_non_permitted_stl_hashes_unchanged": true,
+      "all_non_permitted_frames_unchanged": true,
+      "all_identity_and_quantity_checks_pass": true
+    },
+    "elapsed_seconds": 12.860000000044238
+  },
+  "previous_artifacts_preserved": true,
+  "other_33_production_records_unchanged": true
+}

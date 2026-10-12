@@ -1,0 +1,54 @@
+Geometric net-section comparison of the R4 and straight R5 candidate lower leg. No material failure simulation.
+
+Longitudinal axis X runs from knee centre 0 to toe centre 105 mm. Sections lie in YZ. Bending about Y loads the leg side profile; bending about Z applies lateral bending.
+
+Watertight and consistent winding: pass.
+Both printed parts per leg, solid PLA estimate: R4 36.359 g; R5 42.657 g; change +6.298 g.
+
+Selected complete-part net sections. A is mm2; Zy and Zz are mm3.
+part, x mm, R4 A, R5 A, R4 Zy, R5 Zy, R4 Zz, R5 Zz
+main, 11, 98.716, 94.889, 406.032, 375.163, 65.810, 63.259
+main, 20, 81.793, 96.305, 278.756, 382.726, 54.529, 60.107
+main, 25, 90.361, 101.067, 334.305, 423.679, 57.665, 62.059
+main, 30, 88.529, 105.829, 319.984, 466.549, 56.911, 64.009
+main, 40, 111.577, 784.667, 471.317, 2263.588, 105.903, 4866.792
+main, 50, 604.120, 400.667, 1150.246, 1454.815, 3863.616, 1761.140
+main, 60, 261.077, 291.667, 557.717, 1012.731, 1179.308, 680.556
+main, 80, 204.000, 224.259, 495.429, 598.717, 476.000, 523.272
+main, 95, 181.333, 173.704, 391.450, 359.202, 423.111, 405.309
+main, 100, 130.667, 114.852, 346.557, 260.049, 304.889, 267.988
+auxiliary, 11, 98.717, 94.889, 406.035, 375.163, 65.810, 63.259
+auxiliary, 20, 81.793, 90.705, 278.756, 342.211, 54.529, 55.979
+auxiliary, 25, 84.761, 95.467, 297.745, 379.977, 52.925, 58.425
+auxiliary, 30, 82.929, 100.229, 284.635, 419.645, 51.984, 60.870
+auxiliary, 40, 88.395, 94.887, 261.674, 372.156, 36.597, 49.382
+auxiliary, 50, 90.489, 78.667, 231.044, 257.852, 58.242, 52.444
+auxiliary, 60, R4 present True, R5 present False
+auxiliary, 80, R4 present False, R5 present False
+auxiliary, 95, R4 present False, R5 present False
+auxiliary, 100, R4 present False, R5 present False
+
+Isolated main-cheek root minima, common x range 11 to 31.5 mm.
+R4: area_mm2 80.144 at x 24.5 mm; Z_about_y_mm3 267.629 at x 24.5 mm; Z_about_z_mm3 37.204 at x 31.5 mm
+R5 straight candidate: area_mm2 84.778 at x 17.5 mm; Z_about_y_mm3 299.470 at x 17.5 mm; Z_about_z_mm3 56.519 at x 17.5 mm
+
+Complete-part sweep minima, x=11 mm to x=100 mm or 0.5 mm before the part end.
+R4, tibia_curved_main_and_foot: area_mm2 80.144 at x 24.5 mm; Z_about_y_mm3 254.254 at x 35 mm; Z_about_z_mm3 37.204 at x 31.5 mm
+R4, tibia_auxiliary_cheek: area_mm2 40.667 at x 62.5 mm; Z_about_y_mm3 68.907 at x 62.5 mm; Z_about_z_mm3 23.444 at x 39.5 mm
+R5 straight candidate, tibia_curved_main_and_foot: area_mm2 84.778 at x 17.5 mm; Z_about_y_mm3 260.049 at x 100 mm; Z_about_z_mm3 56.519 at x 17.5 mm
+R5 straight candidate, tibia_auxiliary_cheek: area_mm2 75.333 at x 50.5 mm; Z_about_y_mm3 236.463 at x 50.5 mm; Z_about_z_mm3 40.969 at x 44 mm
+
+In the common main-cheek root window, R5 has larger sampled minimum net area and section moduli. This does not make every cut stronger: at x=11 mm, both moduli are smaller; at the x=100 mm foot-strap cut, R5 has a smaller section in both bending directions.
+The foot-end reduction is far from the knee and normally has a shorter external-force lever arm. A final load-specific check must apply the actual moment at each cut before deciding whether it matters.
+Neither the curved nor straight main part introduces an extra joint. The separate short auxiliary cheek supports the opposite shaft and permits assembly.
+
+Interpretation limits:
+* Solid geometry is used for the section and mass comparison. PLA density is 1.24 g/cm3 for volume-based mass only.
+* The independent auxiliary cheek is not combined with the main piece as a bonded cross section.
+* No infill, layer adhesion, creep, bolt contact, preload or actual load sharing is modeled.
+* Full-part minima occur at different physical locations and cannot be compared as a failure margin without a bending-moment diagram.
+* The thin main-cheek root remains sensitive to lateral bending. A straight distal shank does not resolve uncertain sharing between the two shaft-support cheeks.
+* The bridge moves closer to the knee and the auxiliary cheek is shorter. These changes contribute to the section differences, so this is not an isolated comparison of straight versus curved centreline.
+* Scan interval is 0.5 mm. Local stress concentrations and unsampled narrower features are not resolved.
+
+Trimesh plane cuts with Shapely polygon integration. Holes subtract area. Unsymmetric elastic section modulus uses the complete 2 by 2 second-moment tensor and extreme actual polygon vertices.

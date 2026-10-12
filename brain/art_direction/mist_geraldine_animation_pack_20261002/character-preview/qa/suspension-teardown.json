@@ -1,0 +1,663 @@
+{
+  "before": {
+    "audio": {
+      "active": true,
+      "position": 0.0919253333333332,
+      "reason": "speech"
+    },
+    "epoch": 1,
+    "events": [
+      {
+        "detail": "",
+        "epoch": 1,
+        "time": 0,
+        "type": "ready"
+      },
+      {
+        "detail": "What is a hinge?",
+        "epoch": 1,
+        "time": 0,
+        "type": "context"
+      },
+      {
+        "detail": "listening",
+        "epoch": 1,
+        "time": 0,
+        "type": "state"
+      },
+      {
+        "detail": "attentive",
+        "epoch": 1,
+        "time": 0,
+        "type": "intent"
+      },
+      {
+        "detail": "",
+        "epoch": 1,
+        "time": 0,
+        "type": "play"
+      },
+      {
+        "detail": "thinking",
+        "epoch": 1,
+        "time": 892,
+        "type": "state"
+      },
+      {
+        "detail": "friendly-curiosity",
+        "epoch": 1,
+        "time": 892,
+        "type": "intent"
+      },
+      {
+        "detail": "attentive",
+        "epoch": 1,
+        "time": 1622,
+        "type": "intent"
+      },
+      {
+        "detail": "speaking",
+        "epoch": 1,
+        "time": 2012,
+        "type": "state"
+      }
+    ],
+    "face": {
+      "destroyed": false,
+      "epoch": 1,
+      "error": null,
+      "expression": "attentive",
+      "generation": 4,
+      "intent": "attentive",
+      "loaded": true,
+      "pose": {
+        "eyeFamily": "attentive",
+        "eyeFrame": "rest",
+        "mouthFamily": "friendly",
+        "mouthFrame": "AA",
+        "phase": "hold",
+        "presetId": "attentive",
+        "speaking": true
+      },
+      "reaction": null,
+      "renderer": "geraldine-native-atlas",
+      "requestCount": 2,
+      "speech": {
+        "active": true,
+        "amount": 0.95,
+        "epoch": 1,
+        "sequence": 1,
+        "source": "recovered_provider_caption_word_bounds_estimated_phonemes_audio_gated",
+        "time": 0.07186433333333309,
+        "turn_id": "hinge",
+        "viseme": "AA"
+      },
+      "state": "speaking",
+      "version": "1.0.0",
+      "viseme": "AA"
+    },
+    "faceTimeMs": 2091.925333333333,
+    "loopActive": true,
+    "notes": [
+      {
+        "audiblePosition": 0.5405309999999872,
+        "createdAt": "2026-10-04T22:44:39.749Z",
+        "id": "6a15daa4-f718-4e9b-a4af-ce5bec17c9af",
+        "profile": "expressive",
+        "sceneId": "hinge",
+        "text": "QA synthetic note 2026-10-04: verify moment identity survives reload and export.",
+        "time": 2920,
+        "verdict": "keep",
+        "version": "1.0.1"
+      }
+    ],
+    "pending": false,
+    "profile": "restrained",
+    "recovering": false,
+    "running": true,
+    "scene": "hinge",
+    "sources": 1,
+    "time": 2.091925333333333,
+    "version": "1.0.1"
+  },
+  "suspended": {
+    "contextStates": [
+      "suspended"
+    ],
+    "intervals": 0,
+    "nodes": [
+      {
+        "disconnects": 1,
+        "starts": 1,
+        "stops": 1
+      }
+    ],
+    "snapshot": {
+      "audio": {
+        "active": false,
+        "position": 0.16179833333333304,
+        "reason": "suspended-clock"
+      },
+      "epoch": 2,
+      "events": [
+        {
+          "detail": "",
+          "epoch": 1,
+          "time": 0,
+          "type": "ready"
+        },
+        {
+          "detail": "What is a hinge?",
+          "epoch": 1,
+          "time": 0,
+          "type": "context"
+        },
+        {
+          "detail": "listening",
+          "epoch": 1,
+          "time": 0,
+          "type": "state"
+        },
+        {
+          "detail": "attentive",
+          "epoch": 1,
+          "time": 0,
+          "type": "intent"
+        },
+        {
+          "detail": "",
+          "epoch": 1,
+          "time": 0,
+          "type": "play"
+        },
+        {
+          "detail": "thinking",
+          "epoch": 1,
+          "time": 892,
+          "type": "state"
+        },
+        {
+          "detail": "friendly-curiosity",
+          "epoch": 1,
+          "time": 892,
+          "type": "intent"
+        },
+        {
+          "detail": "attentive",
+          "epoch": 1,
+          "time": 1622,
+          "type": "intent"
+        },
+        {
+          "detail": "speaking",
+          "epoch": 1,
+          "time": 2012,
+          "type": "state"
+        },
+        {
+          "detail": "",
+          "epoch": 2,
+          "time": 2162,
+          "type": "audio-suspended"
+        },
+        {
+          "detail": "attentive · 0 ms",
+          "epoch": 2,
+          "time": 2162,
+          "type": "recovery"
+        }
+      ],
+      "face": {
+        "destroyed": false,
+        "epoch": 2,
+        "error": null,
+        "expression": "attentive",
+        "generation": 7,
+        "intent": "attentive",
+        "loaded": true,
+        "pose": {
+          "eyeFamily": "attentive",
+          "eyeFrame": "rest",
+          "mouthFamily": "friendly",
+          "mouthFrame": "rest",
+          "phase": "hold",
+          "presetId": "attentive",
+          "speaking": false
+        },
+        "reaction": null,
+        "renderer": "geraldine-native-atlas",
+        "requestCount": 2,
+        "speech": {
+          "active": false,
+          "amount": 0,
+          "epoch": 2,
+          "sequence": 2,
+          "source": "silence",
+          "time": 0.16179833333333304,
+          "turn_id": "hinge",
+          "viseme": "rest"
+        },
+        "state": "speaking",
+        "version": "1.0.0",
+        "viseme": "rest"
+      },
+      "faceTimeMs": 2161.8983332975704,
+      "loopActive": false,
+      "notes": [
+        {
+          "audiblePosition": 0.5405309999999872,
+          "createdAt": "2026-10-04T22:44:39.749Z",
+          "id": "6a15daa4-f718-4e9b-a4af-ce5bec17c9af",
+          "profile": "expressive",
+          "sceneId": "hinge",
+          "text": "QA synthetic note 2026-10-04: verify moment identity survives reload and export.",
+          "time": 2920,
+          "verdict": "keep",
+          "version": "1.0.1"
+        }
+      ],
+      "pending": false,
+      "profile": "restrained",
+      "recovering": false,
+      "running": false,
+      "scene": "hinge",
+      "sources": 0,
+      "time": 2.161798333333333,
+      "version": "1.0.1"
+    }
+  },
+  "resumed": {
+    "audio": {
+      "active": true,
+      "position": 0.4193543333333327,
+      "reason": "speech"
+    },
+    "epoch": 2,
+    "events": [
+      {
+        "detail": "",
+        "epoch": 1,
+        "time": 0,
+        "type": "ready"
+      },
+      {
+        "detail": "What is a hinge?",
+        "epoch": 1,
+        "time": 0,
+        "type": "context"
+      },
+      {
+        "detail": "listening",
+        "epoch": 1,
+        "time": 0,
+        "type": "state"
+      },
+      {
+        "detail": "attentive",
+        "epoch": 1,
+        "time": 0,
+        "type": "intent"
+      },
+      {
+        "detail": "",
+        "epoch": 1,
+        "time": 0,
+        "type": "play"
+      },
+      {
+        "detail": "thinking",
+        "epoch": 1,
+        "time": 892,
+        "type": "state"
+      },
+      {
+        "detail": "friendly-curiosity",
+        "epoch": 1,
+        "time": 892,
+        "type": "intent"
+      },
+      {
+        "detail": "attentive",
+        "epoch": 1,
+        "time": 1622,
+        "type": "intent"
+      },
+      {
+        "detail": "speaking",
+        "epoch": 1,
+        "time": 2012,
+        "type": "state"
+      },
+      {
+        "detail": "",
+        "epoch": 2,
+        "time": 2162,
+        "type": "audio-suspended"
+      },
+      {
+        "detail": "attentive · 0 ms",
+        "epoch": 2,
+        "time": 2162,
+        "type": "recovery"
+      },
+      {
+        "detail": "",
+        "epoch": 2,
+        "time": 2162,
+        "type": "play"
+      }
+    ],
+    "face": {
+      "destroyed": false,
+      "epoch": 2,
+      "error": null,
+      "expression": "attentive",
+      "generation": 8,
+      "intent": "attentive",
+      "loaded": true,
+      "pose": {
+        "eyeFamily": "attentive",
+        "eyeFrame": "rest",
+        "mouthFamily": "friendly",
+        "mouthFrame": "S",
+        "phase": "hold",
+        "presetId": "attentive",
+        "speaking": true
+      },
+      "reaction": null,
+      "renderer": "geraldine-native-atlas",
+      "requestCount": 2,
+      "speech": {
+        "active": true,
+        "amount": 0.7846,
+        "epoch": 2,
+        "sequence": 2,
+        "source": "recovered_provider_caption_word_bounds_estimated_phonemes_audio_gated",
+        "time": 0.389129333333333,
+        "turn_id": "hinge",
+        "viseme": "S"
+      },
+      "state": "speaking",
+      "version": "1.0.0",
+      "viseme": "S"
+    },
+    "faceTimeMs": 2419.45433329757,
+    "loopActive": true,
+    "notes": [
+      {
+        "audiblePosition": 0.5405309999999872,
+        "createdAt": "2026-10-04T22:44:39.749Z",
+        "id": "6a15daa4-f718-4e9b-a4af-ce5bec17c9af",
+        "profile": "expressive",
+        "sceneId": "hinge",
+        "text": "QA synthetic note 2026-10-04: verify moment identity survives reload and export.",
+        "time": 2920,
+        "verdict": "keep",
+        "version": "1.0.1"
+      }
+    ],
+    "pending": false,
+    "profile": "restrained",
+    "recovering": false,
+    "running": true,
+    "scene": "hinge",
+    "sources": 1,
+    "time": 2.4193543333333327,
+    "version": "1.0.1"
+  },
+  "teardownBefore": {
+    "audio": {
+      "active": true,
+      "position": 0.051554333333332814,
+      "reason": "speech"
+    },
+    "epoch": 1,
+    "events": [
+      {
+        "detail": "",
+        "epoch": 1,
+        "time": 0,
+        "type": "ready"
+      },
+      {
+        "detail": "What is a hinge?",
+        "epoch": 1,
+        "time": 0,
+        "type": "context"
+      },
+      {
+        "detail": "listening",
+        "epoch": 1,
+        "time": 0,
+        "type": "state"
+      },
+      {
+        "detail": "attentive",
+        "epoch": 1,
+        "time": 0,
+        "type": "intent"
+      },
+      {
+        "detail": "",
+        "epoch": 1,
+        "time": 0,
+        "type": "play"
+      },
+      {
+        "detail": "thinking",
+        "epoch": 1,
+        "time": 872,
+        "type": "state"
+      },
+      {
+        "detail": "friendly-curiosity",
+        "epoch": 1,
+        "time": 872,
+        "type": "intent"
+      },
+      {
+        "detail": "attentive",
+        "epoch": 1,
+        "time": 1611,
+        "type": "intent"
+      },
+      {
+        "detail": "speaking",
+        "epoch": 1,
+        "time": 2022,
+        "type": "state"
+      }
+    ],
+    "face": {
+      "destroyed": false,
+      "epoch": 1,
+      "error": null,
+      "expression": "attentive",
+      "generation": 4,
+      "intent": "attentive",
+      "loaded": true,
+      "pose": {
+        "eyeFamily": "attentive",
+        "eyeFrame": "rest",
+        "mouthFamily": "friendly",
+        "mouthFrame": "AA",
+        "phase": "hold",
+        "presetId": "attentive",
+        "speaking": true
+      },
+      "reaction": null,
+      "renderer": "geraldine-native-atlas",
+      "requestCount": 2,
+      "speech": {
+        "active": true,
+        "amount": 0.95,
+        "epoch": 1,
+        "sequence": 1,
+        "source": "recovered_provider_caption_word_bounds_estimated_phonemes_audio_gated",
+        "time": 0.021623333333333328,
+        "turn_id": "hinge",
+        "viseme": "AA"
+      },
+      "state": "speaking",
+      "version": "1.0.0",
+      "viseme": "AA"
+    },
+    "faceTimeMs": 2051.554333333333,
+    "loopActive": true,
+    "notes": [
+      {
+        "audiblePosition": 0.5405309999999872,
+        "createdAt": "2026-10-04T22:44:39.749Z",
+        "id": "6a15daa4-f718-4e9b-a4af-ce5bec17c9af",
+        "profile": "expressive",
+        "sceneId": "hinge",
+        "text": "QA synthetic note 2026-10-04: verify moment identity survives reload and export.",
+        "time": 2920,
+        "verdict": "keep",
+        "version": "1.0.1"
+      }
+    ],
+    "pending": false,
+    "profile": "restrained",
+    "recovering": false,
+    "running": true,
+    "scene": "hinge",
+    "sources": 1,
+    "time": 2.051554333333333,
+    "version": "1.0.1"
+  },
+  "teardown": {
+    "contexts": [
+      "closed"
+    ],
+    "intervals": 0,
+    "nodes": [
+      {
+        "disconnects": 1,
+        "starts": 1,
+        "stops": 1
+      }
+    ],
+    "snapshot": {
+      "audio": {
+        "active": false,
+        "position": 0,
+        "reason": "suspended-clock"
+      },
+      "epoch": 2,
+      "events": [
+        {
+          "detail": "",
+          "epoch": 1,
+          "time": 0,
+          "type": "ready"
+        },
+        {
+          "detail": "What is a hinge?",
+          "epoch": 1,
+          "time": 0,
+          "type": "context"
+        },
+        {
+          "detail": "listening",
+          "epoch": 1,
+          "time": 0,
+          "type": "state"
+        },
+        {
+          "detail": "attentive",
+          "epoch": 1,
+          "time": 0,
+          "type": "intent"
+        },
+        {
+          "detail": "",
+          "epoch": 1,
+          "time": 0,
+          "type": "play"
+        },
+        {
+          "detail": "thinking",
+          "epoch": 1,
+          "time": 872,
+          "type": "state"
+        },
+        {
+          "detail": "friendly-curiosity",
+          "epoch": 1,
+          "time": 872,
+          "type": "intent"
+        },
+        {
+          "detail": "attentive",
+          "epoch": 1,
+          "time": 1611,
+          "type": "intent"
+        },
+        {
+          "detail": "speaking",
+          "epoch": 1,
+          "time": 2022,
+          "type": "state"
+        }
+      ],
+      "face": {
+        "destroyed": true,
+        "epoch": 1,
+        "error": null,
+        "expression": "attentive",
+        "generation": 5,
+        "intent": "attentive",
+        "loaded": false,
+        "pose": {
+          "eyeFamily": "attentive",
+          "eyeFrame": "rest",
+          "mouthFamily": "friendly",
+          "mouthFrame": "AA",
+          "phase": "hold",
+          "presetId": "attentive",
+          "speaking": true
+        },
+        "reaction": null,
+        "renderer": "geraldine-native-atlas",
+        "requestCount": 2,
+        "speech": {
+          "active": false,
+          "amount": 0,
+          "epoch": null,
+          "sequence": null,
+          "source": "destroy",
+          "time": 0,
+          "turn_id": null,
+          "viseme": "rest"
+        },
+        "state": "speaking",
+        "version": "1.0.0",
+        "viseme": "AA"
+      },
+      "faceTimeMs": 0,
+      "loopActive": false,
+      "notes": [
+        {
+          "audiblePosition": 0.5405309999999872,
+          "createdAt": "2026-10-04T22:44:39.749Z",
+          "id": "6a15daa4-f718-4e9b-a4af-ce5bec17c9af",
+          "profile": "expressive",
+          "sceneId": "hinge",
+          "text": "QA synthetic note 2026-10-04: verify moment identity survives reload and export.",
+          "time": 2920,
+          "verdict": "keep",
+          "version": "1.0.1"
+        }
+      ],
+      "pending": false,
+      "profile": "restrained",
+      "recovering": false,
+      "running": false,
+      "scene": "hinge",
+      "sources": 0,
+      "time": 0,
+      "version": "1.0.1"
+    }
+  }
+}

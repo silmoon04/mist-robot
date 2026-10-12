@@ -1,0 +1,27 @@
+Use case: precise-object-edit
+Edit target: attached rectangular document sprite sheet, 1536x1024 transparent RGBA, EXACTLY 6 columns by 4 rows, 24 drawings.
+Preserve all rectangular document outlines, all four text rows, the cyan line style, the registration and sizes of each drawing, and entrance frames 0-3 plus exit frames 20-23.
+
+Replace ONLY the vertical capped scanner line in the sixteen active cells 4-19. It must be visible at identical strong opacity in EVERY active cell. Never fade it, remove it, reset it or make it pop back in. Animate one continuous eased left-to-right-and-back sweep. Sixteen different scanner positions across sixteen drawings, not several repeated stops.
+
+Measure u along the interior scan corridor, where u=0 is just inside the LEFT document border and u=1 is just inside the RIGHT border. Preserve a small margin to the border. The capped scanner runs vertically across all four text rows, staying entirely within the rectangle. Its text rows stay fixed.
+
+Frame 4, row1 col5: u=0.03
+Frame 5, row1 col6: u=0.14
+Frame 6, row2 col1: u=0.28
+Frame 7, row2 col2: u=0.43
+Frame 8, row2 col3: u=0.59
+Frame 9, row2 col4: u=0.75
+Frame 10, row2 col5: u=0.88
+Frame 11, row2 col6: u=0.98, rightmost turnaround
+Frame 12, row3 col1: u=0.96, now moving LEFT
+Frame 13, row3 col2: u=0.86
+Frame 14, row3 col3: u=0.71
+Frame 15, row3 col4: u=0.55
+Frame 16, row3 col5: u=0.39
+Frame 17, row3 col6: u=0.23
+Frame 18, row4 col1: u=0.10
+Frame 19, row4 col2: u=0.00, leftmost turnaround; next frame4 is u=0.03, so the loop seam moves only a tiny distance.
+
+ALL sixteen listed positions MUST be distinct and visible. A fixed document with a moving scanner, no document bobbing or scaling during these active drawings. Existing entrance0-3 and exit20-23 retain their progressive scales, not duplicate frames.
+Keep the scanner as a single narrow vertical cyan stroke with small flat cap strokes. It is never a magnifying glass, ring, circle, dot, eye or lens. No extra symbols, no success checkmark. Exactly 24 drawings in 6x4 layout, no labels or grid. Genuine transparent background and transparent unpainted interiors, preserve alpha, cyan ink strokes only, no glow, shadow or matte.

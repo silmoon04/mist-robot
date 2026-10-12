@@ -1,0 +1,732 @@
+{
+  "kind": "synthetic_evaluator_validation",
+  "mist_performance_measured": false,
+  "human_naturalness": "unmeasured",
+  "fixtures": 14,
+  "matched": 14,
+  "status_counts": {
+    "pass": 7,
+    "fail": 6,
+    "unknown": 1
+  },
+  "results": [
+    {
+      "contract_id": "after-user-yield",
+      "fixture": "good",
+      "expected_status": "pass",
+      "matched": true,
+      "evaluation": {
+        "case_id": "after-user-yield",
+        "evidence_mode": "synthetic_fixture",
+        "status": "pass",
+        "checks": {
+          "after_user_yield": {
+            "status": "pass",
+            "reason": "Audible acknowledgements must follow the correlated user end and committed turn."
+          },
+          "pending_work_only": {
+            "status": "pass",
+            "reason": "Substantive work must already be running and its answer not yet ready."
+          },
+          "no_ack_for_ready_fast": {
+            "status": "pass",
+            "reason": "A response ready within the declared fast window should have no audible filler."
+          },
+          "quiet_preference": {
+            "status": "pass",
+            "reason": "The explicit quiet preference forbids audible acknowledgements."
+          },
+          "repetition": {
+            "status": "pass",
+            "reason": "At most one audible acknowledgement in this response revision; wording is not judged."
+          },
+          "invalidation": {
+            "status": "pass",
+            "reason": "Resume/revision must cancel pending or active cues by the declared deadline; no superseded output starts later."
+          },
+          "useful_content_evidence": {
+            "status": "pass",
+            "reason": "Useful content needs an explicit human/scenario annotation within a correlated answer playback span."
+          }
+        },
+        "issues": [],
+        "timings_ms": {
+          "first_reaction": 550.0,
+          "first_acknowledgement": 550,
+          "first_useful_content": 1680.0,
+          "acknowledgement_cutoffs": []
+        },
+        "human_naturalness": "unmeasured",
+        "prosody": "unmeasured",
+        "timing_basis": "synthetic"
+      }
+    },
+    {
+      "contract_id": "after-user-yield",
+      "fixture": "bad",
+      "expected_status": "fail",
+      "matched": true,
+      "evaluation": {
+        "case_id": "after-user-yield",
+        "evidence_mode": "synthetic_fixture",
+        "status": "fail",
+        "checks": {
+          "after_user_yield": {
+            "status": "fail",
+            "reason": "Audible acknowledgements must follow the correlated user end and committed turn."
+          },
+          "pending_work_only": {
+            "status": "fail",
+            "reason": "Substantive work must already be running and its answer not yet ready."
+          },
+          "no_ack_for_ready_fast": {
+            "status": "pass",
+            "reason": "A response ready within the declared fast window should have no audible filler."
+          },
+          "quiet_preference": {
+            "status": "pass",
+            "reason": "The explicit quiet preference forbids audible acknowledgements."
+          },
+          "repetition": {
+            "status": "pass",
+            "reason": "At most one audible acknowledgement in this response revision; wording is not judged."
+          },
+          "invalidation": {
+            "status": "pass",
+            "reason": "Resume/revision must cancel pending or active cues by the declared deadline; no superseded output starts later."
+          },
+          "useful_content_evidence": {
+            "status": "pass",
+            "reason": "Useful content needs an explicit human/scenario annotation within a correlated answer playback span."
+          }
+        },
+        "issues": [],
+        "timings_ms": {
+          "first_reaction": null,
+          "first_acknowledgement": -20,
+          "first_useful_content": 1680.0,
+          "acknowledgement_cutoffs": []
+        },
+        "human_naturalness": "unmeasured",
+        "prosody": "unmeasured",
+        "timing_basis": "synthetic"
+      }
+    },
+    {
+      "contract_id": "ready-fast",
+      "fixture": "good",
+      "expected_status": "pass",
+      "matched": true,
+      "evaluation": {
+        "case_id": "ready-fast",
+        "evidence_mode": "synthetic_fixture",
+        "status": "pass",
+        "checks": {
+          "after_user_yield": {
+            "status": "pass",
+            "reason": "Audible acknowledgements must follow the correlated user end and committed turn."
+          },
+          "pending_work_only": {
+            "status": "pass",
+            "reason": "Substantive work must already be running and its answer not yet ready."
+          },
+          "no_ack_for_ready_fast": {
+            "status": "pass",
+            "reason": "A response ready within the declared fast window should have no audible filler."
+          },
+          "quiet_preference": {
+            "status": "pass",
+            "reason": "The explicit quiet preference forbids audible acknowledgements."
+          },
+          "repetition": {
+            "status": "pass",
+            "reason": "At most one audible acknowledgement in this response revision; wording is not judged."
+          },
+          "invalidation": {
+            "status": "pass",
+            "reason": "Resume/revision must cancel pending or active cues by the declared deadline; no superseded output starts later."
+          },
+          "useful_content_evidence": {
+            "status": "pass",
+            "reason": "Useful content needs an explicit human/scenario annotation within a correlated answer playback span."
+          }
+        },
+        "issues": [],
+        "timings_ms": {
+          "first_reaction": 220.0,
+          "first_acknowledgement": null,
+          "first_useful_content": 240.0,
+          "acknowledgement_cutoffs": []
+        },
+        "human_naturalness": "unmeasured",
+        "prosody": "unmeasured",
+        "timing_basis": "synthetic"
+      }
+    },
+    {
+      "contract_id": "ready-fast",
+      "fixture": "bad",
+      "expected_status": "fail",
+      "matched": true,
+      "evaluation": {
+        "case_id": "ready-fast",
+        "evidence_mode": "synthetic_fixture",
+        "status": "fail",
+        "checks": {
+          "after_user_yield": {
+            "status": "pass",
+            "reason": "Audible acknowledgements must follow the correlated user end and committed turn."
+          },
+          "pending_work_only": {
+            "status": "pass",
+            "reason": "Substantive work must already be running and its answer not yet ready."
+          },
+          "no_ack_for_ready_fast": {
+            "status": "fail",
+            "reason": "A response ready within the declared fast window should have no audible filler."
+          },
+          "quiet_preference": {
+            "status": "pass",
+            "reason": "The explicit quiet preference forbids audible acknowledgements."
+          },
+          "repetition": {
+            "status": "pass",
+            "reason": "At most one audible acknowledgement in this response revision; wording is not judged."
+          },
+          "invalidation": {
+            "status": "pass",
+            "reason": "Resume/revision must cancel pending or active cues by the declared deadline; no superseded output starts later."
+          },
+          "useful_content_evidence": {
+            "status": "pass",
+            "reason": "Useful content needs an explicit human/scenario annotation within a correlated answer playback span."
+          }
+        },
+        "issues": [],
+        "timings_ms": {
+          "first_reaction": 80.0,
+          "first_acknowledgement": 80,
+          "first_useful_content": 240.0,
+          "acknowledgement_cutoffs": []
+        },
+        "human_naturalness": "unmeasured",
+        "prosody": "unmeasured",
+        "timing_basis": "synthetic"
+      }
+    },
+    {
+      "contract_id": "quiet-preference",
+      "fixture": "good",
+      "expected_status": "pass",
+      "matched": true,
+      "evaluation": {
+        "case_id": "quiet-preference",
+        "evidence_mode": "synthetic_fixture",
+        "status": "pass",
+        "checks": {
+          "after_user_yield": {
+            "status": "pass",
+            "reason": "Audible acknowledgements must follow the correlated user end and committed turn."
+          },
+          "pending_work_only": {
+            "status": "pass",
+            "reason": "Substantive work must already be running and its answer not yet ready."
+          },
+          "no_ack_for_ready_fast": {
+            "status": "pass",
+            "reason": "A response ready within the declared fast window should have no audible filler."
+          },
+          "quiet_preference": {
+            "status": "pass",
+            "reason": "The explicit quiet preference forbids audible acknowledgements."
+          },
+          "repetition": {
+            "status": "pass",
+            "reason": "At most one audible acknowledgement in this response revision; wording is not judged."
+          },
+          "invalidation": {
+            "status": "pass",
+            "reason": "Resume/revision must cancel pending or active cues by the declared deadline; no superseded output starts later."
+          },
+          "useful_content_evidence": {
+            "status": "pass",
+            "reason": "Useful content needs an explicit human/scenario annotation within a correlated answer playback span."
+          }
+        },
+        "issues": [],
+        "timings_ms": {
+          "first_reaction": 1650.0,
+          "first_acknowledgement": null,
+          "first_useful_content": 1680.0,
+          "acknowledgement_cutoffs": []
+        },
+        "human_naturalness": "unmeasured",
+        "prosody": "unmeasured",
+        "timing_basis": "synthetic"
+      }
+    },
+    {
+      "contract_id": "quiet-preference",
+      "fixture": "bad",
+      "expected_status": "fail",
+      "matched": true,
+      "evaluation": {
+        "case_id": "quiet-preference",
+        "evidence_mode": "synthetic_fixture",
+        "status": "fail",
+        "checks": {
+          "after_user_yield": {
+            "status": "pass",
+            "reason": "Audible acknowledgements must follow the correlated user end and committed turn."
+          },
+          "pending_work_only": {
+            "status": "pass",
+            "reason": "Substantive work must already be running and its answer not yet ready."
+          },
+          "no_ack_for_ready_fast": {
+            "status": "pass",
+            "reason": "A response ready within the declared fast window should have no audible filler."
+          },
+          "quiet_preference": {
+            "status": "fail",
+            "reason": "The explicit quiet preference forbids audible acknowledgements."
+          },
+          "repetition": {
+            "status": "pass",
+            "reason": "At most one audible acknowledgement in this response revision; wording is not judged."
+          },
+          "invalidation": {
+            "status": "pass",
+            "reason": "Resume/revision must cancel pending or active cues by the declared deadline; no superseded output starts later."
+          },
+          "useful_content_evidence": {
+            "status": "pass",
+            "reason": "Useful content needs an explicit human/scenario annotation within a correlated answer playback span."
+          }
+        },
+        "issues": [],
+        "timings_ms": {
+          "first_reaction": 550.0,
+          "first_acknowledgement": 550,
+          "first_useful_content": 1680.0,
+          "acknowledgement_cutoffs": []
+        },
+        "human_naturalness": "unmeasured",
+        "prosody": "unmeasured",
+        "timing_basis": "synthetic"
+      }
+    },
+    {
+      "contract_id": "resumed-before-cue",
+      "fixture": "good",
+      "expected_status": "pass",
+      "matched": true,
+      "evaluation": {
+        "case_id": "resumed-before-cue",
+        "evidence_mode": "synthetic_fixture",
+        "status": "pass",
+        "checks": {
+          "after_user_yield": {
+            "status": "pass",
+            "reason": "Audible acknowledgements must follow the correlated user end and committed turn."
+          },
+          "pending_work_only": {
+            "status": "pass",
+            "reason": "Substantive work must already be running and its answer not yet ready."
+          },
+          "no_ack_for_ready_fast": {
+            "status": "pass",
+            "reason": "A response ready within the declared fast window should have no audible filler."
+          },
+          "quiet_preference": {
+            "status": "pass",
+            "reason": "The explicit quiet preference forbids audible acknowledgements."
+          },
+          "repetition": {
+            "status": "pass",
+            "reason": "At most one audible acknowledgement in this response revision; wording is not judged."
+          },
+          "invalidation": {
+            "status": "pass",
+            "reason": "Resume/revision must cancel pending or active cues by the declared deadline; no superseded output starts later."
+          },
+          "useful_content_evidence": {
+            "status": "pass",
+            "reason": "Cancelled response has no useful-content measurement; none inferred."
+          }
+        },
+        "issues": [],
+        "timings_ms": {
+          "first_reaction": null,
+          "first_acknowledgement": null,
+          "first_useful_content": null,
+          "acknowledgement_cutoffs": []
+        },
+        "human_naturalness": "unmeasured",
+        "prosody": "unmeasured",
+        "timing_basis": "synthetic"
+      }
+    },
+    {
+      "contract_id": "resumed-before-cue",
+      "fixture": "bad",
+      "expected_status": "fail",
+      "matched": true,
+      "evaluation": {
+        "case_id": "resumed-before-cue",
+        "evidence_mode": "synthetic_fixture",
+        "status": "fail",
+        "checks": {
+          "after_user_yield": {
+            "status": "pass",
+            "reason": "Audible acknowledgements must follow the correlated user end and committed turn."
+          },
+          "pending_work_only": {
+            "status": "pass",
+            "reason": "Substantive work must already be running and its answer not yet ready."
+          },
+          "no_ack_for_ready_fast": {
+            "status": "pass",
+            "reason": "A response ready within the declared fast window should have no audible filler."
+          },
+          "quiet_preference": {
+            "status": "pass",
+            "reason": "The explicit quiet preference forbids audible acknowledgements."
+          },
+          "repetition": {
+            "status": "pass",
+            "reason": "At most one audible acknowledgement in this response revision; wording is not judged."
+          },
+          "invalidation": {
+            "status": "fail",
+            "reason": "Resume/revision must cancel pending or active cues by the declared deadline; no superseded output starts later."
+          },
+          "useful_content_evidence": {
+            "status": "pass",
+            "reason": "Cancelled response has no useful-content measurement; none inferred."
+          }
+        },
+        "issues": [],
+        "timings_ms": {
+          "first_reaction": 500.0,
+          "first_acknowledgement": 500,
+          "first_useful_content": null,
+          "acknowledgement_cutoffs": []
+        },
+        "human_naturalness": "unmeasured",
+        "prosody": "unmeasured",
+        "timing_basis": "synthetic"
+      }
+    },
+    {
+      "contract_id": "revision-during-cue",
+      "fixture": "good",
+      "expected_status": "pass",
+      "matched": true,
+      "evaluation": {
+        "case_id": "revision-during-cue",
+        "evidence_mode": "synthetic_fixture",
+        "status": "pass",
+        "checks": {
+          "after_user_yield": {
+            "status": "pass",
+            "reason": "Audible acknowledgements must follow the correlated user end and committed turn."
+          },
+          "pending_work_only": {
+            "status": "pass",
+            "reason": "Substantive work must already be running and its answer not yet ready."
+          },
+          "no_ack_for_ready_fast": {
+            "status": "pass",
+            "reason": "A response ready within the declared fast window should have no audible filler."
+          },
+          "quiet_preference": {
+            "status": "pass",
+            "reason": "The explicit quiet preference forbids audible acknowledgements."
+          },
+          "repetition": {
+            "status": "pass",
+            "reason": "At most one audible acknowledgement in this response revision; wording is not judged."
+          },
+          "invalidation": {
+            "status": "pass",
+            "reason": "Resume/revision must cancel pending or active cues by the declared deadline; no superseded output starts later."
+          },
+          "useful_content_evidence": {
+            "status": "pass",
+            "reason": "Cancelled response has no useful-content measurement; none inferred."
+          }
+        },
+        "issues": [],
+        "timings_ms": {
+          "first_reaction": 550.0,
+          "first_acknowledgement": 550,
+          "first_useful_content": null,
+          "acknowledgement_cutoffs": [
+            40
+          ]
+        },
+        "human_naturalness": "unmeasured",
+        "prosody": "unmeasured",
+        "timing_basis": "synthetic"
+      }
+    },
+    {
+      "contract_id": "revision-during-cue",
+      "fixture": "bad",
+      "expected_status": "fail",
+      "matched": true,
+      "evaluation": {
+        "case_id": "revision-during-cue",
+        "evidence_mode": "synthetic_fixture",
+        "status": "fail",
+        "checks": {
+          "after_user_yield": {
+            "status": "pass",
+            "reason": "Audible acknowledgements must follow the correlated user end and committed turn."
+          },
+          "pending_work_only": {
+            "status": "pass",
+            "reason": "Substantive work must already be running and its answer not yet ready."
+          },
+          "no_ack_for_ready_fast": {
+            "status": "pass",
+            "reason": "A response ready within the declared fast window should have no audible filler."
+          },
+          "quiet_preference": {
+            "status": "pass",
+            "reason": "The explicit quiet preference forbids audible acknowledgements."
+          },
+          "repetition": {
+            "status": "pass",
+            "reason": "At most one audible acknowledgement in this response revision; wording is not judged."
+          },
+          "invalidation": {
+            "status": "fail",
+            "reason": "Resume/revision must cancel pending or active cues by the declared deadline; no superseded output starts later."
+          },
+          "useful_content_evidence": {
+            "status": "pass",
+            "reason": "Cancelled response has no useful-content measurement; none inferred."
+          }
+        },
+        "issues": [],
+        "timings_ms": {
+          "first_reaction": 550.0,
+          "first_acknowledgement": 550,
+          "first_useful_content": null,
+          "acknowledgement_cutoffs": [
+            200
+          ]
+        },
+        "human_naturalness": "unmeasured",
+        "prosody": "unmeasured",
+        "timing_basis": "synthetic"
+      }
+    },
+    {
+      "contract_id": "repetition",
+      "fixture": "good",
+      "expected_status": "pass",
+      "matched": true,
+      "evaluation": {
+        "case_id": "repetition",
+        "evidence_mode": "synthetic_fixture",
+        "status": "pass",
+        "checks": {
+          "after_user_yield": {
+            "status": "pass",
+            "reason": "Audible acknowledgements must follow the correlated user end and committed turn."
+          },
+          "pending_work_only": {
+            "status": "pass",
+            "reason": "Substantive work must already be running and its answer not yet ready."
+          },
+          "no_ack_for_ready_fast": {
+            "status": "pass",
+            "reason": "A response ready within the declared fast window should have no audible filler."
+          },
+          "quiet_preference": {
+            "status": "pass",
+            "reason": "The explicit quiet preference forbids audible acknowledgements."
+          },
+          "repetition": {
+            "status": "pass",
+            "reason": "At most one audible acknowledgement in this response revision; wording is not judged."
+          },
+          "invalidation": {
+            "status": "pass",
+            "reason": "Resume/revision must cancel pending or active cues by the declared deadline; no superseded output starts later."
+          },
+          "useful_content_evidence": {
+            "status": "pass",
+            "reason": "Useful content needs an explicit human/scenario annotation within a correlated answer playback span."
+          }
+        },
+        "issues": [],
+        "timings_ms": {
+          "first_reaction": 550.0,
+          "first_acknowledgement": 550,
+          "first_useful_content": 1680.0,
+          "acknowledgement_cutoffs": []
+        },
+        "human_naturalness": "unmeasured",
+        "prosody": "unmeasured",
+        "timing_basis": "synthetic"
+      }
+    },
+    {
+      "contract_id": "repetition",
+      "fixture": "bad",
+      "expected_status": "fail",
+      "matched": true,
+      "evaluation": {
+        "case_id": "repetition",
+        "evidence_mode": "synthetic_fixture",
+        "status": "fail",
+        "checks": {
+          "after_user_yield": {
+            "status": "pass",
+            "reason": "Audible acknowledgements must follow the correlated user end and committed turn."
+          },
+          "pending_work_only": {
+            "status": "pass",
+            "reason": "Substantive work must already be running and its answer not yet ready."
+          },
+          "no_ack_for_ready_fast": {
+            "status": "pass",
+            "reason": "A response ready within the declared fast window should have no audible filler."
+          },
+          "quiet_preference": {
+            "status": "pass",
+            "reason": "The explicit quiet preference forbids audible acknowledgements."
+          },
+          "repetition": {
+            "status": "fail",
+            "reason": "At most one audible acknowledgement in this response revision; wording is not judged."
+          },
+          "invalidation": {
+            "status": "pass",
+            "reason": "Resume/revision must cancel pending or active cues by the declared deadline; no superseded output starts later."
+          },
+          "useful_content_evidence": {
+            "status": "pass",
+            "reason": "Useful content needs an explicit human/scenario annotation within a correlated answer playback span."
+          }
+        },
+        "issues": [],
+        "timings_ms": {
+          "first_reaction": 550.0,
+          "first_acknowledgement": 550,
+          "first_useful_content": 1680.0,
+          "acknowledgement_cutoffs": []
+        },
+        "human_naturalness": "unmeasured",
+        "prosody": "unmeasured",
+        "timing_basis": "synthetic"
+      }
+    },
+    {
+      "contract_id": "useful-content-is-separate",
+      "fixture": "good",
+      "expected_status": "pass",
+      "matched": true,
+      "evaluation": {
+        "case_id": "useful-content-is-separate",
+        "evidence_mode": "synthetic_fixture",
+        "status": "pass",
+        "checks": {
+          "after_user_yield": {
+            "status": "pass",
+            "reason": "Audible acknowledgements must follow the correlated user end and committed turn."
+          },
+          "pending_work_only": {
+            "status": "pass",
+            "reason": "Substantive work must already be running and its answer not yet ready."
+          },
+          "no_ack_for_ready_fast": {
+            "status": "pass",
+            "reason": "A response ready within the declared fast window should have no audible filler."
+          },
+          "quiet_preference": {
+            "status": "pass",
+            "reason": "The explicit quiet preference forbids audible acknowledgements."
+          },
+          "repetition": {
+            "status": "pass",
+            "reason": "At most one audible acknowledgement in this response revision; wording is not judged."
+          },
+          "invalidation": {
+            "status": "pass",
+            "reason": "Resume/revision must cancel pending or active cues by the declared deadline; no superseded output starts later."
+          },
+          "useful_content_evidence": {
+            "status": "pass",
+            "reason": "Useful content needs an explicit human/scenario annotation within a correlated answer playback span."
+          }
+        },
+        "issues": [],
+        "timings_ms": {
+          "first_reaction": 550.0,
+          "first_acknowledgement": 550,
+          "first_useful_content": 1680.0,
+          "acknowledgement_cutoffs": []
+        },
+        "human_naturalness": "unmeasured",
+        "prosody": "unmeasured",
+        "timing_basis": "synthetic"
+      }
+    },
+    {
+      "contract_id": "useful-content-is-separate",
+      "fixture": "bad",
+      "expected_status": "unknown",
+      "matched": true,
+      "evaluation": {
+        "case_id": "useful-content-is-separate",
+        "evidence_mode": "synthetic_fixture",
+        "status": "unknown",
+        "checks": {
+          "after_user_yield": {
+            "status": "pass",
+            "reason": "Audible acknowledgements must follow the correlated user end and committed turn."
+          },
+          "pending_work_only": {
+            "status": "pass",
+            "reason": "Substantive work must already be running and its answer not yet ready."
+          },
+          "no_ack_for_ready_fast": {
+            "status": "pass",
+            "reason": "A response ready within the declared fast window should have no audible filler."
+          },
+          "quiet_preference": {
+            "status": "pass",
+            "reason": "The explicit quiet preference forbids audible acknowledgements."
+          },
+          "repetition": {
+            "status": "pass",
+            "reason": "At most one audible acknowledgement in this response revision; wording is not judged."
+          },
+          "invalidation": {
+            "status": "pass",
+            "reason": "Resume/revision must cancel pending or active cues by the declared deadline; no superseded output starts later."
+          },
+          "useful_content_evidence": {
+            "status": "unknown",
+            "reason": "Useful content needs an explicit human/scenario annotation within a correlated answer playback span."
+          }
+        },
+        "issues": [],
+        "timings_ms": {
+          "first_reaction": 550.0,
+          "first_acknowledgement": 550,
+          "first_useful_content": null,
+          "acknowledgement_cutoffs": []
+        },
+        "human_naturalness": "unmeasured",
+        "prosody": "unmeasured",
+        "timing_basis": "synthetic"
+      }
+    }
+  ]
+}

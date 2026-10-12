@@ -1,0 +1,405 @@
+{
+  "schema_version": 1,
+  "kind": "synthetic_evaluator_contracts",
+  "note": "All timestamps and responses are invented for evaluator discrimination. No MIST performance, human naturalness, or prosody was measured.",
+  "contracts": [
+    {
+      "id": "after-user-yield",
+      "description": "A cue may begin only after the user has yielded; early playback fails.",
+      "good": {
+        "expected_status": "pass",
+        "sample": {
+          "case_id": "after-user-yield",
+          "turn_id": "turn-1",
+          "revision_id": "revision-1",
+          "response_id": "response-1",
+          "user_span_id": "user-1",
+          "evidence_mode": "synthetic_fixture",
+          "capture": {"complete": true, "clock_id": "synthetic-clock-1", "basis": "synthetic", "start_ms": 0, "end_ms": 2100, "note": "Invented complete event timeline for evaluator validation; no microphone or provider."},
+          "policy": {"quiet": false, "ready_fast_ms": 400, "cancel_deadline_ms": 100, "note": "Frozen synthetic contract values, not measured MIST thresholds."},
+          "events": [
+            {"event": "user_audio_start", "t_ms": 0, "clock_id": "synthetic-clock-1", "case_id": "after-user-yield", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "user_span_id": "user-1"},
+            {"event": "user_audio_end", "t_ms": 100, "clock_id": "synthetic-clock-1", "case_id": "after-user-yield", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "user_span_id": "user-1"},
+            {"event": "turn_committed", "t_ms": 150, "clock_id": "synthetic-clock-1", "case_id": "after-user-yield", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1"},
+            {"event": "response_started", "t_ms": 160, "clock_id": "synthetic-clock-1", "case_id": "after-user-yield", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1"},
+            {"event": "ack_queued", "t_ms": 450, "clock_id": "synthetic-clock-1", "case_id": "after-user-yield", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "ack_id": "ack-1"},
+            {"event": "ack_started", "t_ms": 650, "clock_id": "synthetic-clock-1", "case_id": "after-user-yield", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "ack_id": "ack-1", "playback_id": "ack-playback-1"},
+            {"event": "ack_stopped", "t_ms": 850, "clock_id": "synthetic-clock-1", "case_id": "after-user-yield", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "ack_id": "ack-1", "playback_id": "ack-playback-1"},
+            {"event": "answer_ready", "t_ms": 1700, "clock_id": "synthetic-clock-1", "case_id": "after-user-yield", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1"},
+            {"event": "answer_started", "t_ms": 1750, "clock_id": "synthetic-clock-1", "case_id": "after-user-yield", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "playback_id": "answer-playback-1"},
+            {"event": "first_useful_audio", "t_ms": 1780, "clock_id": "synthetic-clock-1", "case_id": "after-user-yield", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "playback_id": "answer-playback-1", "metadata": {"annotation_source": "scenario_rule", "note": "Frozen synthetic rule: first word supplying the requested answer; acknowledgement excluded."}},
+            {"event": "answer_stopped", "t_ms": 2000, "clock_id": "synthetic-clock-1", "case_id": "after-user-yield", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "playback_id": "answer-playback-1"},
+            {"event": "response_closed", "t_ms": 2100, "clock_id": "synthetic-clock-1", "case_id": "after-user-yield", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "outcome": "completed"}
+          ]
+        }
+      },
+      "bad": {
+        "expected_status": "fail",
+        "expected_failed_check": "after_user_yield",
+        "sample": {
+          "case_id": "after-user-yield",
+          "turn_id": "turn-1",
+          "revision_id": "revision-1",
+          "response_id": "response-1",
+          "user_span_id": "user-1",
+          "evidence_mode": "synthetic_fixture",
+          "capture": {"complete": true, "clock_id": "synthetic-clock-1", "basis": "synthetic", "start_ms": 0, "end_ms": 2100, "note": "Invented complete event timeline for evaluator validation; no microphone or provider."},
+          "policy": {"quiet": false, "ready_fast_ms": 400, "cancel_deadline_ms": 100, "note": "Frozen synthetic contract values, not measured MIST thresholds."},
+          "events": [
+            {"event": "user_audio_start", "t_ms": 0, "clock_id": "synthetic-clock-1", "case_id": "after-user-yield", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "user_span_id": "user-1"},
+            {"event": "ack_queued", "t_ms": 60, "clock_id": "synthetic-clock-1", "case_id": "after-user-yield", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "ack_id": "ack-1"},
+            {"event": "ack_started", "t_ms": 80, "clock_id": "synthetic-clock-1", "case_id": "after-user-yield", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "ack_id": "ack-1", "playback_id": "ack-playback-1"},
+            {"event": "user_audio_end", "t_ms": 100, "clock_id": "synthetic-clock-1", "case_id": "after-user-yield", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "user_span_id": "user-1"},
+            {"event": "turn_committed", "t_ms": 150, "clock_id": "synthetic-clock-1", "case_id": "after-user-yield", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1"},
+            {"event": "response_started", "t_ms": 160, "clock_id": "synthetic-clock-1", "case_id": "after-user-yield", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1"},
+            {"event": "ack_stopped", "t_ms": 280, "clock_id": "synthetic-clock-1", "case_id": "after-user-yield", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "ack_id": "ack-1", "playback_id": "ack-playback-1"},
+            {"event": "answer_ready", "t_ms": 1700, "clock_id": "synthetic-clock-1", "case_id": "after-user-yield", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1"},
+            {"event": "answer_started", "t_ms": 1750, "clock_id": "synthetic-clock-1", "case_id": "after-user-yield", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "playback_id": "answer-playback-1"},
+            {"event": "first_useful_audio", "t_ms": 1780, "clock_id": "synthetic-clock-1", "case_id": "after-user-yield", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "playback_id": "answer-playback-1", "metadata": {"annotation_source": "scenario_rule", "note": "Frozen synthetic rule: first word supplying the requested answer; acknowledgement excluded."}},
+            {"event": "answer_stopped", "t_ms": 2000, "clock_id": "synthetic-clock-1", "case_id": "after-user-yield", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "playback_id": "answer-playback-1"},
+            {"event": "response_closed", "t_ms": 2100, "clock_id": "synthetic-clock-1", "case_id": "after-user-yield", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "outcome": "completed"}
+          ]
+        }
+      }
+    },
+    {
+      "id": "ready-fast",
+      "description": "A fast answer proceeds without an acknowledgement.",
+      "good": {
+        "expected_status": "pass",
+        "sample": {
+          "case_id": "ready-fast",
+          "turn_id": "turn-1",
+          "revision_id": "revision-1",
+          "response_id": "response-1",
+          "user_span_id": "user-1",
+          "evidence_mode": "synthetic_fixture",
+          "capture": {"complete": true, "clock_id": "synthetic-clock-1", "basis": "synthetic", "start_ms": 0, "end_ms": 600, "note": "Invented complete event timeline for evaluator validation; no microphone or provider."},
+          "policy": {"quiet": false, "ready_fast_ms": 400, "cancel_deadline_ms": 100, "note": "Frozen synthetic contract values, not measured MIST thresholds."},
+          "events": [
+            {"event": "user_audio_start", "t_ms": 0, "clock_id": "synthetic-clock-1", "case_id": "ready-fast", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "user_span_id": "user-1"},
+            {"event": "user_audio_end", "t_ms": 100, "clock_id": "synthetic-clock-1", "case_id": "ready-fast", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "user_span_id": "user-1"},
+            {"event": "turn_committed", "t_ms": 150, "clock_id": "synthetic-clock-1", "case_id": "ready-fast", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1"},
+            {"event": "response_started", "t_ms": 160, "clock_id": "synthetic-clock-1", "case_id": "ready-fast", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1"},
+            {"event": "answer_ready", "t_ms": 300, "clock_id": "synthetic-clock-1", "case_id": "ready-fast", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1"},
+            {"event": "answer_started", "t_ms": 320, "clock_id": "synthetic-clock-1", "case_id": "ready-fast", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "playback_id": "answer-playback-1"},
+            {"event": "first_useful_audio", "t_ms": 340, "clock_id": "synthetic-clock-1", "case_id": "ready-fast", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "playback_id": "answer-playback-1", "metadata": {"annotation_source": "scenario_rule", "note": "Frozen synthetic rule: first word supplying the requested answer; acknowledgement excluded."}},
+            {"event": "answer_stopped", "t_ms": 500, "clock_id": "synthetic-clock-1", "case_id": "ready-fast", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "playback_id": "answer-playback-1"},
+            {"event": "response_closed", "t_ms": 600, "clock_id": "synthetic-clock-1", "case_id": "ready-fast", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "outcome": "completed"}
+          ]
+        }
+      },
+      "bad": {
+        "expected_status": "fail",
+        "expected_failed_check": "no_ack_for_ready_fast",
+        "sample": {
+          "case_id": "ready-fast",
+          "turn_id": "turn-1",
+          "revision_id": "revision-1",
+          "response_id": "response-1",
+          "user_span_id": "user-1",
+          "evidence_mode": "synthetic_fixture",
+          "capture": {"complete": true, "clock_id": "synthetic-clock-1", "basis": "synthetic", "start_ms": 0, "end_ms": 600, "note": "Invented complete event timeline for evaluator validation; no microphone or provider."},
+          "policy": {"quiet": false, "ready_fast_ms": 400, "cancel_deadline_ms": 100, "note": "Frozen synthetic contract values, not measured MIST thresholds."},
+          "events": [
+            {"event": "user_audio_start", "t_ms": 0, "clock_id": "synthetic-clock-1", "case_id": "ready-fast", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "user_span_id": "user-1"},
+            {"event": "user_audio_end", "t_ms": 100, "clock_id": "synthetic-clock-1", "case_id": "ready-fast", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "user_span_id": "user-1"},
+            {"event": "turn_committed", "t_ms": 150, "clock_id": "synthetic-clock-1", "case_id": "ready-fast", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1"},
+            {"event": "response_started", "t_ms": 160, "clock_id": "synthetic-clock-1", "case_id": "ready-fast", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1"},
+            {"event": "ack_queued", "t_ms": 170, "clock_id": "synthetic-clock-1", "case_id": "ready-fast", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "ack_id": "ack-1"},
+            {"event": "ack_started", "t_ms": 180, "clock_id": "synthetic-clock-1", "case_id": "ready-fast", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "ack_id": "ack-1", "playback_id": "ack-playback-1"},
+            {"event": "ack_stopped", "t_ms": 260, "clock_id": "synthetic-clock-1", "case_id": "ready-fast", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "ack_id": "ack-1", "playback_id": "ack-playback-1"},
+            {"event": "answer_ready", "t_ms": 300, "clock_id": "synthetic-clock-1", "case_id": "ready-fast", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1"},
+            {"event": "answer_started", "t_ms": 320, "clock_id": "synthetic-clock-1", "case_id": "ready-fast", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "playback_id": "answer-playback-1"},
+            {"event": "first_useful_audio", "t_ms": 340, "clock_id": "synthetic-clock-1", "case_id": "ready-fast", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "playback_id": "answer-playback-1", "metadata": {"annotation_source": "scenario_rule", "note": "Frozen synthetic rule: first word supplying the requested answer; acknowledgement excluded."}},
+            {"event": "answer_stopped", "t_ms": 500, "clock_id": "synthetic-clock-1", "case_id": "ready-fast", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "playback_id": "answer-playback-1"},
+            {"event": "response_closed", "t_ms": 600, "clock_id": "synthetic-clock-1", "case_id": "ready-fast", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "outcome": "completed"}
+          ]
+        }
+      }
+    },
+    {
+      "id": "quiet-preference",
+      "description": "Explicit quiet preference suppresses the cue.",
+      "good": {
+        "expected_status": "pass",
+        "sample": {
+          "case_id": "quiet-preference",
+          "turn_id": "turn-1",
+          "revision_id": "revision-1",
+          "response_id": "response-1",
+          "user_span_id": "user-1",
+          "evidence_mode": "synthetic_fixture",
+          "capture": {"complete": true, "clock_id": "synthetic-clock-1", "basis": "synthetic", "start_ms": 0, "end_ms": 2100, "note": "Invented complete event timeline for evaluator validation; no microphone or provider."},
+          "policy": {"quiet": true, "ready_fast_ms": 400, "cancel_deadline_ms": 100, "note": "Frozen synthetic contract values, not measured MIST thresholds."},
+          "events": [
+            {"event": "user_audio_start", "t_ms": 0, "clock_id": "synthetic-clock-1", "case_id": "quiet-preference", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "user_span_id": "user-1"},
+            {"event": "user_audio_end", "t_ms": 100, "clock_id": "synthetic-clock-1", "case_id": "quiet-preference", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "user_span_id": "user-1"},
+            {"event": "turn_committed", "t_ms": 150, "clock_id": "synthetic-clock-1", "case_id": "quiet-preference", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1"},
+            {"event": "response_started", "t_ms": 160, "clock_id": "synthetic-clock-1", "case_id": "quiet-preference", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1"},
+            {"event": "answer_ready", "t_ms": 1700, "clock_id": "synthetic-clock-1", "case_id": "quiet-preference", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1"},
+            {"event": "answer_started", "t_ms": 1750, "clock_id": "synthetic-clock-1", "case_id": "quiet-preference", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "playback_id": "answer-playback-1"},
+            {"event": "first_useful_audio", "t_ms": 1780, "clock_id": "synthetic-clock-1", "case_id": "quiet-preference", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "playback_id": "answer-playback-1", "metadata": {"annotation_source": "scenario_rule", "note": "Frozen synthetic rule: first word supplying the requested answer; acknowledgement excluded."}},
+            {"event": "answer_stopped", "t_ms": 2000, "clock_id": "synthetic-clock-1", "case_id": "quiet-preference", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "playback_id": "answer-playback-1"},
+            {"event": "response_closed", "t_ms": 2100, "clock_id": "synthetic-clock-1", "case_id": "quiet-preference", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "outcome": "completed"}
+          ]
+        }
+      },
+      "bad": {
+        "expected_status": "fail",
+        "expected_failed_check": "quiet_preference",
+        "sample": {
+          "case_id": "quiet-preference",
+          "turn_id": "turn-1",
+          "revision_id": "revision-1",
+          "response_id": "response-1",
+          "user_span_id": "user-1",
+          "evidence_mode": "synthetic_fixture",
+          "capture": {"complete": true, "clock_id": "synthetic-clock-1", "basis": "synthetic", "start_ms": 0, "end_ms": 2100, "note": "Invented complete event timeline for evaluator validation; no microphone or provider."},
+          "policy": {"quiet": true, "ready_fast_ms": 400, "cancel_deadline_ms": 100, "note": "Frozen synthetic contract values, not measured MIST thresholds."},
+          "events": [
+            {"event": "user_audio_start", "t_ms": 0, "clock_id": "synthetic-clock-1", "case_id": "quiet-preference", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "user_span_id": "user-1"},
+            {"event": "user_audio_end", "t_ms": 100, "clock_id": "synthetic-clock-1", "case_id": "quiet-preference", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "user_span_id": "user-1"},
+            {"event": "turn_committed", "t_ms": 150, "clock_id": "synthetic-clock-1", "case_id": "quiet-preference", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1"},
+            {"event": "response_started", "t_ms": 160, "clock_id": "synthetic-clock-1", "case_id": "quiet-preference", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1"},
+            {"event": "ack_queued", "t_ms": 450, "clock_id": "synthetic-clock-1", "case_id": "quiet-preference", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "ack_id": "ack-1"},
+            {"event": "ack_started", "t_ms": 650, "clock_id": "synthetic-clock-1", "case_id": "quiet-preference", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "ack_id": "ack-1", "playback_id": "ack-playback-1"},
+            {"event": "ack_stopped", "t_ms": 850, "clock_id": "synthetic-clock-1", "case_id": "quiet-preference", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "ack_id": "ack-1", "playback_id": "ack-playback-1"},
+            {"event": "answer_ready", "t_ms": 1700, "clock_id": "synthetic-clock-1", "case_id": "quiet-preference", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1"},
+            {"event": "answer_started", "t_ms": 1750, "clock_id": "synthetic-clock-1", "case_id": "quiet-preference", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "playback_id": "answer-playback-1"},
+            {"event": "first_useful_audio", "t_ms": 1780, "clock_id": "synthetic-clock-1", "case_id": "quiet-preference", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "playback_id": "answer-playback-1", "metadata": {"annotation_source": "scenario_rule", "note": "Frozen synthetic rule: first word supplying the requested answer; acknowledgement excluded."}},
+            {"event": "answer_stopped", "t_ms": 2000, "clock_id": "synthetic-clock-1", "case_id": "quiet-preference", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "playback_id": "answer-playback-1"},
+            {"event": "response_closed", "t_ms": 2100, "clock_id": "synthetic-clock-1", "case_id": "quiet-preference", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "outcome": "completed"}
+          ]
+        }
+      }
+    },
+    {
+      "id": "resumed-before-cue",
+      "description": "Resumed speech cancels a queued cue; the old response must not start later.",
+      "good": {
+        "expected_status": "pass",
+        "sample": {
+          "case_id": "resumed-before-cue",
+          "turn_id": "turn-1",
+          "revision_id": "revision-1",
+          "response_id": "response-1",
+          "user_span_id": "user-1",
+          "evidence_mode": "synthetic_fixture",
+          "capture": {"complete": true, "clock_id": "synthetic-clock-1", "basis": "synthetic", "start_ms": 0, "end_ms": 800, "note": "Invented complete event timeline for evaluator validation; no microphone or provider."},
+          "policy": {"quiet": false, "ready_fast_ms": 400, "cancel_deadline_ms": 100, "note": "Frozen synthetic contract values, not measured MIST thresholds."},
+          "events": [
+            {"event": "user_audio_start", "t_ms": 0, "clock_id": "synthetic-clock-1", "case_id": "resumed-before-cue", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "user_span_id": "user-1"},
+            {"event": "user_audio_end", "t_ms": 100, "clock_id": "synthetic-clock-1", "case_id": "resumed-before-cue", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "user_span_id": "user-1"},
+            {"event": "turn_committed", "t_ms": 150, "clock_id": "synthetic-clock-1", "case_id": "resumed-before-cue", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1"},
+            {"event": "response_started", "t_ms": 160, "clock_id": "synthetic-clock-1", "case_id": "resumed-before-cue", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1"},
+            {"event": "ack_queued", "t_ms": 450, "clock_id": "synthetic-clock-1", "case_id": "resumed-before-cue", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "ack_id": "ack-1"},
+            {"event": "user_resumed", "t_ms": 500, "clock_id": "synthetic-clock-1", "case_id": "resumed-before-cue", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "interruption_id": "resume-1"},
+            {"event": "ack_cancelled", "t_ms": 520, "clock_id": "synthetic-clock-1", "case_id": "resumed-before-cue", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "ack_id": "ack-1", "interruption_id": "resume-1"},
+            {"event": "response_closed", "t_ms": 800, "clock_id": "synthetic-clock-1", "case_id": "resumed-before-cue", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "outcome": "cancelled"}
+          ]
+        }
+      },
+      "bad": {
+        "expected_status": "fail",
+        "expected_failed_check": "invalidation",
+        "sample": {
+          "case_id": "resumed-before-cue",
+          "turn_id": "turn-1",
+          "revision_id": "revision-1",
+          "response_id": "response-1",
+          "user_span_id": "user-1",
+          "evidence_mode": "synthetic_fixture",
+          "capture": {"complete": true, "clock_id": "synthetic-clock-1", "basis": "synthetic", "start_ms": 0, "end_ms": 800, "note": "Invented complete event timeline for evaluator validation; no microphone or provider."},
+          "policy": {"quiet": false, "ready_fast_ms": 400, "cancel_deadline_ms": 100, "note": "Frozen synthetic contract values, not measured MIST thresholds."},
+          "events": [
+            {"event": "user_audio_start", "t_ms": 0, "clock_id": "synthetic-clock-1", "case_id": "resumed-before-cue", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "user_span_id": "user-1"},
+            {"event": "user_audio_end", "t_ms": 100, "clock_id": "synthetic-clock-1", "case_id": "resumed-before-cue", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "user_span_id": "user-1"},
+            {"event": "turn_committed", "t_ms": 150, "clock_id": "synthetic-clock-1", "case_id": "resumed-before-cue", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1"},
+            {"event": "response_started", "t_ms": 160, "clock_id": "synthetic-clock-1", "case_id": "resumed-before-cue", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1"},
+            {"event": "ack_queued", "t_ms": 450, "clock_id": "synthetic-clock-1", "case_id": "resumed-before-cue", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "ack_id": "ack-1"},
+            {"event": "user_resumed", "t_ms": 500, "clock_id": "synthetic-clock-1", "case_id": "resumed-before-cue", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "interruption_id": "resume-1"},
+            {"event": "ack_started", "t_ms": 600, "clock_id": "synthetic-clock-1", "case_id": "resumed-before-cue", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "ack_id": "ack-1", "playback_id": "ack-playback-1"},
+            {"event": "ack_stopped", "t_ms": 700, "clock_id": "synthetic-clock-1", "case_id": "resumed-before-cue", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "ack_id": "ack-1", "playback_id": "ack-playback-1"},
+            {"event": "response_closed", "t_ms": 800, "clock_id": "synthetic-clock-1", "case_id": "resumed-before-cue", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "outcome": "cancelled"}
+          ]
+        }
+      }
+    },
+    {
+      "id": "revision-during-cue",
+      "description": "An active cue stops with matching cancellation correlation and within the declared deadline.",
+      "good": {
+        "expected_status": "pass",
+        "sample": {
+          "case_id": "revision-during-cue",
+          "turn_id": "turn-1",
+          "revision_id": "revision-1",
+          "response_id": "response-1",
+          "user_span_id": "user-1",
+          "evidence_mode": "synthetic_fixture",
+          "capture": {"complete": true, "clock_id": "synthetic-clock-1", "basis": "synthetic", "start_ms": 0, "end_ms": 1000, "note": "Invented complete event timeline for evaluator validation; no microphone or provider."},
+          "policy": {"quiet": false, "ready_fast_ms": 400, "cancel_deadline_ms": 100, "note": "Frozen synthetic contract values, not measured MIST thresholds."},
+          "events": [
+            {"event": "user_audio_start", "t_ms": 0, "clock_id": "synthetic-clock-1", "case_id": "revision-during-cue", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "user_span_id": "user-1"},
+            {"event": "user_audio_end", "t_ms": 100, "clock_id": "synthetic-clock-1", "case_id": "revision-during-cue", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "user_span_id": "user-1"},
+            {"event": "turn_committed", "t_ms": 150, "clock_id": "synthetic-clock-1", "case_id": "revision-during-cue", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1"},
+            {"event": "response_started", "t_ms": 160, "clock_id": "synthetic-clock-1", "case_id": "revision-during-cue", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1"},
+            {"event": "ack_queued", "t_ms": 450, "clock_id": "synthetic-clock-1", "case_id": "revision-during-cue", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "ack_id": "ack-1"},
+            {"event": "ack_started", "t_ms": 650, "clock_id": "synthetic-clock-1", "case_id": "revision-during-cue", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "ack_id": "ack-1", "playback_id": "ack-playback-1"},
+            {"event": "revision_changed", "t_ms": 700, "clock_id": "synthetic-clock-1", "case_id": "revision-during-cue", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "interruption_id": "revision-change-1", "next_revision_id": "revision-2"},
+            {"event": "ack_cancelled", "t_ms": 720, "clock_id": "synthetic-clock-1", "case_id": "revision-during-cue", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "ack_id": "ack-1", "interruption_id": "revision-change-1"},
+            {"event": "ack_stopped", "t_ms": 740, "clock_id": "synthetic-clock-1", "case_id": "revision-during-cue", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "ack_id": "ack-1", "playback_id": "ack-playback-1", "interruption_id": "revision-change-1"},
+            {"event": "response_closed", "t_ms": 1000, "clock_id": "synthetic-clock-1", "case_id": "revision-during-cue", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "outcome": "cancelled"}
+          ]
+        }
+      },
+      "bad": {
+        "expected_status": "fail",
+        "expected_failed_check": "invalidation",
+        "sample": {
+          "case_id": "revision-during-cue",
+          "turn_id": "turn-1",
+          "revision_id": "revision-1",
+          "response_id": "response-1",
+          "user_span_id": "user-1",
+          "evidence_mode": "synthetic_fixture",
+          "capture": {"complete": true, "clock_id": "synthetic-clock-1", "basis": "synthetic", "start_ms": 0, "end_ms": 1000, "note": "Invented complete event timeline for evaluator validation; no microphone or provider."},
+          "policy": {"quiet": false, "ready_fast_ms": 400, "cancel_deadline_ms": 100, "note": "Frozen synthetic contract values, not measured MIST thresholds."},
+          "events": [
+            {"event": "user_audio_start", "t_ms": 0, "clock_id": "synthetic-clock-1", "case_id": "revision-during-cue", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "user_span_id": "user-1"},
+            {"event": "user_audio_end", "t_ms": 100, "clock_id": "synthetic-clock-1", "case_id": "revision-during-cue", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "user_span_id": "user-1"},
+            {"event": "turn_committed", "t_ms": 150, "clock_id": "synthetic-clock-1", "case_id": "revision-during-cue", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1"},
+            {"event": "response_started", "t_ms": 160, "clock_id": "synthetic-clock-1", "case_id": "revision-during-cue", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1"},
+            {"event": "ack_queued", "t_ms": 450, "clock_id": "synthetic-clock-1", "case_id": "revision-during-cue", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "ack_id": "ack-1"},
+            {"event": "ack_started", "t_ms": 650, "clock_id": "synthetic-clock-1", "case_id": "revision-during-cue", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "ack_id": "ack-1", "playback_id": "ack-playback-1"},
+            {"event": "revision_changed", "t_ms": 700, "clock_id": "synthetic-clock-1", "case_id": "revision-during-cue", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "interruption_id": "revision-change-1", "next_revision_id": "revision-2"},
+            {"event": "ack_cancelled", "t_ms": 720, "clock_id": "synthetic-clock-1", "case_id": "revision-during-cue", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "ack_id": "ack-1", "interruption_id": "revision-change-1"},
+            {"event": "ack_stopped", "t_ms": 900, "clock_id": "synthetic-clock-1", "case_id": "revision-during-cue", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "ack_id": "ack-1", "playback_id": "ack-playback-1", "interruption_id": "revision-change-1"},
+            {"event": "response_closed", "t_ms": 1000, "clock_id": "synthetic-clock-1", "case_id": "revision-during-cue", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "outcome": "cancelled"}
+          ]
+        }
+      }
+    },
+    {
+      "id": "repetition",
+      "description": "Two audible acknowledgements in one response revision are a repetition failure.",
+      "good": {
+        "expected_status": "pass",
+        "sample": {
+          "case_id": "repetition",
+          "turn_id": "turn-1",
+          "revision_id": "revision-1",
+          "response_id": "response-1",
+          "user_span_id": "user-1",
+          "evidence_mode": "synthetic_fixture",
+          "capture": {"complete": true, "clock_id": "synthetic-clock-1", "basis": "synthetic", "start_ms": 0, "end_ms": 2100, "note": "Invented complete event timeline for evaluator validation; no microphone or provider."},
+          "policy": {"quiet": false, "ready_fast_ms": 400, "cancel_deadline_ms": 100, "note": "Frozen synthetic contract values, not measured MIST thresholds."},
+          "events": [
+            {"event": "user_audio_start", "t_ms": 0, "clock_id": "synthetic-clock-1", "case_id": "repetition", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "user_span_id": "user-1"},
+            {"event": "user_audio_end", "t_ms": 100, "clock_id": "synthetic-clock-1", "case_id": "repetition", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "user_span_id": "user-1"},
+            {"event": "turn_committed", "t_ms": 150, "clock_id": "synthetic-clock-1", "case_id": "repetition", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1"},
+            {"event": "response_started", "t_ms": 160, "clock_id": "synthetic-clock-1", "case_id": "repetition", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1"},
+            {"event": "ack_queued", "t_ms": 450, "clock_id": "synthetic-clock-1", "case_id": "repetition", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "ack_id": "ack-1"},
+            {"event": "ack_started", "t_ms": 650, "clock_id": "synthetic-clock-1", "case_id": "repetition", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "ack_id": "ack-1", "playback_id": "ack-playback-1"},
+            {"event": "ack_stopped", "t_ms": 850, "clock_id": "synthetic-clock-1", "case_id": "repetition", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "ack_id": "ack-1", "playback_id": "ack-playback-1"},
+            {"event": "answer_ready", "t_ms": 1700, "clock_id": "synthetic-clock-1", "case_id": "repetition", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1"},
+            {"event": "answer_started", "t_ms": 1750, "clock_id": "synthetic-clock-1", "case_id": "repetition", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "playback_id": "answer-playback-1"},
+            {"event": "first_useful_audio", "t_ms": 1780, "clock_id": "synthetic-clock-1", "case_id": "repetition", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "playback_id": "answer-playback-1", "metadata": {"annotation_source": "scenario_rule", "note": "Frozen synthetic rule: first word supplying the requested answer; acknowledgement excluded."}},
+            {"event": "answer_stopped", "t_ms": 2000, "clock_id": "synthetic-clock-1", "case_id": "repetition", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "playback_id": "answer-playback-1"},
+            {"event": "response_closed", "t_ms": 2100, "clock_id": "synthetic-clock-1", "case_id": "repetition", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "outcome": "completed"}
+          ]
+        }
+      },
+      "bad": {
+        "expected_status": "fail",
+        "expected_failed_check": "repetition",
+        "sample": {
+          "case_id": "repetition",
+          "turn_id": "turn-1",
+          "revision_id": "revision-1",
+          "response_id": "response-1",
+          "user_span_id": "user-1",
+          "evidence_mode": "synthetic_fixture",
+          "capture": {"complete": true, "clock_id": "synthetic-clock-1", "basis": "synthetic", "start_ms": 0, "end_ms": 2100, "note": "Invented complete event timeline for evaluator validation; no microphone or provider."},
+          "policy": {"quiet": false, "ready_fast_ms": 400, "cancel_deadline_ms": 100, "note": "Frozen synthetic contract values, not measured MIST thresholds."},
+          "events": [
+            {"event": "user_audio_start", "t_ms": 0, "clock_id": "synthetic-clock-1", "case_id": "repetition", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "user_span_id": "user-1"},
+            {"event": "user_audio_end", "t_ms": 100, "clock_id": "synthetic-clock-1", "case_id": "repetition", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "user_span_id": "user-1"},
+            {"event": "turn_committed", "t_ms": 150, "clock_id": "synthetic-clock-1", "case_id": "repetition", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1"},
+            {"event": "response_started", "t_ms": 160, "clock_id": "synthetic-clock-1", "case_id": "repetition", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1"},
+            {"event": "ack_queued", "t_ms": 450, "clock_id": "synthetic-clock-1", "case_id": "repetition", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "ack_id": "ack-1"},
+            {"event": "ack_started", "t_ms": 650, "clock_id": "synthetic-clock-1", "case_id": "repetition", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "ack_id": "ack-1", "playback_id": "ack-playback-1"},
+            {"event": "ack_stopped", "t_ms": 850, "clock_id": "synthetic-clock-1", "case_id": "repetition", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "ack_id": "ack-1", "playback_id": "ack-playback-1"},
+            {"event": "ack_queued", "t_ms": 1000, "clock_id": "synthetic-clock-1", "case_id": "repetition", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "ack_id": "ack-2"},
+            {"event": "ack_started", "t_ms": 1100, "clock_id": "synthetic-clock-1", "case_id": "repetition", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "ack_id": "ack-2", "playback_id": "ack-playback-2"},
+            {"event": "ack_stopped", "t_ms": 1200, "clock_id": "synthetic-clock-1", "case_id": "repetition", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "ack_id": "ack-2", "playback_id": "ack-playback-2"},
+            {"event": "answer_ready", "t_ms": 1700, "clock_id": "synthetic-clock-1", "case_id": "repetition", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1"},
+            {"event": "answer_started", "t_ms": 1750, "clock_id": "synthetic-clock-1", "case_id": "repetition", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "playback_id": "answer-playback-1"},
+            {"event": "first_useful_audio", "t_ms": 1780, "clock_id": "synthetic-clock-1", "case_id": "repetition", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "playback_id": "answer-playback-1", "metadata": {"annotation_source": "scenario_rule", "note": "Frozen synthetic rule: first word supplying the requested answer; acknowledgement excluded."}},
+            {"event": "answer_stopped", "t_ms": 2000, "clock_id": "synthetic-clock-1", "case_id": "repetition", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "playback_id": "answer-playback-1"},
+            {"event": "response_closed", "t_ms": 2100, "clock_id": "synthetic-clock-1", "case_id": "repetition", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "outcome": "completed"}
+          ]
+        }
+      }
+    },
+    {
+      "id": "useful-content-is-separate",
+      "description": "An acknowledgement span cannot supply a valid useful-content marker; evidence remains unknown.",
+      "good": {
+        "expected_status": "pass",
+        "sample": {
+          "case_id": "useful-content-is-separate",
+          "turn_id": "turn-1",
+          "revision_id": "revision-1",
+          "response_id": "response-1",
+          "user_span_id": "user-1",
+          "evidence_mode": "synthetic_fixture",
+          "capture": {"complete": true, "clock_id": "synthetic-clock-1", "basis": "synthetic", "start_ms": 0, "end_ms": 2100, "note": "Invented complete event timeline for evaluator validation; no microphone or provider."},
+          "policy": {"quiet": false, "ready_fast_ms": 400, "cancel_deadline_ms": 100, "note": "Frozen synthetic contract values, not measured MIST thresholds."},
+          "events": [
+            {"event": "user_audio_start", "t_ms": 0, "clock_id": "synthetic-clock-1", "case_id": "useful-content-is-separate", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "user_span_id": "user-1"},
+            {"event": "user_audio_end", "t_ms": 100, "clock_id": "synthetic-clock-1", "case_id": "useful-content-is-separate", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "user_span_id": "user-1"},
+            {"event": "turn_committed", "t_ms": 150, "clock_id": "synthetic-clock-1", "case_id": "useful-content-is-separate", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1"},
+            {"event": "response_started", "t_ms": 160, "clock_id": "synthetic-clock-1", "case_id": "useful-content-is-separate", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1"},
+            {"event": "ack_queued", "t_ms": 450, "clock_id": "synthetic-clock-1", "case_id": "useful-content-is-separate", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "ack_id": "ack-1"},
+            {"event": "ack_started", "t_ms": 650, "clock_id": "synthetic-clock-1", "case_id": "useful-content-is-separate", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "ack_id": "ack-1", "playback_id": "ack-playback-1"},
+            {"event": "ack_stopped", "t_ms": 850, "clock_id": "synthetic-clock-1", "case_id": "useful-content-is-separate", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "ack_id": "ack-1", "playback_id": "ack-playback-1"},
+            {"event": "answer_ready", "t_ms": 1700, "clock_id": "synthetic-clock-1", "case_id": "useful-content-is-separate", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1"},
+            {"event": "answer_started", "t_ms": 1750, "clock_id": "synthetic-clock-1", "case_id": "useful-content-is-separate", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "playback_id": "answer-playback-1"},
+            {"event": "first_useful_audio", "t_ms": 1780, "clock_id": "synthetic-clock-1", "case_id": "useful-content-is-separate", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "playback_id": "answer-playback-1", "metadata": {"annotation_source": "scenario_rule", "note": "Frozen synthetic rule: first word supplying the requested answer; acknowledgement excluded."}},
+            {"event": "answer_stopped", "t_ms": 2000, "clock_id": "synthetic-clock-1", "case_id": "useful-content-is-separate", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "playback_id": "answer-playback-1"},
+            {"event": "response_closed", "t_ms": 2100, "clock_id": "synthetic-clock-1", "case_id": "useful-content-is-separate", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "outcome": "completed"}
+          ]
+        }
+      },
+      "bad": {
+        "expected_status": "unknown",
+        "sample": {
+          "case_id": "useful-content-is-separate",
+          "turn_id": "turn-1",
+          "revision_id": "revision-1",
+          "response_id": "response-1",
+          "user_span_id": "user-1",
+          "evidence_mode": "synthetic_fixture",
+          "capture": {"complete": true, "clock_id": "synthetic-clock-1", "basis": "synthetic", "start_ms": 0, "end_ms": 2100, "note": "Invented complete event timeline for evaluator validation; no microphone or provider."},
+          "policy": {"quiet": false, "ready_fast_ms": 400, "cancel_deadline_ms": 100, "note": "Frozen synthetic contract values, not measured MIST thresholds."},
+          "events": [
+            {"event": "user_audio_start", "t_ms": 0, "clock_id": "synthetic-clock-1", "case_id": "useful-content-is-separate", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "user_span_id": "user-1"},
+            {"event": "user_audio_end", "t_ms": 100, "clock_id": "synthetic-clock-1", "case_id": "useful-content-is-separate", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "user_span_id": "user-1"},
+            {"event": "turn_committed", "t_ms": 150, "clock_id": "synthetic-clock-1", "case_id": "useful-content-is-separate", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1"},
+            {"event": "response_started", "t_ms": 160, "clock_id": "synthetic-clock-1", "case_id": "useful-content-is-separate", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1"},
+            {"event": "ack_queued", "t_ms": 450, "clock_id": "synthetic-clock-1", "case_id": "useful-content-is-separate", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "ack_id": "ack-1"},
+            {"event": "ack_started", "t_ms": 650, "clock_id": "synthetic-clock-1", "case_id": "useful-content-is-separate", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "ack_id": "ack-1", "playback_id": "ack-playback-1"},
+            {"event": "first_useful_audio", "t_ms": 700, "clock_id": "synthetic-clock-1", "case_id": "useful-content-is-separate", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "playback_id": "ack-playback-1", "metadata": {"annotation_source": "scenario_rule", "note": "Invalid fixture deliberately points the useful marker into the acknowledgement."}},
+            {"event": "ack_stopped", "t_ms": 850, "clock_id": "synthetic-clock-1", "case_id": "useful-content-is-separate", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "ack_id": "ack-1", "playback_id": "ack-playback-1"},
+            {"event": "answer_ready", "t_ms": 1700, "clock_id": "synthetic-clock-1", "case_id": "useful-content-is-separate", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1"},
+            {"event": "answer_started", "t_ms": 1750, "clock_id": "synthetic-clock-1", "case_id": "useful-content-is-separate", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "playback_id": "answer-playback-1"},
+            {"event": "answer_stopped", "t_ms": 2000, "clock_id": "synthetic-clock-1", "case_id": "useful-content-is-separate", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "playback_id": "answer-playback-1"},
+            {"event": "response_closed", "t_ms": 2100, "clock_id": "synthetic-clock-1", "case_id": "useful-content-is-separate", "turn_id": "turn-1", "revision_id": "revision-1", "response_id": "response-1", "outcome": "completed"}
+          ]
+        }
+      }
+    }
+  ]
+}

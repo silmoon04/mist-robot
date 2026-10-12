@@ -1,0 +1,26 @@
+{
+  "version": "1.0.0",
+  "module": "../adapter/geraldine-adapter.mjs",
+  "factory": "createGeraldineAdapter(canvas, options = {})",
+  "fps": 15,
+  "options": ["manifest", "manifestUrl", "renderer", "now", "expression", "epoch", "reducedMotion"],
+  "methods": {
+    "update": "update(nowMs = now()) -> snapshot; caller drives frames",
+    "snapshot": "snapshot() -> {version, renderer, loaded, destroyed, state, expression, intent, epoch, generation, requestCount, pose, viseme, speech, reaction, error}",
+    "startSpeech": "startSpeech({events = [], duration = Infinity, clock, sample, epoch?}) -> boolean; clock and cue time are seconds; sample takes precedence",
+    "stopSpeech": "stopSpeech() -> boolean; cancels sampler generation and closes mouth next rendered frame; preserves intent",
+    "setExpression": "setExpression(id, {epoch?, durationMs?} = {}) -> boolean; finite duration is a visual reaction, 1..10000 ms; otherwise persistent intent",
+    "handleEvent": "handleEvent({type:'state',state,epoch?} | {type:'expression',expression,epoch?,durationMs?} | {type:'reset',epoch?}) -> boolean",
+    "reset": "reset({epoch?} = {}) -> boolean; defaults epoch+1; stops speech and reactions, preserves emotional intent",
+    "destroy": "destroy() -> void; irreversible, no further rendering",
+    "optional": "setGaze, clearGaze, setListeningSignal, setActivity, clearActivity, resetActivities, previewActivity return explicit unsupported receipt"
+  },
+  "speechSnapshot": ["active", "viseme", "amount", "source", "time", "epoch", "sequence", "turn_id"],
+  "properties": ["ready: Promise<boolean>", "loaded: boolean", "manifest", "expression"],
+  "epochRule": "Tagged events/samples below current epoch are rejected; higher epoch retires prior speech and reactions. Untagged calls are trusted current-caller input and cannot establish stale-event safety.",
+  "restRule": "Inactive, rest, nonpositive amount, missing or failed samples force registered rest cel even for open-rest presets; rests need not carry epoch. Explicit invalid amount becomes zero; omitted amount defaults to one for a non-rest viseme and zero for rest. Finite amounts clamp to 0..1. Sample viseme and provenance remain available when the rendered mouth closes.",
+  "unknownExpression": "Reject with false; retain prior intent.",
+  "mapping": {"neutral":"attentive","listening":"quiet-listening","thinking":"considering","happy":"amused","sad":"concerned","alert":"attentive","curious":"friendly-curiosity","reassuring":"reassuring"},
+  "assetRule": "All 13 native preset IDs also accepted; native image bytes reused unchanged. No renderer transforms beyond original registration.",
+  "limitations": ["Caller owns audio sources, playback suspension, live intent and turn arbitration.", "No internal animation loop; caller must update at least each 15 fps frame.", "Snapshot describes last rendered pose; speech cancellation becomes visible on next frame.", "No live runtime swap or activity catalog integration."]
+}

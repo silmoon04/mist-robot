@@ -1,0 +1,92 @@
+{
+  "revision": "Live debug and expression inspector, 2026-09-14",
+  "tests": [
+    {
+      "name": "5 diagnostic buffer, redaction, pagination and pairing contracts",
+      "passed": true
+    },
+    {
+      "name": "33 application contracts",
+      "passed": true
+    },
+    {
+      "name": "12 streaming TTS contracts",
+      "passed": true
+    },
+    {
+      "name": "3 background lifecycle contracts",
+      "passed": true
+    },
+    {
+      "name": "Playback scheduling",
+      "passed": true
+    },
+    {
+      "name": "31,050 renderer states",
+      "passed": true
+    },
+    {
+      "name": "app.js module syntax",
+      "passed": true
+    },
+    {
+      "name": "debug.js module syntax",
+      "passed": true
+    },
+    {
+      "name": "expressions.js module syntax",
+      "passed": true
+    }
+  ],
+  "browser_checks": [
+    "Real synthetic conversation recorded native startup, model turn duration, sensor-tool start/end/result, TTS first audio, playback queue and expression events.",
+    "Real background sensor analysis produced background tool execution and timing events in the filtered debug table.",
+    "Debug category filtering separated background/tool events from transcript wording; text rendered correctly after UTF-8 verification.",
+    "Inspector rendered 40 variants, 20 named presets and 11 mouth shapes without console errors.",
+    "Happy face with held AA mouth at frame 12 (200 ms) returned to byte-identical frame geometry after next/previous stepping.",
+    "Narrow viewport layout showed the main face before controls; geometry bounds had nonzero dimensions."
+  ],
+  "limits": [
+    "The journal holds 2,000 events in memory and pages in batches of 400. Old records roll out; exports contain the currently loaded and filtered trace.",
+    "Audio delivery is sampled at most once per half second per reply. Browser queue and microphone statistics are sampled once per second. PCM is not retained.",
+    "Known authentication fields are removed recursively. Conversation text and tool arguments remain visible and can contain user-provided sensitive information.",
+    "Server elapsed time uses a monotonic performance clock. Browser timestamps use a separate clock; arrival times are not network-latency measurements.",
+    "Tool handler duration excludes model reasoning. Transcript-done-to-playback excludes prior native speech-end detection.",
+    "The inspector mouth sweep is synthetic. Production speech currently uses amplitude-driven AA/rest, not full phoneme alignment.",
+    "The inspector is a review surface, not an editor of the production face geometry. SVG and JSON export actions serialize the selected frame locally."
+  ],
+  "implementation_sha256": {
+    "duplex/__init__.py": "5d72754d88de174c794e9c99541783681f2e5b26eb251c42d084bbf5dd88659a",
+    "duplex/background.py": "03edd6bec92b566540f898f26de52af811b22dc42d9b0f70aa6d302af3ba2afb",
+    "duplex/build_debug_report.py": "3127023e4dac3ad5cfc6310ca5eb0ea6838e5789129ffed3266b9800d1ee665c",
+    "duplex/build_evaluation.py": "e66a7ae0b775eaa4464f5737f2fc44c5cb6b001d174c501e3090ea66972c15d7",
+    "duplex/build_fix_report.py": "de31b9df575695e118c88ec9cc12e6031b3709302bba204f979f06e7f157516a",
+    "duplex/build_layered_report.py": "3b4b99ee129e9e6252f263ca0ae0f13bfcc585980ee4299ebe3eec13131c5955",
+    "duplex/build_quality_report.py": "99daa53945c9b0ee2e23118c19df19d88a9c8d193be98cd95e7c889666a0333c",
+    "duplex/build_tts_report.py": "bddba08083b9a85aba875491fbd8d5173c0b21f83f28c60b18672fc4ab120767",
+    "duplex/conversion.py": "70bcc6af031e80719b04da587125233221487df1496fa5c2ead02fc1b58871ab",
+    "duplex/debugging.py": "8479a2f08f40301f443b7b1ca96c7216b12c14fb4ca886fb5ba5837503fc3b12",
+    "duplex/face_map.json": "7a49c10b77d90a38e9c39903316976a990de6f3a4ed473de88f54feb7824dd62",
+    "duplex/native.py": "137083d04438972018ce279db012ac40fb09da0fa9567fb641fe9cbebdc17c37",
+    "duplex/package.py": "25a26d7a2b7d7a0266969e4406ad4af3d71533c77b6c612cd59a488645e36831",
+    "duplex/persona.txt": "0cef9de6fbd7648510dcee1c6e1d938d59d6a9ea3b3f71fadba1e7847b92658b",
+    "duplex/phrasing.py": "479b7964515aae8d4c517dc0b9226fbbb17e8a95e448fb24dfac046511d7773c",
+    "duplex/README.md": "14d20c06643d5eef258ed2e202c1d41cadf1e0489f533c809e4084935252531b",
+    "duplex/runtime.py": "265b31fb380177778b443744831a6c0e4548b3ab0f3ed3b5fbaf30923e5710e6",
+    "duplex/sensors.py": "af152877bb82b8c5de94b6f84b6b468bbec8e37f7e2496226f61b4b507629d2e",
+    "duplex/server.py": "d224e5cae0225ddd393be58d12e3b15d1969d8bfebcf26042d69b4de9d246284",
+    "duplex/static/app.js": "08a63bedd0980394c6a69062769f34cd5304f987f4a7f30019e7ca6a73e2a0c5",
+    "duplex/static/capture-worklet.js": "ad51a795254e79de00b7951e5ce31bfd32ca57361cda705be8fed0908a862259",
+    "duplex/static/debug.html": "bbd47e863ad2b8fdb1dde56b7617fb4c60192dcbd1a8c2eccdc95af1681b5392",
+    "duplex/static/debug.js": "6cb7e3606e9691a3dc047f13a41ec9db4fbe7b8f9eefbe8dc401f131d305bd76",
+    "duplex/static/delivery.js": "2d03363d078ae189dc43b144dbe75b62231fa515143c931dd2018057e52eb3bd",
+    "duplex/static/expressions.html": "47b14c8f753b43c3c122ca3847c8411c529fb1ce59ba47d83c83014264f4de7a",
+    "duplex/static/expressions.js": "1aeffc63949dbdd91f24de49d772e09a248906ed91d8b68d2607781e3adc31d3",
+    "duplex/static/index.html": "949f8f21eae46616fc318cba25a0e532eaaf91a1788489cf93921ba99b925dd9",
+    "duplex/static/inspect.css": "22338a6d8734030f83e49d1a4d4ce88f615af9b721f1382123ac3c25ec0047bb",
+    "duplex/static/playback.js": "707aabecea80b8e468f0f08f490a6711a05d9bb83aea48570e72039e2ef64021",
+    "duplex/static/sample.wav": "916f229828c194e95b404b8346504331df1d39ec154be53408f25015b283a009",
+    "duplex/static/style.css": "8f2483ddc664d88b71c7380a3346bf65b714ff39afc48cfca07ac015eb4d180a",
+    "duplex/tts.py": "45f2c06fbb691f7e8167162e902279af0f6aff5ae62c851ffdf5fb715d33dbe3"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "status": "pass for printing and restrained unloaded prototype evaluation",
+  "manifest_sha256": "532a5cb83129ba5961618050b376999aca8ad28129412b036fa12d3ac529544e",
+  "print_piece_count": 15,
+  "plate_count": 4,
+  "sampled_pose_count": 39,
+  "yaw_guard_sample_count": 63,
+  "native_joint_count": 3,
+  "operating_limits_deg": {
+    "yaw": [
+      -55,
+      55
+    ],
+    "hip": [
+      -30,
+      65
+    ],
+    "knee": [
+      5,
+      115
+    ]
+  },
+  "printable_mesh_checks": "watertight, consistently wound, positive volume, matching manifest hashes",
+  "required_reports": {
+    "verification.json": "b4d8fcb5dd9c58f1b7ed114740b8a52158d2adf199204d27d699f78f8fc6d22b",
+    "print_validation.json": "e026c1a547d9bae3099b80ab169698c99f80c9e2bf335c7d22446b612832e251",
+    "support_check.json": "5161223be1b7d766fe298b9df40a2ac6d1698bc93b0bffe296e6c0d23cdf9cff",
+    "motion_test.json": "5ae9a2e3becbaef68247f0f0eddb666d06e55821870b59d5d663318cddfb7cdf",
+    "urdf_properties.json": "f2691748daba898fe723f53dd933047e1bd2b6db8422cec0df827cce74471f54",
+    "section_screen.json": "5a21e7d448583fc6b28a1c1c3428f6a93cadde09028cde9d5b2887ba7885ace8",
+    "fusion/fusion_report.json": "9a715a4b9aeac2fe03bbef8cceb7a36f4d21e934fcfce29482ad7a9984f87e88",
+    "yaw_clearance.json": "7bef4cab030394876d12d45a3a17e9579132ebd16cb63c8c46c693222a27179d",
+    "hardware_check.json": "e405b1686fd878ea4473521d944a7f501d2c738e01353cc3704ee2bc7ed050ec",
+    "yaw_load_comparison.json": "80b6303986fa1e8ba582228c1f4310e1fb0fc65b423c6427a4b24bf278e55981",
+    "pitch_section_sweep.json": "2215e9de83d41c7fb92c814c245520e6f6b8646edf320fa29889a9e05fe7ee28"
+  },
+  "limitations": [
+    "Physical print fit and washer thickness remain to be checked.",
+    "Some sections fail the assumed 5 N screen; no full-body loading approval.",
+    "No continuous sweep, real motor heating, fracture or walking balance validation."
+  ]
+}

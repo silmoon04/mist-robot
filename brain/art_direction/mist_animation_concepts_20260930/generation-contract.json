@@ -1,0 +1,38 @@
+{
+  "task": "Generate three independent single-image key poses for the assigned MIST animation concept; no full animation or runtime replacement in this pass.",
+  "skill": "<LOCAL_HOME>/.codex/skills/.system/imagegen/SKILL.md",
+  "primaryReference": "images/available-blink-1.png",
+  "supportingExpressionReferences": [
+    "../mist_game_faces_20260929/sheets/isat-odile-mixed-affect.png",
+    "../mist_game_faces_20260929/sheets/cuphead-jake-clark-process.png"
+  ],
+  "tool": "built-in image_gen only, one call per requested single-image pose. No Python/code image generation, transforms, or editing.",
+  "style": "Use the shared anchor as exact identity, scale, layout, palette and texture reference. One face only, same softly hand-shaped turquoise open-C eyes, same eye centres, compact mouth centre. Square composition, native dimensions preserved. Do not enlarge or move the entire face between poses. Original supporting sheets inform expression shapes only, not a new style.",
+  "references": "View the anchor and all supporting references before calling ImageGen. For first pose use anchor primarily. For subsequent poses, use your selected first pose as edit target and shared anchor as identity reference; change only the assigned acting detail. With props, preserve the prop layout and geometry across all three. Do not reference unviewed local files.",
+  "avoid": "No body/bezel/background scene, skin, detached brows, cheeks, teeth/tongue, text or labels, gradients/glow/3D, stray cyan marks, duplicate/ghost eyes or mouths, extra colours. The anchor already has faint tonal texture; preserve rather than amplifying it.",
+  "motionConstraints": "Listening/thinking closed mouths; serious speech no happy corners. Blinks close lids without rotating or scaling the full eye. Task icons remain below the eye line, separate from eyes and mouth. Book text stays visible on both pages in every pose with no page flip. Draft ink persists. No random disappearing cursor/prop/lines.",
+  "files": "Own only your three canonical images, prompts named for your concept, and manifests/{concept-id}.json. Save exact prompts before calls. Copy selected native artifact bytes from actual tool-returned output_hint paths into project images; do not guess newest filesystem output. Preserve intermediate variants under images/revisions if needed. Never print full base64. Inspect every selected image with view_image and check the triple together.",
+  "manifestSchema": {
+    "id": "concept ID",
+    "tool": "built-in image_gen",
+    "images": [
+      {
+        "id": "pose ID from assignment",
+        "file": "images/{filename}",
+        "prompt": "prompts/{selected-prompt}.txt",
+        "generatedSource": "exact tool-returned source artifact path",
+        "sha256": "selected bytes sha256",
+        "width": 0,
+        "height": 0,
+        "qa": {
+          "singleFace": true,
+          "mistIdentity": true,
+          "noStrayMarks": true
+        },
+        "limitations": "honest remaining nonblocking limitations"
+      }
+    ],
+    "limitations": "honest concept limitations"
+  },
+  "quality": "If a clear defect is seen, do one targeted edit then re-inspect; do not declare a bad middle pose good. Ask root if more than two repairs needed. Report all three selected images ready with QA notes. No browser/publishing/server or live pack edits."
+}

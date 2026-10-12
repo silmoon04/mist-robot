@@ -1,0 +1,75 @@
+{
+  "id": "reading-scan",
+  "tool": "built-in image_gen",
+  "images": [
+    {
+      "id": "reading-scan__1",
+      "file": "images/reading-scan-1.png",
+      "prompt": "prompts/reading-scan-1-repair-gaze.txt",
+      "generatedSource": "C:\\Users\\hssil\\.codex\\generated_images\\01a0ef9d-bfb2-71d1-bc18-d1445c8126cb\\exec-7e0763c5-1098-4000-b982-f38a750503f3.png",
+      "sha256": "0e51d7129af564263f61a2f9c116d2b6473871a607f7e39c9df8db3c16036f6b",
+      "width": 1254,
+      "height": 1254,
+      "qa": {
+        "singleFace": true,
+        "mistIdentity": true,
+        "noStrayMarks": true,
+        "closedMouth": true,
+        "threeStrokesPerPage": true,
+        "sixStrokesTotal": true,
+        "bookBelowFace": true,
+        "noPageFlip": true
+      },
+      "limitations": "Down-left gaze is subtle. The stable book is slightly broader than the prompt's requested bounds, but remains fully below and clear of the face.",
+      "initialPrompt": "prompts/reading-scan-1.txt",
+      "initialGeneratedSource": "C:\\Users\\hssil\\.codex\\generated_images\\01a0ef9d-bfb2-71d1-bc18-d1445c8126cb\\exec-ae7fd90e-5e79-4c13-8c8c-bc87a39f87aa.png",
+      "revisionFile": "images/revisions/reading-scan-1-before-gaze-repair.png"
+    },
+    {
+      "id": "reading-scan__2",
+      "file": "images/reading-scan-2.png",
+      "prompt": "prompts/reading-scan-2-repair-gap.txt",
+      "generatedSource": "C:\\Users\\hssil\\.codex\\generated_images\\01a0ef9d-bfb2-71d1-bc18-d1445c8126cb\\exec-6ab93d8c-1de1-44b6-a8e8-3457d8fe3026.png",
+      "sha256": "6882ec7c13839568864cd129b88be1892ef57bbdf8c61029bcc7153cbef0ee39",
+      "width": 1254,
+      "height": 1254,
+      "qa": {
+        "singleFace": true,
+        "mistIdentity": true,
+        "noStrayMarks": true,
+        "closedMouth": true,
+        "threeStrokesPerPage": true,
+        "sixStrokesTotal": true,
+        "bookBelowFace": true,
+        "noPageFlip": true
+      },
+      "limitations": "Down-right aperture shift is subtle. A generated second eye gap was repaired before selection; selected eye is a single connected C.",
+      "initialPrompt": "prompts/reading-scan-2.txt",
+      "initialGeneratedSource": "C:\\Users\\hssil\\.codex\\generated_images\\01a0ef9d-bfb2-71d1-bc18-d1445c8126cb\\exec-f93fa950-c7f4-4b5a-be00-fd19344b8cbe.png",
+      "revisionFile": "images/revisions/reading-scan-2-before-gap-repair.png"
+    },
+    {
+      "id": "reading-scan__3",
+      "file": "images/reading-scan-3.png",
+      "prompt": "prompts/reading-scan-3.txt",
+      "generatedSource": "C:\\Users\\hssil\\.codex\\generated_images\\01a0ef9d-bfb2-71d1-bc18-d1445c8126cb\\exec-fb6565c1-c798-47d5-9d96-7fb5dcc9a031.png",
+      "sha256": "7d27b7e81f833b9882838f0919d0a11f02a38e6a8afbc5b7254df7b0a5d5d748",
+      "width": 1254,
+      "height": 1254,
+      "qa": {
+        "singleFace": true,
+        "mistIdentity": true,
+        "noStrayMarks": true,
+        "closedMouth": true,
+        "threeStrokesPerPage": true,
+        "sixStrokesTotal": true,
+        "bookBelowFace": true,
+        "noPageFlip": true
+      },
+      "limitations": "Next-line down-left change is subtle; the lower next-line move is not clearly legible from the still. The viewer-right inner eye contour has a small hand-shaped cusp, with no extra gap or detached mark."
+    }
+  ],
+  "limitations": "All three selected native images retain the fully open lower-right book and exactly three visible cyan strokes on each page. There is no blank page, page flip or side swap. Eye-aperture changes are restrained and may need clearer drawn in-betweens for a future animation; these are static key-pose concepts only. Book and facial layout are visually stable, not claimed pixel-identical after generative edits.",
+  "repairCount": 2,
+  "qaReview": "Selected images were each inspected with view_image and then viewed together. Independent read-only visual QA also inspected all three at original detail and confirmed book continuity, six visible strokes, stable face layout and no stray marks. It confirmed subtle gaze changes and the nonblocking pose-3 inner-contour cusp."
+}

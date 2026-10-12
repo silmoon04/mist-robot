@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MIST leg studio — 2D mechanism design</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #14161a; color: #d5d9e0; font: 13px/1.45 'Segoe UI', system-ui, sans-serif; }
+  #wrap { display: grid; grid-template-columns: 1fr 340px; grid-template-rows: auto 1fr; height: 100vh; }
+  #bar { grid-column: 1/3; display: flex; gap: 14px; align-items: center; padding: 6px 12px; background: #1a1d23; border-bottom: 1px solid #2a2e36; flex-wrap: wrap; }
+  #bar b { color: #e8ecf4; }
+  .chip { padding: 2px 10px; border-radius: 10px; font-size: 11.5px; font-weight: 600; background: #23272f; }
+  .chip.ok { color: #4fdc8b; } .chip.warn { color: #f0b64c; } .chip.bad { color: #ff6b5e; }
+  #main { position: relative; }
+  canvas { display: block; }
+  #side { width: 100%; height: 100%; }
+  #panel { background: #1a1d23; border-left: 1px solid #2a2e36; padding: 10px; overflow-y: auto; }
+  .vlab { color: #7d8494; font-size: 10.5px; font-weight: 700; letter-spacing: .08em; margin: 8px 0 2px; }
+  .srow { display: grid; grid-template-columns: 1fr 90px 52px; gap: 6px; align-items: center; margin: 3px 0; }
+  .srow label { color: #aab2c2; font-size: 12px; }
+  .srow .v { color: #e8ecf4; font-size: 11px; text-align: right; font-variant-numeric: tabular-nums; }
+  input[type=range] { width: 100%; accent-color: #4f8fe8; }
+  button { background: #262b35; color: #d5d9e0; border: 1px solid #363c48; border-radius: 6px; padding: 5px 12px; cursor: pointer; }
+  .kv { display: flex; justify-content: space-between; border-bottom: 1px dotted #2a2e36; padding: 2px 0; font-size: 12px; }
+  .kv b { color: #e8ecf4; font-variant-numeric: tabular-nums; }
+  .note { color: #6d7586; font-size: 11px; margin-top: 6px; line-height: 1.5; }
+  .stale { color: #ffcc73; border: 1px solid #8a6020; background: #332711; padding: 4px 9px; border-radius: 6px; font-size: 11px; }
+</style>
+</head>
+<body>
+<div id="wrap">
+  <div id="bar">
+    <b>MIST leg studio</b>
+    <span class="stale">Layout B study only: 82/91/31 mm is not the current Layout A CAD. Do not order belts, rods, or printed parts from this page.</span>
+    <button id="play">⏸ pause</button>
+    <input type="range" id="scrub" min="0" max="1000" value="0" style="width:220px">
+    <span id="phase" class="chip">stance</span>
+    <span id="c_ratio" class="chip">ratio</span>
+    <span id="c_trans" class="chip">transmission</span>
+    <span id="c_travel" class="chip">servo travel</span>
+    <span id="c_bind" class="chip ok">assembles</span>
+  </div>
+  <div id="main"><canvas id="side"></canvas></div>
+  <div id="panel">
+    <canvas id="front" width="320" height="230"></canvas>
+    <canvas id="top" width="320" height="180"></canvas>
+    <canvas id="detail" width="320" height="230"></canvas>
+    <div class="vlab">KNEE-AT-HIP FOUR-BAR (crank · pushrod · rocker)</div>
+    <div id="sliders1"></div>
+    <div class="vlab">WHEEL-AT-KNEE BELT</div>
+    <div id="sliders2"></div>
+    <div class="vlab">GAIT</div>
+    <div id="sliders3"></div>
+    <div class="vlab">DERIVED (archived Layout B study: femur 82 · tibia 91 · d1 31 · wheel Ø70)</div>
+    <div id="read"></div>
+    <div class="note">The four-bar is solved, not assumed: the crank is coaxial with the hip-pitch axis, the pushrod runs beside the femur, the rocker is bolted to the tibia. Ratio and transmission angle change through the gait — red flash = mechanism binds (rod can't reach). Belt spans knee→axle along the rigid tibia, so it crosses no moving joint.</div>
+  </div>
+</div>
+<script>
+'use strict';
+// ---------- fixed geometry: archived Layout B study (not current CAD) ----------
+const L1 = 82, L2 = 91, D1 = 31, RW = 35;      // mm — femur, tibia, hip offset, wheel radius
+const HIP_H = 164;                              // hip-pitch axis height above ground (bodyH 144 + mount 20)
+const STEP = 34;                                // stride mm (0.42 × femur)
+const KNEE_SIGN = -1;                           // knee bows outward (spider look)
+
+// ---------- adjustable mechanism parameters ----------
+const P = {
+  crank: 12, rocker: 23.4, rod: 0, rockOff: 0,  // four-bar (rod/rockOff auto-derived at stand)
+  pulleyK: 9, pulleyW: 12,                      // belt pulleys at knee / wheel
+  speed: 1.0, lift: 40,                         // gait
+  tauKnee: 0.9,                                 // N·m stance knee torque for rod-force readout
+};
+
+// ---------- 2-link IK in the leg plane (x outward, z up, angles from vertical) ----------
+function ik(px, pz) {
+  const r2 = px * px + pz * pz;
+  const D = (r2 - L1 * L1 - L2 * L2) / (2 * L1 * L2);
+  const Dc = Math.max(-1, Math.min(1, D));
+  const q3 = KNEE_SIGN * Math.acos(Dc);
+  const q2 = Math.atan2(px, -pz) - Math.atan2(L2 * Math.sin(q3), L1 + L2 * Math.cos(q3));
+  return { q2, q3, ok: Math.abs(D) <= 1 };
+}
+const dir = (a) => [Math.sin(a), -Math.cos(a)]; // angle from straight-down
+function fk(q2, q3) {
+  const K = [L1 * dir(q2)[0], L1 * dir(q2)[1]];
+  const A = [K[0] + L2 * dir(q2 + q3)[0], K[1] + L2 * dir(q2 + q3)[1]];
+  return { K, A };
+}
+
+// ---------- gait: axle path relative to hip ----------
+function axleTarget(t) { // t in [0,1); duty 0.5
+  const zG = -(HIP_H - RW);
+  if (t < 0.5) { // stance: foot moves backward under the body
+    const u = t / 0.5;
+    return { x: STEP / 2 - u * STEP, z: zG, stance: true, u };
+  }
+  const u = (t - 0.5) / 0.5; // swing: lifted arc forward
+  return { x: -STEP / 2 + u * STEP, z: zG + P.lift * Math.sin(Math.PI * u), stance: false, u };
+}
+
+// ---------- four-bar solve ----------
+// crank pivot = hip (0,0), crank tip C = crank·dir(alpha)
+// rocker base = knee K, rocker tip R = K + rocker·dir(q2+q3+rockOff)
+// pushrod connects C..R with fixed length P.rod. Given leg pose, find alpha.
+function rockerTip(q2, q3, K) {
+  const d = dir(q2 + q3 + P.rockOff);
+  return [K[0] + P.rocker * d[0], K[1] + P.rocker * d[1]];
+}
+function solveCrank(R, prevAlpha) {
+  // intersection of circle(origin, crank) and circle(R, rod)
+  const d = Math.hypot(R[0], R[1]);
+  const r1 = P.crank, r2 = P.rod;
+  if (d > r1 + r2 || d < Math.abs(r2 - r1) || d < 1e-9) return null;
+  const a = (r1 * r1 - r2 * r2 + d * d) / (2 * d);
+  const h = Math.sqrt(Math.max(r1 * r1 - a * a, 0));
+  const mx = (a / d) * R[0], my = (a / d) * R[1];
+  const c1 = [mx + (h / d) * -R[1], my + (h / d) * R[0]];
+  const c2 = [mx - (h / d) * -R[1], my - (h / d) * R[0]];
+  const ang = (c) => Math.atan2(c[0], -c[1]); // our angle-from-down convention
+  const a1 = ang(c1), a2 = ang(c2);
+  if (prevAlpha == null) return a1;
+  const wrap = (x) => Math.atan2(Math.sin(x), Math.cos(x));
+  return Math.abs(wrap(a1 - prevAlpha)) < Math.abs(wrap(a2 - prevAlpha)) ? a1 : a2;
+}
+
+// auto-derive rod length + rocker offset so the mechanism assembles at stand.
+// Classic parallelogram layout: crank ∥ rocker (both ⊥-ish to the femur), rod
+// runs alongside the femur. Ratio ≈ rocker/crank, transmission angle starts ~90°.
+function autoAssemble() {
+  // assemble at the MID-RANGE pose of the gait, so crank travel is centered and
+  // the ratio stays near rocker/crank instead of blowing up at one end
+  let q3min = 1e9, q3max = -1e9, q2mid = 0;
+  for (let i = 0; i <= 40; i++) {
+    const tg = axleTarget(i / 40);
+    const s = ik(tg.x, tg.z);
+    if (s.q3 < q3min) q3min = s.q3;
+    if (s.q3 > q3max) q3max = s.q3;
+    q2mid += s.q2 / 41;
+  }
+  const q3mid = (q3min + q3max) / 2;
+  const { K } = fk(q2mid, q3mid);
+  const armDir = q2mid - Math.PI / 2;           // absolute dir of crank AND rocker
+  P.rockOff = armDir - (q2mid + q3mid);
+  const R = rockerTip(q2mid, q3mid, K);
+  const C = [P.crank * dir(armDir)[0], P.crank * dir(armDir)[1]];
+  P.rod = Math.hypot(C[0] - R[0], C[1] - R[1]);
+}
+autoAssemble();
+
+// ---------- per-frame mechanism state ----------
+let alphaPrev = null, wheelSpin = 0, tPrev = 0;
+function mech(t) {
+  const tg = axleTarget(t);
+  const s = ik(tg.x, tg.z);
+  const { K, A } = fk(s.q2, s.q3);
+  const R = rockerTip(s.q2, s.q3, K);
+  const alpha = solveCrank(R, alphaPrev);
+  let ratio = null, trans = null;
+  if (alpha != null) {
+    alphaPrev = alpha;
+    // instantaneous ratio dalpha/dq3 (numeric)
+    const d = 0.002;
+    const s2 = { q2: s.q2, q3: s.q3 + d };
+    const R2 = rockerTip(s2.q2, s2.q3, fk(s2.q2, s2.q3).K);
+    const a2 = solveCrank(R2, alpha);
+    if (a2 != null) ratio = Math.abs((a2 - alpha) / d);
+    // transmission angle: rod vs rocker
+    const C = [P.crank * dir(alpha)[0], P.crank * dir(alpha)[1]];
+    const rod = [R[0] - C[0], R[1] - C[1]];
+    const rock = [R[0] - K[0], R[1] - K[1]];
+    const dot = (rod[0] * rock[0] + rod[1] * rock[1]) / (Math.hypot(...rod) * Math.hypot(...rock));
+    trans = Math.acos(Math.max(-1, Math.min(1, Math.abs(dot)))) * 180 / Math.PI;
+    // we want the angle from parallel — effective force ∝ sin(angle between rod and rocker)
+    const cross = rod[0] * rock[1] - rod[1] * rock[0];
+    trans = Math.asin(Math.min(1, Math.abs(cross) / (Math.hypot(...rod) * Math.hypot(...rock)))) * 180 / Math.PI;
+    return { ...s, K, A, R, alpha, C, ratio, trans, tg };
+  }
+  return { ...s, K, A, R, alpha: null, C: null, ratio, trans, tg };
+}
+
+// scan whole gait for min transmission / ratio range / servo travel / binding
+function scanGait() {
+  let minTrans = 90, rMin = 1e9, rMax = 0, aMin = 1e9, aMax = -1e9, binds = false, solved = 0;
+  alphaPrev = null;
+  for (let i = 0; i <= 120; i++) {
+    const m = mech(i / 120);
+    if (m.alpha == null) { binds = true; continue; }
+    solved++;
+    if (m.trans != null) minTrans = Math.min(minTrans, m.trans);
+    if (m.ratio != null && m.ratio < 20) { rMin = Math.min(rMin, m.ratio); rMax = Math.max(rMax, m.ratio); }
+    aMin = Math.min(aMin, m.alpha); aMax = Math.max(aMax, m.alpha);
+  }
+  alphaPrev = null;
+  if (!solved) return { minTrans: 0, rMin: 0, rMax: 0, travel: 0, binds: true };
+  if (rMin > rMax) { rMin = 0; rMax = 0; }
+  return { minTrans, rMin, rMax, travel: (aMax - aMin) * 180 / Math.PI, binds };
+}
+
+// ---------- drawing helpers ----------
+function beam(g, a, b, w, fill) {
+  const ang = Math.atan2(b[1] - a[1], b[0] - a[0]);
+  g.save(); g.translate(a[0], a[1]); g.rotate(ang);
+  const L = Math.hypot(b[0] - a[0], b[1] - a[1]);
+  g.fillStyle = fill; g.strokeStyle = '#0d0f12'; g.lineWidth = 1;
+  g.beginPath(); g.roundRect(-w * 0.55, -w / 2, L + w * 1.1, w, w / 2); g.fill(); g.stroke();
+  g.restore();
+}
+function servo(g, p, ang, scale = 1) {
+  g.save(); g.translate(p[0], p[1]); g.rotate(ang);
+  g.fillStyle = '#22262e'; g.strokeStyle = '#3a4150'; g.lineWidth = 1.2;
+  g.beginPath(); g.roundRect(-22.6 * scale, -12.4 * scale, 45.2 * scale, 24.7 * scale, 3); g.fill(); g.stroke();
+  g.fillStyle = '#3a4150'; g.beginPath(); g.arc(-12 * scale, 0, 4.5 * scale, 0, 7); g.fill();
+  g.restore();
+}
+function joint(g, p, r, col = '#e8ecf4') {
+  g.fillStyle = '#14161a'; g.strokeStyle = col; g.lineWidth = 1.6;
+  g.beginPath(); g.arc(p[0], p[1], r, 0, 7); g.fill(); g.stroke();
+  g.fillStyle = col; g.beginPath(); g.arc(p[0], p[1], 1.6, 0, 7); g.fill();
+}
+function dim(g, a, b, off, label) {
+  const dx = b[0] - a[0], dy = b[1] - a[1], L = Math.hypot(dx, dy);
+  const nx = -dy / L * off, ny = dx / L * off;
+  g.strokeStyle = '#4a5162'; g.fillStyle = '#8f97a8'; g.lineWidth = 0.8; g.font = '10px Segoe UI';
+  g.beginPath();
+  g.moveTo(a[0], a[1]); g.lineTo(a[0] + nx, a[1] + ny);
+  g.moveTo(b[0], b[1]); g.lineTo(b[0] + nx, b[1] + ny);
+  g.moveTo(a[0] + nx, a[1] + ny); g.lineTo(b[0] + nx, b[1] + ny);
+  g.stroke();
+  g.save(); g.translate(a[0] + nx + dx / 2, a[1] + ny + dy / 2);
+  g.rotate(Math.atan2(dy, dx));
+  if (Math.abs(Math.atan2(dy, dx)) > Math.PI / 2) g.rotate(Math.PI);
+  g.textAlign = 'center'; g.fillText(label, 0, -3); g.restore();
+}
+function belt(g, a, b, r1, r2, phase) {
+  const dx = b[0] - a[0], dy = b[1] - a[1], L = Math.hypot(dx, dy);
+  const ux = dx / L, uy = dy / L;
+  g.strokeStyle = '#556070'; g.lineWidth = 2; g.setLineDash([5, 4]); g.lineDashOffset = -phase;
+  for (const s of [1, -1]) {
+    // tangent lines between unequal pulleys (open belt)
+    const sinT = (r1 - r2) / L;
+    const cosT = Math.sqrt(Math.max(1 - sinT * sinT, 0));
+    const nx = (-uy * cosT - ux * sinT) * s ? 0 : 0; // simplified below for near-equal radii
+    g.beginPath();
+    g.moveTo(a[0] - uy * r1 * s, a[1] + ux * r1 * s);
+    g.lineTo(b[0] - uy * r2 * s, b[1] + ux * r2 * s);
+    g.stroke();
+  }
+  g.setLineDash([]);
+  for (const [p, r] of [[a, r1], [b, r2]]) {
+    g.fillStyle = '#2c313c'; g.strokeStyle = '#556070'; g.lineWidth = 1.5;
+    g.beginPath(); g.arc(p[0], p[1], r, 0, 7); g.fill(); g.stroke();
+  }
+}
+
+// ---------- views ----------
+const sideCv = document.getElementById('side');
+function drawSide(m, t) {
+  const g = sideCv.getContext('2d');
+  const W = sideCv.width = sideCv.clientWidth, H = sideCv.height = sideCv.clientHeight;
+  g.clearRect(0, 0, W, H);
+  const S = Math.min(H / 300, W / 420);
+  const ox = W * 0.42, oy = H * 0.14 + 40 * S; // hip at this screen point
+  const T = (p) => [ox + p[0] * S * 1.35, oy - p[1] * S * 1.35 * -1]; // z is stored negative-down already
+  const M = (p) => [ox + p[0] * S * 1.35, oy + -p[1] * -S * 1.35];
+  const px = (p) => [ox + p[0] * S * 1.35, oy - p[1] * S * 1.35];
+
+  // ground
+  const gy = px([0, -(HIP_H)])[1];
+  g.strokeStyle = '#3a4150'; g.lineWidth = 1.5;
+  g.beginPath(); g.moveTo(20, gy); g.lineTo(W - 20, gy); g.stroke();
+  g.strokeStyle = '#262b35';
+  for (let x = 24; x < W - 20; x += 14) { g.beginPath(); g.moveTo(x, gy); g.lineTo(x - 8, gy + 8); g.stroke(); }
+
+  // body slice (cylinder wall on the inboard side)
+  g.fillStyle = '#1f2733'; g.strokeStyle = '#2f3a4a';
+  g.beginPath(); g.roundRect(px([-95, 55])[0], px([-95, 55])[1], 60 * S, 210 * S, 8); g.fill(); g.stroke();
+  g.fillStyle = '#7d8494'; g.font = '10px Segoe UI';
+  g.fillText('body', px([-92, 48])[0], px([-92, 48])[1]);
+
+  const hip = px([0, 0]), K = px(m.K), A = px(m.A), R = px(m.R);
+
+  // beams
+  beam(g, hip, K, 15 * S, '#cfc9bd');   // femur (20×16 beam)
+  beam(g, K, A, 13 * S, '#bdb7ab');     // tibia
+
+  // wheel: tire + hub + spokes (spin)
+  g.fillStyle = '#15181d'; g.strokeStyle = '#000';
+  g.beginPath(); g.arc(A[0], A[1], RW * S * 1.35, 0, 7); g.fill(); g.stroke();
+  g.fillStyle = '#8f897d'; g.beginPath(); g.arc(A[0], A[1], RW * 0.42 * S * 1.35, 0, 7); g.fill();
+  g.strokeStyle = '#3c4350'; g.lineWidth = 2;
+  for (let k = 0; k < 3; k++) {
+    const a = wheelSpin + k * Math.PI * 2 / 3;
+    g.beginPath(); g.moveTo(A[0], A[1]);
+    g.lineTo(A[0] + Math.cos(a) * RW * 0.9 * S * 1.35, A[1] + Math.sin(a) * RW * 0.9 * S * 1.35); g.stroke();
+  }
+
+  // belt knee -> axle + wheel servo at knee
+  belt(g, K, A, P.pulleyK * S * 1.35, P.pulleyW * S * 1.35, performance.now() / 30 * P.speed);
+  servo(g, [K[0] - 14 * S, K[1] - 10 * S], Math.atan2(A[1] - K[1], A[0] - K[0]), S * 0.9);
+
+  // hip cluster: hip-pitch servo + coaxial knee servo (stacked), crank + rod
+  servo(g, [hip[0] - 26 * S, hip[1] - 6 * S], 0, S);
+  servo(g, [hip[0] - 26 * S, hip[1] + 22 * S], 0, S);
+  g.fillStyle = '#7d8494'; g.fillText('hip-pitch servo', hip[0] - 90 * S, hip[1] - 24 * S);
+  g.fillText('knee servo (coaxial)', hip[0] - 104 * S, hip[1] + 44 * S);
+
+  if (m.alpha != null) {
+    const C = px(m.C);
+    g.strokeStyle = '#e0a63c'; g.lineWidth = 3.2; // crank
+    g.beginPath(); g.moveTo(hip[0], hip[1]); g.lineTo(C[0], C[1]); g.stroke();
+    g.strokeStyle = '#9d6fff'; g.lineWidth = 2.6; // pushrod
+    g.beginPath(); g.moveTo(C[0], C[1]); g.lineTo(R[0], R[1]); g.stroke();
+    g.strokeStyle = '#e0a63c'; g.lineWidth = 3.2; // rocker (bolted to tibia)
+    g.beginPath(); g.moveTo(K[0], K[1]); g.lineTo(R[0], R[1]); g.stroke();
+    joint(g, C, 3.5, '#e0a63c'); joint(g, R, 3.5, '#9d6fff');
+  } else {
+    g.fillStyle = '#ff6b5e'; g.font = 'bold 13px Segoe UI';
+    g.fillText('LINKAGE BINDS — rod cannot reach', hip[0] - 60, hip[1] - 40);
+  }
+  joint(g, hip, 5); joint(g, K, 5); joint(g, A, 4);
+
+  // foot path ghost
+  g.strokeStyle = '#37c87144'; g.lineWidth = 1.5; g.beginPath();
+  for (let i = 0; i <= 60; i++) {
+    const p = axleTarget(i / 60), q = px([p.x, p.z]);
+    i ? g.lineTo(q[0], q[1]) : g.moveTo(q[0], q[1]);
+  }
+  g.closePath(); g.stroke();
+
+  // dimensions
+  dim(g, hip, K, 26 * S, 'femur 82');
+  dim(g, K, A, 26 * S, 'tibia 91');
+  dim(g, [A[0] - RW * S * 1.35, gy], [A[0] + RW * S * 1.35, gy], 14, 'Ø70 wheel');
+  dim(g, [px([-120, 0])[0], hip[1]], [px([-120, 0])[0], gy], -12, 'hip height 164');
+  g.fillStyle = '#7d8494'; g.font = '11px Segoe UI';
+  g.fillText('SIDE VIEW (leg plane) — crank ▮ rod ▮ rocker drive the knee; belt drives the wheel', 16, 18);
+}
+
+function drawFront(m, t) {
+  const cv = document.getElementById('front'), g = cv.getContext('2d');
+  g.clearRect(0, 0, cv.width, cv.height);
+  g.fillStyle = '#7d8494'; g.font = '10.5px Segoe UI';
+  g.fillText('FRONT VIEW — hip roll ±sway, d1 offset', 8, 14);
+  const S = 0.62;
+  const ox = 70, oy = 40;
+  // body wall
+  g.fillStyle = '#1f2733'; g.beginPath(); g.roundRect(ox - 58, oy - 16, 46, 190, 6); g.fill();
+  // roll servo + axis
+  const roll = 0.14 * Math.sin(t * 2 * Math.PI * 2); // sway twice per cycle
+  servo(g, [ox - 22, oy + 6], 0, 0.55);
+  g.strokeStyle = '#4a5162'; g.setLineDash([3, 3]);
+  g.beginPath(); g.moveTo(ox - 40, oy + 6); g.lineTo(ox + 70, oy + 6); g.stroke(); g.setLineDash([]);
+  // d1 offset then leg plane line
+  const p1 = [ox + D1 * S * 1.6, oy + 6];
+  joint(g, [ox, oy + 6], 4); joint(g, p1, 4);
+  g.save(); g.translate(p1[0], p1[1]); g.rotate(roll);
+  const legLen = (HIP_H - RW) * S;
+  beam(g, [0, 0], [14, legLen * 0.55], 9, '#cfc9bd');
+  beam(g, [14, legLen * 0.55], [6, legLen], 8, '#bdb7ab');
+  // wheel edge-on
+  g.fillStyle = '#15181d'; g.beginPath(); g.ellipse(6, legLen + RW * S * 0.5, 7, RW * S, 0, 0, 7); g.fill();
+  g.restore();
+  dim(g, [ox, oy - 6], [p1[0], oy - 6], -8, 'd1 31');
+  const gy2 = oy + 6 + (HIP_H) * S + 8;
+  g.strokeStyle = '#3a4150'; g.beginPath(); g.moveTo(8, gy2); g.lineTo(cv.width - 8, gy2); g.stroke();
+  g.fillStyle = '#8f97a8';
+  g.fillText(`roll ${(roll * 180 / Math.PI).toFixed(0)}°`, ox + 80, oy + 20);
+}
+
+function drawTop(m, t) {
+  const cv = document.getElementById('top'), g = cv.getContext('2d');
+  g.clearRect(0, 0, cv.width, cv.height);
+  g.fillStyle = '#7d8494'; g.font = '10.5px Segoe UI';
+  g.fillText('TOP VIEW — azimuth 25°, stride sweep', 8, 14);
+  const ox = 92, oy = 100, S = 0.5;
+  g.strokeStyle = '#2f3a4a'; g.fillStyle = '#1f2733';
+  g.beginPath(); g.arc(ox - 90 * S, oy, 90 * S, -1.2, 1.2); g.fill(); g.stroke();
+  const az = 25 * Math.PI / 180;
+  g.save(); g.translate(ox - 90 * S + Math.cos(az) * 90 * S, oy - Math.sin(az) * 90 * S);
+  g.rotate(-az);
+  const ext = (m.A[0]) * S; // radial extent of foot
+  beam(g, [0, 0], [D1 * S, 0], 7, '#22262e');
+  beam(g, [D1 * S, 0], [D1 * S + ext, 0], 6, '#cfc9bd');
+  // wheel footprint + stride sweep
+  g.fillStyle = '#15181d';
+  g.beginPath(); g.ellipse(D1 * S + ext, 0, RW * S, 6, 0, 0, 7); g.fill();
+  g.strokeStyle = '#37c87166'; g.lineWidth = 2;
+  g.beginPath(); g.moveTo(D1 * S + ext - STEP * S / 2, -m.tg.x * 0); g.lineTo(D1 * S + ext + STEP * S / 2, 0); g.stroke();
+  g.restore();
+}
+
+function drawDetail(m) {
+  const cv = document.getElementById('detail'), g = cv.getContext('2d');
+  g.clearRect(0, 0, cv.width, cv.height);
+  g.fillStyle = '#7d8494'; g.font = '10.5px Segoe UI';
+  g.fillText('KNEE CLUSTER ×3 — rocker, belt pulley, wheel servo', 8, 14);
+  const S = 3.1;
+  const ox = cv.width / 2 - 0, oy = cv.height / 2 + 10;
+  const rel = (p) => [ox + (p[0] - m.K[0]) * S, oy - (p[1] - m.K[1]) * S];
+  const K = [ox, oy], A = rel(m.A), R = rel(m.R);
+  // clamp A/R into view (they can be far): draw direction stubs
+  const clampTo = (p, maxL) => {
+    const d = Math.hypot(p[0] - K[0], p[1] - K[1]);
+    if (d <= maxL) return p;
+    return [K[0] + (p[0] - K[0]) / d * maxL, K[1] + (p[1] - K[1]) / d * maxL];
+  };
+  const A2 = clampTo(A, 105), R2 = clampTo(R, 95);
+  beam(g, K, A2, 22, '#bdb7ab');
+  servo(g, [K[0] - 34, K[1] - 26], Math.atan2(A2[1] - K[1], A2[0] - K[0]), 1.5);
+  belt(g, K, A2, P.pulleyK * S, P.pulleyW * S * 0.6, performance.now() / 30);
+  if (m.alpha != null) {
+    g.strokeStyle = '#e0a63c'; g.lineWidth = 5;
+    g.beginPath(); g.moveTo(K[0], K[1]); g.lineTo(R2[0], R2[1]); g.stroke();
+    g.strokeStyle = '#9d6fff'; g.lineWidth = 3.4;
+    const rodDir = Math.atan2(m.C[1] - m.R[1], m.C[0] - m.R[0]);
+    g.beginPath(); g.moveTo(R2[0], R2[1]);
+    g.lineTo(R2[0] + Math.cos(rodDir) * 70, R2[1] - Math.sin(rodDir) * 70); g.stroke();
+    joint(g, R2, 5, '#9d6fff');
+    g.fillStyle = '#e0a63c'; g.fillText(`rocker ${P.rocker.toFixed(0)}mm`, R2[0] + 6, R2[1] - 6);
+  }
+  joint(g, K, 7);
+  g.fillStyle = '#8f97a8';
+  g.fillText(`pulley Ø${(P.pulleyK * 2).toFixed(0)} → Ø${(P.pulleyW * 2).toFixed(0)}`, K[0] + 12, K[1] + 34);
+}
+
+// ---------- UI ----------
+const mkSlider = (host, label, key, min, max, step, unit, oninput) => {
+  const row = document.createElement('div'); row.className = 'srow';
+  row.innerHTML = `<label>${label}</label>`;
+  const inp = document.createElement('input');
+  inp.type = 'range'; inp.min = min; inp.max = max; inp.step = step; inp.value = P[key];
+  const v = document.createElement('span'); v.className = 'v'; v.textContent = P[key] + unit;
+  inp.addEventListener('input', () => { P[key] = +inp.value; v.textContent = inp.value + unit; oninput?.(); refreshScan(); });
+  row.appendChild(inp); row.appendChild(v);
+  document.getElementById(host).appendChild(row);
+};
+mkSlider('sliders1', 'crank length', 'crank', 8, 22, 0.5, '', () => autoNothing());
+mkSlider('sliders1', 'rocker length', 'rocker', 14, 36, 0.5, '');
+mkSlider('sliders1', 'rod length', 'rod', 60, 130, 0.5, '');
+mkSlider('sliders1', 'rocker mount angle', 'rockOff', -3.5, 3.5, 0.02, ' rad');
+mkSlider('sliders2', 'knee pulley radius', 'pulleyK', 6, 16, 0.5, '');
+mkSlider('sliders2', 'wheel pulley radius', 'pulleyW', 6, 20, 0.5, '');
+mkSlider('sliders3', 'gait speed', 'speed', 0, 3, 0.05, '×');
+mkSlider('sliders3', 'swing lift', 'lift', 10, 70, 1, '');
+mkSlider('sliders3', 'stance knee τ (N·m)', 'tauKnee', 0.2, 2.5, 0.05, '');
+function autoNothing() {}
+document.querySelector('#sliders1').insertAdjacentHTML('afterbegin',
+  `<button id="reassemble" style="margin:2px 0 6px">↻ auto-assemble at stance</button>`);
+document.getElementById('reassemble').addEventListener('click', () => {
+  autoAssemble();
+  document.querySelectorAll('#sliders1 .srow')[2].querySelector('input').value = P.rod;
+  document.querySelectorAll('#sliders1 .srow')[2].querySelector('.v').textContent = P.rod.toFixed(1);
+  document.querySelectorAll('#sliders1 .srow')[3].querySelector('input').value = P.rockOff;
+  document.querySelectorAll('#sliders1 .srow')[3].querySelector('.v').textContent = P.rockOff.toFixed(2) + ' rad';
+  refreshScan();
+});
+
+let scan = scanGait();
+function refreshScan() { scan = scanGait(); }
+function setChip(id, txt, cls) { const e = document.getElementById(id); e.textContent = txt; e.className = 'chip ' + cls; }
+
+// ---------- main loop ----------
+let playing = true, t = 0, last = performance.now();
+document.getElementById('play').addEventListener('click', () => {
+  playing = !playing;
+  document.getElementById('play').textContent = playing ? '⏸ pause' : '▶ play';
+});
+document.getElementById('scrub').addEventListener('input', (e) => { playing = false; t = +e.target.value / 1000; document.getElementById('play').textContent = '▶ play'; });
+
+function frame(now) {
+  requestAnimationFrame(frame);
+  const dt = Math.min((now - last) / 1000, 0.05); last = now;
+  if (playing) { t = (t + dt * 0.35 * P.speed) % 1; document.getElementById('scrub').value = Math.round(t * 1000); }
+  const m = mech(t);
+  if (m.tg.stance) wheelSpin += (STEP / 0.5) * dt * 0.35 * P.speed / RW; // rolling
+  drawSide(m, t); drawFront(m, t); drawTop(m, t); drawDetail(m);
+
+  document.getElementById('phase').textContent = m.tg.stance ? 'stance (foot loaded)' : 'swing (leg in air)';
+  if (m.ratio != null) setChip('c_ratio', `ratio ${m.ratio.toFixed(2)} (${scan.rMin.toFixed(2)}–${scan.rMax.toFixed(2)})`,
+    scan.rMin > 1.2 ? 'ok' : 'warn');
+  setChip('c_trans', `transmission ≥ ${scan.minTrans.toFixed(0)}°`, scan.minTrans > 40 ? 'ok' : scan.minTrans > 30 ? 'warn' : 'bad');
+  setChip('c_travel', `servo travel ${scan.travel.toFixed(0)}° of 360°`, scan.travel < 300 ? 'ok' : 'bad');
+  setChip('c_bind', scan.binds ? 'BINDS in gait' : 'assembles through gait', scan.binds ? 'bad' : 'ok');
+
+  // readouts
+  const rodForce = P.tauKnee / (P.rocker / 1000 * Math.sin(Math.max(scan.minTrans, 5) * Math.PI / 180));
+  const beltC = Math.hypot(m.A[0] - m.K[0], m.A[1] - m.K[1]);
+  const beltLen = 2 * beltC + Math.PI * (P.pulleyK + P.pulleyW) + Math.pow(P.pulleyW - P.pulleyK, 2) / beltC;
+  const kv = (k, v) => `<div class="kv"><span>${k}</span><b>${v}</b></div>`;
+  document.getElementById('read').innerHTML =
+    kv('knee angle now', (m.q3 * 180 / Math.PI).toFixed(1) + '°') +
+    kv('hip angle now', (m.q2 * 180 / Math.PI).toFixed(1) + '°') +
+    kv('crank angle now', m.alpha == null ? 'unsolvable' : (m.alpha * 180 / Math.PI).toFixed(1) + '°') +
+    kv('mean linkage ratio', ((scan.rMin + scan.rMax) / 2).toFixed(2) + ':1') +
+    kv('pushrod peak force', rodForce.toFixed(0) + ' N @ ' + P.tauKnee + ' N·m knee') +
+    kv('belt length (theoretical)', beltLen.toFixed(0) + ' mm — GT2: ' + Math.round(beltLen / 2) + ' teeth') +
+    kv('belt reduction', (P.pulleyW / P.pulleyK).toFixed(2) + ':1 wheel slowdown') +
+    kv('stride / cycle', STEP + ' mm');
+}
+requestAnimationFrame(frame);
+</script>
+</body>
+</html>

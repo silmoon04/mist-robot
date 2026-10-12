@@ -1,0 +1,30 @@
+# AI modeling reference, 12 September 2026
+
+This is a short reference to the previous AI work and the hexapod adaptation described in the new message. The user confirmed this pass is **summary and reference only**. No modeling, simulation, printing, server startup or hardware operation was performed for this summary. Existing reports were inspected with three subagents; their recorded results were not rerun.
+
+**What the AI has done so far**
+
+- Reconstructed the MIST project history, purchased hardware, earlier Fusion work and physical fit lessons. The inventory records 18 STS3215 12 V C018 servos, a Xiaomi Mi 9 SE, ESP32 and bus adapters, batteries, power hardware, bearings and printing supplies. The earlier artist mesh is missing; its historical preview was recovered. [History and inventory](../../design/mist_v2_20260906/history_inventory.md)
+- Developed a MIST-inspired **four-legged robot with wheels**, a drum-shaped body, phone face, internal electronics and several geared/belt-driven leg arrangements. Its most developed complete CAD candidate contains **657 solids**, with STEP, GLB and individual STL exports. The recorded drive pose passed a static intersection check, but that does not establish clearance throughout movement. [Complete candidate and limitations](../../design/mist_v2_20260906/cad/leg_proximal_20260907/output_candidate/README.md)
+- Used CadQuery/OpenCascade for much of the complete solid geometry and prepared Fusion API/MCP builders. Actual native Fusion work reached a **267-solid checkpoint**, containing the body and two proximal leg sections. A separate native fixture exercised 16 revolute joints and 96 placement checks. The whole 657-part robot was not demonstrated as a fully working native Fusion assembly. [Native checkpoint](../../design/mist_v2_20260906/cad/fusion_live_20260907/concealed_stages/RR_proximal_native_01/MIST_concealed_native_after_RR.f3d), [joint verification](../../design/mist_v2_20260906/cad/fusion_motion_20260907/NATIVE_VERIFICATION.md)
+- Created **URDF/PyBullet physics studies**, including a version using the complete candidate's calculated link masses, centres of mass and inertias. Standing and rolling passed their declared simulated checks. Walking remained slow or failed criteria, loaded knee torque had little reserve, and dynamic stair tests did not establish successful climbing. The 7.108 kg candidate mass is a calculation using solid-print and hardware assumptions, not a finished robot measurement. [Engineering overview and simulation results](../../design/mist_v2_20260906/README.md)
+- Produced **fit coupons and printable test beds**, including a revised seven-object STL/3MF bed for bearings, servo interfaces, sleeves, inserts, fasteners and assembly access. Earlier physical trials exposed tight bearing fits, broken upright printed adapters and a servo cap that did not clamp properly. Revised-bed feedback is still blank; the second measured fit bed and loaded-leg release remain pending. [First-fit measurement guide](../../design/mist_v2_20260906/coupons/bed1_proximal_20260907/MEASURE_FIRST.md)
+- Built the **desktop brain interface** with animated faces, speech, memory and background work. Later reports describe Spark for conversation, Astra for background tasks, ElevenLabs speech, a reviewed 450-frame editable Aseprite document, and a Talk mode with streaming transcription and interruption. Desktop/provider tests were recorded, but real microphone acoustics, Xiaomi operation and the complete phone-to-robot motion path remain unverified. [Voice repairs](../../design/mist_v2_20260906/brain_v2_20260907/latency_fix_20260907/UPDATE.md), [Talk tests](../../design/mist_v2_20260906/brain_v2_20260907/talk_mode_20260907/TALK_REPORT.md)
+
+The old project ended with a further request to place **every motor inside the body**. That became a packaging and transmission study, not a completed replacement assembly. Excessive mass, weak printed gear attachments, incomplete fasteners, cable movement and full-motion clearance remain unresolved. [Latest saved mechanical direction](../../design/mist_v2_20260906/cad/body_remote_20260907/DESIGN_REQUIREMENT.md)
+
+**The linked hexapod reference**
+
+[3D Printed RC Hexapod Spider Robot](https://www.youtube.com/watch?v=ciE2Z_92T7s) is by Emre Kalem. Its description specifies an Arduino Mega, 18 MG996R servos, three joints per leg, tripod gait and NRF24L01 remote control. The creator links the [MakerWorld model](https://makerworld.com/en/models/1973965-hexapod-spider-robot-with-servo-arduino#profileId-2122819).
+
+The title, creator and description links were checked. MakerWorld was inaccessible during this pass, so original STEP/native file availability and licensing remain unknown. The video and comments were not reviewed in detail; no assembly or manufacturing conclusions are claimed from them.
+
+**The proposed adaptation, kept for future reference**
+
+- Use the linked hexapod as the visual/mechanical starting point, with four legs, no wheels and a similar central hexagonal body.
+- Adapt the leg mounts to the owned STS3215 C018 hardware. Prefer existing components and direct mechanisms; use gears or belts only if necessary.
+- Add one servo for an upright, possibly slightly tilted **Xiaomi Mi 9 SE** holder, allowing the screen to face a person and the cameras to look around. Desired rotation is approximately 360 degrees. The cable route and allowable rotation still need engineering; continuous wired rotation is not established.
+- Connect the phone's voice, face animations and camera functions to the robot electronics and motion controls.
+- Keep dimensions and assembly access traceable, verify the Fusion model, export URDF for physics checks, then prepare PLA fit coupons and printer settings before refining the full parts from physical feedback.
+
+These requests have **not** been implemented by the existing wheeled MIST candidate. Its fixed face phone, second internal phone, drum body and remote transmissions should not be mistaken for the proposed single rotating-phone, wheel-free design. This note preserves the proposal without changing the older design or its requirements.

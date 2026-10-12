@@ -1,0 +1,785 @@
+{
+  "status": "CAD, mesh, profile and engine checks pass; physical interface tests pending",
+  "parts": [
+    {
+      "name": "01_case_to_shaft_gauge_no_support",
+      "stl": "01_case_to_shaft_gauge_no_support.stl",
+      "sha256": "fda0c863cdc9c271ca749aea273b21152387ab79db16854a1b8dbe032dbe2260",
+      "dimensions_mm": [
+        29.0000001,
+        60.0000002,
+        37.50000010000001
+      ],
+      "print_rotation_deg": [
+        180,
+        0,
+        0
+      ],
+      "purpose": "Attach to the existing clamped servo with two M3x50 tie bolts, printed 5 mm underside spacers, nuts and washers. New tapered feet remove the former supports.",
+      "volume_mm3": 7758.840101326202
+    },
+    {
+      "name": "01_gauge_tie_bolt_spacer_5mm_1",
+      "stl": "01_gauge_tie_bolt_spacer_5mm_1.stl",
+      "sha256": "ab0c7a442a2cc90cc595b73495a02ac836dd5a8c9d0850a1861c860b84134750",
+      "dimensions_mm": [
+        8.0,
+        8.0,
+        5.0
+      ],
+      "print_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "purpose": "Under the existing saddle foot, before its washer and nut, when using the M3x50 gauge tie bolt. This is not a yaw spacer.",
+      "volume_mm3": 205.93139844281094
+    },
+    {
+      "name": "01_gauge_tie_bolt_spacer_5mm_2",
+      "stl": "01_gauge_tie_bolt_spacer_5mm_2.stl",
+      "sha256": "ab0c7a442a2cc90cc595b73495a02ac836dd5a8c9d0850a1861c860b84134750",
+      "dimensions_mm": [
+        8.0,
+        8.0,
+        5.0
+      ],
+      "print_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "purpose": "Under the existing saddle foot, before its washer and nut, when using the M3x50 gauge tie bolt. This is not a yaw spacer.",
+      "volume_mm3": 205.93139844281094
+    },
+    {
+      "name": "02_main_horn_cheek",
+      "stl": "02_main_horn_cheek.stl",
+      "sha256": "00e45907637aec10521d88cc0c93faf20e246648065042f59c46582d53e1867c",
+      "dimensions_mm": [
+        47.0,
+        28.000000000000004,
+        4.0
+      ],
+      "print_rotation_deg": [
+        -90,
+        0,
+        0
+      ],
+      "purpose": "Use the actual supplied disc and its retainer washer. Assemble with the 38 mm bridge without forcing the disc stack.",
+      "volume_mm3": 3225.503146658441
+    },
+    {
+      "name": "03_auxiliary_horn_cheek",
+      "stl": "03_auxiliary_horn_cheek.stl",
+      "sha256": "7574d0e7deb1022287a449ebbfef9895d24b99ada4a0a589e395fbe3f60df056",
+      "dimensions_mm": [
+        47.0,
+        28.000000000000004,
+        5.100000000000001
+      ],
+      "print_rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "purpose": "Use the actual supplied disc and its retainer washer. Assemble with the 38 mm bridge without forcing the disc stack.",
+      "volume_mm3": 3172.7517292306047
+    },
+    {
+      "name": "04_horn_bridge_38_roofed",
+      "stl": "04_horn_bridge_38_roofed.stl",
+      "sha256": "f593b4a821eaf692829d68c525e3fbcd6e1f5b79a2d76abd9924d4131cd86adb",
+      "dimensions_mm": [
+        8.0,
+        38.0,
+        14.0
+      ],
+      "print_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "purpose": "One M3x50, two OD7 by 0.5 mm washers and a plain 2.4 mm nut close the two cheeks. Check auxiliary free rotation.",
+      "volume_mm3": 3887.4227210870813
+    },
+    {
+      "name": "05_yaw_spacer_nominal_11p6_1",
+      "stl": "05_yaw_spacer_nominal_11p6_1.stl",
+      "sha256": "82f2fa383771d25ccbcf4ff7617c6973d04e7dbefd853e071df5c505fa0dcc58",
+      "dimensions_mm": [
+        5.8,
+        5.8,
+        11.6
+      ],
+      "print_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "purpose": "Four nominal spacers form a complete set. Short and long alternatives are comparison samples only.",
+      "volume_mm3": 201.16246079466163
+    },
+    {
+      "name": "05_yaw_spacer_nominal_11p6_2",
+      "stl": "05_yaw_spacer_nominal_11p6_2.stl",
+      "sha256": "82f2fa383771d25ccbcf4ff7617c6973d04e7dbefd853e071df5c505fa0dcc58",
+      "dimensions_mm": [
+        5.8,
+        5.8,
+        11.6
+      ],
+      "print_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "purpose": "Four nominal spacers form a complete set. Short and long alternatives are comparison samples only.",
+      "volume_mm3": 201.16246079466163
+    },
+    {
+      "name": "05_yaw_spacer_nominal_11p6_3",
+      "stl": "05_yaw_spacer_nominal_11p6_3.stl",
+      "sha256": "82f2fa383771d25ccbcf4ff7617c6973d04e7dbefd853e071df5c505fa0dcc58",
+      "dimensions_mm": [
+        5.8,
+        5.8,
+        11.6
+      ],
+      "print_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "purpose": "Four nominal spacers form a complete set. Short and long alternatives are comparison samples only.",
+      "volume_mm3": 201.16246079466163
+    },
+    {
+      "name": "05_yaw_spacer_nominal_11p6_4",
+      "stl": "05_yaw_spacer_nominal_11p6_4.stl",
+      "sha256": "82f2fa383771d25ccbcf4ff7617c6973d04e7dbefd853e071df5c505fa0dcc58",
+      "dimensions_mm": [
+        5.8,
+        5.8,
+        11.6
+      ],
+      "print_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "purpose": "Four nominal spacers form a complete set. Short and long alternatives are comparison samples only.",
+      "volume_mm3": 201.16246079466163
+    },
+    {
+      "name": "05_yaw_spacer_short_11p3_1",
+      "stl": "05_yaw_spacer_short_11p3_1.stl",
+      "sha256": "179e0e4778daafffadc217a7e8f2acdf92cd5c9dbae3d9b5e3c0cb427ec1af2f",
+      "dimensions_mm": [
+        5.8,
+        5.8,
+        11.3
+      ],
+      "print_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "purpose": "Four nominal spacers form a complete set. Short and long alternatives are comparison samples only.",
+      "volume_mm3": 195.9599833603169
+    },
+    {
+      "name": "05_yaw_spacer_long_11p9_1",
+      "stl": "05_yaw_spacer_long_11p9_1.stl",
+      "sha256": "8b6721f9ae7093d38d06ca4cf257a263f2fd611fd95a3a60c8d18c83c987c5e5",
+      "dimensions_mm": [
+        5.8,
+        5.8,
+        11.9
+      ],
+      "print_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "purpose": "Four nominal spacers form a complete set. Short and long alternatives are comparison samples only.",
+      "volume_mm3": 206.36493822900636
+    },
+    {
+      "name": "06_M3_hole_strip_3p2_3p4_3p6",
+      "stl": "06_M3_hole_strip_3p2_3p4_3p6.stl",
+      "sha256": "18a38c7b76d4d9e3df8eb7188312c017c627e62ca8a4b00e09f9e8a70828482c",
+      "dimensions_mm": [
+        34.0,
+        14.0,
+        4.0
+      ],
+      "print_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "purpose": "Left to right from the notched end: 3.2, 3.4 and 3.6 mm bore diameter.",
+      "volume_mm3": 1778.7982393612185
+    },
+    {
+      "name": "07_M3_nut_depth_2p6_2p8_3p0",
+      "stl": "07_M3_nut_depth_2p6_2p8_3p0.stl",
+      "sha256": "9818404f597261570e706fb4fe4c92827a9c859bacbd27ca7a5ed2202b21fa66",
+      "dimensions_mm": [
+        36.0,
+        12.0,
+        5.0
+      ],
+      "print_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "purpose": "Left to right from the notched end: 2.6, 2.8 and 3.0 mm pocket depth; all have 5.7 mm across flats. Measures nut seating without guessing what needed sanding.",
+      "volume_mm3": 1843.7250726261943
+    }
+  ],
+  "interface_checks": {
+    "gauge_to_printed_saddle": 0.0,
+    "gauge_to_reused_cap": 0.0,
+    "gauge_to_servo": 0.0,
+    "gauge_to_main_horn": 0.0,
+    "horn_face_added_mm3": 0.0,
+    "horn_face_removed_mm3": 0.0,
+    "mount_feet_added_mm3": 0.0,
+    "mount_feet_removed_mm3": 0.0,
+    "tie_bolt_-1_to_gauge_mm3": 0.0,
+    "tie_bolt_-1_to_existing_saddle_mm3": 0.0,
+    "tie_bolt_-1_to_servo_mm3": 0.0,
+    "tie_bolt_-1_to_cap_mm3": 0.0,
+    "tie_bolt_1_to_gauge_mm3": 0.0,
+    "tie_bolt_1_to_existing_saddle_mm3": 0.0,
+    "tie_bolt_1_to_servo_mm3": 0.0,
+    "tie_bolt_1_to_cap_mm3": 0.0,
+    "auxiliary_cheek_to_provisional_plug_mm3": 0.0,
+    "horn_fixture_main_to_auxiliary_mm3": 0.0,
+    "horn_fixture_main_to_bridge_mm3": 0.0,
+    "horn_fixture_main_to_case_mm3": 0.0,
+    "horn_fixture_main_to_main_horn_mm3": 0.0,
+    "horn_fixture_main_to_aux_disc_mm3": 0.0,
+    "horn_fixture_auxiliary_to_bridge_mm3": 0.0,
+    "horn_fixture_auxiliary_to_case_mm3": 0.0,
+    "horn_fixture_auxiliary_to_main_horn_mm3": 0.0,
+    "horn_fixture_auxiliary_to_aux_disc_mm3": 0.0,
+    "horn_fixture_bridge_to_case_mm3": 0.0,
+    "horn_fixture_bridge_to_main_horn_mm3": 0.0,
+    "horn_fixture_bridge_to_aux_disc_mm3": 0.0,
+    "horn_fixture_case_to_main_horn_mm3": 0.0,
+    "horn_fixture_case_to_aux_disc_mm3": 0.0,
+    "horn_fixture_main_horn_to_aux_disc_mm3": 0.0
+  },
+  "prior_printed_saddle_step_sha256": "2acdf5490b58155c37d18d4c6d4f4f043ab6a54d20c72ab1c6a71cffa86f9ba7",
+  "source_manifest_sha256": "67f0d5e3bfb633414722b17305cef4212ca7f8fa753aa922a252bc383306ad3d",
+  "feedback": {
+    "date": "2026-09-13",
+    "operator_report": {
+      "printed": "Revised upright saddle only; reused an earlier flat cap.",
+      "sanding": "Some sanding was required around the reported 2.5 nut or height fit. Exact feature and cause not confirmed.",
+      "nut_fit": "All three nuts fitted firmly.",
+      "servo_retention": "Servo reported not moving within the completed clamp.",
+      "nut_identifier": "2.5 wording awaiting clarification; no M2.5 substitution assumed.",
+      "physical_load_or_torque_measurement": null
+    },
+    "disposition": "Proceed to shaft alignment and free horn/auxiliary rotation fixtures. Keep the case-contact dimensions.",
+    "flat_cap_changed_between_trials": false
+  },
+  "units": "mm",
+  "limits": [
+    "Assembled clamp retention is operator-reported and has no quantified load test.",
+    "The registration gauge checks fixed alignment only; do not command the servo with it attached.",
+    "No powered or loaded joint performance is established by the current feedback."
+  ],
+  "plate": {
+    "file": "Third_Print_Joint_Interfaces.3mf",
+    "sha256": "289d3c4904f8375ecb478f828d27eddf30d8727dfa468be6d19c835a10c5d499",
+    "stl": "Third_Print_Joint_Interfaces.stl",
+    "stl_sha256": "d1a04f162487e8b276170a382d31192b70065a1967e6ed32b7dd3f0b220d05d8",
+    "object_count": 14,
+    "bounds_mm": [
+      [
+        17.706545353517868,
+        79.10873230569996,
+        0.0
+      ],
+      [
+        207.29345464648213,
+        145.89126769430004,
+        37.5
+      ]
+    ],
+    "positions": [
+      {
+        "name": "01_case_to_shaft_gauge_no_support",
+        "bounds_mm": [
+          [
+            17.706545353517868,
+            79.10873230569996,
+            0.0
+          ],
+          [
+            77.70654525351787,
+            108.09676785045303,
+            37.5
+          ]
+        ],
+        "map_number": 1
+      },
+      {
+        "name": "03_auxiliary_horn_cheek",
+        "bounds_mm": [
+          [
+            86.70654525351787,
+            79.10873230569996,
+            0.0
+          ],
+          [
+            133.70654525351787,
+            107.09322962793522,
+            5.09999990463257
+          ]
+        ],
+        "map_number": 2
+      },
+      {
+        "name": "02_main_horn_cheek",
+        "bounds_mm": [
+          [
+            142.70654525351787,
+            79.10873230569996,
+            0.0
+          ],
+          [
+            189.70654525351787,
+            107.09275720291771,
+            4.000000000000002
+          ]
+        ],
+        "map_number": 3
+      },
+      {
+        "name": "06_M3_hole_strip_3p2_3p4_3p6",
+        "bounds_mm": [
+          [
+            17.706545353517868,
+            117.09676785045303,
+            0.0
+          ],
+          [
+            51.70654535351787,
+            131.09676785045303,
+            4.0
+          ]
+        ],
+        "map_number": 4
+      },
+      {
+        "name": "07_M3_nut_depth_2p6_2p8_3p0",
+        "bounds_mm": [
+          [
+            60.70654535351787,
+            117.09676785045303,
+            0.0
+          ],
+          [
+            96.70654535351787,
+            129.09676785045303,
+            5.0
+          ]
+        ],
+        "map_number": 5
+      },
+      {
+        "name": "04_horn_bridge_38_roofed",
+        "bounds_mm": [
+          [
+            105.70654535351787,
+            117.09676785045303,
+            0.0
+          ],
+          [
+            143.70654535351787,
+            125.09676785045303,
+            14.0
+          ]
+        ],
+        "map_number": 6
+      },
+      {
+        "name": "01_gauge_tie_bolt_spacer_5mm_1",
+        "bounds_mm": [
+          [
+            152.70654535351787,
+            117.09676785045303,
+            0.0
+          ],
+          [
+            160.70275089726783,
+            125.08918116544373,
+            5.0
+          ]
+        ],
+        "map_number": 7
+      },
+      {
+        "name": "01_gauge_tie_bolt_spacer_5mm_2",
+        "bounds_mm": [
+          [
+            169.70275089726783,
+            117.09676785045303,
+            0.0
+          ],
+          [
+            177.6989564410178,
+            125.08918116544373,
+            5.0
+          ]
+        ],
+        "map_number": 8
+      },
+      {
+        "name": "05_yaw_spacer_nominal_11p6_1",
+        "bounds_mm": [
+          [
+            186.6989564410178,
+            117.09676785045303,
+            0.0
+          ],
+          [
+            192.49620554374997,
+            122.89126769430004,
+            11.600000381469727
+          ]
+        ],
+        "map_number": 9
+      },
+      {
+        "name": "05_yaw_spacer_nominal_11p6_2",
+        "bounds_mm": [
+          [
+            201.49620554374997,
+            117.09676785045303,
+            0.0
+          ],
+          [
+            207.29345464648213,
+            122.89126769430004,
+            11.600000381469727
+          ]
+        ],
+        "map_number": 10
+      },
+      {
+        "name": "05_yaw_spacer_nominal_11p6_3",
+        "bounds_mm": [
+          [
+            17.706545353517868,
+            140.09676785045303,
+            0.0
+          ],
+          [
+            23.503794456250034,
+            145.89126769430004,
+            11.600000381469727
+          ]
+        ],
+        "map_number": 11
+      },
+      {
+        "name": "05_yaw_spacer_nominal_11p6_4",
+        "bounds_mm": [
+          [
+            32.503794456250034,
+            140.09676785045303,
+            0.0
+          ],
+          [
+            38.3010435589822,
+            145.89126769430004,
+            11.600000381469727
+          ]
+        ],
+        "map_number": 12
+      },
+      {
+        "name": "05_yaw_spacer_short_11p3_1",
+        "bounds_mm": [
+          [
+            47.3010435589822,
+            140.09676785045303,
+            0.0
+          ],
+          [
+            53.09829266171437,
+            145.89126769430004,
+            11.300000190734863
+          ]
+        ],
+        "map_number": 13
+      },
+      {
+        "name": "05_yaw_spacer_long_11p9_1",
+        "bounds_mm": [
+          [
+            62.09829266171437,
+            140.09676785045303,
+            0.0
+          ],
+          [
+            67.89554176444653,
+            145.89126769430004,
+            11.899999618530273
+          ]
+        ],
+        "map_number": 14
+      }
+    ]
+  },
+  "mesh_checks": [
+    {
+      "name": "01_case_to_shaft_gauge_no_support",
+      "non_bed_area_steeper_than45_mm2": 0.0
+    },
+    {
+      "name": "01_gauge_tie_bolt_spacer_5mm_1",
+      "non_bed_area_steeper_than45_mm2": 0.0
+    },
+    {
+      "name": "01_gauge_tie_bolt_spacer_5mm_2",
+      "non_bed_area_steeper_than45_mm2": 0.0
+    },
+    {
+      "name": "02_main_horn_cheek",
+      "non_bed_area_steeper_than45_mm2": 0.0
+    },
+    {
+      "name": "03_auxiliary_horn_cheek",
+      "non_bed_area_steeper_than45_mm2": 0.0
+    },
+    {
+      "name": "04_horn_bridge_38_roofed",
+      "non_bed_area_steeper_than45_mm2": 0.0
+    },
+    {
+      "name": "05_yaw_spacer_nominal_11p6_1",
+      "non_bed_area_steeper_than45_mm2": 0.0
+    },
+    {
+      "name": "05_yaw_spacer_nominal_11p6_2",
+      "non_bed_area_steeper_than45_mm2": 0.0
+    },
+    {
+      "name": "05_yaw_spacer_nominal_11p6_3",
+      "non_bed_area_steeper_than45_mm2": 0.0
+    },
+    {
+      "name": "05_yaw_spacer_nominal_11p6_4",
+      "non_bed_area_steeper_than45_mm2": 0.0
+    },
+    {
+      "name": "05_yaw_spacer_short_11p3_1",
+      "non_bed_area_steeper_than45_mm2": 0.0
+    },
+    {
+      "name": "05_yaw_spacer_long_11p9_1",
+      "non_bed_area_steeper_than45_mm2": 0.0
+    },
+    {
+      "name": "06_M3_hole_strip_3p2_3p4_3p6",
+      "non_bed_area_steeper_than45_mm2": 0.0
+    },
+    {
+      "name": "07_M3_nut_depth_2p6_2p8_3p0",
+      "non_bed_area_steeper_than45_mm2": 0.0
+    }
+  ],
+  "profile": {
+    "file": "Neptune4Pro_ThirdFit_Joints_NoSupports_020.curaprofile",
+    "sha256": "73f20c138d7ab547c04fab3923895f67f7d9d59a9c779146a083d8c09adae882",
+    "name": "R5 Third Fit - Joint Interfaces - 0.20mm",
+    "settings": {
+      "layer_height": 0.2,
+      "layer_height_0": 0.2,
+      "adaptive_layer_height_enabled": false,
+      "line_width": 0.42,
+      "wall_line_width": 0.42,
+      "wall_line_width_0": 0.42,
+      "wall_line_width_x": 0.42,
+      "skin_line_width": 0.42,
+      "infill_line_width": 0.42,
+      "support_line_width": 0.42,
+      "support_interface_line_width": 0.42,
+      "support_roof_line_width": 0.42,
+      "skirt_brim_line_width": 0.42,
+      "initial_layer_line_width_factor": 100,
+      "wall_thickness": 2.1,
+      "wall_line_count": 5,
+      "top_bottom_thickness": 1.2,
+      "top_thickness": 1.2,
+      "bottom_thickness": 1.2,
+      "top_layers": 6,
+      "bottom_layers": 6,
+      "roofing_layer_count": 0,
+      "infill_sparse_density": 35,
+      "infill_pattern": "gyroid",
+      "infill_overlap": 10,
+      "skin_overlap": 10,
+      "infill_sparse_thickness": 0.2,
+      "infill_before_walls": false,
+      "ironing_enabled": false,
+      "magic_spiralize": false,
+      "material_print_temperature": 210,
+      "material_print_temperature_layer_0": 210,
+      "material_initial_print_temperature": 210,
+      "material_final_print_temperature": 210,
+      "material_bed_temperature": 60,
+      "material_bed_temperature_layer_0": 60,
+      "material_flow": 100,
+      "material_flow_layer_0": 100,
+      "material_max_flowrate": 8,
+      "speed_print": 80,
+      "speed_wall": 65,
+      "speed_wall_0": 50,
+      "speed_wall_x": 80,
+      "speed_infill": 90,
+      "speed_topbottom": 45,
+      "speed_roofing": 35,
+      "speed_support": 60,
+      "speed_support_infill": 60,
+      "speed_support_interface": 35,
+      "speed_support_roof": 35,
+      "speed_support_bottom": 35,
+      "speed_layer_0": 25,
+      "speed_print_layer_0": 25,
+      "speed_travel_layer_0": 60,
+      "speed_travel": 150,
+      "skirt_brim_speed": 25,
+      "speed_slowdown_layers": 3,
+      "acceleration_enabled": true,
+      "acceleration_print": 2500,
+      "acceleration_wall": 1800,
+      "acceleration_wall_0": 1200,
+      "acceleration_wall_x": 2000,
+      "acceleration_topbottom": 1000,
+      "acceleration_roofing": 1000,
+      "acceleration_infill": 2500,
+      "acceleration_support": 1800,
+      "acceleration_support_infill": 1800,
+      "acceleration_support_interface": 800,
+      "acceleration_support_roof": 800,
+      "acceleration_support_bottom": 800,
+      "acceleration_travel": 3000,
+      "acceleration_layer_0": 500,
+      "acceleration_print_layer_0": 500,
+      "acceleration_travel_layer_0": 1000,
+      "acceleration_skirt_brim": 500,
+      "jerk_enabled": false,
+      "retraction_enable": true,
+      "retraction_amount": 0.5,
+      "retraction_speed": 35,
+      "retraction_retract_speed": 35,
+      "retraction_prime_speed": 35,
+      "retract_at_layer_change": false,
+      "retraction_extra_prime_amount": 0,
+      "retraction_hop_enabled": false,
+      "retraction_combing": "noskin",
+      "cool_fan_enabled": true,
+      "cool_fan_speed": 100,
+      "cool_fan_speed_min": 100,
+      "cool_fan_speed_max": 100,
+      "cool_fan_speed_0": 0,
+      "cool_fan_full_layer": 3,
+      "cool_fan_full_at_height": 0.6,
+      "cool_min_layer_time": 10,
+      "cool_min_speed": 10,
+      "cool_lift_head": false,
+      "support_enable": false,
+      "support_type": "everywhere",
+      "support_structure": "normal",
+      "support_angle": 50,
+      "support_pattern": "zigzag",
+      "support_infill_rate": 15,
+      "support_interface_enable": false,
+      "support_roof_enable": false,
+      "support_bottom_enable": false,
+      "support_interface_height": 0.6,
+      "support_roof_height": 0.6,
+      "support_interface_density": 60,
+      "support_roof_density": 60,
+      "support_interface_pattern": "lines",
+      "support_roof_pattern": "lines",
+      "support_z_distance": 0.2,
+      "support_top_distance": 0.2,
+      "support_bottom_distance": 0.2,
+      "support_xy_distance": 0.5,
+      "support_xy_overrides_z": "z_overrides_xy",
+      "support_brim_enable": false,
+      "support_brim_width": 3,
+      "support_brim_line_count": 8,
+      "adhesion_type": "brim",
+      "brim_width": 4,
+      "brim_line_count": 10,
+      "brim_gap": 0.15,
+      "brim_location": "outside",
+      "print_sequence": "all_at_once",
+      "prime_tower_enable": false,
+      "meshfix_union_all": true,
+      "meshfix_extensive_stitching": false,
+      "meshfix_keep_open_polygons": false,
+      "wall_overhang_angle": 40,
+      "wall_overhang_speed_factors": "[30, 25, 20]",
+      "cool_min_layer_time_overhang": 12,
+      "cool_min_layer_time_overhang_min_segment_length": 1,
+      "bridge_settings_enabled": true,
+      "bridge_wall_min_length": 1,
+      "bridge_wall_speed": 15,
+      "bridge_skin_speed": 20,
+      "bridge_wall_material_flow": 100,
+      "bridge_skin_material_flow": 100,
+      "bridge_fan_speed": 100,
+      "bridge_enable_more_layers": false,
+      "conical_overhang_enabled": false
+    },
+    "installed_cura_fast_parser_pass": true
+  },
+  "slice_trial": {
+    "engine_version": "5.13.0",
+    "model_g": 26.350922408225003,
+    "support_g": 0.0,
+    "adhesion_g": 1.1030973438051213,
+    "estimated_hours": 2.8456717930555557,
+    "peak_nominal_flow_mm3_s": 7.627901051360718,
+    "motion_bounds_mm": [
+      [
+        13.559,
+        74.969,
+        0.2
+      ],
+      [
+        211.457,
+        150.01,
+        37.4
+      ]
+    ],
+    "within_bed": true,
+    "method": "Process values applied to the explicit CuraEngine analysis stack. Actual Cura/printer results can differ.",
+    "archived_inert_toolpath_sha256": "8f0f511c98e4482fdf20a6bb1b58776d4d6a56971cebae859f4d1702425a52a6"
+  },
+  "source_files_sha256": {
+    "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\third_fit_joints_20260913\\build_joint_plate.py": "26388040e6bb9d5dc59735ef27dd21456b59180fe0456b1554406870a4aa2b8e",
+    "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\third_fit_joints_20260913\\pack_and_slice.py": "97794cf9672d5ba833de5f2855791e2e0c989a322acb945c1358f6f0baf3ebe5",
+    "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\fit_coupons.py": "b246ec3498e905b115026cefdfb3309ac29dfa415e67c8bd946ef72972cf34a1",
+    "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\leg.py": "0796342a5db13ec84f653cefb58a09560e2d7687089d8ae7a4c7010a4ac2d38f",
+    "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\servo_contract.py": "eeb09be505f2a4e80cd710d193592099df1f98f849f7ce3eac0f1ba1d3f2dcaa"
+  },
+  "supporting_files_sha256": {
+    "PRINT_NEXT.txt": "d3cb1eb880ca01b19b6efd865278bd7a239ae56239fe6b494134fcb12f73ea88",
+    "plate_map.png": "13f966184a62d221d43a044ccd7805af53dc3cede9dc7632841166f91a14307b",
+    "NEXT_MEASUREMENTS.csv": "00cd976ca0ad3b68d878e7164dc341be6ca6de8e0e9d87c1ab06ec6255a0a3a8"
+  }
+}

@@ -1,0 +1,52 @@
+FIRST CASE-FIT OPTION: 0.28 MM, FIVE WALLS, 15% GYROID
+
+Use Neptune4Pro_R5_CaseFit_028_15pct.curaprofile with the unchanged
+01_servo_case_fit.3mf from the Quick Fit package. This file is a separate
+option; it does not overwrite the earlier 0.20 mm profile or the robot model.
+
+Import through Preferences > Configure Cura > Profiles > Import. Select the
+Neptune 4 Pro with 0.4 mm nozzle and PLA. Activate
+HexQuad R5 - Case Fit Only - 0.28mm 15pct.
+Discard old print-setting overrides when prompted. Load only the first small
+saddle-and-cap plate, keep scale/orientation, and inspect supports after slicing.
+
+Compared on the actual unchanged first plate using CuraEngine 5.13:
+0.20 mm / five walls / 35% gyroid: about 2 h 23 min, 28.65 g model PLA.
+0.20 mm / five walls / 15% gyroid: about 2 h 10 min, 27.34 g model PLA.
+0.20 mm / six walls / 10% gyroid: about 2 h 10 min, 28.15 g model PLA.
+0.28 mm / five walls / 15% gyroid: about 1 h 51 min, 28.54 g model PLA.
+0.30 mm / five walls / 15% gyroid: about 1 h 45 min, 28.26 g model PLA.
+Support and brim are additional material. Estimates are not guaranteed printer times.
+
+The selected 0.28 mm profile keeps a 0.20 mm first layer, 0.42 mm lines,
+five walls, 15% gyroid and five top/bottom layers (1.40 mm nominal skin).
+Outer walls 45 mm/s; inner walls and infill 65; first layer 25.
+PLA 210 C nozzle / 60 C bed, within the filament label's range.
+Supports remain enabled with a 0.28 mm Z gap and 0.84 mm top interface.
+Peak calculated flow in this trial was 7.69 mm3/s; all moves fit the 225 mm bed.
+
+WHY NOT JUST ADD WALLS?
+The thin clamp walls already contain mostly perimeters and skins. Reducing
+infill changes only the remaining interior. Six walls replace more of that
+interior with perimeter paths. This did not save meaningful time and used
+more PLA than five walls at 15% in this comparison. It is not a measured strength comparison.
+
+WHAT THIS TEST ESTABLISHES
+Check actual case width, cap contact/travel, nut fit and cable space without
+forcing or overtightening the clamp. This is a coarse first-fit screen.
+The later combined case-to-shaft gauge is still required before accepting
+shaft alignment. Use the 0.20 mm profile for the fine alignment/horn fixtures
+unless deliberately testing a new final process for those features.
+
+Thicker layers change vertical feature approximation, stair stepping and
+supported undersides. The 0.28 mm engine trial's last layer was at 29.88 mm,
+compared with 30.0 mm in the 0.20 mm trial; this is not a physical measurement
+or a simple scale error. Do not assume identical fit or interlayer strength.
+Changing layer height, infill or wall count also means the earlier structural
+print assumptions do not transfer automatically. Test the intended final
+material/process before using these settings on loaded robot components.
+
+The profile format and setting types/enums were checked against installed
+Cura 5.13. It was not imported into the live Cura UI and no physical print ran.
+Machine definition, start/end G-code, Z offset and firmware calibration remain
+inherited from the selected printer. No executable test G-code is supplied.

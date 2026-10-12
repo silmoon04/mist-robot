@@ -1,0 +1,16 @@
+Renderer timing contract for the 15 fps pass
+
+Default visible animation cadence: 15 fps (66.6667 ms per animation frame).
+Expression placement, eye pose and gaze sample a shared animation frame clock.
+Default expression transition: 600 ms (9 frames). Requested durations round up
+to whole animation frames, with a 400 ms minimum and 1600 ms maximum.
+Blink duration: 400 ms. Closed interval: 100 ms to 233.3333 ms, a 133.3333 ms
+hold. A normal blink is not forced to display every available cel.
+The speech sampler always reads the current audible audio time. It is never
+advanced by frame count. Draws occur at 15 fps; inactive speech, rest, MBP and
+stopSpeech can close the mouth immediately between scheduled draws.
+renderTo keeps its current API. Held inspector overrides force a draw. A fps
+option can set a deliberate preview cadence; the default remains 15.
+The base renderer includes a TH-to-LNT compatibility alias. The drawn renderer
+loads replacement frames from their declared source file and applies their
+sourceScale once. The production and inspector copies use identical code.

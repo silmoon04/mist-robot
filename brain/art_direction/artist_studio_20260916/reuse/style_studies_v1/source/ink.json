@@ -1,0 +1,33 @@
+{
+  "style": "Hand ink",
+  "tool": "image_gen.imagegen (built-in)",
+  "mode": "style-transfer",
+  "generatedAt": "2026-09-28",
+  "reference": "../reference.png",
+  "originalPath": "<LOCAL_HOME>/.codex/generated_images/01a0e9b8-3d99-70b3-9e21-55d4e305b6ae/exec-eae66de5-c86f-4b39-bc98-27389ad1132d.png",
+  "savedPath": "source/ink.png",
+  "sha256": "3dedde4bc5b6d3f3495ddb9bff605d3069e02b842659ec8cc3025b263896761e",
+  "promptFile": "../prompts/ink.txt",
+  "prompt": "Use case: style-transfer.\nAsset type: one MIST robot-face style exploration sheet.\nInput image 1 is the edit target and exact expression/layout reference.\nRedraw these SAME TEN minimal faces in a slightly different \"Hand ink\" style: beautifully clean hand-drawn matte ink, modest tactile edge variation and subtle natural pressure variation within about +/-12% of the reference stroke weight. Make the human curvature and tapered pressure changes visibly distinguishable at normal viewing size, while staying close to MIST's recognizable simple shapes. This is a genuine redrawing, not a noisy filter.\nCanvas: exactly 1024 x 1536, exactly two columns and five rows in the same order and positions as the reference. Flat uniform dark #101c20 background; all art one solid cyan #58e2d8. No labels or grid lines.\nPreserve every expression, relative eye size, eye opening/gap orientation, mouth shape or mouth absence, placement and generous margins.\nRow 1 left: the two outward-opening circular C eyes with straight short closed mouth. Row 1 right: matching outward-opening circular C eyes and the LARGE solid round listening mouth.\nRow 2 left: the reference's slightly tipped open C eyes and a TINY round curious mouth. Row 2 right: two inward-ended narrow rounded bracket eyes and the TINY round quiet-thought mouth.\nRow 3 left: open C eyes and the filled bowl-shaped happy mouth. Row 3 right: narrow rounded bracket eyes and the small curved playful smile.\nRow 4 left: two asymmetrical upward-ended curved closed eyelids, NO MOUTH AT ALL (Deadpan). Row 4 right: two closed curved eyelids and the tall solid vertical oval sleepy mouth.\nRow 5 left: two inward-pointing angle eyes > <, NO MOUTH AT ALL (Delighted). Row 5 right: open C eyes, clearly downturned curved sad mouth, and exactly one long tear on the far right.\nCritical: never fill in an eye's open gap. Never turn eye rings into solid dots. Do not add mouths to either mouthless face. Keep existing small mouths even though they are tiny.\nAvoid any new facial parts, pupils, eyebrows, face silhouette, head/body, glow, neon bloom, shine, bevel, shading, gradients, scratchy textures, fuzzy edges, double shadow lines, motion marks, extra tears, added decorations, watermarks or text. The result is one static comparison sheet, not animation frames.",
+  "dimensions": {
+    "width": 1024,
+    "height": 1536
+  },
+  "unchangedGeneratedImage": true,
+  "review": {
+    "count": 10,
+    "layout": "2 columns x 5 rows",
+    "mouthlessFacesPreserved": [
+      "row4left Deadpan",
+      "row5left Delighted"
+    ],
+    "smallMouthsPreserved": true,
+    "gapsAndOrientationPreserved": true,
+    "expressionOrderPreserved": true
+  },
+  "limitations": [
+    "Style exploration, not production animation frames.",
+    "Subtle tonal grain and a few fine edge trails remain from generated ink texture; palette and flatness are approximate.",
+    "Pressure changes are intentionally modest to retain MIST identity."
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "study": "MIST acting study inspired by Wallace & Gromit and Shaun the Sheep",
+  "tool": "image_gen.imagegen",
+  "mode": "built-in",
+  "generation_calls": 1,
+  "targeted_correction_calls": 0,
+  "original_generated_path": "<LOCAL_HOME>/.codex/generated_images/01a0ea85-5a41-7303-82f8-d8b067845867/exec-c788e1ba-bfec-4e2f-83fc-42aa308865bf.png",
+  "saved_path": "/brain/art_direction/artist_studio_20260916/reuse/acting_studies_v1/source/aardman.png",
+  "prompt_path": "/brain/art_direction/artist_studio_20260916/reuse/acting_studies_v1/prompts/aardman.txt",
+  "reference_path": "/brain/art_direction/artist_studio_20260916/reuse/style_studies_v3/user_reference.png",
+  "dimensions": {
+    "width": 1536,
+    "height": 1024
+  },
+  "sha256": "ca3955533a3036b3020c1388c4e61003bcc0b89e95bd5281c85daf2278bb8386",
+  "original_sha256": "ca3955533a3036b3020c1388c4e61003bcc0b89e95bd5281c85daf2278bb8386",
+  "original_bytes_preserved": true,
+  "post_processing": "None. The original generated PNG was copied unchanged.",
+  "grid": {
+    "columns": 3,
+    "rows": 3,
+    "faces": 9,
+    "visible_grid_lines": false,
+    "cell_width": 512,
+    "cell_height": 341.3333333333333
+  },
+  "review": {
+    "method": "Visual inspection of the full generated sheet, followed by dimensions, SHA256 comparison, and selected background pixel samples from the unchanged saved copy.",
+    "overall": "Accepted with notes. Nine cyan faces form three clear rows on a dark field. No text, frames, animal heads, bodies, props, or icons appear. The facial anchors remain visually stable within each row.",
+    "rows": [
+      {
+        "row": 1,
+        "sequence": "Attentive listening",
+        "setup": "Round forward-looking eyes and a closed straight mouth.",
+        "change": "Pupils move right and one lifted brow/lid accent introduces alert attention.",
+        "settle": "Half-lowered lids soften the attentive hold while the mouth stays closed.",
+        "assessment": "The sequence reads as calm attention. The lifted lid includes a short separate brow accent."
+      },
+      {
+        "row": 2,
+        "sequence": "Dry disbelief",
+        "setup": "Neutral circular eyes with a tiny flat mouth.",
+        "change": "One eye narrows while the other remains round; the pupils glance sideways.",
+        "settle": "Both eyes settle under nearly horizontal lids with the mouth held straight.",
+        "assessment": "The sequence is distinct at thumbnail scale. Rounded lower lids and a flat mouth keep it deadpan rather than angry."
+      },
+      {
+        "row": 3,
+        "sequence": "Quiet realisation",
+        "setup": "Different eye heights and an off-centre gaze suggest puzzlement.",
+        "change": "Two closed curved eye strokes form a complete blink.",
+        "settle": "The eyes reopen together and the mouth becomes a small smile.",
+        "assessment": "The blink separates the beats clearly. The final pose reads as quiet satisfaction."
+      }
+    ],
+    "limitations": [
+      "The background is visually near-uniform dark teal but does not match #101c20 at every pixel. Six sampled empty-background RGB values ranged from (16,29,32) to (17,32,34).",
+      "The rounded eye shapes are smoother and more graphic than a physical clay surface. The Aardman influence is expressed mainly through understated gaze, eyelids, asymmetry, and timing.",
+      "A separate cyan brow accent appears in the attentive change pose and a small brow-like edge appears in the puzzled setup.",
+      "Equal grid thirds and stable face anchors are visually respected; the generated drawing was not geometrically aligned or altered after generation."
+    ]
+  }
+}

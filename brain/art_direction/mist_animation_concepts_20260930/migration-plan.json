@@ -1,0 +1,112 @@
+{
+  "schema": "mist-gradual-animation-migration",
+  "version": 1,
+  "stage": "key-pose-feedback",
+  "currentPackChanged": false,
+  "styleApproval": {
+    "anchor": "images/available-blink-1.png",
+    "likedReferenceFamilies": [
+      "later-alligator-sweet-geraldine",
+      "isat-odile-mixed-affect",
+      "cuphead-jake-clark-process"
+    ],
+    "selectionRanked": false,
+    "lockedTraits": [
+      "turquoise filled strokes",
+      "open-C eye vocabulary with replacement lid drawings",
+      "fixed eye and mouth anchors",
+      "compact emotionally matched mouth",
+      "secondary task icons separated from face"
+    ]
+  },
+  "waves": [
+    {
+      "wave": 1,
+      "name": "Everyday presence",
+      "concepts": [
+        "available-blink",
+        "listening-focus",
+        "thinking-glance",
+        "warm-to-thoughtful"
+      ],
+      "reason": "Improve the most frequent states and their handoffs first."
+    },
+    {
+      "wave": 2,
+      "name": "Speech",
+      "concepts": [
+        "speaking-warm",
+        "speaking-serious"
+      ],
+      "reason": "Keep mouth shapes consistent with the emotion and synchronize to audible playback."
+    },
+    {
+      "wave": 3,
+      "name": "Tasks and reactions",
+      "concepts": [
+        "coding-focus",
+        "reading-scan",
+        "drafting-stroke",
+        "searching-sweep",
+        "recognition",
+        "empathy"
+      ],
+      "reason": "Refresh task-specific loops and one-shot reactions after the shared face is approved."
+    }
+  ],
+  "productionStages": [
+    {
+      "stage": "Feedback",
+      "deliverables": [
+        "three static key-pose PNGs per concept",
+        "per-idea choice and per-pose notes"
+      ],
+      "completeAnimation": false
+    },
+    {
+      "stage": "Draw",
+      "deliverables": [
+        "registered left-eye and right-eye layers",
+        "emotion-specific mouth rests and visemes",
+        "authored transition and loop in-betweens",
+        "15fps timing with explicit holds"
+      ],
+      "framePolicy": "Plan 12 or more drawn cels for complete loops or activity sequences; a brief blink can use fewer closing cels within its longer idle cycle. Do not slow a blink just to fill a count."
+    },
+    {
+      "stage": "Verify",
+      "deliverables": [
+        "all cels inspected in order and as a loop",
+        "small landscape-screen preview",
+        "rest-to-action-to-rest and interrupted transitions",
+        "speech against audible playback including pauses and barge-in",
+        "task ownership and reduced-motion checks"
+      ]
+    },
+    {
+      "stage": "Promote",
+      "deliverables": [
+        "one family enabled through a reversible asset mapping",
+        "old pack as fallback",
+        "rollback on missing or unapproved layers"
+      ],
+      "retirementCondition": "Retire old assets only after all mapped states have approved replacements."
+    }
+  ],
+  "runtimeConstraints": {
+    "viewport": [
+      100,
+      64
+    ],
+    "fps": 15,
+    "expressionTransitionDefaultMs": 600,
+    "expressionTransitionMinMs": 400,
+    "expressionTransitionMaxMs": 1600,
+    "timingStatus": "Concept timings are proposals; faster timings require deliberate tested renderer/policy changes.",
+    "speechClock": "Preserve audible playback clock, aligned viseme cues and silence-to-rest.",
+    "activityManifest": "Existing v6 validates nine activity IDs and 12 entrance/loop/exit frames; version any incompatible structure.",
+    "fullDuplex": "Barge-in stops old playback/mouth activity and returns to listening; it must not leave a speaking mouth running."
+  },
+  "evidence": "qa/runtime-audit.json",
+  "liveRuntimeChanges": []
+}

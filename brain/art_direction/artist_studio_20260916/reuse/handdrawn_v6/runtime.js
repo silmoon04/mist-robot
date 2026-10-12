@@ -1,0 +1,305 @@
+/* Activity symbols alongside the original MIST eyes, blinks and speaking mouth. */
+(function(root){
+  'use strict';
+  const FPS=15, TICK=1000/FPS;
+  const IDS=['coding','reading','writing','email','searching','planning','calculating','connecting','checking'];
+  const sharedLoads=new Map();
+  const BACKGROUND_LOAD_CONCURRENCY=4;
+  const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
+  const ease=n=>{n=clamp(n,0,1);return n*n*(3-2*n);};
+  const mix=(a,b,t)=>a+(b-a)*t;
+  // One face-wide trace, with clearance measured from the current eye contours.
+  function listeningGeometry(eyes,transform={x:0,y:0,scale:1},gaze={x:0,y:0}){
+    const scale=transform.scale,boxes=eyes.map(b=>({left:transform.x+(b.left+gaze.x)*scale-1.8*scale,right:transform.x+(b.right+gaze.x)*scale+1.8*scale,center:transform.y+((b.top+b.bottom)/2+gaze.y)*scale})).sort((a,b)=>a.left-b.left);
+    const segments=[];let start=transform.x+4*scale;
+    for(const box of boxes){if(box.left>start)segments.push([start,box.left]);start=Math.max(start,box.right);}
+    const end=transform.x+96*scale;if(start<end)segments.push([start,end]);
+    return {segments,y:boxes.length?boxes.reduce((sum,b)=>sum+b.center,0)/boxes.length:transform.y+32*scale,left:transform.x+4*scale,right:end};
+  }
+  const LOOP_HOLDS={coding:[3,2,4,3],reading:[4,3,4,3],writing:[3,3,4,2],email:[4,4,4,4],searching:[4,4,4,4],planning:[3,3,4,50],calculating:[3,3,3,5],connecting:[4,4,4,4],checking:[3,3,4,50]};
+
+  function createActivityClock(now=()=>root.performance.now()){
+    let current=null,serial=0;
+    function sample(time=now()){
+      if(!current)return null;
+      const age=Math.max(0,time-current.at),tick=Math.floor(age/TICK+1e-7);
+      if(current.exiting){
+        if(tick>=8){current=null;return null;}
+        return {...current,phase:'exit',frame:8+Math.floor(tick/2),alpha:1-ease(tick/8),age};
+      }
+      if(tick<8)return {...current,phase:'entrance',frame:Math.floor(tick/2),alpha:ease((tick+1)/8),age};
+      const holds=LOOP_HOLDS[current.id],length=holds.reduce((a,b)=>a+b,0);
+      let rest=(tick-8)%length,index=0;
+      while(rest>=holds[index])rest-=holds[index++];
+      return {...current,phase:'loop',frame:4+index,alpha:1,age};
+    }
+    return {
+      set(id,options={}){
+        if(!IDS.includes(id))return {accepted:false,reason:'unknown_activity'};
+        if(current?.id===id&&current.owner===(options.owner??null)&&!current.exiting&&!options.restart)return {accepted:true,token:current.token,id};
+        current={id,token:++serial,owner:options.owner??null,at:now(),exiting:false};
+        return {accepted:true,token:current.token,id};
+      },
+      clear(token,options={}){
+        if(!current||(token!==undefined&&token!==null&&current.token!==token))return false;
+        if(options.immediate)current=null;
+        else if(!current.exiting)current={...current,at:now(),exiting:true};
+        return true;
+      },sample,
+      get token(){return current?.token??null;}
+    };
+  }
+
+  function validateManifest(manifest){
+    if(manifest?.version!==6||manifest.fps!==15)throw new Error('Expected hand-drawn manifest v6 at 15 fps');
+    for(const id of IDS){
+      const asset=manifest.assets?.[id],length=12;
+      if(!asset||asset.frames?.length!==length||asset.frames.some(frame=>typeof frame.file!=='string'||!frame.file.startsWith('frames/')))throw new Error('Invalid hand-drawn asset: '+id);
+    }
+    for(const id of IDS){
+      const item=manifest.activities?.find(a=>a.id===id);
+      if(!item||!['side','above'].includes(item.placement))throw new Error('Invalid activity placement: '+id);
+    }
+    return manifest;
+  }
+
+  function create(container,options={}){
+    const now=options.now||(()=>root.performance.now()),data=options.data||root.MIST_DATA;
+    const oldRuntime=options.drawnRuntime||root.MistDrawnFaceRuntime;
+    if(!oldRuntime)throw new Error('Load the drawn face runtime before hand-drawn motion');
+    const reduced=options.reducedMotion??!!root.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+    let manifest=options.manifest||null,images=options.handdrawnImages||{},ready=false,dead=false,error=null,raf=null;
+    let revision=0,lastTargets=null,eyeTransition=null,held={},expression=options.expression||data.faces[0].id;
+    let listening={active:false,level:0,samples:Array(48).fill(0)};
+    const clock=createActivityClock(now),previewClock=createActivityClock(now),faces=new Map(data.faces.map(f=>[f.id,f]));
+    let previewActivity=false;const loadedActivities=new Set(),activityLoads=new Map();
+    const activeActivity=time=>previewActivity?previewClock.sample(time):clock.sample(time);
+    const origin=now(),sampleTime=time=>origin+Math.floor((time-origin)/TICK+1e-7)*TICK;
+    const activityConfig=id=>manifest?.activities.find(a=>a.id===id);
+    const progress=(state,details={})=>{try{options.onProgress?.({stage:'handdrawn',state,...details});}catch(_){}};
+    const activityFiles=id=>manifest.assets[id].frames.map(frame=>frame.file);
+    function loadFile(file,manifestUrl){
+      if(images[file])return Promise.resolve(images[file]);
+      const url=new URL(file,new URL(manifestUrl,root.location.href)).href;
+      if(!sharedLoads.has(url))sharedLoads.set(url,(async()=>{
+        const img=new root.Image();img.src=url;await img.decode();
+        if(img.naturalWidth!==256||img.naturalHeight!==256)throw new Error('Unregistered hand-drawn frame: '+file);
+        return img;
+      })().catch(problem=>{sharedLoads.delete(url);throw problem;}));
+      return sharedLoads.get(url).then(img=>{if(!dead)images[file]=img;return img;});
+    }
+    function ensureActivity(id){
+      if(!manifest||!IDS.includes(id))return Promise.resolve(false);
+      if(loadedActivities.has(id))return Promise.resolve(true);
+      if(activityLoads.has(id))return activityLoads.get(id);
+      const manifestUrl=options.manifestUrl||'/studio/handdrawn_v6/manifest.json';
+      const task=Promise.all(activityFiles(id).map(file=>loadFile(file,manifestUrl))).then(()=>{
+        if(dead)return false;
+        loadedActivities.add(id);activityLoads.delete(id);
+        if(clock.sample()?.id===id||previewClock.sample()?.id===id){transitionToNext();revision++;api.update(now());}
+        progress('activity-ready',{activity:id});return true;
+      }).catch(problem=>{
+        activityLoads.delete(id);if(dead)return false;
+        error=problem;progress('activity-error',{activity:id,message:problem?.message||String(problem)});
+        options.onError?.(problem);return false;
+      });
+      activityLoads.set(id,task);return task;
+    }
+    function preloadActivities(files,manifestUrl){
+      let cursor=0,finished=0;
+      const worker=async()=>{while(!dead){const index=cursor++;if(index>=files.length)return;const file=files[index];
+        try{await loadFile(file,manifestUrl);}catch(problem){if(!dead){error=problem;progress('frame-error',{file,message:problem?.message||String(problem)});}}
+        finished++;if(!dead)progress('background-loading',{loaded:finished,total:files.length,file});
+      }};
+      progress('background-loading',{loaded:0,total:files.length});
+      return Promise.all(Array.from({length:Math.min(BACKGROUND_LOAD_CONCURRENCY,files.length)},worker)).then(()=>{
+        for(const id of IDS)if(activityFiles(id).every(file=>images[file]))loadedActivities.add(id);
+        const active=activeActivity();if(active&&loadedActivities.has(active.id)){transitionToNext();revision++;api.update(now());}
+        if(!dead)progress('background-ready',{loaded:finished,total:files.length});
+      });
+    }
+    function targets(id=expression,activity=activeActivity()){
+      const config=activity&&!activity.exiting&&loadedActivities.has(activity.id)?activityConfig(activity.id):null;
+      const side=config?.placement==='side',above=config?.placement==='above';
+      return {
+        id,activity:config?.id||null,
+        transform:side?{x:2,y:8.32,scale:.74}:above?{x:14,y:15,scale:.72}:{x:0,y:0,scale:1}
+      };
+    }
+    function transitionToNext(){
+      const at=sampleTime(now()),to=targets(),from=layout(at);
+      if(JSON.stringify(lastTargets)===JSON.stringify(to))return;
+      eyeTransition=reduced?null:{at,from,to,duration:9*TICK};lastTargets=to;revision++;
+    }
+    function layout(time){
+      const target=lastTargets||targets();
+      if(!eyeTransition)return target;
+      const t=clamp((time-eyeTransition.at)/eyeTransition.duration,0,1);
+      if(t>=1){eyeTransition=null;return target;}
+      const a=eyeTransition.from,b=eyeTransition.to,m=ease(t);
+      return {...b,transform:{x:mix(a.transform.x,b.transform.x,m),y:mix(a.transform.y,b.transform.y,m),scale:mix(a.transform.scale,b.transform.scale,m)}};
+    }
+    function shot(time=now()){
+      const at=sampleTime(time),activity=activeActivity(at),model=layout(at);
+      const symbol=activity?{...activity,frame:Number.isInteger(held.activityFrame)?clamp(held.activityFrame,0,11):reduced?7:activity.frame,
+        imageReady:loadedActivities.has(activity.id)}:null;
+      if(symbol)symbol.file=manifest?.assets[symbol.id]?.frames[symbol.frame]?.file||null;
+      const face=faces.get(expression)||data.faces[0];
+      return {ready,error:error?.message||null,fps:FPS,time:at,expression,eyeSource:'original-mist',
+        eyes:['eye_L','eye_R'].map(role=>({role,...face.slots[role]})),faceTransform:model.transform,
+        activity:symbol,transitioning:!!eyeTransition,layers:held.layers||'all'};
+    }
+    function drawFrame(context,id,index,x,y,size,mirror=1,alpha=1){
+      const asset=manifest.assets[id],frame=asset.frames[Number.isInteger(index)?clamp(index,0,asset.frames.length-1):0],image=images[frame.file];
+      context.save();context.globalAlpha=alpha;context.translate(x,y);context.scale(mirror,1);
+      context.drawImage(image,-size/2,-size*(asset.type==='eye'?(asset.baseline??204)/256:.5),size,size);context.restore();
+    }
+    const layer={
+      get ready(){return ready;},get revision(){return revision;},
+      replaceEyes:false,
+      get showEyes(){return !held.layers||held.layers==='all'||held.layers==='eyes';},
+      get showDecorations(){return !held.layers||held.layers==='all';},
+      get showMouth(){return !held.layers||held.layers==='all'||held.layers==='mouth';},
+      faceTransform(state){return shot(state.drawnAnimation.time).faceTransform;},
+      paint(context,state,gaze){
+        const s=shot(state.drawnAnimation.time),layers=s.layers;
+        if(listening.active&&layers==='all'){
+          const geometry=listeningGeometry(state.drawnEyeBounds||[],s.faceTransform,gaze);
+          const amplitude=reduced?0:2.2*s.faceTransform.scale*listening.level;
+          context.save();context.strokeStyle='#72cbb9';context.lineWidth=.55*s.faceTransform.scale;context.lineCap='round';context.lineJoin='round';context.globalAlpha=.72;
+          for(const [left,right] of geometry.segments){
+            const count=Math.max(3,Math.ceil((right-left)*2));
+            const points=Array.from({length:count},(_,i)=>{
+              const x=mix(left,right,i/(count-1)),position=(x-geometry.left)/(geometry.right-geometry.left)*(listening.samples.length-1),index=Math.floor(position);
+              const value=mix(listening.samples[index]||0,listening.samples[Math.min(index+1,listening.samples.length-1)]||0,position-index);
+              return [x,geometry.y+value*amplitude];
+            });
+            const path=new root.Path2D(root.MistFaceRuntime.pathData(points,false));context.stroke(path);
+          }
+          context.restore();
+        }
+        const a=s.activity;if(a?.imageReady&&(layers==='all'||layers==='activity')){
+          const above=activityConfig(a.id).placement==='above';
+          drawFrame(context,a.id,a.frame,above?50:84,above?14:31,above?42:29,1,a.alpha);
+        }
+      }
+    };
+    const base=oldRuntime.create(container,{...options,autoStart:false,fps:FPS,eyeLayer:layer});
+    expression=base.expression;lastTargets=targets();
+    const owners=new Map();let stateToken=null,stateActivity=null;
+    function setActivity(id,settings={}){
+      if(dead)return {accepted:false,reason:'destroyed'};
+      const result=clock.set(id,settings);if(result.accepted){transitionToNext();revision++;ensureActivity(id);}return result;
+    }
+    function clearActivity(token,settings={}){
+      const result=clock.clear(token,settings);if(result){transitionToNext();revision++;}return result;
+    }
+    function finishOwner(owner){
+      const entry=owners.get(owner);if(!entry)return;
+      owners.delete(owner);if(clock.token!==entry.token)return;
+      const previous=[...owners.entries()].at(-1);
+      if(previous){const [key,value]=previous;value.token=setActivity(value.id,{owner:key}).token;}
+      else if(stateActivity)stateToken=setActivity(stateActivity,{owner:'state'}).token;
+      else clearActivity(entry.token);
+    }
+    function handleEvent(event){
+      if(!event||typeof event!=='object')return false;
+      if(event.type==='state'){
+        const id=event.state==='thinking'?'planning':event.state==='checking'?'checking':null;
+        stateActivity=id;
+        if(id){const active=clock.sample();if(!active||active.exiting||active.owner==='state')stateToken=setActivity(id,{owner:'state'}).token;}
+        else if(stateToken!==null){clearActivity(stateToken);stateToken=null;}
+        return true;
+      }
+      if(event.type==='brain_job'&&event.job_id){
+        const owner='brain:'+event.job_id;
+        if(event.status==='running')owners.set(owner,{id:'planning',token:setActivity('planning',{owner}).token});
+        else finishOwner(owner);
+        return true;
+      }
+      if(event.type==='debug_tool'){
+        const supported={get_sensor_snapshot:'checking',recall:'reading',remember:'writing'};
+        const id=supported[event.name];if(!id||!event.call_id)return false;
+        const owner='tool:'+event.call_id;
+        if(event.phase==='started')owners.set(owner,{id,token:setActivity(id,{owner}).token});
+        else if(event.phase==='finished')finishOwner(owner);
+        return true;
+      }
+      return false;
+    }
+    const api={
+      setListeningSignal({active=false,level=0,samples=[]}={}){
+        if(!active){
+          if(!listening.active)return false;
+          listening={active:false,level:0,samples:Array(48).fill(0)};
+          // Clearing is immediate; live microphone updates use the existing frame clock.
+          revision++;api.update(now());return true;
+        }
+        if(reduced){
+          if(listening.active)return false;
+          listening={active:true,level:0,samples:Array(48).fill(0)};return true;
+        }
+        const values=Array.from(samples,value=>clamp(Number(value)||0,-1,1));
+        const smooth=Array.from({length:48},(_,i)=>{
+          const center=i/47*Math.max(0,values.length-1),index=Math.round(center);let sum=0,weight=0;
+          for(let offset=-3;offset<=3;offset++){const w=4-Math.abs(offset);sum+=(values[clamp(index+offset,0,values.length-1)]||0)*w;weight+=w;}
+          return sum/weight;
+        });
+        const target=clamp(Number(level)||0,0,1);
+        const clean=value=>Math.abs(value)<.0001?0:value;
+        const next={active:true,level:clean(mix(listening.level,target,target>listening.level ? .55 : .35)),samples:smooth.map((value,i)=>clean(mix(listening.samples[i],value,.45)))};
+        if(listening.active&&next.level===listening.level&&next.samples.every((value,i)=>value===listening.samples[i]))return false;
+        listening=next;return true;
+      },
+      setExpression(id,settings={}){const ok=base.setExpression(id,settings);if(ok&&expression!==id){expression=id;transitionToNext();}return ok;},
+      startSpeech(settings){return base.startSpeech(settings);},stopSpeech(){return base.stopSpeech();},
+      setGaze(x,y){base.setGaze(x,y);},clearGaze(){base.clearGaze();},
+      blink(){revision++;base.blink();},
+      setActivity,clearActivity,handleEvent,
+      previewActivity(id){
+        const result=previewClock.set(id,{owner:'preview'});
+        if(result.accepted){previewActivity=true;transitionToNext();revision++;ensureActivity(id);}
+        return result;
+      },
+      clearPreviewActivity(){
+        if(!previewActivity)return;
+        previewActivity=false;previewClock.clear(undefined,{immediate:true});transitionToNext();revision++;
+      },
+      inspect(settings={}){held={...settings};revision++;return shot();},
+      resetActivities(){owners.clear();stateToken=null;stateActivity=null;clearActivity(undefined,{immediate:true});},
+      update(time=now()){
+        if(dead)return null;
+        const state=base.update(time);return state?{...state,handdrawn:shot(time),renderer:ready&&state.drawnReady?'handdrawn':state.renderer}:null;
+      },
+      snapshot(time=now(),overrides={}){const s=base.snapshot(time,overrides);return {...s,handdrawn:shot(time),renderer:ready&&s.drawnReady?'handdrawn':s.renderer};},
+      renderTo(canvas,time=now(),overrides={}){const s=base.renderTo(canvas,time,overrides);return {...s,handdrawn:shot(time),renderer:ready&&s.drawnReady?'handdrawn':s.renderer};},
+      setFps(){return base.setFps(FPS);},
+      destroy(){dead=true;owners.clear();if(raf!==null)root.cancelAnimationFrame?.(raf);base.destroy();},
+      get expression(){return base.expression;},get expressions(){return base.expressions;},get speaking(){return base.speaking;},
+      get canvas(){return base.canvas;},get svg(){return base.svg;},get loaded(){return ready&&base.loaded;},get error(){return error||base.error;},
+      get manifest(){return manifest;}
+    };
+    api.ready=(async()=>{
+      try{
+        const manifestUrl=options.manifestUrl||'/studio/handdrawn_v6/manifest.json';
+        progress('manifest-loading');
+        if(!manifest){const response=await root.fetch(manifestUrl,{cache:'no-cache'});if(!response.ok)throw new Error('Hand-drawn manifest HTTP '+response.status);manifest=await response.json();}
+        validateManifest(manifest);
+        const files=[...new Set(IDS.flatMap(id=>manifest.assets[id].frames.map(f=>f.file)))];
+        if(dead)return false;
+        const baseReady=await base.ready;if(dead)return false;
+        if(!baseReady)throw base.error||new Error('Drawn face renderer did not load');
+        if(options.handdrawnImages)for(const id of IDS)if(activityFiles(id).every(file=>images[file]))loadedActivities.add(id);
+        ready=true;transitionToNext();revision++;api.update(now());
+        progress('ready',{loaded:files.filter(file=>images[file]).length,total:files.length});
+        const active=activeActivity();if(active)ensureActivity(active.id);
+        if(!options.handdrawnImages)preloadActivities(files,manifestUrl);
+        return base.loaded;
+      }catch(problem){if(dead)return false;error=problem;ready=false;options.onError?.(problem);return false;}
+    })();
+    if(options.autoStart!==false&&root.requestAnimationFrame){const tick=time=>{if(dead)return;api.update(time);raf=root.requestAnimationFrame(tick);};raf=root.requestAnimationFrame(tick);}
+    return api;
+  }
+  root.MistHanddrawnRuntime={create,version:'6.1.0',fps:FPS,activities:IDS,helpers:{createActivityClock,validateManifest,listeningGeometry}};
+  if(typeof module!=='undefined'&&module.exports)module.exports=root.MistHanddrawnRuntime;
+})(typeof window!=='undefined'?window:globalThis);

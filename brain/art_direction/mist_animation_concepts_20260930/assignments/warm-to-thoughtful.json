@@ -1,0 +1,34 @@
+{
+  "id": "warm-to-thoughtful",
+  "title": "Warm \u2192 thoughtful",
+  "wave": 1,
+  "summary": "A transition that keeps eye centres fixed and relaxes the smile before the thinking gaze.",
+  "poses": [
+    {
+      "id": "warm-to-thoughtful__1",
+      "label": "Warm",
+      "filename": "warm-to-thoughtful-1.png",
+      "direction": "Warm balanced open C eyes, small closed smile."
+    },
+    {
+      "id": "warm-to-thoughtful__2",
+      "label": "Between",
+      "filename": "warm-to-thoughtful-2.png",
+      "direction": "One lid lowers a little, other eye stays open. Mouth has relaxed into an almost-flat closed stroke. No double eyes or double mouth; no crossfade ghosts."
+    },
+    {
+      "id": "warm-to-thoughtful__3",
+      "label": "Thoughtful",
+      "filename": "warm-to-thoughtful-3.png",
+      "direction": "One lid lowered, opposite eye mildly raised, both dark apertures turn subtly up-left. Short angled neutral closed mouth; no happy smile."
+    }
+  ],
+  "cycle": "Warm \u2192 between \u2192 thoughtful, with drawn in-betweens. Interruptible into listening without double silhouettes.",
+  "timing": "200\u2013350 ms transition",
+  "replaceTargets": [
+    "transition/happy-to-thinking"
+  ],
+  "targetFps": 15,
+  "minimumDrawnFrames": 12,
+  "status": "key-pose-concept"
+}

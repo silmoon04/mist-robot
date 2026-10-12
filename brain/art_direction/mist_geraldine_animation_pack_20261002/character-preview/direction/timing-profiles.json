@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "defaultProfile": "restrained",
+  "selectionStatus": "provisional",
+  "fps": 15,
+  "transitionMs": 400,
+  "profiles": [
+    {"id": "restrained", "title": "Restrained", "description": "A brief acknowledgement and a small dry reaction. Hold the ongoing intent through pauses.", "dryReactionMs": 600, "acknowledgementMs": 400, "interruptionRecoveryMs": 400},
+    {"id": "expressive", "title": "Expressive", "description": "Let the same dry reaction and acknowledgement linger. Audio, artwork, and conversational beats stay the same.", "dryReactionMs": 1000, "acknowledgementMs": 800, "interruptionRecoveryMs": 400}
+  ],
+  "eyePolicy": {"mode": "idle", "blink": "Reuse deterministic pack idle blinks and closed-eye family transitions.", "gaze": "Reuse pack look-left, look-right and settle cels only when its idle scheduler selects them. Do not force a glance into these short scenes.", "reaction": "Finite named-preset hold; do not enable the looping reaction cel tour.", "reducedMotion": "Disable incidental blink and gaze motion; explicit playback may retain native speech cels and necessary preset transitions."},
+  "interruption": {"stopSpeechImmediately": true, "nextIntent": "quiet-listening", "cancelPendingReactionReturn": true, "cancelPendingSceneSpeech": true, "closeMouthByNextRenderedFrame": true},
+  "assetPolicy": {"nativeCelsOnly": true, "rotationAllowed": false, "nonUniformScaleAllowed": false, "newShapesAllowed": false}
+}

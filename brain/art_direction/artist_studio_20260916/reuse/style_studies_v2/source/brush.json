@@ -1,0 +1,108 @@
+{
+  "version": 2,
+  "id": "brush",
+  "label": "Dry brush",
+  "tool": "image_gen.imagegen",
+  "mode": "built-in",
+  "createdDate": "2026-09-28",
+  "source": "<LOCAL_HOME>/.codex/generated_images/01a0e9db-4c72-7c12-8edf-7ac1e045dc51/exec-8421eda6-933a-4007-b104-13cd873d5b34.png",
+  "copiedUnchanged": true,
+  "file": "source/brush.png",
+  "sha256": "99089fbc66ec53944009549aa1b32012c5f488b4d1a32d31bc0b143436be4bd4",
+  "reference": {
+    "file": "reference.png",
+    "sha256": "1f2a86c392e01df3b732c5cb8dbd648f4f9edcce667bccae5ce6499485959f13",
+    "role": "Identity and emotion reference; path geometry not locked."
+  },
+  "prompt": {
+    "file": "prompts/brush.txt",
+    "sha256": "90e3693ea1fd9d401cfaad07276e0e9de245662914136f2469b2708be2a37b55"
+  },
+  "grid": {
+    "columns": 2,
+    "rows": 5,
+    "width": 1024,
+    "height": 1536,
+    "order": "row-major"
+  },
+  "direction": "Painted gestures with dry edges, tapered flicks, bristle channels, uneven swept loops and negative-space skips within strokes.",
+  "review": {
+    "method": "Visual inspection of complete generated sheet against original reference.",
+    "accepted": true,
+    "notOnlyThickness": true,
+    "changes": [
+      "Eye loops are asymmetric and swept rather than circular arcs.",
+      "Tapered brush ends and bristle splits remain visible at thumbnail size.",
+      "Listening and sleepy mouths are hollow brush ovals rather than filled shapes.",
+      "Smirk, frown and closed eye arcs have directional painted construction."
+    ],
+    "faces": [
+      {
+        "index": 0,
+        "name": "Calm",
+        "pass": true,
+        "notes": "Open swept loops and a level flat brush mouth."
+      },
+      {
+        "index": 1,
+        "name": "Listening",
+        "pass": true,
+        "notes": "Attentive loops with hollow vertical oval mouth."
+      },
+      {
+        "index": 2,
+        "name": "Curious",
+        "pass": true,
+        "notes": "Asymmetric rounded triangular loops, small resting dot mouth."
+      },
+      {
+        "index": 3,
+        "name": "Quiet thought",
+        "pass": true,
+        "notes": "Narrow half-closed brush forms with tiny mouth."
+      },
+      {
+        "index": 4,
+        "name": "Happy",
+        "pass": true,
+        "notes": "Open loops and painted bowl grin; dry central gap is intentional brush construction."
+      },
+      {
+        "index": 5,
+        "name": "Playful",
+        "pass": true,
+        "notes": "Half-closed brush eyes and rising smirk."
+      },
+      {
+        "index": 6,
+        "name": "Deadpan",
+        "pass": true,
+        "notes": "Two shallow closed arcs; mouthless."
+      },
+      {
+        "index": 7,
+        "name": "Sleepy",
+        "pass": true,
+        "notes": "Closed arcs and tall hollow oval yawn."
+      },
+      {
+        "index": 8,
+        "name": "Delighted",
+        "pass": true,
+        "notes": "Two inward squeeze eyes; mouthless."
+      },
+      {
+        "index": 9,
+        "name": "Sad",
+        "pass": true,
+        "notes": "Drooping irregular loops, clear frown and one outer-right tear."
+      }
+    ],
+    "limitations": [
+      "Static style proposal, not an animation frame atlas.",
+      "Fine bristle channels may become less distinct at very small display sizes.",
+      "Brush geometry varies intentionally between expressions; production animation would require consistent component redraws."
+    ]
+  },
+  "attempts": 1
+}

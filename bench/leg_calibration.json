@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "geometry": {
+    "hip_offset_mm": 32.0,
+    "femur_mm": 110.0,
+    "tibia_mm": 70.0
+  },
+  "knee_sign": -1,
+  "knee_driver_mode": "absolute_tibia_1to1",
+  "linkage": {
+    "driver_mm": 40.0,
+    "coupler_mm": 110.0,
+    "follower_mm": 40.0,
+    "follower_to_tibia_deg": 180.0,
+    "reference_q3_deg": -90.0,
+    "relative_input_min_deg": -30.0,
+    "relative_input_max_deg": 40.0,
+    "commissioning_margin_deg": 5.0
+  },
+  "roles": {
+    "roll": {
+      "id": 1,
+      "label": "hip roll / coxa",
+      "reference_angle_deg": 0.0,
+      "endpoint_a_tick": 2179,
+      "endpoint_b_tick": 4082,
+      "center_tick": 3075,
+      "sign": 1,
+      "min_tick": 2179,
+      "max_tick": 4082
+    },
+    "hip": {
+      "id": 2,
+      "label": "femur / hip pitch",
+      "reference_angle_deg": 90.0,
+      "endpoint_a_tick": 717,
+      "endpoint_b_tick": 2091,
+      "center_tick": 1386,
+      "sign": -1,
+      "min_tick": 717,
+      "max_tick": 2091
+    },
+    "knee_driver": {
+      "id": 3,
+      "label": "remote knee driver",
+      "reference_angle_deg": 0.0,
+      "endpoint_a_tick": 2493,
+      "endpoint_b_tick": 1531,
+      "center_tick": 2085,
+      "sign": 1,
+      "min_tick": 1531,
+      "max_tick": 2493
+    }
+  }
+}

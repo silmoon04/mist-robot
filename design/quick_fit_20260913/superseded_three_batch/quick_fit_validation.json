@@ -1,0 +1,281 @@
+{
+  "status": "geometry_and_profile_checks_pass",
+  "source_manifest_sha256": "67f0d5e3bfb633414722b17305cef4212ca7f8fa753aa922a252bc383306ad3d",
+  "profile": "Neptune4Pro_R5_QuickFit_PLA_020.curaprofile",
+  "profile_sha256": "e6e9f69898e6f2f58b451100b1754a880e6e5e731764c720fbf3b2a7e1690190",
+  "profile_settings": {
+    "layer_height": 0.2,
+    "layer_height_0": 0.2,
+    "adaptive_layer_height_enabled": false,
+    "line_width": 0.42,
+    "wall_line_width": 0.42,
+    "wall_line_width_0": 0.42,
+    "wall_line_width_x": 0.42,
+    "skin_line_width": 0.42,
+    "infill_line_width": 0.42,
+    "support_line_width": 0.42,
+    "support_interface_line_width": 0.42,
+    "support_roof_line_width": 0.42,
+    "skirt_brim_line_width": 0.42,
+    "initial_layer_line_width_factor": 100,
+    "wall_thickness": 2.1,
+    "wall_line_count": 5,
+    "top_bottom_thickness": 1.2,
+    "top_thickness": 1.2,
+    "bottom_thickness": 1.2,
+    "top_layers": 6,
+    "bottom_layers": 6,
+    "roofing_layer_count": 0,
+    "infill_sparse_density": 35,
+    "infill_pattern": "gyroid",
+    "infill_overlap": 10,
+    "skin_overlap": 10,
+    "infill_sparse_thickness": 0.2,
+    "infill_before_walls": false,
+    "ironing_enabled": false,
+    "magic_spiralize": false,
+    "material_print_temperature": 210,
+    "material_print_temperature_layer_0": 210,
+    "material_initial_print_temperature": 210,
+    "material_final_print_temperature": 210,
+    "material_bed_temperature": 60,
+    "material_bed_temperature_layer_0": 60,
+    "material_flow": 100,
+    "material_flow_layer_0": 100,
+    "material_max_flowrate": 8,
+    "speed_print": 85,
+    "speed_wall": 65,
+    "speed_wall_0": 50,
+    "speed_wall_x": 85,
+    "speed_infill": 95,
+    "speed_topbottom": 45,
+    "speed_roofing": 35,
+    "speed_support": 60,
+    "speed_support_infill": 60,
+    "speed_support_interface": 35,
+    "speed_support_roof": 35,
+    "speed_support_bottom": 35,
+    "speed_layer_0": 25,
+    "speed_print_layer_0": 25,
+    "speed_travel_layer_0": 60,
+    "speed_travel": 150,
+    "skirt_brim_speed": 25,
+    "speed_slowdown_layers": 3,
+    "acceleration_enabled": true,
+    "acceleration_print": 2500,
+    "acceleration_wall": 1800,
+    "acceleration_wall_0": 1200,
+    "acceleration_wall_x": 2000,
+    "acceleration_topbottom": 1000,
+    "acceleration_roofing": 1000,
+    "acceleration_infill": 2500,
+    "acceleration_support": 1800,
+    "acceleration_support_infill": 1800,
+    "acceleration_support_interface": 800,
+    "acceleration_support_roof": 800,
+    "acceleration_support_bottom": 800,
+    "acceleration_travel": 3000,
+    "acceleration_layer_0": 500,
+    "acceleration_print_layer_0": 500,
+    "acceleration_travel_layer_0": 1000,
+    "acceleration_skirt_brim": 500,
+    "jerk_enabled": false,
+    "retraction_enable": true,
+    "retraction_amount": 0.5,
+    "retraction_speed": 35,
+    "retraction_retract_speed": 35,
+    "retraction_prime_speed": 35,
+    "retract_at_layer_change": false,
+    "retraction_extra_prime_amount": 0,
+    "retraction_hop_enabled": false,
+    "retraction_combing": "noskin",
+    "cool_fan_enabled": true,
+    "cool_fan_speed": 100,
+    "cool_fan_speed_min": 100,
+    "cool_fan_speed_max": 100,
+    "cool_fan_speed_0": 0,
+    "cool_fan_full_layer": 3,
+    "cool_fan_full_at_height": 0.6,
+    "cool_min_layer_time": 10,
+    "cool_min_speed": 10,
+    "cool_lift_head": false,
+    "support_enable": true,
+    "support_type": "everywhere",
+    "support_structure": "normal",
+    "support_angle": 50,
+    "support_pattern": "zigzag",
+    "support_infill_rate": 15,
+    "support_interface_enable": true,
+    "support_roof_enable": true,
+    "support_bottom_enable": false,
+    "support_interface_height": 0.6,
+    "support_roof_height": 0.6,
+    "support_interface_density": 60,
+    "support_roof_density": 60,
+    "support_interface_pattern": "lines",
+    "support_roof_pattern": "lines",
+    "support_z_distance": 0.2,
+    "support_top_distance": 0.2,
+    "support_bottom_distance": 0.2,
+    "support_xy_distance": 0.5,
+    "support_xy_overrides_z": "z_overrides_xy",
+    "support_brim_enable": true,
+    "support_brim_width": 3,
+    "support_brim_line_count": 8,
+    "adhesion_type": "brim",
+    "brim_width": 4,
+    "brim_line_count": 10,
+    "brim_gap": 0.1,
+    "brim_location": "outside",
+    "print_sequence": "all_at_once",
+    "prime_tower_enable": false,
+    "meshfix_union_all": true,
+    "meshfix_extensive_stitching": false,
+    "meshfix_keep_open_polygons": false
+  },
+  "plates": [
+    {
+      "name": "01_servo_case_and_alignment",
+      "part_count": 4,
+      "parts": [
+        {
+          "name": "r5_case_datum_saddle_0p3",
+          "source_stl": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\coupons_stl\\r5_case_datum_saddle_0p3.stl",
+          "source_sha256": "ac4612018e8a0ccf1af1ce294ebfc54ee79cf865ffc54faf44d5b8411ba3651c"
+        },
+        {
+          "name": "r5_case_cap_0p3",
+          "source_stl": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\coupons_stl\\r5_case_cap_0p3.stl",
+          "source_sha256": "ba7a100b8b5196e6753f648ed50467291f1f49b6f6e39ed0bb6870916fe67a57"
+        },
+        {
+          "name": "r5_case_to_shaft_registration_plate",
+          "source_stl": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\coupons_stl\\r5_case_to_shaft_registration_plate.stl",
+          "source_sha256": "4590d90273ccea8253faae0aff623f1c748b8e7864f306baad3dc62559455faf"
+        },
+        {
+          "name": "r5_m3_clearance_3p2_3p4_3p6",
+          "source_stl": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\coupons_stl\\r5_m3_clearance_3p2_3p4_3p6.stl",
+          "source_sha256": "6b4a6089013be8df457c1ae33dfcd8139490135b97bfa51a472e867f98385c97"
+        }
+      ],
+      "bounds_mm": [
+        [
+          46.77000045776367,
+          67.5,
+          0.0
+        ],
+        [
+          178.22999954223633,
+          157.5,
+          37.5
+        ]
+      ],
+      "stl_sha256": "c65b1d9752a485b91a57656fd94665d0bb8770aafd390f5fb6cb9ba32306b39c",
+      "model_3mf_sha256": "941c45f9a8d45e8f961999d2c12bb9ba36c702eb0e07996560140b6404712586"
+    },
+    {
+      "name": "02_horns_and_sections",
+      "part_count": 6,
+      "parts": [
+        {
+          "name": "r5_horn_fixture_main",
+          "source_stl": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\coupons_stl\\r5_horn_fixture_main.stl",
+          "source_sha256": "aa831f0fa3292c41e54d82a5109acba99f934cbee78b664a6a3a1e7a0c413ba8"
+        },
+        {
+          "name": "r5_horn_fixture_auxiliary",
+          "source_stl": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\coupons_stl\\r5_horn_fixture_auxiliary.stl",
+          "source_sha256": "5d230834c32b5bc543b1ee9d721c18601be5697568793c56c7cec0f9d17263f8"
+        },
+        {
+          "name": "r5_horn_fixture_bridge_38",
+          "source_stl": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\coupons_stl\\r5_horn_fixture_bridge_38.stl",
+          "source_sha256": "e1d19f4b16fe954254f0a472b7b93cc298469c772bb359e8342c65a094785459"
+        },
+        {
+          "name": "r5_yaw_spacer_11p6",
+          "source_stl": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\coupons_stl\\r5_yaw_spacer_11p6.stl",
+          "source_sha256": "82f2fa383771d25ccbcf4ff7617c6973d04e7dbefd853e071df5c505fa0dcc58"
+        },
+        {
+          "name": "r5_top_bridge_load_main",
+          "source_stl": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\coupons_stl\\r5_top_bridge_load_main.stl",
+          "source_sha256": "e5f58c0ef3933a690732c936096b8b3e0ee545beca60491dd23c9eb1416e3ea4"
+        },
+        {
+          "name": "r5_top_bridge_load_aux",
+          "source_stl": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\coupons_stl\\r5_top_bridge_load_aux.stl",
+          "source_sha256": "a64ad840a33a192ba19f89ac8c73fbfb69786ea9001b6e07bb0d8d5c9798e2cc"
+        }
+      ],
+      "bounds_mm": [
+        [
+          18.90137563936878,
+          98.51740287616849,
+          0.0
+        ],
+        [
+          206.09862436063122,
+          126.48259712383151,
+          42.0
+        ]
+      ],
+      "stl_sha256": "259620ce5da6f0ed1a35746e86865a03288abe9a17a5bdf5bacd652f759d908d",
+      "model_3mf_sha256": "d7fc93c387eb0eaba2641506e92d1de2d9a6be6f828d1441033c84a0690111a2"
+    },
+    {
+      "name": "03_phone_fit",
+      "part_count": 5,
+      "parts": [
+        {
+          "name": "phone_fit_0p5_tray",
+          "source_stl": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\coupons_stl\\phone_fit_0p5_tray.stl",
+          "source_sha256": "1cb7793b785b5346cfc905e5defc0f555aadba2a473a62ab971564300c8be69e"
+        },
+        {
+          "name": "phone_fit_0p5_clip_left",
+          "source_stl": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\coupons_stl\\phone_fit_0p5_clip_left.stl",
+          "source_sha256": "4db781092904fd35511c35968b307e2960a0bda0de63ba019b689b1d421a994a"
+        },
+        {
+          "name": "phone_fit_0p5_clip_right",
+          "source_stl": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\coupons_stl\\phone_fit_0p5_clip_right.stl",
+          "source_sha256": "e2b774fdbb8bcbc2da909ee0a43575577253e3c248cf7fdee7f92e922521a886"
+        },
+        {
+          "name": "phone_usb_spine_6mm_coupon",
+          "source_stl": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\coupons_stl\\phone_usb_spine_6mm_coupon.stl",
+          "source_sha256": "ac4f363b6b33c658e603df046e11f1cc94b961c9616ad9aab422917eb92093ea"
+        },
+        {
+          "name": "phone_pan_horn_stack_fit",
+          "source_stl": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\coupons_stl\\phone_pan_horn_stack_fit.stl",
+          "source_sha256": "92c72911c1c91508e596bf86d895ca00e4d9cd029e23eefa747c3330bb5501cf"
+        }
+      ],
+      "bounds_mm": [
+        [
+          17.5,
+          69.3679676055908,
+          0.0
+        ],
+        [
+          207.5,
+          155.63203239440918,
+          16.5
+        ]
+      ],
+      "stl_sha256": "da1d301014cd95e9a62726650040b47787e0dc9c59552f3fcac87628394697be",
+      "model_3mf_sha256": "543ebb198e995abfbe5b01f2c8886a7ef6952f563375f3ae5b3c441c4bfab9d9"
+    }
+  ],
+  "all_original_15_specimens_preserved": true,
+  "parts_modified": false,
+  "layer_height_mm": 0.2,
+  "purpose": "Shorter staged print jobs. Start with servo case, cap, alignment gauge and M3 hole strip.",
+  "limits": [
+    "Physical quality and fit cannot be guaranteed without printing.",
+    "Smaller first job defers horn, phone and load specimens; it does not replace their tests."
+  ]
+}

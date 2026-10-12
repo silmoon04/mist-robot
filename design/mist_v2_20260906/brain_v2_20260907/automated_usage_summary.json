@@ -1,0 +1,51 @@
+{
+  "scope": "Recorded automated live probes only; excludes coding-agent tokens and user-triggered chats",
+  "runs": [
+    {
+      "run": "backend_validation",
+      "input_tokens": 60704,
+      "output_tokens": 687,
+      "cached_input_tokens": 44160
+    },
+    {
+      "run": "browser_validation",
+      "input_tokens": 10905,
+      "output_tokens": 151,
+      "cached_input_tokens": null
+    },
+    {
+      "run": "research_validation",
+      "input_tokens": 2793,
+      "output_tokens": 71,
+      "cached_input_tokens": null
+    },
+    {
+      "run": "Astra_latency",
+      "input_tokens": 13617,
+      "output_tokens": 148,
+      "cached_input_tokens": 9728
+    },
+    {
+      "run": "Spark_initial",
+      "input_tokens": 8828,
+      "output_tokens": 203,
+      "cached_input_tokens": 5376
+    },
+    {
+      "run": "Spark_identity_retest",
+      "input_tokens": 5827,
+      "output_tokens": 229,
+      "cached_input_tokens": 2688
+    },
+    {
+      "run": "root_short_live_timing",
+      "input_tokens": 3057,
+      "output_tokens": 63,
+      "cached_input_tokens": null
+    }
+  ],
+  "input_tokens": 105731,
+  "output_tokens": 1552,
+  "known_cached_input_tokens": 61952,
+  "cost_usd": null
+}

@@ -1,0 +1,25 @@
+{
+  "status": "blocked_by_provider_billing",
+  "checked_on": "2026-09-22",
+  "voice_id": "24AMj4dc02cYAwoUnqzN",
+  "model_id": "eleven_flash_v2_5",
+  "voice_access_http_status": 200,
+  "voice_name": "MIST (refined)",
+  "subscription_status": "past_due",
+  "minimal_synthesis": {
+    "text": "Hello.",
+    "http_status": 401,
+    "error_type": "payment_required",
+    "error_code": "payment_issue",
+    "provider_message": "Your subscription has a failed or incomplete payment. Complete the latest invoice to continue usage."
+  },
+  "websocket_probes": [
+    {"variant": "space initialization then phrase and flush; no close_context sent", "elapsed_seconds": 0.094, "audio_bytes": 0, "isFinal": true},
+    {"variant": "phrase and flush in first context message; no close_context sent", "elapsed_seconds": 0.25, "audio_bytes": 0, "isFinal": true},
+    {"variant": "same first-message phrase without sync_alignment; no close_context sent", "elapsed_seconds": 0.109, "audio_bytes": 0, "isFinal": true}
+  ],
+  "conclusion": "The empty audio failure occurs without a close_context command. No evidence supports changing context completion timing to fix this failure. The same voice and model are explicitly blocked by the provider payment check.",
+  "new_aligned_samples_generated": 0,
+  "changes": "An empty WebSocket reply now performs one bounded subscription read and shows a specific billing message when status is past_due, instead of suggesting a repeat that cannot succeed.",
+  "next_action": "After the account payment is resolved, rerun brain/harness/probe_lipsync_stream.py to generate the three intended aligned samples and inspect them in the animation page."
+}

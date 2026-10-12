@@ -1,0 +1,97 @@
+{
+  "id": "warm-to-thoughtful",
+  "tool": "built-in image_gen",
+  "images": [
+    {
+      "id": "warm-to-thoughtful__1",
+      "file": "images/warm-to-thoughtful-1.png",
+      "prompt": "prompts/warm-to-thoughtful-1.txt",
+      "generatedSource": "<LOCAL_HOME>/.codex/generated_images/01a0ef9e-b921-7e61-b875-d77de2145c4f/exec-6ef884bf-00f7-4bcf-a3d9-769127d0ae8c.png",
+      "sha256": "0aea7d68ba3f89e156b42b2695353f61551451623294f15cac6a41a95f012d96",
+      "width": 1254,
+      "height": 1254,
+      "qa": {
+        "singleFace": true,
+        "mistIdentity": true,
+        "noStrayMarks": true,
+        "singleEyesAndMouth": true,
+        "closedMouth": true,
+        "visuallyStableCentres": true
+      },
+      "limitations": "Native generated contours have small hand-shaped differences from the shared anchor."
+    },
+    {
+      "id": "warm-to-thoughtful__2",
+      "file": "images/warm-to-thoughtful-2.png",
+      "prompt": "prompts/warm-to-thoughtful-2.txt",
+      "generatedSource": "<LOCAL_HOME>/.codex/generated_images/01a0ef9e-b921-7e61-b875-d77de2145c4f/exec-878d722a-0857-4423-90f2-a4ce24a94ec8.png",
+      "sha256": "a7137234e5b5502d9ae35a773998de9f4ac6d7bde9b53200355137d35138891e",
+      "width": 1254,
+      "height": 1254,
+      "qa": {
+        "singleFace": true,
+        "mistIdentity": true,
+        "noStrayMarks": true,
+        "singleEyesAndMouth": true,
+        "closedMouth": true,
+        "visuallyStableCentres": true,
+        "smileRelaxedBeforeGazeTurn": true,
+        "leftUpperLidSoftens": true,
+        "rightEyeRemainsOpen": true,
+        "noCrossfadeGhosts": true,
+        "noWholeEyeRotation": true
+      },
+      "limitations": "The relaxed almost-flat mouth has minor native contour and vertical registration variation; it remains visually centred with the anchor face."
+    },
+    {
+      "id": "warm-to-thoughtful__3",
+      "file": "images/warm-to-thoughtful-3.png",
+      "prompt": "prompts/warm-to-thoughtful-3-r2.txt",
+      "generatedSource": "<LOCAL_HOME>/.codex/generated_images/01a0ef9e-b921-7e61-b875-d77de2145c4f/exec-ce630d25-e79d-4031-9df4-9fb2943db9a4.png",
+      "sha256": "94b6ba64115f7c1c29ed39e175e4cdc40a9a7ffa7a8739819d0bf8d6556ede32",
+      "width": 1254,
+      "height": 1254,
+      "qa": {
+        "singleFace": true,
+        "mistIdentity": true,
+        "noStrayMarks": true,
+        "singleEyesAndMouth": true,
+        "closedMouth": true,
+        "visuallyStableCentres": true,
+        "leftUpperLidLowered": true,
+        "rightEyeMildlyRaised": true,
+        "subtleInternalUpLeftGaze": true,
+        "neutralAngledMouthWithoutSmile": true,
+        "noCrossfadeGhosts": true,
+        "noWholeEyeRotation": true
+      },
+      "limitations": "Up-left attention is deliberately subtle in the pupil-free C-eye design. Native hand-shaped contours and mouth registration vary slightly; final animation will need deliberate drawn registration.",
+      "repairs": [
+        {
+          "prompt": "prompts/warm-to-thoughtful-3-r1.txt",
+          "generatedSource": "<LOCAL_HOME>/.codex/generated_images/01a0ef9e-b921-7e61-b875-d77de2145c4f/exec-9a48545f-a956-490b-ab59-a281be2f1ba6.png",
+          "retainedFile": "images/revisions/warm-to-thoughtful-3-gaze-repair-before-lid-restore.png",
+          "reason": "First final pose gaze remained too faint. Apertures were adjusted up-left, but this reopened the lowered left lid."
+        },
+        {
+          "prompt": "prompts/warm-to-thoughtful-3-r2.txt",
+          "reason": "Restore lowered left upper lid while retaining the subtle internal up-left aperture bias. Selected final output."
+        }
+      ],
+      "initialVariant": {
+        "prompt": "prompts/warm-to-thoughtful-3.txt",
+        "generatedSource": "<LOCAL_HOME>/.codex/generated_images/01a0ef9e-b921-7e61-b875-d77de2145c4f/exec-0a553cda-a589-4806-b8a4-e0f1eac04c1a.png",
+        "retainedFile": "images/revisions/warm-to-thoughtful-3-before-gaze-repair.png"
+      }
+    }
+  ],
+  "qa": {
+    "inspectedEverySelectedImage": true,
+    "tripleReviewedInOrder": true,
+    "nativeDimensionsPreserved": true,
+    "exactGeneratedBytesCopied": true,
+    "noCodeDrawnOrTransformedArt": true,
+    "actingSequence": "Warm open eyes and small smile; then left lid slightly lowers and mouth relaxes while gaze remains forward; finally mild up-left aperture bias, lowered left lid, slightly raised right lid and short angled neutral mouth."
+  },
+  "limitations": "Three static concept key poses, not a full animation. Native ImageGen preserves the face layout visually, with small contour and mouth registration differences. The pupil-free up-left gaze is restrained. Full drawn in-betweens and precise animation registration remain outside this pass."
+}

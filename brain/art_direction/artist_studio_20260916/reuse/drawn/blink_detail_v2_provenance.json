@@ -1,0 +1,52 @@
+{
+  "tool": "built-in image_gen",
+  "generated_path": "C:\\Users\\hssil\\.codex\\generated_images\\01a0ca64-e36c-7dc1-9ca2-89e065dae246\\exec-ec66b1f5-1c5b-4c5d-acff-792f0accc059.png",
+  "saved_path": "/brain/art_direction/artist_studio_20260916/reuse/drawn/sheets/blink_detail_v2.png",
+  "prompt": "Use case: precise-object-edit. Production hand-drawn sprite sheet for two minimalist robot-eye blink animations. Images 1 and 2 are references for the hook eye and chevron eye identities. Improve their animation, especially the missing intermediate reopening poses. Do NOT reproduce their existing six-cell layouts.\n\nOUTPUT: one square sheet containing EXACTLY 16 separate eye drawings in a precise 4-column by 4-row grid of equal square cells. Every cell contains ONE eye. No grid lines, captions, numbers, text, shadow, glow, texture or other objects. Read the first eight poses left to right through rows 1-2 as HOOK. Read the next eight poses through rows 3-4 as CHEVRON. Opaque pure WHITE #ffffff background covers the entire image. WHITE PAPER, NOT TRANSPARENCY. Flat opaque turquoise #5eeadd ink, smooth antialiasing, rounded ends, exactly the same brush thickness in all 16 poses. No gradients, no 3D, no shine. Strong simple clean silhouette.\n\nREGISTRATION: each eye centered in its cell, lower-lid baseline fixed, full eye occupies about 58% of cell width. Avoid size drift. Horizontal width stays substantially consistent through closing and reopening, at least 85% width even at closed. Animate lids, not overall scale. Closed poses must be single strokes, not filled wedges. The first and eighth pose of each eye must match exactly for a seamless return to rest.\n\nHOOK, rows 1-2, eight poses:\n1 rest: angled top arm descends to a right corner, then curls into a rounded lower hooked lid open on the left, like reference 1;\n2 anticipation: upper lid lifts only a little, lower hook and corners stay anchored;\n3 closing: upper arm lowers toward lower hook, aperture around half rest; maintain angled top and round lower lid;\n4 near_closed: aperture about 12%; upper lid almost meets lower hook, but retain a thin curved slit and the right corner;\n5 closed: lids merged to ONE shallow slightly slanted curved lid stroke that follows the same lower hook baseline, tucked right corner, no extra arm;\n6 opening_low: tiny curved slit opens at LEFT, top arm just lifting off, lower hook fixed; this must be a true intermediate between 5 and 7, NOT already mostly open;\n7 opening: aperture around 55%, diagonal upper arm unfolds while round lower hooked lid still anchors;\n8 settled: exactly the original hook from pose 1.\n\nCHEVRON, rows 3-4, eight poses:\nThis eye starts as a rounded sideways > mark. DO NOT shrink the whole chevron then suddenly replace it with a smile. Articulate both arms continuously about their shared right corner. Keep the right corner visible until near-closed.\n1 rest: sideways >, rounded ends, reference 2 identity;\n2 anticipation: upper arm lifts slightly and both arms subtly soften, same width;\n3 closing: upper left end moves DOWN and lower left end moves UP, narrowing the angle to half; arms bend slightly and right junction softens, same horizontal span;\n4 near_closed: upper and lower arms are nearly touching, small shallow angled slit remains, a visible folded corner on the right; it should read as a very narrow >, NOT a tiny scaled >;\n5 closed: two arms have met into ONE almost horizontal gently slanted lid stroke with a subtle tucked bend at the RIGHT end. No U-shaped smile, no large change of axis or position;\n6 opening_low: unfold this SAME right-hand bend to reveal a narrow 20% angle, upper arm separates just slightly from lower; same horizontal extent;\n7 opening: arms unfurl to 60% angle, recognizable relaxed chevron with rounded right corner;\n8 settled: exactly original chevron from pose 1.\n\nEach sequence needs distinct designed contours, believable overlap of motion, and closely related adjacent silhouettes. No accidental duplicate eyelids, extra eye, disconnected stray cyan flecks, or decorative parts.",
+  "references": [
+    "/brain/art_direction/artist_studio_20260916/reuse/drawn/sheets/hook.png",
+    "/brain/art_direction/artist_studio_20260916/reuse/drawn/sheets/chevron.png"
+  ],
+  "grid": {
+    "columns": 4,
+    "rows": 4
+  },
+  "sequences": [
+    {
+      "id": "hook",
+      "frameOffset": 0,
+      "frameCount": 8,
+      "poses": [
+        "rest",
+        "anticipation",
+        "closing",
+        "near_closed",
+        "closed",
+        "opening_low",
+        "opening",
+        "settled"
+      ]
+    },
+    {
+      "id": "chevron",
+      "frameOffset": 8,
+      "frameCount": 8,
+      "poses": [
+        "rest",
+        "anticipation",
+        "closing",
+        "near_closed",
+        "closed",
+        "opening_low",
+        "opening",
+        "settled"
+      ]
+    }
+  ],
+  "visual_verdict": {
+    "accepted": true,
+    "observed": "Sixteen distinct poses in the requested order on white. Hook now includes a narrow reopening slit followed by a wider aperture. Chevron arms articulate gradually, preserve horizontal span and meet in a single shallow lid instead of switching into a smile arc. No extra drawings or obvious edge flecks.",
+    "limitations": "Generated rest and settled drawings are not pixel-identical; use the rest cel again for the settled playback beat to prevent loop drift. Slight variation in stroke weight and registration remains and requires the atlas's shared alignment, not separate per-frame stretching.",
+    "recommended_playback": "One shared translation/scale per family. Keep lower-lid baseline registered across all eight cells. Use rest at settle for a stable loop."
+  }
+}

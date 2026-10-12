@@ -1,0 +1,487 @@
+{
+  "status": "preliminary_conditional_mechanism_contracts",
+  "models": {
+    "strict_independent_pickups": {
+      "assumption": "Three1:1 carrier-relative bevel pickups; beta=alpha-q0. Actual signs and offsets must be embodied.",
+      "joint_order": [
+        "q0",
+        "hip",
+        "knee",
+        "wheel"
+      ],
+      "A_motor_from_joint": [
+        [
+          2.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          2.0,
+          2.0,
+          0.0,
+          0.0
+        ],
+        [
+          2.0,
+          2.0,
+          2.0,
+          0.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      ],
+      "R_joint_from_motor": [
+        [
+          0.5,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          -0.5,
+          0.5,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -0.5,
+          0.5,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          -0.5,
+          1.0
+        ]
+      ],
+      "motor_torque_from_joint": [
+        [
+          0.5,
+          -0.5,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.5,
+          -0.5,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.5,
+          -0.5
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "virtual_work_test_max_error": 1.3322676295501878e-15,
+      "validation": "Algebra and ideal power only; no physical packaging or performance assertion",
+      "motor_order": [
+        "mY",
+        "mH",
+        "mK",
+        "mW"
+      ],
+      "first_axis_scope": "First-axis carrier with the stated ideal pickup signs; yaw/roll geometry must be chosen explicitly."
+    },
+    "internal_three_motor_plate": {
+      "assumption": "H/K/W housings rotate with the fully enclosed first-joint plate; equal open belts.",
+      "joint_order": [
+        "q0",
+        "hip",
+        "knee",
+        "wheel"
+      ],
+      "A_motor_from_joint": [
+        [
+          2.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          2.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          2.0,
+          2.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      ],
+      "R_joint_from_motor": [
+        [
+          0.5,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.5,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -0.5,
+          0.5,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          -0.5,
+          1.0
+        ]
+      ],
+      "motor_torque_from_joint": [
+        [
+          0.5,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.5,
+          -0.5,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.5,
+          -0.5
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "virtual_work_test_max_error": 8.881784197001252e-16,
+      "validation": "Algebra and ideal power only; no physical packaging or performance assertion",
+      "motor_order": [
+        "mY",
+        "mH",
+        "mK",
+        "mW"
+      ],
+      "first_axis_scope": "First-axis carrier with the stated ideal pickup signs; yaw/roll geometry must be chosen explicitly."
+    },
+    "internal_HK_fixed_W_hybrid": {
+      "assumption": "Only the fixed-body continuous wheel channel crosses first joint through1:1 pickup.",
+      "joint_order": [
+        "q0",
+        "hip",
+        "knee",
+        "wheel"
+      ],
+      "A_motor_from_joint": [
+        [
+          2.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          2.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          2.0,
+          2.0,
+          0.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      ],
+      "R_joint_from_motor": [
+        [
+          0.5,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.5,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -0.5,
+          0.5,
+          0.0
+        ],
+        [
+          -0.5,
+          0.0,
+          -0.5,
+          1.0
+        ]
+      ],
+      "motor_torque_from_joint": [
+        [
+          0.5,
+          0.0,
+          0.0,
+          -0.5
+        ],
+        [
+          0.0,
+          0.5,
+          -0.5,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.5,
+          -0.5
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "virtual_work_test_max_error": 1.7763568394002505e-15,
+      "validation": "Algebra and ideal power only; no physical packaging or performance assertion",
+      "motor_order": [
+        "mY",
+        "mH",
+        "mK",
+        "mW"
+      ],
+      "first_axis_scope": "First-axis carrier with the stated ideal pickup signs; yaw/roll geometry must be chosen explicitly."
+    },
+    "internal_pitch_differential_hybrid": {
+      "assumption": "Equal side gears; carrier drives h; sideA drives absolute tibia via1:1 belt; fixed-body wheel feed.",
+      "joint_order": [
+        "q0",
+        "hip",
+        "knee",
+        "wheel"
+      ],
+      "A_motor_from_joint": [
+        [
+          2.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          2.0,
+          2.0,
+          0.0
+        ],
+        [
+          0.0,
+          2.0,
+          -2.0,
+          0.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      ],
+      "R_joint_from_motor": [
+        [
+          0.5,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.25,
+          0.25,
+          0.0
+        ],
+        [
+          -0.0,
+          0.25,
+          -0.25,
+          -0.0
+        ],
+        [
+          -0.5,
+          -0.5,
+          0.0,
+          1.0
+        ]
+      ],
+      "motor_torque_from_joint": [
+        [
+          0.5,
+          0.0,
+          0.0,
+          -0.5
+        ],
+        [
+          0.0,
+          0.25,
+          0.25,
+          -0.5
+        ],
+        [
+          -0.0,
+          0.25,
+          -0.25,
+          -0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "virtual_work_test_max_error": 1.7763568394002505e-15,
+      "validation": "Algebra and ideal power only; no physical packaging or performance assertion",
+      "motor_order": [
+        "mY",
+        "mA",
+        "mB",
+        "mW"
+      ],
+      "first_axis_scope": "First-axis carrier with the stated ideal pickup signs; yaw/roll geometry must be chosen explicitly."
+    },
+    "strict_spatial_typeI_duplicate_wheel": {
+      "assumption": "Published TypeI first3rows at[1,1,2,2]; fourth row is OUR proposed identical independent A2 transport for wheel. No extra motor reduction implied.",
+      "source": "https://doi.org/10.1109/TRO.2025.3543262",
+      "continuous_wheel_note": "Literal duplicated2:1 route halves wheel speed; a different real ratio or speed-up needs a new contract.",
+      "joint_order": [
+        "q0",
+        "hip",
+        "knee",
+        "wheel"
+      ],
+      "A_motor_from_joint": [
+        [
+          1.0,
+          2.0,
+          0.0,
+          0.0
+        ],
+        [
+          -1.0,
+          2.0,
+          0.0,
+          0.0
+        ],
+        [
+          -1.0,
+          2.0,
+          2.0,
+          0.0
+        ],
+        [
+          -1.0,
+          2.0,
+          2.0,
+          2.0
+        ]
+      ],
+      "R_joint_from_motor": [
+        [
+          0.5,
+          -0.5,
+          0.0,
+          0.0
+        ],
+        [
+          0.25,
+          0.25,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -0.5,
+          0.5,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          -0.5,
+          0.5
+        ]
+      ],
+      "motor_torque_from_joint": [
+        [
+          0.5,
+          0.25,
+          0.0,
+          0.0
+        ],
+        [
+          -0.5,
+          0.25,
+          -0.5,
+          -0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.5,
+          -0.5
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.5
+        ]
+      ],
+      "virtual_work_test_max_error": 1.7763568394002505e-15,
+      "validation": "Algebra and ideal power only; no physical packaging or performance assertion",
+      "motor_order": [
+        "a0",
+        "a1",
+        "a2",
+        "a3"
+      ],
+      "first_axis_scope": "Abduction/adduction in the source paper; yaw reorientation is not verified here."
+    }
+  }
+}

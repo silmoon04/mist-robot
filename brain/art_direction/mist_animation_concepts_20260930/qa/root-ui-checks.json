@@ -1,0 +1,53 @@
+{
+  "schema": "mist-animation-feedback-ui-qa",
+  "version": 1,
+  "scope": "Real local feedback UI with current concept catalog; static image previews only.",
+  "checks": {
+    "rows": 12,
+    "imageElements": 36,
+    "desktopViewport": [
+      1440,
+      900
+    ],
+    "desktopPageWidth": 1425,
+    "searchThinkingResults": 2,
+    "developFilterResults": 1,
+    "ideaChoiceAndPoseNoteSeparate": true,
+    "reloadPreservesFeedback": true,
+    "escapeReturnsFocusTo": "note-thinking-glance__2",
+    "nextPoseTitle": "Thinking / Reconsider",
+    "downloadCreatedAndReadBack": true,
+    "downloadEventHookReported": false,
+    "downloadSchema": "mist-animation-concepts-review",
+    "downloadRecords": 2,
+    "phoneViewport": [
+      390,
+      844
+    ],
+    "phonePageWidth": 375,
+    "phoneRowClientWidth": 345,
+    "phoneRowScrollWidth": 600,
+    "phoneDialogClientWidth": 351,
+    "phoneDialogScrollWidth": 351,
+    "phoneImageSize": [
+      351,
+      351
+    ],
+    "testFeedbackRestored": true,
+    "temporaryViewportReset": true,
+    "fullCatalogBrokenLoadedImagesAfterAssembly": []
+  },
+  "stateTests": {
+    "passed": 10,
+    "failed": 0,
+    "file": "qa/ui-tests-review-state.test.js"
+  },
+  "screenshots": [
+    "qa/phone-inspector.jpg"
+  ],
+  "limitations": [
+    "Three key poses do not validate motion smoothness, live voice timing or final phone-face registration.",
+    "Native browser download event hook timed out; the actual JSON file was saved and its schema, records and middle-pose metadata were validated.",
+    "Lazy images outside the browser viewport were checked through native asset decode and independent image review rather than assumed loaded."
+  ]
+}

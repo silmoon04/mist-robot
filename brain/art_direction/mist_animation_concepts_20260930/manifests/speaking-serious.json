@@ -1,0 +1,86 @@
+{
+  "id": "speaking-serious",
+  "tool": "built-in image_gen",
+  "images": [
+    {
+      "id": "speaking-serious__1",
+      "file": "images/speaking-serious-1.png",
+      "prompt": "prompts/speaking-serious-1-repair-1.txt",
+      "generatedSource": "<LOCAL_HOME>/.codex/generated_images/01a0ef9e-501d-72d2-9532-fb2d818e6686/exec-f890b151-fab9-4495-8edf-d53ea66af84a.png",
+      "sha256": "9408deb4c4eb05946fb6a2eb3e7d2f69b2a17f045c2563023026519e74006693",
+      "width": 1254,
+      "height": 1254,
+      "qa": {
+        "singleFace": true,
+        "mistIdentity": true,
+        "noStrayMarks": true,
+        "neutralMouthCorners": true,
+        "calmLoweredUpperLids": true,
+        "closedRestMouth": true,
+        "nativeBytesPreserved": true
+      },
+      "limitations": "A single upper-lid repair made the calm lowered-lid attitude more explicit. This is a static resting shape reference; temporal interpolation has not been assessed."
+    },
+    {
+      "id": "speaking-serious__2",
+      "file": "images/speaking-serious-2.png",
+      "prompt": "prompts/speaking-serious-2.txt",
+      "generatedSource": "<LOCAL_HOME>/.codex/generated_images/01a0ef9e-501d-72d2-9532-fb2d818e6686/exec-5c9d463d-58ae-47d0-a373-dc72d1b64307.png",
+      "sha256": "ad4ba8b6ab3c5f33059667bd40463222b98322463b140d8cf90db56a69cf2fff",
+      "width": 1254,
+      "height": 1254,
+      "qa": {
+        "singleFace": true,
+        "mistIdentity": true,
+        "noStrayMarks": true,
+        "neutralMouthCorners": true,
+        "sameEyesAndGaze": true,
+        "flatUpperMouthEdge": true,
+        "darkMouthInterior": true,
+        "noTeethTongueOrProtrusions": true,
+        "nativeBytesPreserved": true
+      },
+      "limitations": "The soft-vowel outline has a gently curved lower edge and restrained level corners. It is a shape reference rather than a phoneme-specific viseme."
+    },
+    {
+      "id": "speaking-serious__3",
+      "file": "images/speaking-serious-3.png",
+      "prompt": "prompts/speaking-serious-3.txt",
+      "generatedSource": "<LOCAL_HOME>/.codex/generated_images/01a0ef9e-501d-72d2-9532-fb2d818e6686/exec-64af6025-b10b-4b8e-aaf3-944972c355b6.png",
+      "sha256": "942d5bb70a1328dd94192e2ee86faef9730733dbd64073db2c99823672d4df3b",
+      "width": 1254,
+      "height": 1254,
+      "qa": {
+        "singleFace": true,
+        "mistIdentity": true,
+        "noStrayMarks": true,
+        "neutralMouthCorners": true,
+        "sameEyesAndGaze": true,
+        "roundedMouthDistinctFromSoftVowel": true,
+        "darkMouthInterior": true,
+        "noTeethTongueOrProtrusions": true,
+        "nativeBytesPreserved": true
+      },
+      "limitations": "The rounded mouth is near circular and narrower than the soft vowel. It is a static articulation reference; audio timing has not been assessed."
+    }
+  ],
+  "repairCount": 1,
+  "revisions": [
+    {
+      "file": "images/revisions/speaking-serious-1-initial.png",
+      "prompt": "prompts/speaking-serious-1.txt",
+      "generatedSource": "<LOCAL_HOME>/.codex/generated_images/01a0ef9e-501d-72d2-9532-fb2d818e6686/exec-750a4482-8bc8-4977-aa26-5d1686bb88dd.png",
+      "reason": "Upper C-eye lids initially remained too close to the fully round anchor aperture."
+    }
+  ],
+  "independentVisualQa": "Pass for expression shapes, one-face identity, stable eye placement and scale, neutral mouth attitude, dark interiors, and absence of stray marks or protrusions.",
+  "paletteCheck": {
+    "method": "Read-only RGB average of bright turquoise samples on a 5-pixel grid within the shared eye region; no image transform or editing.",
+    "anchorAverageRgb": [73.7, 237.0, 242.5],
+    "restAverageRgb": [61.6, 252.4, 253.1],
+    "softVowelAverageRgb": [52.3, 252.5, 253.1],
+    "roundedVowelAverageRgb": [57.9, 252.7, 253.0],
+    "note": "The generated serious triple is slightly brighter and more saturated in cyan than the shared anchor; exact pixel-level palette matching is not established."
+  },
+  "limitations": "Three independently generated native static key-pose concepts for future audio-driven serious speech. The triple preserves calm eye attitude and neutral mouth attitude, but it is not a full viseme family, animation, repeating loop, or playback-synchronised runtime asset. The triple is slightly brighter and more saturated in cyan than the anchor. Minor generative contour and faint texture variations remain possible."
+}

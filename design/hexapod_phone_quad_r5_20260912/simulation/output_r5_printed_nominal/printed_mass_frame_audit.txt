@@ -1,0 +1,28 @@
+R5 printed assembly mass and frame audit
+
+Status: audit_pass. 921 checks passed; 0 failed checks; 0 errors.
+Assembly: 135 parts, 76 printed instances, 34 print SKUs, 14 links.
+Assembled mass: 2.756961896899023 kg.
+Model deposition mass: 1.056056414315527 kg.
+High fasteners: 581 pieces totaling 0.3909911866282129 kg.
+Wiring allowance: 0.150 kg. The old 50 g fastener allowance is excluded.
+Servos: 13 at 0.055 kg each.
+
+Printed COM receives R c + t and its COM tensor receives R I R^T once. Link tensors are independently summed at the link origin and then translated to the combined COM.
+Deposited PLA is checked against model-only production properties. No solid-density formula, box-inertia approximation, repeated GCode inverse transform or repeated layer correction is applied.
+The frozen configuration has a 70 mm coxa, 90 mm femur and 105 mm tibia. All 13 URDF joint origins match the configured dimensions and azimuths.
+Hip and knee servo cases face inward; their ownership, bounds, COM side and cap positions pass. All eight analytical hip/knee clamp screw groups have the expected owning link and positive local-Z axis.
+CAD assembly frames follow neutral yaw 0 degrees, hip 30 degrees and knee 75 degrees. A separate read-only Bullet frame probe verifies operating yaw 0 degrees, hip 30 degrees and knee 81 degrees on all 14 links. Yaw operating limits are -19 to 19 degrees.
+URDF masses, COMs, complete inertia tensors, CAD visual frames and landscape phone collision dimensions pass. No dynamics steps were run by this audit.
+
+Checks frozen deposition properties through print-STL to link transforms, assembled tensors, distributed high fastener mass, URDF values, CAD visual frames, landscape phone collision and Bullet kinematic probes without stepping. GCode integration is covered by a separate source audit. Physical mass, fit and walking are not measured here.
+
+Bound source files: 138. CAD visual link comparisons: 14.
+Audit JSON SHA256: 6354e3948cf7dbe2f6ff7ee5313bc272360d8f3b33e39464916343f914ac0180
+printed_manifest SHA256: b655f1b4db8dc20fcc87ff4fe330507580c74c166baa56ae4e3d60a9604d712a
+solid_manifest SHA256: 67f0d5e3bfb633414722b17305cef4212ca7f8fa753aa922a252bc383306ad3d
+production_properties SHA256: ab1bf424b18f5d8d96ab792fa2a05b18a8f186988033876dbc758074ee76c7f8
+urdf SHA256: 4988501c21b18eaee46c8bd0928f54aff375a38b122e02283338d20cbe4373d8
+fastener_properties SHA256: 355deb3da703b8f81d4d7ff9f0ed513f0da3718b9d0eef8b3193e9007beaae6b
+audit_source SHA256: 7ba0b93a6cd0318cae21012a81319583ec6d66cfd968fe66587f1c966a000105
+reused_frame_probe_source SHA256: 5a213c9c59717d2dfe6a107a405ed797753d038e38858854d68210c6676617ef

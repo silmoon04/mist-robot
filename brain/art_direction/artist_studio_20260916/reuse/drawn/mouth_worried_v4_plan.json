@@ -1,0 +1,225 @@
+{
+  "family": "worried",
+  "destination": "sheets/mouth_worried_v4.png",
+  "imageSize": [
+    1536,
+    1024
+  ],
+  "columns": 4,
+  "rows": 2,
+  "order": [
+    "rest",
+    "release",
+    "small_AA",
+    "AA",
+    "EH",
+    "EE",
+    "LNT",
+    "wide_close"
+  ],
+  "cellWidth": 384,
+  "cellHeight": 512,
+  "logicalCellWidth": 221.75,
+  "sourceScale": 0.5774739583333334,
+  "registration": "Preserve all relative pose sizes using one shared sourceScale. Ink boxes are measured without antialias padding. Register each extracted crop around its horizontal center and selected common upper-mouth anchor; do not independently normalize pose width or height.",
+  "frames": [
+    {
+      "pose": "rest",
+      "column": 0,
+      "row": 0,
+      "cell": [
+        0,
+        0,
+        384,
+        512
+      ],
+      "inkBBoxXYXY": [
+        105,
+        290,
+        331,
+        343
+      ],
+      "cropAnchorTopCenter": [
+        113,
+        0
+      ],
+      "holes": 0,
+      "connectedComponents": 1
+    },
+    {
+      "pose": "release",
+      "column": 1,
+      "row": 0,
+      "cell": [
+        384,
+        0,
+        384,
+        512
+      ],
+      "inkBBoxXYXY": [
+        542,
+        250,
+        629,
+        374
+      ],
+      "cropAnchorTopCenter": [
+        43.5,
+        0
+      ],
+      "holes": 0,
+      "connectedComponents": 1
+    },
+    {
+      "pose": "small_AA",
+      "column": 2,
+      "row": 0,
+      "cell": [
+        768,
+        0,
+        384,
+        512
+      ],
+      "inkBBoxXYXY": [
+        907,
+        231,
+        1009,
+        393
+      ],
+      "cropAnchorTopCenter": [
+        51,
+        0
+      ],
+      "holes": 0,
+      "connectedComponents": 1
+    },
+    {
+      "pose": "AA",
+      "column": 3,
+      "row": 0,
+      "cell": [
+        1152,
+        0,
+        384,
+        512
+      ],
+      "inkBBoxXYXY": [
+        1270,
+        213,
+        1396,
+        407
+      ],
+      "cropAnchorTopCenter": [
+        63,
+        0
+      ],
+      "holes": 0,
+      "connectedComponents": 1
+    },
+    {
+      "pose": "EH",
+      "column": 0,
+      "row": 1,
+      "cell": [
+        0,
+        512,
+        384,
+        512
+      ],
+      "inkBBoxXYXY": [
+        118,
+        676,
+        318,
+        761
+      ],
+      "cropAnchorTopCenter": [
+        100,
+        0
+      ],
+      "holes": 0,
+      "connectedComponents": 1
+    },
+    {
+      "pose": "EE",
+      "column": 1,
+      "row": 1,
+      "cell": [
+        384,
+        512,
+        384,
+        512
+      ],
+      "inkBBoxXYXY": [
+        476,
+        685,
+        706,
+        749
+      ],
+      "cropAnchorTopCenter": [
+        115,
+        0
+      ],
+      "holes": 0,
+      "connectedComponents": 1
+    },
+    {
+      "pose": "LNT",
+      "column": 2,
+      "row": 1,
+      "cell": [
+        768,
+        512,
+        384,
+        512
+      ],
+      "inkBBoxXYXY": [
+        875,
+        692,
+        1041,
+        743
+      ],
+      "cropAnchorTopCenter": [
+        83,
+        0
+      ],
+      "holes": 0,
+      "connectedComponents": 1
+    },
+    {
+      "pose": "wide_close",
+      "column": 3,
+      "row": 1,
+      "cell": [
+        1152,
+        512,
+        384,
+        512
+      ],
+      "inkBBoxXYXY": [
+        1211,
+        689,
+        1458,
+        741
+      ],
+      "cropAnchorTopCenter": [
+        123.5,
+        0
+      ],
+      "holes": 0,
+      "connectedComponents": 1
+    }
+  ],
+  "analysis": {
+    "pixelMask": "red < 170 and green > 150 and blue > 150 and green-red > 65",
+    "backgroundCornerRGB": [
+      253,
+      253,
+      253
+    ],
+    "backgroundPixelsAbove245Fraction": 0.9988116539124738,
+    "medianInkRGB": [
+      55,
+      225,
+      232
+    ]
+  }
+}

@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+
+<html>
+<head>
+<title>KHK ユーザーログイン</title>
+<script src="/khkmember/js/sha256.js" type="text/javascript"></script>
+<script type="text/javascript">
+<!--
+
+	var MSG_LOGIN_001 = "「ユーザーID」を入力してください。"; // "「ユーザーID」をご入力ください。"
+	var MSG_LOGIN_002 = "「パスワード」を入力してください。"; // "「パスワード」をご入力ください。";
+	var MSG_LOGIN_003 = "クッキーが無効のため保存できません。"; // "クッキーが無効のため保存できません。";
+
+
+	/* onload時初期設定 */
+	function init_set(){
+		  //window.resizeTo(700, 430);
+		  //window.moveTo(0, 0);
+
+		  document.loginFrm.j_username.focus();
+
+	}
+
+
+	/* 入力項目チェック 後submit */
+	function checkInput(){
+		var obj = document.loginFrm;
+
+		if (!checkEssential()) {
+			return false;
+		}
+
+		// ユーザーID取得
+
+		var user_id = document.getElementById("j_username").value;
+		// パスワードはハッシュ化(SHA256)する
+		var pword = convertPword(user_id, obj.j_password_disp.value);
+		obj.j_password.value = pword;
+
+		// 自動ログインチェックボックスがONの場合はユーザーIDをクッキーに保存
+
+		// 2014.3.6 add パスワードも保存
+
+		if(obj.checkCookie.checked){
+			setCookie("khk_uid", user_id);
+			setCookie("khk_pass", pword);
+		}
+	}
+
+
+	// 必須項目チェック
+	function checkEssential(){
+		var obj = document.loginFrm;
+		if (!requiredValidator(obj.j_username, true)) {
+			alert(MSG_LOGIN_001);
+			obj.j_username.focus();
+			obj.j_username.select();
+			return false;
+		}
+		if (!requiredValidator(obj.j_password_disp, false)) {
+			alert(MSG_LOGIN_002);
+			obj.j_password_disp.focus();
+			obj.j_password_disp.select();
+			return false;
+		}
+		return true;
+	}
+
+	// 空文字列チェック
+	function requiredValidator(element, trim) {
+		var val = "";
+		if (element) {
+			val += element.value;
+		} else {
+			return false;
+		}
+		if (trim) {
+			val = Trim(val);
+		}
+		if (val.length==0) {
+			return false;
+		}
+		return true;
+	}
+
+	// Trim関数
+	function Trim(value){
+		var strRt;
+		strRt = LTrim(value);
+		strRt = RTrim(strRt);
+		return strRt;
+	}
+
+	// LTrim関数
+	function LTrim(value){
+		var i;
+		for (i = 0; i < value.length; i ++){
+			if (value.charAt(i) != " " && value.charAt(i) != "　"){
+				return value.substring( i, value.length);
+			}
+		}
+		return "";
+	}
+
+	// RTrim関数
+	function RTrim(value){
+		var i;
+		for (i = value.length - 1; i >= 0; i --){
+			if (value.charAt(i) != " " && value.charAt(i) != "　"){
+				return value.substring( 0, i + 1);
+			}
+		}
+		return "";
+	}
+
+
+/* クッキー書き込み関数 */
+function setCookie(key_name, value){
+	var ex = "Mon, 31 Dec 2040 23:59:59 GMT;";
+	document.cookie = escape(key_name) + "=" + escape(value) + ";path=/;expires=" + ex;
+}
+
+/* クッキー読み込み関数 */
+function getCookie(key_name){
+	var c_data = "";
+	if(key_name){
+		c_data = document.cookie + ";";
+		c_data = unescape(c_data);
+		var n_point = c_data.indexOf(key_name); //（1）
+
+		var v_point = c_data.indexOf("=",n_point) + 1; //（2）
+
+		var end_point = c_data.indexOf(";",n_point); //（3）
+
+		if(n_point > -1){
+			c_data = c_data.substring(v_point,end_point);
+		}else{
+			c_data = "";
+		}
+	}
+	return c_data;
+}
+/* クッキー有効判定 */
+function validCookie(){
+	var obj = document.loginFrm;
+	if(obj.checkCookie.checked){
+		if(!navigator.cookieEnabled) {
+			alert(MSG_LOGIN_003);
+		}
+	}
+}
+
+/* salt and hash */
+function convertPword(user_id, pword){
+	// make 'salt' (get SHA256-Hash from 'user_id')
+	var shaObj_uid =  new jsSHA(user_id, "ASCII");
+	var salt = shaObj_uid.getHash("SHA-256", "HEX");
+
+	// make hashed password
+	var shaObj_pass = new jsSHA(salt + pword, "ASCII");
+	var sha256digest = shaObj_pass.getHash("SHA-256", "HEX");
+
+	// to do more stretching …
+
+	return sha256digest;
+}
+
+/* 登録せずに注文 */
+function order_Click() {
+
+	var obj = document.loginFrm;
+	
+	obj.action = "../sheet/hyojunCart.do?mode=order&lang=ja";
+	obj.submit();
+	
+}
+
+//-->
+</script>
+</head>
+<body onLoad="init_set()">
+
+<!-- LOCALE :ja_JP /country :日本<br>
+request.getParameter('lang') :en -->
+
+<script type="text/javascript" language="javascript">
+<!--
+
+// cookieに保存されているユーザーIDとパスワードを取得
+var user_id = getCookie("khk_uid");
+var pword = "";
+var Locale = "en";
+
+var ref = document.referrer;
+
+// 注文時
+if (ref.indexOf("hyojunCart") > 0){
+	pword = "";
+}else{
+	pword = getCookie("khk_pass");
+}
+
+
+if(user_id.length > 0 && pword.length > 0){
+	// ユーザーIDとパスワードが保存されていた場合は画面表示をせずにsubmit
+	document.write("<form id='loginFrm' name='loginFrm' method='post' action='j_security_check'>");
+	document.write("<input id='j_username' name='j_username' type='hidden' value='" + user_id + "'>");
+	document.write("<input id='j_password' name='j_password' type='hidden' value='" + pword + "'>");
+	document.write("</form>");
+
+	document.loginFrm.submit();
+
+}else{
+
+	
+	if(Locale == 'en' || Locale == 'zh_CN'){
+		
+		// ユーザーIDとパスワードが保存されていない場合はログイン画面を表示する
+		var tmp = "<form id='loginFrm' name='loginFrm' method='post' action='j_security_check?lang=en' onSubmit='return checkInput();'>\n";
+
+		tmp = tmp + "<table width='100%' height='90%' border='0'>\n";
+		tmp = tmp + "<tr><td align='center' valign='middle'>\n";
+
+		tmp = tmp + "<table width='460px' height='230px' border='0' bordercolor='#c0c0c0' bgcolor='#eeeeee' cellspacing='0'\n";
+		tmp = tmp + "style='border-style: solid; border-width: 1px; color: black; vertical-align:middle; ";
+		tmp = tmp + "background-image: url(/khkmember/img/logo_banner_khk.gif); background-repeat: no-repeat;'>\n";
+		tmp = tmp + "<tr><td align='center'>\n";
+
+		tmp = tmp + "<table border='0' width='100%' height='100%'>\n";
+		tmp = tmp + "<tr><td nowrap align='center' height='20px'></td></tr>\n";
+		tmp = tmp + "<tr><td nowrap align='center'>\n";
+		tmp = tmp + "	<div style='font-size: 15pt; font-weight: bold;'>KHK User Login</div>\n";
+		tmp = tmp + "</td></tr>\n";
+
+		tmp = tmp + "<tr><td nowrap align='center'>\n";
+		tmp = tmp + "	<table><tr><td style='font-size:11pt';>User ID</td>\n";
+		tmp = tmp + "	<td><input id='j_username' name='j_username' type='text' maxlength='40' size='30' style='ime-mode:disabled; width:200px;'></td></tr>\n";
+		tmp = tmp + "	<tr><td style='font-size:11pt';>Password</td>\n";
+		tmp = tmp + "	<td><input id='j_password_disp' name='j_password_disp' type='password' maxlength='128' size='30' style='ime-mode:disabled; width:200px;'></td></tr></table>\n";
+		tmp = tmp + "</td></tr>\n";
+
+		tmp = tmp + "<tr><td nowrap align='center' height='30px'>\n";
+		tmp = tmp + "	<div style='font-size: 10pt;'>\n";
+		tmp = tmp + "	<input type='checkbox' id='checkCookie' name='checkCookie' onClick='validCookie();' checked />\n";
+		tmp = tmp + "	Skip input next time (saved in cookies)\n";
+		tmp = tmp + "	</div>\n";
+		tmp = tmp + "</td></tr>\n";
+
+		tmp = tmp + "<tr><td nowrap align='center'>\n";
+		tmp = tmp + "	<input id='btnLogin' type='submit' value='Login' style='width: 105px; height: 30px;'>&nbsp;\n";
+		tmp = tmp + "	<input id='btnCancel' type='reset' value='Clear' style='width: 105px; height: 30px;'>\n";
+		tmp = tmp + "</td></tr>\n";
+
+		tmp = tmp + "<tr><td nowrap align='center'>\n";
+		tmp = tmp + "	<div style='font-size: 11pt; font-weight: bold;'>\n";
+		tmp = tmp + "	<a href='https://khkgears.co.jp/khkmember/register/inputProvisional.do?lang=en' target='input'>If you are not registered, click here.</a>\n";
+		tmp = tmp + "	</div>\n";
+		tmp = tmp + "</td></tr>\n";
+		tmp = tmp + "</table>\n";
+
+		tmp = tmp + "</td></tr>\n";
+		tmp = tmp + "</table>\n";
+
+		tmp = tmp + "<div align='center' style='font-size: 10pt; width:460px;'>\n";
+		tmp = tmp + "<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n";
+		tmp = tmp + "<a href='https://khkgears.co.jp/khkmember/support/reissuePass.do?lang=en' target='_blank'>Forgot password?</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n";
+		tmp = tmp + "<a href='https://khkgears.co.jp/khkmember/support/noticeUidPass.do?lang=en' target='_blank'>Forgot both user ID and password?</a>\n";
+		tmp = tmp + "</div>\n";
+
+		// Authentication Notes 2014/6/11 add
+		tmp = tmp + "<br><div align='left' style='font-size: 10pt; width:460px;'><br>\n";
+//		tmp = tmp + "本システムは平成26年6月21日をもって、セキュリティを強化した登録ユーザー様専用のサービスとさせて頂きます。ご使用時に「ユーザーID」と「パスワード」が必要となりますのでご了承願います。なお、平成26年6月20日以前の登録ユーザー様においても、改めてユーザー登録が必要となります。お手数をおかけしますが、下記リンクよりユーザー登録をお願いいたします。<br><br>\n";
+//		tmp = tmp + "Detail is here \u2192 <a href=\"http://www.khkgears.co.jp/gear_technology/User\\'s_registration.html\" target='input'>user registration edit or delete</a><br><br>\n";
+//		tmp = tmp + "<a href=\"https://khkgears.net/new/contact_us.html\" target='input'>For inquiries, click here.</a>\n";
+		tmp = tmp + "</div>\n";
+
+		tmp = tmp + "</td></tr>\n";
+		tmp = tmp + "</table>\n";
+
+		tmp = tmp + "<input id='j_password' name='j_password' type='hidden' value=''>\n";
+		tmp = tmp + "</form>\n";
+
+		document.write(tmp);
+		
+	}else{
+		
+		// ユーザーIDとパスワードが保存されていない場合はログイン画面を表示する
+		var tmp = "<form id='loginFrm' name='loginFrm' method='post' action='j_security_check?lang=ja' onSubmit='return checkInput();'>\n";
+
+		tmp = tmp + "<table width='100%' height='90%' border='0'>\n";
+		tmp = tmp + "<tr><td align='center' valign='middle'>\n";
+
+		tmp = tmp + "<table width='460px' height='230px' border='0' bordercolor='#c0c0c0' bgcolor='#eeeeee' cellspacing='0'\n";
+		tmp = tmp + "style='border-style: solid; border-width: 1px; color: black; vertical-align:middle; ";
+		tmp = tmp + "background-image: url(/khkmember/img/logo_banner_khk.gif); background-repeat: no-repeat;'>\n";
+		tmp = tmp + "<tr><td align='center'>\n";
+
+		tmp = tmp + "<table border='0' width='100%' height='100%'>\n";
+		tmp = tmp + "<tr><td nowrap align='center' height='20px'></td></tr>\n";
+		tmp = tmp + "<tr><td nowrap align='center'>\n";
+		tmp = tmp + "	<div style='font-size: 15pt; font-weight: bold;'>KHK ユーザーログイン</div>\n";
+		tmp = tmp + "</td></tr>\n";
+
+		tmp = tmp + "<tr><td nowrap align='center'>\n";
+		tmp = tmp + "	<table><tr><td style='font-size:11pt';>ユーザーID</td>\n";
+		tmp = tmp + "	<td><input id='j_username' name='j_username' type='text' maxlength='40' size='30' style='ime-mode:disabled; width:200px;'></td></tr>\n";
+		tmp = tmp + "	<tr><td style='font-size:11pt';>パスワード</td>\n";
+		tmp = tmp + "	<td><input id='j_password_disp' name='j_password_disp' type='password' maxlength='128' size='30' style='ime-mode:disabled; width:200px;'></td></tr></table>\n";
+		tmp = tmp + "</td></tr>\n";
+
+		tmp = tmp + "<tr><td nowrap align='center' height='30px'>\n";
+		tmp = tmp + "	<div style='font-size: 10pt;'>\n";
+		tmp = tmp + "	<input type='checkbox' id='checkCookie' name='checkCookie' onClick='validCookie();' checked />\n";
+		tmp = tmp + "	次回から入力を省略（クッキーに保存）\n";
+		tmp = tmp + "	</div>\n";
+		tmp = tmp + "</td></tr>\n";
+
+		tmp = tmp + "<tr><td nowrap align='center'>\n";
+		tmp = tmp + "	<input id='btnLogin' type='submit' value='ログイン' style='width: 105px; height: 30px;'>&nbsp;\n";
+		tmp = tmp + "	<input id='btnCancel' type='reset' value='クリア' style='width: 105px; height: 30px;'>\n";
+		tmp = tmp + "</td></tr>\n";
+
+		tmp = tmp + "<tr><td nowrap align='center'>\n";
+ 		tmp = tmp + "	<div style='font-size: 11pt; font-weight: bold;'>\n";
+ 		tmp = tmp + "	未登録の方は<a href=https://www.khkgears.co.jp/gear_technology/users_registration/ target='input'>こちら</a>へ\n";
+		tmp = tmp + "</td></tr>\n";
+		tmp = tmp + "</table>\n";
+
+		tmp = tmp + "</td></tr>\n";
+		tmp = tmp + "</table>\n";
+
+		tmp = tmp + "<div align='center' style='font-size: 10pt; width:460px;'>\n";
+		tmp = tmp + "<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n";
+		tmp = tmp + "<a href='https://khkgears.co.jp/khkmember/support/reissuePass.do?lang=ja' target='_blank'>パスワードをお忘れの方</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n";
+		tmp = tmp + "<a href='https://khkgears.co.jp/khkmember/support/noticeUidPass.do?lang=ja' target='_blank'>ユーザーID、パスワード両方をお忘れの方</a>\n";
+		tmp = tmp + "</div>\n";
+		tmp = tmp + "</td></tr>\n";
+		tmp = tmp + "</table>\n";
+
+		tmp = tmp + "<input id='j_password' name='j_password' type='hidden' value=''>\n";
+		tmp = tmp + "</form>\n";
+
+		document.write(tmp);
+	}
+	
+
+}
+
+//-->
+</script>
+
+
+
+</body>
+</html>
+

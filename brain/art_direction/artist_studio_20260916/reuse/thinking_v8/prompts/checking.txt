@@ -1,0 +1,15 @@
+Use case: stylized-concept
+Asset type: transparent 24-frame animation sprite sheet for a small UI activity prop.
+Create one finished PNG sprite sheet for "checking a document, still in progress". EXACT layout: six columns and four rows, 24 separate drawings in row-major order, 1536 by 1024 pixels, each invisible cell 256 by 256 pixels. SIX drawings in every row and FOUR rows. No grid lines, dividers, labels, numbers, or words. True alpha transparency throughout the background and inside every outline.
+
+Visual style: flat cyan #26e6e5 outlines, medium rounded strokes, restrained lightly hand-drawn contours with stable shapes. Clear Lordicon-like motion design. No glow, shadows, haze, matte, halo, speckles, gradients, or filled backdrop. Only cyan strokes with transparent surrounding space.
+
+Subject: a small upright document outline with a folded top-right corner. Inside are three EMPTY square checkboxes in a column on the left. Beside each box are two short horizontal strokes representing unreadable text. A short open scan bracket, made from two small corner strokes outside the left and right ends of a row, highlights one row at a time. The bracket moves down the document to inspect the rows, then quietly resets to the top. ALL THREE CHECKBOXES MUST REMAIN EMPTY in EVERY frame. No checkmark, tick, X, stamp, success badge, completion mark, eyes, face, mouth, or circular third-eye shape.
+
+Shared registration in every full-size drawing: document x=65..191, y=43..204; bottom-center at local (128,204). Page shape, fold, checkbox positions, short text strokes, stroke thickness, and scale remain exactly fixed across frames 4-19. Row centers are approximately y=91, 124, 157. The scan bracket moves; the document does not sway, rotate, bounce, or change size. Keep generous clear margins between all cells.
+
+Timeline, row-major, zero-based:
+0-3 entrance: 0 small folded-paper outline at the shared bottom anchor; 1 partly unfolded narrow paper; 2 nearly full document with three empty boxes appearing; 3 full document with scan bracket at top row.
+4-19 sixteen-frame active loop: frame 4 top-row bracket; 5 top-row bracket held; 6 top-row bracket held; 7 bracket moves halfway toward middle; 8 middle-row bracket; 9 middle-row bracket held; 10 middle-row bracket held; 11 bracket halfway toward lower row; 12 lower-row bracket; 13 lower-row bracket held; 14 lower-row bracket held; 15 bracket just below lower row; 16 bracket becomes short faint corner strokes below lower row; 17 bracket absent, document unchanged; 18 faint bracket reappears at the top row; 19 full bracket at top row. Every checkbox stays completely empty. Frame 19 loops cleanly into frame 4.
+20-23 exit: 20 bracket disappears while document remains full-size; 21 document starts folding; 22 half-folded smaller paper at shared bottom anchor; 23 small folded-paper outline.
+Render all 24 separate drawings. This is an ongoing inspection loop with no successful completion state.

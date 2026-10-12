@@ -1,0 +1,23 @@
+{
+  "date": "2026-09-29",
+  "method": "In-app browser interactions and rendered screenshot",
+  "url": "http://127.0.0.1:9041/reuse/style_studies_v3/",
+  "passed": true,
+  "checks": {
+    "allStyleTiles": 30,
+    "singleStyleComparisonTiles": 20,
+    "loadedImagesAfterVisitingFinalRow": 30,
+    "missingImageErrors": 0,
+    "userReferenceLoaded": true,
+    "inspectorOpens": true,
+    "inspectorStyleSwitch": "Reference style to More expressive",
+    "individualDownloadLinksMatchFaceAndStyle": true,
+    "escapeClosesDialog": true,
+    "focusReturnsToTrigger": true,
+    "screenshot": "preview.jpg"
+  },
+  "limitations": [
+    "Desktop browser checked; mobile layout was not separately exercised.",
+    "Static concepts only; animation and voice sync were not changed or tested."
+  ]
+}

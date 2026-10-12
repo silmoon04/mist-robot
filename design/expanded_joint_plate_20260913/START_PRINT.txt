@@ -1,0 +1,45 @@
+EXPANDED JOINT PLATE: 19 PARTS, ABOUT 3 HOURS 44 MINUTES
+
+Load Expanded_Joint_Plate_3to4h.3mf instead of the earlier third plate.
+It contains all 14 previous joint-fit pieces plus five useful production parts:
+  One lower yaw support arm.
+  Four 4 mm spacers for the phone-pan mounting feet, to keep for later.
+Do not load both plates together or print the first fourteen pieces twice.
+
+Use the existing profile named:
+  R5 Third Fit - Joint Interfaces - 0.20mm
+File:
+  Neptune4Pro_ThirdFit_Joints_NoSupports_020.curaprofile
+The included copy is byte-for-byte identical to the one already supplied.
+No profile change or re-import is needed if that exact profile is active.
+This plate is checked with that 0.20 mm profile, not the older 0.28 mm case-fit profile.
+
+Keep the supplied sizes and orientations. Generate Support must remain OFF.
+The added lower yaw arm is flipped relative to its old production STL so its
+recessed screw seats face upward during printing. Do not rotate it back.
+Its mounting geometry and every source part are unchanged.
+Inspect the sliced layers and brim; keep machine speed/flow multipliers at 100%.
+
+The actual test slice estimates 3 h 44 min, about 35.49 g of model PLA and
+1.42 g of brim, with ZERO support material. Peak calculated flow is about
+7.79 mm3/s. The model and toolpath fit the 225 mm bed. Actual Cura/printer
+time can differ with machine state, material and retained setting overrides.
+
+WHY THESE EXTRAS
+The lower yaw arm uses the standard C018 auxiliary-disc screw pattern and the
+nominal yaw spacers already on the plate. It lets you test the lower support
+stack without committing to an entire moving leg. Its fit still needs checking.
+The four phone-pan foot spacers have simple geometry and standard clearance
+bores. Keep them labelled for the later pan module. They do not go in the
+horn fixture or replace the 11.6 mm yaw spacers or 5 mm gauge spacers.
+
+ASSEMBLY ORDER
+Follow the existing four assembly images for the alignment gauge and horn
+fixture. Use image 05 and ASSEMBLY_ADDITIONS.txt for the extra lower arm.
+Fit the auxiliary disc and its central retainer before adding
+the lower arm, because the arm can obstruct that work. Keep power disconnected;
+this is an unloaded fit test, not a complete supported leg or gait test.
+
+The five additions were selected as lower-risk standard-interface parts,
+not as guaranteed final fits. No structural qualification or CAD clearance
+result is being inferred from the successful case-clamp fit alone.

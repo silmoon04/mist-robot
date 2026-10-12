@@ -1,0 +1,126 @@
+{
+  "schema": "mist-animation-runtime-audit",
+  "version": 1,
+  "auditedOn": "2026-09-30",
+  "scope": "Read-only local runtime and selection analysis. No runtime edits, image generation or publishing.",
+  "selection": {
+    "path": "brain/art_direction/mist_game_faces_20260929/selections/20260930/selection.json",
+    "faceCount": 79,
+    "studyCount": 26,
+    "ranked": false,
+    "unselectedAreRejected": false,
+    "poseCounts": {"Attentive": 19, "Considering": 14, "Skeptical": 17, "Amused": 23, "Concerned": 6},
+    "categoryCounts": {"process": 26, "handdrawn": 16, "dialogue": 12, "graphic": 9, "cozy": 8, "3d": 5, "action": 3},
+    "completeLikedFamilies": ["later-alligator-sweet-geraldine", "isat-odile-mixed-affect", "cuphead-jake-clark-process"],
+    "assetConvention": "Study sheets are 1536 by 1024 pixels in a 3 by 2 grid; five static 512 by 512 concepts and a blank sixth cell. Face IDs use study-id__lowercase-pose.",
+    "productionStatus": "Static review concepts. No separated production eye/mouth layers or animation timing is established by these sheets.",
+    "references": [
+      {"path": "brain/art_direction/mist_game_faces_20260929/selections/20260930/selection.json", "line": 5},
+      {"path": "brain/art_direction/mist_game_faces_20260929/BRIEF.md", "line": 16},
+      {"path": "brain/art_direction/mist_game_faces_20260929/RESULT.md", "line": 14}
+    ]
+  },
+  "currentRuntime": {
+    "stack": ["MistFaceRuntime 2.0.0", "MistDrawnFaceRuntime 1.4.0", "MistHanddrawnRuntime 6.1.0"],
+    "selectionIsWiredIntoLiveRuntime": false,
+    "liveFaceCount": 40,
+    "expressionCount": 21,
+    "expressions": ["neutral", "happy", "sad", "alert", "bored", "dead_inside", "error", "smug", "curious", "sleepy", "angry", "love", "suspicious", "surprised", "panic", "listening", "thinking", "mischief", "proud", "embarrassed", "uncertain"],
+    "states": ["available", "connecting", "listening", "thinking", "checking", "speaking"],
+    "defaultFaceId": "39_neutral_02_manual",
+    "activities": ["coding", "reading", "writing", "email", "searching", "planning", "calculating", "connecting", "checking"],
+    "eyeFamilies": ["round", "hook", "arc", "loop", "slot", "chevron", "bar"],
+    "mouthFamilies": ["mouth_neutral", "mouth_smile", "mouth_angry", "mouth_sad", "mouth_flat", "mouth_worried", "mouth_skeptical"],
+    "references": [
+      {"path": "brain/duplex/static/app.js", "line": 60},
+      {"path": "brain/duplex/face_map.json", "line": 2},
+      {"path": "brain/duplex/static/expression_policy.js", "line": 4},
+      {"path": "brain/art_direction/artist_studio_20260916/reuse/handdrawn_v6/runtime.js", "line": 5}
+    ]
+  },
+  "constraints": {
+    "frameRate": {"fps": 15, "frameMs": 66.6666666667, "reference": {"path": "brain/ui/static/drawn_face_renderer.js", "line": 5}},
+    "faceViewport": {"width": 100, "height": 64, "safeBounds": [5.5, 5.5, 94.5, 58.5], "reference": {"path": "brain/ui/static/face_runtime.js", "line": 247}},
+    "expression": {
+      "holdMinMs": 400,
+      "holdMaxMs": 6000,
+      "cooldownMs": 450,
+      "defaultTransitionMs": 600,
+      "drawnTransitionMinMs": 400,
+      "drawnTransitionMaxMs": 1600,
+      "maxSequenceLength": 8,
+      "maxSequenceAgeMs": 10000,
+      "queuedRequestMaxAgeMs": 1200,
+      "persistentBaseSupported": true,
+      "duplicateRequestsRestartAnimation": false,
+      "timedHoldStartsAfterTransition": true,
+      "reference": {"path": "brain/duplex/static/expression_policy.js", "line": 2}
+    },
+    "thinking": {"delayMs": 650, "holdMs": 3600, "currentCycle": ["curious:0", "neutral:1", "neutral:0"], "gaze": [-0.35, -0.2], "reference": {"path": "brain/duplex/static/expression_policy.js", "line": 149}},
+    "blink": {"drawnDurationMs": 400, "initialWaitMs": 3350, "laterWaitsMs": [4100, 5200, 3600, 6100, 4450], "eyePoses": ["rest", "anticipation", "closing", "near_closed", "closed", "opening_low", "opening", "settled"], "reference": {"path": "brain/ui/static/drawn_face_renderer.js", "line": 68}},
+    "speech": {
+      "driver": "Audible playback clock via getOutputTimestamp; context minus output/base latency fallback.",
+      "visemes": ["rest", "AA", "EH", "EE", "OH", "OO", "MBP", "FV", "LNT", "TH", "S"],
+      "silentOrSuspendedPlayback": "Rest mouth with active false.",
+      "missingAlignmentFallback": "20 ms PCM energy windows choose rest or AA with amplitude.",
+      "startBufferDefaultMs": 200,
+      "startBufferRangeMs": [120, 400],
+      "familySwitch": "Closed cue, cue boundary, quiet trough after 150 ms, or bounded 400 ms timeout.",
+      "mouthlessSpeakingFace": "Expression policy selects a mouth-bearing variant from the same preset when possible.",
+      "references": [
+        {"path": "brain/duplex/static/playback.js", "line": 19},
+        {"path": "brain/duplex/static/playback.js", "line": 106},
+        {"path": "brain/ui/static/drawn_face_renderer.js", "line": 451},
+        {"path": "brain/duplex/static/expression_policy.js", "line": 168}
+      ]
+    },
+    "activity": {
+      "manifestVersion": 6,
+      "validatedIdsAreHardcoded": true,
+      "framesPerActivity": 12,
+      "poses": ["enter_0", "enter_1", "enter_2", "enter_3", "loop_0", "loop_1", "loop_2", "loop_3", "exit_0", "exit_1", "exit_2", "exit_3"],
+      "entranceMs": 533.3333333333,
+      "exitMs": 533.3333333333,
+      "layoutTransitionMs": 600,
+      "placements": ["side", "above"],
+      "loopHoldsTicks": {"coding": [3,2,4,3], "reading": [4,3,4,3], "writing": [3,3,4,2], "email": [4,4,4,4], "searching": [4,4,4,4], "planning": [3,3,4,50], "calculating": [3,3,3,5], "connecting": [4,4,4,4], "checking": [3,3,4,50]},
+      "ownership": "Token and owner prevent a completed older task from clearing a newer activity; previous owner or state activity can resume.",
+      "references": [
+        {"path": "brain/art_direction/artist_studio_20260916/reuse/handdrawn_v6/runtime.js", "line": 10},
+        {"path": "brain/art_direction/artist_studio_20260916/reuse/handdrawn_v6/runtime.js", "line": 44},
+        {"path": "brain/art_direction/artist_studio_20260916/reuse/handdrawn_v6/runtime.js", "line": 129}
+      ]
+    },
+    "reducedMotion": "No automatic blink/gaze/breath or transitions. Activities show a held loop pose. Picker draws once and pauses its shared clock.",
+    "assetLoading": "Drawn atlas validates required families and every face mouth assignment, loads all referenced sheets, and keeps the original SVG fallback if loading fails. Handdrawn activity PNG loads are shared across preview instances.",
+    "previewLifecycle": "Only visible cards have renderer instances; one shared 15 fps clock updates them; closing, filtering or recycling cards destroys renderers.",
+    "lifecycleReferences": [
+      {"path": "brain/ui/static/drawn_face_renderer.js", "line": 680},
+      {"path": "brain/art_direction/artist_studio_20260916/reuse/handdrawn_v6/runtime.js", "line": 191},
+      {"path": "brain/duplex/static/animation_picker.mjs", "line": 19},
+      {"path": "brain/duplex/static/animation_picker.mjs", "line": 34}
+    ]
+  },
+  "migrationRecommendation": [
+    {"stage": 1, "name": "Choose an authored face vocabulary", "action": "Use the liked poses as an unranked reference pool. Select consistent contour, stroke, cyan colour, glow, eye spacing and mouth anchors for the new family; do not treat all 26 study treatments as one blended style."},
+    {"stage": 2, "name": "Review three beats per proposed animation", "action": "Produce anticipation, readable main action, and settle or return images per concept. Each triple should depict one animation in the same style. Include proposed trigger, total duration, whether it loops, and a quiet mouth version for listening."},
+    {"stage": 3, "name": "Build everyday motion first", "action": "Start with idle blink, attentive listening, consideration, dry skepticism, amused recognition and gentle concern. Approve emotion and silhouette at small screen size before drawing every cel."},
+    {"stage": 4, "name": "Replace one expression family at a time", "action": "Keep legacy expression names and fallback assets while adding approved production layers and 15 fps timing. Validate rest-to-action-to-rest, interruption, timed return, long holds, blink interactions and reduced motion for each replacement."},
+    {"stage": 5, "name": "Integrate speaking mouths", "action": "Build compatible viseme families for the approved expressions and preserve the existing audible playback clock. Test silence, packet gaps, suspended audio, barge-in and expression changes during speech."},
+    {"stage": 6, "name": "Refresh activities and retire the old pack", "action": "Replace activity artwork while retaining entrance-loop-exit and ownership. New activity IDs or frame structures need a versioned manifest/runtime change. Extend the preview catalog only after each family passes local review; retire old assets after all mapped states and expressions have approved replacements."}
+  ],
+  "animationConceptPriorities": [
+    "Attentive lean and return",
+    "Thinking glance with a deliberate held lid pose",
+    "Dry skeptical glance and one-sided lid shift",
+    "Amused recognition with a small smile and soft rebound",
+    "Gentle concern with a restrained mouth and easing gaze",
+    "Wake or greeting blink",
+    "Quiet proud acknowledgement",
+    "Brief surprise followed by recovery",
+    "Recoverable error followed by calm reset",
+    "Sleepy settle",
+    "Planning, checking and search activity refresh",
+    "Audio-driven expressive speech family"
+  ]
+}

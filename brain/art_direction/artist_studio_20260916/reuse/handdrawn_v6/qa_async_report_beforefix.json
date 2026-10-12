@@ -1,0 +1,14 @@
+{
+  "passed": false,
+  "runtimeSha256": "b42dee84004572abca2a726dcadb252fca742d678a9e4b72330806a2d9fe7f87",
+  "checks": [
+    "A failed frame leaves the old renderer active and allows a later retry",
+    "Incomplete frame dimensions fail cleanly without using the overlay"
+  ],
+  "failures": [
+    {
+      "name": "Destroy during frame loading cannot revive the overlay or emit a stale failure",
+      "error": "Destroyed instances must not report a loading failure\n\n1 !== 0\n"
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+Name,Unit,Expression,Value,Comments,Favorite
+body_dia,mm,180 mm,180 mm,[LOCKED] Barrel outside diameter,true
+body_r,mm,body_dia / 2,90 mm,[DERIVED] Barrel outside radius,true
+body_h,mm,260 mm,260 mm,[LOCKED] Cylinder only; dome and handle excluded,true
+leg_mount_h,mm,35 mm,35 mm,[LOCKED] q1 axis above barrel bottom,true
+mount_standoff,mm,10 mm,10 mm,[LOCKED] Shell surface to q1 axis,true
+mount_r,mm,body_r + mount_standoff,100 mm,[DERIVED] Body axis to q1 axis,true
+d1,mm,32 mm,32 mm,[LOCKED] q1-to-q2 offset along radial axis,true
+hip_pitch_r,mm,mount_r + d1,132 mm,[DERIVED] Body axis to q2 axis,true
+femur,mm,110 mm,110 mm,[LOCKED] q2-to-q3 axis distance,true
+tibia,mm,70 mm,70 mm,[LOCKED] q3 axis to wheel axle,true
+wheel_dia,mm,70 mm,70 mm,[LOCKED] Tire outside diameter,true
+wheel_r,mm,wheel_dia / 2,35 mm,[DERIVED] Tire radius,true
+front_az,deg,25 deg,25 deg,[LOCKED] Front mount rays are +front_az and -front_az,true
+rear_az,deg,109 deg,109 deg,[LOCKED] Rear mount rays are +rear_az and -rear_az,true
+beam_w,mm,20 mm,20 mm,[LOCKED] Printed link width,true
+beam_t,mm,14 mm,14 mm,[LOCKED] Printed link thickness,true
+stance_r,mm,176 mm,176 mm,[POSE] Neutral wheel contact radius; not a part dimension,true
+neutral_body_clearance,mm,148 mm,148 mm,[POSE] Barrel-bottom height in neutral stand,true
+tallest_body_clearance,mm,171 mm,171 mm,[POSE] Historical 111/70 upper target; scan ~170-171 with rounded 110/70 and record actual pass,false
+servo_l,mm,45.2 mm,45.2 mm,[MEASURE SEED] Nominal STS3215 body length; replace from delivered lot,true
+servo_w,mm,24.7 mm,24.7 mm,[MEASURE SEED] Nominal body width; measure seam/label and exclude cable,true
+servo_h,mm,35 mm,35 mm,[MEASURE SEED] Nominal body height; exclude horn and measure delivered lot,true
+servo_ear_ext,mm,5.9 mm,5.9 mm,[MEASURE] Provisional ear projection; replace from delivered servo,true
+servo_ear_underside_z,mm,26.5 mm,26.5 mm,[MEASURE] Provisional case datum to ear underside,true
+servo_ear_hole_pitch,mm,17 mm,17 mm,[MEASURE] Provisional hole-centre pitch; document exact centres,true
+servo_axis_from_end,mm,11.3 mm,11.3 mm,[MEASURE] Provisional output-axis location; kinematically critical,true
+servo_spline_dia,mm,5.9 mm,5.9 mm,[MEASURE] Nominal 25T spline OD; do not print mating teeth from this alone,true
+servo_spline_teeth,No Units,25,25,[MEASURE] Nominal spline tooth count,false
+servo_output_screw_d,mm,3 mm,3 mm,[MEASURE] Nominal M3 output screw; verify delivered hardware,false
+servo_output_screw_l,mm,6 mm,6 mm,[MEASURE] Nominal output screw length; verify engagement,false
+horn_dia,mm,21 mm,21 mm,[MEASURE] Provisional horn OD; replace from actual horn,true
+horn_t,mm,3.4 mm,3.4 mm,[MEASURE] Provisional horn thickness,true
+horn_bcd,mm,14 mm,14 mm,[MEASURE] Placeholder midpoint only; final bolt circle is unresolved,true
+servo_mass,g,55 g,55 g,[MASS] Target measured mass; use a calibrated material or mass-proxy component,false
+phone_h,mm,147.5 mm,147.5 mm,[ENVELOPE] Mi 9 SE height without case or plug,true
+phone_w,mm,70.5 mm,70.5 mm,[ENVELOPE] Mi 9 SE width without case,false
+phone_t,mm,7.45 mm,7.45 mm,[ENVELOPE] Mi 9 SE thickness without protector,false
+battery_l,mm,104 mm,104 mm,[MEASURE ON ARRIVAL] Ordered HOOVO envelope estimate,true
+battery_w,mm,34.5 mm,34.5 mm,[MEASURE ON ARRIVAL] Ordered HOOVO envelope estimate,false
+battery_h,mm,24.5 mm,24.5 mm,[MEASURE ON ARRIVAL] Physical pack thickness; not sim mass-centre Z,false
+shell_wall,mm,3 mm,3 mm,[PROVISIONAL] Validate stiffness mass and print process,true
+deck_t,mm,5 mm,5 mm,[PROVISIONAL] Starting plate thickness; pocket or rib later,false
+pocket_clearance_per_side,mm,0.25 mm,0.25 mm,[CALIBRATION] Gap on EACH side: pocket = part + 2*pocket_clearance_per_side,true
+pin_radial_clearance,mm,0.25 mm,0.25 mm,[CALIBRATION] Radial gap: hole adds 2*pin_radial_clearance before process compensation,true
+hole_diameter_comp,mm,0.20 mm,0.20 mm,[CALIBRATION] Process correction for printed hole undersize; not intentional fit clearance,true
+motion_clearance,mm,2 mm,2 mm,[PROVISIONAL] Starting air gap around swept moving envelopes; validate through ROM,false
+lid_side_gap,mm,0.35 mm,0.35 mm,[CALIBRATION] Gap on EACH side of removable lid,false
+cable_margin,mm,1 mm,1 mm,[PROVISIONAL] Extra space around measured moving cable envelope,false
+min_boss_wall,mm,2.4 mm,2.4 mm,[PROVISIONAL] Starting radial material around a fastener hole; increase for structural pivots,false
+m3_clear_model_d,mm,3.4 mm,3.4 mm,[CALIBRATION] Starting modeled M3 pass-through; coupon or drill policy decides final,true
+edge_chamfer,mm,0.5 mm,0.5 mm,[PROVISIONAL] Starting elephant-foot relief where mating datum permits,false
+cable_slot_w,mm,8 mm,8 mm,[PROVISIONAL] Starting cable slot selected from coupon family; verify plug and bend,true
+phone_clearance_per_side,mm,0.5 mm,0.5 mm,[CALIBRATION] Starting naked-phone gap on each side; case/foam separate,true
+phone_frame_wall,mm,3 mm,3 mm,[PROVISIONAL] Starting front-frame border; validate stiffness and curvature,false
+phone_center_z,mm,170 mm,170 mm,[PROVISIONAL] Phone centre above barrel bottom; recheck CoM and service,true
+horn_slot_bcd_min,mm,12 mm,12 mm,[MEASURE] Temporary slotted coupon lower bound; replace after horn measurement,false
+horn_slot_bcd_max,mm,16 mm,16 mm,[MEASURE] Temporary slotted coupon upper bound; replace after horn measurement,false
+q1_min,deg,-60 deg,-60 deg,[ROM] Hip-roll minimum; local-axis sign must be verified,true
+q1_max,deg,60 deg,60 deg,[ROM] Hip-roll maximum; local-axis sign must be verified,true
+q2_min,deg,-35 deg,-35 deg,[ROM] Hip-pitch minimum,true
+q2_max,deg,110 deg,110 deg,[ROM] Hip-pitch maximum,true
+q3_min,deg,-135 deg,-135 deg,[ROM] Knee minimum,true
+q3_max,deg,135 deg,135 deg,[ROM] Knee maximum,true
+body_inner_dia,mm,body_dia - 2 * shell_wall,174 mm,[DERIVED] Nominal inside diameter before ribs and hardware,false
+leg_reach_cc,mm,femur + tibia,180 mm,[DERIVED] Maximum collinear q2-to-wheel-axis centre distance,false
+stand_axle_z,mm,wheel_r - neutral_body_clearance,-113 mm,[DERIVED] Neutral wheel-axis Z in barrel-bottom coordinates,false
+neutral_q1_world_z,mm,neutral_body_clearance + leg_mount_h,183 mm,[DERIVED] Neutral q1 height above ground,false
+front_mount_x,mm,mount_r * cos(front_az),90.6308 mm,[DERIVED] FL/FR q1 X coordinate,false
+front_mount_y,mm,mount_r * sin(front_az),42.2618 mm,[DERIVED] Positive front q1 Y magnitude,false
+rear_mount_x,mm,mount_r * cos(rear_az),-32.5568 mm,[DERIVED] RL/RR q1 X coordinate,false
+rear_mount_y,mm,mount_r * sin(rear_az),94.5519 mm,[DERIVED] Positive rear q1 Y magnitude,false
+servo_pocket_l,mm,servo_l + 2 * pocket_clearance_per_side,45.7 mm,[DERIVED] Rectangular body pocket length,false
+servo_pocket_w,mm,servo_w + 2 * pocket_clearance_per_side,25.2 mm,[DERIVED] Rectangular body pocket width,false
+servo_pocket_h,mm,servo_h + 2 * pocket_clearance_per_side,35.5 mm,[DERIVED] Full body-envelope pocket height,false
+horn_recess_dia,mm,horn_dia + 2 * pocket_clearance_per_side,21.5 mm,[DERIVED] Starting horn recess; coupon required,false
+phone_pocket_h,mm,phone_h + 2 * phone_clearance_per_side,148.5 mm,[DERIVED] Portrait pocket height before camera/case keepouts,false
+phone_pocket_w,mm,phone_w + 2 * phone_clearance_per_side,71.5 mm,[DERIVED] Portrait pocket width,false
+phone_pocket_t,mm,phone_t + 2 * phone_clearance_per_side,8.45 mm,[DERIVED] Naked-phone depth allowance,false
+phone_frame_h,mm,phone_pocket_h + 2 * phone_frame_wall,154.5 mm,[DERIVED] Front-view outer frame height,false
+phone_frame_w,mm,phone_pocket_w + 2 * phone_frame_wall,77.5 mm,[DERIVED] Front-view outer frame width,false
+m3_boss_od,mm,m3_clear_model_d + 2 * min_boss_wall,8.2 mm,[DERIVED] Minimum starting boss OD; structural pivots likely larger,false

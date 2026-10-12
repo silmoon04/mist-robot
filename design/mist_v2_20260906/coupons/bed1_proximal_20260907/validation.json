@@ -1,0 +1,467 @@
+{
+  "status": "geometry_checks_passed_physical_fit_pending",
+  "part_count": 7,
+  "bounds_mm": [
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      216.0,
+      216.0,
+      22.0
+    ]
+  ],
+  "extent_mm": [
+    216.0,
+    216.0,
+    22.0
+  ],
+  "model_volume_cm3": 113.92944377054242,
+  "solid_PLA_estimate_g": 141.2725102754726,
+  "tessellation_mm": 0.03,
+  "inter_part_intersections_mm3": 0,
+  "minimum_inter_part_distance_mm": 2.0,
+  "pairwise_checks": [
+    {
+      "parts": [
+        1,
+        2
+      ],
+      "distance_mm": 20.0,
+      "intersection_mm3": 0.0
+    },
+    {
+      "parts": [
+        1,
+        3
+      ],
+      "distance_mm": 8.0,
+      "intersection_mm3": 0.0
+    },
+    {
+      "parts": [
+        2,
+        3
+      ],
+      "distance_mm": 6.0,
+      "intersection_mm3": 0.0
+    },
+    {
+      "parts": [
+        1,
+        4
+      ],
+      "distance_mm": 8.0,
+      "intersection_mm3": 0.0
+    },
+    {
+      "parts": [
+        2,
+        4
+      ],
+      "distance_mm": 35.0,
+      "intersection_mm3": 0.0
+    },
+    {
+      "parts": [
+        3,
+        4
+      ],
+      "distance_mm": 5.0,
+      "intersection_mm3": 0.0
+    },
+    {
+      "parts": [
+        1,
+        5
+      ],
+      "distance_mm": 9.351591323771851,
+      "intersection_mm3": 0.0
+    },
+    {
+      "parts": [
+        2,
+        5
+      ],
+      "distance_mm": 34.0,
+      "intersection_mm3": 0.0
+    },
+    {
+      "parts": [
+        3,
+        5
+      ],
+      "distance_mm": 4.0,
+      "intersection_mm3": 0.0
+    },
+    {
+      "parts": [
+        4,
+        5
+      ],
+      "distance_mm": 4.0,
+      "intersection_mm3": 0.0
+    },
+    {
+      "parts": [
+        1,
+        6
+      ],
+      "distance_mm": 2.014702703389887,
+      "intersection_mm3": 0.0
+    },
+    {
+      "parts": [
+        2,
+        6
+      ],
+      "distance_mm": 2.0,
+      "intersection_mm3": 0.0
+    },
+    {
+      "parts": [
+        3,
+        6
+      ],
+      "distance_mm": 2.0,
+      "intersection_mm3": 0.0
+    },
+    {
+      "parts": [
+        4,
+        6
+      ],
+      "distance_mm": 2.0,
+      "intersection_mm3": 0.0
+    },
+    {
+      "parts": [
+        5,
+        6
+      ],
+      "distance_mm": 2.0,
+      "intersection_mm3": 0.0
+    },
+    {
+      "parts": [
+        1,
+        7
+      ],
+      "distance_mm": 49.88451279003334,
+      "intersection_mm3": 0.0
+    },
+    {
+      "parts": [
+        2,
+        7
+      ],
+      "distance_mm": 67.5,
+      "intersection_mm3": 0.0
+    },
+    {
+      "parts": [
+        3,
+        7
+      ],
+      "distance_mm": 38.842120951576455,
+      "intersection_mm3": 0.0
+    },
+    {
+      "parts": [
+        4,
+        7
+      ],
+      "distance_mm": 26.853045391239508,
+      "intersection_mm3": 0.0
+    },
+    {
+      "parts": [
+        5,
+        7
+      ],
+      "distance_mm": 7.5,
+      "intersection_mm3": 0.0
+    },
+    {
+      "parts": [
+        6,
+        7
+      ],
+      "distance_mm": 4.0,
+      "intersection_mm3": 0.0
+    }
+  ],
+  "checks": [
+    {
+      "part": "01_bearing_boss_carrier",
+      "brep_valid": true,
+      "solid_count": 1,
+      "watertight": true,
+      "winding_consistent": true,
+      "mesh_shell_checks": {
+        "positive_material_shells": 1,
+        "surface_shells": 1,
+        "enclosed_void_shells": 0,
+        "void_shell_checks": []
+      },
+      "volume_mm3": 42957.45394333319,
+      "mesh_volume_mm3": 42947.717184338464,
+      "bounds_mm": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          133.0,
+          171.0,
+          8.399999618530273
+        ]
+      ],
+      "triangles": 106682,
+      "original_operations_retained": true,
+      "original_geometry_removed_mm3": 0.0
+    },
+    {
+      "part": "02_hardware_interface_board",
+      "brep_valid": true,
+      "solid_count": 1,
+      "watertight": true,
+      "winding_consistent": true,
+      "mesh_shell_checks": {
+        "positive_material_shells": 1,
+        "surface_shells": 2,
+        "enclosed_void_shells": 1,
+        "void_shell_checks": [
+          {
+            "signed_volume_mm3": -0.5400089502289802,
+            "bounds_mm": [
+              [
+                145.4499969482422,
+                75.5,
+                1.600000023841858
+              ],
+              [
+                146.5500030517578,
+                77.5,
+                2.0999999046325684
+              ]
+            ],
+            "containment_sample_count": 32,
+            "absolute_winding_min": 0.9999999999999996,
+            "absolute_winding_max": 1.0000000000000009,
+            "containment": "All vertices and triangle centroids lie inside the positive shell"
+          }
+        ]
+      },
+      "volume_mm3": 19797.040325413116,
+      "mesh_volume_mm3": 19796.613527223642,
+      "bounds_mm": [
+        [
+          141.0,
+          0.0,
+          0.0
+        ],
+        [
+          205.0,
+          114.0,
+          10.0
+        ]
+      ],
+      "triangles": 39898,
+      "original_operations_retained": true,
+      "original_geometry_removed_mm3": 0.0
+    },
+    {
+      "part": "03_servo_width_gauge",
+      "brep_valid": true,
+      "solid_count": 1,
+      "watertight": true,
+      "winding_consistent": true,
+      "mesh_shell_checks": {
+        "positive_material_shells": 1,
+        "surface_shells": 1,
+        "enclosed_void_shells": 0,
+        "void_shell_checks": []
+      },
+      "volume_mm3": 4382.907200000003,
+      "mesh_volume_mm3": 4382.907213618836,
+      "bounds_mm": [
+        [
+          141.0,
+          120.0,
+          0.0
+        ],
+        [
+          205.0,
+          144.0,
+          8.0
+        ]
+      ],
+      "triangles": 132,
+      "original_operations_retained": true,
+      "original_geometry_removed_mm3": 0.0
+    },
+    {
+      "part": "04_split_clamp_lower",
+      "brep_valid": true,
+      "solid_count": 1,
+      "watertight": true,
+      "winding_consistent": true,
+      "mesh_shell_checks": {
+        "positive_material_shells": 1,
+        "surface_shells": 1,
+        "enclosed_void_shells": 0,
+        "void_shell_checks": []
+      },
+      "volume_mm3": 1985.1480364611264,
+      "mesh_volume_mm3": 1985.2035353927824,
+      "bounds_mm": [
+        [
+          141.0,
+          149.0,
+          0.0
+        ],
+        [
+          173.0,
+          159.0,
+          8.0
+        ]
+      ],
+      "triangles": 400,
+      "original_operations_retained": true,
+      "original_geometry_removed_mm3": 0.0
+    },
+    {
+      "part": "05_split_clamp_upper",
+      "brep_valid": true,
+      "solid_count": 1,
+      "watertight": true,
+      "winding_consistent": true,
+      "mesh_shell_checks": {
+        "positive_material_shells": 1,
+        "surface_shells": 1,
+        "enclosed_void_shells": 0,
+        "void_shell_checks": []
+      },
+      "volume_mm3": 3439.6664364611433,
+      "mesh_volume_mm3": 3439.721938181215,
+      "bounds_mm": [
+        [
+          141.0,
+          148.0,
+          0.0
+        ],
+        [
+          205.0,
+          174.0,
+          8.0
+        ]
+      ],
+      "triangles": 836,
+      "original_operations_retained": true,
+      "original_geometry_removed_mm3": 0.0
+    },
+    {
+      "part": "06_624_retainer_boss",
+      "brep_valid": true,
+      "solid_count": 1,
+      "watertight": true,
+      "winding_consistent": true,
+      "mesh_shell_checks": {
+        "positive_material_shells": 1,
+        "surface_shells": 1,
+        "enclosed_void_shells": 0,
+        "void_shell_checks": []
+      },
+      "volume_mm3": 40509.3763170282,
+      "mesh_volume_mm3": 40505.80117888985,
+      "bounds_mm": [
+        [
+          1.0,
+          1.0003491640090942,
+          0.0
+        ],
+        [
+          216.0,
+          216.0,
+          22.0
+        ]
+      ],
+      "triangles": 27112,
+      "original_operations_retained": true,
+      "original_geometry_removed_mm3": 0.0
+    },
+    {
+      "part": "07_624_retainer_cap",
+      "brep_valid": true,
+      "solid_count": 1,
+      "watertight": true,
+      "winding_consistent": true,
+      "mesh_shell_checks": {
+        "positive_material_shells": 1,
+        "surface_shells": 1,
+        "enclosed_void_shells": 0,
+        "void_shell_checks": []
+      },
+      "volume_mm3": 857.8515118456484,
+      "mesh_volume_mm3": 857.762586627095,
+      "bounds_mm": [
+        [
+          175.0,
+          181.5,
+          0.0
+        ],
+        [
+          206.0,
+          202.5,
+          2.4000000953674316
+        ]
+      ],
+      "triangles": 2424,
+      "original_operations_retained": true,
+      "original_geometry_removed_mm3": 0.0
+    }
+  ],
+  "units_3mf": "millimeter",
+  "step_roundtrip_valid": true,
+  "step_roundtrip_solids": 7,
+  "source_files_unchanged": true,
+  "protected_original_sha256": {
+    "build_coupon_bed.py": "9820d0ab592b761ebca17fa20755449a0a550e86c5b9a925b792d616097fddbc",
+    "coupon_recipe.json": "bdecc02e6517ff24fc062b1280189d91b07d6831175e9e748123a5280289dee2",
+    "feedback_BED1.csv": "6d099663f2184854ebf04fb291798d4adb93845fe3f842e00417237248171cbe",
+    "fit_parameters.json": "c9ef46f4dfa19b0c73f55f7df48c83b577f54b10adfae9e9295e242187ddaefd",
+    "bed1\\01_bearing_boss_carrier.stl": "9a5bfe70584200e25d78efa2da46d0ea1ccc64c7799866dc8d67d840c7571f9f",
+    "bed1\\02_hardware_interface_board.stl": "c536fe34c69c1d3a968bc5a5b65fa2d673b846ce10abf3237dcd592c61cf1cfb",
+    "bed1\\03_servo_width_gauge.stl": "6d8b9b4db6fa1241444dd9c548a6caf27486492de77c5ce3be77d14d91be90c7",
+    "bed1\\04_split_clamp_lower.stl": "10c0326ad129b1d813769e6d14de14898f9f13d02831a93838d2062ad8d906bb",
+    "bed1\\05_split_clamp_upper.stl": "61a707488b40ff244df1019da17dce265cd5ea19563a0e308e0017c5bdb11533",
+    "bed1\\06_624_retainer_boss.stl": "09a5c1ffd2192c0b80bf919688dca1a905902a9312f0665ca1202fd710d47d13",
+    "bed1\\07_624_retainer_cap.stl": "fece0b8ebb78f87ff0eea28c3ffe26c11029c333ab5cf55f54ea1808537ba965",
+    "bed1\\BED1_TOP_VIEW.png": "9f4019f2a1af60d9afc58f141ccb2bf9dd97793dc88ca5519b449ae12446fe09",
+    "bed1\\build_log.txt": "8e84762b05a627aa48c1a85a72697dab302ab01a51613cdd58719a641ced31ed",
+    "bed1\\delivery_checks.json": "19205b068a82df1f6cfb3119fbd02678461e32b93a368f44a74308e4730c4340",
+    "bed1\\feature_manifest.json": "b13241eabe7e9a53ea2f91ad0fca2c57ce1a95c604b0d5729e9adcda05fd6054",
+    "bed1\\feedback_template.csv": "6d099663f2184854ebf04fb291798d4adb93845fe3f842e00417237248171cbe",
+    "bed1\\MIST_BED1_ALL_PARTS.3mf": "f6c0689b856f1801cf11c27985e87379045585cc01e7f7d8764bebbadf6d0d04",
+    "bed1\\MIST_BED1_ALL_PARTS.step": "616c119417e2ec334a8aa5d7331d8ce17db27a37a78b955295d0f9c3567154bb",
+    "bed1\\MIST_BED1_ALL_PARTS.stl": "1a211b018a27138ed8ad4a0c95513c828641ff734b527981592d54d9aa8e05e4",
+    "bed1\\validation.json": "55588db5bda1faedc4d5e5835694926bd782987cc140c053e103a6872e418d8e"
+  },
+  "contract_sha256": "f8d0ba13aa687db850d38b24d63841124260aea41f86f851de7325d151be37b1",
+  "coupon_contract_status": "fixed_coupon_contract_pending_leg_adoption",
+  "manufacturing_interface_confirmation": "pending_leg_adoption",
+  "builder_sha256": "9680408911d8aa5a54a682a6a97cab0cfc6ed3450e5cd1dba971bfb16b62d8cd",
+  "unvalidated": [
+    "leg adoption of coupon interfaces",
+    "printer profile",
+    "printed fit",
+    "horizontal pocket bridging",
+    "sleeve and coupling-nut dimensions",
+    "bearing retention",
+    "structural loads"
+  ]
+}

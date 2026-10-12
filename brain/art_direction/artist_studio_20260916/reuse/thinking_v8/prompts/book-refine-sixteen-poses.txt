@@ -1,0 +1,28 @@
+Use case: precise-object-edit
+Edit target: the attached transparent RGBA book sprite sheet, SIX columns by FOUR rows, 24 drawings, 1536x1024.
+
+Preserve the fixed camera, thin rounded cyan line style, book cover and central spine geometry, all individual cell positions, entrance frames 0-3 and exit frames 20-23. Preserve the already-correct three printed cyan bars on BOTH sides of the turning paper leaf.
+
+Refine ONLY the SIXTEEN active drawings 4-19 into SIXTEEN DIFFERENT, sequential, physically coherent poses of ONE right-to-left page turn. Eliminate repeated flat hold drawings that pad the active frame count. The page must remain hinged at the center spine, its outer RIGHT edge lifting first and traveling LEFT until the page lies on the left stack. Do not turn left-to-right. The stationary book and camera never bob, shrink, rotate, or jump.
+
+Frame index and exact sheet location, with paper angle measured from its initial flat RIGHT position to the final flat LEFT position:
+4 = row1 col5: 4 degrees, the outer-right edge of the right leaf just begins to curl upward, visibly distinct from a fully flat spread.
+5 = row1 col6: 10 degrees, outer-right edge slightly higher and further inward; gentle early lift.
+6 = row2 col1: 18 degrees, right leaf clearly lifts; its printed face still broad.
+7 = row2 col2: 30 degrees, right leaf tilts toward center, printed bars foreshorten with the surface.
+8 = row2 col3: 45 degrees, lifted leaf narrowing on the RIGHT of the hinge.
+9 = row2 col4: 61 degrees, lifted leaf narrower and higher; visible bars confined to its face.
+10 = row2 col5: 77 degrees, almost edge-on on RIGHT of spine, three moving text bars strongly compressed.
+11 = row2 col6: 92 degrees, just crossed the spine toward LEFT, leaf nearly edge-on; tiny foreshortened marks from its PRINTED REVERSE side.
+12 = row3 col1: 108 degrees, reverse face opens toward left, showing three short perspective-compressed bars physically attached inside the leaf.
+13 = row3 col2: 125 degrees, printed reverse face widens over left side, moving bars widen with its plane.
+14 = row3 col3: 141 degrees, page descends toward left stack; moving reverse-side bars approach horizontal.
+15 = row3 col4: 155 degrees, a shallow raised arch over left stack, three visible bars on that curved sheet, distinctly not flat yet.
+16 = row3 col5: 166 degrees, lower shallow arch, outer-left edge just above left stack, three bars already present on moving page.
+17 = row3 col6: 174 degrees, page almost flat with a small raised OUTER-LEFT edge, printed bars near final position.
+18 = row4 col1: 178 degrees, only a tiny outer-left settling curl remains; three printed bars already occupy final left-page surface.
+19 = row4 col2: 180 degrees, completely flat open spread with three bars on each inner page. No curl. Loop wraps into the tiny new right-edge curl at frame4.
+
+The scanner/text lines must never float, flip independently, appear only after landing, disappear on the reverse side or cross into empty space. BOTH SIDES of the turning leaf are printed with three bars. Before crossing vertical show top/front print, afterward show reverse print. Underlying left-page bars are occluded by the turning sheet. Fixed right-page text is revealed normally as the turning sheet lifts away.
+
+Every active frame must show a different page angle or settling curl, not just different pixels or line jitter. No duplicated flat pauses among frames4-18. Small final increments are easing into the landing, and frame19 to4 is a gentle new-page pickup. Keep outer covers, spine, canvas geometry and all non-active cells fixed. Genuine transparent alpha; no shadow, bloom, matte, background, words, labels, hands or faces.

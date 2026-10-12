@@ -1,0 +1,117 @@
+{
+  "status": "conservative_planar_screen_not_final_CAD_clearance",
+  "parameters_sha256": "37a6eaa2361a53cc53d1a5ce40a6a7bc495f4ce1ffb6bbd053f1056c218a1961",
+  "draft_servo_assumption": "45.2 X by35 Y mm; pitch-local centre X30,Y-56.5/+76.5; complete handed mirror; overlapping Z span",
+  "adjacent_mount_spacing_mm": 145.6639969244288,
+  "barrel_to_yaw_axis_mm": 13.0,
+  "audit_box_assumption": "75 radial x90 transverse x65 high, centred on pitch axis (35,+/-30,0)",
+  "audit_box_height_bodybottom_mm": [
+    2.5,
+    67.5
+  ],
+  "audit_box_max_radius_about_yaw_mm": 104.31323022512532,
+  "audit_box_min_radius_to_bodycenter": {
+    "distance_mm": 26.435198560257447,
+    "yaw_deg": 100
+  },
+  "audit_box_nominal_drive_min_body_radius_mm": 91.05564262483955,
+  "audit_box_strongest_pair_overlap_2deg_grid": {
+    "legs": [
+      "FL",
+      "RL"
+    ],
+    "yaw_deg": [
+      78,
+      -78
+    ],
+    "sat_overlap_mm": 49.573186879962364
+  },
+  "draft_servo_boxes": {
+    "hip": {
+      "min_radius_to_bodycenter": {
+        "leg": "FL",
+        "yaw_deg": -100,
+        "distance_mm": 62.44797741867473
+      },
+      "nominal_drive_min_radius_mm": [
+        118.7842481346787,
+        118.7842481346787,
+        118.78424813467868,
+        118.78424813467868
+      ],
+      "strongest_pair_overlap_2deg_grid": {
+        "legs": [
+          "FL",
+          "FR"
+        ],
+        "yaw_deg": [
+          -100,
+          100
+        ],
+        "sat_overlap_mm": 39.58647900995727
+      },
+      "sampled_rear_shell_intersection_at_bodybottom_z35": {
+        "leg": "RL",
+        "yaw_deg": 85,
+        "shell_point_mm": [
+          -86.93332436601614,
+          23.293714059226893
+        ]
+      }
+    },
+    "remote": {
+      "min_radius_to_bodycenter": {
+        "leg": "RL",
+        "yaw_deg": -100,
+        "distance_mm": 24.514237700306175
+      },
+      "nominal_drive_min_radius_mm": [
+        198.665571239382,
+        198.665571239382,
+        198.66557123938196,
+        198.66557123938196
+      ],
+      "strongest_pair_overlap_2deg_grid": {
+        "legs": [
+          "FL",
+          "RL"
+        ],
+        "yaw_deg": [
+          22,
+          -22
+        ],
+        "sat_overlap_mm": 45.55321426033883
+      },
+      "sampled_rear_shell_intersection_at_bodybottom_z35": null
+    }
+  },
+  "travel": {
+    "motor_usable_span_deg": 350,
+    "full_yaw_joint_span_deg": 200,
+    "full_yaw_motor_span_at_2_deg": 400,
+    "full_hip_joint_span_deg": 165,
+    "full_hip_motor_span_at_2_deg": 330,
+    "full_hip_motor_span_at_3p5_deg": 577.5,
+    "max_hip_span_at_3p5_deg": 100.0,
+    "absolute_tibia_full_rectangular_limits_span_deg": 300,
+    "absolute_tibia_motor_span_at_2_deg": 600,
+    "drive_neutral_hip_knee_deg": [
+      58.061527906608916,
+      -84.95649763105256
+    ],
+    "hip_range_if_centered_at_drive_2_deg": [
+      -29.438472093391084,
+      145.56152790660892
+    ],
+    "hip_range_if_centered_at_drive_3p5_deg": [
+      8.061527906608916,
+      108.06152790660892
+    ]
+  },
+  "mass": {
+    "total_estimate_kg": 3.9537629455500003,
+    "eight_pitch_and_remote_servos_kg": 0.44,
+    "com_z_rise_if_these_servos_raise_50mm": 5.564319435175348,
+    "four_added_50g_pods_total_kg": 4.1537629455500005
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "id": "mouths-friendly",
+  "kind": "mouths",
+  "family": "friendly",
+  "imageFile": "images/mouths-friendly.png",
+  "promptFile": "prompts/mouths-friendly-repair.txt",
+  "basePromptFile": "prompts/mouths-friendly.txt",
+  "tool": "built-in image_gen",
+  "generatedSource": "C:\\Users\\hssil\\.codex\\generated_images\\01a0fc8f-7e2f-7a60-b53b-c7909826ee2d\\exec-51ae8f76-236c-4006-943d-45d99f481b09.png",
+  "firstGeneratedSource": "C:\\Users\\hssil\\.codex\\generated_images\\01a0fc8f-7e2f-7a60-b53b-c7909826ee2d\\exec-ae8e5208-9521-44ef-9335-f2cbfef0ebc5.png",
+  "sha256": "ee3c150dd30d17fa7e6bc30cacb77a764aae9c7f31da38681c1b9cca49151024",
+  "width": 1536,
+  "height": 1024,
+  "columns": 4,
+  "rows": 3,
+  "alpha": {
+    "mode": "RGBA",
+    "transparentPixelFraction": 0.9406642913818359,
+    "extrema": [0, 254],
+    "fractionAlpha1Through7": 0.010255177815755209,
+    "fractionAlpha8Through31": 0.0008290608723958334,
+    "fractionAlpha32Through127": 0.0016892751057942708
+  },
+  "qa": {
+    "status": "passed-with-limitations",
+    "nativePngCopiedUnchanged": true,
+    "allTwelveCellsVisuallyInspected": true,
+    "rowMajorOrder": ["rest", "MBP", "release", "small-AA", "AA", "EH", "EE", "OH", "OO", "FV", "LNT", "S"],
+    "referenceStyle": "Smooth turquoise abstract MIST marks, with a restrained closed upward curve and modest filled bowl; no human mouth anatomy.",
+    "mouthOnly": true,
+    "noEyesHeadsBrowsOrLabels": true,
+    "noTeethTongueOrProtrusions": true,
+    "oneConnectedShapePerCellAtAlpha32": true,
+    "noDetachedVisibleInteriors": true,
+    "speechContrast": "Closure, release, two bowl sizes, low rectangular and bean targets, upright OH and OO, notched FV, compact LNT and narrow S remain distinct.",
+    "transparencyInspection": "Native RGBA alpha inspected with read-only PIL. Most apparent halo pixels in the raw RGB preview have alpha zero. All cells have one connected component at alpha >= 32. Low-alpha remnants remain below 32 and are reported separately.",
+    "registration": "Horizontal centers are close to local x=192. Vertical native mouth centers vary by row and articulation; runtime should use cell alignment without stretching the artwork.",
+    "repairsUsed": 1,
+    "nativeEdits": "None. No crop, resize, recolor, repaint, alpha cleaning, or frame transformation.",
+    "frameBoundsAtAlpha32": [
+      {"index": 0, "name": "rest", "cellOrigin": [0, 0], "bboxLocal": [126, 207, 261, 255], "size": [135, 48], "centerLocal": [193.5, 231]},
+      {"index": 1, "name": "MBP", "cellOrigin": [384, 0], "bboxLocal": [122, 203, 266, 229], "size": [144, 26], "centerLocal": [194, 216]},
+      {"index": 2, "name": "release", "cellOrigin": [768, 0], "bboxLocal": [117, 192, 269, 237], "size": [152, 45], "centerLocal": [193, 214.5]},
+      {"index": 3, "name": "small-AA", "cellOrigin": [1152, 0], "bboxLocal": [126, 195, 259, 260], "size": [133, 65], "centerLocal": [192.5, 227.5]},
+      {"index": 4, "name": "AA", "cellOrigin": [0, 341], "bboxLocal": [113, 135, 273, 219], "size": [160, 84], "centerLocal": [193, 177]},
+      {"index": 5, "name": "EH", "cellOrigin": [384, 341], "bboxLocal": [118, 130, 268, 209], "size": [150, 79], "centerLocal": [193, 169.5]},
+      {"index": 6, "name": "EE", "cellOrigin": [768, 341], "bboxLocal": [99, 142, 286, 205], "size": [187, 63], "centerLocal": [192.5, 173.5]},
+      {"index": 7, "name": "OH", "cellOrigin": [1152, 341], "bboxLocal": [136, 89, 249, 239], "size": [113, 150], "centerLocal": [192.5, 164]},
+      {"index": 8, "name": "OO", "cellOrigin": [0, 683], "bboxLocal": [147, 85, 238, 197], "size": [91, 112], "centerLocal": [192.5, 141]},
+      {"index": 9, "name": "FV", "cellOrigin": [384, 683], "bboxLocal": [123, 116, 265, 154], "size": [142, 38], "centerLocal": [194, 135]},
+      {"index": 10, "name": "LNT", "cellOrigin": [768, 683], "bboxLocal": [126, 101, 261, 173], "size": [135, 72], "centerLocal": [193.5, 137]},
+      {"index": 11, "name": "S", "cellOrigin": [1152, 683], "bboxLocal": [123, 110, 261, 158], "size": [138, 48], "centerLocal": [192, 134]}
+    ]
+  },
+  "limitations": [
+    "Native marks exceed the requested compact pixel dimensions; the largest visible target is OH at approximately 113 x 150 pixels. One uniform family scale can make the entire atlas compact without reshaping individual frames.",
+    "Native vertical placement does not match a single local y=170 center. Exact measured centers are supplied for runtime alignment.",
+    "The original transparent PNG retains luminous RGB values under many fully transparent pixels. An alpha-aware renderer must determine the appearance; raw RGB previews exaggerate the halo.",
+    "Approximately 1.03% of pixels have alpha 1 through 7, with additional edge pixels at alpha 8 through 31. The bytes are preserved, so these faint remnants were not cleaned in code.",
+    "The release, EH, EE, OH, OO, LNT and S contain softly different interior tone rather than the requested strictly uniform flat silhouette. Their visible cyan regions remain connected and contain no anatomical pieces.",
+    "The image has been inspected as a native atlas; motion, combined eye-layer rendering, and live audio playback are the parent task's remaining verification."
+  ]
+}

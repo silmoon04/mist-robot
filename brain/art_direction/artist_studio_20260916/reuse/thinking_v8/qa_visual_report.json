@@ -1,0 +1,169 @@
+{
+  "passed": true,
+  "checkedAt": "2026-09-24T22:17:55.204Z",
+  "review": "Manual consecutive-pose and persistent-body review of contact sheets; all cel indices zero-based.",
+  "manifestSha256": "48562750d59e7fa052a3737038177cfdd311bd4c67f577786da1437337baec5a",
+  "assets": {
+    "book": {
+      "status": "contact-approved",
+      "approved": true,
+      "issues": [],
+      "observations": [
+        "Printed front and back stay attached to the turning page; no blank flat-page text pop.",
+        "Stable registered spine and lower outline."
+      ],
+      "semanticReviewComplete": true,
+      "sourceSha256": "f2b2b57217b5306a197ad6dddee9ca3c51fe44f2b53c2ae38020f8d45544b75b",
+      "contactSha256": "a17ff936af317a2f0118a41bc93ab91b2820d3d36e6570e54fd1ce6db1969b9d"
+    },
+    "terminal": {
+      "status": "contact-approved",
+      "approved": true,
+      "issues": [],
+      "observations": [
+        "Success ticks removed; code/caret motion remains.",
+        "Shared bottom registration corrected major drift. Minor screen-outline variation remains."
+      ],
+      "semanticReviewComplete": true,
+      "sourceSha256": "c6af2c342987fe85db93c55010530bf86fd98c2f54f30c1dcf7129f26b70bf7f",
+      "contactSha256": "d3d1ed755331d95e8c12426b531a1a6a633b218755595acfaf9ca87cd61d1b64"
+    },
+    "note": {
+      "status": "contact-approved",
+      "approved": true,
+      "semanticReviewComplete": true,
+      "issues": [],
+      "observations": [
+        "Pen follows progressively revealed first and second strokes; upper line persists.",
+        "Explicit body anchor removes the former cel-16 pad drop.",
+        "Finishing/page-turn source cels retain minor contour and pen changes but stay grounded.",
+        "Early frames reuse generated pad, pen, and stroke crops; final six active page cels retain original drawings."
+      ],
+      "sourceSha256": "347e2e372fab19183055c033a8275ad6b5b4efcb09f84a40d7e4f953643abae1",
+      "contactSha256": "45b6b637d8413f76d0917ab6df8630eaef8de0eacdfb303ed6b5ab8cc488ac04",
+      "componentHashes": [
+        {
+          "file": "components/note_pad.png",
+          "sha256": "1f8a8e0e8f95fa6a9d66977a59f665e5c6ff7a27d9553a026e6d1d38cea071ed",
+          "source": "source/note.png",
+          "sourceSha256": "347e2e372fab19183055c033a8275ad6b5b4efcb09f84a40d7e4f953643abae1"
+        },
+        {
+          "file": "components/note_pen.png",
+          "sha256": "3f8cc4ae008a7ba6bc5819138abd0f3b8beb243b372d29c8fdcc29fe00e409d2",
+          "source": "source/note.png",
+          "sourceSha256": "347e2e372fab19183055c033a8275ad6b5b4efcb09f84a40d7e4f953643abae1"
+        },
+        {
+          "file": "components/note_stroke_first.png",
+          "sha256": "e4dad8d2c2e2648f268091975daf41cf74eb07e1ad7cc1ba679df53a3c2aedbd",
+          "source": "source/note.png",
+          "sourceSha256": "347e2e372fab19183055c033a8275ad6b5b4efcb09f84a40d7e4f953643abae1"
+        },
+        {
+          "file": "components/note_stroke_second.png",
+          "sha256": "171a48a89e5534fd4a9ec595ce04059c2fa92e687aed095e8e3fe0d0be030045",
+          "source": "source/note.png",
+          "sourceSha256": "347e2e372fab19183055c033a8275ad6b5b4efcb09f84a40d7e4f953643abae1"
+        }
+      ]
+    },
+    "cards": {
+      "status": "contact-approved",
+      "approved": true,
+      "semanticReviewComplete": true,
+      "issues": [],
+      "observations": [
+        "Centre card lifts and returns, followed by the left card, with visible intermediate positions.",
+        "Nonconsecutive return positions intentionally reuse poses; adjacent active placements change.",
+        "Front silhouette occludes rear outlines correctly in the reviewed contact.",
+        "24 playback frames reuse one generated card component three times; no claim of 24 independently drawn poses."
+      ],
+      "sourceSha256": "262773a50216044f5816756119a6fb16a68a3c986669240f593e3c30c5dafd38",
+      "contactSha256": "c77c3c109e56b8547aa4bb44d56f33a35c762c9f466b5c2099b2b49facb16851"
+    },
+    "searching": {
+      "status": "contact-approved",
+      "approved": true,
+      "issues": [],
+      "observations": [
+        "Continuous visible scanner out-and-back, including return cels 17/18.",
+        "Persistent rectangular document body."
+      ],
+      "semanticReviewComplete": true,
+      "sourceSha256": "2d75a2a10d20cbd295b539e195456d8e0b8a3e809fe407bfc75833d150e89f43",
+      "contactSha256": "5aff86a5e2d4c35161d1f360432436911121e2212a8bc0d47c55908dfe8460ce"
+    },
+    "planning": {
+      "status": "contact-approved",
+      "approved": true,
+      "issues": [],
+      "observations": [
+        "Ordered dot motion out and back; former near-repeat return groups replaced.",
+        "Minor hand-drawn arc variation is acceptable; no abrupt body jump visible."
+      ],
+      "semanticReviewComplete": true,
+      "sourceSha256": "9b7a51c135624596bd2b0013fc5f4dbb27f8b65d9b61992129a320b20d06d135",
+      "contactSha256": "cdbde79033e6d0dc5856fd663cb7126001178c8130ffc5cd83cfb454a4a842a4"
+    },
+    "connecting": {
+      "status": "contact-approved",
+      "approved": true,
+      "semanticReviewComplete": true,
+      "issues": [],
+      "observations": [
+        "Continuous packet sweep out and back replaces the former jump and small reversals.",
+        "Endpoint/path component remains fixed, with visible gaps and no success mark.",
+        "Declared generated path and packet crops; seam movement 4 pixels versus ordinary maximum 9."
+      ],
+      "sourceSha256": "766e5cab5df698e5373001dcef0f8479679a263f9e8b572a7827b1a405d2f570",
+      "contactSha256": "7290453d668592ea09befae1ffd237962d39ef6e2a2b5af23741f5b9034a8e2d",
+      "componentHashes": [
+        {
+          "file": "components/connecting_path.png",
+          "sha256": "237628dea8de7c857379e0a9e95601b16c7c56a3f349563a7a75500ad37be2aa",
+          "source": "source/connecting.png",
+          "sourceSha256": "766e5cab5df698e5373001dcef0f8479679a263f9e8b572a7827b1a405d2f570"
+        },
+        {
+          "file": "components/connecting_packet.png",
+          "sha256": "2e09ce4e4f41d070028175c8f9c8f14aa601913f76da29d3cb791a9c7320bcc7",
+          "source": "source/connecting.png",
+          "sourceSha256": "766e5cab5df698e5373001dcef0f8479679a263f9e8b572a7827b1a405d2f570"
+        }
+      ]
+    },
+    "checking": {
+      "status": "contact-approved",
+      "approved": true,
+      "semanticReviewComplete": true,
+      "issues": [],
+      "observations": [
+        "Continuous visible down-and-up bracket with intermediate positions, no coarse repeated row groups.",
+        "Page and contents remain fixed. Marker is retained during entrance/exit scaling.",
+        "Declared generated body and bracket crops; seam movement 7 pixels versus ordinary maximum 15."
+      ],
+      "sourceSha256": "e9dc77d659aaf73ba54d975474f9ca9a9eccb4eefcbdb478e6a16d64a4822ad1",
+      "contactSha256": "8479bb740f92b67a0c753349dc3db1557cba9579e955c362bce2d269ccfe1961",
+      "componentHashes": [
+        {
+          "file": "components/checking_body.png",
+          "sha256": "eac5fa49682ab59ba2935cea8339f1e1d2397327af3212941753ea3399d0fbe6",
+          "source": "source/checking_parts.png",
+          "sourceSha256": "50e59421273a94b728b1c6fd948e203ec899c7d537dbc147ee9e0b4d29afd963"
+        },
+        {
+          "file": "components/checking_bracket.png",
+          "sha256": "e83cf172de00da6ec48c297bf4b0e3a035669381669b30d7929d26dd7c8b64f5",
+          "source": "source/checking_parts.png",
+          "sourceSha256": "50e59421273a94b728b1c6fd948e203ec899c7d537dbc147ee9e0b4d29afd963"
+        }
+      ]
+    }
+  },
+  "limits": [
+    "Contact review cannot by itself prove perceived smoothness at runtime. Separate browser playback evidence is recorded in BROWSER_CHECK.md.",
+    "Different pixel hashes do not establish different poses."
+  ],
+  "bindingCheckedAt": "2026-09-24T22:26:19.064Z"
+}

@@ -1,0 +1,4365 @@
+{
+  "scope": "Normal preview tab after frozen candidate reload; isolated QA fixtures excluded",
+  "truncated": false,
+  "uniqueRequestUrls": [
+    "http://127.0.0.1:9064/character-preview/preview/",
+    "http://127.0.0.1:9064/character-preview/preview/style.css",
+    "http://127.0.0.1:9064/character-preview/preview/app.mjs",
+    "http://127.0.0.1:9064/character-preview/adapter/geraldine-adapter.mjs",
+    "http://127.0.0.1:9064/character-preview/preview/transport.mjs",
+    "http://127.0.0.1:9064/character-preview/preview/playback.mjs",
+    "http://127.0.0.1:9064/character-preview/adapter/source/state.mjs",
+    "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs",
+    "http://127.0.0.1:9064/character-preview/speech-review/sampler.mjs",
+    "http://127.0.0.1:9064/character-preview/direction/scenes.json",
+    "http://127.0.0.1:9064/character-preview/direction/timing-profiles.json",
+    "http://127.0.0.1:9064/site/speech-clips.json",
+    "http://127.0.0.1:9064/favicon.ico",
+    "http://127.0.0.1:9064/site/audio/mist-hinge-native.wav",
+    "http://127.0.0.1:9064/site/audio/mist-second-attempt-native.wav",
+    "http://127.0.0.1:9064/site/audio/mist-patience-native.wav",
+    "http://127.0.0.1:9064/site/asset-manifest.json",
+    "http://127.0.0.1:9064/site/assets/eyes-attentive.png",
+    "http://127.0.0.1:9064/site/assets/eyes-considering.png",
+    "http://127.0.0.1:9064/site/assets/eyes-skeptical.png",
+    "http://127.0.0.1:9064/site/assets/eyes-amused.png",
+    "http://127.0.0.1:9064/site/assets/eyes-concerned.png",
+    "http://127.0.0.1:9064/site/assets/eyes-laughing.png",
+    "http://127.0.0.1:9064/site/assets/mouths-friendly.png",
+    "http://127.0.0.1:9064/site/assets/mouths-dry.png",
+    "http://127.0.0.1:9064/site/assets/mouths-concerned.png",
+    "http://127.0.0.1:9064/site/assets/eyes-concerned-detail.png",
+    "http://127.0.0.1:9064/site/assets/eyes-laughing-detail.png"
+  ],
+  "nonLocal": [],
+  "events": [
+    {
+      "sequence": 29,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "type": "other"
+        },
+        "loaderId": "E78DEDDF866D11391F71316F4BE2C4D8",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Upgrade-Insecure-Requests": "1",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "VeryHigh",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/character-preview/preview/"
+        },
+        "requestId": "E78DEDDF866D11391F71316F4BE2C4D8",
+        "timestamp": 287939.796348,
+        "type": "Document",
+        "wallTime": 1791153550.470873
+      }
+    },
+    {
+      "sequence": 44,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "columnNumber": 244,
+          "lineNumber": 1,
+          "type": "parser",
+          "url": "http://127.0.0.1:9064/character-preview/preview/"
+        },
+        "loaderId": "E78DEDDF866D11391F71316F4BE2C4D8",
+        "redirectHasExtraInfo": false,
+        "renderBlockingBehavior": "Blocking",
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "VeryHigh",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/character-preview/preview/style.css"
+        },
+        "requestId": "79488.31",
+        "timestamp": 287939.838697,
+        "type": "Stylesheet",
+        "wallTime": 1791153550.513227
+      }
+    },
+    {
+      "sequence": 45,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "columnNumber": 280,
+          "lineNumber": 1,
+          "type": "parser",
+          "url": "http://127.0.0.1:9064/character-preview/preview/"
+        },
+        "loaderId": "E78DEDDF866D11391F71316F4BE2C4D8",
+        "redirectHasExtraInfo": false,
+        "renderBlockingBehavior": "NonBlocking",
+        "request": {
+          "headers": {
+            "Origin": "http://127.0.0.1:9064",
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+        },
+        "requestId": "79488.32",
+        "timestamp": 287939.839536,
+        "type": "Script",
+        "wallTime": 1791153550.514044
+      }
+    },
+    {
+      "sequence": 60,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "columnNumber": 37,
+          "lineNumber": 0,
+          "type": "script",
+          "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+        },
+        "loaderId": "E78DEDDF866D11391F71316F4BE2C4D8",
+        "redirectHasExtraInfo": false,
+        "renderBlockingBehavior": "NonBlocking",
+        "request": {
+          "headers": {
+            "Origin": "http://127.0.0.1:9064",
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/app.mjs",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/character-preview/adapter/geraldine-adapter.mjs"
+        },
+        "requestId": "79488.35",
+        "timestamp": 287939.91367,
+        "type": "Script",
+        "wallTime": 1791153550.588203
+      }
+    },
+    {
+      "sequence": 61,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "columnNumber": 29,
+          "lineNumber": 1,
+          "type": "script",
+          "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+        },
+        "loaderId": "E78DEDDF866D11391F71316F4BE2C4D8",
+        "redirectHasExtraInfo": false,
+        "renderBlockingBehavior": "NonBlocking",
+        "request": {
+          "headers": {
+            "Origin": "http://127.0.0.1:9064",
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/app.mjs",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/character-preview/preview/transport.mjs"
+        },
+        "requestId": "79488.36",
+        "timestamp": 287939.913939,
+        "type": "Script",
+        "wallTime": 1791153550.588434
+      }
+    },
+    {
+      "sequence": 62,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "columnNumber": 30,
+          "lineNumber": 2,
+          "type": "script",
+          "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+        },
+        "loaderId": "E78DEDDF866D11391F71316F4BE2C4D8",
+        "redirectHasExtraInfo": false,
+        "renderBlockingBehavior": "NonBlocking",
+        "request": {
+          "headers": {
+            "Origin": "http://127.0.0.1:9064",
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/app.mjs",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/character-preview/preview/playback.mjs"
+        },
+        "requestId": "79488.37",
+        "timestamp": 287939.914095,
+        "type": "Script",
+        "wallTime": 1791153550.588584
+      }
+    },
+    {
+      "sequence": 76,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "columnNumber": 94,
+          "lineNumber": 0,
+          "type": "script",
+          "url": "http://127.0.0.1:9064/character-preview/adapter/geraldine-adapter.mjs"
+        },
+        "loaderId": "E78DEDDF866D11391F71316F4BE2C4D8",
+        "redirectHasExtraInfo": false,
+        "renderBlockingBehavior": "NonBlocking",
+        "request": {
+          "headers": {
+            "Origin": "http://127.0.0.1:9064",
+            "Referer": "http://127.0.0.1:9064/character-preview/adapter/geraldine-adapter.mjs",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/character-preview/adapter/source/state.mjs"
+        },
+        "requestId": "79488.38",
+        "timestamp": 287939.958554,
+        "type": "Script",
+        "wallTime": 1791153550.633071
+      }
+    },
+    {
+      "sequence": 77,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "columnNumber": 57,
+          "lineNumber": 1,
+          "type": "script",
+          "url": "http://127.0.0.1:9064/character-preview/adapter/geraldine-adapter.mjs"
+        },
+        "loaderId": "E78DEDDF866D11391F71316F4BE2C4D8",
+        "redirectHasExtraInfo": false,
+        "renderBlockingBehavior": "NonBlocking",
+        "request": {
+          "headers": {
+            "Origin": "http://127.0.0.1:9064",
+            "Referer": "http://127.0.0.1:9064/character-preview/adapter/geraldine-adapter.mjs",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+        },
+        "requestId": "79488.39",
+        "timestamp": 287939.958936,
+        "type": "Script",
+        "wallTime": 1791153550.633446
+      }
+    },
+    {
+      "sequence": 85,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "columnNumber": 34,
+          "lineNumber": 0,
+          "type": "script",
+          "url": "http://127.0.0.1:9064/character-preview/preview/playback.mjs"
+        },
+        "loaderId": "E78DEDDF866D11391F71316F4BE2C4D8",
+        "redirectHasExtraInfo": false,
+        "renderBlockingBehavior": "NonBlocking",
+        "request": {
+          "headers": {
+            "Origin": "http://127.0.0.1:9064",
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/playback.mjs",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/character-preview/speech-review/sampler.mjs"
+        },
+        "requestId": "79488.40",
+        "timestamp": 287939.972828,
+        "type": "Script",
+        "wallTime": 1791153550.647348
+      }
+    },
+    {
+      "sequence": 105,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "stack": {
+            "callFrames": [
+              {
+                "columnNumber": 47,
+                "functionName": "json",
+                "lineNumber": 8,
+                "scriptId": "24",
+                "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+              },
+              {
+                "columnNumber": 60,
+                "functionName": "init",
+                "lineNumber": 81,
+                "scriptId": "24",
+                "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+              },
+              {
+                "columnNumber": 0,
+                "functionName": "",
+                "lineNumber": 92,
+                "scriptId": "24",
+                "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+              }
+            ]
+          },
+          "type": "script"
+        },
+        "loaderId": "E78DEDDF866D11391F71316F4BE2C4D8",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/character-preview/direction/scenes.json"
+        },
+        "requestId": "79488.41",
+        "timestamp": 287940.028506,
+        "type": "Fetch",
+        "wallTime": 1791153550.703172
+      }
+    },
+    {
+      "sequence": 106,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "stack": {
+            "callFrames": [
+              {
+                "columnNumber": 47,
+                "functionName": "json",
+                "lineNumber": 8,
+                "scriptId": "24",
+                "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+              },
+              {
+                "columnNumber": 93,
+                "functionName": "init",
+                "lineNumber": 81,
+                "scriptId": "24",
+                "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+              },
+              {
+                "columnNumber": 0,
+                "functionName": "",
+                "lineNumber": 92,
+                "scriptId": "24",
+                "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+              }
+            ]
+          },
+          "type": "script"
+        },
+        "loaderId": "E78DEDDF866D11391F71316F4BE2C4D8",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/character-preview/direction/timing-profiles.json"
+        },
+        "requestId": "79488.42",
+        "timestamp": 287940.029351,
+        "type": "Fetch",
+        "wallTime": 1791153550.703944
+      }
+    },
+    {
+      "sequence": 107,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "stack": {
+            "callFrames": [
+              {
+                "columnNumber": 47,
+                "functionName": "json",
+                "lineNumber": 8,
+                "scriptId": "24",
+                "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+              },
+              {
+                "columnNumber": 135,
+                "functionName": "init",
+                "lineNumber": 81,
+                "scriptId": "24",
+                "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+              },
+              {
+                "columnNumber": 0,
+                "functionName": "",
+                "lineNumber": 92,
+                "scriptId": "24",
+                "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+              }
+            ]
+          },
+          "type": "script"
+        },
+        "loaderId": "E78DEDDF866D11391F71316F4BE2C4D8",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/site/speech-clips.json"
+        },
+        "requestId": "79488.43",
+        "timestamp": 287940.030037,
+        "type": "Fetch",
+        "wallTime": 1791153550.704598
+      }
+    },
+    {
+      "sequence": 117,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "type": "other"
+        },
+        "loaderId": "E78DEDDF866D11391F71316F4BE2C4D8",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/favicon.ico"
+        },
+        "requestId": "79488.44",
+        "timestamp": 287940.078879,
+        "type": "Other",
+        "wallTime": 1791153550.753402
+      }
+    },
+    {
+      "sequence": 135,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "stack": {
+            "callFrames": [
+              {
+                "columnNumber": 90,
+                "functionName": "",
+                "lineNumber": 84,
+                "scriptId": "24",
+                "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+              },
+              {
+                "columnNumber": 26,
+                "functionName": "init",
+                "lineNumber": 84,
+                "scriptId": "24",
+                "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+              }
+            ]
+          },
+          "type": "script"
+        },
+        "loaderId": "E78DEDDF866D11391F71316F4BE2C4D8",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/site/audio/mist-hinge-native.wav"
+        },
+        "requestId": "79488.45",
+        "timestamp": 287940.177843,
+        "type": "Fetch",
+        "wallTime": 1791153550.852411
+      }
+    },
+    {
+      "sequence": 136,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "stack": {
+            "callFrames": [
+              {
+                "columnNumber": 90,
+                "functionName": "",
+                "lineNumber": 84,
+                "scriptId": "24",
+                "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+              },
+              {
+                "columnNumber": 26,
+                "functionName": "init",
+                "lineNumber": 84,
+                "scriptId": "24",
+                "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+              }
+            ]
+          },
+          "type": "script"
+        },
+        "loaderId": "E78DEDDF866D11391F71316F4BE2C4D8",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/site/audio/mist-second-attempt-native.wav"
+        },
+        "requestId": "79488.46",
+        "timestamp": 287940.178313,
+        "type": "Fetch",
+        "wallTime": 1791153550.85283
+      }
+    },
+    {
+      "sequence": 137,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "stack": {
+            "callFrames": [
+              {
+                "columnNumber": 90,
+                "functionName": "",
+                "lineNumber": 84,
+                "scriptId": "24",
+                "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+              },
+              {
+                "columnNumber": 26,
+                "functionName": "init",
+                "lineNumber": 84,
+                "scriptId": "24",
+                "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+              }
+            ]
+          },
+          "type": "script"
+        },
+        "loaderId": "E78DEDDF866D11391F71316F4BE2C4D8",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/site/audio/mist-patience-native.wav"
+        },
+        "requestId": "79488.47",
+        "timestamp": 287940.17856,
+        "type": "Fetch",
+        "wallTime": 1791153550.853102
+      }
+    },
+    {
+      "sequence": 157,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "stack": {
+            "callFrames": [
+              {
+                "columnNumber": 25,
+                "functionName": "fetchJson",
+                "lineNumber": 38,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 60,
+                "functionName": "",
+                "lineNumber": 151,
+                "scriptId": "25",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/geraldine-adapter.mjs"
+              },
+              {
+                "columnNumber": 4,
+                "functionName": "createGeraldineAdapter",
+                "lineNumber": 160,
+                "scriptId": "25",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/geraldine-adapter.mjs"
+              },
+              {
+                "columnNumber": 7,
+                "functionName": "init",
+                "lineNumber": 85,
+                "scriptId": "24",
+                "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+              }
+            ]
+          },
+          "type": "script"
+        },
+        "loaderId": "E78DEDDF866D11391F71316F4BE2C4D8",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/site/asset-manifest.json"
+        },
+        "requestId": "79488.48",
+        "timestamp": 287940.246271,
+        "type": "Fetch",
+        "wallTime": 1791153550.920827
+      }
+    },
+    {
+      "sequence": 164,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "stack": {
+            "callFrames": [
+              {
+                "columnNumber": 16,
+                "functionName": "",
+                "lineNumber": 59,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 63,
+                "functionName": "",
+                "lineNumber": 51,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 51,
+                "functionName": "load",
+                "lineNumber": 51,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 27,
+                "functionName": "",
+                "lineNumber": 156,
+                "scriptId": "25",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/geraldine-adapter.mjs"
+              }
+            ]
+          },
+          "type": "script"
+        },
+        "loaderId": "E78DEDDF866D11391F71316F4BE2C4D8",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "Low",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/site/assets/eyes-attentive.png"
+        },
+        "requestId": "79488.49",
+        "timestamp": 287940.268321,
+        "type": "Image",
+        "wallTime": 1791153550.943287
+      }
+    },
+    {
+      "sequence": 165,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "stack": {
+            "callFrames": [
+              {
+                "columnNumber": 16,
+                "functionName": "",
+                "lineNumber": 59,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 63,
+                "functionName": "",
+                "lineNumber": 51,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 51,
+                "functionName": "load",
+                "lineNumber": 51,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 27,
+                "functionName": "",
+                "lineNumber": 156,
+                "scriptId": "25",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/geraldine-adapter.mjs"
+              }
+            ]
+          },
+          "type": "script"
+        },
+        "loaderId": "E78DEDDF866D11391F71316F4BE2C4D8",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "Low",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/site/assets/eyes-considering.png"
+        },
+        "requestId": "79488.50",
+        "timestamp": 287940.269234,
+        "type": "Image",
+        "wallTime": 1791153550.943755
+      }
+    },
+    {
+      "sequence": 166,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "stack": {
+            "callFrames": [
+              {
+                "columnNumber": 16,
+                "functionName": "",
+                "lineNumber": 59,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 63,
+                "functionName": "",
+                "lineNumber": 51,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 51,
+                "functionName": "load",
+                "lineNumber": 51,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 27,
+                "functionName": "",
+                "lineNumber": 156,
+                "scriptId": "25",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/geraldine-adapter.mjs"
+              }
+            ]
+          },
+          "type": "script"
+        },
+        "loaderId": "E78DEDDF866D11391F71316F4BE2C4D8",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "Low",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/site/assets/eyes-skeptical.png"
+        },
+        "requestId": "79488.51",
+        "timestamp": 287940.269482,
+        "type": "Image",
+        "wallTime": 1791153550.94399
+      }
+    },
+    {
+      "sequence": 167,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "stack": {
+            "callFrames": [
+              {
+                "columnNumber": 16,
+                "functionName": "",
+                "lineNumber": 59,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 63,
+                "functionName": "",
+                "lineNumber": 51,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 51,
+                "functionName": "load",
+                "lineNumber": 51,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 27,
+                "functionName": "",
+                "lineNumber": 156,
+                "scriptId": "25",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/geraldine-adapter.mjs"
+              }
+            ]
+          },
+          "type": "script"
+        },
+        "loaderId": "E78DEDDF866D11391F71316F4BE2C4D8",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "Low",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/site/assets/eyes-amused.png"
+        },
+        "requestId": "79488.52",
+        "timestamp": 287940.269712,
+        "type": "Image",
+        "wallTime": 1791153550.944245
+      }
+    },
+    {
+      "sequence": 168,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "stack": {
+            "callFrames": [
+              {
+                "columnNumber": 16,
+                "functionName": "",
+                "lineNumber": 59,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 63,
+                "functionName": "",
+                "lineNumber": 51,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 51,
+                "functionName": "load",
+                "lineNumber": 51,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 27,
+                "functionName": "",
+                "lineNumber": 156,
+                "scriptId": "25",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/geraldine-adapter.mjs"
+              }
+            ]
+          },
+          "type": "script"
+        },
+        "loaderId": "E78DEDDF866D11391F71316F4BE2C4D8",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "Low",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/site/assets/eyes-concerned.png"
+        },
+        "requestId": "79488.53",
+        "timestamp": 287940.269933,
+        "type": "Image",
+        "wallTime": 1791153550.94446
+      }
+    },
+    {
+      "sequence": 169,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "stack": {
+            "callFrames": [
+              {
+                "columnNumber": 16,
+                "functionName": "",
+                "lineNumber": 59,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 63,
+                "functionName": "",
+                "lineNumber": 51,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 51,
+                "functionName": "load",
+                "lineNumber": 51,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 27,
+                "functionName": "",
+                "lineNumber": 156,
+                "scriptId": "25",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/geraldine-adapter.mjs"
+              }
+            ]
+          },
+          "type": "script"
+        },
+        "loaderId": "E78DEDDF866D11391F71316F4BE2C4D8",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "Low",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/site/assets/eyes-laughing.png"
+        },
+        "requestId": "79488.54",
+        "timestamp": 287940.270129,
+        "type": "Image",
+        "wallTime": 1791153550.944627
+      }
+    },
+    {
+      "sequence": 170,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "stack": {
+            "callFrames": [
+              {
+                "columnNumber": 16,
+                "functionName": "",
+                "lineNumber": 59,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 63,
+                "functionName": "",
+                "lineNumber": 51,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 51,
+                "functionName": "load",
+                "lineNumber": 51,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 27,
+                "functionName": "",
+                "lineNumber": 156,
+                "scriptId": "25",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/geraldine-adapter.mjs"
+              }
+            ]
+          },
+          "type": "script"
+        },
+        "loaderId": "E78DEDDF866D11391F71316F4BE2C4D8",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "Low",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/site/assets/mouths-friendly.png"
+        },
+        "requestId": "79488.55",
+        "timestamp": 287940.270292,
+        "type": "Image",
+        "wallTime": 1791153550.944789
+      }
+    },
+    {
+      "sequence": 171,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "stack": {
+            "callFrames": [
+              {
+                "columnNumber": 16,
+                "functionName": "",
+                "lineNumber": 59,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 63,
+                "functionName": "",
+                "lineNumber": 51,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 51,
+                "functionName": "load",
+                "lineNumber": 51,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 27,
+                "functionName": "",
+                "lineNumber": 156,
+                "scriptId": "25",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/geraldine-adapter.mjs"
+              }
+            ]
+          },
+          "type": "script"
+        },
+        "loaderId": "E78DEDDF866D11391F71316F4BE2C4D8",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "Low",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/site/assets/mouths-dry.png"
+        },
+        "requestId": "79488.56",
+        "timestamp": 287940.270421,
+        "type": "Image",
+        "wallTime": 1791153550.944913
+      }
+    },
+    {
+      "sequence": 172,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "stack": {
+            "callFrames": [
+              {
+                "columnNumber": 16,
+                "functionName": "",
+                "lineNumber": 59,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 63,
+                "functionName": "",
+                "lineNumber": 51,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 51,
+                "functionName": "load",
+                "lineNumber": 51,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 27,
+                "functionName": "",
+                "lineNumber": 156,
+                "scriptId": "25",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/geraldine-adapter.mjs"
+              }
+            ]
+          },
+          "type": "script"
+        },
+        "loaderId": "E78DEDDF866D11391F71316F4BE2C4D8",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "Low",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/site/assets/mouths-concerned.png"
+        },
+        "requestId": "79488.57",
+        "timestamp": 287940.270602,
+        "type": "Image",
+        "wallTime": 1791153550.945098
+      }
+    },
+    {
+      "sequence": 173,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "stack": {
+            "callFrames": [
+              {
+                "columnNumber": 16,
+                "functionName": "",
+                "lineNumber": 59,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 63,
+                "functionName": "",
+                "lineNumber": 51,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 51,
+                "functionName": "load",
+                "lineNumber": 51,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 27,
+                "functionName": "",
+                "lineNumber": 156,
+                "scriptId": "25",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/geraldine-adapter.mjs"
+              }
+            ]
+          },
+          "type": "script"
+        },
+        "loaderId": "E78DEDDF866D11391F71316F4BE2C4D8",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "Low",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/site/assets/eyes-concerned-detail.png"
+        },
+        "requestId": "79488.58",
+        "timestamp": 287940.270755,
+        "type": "Image",
+        "wallTime": 1791153550.945247
+      }
+    },
+    {
+      "sequence": 174,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "stack": {
+            "callFrames": [
+              {
+                "columnNumber": 16,
+                "functionName": "",
+                "lineNumber": 59,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 63,
+                "functionName": "",
+                "lineNumber": 51,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 51,
+                "functionName": "load",
+                "lineNumber": 51,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 27,
+                "functionName": "",
+                "lineNumber": 156,
+                "scriptId": "25",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/geraldine-adapter.mjs"
+              }
+            ]
+          },
+          "type": "script"
+        },
+        "loaderId": "E78DEDDF866D11391F71316F4BE2C4D8",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "Low",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/site/assets/eyes-laughing-detail.png"
+        },
+        "requestId": "79488.59",
+        "timestamp": 287940.270913,
+        "type": "Image",
+        "wallTime": 1791153550.945439
+      }
+    },
+    {
+      "sequence": 280,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "type": "other"
+        },
+        "loaderId": "828CD98935EC407948907119E5CCAB70",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Upgrade-Insecure-Requests": "1",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "VeryHigh",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/character-preview/preview/"
+        },
+        "requestId": "828CD98935EC407948907119E5CCAB70",
+        "timestamp": 288287.747031,
+        "type": "Document",
+        "wallTime": 1791153898.421515
+      }
+    },
+    {
+      "sequence": 295,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "columnNumber": 244,
+          "lineNumber": 1,
+          "type": "parser",
+          "url": "http://127.0.0.1:9064/character-preview/preview/"
+        },
+        "loaderId": "828CD98935EC407948907119E5CCAB70",
+        "redirectHasExtraInfo": false,
+        "renderBlockingBehavior": "Blocking",
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "VeryHigh",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/character-preview/preview/style.css"
+        },
+        "requestId": "79488.61",
+        "timestamp": 288287.792022,
+        "type": "Stylesheet",
+        "wallTime": 1791153898.466542
+      }
+    },
+    {
+      "sequence": 296,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "columnNumber": 280,
+          "lineNumber": 1,
+          "type": "parser",
+          "url": "http://127.0.0.1:9064/character-preview/preview/"
+        },
+        "loaderId": "828CD98935EC407948907119E5CCAB70",
+        "redirectHasExtraInfo": false,
+        "renderBlockingBehavior": "NonBlocking",
+        "request": {
+          "headers": {
+            "Origin": "http://127.0.0.1:9064",
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+        },
+        "requestId": "79488.62",
+        "timestamp": 288287.792783,
+        "type": "Script",
+        "wallTime": 1791153898.467295
+      }
+    },
+    {
+      "sequence": 312,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "columnNumber": 37,
+          "lineNumber": 0,
+          "type": "script",
+          "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+        },
+        "loaderId": "828CD98935EC407948907119E5CCAB70",
+        "redirectHasExtraInfo": false,
+        "renderBlockingBehavior": "NonBlocking",
+        "request": {
+          "headers": {
+            "Origin": "http://127.0.0.1:9064",
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/app.mjs",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/character-preview/adapter/geraldine-adapter.mjs"
+        },
+        "requestId": "79488.65",
+        "timestamp": 288287.951007,
+        "type": "Script",
+        "wallTime": 1791153898.625531
+      }
+    },
+    {
+      "sequence": 313,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "columnNumber": 29,
+          "lineNumber": 1,
+          "type": "script",
+          "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+        },
+        "loaderId": "828CD98935EC407948907119E5CCAB70",
+        "redirectHasExtraInfo": false,
+        "renderBlockingBehavior": "NonBlocking",
+        "request": {
+          "headers": {
+            "Origin": "http://127.0.0.1:9064",
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/app.mjs",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/character-preview/preview/transport.mjs"
+        },
+        "requestId": "79488.66",
+        "timestamp": 288287.951268,
+        "type": "Script",
+        "wallTime": 1791153898.625765
+      }
+    },
+    {
+      "sequence": 314,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "columnNumber": 30,
+          "lineNumber": 2,
+          "type": "script",
+          "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+        },
+        "loaderId": "828CD98935EC407948907119E5CCAB70",
+        "redirectHasExtraInfo": false,
+        "renderBlockingBehavior": "NonBlocking",
+        "request": {
+          "headers": {
+            "Origin": "http://127.0.0.1:9064",
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/app.mjs",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/character-preview/preview/playback.mjs"
+        },
+        "requestId": "79488.67",
+        "timestamp": 288287.951426,
+        "type": "Script",
+        "wallTime": 1791153898.625918
+      }
+    },
+    {
+      "sequence": 325,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "columnNumber": 94,
+          "lineNumber": 0,
+          "type": "script",
+          "url": "http://127.0.0.1:9064/character-preview/adapter/geraldine-adapter.mjs"
+        },
+        "loaderId": "828CD98935EC407948907119E5CCAB70",
+        "redirectHasExtraInfo": false,
+        "renderBlockingBehavior": "NonBlocking",
+        "request": {
+          "headers": {
+            "Origin": "http://127.0.0.1:9064",
+            "Referer": "http://127.0.0.1:9064/character-preview/adapter/geraldine-adapter.mjs",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/character-preview/adapter/source/state.mjs"
+        },
+        "requestId": "79488.68",
+        "timestamp": 288287.978447,
+        "type": "Script",
+        "wallTime": 1791153898.652973
+      }
+    },
+    {
+      "sequence": 326,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "columnNumber": 57,
+          "lineNumber": 1,
+          "type": "script",
+          "url": "http://127.0.0.1:9064/character-preview/adapter/geraldine-adapter.mjs"
+        },
+        "loaderId": "828CD98935EC407948907119E5CCAB70",
+        "redirectHasExtraInfo": false,
+        "renderBlockingBehavior": "NonBlocking",
+        "request": {
+          "headers": {
+            "Origin": "http://127.0.0.1:9064",
+            "Referer": "http://127.0.0.1:9064/character-preview/adapter/geraldine-adapter.mjs",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+        },
+        "requestId": "79488.69",
+        "timestamp": 288287.978763,
+        "type": "Script",
+        "wallTime": 1791153898.653269
+      }
+    },
+    {
+      "sequence": 335,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "columnNumber": 34,
+          "lineNumber": 0,
+          "type": "script",
+          "url": "http://127.0.0.1:9064/character-preview/preview/playback.mjs"
+        },
+        "loaderId": "828CD98935EC407948907119E5CCAB70",
+        "redirectHasExtraInfo": false,
+        "renderBlockingBehavior": "NonBlocking",
+        "request": {
+          "headers": {
+            "Origin": "http://127.0.0.1:9064",
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/playback.mjs",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/character-preview/speech-review/sampler.mjs"
+        },
+        "requestId": "79488.70",
+        "timestamp": 288287.985037,
+        "type": "Script",
+        "wallTime": 1791153898.659546
+      }
+    },
+    {
+      "sequence": 363,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "stack": {
+            "callFrames": [
+              {
+                "columnNumber": 47,
+                "functionName": "json",
+                "lineNumber": 8,
+                "scriptId": "24",
+                "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+              },
+              {
+                "columnNumber": 60,
+                "functionName": "init",
+                "lineNumber": 81,
+                "scriptId": "24",
+                "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+              },
+              {
+                "columnNumber": 0,
+                "functionName": "",
+                "lineNumber": 92,
+                "scriptId": "24",
+                "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+              }
+            ]
+          },
+          "type": "script"
+        },
+        "loaderId": "828CD98935EC407948907119E5CCAB70",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/character-preview/direction/scenes.json"
+        },
+        "requestId": "79488.71",
+        "timestamp": 288288.019893,
+        "type": "Fetch",
+        "wallTime": 1791153898.694491
+      }
+    },
+    {
+      "sequence": 364,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "stack": {
+            "callFrames": [
+              {
+                "columnNumber": 47,
+                "functionName": "json",
+                "lineNumber": 8,
+                "scriptId": "24",
+                "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+              },
+              {
+                "columnNumber": 93,
+                "functionName": "init",
+                "lineNumber": 81,
+                "scriptId": "24",
+                "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+              },
+              {
+                "columnNumber": 0,
+                "functionName": "",
+                "lineNumber": 92,
+                "scriptId": "24",
+                "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+              }
+            ]
+          },
+          "type": "script"
+        },
+        "loaderId": "828CD98935EC407948907119E5CCAB70",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/character-preview/direction/timing-profiles.json"
+        },
+        "requestId": "79488.72",
+        "timestamp": 288288.020496,
+        "type": "Fetch",
+        "wallTime": 1791153898.695037
+      }
+    },
+    {
+      "sequence": 365,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "stack": {
+            "callFrames": [
+              {
+                "columnNumber": 47,
+                "functionName": "json",
+                "lineNumber": 8,
+                "scriptId": "24",
+                "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+              },
+              {
+                "columnNumber": 135,
+                "functionName": "init",
+                "lineNumber": 81,
+                "scriptId": "24",
+                "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+              },
+              {
+                "columnNumber": 0,
+                "functionName": "",
+                "lineNumber": 92,
+                "scriptId": "24",
+                "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+              }
+            ]
+          },
+          "type": "script"
+        },
+        "loaderId": "828CD98935EC407948907119E5CCAB70",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/site/speech-clips.json"
+        },
+        "requestId": "79488.73",
+        "timestamp": 288288.02083,
+        "type": "Fetch",
+        "wallTime": 1791153898.695345
+      }
+    },
+    {
+      "sequence": 381,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "stack": {
+            "callFrames": [
+              {
+                "columnNumber": 90,
+                "functionName": "",
+                "lineNumber": 84,
+                "scriptId": "24",
+                "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+              },
+              {
+                "columnNumber": 26,
+                "functionName": "init",
+                "lineNumber": 84,
+                "scriptId": "24",
+                "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+              }
+            ]
+          },
+          "type": "script"
+        },
+        "loaderId": "828CD98935EC407948907119E5CCAB70",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/site/audio/mist-hinge-native.wav"
+        },
+        "requestId": "79488.74",
+        "timestamp": 288288.152852,
+        "type": "Fetch",
+        "wallTime": 1791153898.827409
+      }
+    },
+    {
+      "sequence": 382,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "stack": {
+            "callFrames": [
+              {
+                "columnNumber": 90,
+                "functionName": "",
+                "lineNumber": 84,
+                "scriptId": "24",
+                "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+              },
+              {
+                "columnNumber": 26,
+                "functionName": "init",
+                "lineNumber": 84,
+                "scriptId": "24",
+                "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+              }
+            ]
+          },
+          "type": "script"
+        },
+        "loaderId": "828CD98935EC407948907119E5CCAB70",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/site/audio/mist-second-attempt-native.wav"
+        },
+        "requestId": "79488.75",
+        "timestamp": 288288.153253,
+        "type": "Fetch",
+        "wallTime": 1791153898.827767
+      }
+    },
+    {
+      "sequence": 383,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "stack": {
+            "callFrames": [
+              {
+                "columnNumber": 90,
+                "functionName": "",
+                "lineNumber": 84,
+                "scriptId": "24",
+                "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+              },
+              {
+                "columnNumber": 26,
+                "functionName": "init",
+                "lineNumber": 84,
+                "scriptId": "24",
+                "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+              }
+            ]
+          },
+          "type": "script"
+        },
+        "loaderId": "828CD98935EC407948907119E5CCAB70",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/site/audio/mist-patience-native.wav"
+        },
+        "requestId": "79488.76",
+        "timestamp": 288288.153489,
+        "type": "Fetch",
+        "wallTime": 1791153898.827999
+      }
+    },
+    {
+      "sequence": 384,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "type": "other"
+        },
+        "loaderId": "828CD98935EC407948907119E5CCAB70",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/favicon.ico"
+        },
+        "requestId": "79488.77",
+        "timestamp": 288288.156093,
+        "type": "Other",
+        "wallTime": 1791153898.830606
+      }
+    },
+    {
+      "sequence": 410,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "stack": {
+            "callFrames": [
+              {
+                "columnNumber": 25,
+                "functionName": "fetchJson",
+                "lineNumber": 38,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 60,
+                "functionName": "",
+                "lineNumber": 151,
+                "scriptId": "25",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/geraldine-adapter.mjs"
+              },
+              {
+                "columnNumber": 4,
+                "functionName": "createGeraldineAdapter",
+                "lineNumber": 160,
+                "scriptId": "25",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/geraldine-adapter.mjs"
+              },
+              {
+                "columnNumber": 7,
+                "functionName": "init",
+                "lineNumber": 85,
+                "scriptId": "24",
+                "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+              }
+            ]
+          },
+          "type": "script"
+        },
+        "loaderId": "828CD98935EC407948907119E5CCAB70",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/site/asset-manifest.json"
+        },
+        "requestId": "79488.78",
+        "timestamp": 288288.226597,
+        "type": "Fetch",
+        "wallTime": 1791153898.901141
+      }
+    },
+    {
+      "sequence": 416,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "type": "other"
+        },
+        "loaderId": "828CD98935EC407948907119E5CCAB70",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "Low",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/site/assets/eyes-attentive.png"
+        },
+        "requestId": "79488.79",
+        "timestamp": 288288.240149,
+        "type": "Image",
+        "wallTime": 1791153898.914653
+      }
+    },
+    {
+      "sequence": 417,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "type": "other"
+        },
+        "loaderId": "828CD98935EC407948907119E5CCAB70",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "Low",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/site/assets/eyes-considering.png"
+        },
+        "requestId": "79488.80",
+        "timestamp": 288288.240318,
+        "type": "Image",
+        "wallTime": 1791153898.914798
+      }
+    },
+    {
+      "sequence": 418,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "type": "other"
+        },
+        "loaderId": "828CD98935EC407948907119E5CCAB70",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "Low",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/site/assets/eyes-skeptical.png"
+        },
+        "requestId": "79488.81",
+        "timestamp": 288288.240407,
+        "type": "Image",
+        "wallTime": 1791153898.914886
+      }
+    },
+    {
+      "sequence": 419,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "type": "other"
+        },
+        "loaderId": "828CD98935EC407948907119E5CCAB70",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "Low",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/site/assets/eyes-amused.png"
+        },
+        "requestId": "79488.82",
+        "timestamp": 288288.24048,
+        "type": "Image",
+        "wallTime": 1791153898.914958
+      }
+    },
+    {
+      "sequence": 420,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "type": "other"
+        },
+        "loaderId": "828CD98935EC407948907119E5CCAB70",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "Low",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/site/assets/eyes-concerned.png"
+        },
+        "requestId": "79488.83",
+        "timestamp": 288288.240552,
+        "type": "Image",
+        "wallTime": 1791153898.91503
+      }
+    },
+    {
+      "sequence": 421,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "type": "other"
+        },
+        "loaderId": "828CD98935EC407948907119E5CCAB70",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "Low",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/site/assets/eyes-laughing.png"
+        },
+        "requestId": "79488.84",
+        "timestamp": 288288.240637,
+        "type": "Image",
+        "wallTime": 1791153898.915116
+      }
+    },
+    {
+      "sequence": 422,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "type": "other"
+        },
+        "loaderId": "828CD98935EC407948907119E5CCAB70",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "Low",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/site/assets/mouths-friendly.png"
+        },
+        "requestId": "79488.85",
+        "timestamp": 288288.240715,
+        "type": "Image",
+        "wallTime": 1791153898.915194
+      }
+    },
+    {
+      "sequence": 423,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "type": "other"
+        },
+        "loaderId": "828CD98935EC407948907119E5CCAB70",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "Low",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/site/assets/mouths-dry.png"
+        },
+        "requestId": "79488.86",
+        "timestamp": 288288.24078,
+        "type": "Image",
+        "wallTime": 1791153898.915256
+      }
+    },
+    {
+      "sequence": 424,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "type": "other"
+        },
+        "loaderId": "828CD98935EC407948907119E5CCAB70",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "Low",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/site/assets/mouths-concerned.png"
+        },
+        "requestId": "79488.87",
+        "timestamp": 288288.240854,
+        "type": "Image",
+        "wallTime": 1791153898.915333
+      }
+    },
+    {
+      "sequence": 425,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "type": "other"
+        },
+        "loaderId": "828CD98935EC407948907119E5CCAB70",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "Low",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/site/assets/eyes-concerned-detail.png"
+        },
+        "requestId": "79488.88",
+        "timestamp": 288288.240916,
+        "type": "Image",
+        "wallTime": 1791153898.915391
+      }
+    },
+    {
+      "sequence": 426,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "type": "other"
+        },
+        "loaderId": "828CD98935EC407948907119E5CCAB70",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "Low",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/site/assets/eyes-laughing-detail.png"
+        },
+        "requestId": "79488.89",
+        "timestamp": 288288.240987,
+        "type": "Image",
+        "wallTime": 1791153898.915463
+      }
+    },
+    {
+      "sequence": 518,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "type": "other"
+        },
+        "loaderId": "CD5B46EC4FE96A1BB5D48824539985EE",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Upgrade-Insecure-Requests": "1",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "VeryHigh",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/character-preview/preview/"
+        },
+        "requestId": "CD5B46EC4FE96A1BB5D48824539985EE",
+        "timestamp": 288300.070574,
+        "type": "Document",
+        "wallTime": 1791153910.745053
+      }
+    },
+    {
+      "sequence": 533,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "columnNumber": 244,
+          "lineNumber": 1,
+          "type": "parser",
+          "url": "http://127.0.0.1:9064/character-preview/preview/"
+        },
+        "loaderId": "CD5B46EC4FE96A1BB5D48824539985EE",
+        "redirectHasExtraInfo": false,
+        "renderBlockingBehavior": "Blocking",
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "VeryHigh",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/character-preview/preview/style.css"
+        },
+        "requestId": "79488.91",
+        "timestamp": 288300.099066,
+        "type": "Stylesheet",
+        "wallTime": 1791153910.773556
+      }
+    },
+    {
+      "sequence": 534,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "columnNumber": 280,
+          "lineNumber": 1,
+          "type": "parser",
+          "url": "http://127.0.0.1:9064/character-preview/preview/"
+        },
+        "loaderId": "CD5B46EC4FE96A1BB5D48824539985EE",
+        "redirectHasExtraInfo": false,
+        "renderBlockingBehavior": "NonBlocking",
+        "request": {
+          "headers": {
+            "Origin": "http://127.0.0.1:9064",
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+        },
+        "requestId": "79488.92",
+        "timestamp": 288300.099383,
+        "type": "Script",
+        "wallTime": 1791153910.773875
+      }
+    },
+    {
+      "sequence": 550,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "columnNumber": 37,
+          "lineNumber": 0,
+          "type": "script",
+          "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+        },
+        "loaderId": "CD5B46EC4FE96A1BB5D48824539985EE",
+        "redirectHasExtraInfo": false,
+        "renderBlockingBehavior": "NonBlocking",
+        "request": {
+          "headers": {
+            "Origin": "http://127.0.0.1:9064",
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/app.mjs",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/character-preview/adapter/geraldine-adapter.mjs"
+        },
+        "requestId": "79488.95",
+        "timestamp": 288300.153317,
+        "type": "Script",
+        "wallTime": 1791153910.827816
+      }
+    },
+    {
+      "sequence": 551,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "columnNumber": 29,
+          "lineNumber": 1,
+          "type": "script",
+          "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+        },
+        "loaderId": "CD5B46EC4FE96A1BB5D48824539985EE",
+        "redirectHasExtraInfo": false,
+        "renderBlockingBehavior": "NonBlocking",
+        "request": {
+          "headers": {
+            "Origin": "http://127.0.0.1:9064",
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/app.mjs",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/character-preview/preview/transport.mjs"
+        },
+        "requestId": "79488.96",
+        "timestamp": 288300.153481,
+        "type": "Script",
+        "wallTime": 1791153910.827964
+      }
+    },
+    {
+      "sequence": 552,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "columnNumber": 30,
+          "lineNumber": 2,
+          "type": "script",
+          "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+        },
+        "loaderId": "CD5B46EC4FE96A1BB5D48824539985EE",
+        "redirectHasExtraInfo": false,
+        "renderBlockingBehavior": "NonBlocking",
+        "request": {
+          "headers": {
+            "Origin": "http://127.0.0.1:9064",
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/app.mjs",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/character-preview/preview/playback.mjs"
+        },
+        "requestId": "79488.97",
+        "timestamp": 288300.153578,
+        "type": "Script",
+        "wallTime": 1791153910.828057
+      }
+    },
+    {
+      "sequence": 571,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "columnNumber": 94,
+          "lineNumber": 0,
+          "type": "script",
+          "url": "http://127.0.0.1:9064/character-preview/adapter/geraldine-adapter.mjs"
+        },
+        "loaderId": "CD5B46EC4FE96A1BB5D48824539985EE",
+        "redirectHasExtraInfo": false,
+        "renderBlockingBehavior": "NonBlocking",
+        "request": {
+          "headers": {
+            "Origin": "http://127.0.0.1:9064",
+            "Referer": "http://127.0.0.1:9064/character-preview/adapter/geraldine-adapter.mjs",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/character-preview/adapter/source/state.mjs"
+        },
+        "requestId": "79488.98",
+        "timestamp": 288300.17157,
+        "type": "Script",
+        "wallTime": 1791153910.846059
+      }
+    },
+    {
+      "sequence": 572,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "columnNumber": 57,
+          "lineNumber": 1,
+          "type": "script",
+          "url": "http://127.0.0.1:9064/character-preview/adapter/geraldine-adapter.mjs"
+        },
+        "loaderId": "CD5B46EC4FE96A1BB5D48824539985EE",
+        "redirectHasExtraInfo": false,
+        "renderBlockingBehavior": "NonBlocking",
+        "request": {
+          "headers": {
+            "Origin": "http://127.0.0.1:9064",
+            "Referer": "http://127.0.0.1:9064/character-preview/adapter/geraldine-adapter.mjs",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+        },
+        "requestId": "79488.99",
+        "timestamp": 288300.171713,
+        "type": "Script",
+        "wallTime": 1791153910.846195
+      }
+    },
+    {
+      "sequence": 573,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "columnNumber": 34,
+          "lineNumber": 0,
+          "type": "script",
+          "url": "http://127.0.0.1:9064/character-preview/preview/playback.mjs"
+        },
+        "loaderId": "CD5B46EC4FE96A1BB5D48824539985EE",
+        "redirectHasExtraInfo": false,
+        "renderBlockingBehavior": "NonBlocking",
+        "request": {
+          "headers": {
+            "Origin": "http://127.0.0.1:9064",
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/playback.mjs",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/character-preview/speech-review/sampler.mjs"
+        },
+        "requestId": "79488.100",
+        "timestamp": 288300.172064,
+        "type": "Script",
+        "wallTime": 1791153910.846546
+      }
+    },
+    {
+      "sequence": 596,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "stack": {
+            "callFrames": [
+              {
+                "columnNumber": 47,
+                "functionName": "json",
+                "lineNumber": 8,
+                "scriptId": "24",
+                "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+              },
+              {
+                "columnNumber": 60,
+                "functionName": "init",
+                "lineNumber": 81,
+                "scriptId": "24",
+                "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+              },
+              {
+                "columnNumber": 0,
+                "functionName": "",
+                "lineNumber": 92,
+                "scriptId": "24",
+                "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+              }
+            ]
+          },
+          "type": "script"
+        },
+        "loaderId": "CD5B46EC4FE96A1BB5D48824539985EE",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/character-preview/direction/scenes.json"
+        },
+        "requestId": "79488.101",
+        "timestamp": 288300.194243,
+        "type": "Fetch",
+        "wallTime": 1791153910.868766
+      }
+    },
+    {
+      "sequence": 597,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "stack": {
+            "callFrames": [
+              {
+                "columnNumber": 47,
+                "functionName": "json",
+                "lineNumber": 8,
+                "scriptId": "24",
+                "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+              },
+              {
+                "columnNumber": 93,
+                "functionName": "init",
+                "lineNumber": 81,
+                "scriptId": "24",
+                "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+              },
+              {
+                "columnNumber": 0,
+                "functionName": "",
+                "lineNumber": 92,
+                "scriptId": "24",
+                "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+              }
+            ]
+          },
+          "type": "script"
+        },
+        "loaderId": "CD5B46EC4FE96A1BB5D48824539985EE",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/character-preview/direction/timing-profiles.json"
+        },
+        "requestId": "79488.102",
+        "timestamp": 288300.194473,
+        "type": "Fetch",
+        "wallTime": 1791153910.868969
+      }
+    },
+    {
+      "sequence": 598,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "stack": {
+            "callFrames": [
+              {
+                "columnNumber": 47,
+                "functionName": "json",
+                "lineNumber": 8,
+                "scriptId": "24",
+                "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+              },
+              {
+                "columnNumber": 135,
+                "functionName": "init",
+                "lineNumber": 81,
+                "scriptId": "24",
+                "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+              },
+              {
+                "columnNumber": 0,
+                "functionName": "",
+                "lineNumber": 92,
+                "scriptId": "24",
+                "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+              }
+            ]
+          },
+          "type": "script"
+        },
+        "loaderId": "CD5B46EC4FE96A1BB5D48824539985EE",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/site/speech-clips.json"
+        },
+        "requestId": "79488.103",
+        "timestamp": 288300.194601,
+        "type": "Fetch",
+        "wallTime": 1791153910.869093
+      }
+    },
+    {
+      "sequence": 608,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "type": "other"
+        },
+        "loaderId": "CD5B46EC4FE96A1BB5D48824539985EE",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/favicon.ico"
+        },
+        "requestId": "79488.104",
+        "timestamp": 288300.215366,
+        "type": "Other",
+        "wallTime": 1791153910.889871
+      }
+    },
+    {
+      "sequence": 625,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "stack": {
+            "callFrames": [
+              {
+                "columnNumber": 90,
+                "functionName": "",
+                "lineNumber": 84,
+                "scriptId": "24",
+                "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+              },
+              {
+                "columnNumber": 26,
+                "functionName": "init",
+                "lineNumber": 84,
+                "scriptId": "24",
+                "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+              }
+            ]
+          },
+          "type": "script"
+        },
+        "loaderId": "CD5B46EC4FE96A1BB5D48824539985EE",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/site/audio/mist-hinge-native.wav"
+        },
+        "requestId": "79488.105",
+        "timestamp": 288300.261163,
+        "type": "Fetch",
+        "wallTime": 1791153910.935686
+      }
+    },
+    {
+      "sequence": 626,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "stack": {
+            "callFrames": [
+              {
+                "columnNumber": 90,
+                "functionName": "",
+                "lineNumber": 84,
+                "scriptId": "24",
+                "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+              },
+              {
+                "columnNumber": 26,
+                "functionName": "init",
+                "lineNumber": 84,
+                "scriptId": "24",
+                "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+              }
+            ]
+          },
+          "type": "script"
+        },
+        "loaderId": "CD5B46EC4FE96A1BB5D48824539985EE",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/site/audio/mist-second-attempt-native.wav"
+        },
+        "requestId": "79488.106",
+        "timestamp": 288300.261367,
+        "type": "Fetch",
+        "wallTime": 1791153910.935862
+      }
+    },
+    {
+      "sequence": 627,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "stack": {
+            "callFrames": [
+              {
+                "columnNumber": 90,
+                "functionName": "",
+                "lineNumber": 84,
+                "scriptId": "24",
+                "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+              },
+              {
+                "columnNumber": 26,
+                "functionName": "init",
+                "lineNumber": 84,
+                "scriptId": "24",
+                "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+              }
+            ]
+          },
+          "type": "script"
+        },
+        "loaderId": "CD5B46EC4FE96A1BB5D48824539985EE",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/site/audio/mist-patience-native.wav"
+        },
+        "requestId": "79488.107",
+        "timestamp": 288300.261488,
+        "type": "Fetch",
+        "wallTime": 1791153910.935981
+      }
+    },
+    {
+      "sequence": 648,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "stack": {
+            "callFrames": [
+              {
+                "columnNumber": 25,
+                "functionName": "fetchJson",
+                "lineNumber": 38,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 60,
+                "functionName": "",
+                "lineNumber": 151,
+                "scriptId": "25",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/geraldine-adapter.mjs"
+              },
+              {
+                "columnNumber": 4,
+                "functionName": "createGeraldineAdapter",
+                "lineNumber": 160,
+                "scriptId": "25",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/geraldine-adapter.mjs"
+              },
+              {
+                "columnNumber": 7,
+                "functionName": "init",
+                "lineNumber": 85,
+                "scriptId": "24",
+                "url": "http://127.0.0.1:9064/character-preview/preview/app.mjs"
+              }
+            ]
+          },
+          "type": "script"
+        },
+        "loaderId": "CD5B46EC4FE96A1BB5D48824539985EE",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/site/asset-manifest.json"
+        },
+        "requestId": "79488.108",
+        "timestamp": 288300.296918,
+        "type": "Fetch",
+        "wallTime": 1791153910.971454
+      }
+    },
+    {
+      "sequence": 655,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "stack": {
+            "callFrames": [
+              {
+                "columnNumber": 16,
+                "functionName": "",
+                "lineNumber": 59,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 63,
+                "functionName": "",
+                "lineNumber": 51,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 51,
+                "functionName": "load",
+                "lineNumber": 51,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 27,
+                "functionName": "",
+                "lineNumber": 156,
+                "scriptId": "25",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/geraldine-adapter.mjs"
+              }
+            ]
+          },
+          "type": "script"
+        },
+        "loaderId": "CD5B46EC4FE96A1BB5D48824539985EE",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "Low",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/site/assets/eyes-attentive.png"
+        },
+        "requestId": "79488.109",
+        "timestamp": 288300.316194,
+        "type": "Image",
+        "wallTime": 1791153910.990725
+      }
+    },
+    {
+      "sequence": 656,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "stack": {
+            "callFrames": [
+              {
+                "columnNumber": 16,
+                "functionName": "",
+                "lineNumber": 59,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 63,
+                "functionName": "",
+                "lineNumber": 51,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 51,
+                "functionName": "load",
+                "lineNumber": 51,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 27,
+                "functionName": "",
+                "lineNumber": 156,
+                "scriptId": "25",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/geraldine-adapter.mjs"
+              }
+            ]
+          },
+          "type": "script"
+        },
+        "loaderId": "CD5B46EC4FE96A1BB5D48824539985EE",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "Low",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/site/assets/eyes-considering.png"
+        },
+        "requestId": "79488.110",
+        "timestamp": 288300.31648,
+        "type": "Image",
+        "wallTime": 1791153910.990989
+      }
+    },
+    {
+      "sequence": 657,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "stack": {
+            "callFrames": [
+              {
+                "columnNumber": 16,
+                "functionName": "",
+                "lineNumber": 59,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 63,
+                "functionName": "",
+                "lineNumber": 51,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 51,
+                "functionName": "load",
+                "lineNumber": 51,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 27,
+                "functionName": "",
+                "lineNumber": 156,
+                "scriptId": "25",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/geraldine-adapter.mjs"
+              }
+            ]
+          },
+          "type": "script"
+        },
+        "loaderId": "CD5B46EC4FE96A1BB5D48824539985EE",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "Low",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/site/assets/eyes-skeptical.png"
+        },
+        "requestId": "79488.111",
+        "timestamp": 288300.316695,
+        "type": "Image",
+        "wallTime": 1791153910.991192
+      }
+    },
+    {
+      "sequence": 658,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "stack": {
+            "callFrames": [
+              {
+                "columnNumber": 16,
+                "functionName": "",
+                "lineNumber": 59,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 63,
+                "functionName": "",
+                "lineNumber": 51,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 51,
+                "functionName": "load",
+                "lineNumber": 51,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 27,
+                "functionName": "",
+                "lineNumber": 156,
+                "scriptId": "25",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/geraldine-adapter.mjs"
+              }
+            ]
+          },
+          "type": "script"
+        },
+        "loaderId": "CD5B46EC4FE96A1BB5D48824539985EE",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "Low",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/site/assets/eyes-amused.png"
+        },
+        "requestId": "79488.112",
+        "timestamp": 288300.316874,
+        "type": "Image",
+        "wallTime": 1791153910.991372
+      }
+    },
+    {
+      "sequence": 659,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "stack": {
+            "callFrames": [
+              {
+                "columnNumber": 16,
+                "functionName": "",
+                "lineNumber": 59,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 63,
+                "functionName": "",
+                "lineNumber": 51,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 51,
+                "functionName": "load",
+                "lineNumber": 51,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 27,
+                "functionName": "",
+                "lineNumber": 156,
+                "scriptId": "25",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/geraldine-adapter.mjs"
+              }
+            ]
+          },
+          "type": "script"
+        },
+        "loaderId": "CD5B46EC4FE96A1BB5D48824539985EE",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "Low",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/site/assets/eyes-concerned.png"
+        },
+        "requestId": "79488.113",
+        "timestamp": 288300.317,
+        "type": "Image",
+        "wallTime": 1791153910.991494
+      }
+    },
+    {
+      "sequence": 660,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "stack": {
+            "callFrames": [
+              {
+                "columnNumber": 16,
+                "functionName": "",
+                "lineNumber": 59,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 63,
+                "functionName": "",
+                "lineNumber": 51,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 51,
+                "functionName": "load",
+                "lineNumber": 51,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 27,
+                "functionName": "",
+                "lineNumber": 156,
+                "scriptId": "25",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/geraldine-adapter.mjs"
+              }
+            ]
+          },
+          "type": "script"
+        },
+        "loaderId": "CD5B46EC4FE96A1BB5D48824539985EE",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "Low",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/site/assets/eyes-laughing.png"
+        },
+        "requestId": "79488.114",
+        "timestamp": 288300.31716,
+        "type": "Image",
+        "wallTime": 1791153910.991659
+      }
+    },
+    {
+      "sequence": 661,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "stack": {
+            "callFrames": [
+              {
+                "columnNumber": 16,
+                "functionName": "",
+                "lineNumber": 59,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 63,
+                "functionName": "",
+                "lineNumber": 51,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 51,
+                "functionName": "load",
+                "lineNumber": 51,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 27,
+                "functionName": "",
+                "lineNumber": 156,
+                "scriptId": "25",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/geraldine-adapter.mjs"
+              }
+            ]
+          },
+          "type": "script"
+        },
+        "loaderId": "CD5B46EC4FE96A1BB5D48824539985EE",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "Low",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/site/assets/mouths-friendly.png"
+        },
+        "requestId": "79488.115",
+        "timestamp": 288300.317354,
+        "type": "Image",
+        "wallTime": 1791153910.991871
+      }
+    },
+    {
+      "sequence": 662,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "stack": {
+            "callFrames": [
+              {
+                "columnNumber": 16,
+                "functionName": "",
+                "lineNumber": 59,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 63,
+                "functionName": "",
+                "lineNumber": 51,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 51,
+                "functionName": "load",
+                "lineNumber": 51,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 27,
+                "functionName": "",
+                "lineNumber": 156,
+                "scriptId": "25",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/geraldine-adapter.mjs"
+              }
+            ]
+          },
+          "type": "script"
+        },
+        "loaderId": "CD5B46EC4FE96A1BB5D48824539985EE",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "Low",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/site/assets/mouths-dry.png"
+        },
+        "requestId": "79488.116",
+        "timestamp": 288300.317546,
+        "type": "Image",
+        "wallTime": 1791153910.992047
+      }
+    },
+    {
+      "sequence": 663,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "stack": {
+            "callFrames": [
+              {
+                "columnNumber": 16,
+                "functionName": "",
+                "lineNumber": 59,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 63,
+                "functionName": "",
+                "lineNumber": 51,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 51,
+                "functionName": "load",
+                "lineNumber": 51,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 27,
+                "functionName": "",
+                "lineNumber": 156,
+                "scriptId": "25",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/geraldine-adapter.mjs"
+              }
+            ]
+          },
+          "type": "script"
+        },
+        "loaderId": "CD5B46EC4FE96A1BB5D48824539985EE",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "Low",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/site/assets/mouths-concerned.png"
+        },
+        "requestId": "79488.117",
+        "timestamp": 288300.317689,
+        "type": "Image",
+        "wallTime": 1791153910.992183
+      }
+    },
+    {
+      "sequence": 664,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "stack": {
+            "callFrames": [
+              {
+                "columnNumber": 16,
+                "functionName": "",
+                "lineNumber": 59,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 63,
+                "functionName": "",
+                "lineNumber": 51,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 51,
+                "functionName": "load",
+                "lineNumber": 51,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 27,
+                "functionName": "",
+                "lineNumber": 156,
+                "scriptId": "25",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/geraldine-adapter.mjs"
+              }
+            ]
+          },
+          "type": "script"
+        },
+        "loaderId": "CD5B46EC4FE96A1BB5D48824539985EE",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "Low",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/site/assets/eyes-concerned-detail.png"
+        },
+        "requestId": "79488.118",
+        "timestamp": 288300.317816,
+        "type": "Image",
+        "wallTime": 1791153910.992331
+      }
+    },
+    {
+      "sequence": 665,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:9064/character-preview/preview/",
+        "frameId": "C57E996C6302EA98563B6A445EA4D546",
+        "hasUserGesture": false,
+        "initiator": {
+          "stack": {
+            "callFrames": [
+              {
+                "columnNumber": 16,
+                "functionName": "",
+                "lineNumber": 59,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 63,
+                "functionName": "",
+                "lineNumber": 51,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 51,
+                "functionName": "load",
+                "lineNumber": 51,
+                "scriptId": "18",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/source/player.mjs"
+              },
+              {
+                "columnNumber": 27,
+                "functionName": "",
+                "lineNumber": 156,
+                "scriptId": "25",
+                "url": "http://127.0.0.1:9064/character-preview/adapter/geraldine-adapter.mjs"
+              }
+            ]
+          },
+          "type": "script"
+        },
+        "loaderId": "CD5B46EC4FE96A1BB5D48824539985EE",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:9064/character-preview/preview/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "Low",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:9064/site/assets/eyes-laughing-detail.png"
+        },
+        "requestId": "79488.119",
+        "timestamp": 288300.317985,
+        "type": "Image",
+        "wallTime": 1791153910.992482
+      }
+    }
+  ]
+}

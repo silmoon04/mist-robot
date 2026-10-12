@@ -1,0 +1,47 @@
+{
+  "status": "complete",
+  "completedAt": "2026-10-04T22:52:00Z",
+  "milestone": "Three-scene character preview and tested runtime adapter",
+  "previewVersion": "1.0.1",
+  "adapterVersion": "1.0.0",
+  "root": "/brain/art_direction/mist_geraldine_animation_pack_20261002/character-preview",
+  "previewUrl": "http://127.0.0.1:9064/character-preview/preview/",
+  "launchCommand": "python brain/art_direction/mist_geraldine_animation_pack_20261002/character-preview/serve.py --port 9064",
+  "portableLaunchCommand": "python character-preview/serve.py --port 9064",
+  "archive": "mist-geraldine-character-preview-1.0.1.zip",
+  "archiveSha256": "a5233ade00523e5cfd92acad35b63e189444a8c7dec1ed52290d4f9c5dc41add",
+  "archiveBytes": 14525842,
+  "archiveEntriesVerified": 87,
+  "faces": {"presets": 13, "eyeFamilies": 6, "mouthFamilies": 3, "eyeCels": 72, "mouthCels": 36, "fps": 15},
+  "evidence": {
+    "adapterWorkerGroups": 42,
+    "independentSampledRuntime": {"passed": 72, "total": 72},
+    "independentBoundaries": {"passed": 5, "total": 5},
+    "independentScenesAndNativeCels": {"passed": 9, "total": 9},
+    "actualPlaybackAndTransportLogic": {"passed": 26, "total": 26},
+    "speechSampler": {"passed": 51, "total": 51},
+    "injectedClockScheduling": {"passed": 8, "total": 8},
+    "independentBrowser": {"passed": 20, "total": 20},
+    "inputComparisons": {"passed": 23, "total": 23},
+    "freshPortableLaunch": {"passed": 20, "total": 20, "temporaryProcessStopped": true}
+  },
+  "handoff": ["README.md", "INTEGRATION.md", "ACCEPTANCE.md", "contract/interface.json", "contract/interface.md", "release-manifest.json", "release-check-results.json", "qa/browser-review.json", "qa/defects.md"],
+  "screenshots": ["qa/desktop.jpg", "qa/phone-landscape-gap.jpg", "qa/reduced-motion.jpg", "qa/notes-restored-export.jpg", "qa/audio-suspended.jpg", "qa/missing-asset.jpg"],
+  "remaining": [
+    "Human review of selected expressions and restrained versus expressive timing",
+    "Logic-owner live integration, remaining expression mappings and unsupported optional hooks",
+    "Improved acoustic cue alignment when better ground-truth data is available",
+    "Minor non-blocking duplicate authored-interruption labels in the inspector"
+  ],
+  "boundaries": {
+    "nativeArtAndAudioUnchanged": true,
+    "sharedRuntimeUnchanged": true,
+    "liveDefaultChanged": false,
+    "published": false,
+    "newSynthesis": false,
+    "paidCalls": false,
+    "deviceOrMicrophoneUse": false,
+    "liveServiceRestart": false
+  },
+  "evidenceLimits": "Two clips use estimated phoneme timing within word bounds; one uses audio energy. Browser and injected-clock checks do not establish acoustic latency, perceptual lip-sync quality, human style approval or live integration."
+}

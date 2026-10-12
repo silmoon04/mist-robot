@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MIST battery power explainer</title>
+<style>
+  :root{
+    --ink:#16202a;--muted:#5d6874;--paper:#f4f6f8;--card:#fff;--line:#c9d2db;
+    --red:#bb251d;--amber:#bd790b;--green:#087d5c;--blue:#1768ac;--purple:#6951a3;
+    --raw:#fff0ef;--logic:#eaf8f5;--setup:#fff7df;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:#30363d;font-family:Arial,Helvetica,sans-serif;color:var(--ink)}
+  .board{width:1536px;height:1024px;margin:30px auto;background:var(--paper);position:relative;overflow:hidden;padding:34px 42px 30px;box-shadow:0 16px 45px #0006}
+  header{height:96px;border-bottom:4px solid var(--ink);display:flex;justify-content:space-between;gap:24px}
+  h1{font-size:40px;line-height:1;margin:0;letter-spacing:-.7px}
+  .sub{font-size:18px;color:var(--muted);margin-top:9px}
+  .legend{width:390px;display:flex;justify-content:flex-end;align-content:flex-start;gap:8px;flex-wrap:wrap}
+  .badge{display:inline-block;border-radius:999px;padding:6px 11px;color:#fff;font-weight:900;font-size:13px;letter-spacing:.35px}
+  .required{background:var(--green)}.recommended{background:var(--blue)}.setup{background:var(--amber)}.notneeded{background:#6b7280}.dangerbadge{background:var(--red)}
+  .foot{position:absolute;bottom:10px;left:42px;right:42px;color:#68727d;font-size:12px;display:flex;justify-content:space-between}
+  .photo{width:100%;height:100%;object-fit:cover;display:block}
+  .panel{background:#fff;border:2px solid var(--line);border-radius:14px;padding:15px 17px}
+  .panel h2{font-size:22px;margin:0 0 10px}
+  .panel h3{font-size:18px;margin:0 0 5px}.panel p{font-size:14px;line-height:1.35;color:var(--muted);margin:5px 0}
+  .warn{color:var(--red)!important;font-weight:900}.good{color:var(--green)!important;font-weight:900}
+  .photo-strip{height:145px;display:grid;grid-template-columns:1.08fr .9fr 1fr .9fr 1fr;gap:12px;margin-top:16px}
+  .photo-card{background:#fff;border:2px solid var(--line);border-radius:12px;overflow:hidden;position:relative}
+  .photo-card img{width:100%;height:102px;object-fit:cover}.photo-card b{display:block;font-size:15px;padding:7px 10px}
+  .photo-card .badge{position:absolute;top:8px;left:8px}
+  .flow{display:flex;align-items:stretch;gap:10px;margin-top:16px;height:203px}
+  .node{flex:1;background:#fff;border:3px solid var(--line);border-radius:13px;padding:13px;position:relative}
+  .node.raw{border-color:#d35149;background:var(--raw)}.node.logic{border-color:#248d7f;background:var(--logic)}.node.optional{border-color:#4d86bd;background:#eef6fd}.node.protect{border-color:#d79719;background:var(--setup)}
+  .node .n{width:31px;height:31px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--ink);color:#fff;font-weight:900;margin-bottom:8px}
+  .node h2{font-size:20px;margin:0 0 7px}.node p{font-size:13.5px;line-height:1.3;color:var(--muted);margin:0}.arrow{font-size:31px;display:flex;align-items:center;color:#77818a;font-weight:900}
+  .split{display:grid;grid-template-columns:1.08fr 1fr;gap:15px;height:300px;margin-top:16px}
+  .branches{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+  .branch{border:2px solid #d35149;background:var(--raw);border-radius:12px;padding:13px}.branch.logic{border-color:#248d7f;background:var(--logic)}
+  .branch h3{font-size:17px;margin:0 0 5px}.branch p{font-size:13px;line-height:1.28;margin:0;color:var(--muted)}
+  .truths{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+  .truth{border-radius:12px;padding:13px 15px;border:2px solid var(--line);background:#fff}.truth h3{font-size:17px;margin:0 0 6px}.truth p{font-size:13.5px;line-height:1.3;margin:0;color:var(--muted)}
+
+  .compare{display:grid;grid-template-columns:1fr 1.12fr 1fr;gap:16px;height:755px;margin-top:18px}
+  .column{background:#fff;border:2px solid var(--line);border-radius:15px;padding:16px;position:relative}
+  .column h2{font-size:25px;margin:0 0 4px}.column .deck{font-size:14px;color:var(--muted);min-height:40px}
+  .column .hero{height:150px;margin:12px -1px;border-radius:10px;overflow:hidden;background:#e0e5e9}.column .hero img{width:100%;height:100%;object-fit:cover}
+  .mini-flow{display:grid;gap:8px}.flow-row{display:flex;align-items:center;gap:7px}.mini{flex:1;border:2px solid #b8c1ca;border-radius:9px;padding:9px 8px;text-align:center;font-size:14px;font-weight:900;background:#fff}.mini.red{border-color:#d35149;background:var(--raw)}.mini.green{border-color:#248d7f;background:var(--logic)}.mini.amber{border-color:#d79719;background:var(--setup)}.mini.blue{border-color:#4d86bd;background:#eef6fd}
+  .tinyarrow{font-size:22px;color:#7b858e}.rule{height:2px;background:#d9dfe5;margin:13px 0}
+  ul{margin:6px 0;padding-left:20px;font-size:14px;line-height:1.38}li{margin:7px 0}
+  .bottom-note{position:absolute;bottom:15px;left:16px;right:16px;border-radius:11px;padding:11px 13px;background:var(--setup);border:2px solid #d79719;font-size:13px;line-height:1.3}
+
+  .failure-layout{display:grid;grid-template-columns:1.55fr .86fr;gap:16px;height:754px;margin-top:18px}
+  .failure-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:11px}
+  .failure{background:#fff;border:2px solid var(--line);border-radius:13px;padding:13px 14px}
+  .failure h2{font-size:19px;margin:0 0 7px}.failure p{font-size:13px;line-height:1.3;margin:4px 0;color:var(--muted)}
+  .failure .defence{font-weight:900;color:var(--green)}.failure .limit{font-weight:800;color:var(--red)}
+  .sidecol{display:flex;flex-direction:column;gap:12px}
+  .math{background:#17202a;color:#fff;border-radius:14px;padding:17px}.math h2{font-size:23px;margin:0 0 10px}.math .big{font-size:33px;font-weight:900;color:#ffd477}.math p{color:#dbe2e8;font-size:13.5px;line-height:1.35}
+  .charge{background:#fff;border:3px solid var(--green);border-radius:14px;padding:15px}.charge h2{font-size:22px;margin:0 0 9px}.charge-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.charge-grid div{background:var(--logic);border-radius:8px;padding:8px;font-size:13px}
+  .stops{background:var(--raw);border:3px solid var(--red);border-radius:14px;padding:15px}.stops h2{font-size:22px;margin:0 0 7px}.stops ul{font-size:13.5px}
+  .provenance{font-size:12px;color:#6c7680;margin-top:7px}
+</style>
+</head>
+<body>
+
+<section class="board" id="why">
+  <header>
+    <div><h1>Why the battery path has several parts</h1><div class="sub">Each item has one job; none of them magically makes the battery “safer” by itself</div></div>
+    <div class="legend"><span class="badge required">REQUIRED FULL ROBOT</span><span class="badge recommended">RECOMMENDED</span><span class="badge setup">SETUP ONLY</span></div>
+  </header>
+
+  <div class="photo-strip">
+    <div class="photo-card"><span class="badge required">SOURCE</span><img src="../order-verified-guides/work/reference_photos/hoovo_pack_label.jpg" style="object-position:52% 43%"><b>HOOVO 3S · XT60</b></div>
+    <div class="photo-card"><span class="badge recommended">INTERFACE</span><img src="../order-verified-guides/work/video_frames/crops/34s_xt60_heatshrink_and_servo_cables.jpg" style="object-position:22% 12%"><b>XT connectors/pigtails</b></div>
+    <div class="photo-card"><span class="badge required">DISTRIBUTE</span><img src="../order-verified-guides/work/video_frames/full_frames/53s_all_items_overview.jpg" style="object-position:66% 48%"><b>XT60 → 8×XT30 PDB</b></div>
+    <div class="photo-card"><span class="badge required">PROTECT</span><img src="../order-verified-guides/work/video_frames/full_frames/53s_all_items_overview.jpg" style="object-position:43% 46%"><b>Blade fuses/holders</b></div>
+    <div class="photo-card"><span class="badge required">REGULATE</span><img src="../order-verified-guides/work/video_frames/full_frames/10s_power_tools.jpg" style="object-position:70% 58%"><b>5 V UBEC modules</b></div>
+  </div>
+
+  <div class="flow">
+    <div class="node raw"><div class="n">1</div><h2>Battery XT60</h2><p>The pack already ends in XT60. It is the starting connector and carries raw 3S: about 9.9–12.6 V.</p></div>
+    <div class="arrow">→</div>
+    <div class="node optional"><div class="n">2</div><h2>XT90-S loop/disconnect</h2><p>A reachable kill/disconnect with pre-charge contact to reduce plug-in spark. Useful, but it is not a voltage converter and is not required for one-servo testing.</p></div>
+    <div class="arrow">→</div>
+    <div class="node protect"><div class="n">3</div><h2>30 A main fuse</h2><p>Placed close to the battery so a trunk short cannot make the heavy cable act like a heater. It protects wiring/fire risk—not the servo electronics.</p></div>
+    <div class="arrow">→</div>
+    <div class="node raw"><div class="n">4</div><h2>PDB</h2><p>Splits one battery feed into several keyed outputs. A correctly built distribution harness could replace it; some form of distribution is required.</p></div>
+  </div>
+
+  <div class="split">
+    <div class="panel">
+      <h2>What comes out of the PDB</h2>
+      <div class="branches">
+        <div class="branch"><h3>FL leg · XT30</h3><p>15 A fuse → 16 AWG → four C018 servos. Raw 3S.</p></div>
+        <div class="branch"><h3>FR leg · XT30</h3><p>15 A fuse → 16 AWG → four C018 servos. Raw 3S.</p></div>
+        <div class="branch"><h3>RR leg · XT30</h3><p>15 A fuse → 16 AWG → four C018 servos. Raw 3S.</p></div>
+        <div class="branch"><h3>RL leg · XT30</h3><p>15 A fuse → 16 AWG → four C018 servos. Raw 3S.</p></div>
+        <div class="branch logic"><h3>Logic branch</h3><p>Raw 3S → measured UBEC → regulated 5 V for ESP32 and sensors.</p></div>
+        <div class="branch logic"><h3>Signal/common ground</h3><p>ESP32 → Adapter A → servo data. Servo motor current does not pass through the ESP32 or adapter.</p></div>
+      </div>
+    </div>
+    <div class="panel">
+      <h2>Why use separate leg branches?</h2>
+      <p>Four C018s in one leg could theoretically draw about <b>10.8 A at simultaneous stall</b>. Separate branches keep the high-current route short and let one leg fault be isolated without dismantling the whole robot.</p>
+      <p>A <b>4700 µF / 25 V capacitor</b> at each leg root supplies very brief current transients and reduces local voltage dips. It goes across + and GND in parallel; reversed polarity is dangerous.</p>
+      <p class="warn">The full robot must never be designed to sit at simultaneous stall. Fuses are the last layer; motion limits, current/temperature monitoring and mechanical freedom are the first layers.</p>
+    </div>
+  </div>
+
+  <div class="truths">
+    <div class="truth"><h3>XT60 versus XT90-S</h3><p>XT60 is the battery interface. XT90-S is an added disconnect/anti-spark device. Changing connector size does not increase what the battery lead or XT60 can safely deliver.</p></div>
+    <div class="truth"><h3>Smoke stopper</h3><p>Temporary current limiting for first static power after wiring changes. Remove/bypass it before movement because its voltage drop can reset servos and ESP32.</p></div>
+    <div class="truth"><h3>UBEC</h3><p>Essential voltage separation: the C018s use raw 3S, while the ESP32 module itself operates around 3.3 V and the DevKit is normally fed from a regulated 5 V input.</p></div>
+  </div>
+  <div class="foot"><span>Design rationale from MIST_BUILD_PHASES.md; real photos from the user's video.</span><span>Battery explainer 1/3</span></div>
+</section>
+
+<section class="board" id="levels">
+  <header>
+    <div><h1>Do you need all of it? It depends on the test</h1><div class="sub">A one-servo intake setup is intentionally much smaller than the finished 16-servo robot</div></div>
+    <div class="legend"><span class="badge required">POWER PATH</span><span class="badge setup">TEMPORARY</span><span class="badge notneeded">NOT NEEDED YET</span></div>
+  </header>
+
+  <div class="compare">
+    <section class="column">
+      <h2>1 · Charging a pack</h2><div class="deck">This is a charger circuit, not the robot power harness.</div>
+      <div class="hero"><img src="../order-verified-guides/work/reference_photos/b6neo_charging.jpg" style="object-position:48% 42%"></div>
+      <div class="mini-flow">
+        <div class="flow-row"><div class="mini blue">100 W USB-C PD</div><div class="tinyarrow">→</div><div class="mini blue">B6 Neo</div></div>
+        <div class="flow-row"><div class="mini green">XT60 main</div><div class="tinyarrow">+</div><div class="mini green">3S balance plug</div></div>
+        <div class="flow-row"><div class="mini red">ONE HOOVO PACK</div></div>
+      </div>
+      <div class="rule"></div>
+      <ul>
+        <li><b>LiPo</b>, not LiHV</li><li><b>3S balance charge</b></li><li><b>2.2 A maximum</b></li><li><b>12.6 V full</b></li><li>Non-flammable surface; supervised</li>
+      </ul>
+      <div class="bottom-note"><b>Not used while charging:</b> XT90-S, robot PDB, leg fuses, servos and ESP32.</div>
+    </section>
+
+    <section class="column">
+      <h2>2 · Testing one C018</h2><div class="deck">The smallest sensible commissioning circuit.</div>
+      <div class="hero"><img src="../order-verified-guides/work/video_frames/full_frames/22s_logic_boards.jpg" style="object-position:73% 31%"></div>
+      <div class="mini-flow">
+        <div class="flow-row"><div class="mini red">HOOVO XT60</div><div class="tinyarrow">→</div><div class="mini amber">5/7.5 A fuse</div></div>
+        <div class="flow-row"><div class="mini amber">Smoke stopper</div><div class="tinyarrow">→</div><div class="mini red">ONE C018 power</div></div>
+        <div class="flow-row"><div class="mini blue">PC USB</div><div class="tinyarrow">→</div><div class="mini blue">FE-URT-1 data</div></div>
+        <div class="flow-row"><div class="mini green">Verified 5264</div><div class="tinyarrow">→</div><div class="mini green">ONE C018 bus</div></div>
+      </div>
+      <div class="rule"></div>
+      <ul>
+        <li>Working multimeter first</li><li>No horn for initial register/read/small sweep</li><li>External 3S powers the servo</li><li>USB powers/links the FE-URT logic</li><li>Smoke stopper for static first power</li>
+      </ul>
+      <div class="bottom-note"><b>Not needed yet:</b> ESP32, Adapter A, main PDB, four branch fuses, four capacitors, or XT90-S. Those belong to the robot harness.</div>
+    </section>
+
+    <section class="column">
+      <h2>3 · Finished robot</h2><div class="deck">High current is split, protected and kept away from logic.</div>
+      <div class="hero"><img src="../order-verified-guides/work/video_frames/full_frames/53s_all_items_overview.jpg" style="object-position:57% 52%"></div>
+      <div class="mini-flow">
+        <div class="flow-row"><div class="mini red">LiPo XT60</div><div class="tinyarrow">→</div><div class="mini blue">XT90-S</div></div>
+        <div class="flow-row"><div class="mini amber">30 A main fuse</div><div class="tinyarrow">→</div><div class="mini red">PDB</div></div>
+        <div class="flow-row"><div class="mini red">4 × 15 A branches</div><div class="tinyarrow">→</div><div class="mini red">16 servos</div></div>
+        <div class="flow-row"><div class="mini green">UBEC 5 V</div><div class="tinyarrow">→</div><div class="mini green">ESP32</div></div>
+      </div>
+      <div class="rule"></div>
+      <ul>
+        <li>One accessible emergency disconnect</li><li>Main fuse close to the pack</li><li>One independently fused branch per leg</li><li>Raw 3S and regulated 5 V clearly labelled</li><li>Common ground; separate high-current path</li>
+      </ul>
+      <div class="bottom-note"><b>Smoke stopper is setup-only:</b> use it for static first power and ID scans, then bypass it before any movement or load test.</div>
+    </section>
+  </div>
+  <div class="foot"><span>The XT90-S is recommended for the finished robot; it is not a prerequisite for the FE-URT one-servo test.</span><span>Battery explainer 2/3</span></div>
+</section>
+
+<section class="board" id="failures">
+  <header>
+    <div><h1>What each safety layer catches—and what it cannot</h1><div class="sub">Protection is layered because a connector, fuse, capacitor or software check only covers certain failures</div></div>
+    <div class="legend"><span class="badge dangerbadge">FAULT</span><span class="badge required">DEFENCE</span><span class="badge setup">LIMIT</span></div>
+  </header>
+
+  <div class="failure-layout">
+    <div class="failure-grid">
+      <article class="failure"><h2>Battery/trunk wire shorts</h2><p class="defence">Defence: 30 A main fuse close to the pack.</p><p class="limit">It cannot correct reversed polarity or make undersized wire safe.</p></article>
+      <article class="failure"><h2>One leg cable shorts or servo jams</h2><p class="defence">Defence: that leg's 15 A fuse plus firmware current/temperature/position limits.</p><p class="limit">A fuse is not a precision servo protector; it primarily protects the branch wiring.</p></article>
+      <article class="failure"><h2>New harness was wired incorrectly</h2><p class="defence">Defence: continuity/polarity checks, then smoke stopper for static first power.</p><p class="limit">Do not move motors through the stopper; voltage sag creates false resets/dropouts.</p></article>
+      <article class="failure"><h2>Plug-in spark charges capacitors instantly</h2><p class="defence">Defence: XT90-S pre-charge/anti-spark contact and a reachable disconnect.</p><p class="limit">It does not change voltage, increase XT60 capacity or replace the main fuse.</p></article>
+      <article class="failure"><h2>Servo movement pulls the rail down briefly</h2><p class="defence">Defence: short/good-gauge wiring and 4700 µF capacitor at each leg root.</p><p class="limit">A capacitor cannot support sustained overload. Reversing it can cause violent failure.</p></article>
+      <article class="failure"><h2>Raw 3S reaches low-voltage logic</h2><p class="defence">Defence: measured UBEC output, labelled 5 V rail and separate connector routing.</p><p class="limit">Never “test by plugging in.” Meter the UBEC at 4.9–5.2 V first.</p></article>
+      <article class="failure"><h2>Battery is overcharged or cells drift apart</h2><p class="defence">Defence: B6 Neo in LiPo 3S balance mode with main and balance leads attached.</p><p class="limit">LiHV mode is wrong for the 11.1 V HOOVO packs.</p></article>
+      <article class="failure"><h2>Robot needs to stop immediately</h2><p class="defence">Defence: accessible XT90-S/loop key or battery disconnect plus software torque-off/deadman.</p><p class="limit">A software stop does not help if the controller has crashed; a buried plug is not a useful kill path.</p></article>
+    </div>
+
+    <aside class="sidecol">
+      <div class="math">
+        <h2>Why the current paths are substantial</h2>
+        <div class="big">2.7 A × 16 = 43.2 A</div>
+        <p>Feetech specifies about 2.7 A stall current per ST-3215-C018 at 12 V. Four in one leg could theoretically reach 10.8 A; all 16 could reach 43.2 A.</p>
+        <p>The project’s 15 A branch and 30 A main fuses are starting values for a robot that must avoid simultaneous stall. A repeated fuse blow means stop and diagnose binding, command limits, wiring or current—not install a larger fuse.</p>
+      </div>
+      <div class="charge">
+        <h2>Correct HOOVO charge card</h2>
+        <div class="charge-grid"><div><b>Chemistry</b><br>LiPo</div><div><b>Cells</b><br>3S</div><div><b>Mode</b><br>Balance</div><div><b>Current</b><br>≤ 2.2 A</div><div><b>Full pack</b><br>12.6 V</div><div><b>Connected</b><br>One pack</div></div>
+        <p class="provenance">Your charger photo showed LiHV/3S Charge selected; change both chemistry and mode.</p>
+      </div>
+      <div class="stops">
+        <h2>Stop immediately if</h2>
+        <ul><li>Smoke stopper stays bright</li><li>Connector or fuse holder warms</li><li>LiPo swells, smells or has a bad cell</li><li>Capacitor vents/bulges</li><li>ESP32 resets when servos move</li><li>The same branch fuse blows twice</li></ul>
+      </div>
+    </aside>
+  </div>
+  <div class="foot"><span>Fuse values must match verified wire, connectors and measured operating current; do not up-fuse to hide a fault.</span><span>Battery explainer 3/3</span></div>
+</section>
+
+</body>
+</html>

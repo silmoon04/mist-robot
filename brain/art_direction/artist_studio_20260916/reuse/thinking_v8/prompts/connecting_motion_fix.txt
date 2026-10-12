@@ -1,0 +1,26 @@
+Use case: precise-object-edit. Correct ONLY the moving packet capsules in this existing transparent six-column four-row connecting sprite sheet. Keep the node outlines, short dashed paths, background alpha, registration, stroke width, cyan color and all other art unchanged. Do not add labels or numbers.
+
+The sixteen active drawings need progressive packet motion, with NO stalls or large jumps at row breaks. Place the capsule along the span BETWEEN THE CENTERS OF THE TWO SQUARE NODES. Positions below are percentages of that span from left to right. These positions must be visibly distinct:
+top row column5: 20 percent
+top row column6: 28 percent
+second row column1: 36 percent
+second row column2: 44 percent
+second row column3: 52 percent
+second row column4: 60 percent
+second row column5: 68 percent
+second row column6: 76 percent
+third row column1: 80 percent
+third row column2: 72 percent
+third row column3: 64 percent
+third row column4: 56 percent
+third row column5: 48 percent
+third row column6: 40 percent
+bottom row column1: 32 percent
+bottom row column2: 24 percent
+
+The top row LAST TWO packets must BOTH remain near the LEFT node; the last one must NOT jump to the path center.
+The second row must show SIX small evenly spaced steps to the RIGHT.
+The third row must show SIX small evenly spaced steps to the LEFT; its first packet must stay close to the RIGHT node and its second must be only a SMALL step left, never jump to the center.
+The bottom row first two packets continue moving LEFT in two small steps and join the first active frame seamlessly.
+
+Make each packet just 12px wide. Leave the underlying dashed path identical in all active drawings, with visible transparent gaps. Never show a completed connection or success mark. Keep all24drawings six columns by four rows, cyan line art, genuine alpha transparency.

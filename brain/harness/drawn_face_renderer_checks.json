@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "checkedAt": "2026-10-02T12:23:25.806Z",
+  "rendererSha256": "8da6cd27ce24b6ae8cf5e4191b4d6c8a90d65bb024b6de03e4001e3583cc8426",
+  "faces": 40,
+  "atlasCels": 164,
+  "eyeFrameChecks": 616,
+  "eyeCornerChecks": 2464,
+  "mouthCornerChecks": 2432,
+  "transitionPairs": 1600,
+  "transitionSamples": 20920,
+  "rapidRetargets": 120,
+  "readableSpeechChecks": 8,
+  "checks": [
+    "Audio clock drives event poses independently of wall time",
+    "Streaming sampler drives every frame",
+    "Pre-roll and gaps use original rest",
+    "Stop clears stale speech sampler",
+    "Every expression keeps its original mouth center",
+    "All mouth crops fit viewport",
+    "6- and 8-frame blink poses by name",
+    "Closed hold survives every 8 fps phase",
+    "12- and 16-frame mouth poses by name",
+    "Quiet vowels use release and closure cels",
+    "White removal and canonical color preserve coverage",
+    "Invalid atlas keeps original renderer",
+    "Exact original resting eye geometry in all 40 faces",
+    "All 1600 expression pairs preserve audio clock and have no midpoint placement jump",
+    "Rapid retarget captures displayed eye, mouth and tear groups",
+    "Shared renderTo canvas API preserves identity and isolates inspector overrides",
+    "Mixed-sheet consonants use their own image and normalize source scale exactly once",
+    "Faces 20 and 40 have readable AA, LNT, FV and TH with exact resting dots",
+    "Speech width and anchor survive retargets between small and large mouths"
+  ],
+  "limits": [
+    "Geometry checks use source-contour fitting support in the headless harness. Browsers fit the actual keyed image ink.",
+    "These checks validate state and placement; visual motion quality still requires browser inspection."
+  ]
+}

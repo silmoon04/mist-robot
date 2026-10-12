@@ -1,0 +1,43 @@
+{
+  "version": 4,
+  "family": "worried",
+  "status": "ready_for_atlas_integration",
+  "method": "built-in ImageGen",
+  "source": "<LOCAL_HOME>/.codex/generated_images/01a0cd68-1726-77b3-b483-75ae19c44bb4/exec-1a670a93-52c7-4e87-87f1-a8c34bada249.png",
+  "destination": "sheets/mouth_worried_v4.png",
+  "imageSize": [
+    1536,
+    1024
+  ],
+  "columns": 4,
+  "rows": 2,
+  "order": [
+    "rest",
+    "release",
+    "small_AA",
+    "AA",
+    "EH",
+    "EE",
+    "LNT",
+    "wide_close"
+  ],
+  "prompt": "Use case: stylized-concept. Asset: a production sprite sheet of eight MIST robot mouth animation cels, in exactly FOUR columns and TWO rows, landscape composition.\nThe input images are STYLE REFERENCES ONLY: use their plain smooth cyan silhouette style, not their smiling poses. New emotion is WORRIED / STARTLED. These mouths must not look cheerful.\nOpaque pure white #FFFFFF background. Solid flat cyan approximately #38DDD9 with clean smooth antialiased edges. Eight isolated mouth shapes only; no eyes, face outline, text, labels, grid lines, frame borders, shading, gradients, glow, texture or shadows.\nEvery cell has exactly one single continuous filled cyan shape, centered consistently, generous white margins, no holes or extra islands. Each mouth is small within its cell, at most 55% of cell width and 33% of cell height. Think of restrained uneasy speech: a little vertically pulled and tense, not smiling, not drooping sadly, not a broad angry grimace. Preserve discernible phoneme differences.\nRead left-to-right, top-to-bottom:\n1 REST: a small tense closed mouth, shallow inverted arch (center a little higher than the low ends), smooth rounded tips. No open O.\n2 RELEASE: a compact small vertical oval aperture, clearly taller than wide.\n3 SMALL_AA: a medium oval aperture, a little larger than RELEASE, slightly taller than wide; smooth and subtly tense.\n4 AA: a tall rounded aperture, the largest open shape but not huge, roughly vertical rounded rectangle/oval, vertical tension.\n5 EH: a narrow-open smooth rounded rectangle, slightly wider than tall, with a gently domed upper contour and mildly tense low ends, no smile.\n6 EE: a slightly wider but vertically shallow strained flat aperture, smoothly rounded ends. Almost horizontal; no raised corners and no bowl-shaped smile.\n7 LNT: a compact almost closed flattened oval/bar, nearly straight with a very slight worried downward-end curve. No notch, tongue or teeth.\n8 WIDE_CLOSE: a restrained pressed horizontal shape, wider than LNT and a little flatter, slight downturned ends. One continuous smooth narrow form.\nABSOLUTE AVOIDS: no tongue nub, no center dips or W-shaped notches, no middle pinches, no teeth, no tabs, no holes. Never reuse the crescent upward smile of the reference. This is a subtle, consistent worried speaking family.",
+  "generationAttempts": 1,
+  "sha256": "23b9d8c3e5a5d917e6cb1bc58eca2b68dda0d4f2e4d7200fac719bfd2a564539",
+  "sourcePreservedByteForByte": true,
+  "visualAudit": {
+    "accepted": true,
+    "findings": [
+      "Eight isolated continuous smooth cyan shapes, without teeth, tongues, notches, holes or extra islands.",
+      "REST is a shallow tense frown; RELEASE, SMALL_AA and AA progressively grow as vertical apertures.",
+      "EH, EE, LNT and WIDE_CLOSE are restrained broad shapes with no smiling raised corners.",
+      "One connected cyan component per cell and zero holes in every component, verified by pixel analysis."
+    ],
+    "limitations": [
+      "EE and LNT mainly differ in width, so performance depends on preserving relative scale rather than independently fitting every pose.",
+      "The emotion is clearest in the rest shape and the tall vowels; broad consonants are deliberately subdued and rely on worried eyes to complete the expression.",
+      "The built-in generator produced a near-white background (corner RGB 253,253,253) and small cyan fill variation rather than exact flat requested colors. Original source pixels remain unchanged; the existing extraction and tint pipeline should remove background and normalize display color.",
+      "Cells are rectangular (384 by 512 pixels); width-based common scale must be used, not square-cell assumptions."
+    ]
+  }
+}

@@ -1,0 +1,2639 @@
+{
+  "status": "mismatches found",
+  "checkedAt": "2026-09-22T19:51:13.168356+00:00",
+  "scope": {
+    "faces": 40,
+    "eyes": 80,
+    "sourceParts": 30,
+    "atlasFrames": 84
+  },
+  "hashes": {
+    "brain\\face_assets\\app\\app_data.js": "109d1dd2aa286a3090e493aa0f61294a4bb6472985f8916e9c75dfce37e5c98f",
+    "brain\\art_direction\\artist_studio_20260916\\reuse\\drawn\\atlas.json": "11bf2a65d91d4232b1b576f1d8c87ae6773f2ebe172a214f1f243445509b164b",
+    "brain\\ui\\static\\drawn_face_renderer.js": "1837e7cd6172230a800654f82e73369baf90164ca48a1af70debcd19b5a2d901",
+    "brain\\art_direction\\artist_studio_20260916\\reuse\\drawn\\preview.js": "34ceeabd625bba0ed3c9747275af9f56f83f4bf48e29312f67ba87699c2b3ed0"
+  },
+  "method": [
+    "Visually inspected faces_sheet.png, eyes_sheet.png, all seven initial generated eye sheets and both accepted v2 eye sheets.",
+    "Independently reproduced source-to-reference rigid registration and renderer min-scale math.",
+    "Measured actual generated rest-cel ink pixels, not just crop rectangles, after the renderer transform.",
+    "Original bounds use dense source contour points plus stroke radius. Curved SVG smoothing can move extrema slightly.",
+    "Ratio severity is diagnostic: high means below 0.8 or above 1.25 on either dimension, or >0.1 normalized source-reference RMS. It is not a perceptual quality score.",
+    "Low severity does not mean exact identity match. All 30 source shapes are replaced by seven generated representatives at rest."
+  ],
+  "parts": {
+    "circle_gap_02": {
+      "family": "round",
+      "reference": "circle_gap_03",
+      "severity": "high",
+      "originalBounds": {
+        "x": -11.929,
+        "y": -11.572,
+        "w": 21.916,
+        "h": 21.924
+      },
+      "generatedRestBounds": {
+        "x": -9.365679190020279,
+        "y": -8.76263622327812,
+        "w": 16.3030070821126,
+        "h": 16.041490873461065
+      },
+      "widthRatio": 0.743886068722057,
+      "heightRatio": 0.7316863197163412,
+      "centerShift": [
+        -0.24317564896397847,
+        -0.13189078654758823
+      ],
+      "rotationDegrees": 31.182219406255356,
+      "mirrored": false,
+      "referenceShapeNormalizedRms": 0.00809953562299408,
+      "notes": "Original round gap points farther upward than circle_gap_03; rotation alone is approximate.",
+      "uses": [
+        {
+          "face": "09_happy_03_manual",
+          "role": "eye_L"
+        },
+        {
+          "face": "09_happy_03_manual",
+          "role": "eye_R"
+        },
+        {
+          "face": "11_happy_05_manual",
+          "role": "eye_L"
+        },
+        {
+          "face": "20_neutral_06_manual",
+          "role": "eye_L"
+        },
+        {
+          "face": "20_neutral_06_manual",
+          "role": "eye_R"
+        },
+        {
+          "face": "32_sad_07_manual",
+          "role": "eye_R"
+        }
+      ]
+    },
+    "circle_gap_03": {
+      "family": "round",
+      "reference": "circle_gap_03",
+      "severity": "low",
+      "originalBounds": {
+        "x": -11.586,
+        "y": -11.158,
+        "w": 21.576999999999998,
+        "h": 22.277
+      },
+      "generatedRestBounds": {
+        "x": -11.517283439490445,
+        "y": -10.670566878980889,
+        "w": 21.439566878980887,
+        "h": 21.30213375796178
+      },
+      "widthRatio": 0.9936305732484075,
+      "heightRatio": 0.956238890243829,
+      "centerShift": [
+        0.0,
+        0.0
+      ],
+      "rotationDegrees": 0.0,
+      "mirrored": false,
+      "referenceShapeNormalizedRms": 0.0,
+      "notes": "Reference eye; generated circle is slightly different in stroke thickness and gap.",
+      "uses": [
+        {
+          "face": "11_happy_05_manual",
+          "role": "eye_R"
+        },
+        {
+          "face": "25_neutral_2_03_manual",
+          "role": "eye_L"
+        },
+        {
+          "face": "25_neutral_2_03_manual",
+          "role": "eye_R"
+        },
+        {
+          "face": "32_sad_07_manual",
+          "role": "eye_L"
+        },
+        {
+          "face": "39_neutral_02_manual",
+          "role": "eye_L"
+        },
+        {
+          "face": "39_neutral_02_manual",
+          "role": "eye_R"
+        }
+      ]
+    },
+    "open_C_43": {
+      "family": "round",
+      "reference": "circle_gap_03",
+      "severity": "medium",
+      "originalBounds": {
+        "x": -12.261,
+        "y": -11.475,
+        "w": 22.207,
+        "h": 23.014
+      },
+      "generatedRestBounds": {
+        "x": -11.354660944562665,
+        "y": -10.294704211111275,
+        "w": 20.53856280152589,
+        "h": 20.69077844708179
+      },
+      "widthRatio": 0.9248688612386136,
+      "heightRatio": 0.899051813986347,
+      "centerShift": [
+        0.07212045620027929,
+        0.01868501242961962
+      ],
+      "rotationDegrees": -4.0434751047044655,
+      "mirrored": false,
+      "referenceShapeNormalizedRms": 0.009795797256657949,
+      "notes": "Taller C and opening angle differ from generic circle_gap_03.",
+      "uses": [
+        {
+          "face": "07_annoyed_03_manual",
+          "role": "eye_R"
+        },
+        {
+          "face": "36_misc_03_manual",
+          "role": "eye_R"
+        }
+      ]
+    },
+    "open_C_50": {
+      "family": "round",
+      "reference": "circle_gap_03",
+      "severity": "low",
+      "originalBounds": {
+        "x": -11.920000000000002,
+        "y": -10.433,
+        "w": 21.876000000000005,
+        "h": 20.962000000000003
+      },
+      "generatedRestBounds": {
+        "x": -11.375621274847774,
+        "y": -10.30491660786221,
+        "w": 20.808425270944575,
+        "h": 20.70936366926593
+      },
+      "widthRatio": 0.9511988147259357,
+      "heightRatio": 0.9879478899563938,
+      "centerShift": [
+        0.010591360624513158,
+        0.001765226770752193
+      ],
+      "rotationDegrees": -0.37884289802275617,
+      "mirrored": false,
+      "referenceShapeNormalizedRms": 0.011619582043401144,
+      "notes": "Round C with broader mouth opening differs from shared round gap.",
+      "uses": [
+        {
+          "face": "33_sad_08_manual",
+          "role": "eye_R"
+        }
+      ]
+    },
+    "angry_hook_00": {
+      "family": "hook",
+      "reference": "angry_hook_00",
+      "severity": "low",
+      "originalBounds": {
+        "x": -10.225999999999999,
+        "y": -10.645999999999999,
+        "w": 19.334999999999997,
+        "h": 18.244999999999997
+      },
+      "generatedRestBounds": {
+        "x": -10.177174242424242,
+        "y": -10.409787878787878,
+        "w": 19.139696969696967,
+        "h": 17.772575757575755
+      },
+      "widthRatio": 0.98989898989899,
+      "heightRatio": 0.9741066460715679,
+      "centerShift": [
+        -0.04882575757575758,
+        0.0
+      ],
+      "rotationDegrees": 0.0,
+      "mirrored": false,
+      "referenceShapeNormalizedRms": 0.0,
+      "notes": "Family exemplar retains angry slope; generated tube is heavier and proportions differ.",
+      "uses": [
+        {
+          "face": "02_angry_02_manual",
+          "role": "eye_L"
+        },
+        {
+          "face": "02_angry_02_manual",
+          "role": "eye_R"
+        },
+        {
+          "face": "04_angry_08_manual",
+          "role": "eye_L"
+        },
+        {
+          "face": "04_angry_08_manual",
+          "role": "eye_R"
+        }
+      ]
+    },
+    "droop_hook_08": {
+      "family": "hook",
+      "reference": "angry_hook_00",
+      "severity": "high",
+      "originalBounds": {
+        "x": -11.899,
+        "y": -6.4350000000000005,
+        "w": 20.502,
+        "h": 14.372000000000002
+      },
+      "generatedRestBounds": {
+        "x": -8.629184375551295,
+        "y": -2.244545413208771,
+        "w": 12.848492633220609,
+        "h": 8.353028188930475
+      },
+      "widthRatio": 0.6266945972695644,
+      "heightRatio": 0.581201516068082,
+      "centerShift": [
+        -0.5569380589409914,
+        1.1809686812564655
+      ],
+      "rotationDegrees": -25.185520565277255,
+      "mirrored": false,
+      "referenceShapeNormalizedRms": 0.010290118039798606,
+      "notes": "Short bottom return and almost horizontal top become generic angry hook.",
+      "uses": [
+        {
+          "face": "05_annoyed_01_manual",
+          "role": "eye_L"
+        }
+      ]
+    },
+    "droop_hook_09": {
+      "family": "hook",
+      "reference": "angry_hook_00",
+      "severity": "high",
+      "originalBounds": {
+        "x": -13.765,
+        "y": -7.2,
+        "w": 22.540999999999997,
+        "h": 16.241
+      },
+      "generatedRestBounds": {
+        "x": -10.122693128502501,
+        "y": -2.976592516934251,
+        "w": 13.750514952377396,
+        "h": 9.725332859880053
+      },
+      "widthRatio": 0.6100224015073598,
+      "heightRatio": 0.5988136727960134,
+      "centerShift": [
+        -0.752935652313802,
+        0.9655739130057768
+      ],
+      "rotationDegrees": -40.52655053910324,
+      "mirrored": false,
+      "referenceShapeNormalizedRms": 0.022589537368107003,
+      "notes": "Upward-sloping lid and short lower return are not the angry-hook silhouette.",
+      "uses": [
+        {
+          "face": "31_sad_06_manual",
+          "role": "eye_L"
+        },
+        {
+          "face": "31_sad_06_manual",
+          "role": "eye_R"
+        }
+      ]
+    },
+    "droop_hook_10": {
+      "family": "hook",
+      "reference": "angry_hook_00",
+      "severity": "high",
+      "originalBounds": {
+        "x": -13.437,
+        "y": -6.408,
+        "w": 23.148999999999997,
+        "h": 14.684
+      },
+      "generatedRestBounds": {
+        "x": -8.950499329749286,
+        "y": -2.0409679862102803,
+        "w": 12.985514470251916,
+        "h": 8.38261603727912
+      },
+      "widthRatio": 0.5609535820230643,
+      "heightRatio": 0.5708673411385945,
+      "centerShift": [
+        -0.5952420946233286,
+        1.2163400324292803
+      ],
+      "rotationDegrees": -27.666585201786198,
+      "mirrored": false,
+      "referenceShapeNormalizedRms": 0.019817051630687522,
+      "notes": "Broad shallow horizontal droop is replaced by a taller angry hook.",
+      "uses": [
+        {
+          "face": "05_annoyed_01_manual",
+          "role": "eye_R"
+        }
+      ]
+    },
+    "circle_gap_04": {
+      "family": "hook",
+      "reference": "angry_hook_00",
+      "severity": "high",
+      "originalBounds": {
+        "x": -11.822999999999999,
+        "y": -8.306,
+        "w": 21.840999999999998,
+        "h": 16.962
+      },
+      "generatedRestBounds": {
+        "x": -9.168455104496992,
+        "y": -6.196298451565237,
+        "w": 15.253012642346913,
+        "h": 10.07480784459892
+      },
+      "widthRatio": 0.6983660382925193,
+      "heightRatio": 0.5939634385449193,
+      "centerShift": [
+        -0.6394487833235356,
+        -1.3338945292657778
+      ],
+      "rotationDegrees": -156.06274709919617,
+      "mirrored": true,
+      "referenceShapeNormalizedRms": 0.06084394330771471,
+      "notes": "Nearly horizontal upper bar and broad lower bowl are replaced by a rotated angry hook.",
+      "uses": [
+        {
+          "face": "07_annoyed_03_manual",
+          "role": "eye_L"
+        }
+      ]
+    },
+    "open_C_42": {
+      "family": "hook",
+      "reference": "angry_hook_00",
+      "severity": "low",
+      "originalBounds": {
+        "x": -10.094999999999999,
+        "y": -9.880999999999998,
+        "w": 19.093999999999998,
+        "h": 17.435
+      },
+      "generatedRestBounds": {
+        "x": -9.902516334927473,
+        "y": -9.681130541401927,
+        "w": 18.574652019433735,
+        "h": 17.10827912936609
+      },
+      "widthRatio": 0.9728004618955556,
+      "heightRatio": 0.9812606325991449,
+      "centerShift": [
+        -0.0671903252106052,
+        0.03650902328111627
+      ],
+      "rotationDegrees": -0.5409652817299562,
+      "mirrored": false,
+      "referenceShapeNormalizedRms": 0.01114249093321681,
+      "notes": "Rounded descending hook is close to angry hook but lower return differs.",
+      "uses": [
+        {
+          "face": "01_angry_01_manual",
+          "role": "eye_R"
+        }
+      ]
+    },
+    "open_C_46": {
+      "family": "hook",
+      "reference": "angry_hook_00",
+      "severity": "high",
+      "originalBounds": {
+        "x": -13.711,
+        "y": -8.367,
+        "w": 23.827,
+        "h": 17.478
+      },
+      "generatedRestBounds": {
+        "x": -10.343382517274986,
+        "y": -3.638802944661321,
+        "w": 15.812067826308901,
+        "h": 10.627497766924096
+      },
+      "widthRatio": 0.6636197518071474,
+      "heightRatio": 0.6080499923860908,
+      "centerShift": [
+        -0.6398486041205356,
+        1.3029459388007272
+      ],
+      "rotationDegrees": -22.66889130433874,
+      "mirrored": false,
+      "referenceShapeNormalizedRms": 0.06676246471803637,
+      "notes": "Upward lid and broad rounded bowl differ from rotated angry hook.",
+      "uses": [
+        {
+          "face": "33_sad_08_manual",
+          "role": "eye_L"
+        }
+      ]
+    },
+    "open_C_47": {
+      "family": "hook",
+      "reference": "angry_hook_00",
+      "severity": "high",
+      "originalBounds": {
+        "x": -11.001999999999999,
+        "y": -7.9,
+        "w": 20.043999999999997,
+        "h": 15.803
+      },
+      "generatedRestBounds": {
+        "x": -8.910718209767603,
+        "y": -4.9232041238366575,
+        "w": 15.021457660789949,
+        "h": 11.345709579080012
+      },
+      "widthRatio": 0.7494241499096962,
+      "heightRatio": 0.7179465657837126,
+      "centerShift": [
+        -0.4199893793726286,
+        0.7481506657033474
+      ],
+      "rotationDegrees": -14.205204585090081,
+      "mirrored": false,
+      "referenceShapeNormalizedRms": 0.01910734632551378,
+      "notes": "Nearly horizontal upper lid and smaller droop become taller angry hook.",
+      "uses": [
+        {
+          "face": "01_angry_01_manual",
+          "role": "eye_L"
+        }
+      ]
+    },
+    "open_C_49": {
+      "family": "hook",
+      "reference": "angry_hook_00",
+      "severity": "high",
+      "originalBounds": {
+        "x": -12.238,
+        "y": -7.586,
+        "w": 22.372999999999998,
+        "h": 16.561
+      },
+      "generatedRestBounds": {
+        "x": -9.571072402630984,
+        "y": -5.532407251385354,
+        "w": 16.432719658768676,
+        "h": 13.421556762313067
+      },
+      "widthRatio": 0.7344888776100066,
+      "heightRatio": 0.8104315417132459,
+      "centerShift": [
+        -0.3032125732466451,
+        0.4838711297711793
+      ],
+      "rotationDegrees": -8.58802047045449,
+      "mirrored": false,
+      "referenceShapeNormalizedRms": 0.06790536829437657,
+      "notes": "Horizontal lid and wide bowl are not equivalent to rotated angry hook.",
+      "uses": [
+        {
+          "face": "36_misc_03_manual",
+          "role": "eye_L"
+        }
+      ]
+    },
+    "closed_lid_arc_05": {
+      "family": "arc",
+      "reference": "happy_arc_16",
+      "severity": "high",
+      "originalBounds": {
+        "x": -10.396999999999998,
+        "y": -5.0440000000000005,
+        "w": 20.607,
+        "h": 8.433
+      },
+      "generatedRestBounds": {
+        "x": -8.22514051461182,
+        "y": -4.869108679755018,
+        "w": 15.821102972159842,
+        "h": 7.455941511117201
+      },
+      "widthRatio": 0.7677538201659554,
+      "heightRatio": 0.8841386826891025,
+      "centerShift": [
+        -0.2210890285318996,
+        -0.3136379241964171
+      ],
+      "rotationDegrees": 173.67021987654073,
+      "mirrored": false,
+      "referenceShapeNormalizedRms": 0.005714504053416827,
+      "notes": "Shallow closed U becomes a rotated generic happy arch; preserve original U curvature.",
+      "uses": [
+        {
+          "face": "16_misc_16_manual",
+          "role": "eye_L"
+        },
+        {
+          "face": "16_misc_16_manual",
+          "role": "eye_R"
+        },
+        {
+          "face": "21_neutral_11_manual",
+          "role": "eye_R"
+        },
+        {
+          "face": "22_neutral_12_manual",
+          "role": "eye_L"
+        },
+        {
+          "face": "22_neutral_12_manual",
+          "role": "eye_R"
+        },
+        {
+          "face": "23_neutral_13_manual",
+          "role": "eye_R"
+        }
+      ]
+    },
+    "closed_lid_arc_06": {
+      "family": "arc",
+      "reference": "happy_arc_16",
+      "severity": "high",
+      "originalBounds": {
+        "x": -9.934000000000001,
+        "y": -5.145,
+        "w": 19.372999999999998,
+        "h": 8.376000000000001
+      },
+      "generatedRestBounds": {
+        "x": -7.633709538595411,
+        "y": -4.927254613513895,
+        "w": 14.165843611799804,
+        "h": 7.080018450542868
+      },
+      "widthRatio": 0.7312157957879423,
+      "heightRatio": 0.8452744090906001,
+      "centerShift": [
+        -0.30328773269550524,
+        -0.4302453882424624
+      ],
+      "rotationDegrees": 170.33501308322863,
+      "mirrored": false,
+      "referenceShapeNormalizedRms": 0.018018409680408718,
+      "notes": "Compact rounded U becomes the generic arch; preserve width, curvature and thickness.",
+      "uses": [
+        {
+          "face": "21_neutral_11_manual",
+          "role": "eye_L"
+        },
+        {
+          "face": "23_neutral_13_manual",
+          "role": "eye_L"
+        }
+      ]
+    },
+    "closed_lid_arc_07": {
+      "family": "arc",
+      "reference": "happy_arc_16",
+      "severity": "medium",
+      "originalBounds": {
+        "x": -11.668,
+        "y": -7.768,
+        "w": 21.291000000000004,
+        "h": 11.802999999999999
+      },
+      "generatedRestBounds": {
+        "x": -11.0938862225427,
+        "y": -7.392069600766755,
+        "w": 19.157247314054487,
+        "h": 9.802807368894344
+      },
+      "widthRatio": 0.899781471704217,
+      "heightRatio": 0.8305352341687998,
+      "centerShift": [
+        -0.49276256551545927,
+        -0.6241659163195825
+      ],
+      "rotationDegrees": 168.92792024571892,
+      "mirrored": true,
+      "referenceShapeNormalizedRms": 0.028226669704337508,
+      "notes": "Asymmetric U with high right endpoint is replaced by symmetric arch.",
+      "uses": [
+        {
+          "face": "26_sad_01_manual",
+          "role": "eye_L"
+        },
+        {
+          "face": "26_sad_01_manual",
+          "role": "eye_R"
+        }
+      ]
+    },
+    "happy_arc_15": {
+      "family": "arc",
+      "reference": "happy_arc_16",
+      "severity": "high",
+      "originalBounds": {
+        "x": -11.501999999999999,
+        "y": -7.506,
+        "w": 21.171999999999997,
+        "h": 11.5
+      },
+      "generatedRestBounds": {
+        "x": -8.963950733452632,
+        "y": -7.112300184572224,
+        "w": 14.74567233291104,
+        "h": 8.973683633102679
+      },
+      "widthRatio": 0.6964704483710109,
+      "heightRatio": 0.780320315921972,
+      "centerShift": [
+        -0.675114566997113,
+        -0.8694583680208838
+      ],
+      "rotationDegrees": 159.96385365937437,
+      "mirrored": false,
+      "referenceShapeNormalizedRms": 0.01803089943755658,
+      "notes": "Asymmetric high-right U is treated as rotated symmetric arch.",
+      "uses": [
+        {
+          "face": "29_sad_04_manual",
+          "role": "eye_L"
+        },
+        {
+          "face": "29_sad_04_manual",
+          "role": "eye_R"
+        }
+      ]
+    },
+    "happy_arc_16": {
+      "family": "arc",
+      "reference": "happy_arc_16",
+      "severity": "low",
+      "originalBounds": {
+        "x": -10.510000000000002,
+        "y": -3.665,
+        "w": 20.491,
+        "h": 9.4
+      },
+      "generatedRestBounds": {
+        "x": -10.45008479532164,
+        "y": -3.2189795321637424,
+        "w": 20.371169590643277,
+        "h": 8.507959064327485
+      },
+      "widthRatio": 0.9941520467836258,
+      "heightRatio": 0.9051020281199452,
+      "centerShift": [
+        0.0,
+        0.0
+      ],
+      "rotationDegrees": 0.0,
+      "mirrored": false,
+      "referenceShapeNormalizedRms": 0.0,
+      "notes": "Arch reference; generated thick stroke and width/depth proportion differ.",
+      "uses": [
+        {
+          "face": "10_happy_04_manual",
+          "role": "eye_L"
+        },
+        {
+          "face": "10_happy_04_manual",
+          "role": "eye_R"
+        },
+        {
+          "face": "14_happy_16_manual",
+          "role": "eye_L"
+        },
+        {
+          "face": "14_happy_16_manual",
+          "role": "eye_R"
+        }
+      ]
+    },
+    "happy_arc_17": {
+      "family": "arc",
+      "reference": "happy_arc_16",
+      "severity": "high",
+      "originalBounds": {
+        "x": -9.350999999999999,
+        "y": -5.52,
+        "w": 19.403,
+        "h": 8.908
+      },
+      "generatedRestBounds": {
+        "x": -6.27793641213388,
+        "y": -5.258558798618708,
+        "w": 14.015497697780933,
+        "h": 7.321710352793339
+      },
+      "widthRatio": 0.7223366333959148,
+      "heightRatio": 0.8219252753472541,
+      "centerShift": [
+        0.3793124367565852,
+        -0.5317036222220386
+      ],
+      "rotationDegrees": -167.83210188801596,
+      "mirrored": true,
+      "referenceShapeNormalizedRms": 0.024367538970121765,
+      "notes": "Asymmetric high-left U loses its endpoint relationship in shared arch.",
+      "uses": [
+        {
+          "face": "06_annoyed_02_manual",
+          "role": "eye_L"
+        },
+        {
+          "face": "06_annoyed_02_manual",
+          "role": "eye_R"
+        }
+      ]
+    },
+    "happy_arc_18": {
+      "family": "arc",
+      "reference": "happy_arc_16",
+      "severity": "high",
+      "originalBounds": {
+        "x": -12.117,
+        "y": -8.782,
+        "w": 21.526,
+        "h": 13.329
+      },
+      "generatedRestBounds": {
+        "x": -9.98584353085778,
+        "y": -8.305702812114014,
+        "w": 15.502939929769308,
+        "h": 10.239010123455298
+      },
+      "widthRatio": 0.7201960387331278,
+      "heightRatio": 0.7681754162694349,
+      "centerShift": [
+        -0.8803735659731249,
+        -1.0686977503863648
+      ],
+      "rotationDegrees": 155.82083175488438,
+      "mirrored": false,
+      "referenceShapeNormalizedRms": 0.03462760313142278,
+      "notes": "Deep asymmetrical U is the worst arc width fit; generic arch cannot preserve it.",
+      "uses": [
+        {
+          "face": "35_sad_10_manual",
+          "role": "eye_L"
+        },
+        {
+          "face": "35_sad_10_manual",
+          "role": "eye_R"
+        }
+      ]
+    },
+    "happy_arc_19": {
+      "family": "arc",
+      "reference": "happy_arc_16",
+      "severity": "high",
+      "originalBounds": {
+        "x": -10.075999999999999,
+        "y": -3.4139999999999997,
+        "w": 20.470999999999997,
+        "h": 8.536
+      },
+      "generatedRestBounds": {
+        "x": -7.194559823676884,
+        "y": -2.4611604255356205,
+        "w": 15.23946840804554,
+        "h": 7.384094674378176
+      },
+      "widthRatio": 0.7444418156438641,
+      "heightRatio": 0.8650532655082211,
+      "centerShift": [
+        0.2656743803458852,
+        0.3768869116534672
+      ],
+      "rotationDegrees": -7.886352073984422,
+      "mirrored": false,
+      "referenceShapeNormalizedRms": 0.01191407644188995,
+      "notes": "Shallow arch is replaced by deeper/thicker shared arch.",
+      "uses": [
+        {
+          "face": "13_happy_14_manual",
+          "role": "eye_L"
+        },
+        {
+          "face": "13_happy_14_manual",
+          "role": "eye_R"
+        }
+      ]
+    },
+    "e_shape_11": {
+      "family": "loop",
+      "reference": "e_shape_12",
+      "severity": "high",
+      "originalBounds": {
+        "x": -11.209999999999999,
+        "y": -9.798,
+        "w": 20.726,
+        "h": 20.933999999999997
+      },
+      "generatedRestBounds": {
+        "x": -10.807766602983035,
+        "y": -8.477297298000765,
+        "w": 19.722249661131016,
+        "h": 18.36890997621505
+      },
+      "widthRatio": 0.9515704748205643,
+      "heightRatio": 0.8774677546677678,
+      "centerShift": [
+        -0.09964177241752736,
+        0.038157690106761066
+      ],
+      "rotationDegrees": 3.586021210501737,
+      "mirrored": false,
+      "referenceShapeNormalizedRms": 0.11772319501826653,
+      "notes": "Crossbar and upper dome proportions differ from the shared loop.",
+      "uses": [
+        {
+          "face": "18_misc_2_02_manual",
+          "role": "eye_R"
+        },
+        {
+          "face": "28_sad_03_manual",
+          "role": "eye_L"
+        },
+        {
+          "face": "38_misc_2_06_manual",
+          "role": "eye_R"
+        }
+      ]
+    },
+    "e_shape_12": {
+      "family": "loop",
+      "reference": "e_shape_12",
+      "severity": "low",
+      "originalBounds": {
+        "x": -11.326,
+        "y": -10.07,
+        "w": 21.043,
+        "h": 21.468
+      },
+      "generatedRestBounds": {
+        "x": -11.260240625,
+        "y": -9.0683875,
+        "w": 20.911481249999998,
+        "h": 19.59629375
+      },
+      "widthRatio": 0.9937499999999999,
+      "heightRatio": 0.9128141303335197,
+      "centerShift": [
+        0.0,
+        0.06575937500000073
+      ],
+      "rotationDegrees": 0.0,
+      "mirrored": false,
+      "referenceShapeNormalizedRms": 0.0,
+      "notes": "Loop reference; generated crossbar is thicker and upper/lower proportions differ.",
+      "uses": [
+        {
+          "face": "18_misc_2_02_manual",
+          "role": "eye_L"
+        },
+        {
+          "face": "27_sad_02_manual",
+          "role": "eye_R"
+        },
+        {
+          "face": "28_sad_03_manual",
+          "role": "eye_R"
+        },
+        {
+          "face": "34_sad_09_manual",
+          "role": "eye_L"
+        },
+        {
+          "face": "34_sad_09_manual",
+          "role": "eye_R"
+        },
+        {
+          "face": "38_misc_2_06_manual",
+          "role": "eye_L"
+        }
+      ]
+    },
+    "e_shape_13": {
+      "family": "loop",
+      "reference": "e_shape_12",
+      "severity": "high",
+      "originalBounds": {
+        "x": -10.341,
+        "y": -8.547,
+        "w": 20.259999999999998,
+        "h": 20.589
+      },
+      "generatedRestBounds": {
+        "x": -7.516652081671033,
+        "y": -5.408156359103636,
+        "w": 14.476733575337114,
+        "h": 14.705686753193174
+      },
+      "widthRatio": 0.7145475604806079,
+      "heightRatio": 0.7142496844525317,
+      "centerShift": [
+        -0.06728529400247574,
+        0.19718701749295242
+      ],
+      "rotationDegrees": -39.11223627604072,
+      "mirrored": false,
+      "referenceShapeNormalizedRms": 0.10868943323968418,
+      "notes": "Tilted crossbar is part of the source contour, not just a rotated identical loop.",
+      "uses": [
+        {
+          "face": "27_sad_02_manual",
+          "role": "eye_L"
+        }
+      ]
+    },
+    "open_C_44": {
+      "family": "slot",
+      "reference": "open_C_44",
+      "severity": "low",
+      "originalBounds": {
+        "x": -11.547,
+        "y": -5.21,
+        "w": 21.383,
+        "h": 10.19
+      },
+      "generatedRestBounds": {
+        "x": -11.509747386759583,
+        "y": -5.144102787456446,
+        "w": 21.308494773519165,
+        "h": 10.058205574912892
+      },
+      "widthRatio": 0.9965156794425089,
+      "heightRatio": 0.9870662978324722,
+      "centerShift": [
+        0.0,
+        0.0
+      ],
+      "rotationDegrees": 0.0,
+      "mirrored": false,
+      "referenceShapeNormalizedRms": 0.0,
+      "notes": "Slot reference; generated slot has heavier parallel bars and rounder bend.",
+      "uses": [
+        {
+          "face": "37_misc_06_manual",
+          "role": "eye_L"
+        },
+        {
+          "face": "37_misc_06_manual",
+          "role": "eye_R"
+        },
+        {
+          "face": "40_neutral_03_manual",
+          "role": "eye_L"
+        },
+        {
+          "face": "40_neutral_03_manual",
+          "role": "eye_R"
+        }
+      ]
+    },
+    "open_C_45": {
+      "family": "slot",
+      "reference": "open_C_44",
+      "severity": "high",
+      "originalBounds": {
+        "x": -12.269,
+        "y": -5.42,
+        "w": 21.884999999999998,
+        "h": 10.212
+      },
+      "generatedRestBounds": {
+        "x": -10.158839899041231,
+        "y": -5.228656353296099,
+        "w": 17.39483229581868,
+        "h": 9.597078468043094
+      },
+      "widthRatio": 0.7948289831308514,
+      "heightRatio": 0.9397844171605066,
+      "centerShift": [
+        -0.1349237511318897,
+        -0.11611711927455204
+      ],
+      "rotationDegrees": 7.240267301854444,
+      "mirrored": false,
+      "referenceShapeNormalizedRms": 0.04114972087446387,
+      "notes": "Short slot and different bar spacing are replaced with identical shared slot.",
+      "uses": [
+        {
+          "face": "24_neutral_2_01_manual",
+          "role": "eye_R"
+        }
+      ]
+    },
+    "open_C_48": {
+      "family": "slot",
+      "reference": "open_C_44",
+      "severity": "low",
+      "originalBounds": {
+        "x": -11.341,
+        "y": -5.181,
+        "w": 20.854,
+        "h": 10.591000000000001
+      },
+      "generatedRestBounds": {
+        "x": -11.287022096663458,
+        "y": -4.765848140423767,
+        "w": 20.712950389907036,
+        "h": 9.807689818062942
+      },
+      "widthRatio": 0.9932363282778861,
+      "heightRatio": 0.9260400168126656,
+      "centerShift": [
+        -0.016546901709940443,
+        0.023496768607703444
+      ],
+      "rotationDegrees": -0.6906067748982011,
+      "mirrored": false,
+      "referenceShapeNormalizedRms": 0.012143393661058547,
+      "notes": "Near-parallel horizontal slot differs in length and bar spacing.",
+      "uses": [
+        {
+          "face": "03_angry_07_manual",
+          "role": "eye_L"
+        },
+        {
+          "face": "03_angry_07_manual",
+          "role": "eye_R"
+        }
+      ]
+    },
+    "open_C_51": {
+      "family": "slot",
+      "reference": "open_C_44",
+      "severity": "medium",
+      "originalBounds": {
+        "x": -12.846,
+        "y": -5.168,
+        "w": 23.232999999999997,
+        "h": 10.611
+      },
+      "generatedRestBounds": {
+        "x": -11.009217440422143,
+        "y": -4.849202709302178,
+        "w": 19.34189221502621,
+        "h": 10.142000984613365
+      },
+      "widthRatio": 0.8325180654683516,
+      "heightRatio": 0.9558006770910719,
+      "centerShift": [
+        -0.10877133290903629,
+        0.08429778300450419
+      ],
+      "rotationDegrees": 175.32774047216463,
+      "mirrored": true,
+      "referenceShapeNormalizedRms": 0.026890604595825266,
+      "notes": "Curved upper bar and slightly offset terminals are lost in generic slot.",
+      "uses": [
+        {
+          "face": "24_neutral_2_01_manual",
+          "role": "eye_L"
+        }
+      ]
+    },
+    "chevron_01": {
+      "family": "chevron",
+      "reference": "chevron_01",
+      "severity": "low",
+      "originalBounds": {
+        "x": -8.559,
+        "y": -8.041,
+        "w": 16.551,
+        "h": 15.724999999999998
+      },
+      "generatedRestBounds": {
+        "x": -8.514267567567567,
+        "y": -7.604083783783784,
+        "w": 16.461535135135133,
+        "h": 14.851167567567565
+      },
+      "widthRatio": 0.9945945945945945,
+      "heightRatio": 0.944430369956602,
+      "centerShift": [
+        0.0,
+        0.0
+      ],
+      "rotationDegrees": 0.0,
+      "mirrored": false,
+      "referenceShapeNormalizedRms": 0.0,
+      "notes": "Only source chevron; generated elbows and thick tubing still differ.",
+      "uses": [
+        {
+          "face": "08_annoyed_04_manual",
+          "role": "eye_L"
+        },
+        {
+          "face": "08_annoyed_04_manual",
+          "role": "eye_R"
+        },
+        {
+          "face": "12_happy_09_manual",
+          "role": "eye_L"
+        },
+        {
+          "face": "12_happy_09_manual",
+          "role": "eye_R"
+        },
+        {
+          "face": "19_misc_2_03_manual",
+          "role": "eye_L"
+        },
+        {
+          "face": "19_misc_2_03_manual",
+          "role": "eye_R"
+        },
+        {
+          "face": "30_sad_05_manual",
+          "role": "eye_L"
+        },
+        {
+          "face": "30_sad_05_manual",
+          "role": "eye_R"
+        }
+      ]
+    },
+    "flat_bar_14": {
+      "family": "bar",
+      "reference": "flat_bar_14",
+      "severity": "low",
+      "originalBounds": {
+        "x": -10.215,
+        "y": -1.52,
+        "w": 20.43,
+        "h": 3.04
+      },
+      "generatedRestBounds": {
+        "x": -10.18521865889213,
+        "y": -1.4592857142857143,
+        "w": 20.310874635568517,
+        "h": 2.859008746355685
+      },
+      "widthRatio": 0.9941690962099128,
+      "heightRatio": 0.9404634034064753,
+      "centerShift": [
+        -0.029781341107870674,
+        -0.029781341107871784
+      ],
+      "rotationDegrees": 0.0,
+      "mirrored": false,
+      "referenceShapeNormalizedRms": 0.0,
+      "notes": "Same basic topology; generated bar thickness differs and squeeze can exceed rest height.",
+      "uses": [
+        {
+          "face": "15_misc_15_manual",
+          "role": "eye_L"
+        },
+        {
+          "face": "15_misc_15_manual",
+          "role": "eye_R"
+        },
+        {
+          "face": "17_misc_2_01_manual",
+          "role": "eye_L"
+        },
+        {
+          "face": "17_misc_2_01_manual",
+          "role": "eye_R"
+        }
+      ]
+    }
+  },
+  "faces": [
+    {
+      "id": "01_angry_01_manual",
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "open_C_47",
+          "family": "hook",
+          "severity": "high",
+          "widthRatio": 0.7494241499096962,
+          "heightRatio": 0.7179465657837126,
+          "slotRotation": 0.0,
+          "slotMirror": false
+        },
+        {
+          "role": "eye_R",
+          "part": "open_C_42",
+          "family": "hook",
+          "severity": "low",
+          "widthRatio": 0.9728004618955556,
+          "heightRatio": 0.9812606325991449,
+          "slotRotation": 0.0,
+          "slotMirror": true
+        }
+      ],
+      "mouth": {
+        "part": "mouth_line_31",
+        "x": 50.28,
+        "y": 45.02,
+        "rot": -0.88,
+        "mirror": false
+      },
+      "severity": "high",
+      "mouthIssues": [
+        "Preview ignores original mouth rotation -0.88 degrees"
+      ]
+    },
+    {
+      "id": "02_angry_02_manual",
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "angry_hook_00",
+          "family": "hook",
+          "severity": "low",
+          "widthRatio": 0.98989898989899,
+          "heightRatio": 0.9741066460715679,
+          "slotRotation": -2.98,
+          "slotMirror": false
+        },
+        {
+          "role": "eye_R",
+          "part": "angry_hook_00",
+          "family": "hook",
+          "severity": "low",
+          "widthRatio": 0.98989898989899,
+          "heightRatio": 0.9741066460715679,
+          "slotRotation": -0.23,
+          "slotMirror": true
+        }
+      ],
+      "mouth": {
+        "part": "mouth_oval_tall_filled_34",
+        "x": 49.21,
+        "y": 44.84,
+        "rot": -0.0,
+        "mirror": false
+      },
+      "severity": "low",
+      "mouthIssues": []
+    },
+    {
+      "id": "03_angry_07_manual",
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "open_C_48",
+          "family": "slot",
+          "severity": "low",
+          "widthRatio": 0.9932363282778861,
+          "heightRatio": 0.9260400168126656,
+          "slotRotation": 1.81,
+          "slotMirror": false
+        },
+        {
+          "role": "eye_R",
+          "part": "open_C_48",
+          "family": "slot",
+          "severity": "low",
+          "widthRatio": 0.9932363282778861,
+          "heightRatio": 0.9260400168126656,
+          "slotRotation": 0.0,
+          "slotMirror": true
+        }
+      ],
+      "mouth": {
+        "part": "mouth_frown_arc_28",
+        "x": 55.01,
+        "y": 42.6,
+        "rot": 0.05,
+        "mirror": false
+      },
+      "severity": "low",
+      "mouthIssues": []
+    },
+    {
+      "id": "04_angry_08_manual",
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "angry_hook_00",
+          "family": "hook",
+          "severity": "low",
+          "widthRatio": 0.98989898989899,
+          "heightRatio": 0.9741066460715679,
+          "slotRotation": -0.96,
+          "slotMirror": false
+        },
+        {
+          "role": "eye_R",
+          "part": "angry_hook_00",
+          "family": "hook",
+          "severity": "low",
+          "widthRatio": 0.98989898989899,
+          "heightRatio": 0.9741066460715679,
+          "slotRotation": 0.9,
+          "slotMirror": true
+        }
+      ],
+      "mouth": {
+        "part": "mouth_frown_arc_29",
+        "x": 50.16,
+        "y": 39.12,
+        "rot": 0.0,
+        "mirror": false
+      },
+      "severity": "low",
+      "mouthIssues": []
+    },
+    {
+      "id": "05_annoyed_01_manual",
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "droop_hook_08",
+          "family": "hook",
+          "severity": "high",
+          "widthRatio": 0.6266945972695644,
+          "heightRatio": 0.581201516068082,
+          "slotRotation": -0.0,
+          "slotMirror": false
+        },
+        {
+          "role": "eye_R",
+          "part": "droop_hook_10",
+          "family": "hook",
+          "severity": "high",
+          "widthRatio": 0.5609535820230643,
+          "heightRatio": 0.5708673411385945,
+          "slotRotation": -0.0,
+          "slotMirror": true
+        }
+      ],
+      "mouth": {
+        "part": "mouth_chevron_up_20",
+        "x": 49.69,
+        "y": 41.1,
+        "rot": 0.0,
+        "mirror": false
+      },
+      "severity": "high",
+      "mouthIssues": []
+    },
+    {
+      "id": "06_annoyed_02_manual",
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "happy_arc_17",
+          "family": "arc",
+          "severity": "high",
+          "widthRatio": 0.7223366333959148,
+          "heightRatio": 0.8219252753472541,
+          "slotRotation": -2.38,
+          "slotMirror": false
+        },
+        {
+          "role": "eye_R",
+          "part": "happy_arc_17",
+          "family": "arc",
+          "severity": "high",
+          "widthRatio": 0.7223366333959148,
+          "heightRatio": 0.8219252753472541,
+          "slotRotation": -0.02,
+          "slotMirror": true
+        }
+      ],
+      "mouth": {
+        "part": "mouth_frown_arc_28",
+        "x": 55.33,
+        "y": 34.82,
+        "rot": 2.72,
+        "mirror": false
+      },
+      "severity": "high",
+      "mouthIssues": [
+        "Preview ignores original mouth rotation 2.72 degrees"
+      ]
+    },
+    {
+      "id": "07_annoyed_03_manual",
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "circle_gap_04",
+          "family": "hook",
+          "severity": "high",
+          "widthRatio": 0.6983660382925193,
+          "heightRatio": 0.5939634385449193,
+          "slotRotation": 0.07,
+          "slotMirror": false
+        },
+        {
+          "role": "eye_R",
+          "part": "open_C_43",
+          "family": "round",
+          "severity": "medium",
+          "widthRatio": 0.9248688612386136,
+          "heightRatio": 0.899051813986347,
+          "slotRotation": 0.0,
+          "slotMirror": true
+        }
+      ],
+      "mouth": {
+        "part": "mouth_dome_filled_23",
+        "x": 49.92,
+        "y": 44.87,
+        "rot": 0.0,
+        "mirror": false
+      },
+      "severity": "high",
+      "mouthIssues": []
+    },
+    {
+      "id": "08_annoyed_04_manual",
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "chevron_01",
+          "family": "chevron",
+          "severity": "low",
+          "widthRatio": 0.9945945945945945,
+          "heightRatio": 0.944430369956602,
+          "slotRotation": 0.04,
+          "slotMirror": false
+        },
+        {
+          "role": "eye_R",
+          "part": "chevron_01",
+          "family": "chevron",
+          "severity": "low",
+          "widthRatio": 0.9945945945945945,
+          "heightRatio": 0.944430369956602,
+          "slotRotation": 1.41,
+          "slotMirror": true
+        }
+      ],
+      "mouth": {
+        "part": "mouth_rounded_rect_filled_36",
+        "x": 49.66,
+        "y": 44.75,
+        "rot": 0.53,
+        "mirror": false
+      },
+      "severity": "low",
+      "mouthIssues": [
+        "Preview ignores original mouth rotation 0.53 degrees"
+      ]
+    },
+    {
+      "id": "09_happy_03_manual",
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "circle_gap_02",
+          "family": "round",
+          "severity": "high",
+          "widthRatio": 0.743886068722057,
+          "heightRatio": 0.7316863197163412,
+          "slotRotation": 2.25,
+          "slotMirror": false
+        },
+        {
+          "role": "eye_R",
+          "part": "circle_gap_02",
+          "family": "round",
+          "severity": "high",
+          "widthRatio": 0.743886068722057,
+          "heightRatio": 0.7316863197163412,
+          "slotRotation": -0.94,
+          "slotMirror": true
+        }
+      ],
+      "mouth": {
+        "part": "mouth_open_smile_filled_33",
+        "x": 50.27,
+        "y": 48.41,
+        "rot": -0.0,
+        "mirror": false
+      },
+      "severity": "high",
+      "mouthIssues": []
+    },
+    {
+      "id": "10_happy_04_manual",
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "happy_arc_16",
+          "family": "arc",
+          "severity": "low",
+          "widthRatio": 0.9941520467836258,
+          "heightRatio": 0.9051020281199452,
+          "slotRotation": 0.05,
+          "slotMirror": false
+        },
+        {
+          "role": "eye_R",
+          "part": "happy_arc_16",
+          "family": "arc",
+          "severity": "low",
+          "widthRatio": 0.9941520467836258,
+          "heightRatio": 0.9051020281199452,
+          "slotRotation": 6.17,
+          "slotMirror": true
+        }
+      ],
+      "mouth": {
+        "part": "mouth_w_squiggle_39",
+        "x": 50.38,
+        "y": 45.08,
+        "rot": 0.0,
+        "mirror": false
+      },
+      "severity": "low",
+      "mouthIssues": []
+    },
+    {
+      "id": "11_happy_05_manual",
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "circle_gap_02",
+          "family": "round",
+          "severity": "high",
+          "widthRatio": 0.743886068722057,
+          "heightRatio": 0.7316863197163412,
+          "slotRotation": -30.3,
+          "slotMirror": false
+        },
+        {
+          "role": "eye_R",
+          "part": "circle_gap_03",
+          "family": "round",
+          "severity": "low",
+          "widthRatio": 0.9936305732484075,
+          "heightRatio": 0.956238890243829,
+          "slotRotation": 0.2,
+          "slotMirror": true
+        }
+      ],
+      "mouth": {
+        "part": "mouth_smile_arc_37",
+        "x": 49.14,
+        "y": 51.71,
+        "rot": -0.23,
+        "mirror": false
+      },
+      "severity": "high",
+      "mouthIssues": []
+    },
+    {
+      "id": "12_happy_09_manual",
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "chevron_01",
+          "family": "chevron",
+          "severity": "low",
+          "widthRatio": 0.9945945945945945,
+          "heightRatio": 0.944430369956602,
+          "slotRotation": 0.85,
+          "slotMirror": false
+        },
+        {
+          "role": "eye_R",
+          "part": "chevron_01",
+          "family": "chevron",
+          "severity": "low",
+          "widthRatio": 0.9945945945945945,
+          "heightRatio": 0.944430369956602,
+          "slotRotation": -0.67,
+          "slotMirror": true
+        }
+      ],
+      "mouth": null,
+      "severity": "low",
+      "mouthIssues": [
+        "No canonical mouth: production suppresses speech mouth, preview invents fallback mouth"
+      ]
+    },
+    {
+      "id": "13_happy_14_manual",
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "happy_arc_19",
+          "family": "arc",
+          "severity": "high",
+          "widthRatio": 0.7444418156438641,
+          "heightRatio": 0.8650532655082211,
+          "slotRotation": 2.8,
+          "slotMirror": false
+        },
+        {
+          "role": "eye_R",
+          "part": "happy_arc_19",
+          "family": "arc",
+          "severity": "high",
+          "widthRatio": 0.7444418156438641,
+          "heightRatio": 0.8650532655082211,
+          "slotRotation": 0.42,
+          "slotMirror": true
+        }
+      ],
+      "mouth": {
+        "part": "mouth_smile_arc_37",
+        "x": 50.04,
+        "y": 57.92,
+        "rot": -5.4,
+        "mirror": false
+      },
+      "severity": "high",
+      "mouthIssues": [
+        "Preview ignores original mouth rotation -5.4 degrees"
+      ]
+    },
+    {
+      "id": "14_happy_16_manual",
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "happy_arc_16",
+          "family": "arc",
+          "severity": "low",
+          "widthRatio": 0.9941520467836258,
+          "heightRatio": 0.9051020281199452,
+          "slotRotation": -5.06,
+          "slotMirror": false
+        },
+        {
+          "role": "eye_R",
+          "part": "happy_arc_16",
+          "family": "arc",
+          "severity": "low",
+          "widthRatio": 0.9941520467836258,
+          "heightRatio": 0.9051020281199452,
+          "slotRotation": 7.57,
+          "slotMirror": true
+        }
+      ],
+      "mouth": {
+        "part": "mouth_line_30",
+        "x": 50.88,
+        "y": 52.47,
+        "rot": 1.17,
+        "mirror": false
+      },
+      "severity": "low",
+      "mouthIssues": [
+        "Preview ignores original mouth rotation 1.17 degrees"
+      ]
+    },
+    {
+      "id": "15_misc_15_manual",
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "flat_bar_14",
+          "family": "bar",
+          "severity": "low",
+          "widthRatio": 0.9941690962099128,
+          "heightRatio": 0.9404634034064753,
+          "slotRotation": -0.53,
+          "slotMirror": false
+        },
+        {
+          "role": "eye_R",
+          "part": "flat_bar_14",
+          "family": "bar",
+          "severity": "low",
+          "widthRatio": 0.9941690962099128,
+          "heightRatio": 0.9404634034064753,
+          "slotRotation": -0.83,
+          "slotMirror": true
+        }
+      ],
+      "mouth": {
+        "part": "mouth_rounded_rect_filled_36",
+        "x": 50.27,
+        "y": 45.45,
+        "rot": -7.17,
+        "mirror": false
+      },
+      "severity": "low",
+      "mouthIssues": [
+        "Preview ignores original mouth rotation -7.17 degrees"
+      ]
+    },
+    {
+      "id": "16_misc_16_manual",
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "closed_lid_arc_05",
+          "family": "arc",
+          "severity": "high",
+          "widthRatio": 0.7677538201659554,
+          "heightRatio": 0.8841386826891025,
+          "slotRotation": -0.23,
+          "slotMirror": false
+        },
+        {
+          "role": "eye_R",
+          "part": "closed_lid_arc_05",
+          "family": "arc",
+          "severity": "high",
+          "widthRatio": 0.7677538201659554,
+          "heightRatio": 0.8841386826891025,
+          "slotRotation": -1.27,
+          "slotMirror": true
+        }
+      ],
+      "mouth": {
+        "part": "mouth_oval_tall_filled_34",
+        "x": 49.76,
+        "y": 38.89,
+        "rot": -6.01,
+        "mirror": false
+      },
+      "severity": "high",
+      "mouthIssues": [
+        "Preview ignores original mouth rotation -6.01 degrees"
+      ]
+    },
+    {
+      "id": "17_misc_2_01_manual",
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "flat_bar_14",
+          "family": "bar",
+          "severity": "low",
+          "widthRatio": 0.9941690962099128,
+          "heightRatio": 0.9404634034064753,
+          "slotRotation": -0.12,
+          "slotMirror": false
+        },
+        {
+          "role": "eye_R",
+          "part": "flat_bar_14",
+          "family": "bar",
+          "severity": "low",
+          "widthRatio": 0.9941690962099128,
+          "heightRatio": 0.9404634034064753,
+          "slotRotation": -0.28,
+          "slotMirror": true
+        }
+      ],
+      "mouth": {
+        "part": "mouth_wide_bar_filled_41",
+        "x": 49.83,
+        "y": 45.97,
+        "rot": 0.02,
+        "mirror": false
+      },
+      "severity": "low",
+      "mouthIssues": []
+    },
+    {
+      "id": "18_misc_2_02_manual",
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "e_shape_12",
+          "family": "loop",
+          "severity": "low",
+          "widthRatio": 0.9937499999999999,
+          "heightRatio": 0.9128141303335197,
+          "slotRotation": 0.0,
+          "slotMirror": false
+        },
+        {
+          "role": "eye_R",
+          "part": "e_shape_11",
+          "family": "loop",
+          "severity": "high",
+          "widthRatio": 0.9515704748205643,
+          "heightRatio": 0.8774677546677678,
+          "slotRotation": 0.01,
+          "slotMirror": true
+        }
+      ],
+      "mouth": {
+        "part": "mouth_rounded_rect_filled_36",
+        "x": 49.83,
+        "y": 47.04,
+        "rot": 6.36,
+        "mirror": false
+      },
+      "severity": "high",
+      "mouthIssues": [
+        "Preview ignores original mouth rotation 6.36 degrees"
+      ]
+    },
+    {
+      "id": "19_misc_2_03_manual",
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "chevron_01",
+          "family": "chevron",
+          "severity": "low",
+          "widthRatio": 0.9945945945945945,
+          "heightRatio": 0.944430369956602,
+          "slotRotation": -3.42,
+          "slotMirror": false
+        },
+        {
+          "role": "eye_R",
+          "part": "chevron_01",
+          "family": "chevron",
+          "severity": "low",
+          "widthRatio": 0.9945945945945945,
+          "heightRatio": 0.944430369956602,
+          "slotRotation": 0.52,
+          "slotMirror": true
+        }
+      ],
+      "mouth": {
+        "part": "mouth_line_32",
+        "x": 50.56,
+        "y": 45.58,
+        "rot": -0.79,
+        "mirror": false
+      },
+      "severity": "low",
+      "mouthIssues": [
+        "Preview ignores original mouth rotation -0.79 degrees"
+      ]
+    },
+    {
+      "id": "20_neutral_06_manual",
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "circle_gap_02",
+          "family": "round",
+          "severity": "high",
+          "widthRatio": 0.743886068722057,
+          "heightRatio": 0.7316863197163412,
+          "slotRotation": -6.98,
+          "slotMirror": false
+        },
+        {
+          "role": "eye_R",
+          "part": "circle_gap_02",
+          "family": "round",
+          "severity": "high",
+          "widthRatio": 0.743886068722057,
+          "heightRatio": 0.7316863197163412,
+          "slotRotation": 7.3,
+          "slotMirror": true
+        }
+      ],
+      "mouth": {
+        "part": "mouth_dot_25",
+        "x": 50.28,
+        "y": 46.19,
+        "rot": 0.0,
+        "mirror": false
+      },
+      "severity": "high",
+      "mouthIssues": []
+    },
+    {
+      "id": "21_neutral_11_manual",
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "closed_lid_arc_06",
+          "family": "arc",
+          "severity": "high",
+          "widthRatio": 0.7312157957879423,
+          "heightRatio": 0.8452744090906001,
+          "slotRotation": -0.0,
+          "slotMirror": false
+        },
+        {
+          "role": "eye_R",
+          "part": "closed_lid_arc_05",
+          "family": "arc",
+          "severity": "high",
+          "widthRatio": 0.7677538201659554,
+          "heightRatio": 0.8841386826891025,
+          "slotRotation": -0.41,
+          "slotMirror": true
+        }
+      ],
+      "mouth": {
+        "part": "mouth_dome_filled_24",
+        "x": 49.24,
+        "y": 35.36,
+        "rot": -3.26,
+        "mirror": false
+      },
+      "severity": "high",
+      "mouthIssues": [
+        "Preview ignores original mouth rotation -3.26 degrees"
+      ]
+    },
+    {
+      "id": "22_neutral_12_manual",
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "closed_lid_arc_05",
+          "family": "arc",
+          "severity": "high",
+          "widthRatio": 0.7677538201659554,
+          "heightRatio": 0.8841386826891025,
+          "slotRotation": -2.48,
+          "slotMirror": false
+        },
+        {
+          "role": "eye_R",
+          "part": "closed_lid_arc_05",
+          "family": "arc",
+          "severity": "high",
+          "widthRatio": 0.7677538201659554,
+          "heightRatio": 0.8841386826891025,
+          "slotRotation": -1.54,
+          "slotMirror": true
+        }
+      ],
+      "mouth": {
+        "part": "mouth_line_30",
+        "x": 50.81,
+        "y": 39.03,
+        "rot": -0.77,
+        "mirror": false
+      },
+      "severity": "high",
+      "mouthIssues": [
+        "Preview ignores original mouth rotation -0.77 degrees"
+      ]
+    },
+    {
+      "id": "23_neutral_13_manual",
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "closed_lid_arc_06",
+          "family": "arc",
+          "severity": "high",
+          "widthRatio": 0.7312157957879423,
+          "heightRatio": 0.8452744090906001,
+          "slotRotation": 5.32,
+          "slotMirror": false
+        },
+        {
+          "role": "eye_R",
+          "part": "closed_lid_arc_05",
+          "family": "arc",
+          "severity": "high",
+          "widthRatio": 0.7677538201659554,
+          "heightRatio": 0.8841386826891025,
+          "slotRotation": -2.22,
+          "slotMirror": true
+        }
+      ],
+      "mouth": {
+        "part": "mouth_oval_tall_filled_35",
+        "x": 49.8,
+        "y": 38.66,
+        "rot": -5.83,
+        "mirror": false
+      },
+      "severity": "high",
+      "mouthIssues": [
+        "Preview ignores original mouth rotation -5.83 degrees"
+      ]
+    },
+    {
+      "id": "24_neutral_2_01_manual",
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "open_C_51",
+          "family": "slot",
+          "severity": "medium",
+          "widthRatio": 0.8325180654683516,
+          "heightRatio": 0.9558006770910719,
+          "slotRotation": 0.1,
+          "slotMirror": false
+        },
+        {
+          "role": "eye_R",
+          "part": "open_C_45",
+          "family": "slot",
+          "severity": "high",
+          "widthRatio": 0.7948289831308514,
+          "heightRatio": 0.9397844171605066,
+          "slotRotation": -0.01,
+          "slotMirror": true
+        }
+      ],
+      "mouth": {
+        "part": "mouth_line_31",
+        "x": 50.69,
+        "y": 46.22,
+        "rot": -1.68,
+        "mirror": false
+      },
+      "severity": "high",
+      "mouthIssues": [
+        "Preview ignores original mouth rotation -1.68 degrees"
+      ]
+    },
+    {
+      "id": "25_neutral_2_03_manual",
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "circle_gap_03",
+          "family": "round",
+          "severity": "low",
+          "widthRatio": 0.9936305732484075,
+          "heightRatio": 0.956238890243829,
+          "slotRotation": -1.07,
+          "slotMirror": false
+        },
+        {
+          "role": "eye_R",
+          "part": "circle_gap_03",
+          "family": "round",
+          "severity": "low",
+          "widthRatio": 0.9936305732484075,
+          "heightRatio": 0.956238890243829,
+          "slotRotation": 1.93,
+          "slotMirror": true
+        }
+      ],
+      "mouth": {
+        "part": "mouth_dot_26",
+        "x": 49.67,
+        "y": 46.79,
+        "rot": 0.0,
+        "mirror": false
+      },
+      "severity": "low",
+      "mouthIssues": []
+    },
+    {
+      "id": "26_sad_01_manual",
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "closed_lid_arc_07",
+          "family": "arc",
+          "severity": "medium",
+          "widthRatio": 0.899781471704217,
+          "heightRatio": 0.8305352341687998,
+          "slotRotation": 0.04,
+          "slotMirror": false
+        },
+        {
+          "role": "eye_R",
+          "part": "closed_lid_arc_07",
+          "family": "arc",
+          "severity": "medium",
+          "widthRatio": 0.899781471704217,
+          "heightRatio": 0.8305352341687998,
+          "slotRotation": 2.65,
+          "slotMirror": true
+        }
+      ],
+      "mouth": {
+        "part": "mouth_line_30",
+        "x": 49.66,
+        "y": 40.62,
+        "rot": 0.48,
+        "mirror": false
+      },
+      "severity": "medium",
+      "mouthIssues": []
+    },
+    {
+      "id": "27_sad_02_manual",
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "e_shape_13",
+          "family": "loop",
+          "severity": "high",
+          "widthRatio": 0.7145475604806079,
+          "heightRatio": 0.7142496844525317,
+          "slotRotation": 0.0,
+          "slotMirror": false
+        },
+        {
+          "role": "eye_R",
+          "part": "e_shape_12",
+          "family": "loop",
+          "severity": "low",
+          "widthRatio": 0.9937499999999999,
+          "heightRatio": 0.9128141303335197,
+          "slotRotation": 18.7,
+          "slotMirror": true
+        }
+      ],
+      "mouth": {
+        "part": "mouth_rounded_rect_filled_36",
+        "x": 49.79,
+        "y": 46.82,
+        "rot": -9.84,
+        "mirror": false
+      },
+      "severity": "high",
+      "mouthIssues": [
+        "Preview ignores original mouth rotation -9.84 degrees"
+      ]
+    },
+    {
+      "id": "28_sad_03_manual",
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "e_shape_11",
+          "family": "loop",
+          "severity": "high",
+          "widthRatio": 0.9515704748205643,
+          "heightRatio": 0.8774677546677678,
+          "slotRotation": -20.01,
+          "slotMirror": false
+        },
+        {
+          "role": "eye_R",
+          "part": "e_shape_12",
+          "family": "loop",
+          "severity": "low",
+          "widthRatio": 0.9937499999999999,
+          "heightRatio": 0.9128141303335197,
+          "slotRotation": 18.96,
+          "slotMirror": true
+        }
+      ],
+      "mouth": {
+        "part": "mouth_w_squiggle_40",
+        "x": 49.49,
+        "y": 41.24,
+        "rot": -0.0,
+        "mirror": false
+      },
+      "severity": "high",
+      "mouthIssues": []
+    },
+    {
+      "id": "29_sad_04_manual",
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "happy_arc_15",
+          "family": "arc",
+          "severity": "high",
+          "widthRatio": 0.6964704483710109,
+          "heightRatio": 0.780320315921972,
+          "slotRotation": 0.01,
+          "slotMirror": false
+        },
+        {
+          "role": "eye_R",
+          "part": "happy_arc_15",
+          "family": "arc",
+          "severity": "high",
+          "widthRatio": 0.6964704483710109,
+          "heightRatio": 0.780320315921972,
+          "slotRotation": 0.39,
+          "slotMirror": true
+        }
+      ],
+      "mouth": {
+        "part": "mouth_w_squiggle_40",
+        "x": 49.58,
+        "y": 34.38,
+        "rot": -0.22,
+        "mirror": false
+      },
+      "severity": "high",
+      "mouthIssues": []
+    },
+    {
+      "id": "30_sad_05_manual",
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "chevron_01",
+          "family": "chevron",
+          "severity": "low",
+          "widthRatio": 0.9945945945945945,
+          "heightRatio": 0.944430369956602,
+          "slotRotation": -1.32,
+          "slotMirror": false
+        },
+        {
+          "role": "eye_R",
+          "part": "chevron_01",
+          "family": "chevron",
+          "severity": "low",
+          "widthRatio": 0.9945945945945945,
+          "heightRatio": 0.944430369956602,
+          "slotRotation": 0.34,
+          "slotMirror": true
+        }
+      ],
+      "mouth": {
+        "part": "mouth_chevron_up_21",
+        "x": 49.48,
+        "y": 41.59,
+        "rot": -0.0,
+        "mirror": false
+      },
+      "severity": "low",
+      "mouthIssues": []
+    },
+    {
+      "id": "31_sad_06_manual",
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "droop_hook_09",
+          "family": "hook",
+          "severity": "high",
+          "widthRatio": 0.6100224015073598,
+          "heightRatio": 0.5988136727960134,
+          "slotRotation": -0.0,
+          "slotMirror": false
+        },
+        {
+          "role": "eye_R",
+          "part": "droop_hook_09",
+          "family": "hook",
+          "severity": "high",
+          "widthRatio": 0.6100224015073598,
+          "heightRatio": 0.5988136727960134,
+          "slotRotation": -2.68,
+          "slotMirror": true
+        }
+      ],
+      "mouth": {
+        "part": "mouth_oval_tall_filled_34",
+        "x": 49.65,
+        "y": 45.9,
+        "rot": 2.11,
+        "mirror": false
+      },
+      "severity": "high",
+      "mouthIssues": [
+        "Preview ignores original mouth rotation 2.11 degrees"
+      ]
+    },
+    {
+      "id": "32_sad_07_manual",
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "circle_gap_03",
+          "family": "round",
+          "severity": "low",
+          "widthRatio": 0.9936305732484075,
+          "heightRatio": 0.956238890243829,
+          "slotRotation": -20.61,
+          "slotMirror": false
+        },
+        {
+          "role": "eye_R",
+          "part": "circle_gap_02",
+          "family": "round",
+          "severity": "high",
+          "widthRatio": 0.743886068722057,
+          "heightRatio": 0.7316863197163412,
+          "slotRotation": 40.0,
+          "slotMirror": true
+        }
+      ],
+      "mouth": {
+        "part": "mouth_frown_arc_29",
+        "x": 50.45,
+        "y": 41.05,
+        "rot": -1.54,
+        "mirror": false
+      },
+      "severity": "high",
+      "mouthIssues": [
+        "Preview ignores original mouth rotation -1.54 degrees"
+      ]
+    },
+    {
+      "id": "33_sad_08_manual",
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "open_C_46",
+          "family": "hook",
+          "severity": "high",
+          "widthRatio": 0.6636197518071474,
+          "heightRatio": 0.6080499923860908,
+          "slotRotation": -0.0,
+          "slotMirror": false
+        },
+        {
+          "role": "eye_R",
+          "part": "open_C_50",
+          "family": "round",
+          "severity": "low",
+          "widthRatio": 0.9511988147259357,
+          "heightRatio": 0.9879478899563938,
+          "slotRotation": -0.0,
+          "slotMirror": true
+        }
+      ],
+      "mouth": {
+        "part": "mouth_w_squiggle_40",
+        "x": 49.38,
+        "y": 39.96,
+        "rot": -1.6,
+        "mirror": false
+      },
+      "severity": "high",
+      "mouthIssues": [
+        "Preview ignores original mouth rotation -1.6 degrees"
+      ]
+    },
+    {
+      "id": "34_sad_09_manual",
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "e_shape_12",
+          "family": "loop",
+          "severity": "low",
+          "widthRatio": 0.9937499999999999,
+          "heightRatio": 0.9128141303335197,
+          "slotRotation": -18.85,
+          "slotMirror": false
+        },
+        {
+          "role": "eye_R",
+          "part": "e_shape_12",
+          "family": "loop",
+          "severity": "low",
+          "widthRatio": 0.9937499999999999,
+          "heightRatio": 0.9128141303335197,
+          "slotRotation": 18.58,
+          "slotMirror": true
+        }
+      ],
+      "mouth": {
+        "part": "mouth_frown_arc_29",
+        "x": 49.73,
+        "y": 42.34,
+        "rot": -2.49,
+        "mirror": false
+      },
+      "severity": "low",
+      "mouthIssues": [
+        "Preview ignores original mouth rotation -2.49 degrees"
+      ]
+    },
+    {
+      "id": "35_sad_10_manual",
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "happy_arc_18",
+          "family": "arc",
+          "severity": "high",
+          "widthRatio": 0.7201960387331278,
+          "heightRatio": 0.7681754162694349,
+          "slotRotation": -0.02,
+          "slotMirror": false
+        },
+        {
+          "role": "eye_R",
+          "part": "happy_arc_18",
+          "family": "arc",
+          "severity": "high",
+          "widthRatio": 0.7201960387331278,
+          "heightRatio": 0.7681754162694349,
+          "slotRotation": 0.02,
+          "slotMirror": true
+        }
+      ],
+      "mouth": null,
+      "severity": "high",
+      "mouthIssues": [
+        "No canonical mouth: production suppresses speech mouth, preview invents fallback mouth"
+      ]
+    },
+    {
+      "id": "36_misc_03_manual",
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "open_C_49",
+          "family": "hook",
+          "severity": "high",
+          "widthRatio": 0.7344888776100066,
+          "heightRatio": 0.8104315417132459,
+          "slotRotation": -0.0,
+          "slotMirror": false
+        },
+        {
+          "role": "eye_R",
+          "part": "open_C_43",
+          "family": "round",
+          "severity": "medium",
+          "widthRatio": 0.9248688612386136,
+          "heightRatio": 0.899051813986347,
+          "slotRotation": -1.65,
+          "slotMirror": true
+        }
+      ],
+      "mouth": {
+        "part": "mouth_diagonal_22",
+        "x": 49.58,
+        "y": 43.6,
+        "rot": -0.59,
+        "mirror": false
+      },
+      "severity": "high",
+      "mouthIssues": [
+        "Preview ignores original mouth rotation -0.59 degrees"
+      ]
+    },
+    {
+      "id": "37_misc_06_manual",
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "open_C_44",
+          "family": "slot",
+          "severity": "low",
+          "widthRatio": 0.9965156794425089,
+          "heightRatio": 0.9870662978324722,
+          "slotRotation": 0.05,
+          "slotMirror": false
+        },
+        {
+          "role": "eye_R",
+          "part": "open_C_44",
+          "family": "slot",
+          "severity": "low",
+          "widthRatio": 0.9965156794425089,
+          "heightRatio": 0.9870662978324722,
+          "slotRotation": 1.41,
+          "slotMirror": true
+        }
+      ],
+      "mouth": {
+        "part": "mouth_smile_arc_38",
+        "x": 49.79,
+        "y": 47.76,
+        "rot": 0.0,
+        "mirror": false
+      },
+      "severity": "low",
+      "mouthIssues": [
+        "Preview selects smile speech set; production selects neutral speech set"
+      ]
+    },
+    {
+      "id": "38_misc_2_06_manual",
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "e_shape_12",
+          "family": "loop",
+          "severity": "low",
+          "widthRatio": 0.9937499999999999,
+          "heightRatio": 0.9128141303335197,
+          "slotRotation": -2.17,
+          "slotMirror": false
+        },
+        {
+          "role": "eye_R",
+          "part": "e_shape_11",
+          "family": "loop",
+          "severity": "high",
+          "widthRatio": 0.9515704748205643,
+          "heightRatio": 0.8774677546677678,
+          "slotRotation": 4.45,
+          "slotMirror": true
+        }
+      ],
+      "mouth": {
+        "part": "mouth_oval_tall_filled_34",
+        "x": 50.57,
+        "y": 47.14,
+        "rot": -0.62,
+        "mirror": false
+      },
+      "severity": "high",
+      "mouthIssues": [
+        "Preview ignores original mouth rotation -0.62 degrees"
+      ]
+    },
+    {
+      "id": "39_neutral_02_manual",
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "circle_gap_03",
+          "family": "round",
+          "severity": "low",
+          "widthRatio": 0.9936305732484075,
+          "heightRatio": 0.956238890243829,
+          "slotRotation": -1.96,
+          "slotMirror": false
+        },
+        {
+          "role": "eye_R",
+          "part": "circle_gap_03",
+          "family": "round",
+          "severity": "low",
+          "widthRatio": 0.9936305732484075,
+          "heightRatio": 0.956238890243829,
+          "slotRotation": 1.52,
+          "slotMirror": true
+        }
+      ],
+      "mouth": {
+        "part": "mouth_line_30",
+        "x": 50.54,
+        "y": 47.22,
+        "rot": -0.13,
+        "mirror": false
+      },
+      "severity": "low",
+      "mouthIssues": []
+    },
+    {
+      "id": "40_neutral_03_manual",
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "open_C_44",
+          "family": "slot",
+          "severity": "low",
+          "widthRatio": 0.9965156794425089,
+          "heightRatio": 0.9870662978324722,
+          "slotRotation": -2.12,
+          "slotMirror": false
+        },
+        {
+          "role": "eye_R",
+          "part": "open_C_44",
+          "family": "slot",
+          "severity": "low",
+          "widthRatio": 0.9965156794425089,
+          "heightRatio": 0.9870662978324722,
+          "slotRotation": 1.23,
+          "slotMirror": true
+        }
+      ],
+      "mouth": {
+        "part": "mouth_dot_27",
+        "x": 50.0,
+        "y": 46.41,
+        "rot": 0.0,
+        "mirror": false
+      },
+      "severity": "low",
+      "mouthIssues": []
+    }
+  ],
+  "findings": [
+    {
+      "severity": "high",
+      "issue": "Canonical identities replaced at rest",
+      "detail": "Every eye uses its generated family representative at rest; grouping was broad motion compatibility, not shape equivalence.",
+      "fix": "Keep canonical source art for rest and settled; preserve exact slot placement. Use generated cels only within blink, with per-part retargeting."
+    },
+    {
+      "severity": "high",
+      "issue": "Arbitrary rectangle rotation shrinks eyes",
+      "detail": "Uniform scale uses rotated master rectangle bounds. Rotating a mostly empty rectangle overestimates ink extents and can substantially shrink both dimensions.",
+      "fix": "Fit measured ink support or explicit family basis, not rotated crop rectangles. Enforce source width and endpoints in per-part blink retargeting."
+    },
+    {
+      "severity": "high",
+      "issue": "Mid-transition hard cut",
+      "detail": "rigAt selects previous before half and current after half. Blink only changes lid pose; mouth, tears, eye slots and sizes jump at the midpoint.",
+      "fix": "Interpolate shared layer placement and use opacity transitions for incompatible topology. Keep speech timeline independent of expression changes."
+    },
+    {
+      "severity": "medium",
+      "issue": "Preview and production speaking geometry disagree",
+      "detail": "Preview clamps mouth width and omits rotation/mirror; production uses raw width, rotation/mirror and face fitting. Face 37 uses different mouth family. Faces 12 and 35 have no mouth: preview fabricates one, production cannot speak visually.",
+      "fix": "One shared renderer and explicit per-face speech policy."
+    }
+  ],
+  "recommendation": "Preserve exact canonical artwork outside blink; use reusable transitions on layer transforms and opacity, with generated intermediate cels retargeted per source part. The model should select semantic face intents and duration, not part IDs or frame indices."
+}

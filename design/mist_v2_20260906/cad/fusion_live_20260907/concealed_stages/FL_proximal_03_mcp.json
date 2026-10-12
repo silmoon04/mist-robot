@@ -1,0 +1,12 @@
+{
+  "id": 2,
+  "jsonrpc": "2.0",
+  "result": {
+    "content": [
+      {
+        "text": "{\n    \"error\": \"Traceback (most recent call last):\\n  File \\\"<string>\\\", line 44, in <module>\\n  File \\\"<string>\\\", line 38, in run\\n  File \\\"C:\\\\Users\\\\hssil\\\\Downloads\\\\03_Programming_Projects\\\\spider-robot\\\\design\\\\mist_v2_20260906\\\\cad\\\\fusion_live_20260907\\\\build_concealed_stage.py\\\", line 78, in run\\n    result=replay.build_leg(design.rootComponent,specs[request['leg']],request['palette'],record_part,\\n                            extend=request.get('extend',False))\\n  File \\\"C:\\\\Users\\\\hssil\\\\Downloads\\\\03_Programming_Projects\\\\spider-robot\\\\design\\\\mist_v2_20260906\\\\cad\\\\fusion_live_20260907\\\\concealed_native_replay.py\\\", line 160, in build_leg\\n    native.place_occurrence(outer,target_matrix)\\n    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^\\n  File \\\"C:\\\\Users\\\\hssil\\\\Downloads\\\\03_Programming_Projects\\\\spider-robot\\\\design\\\\mist_v2_20260906\\\\cad\\\\native_parts.py\\\", line 50, in place_occurrence\\n    occurrence.transform2 = matrix\\n    ^^^^^^^^^^^^^^^^^^^^^\\n  File \\\"C:\\\\Users/hssil/AppData/Local/Autodesk/webdeploy/production/61bf25b220a2d0307c84c301e65a59ac225d9a1e/Api/Python/packages\\\\adsk\\\\fusion.py\\\", line 50481, in _set_transform2\\n    return _fusion.Occurrence__set_transform2(self, value)\\n           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\\nRuntimeError: 3 : transform overrides can only be set on Occurrence proxy from root component\\n\",\n    \"success\": false\n}",
+        "type": "text"
+      }
+    ]
+  }
+}

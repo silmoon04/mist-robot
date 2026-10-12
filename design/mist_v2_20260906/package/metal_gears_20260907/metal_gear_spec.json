@@ -1,0 +1,143 @@
+{
+  "status": "procurement and machining specification; no purchase; no complete assembly rating",
+  "preferred_family": {
+    "manufacturer": "HPC Gears",
+    "series": "PG1",
+    "material": "214M15/045M10 steel, condition to be confirmed on quotation",
+    "module_mm": 1,
+    "pressure_angle_deg": 20,
+    "face_width_mm": 8,
+    "overall_width_mm": 8,
+    "source": "https://www.hpcgears.com/pdf_c33/23.28-23.33.pdf"
+  },
+  "catalogue_parts": [
+    {
+      "part": "PG1-20",
+      "teeth": 20,
+      "pitch_diameter_mm": 20,
+      "outside_diameter_mm": 22,
+      "bore_H8_mm": 8,
+      "mass_g": 16,
+      "catalogue_GBP": 11.33
+    },
+    {
+      "part": "PG1-25",
+      "teeth": 25,
+      "pitch_diameter_mm": 25,
+      "outside_diameter_mm": 27,
+      "bore_H8_mm": 8,
+      "mass_g": 27,
+      "catalogue_GBP": 12.4
+    },
+    {
+      "part": "PG1-40",
+      "teeth": 40,
+      "pitch_diameter_mm": 40,
+      "outside_diameter_mm": 42,
+      "bore_H8_mm": 8,
+      "mass_g": 74,
+      "catalogue_GBP": 14.96
+    },
+    {
+      "part": "PG1-50",
+      "teeth": 50,
+      "pitch_diameter_mm": 50,
+      "outside_diameter_mm": 52,
+      "bore_H8_mm": 10,
+      "mass_g": 115,
+      "catalogue_GBP": 16.44
+    }
+  ],
+  "price_status": "catalogue quantity1-5 values; VAT basis and live stock/price unverified; confirm before ordering",
+  "horn_primary_drawing": {
+    "source": "https://cdn.robotshop.com/media/F/Fit/RB-Fit-155/pdf/feetech_12v_30kg_cm_magnetic_encoding_servo_sts321_specification_pdf.pdf",
+    "local_render": "../../references/C018_page7.png",
+    "outside_diameter_mm": 19.95,
+    "overall_thickness_mm": 4.5,
+    "peripheral_threaded_flange_thickness_mm": 2.5,
+    "raised_centre_boss_diameter_mm": 9,
+    "raised_boss_height_above_flange_mm": 2,
+    "hole_count": 4,
+    "hole_thread": "M3",
+    "bolt_circle_mm": 14,
+    "usable_thread_depth_status": "not established by nominal flange thickness; measure chamfers and actual threaded length",
+    "mounting_direction": "Raised9mm boss and5.9mm spline opening face the servo; opposite flat face with3.2mm screw clearance faces the gear.",
+    "casing_to_horn_flat_face_datum": "Not established by accessory thickness alone; verify actual fitted axial stop and shaft retention head."
+  },
+  "knee_candidate": {
+    "pinion": "modified HPC PG1-25",
+    "output": "modified HPC PG1-50",
+    "centres_mm": 37.5,
+    "pinion_machining": {
+      "four_clearance_holes_mm": 3.4,
+      "bolt_circle_mm": 14,
+      "head_counterbores": "none in preferred candidate; ordinary heads remain beyond gear face",
+      "horn_screw_candidate": "M3x10 through8mm gear gives2mm nominal engagement, subject to actual horn thread and rear clearance",
+      "rear_face": "Flat against outward-facing factory horn flange; do not add a9mm-boss recess on the basis of the accessory drawing.",
+      "central_clearance": "Stock8mm bore must clear actual central retaining screw head and hex tool; confirm supplied hardware envelope."
+    },
+    "output_machining": {
+      "finished_width_mm": 8,
+      "bore_preference_mm": 7,
+      "stock_bore_alternative": "custom flush concentric10OD/7ID bushing,8mm long; bushing is a centring element, not the torque coupling",
+      "four_M4_clearance_holes_mm": 4.5,
+      "bolt_circle_mm": 16,
+      "ordinary_face_screw_candidate": "M4x14 through8mm metal gear gives6mm nominal thread engagement in the3GT pulley",
+      "optional_positive_location": {
+        "dowel_count": 2,
+        "dowel_diameter_mm": 3,
+        "pcd_mm": 20,
+        "angles_deg": [
+          45,
+          225
+        ],
+        "engagement_each_part_mm": 3,
+        "status": "own machining proposal; factory review of material, actual groove/root depth, drilled M4 threads and fits required"
+      }
+    }
+  },
+  "yaw_hip_20_40": {
+    "centres_mm": 30,
+    "stock_blank_pair": [
+      "PG1-20",
+      "PG1-40"
+    ],
+    "horn_status": "Direct four3.4mm through-hole pattern on14BCD rejected by root-ligament screen even in metal",
+    "remaining_interface": "separate factory-horn flange plus concentric keyed/pinned8mm stub and keyed20T gear, or supplier-engineered flanged pinion; exact adapter material, drawing, retention and added axial envelope still required",
+    "shaft_output_status": "PG40stock8mm needs custom7mm bore or centring adapter plus separately specified positive torque connection;8mm yaw shaft fits nominal bore only"
+  },
+  "screens": {
+    "root_diameter_formula": "m*(z-2.5), unshifted full-depth reference only, not verified supplier fillet",
+    "root_ligament_20T_3p4_on14_mm": 0.050000000000000044,
+    "root_ligament_25T_3p4_on14_mm": 2.55,
+    "PG50_inner_ligament_stock_bore10_M4clear4p5_mm": 0.75,
+    "PG50_inner_ligament_custom_bore7_M4clear4p5_mm": 2.25,
+    "dowel_tangential_load_each_at5p5Nm_N": 275.0,
+    "dowel_single_shear_MPa_at5p5Nm": 38.90454164468553,
+    "dowel_bearing_MPa_at5p5Nm_and3mm_engagement": 30.555555555555557,
+    "ratings_status": "static geometry/load screens only; no modified tooth, face-joint or fatigue rating"
+  },
+  "retention_followup": {
+    "individual_solids_checked": 47,
+    "all_valid_single_solids": true,
+    "issues": [],
+    "primitive_solid_mass_g": 110.92760688976563,
+    "scope": "individual retention parts with tibia-hub cuts applied; excludes integration collisions",
+    "report": "retention_solid_validation.json",
+    "process_exit_code": 1,
+    "runtime_note": "Geometry checks and report generation completed. The supplied CadQuery runtime then exited1 without error output; a separate import-cadquery-and-print probe also exited1. This is not a clean process-level test pass."
+  },
+  "updated_25_50_input_forces": {
+    "output_working_peak_Nm": 2.75,
+    "gear_pitch_radius_m": 0.025,
+    "gear_tangential_N": 110.0,
+    "gear_separating_N": 40.036725769282256
+  },
+  "not_done": [
+    "No quotation requested or purchase made",
+    "No maker accepts the robot bolt patterns yet",
+    "No verified tooth STEP or exact root/fillet contour acquired",
+    "No complete low-play horn or shaft-coupling rating established",
+    "No existing yaw/hip housing is claimed to accommodate the unresolved20T adapter"
+  ]
+}

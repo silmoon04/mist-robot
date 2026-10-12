@@ -1,0 +1,371 @@
+{
+  "status": "PASS_IN_MODEL",
+  "criteria": {
+    "all_leg_steps_completed": true,
+    "continuous_motor_rms": true,
+    "reachable_targets": true,
+    "motor_travel_limits": true,
+    "tilt_below_10deg": true,
+    "joint_tracking_rms_below_8deg": true,
+    "no_nonwheel_ground_support": true,
+    "coarse_self_collision": true,
+    "forward_at_least_80pct_planned": true,
+    "final_lateral_drift_below_10mm": true,
+    "all_feet_clear_15mm": true,
+    "all_swings_unload_and_touch_down": true,
+    "no_early_abort": true,
+    "three_contact_samples_at_least_95pct": true,
+    "each_full_cycle_advances_at_least_60pct_stride": true
+  },
+  "mass_kg": 6.341061857161208,
+  "duration_s": 39.501,
+  "dt_s": 0.001,
+  "completed_leg_steps": 12,
+  "planned_forward_m": 0.24,
+  "base_displacement_m": [
+    0.23914402930737164,
+    -0.001928206073889545,
+    0.01059166441836698
+  ],
+  "mean_forward_speed_m_s": 0.006054125953959942,
+  "max_tilt_deg": 1.8270881228412055,
+  "max_lateral_excursion_m": 0.051716023147736566,
+  "joint_tracking_rms_deg": 2.964123927713023,
+  "motor_rms_nm": [
+    [
+      0.10557661315764355,
+      0.46385362148959597,
+      0.41229934801539864
+    ],
+    [
+      0.0891830927126597,
+      0.3200712502777981,
+      0.5600129722409194
+    ],
+    [
+      0.08214083450937491,
+      0.2748626473200719,
+      0.6605434344091379
+    ],
+    [
+      0.1196320611722522,
+      0.36080826999992566,
+      0.5565215821877909
+    ]
+  ],
+  "max_servo_rms_nm": 0.6605434344091379,
+  "servo_continuous_limit_nm": 0.7281437625000001,
+  "servo_peak_limit_nm": 1.3349302312500002,
+  "motor_saturation_fraction": 0.05217589428115744,
+  "motor_travel_violation_fraction": 0.0,
+  "invalid_ik_commands": 0,
+  "wheel_current_torque_limit_nm": 0.1735486777713291,
+  "max_wheel_torque_nm": 0.1735486777713291,
+  "wheel_abs_mechanical_work_j": 1.7377388734776407,
+  "max_contact_force_n": 46.770694532291515,
+  "all_foot_max_clearance_m": [
+    0.028270267908723855,
+    0.030274849042316233,
+    0.031968802037913316,
+    0.03174849311647159
+  ],
+  "fewer_than_three_contact_sample_fraction": 0.0,
+  "support_gate_wait_s": 0.0,
+  "coarse_collision_count": 0,
+  "nonwheel_contact_samples": 0,
+  "full_cycle_advances_m": [
+    0.07780002342517826,
+    0.0824268348805417
+  ],
+  "trajectory_record_hz": 50,
+  "nominal_duration_s": 39.5,
+  "abort_reason": null,
+  "swing_audits": [
+    {
+      "leg_step": 0,
+      "leg": 2,
+      "max_swing_clearance_m": 0.031224227589569463,
+      "unloaded_during_swing": true,
+      "touchdown_confirmed": true
+    },
+    {
+      "leg_step": 1,
+      "leg": 0,
+      "max_swing_clearance_m": 0.028164640371442826,
+      "unloaded_during_swing": true,
+      "touchdown_confirmed": true
+    },
+    {
+      "leg_step": 2,
+      "leg": 3,
+      "max_swing_clearance_m": 0.026082606564918738,
+      "unloaded_during_swing": true,
+      "touchdown_confirmed": true
+    },
+    {
+      "leg_step": 3,
+      "leg": 1,
+      "max_swing_clearance_m": 0.028102816158073078,
+      "unloaded_during_swing": true,
+      "touchdown_confirmed": true
+    },
+    {
+      "leg_step": 4,
+      "leg": 2,
+      "max_swing_clearance_m": 0.029597514666636474,
+      "unloaded_during_swing": true,
+      "touchdown_confirmed": true
+    },
+    {
+      "leg_step": 5,
+      "leg": 0,
+      "max_swing_clearance_m": 0.027644500404473,
+      "unloaded_during_swing": true,
+      "touchdown_confirmed": true
+    },
+    {
+      "leg_step": 6,
+      "leg": 3,
+      "max_swing_clearance_m": 0.03174849311647159,
+      "unloaded_during_swing": true,
+      "touchdown_confirmed": true
+    },
+    {
+      "leg_step": 7,
+      "leg": 1,
+      "max_swing_clearance_m": 0.030274849042316233,
+      "unloaded_during_swing": true,
+      "touchdown_confirmed": true
+    },
+    {
+      "leg_step": 8,
+      "leg": 2,
+      "max_swing_clearance_m": 0.031968802037913316,
+      "unloaded_during_swing": true,
+      "touchdown_confirmed": true
+    },
+    {
+      "leg_step": 9,
+      "leg": 0,
+      "max_swing_clearance_m": 0.028270267908723855,
+      "unloaded_during_swing": true,
+      "touchdown_confirmed": true
+    },
+    {
+      "leg_step": 10,
+      "leg": 3,
+      "max_swing_clearance_m": 0.03081303533583285,
+      "unloaded_during_swing": true,
+      "touchdown_confirmed": true
+    },
+    {
+      "leg_step": 11,
+      "leg": 1,
+      "max_swing_clearance_m": 0.029684811847349613,
+      "unloaded_during_swing": true,
+      "touchdown_confirmed": true
+    }
+  ],
+  "min_sampled_support_margin_m": 0.02127076178883721,
+  "negative_support_margin_fraction": 0.0,
+  "source_sha256": {
+    "supported_crawl.py": "a3f538b1c49ad33fed91f23fcc4784e40e521500dd605833cc003951ec563e36",
+    "model.py": "d7fc5c843553da04feebf93f0bf59be60033e4f52c858117bfea95e23de59619",
+    "run_sim.py": "c17536e9ee478ffccf0c62f982ef824c954b9efce8afd11151d041160c9dc525",
+    "geometry_study.py": "92c4c7c177d735dc9cbc880a73a59aafa0298cc7a4b97ca7a09cf8213e4516b7"
+  },
+  "parameters_sha256": "d3e6fc900877240f58dab23ce316e3cf9da8e52d269dfe449e837a8d0fbe1987",
+  "controller_sha256": "d1683da31d3f16cd107d8262acafe62c0526301ed207c91ce6aaa86923f44c7b",
+  "pybullet_api": 202010061,
+  "python": "3.12.7",
+  "milestones": [
+    {
+      "t": 4.51,
+      "completed_legs": 1,
+      "base_position": [
+        0.01022571763939473,
+        -0.04700841185269858,
+        0.24318747125289664
+      ],
+      "contacts_n": [
+        14.887154143415083,
+        14.633176917642121,
+        10.900520647061644,
+        20.389521542805063
+      ]
+    },
+    {
+      "t": 7.51,
+      "completed_legs": 2,
+      "base_position": [
+        -0.005963180662397011,
+        -0.027364796230757864,
+        0.24309923274157097
+      ],
+      "contacts_n": [
+        9.25037652245114,
+        17.37016564484548,
+        18.17539349148617,
+        17.523239049990863
+      ]
+    },
+    {
+      "t": 10.51,
+      "completed_legs": 3,
+      "base_position": [
+        0.060028765190452756,
+        0.05136247984086434,
+        0.24305845106559473
+      ],
+      "contacts_n": [
+        22.604693575831345,
+        5.547870767092526,
+        25.363507656181696,
+        6.754539824596555
+      ]
+    },
+    {
+      "t": 13.51,
+      "completed_legs": 4,
+      "base_position": [
+        0.037661945551916445,
+        0.03330359266901195,
+        0.24358045884997873
+      ],
+      "contacts_n": [
+        16.382312744283478,
+        9.625159308662171,
+        16.64383829307514,
+        20.03997767515089
+      ]
+    },
+    {
+      "t": 16.51,
+      "completed_legs": 5,
+      "base_position": [
+        0.09165205754577907,
+        -0.04673441656993006,
+        0.24413991123562556
+      ],
+      "contacts_n": [
+        15.526214895364317,
+        15.761455815558215,
+        10.839488070943304,
+        20.863201154265422
+      ]
+    },
+    {
+      "t": 19.5,
+      "completed_legs": 6,
+      "base_position": [
+        0.07513912830402772,
+        -0.026080708495287132,
+        0.24386441770889733
+      ],
+      "contacts_n": [
+        9.558836440929461,
+        17.72426507187233,
+        18.38804464524422,
+        16.56811019841321
+      ]
+    },
+    {
+      "t": 22.5,
+      "completed_legs": 7,
+      "base_position": [
+        0.13897163646098498,
+        0.04511781037934563,
+        0.2438835919898264
+      ],
+      "contacts_n": [
+        16.663593960080902,
+        13.424360231400225,
+        20.14261162438722,
+        12.194035994537904
+      ]
+    },
+    {
+      "t": 25.5,
+      "completed_legs": 8,
+      "base_position": [
+        0.11546196897709471,
+        0.03413445830065625,
+        0.2437016371649073
+      ],
+      "contacts_n": [
+        13.826023818542668,
+        12.217848610540264,
+        18.791317459577044,
+        16.739488624833932
+      ]
+    },
+    {
+      "t": 28.5,
+      "completed_legs": 9,
+      "base_position": [
+        0.17017249378234486,
+        -0.047889201747021846,
+        0.2441743660501236
+      ],
+      "contacts_n": [
+        15.91641670911582,
+        16.900575945137472,
+        10.23879749884132,
+        18.887775264400773
+      ]
+    },
+    {
+      "t": 31.5,
+      "completed_legs": 10,
+      "base_position": [
+        0.1538139907470089,
+        -0.027118643361222633,
+        0.24410094703782617
+      ],
+      "contacts_n": [
+        10.224637012112233,
+        17.8489505664706,
+        17.97327443409409,
+        16.062811148051747
+      ]
+    },
+    {
+      "t": 34.5,
+      "completed_legs": 11,
+      "base_position": [
+        0.2210618042189272,
+        0.043079322385206405,
+        0.24396338717094604
+      ],
+      "contacts_n": [
+        17.178646556862372,
+        12.552845853775683,
+        20.026952641985325,
+        10.681758113621331
+      ]
+    },
+    {
+      "t": 37.5,
+      "completed_legs": 12,
+      "base_position": [
+        0.1978888038576364,
+        0.0332622807092967,
+        0.2437256661708876
+      ],
+      "contacts_n": [
+        15.461731827559255,
+        11.74200192576695,
+        19.02374288019445,
+        16.05604098402208
+      ]
+    }
+  ],
+  "limitations": [
+    "This is a coarse collision model with ideal state feedback. IMU, contact estimation and localization are not implemented.",
+    "Use parameters_used.json for mass provenance. The initial sensitivity moves the same 55 g servo to 40 mm down the femur; fitted geometry is a separate input.",
+    "Servo delay, command hysteresis, stiffness, thermal limits and friction are assumed. No separate force-side backlash gap, rotor inertia or belt vibration.",
+    "Wheel orientation compensation uses small body roll/pitch angles and is only evaluated for the stated tilt envelope.",
+    "No base reset, external forces, raised torque limits or contact constraints are used after initial placement.",
+    "Not a stair controller or a physical build release."
+  ]
+}

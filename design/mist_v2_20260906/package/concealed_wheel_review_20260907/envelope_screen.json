@@ -1,0 +1,140 @@
+{
+  "status": "proposed_envelope_not_final_CAD_or_purchase",
+  "coordinates": "u down tibia from knee; X in leg plane; Y along wheel axle",
+  "leading_contract": {
+    "motor_case_u_mm": [
+      20,
+      81
+    ],
+    "motor_shaft_u_mm": [
+      81,
+      93
+    ],
+    "motor_axis_XY_mm": [
+      0,
+      20
+    ],
+    "wheel_axis_u_mm": 130,
+    "proposed_shell_X_mm": 40,
+    "proposed_shell_Y_mm": [
+      65,
+      70
+    ]
+  },
+  "bare_motor_with_shaft_mm": 73,
+  "longitudinal_section_with_2mm_wall_1mm_gap_mm": 31,
+  "transverse_motor_extent_with_2mm_wall_1mm_gap_mm": 79,
+  "encoder_cable_and_bend_envelope_included": false,
+  "longitudinal_motor_X_mm": [
+    -12.5,
+    12.5
+  ],
+  "longitudinal_motor_Y_mm": [
+    7.5,
+    32.5
+  ],
+  "existing_tibia_inner_Y_mm": [
+    -16,
+    26
+  ],
+  "existing_tibia_internal_width_mm": 42,
+  "motor_intrusion_past_existing_positive_inner_wall_mm": 6.5,
+  "positive_inner_wall_required_for_1mm_motor_gap_mm": 33.5,
+  "upper_motor_bay_width_with_6mm_cheek_and_1p6mm_covers_mm": 66.7,
+  "extension_to_wheel_from_motor_shaft_tip_mm": 37,
+  "existing_cross_tie_station_u_mm": [
+    48,
+    75
+  ],
+  "existing_cross_tie_X_mm": [
+    -9,
+    9
+  ],
+  "existing_cross_ties_intersect_motor": true,
+  "old_wheel_bearing_faces_Y_mm": [
+    [
+      -22,
+      -16
+    ],
+    [
+      26,
+      32
+    ]
+  ],
+  "old_wheel_bearing_center_span_mm": 48,
+  "tire_faces_Y_mm": [
+    -12,
+    12
+  ],
+  "old_side_gaps_beside_tire_mm": [
+    4,
+    14
+  ],
+  "example_commercial_pulley_length_mm": [
+    20.6,
+    22
+  ],
+  "pulley_shortfall_in_14mm_side_gap_mm": [
+    6.600000000000001,
+    8
+  ],
+  "example_positive_bearing_center_Y_mm": 40,
+  "example_total_width_with_outward_keeper_head_and_covers_mm": 75.6,
+  "cover_pair_mass_g_110x40x1p6_PETG": 17.8816,
+  "removed_old_foot_cradle_print_mass_g": 32.19304351829885,
+  "motor_mass_retained_g": 98,
+  "motor_purchase_confirmed": false,
+  "illustrative_1to1_miter_loads": [
+    {
+      "case": "previous_current_limited_reference",
+      "torque_Nm": 0.1719,
+      "mean_pitch_radius_mm": 8,
+      "tangential_N": 21.4875,
+      "radial_N": 5.530148074433296,
+      "axial_N": 5.530148074433296
+    },
+    {
+      "case": "previous_current_limited_reference",
+      "torque_Nm": 0.1719,
+      "mean_pitch_radius_mm": 10,
+      "tangential_N": 17.19,
+      "radial_N": 4.424118459546636,
+      "axial_N": 4.424118459546636
+    },
+    {
+      "case": "previous_current_limited_reference",
+      "torque_Nm": 0.1719,
+      "mean_pitch_radius_mm": 12,
+      "tangential_N": 14.325000000000001,
+      "radial_N": 3.6867653829555307,
+      "axial_N": 3.6867653829555307
+    },
+    {
+      "case": "stall_reference_not_continuous",
+      "torque_Nm": 1.1768,
+      "mean_pitch_radius_mm": 8,
+      "tangential_N": 147.10000000000002,
+      "radial_N": 37.8585122396341,
+      "axial_N": 37.8585122396341
+    },
+    {
+      "case": "stall_reference_not_continuous",
+      "torque_Nm": 1.1768,
+      "mean_pitch_radius_mm": 10,
+      "tangential_N": 117.68000000000002,
+      "radial_N": 30.286809791707284,
+      "axial_N": 30.286809791707284
+    },
+    {
+      "case": "stall_reference_not_continuous",
+      "torque_Nm": 1.1768,
+      "mean_pitch_radius_mm": 12,
+      "tangential_N": 98.06666666666668,
+      "radial_N": 25.239008159756068,
+      "axial_N": 25.239008159756068
+    }
+  ],
+  "miter_load_assumptions": "Straight 20-degree pressure-angle gears with 45-degree pitch cones, using mean pitch radius; no dynamic factors or bearing rating applied.",
+  "rough_motor_copper_loss_at_1A_W_from_12V_5p5A_stall": 2.1818181818181817,
+  "thermal_note": "A rough resistance-derived heat allowance, not a continuous-duty or temperature prediction; brush drop, temperature and gear loss are omitted."
+}

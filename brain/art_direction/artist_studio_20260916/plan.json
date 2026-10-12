@@ -1,0 +1,852 @@
+{
+  "status": "Existing MIST assets and renderer. Artist drawing scope is a separate proposal.",
+  "states": [
+    {
+      "id": "available",
+      "name": "Available",
+      "kind": "State",
+      "talk": true,
+      "family": "round",
+      "frames": 72,
+      "options": [
+        "neutral 39",
+        "happy 12"
+      ],
+      "sources": [
+        "39_neutral_02_manual",
+        "12_happy_09_manual"
+      ],
+      "eyes": "circle_gap_03",
+      "mouth": "mouth_line_30",
+      "note": "Existing face geometry. "
+    },
+    {
+      "id": "listening",
+      "name": "Listening",
+      "kind": "State",
+      "talk": false,
+      "family": "round",
+      "frames": 48,
+      "options": [
+        "listening 25",
+        "alert 24",
+        "attentive 07"
+      ],
+      "sources": [
+        "25_neutral_2_03_manual",
+        "24_neutral_2_01_manual",
+        "07_annoyed_03_manual"
+      ],
+      "eyes": "circle_gap_03",
+      "mouth": "mouth_dot_26",
+      "note": "Existing face geometry. "
+    },
+    {
+      "id": "thinking",
+      "name": "Thinking",
+      "kind": "State",
+      "talk": false,
+      "family": "focused",
+      "frames": 72,
+      "options": [
+        "neutral 39",
+        "focused 40",
+        "variant 18"
+      ],
+      "sources": [
+        "39_neutral_02_manual",
+        "40_neutral_03_manual",
+        "18_misc_2_02_manual"
+      ],
+      "eyes": "circle_gap_03",
+      "mouth": "mouth_line_30",
+      "note": "Existing face geometry. Current thinking gaze."
+    },
+    {
+      "id": "happy",
+      "name": "Happy",
+      "kind": "Speaking",
+      "talk": true,
+      "family": "happy",
+      "frames": 48,
+      "options": [
+        "happy 09"
+      ],
+      "sources": [
+        "09_happy_03_manual"
+      ],
+      "eyes": "circle_gap_02",
+      "mouth": "mouth_open_smile_filled_33",
+      "note": "Existing face geometry. "
+    },
+    {
+      "id": "focused",
+      "name": "Focused",
+      "kind": "Speaking",
+      "talk": true,
+      "family": "focused",
+      "frames": 48,
+      "options": [
+        "focused 40"
+      ],
+      "sources": [
+        "40_neutral_03_manual"
+      ],
+      "eyes": "open_C_44",
+      "mouth": "mouth_dot_27",
+      "note": "Existing face geometry. "
+    },
+    {
+      "id": "concerned",
+      "name": "Concerned",
+      "kind": "Speaking",
+      "talk": true,
+      "family": "soft",
+      "frames": 48,
+      "options": [
+        "sad 32"
+      ],
+      "sources": [
+        "32_sad_07_manual"
+      ],
+      "eyes": "circle_gap_03",
+      "mouth": "mouth_frown_arc_29",
+      "note": "Existing face geometry. "
+    },
+    {
+      "id": "surprised",
+      "name": "Surprised",
+      "kind": "Reaction",
+      "talk": false,
+      "family": "wide",
+      "frames": 12,
+      "options": [
+        "surprised 38"
+      ],
+      "sources": [
+        "38_misc_2_06_manual"
+      ],
+      "eyes": "e_shape_12",
+      "mouth": "mouth_oval_tall_filled_34",
+      "note": "Existing face geometry. Brief hold."
+    },
+    {
+      "id": "sleepy",
+      "name": "Sleepy",
+      "kind": "Reaction",
+      "talk": false,
+      "family": "heavy",
+      "frames": 12,
+      "options": [
+        "sleepy 16"
+      ],
+      "sources": [
+        "16_misc_16_manual"
+      ],
+      "eyes": "closed_lid_arc_05",
+      "mouth": "mouth_oval_tall_filled_34",
+      "note": "Existing face geometry. Brief hold."
+    },
+    {
+      "id": "skeptical",
+      "name": "Skeptical",
+      "kind": "Reaction",
+      "talk": false,
+      "family": "focused",
+      "frames": 12,
+      "options": [
+        "suspicious 08"
+      ],
+      "sources": [
+        "08_annoyed_04_manual"
+      ],
+      "eyes": "chevron_01",
+      "mouth": "mouth_rounded_rect_filled_36",
+      "note": "Existing face geometry. Brief hold."
+    },
+    {
+      "id": "delighted",
+      "name": "Delighted",
+      "kind": "Reaction",
+      "talk": false,
+      "family": "happy",
+      "frames": 12,
+      "options": [
+        "happy 13"
+      ],
+      "sources": [
+        "13_happy_14_manual"
+      ],
+      "eyes": "happy_arc_19",
+      "mouth": "mouth_smile_arc_37",
+      "note": "Existing face geometry. Brief hold."
+    }
+  ],
+  "families": [
+    "round",
+    "happy",
+    "focused",
+    "soft",
+    "heavy",
+    "wide"
+  ],
+  "parts": [
+    {
+      "id": "E01",
+      "group": "Eyes",
+      "name": "Round / available",
+      "note": "Left and right eyes on separate layers.",
+      "unit": "eye pair"
+    },
+    {
+      "id": "E02",
+      "group": "Eyes",
+      "name": "Attentive / listening",
+      "note": "Left and right eyes on separate layers.",
+      "unit": "eye pair"
+    },
+    {
+      "id": "E03",
+      "group": "Eyes",
+      "name": "Focused / thinking",
+      "note": "Left and right eyes on separate layers.",
+      "unit": "eye pair"
+    },
+    {
+      "id": "E04",
+      "group": "Eyes",
+      "name": "Happy",
+      "note": "Left and right eyes on separate layers.",
+      "unit": "eye pair"
+    },
+    {
+      "id": "E05",
+      "group": "Eyes",
+      "name": "Soft / concerned",
+      "note": "Left and right eyes on separate layers.",
+      "unit": "eye pair"
+    },
+    {
+      "id": "E06",
+      "group": "Eyes",
+      "name": "Heavy / sleepy",
+      "note": "Left and right eyes on separate layers.",
+      "unit": "eye pair"
+    },
+    {
+      "id": "E07",
+      "group": "Eyes",
+      "name": "Angled / skeptical",
+      "note": "Left and right eyes on separate layers.",
+      "unit": "eye pair"
+    },
+    {
+      "id": "E08",
+      "group": "Eyes",
+      "name": "Wide / surprise",
+      "note": "Left and right eyes on separate layers.",
+      "unit": "eye pair"
+    },
+    {
+      "id": "M01",
+      "group": "Mouths",
+      "name": "Rest",
+      "note": "Shared anchor; no baked glow.",
+      "unit": "mouth"
+    },
+    {
+      "id": "M02",
+      "group": "Mouths",
+      "name": "Smile",
+      "note": "Shared anchor; no baked glow.",
+      "unit": "mouth"
+    },
+    {
+      "id": "M03",
+      "group": "Mouths",
+      "name": "Concern",
+      "note": "Shared anchor; no baked glow.",
+      "unit": "mouth"
+    },
+    {
+      "id": "M04",
+      "group": "Mouths",
+      "name": "Smirk",
+      "note": "Shared anchor; no baked glow.",
+      "unit": "mouth"
+    },
+    {
+      "id": "M05",
+      "group": "Mouths",
+      "name": "Lips together / MBP",
+      "note": "Shared anchor; no baked glow.",
+      "unit": "mouth"
+    },
+    {
+      "id": "M06",
+      "group": "Mouths",
+      "name": "Open / AA",
+      "note": "Shared anchor; no baked glow.",
+      "unit": "mouth"
+    },
+    {
+      "id": "M07",
+      "group": "Mouths",
+      "name": "Wide / EE",
+      "note": "Shared anchor; no baked glow.",
+      "unit": "mouth"
+    },
+    {
+      "id": "M08",
+      "group": "Mouths",
+      "name": "Round / OO",
+      "note": "Shared anchor; no baked glow.",
+      "unit": "mouth"
+    },
+    {
+      "id": "B01",
+      "group": "Blinks",
+      "name": "round / Half closed",
+      "note": "Keep this family recognizable through the blink.",
+      "unit": "eye pair"
+    },
+    {
+      "id": "B02",
+      "group": "Blinks",
+      "name": "round / Closed",
+      "note": "Keep this family recognizable through the blink.",
+      "unit": "eye pair"
+    },
+    {
+      "id": "B03",
+      "group": "Blinks",
+      "name": "happy / Half closed",
+      "note": "Keep this family recognizable through the blink.",
+      "unit": "eye pair"
+    },
+    {
+      "id": "B04",
+      "group": "Blinks",
+      "name": "happy / Closed",
+      "note": "Keep this family recognizable through the blink.",
+      "unit": "eye pair"
+    },
+    {
+      "id": "B05",
+      "group": "Blinks",
+      "name": "focused / Half closed",
+      "note": "Keep this family recognizable through the blink.",
+      "unit": "eye pair"
+    },
+    {
+      "id": "B06",
+      "group": "Blinks",
+      "name": "focused / Closed",
+      "note": "Keep this family recognizable through the blink.",
+      "unit": "eye pair"
+    },
+    {
+      "id": "B07",
+      "group": "Blinks",
+      "name": "soft / Half closed",
+      "note": "Keep this family recognizable through the blink.",
+      "unit": "eye pair"
+    },
+    {
+      "id": "B08",
+      "group": "Blinks",
+      "name": "soft / Closed",
+      "note": "Keep this family recognizable through the blink.",
+      "unit": "eye pair"
+    },
+    {
+      "id": "B09",
+      "group": "Blinks",
+      "name": "heavy / Half closed",
+      "note": "Keep this family recognizable through the blink.",
+      "unit": "eye pair"
+    },
+    {
+      "id": "B10",
+      "group": "Blinks",
+      "name": "heavy / Closed",
+      "note": "Keep this family recognizable through the blink.",
+      "unit": "eye pair"
+    },
+    {
+      "id": "B11",
+      "group": "Blinks",
+      "name": "wide / Half closed",
+      "note": "Keep this family recognizable through the blink.",
+      "unit": "eye pair"
+    },
+    {
+      "id": "B12",
+      "group": "Blinks",
+      "name": "wide / Closed",
+      "note": "Keep this family recognizable through the blink.",
+      "unit": "eye pair"
+    },
+    {
+      "id": "A01",
+      "group": "Reactions",
+      "name": "Surprise anticipation",
+      "note": "A brief accent. No speaking required.",
+      "unit": "eye pair"
+    },
+    {
+      "id": "A02",
+      "group": "Reactions",
+      "name": "Surprise overshoot",
+      "note": "A brief accent. No speaking required.",
+      "unit": "eye pair"
+    },
+    {
+      "id": "A03",
+      "group": "Reactions",
+      "name": "Happy squeeze",
+      "note": "A brief accent. No speaking required.",
+      "unit": "eye pair"
+    },
+    {
+      "id": "A04",
+      "group": "Reactions",
+      "name": "Sleepy droop",
+      "note": "A brief accent. No speaking required.",
+      "unit": "eye pair"
+    },
+    {
+      "id": "R01",
+      "group": "Redraws",
+      "name": "Available B",
+      "note": "Small contour variation; position stays fixed.",
+      "unit": "eye pair"
+    },
+    {
+      "id": "R02",
+      "group": "Redraws",
+      "name": "Available C",
+      "note": "Small contour variation; position stays fixed.",
+      "unit": "eye pair"
+    },
+    {
+      "id": "R03",
+      "group": "Redraws",
+      "name": "Focused B",
+      "note": "Small contour variation; position stays fixed.",
+      "unit": "eye pair"
+    },
+    {
+      "id": "R04",
+      "group": "Redraws",
+      "name": "Focused C",
+      "note": "Small contour variation; position stays fixed.",
+      "unit": "eye pair"
+    }
+  ],
+  "clips": [
+    {
+      "id": "available_neutral_39",
+      "label": "Available / neutral 39",
+      "frames": 72,
+      "fps": 24,
+      "seconds": 3,
+      "settings": {
+        "state": "available",
+        "option": "neutral 39",
+        "mode": "state"
+      },
+      "reuse": "circle_gap_03 + mouth_line_30",
+      "core": true
+    },
+    {
+      "id": "available_happy_12",
+      "label": "Available / happy 12",
+      "frames": 72,
+      "fps": 24,
+      "seconds": 3,
+      "settings": {
+        "state": "available",
+        "option": "happy 12",
+        "mode": "state"
+      },
+      "reuse": "circle_gap_03 + mouth_line_30",
+      "core": false
+    },
+    {
+      "id": "listening_listening_25",
+      "label": "Listening / listening 25",
+      "frames": 48,
+      "fps": 24,
+      "seconds": 2,
+      "settings": {
+        "state": "listening",
+        "option": "listening 25",
+        "mode": "state"
+      },
+      "reuse": "circle_gap_03 + mouth_dot_26",
+      "core": true
+    },
+    {
+      "id": "listening_alert_24",
+      "label": "Listening / alert 24",
+      "frames": 48,
+      "fps": 24,
+      "seconds": 2,
+      "settings": {
+        "state": "listening",
+        "option": "alert 24",
+        "mode": "state"
+      },
+      "reuse": "circle_gap_03 + mouth_dot_26",
+      "core": false
+    },
+    {
+      "id": "listening_attentive_07",
+      "label": "Listening / attentive 07",
+      "frames": 48,
+      "fps": 24,
+      "seconds": 2,
+      "settings": {
+        "state": "listening",
+        "option": "attentive 07",
+        "mode": "state"
+      },
+      "reuse": "circle_gap_03 + mouth_dot_26",
+      "core": false
+    },
+    {
+      "id": "thinking_neutral_39",
+      "label": "Thinking / neutral 39",
+      "frames": 72,
+      "fps": 24,
+      "seconds": 3,
+      "settings": {
+        "state": "thinking",
+        "option": "neutral 39",
+        "mode": "state"
+      },
+      "reuse": "circle_gap_03 + mouth_line_30",
+      "core": true
+    },
+    {
+      "id": "thinking_focused_40",
+      "label": "Thinking / focused 40",
+      "frames": 72,
+      "fps": 24,
+      "seconds": 3,
+      "settings": {
+        "state": "thinking",
+        "option": "focused 40",
+        "mode": "state"
+      },
+      "reuse": "circle_gap_03 + mouth_line_30",
+      "core": false
+    },
+    {
+      "id": "thinking_variant_18",
+      "label": "Thinking / variant 18",
+      "frames": 72,
+      "fps": 24,
+      "seconds": 3,
+      "settings": {
+        "state": "thinking",
+        "option": "variant 18",
+        "mode": "state"
+      },
+      "reuse": "circle_gap_03 + mouth_line_30",
+      "core": false
+    },
+    {
+      "id": "speech_available",
+      "label": "Speech / Available",
+      "frames": 48,
+      "fps": 24,
+      "seconds": 2,
+      "settings": {
+        "state": "available",
+        "mode": "speech"
+      },
+      "reuse": "circle_gap_03 + shared mouth cycle",
+      "core": true
+    },
+    {
+      "id": "speech_happy",
+      "label": "Speech / Happy",
+      "frames": 48,
+      "fps": 24,
+      "seconds": 2,
+      "settings": {
+        "state": "happy",
+        "mode": "speech"
+      },
+      "reuse": "circle_gap_02 + shared mouth cycle",
+      "core": true
+    },
+    {
+      "id": "speech_focused",
+      "label": "Speech / Focused",
+      "frames": 48,
+      "fps": 24,
+      "seconds": 2,
+      "settings": {
+        "state": "focused",
+        "mode": "speech"
+      },
+      "reuse": "open_C_44 + shared mouth cycle",
+      "core": true
+    },
+    {
+      "id": "speech_concerned",
+      "label": "Speech / Concerned",
+      "frames": 48,
+      "fps": 24,
+      "seconds": 2,
+      "settings": {
+        "state": "concerned",
+        "mode": "speech"
+      },
+      "reuse": "circle_gap_03 + shared mouth cycle",
+      "core": true
+    },
+    {
+      "id": "blink_round",
+      "label": "Blink / round",
+      "frames": 6,
+      "fps": 24,
+      "seconds": 0.25,
+      "settings": {
+        "state": "available",
+        "family": "round",
+        "mode": "blink",
+        "mouth": false
+      },
+      "reuse": "B01 + B02 + open eyes",
+      "core": true
+    },
+    {
+      "id": "enter_round",
+      "label": "Transition / round",
+      "frames": 8,
+      "fps": 24,
+      "seconds": 0.3333333333333333,
+      "settings": {
+        "state": "available",
+        "family": "round",
+        "mode": "transition",
+        "mouth": false
+      },
+      "reuse": "Shared closed-lid bridge; eyes only",
+      "core": true
+    },
+    {
+      "id": "blink_happy",
+      "label": "Blink / happy",
+      "frames": 6,
+      "fps": 24,
+      "seconds": 0.25,
+      "settings": {
+        "state": "available",
+        "family": "happy",
+        "mode": "blink",
+        "mouth": false
+      },
+      "reuse": "B03 + B04 + open eyes",
+      "core": true
+    },
+    {
+      "id": "enter_happy",
+      "label": "Transition / happy",
+      "frames": 8,
+      "fps": 24,
+      "seconds": 0.3333333333333333,
+      "settings": {
+        "state": "available",
+        "family": "happy",
+        "mode": "transition",
+        "mouth": false
+      },
+      "reuse": "Shared closed-lid bridge; eyes only",
+      "core": true
+    },
+    {
+      "id": "blink_focused",
+      "label": "Blink / focused",
+      "frames": 6,
+      "fps": 24,
+      "seconds": 0.25,
+      "settings": {
+        "state": "available",
+        "family": "focused",
+        "mode": "blink",
+        "mouth": false
+      },
+      "reuse": "B05 + B06 + open eyes",
+      "core": true
+    },
+    {
+      "id": "enter_focused",
+      "label": "Transition / focused",
+      "frames": 8,
+      "fps": 24,
+      "seconds": 0.3333333333333333,
+      "settings": {
+        "state": "available",
+        "family": "focused",
+        "mode": "transition",
+        "mouth": false
+      },
+      "reuse": "Shared closed-lid bridge; eyes only",
+      "core": true
+    },
+    {
+      "id": "blink_soft",
+      "label": "Blink / soft",
+      "frames": 6,
+      "fps": 24,
+      "seconds": 0.25,
+      "settings": {
+        "state": "available",
+        "family": "soft",
+        "mode": "blink",
+        "mouth": false
+      },
+      "reuse": "B07 + B08 + open eyes",
+      "core": true
+    },
+    {
+      "id": "enter_soft",
+      "label": "Transition / soft",
+      "frames": 8,
+      "fps": 24,
+      "seconds": 0.3333333333333333,
+      "settings": {
+        "state": "available",
+        "family": "soft",
+        "mode": "transition",
+        "mouth": false
+      },
+      "reuse": "Shared closed-lid bridge; eyes only",
+      "core": true
+    },
+    {
+      "id": "blink_heavy",
+      "label": "Blink / heavy",
+      "frames": 6,
+      "fps": 24,
+      "seconds": 0.25,
+      "settings": {
+        "state": "available",
+        "family": "heavy",
+        "mode": "blink",
+        "mouth": false
+      },
+      "reuse": "B09 + B10 + open eyes",
+      "core": true
+    },
+    {
+      "id": "enter_heavy",
+      "label": "Transition / heavy",
+      "frames": 8,
+      "fps": 24,
+      "seconds": 0.3333333333333333,
+      "settings": {
+        "state": "available",
+        "family": "heavy",
+        "mode": "transition",
+        "mouth": false
+      },
+      "reuse": "Shared closed-lid bridge; eyes only",
+      "core": true
+    },
+    {
+      "id": "blink_wide",
+      "label": "Blink / wide",
+      "frames": 6,
+      "fps": 24,
+      "seconds": 0.25,
+      "settings": {
+        "state": "available",
+        "family": "wide",
+        "mode": "blink",
+        "mouth": false
+      },
+      "reuse": "B11 + B12 + open eyes",
+      "core": true
+    },
+    {
+      "id": "enter_wide",
+      "label": "Transition / wide",
+      "frames": 8,
+      "fps": 24,
+      "seconds": 0.3333333333333333,
+      "settings": {
+        "state": "available",
+        "family": "wide",
+        "mode": "transition",
+        "mouth": false
+      },
+      "reuse": "Shared closed-lid bridge; eyes only",
+      "core": true
+    },
+    {
+      "id": "reaction_surprised",
+      "label": "Reaction / Surprised",
+      "frames": 12,
+      "fps": 24,
+      "seconds": 0.5,
+      "settings": {
+        "state": "surprised"
+      },
+      "reuse": "e_shape_12 + mouth_oval_tall_filled_34 + accent",
+      "core": true
+    },
+    {
+      "id": "reaction_sleepy",
+      "label": "Reaction / Sleepy",
+      "frames": 12,
+      "fps": 24,
+      "seconds": 0.5,
+      "settings": {
+        "state": "sleepy"
+      },
+      "reuse": "closed_lid_arc_05 + mouth_oval_tall_filled_34 + accent",
+      "core": true
+    },
+    {
+      "id": "reaction_skeptical",
+      "label": "Reaction / Skeptical",
+      "frames": 12,
+      "fps": 24,
+      "seconds": 0.5,
+      "settings": {
+        "state": "skeptical"
+      },
+      "reuse": "chevron_01 + mouth_rounded_rect_filled_36 + accent",
+      "core": true
+    },
+    {
+      "id": "reaction_delighted",
+      "label": "Reaction / Delighted",
+      "frames": 12,
+      "fps": 24,
+      "seconds": 0.5,
+      "settings": {
+        "state": "delighted"
+      },
+      "reuse": "happy_arc_19 + mouth_smile_arc_37 + accent",
+      "core": true
+    }
+  ],
+  "counts": {
+    "drawings": 36,
+    "eye_pairs": 28,
+    "mouths": 8,
+    "individual_parts": 64,
+    "core_frames": 516,
+    "all_frames": 828,
+    "core_clips": 23,
+    "all_clips": 28
+  },
+  "fps": 24
+}

@@ -1,0 +1,91 @@
+{
+  "status": "executed_and_verified",
+  "revision": "hex_quad_r5_inward_hip_straight_tibia",
+  "verified_utc": "2026-09-12T20:32:49.193801+00:00",
+  "document_name": "Hex Quad R5 inward hip straight tibia 20260912_212610",
+  "document_attribute_group": "hexapod_phone_quad_r5_20260912",
+  "runtime_namespace_prefix": "hex_quad_r5_fusion_runtime_",
+  "source_manifest_sha256": "67f0d5e3bfb633414722b17305cef4212ca7f8fa753aa922a252bc383306ad3d",
+  "native_input_sha256": "1035ab1685ef12f5ca3ea396218f4b1520713c2b45d4b39b0cd7c35866bcfebf",
+  "source_step_sha256": {
+    "base": "b6cb483d4ab3ec0f6d19482488f6cece266f37cf9c85f19cf0375e4424fd0e4e",
+    "phone_pan": "fa4ef32626ba81b0799ab739869fb15eb543b4f1071e4449f5ec09cf2ec0660e",
+    "coxa_FL": "9bdd97103cda9bfff954a068344b46a8ffdfaf57bb622765dabab0756021c144",
+    "femur_FL": "5896bbdadd83b2972c9aaa242ba6632486901cca93b17ab028cb54a55354f2e0",
+    "tibia_FL": "d0ebb6d733f7baeafe114b928876a618b775996249e4bd4709751d5d03615b7d",
+    "coxa_FR": "b9c30386e89a7a2ff6588f9bf0bdde3ee6cd87738ee621b8a62e4586b5e6f8cd",
+    "femur_FR": "38aac358574d2cc06521d9b7387a3815da9b67160fc1ee639cc31570d4470b93",
+    "tibia_FR": "c9604a4ece0abcf0bd024bb6a1bba8443a63f14ed34490035392fc8e17a5539d",
+    "coxa_RL": "2e61a97af2d40254925b6732bf623e6a8088844355c26ddd98a637ae069fccdb",
+    "femur_RL": "9467578629fd2c761e5cacc3ae008101589f8c0ac584c4a1f29e419d91eaf189",
+    "tibia_RL": "5cec2b4f840ad8fe7dcf6d2efd2c13d22e532f09645d4b6412d61e0fe0a0ef7b",
+    "coxa_RR": "22a834e35f32d0a537233bed17b1f98c2479ebbc6fa377c7893772dc34f0de47",
+    "femur_RR": "cb9345da31b5eda19638a1c7eb309fd1884a657f73fc9b2c0a0fed3fc5877bd7",
+    "tibia_RR": "46cf5e5a07f43c2bf71822c6610415e48a96045624512f4fa79a46452e9f6d21"
+  },
+  "scripts": {
+    "fusion_import.py": "5988526840362b322dc2e8559cd9cfdd8ea401dec3c41f9ed72ca96882f12e4a",
+    "fusion_finish.py": "27a1db2eeed733769eda412b7584073e6a23adb2106c35a979bc02bd556b0dc4",
+    "fusion_export.py": "4b766558c3d3c33cb3b680b01f5c36bd6fd612c4e4e8517eb4ac7e6eb615a111",
+    "fusion_client.py": "945bbaac00c524d5c3e0960068be9fd05311d81235cb39fdb0edb2331df344e3",
+    "fusion_present.py": "fd5ffb04fad23be1e873f5afaa85cb0a2cae5a637dde706abfdb9f8c4b279cd6",
+    "fusion_runtime_r5.py": "7ccad68f09aa66261c6e11967b622212ed19d292281dc95ebb9b1fa9d96e3114",
+    "fusion_probe.py": "0c705248ecd19221a9d5e75fd4e764fc69a23d8732de039bf80c929d371e8701",
+    "fusion_limits_audit.py": "fb738e532041bb1654d48125a0b0f52d03556812f75823a9dbab6a181796d0dd"
+  },
+  "export_sha256": {
+    "f3d": "68a6a3ccf90f88a4546587b21fac34bf03d9ab100765cd0174ae234c5bf59402",
+    "step": "069961fac710ef3834e29091ce0893ea0e84baa14caf2e1747a8bdd7c4bfb86d",
+    "preview": "6f291e9b2933c7d796be0b65a52c8ebad903b950d41c53211683abc3c9179bd7"
+  },
+  "audit_sha256": {
+    "native_report.json": "53532402de6f9f3f25410b02dba0fb58b8274e9b2c25cbca64d1d8c93153590d",
+    "native_inspection.json": "f3bc3b038205f0d600a00a3294da552f14b1a6d6b29b2ef6438795085673ff32",
+    "native_integrity.json": "0cfbda61c7740c0222b20a89b44fdf6755585e0402da0378a190fac0cc9becef",
+    "native_step_roundtrip.json": "bdd9d8dbe763ab9d733c7510fa345b39ae4bce8b28d37b20d77c836c11116536",
+    "native_limits.json": "cae61249312a5db78b66ecd83cec5d3936c23f1738aac48700d8c6b60c2b2105"
+  },
+  "checks": {
+    "links": 14,
+    "closed_native_solids": 133,
+    "correct_one_degree_joint_motions": 13,
+    "all_neutral_poses_restored": true,
+    "all_actual_native_limits_match": true,
+    "actual_native_coxa_yaw_limits_deg": [
+      -19,
+      19
+    ],
+    "positive_native_intersections_at_neutral": 0,
+    "archive_crc": "passed with Python 3.14 Zstandard support",
+    "archive_entry_count": 304
+  },
+  "native_step_roundtrip": {
+    "status": "passed",
+    "reader": "OCP 7.8.1.1",
+    "step_sha256": "069961fac710ef3834e29091ce0893ea0e84baa14caf2e1747a8bdd7c4bfb86d",
+    "solid_count": 133,
+    "native_volume_mm3": 1685729.6423765998,
+    "roundtrip_volume_mm3": 1685734.1027389423,
+    "relative_volume_error": 2.6459535564793413e-06,
+    "maximum_bounds_error_mm": 2.7711166694643907e-11
+  },
+  "preserved_interim": {
+    "source_manifest_sha256": "a0a035fb1d548dc73a90a74d7324299ebef63f7c52f1e1f36abd404992b075fa",
+    "path": "manufacturing/interim_native_a0a035fb/cad/output/fusion",
+    "files_preserved": 9,
+    "native_f3d_sha256": "d0e8023ca586d52eab8b826dca0730042fd274e5739b0ad661d1a0b57d0784df"
+  },
+  "preserved_previous_bounds": {
+    "source_manifest_sha256": "ce504f86e7779430ae50394041a0d02d92c47ab61b77c710cbcfba79fbdd9470",
+    "path": "manufacturing/interim_native_ce504f86/cad/output/fusion",
+    "files_preserved": 12,
+    "native_f3d_sha256": "734a9546c1b02e6ba30fd699ef392b1c5db35a51a7aa651609863decf12c30f3"
+  },
+  "r4_preserved": {
+    "cad_source_hashes_unchanged": true,
+    "fusion_helper_hashes_unchanged": true,
+    "native_f3d_sha256": "0cdef5d9648bc19ca949e66ef0d6ddb86dc8a41da02c3c2f4acbb7c4b5f65bbd"
+  },
+  "scope": "The native audit covers neutral placement, actual configured joint limits, a bounded one-degree motion per joint, source and export hashes, and export integrity. Full-range collision checks are separate.",
+  "notes": "Final R5 uses native coxa yaw limits from -19 to 19 degrees. A read-only audit confirmed the actual enabled native limits and neutral angles for all thirteen joints. Reference graphics were hidden for the clean preview; geometry and neutral poses were preserved."
+}

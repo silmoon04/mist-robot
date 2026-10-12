@@ -1,0 +1,1706 @@
+{
+  "created_utc": "2026-09-12T15:53:07.298014+00:00",
+  "status": "audit_pass",
+  "inputs": {
+    "manifest_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\cad\\output\\assembly_manifest.json",
+    "urdf_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\simulation\\output_r3_solid_nominal\\quadruped.urdf",
+    "audit_source_sha256": "471f22790a643681e54fa717d24c74b18aa3ad72e624183f954b966bf173ec96",
+    "meshes": {
+      "base": {
+        "manifest_mesh_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\cad\\output\\links\\base.stl",
+        "urdf_mesh_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\cad\\output\\links\\base.stl",
+        "manifest_mesh_sha256": "c30d92a99561bc1a844ca2da6e30712ec3c028ec7e9ab8bff303e4b069e6707a",
+        "urdf_mesh_sha256": "c30d92a99561bc1a844ca2da6e30712ec3c028ec7e9ab8bff303e4b069e6707a"
+      },
+      "phone_pan": {
+        "manifest_mesh_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\cad\\output\\links\\phone_pan.stl",
+        "urdf_mesh_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\cad\\output\\links\\phone_pan.stl",
+        "manifest_mesh_sha256": "92ecaea73fed260b53bdb4c85876d29b68893592fbef707975d61227dbeb361a",
+        "urdf_mesh_sha256": "92ecaea73fed260b53bdb4c85876d29b68893592fbef707975d61227dbeb361a"
+      },
+      "coxa_FL": {
+        "manifest_mesh_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\cad\\output\\links\\coxa_FL.stl",
+        "urdf_mesh_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\cad\\output\\links\\coxa_FL.stl",
+        "manifest_mesh_sha256": "1b0b2cefa5bf8f89eee62d6d441541e2afd62e30ab8cb2429ba92ab03496e251",
+        "urdf_mesh_sha256": "1b0b2cefa5bf8f89eee62d6d441541e2afd62e30ab8cb2429ba92ab03496e251"
+      },
+      "femur_FL": {
+        "manifest_mesh_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\cad\\output\\links\\femur_FL.stl",
+        "urdf_mesh_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\cad\\output\\links\\femur_FL.stl",
+        "manifest_mesh_sha256": "b29a949235e51b5aa5d1f509b5fb2ec69701df34d2daea342e841ea7c8ac0436",
+        "urdf_mesh_sha256": "b29a949235e51b5aa5d1f509b5fb2ec69701df34d2daea342e841ea7c8ac0436"
+      },
+      "tibia_FL": {
+        "manifest_mesh_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\cad\\output\\links\\tibia_FL.stl",
+        "urdf_mesh_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\cad\\output\\links\\tibia_FL.stl",
+        "manifest_mesh_sha256": "368340d138357021d1b673eb9c37dfb0629884d85c1d37df7f09318a4694a15c",
+        "urdf_mesh_sha256": "368340d138357021d1b673eb9c37dfb0629884d85c1d37df7f09318a4694a15c"
+      },
+      "coxa_FR": {
+        "manifest_mesh_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\cad\\output\\links\\coxa_FR.stl",
+        "urdf_mesh_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\cad\\output\\links\\coxa_FR.stl",
+        "manifest_mesh_sha256": "1b0b2cefa5bf8f89eee62d6d441541e2afd62e30ab8cb2429ba92ab03496e251",
+        "urdf_mesh_sha256": "1b0b2cefa5bf8f89eee62d6d441541e2afd62e30ab8cb2429ba92ab03496e251"
+      },
+      "femur_FR": {
+        "manifest_mesh_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\cad\\output\\links\\femur_FR.stl",
+        "urdf_mesh_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\cad\\output\\links\\femur_FR.stl",
+        "manifest_mesh_sha256": "b29a949235e51b5aa5d1f509b5fb2ec69701df34d2daea342e841ea7c8ac0436",
+        "urdf_mesh_sha256": "b29a949235e51b5aa5d1f509b5fb2ec69701df34d2daea342e841ea7c8ac0436"
+      },
+      "tibia_FR": {
+        "manifest_mesh_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\cad\\output\\links\\tibia_FR.stl",
+        "urdf_mesh_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\cad\\output\\links\\tibia_FR.stl",
+        "manifest_mesh_sha256": "368340d138357021d1b673eb9c37dfb0629884d85c1d37df7f09318a4694a15c",
+        "urdf_mesh_sha256": "368340d138357021d1b673eb9c37dfb0629884d85c1d37df7f09318a4694a15c"
+      },
+      "coxa_RL": {
+        "manifest_mesh_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\cad\\output\\links\\coxa_RL.stl",
+        "urdf_mesh_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\cad\\output\\links\\coxa_RL.stl",
+        "manifest_mesh_sha256": "1b0b2cefa5bf8f89eee62d6d441541e2afd62e30ab8cb2429ba92ab03496e251",
+        "urdf_mesh_sha256": "1b0b2cefa5bf8f89eee62d6d441541e2afd62e30ab8cb2429ba92ab03496e251"
+      },
+      "femur_RL": {
+        "manifest_mesh_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\cad\\output\\links\\femur_RL.stl",
+        "urdf_mesh_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\cad\\output\\links\\femur_RL.stl",
+        "manifest_mesh_sha256": "b29a949235e51b5aa5d1f509b5fb2ec69701df34d2daea342e841ea7c8ac0436",
+        "urdf_mesh_sha256": "b29a949235e51b5aa5d1f509b5fb2ec69701df34d2daea342e841ea7c8ac0436"
+      },
+      "tibia_RL": {
+        "manifest_mesh_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\cad\\output\\links\\tibia_RL.stl",
+        "urdf_mesh_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\cad\\output\\links\\tibia_RL.stl",
+        "manifest_mesh_sha256": "368340d138357021d1b673eb9c37dfb0629884d85c1d37df7f09318a4694a15c",
+        "urdf_mesh_sha256": "368340d138357021d1b673eb9c37dfb0629884d85c1d37df7f09318a4694a15c"
+      },
+      "coxa_RR": {
+        "manifest_mesh_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\cad\\output\\links\\coxa_RR.stl",
+        "urdf_mesh_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\cad\\output\\links\\coxa_RR.stl",
+        "manifest_mesh_sha256": "1b0b2cefa5bf8f89eee62d6d441541e2afd62e30ab8cb2429ba92ab03496e251",
+        "urdf_mesh_sha256": "1b0b2cefa5bf8f89eee62d6d441541e2afd62e30ab8cb2429ba92ab03496e251"
+      },
+      "femur_RR": {
+        "manifest_mesh_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\cad\\output\\links\\femur_RR.stl",
+        "urdf_mesh_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\cad\\output\\links\\femur_RR.stl",
+        "manifest_mesh_sha256": "b29a949235e51b5aa5d1f509b5fb2ec69701df34d2daea342e841ea7c8ac0436",
+        "urdf_mesh_sha256": "b29a949235e51b5aa5d1f509b5fb2ec69701df34d2daea342e841ea7c8ac0436"
+      },
+      "tibia_RR": {
+        "manifest_mesh_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\cad\\output\\links\\tibia_RR.stl",
+        "urdf_mesh_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\cad\\output\\links\\tibia_RR.stl",
+        "manifest_mesh_sha256": "368340d138357021d1b673eb9c37dfb0629884d85c1d37df7f09318a4694a15c",
+        "urdf_mesh_sha256": "368340d138357021d1b673eb9c37dfb0629884d85c1d37df7f09318a4694a15c"
+      }
+    },
+    "manifest_sha256": "ed3b458fd8c5929c04652dcaf8b7686c31f8b987f2cead30e14f12191bfa71a2",
+    "urdf_sha256": "6ed6b34286bacd9f3f6305e54898f22d088639ce388545b3bc583e56e9b46940",
+    "auxiliary_files": {
+      "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\printing\\fastener_mass.json": "c8ca9b257d69ad92f92aa91839c1ba3d7262b854369b02719496ed6fb65d8e02",
+      "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\settings.json": "dc619bbc98e9b418b75981764b8dd56129bcfbc31173f508a90c5335264839f3",
+      "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\cad\\leg.py": "0aa083ef81ae2a675bafcbda74d9d318c350732c8205933411e11be94aa1e27f",
+      "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\cad\\phone.py": "36fbd54f48427bd88ef04db4507e375aed5c50fb4fd262abef27ea6824cfb399",
+      "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\cad\\body.py": "6c690f86f77066f4ba73754e96db406684a4a0cba9a5b9cd921ecb1e12cea2cf",
+      "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\printing\\fastener_mass.py": "86d9931495651a55ae76a4713cb8fe116b77896c6fa5a828bed70d492ffe9707"
+    },
+    "fastener_properties_sha256": "c8ca9b257d69ad92f92aa91839c1ba3d7262b854369b02719496ed6fb65d8e02"
+  },
+  "tolerances": {
+    "mass_kg": 1e-10,
+    "aggregate_com_mm": 1e-08,
+    "aggregate_inertia_kg_m2": 1e-12,
+    "box_inertia_kg_m2": 1e-12,
+    "bullet_com_local_m": 1e-10,
+    "bullet_inertia_kg_m2": 1e-10,
+    "frame_position_m": 2e-06,
+    "frame_rotation_matrix": 2e-06,
+    "whole_com_m": 1e-09,
+    "phone_collision_m": 1e-09
+  },
+  "checks": [
+    {
+      "name": "analytical_fastener_scenario",
+      "passed": true,
+      "scenario": "high"
+    },
+    {
+      "name": "analytical_fastener_source:settings.json",
+      "passed": true
+    },
+    {
+      "name": "analytical_fastener_source:cad/leg.py",
+      "passed": true
+    },
+    {
+      "name": "analytical_fastener_source:cad/phone.py",
+      "passed": true
+    },
+    {
+      "name": "analytical_fastener_source:cad/body.py",
+      "passed": true
+    },
+    {
+      "name": "analytical_fastener_source:printing/fastener_mass.py",
+      "passed": true
+    },
+    {
+      "name": "analytical_fastener_manifest_source",
+      "passed": true
+    },
+    {
+      "name": "analytical_fastener_coverage",
+      "passed": true,
+      "analytical_record_count": 14,
+      "hardware_piece_count": 537
+    },
+    {
+      "name": "analytical_fastener_total",
+      "passed": true,
+      "total_mass_kg": 0.38306749525237
+    },
+    {
+      "name": "analytical_fasteners:fasteners_base",
+      "passed": true,
+      "hardware_piece_count": 132,
+      "mass_error_kg": 4.163336342344337e-17,
+      "com_error_mm": 7.105427357601002e-15,
+      "inertia_error_kg_m2": 5.082197683525802e-21
+    },
+    {
+      "name": "analytical_fasteners:fasteners_phone_pan",
+      "passed": true,
+      "hardware_piece_count": 33,
+      "mass_error_kg": 1.0408340855860843e-17,
+      "com_error_mm": 1.4210854715202004e-14,
+      "inertia_error_kg_m2": 1.3552527156068805e-20
+    },
+    {
+      "name": "analytical_fasteners:fasteners_coxa_FL",
+      "passed": true,
+      "hardware_piece_count": 37,
+      "mass_error_kg": 6.938893903907228e-18,
+      "com_error_mm": 7.105427357601002e-15,
+      "inertia_error_kg_m2": 6.776263578034403e-21
+    },
+    {
+      "name": "analytical_fasteners:fasteners_femur_FL",
+      "passed": true,
+      "hardware_piece_count": 31,
+      "mass_error_kg": 0.0,
+      "com_error_mm": 0.0,
+      "inertia_error_kg_m2": 0.0
+    },
+    {
+      "name": "analytical_fasteners:fasteners_tibia_FL",
+      "passed": true,
+      "hardware_piece_count": 25,
+      "mass_error_kg": 3.469446951953614e-18,
+      "com_error_mm": 7.105427357601002e-15,
+      "inertia_error_kg_m2": 3.3881317890172014e-21
+    },
+    {
+      "name": "analytical_fasteners:fasteners_coxa_FR",
+      "passed": true,
+      "hardware_piece_count": 37,
+      "mass_error_kg": 6.938893903907228e-18,
+      "com_error_mm": 7.105427357601002e-15,
+      "inertia_error_kg_m2": 6.776263578034403e-21
+    },
+    {
+      "name": "analytical_fasteners:fasteners_femur_FR",
+      "passed": true,
+      "hardware_piece_count": 31,
+      "mass_error_kg": 0.0,
+      "com_error_mm": 0.0,
+      "inertia_error_kg_m2": 0.0
+    },
+    {
+      "name": "analytical_fasteners:fasteners_tibia_FR",
+      "passed": true,
+      "hardware_piece_count": 25,
+      "mass_error_kg": 3.469446951953614e-18,
+      "com_error_mm": 7.105427357601002e-15,
+      "inertia_error_kg_m2": 3.3881317890172014e-21
+    },
+    {
+      "name": "analytical_fasteners:fasteners_coxa_RL",
+      "passed": true,
+      "hardware_piece_count": 37,
+      "mass_error_kg": 6.938893903907228e-18,
+      "com_error_mm": 7.105427357601002e-15,
+      "inertia_error_kg_m2": 6.776263578034403e-21
+    },
+    {
+      "name": "analytical_fasteners:fasteners_femur_RL",
+      "passed": true,
+      "hardware_piece_count": 31,
+      "mass_error_kg": 0.0,
+      "com_error_mm": 0.0,
+      "inertia_error_kg_m2": 0.0
+    },
+    {
+      "name": "analytical_fasteners:fasteners_tibia_RL",
+      "passed": true,
+      "hardware_piece_count": 25,
+      "mass_error_kg": 3.469446951953614e-18,
+      "com_error_mm": 7.105427357601002e-15,
+      "inertia_error_kg_m2": 3.3881317890172014e-21
+    },
+    {
+      "name": "analytical_fasteners:fasteners_coxa_RR",
+      "passed": true,
+      "hardware_piece_count": 37,
+      "mass_error_kg": 6.938893903907228e-18,
+      "com_error_mm": 7.105427357601002e-15,
+      "inertia_error_kg_m2": 6.776263578034403e-21
+    },
+    {
+      "name": "analytical_fasteners:fasteners_femur_RR",
+      "passed": true,
+      "hardware_piece_count": 31,
+      "mass_error_kg": 0.0,
+      "com_error_mm": 0.0,
+      "inertia_error_kg_m2": 0.0
+    },
+    {
+      "name": "analytical_fasteners:fasteners_tibia_RR",
+      "passed": true,
+      "hardware_piece_count": 25,
+      "mass_error_kg": 3.469446951953614e-18,
+      "com_error_mm": 7.105427357601002e-15,
+      "inertia_error_kg_m2": 3.3881317890172014e-21
+    },
+    {
+      "name": "part_ownership",
+      "passed": true,
+      "part_count": 135,
+      "link_count": 14
+    },
+    {
+      "name": "unique_part_names",
+      "passed": true
+    },
+    {
+      "name": "total_mass",
+      "passed": true,
+      "parts_mass_kg": 2.857856444245494,
+      "links_mass_kg": 2.857856444245494
+    },
+    {
+      "name": "part_physical_properties:body_deck",
+      "passed": true
+    },
+    {
+      "name": "pla_density:body_deck",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:hex_faceted_cover",
+      "passed": true
+    },
+    {
+      "name": "pla_density:hex_faceted_cover",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:pan_cover_spacer_1",
+      "passed": true
+    },
+    {
+      "name": "pla_density:pan_cover_spacer_1",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:pan_cover_spacer_2",
+      "passed": true
+    },
+    {
+      "name": "pla_density:pan_cover_spacer_2",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:pan_cover_spacer_3",
+      "passed": true
+    },
+    {
+      "name": "pla_density:pan_cover_spacer_3",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:pan_cover_spacer_4",
+      "passed": true
+    },
+    {
+      "name": "pla_density:pan_cover_spacer_4",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:battery_tray",
+      "passed": true
+    },
+    {
+      "name": "pla_density:battery_tray",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:battery_envelope",
+      "passed": true
+    },
+    {
+      "name": "analytical_box:battery_envelope",
+      "passed": true,
+      "inertia_error_kg_m2": 2.710505431213761e-20
+    },
+    {
+      "name": "part_physical_properties:power_distribution_envelope",
+      "passed": true
+    },
+    {
+      "name": "analytical_box:power_distribution_envelope",
+      "passed": true,
+      "inertia_error_kg_m2": 8.470329472543003e-22
+    },
+    {
+      "name": "part_physical_properties:power_distribution_tray",
+      "passed": true
+    },
+    {
+      "name": "pla_density:power_distribution_tray",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:servo_bus_adapter_envelope",
+      "passed": true
+    },
+    {
+      "name": "analytical_box:servo_bus_adapter_envelope",
+      "passed": true,
+      "inertia_error_kg_m2": 6.988021814847978e-21
+    },
+    {
+      "name": "part_physical_properties:servo_bus_adapter_tray",
+      "passed": true
+    },
+    {
+      "name": "pla_density:servo_bus_adapter_tray",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:esp32_envelope",
+      "passed": true
+    },
+    {
+      "name": "analytical_box:esp32_envelope",
+      "passed": true,
+      "inertia_error_kg_m2": 9.740878893424454e-21
+    },
+    {
+      "name": "part_physical_properties:esp32_tray",
+      "passed": true
+    },
+    {
+      "name": "pla_density:esp32_tray",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:ubec_envelope",
+      "passed": true
+    },
+    {
+      "name": "analytical_box:ubec_envelope",
+      "passed": true,
+      "inertia_error_kg_m2": 9.317362419797304e-21
+    },
+    {
+      "name": "part_physical_properties:ubec_tray",
+      "passed": true
+    },
+    {
+      "name": "pla_density:ubec_tray",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:phone_pan_servo_saddle",
+      "passed": true
+    },
+    {
+      "name": "pla_density:phone_pan_servo_saddle",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:phone_pan_servo_cap",
+      "passed": true
+    },
+    {
+      "name": "pla_density:phone_pan_servo_cap",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:phone_pan_hub",
+      "passed": true
+    },
+    {
+      "name": "pla_density:phone_pan_hub",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:phone_cradle_rear_frame",
+      "passed": true
+    },
+    {
+      "name": "pla_density:phone_cradle_rear_frame",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:phone_cradle_top_cap",
+      "passed": true
+    },
+    {
+      "name": "pla_density:phone_cradle_top_cap",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:phone_cradle_lower_clip_left",
+      "passed": true
+    },
+    {
+      "name": "pla_density:phone_cradle_lower_clip_left",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:phone_cradle_lower_clip_right",
+      "passed": true
+    },
+    {
+      "name": "pla_density:phone_cradle_lower_clip_right",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:phone_cradle_foot_left",
+      "passed": true
+    },
+    {
+      "name": "pla_density:phone_cradle_foot_left",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:phone_cradle_foot_right",
+      "passed": true
+    },
+    {
+      "name": "pla_density:phone_cradle_foot_right",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:phone_pan_STS3215_envelope",
+      "passed": true
+    },
+    {
+      "name": "analytical_box:phone_pan_STS3215_envelope",
+      "passed": true,
+      "inertia_error_kg_m2": 2.1175823681357508e-20
+    },
+    {
+      "name": "part_physical_properties:phone_pan_C018_metal_horn",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:Xiaomi_Mi9SE_bare_phone_envelope",
+      "passed": true
+    },
+    {
+      "name": "analytical_box:Xiaomi_Mi9SE_bare_phone_envelope",
+      "passed": true,
+      "inertia_error_kg_m2": 2.710505431213761e-19
+    },
+    {
+      "name": "part_physical_properties:FL_yaw_case_saddle",
+      "passed": true
+    },
+    {
+      "name": "pla_density:FL_yaw_case_saddle",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:FL_case_cap_yaw",
+      "passed": true
+    },
+    {
+      "name": "pla_density:FL_case_cap_yaw",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:FL_servo_yaw",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:FL_coxa_upper_and_hip_saddle",
+      "passed": true
+    },
+    {
+      "name": "pla_density:FL_coxa_upper_and_hip_saddle",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:FL_coxa_lower_auxiliary_arm",
+      "passed": true
+    },
+    {
+      "name": "pla_density:FL_coxa_lower_auxiliary_arm",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:FL_case_cap_hip",
+      "passed": true
+    },
+    {
+      "name": "pla_density:FL_case_cap_hip",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:FL_servo_hip",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:FL_horn_yaw_main",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:FL_horn_yaw_auxiliary",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:FL_yaw_auxiliary_spacer_1",
+      "passed": true
+    },
+    {
+      "name": "pla_density:FL_yaw_auxiliary_spacer_1",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:FL_yaw_auxiliary_spacer_2",
+      "passed": true
+    },
+    {
+      "name": "pla_density:FL_yaw_auxiliary_spacer_2",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:FL_yaw_auxiliary_spacer_3",
+      "passed": true
+    },
+    {
+      "name": "pla_density:FL_yaw_auxiliary_spacer_3",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:FL_yaw_auxiliary_spacer_4",
+      "passed": true
+    },
+    {
+      "name": "pla_density:FL_yaw_auxiliary_spacer_4",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:FL_femur_main_and_knee_saddle",
+      "passed": true
+    },
+    {
+      "name": "pla_density:FL_femur_main_and_knee_saddle",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:FL_femur_auxiliary_cheek",
+      "passed": true
+    },
+    {
+      "name": "pla_density:FL_femur_auxiliary_cheek",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:FL_case_cap_knee",
+      "passed": true
+    },
+    {
+      "name": "pla_density:FL_case_cap_knee",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:FL_servo_knee",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:FL_horn_hip_main",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:FL_horn_hip_auxiliary",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:FL_tibia_curved_main_and_foot",
+      "passed": true
+    },
+    {
+      "name": "pla_density:FL_tibia_curved_main_and_foot",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:FL_tibia_auxiliary_cheek",
+      "passed": true
+    },
+    {
+      "name": "pla_density:FL_tibia_auxiliary_cheek",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:FL_horn_knee_main",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:FL_horn_knee_auxiliary",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:FR_yaw_case_saddle",
+      "passed": true
+    },
+    {
+      "name": "pla_density:FR_yaw_case_saddle",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:FR_case_cap_yaw",
+      "passed": true
+    },
+    {
+      "name": "pla_density:FR_case_cap_yaw",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:FR_servo_yaw",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:FR_coxa_upper_and_hip_saddle",
+      "passed": true
+    },
+    {
+      "name": "pla_density:FR_coxa_upper_and_hip_saddle",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:FR_coxa_lower_auxiliary_arm",
+      "passed": true
+    },
+    {
+      "name": "pla_density:FR_coxa_lower_auxiliary_arm",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:FR_case_cap_hip",
+      "passed": true
+    },
+    {
+      "name": "pla_density:FR_case_cap_hip",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:FR_servo_hip",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:FR_horn_yaw_main",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:FR_horn_yaw_auxiliary",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:FR_yaw_auxiliary_spacer_1",
+      "passed": true
+    },
+    {
+      "name": "pla_density:FR_yaw_auxiliary_spacer_1",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:FR_yaw_auxiliary_spacer_2",
+      "passed": true
+    },
+    {
+      "name": "pla_density:FR_yaw_auxiliary_spacer_2",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:FR_yaw_auxiliary_spacer_3",
+      "passed": true
+    },
+    {
+      "name": "pla_density:FR_yaw_auxiliary_spacer_3",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:FR_yaw_auxiliary_spacer_4",
+      "passed": true
+    },
+    {
+      "name": "pla_density:FR_yaw_auxiliary_spacer_4",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:FR_femur_main_and_knee_saddle",
+      "passed": true
+    },
+    {
+      "name": "pla_density:FR_femur_main_and_knee_saddle",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:FR_femur_auxiliary_cheek",
+      "passed": true
+    },
+    {
+      "name": "pla_density:FR_femur_auxiliary_cheek",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:FR_case_cap_knee",
+      "passed": true
+    },
+    {
+      "name": "pla_density:FR_case_cap_knee",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:FR_servo_knee",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:FR_horn_hip_main",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:FR_horn_hip_auxiliary",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:FR_tibia_curved_main_and_foot",
+      "passed": true
+    },
+    {
+      "name": "pla_density:FR_tibia_curved_main_and_foot",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:FR_tibia_auxiliary_cheek",
+      "passed": true
+    },
+    {
+      "name": "pla_density:FR_tibia_auxiliary_cheek",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:FR_horn_knee_main",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:FR_horn_knee_auxiliary",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:RL_yaw_case_saddle",
+      "passed": true
+    },
+    {
+      "name": "pla_density:RL_yaw_case_saddle",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:RL_case_cap_yaw",
+      "passed": true
+    },
+    {
+      "name": "pla_density:RL_case_cap_yaw",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:RL_servo_yaw",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:RL_coxa_upper_and_hip_saddle",
+      "passed": true
+    },
+    {
+      "name": "pla_density:RL_coxa_upper_and_hip_saddle",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:RL_coxa_lower_auxiliary_arm",
+      "passed": true
+    },
+    {
+      "name": "pla_density:RL_coxa_lower_auxiliary_arm",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:RL_case_cap_hip",
+      "passed": true
+    },
+    {
+      "name": "pla_density:RL_case_cap_hip",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:RL_servo_hip",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:RL_horn_yaw_main",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:RL_horn_yaw_auxiliary",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:RL_yaw_auxiliary_spacer_1",
+      "passed": true
+    },
+    {
+      "name": "pla_density:RL_yaw_auxiliary_spacer_1",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:RL_yaw_auxiliary_spacer_2",
+      "passed": true
+    },
+    {
+      "name": "pla_density:RL_yaw_auxiliary_spacer_2",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:RL_yaw_auxiliary_spacer_3",
+      "passed": true
+    },
+    {
+      "name": "pla_density:RL_yaw_auxiliary_spacer_3",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:RL_yaw_auxiliary_spacer_4",
+      "passed": true
+    },
+    {
+      "name": "pla_density:RL_yaw_auxiliary_spacer_4",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:RL_femur_main_and_knee_saddle",
+      "passed": true
+    },
+    {
+      "name": "pla_density:RL_femur_main_and_knee_saddle",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:RL_femur_auxiliary_cheek",
+      "passed": true
+    },
+    {
+      "name": "pla_density:RL_femur_auxiliary_cheek",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:RL_case_cap_knee",
+      "passed": true
+    },
+    {
+      "name": "pla_density:RL_case_cap_knee",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:RL_servo_knee",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:RL_horn_hip_main",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:RL_horn_hip_auxiliary",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:RL_tibia_curved_main_and_foot",
+      "passed": true
+    },
+    {
+      "name": "pla_density:RL_tibia_curved_main_and_foot",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:RL_tibia_auxiliary_cheek",
+      "passed": true
+    },
+    {
+      "name": "pla_density:RL_tibia_auxiliary_cheek",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:RL_horn_knee_main",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:RL_horn_knee_auxiliary",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:RR_yaw_case_saddle",
+      "passed": true
+    },
+    {
+      "name": "pla_density:RR_yaw_case_saddle",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:RR_case_cap_yaw",
+      "passed": true
+    },
+    {
+      "name": "pla_density:RR_case_cap_yaw",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:RR_servo_yaw",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:RR_coxa_upper_and_hip_saddle",
+      "passed": true
+    },
+    {
+      "name": "pla_density:RR_coxa_upper_and_hip_saddle",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:RR_coxa_lower_auxiliary_arm",
+      "passed": true
+    },
+    {
+      "name": "pla_density:RR_coxa_lower_auxiliary_arm",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:RR_case_cap_hip",
+      "passed": true
+    },
+    {
+      "name": "pla_density:RR_case_cap_hip",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:RR_servo_hip",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:RR_horn_yaw_main",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:RR_horn_yaw_auxiliary",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:RR_yaw_auxiliary_spacer_1",
+      "passed": true
+    },
+    {
+      "name": "pla_density:RR_yaw_auxiliary_spacer_1",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:RR_yaw_auxiliary_spacer_2",
+      "passed": true
+    },
+    {
+      "name": "pla_density:RR_yaw_auxiliary_spacer_2",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:RR_yaw_auxiliary_spacer_3",
+      "passed": true
+    },
+    {
+      "name": "pla_density:RR_yaw_auxiliary_spacer_3",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:RR_yaw_auxiliary_spacer_4",
+      "passed": true
+    },
+    {
+      "name": "pla_density:RR_yaw_auxiliary_spacer_4",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:RR_femur_main_and_knee_saddle",
+      "passed": true
+    },
+    {
+      "name": "pla_density:RR_femur_main_and_knee_saddle",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:RR_femur_auxiliary_cheek",
+      "passed": true
+    },
+    {
+      "name": "pla_density:RR_femur_auxiliary_cheek",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:RR_case_cap_knee",
+      "passed": true
+    },
+    {
+      "name": "pla_density:RR_case_cap_knee",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:RR_servo_knee",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:RR_horn_hip_main",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:RR_horn_hip_auxiliary",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:RR_tibia_curved_main_and_foot",
+      "passed": true
+    },
+    {
+      "name": "pla_density:RR_tibia_curved_main_and_foot",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:RR_tibia_auxiliary_cheek",
+      "passed": true
+    },
+    {
+      "name": "pla_density:RR_tibia_auxiliary_cheek",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:RR_horn_knee_main",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:RR_horn_knee_auxiliary",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:wiring_allowance",
+      "passed": true
+    },
+    {
+      "name": "analytical_box:wiring_allowance",
+      "passed": true,
+      "inertia_error_kg_m2": 2.710505431213761e-20
+    },
+    {
+      "name": "part_physical_properties:fasteners_base",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:fasteners_phone_pan",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:fasteners_coxa_FL",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:fasteners_femur_FL",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:fasteners_tibia_FL",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:fasteners_coxa_FR",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:fasteners_femur_FR",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:fasteners_tibia_FR",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:fasteners_coxa_RL",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:fasteners_femur_RL",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:fasteners_tibia_RL",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:fasteners_coxa_RR",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:fasteners_femur_RR",
+      "passed": true
+    },
+    {
+      "name": "part_physical_properties:fasteners_tibia_RR",
+      "passed": true
+    },
+    {
+      "name": "analytical_box_coverage",
+      "passed": true,
+      "box_count": 8
+    },
+    {
+      "name": "link_aggregation:base",
+      "passed": true,
+      "part_count": 33,
+      "mass_error_kg": 2.220446049250313e-16,
+      "com_error_mm": 3.552713678800501e-15,
+      "inertia_error_kg_m2": 4.336808689942018e-19,
+      "principal_moments_kg_m2": [
+        0.0030079463807860165,
+        0.003252710030787107,
+        0.0043088948128043
+      ]
+    },
+    {
+      "name": "link_aggregation:phone_pan",
+      "passed": true,
+      "part_count": 10,
+      "mass_error_kg": 5.551115123125783e-17,
+      "com_error_mm": 7.105427357601002e-15,
+      "inertia_error_kg_m2": 1.0842021724855044e-19,
+      "principal_moments_kg_m2": [
+        0.00020932857435567893,
+        0.0005259567952843824,
+        0.0007166299437992464
+      ]
+    },
+    {
+      "name": "link_aggregation:coxa_FL",
+      "passed": true,
+      "part_count": 11,
+      "mass_error_kg": 2.7755575615628914e-17,
+      "com_error_mm": 7.105427357601002e-15,
+      "inertia_error_kg_m2": 2.710505431213761e-20,
+      "principal_moments_kg_m2": [
+        4.5618802053850265e-05,
+        0.00012961156036137304,
+        0.00015774703838924677
+      ]
+    },
+    {
+      "name": "link_aggregation:femur_FL",
+      "passed": true,
+      "part_count": 7,
+      "mass_error_kg": 0.0,
+      "com_error_mm": 0.0,
+      "inertia_error_kg_m2": 1.4823076576950256e-21,
+      "principal_moments_kg_m2": [
+        4.1815649161361105e-05,
+        0.0002188543326667007,
+        0.00023215186221613263
+      ]
+    },
+    {
+      "name": "link_aggregation:tibia_FL",
+      "passed": true,
+      "part_count": 5,
+      "mass_error_kg": 0.0,
+      "com_error_mm": 0.0,
+      "inertia_error_kg_m2": 0.0,
+      "principal_moments_kg_m2": [
+        2.0783398970625933e-05,
+        6.184906846312269e-05,
+        7.444908188992855e-05
+      ]
+    },
+    {
+      "name": "link_aggregation:coxa_FR",
+      "passed": true,
+      "part_count": 11,
+      "mass_error_kg": 2.7755575615628914e-17,
+      "com_error_mm": 7.105427357601002e-15,
+      "inertia_error_kg_m2": 2.710505431213761e-20,
+      "principal_moments_kg_m2": [
+        4.5618802053850265e-05,
+        0.00012961156036137304,
+        0.00015774703838924677
+      ]
+    },
+    {
+      "name": "link_aggregation:femur_FR",
+      "passed": true,
+      "part_count": 7,
+      "mass_error_kg": 0.0,
+      "com_error_mm": 0.0,
+      "inertia_error_kg_m2": 1.4823076576950256e-21,
+      "principal_moments_kg_m2": [
+        4.1815649161361105e-05,
+        0.0002188543326667007,
+        0.00023215186221613263
+      ]
+    },
+    {
+      "name": "link_aggregation:tibia_FR",
+      "passed": true,
+      "part_count": 5,
+      "mass_error_kg": 0.0,
+      "com_error_mm": 0.0,
+      "inertia_error_kg_m2": 0.0,
+      "principal_moments_kg_m2": [
+        2.0783398970625933e-05,
+        6.184906846312269e-05,
+        7.444908188992855e-05
+      ]
+    },
+    {
+      "name": "link_aggregation:coxa_RL",
+      "passed": true,
+      "part_count": 11,
+      "mass_error_kg": 2.7755575615628914e-17,
+      "com_error_mm": 7.105427357601002e-15,
+      "inertia_error_kg_m2": 2.710505431213761e-20,
+      "principal_moments_kg_m2": [
+        4.5618802053850265e-05,
+        0.00012961156036137304,
+        0.00015774703838924677
+      ]
+    },
+    {
+      "name": "link_aggregation:femur_RL",
+      "passed": true,
+      "part_count": 7,
+      "mass_error_kg": 0.0,
+      "com_error_mm": 0.0,
+      "inertia_error_kg_m2": 1.4823076576950256e-21,
+      "principal_moments_kg_m2": [
+        4.1815649161361105e-05,
+        0.0002188543326667007,
+        0.00023215186221613263
+      ]
+    },
+    {
+      "name": "link_aggregation:tibia_RL",
+      "passed": true,
+      "part_count": 5,
+      "mass_error_kg": 0.0,
+      "com_error_mm": 0.0,
+      "inertia_error_kg_m2": 0.0,
+      "principal_moments_kg_m2": [
+        2.0783398970625933e-05,
+        6.184906846312269e-05,
+        7.444908188992855e-05
+      ]
+    },
+    {
+      "name": "link_aggregation:coxa_RR",
+      "passed": true,
+      "part_count": 11,
+      "mass_error_kg": 2.7755575615628914e-17,
+      "com_error_mm": 7.105427357601002e-15,
+      "inertia_error_kg_m2": 2.710505431213761e-20,
+      "principal_moments_kg_m2": [
+        4.5618802053850265e-05,
+        0.00012961156036137304,
+        0.00015774703838924677
+      ]
+    },
+    {
+      "name": "link_aggregation:femur_RR",
+      "passed": true,
+      "part_count": 7,
+      "mass_error_kg": 0.0,
+      "com_error_mm": 0.0,
+      "inertia_error_kg_m2": 1.4823076576950256e-21,
+      "principal_moments_kg_m2": [
+        4.1815649161361105e-05,
+        0.0002188543326667007,
+        0.00023215186221613263
+      ]
+    },
+    {
+      "name": "link_aggregation:tibia_RR",
+      "passed": true,
+      "part_count": 5,
+      "mass_error_kg": 0.0,
+      "com_error_mm": 0.0,
+      "inertia_error_kg_m2": 0.0,
+      "principal_moments_kg_m2": [
+        2.0783398970625933e-05,
+        6.184906846312269e-05,
+        7.444908188992855e-05
+      ]
+    },
+    {
+      "name": "urdf_link_names",
+      "passed": true
+    },
+    {
+      "name": "phone_collision_box",
+      "passed": true,
+      "expected_size_m": [
+        0.00745,
+        0.1475,
+        0.0705
+      ],
+      "actual_size_m": [
+        0.00745,
+        0.1475,
+        0.0705
+      ],
+      "expected_origin_m": [
+        0.003725,
+        0.0,
+        0.05325
+      ],
+      "actual_origin_m": [
+        0.003725,
+        0.0,
+        0.05325
+      ],
+      "actual_rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "cad_visual:base",
+      "passed": true
+    },
+    {
+      "name": "cad_visual:phone_pan",
+      "passed": true
+    },
+    {
+      "name": "cad_visual:coxa_FL",
+      "passed": true
+    },
+    {
+      "name": "cad_visual:femur_FL",
+      "passed": true
+    },
+    {
+      "name": "cad_visual:tibia_FL",
+      "passed": true
+    },
+    {
+      "name": "cad_visual:coxa_FR",
+      "passed": true
+    },
+    {
+      "name": "cad_visual:femur_FR",
+      "passed": true
+    },
+    {
+      "name": "cad_visual:tibia_FR",
+      "passed": true
+    },
+    {
+      "name": "cad_visual:coxa_RL",
+      "passed": true
+    },
+    {
+      "name": "cad_visual:femur_RL",
+      "passed": true
+    },
+    {
+      "name": "cad_visual:tibia_RL",
+      "passed": true
+    },
+    {
+      "name": "cad_visual:coxa_RR",
+      "passed": true
+    },
+    {
+      "name": "cad_visual:femur_RR",
+      "passed": true
+    },
+    {
+      "name": "cad_visual:tibia_RR",
+      "passed": true
+    },
+    {
+      "name": "manifest_assembly_frame:base",
+      "passed": true,
+      "position_error_m": 0.0,
+      "rotation_matrix_error": 0.0
+    },
+    {
+      "name": "manifest_assembly_frame:phone_pan",
+      "passed": true,
+      "position_error_m": 0.0,
+      "rotation_matrix_error": 0.0
+    },
+    {
+      "name": "manifest_assembly_frame:coxa_FL",
+      "passed": true,
+      "position_error_m": 0.0,
+      "rotation_matrix_error": 0.0
+    },
+    {
+      "name": "manifest_assembly_frame:femur_FL",
+      "passed": true,
+      "position_error_m": 0.0,
+      "rotation_matrix_error": 0.0
+    },
+    {
+      "name": "manifest_assembly_frame:tibia_FL",
+      "passed": true,
+      "position_error_m": 1.734723475976807e-18,
+      "rotation_matrix_error": 0.0
+    },
+    {
+      "name": "manifest_assembly_frame:coxa_FR",
+      "passed": true,
+      "position_error_m": 0.0,
+      "rotation_matrix_error": 0.0
+    },
+    {
+      "name": "manifest_assembly_frame:femur_FR",
+      "passed": true,
+      "position_error_m": 0.0,
+      "rotation_matrix_error": 0.0
+    },
+    {
+      "name": "manifest_assembly_frame:tibia_FR",
+      "passed": true,
+      "position_error_m": 1.734723475976807e-18,
+      "rotation_matrix_error": 0.0
+    },
+    {
+      "name": "manifest_assembly_frame:coxa_RL",
+      "passed": true,
+      "position_error_m": 0.0,
+      "rotation_matrix_error": 0.0
+    },
+    {
+      "name": "manifest_assembly_frame:femur_RL",
+      "passed": true,
+      "position_error_m": 0.0,
+      "rotation_matrix_error": 0.0
+    },
+    {
+      "name": "manifest_assembly_frame:tibia_RL",
+      "passed": true,
+      "position_error_m": 1.734723475976807e-18,
+      "rotation_matrix_error": 0.0
+    },
+    {
+      "name": "manifest_assembly_frame:coxa_RR",
+      "passed": true,
+      "position_error_m": 0.0,
+      "rotation_matrix_error": 0.0
+    },
+    {
+      "name": "manifest_assembly_frame:femur_RR",
+      "passed": true,
+      "position_error_m": 0.0,
+      "rotation_matrix_error": 0.0
+    },
+    {
+      "name": "manifest_assembly_frame:tibia_RR",
+      "passed": true,
+      "position_error_m": 1.734723475976807e-18,
+      "rotation_matrix_error": 0.0
+    },
+    {
+      "name": "bullet_mass_inertia_frame:base",
+      "passed": true,
+      "mass_error_kg": 0.0,
+      "com_local_error_m": 2.5167368189471517e-14,
+      "inertia_error_kg_m2": 1.932800013109857e-15,
+      "position_error_m": 0.0,
+      "rotation_matrix_error": 1.1102230246251565e-16
+    },
+    {
+      "name": "bullet_mass_inertia_frame:coxa_FL",
+      "passed": true,
+      "mass_error_kg": 0.0,
+      "com_local_error_m": 1.001282390333813e-14,
+      "inertia_error_kg_m2": 1.6297655059001586e-17,
+      "position_error_m": 1.948951067198834e-08,
+      "rotation_matrix_error": 1.1491551460407479e-07
+    },
+    {
+      "name": "bullet_mass_inertia_frame:femur_FL",
+      "passed": true,
+      "mass_error_kg": 0.0,
+      "com_local_error_m": 5.745404152435185e-15,
+      "inertia_error_kg_m2": 5.649220067263552e-16,
+      "position_error_m": 1.5552360455028946e-08,
+      "rotation_matrix_error": 1.2498634577307044e-07
+    },
+    {
+      "name": "bullet_mass_inertia_frame:tibia_FL",
+      "passed": true,
+      "mass_error_kg": 0.0,
+      "com_local_error_m": 2.650310526597366e-14,
+      "inertia_error_kg_m2": 2.065750833906484e-16,
+      "position_error_m": 2.50583611638433e-08,
+      "rotation_matrix_error": 8.153847605441022e-08
+    },
+    {
+      "name": "bullet_mass_inertia_frame:coxa_FR",
+      "passed": true,
+      "mass_error_kg": 0.0,
+      "com_local_error_m": 1.001282390333813e-14,
+      "inertia_error_kg_m2": 1.6297655059001586e-17,
+      "position_error_m": 1.6463236052199903e-08,
+      "rotation_matrix_error": 8.201635581794875e-08
+    },
+    {
+      "name": "bullet_mass_inertia_frame:femur_FR",
+      "passed": true,
+      "mass_error_kg": 0.0,
+      "com_local_error_m": 5.745404152435185e-15,
+      "inertia_error_kg_m2": 5.649220067263552e-16,
+      "position_error_m": 6.304695293612994e-09,
+      "rotation_matrix_error": 4.642791884279518e-08
+    },
+    {
+      "name": "bullet_mass_inertia_frame:tibia_FR",
+      "passed": true,
+      "mass_error_kg": 0.0,
+      "com_local_error_m": 2.650310526597366e-14,
+      "inertia_error_kg_m2": 2.065750833906484e-16,
+      "position_error_m": 6.176643307931329e-09,
+      "rotation_matrix_error": 2.6573341854740917e-07
+    },
+    {
+      "name": "bullet_mass_inertia_frame:coxa_RL",
+      "passed": true,
+      "mass_error_kg": 0.0,
+      "com_local_error_m": 1.001282390333813e-14,
+      "inertia_error_kg_m2": 1.6297655059001586e-17,
+      "position_error_m": 6.032500998731649e-09,
+      "rotation_matrix_error": 3.429434847213031e-09
+    },
+    {
+      "name": "bullet_mass_inertia_frame:femur_RL",
+      "passed": true,
+      "mass_error_kg": 0.0,
+      "com_local_error_m": 5.745404152435185e-15,
+      "inertia_error_kg_m2": 5.649220067263552e-16,
+      "position_error_m": 1.3373837232100172e-08,
+      "rotation_matrix_error": 1.5885837950646575e-08
+    },
+    {
+      "name": "bullet_mass_inertia_frame:tibia_RL",
+      "passed": true,
+      "mass_error_kg": 0.0,
+      "com_local_error_m": 2.650310526597366e-14,
+      "inertia_error_kg_m2": 2.065750833906484e-16,
+      "position_error_m": 1.4877587550810034e-08,
+      "rotation_matrix_error": 5.833505922758775e-08
+    },
+    {
+      "name": "bullet_mass_inertia_frame:coxa_RR",
+      "passed": true,
+      "mass_error_kg": 0.0,
+      "com_local_error_m": 1.001282390333813e-14,
+      "inertia_error_kg_m2": 1.6297655059001586e-17,
+      "position_error_m": 8.559544018016396e-09,
+      "rotation_matrix_error": 3.677053483919224e-08
+    },
+    {
+      "name": "bullet_mass_inertia_frame:femur_RR",
+      "passed": true,
+      "mass_error_kg": 0.0,
+      "com_local_error_m": 5.745404152435185e-15,
+      "inertia_error_kg_m2": 5.649220067263552e-16,
+      "position_error_m": 9.88626464026865e-09,
+      "rotation_matrix_error": 6.67041555324488e-08
+    },
+    {
+      "name": "bullet_mass_inertia_frame:tibia_RR",
+      "passed": true,
+      "mass_error_kg": 0.0,
+      "com_local_error_m": 2.650310526597366e-14,
+      "inertia_error_kg_m2": 2.065750833906484e-16,
+      "position_error_m": 2.3655771008712634e-08,
+      "rotation_matrix_error": 3.7350714909845095e-08
+    },
+    {
+      "name": "bullet_mass_inertia_frame:phone_pan",
+      "passed": true,
+      "mass_error_kg": 0.0,
+      "com_local_error_m": 2.222397613160787e-15,
+      "inertia_error_kg_m2": 1.0842021724855044e-19,
+      "position_error_m": 1.0620643475789393e-08,
+      "rotation_matrix_error": 1.1939498473223509e-08
+    },
+    {
+      "name": "whole_robot_world_com",
+      "passed": true,
+      "maximum_error_m": 3.041806491126965e-14
+    },
+    {
+      "name": "inputs_unchanged_during_audit",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "scope": "Mass aggregation, analytical box inertia, CAD mesh identity, phone collision dimensions, and kinematic frames. This audit does not test walking, contact dynamics, print fit, or physical material properties.",
+  "pose_probe": {
+    "base_position_m": [
+      -0.2,
+      0.1,
+      0.3
+    ],
+    "base_rpy_deg": [
+      5,
+      -7,
+      12
+    ],
+    "leg_angles_deg": {
+      "FL": [
+        10,
+        30,
+        75
+      ],
+      "FR": [
+        -5,
+        20,
+        60
+      ],
+      "RL": [
+        20,
+        15,
+        90
+      ],
+      "RR": [
+        -15,
+        25,
+        80
+      ]
+    },
+    "phone_pan_deg": 60
+  },
+  "failed_checks": [],
+  "passed": true
+}

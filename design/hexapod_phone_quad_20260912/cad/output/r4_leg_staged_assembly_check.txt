@@ -1,0 +1,50 @@
+R4 staged assembly addendum
+
+Original complete-assembly diagnostic passed: False
+Corrected complete-assembly service access passed: False
+Staged nut assembly passed: True
+Corrected screw and driver access passed: True
+Accepted staged assembly gate passed: True
+
+The planned clamp screw stack uses a 0.5 mm head washer.
+Raw under-head Y=16.865 mm; M3 x 35 tip Y=-18.135 mm; seated driver begins at Y=19.865 mm.
+
+Staged check:
+  counts: {'clamps': 3, 'clamp_bolts': 9, 'tools': 47, 'tool_part_pairs': 119, 'boolean_pairs_tested': 61, 'blocked_pairs': 0, 'blocked_tools': 0, 'errors': 0, 'contacts_without_blocking_volume': 27}
+  scope: Continuous entry of all nine nuts into bare printed carriers, followed by seated hardware checks with each carrier's own servo and cap.
+  procedure: ["Preload the bare yaw saddle, hip coxa carrier and knee femur carrier before installing their servos or caps. Keep the hip lower arm, surrounding femur and tibia assemblies absent. The hip carrier's integrated post remains present.", 'For all yaw nuts, the hip rear nut and all knee nuts, align the nut flats to the printed trap and feed from the open negative raw-Y side. The checked continuous entry begins with the nut rear face at raw Y=-60 mm and ends at Y=-16.1 mm.', 'For the hip front lower nut at raw X=13.915, Z=-23 mm, hold its thickness at raw Y=-20 to -17.6 mm and slide its center from raw Z=-40 to -23 mm through the side opening.', 'For the hip front upper nut at raw X=13.915, Z=-7 mm, hold the same raw-Y thickness interval and slide its center from raw Z=5 to -7 mm through the opposite side opening.', 'After either hip front nut reaches its bolt axis, translate it 3.9 mm along positive raw Y. Its seated interval is Y=-16.1 to -13.7 mm. This lateral-then-axial route avoids assuming the nut starts inside the reopened channel.', 'Keep each nut seated while installing its servo and cap. Place a 0.5 mm OD7/ID3.2 head washer under each M3 x 35 screw, then engage the nut from the cap side before fitting surrounding leg assemblies.', 'For later hip nut removal or replacement, remove surrounding parts to recover the bare-carrier access used here. The original assembled-leg nut-tool obstructions remain reported separately.']
+  limitations: ['Entry sweeps use a filled nut exterior, conservatively including its thread hole. Seated nuts use a simple 3 mm bore; thread geometry and tightening are not simulated.', 'The nominal matching-flat clearance is 0.1 mm per side and needs a printed fit check.', 'The checks establish a route for the nut itself, not clearance for fingers, a wrench or a particular nut-holding tool.', 'Keeping a loose nut seated during servo and cap installation remains a physical assembly task.', 'Servo and cap insertion motions are not swept; their final seated relationship to the nuts, screws and washers is checked.', 'These staged checks deliberately exclude the body, lower arm and surrounding moving links before they are fitted. They do not replace the full assembled-leg service-access report.', 'Physical fit, plastic deformation, washer tolerances and thread engagement remain unverified.', "Input parts must come from the production build matching the recorded sources. Before/after hashes detect file changes during this check, not the caller's earlier shape construction."]
+
+Corrected complete-assembly access counts: {'clamps': 3, 'clamp_bolts': 9, 'tools': 54, 'tool_part_pairs': 1242, 'boolean_pairs_tested': 95, 'blocked_pairs': 7, 'blocked_tools': 4, 'errors': 0, 'contacts_without_blocking_volume': 18, 'seated_screw_shank_blocked_tools': 0, 'screw_head_insertion_blocked_tools': 0, 'driver_at_seated_head_blocked_tools': 0, 'nut_insertion_blocked_tools': 1, 'nut_holding_tube_blocked_tools': 3, 'seated_head_washer_blocked_tools': 0}
+Corrected service obstructions retained:
+  hip_clamp_1_nut_insertion against femur_main_and_knee_saddle: 10.278212663465032 mm3
+  hip_clamp_1_nut_holding_tube against femur_main_and_knee_saddle: 35.573783892686116 mm3
+  hip_clamp_1_nut_holding_tube against case_cap_knee: 32.814791075575194 mm3
+  hip_clamp_2_nut_holding_tube against coxa_upper_and_hip_saddle: 87.06062977492904 mm3
+  hip_clamp_2_nut_holding_tube against coxa_lower_auxiliary_arm: 53.51803649696063 mm3
+  hip_clamp_3_nut_holding_tube against coxa_upper_and_hip_saddle: 94.69664096245873 mm3
+  hip_clamp_3_nut_holding_tube against coxa_lower_auxiliary_arm: 53.51803649696036 mm3
+
+Addendum source SHA256 before:
+  leg.py: 1a639aa397653f70e02f5a519141c79ba87daa72e799c2b948728b7bd39bcabf
+  servo_contract.py: eeb09be505f2a4e80cd710d193592099df1f98f849f7ce3eac0f1ba1d3f2dcaa
+  geom.py: 655e7d2b8b05226cc9e0f3782dcd1a58599dd81226b6e918c60eac91f5526626
+  check_leg.py: 72556a40ce65fed06b31523d72f7804dae88b2fac4a62c3c7a304424c7ca3f64
+  check_r4_leg_interfaces.py: 35251df92cee354c44b300928bd31b059041b60da4cbd4d8ee023cddea1346ff
+  check_r4_clamp_access.py: 19860e0bbbc8fbae7b984dc6d7de54f183b12ed42fa8aa92f78118d8751cb904
+  hardware/ST3215.step: 58e38e4dc49f97df738c5f229f9aa8a7dce64a0a1d01335486a52d53e6017e8a
+  check_r4_staged_nuts.py: 9605c2af94e47a7666349c5a13b1400248ccc9ffdfaea89344c69d4d4bb2d131
+  add_r4_staged_nut_check.py: 41b16b5f0ae56b708e37ff29aa1e48696c34b43b222950c2af1fce16b30cd86a
+
+Addendum source SHA256 after:
+  leg.py: 1a639aa397653f70e02f5a519141c79ba87daa72e799c2b948728b7bd39bcabf
+  servo_contract.py: eeb09be505f2a4e80cd710d193592099df1f98f849f7ce3eac0f1ba1d3f2dcaa
+  geom.py: 655e7d2b8b05226cc9e0f3782dcd1a58599dd81226b6e918c60eac91f5526626
+  check_leg.py: 72556a40ce65fed06b31523d72f7804dae88b2fac4a62c3c7a304424c7ca3f64
+  check_r4_leg_interfaces.py: 35251df92cee354c44b300928bd31b059041b60da4cbd4d8ee023cddea1346ff
+  check_r4_clamp_access.py: 19860e0bbbc8fbae7b984dc6d7de54f183b12ed42fa8aa92f78118d8751cb904
+  hardware/ST3215.step: 58e38e4dc49f97df738c5f229f9aa8a7dce64a0a1d01335486a52d53e6017e8a
+  check_r4_staged_nuts.py: 9605c2af94e47a7666349c5a13b1400248ccc9ffdfaea89344c69d4d4bb2d131
+  add_r4_staged_nut_check.py: 41b16b5f0ae56b708e37ff29aa1e48696c34b43b222950c2af1fce16b30cd86a
+
+Changed addendum sources: []

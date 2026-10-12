@@ -1,0 +1,450 @@
+{
+  "id": "planning",
+  "version": 8,
+  "tool": "built-in image_gen.imagegen",
+  "sourceFile": "planning.png",
+  "width": 1536,
+  "height": 1024,
+  "mode": "RGBA",
+  "grid": {
+    "columns": 6,
+    "rows": 4,
+    "cellWidth": 256,
+    "cellHeight": 256,
+    "order": "row-major"
+  },
+  "frameCount": 24,
+  "phases": {
+    "enter": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "loop": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "exit": [
+      20,
+      21,
+      22,
+      23
+    ]
+  },
+  "promptFiles": [
+    "../prompts/planning.txt",
+    "../prompts/planning-motion-refine.txt"
+  ],
+  "source": "<LOCAL_HOME>/.codex/generated_images/01a0d42d-f8e3-73d1-a882-79d426450e52/exec-f4c3db7b-e610-4584-92fe-b82a3db7113b.png",
+  "sha256": "9b7a51c135624596bd2b0013fc5f4dbb27f8b65d9b61992129a320b20d06d135",
+  "sourceUnmodified": true,
+  "previousCandidate": "<LOCAL_HOME>/.codex/generated_images/01a0d42d-f8e3-73d1-a882-79d426450e52/exec-86877790-91b4-452b-89e0-305564702087.png",
+  "motion": "A solid bead travels right along a shallow arch and returns left; entrance draws on and exit retracts.",
+  "registration": "Use fixed-arc endpoint registration if mechanically extracting. Do not center each cel on the moving bead. The source remains unchanged.",
+  "review": {
+    "status": "needs_motion_correction",
+    "allCellsVisible": true,
+    "noFaceOrText": true,
+    "transparentBackground": true,
+    "strictSixteenDistinctActivePosesPassed": false,
+    "fixedOutlinePassed": false,
+    "minimumSignificantAlpha": 64,
+    "alphaExtrema": [
+      0,
+      254
+    ],
+    "alphaZeroFraction": 0.965652,
+    "notes": "Original built-in ImageGen RGBA preserved byte-for-byte. Alpha compositing was inspected on a dark diagnostic background without editing either source. Two targeted motion-refinement calls were made, one per sheet. Do not infer semantic pose variety from file count or pixel inequality.",
+    "limitations": [
+      "Active cels7 and8 cluster at nearly the same crest position despite distinct requested coordinates.",
+      "Cels11 and12 cluster near the right turnaround.",
+      "Arc curvature and raw registration are not perfectly fixed between cels.",
+      "Native alpha is present; RGB under zero-alpha pixels contains a teal field and raw viewers can misrepresent it."
+    ]
+  },
+  "cells": [
+    {
+      "index": 0,
+      "row": 0,
+      "column": 0,
+      "phase": "enter",
+      "boundsAlpha64": [
+        64,
+        158,
+        76,
+        171
+      ]
+    },
+    {
+      "index": 1,
+      "row": 0,
+      "column": 1,
+      "phase": "enter",
+      "boundsAlpha64": [
+        52,
+        128,
+        122,
+        173
+      ]
+    },
+    {
+      "index": 2,
+      "row": 0,
+      "column": 2,
+      "phase": "enter",
+      "boundsAlpha64": [
+        46,
+        124,
+        154,
+        174
+      ]
+    },
+    {
+      "index": 3,
+      "row": 0,
+      "column": 3,
+      "phase": "enter",
+      "boundsAlpha64": [
+        40,
+        124,
+        213,
+        174
+      ]
+    },
+    {
+      "index": 4,
+      "row": 0,
+      "column": 4,
+      "phase": "loop",
+      "boundsAlpha64": [
+        33,
+        124,
+        207,
+        173
+      ],
+      "beadCenterEstimate": [
+        41.96,
+        162.52
+      ],
+      "beadFractionOfVisibleArcWidthEstimate": 0.0515
+    },
+    {
+      "index": 5,
+      "row": 0,
+      "column": 5,
+      "phase": "loop",
+      "boundsAlpha64": [
+        33,
+        124,
+        202,
+        169
+      ],
+      "beadCenterEstimate": [
+        63.67,
+        143.45
+      ],
+      "beadFractionOfVisibleArcWidthEstimate": 0.1815
+    },
+    {
+      "index": 6,
+      "row": 1,
+      "column": 0,
+      "phase": "loop",
+      "boundsAlpha64": [
+        59,
+        104,
+        227,
+        151
+      ],
+      "beadCenterEstimate": [
+        119.87,
+        112.87
+      ],
+      "beadFractionOfVisibleArcWidthEstimate": 0.3623
+    },
+    {
+      "index": 7,
+      "row": 1,
+      "column": 1,
+      "phase": "loop",
+      "boundsAlpha64": [
+        54,
+        101,
+        221,
+        151
+      ],
+      "beadCenterEstimate": [
+        142.5,
+        109.5
+      ],
+      "beadFractionOfVisibleArcWidthEstimate": 0.5299
+    },
+    {
+      "index": 8,
+      "row": 1,
+      "column": 2,
+      "phase": "loop",
+      "boundsAlpha64": [
+        48,
+        101,
+        215,
+        151
+      ],
+      "beadCenterEstimate": [
+        143.5,
+        110.5
+      ],
+      "beadFractionOfVisibleArcWidthEstimate": 0.5719
+    },
+    {
+      "index": 9,
+      "row": 1,
+      "column": 3,
+      "phase": "loop",
+      "boundsAlpha64": [
+        43,
+        106,
+        211,
+        151
+      ],
+      "beadCenterEstimate": [
+        159.8,
+        116.8
+      ],
+      "beadFractionOfVisibleArcWidthEstimate": 0.6952
+    },
+    {
+      "index": 10,
+      "row": 1,
+      "column": 4,
+      "phase": "loop",
+      "boundsAlpha64": [
+        37,
+        106,
+        205,
+        151
+      ],
+      "beadCenterEstimate": [
+        176.06,
+        125.38
+      ],
+      "beadFractionOfVisibleArcWidthEstimate": 0.8277
+    },
+    {
+      "index": 11,
+      "row": 1,
+      "column": 5,
+      "phase": "loop",
+      "boundsAlpha64": [
+        32,
+        106,
+        200,
+        151
+      ],
+      "beadCenterEstimate": [
+        185.76,
+        135.62
+      ],
+      "beadFractionOfVisibleArcWidthEstimate": 0.9153
+    },
+    {
+      "index": 12,
+      "row": 2,
+      "column": 0,
+      "phase": "loop",
+      "boundsAlpha64": [
+        59,
+        84,
+        227,
+        129
+      ],
+      "beadCenterEstimate": [
+        207.94,
+        111.71
+      ],
+      "beadFractionOfVisibleArcWidthEstimate": 0.8866
+    },
+    {
+      "index": 13,
+      "row": 2,
+      "column": 1,
+      "phase": "loop",
+      "boundsAlpha64": [
+        54,
+        83,
+        221,
+        129
+      ],
+      "beadCenterEstimate": [
+        193.16,
+        103.25
+      ],
+      "beadFractionOfVisibleArcWidthEstimate": 0.8333
+    },
+    {
+      "index": 14,
+      "row": 2,
+      "column": 2,
+      "phase": "loop",
+      "boundsAlpha64": [
+        48,
+        81,
+        215,
+        129
+      ],
+      "beadCenterEstimate": [
+        153.0,
+        90.0
+      ],
+      "beadFractionOfVisibleArcWidthEstimate": 0.6287
+    },
+    {
+      "index": 15,
+      "row": 2,
+      "column": 3,
+      "phase": "loop",
+      "boundsAlpha64": [
+        43,
+        77,
+        210,
+        129
+      ],
+      "beadCenterEstimate": [
+        127.14,
+        86.0
+      ],
+      "beadFractionOfVisibleArcWidthEstimate": 0.5038
+    },
+    {
+      "index": 16,
+      "row": 2,
+      "column": 4,
+      "phase": "loop",
+      "boundsAlpha64": [
+        37,
+        80,
+        205,
+        129
+      ],
+      "beadCenterEstimate": [
+        106.71,
+        88.29
+      ],
+      "beadFractionOfVisibleArcWidthEstimate": 0.415
+    },
+    {
+      "index": 17,
+      "row": 2,
+      "column": 5,
+      "phase": "loop",
+      "boundsAlpha64": [
+        32,
+        83,
+        200,
+        129
+      ],
+      "beadCenterEstimate": [
+        67.46,
+        100.36
+      ],
+      "beadFractionOfVisibleArcWidthEstimate": 0.2111
+    },
+    {
+      "index": 18,
+      "row": 3,
+      "column": 0,
+      "phase": "loop",
+      "boundsAlpha64": [
+        59,
+        64,
+        227,
+        109
+      ],
+      "beadCenterEstimate": [
+        80.07,
+        90.2
+      ],
+      "beadFractionOfVisibleArcWidthEstimate": 0.1254
+    },
+    {
+      "index": 19,
+      "row": 3,
+      "column": 1,
+      "phase": "loop",
+      "boundsAlpha64": [
+        53,
+        63,
+        221,
+        109
+      ],
+      "beadCenterEstimate": [
+        62.0,
+        97.0
+      ],
+      "beadFractionOfVisibleArcWidthEstimate": 0.0536
+    },
+    {
+      "index": 20,
+      "row": 3,
+      "column": 2,
+      "phase": "exit",
+      "boundsAlpha64": [
+        45,
+        62,
+        159,
+        111
+      ]
+    },
+    {
+      "index": 21,
+      "row": 3,
+      "column": 3,
+      "phase": "exit",
+      "boundsAlpha64": [
+        40,
+        63,
+        141,
+        111
+      ]
+    },
+    {
+      "index": 22,
+      "row": 3,
+      "column": 4,
+      "phase": "exit",
+      "boundsAlpha64": [
+        33,
+        65,
+        102,
+        111
+      ]
+    },
+    {
+      "index": 23,
+      "row": 3,
+      "column": 5,
+      "phase": "exit",
+      "boundsAlpha64": [
+        34,
+        96,
+        48,
+        110
+      ]
+    }
+  ]
+}

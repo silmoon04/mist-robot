@@ -1,0 +1,660 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MIST single-leg calibration and IK</title>
+<style>
+  :root {
+    --bg:#0f1115; --panel:#171a21; --line:#2a303d; --ink:#e8ebf2;
+    --dim:#929bad; --blue:#55a8ff; --green:#42d98b; --amber:#ffb33f; --red:#ff6767;
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; color:var(--ink); background:var(--bg); font:13px/1.5 ui-monospace,"Cascadia Code",Consolas,monospace; }
+  header { display:flex; gap:14px; align-items:center; padding:12px 18px; border-bottom:1px solid var(--line); background:var(--panel); }
+  h1 { margin:0; font-size:14px; letter-spacing:.04em; }
+  h2 { margin:0 0 10px; color:var(--dim); font-size:11px; text-transform:uppercase; letter-spacing:.1em; }
+  a { color:var(--blue); text-decoration:none; }
+  .spacer { flex:1; }
+  .grid { display:grid; grid-template-columns:minmax(520px,1.15fr) minmax(420px,.85fr); gap:14px; padding:14px; }
+  @media(max-width:1000px) { .grid { grid-template-columns:1fr; } }
+  .panel { margin-bottom:14px; padding:13px; border:1px solid var(--line); border-radius:8px; background:var(--panel); }
+  .row { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+  .row > * { flex:1; }
+  button,select,input { padding:7px 9px; color:var(--ink); background:#0c0e12; border:1px solid var(--line); border-radius:5px; font:inherit; }
+  button { cursor:pointer; background:#232937; }
+  button:hover { border-color:var(--blue); }
+  button.primary { color:#041222; background:var(--blue); border-color:var(--blue); font-weight:700; }
+  button.danger { color:#2b0000; background:var(--red); border-color:var(--red); font-weight:700; }
+  input[type=number] { width:100%; }
+  label { display:block; margin:7px 0 3px; color:var(--dim); font-size:11px; }
+  table { width:100%; border-collapse:collapse; }
+  th,td { padding:7px 6px; text-align:left; border-bottom:1px solid var(--line); }
+  th { color:var(--dim); font-size:10px; text-transform:uppercase; letter-spacing:.06em; }
+  td.num { text-align:right; font-variant-numeric:tabular-nums; }
+  .pill { display:inline-flex; gap:7px; align-items:center; padding:3px 9px; border:1px solid var(--line); border-radius:99px; }
+  .dot { width:8px; height:8px; border-radius:50%; background:var(--dim); }
+  .dot.ok { background:var(--green); } .dot.warn { background:var(--amber); } .dot.bad { background:var(--red); }
+  .hint { margin-top:7px; color:var(--dim); font-size:11px; }
+  .warning { padding:9px 11px; border-left:3px solid var(--amber); background:#241d10; color:#ffd795; }
+  .danger-zone { border-color:#5b2b2b; }
+  .good { color:var(--green); } .bad { color:var(--red); } .warn { color:var(--amber); }
+  pre { min-height:90px; margin:0; padding:10px; overflow:auto; border:1px solid var(--line); border-radius:6px; background:#0c0e12; white-space:pre-wrap; }
+  svg { display:block; width:100%; height:360px; border:1px solid var(--line); border-radius:7px; background:#0c0e12; }
+  #diagram { touch-action:none; cursor:crosshair; user-select:none; }
+  .axis { stroke:#354052; stroke-width:1; }
+  .main-link { stroke:var(--blue); stroke-width:7; stroke-linecap:round; }
+  .fourbar-link { stroke:var(--green); stroke-width:5; stroke-linecap:round; }
+  .short-link { stroke:var(--amber); stroke-width:6; stroke-linecap:round; }
+  .joint { fill:#0c0e12; stroke:#c7dcff; stroke-width:3; } .target { fill:none; stroke:var(--amber); stroke-width:2; }
+  .passive { fill:#0c0e12; stroke:var(--green); stroke-width:2; }
+  .servo-ring { fill:#17263a; stroke:var(--amber); stroke-width:3; }
+  .workspace-envelope { fill:rgba(66,217,139,.08); stroke:rgba(66,217,139,.38); stroke-width:1.5; stroke-dasharray:4 4; }
+  .rom-arc { fill:none; stroke-width:10; opacity:.16; stroke-linecap:round; }
+  .position-span { fill:none; stroke-width:2; opacity:.48; stroke-dasharray:5 4; }
+  .cursor-target { fill:none; stroke:#d7dde8; stroke-width:1.5; stroke-dasharray:3 3; opacity:.55; }
+  .caption { fill:#9ba5b7; font:11px ui-monospace,monospace; }
+  .value { color:var(--ink); font-variant-numeric:tabular-nums; }
+</style>
+</head>
+<body>
+<header>
+  <h1>MIST SINGLE-LEG CALIBRATION + IK</h1>
+  <span class="pill"><span class="dot" id="bus-dot"></span><span id="bus-state">checking server</span></span>
+  <span class="spacer"></span>
+  <a href="/">SERVO BENCH</a>
+  <button class="danger" id="estop">TORQUE OFF ALL</button>
+</header>
+
+<div class="grid">
+  <main>
+    <section class="panel">
+      <h2>Safety gate</h2>
+      <div class="warning">Clamp the hip fixture before powered testing. Use metal joint pins for powered motion. Calibration capture only reads positions and refuses to run while torque is enabled.</div>
+      <div class="row" style="margin-top:10px">
+        <button class="primary" id="check">Check IDs, rail and torque state</button>
+        <button id="pose">Read current pose</button>
+        <button id="live">Start live hardware pose</button>
+      </div>
+      <pre id="check-output">Connect and scan the three servos in the Servo Bench first.</pre>
+    </section>
+
+    <section class="panel">
+      <h2>Physical calibration</h2>
+      <table>
+        <thead><tr><th>Role</th><th>ID</th><th>Reference</th><th>Direction</th><th>Endpoint A</th><th>Endpoint B</th><th>Sorted raw range</th></tr></thead>
+        <tbody id="roles"></tbody>
+      </table>
+      <div class="row" style="margin-top:11px">
+        <button id="neutral">Capture printed-reference ticks</button>
+        <span id="ready" class="warn">not calibrated</span>
+      </div>
+      <div class="hint">Printed reference: yaw centred, femur horizontal/outward, tibia vertical down, 40 mm driver and follower vertical up, and 110 mm coupler parallel to the femur. In the logical model this is q1 = 0°, q2 = +90°, q3 = -90° and knee-driver angle = 0°.</div>
+      <div class="hint">To find each direction, use the Servo Bench for one small 16-32 tick jog. Positive roll moves toward +Y, positive hip moves the leg outward in +X, and positive knee-driver moves the tibia's absolute angle outward. Return to the printed reference after every jog.</div>
+      <div class="hint">Endpoint A and B are physical safe ends, not “up = upper” and “down = lower”. Capture them in either order; the page sorts their tick numbers automatically. Stop before hard contact and leave clearance for flex and bearing play.</div>
+      <div class="hint warn">The knee equation is exact only if both proximal servo axes are coaxial, driver = follower centre distance, coupler = femur centre distance, and all pivot axes are parallel. Measure those four conditions before powered coordinated motion.</div>
+      <div class="hint warn">Raw ranges alone cannot prevent four-bar collisions. Fusion cleared relative input from -30° to +40°; first commissioning keeps a 5° margin, so the page enforces -25° to +35°, equivalent to q3 from -115° to -55°.</div>
+    </section>
+
+    <section class="panel">
+      <h2>Inverse kinematics dry-run</h2>
+      <div class="row">
+        <div><label>X outward (mm)</label><input id="x" type="number" step="1" value="120"></div>
+        <div><label>Y lateral (mm)</label><input id="y" type="number" step="1" value="0"></div>
+        <div><label>Z up (mm; down is negative)</label><input id="z" type="number" step="1" value="-120"></div>
+        <div><label>Knee branch</label><select id="branch"><option value="-1">-1 spider branch</option><option value="1">+1 alternate</option></select></div>
+      </div>
+      <div class="row" style="margin-top:10px">
+        <button class="primary" id="solve">Calculate joint angles and servo ticks</button>
+        <button id="reference">Load printed reference pose</button>
+      </div>
+      <pre id="ik-output">No target calculated yet.</pre>
+      <div class="hint">IK remains a dry-run unless the separate guarded motion panel is explicitly armed. A target is motor-eligible only after all reference ticks, signs and physical endpoints are captured and every raw and coupled limit passes.</div>
+    </section>
+
+    <section class="panel danger-zone">
+      <h2>Guarded physical drag motion</h2>
+      <div class="warning">Arming enables all three motors. Clamp the yaw base, use metal pivot pins, remove the foot load, keep hands and wires out of the linkage, and stay beside TORQUE OFF ALL.</div>
+      <label class="row" style="margin-top:10px;align-items:flex-start">
+        <input id="motion-confirm" type="checkbox" style="flex:0 0 auto;margin-top:3px">
+        <span>I confirm the fixture is clamped, metal pins are installed, the mechanism is unloaded, and the swept area is clear.</span>
+      </label>
+      <label>Motion speed <span id="motion-speed-label" class="value"></span></label>
+      <input id="motion-speed" type="range" min="10" max="100" value="70" step="5">
+      <div class="row" style="margin-top:9px">
+        <button id="arm" class="danger" disabled>Arm drag motion</button>
+        <button id="disarm">Disarm / torque off</button>
+      </div>
+      <pre id="motion-output">DISARMED. Dragging is simulation-only.</pre>
+      <div class="hint">After arming, press and hold in the side view while dragging. Releasing holds the last valid pose; use Disarm or TORQUE OFF ALL when finished. The default 70% profile runs a 30 Hz loop near 116°/s. The 30% temporary torque limit, 800 mA trip, 50 °C trip, 750 ms deadman and 60 s arm window stay fixed at every speed.</div>
+    </section>
+  </main>
+
+  <aside>
+    <section class="panel">
+      <h2>Exact test-leg model</h2>
+      <table id="geometry"></table>
+      <table id="rom-table"></table>
+    </section>
+    <section class="panel">
+      <h2>Side view: complete 40/110/40/110 linkage</h2>
+      <svg id="diagram" viewBox="0 0 480 360" aria-label="leg kinematics side view">
+        <path id="workspace-envelope" class="workspace-envelope"></path>
+        <path id="hip-position-span" class="position-span" stroke="#55a8ff"></path>
+        <path id="knee-position-span" class="position-span" stroke="#ffb33f"></path>
+        <path id="hip-rom-arc" class="rom-arc" stroke="#55a8ff"></path>
+        <path id="knee-rom-arc" class="rom-arc" stroke="#ffb33f"></path>
+        <path id="driver-rom-arc" class="rom-arc" stroke="#42d98b"></path>
+        <line id="axis-x" class="axis"></line><line id="axis-down" class="axis"></line>
+        <text id="axis-x-label" class="caption">+X</text><text id="axis-down-label" class="caption">down</text>
+        <line id="coxa" class="main-link"></line><line id="femur" class="main-link"></line><line id="tibia" class="main-link"></line>
+        <line id="driver" class="short-link"></line><line id="coupler" class="fourbar-link"></line><line id="follower" class="short-link"></line>
+        <circle id="pitch-servos" class="servo-ring" r="11"></circle>
+        <circle id="j0" class="joint" r="7"></circle><circle id="j1" class="joint" r="7"></circle><circle id="j2" class="joint" r="7"></circle><circle id="tip" class="joint" r="7"></circle>
+        <circle id="driver-tip" class="passive" r="5"></circle><circle id="follower-tip" class="passive" r="5"></circle>
+        <circle id="target" class="target" r="11"></circle>
+        <circle id="cursor-target" class="cursor-target" r="9"></circle>
+        <text id="roll-label" class="caption" x="14" y="18"></text>
+        <path id="roll-rom-arc" class="rom-arc" stroke="#b98bff"></path>
+        <circle id="roll-inset-centre" cx="420" cy="72" r="3" fill="#b98bff"></circle>
+        <line id="roll-current" x1="420" y1="72" x2="420" y2="44" stroke="#b98bff" stroke-width="2"></line>
+        <text class="caption" x="388" y="111">yaw ROM</text>
+        <line class="main-link" x1="16" y1="332" x2="38" y2="332"></line><text class="caption" x="44" y="336">femur / tibia</text>
+        <line class="fourbar-link" x1="155" y1="332" x2="177" y2="332"></line><text class="caption" x="183" y="336">coupler</text>
+        <line class="short-link" x1="255" y1="332" x2="277" y2="332"></line><text class="caption" x="283" y="336">driver / follower</text>
+      </svg>
+      <div id="yaw-wheel-status" class="hint value">Mouse wheel yaw: 0.0°. Scroll up = +yaw, scroll down = -yaw.</div>
+      <div class="hint">Drag anywhere inside the side view to move the amber target. Use the mouse wheel over the diagram for yaw: up is positive, down is negative. Wheel yaw also works while armed and holding, without pressing the mouse button.</div>
+      <div class="hint">The translucent green region is the maximum calibrated Cartesian span. Broad low-opacity arcs show raw joint ROM. Dashed blue and amber curves show the foot span from sweeping only hip or knee at the displayed pose; the purple inset shows yaw ROM. A pale dashed circle shows the unconstrained cursor when it is clamped to the amber valid target.</div>
+      <div class="hint">The two pitch servos are coaxial at the amber-ringed pivot. Driver and follower stay parallel; coupler and femur stay parallel. The drawing projects Y/Z onto radial-down distance, so hip roll is shown as a number.</div>
+      <pre id="live-output">Live hardware pose is off.</pre>
+    </section>
+  </aside>
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+const labels = { roll:'hip roll / coxa', hip:'femur / hip pitch', knee_driver:'remote knee driver' };
+let config = null, workspace = null, dragCursor = null;
+let diagramMap = null, draggingTarget = false, dragFrame = null, solveSequence = 0, liveTimer = null;
+let motionToken = null, heartbeatTimer = null, pendingMotion = null, motionInFlight = false;
+let dragYawRad = 0, yawWheelDegrees = 0, yawWheelFrame = null;
+
+async function api(path, body) {
+  const options = body ? { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body) } : {};
+  const response = await fetch(path, options);
+  const data = await response.json().catch(() => ({error:'bad response'}));
+  if (!response.ok || data.error) throw new Error(data.error || response.statusText);
+  return data;
+}
+
+function setMotionUi(message, cls='') {
+  $('motion-output').textContent=message;
+  $('motion-output').className=cls;
+  $('arm').textContent=motionToken?'ARMED: hold and drag':'Arm drag motion';
+}
+
+function clearMotionLocal(reason='DISARMED') {
+  motionToken=null;
+  pendingMotion=null;
+  if(heartbeatTimer){clearInterval(heartbeatTimer);heartbeatTimer=null;}
+  setMotionUi(`${reason}. Dragging is simulation-only.`);
+  $('arm').disabled=!$('motion-confirm').checked;
+  $('motion-speed').disabled=false;
+}
+
+async function disarmMotion(reason='pointer released') {
+  const token=motionToken;
+  clearMotionLocal('DISARMING');
+  try {
+    const data=await api('/api/leg/disarm',{token,reason});
+    setMotionUi(`DISARMED: ${data.reason}; torque off IDs ${data.torque_off.join(', ')||'none'}`,'good');
+  } catch(error) {
+    setMotionUi(`DISARM REQUEST ERROR: ${error.message}. Press TORQUE OFF ALL.`,'bad');
+  }
+}
+
+function startHeartbeat() {
+  if(heartbeatTimer)clearInterval(heartbeatTimer);
+  heartbeatTimer=setInterval(async()=>{
+    if(!motionToken)return;
+    try{
+      const data=await api('/api/leg/heartbeat',{token:motionToken});
+      setMotionUi(`ARMED AND HOLDING\ndeadman ${data.deadman_ms} ms · arm window ${n(data.arm_remaining_s,1)} s\nPress and hold in the side view, then drag. Release = hold last valid pose.`,'warn');
+    }catch(error){clearMotionLocal(`AUTO-DISARMED: ${error.message}`);}
+  },200);
+}
+
+async function pumpMotionTarget(){
+  if(motionInFlight||!motionToken)return;
+  motionInFlight=true;
+  try{
+    while(pendingMotion&&motionToken){
+      const body=pendingMotion;pendingMotion=null;
+      const data=await api('/api/leg/move',{token:motionToken,...body});
+      const projection=data.projection;
+      setMotionUi(`ARMED: FOLLOWING GUARDED TARGET\nrequested ticks ${JSON.stringify(data.ticks)}\ncommanded ${JSON.stringify(data.commanded)}\n${projection.projected?`cursor clamped by ${n(projection.projection_distance_mm)} mm`:'cursor inside envelope'}\ndeadman ${data.deadman_ms} ms`,'warn');
+    }
+  }catch(error){
+    clearMotionLocal(`AUTO-DISARMED: ${error.message}`);
+  }finally{motionInFlight=false;}
+}
+
+function queueMotionTarget(force=false){
+  if(!motionToken||(!draggingTarget&&!force))return;
+  pendingMotion={x_mm:+$('x').value,y_mm:+$('y').value,z_mm:+$('z').value,knee_sign:+$('branch').value};
+  pumpMotionTarget();
+}
+
+function n(value, digits=2) { return value == null ? 'n/a' : Number(value).toFixed(digits); }
+
+async function loadWorkspace(){
+  try{
+    workspace=await api('/api/leg/workspace');
+    const ranges=workspace.ranges_deg;
+    $('rom-table').innerHTML=Object.entries({
+      'calibrated yaw ROM':`${n(ranges.roll[0],1)}°…${n(ranges.roll[1],1)}°`,
+      'calibrated hip ROM':`${n(ranges.hip[0],1)}°…${n(ranges.hip[1],1)}°`,
+      'driver absolute ROM':`${n(ranges.knee_driver_absolute[0],1)}°…${n(ranges.knee_driver_absolute[1],1)}°`,
+      'coupled knee q3 ROM':`${n(ranges.knee_relative[0],1)}°…${n(ranges.knee_relative[1],1)}°`,
+    }).map(([key,value])=>`<tr><td>${key}</td><td class="num">${value}</td></tr>`).join('');
+  }catch(_){workspace=null;$('rom-table').innerHTML='';}
+}
+
+async function loadConfig() {
+  const data = await api('/api/leg/config');
+  config = data.config;
+  $('geometry').innerHTML = Object.entries({
+    'hip offset d1': config.geometry.hip_offset_mm + ' mm',
+    'femur': config.geometry.femur_mm + ' mm',
+    'tibia': config.geometry.tibia_mm + ' mm',
+    'driver / follower': `${config.linkage.driver_mm} / ${config.linkage.follower_mm} mm`,
+    'coupler / femur': `${config.linkage.coupler_mm} / ${config.geometry.femur_mm} mm`,
+    'knee transmission': '1:1 absolute tibia',
+    'servo equation': 'knee driver = q2 + q3',
+    'printed reference': 'q = (0°, +90°, -90°)',
+    'Fusion-cleared input': `${config.linkage.relative_input_min_deg}° to +${config.linkage.relative_input_max_deg}°`,
+    'commissioning input': `${config.linkage.relative_input_min_deg + config.linkage.commissioning_margin_deg}° to +${config.linkage.relative_input_max_deg - config.linkage.commissioning_margin_deg}°`,
+    'commissioning q3': `${config.linkage.reference_q3_deg + config.linkage.relative_input_min_deg + config.linkage.commissioning_margin_deg}° to ${config.linkage.reference_q3_deg + config.linkage.relative_input_max_deg - config.linkage.commissioning_margin_deg}°`
+  }).map(([key,value]) => `<tr><td>${key}</td><td class="num">${value}</td></tr>`).join('');
+  $('roles').innerHTML = Object.entries(config.roles).map(([role,value]) => `
+    <tr>
+      <td>${labels[role]}</td><td class="num">${value.id}</td><td class="num">${value.center_tick ?? 'n/a'} @ ${value.reference_angle_deg}°</td>
+      <td><select class="sign" data-role="${role}"><option value="" ${value.sign == null?'selected':''}>unknown</option><option value="1" ${value.sign===1?'selected':''}>+1</option><option value="-1" ${value.sign===-1?'selected':''}>-1</option></select></td>
+      <td><button class="endpoint" data-role="${role}" data-endpoint="a">${value.endpoint_a_tick ?? 'capture A'}</button></td>
+      <td><button class="endpoint" data-role="${role}" data-endpoint="b">${value.endpoint_b_tick ?? 'capture B'}</button></td>
+      <td class="num">${value.endpoint_a_tick == null || value.endpoint_b_tick == null ? 'capture A + B' : `${value.min_tick}…${value.max_tick}`}</td>
+    </tr>`).join('');
+  $('ready').textContent = data.ready ? 'calibration complete' : 'calibration incomplete';
+  $('ready').className = data.ready ? 'good' : 'warn';
+  document.querySelectorAll('.sign').forEach(select => select.onchange = async event => {
+    if (!event.target.value) return;
+    try {
+      await api('/api/leg/sign', {role:event.target.dataset.role, sign:+event.target.value});
+      await loadConfig();
+    } catch (error) { alert(error.message); }
+  });
+  document.querySelectorAll('.endpoint').forEach(button => button.onclick = async event => {
+    const role = event.target.dataset.role, endpoint = event.target.dataset.endpoint;
+    if (!confirm(`Torque must be OFF on all three servos. Move ${labels[role]} to physical safe endpoint ${endpoint.toUpperCase()}, stopping before contact, then capture its tick? The page will sort A/B numerically.`)) return;
+    try {
+      await api('/api/leg/capture_endpoint', {role, endpoint});
+      await loadConfig();
+    } catch (error) { alert(error.message); }
+  });
+  await loadWorkspace();
+}
+
+async function connectionState() {
+  try {
+    const data = await api('/api/ports');
+    $('bus-dot').className = 'dot ' + (data.connected ? 'ok' : 'warn');
+    $('bus-state').textContent = data.connected ? data.connected + ' connected' : 'bus disconnected';
+  } catch (_) {
+    $('bus-dot').className = 'dot bad'; $('bus-state').textContent = 'server not running';
+  }
+}
+
+$('motion-confirm').onchange=()=>{$('arm').disabled=!$('motion-confirm').checked||!!motionToken;};
+
+function updateMotionSpeedLabel(){
+  const percent=+$('motion-speed').value;
+  const step=Math.round(8+(60-8)*percent/100);
+  const speed=Math.round(100+(1000-100)*percent/100);
+  const acceleration=Math.round(2+(20-2)*percent/100);
+  const degreesPerSecond=step*30*360/4096;
+  $('motion-speed-label').textContent=`${percent}% · ~${n(degreesPerSecond,0)}°/s · ${step} ticks/cycle · servo speed ${speed} · accel ${acceleration}`;
+}
+$('motion-speed').oninput=updateMotionSpeedLabel;
+updateMotionSpeedLabel();
+
+$('arm').onclick=async()=>{
+  if(!$('motion-confirm').checked||motionToken)return;
+  if(!confirm('This will enable torque on IDs 1, 2 and 3 at the current pose. Is the fixture clamped and the linkage area clear?'))return;
+  if(liveTimer!==null){if(typeof liveTimer==='number')clearTimeout(liveTimer);stopLivePose();}
+  $('arm').disabled=true;
+  $('motion-speed').disabled=true;
+  setMotionUi('ARMING: checking telemetry, mode, calibration, current pose and limits…','warn');
+  try{
+    const data=await api('/api/leg/arm',{confirm:true,speed_percent:+$('motion-speed').value});
+    motionToken=data.token;
+    if(data.pose?.tip_mm){
+      $('x').value=n(data.pose.tip_mm.x,1);$('y').value=n(data.pose.tip_mm.y,1);$('z').value=n(data.pose.tip_mm.z,1);
+      await solveTarget();
+    }
+    setMotionUi(`ARMED AND HOLDING CURRENT POSE\nprofile ${data.limits.speed_percent}% · ~${n(data.limits.estimated_deg_s,0)}°/s\ncommanded ${JSON.stringify(data.commanded)}\nPress and hold in the side view, then drag. Release = hold; Disarm = torque off.`,'warn');
+    startHeartbeat();
+  }catch(error){clearMotionLocal(`ARM REFUSED: ${error.message}`);}
+  $('arm').disabled=!$('motion-confirm').checked||!!motionToken;
+};
+
+$('disarm').onclick=()=>disarmMotion('user disarm button');
+
+$('estop').onclick=async()=>{
+  clearMotionLocal('E-STOP REQUESTED');
+  try{
+    const data=await api('/api/estop',{});
+    setMotionUi(`E-STOP: torque off IDs ${data.torque_off.join(', ')||'none'}`,'good');
+  }catch(error){setMotionUi(`E-STOP ERROR: ${error.message}. Disconnect servo power.`,'bad');}
+};
+
+$('check').onclick = async () => {
+  try {
+    const data = await api('/api/leg/check', {});
+    const lines = [];
+    for (const [role,value] of Object.entries(data.roles || {})) {
+      const status = !value.present ? 'NOT FOUND'
+        : !value.register_reads_ok ? 'PING ONLY; registers unreadable'
+        : `tick ${value.position}, ${value.voltage} V, ${value.temperature} C, ${value.current_ma} mA, torque ${value.torque_enabled?'ON':'off'}`;
+      lines.push(`${labels[role]} (ID ${value.id}): ${status}`);
+    }
+    if (data.reason) lines.push(data.reason);
+    lines.push('', data.safe_to_calibrate ? 'PASS: safe to capture torque-off calibration.' : 'NOT READY: fix the warnings below.');
+    if (data.warnings?.length) lines.push(...data.warnings.map(value => '• ' + value));
+    $('check-output').textContent = lines.join('\n');
+    $('check-output').className = data.safe_to_calibrate ? 'good' : 'warn';
+  } catch (error) { $('check-output').textContent = error.message; $('check-output').className = 'bad'; }
+};
+
+$('neutral').onclick = async () => {
+  if (!confirm('Torque must be OFF. Is the leg at the printed reference: femur outward, tibia down, driver/follower up and coupler parallel to femur?')) return;
+  try {
+    const data = await api('/api/leg/capture_neutral', {confirm:true});
+    $('check-output').textContent = 'Captured printed reference: ' + JSON.stringify(data.captured);
+    await loadConfig();
+  } catch (error) { alert(error.message); }
+};
+
+$('pose').onclick = async () => {
+  try {
+    const data = await api('/api/leg/current_pose', {});
+    const lines = ['ticks: ' + JSON.stringify(data.ticks)];
+    if (data.joints_deg) {
+      lines.push(`joints: roll ${n(data.joints_deg.roll)}°, hip ${n(data.joints_deg.hip)}°, knee ${n(data.joints_deg.knee)}°`);
+      lines.push(`tip: x ${n(data.tip_mm.x)} mm, y ${n(data.tip_mm.y)} mm, z ${n(data.tip_mm.z)} mm`);
+      if(data.linkage_check)lines.push(`relative linkage input: ${n(data.linkage_check.relative_input_deg)}° (${data.linkage_check.within_limits?'PASS':'OUTSIDE SAFE REGION'})`);
+      drawSolution({reachable:true,joints_deg:data.joints_deg,servo_deg:data.servo_deg});
+    }
+    if (data.errors?.length) lines.push(...data.errors.map(value => '• ' + value));
+    $('check-output').textContent = lines.join('\n');
+  } catch (error) { $('check-output').textContent = error.message; }
+};
+
+function segment(id, a, b) {
+  const line = $(id); line.setAttribute('x1',a.x); line.setAttribute('y1',a.y); line.setAttribute('x2',b.x); line.setAttribute('y2',b.y);
+}
+
+function marker(id, p) { $(id).setAttribute('cx',p.x); $(id).setAttribute('cy',p.y); }
+
+function pathData(points,close=false){
+  if(!points.length)return '';
+  return points.map((p,index)=>`${index?'L':'M'}${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(' ')+(close?' Z':'');
+}
+
+function angleSamples(minimum,maximum,count=48){
+  return Array.from({length:count+1},(_,index)=>minimum+(maximum-minimum)*index/count);
+}
+
+function drawRomOverlays(q1,q2,q3,hip,knee,map,addPolar){
+  if(!workspace)return;
+  const radians=degrees=>degrees*Math.PI/180;
+  const rollRange=workspace.ranges_deg.roll.map(radians);
+  const hipRange=workspace.ranges_deg.hip.map(radians);
+  const driverRange=workspace.ranges_deg.knee_driver_absolute.map(radians);
+  const kneeRange=workspace.ranges_deg.knee_relative.map(radians);
+
+  const envelope=workspace.envelope.map(point=>map({x:point.x,down:point.down}));
+  $('workspace-envelope').setAttribute('d',pathData(envelope,true));
+
+  const hipArc=angleSamples(hipRange[0],hipRange[1]).map(angle=>map(addPolar(hip,46,angle)));
+  const kneeArc=angleSamples(q2+kneeRange[0],q2+kneeRange[1]).map(angle=>map(addPolar(knee,33,angle)));
+  const followerOffset=config.linkage.follower_to_tibia_deg*Math.PI/180;
+  const driverArc=angleSamples(driverRange[0]+followerOffset,driverRange[1]+followerOffset)
+    .map(angle=>map(addPolar(hip,29,angle)));
+  $('hip-rom-arc').setAttribute('d',pathData(hipArc));
+  $('knee-rom-arc').setAttribute('d',pathData(kneeArc));
+  $('driver-rom-arc').setAttribute('d',pathData(driverArc));
+
+  const hipSpan=[];
+  for(const angle of angleSamples(hipRange[0],hipRange[1],80)){
+    const alpha=angle+q3;
+    if(alpha<driverRange[0]||alpha>driverRange[1]||q3<kneeRange[0]||q3>kneeRange[1])continue;
+    const movingKnee=addPolar(hip,config.geometry.femur_mm,angle);
+    hipSpan.push(map(addPolar(movingKnee,config.geometry.tibia_mm,angle+q3)));
+  }
+  const kneeSpan=[];
+  for(const relative of angleSamples(kneeRange[0],kneeRange[1],80)){
+    const alpha=q2+relative;
+    if(alpha<driverRange[0]||alpha>driverRange[1])continue;
+    kneeSpan.push(map(addPolar(knee,config.geometry.tibia_mm,q2+relative)));
+  }
+  $('hip-position-span').setAttribute('d',pathData(hipSpan));
+  $('knee-position-span').setAttribute('d',pathData(kneeSpan));
+
+  const rollCentre={x:420,y:72},rollRadius=28;
+  const rollArc=angleSamples(rollRange[0],rollRange[1]).map(angle=>({
+    x:rollCentre.x+rollRadius*Math.sin(angle),y:rollCentre.y-rollRadius*Math.cos(angle)}));
+  $('roll-rom-arc').setAttribute('d',pathData(rollArc));
+  const rollEnd={x:rollCentre.x+rollRadius*Math.sin(q1),y:rollCentre.y-rollRadius*Math.cos(q1)};
+  segment('roll-current',rollCentre,rollEnd);
+}
+
+function drawSolution(data) {
+  if (!config) return;
+  const physical = (x, down) => ({x, down});
+  const addPolar = (origin, length, angle) => physical(
+    origin.x + length*Math.sin(angle), origin.down + length*Math.cos(angle));
+  const root = physical(0,0), hip = physical(config.geometry.hip_offset_mm,0);
+  let knee = hip, tip = hip, driverTip = hip, followerTip = hip;
+  let q1=0,q2=0,q3=0;
+  if (data.reachable) {
+    q1=data.joints_deg.roll*Math.PI/180;
+    q2 = data.joints_deg.hip*Math.PI/180;
+    q3 = data.joints_deg.knee*Math.PI/180;
+    const tibiaAngle = q2+q3;
+    const followerOffset = config.linkage.follower_to_tibia_deg*Math.PI/180;
+    knee = addPolar(hip,config.geometry.femur_mm,q2);
+    tip = addPolar(knee,config.geometry.tibia_mm,tibiaAngle);
+    driverTip = addPolar(hip,config.linkage.driver_mm,tibiaAngle+followerOffset);
+    followerTip = addPolar(knee,config.linkage.follower_mm,tibiaAngle+followerOffset);
+    $('roll-label').textContent = `q1 ${n(data.joints_deg.roll)}°   q2 ${n(data.joints_deg.hip)}°   q3 ${n(data.joints_deg.knee)}°   driver ${n(data.servo_deg.knee_driver)}°`;
+  }
+  const targetRadialDown = Math.hypot(+$('y').value,+$('z').value);
+  const wanted = physical(+$('x').value,targetRadialDown);
+  // Fixed workspace mapping avoids a feedback jump while the target is dragged.
+  const minX=-55, maxX=config.geometry.hip_offset_mm+config.geometry.femur_mm+config.geometry.tibia_mm+25;
+  const minD=-55, maxD=config.geometry.femur_mm+config.geometry.tibia_mm+25;
+  const scale=Math.min(400/(maxX-minX),250/(maxD-minD));
+  const offsetX=(480-(maxX-minX)*scale)/2;
+  const offsetY=28;
+  const map=p=>({x:offsetX+(p.x-minX)*scale,y:offsetY+(p.down-minD)*scale});
+  diagramMap={minX,maxX,minD,maxD,scale,offsetX,offsetY};
+  drawRomOverlays(q1,q2,q3,hip,knee,map,addPolar);
+  const r=map(root), h=map(hip), k=map(knee), t=map(tip), d=map(driverTip), f=map(followerTip), w=map(wanted);
+  segment('coxa',r,h); segment('femur',h,k); segment('tibia',k,t);
+  segment('driver',h,d); segment('coupler',d,f); segment('follower',k,f);
+  marker('j0',r); marker('j1',h); marker('pitch-servos',h); marker('j2',k); marker('tip',t);
+  marker('driver-tip',d); marker('follower-tip',f); marker('target',w);
+  if(dragCursor){marker('cursor-target',map(dragCursor));$('cursor-target').style.display='';}
+  else $('cursor-target').style.display='none';
+  const xAxisA=map(physical(minX,0)), xAxisB=map(physical(maxX,0));
+  const dAxisA=map(physical(0,minD)), dAxisB=map(physical(0,maxD));
+  segment('axis-x',xAxisA,xAxisB); segment('axis-down',dAxisA,dAxisB);
+  $('axis-x-label').setAttribute('x',xAxisB.x-20); $('axis-x-label').setAttribute('y',xAxisB.y-7);
+  $('axis-down-label').setAttribute('x',dAxisB.x+6); $('axis-down-label').setAttribute('y',Math.min(316,dAxisB.y));
+}
+
+$('reference').onclick = () => {
+  $('x').value = config.geometry.hip_offset_mm + config.geometry.femur_mm;
+  $('y').value = 0;
+  $('z').value = -config.geometry.tibia_mm;
+  $('branch').value = -1;
+  $('solve').click();
+};
+
+async function solveTarget(projectCursor=false,forceMotion=false) {
+  const sequence=++solveSequence;
+  try {
+    const request={x_mm:+$('x').value,y_mm:+$('y').value,z_mm:+$('z').value,knee_sign:+$('branch').value};
+    let projection=null;
+    let data;
+    if(projectCursor){
+      projection=await api('/api/leg/project',request);
+      data=projection.ik;
+      $('x').value=n(projection.target_mm.x,1);
+      $('y').value=n(projection.target_mm.y,1);
+      $('z').value=n(projection.target_mm.z,1);
+    }else data=await api('/api/leg/ik',request);
+    if(sequence!==solveSequence)return;
+    if (!data.reachable) {
+      $('ik-output').textContent = `UNREACHABLE\n${data.reason}\nplanar reach: ${n(data.workspace_mm.planar_distance)} mm; allowed ${n(data.workspace_mm.minimum)} to ${n(data.workspace_mm.maximum)} mm`;
+      $('ik-output').className = 'bad'; drawSolution(data);
+      if(motionToken)setMotionUi('ARMED: HOLDING LAST VALID POSE\nCursor target is unreachable.','warn');
+      return;
+    }
+    const ticks = Object.entries(data.ticks).map(([role,value]) => `${role}: ${value.requested ?? 'not calibrated'}${value.within_limits===false?' OUTSIDE LIMITS':''}`).join('\n');
+    const linkage=data.linkage_check;
+    const linkageLine=`relative linkage input: ${n(linkage.relative_input_deg)}°; commissioning ${n(linkage.minimum_deg)}°…${n(linkage.maximum_deg)}° (${linkage.within_limits?'PASS':'COLLISION-RISK'}); Fusion edge ${n(linkage.cad_minimum_deg)}°…${n(linkage.cad_maximum_deg)}°`;
+    const projectionLine=projection?.projected?`\ncursor projection: clamped ${n(projection.projection_distance_mm)} mm to nearest valid pose`:'';
+    $('ik-output').textContent = `REACHABLE${projectionLine}\nlogical joints: roll ${n(data.joints_deg.roll)}°, hip ${n(data.joints_deg.hip)}°, relative knee ${n(data.joints_deg.knee)}°\nphysical servos: roll ${n(data.servo_deg.roll)}°, hip ${n(data.servo_deg.hip)}°, knee driver ${n(data.servo_deg.knee_driver)}°\n${linkageLine}\n\n${ticks}\n\ncombined limit result: ${data.within_calibrated_limits == null ? 'raw calibration incomplete' : data.within_calibrated_limits ? 'PASS' : 'FAIL'}\nFK check error: ${data.fk_error_mm.toExponential(2)} mm`;
+    $('ik-output').className = data.within_calibrated_limits === false ? 'bad' : data.within_calibrated_limits === true ? 'good' : 'warn';
+    drawSolution(data);
+    if(motionToken&&(draggingTarget||forceMotion)){
+      if(data.within_calibrated_limits===true)queueMotionTarget(forceMotion);
+      else setMotionUi('ARMED: HOLDING LAST VALID POSE\nTarget failed a calibrated limit.','warn');
+    }
+  } catch (error) {
+    $('ik-output').textContent = error.message;$('ik-output').className = 'bad';
+    if(motionToken)setMotionUi(`ARMED: HOLDING LAST VALID POSE\n${error.message}`,'warn');
+  }
+}
+
+$('solve').onclick=()=>{dragCursor=null;solveTarget(false);};
+
+function stopLivePose(){
+  liveTimer=null;
+  $('live').textContent='Start live hardware pose';
+}
+
+async function livePoseLoop(){
+  if(liveTimer===null)return;
+  try{
+    const data=await api('/api/leg/current_pose',{});
+    const lines=['ticks: '+JSON.stringify(data.ticks)];
+    if(data.joints_deg){
+      const linkage=data.linkage_check;
+      lines.push(`joints: roll ${n(data.joints_deg.roll)}°, hip ${n(data.joints_deg.hip)}°, knee ${n(data.joints_deg.knee)}°`);
+      lines.push(`tip: x ${n(data.tip_mm.x)} mm, y ${n(data.tip_mm.y)} mm, z ${n(data.tip_mm.z)} mm`);
+      lines.push(`relative linkage input: ${n(linkage.relative_input_deg)}° (${linkage.within_limits?'PASS':'OUTSIDE SAFE REGION'})`);
+      drawSolution({reachable:true,joints_deg:data.joints_deg,servo_deg:data.servo_deg});
+    }
+    if(data.errors?.length)lines.push(...data.errors.map(value=>'• '+value));
+    $('live-output').textContent=lines.join('\n');
+    $('live-output').className=data.linkage_check&&!data.linkage_check.within_limits?'bad':'';
+  }catch(error){$('live-output').textContent=error.message;$('live-output').className='bad';}
+  if(liveTimer!==null)liveTimer=setTimeout(livePoseLoop,250);
+}
+
+$('live').onclick=()=>{
+  if(liveTimer!==null){if(typeof liveTimer==='number')clearTimeout(liveTimer);stopLivePose();return;}
+  liveTimer=true;
+  $('live').textContent='Stop live hardware pose';
+  livePoseLoop();
+};
+
+function dragTarget(event){
+  if(!diagramMap)return;
+  const rect=$('diagram').getBoundingClientRect();
+  const viewX=(event.clientX-rect.left)*480/rect.width;
+  const viewY=(event.clientY-rect.top)*360/rect.height;
+  if(viewY>310)return;
+  const x=Math.max(diagramMap.minX,Math.min(diagramMap.maxX,(viewX-diagramMap.offsetX)/diagramMap.scale+diagramMap.minX));
+  const down=Math.max(0,Math.min(diagramMap.maxD,(viewY-diagramMap.offsetY)/diagramMap.scale+diagramMap.minD));
+  const usableDown=down;
+  const lateral=usableDown*Math.sin(dragYawRad);
+  const z=-usableDown*Math.cos(dragYawRad);
+  dragCursor={x,down:usableDown};
+  $('x').value=x.toFixed(1);$('y').value=lateral.toFixed(1);$('z').value=z.toFixed(1);
+  solveTarget(true);
+}
+
+$('diagram').addEventListener('wheel',event=>{
+  event.preventDefault();
+  if(liveTimer!==null){if(typeof liveTimer==='number')clearTimeout(liveTimer);stopLivePose();}
+  if(!yawWheelFrame)dragYawRad=Math.atan2(+$('y').value||0,-(+$('z').value||-1));
+  const magnitude=Math.max(0.1,Math.min(3,Math.abs(event.deltaY)/100));
+  yawWheelDegrees+=(event.deltaY<0?1:-1)*5*magnitude;
+  if(yawWheelFrame)return;
+  yawWheelFrame=requestAnimationFrame(()=>{
+    yawWheelFrame=null;
+    const ranges=workspace?.ranges_deg?.roll||[-90,90];
+    const requested=dragYawRad*180/Math.PI+yawWheelDegrees;
+    yawWheelDegrees=0;
+    const clamped=Math.max(ranges[0],Math.min(ranges[1],requested));
+    dragYawRad=clamped*Math.PI/180;
+    const down=Math.hypot(+$('y').value,+$('z').value);
+    $('y').value=(down*Math.sin(dragYawRad)).toFixed(1);
+    $('z').value=(-down*Math.cos(dragYawRad)).toFixed(1);
+    dragCursor={x:+$('x').value,down};
+    $('yaw-wheel-status').textContent=`Mouse wheel yaw: ${n(clamped,1)}° (${clamped===requested?'inside ROM':'clamped to ROM'}). Scroll up = +yaw, scroll down = -yaw.`;
+    solveTarget(true,true);
+  });
+},{passive:false});
+
+$('diagram').addEventListener('pointerdown',event=>{
+  if(liveTimer!==null){if(typeof liveTimer==='number')clearTimeout(liveTimer);stopLivePose();}
+  dragYawRad=Math.atan2(+$('y').value||0,-(+$('z').value||-1));
+  $('yaw-wheel-status').textContent=`Mouse wheel yaw: ${n(dragYawRad*180/Math.PI,1)}°. Scroll up = +yaw, scroll down = -yaw.`;
+  draggingTarget=true;
+  $('diagram').setPointerCapture(event.pointerId);
+  dragTarget(event);
+});
+$('diagram').addEventListener('pointermove',event=>{
+  if(!draggingTarget)return;
+  if(dragFrame)cancelAnimationFrame(dragFrame);
+  dragFrame=requestAnimationFrame(()=>{dragFrame=null;dragTarget(event);});
+});
+$('diagram').addEventListener('pointerup',event=>{
+  draggingTarget=false;$('diagram').releasePointerCapture(event.pointerId);
+  dragCursor=null;$('cursor-target').style.display='none';
+  if(motionToken)setMotionUi('ARMED: HOLDING LAST VALID POSE\nDrag again or press Disarm / torque off.','warn');
+});
+$('diagram').addEventListener('pointercancel',()=>{
+  draggingTarget=false;dragCursor=null;$('cursor-target').style.display='none';
+  if(motionToken)setMotionUi('ARMED: HOLDING LAST VALID POSE\nPointer cancelled; drag again or disarm.','warn');
+});
+
+window.addEventListener('blur',()=>{if(motionToken)disarmMotion('browser lost focus');});
+document.addEventListener('visibilitychange',()=>{if(document.hidden&&motionToken)disarmMotion('page hidden');});
+window.addEventListener('pagehide',()=>{
+  if(!motionToken)return;
+  fetch('/api/leg/disarm',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({token:motionToken,reason:'page closed'}),keepalive:true}).catch(()=>{});
+});
+
+Promise.all([loadConfig(),connectionState()]).then(() => $('solve').click()).catch(error => {
+  $('bus-dot').className='dot bad'; $('bus-state').textContent=error.message;
+});
+setInterval(connectionState,2000);
+</script>
+</body>
+</html>

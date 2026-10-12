@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "checkedAt": "2026-09-23T23:05:15.075Z",
+  "runtimeSha256": "bf98617fe07d4146372c31cefdf2e17534c703f06e3caa301dc6ba61c09e4e00",
+  "rendererSha256": "3a600d7b08f15bf96c5a74ee353bc01403c09b7bf744e12f9c7c62485ee60f5a",
+  "manifestSha256": "c4d67775ced473b6e2f7d5c9b6fca33357c842ece92603a3a8744e8e227ea571",
+  "checks": [
+    "Original MIST eyes remain active and replacement eye cels are absent",
+    "All nine activities enter, use every loop cel for twelve seconds, remain active until cleared, then exit",
+    "Every activity keeps the original MIST eyes and paints no replacement eye cels",
+    "All 81 ordered activity replacements reject stale completion tokens",
+    "Explicit event ownership prevents an old tool or brain completion from clearing a newer activity",
+    "All forty expression IDs preserve their original left and right source part IDs",
+    "Explicit blinking stays with the original renderer",
+    "Existing audio clock stays unquantized, 120 Hz updates paint at 15 fps, and lip closures and stopped audio update immediately",
+    "Invalid activity names leave the running activity intact, bad manifests use fallback, and destroyed runtimes no longer update"
+  ],
+  "counts": {
+    "lifecycleSamples": 1692,
+    "replacements": 81,
+    "expressions": 40,
+    "speechSamples": 120,
+    "paintsInOneSecond": 15
+  },
+  "limits": [
+    "Canvas calls are inspected with a recording context; this does not rate artistic quality or replace browser review.",
+    "No microphone, provider, or live tool connection is used. Speech is tested against a deterministic audio clock."
+  ]
+}

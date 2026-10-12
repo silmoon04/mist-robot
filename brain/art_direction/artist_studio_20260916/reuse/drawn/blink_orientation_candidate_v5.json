@@ -1,0 +1,1714 @@
+{
+  "version": 5,
+  "checkedAt": "2026-09-23T14:44:44.985Z",
+  "passed": true,
+  "rendererSha256": "0d4ed5beb57469d57735d2e2cc7ec01f3c30003dd300fd9faef5ba5219824b14",
+  "baseRuntimeSha256": "af28cf1903933ade168ff87a8e930a42b5949d0f3a8cfeed44c406a4a6f5921f",
+  "faceDataSha256": "109d1dd2aa286a3090e493aa0f61294a4bb6472985f8916e9c75dfce37e5c98f",
+  "atlasSha256": "229bcecdee62216684b535ee1dfae16536df4a41896c51a88c87621ceb94e4a3",
+  "scope": {
+    "faces": 40,
+    "eyes": 80,
+    "sourceClosedArcChecks": 14,
+    "intentionalAngryTiltChecks": 4,
+    "roundGapClosureChecks": 4,
+    "pngLids": 54,
+    "vectorLids": 26
+  },
+  "criteria": [
+    "Measured transformed PNG ink centerlines from actual drawImage commands, and verified vector squeeze paths against their actual canvas path commands. Reported glyph rotation alone is not used as proof.",
+    "Source closed arcs on faces 16, 21, 22, 23, 26, 29 and 35 retain their curvature sign and endpoint attitude within 12 degrees.",
+    "Angry faces 02 and 04 retain mirrored lid tilt: left positive, right negative, with a broad 5 to 25 degree range.",
+    "Round faces 09 and 20 close within 5 degrees of screen level.",
+    "Ranges are visual acceptance choices, not claims about anatomical correctness."
+  ],
+  "rows": [
+    {
+      "face": "01_angry_01_manual",
+      "role": "eye_L",
+      "part": "open_C_47",
+      "closedVisibleAxisDegrees": 5.282640691870301,
+      "canonicalEndpointAxisDegrees": 7.841398290441506,
+      "canonicalCurve": {
+        "quadratic": -14.465945753162782,
+        "linear": 1.928969917010749,
+        "axis": 7.841398290441506,
+        "width": 16.88019512622227
+      },
+      "closedCurve": {
+        "quadratic": -9.133039929214334,
+        "linear": -0.5403773479955069,
+        "axis": 7.841398290441506,
+        "width": 20.347182874658902
+      },
+      "sourceFile": "sheets/blink_detail_v2.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "01_angry_01_manual",
+      "role": "eye_R",
+      "part": "open_C_42",
+      "closedVisibleAxisDegrees": -14.970881491313941,
+      "canonicalEndpointAxisDegrees": -4.06273710452839,
+      "canonicalCurve": {
+        "quadratic": -3.547124001240346,
+        "linear": -2.1898948709595154,
+        "axis": -4.06273710452839,
+        "width": 15.331544426549016
+      },
+      "closedCurve": {
+        "quadratic": -9.395758909219706,
+        "linear": -4.112951158423862,
+        "axis": -4.06273710452839,
+        "width": 20.001867126046307
+      },
+      "sourceFile": "sheets/blink_detail_v2.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "02_angry_02_manual",
+      "role": "eye_L",
+      "part": "angry_hook_00",
+      "closedVisibleAxisDegrees": 15.844814369145777,
+      "canonicalEndpointAxisDegrees": 1.863839055588507,
+      "canonicalCurve": {
+        "quadratic": -4.404126312952442,
+        "linear": 2.958712634169127,
+        "axis": 1.863839055588507,
+        "width": 15.604866150138694
+      },
+      "closedCurve": {
+        "quadratic": -9.78292091377503,
+        "linear": 5.292033345761733,
+        "axis": 1.863839055588507,
+        "width": 20.29377862937983
+      },
+      "sourceFile": "sheets/blink_detail_v2.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "02_angry_02_manual",
+      "role": "eye_R",
+      "part": "angry_hook_00",
+      "closedVisibleAxisDegrees": -16.276656927251597,
+      "canonicalEndpointAxisDegrees": -5.073839055588471,
+      "canonicalCurve": {
+        "quadratic": -4.40412631295235,
+        "linear": -2.958712634169117,
+        "axis": -5.073839055588471,
+        "width": 15.604866150138683
+      },
+      "closedCurve": {
+        "quadratic": -9.531982592173309,
+        "linear": -4.2692562364277435,
+        "axis": -5.073839055588471,
+        "width": 20.246736187940733
+      },
+      "sourceFile": "sheets/blink_detail_v2.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "03_angry_07_manual",
+      "role": "eye_L",
+      "part": "open_C_48",
+      "closedVisibleAxisDegrees": 1.4005421333255816,
+      "canonicalEndpointAxisDegrees": 1.7393506761141773,
+      "canonicalCurve": {
+        "quadratic": 1.2022239145448133,
+        "linear": -0.4450118927126323,
+        "axis": 1.7393506761141773,
+        "width": 17.47793251748416
+      },
+      "closedCurve": {
+        "quadratic": -8.35314523478283,
+        "linear": -0.08529491815988774,
+        "axis": 1.7393506761141773,
+        "width": 20.86271582723236
+      },
+      "sourceFile": "sheets/slot.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "03_angry_07_manual",
+      "role": "eye_R",
+      "part": "open_C_48",
+      "closedVisibleAxisDegrees": 0.3983052905080772,
+      "canonicalEndpointAxisDegrees": 0.07064932388579355,
+      "canonicalCurve": {
+        "quadratic": 1.2022239145445661,
+        "linear": 0.44501189271261954,
+        "axis": 0.07064932388579355,
+        "width": 17.47793251748415
+      },
+      "closedCurve": {
+        "quadratic": -8.35290196208478,
+        "linear": 0.08129490968564713,
+        "axis": 0.07064932388579355,
+        "width": 20.862135733202464
+      },
+      "sourceFile": "sheets/slot.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "04_angry_08_manual",
+      "role": "eye_L",
+      "part": "angry_hook_00",
+      "closedVisibleAxisDegrees": 16.276656927251615,
+      "canonicalEndpointAxisDegrees": 3.8838390555884943,
+      "canonicalCurve": {
+        "quadratic": -4.404126312952287,
+        "linear": 2.958712634169135,
+        "axis": 3.8838390555884943,
+        "width": 15.604866150138683
+      },
+      "closedCurve": {
+        "quadratic": -9.638310790537494,
+        "linear": 4.706718261750605,
+        "axis": 3.8838390555884943,
+        "width": 20.27816453436666
+      },
+      "sourceFile": "sheets/blink_detail_v2.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "04_angry_08_manual",
+      "role": "eye_R",
+      "part": "angry_hook_00",
+      "closedVisibleAxisDegrees": -16.27665692725161,
+      "canonicalEndpointAxisDegrees": -3.943839055588504,
+      "canonicalCurve": {
+        "quadratic": -4.404126312952181,
+        "linear": -2.9587126341691197,
+        "axis": -3.943839055588504,
+        "width": 15.604866150138683
+      },
+      "closedCurve": {
+        "quadratic": -9.632909367194596,
+        "linear": -4.684630978782802,
+        "axis": -3.943839055588504,
+        "width": 20.27698387955367
+      },
+      "sourceFile": "sheets/blink_detail_v2.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "05_annoyed_01_manual",
+      "role": "eye_L",
+      "part": "droop_hook_08",
+      "closedVisibleAxisDegrees": 1.2308933601713563,
+      "canonicalEndpointAxisDegrees": 13.350773367992865,
+      "canonicalCurve": {
+        "quadratic": -13.891140661688167,
+        "linear": 2.5663901463712864,
+        "axis": 13.350773367992865,
+        "width": 17.322475289666137
+      },
+      "closedCurve": {
+        "quadratic": -9.295428430473388,
+        "linear": -3.8370617769722695,
+        "axis": 13.350773367992865,
+        "width": 20.026425280111592
+      },
+      "sourceFile": "sheets/blink_detail_v2.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "05_annoyed_01_manual",
+      "role": "eye_R",
+      "part": "droop_hook_10",
+      "closedVisibleAxisDegrees": -0.6921850839323582,
+      "canonicalEndpointAxisDegrees": -10.141148267941597,
+      "canonicalCurve": {
+        "quadratic": -15.27364719011973,
+        "linear": -2.773497828687544,
+        "axis": -10.141148267941597,
+        "width": 19.814410788474007
+      },
+      "closedCurve": {
+        "quadratic": -10.41877254495045,
+        "linear": 3.300533220018741,
+        "axis": -10.141148267941597,
+        "width": 22.78342590969247
+      },
+      "sourceFile": "sheets/blink_detail_v2.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "06_annoyed_02_manual",
+      "role": "eye_L",
+      "part": "happy_arc_17",
+      "closedVisibleAxisDegrees": 5.138771058692953,
+      "canonicalEndpointAxisDegrees": 5.138944908694626,
+      "canonicalCurve": {
+        "quadratic": -16.151698020324304,
+        "linear": 0.0000882636260770295,
+        "axis": 5.138944908694626,
+        "width": 15.889595650990405
+      },
+      "closedCurve": {
+        "quadratic": -12.598324456975936,
+        "linear": 0.000012870201367953403,
+        "axis": 5.138944908694626,
+        "width": 15.889595650990408
+      },
+      "sourceFile": "canonical vector path",
+      "renderedAs": "canonical vector squeeze"
+    },
+    {
+      "face": "06_annoyed_02_manual",
+      "role": "eye_R",
+      "part": "happy_arc_17",
+      "closedVisibleAxisDegrees": -7.538771058692956,
+      "canonicalEndpointAxisDegrees": -7.538944908694628,
+      "canonicalCurve": {
+        "quadratic": -16.151698020323902,
+        "linear": -0.00008826362608138012,
+        "axis": -7.538944908694628,
+        "width": 15.889595650990408
+      },
+      "closedCurve": {
+        "quadratic": -12.598324456975645,
+        "linear": -0.00001287020137183899,
+        "axis": -7.538944908694628,
+        "width": 15.889595650990408
+      },
+      "sourceFile": "canonical vector path",
+      "renderedAs": "canonical vector squeeze"
+    },
+    {
+      "face": "07_annoyed_03_manual",
+      "role": "eye_L",
+      "part": "circle_gap_04",
+      "closedVisibleAxisDegrees": 2.192807894728607,
+      "canonicalEndpointAxisDegrees": -6.127362980124776,
+      "canonicalCurve": {
+        "quadratic": -2.309741521284608,
+        "linear": -0.5785396208213223,
+        "axis": -6.127362980124776,
+        "width": 18.48411890771633
+      },
+      "closedCurve": {
+        "quadratic": -9.827957488568712,
+        "linear": 3.4076572550581523,
+        "axis": -6.127362980124776,
+        "width": 21.285917117739213
+      },
+      "sourceFile": "sheets/blink_detail_v2.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "07_annoyed_03_manual",
+      "role": "eye_R",
+      "part": "open_C_43",
+      "closedVisibleAxisDegrees": -3.7752339990333406,
+      "canonicalEndpointAxisDegrees": -9.732269270637765,
+      "canonicalCurve": {
+        "quadratic": -4.4740460777097075,
+        "linear": -2.3145606521303703,
+        "axis": -9.732269270637765,
+        "width": 19.231786200810106
+      },
+      "closedCurve": {
+        "quadratic": -18.002989358324385,
+        "linear": 2.1677711150155616,
+        "axis": -9.732269270637765,
+        "width": 22.372388209190937
+      },
+      "sourceFile": "sheets/v2/eyes_round_loop_arc_v2.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "08_annoyed_04_manual",
+      "role": "eye_L",
+      "part": "chevron_01",
+      "closedVisibleAxisDegrees": -0.5596038058788128,
+      "canonicalEndpointAxisDegrees": 1.13424446898461,
+      "canonicalCurve": {
+        "quadratic": 0.06280616376495136,
+        "linear": -0.01740554966118676,
+        "axis": 1.13424446898461,
+        "width": 13.386716260405219
+      },
+      "closedCurve": {
+        "quadratic": -2.0024231382300397,
+        "linear": -0.33753364233433114,
+        "axis": 1.13424446898461,
+        "width": 16.458498444615934
+      },
+      "sourceFile": "sheets/blink_detail_v2.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "08_annoyed_04_manual",
+      "role": "eye_R",
+      "part": "chevron_01",
+      "closedVisibleAxisDegrees": 0.9873147086635985,
+      "canonicalEndpointAxisDegrees": 0.31575553101538806,
+      "canonicalCurve": {
+        "quadratic": 0.0628061637647797,
+        "linear": 0.017405549661192846,
+        "axis": 0.31575553101538806,
+        "width": 13.386716260405223
+      },
+      "closedCurve": {
+        "quadratic": -1.9890222661875079,
+        "linear": 0.044105695272841895,
+        "axis": 0.31575553101538806,
+        "width": 16.35106024852287
+      },
+      "sourceFile": "sheets/blink_detail_v2.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "09_happy_03_manual",
+      "role": "eye_L",
+      "part": "circle_gap_02",
+      "closedVisibleAxisDegrees": 0.08325499821834423,
+      "canonicalEndpointAxisDegrees": 0.9635251969991708,
+      "canonicalCurve": {
+        "quadratic": 3.7400003701697164,
+        "linear": -2.4960573308625813,
+        "axis": 0.9635251969991708,
+        "width": 18.399635702662895
+      },
+      "closedCurve": {
+        "quadratic": -17.457229399405286,
+        "linear": -0.3158075672688118,
+        "axis": 0.9635251969991708,
+        "width": 21.908022063613654
+      },
+      "sourceFile": "sheets/v2/eyes_round_loop_arc_v2.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "09_happy_03_manual",
+      "role": "eye_R",
+      "part": "circle_gap_02",
+      "closedVisibleAxisDegrees": -0.029539170596048603,
+      "canonicalEndpointAxisDegrees": 0.3464748030008338,
+      "canonicalCurve": {
+        "quadratic": 3.740000370169508,
+        "linear": 2.496057330862571,
+        "axis": 0.3464748030008338,
+        "width": 18.39963570266289
+      },
+      "closedCurve": {
+        "quadratic": -17.447995446628667,
+        "linear": -0.12986943425823128,
+        "axis": 0.3464748030008338,
+        "width": 21.90065999293227
+      },
+      "sourceFile": "sheets/v2/eyes_round_loop_arc_v2.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "10_happy_04_manual",
+      "role": "eye_L",
+      "part": "happy_arc_16",
+      "closedVisibleAxisDegrees": 4.700094995247869,
+      "canonicalEndpointAxisDegrees": 4.699983246690242,
+      "canonicalCurve": {
+        "quadratic": 19.51403016151574,
+        "linear": -0.0007886703679428482,
+        "axis": 4.699983246690242,
+        "width": 16.946791937633154
+      },
+      "closedCurve": {
+        "quadratic": 15.220943528094747,
+        "linear": -0.0005751426087225924,
+        "axis": 4.699983246690242,
+        "width": 16.946791937633165
+      },
+      "sourceFile": "canonical vector path",
+      "renderedAs": "canonical vector squeeze"
+    },
+    {
+      "face": "10_happy_04_manual",
+      "role": "eye_R",
+      "part": "happy_arc_16",
+      "closedVisibleAxisDegrees": 1.519905004752182,
+      "canonicalEndpointAxisDegrees": 1.5200167533097413,
+      "canonicalCurve": {
+        "quadratic": 19.51403016151587,
+        "linear": 0.0007886703679750584,
+        "axis": 1.5200167533097413,
+        "width": 16.94679193763315
+      },
+      "closedCurve": {
+        "quadratic": 15.220943528094589,
+        "linear": 0.000575142608679656,
+        "axis": 1.5200167533097413,
+        "width": 16.94679193763315
+      },
+      "sourceFile": "canonical vector path",
+      "renderedAs": "canonical vector squeeze"
+    },
+    {
+      "face": "11_happy_05_manual",
+      "role": "eye_L",
+      "part": "circle_gap_02",
+      "closedVisibleAxisDegrees": 0.08263560722011117,
+      "canonicalEndpointAxisDegrees": 1.8447205352249363,
+      "canonicalCurve": {
+        "quadratic": -0.0008429404963273507,
+        "linear": 0.00021310725176965745,
+        "axis": 1.8447205352249363,
+        "width": 17.640952573652765
+      },
+      "closedCurve": {
+        "quadratic": -16.94790434912027,
+        "linear": -0.6100380424937785,
+        "axis": 1.8447205352249363,
+        "width": 21.25471728290681
+      },
+      "sourceFile": "sheets/v2/eyes_round_loop_arc_v2.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "11_happy_05_manual",
+      "role": "eye_R",
+      "part": "circle_gap_03",
+      "closedVisibleAxisDegrees": -0.03015856159427302,
+      "canonicalEndpointAxisDegrees": -0.7643950975884594,
+      "canonicalCurve": {
+        "quadratic": -0.0014984360854440317,
+        "linear": -0.0003298378934754817,
+        "axis": -0.7643950975884594,
+        "width": 18.148622106150718
+      },
+      "closedCurve": {
+        "quadratic": -17.180432914587982,
+        "linear": 0.25982207103215377,
+        "axis": -0.7643950975884594,
+        "width": 21.562119394291813
+      },
+      "sourceFile": "sheets/v2/eyes_round_loop_arc_v2.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "12_happy_09_manual",
+      "role": "eye_L",
+      "part": "chevron_01",
+      "closedVisibleAxisDegrees": -0.7467246254744868,
+      "canonicalEndpointAxisDegrees": 1.9442444689846174,
+      "canonicalCurve": {
+        "quadratic": 0.06280616376486609,
+        "linear": -0.017405549661191025,
+        "axis": 1.9442444689846174,
+        "width": 13.386716260405223
+      },
+      "closedCurve": {
+        "quadratic": -2.015596900705091,
+        "linear": -0.627276771099612,
+        "axis": 1.9442444689846174,
+        "width": 16.55397404339517
+      },
+      "sourceFile": "sheets/blink_detail_v2.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "12_happy_09_manual",
+      "role": "eye_R",
+      "part": "chevron_01",
+      "closedVisibleAxisDegrees": 0.8001938890679443,
+      "canonicalEndpointAxisDegrees": -1.7642444689846006,
+      "canonicalCurve": {
+        "quadratic": 0.06280616376495614,
+        "linear": 0.01740554966120032,
+        "axis": -1.7642444689846006,
+        "width": 13.386716260405237
+      },
+      "closedCurve": {
+        "quadratic": -2.013919303450156,
+        "linear": 0.5903266441540054,
+        "axis": -1.7642444689846006,
+        "width": 16.54237252900237
+      },
+      "sourceFile": "sheets/blink_detail_v2.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "13_happy_14_manual",
+      "role": "eye_L",
+      "part": "happy_arc_19",
+      "closedVisibleAxisDegrees": -0.4376373408375028,
+      "canonicalEndpointAxisDegrees": -0.4381396249329262,
+      "canonicalCurve": {
+        "quadratic": 17.044422811352202,
+        "linear": -0.00024208596853376177,
+        "axis": -0.4381396249329262,
+        "width": 16.847861631355155
+      },
+      "closedCurve": {
+        "quadratic": 13.294649811903477,
+        "linear": -0.00001759201105824605,
+        "axis": -0.4381396249329262,
+        "width": 16.847861631355162
+      },
+      "sourceFile": "canonical vector path",
+      "renderedAs": "canonical vector squeeze"
+    },
+    {
+      "face": "13_happy_14_manual",
+      "role": "eye_R",
+      "part": "happy_arc_19",
+      "closedVisibleAxisDegrees": 3.657637340837493,
+      "canonicalEndpointAxisDegrees": 3.6581396249329265,
+      "canonicalCurve": {
+        "quadratic": 17.0444228113524,
+        "linear": 0.00024208596850777884,
+        "axis": 3.6581396249329265,
+        "width": 16.84786163135516
+      },
+      "closedCurve": {
+        "quadratic": 13.294649811903378,
+        "linear": 0.000017592011042638758,
+        "axis": 3.6581396249329265,
+        "width": 16.847861631355173
+      },
+      "sourceFile": "canonical vector path",
+      "renderedAs": "canonical vector squeeze"
+    },
+    {
+      "face": "14_happy_16_manual",
+      "role": "eye_L",
+      "part": "happy_arc_16",
+      "closedVisibleAxisDegrees": -0.40990500475217095,
+      "canonicalEndpointAxisDegrees": -0.4100167533097574,
+      "canonicalCurve": {
+        "quadratic": 19.514030161516192,
+        "linear": -0.000788670367947295,
+        "axis": -0.4100167533097574,
+        "width": 16.946791937633154
+      },
+      "closedCurve": {
+        "quadratic": 15.220943528094626,
+        "linear": -0.000575142608718556,
+        "axis": -0.4100167533097574,
+        "width": 16.946791937633154
+      },
+      "sourceFile": "canonical vector path",
+      "renderedAs": "canonical vector squeeze"
+    },
+    {
+      "face": "14_happy_16_manual",
+      "role": "eye_R",
+      "part": "happy_arc_16",
+      "closedVisibleAxisDegrees": 2.919905004752187,
+      "canonicalEndpointAxisDegrees": 2.9200167533097665,
+      "canonicalCurve": {
+        "quadratic": 19.514030161515752,
+        "linear": 0.0007886703679653982,
+        "axis": 2.9200167533097665,
+        "width": 16.94679193763315
+      },
+      "closedCurve": {
+        "quadratic": 15.220943528094677,
+        "linear": 0.0005751426086970782,
+        "axis": 2.9200167533097665,
+        "width": 16.946791937633137
+      },
+      "sourceFile": "canonical vector path",
+      "renderedAs": "canonical vector squeeze"
+    },
+    {
+      "face": "15_misc_15_manual",
+      "role": "eye_L",
+      "part": "flat_bar_14",
+      "closedVisibleAxisDegrees": -0.5300000000000029,
+      "canonicalEndpointAxisDegrees": -0.5299999999999904,
+      "canonicalCurve": {
+        "quadratic": 9.818635109337285e-14,
+        "linear": 5.928122586770213e-15,
+        "axis": -0.5299999999999904,
+        "width": 17.389999999999993
+      },
+      "closedCurve": {
+        "quadratic": -1.4727952664005932e-13,
+        "linear": 2.0944545099012913e-15,
+        "axis": -0.5299999999999904,
+        "width": 17.389999999999993
+      },
+      "sourceFile": "canonical vector path",
+      "renderedAs": "canonical vector squeeze"
+    },
+    {
+      "face": "15_misc_15_manual",
+      "role": "eye_R",
+      "part": "flat_bar_14",
+      "closedVisibleAxisDegrees": -0.8300000000000062,
+      "canonicalEndpointAxisDegrees": -0.8300000000000062,
+      "canonicalCurve": {
+        "quadratic": 1.472795266400595e-13,
+        "linear": -1.6154419326574836e-14,
+        "axis": -0.8300000000000062,
+        "width": 17.39
+      },
+      "closedCurve": {
+        "quadratic": 2.454658777334322e-13,
+        "linear": 1.9195103121129012e-14,
+        "axis": -0.8300000000000062,
+        "width": 17.389999999999993
+      },
+      "sourceFile": "canonical vector path",
+      "renderedAs": "canonical vector squeeze"
+    },
+    {
+      "face": "16_misc_16_manual",
+      "role": "eye_L",
+      "part": "closed_lid_arc_05",
+      "closedVisibleAxisDegrees": -1.9101611427171148,
+      "canonicalEndpointAxisDegrees": -1.9106011743377076,
+      "canonicalCurve": {
+        "quadratic": -19.24393143230494,
+        "linear": -0.0009385762322609209,
+        "axis": -1.9106011743377076,
+        "width": 17.444485937658186
+      },
+      "closedCurve": {
+        "quadratic": -15.010266530912304,
+        "linear": -0.0005723922992475417,
+        "axis": -1.9106011743377076,
+        "width": 17.444485937658186
+      },
+      "sourceFile": "canonical vector path",
+      "renderedAs": "canonical vector squeeze"
+    },
+    {
+      "face": "16_misc_16_manual",
+      "role": "eye_R",
+      "part": "closed_lid_arc_05",
+      "closedVisibleAxisDegrees": 0.410161142717131,
+      "canonicalEndpointAxisDegrees": 0.410601174337696,
+      "canonicalCurve": {
+        "quadratic": -19.243931432305065,
+        "linear": 0.0009385762322523308,
+        "axis": 0.410601174337696,
+        "width": 17.44448593765818
+      },
+      "closedCurve": {
+        "quadratic": -15.01026653091236,
+        "linear": 0.0005723922991952796,
+        "axis": 0.410601174337696,
+        "width": 17.444485937658172
+      },
+      "sourceFile": "canonical vector path",
+      "renderedAs": "canonical vector squeeze"
+    },
+    {
+      "face": "17_misc_2_01_manual",
+      "role": "eye_L",
+      "part": "flat_bar_14",
+      "closedVisibleAxisDegrees": -0.1199999999999791,
+      "canonicalEndpointAxisDegrees": -0.1199999999999916,
+      "canonicalCurve": {
+        "quadratic": 5.891181065602365e-13,
+        "linear": -8.002121944600774e-15,
+        "axis": -0.1199999999999916,
+        "width": 17.389999999999993
+      },
+      "closedCurve": {
+        "quadratic": 7.363976332002956e-13,
+        "linear": -8.84630008988215e-16,
+        "axis": -0.1199999999999916,
+        "width": 17.389999999999993
+      },
+      "sourceFile": "canonical vector path",
+      "renderedAs": "canonical vector squeeze"
+    },
+    {
+      "face": "17_misc_2_01_manual",
+      "role": "eye_R",
+      "part": "flat_bar_14",
+      "closedVisibleAxisDegrees": -0.280000000000008,
+      "canonicalEndpointAxisDegrees": -0.27999999999998304,
+      "canonicalCurve": {
+        "quadratic": 1.9637270218674615e-13,
+        "linear": -8.092463727652642e-15,
+        "axis": -0.27999999999998304,
+        "width": 17.390000000000008
+      },
+      "closedCurve": {
+        "quadratic": 2.454658777334327e-13,
+        "linear": -8.518426847304744e-15,
+        "axis": -0.27999999999998304,
+        "width": 17.390000000000008
+      },
+      "sourceFile": "canonical vector path",
+      "renderedAs": "canonical vector squeeze"
+    },
+    {
+      "face": "18_misc_2_02_manual",
+      "role": "eye_L",
+      "part": "e_shape_12",
+      "closedVisibleAxisDegrees": 2.5856761262234054,
+      "canonicalEndpointAxisDegrees": -7.276945617310409,
+      "canonicalCurve": {
+        "quadratic": 13.702191736647904,
+        "linear": -1.2793003014126167,
+        "axis": -7.276945617310409,
+        "width": 18.271017157971933
+      },
+      "closedCurve": {
+        "quadratic": -16.300280397005384,
+        "linear": 3.2732915312673723,
+        "axis": -7.276945617310409,
+        "width": 20.592607582220392
+      },
+      "sourceFile": "sheets/v2/eyes_round_loop_arc_v2.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "18_misc_2_02_manual",
+      "role": "eye_R",
+      "part": "e_shape_11",
+      "closedVisibleAxisDegrees": -1.0182025521733231,
+      "canonicalEndpointAxisDegrees": 5.531573429675307,
+      "canonicalCurve": {
+        "quadratic": 14.791242185697262,
+        "linear": 1.7381964166211419,
+        "axis": 5.531573429675307,
+        "width": 17.95013915593644
+      },
+      "closedCurve": {
+        "quadratic": -16.007923965962256,
+        "linear": -2.141950621197716,
+        "axis": 5.531573429675307,
+        "width": 20.52773041566266
+      },
+      "sourceFile": "sheets/v2/eyes_round_loop_arc_v2.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "19_misc_2_03_manual",
+      "role": "eye_L",
+      "part": "chevron_01",
+      "closedVisibleAxisDegrees": -1.2131181250685141,
+      "canonicalEndpointAxisDegrees": -2.325755531015388,
+      "canonicalCurve": {
+        "quadratic": 0.06280616376486763,
+        "linear": -0.017405549661195768,
+        "axis": -2.325755531015388,
+        "width": 13.386716260405215
+      },
+      "closedCurve": {
+        "quadratic": -2.009661892847664,
+        "linear": 0.4684507476015027,
+        "axis": -2.325755531015388,
+        "width": 16.500392864022814
+      },
+      "sourceFile": "sheets/blink_detail_v2.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "19_misc_2_03_manual",
+      "role": "eye_R",
+      "part": "chevron_01",
+      "closedVisibleAxisDegrees": 0.33380038947387514,
+      "canonicalEndpointAxisDegrees": -0.5742444689846191,
+      "canonicalCurve": {
+        "quadratic": 0.0628061637647764,
+        "linear": 0.01740554966118112,
+        "axis": -0.5742444689846191,
+        "width": 13.386716260405223
+      },
+      "closedCurve": {
+        "quadratic": -1.992113227057586,
+        "linear": 0.11164061941299469,
+        "axis": -0.5742444689846191,
+        "width": 16.37676680199533
+      },
+      "sourceFile": "sheets/blink_detail_v2.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "20_neutral_06_manual",
+      "role": "eye_L",
+      "part": "circle_gap_02",
+      "closedVisibleAxisDegrees": 0.06349796567230119,
+      "canonicalEndpointAxisDegrees": -4.939244513286992,
+      "canonicalCurve": {
+        "quadratic": 4.662689806759861,
+        "linear": -2.4550573162483986,
+        "axis": -4.939244513286992,
+        "width": 18.427680048043236
+      },
+      "closedCurve": {
+        "quadratic": -17.51623983014784,
+        "linear": 1.768839973854851,
+        "axis": -4.939244513286992,
+        "width": 21.834502388727973
+      },
+      "sourceFile": "sheets/v2/eyes_round_loop_arc_v2.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "20_neutral_06_manual",
+      "role": "eye_R",
+      "part": "circle_gap_02",
+      "closedVisibleAxisDegrees": -0.049296203142092994,
+      "canonicalEndpointAxisDegrees": 5.2592445132869905,
+      "canonicalCurve": {
+        "quadratic": 4.662689806759761,
+        "linear": 2.455057316248402,
+        "axis": 5.2592445132869905,
+        "width": 18.42768004804323
+      },
+      "closedCurve": {
+        "quadratic": -17.525368942062045,
+        "linear": -1.8769565685447063,
+        "axis": 5.2592445132869905,
+        "width": 21.826618927956616
+      },
+      "sourceFile": "sheets/v2/eyes_round_loop_arc_v2.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "21_neutral_11_manual",
+      "role": "eye_L",
+      "part": "closed_lid_arc_06",
+      "closedVisibleAxisDegrees": -5.016313847219353,
+      "canonicalEndpointAxisDegrees": -5.016396788757794,
+      "canonicalCurve": {
+        "quadratic": -17.026757545998475,
+        "linear": 0.0003904709696403002,
+        "axis": -5.016396788757794,
+        "width": 16.1950222287172
+      },
+      "closedCurve": {
+        "quadratic": -13.28087088584471,
+        "linear": 0.0003320679161252618,
+        "axis": -5.016396788757794,
+        "width": 16.1950222287172
+      },
+      "sourceFile": "canonical vector path",
+      "renderedAs": "canonical vector squeeze"
+    },
+    {
+      "face": "21_neutral_11_manual",
+      "role": "eye_R",
+      "part": "closed_lid_arc_05",
+      "closedVisibleAxisDegrees": 1.270161142717124,
+      "canonicalEndpointAxisDegrees": 1.2706011743376888,
+      "canonicalCurve": {
+        "quadratic": -19.243931432304986,
+        "linear": 0.0009385762322443821,
+        "axis": 1.2706011743376888,
+        "width": 17.444485937658186
+      },
+      "closedCurve": {
+        "quadratic": -15.010266530912054,
+        "linear": 0.0005723922992104871,
+        "axis": 1.2706011743376888,
+        "width": 17.4444859376582
+      },
+      "sourceFile": "canonical vector path",
+      "renderedAs": "canonical vector squeeze"
+    },
+    {
+      "face": "22_neutral_12_manual",
+      "role": "eye_L",
+      "part": "closed_lid_arc_05",
+      "closedVisibleAxisDegrees": -4.160161142717115,
+      "canonicalEndpointAxisDegrees": -4.160601174337702,
+      "canonicalCurve": {
+        "quadratic": -19.243931432305466,
+        "linear": -0.0009385762322463879,
+        "axis": -4.160601174337702,
+        "width": 17.444485937658172
+      },
+      "closedCurve": {
+        "quadratic": -15.010266530912638,
+        "linear": -0.0005723922992197616,
+        "axis": -4.160601174337702,
+        "width": 17.444485937658175
+      },
+      "sourceFile": "canonical vector path",
+      "renderedAs": "canonical vector squeeze"
+    },
+    {
+      "face": "22_neutral_12_manual",
+      "role": "eye_R",
+      "part": "closed_lid_arc_05",
+      "closedVisibleAxisDegrees": 0.1401611427171166,
+      "canonicalEndpointAxisDegrees": 0.14060117433770777,
+      "canonicalCurve": {
+        "quadratic": -19.24393143230518,
+        "linear": 0.0009385762322859352,
+        "axis": 0.14060117433770777,
+        "width": 17.444485937658172
+      },
+      "closedCurve": {
+        "quadratic": -15.010266530912109,
+        "linear": 0.000572392299236381,
+        "axis": 0.14060117433770777,
+        "width": 17.444485937658186
+      },
+      "sourceFile": "canonical vector path",
+      "renderedAs": "canonical vector squeeze"
+    },
+    {
+      "face": "23_neutral_13_manual",
+      "role": "eye_L",
+      "part": "closed_lid_arc_06",
+      "closedVisibleAxisDegrees": 0.3036861527806206,
+      "canonicalEndpointAxisDegrees": 0.3036032112421704,
+      "canonicalCurve": {
+        "quadratic": -17.026757545998386,
+        "linear": 0.00039047096968839834,
+        "axis": 0.3036032112421704,
+        "width": 16.195022228717196
+      },
+      "closedCurve": {
+        "quadratic": -13.280870885844884,
+        "linear": 0.00033206791613390086,
+        "axis": 0.3036032112421704,
+        "width": 16.195022228717196
+      },
+      "sourceFile": "canonical vector path",
+      "renderedAs": "canonical vector squeeze"
+    },
+    {
+      "face": "23_neutral_13_manual",
+      "role": "eye_R",
+      "part": "closed_lid_arc_05",
+      "closedVisibleAxisDegrees": -0.539838857282875,
+      "canonicalEndpointAxisDegrees": -0.5393988256623095,
+      "canonicalCurve": {
+        "quadratic": -19.243931432305107,
+        "linear": 0.0009385762322477767,
+        "axis": -0.5393988256623095,
+        "width": 17.444485937658207
+      },
+      "closedCurve": {
+        "quadratic": -15.01026653091236,
+        "linear": 0.0005723922992447732,
+        "axis": -0.5393988256623095,
+        "width": 17.444485937658207
+      },
+      "sourceFile": "canonical vector path",
+      "renderedAs": "canonical vector squeeze"
+    },
+    {
+      "face": "24_neutral_2_01_manual",
+      "role": "eye_L",
+      "part": "open_C_51",
+      "closedVisibleAxisDegrees": -1.484600373598121,
+      "canonicalEndpointAxisDegrees": 4.027595141023366,
+      "canonicalCurve": {
+        "quadratic": -2.825766601559551,
+        "linear": -0.06303237782711246,
+        "axis": 4.027595141023366,
+        "width": 19.817703229592826
+      },
+      "closedCurve": {
+        "quadratic": -9.300497218668886,
+        "linear": -2.147158443875411,
+        "axis": 4.027595141023366,
+        "width": 23.028660369463463
+      },
+      "sourceFile": "sheets/slot.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "24_neutral_2_01_manual",
+      "role": "eye_R",
+      "part": "open_C_45",
+      "closedVisibleAxisDegrees": -1.807224120637948,
+      "canonicalEndpointAxisDegrees": 7.99528493075779,
+      "canonicalCurve": {
+        "quadratic": 5.836830684521017,
+        "linear": -0.35281322778438906,
+        "axis": 7.99528493075779,
+        "width": 18.53261486498053
+      },
+      "closedCurve": {
+        "quadratic": -8.852283350397975,
+        "linear": -3.6870072057706293,
+        "axis": 7.99528493075779,
+        "width": 21.46229976353665
+      },
+      "sourceFile": "sheets/slot.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "25_neutral_2_03_manual",
+      "role": "eye_L",
+      "part": "circle_gap_03",
+      "closedVisibleAxisDegrees": 0.07841128243780641,
+      "canonicalEndpointAxisDegrees": -0.10560490241155007,
+      "canonicalCurve": {
+        "quadratic": -0.0014984360853657237,
+        "linear": 0.0003298378934739693,
+        "axis": -0.10560490241155007,
+        "width": 18.148622106150707
+      },
+      "closedCurve": {
+        "quadratic": -17.141346702627676,
+        "linear": 0.0606908762785456,
+        "axis": -0.10560490241155007,
+        "width": 21.516354155262057
+      },
+      "sourceFile": "sheets/v2/eyes_round_loop_arc_v2.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "25_neutral_2_03_manual",
+      "role": "eye_R",
+      "part": "circle_gap_03",
+      "closedVisibleAxisDegrees": -0.03438288637657711,
+      "canonicalEndpointAxisDegrees": 0.9656049024115237,
+      "canonicalCurve": {
+        "quadratic": -0.0014984360856146832,
+        "linear": -0.00032983789350442917,
+        "axis": 0.9656049024115237,
+        "width": 18.14862210615071
+      },
+      "closedCurve": {
+        "quadratic": -17.189578210999095,
+        "linear": -0.3459092959962341,
+        "axis": 0.9656049024115237,
+        "width": 21.57126430924137
+      },
+      "sourceFile": "sheets/v2/eyes_round_loop_arc_v2.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "26_sad_01_manual",
+      "role": "eye_L",
+      "part": "closed_lid_arc_07",
+      "closedVisibleAxisDegrees": -15.681377284159945,
+      "canonicalEndpointAxisDegrees": -15.681277590856531,
+      "canonicalCurve": {
+        "quadratic": -22.531749050742615,
+        "linear": 0.00017581158730051286,
+        "axis": -15.681277590856531,
+        "width": 18.825271365317207
+      },
+      "closedCurve": {
+        "quadratic": -17.574764260427315,
+        "linear": 0.00009685915548286865,
+        "axis": -15.681277590856531,
+        "width": 18.825271365317207
+      },
+      "sourceFile": "canonical vector path",
+      "renderedAs": "canonical vector squeeze"
+    },
+    {
+      "face": "26_sad_01_manual",
+      "role": "eye_R",
+      "part": "closed_lid_arc_07",
+      "closedVisibleAxisDegrees": 18.37137728415996,
+      "canonicalEndpointAxisDegrees": 18.37127759085653,
+      "canonicalCurve": {
+        "quadratic": -22.5317490507426,
+        "linear": -0.00017581158729431046,
+        "axis": 18.37127759085653,
+        "width": 18.82527136531722
+      },
+      "closedCurve": {
+        "quadratic": -17.574764260427237,
+        "linear": -0.00009685915548718129,
+        "axis": 18.37127759085653,
+        "width": 18.825271365317207
+      },
+      "sourceFile": "canonical vector path",
+      "renderedAs": "canonical vector squeeze"
+    },
+    {
+      "face": "27_sad_02_manual",
+      "role": "eye_L",
+      "part": "e_shape_13",
+      "closedVisibleAxisDegrees": -9.857356816987865,
+      "canonicalEndpointAxisDegrees": 2.5870403305720897,
+      "canonicalCurve": {
+        "quadratic": 6.610201416511216,
+        "linear": 0.2378411080491953,
+        "axis": 2.5870403305720897,
+        "width": 17.378077646647053
+      },
+      "closedCurve": {
+        "quadratic": -15.50309776346221,
+        "linear": -3.9761866576938543,
+        "axis": 2.5870403305720897,
+        "width": 19.215595463049354
+      },
+      "sourceFile": "sheets/v2/eyes_round_loop_arc_v2.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "27_sad_02_manual",
+      "role": "eye_R",
+      "part": "e_shape_12",
+      "closedVisibleAxisDegrees": 8.634323873776514,
+      "canonicalEndpointAxisDegrees": -10.125995784693941,
+      "canonicalCurve": {
+        "quadratic": 1.1903195412371204,
+        "linear": -2.1331852861812672,
+        "axis": -10.125995784693941,
+        "width": 18.28656988559434
+      },
+      "closedCurve": {
+        "quadratic": -16.443818498415485,
+        "linear": 6.077773604976275,
+        "axis": -10.125995784693941,
+        "width": 19.24832702143678
+      },
+      "sourceFile": "sheets/v2/eyes_round_loop_arc_v2.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "28_sad_03_manual",
+      "role": "eye_L",
+      "part": "e_shape_11",
+      "closedVisibleAxisDegrees": -9.85735681698789,
+      "canonicalEndpointAxisDegrees": 12.296487595617815,
+      "canonicalCurve": {
+        "quadratic": 1.8348767443115106,
+        "linear": 1.8496480791270813,
+        "axis": 12.296487595617815,
+        "width": 17.683050347151312
+      },
+      "closedCurve": {
+        "quadratic": -16.501383582216228,
+        "linear": -6.986002356094758,
+        "axis": 12.296487595617815,
+        "width": 18.546441172355117
+      },
+      "sourceFile": "sheets/v2/eyes_round_loop_arc_v2.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "28_sad_03_manual",
+      "role": "eye_R",
+      "part": "e_shape_12",
+      "closedVisibleAxisDegrees": 8.790323873776552,
+      "canonicalEndpointAxisDegrees": -9.865995784693954,
+      "canonicalCurve": {
+        "quadratic": 1.1903195412371212,
+        "linear": -2.1331852861812766,
+        "axis": -9.865995784693954,
+        "width": 18.286569885594332
+      },
+      "closedCurve": {
+        "quadratic": -16.441439106564278,
+        "linear": 6.048409315594306,
+        "axis": -9.865995784693954,
+        "width": 19.267390019728495
+      },
+      "sourceFile": "sheets/v2/eyes_round_loop_arc_v2.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "29_sad_04_manual",
+      "role": "eye_L",
+      "part": "happy_arc_15",
+      "closedVisibleAxisDegrees": -15.37676263569049,
+      "canonicalEndpointAxisDegrees": -15.37679611556188,
+      "canonicalCurve": {
+        "quadratic": -20.69733488987649,
+        "linear": -0.00003903752284220089,
+        "axis": -15.37679611556188,
+        "width": 18.33933150356434
+      },
+      "closedCurve": {
+        "quadratic": -16.14392121479142,
+        "linear": -0.000017571013180927973,
+        "axis": -15.37679611556188,
+        "width": 18.33933150356434
+      },
+      "sourceFile": "canonical vector path",
+      "renderedAs": "canonical vector squeeze"
+    },
+    {
+      "face": "29_sad_04_manual",
+      "role": "eye_R",
+      "part": "happy_arc_15",
+      "closedVisibleAxisDegrees": 15.776762635690465,
+      "canonicalEndpointAxisDegrees": 15.776796115561906,
+      "canonicalCurve": {
+        "quadratic": -20.697334889876483,
+        "linear": 0.00003903752282682658,
+        "axis": 15.776796115561906,
+        "width": 18.33933150356434
+      },
+      "closedCurve": {
+        "quadratic": -16.143921214791604,
+        "linear": 0.000017571013136499455,
+        "axis": 15.776796115561906,
+        "width": 18.339331503564324
+      },
+      "sourceFile": "canonical vector path",
+      "renderedAs": "canonical vector squeeze"
+    },
+    {
+      "face": "30_sad_05_manual",
+      "role": "eye_L",
+      "part": "chevron_01",
+      "closedVisibleAxisDegrees": -0.9185050138158692,
+      "canonicalEndpointAxisDegrees": -0.2257555310153864,
+      "canonicalCurve": {
+        "quadratic": 0.06280616376477972,
+        "linear": -0.017405549661192114,
+        "axis": -0.2257555310153864,
+        "width": 13.386716260405226
+      },
+      "closedCurve": {
+        "quadratic": -1.9892990153600663,
+        "linear": -0.05014849494645893,
+        "axis": -0.2257555310153864,
+        "width": 16.353384524136015
+      },
+      "sourceFile": "sheets/blink_detail_v2.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "30_sad_05_manual",
+      "role": "eye_R",
+      "part": "chevron_01",
+      "closedVisibleAxisDegrees": 0.6284135007265463,
+      "canonicalEndpointAxisDegrees": -0.7542444689846047,
+      "canonicalCurve": {
+        "quadratic": 0.06280616376486196,
+        "linear": 0.01740554966118054,
+        "axis": -0.7542444689846047,
+        "width": 13.386716260405208
+      },
+      "closedCurve": {
+        "quadratic": -1.998332919725386,
+        "linear": 0.2478087637140867,
+        "axis": -0.7542444689846047,
+        "width": 16.42681160717126
+      },
+      "sourceFile": "sheets/blink_detail_v2.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "31_sad_06_manual",
+      "role": "eye_L",
+      "part": "droop_hook_09",
+      "closedVisibleAxisDegrees": -9.729845946084646,
+      "canonicalEndpointAxisDegrees": -1.0591277248052688,
+      "canonicalCurve": {
+        "quadratic": -16.477661660600212,
+        "linear": 1.983234241264842,
+        "axis": -1.0591277248052688,
+        "width": 19.47693568382276
+      },
+      "closedCurve": {
+        "quadratic": -10.084062119509715,
+        "linear": -2.9070907537195017,
+        "axis": -1.0591277248052688,
+        "width": 22.129406008971948
+      },
+      "sourceFile": "sheets/blink_detail_v2.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "31_sad_06_manual",
+      "role": "eye_R",
+      "part": "droop_hook_09",
+      "closedVisibleAxisDegrees": 7.987845946084664,
+      "canonicalEndpointAxisDegrees": -1.6208722751947184,
+      "canonicalCurve": {
+        "quadratic": -16.477661660600376,
+        "linear": -1.9832342412648998,
+        "axis": -1.6208722751947184,
+        "width": 19.47693568382276
+      },
+      "closedCurve": {
+        "quadratic": -10.091374005904482,
+        "linear": 3.255589109557149,
+        "axis": -1.6208722751947184,
+        "width": 22.05051350494898
+      },
+      "sourceFile": "sheets/blink_detail_v2.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "32_sad_07_manual",
+      "role": "eye_L",
+      "part": "circle_gap_03",
+      "closedVisibleAxisDegrees": -0.2266431451304714,
+      "canonicalEndpointAxisDegrees": 6.904061726961116,
+      "canonicalCurve": {
+        "quadratic": -5.353309448527266,
+        "linear": 2.3410588249305193,
+        "axis": 6.904061726961116,
+        "width": 18.88977336018811
+      },
+      "closedCurve": {
+        "quadratic": -17.84249688634906,
+        "linear": -2.5629876992139793,
+        "axis": 6.904061726961116,
+        "width": 22.07703180978049
+      },
+      "sourceFile": "sheets/v2/eyes_round_loop_arc_v2.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "32_sad_07_manual",
+      "role": "eye_R",
+      "part": "circle_gap_02",
+      "closedVisibleAxisDegrees": -0.33943731394483967,
+      "canonicalEndpointAxisDegrees": -4.024270706500402,
+      "canonicalCurve": {
+        "quadratic": -4.68055568193878,
+        "linear": -1.3971665204619437,
+        "axis": -4.024270706500402,
+        "width": 18.23061240560419
+      },
+      "closedCurve": {
+        "quadratic": -17.229577786015692,
+        "linear": 1.2903735190094345,
+        "axis": -4.024270706500402,
+        "width": 21.54405125075155
+      },
+      "sourceFile": "sheets/v2/eyes_round_loop_arc_v2.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "33_sad_08_manual",
+      "role": "eye_L",
+      "part": "open_C_46",
+      "closedVisibleAxisDegrees": -9.71416729430504,
+      "canonicalEndpointAxisDegrees": -1.8858128696059895,
+      "canonicalCurve": {
+        "quadratic": -12.210282969298563,
+        "linear": -0.019332086204577603,
+        "axis": -1.8858128696059895,
+        "width": 20.50831747571548
+      },
+      "closedCurve": {
+        "quadratic": -10.522661304792168,
+        "linear": -2.7065398261970355,
+        "axis": -1.8858128696059895,
+        "width": 23.170712911253297
+      },
+      "sourceFile": "sheets/blink_detail_v2.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "33_sad_08_manual",
+      "role": "eye_R",
+      "part": "open_C_50",
+      "closedVisibleAxisDegrees": -2.638554631844234,
+      "canonicalEndpointAxisDegrees": -0.5128540192169774,
+      "canonicalCurve": {
+        "quadratic": -0.033163194904421135,
+        "linear": 0.021946480928016817,
+        "axis": -0.5128540192169774,
+        "width": 18.6074520370778
+      },
+      "closedCurve": {
+        "quadratic": -17.43615240403476,
+        "linear": -0.7492529051336748,
+        "axis": -0.5128540192169774,
+        "width": 21.85940454962803
+      },
+      "sourceFile": "sheets/v2/eyes_round_loop_arc_v2.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "34_sad_09_manual",
+      "role": "eye_L",
+      "part": "e_shape_12",
+      "closedVisibleAxisDegrees": -8.72432387377654,
+      "canonicalEndpointAxisDegrees": 9.975995784693945,
+      "canonicalCurve": {
+        "quadratic": 1.190319541237365,
+        "linear": 2.13318528618127,
+        "axis": 9.975995784693945,
+        "width": 18.286569885594346
+      },
+      "closedCurve": {
+        "quadratic": -16.44244584759707,
+        "linear": -6.060841383493792,
+        "axis": 9.975995784693945,
+        "width": 19.259338110394516
+      },
+      "sourceFile": "sheets/v2/eyes_round_loop_arc_v2.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "34_sad_09_manual",
+      "role": "eye_R",
+      "part": "e_shape_12",
+      "closedVisibleAxisDegrees": 8.562323873776553,
+      "canonicalEndpointAxisDegrees": -10.245995784693955,
+      "canonicalCurve": {
+        "quadratic": 1.1903195412373078,
+        "linear": -2.133185286181276,
+        "axis": -10.245995784693955,
+        "width": 18.286569885594346
+      },
+      "closedCurve": {
+        "quadratic": -16.44491646817383,
+        "linear": 6.09130222149503,
+        "axis": -10.245995784693955,
+        "width": 19.23949224707092
+      },
+      "sourceFile": "sheets/v2/eyes_round_loop_arc_v2.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "35_sad_10_manual",
+      "role": "eye_L",
+      "part": "happy_arc_18",
+      "closedVisibleAxisDegrees": -19.54814205324634,
+      "canonicalEndpointAxisDegrees": -19.547801621219005,
+      "canonicalCurve": {
+        "quadratic": -24.079705964600002,
+        "linear": -0.0007838054936186622,
+        "axis": -19.547801621219005,
+        "width": 19.073278473682727
+      },
+      "closedCurve": {
+        "quadratic": -18.782170662746022,
+        "linear": -0.0007539868975754763,
+        "axis": -19.547801621219005,
+        "width": 19.073278473682723
+      },
+      "sourceFile": "canonical vector path",
+      "renderedAs": "canonical vector squeeze"
+    },
+    {
+      "face": "35_sad_10_manual",
+      "role": "eye_R",
+      "part": "happy_arc_18",
+      "closedVisibleAxisDegrees": 19.548142053246348,
+      "canonicalEndpointAxisDegrees": 19.54780162121901,
+      "canonicalCurve": {
+        "quadratic": -24.079705964600148,
+        "linear": 0.0007838054935922335,
+        "axis": 19.54780162121901,
+        "width": 19.07327847368272
+      },
+      "closedCurve": {
+        "quadratic": -18.782170662745823,
+        "linear": 0.0007539868975832536,
+        "axis": 19.54780162121901,
+        "width": 19.07327847368272
+      },
+      "sourceFile": "canonical vector path",
+      "renderedAs": "canonical vector squeeze"
+    },
+    {
+      "face": "36_misc_03_manual",
+      "role": "eye_L",
+      "part": "open_C_49",
+      "closedVisibleAxisDegrees": -1.118619790586841,
+      "canonicalEndpointAxisDegrees": -0.9227271822013009,
+      "canonicalCurve": {
+        "quadratic": -10.020154176197016,
+        "linear": -0.005048497417183384,
+        "axis": -0.9227271822013009,
+        "width": 18.85131900320859
+      },
+      "closedCurve": {
+        "quadratic": -10.005240567957141,
+        "linear": 0.3052508832641664,
+        "axis": -0.9227271822013009,
+        "width": 22.287555388893956
+      },
+      "sourceFile": "sheets/blink_detail_v2.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "36_misc_03_manual",
+      "role": "eye_R",
+      "part": "open_C_43",
+      "closedVisibleAxisDegrees": -4.056397084407186,
+      "canonicalEndpointAxisDegrees": -2.6339895355708856,
+      "canonicalCurve": {
+        "quadratic": -1.6402359083023992,
+        "linear": -1.104607330013339,
+        "axis": -2.6339895355708856,
+        "width": 18.640712401189923
+      },
+      "closedCurve": {
+        "quadratic": -17.846716694599664,
+        "linear": -0.5122424450127724,
+        "axis": -2.6339895355708856,
+        "width": 22.389597815832573
+      },
+      "sourceFile": "sheets/v2/eyes_round_loop_arc_v2.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "37_misc_06_manual",
+      "role": "eye_L",
+      "part": "open_C_44",
+      "closedVisibleAxisDegrees": 1.6719838183498716,
+      "canonicalEndpointAxisDegrees": 1.256553912133826,
+      "canonicalCurve": {
+        "quadratic": 0.07469765084106715,
+        "linear": -0.08482400668729187,
+        "axis": 1.256553912133826,
+        "width": 18.12452576170891
+      },
+      "closedCurve": {
+        "quadratic": -8.520142743468666,
+        "linear": 0.18875554774776332,
+        "axis": 1.256553912133826,
+        "width": 21.278133028764493
+      },
+      "sourceFile": "sheets/slot.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "37_misc_06_manual",
+      "role": "eye_R",
+      "part": "open_C_44",
+      "closedVisibleAxisDegrees": -0.13419896946008303,
+      "canonicalEndpointAxisDegrees": 0.20344608786619386,
+      "canonicalCurve": {
+        "quadratic": 0.07469765084084713,
+        "linear": 0.08482400668730666,
+        "axis": 0.20344608786619386,
+        "width": 18.12452576170891
+      },
+      "closedCurve": {
+        "quadratic": -8.521733278588092,
+        "linear": -0.16034987038364382,
+        "axis": 0.20344608786619386,
+        "width": 21.28261316156692
+      },
+      "sourceFile": "sheets/slot.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "38_misc_2_06_manual",
+      "role": "eye_L",
+      "part": "e_shape_12",
+      "closedVisibleAxisDegrees": 1.2836761262234573,
+      "canonicalEndpointAxisDegrees": 0.7936113653676327,
+      "canonicalCurve": {
+        "quadratic": 8.812168666206812,
+        "linear": 0.1942513514315901,
+        "axis": 0.7936113653676327,
+        "width": 17.735635470046848
+      },
+      "closedCurve": {
+        "quadratic": -16.075885491800168,
+        "linear": 0.11772487809257871,
+        "axis": 0.7936113653676327,
+        "width": 20.848597463240832
+      },
+      "sourceFile": "sheets/v2/eyes_round_loop_arc_v2.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "38_misc_2_06_manual",
+      "role": "eye_R",
+      "part": "e_shape_11",
+      "closedVisibleAxisDegrees": 1.6457974478266562,
+      "canonicalEndpointAxisDegrees": 9.971573429675287,
+      "canonicalCurve": {
+        "quadratic": 14.791242185697278,
+        "linear": 1.7381964166211645,
+        "axis": 9.971573429675287,
+        "width": 17.950139155936455
+      },
+      "closedCurve": {
+        "quadratic": -15.97100236495925,
+        "linear": -2.7151402539984812,
+        "axis": 9.971573429675287,
+        "width": 20.332755959639883
+      },
+      "sourceFile": "sheets/v2/eyes_round_loop_arc_v2.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "39_neutral_02_manual",
+      "role": "eye_L",
+      "part": "circle_gap_03",
+      "closedVisibleAxisDegrees": 0.04498774869675351,
+      "canonicalEndpointAxisDegrees": -0.9956049024115302,
+      "canonicalCurve": {
+        "quadratic": -0.001498436085605566,
+        "linear": 0.00032983789348758105,
+        "axis": -0.9956049024115302,
+        "width": 18.14862210615071
+      },
+      "closedCurve": {
+        "quadratic": -17.19197843955419,
+        "linear": 0.3601389519492462,
+        "axis": -0.9956049024115302,
+        "width": 21.573785646808822
+      },
+      "sourceFile": "sheets/v2/eyes_round_loop_arc_v2.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "39_neutral_02_manual",
+      "role": "eye_R",
+      "part": "circle_gap_03",
+      "closedVisibleAxisDegrees": -0.06780642011763767,
+      "canonicalEndpointAxisDegrees": 0.5556049024115305,
+      "canonicalCurve": {
+        "quadratic": -0.0014984360854503438,
+        "linear": -0.0003298378934871464,
+        "axis": 0.5556049024115305,
+        "width": 18.14862210615069
+      },
+      "closedCurve": {
+        "quadratic": -17.16731885094716,
+        "linear": -0.21410074020377254,
+        "axis": 0.5556049024115305,
+        "width": 21.54692640404734
+      },
+      "sourceFile": "sheets/v2/eyes_round_loop_arc_v2.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "40_neutral_03_manual",
+      "role": "eye_L",
+      "part": "open_C_44",
+      "closedVisibleAxisDegrees": -0.5487931081905826,
+      "canonicalEndpointAxisDegrees": -0.913446087866199,
+      "canonicalCurve": {
+        "quadratic": 0.0746976508413091,
+        "linear": -0.08482400668730589,
+        "axis": -0.913446087866199,
+        "width": 18.124525761708906
+      },
+      "closedCurve": {
+        "quadratic": -8.521180823645366,
+        "linear": 0.17021404828337292,
+        "axis": -0.913446087866199,
+        "width": 21.28106581639223
+      },
+      "sourceFile": "sheets/slot.png",
+      "renderedAs": "registered PNG lid"
+    },
+    {
+      "face": "40_neutral_03_manual",
+      "role": "eye_R",
+      "part": "open_C_44",
+      "closedVisibleAxisDegrees": -0.3066765468387221,
+      "canonicalEndpointAxisDegrees": 0.023446087866181707,
+      "canonicalCurve": {
+        "quadratic": 0.07469765084106804,
+        "linear": 0.08482400668729198,
+        "axis": 0.023446087866181707,
+        "width": 18.12452576170891
+      },
+      "closedCurve": {
+        "quadratic": -8.5218871899105,
+        "linear": -0.15760218043075447,
+        "axis": 0.023446087866181707,
+        "width": 21.28304258181963
+      },
+      "sourceFile": "sheets/slot.png",
+      "renderedAs": "registered PNG lid"
+    }
+  ],
+  "failures": [],
+  "warnings": [],
+  "limitations": [
+    "The tests assess fully closed poses. Root browser review must also judge the visible closing and reopening motion.",
+    "Centerline measurement approximates a stylized thick stroke; it does not measure GPU antialiasing.",
+    "Preserving source arc concavity is distinct from forcing all eyes to the same closure curve."
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "status": "static_smooth_shaft_screen_no_notches_fatigue_or_measured_material",
+  "supports_mm": [
+    8.5,
+    45.825
+  ],
+  "shaft_diameter_mm": 7,
+  "pulley_load_N": 300,
+  "pulley_load_Y_mm": 21.125,
+  "gear_torque_Nm": 2.75,
+  "gear_force_plane_Y_mm": 32.125,
+  "gear_force_tangential_N": 137.5,
+  "gear_force_radial_N": 50.045907211602824,
+  "pulley_only": {
+    "reaction_left_XZ_N": [
+      -0.0,
+      198.5264567983925
+    ],
+    "reaction_right_XZ_N": [
+      -0.0,
+      101.4735432016075
+    ],
+    "peak": {
+      "y_mm": 21.125,
+      "moment_Nmm": 2506.3965170797055
+    },
+    "bending_stress_MPa": 74.43132735469065,
+    "if_shaft_carries_3Nm_von_mises_MPa": 107.20422777666181,
+    "load_point_deflection_mm_E200GPa": 0.011052609068556356
+  },
+  "radial_mesh_force_opposes_belt_pull": {
+    "reaction_left_XZ_N": [
+      -50.468854655056944,
+      180.15729594644452
+    ],
+    "reaction_right_XZ_N": [
+      -87.03114534494306,
+      69.79679684195267
+    ],
+    "peak": {
+      "y_mm": 21.125,
+      "moment_Nmm": 2362.0479752762985
+    },
+    "bending_stress_MPa": 70.14467378853428,
+    "if_shaft_carries_3Nm_von_mises_MPa": 104.2736746370298
+  },
+  "radial_mesh_force_adds_to_belt_pull": {
+    "reaction_left_XZ_N": [
+      -50.468854655056944,
+      216.89561765034048
+    ],
+    "reaction_right_XZ_N": [
+      -87.03114534494306,
+      133.15028956126233
+    ],
+    "peak": {
+      "y_mm": 21.125,
+      "moment_Nmm": 2811.4606305170496
+    },
+    "bending_stress_MPa": 83.49067879277811,
+    "if_shaft_carries_3Nm_von_mises_MPa": 113.6812095585199
+  }
+}

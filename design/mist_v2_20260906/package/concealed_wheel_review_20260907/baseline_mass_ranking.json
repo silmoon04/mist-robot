@@ -1,0 +1,742 @@
+{
+  "status": "mass_and_quasi_static_reserve_review_not_dynamic_release",
+  "fixed_components_in_selected_layout": {
+    "two_155g_phones_kg": 0.31,
+    "battery_kg": 0.174,
+    "twelve_55g_servos_kg": 0.66,
+    "four_98g_motors_kg": 0.392
+  },
+  "fixed_component_sum_kg": 1.536,
+  "current_electronics_harness_extras_allowance_kg": 0.45,
+  "baseline": {
+    "source": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\mist_v2_20260906\\cad\\leg_proximal_20260907\\output_candidate\\leg_geometry_report.json",
+    "source_sha256": "6eb16f526239fcb64b52d29b171c6e0a213683a6cd7da0355804a2b4689871c0",
+    "part_count": 657,
+    "assigned_total_kg": 7.108160063387575,
+    "printed_total_kg": 2.8290029524304057,
+    "largest_printed_families": [
+      {
+        "name": "PF02_sliding_carriage",
+        "mass_g": 617.7653162201887,
+        "count": 4
+      },
+      {
+        "name": "F01_femur_cheek_drive",
+        "mass_g": 186.23214043702097,
+        "count": 4
+      },
+      {
+        "name": "B01_structural_lower_deck",
+        "mass_g": 167.02159443399512,
+        "count": 1
+      },
+      {
+        "name": "Y01_fixed_mount_bridge",
+        "mass_g": 140.32142838256232,
+        "count": 4
+      },
+      {
+        "name": "T03_tibia_outer_cheek",
+        "mass_g": 132.7387400769161,
+        "count": 4
+      },
+      {
+        "name": "W07_motor_mount_cradle",
+        "mass_g": 128.7721740731954,
+        "count": 4
+      },
+      {
+        "name": "T02_tibia_main_cheek",
+        "mass_g": 116.90193397121521,
+        "count": 4
+      },
+      {
+        "name": "W03_wheel_hub",
+        "mass_g": 110.69639691585346,
+        "count": 4
+      },
+      {
+        "name": "H08_servo_saddle",
+        "mass_g": 100.81693864998788,
+        "count": 4
+      },
+      {
+        "name": "B07_upper_shell_rear",
+        "mass_g": 95.17955281033427,
+        "count": 1
+      },
+      {
+        "name": "PF01_hip_only_coxa",
+        "mass_g": 90.17321827299995,
+        "count": 4
+      },
+      {
+        "name": "B11_shallow_lid",
+        "mass_g": 81.8441674716954,
+        "count": 1
+      },
+      {
+        "name": "B04_phone_and_electronics_deck",
+        "mass_g": 72.9729279508563,
+        "count": 1
+      },
+      {
+        "name": "B07_upper_shell_front",
+        "mass_g": 72.59802635882451,
+        "count": 1
+      },
+      {
+        "name": "F01_femur_cheek_belt",
+        "mass_g": 52.717710183725494,
+        "count": 4
+      },
+      {
+        "name": "H06_output_40T",
+        "mass_g": 48.42907830070287,
+        "count": 4
+      },
+      {
+        "name": "Y06_yaw_output_40T",
+        "mass_g": 47.93753214775161,
+        "count": 4
+      },
+      {
+        "name": "B10_lid_twin_rim",
+        "mass_g": 45.94327086515901,
+        "count": 1
+      },
+      {
+        "name": "H10_servo_clamp_cap",
+        "mass_g": 41.6042487989459,
+        "count": 4
+      },
+      {
+        "name": "B14_square_face_bezel",
+        "mass_g": 38.48194097986741,
+        "count": 1
+      },
+      {
+        "name": "B06_lower_shell_rear",
+        "mass_g": 38.038793297968695,
+        "count": 1
+      },
+      {
+        "name": "B12_lid_bridge_handle",
+        "mass_g": 32.92603742470425,
+        "count": 1
+      },
+      {
+        "name": "B05_upper_core_ring",
+        "mass_g": 31.434824559359107,
+        "count": 1
+      },
+      {
+        "name": "Y02_608_housing_lower",
+        "mass_g": 31.153413168808388,
+        "count": 4
+      },
+      {
+        "name": "Y09_servo_clamp_cap",
+        "mass_g": 30.043456360723603,
+        "count": 4
+      }
+    ],
+    "FL_printed_parts": [
+      {
+        "name": "PF02_sliding_carriage",
+        "group": "FL",
+        "category": "print",
+        "link": "femur",
+        "mass_g": 154.4413290550471,
+        "volume_cm3": 121.6073457126355,
+        "bounds_partlocal_mm": [
+          [
+            -33.0,
+            -7.0,
+            -75.73
+          ],
+          [
+            33.0,
+            92.625,
+            17.0
+          ]
+        ],
+        "note": "4mm nominal plate on fixed femur rails; tension setting and locked slip strength unmeasured"
+      },
+      {
+        "name": "F01_femur_cheek_drive",
+        "group": "FL",
+        "category": "print",
+        "link": "femur",
+        "mass_g": 46.55803510925523,
+        "volume_cm3": 36.659870164767895,
+        "bounds_partlocal_mm": [
+          [
+            -22.0,
+            -16.0,
+            -155.5
+          ],
+          [
+            22.0,
+            6.0,
+            13.0
+          ]
+        ],
+        "note": "6mm PETG cheek with30mmOD608boss;1.2mmfloor/7.2mmseatdepth fromcoupon; lead-in transfer pending"
+      },
+      {
+        "name": "Y01_fixed_mount_bridge",
+        "group": "FL",
+        "category": "print",
+        "link": "body",
+        "mass_g": 35.08035709564061,
+        "volume_cm3": 27.62232842176426,
+        "bounds_partlocal_mm": [
+          [
+            -34.0,
+            -26.0,
+            -31.5
+          ],
+          [
+            58.757037982696176,
+            58.757037982696176,
+            7.5
+          ]
+        ],
+        "note": "FourM4holes:radial78/98,tangent+/-22mm;52mmbridge mates expanded bodytabs"
+      },
+      {
+        "name": "T03_tibia_outer_cheek",
+        "group": "FL",
+        "category": "print",
+        "link": "tibia",
+        "mass_g": 33.18468501922902,
+        "volume_cm3": 26.12967324348742,
+        "bounds_partlocal_mm": [
+          [
+            -19.000000000000004,
+            26.0,
+            -144.0
+          ],
+          [
+            19.0,
+            36.125,
+            19.0
+          ]
+        ],
+        "note": ""
+      },
+      {
+        "name": "W07_motor_mount_cradle",
+        "group": "FL",
+        "category": "print",
+        "link": "tibia",
+        "mass_g": 32.19304351829885,
+        "volume_cm3": 25.34885316401484,
+        "bounds_partlocal_mm": [
+          [
+            -16.5,
+            32.0,
+            -18.5
+          ],
+          [
+            16.5,
+            108.0,
+            18.5
+          ]
+        ],
+        "note": "61mm axial envelope held by open saddle; case clamp and holepattern unfinished"
+      },
+      {
+        "name": "T02_tibia_main_cheek",
+        "group": "FL",
+        "category": "print",
+        "link": "tibia",
+        "mass_g": 29.225483492803804,
+        "volume_cm3": 23.012191726617168,
+        "bounds_partlocal_mm": [
+          [
+            -14.0,
+            -22.0,
+            -144.0
+          ],
+          [
+            14.0,
+            -16.0,
+            14.0
+          ]
+        ],
+        "note": "6mmPETG open yoke; wheel626support is separate from motor bearing"
+      },
+      {
+        "name": "W03_wheel_hub",
+        "group": "FL",
+        "category": "print",
+        "link": "wheel",
+        "mass_g": 27.674099228963374,
+        "volume_cm3": 21.79062931414439,
+        "bounds_partlocal_mm": [
+          [
+            -36.5,
+            -12.0,
+            -36.5
+          ],
+          [
+            36.5,
+            12.0,
+            36.5
+          ]
+        ],
+        "note": "Bolt-on tirecarrier;6.2mm axle bore torque-lock unfinished"
+      },
+      {
+        "name": "H08_servo_saddle",
+        "group": "FL",
+        "category": "print",
+        "link": "pod",
+        "mass_g": 25.20423466249697,
+        "volume_cm3": 19.845854064958242,
+        "bounds_partlocal_mm": [
+          [
+            13.5,
+            -100.5,
+            -35.0
+          ],
+          [
+            66.73,
+            -58.0,
+            12.865000000000002
+          ]
+        ],
+        "note": "Maker case datum; bolted coxa ears and controlled clamp lands"
+      },
+      {
+        "name": "PF01_hip_only_coxa",
+        "group": "FL",
+        "category": "print",
+        "link": "yaw",
+        "mass_g": 22.543304568249987,
+        "volume_cm3": 17.750633518307076,
+        "bounds_partlocal_mm": [
+          [
+            -10.0,
+            -35.0,
+            -34.0
+          ],
+          [
+            48.5,
+            42.0,
+            28.0
+          ]
+        ],
+        "note": "Remote knee support flange removed; hip-side connection retained"
+      },
+      {
+        "name": "F01_femur_cheek_belt",
+        "group": "FL",
+        "category": "print",
+        "link": "femur",
+        "mass_g": 13.179427545931391,
+        "volume_cm3": 10.377502004670387,
+        "bounds_partlocal_mm": [
+          [
+            -16.0,
+            41.124999999999964,
+            -155.5
+          ],
+          [
+            16.0,
+            49.525000000000006,
+            -80.0
+          ]
+        ],
+        "note": "6mm PETG cheek with30mmOD608boss;1.2mmfloor/7.2mmseatdepth fromcoupon; lead-in transfer pending"
+      },
+      {
+        "name": "H06_output_40T",
+        "group": "FL",
+        "category": "print",
+        "link": "femur",
+        "mass_g": 12.107269575175712,
+        "volume_cm3": 9.533283130059615,
+        "bounds_partlocal_mm": [
+          [
+            -20.967720783828508,
+            -58.0,
+            -20.967720783828508
+          ],
+          [
+            20.96772078382851,
+            -49.99999999999946,
+            20.96772078382851
+          ]
+        ],
+        "note": "Module1,20deg involute,8mm face; shaft/horn torque-lock interface unfinished"
+      },
+      {
+        "name": "Y06_yaw_output_40T",
+        "group": "FL",
+        "category": "print",
+        "link": "yaw",
+        "mass_g": 11.984383036937903,
+        "volume_cm3": 9.436522076329057,
+        "bounds_partlocal_mm": [
+          [
+            -20.999733599105515,
+            -20.999733599105515,
+            11.999999999999947
+          ],
+          [
+            20.999733599105515,
+            20.999733599105515,
+            20.0
+          ]
+        ],
+        "note": "Yaw gear phase follows yaw; provisional8.2mm bore lacks torque key"
+      },
+      {
+        "name": "H10_servo_clamp_cap",
+        "group": "FL",
+        "category": "print",
+        "link": "pod",
+        "mass_g": 10.401062199736476,
+        "volume_cm3": 8.189812755698012,
+        "bounds_partlocal_mm": [
+          [
+            13.500000000000004,
+            -100.5,
+            12.565
+          ],
+          [
+            66.73,
+            -61.5,
+            16.865000000000002
+          ]
+        ],
+        "note": "Hard stops set coupon-linked25.23mmpocket; capturedTPUpad supplies preload"
+      },
+      {
+        "name": "Y02_608_housing_lower",
+        "group": "FL",
+        "category": "print",
+        "link": "body",
+        "mass_g": 7.788353292202097,
+        "volume_cm3": 6.132561647403226,
+        "bounds_partlocal_mm": [
+          [
+            -16.0,
+            -16.0,
+            -25.0
+          ],
+          [
+            16.0,
+            16.0,
+            -13.0
+          ]
+        ],
+        "note": "Bearing seat22.30mm provisional; printed shoulder and bolted retainer"
+      },
+      {
+        "name": "Y09_servo_clamp_cap",
+        "group": "FL",
+        "category": "print",
+        "link": "body",
+        "mass_g": 7.510864090180901,
+        "volume_cm3": 5.914066212740867,
+        "bounds_partlocal_mm": [
+          [
+            10.8,
+            -31.0,
+            7.199999999999999
+          ],
+          [
+            66.73,
+            31.0,
+            11.5
+          ]
+        ],
+        "note": "Rigid bolt-land stops; clearance window leaves factoryhorn accessible"
+      }
+    ],
+    "body_printed_parts": [
+      {
+        "name": "B01_structural_lower_deck",
+        "group": "body",
+        "category": "print",
+        "link": "body",
+        "mass_g": 167.02159443399512,
+        "volume_cm3": 131.51306648346073,
+        "bounds_partlocal_mm": [
+          [
+            -101.82337649086284,
+            -101.82337649086286,
+            0.0
+          ],
+          [
+            101.82337649086286,
+            101.82337649086286,
+            5.0
+          ]
+        ],
+        "note": "PETG flat on bed; four M4 anchors per root at radial78/98mm and tangential+/-22mm; extended tabs require full assembly and fastener-access check"
+      },
+      {
+        "name": "B07_upper_shell_rear",
+        "group": "body",
+        "category": "print",
+        "link": "body",
+        "mass_g": 95.17955281033427,
+        "volume_cm3": 74.94452977191675,
+        "bounds_partlocal_mm": [
+          [
+            -90.00000010117141,
+            -90.0000001,
+            107.9999999
+          ],
+          [
+            1.000000055109106e-07,
+            90.0000001,
+            220.0000001
+          ]
+        ],
+        "note": "112mm tall cosmetic clamshell; rim and core carry alignment, seam attachment awaits coupon"
+      },
+      {
+        "name": "B11_shallow_lid",
+        "group": "body",
+        "category": "print",
+        "link": "body",
+        "mass_g": 81.8441674716954,
+        "volume_cm3": 64.44422635566566,
+        "bounds_partlocal_mm": [
+          [
+            -90.1,
+            -90.1,
+            230.5
+          ],
+          [
+            90.1,
+            90.1,
+            242.0000001
+          ]
+        ],
+        "note": "Native revolved section; print rim down; bridge handle removes lid only"
+      },
+      {
+        "name": "B04_phone_and_electronics_deck",
+        "group": "body",
+        "category": "print",
+        "link": "body",
+        "mass_g": 72.9729279508563,
+        "volume_cm3": 57.45899838650103,
+        "bounds_partlocal_mm": [
+          [
+            -83.0,
+            -83.0,
+            60.99999999999999
+          ],
+          [
+            72.99828765114974,
+            83.0,
+            68.0
+          ]
+        ],
+        "note": "Horizontal PETG deck; remove before reaching battery from above"
+      },
+      {
+        "name": "B07_upper_shell_front",
+        "group": "body",
+        "category": "print",
+        "link": "body",
+        "mass_g": 72.59802635882451,
+        "volume_cm3": 57.163800282538986,
+        "bounds_partlocal_mm": [
+          [
+            -1.000000584875755e-07,
+            -90.0000001,
+            107.9999999
+          ],
+          [
+            90.0000001,
+            90.0000001,
+            220.0000001
+          ]
+        ],
+        "note": "112mm tall cosmetic clamshell; rim and core carry alignment, seam attachment awaits coupon"
+      },
+      {
+        "name": "B10_lid_twin_rim",
+        "group": "body",
+        "category": "print",
+        "link": "body",
+        "mass_g": 45.94327086515901,
+        "volume_cm3": 36.175803830833864,
+        "bounds_partlocal_mm": [
+          [
+            -92.0,
+            -92.0,
+            216.0
+          ],
+          [
+            92.0,
+            92.0,
+            232.0
+          ]
+        ],
+        "note": "Print flat; two raised circumferential bands preserve the reference silhouette"
+      },
+      {
+        "name": "B14_square_face_bezel",
+        "group": "body",
+        "category": "print",
+        "link": "body",
+        "mass_g": 38.48194097986741,
+        "volume_cm3": 30.30074092902946,
+        "bounds_partlocal_mm": [
+          [
+            84.0,
+            -47.0,
+            96.0
+          ],
+          [
+            99.0,
+            47.0,
+            182.0
+          ]
+        ],
+        "note": "94x86mm outline masks a64x68mm phone view; 17mm recess constrains off-axis viewing"
+      },
+      {
+        "name": "B06_lower_shell_rear",
+        "group": "body",
+        "category": "print",
+        "link": "body",
+        "mass_g": 38.038793297968695,
+        "volume_cm3": 29.951805746432044,
+        "bounds_partlocal_mm": [
+          [
+            -90.0,
+            -90.0,
+            6.0
+          ],
+          [
+            5.5109105961630896e-15,
+            90.0,
+            106.0
+          ]
+        ],
+        "note": "2.4mm cosmetic wall; hip-window size awaits moving pod interference audit"
+      },
+      {
+        "name": "B12_lid_bridge_handle",
+        "group": "body",
+        "category": "print",
+        "link": "body",
+        "mass_g": 32.92603742470425,
+        "volume_cm3": 25.926013720239567,
+        "bounds_partlocal_mm": [
+          [
+            -12.000000100000005,
+            -49.47202809420518,
+            239.9038459318715
+          ],
+          [
+            12.000000100000008,
+            49.472028094205186,
+            260.0
+          ]
+        ],
+        "note": "Print broad side on bed; four screw feet; do not lift the robot by this cosmetic lid handle"
+      },
+      {
+        "name": "B05_upper_core_ring",
+        "group": "body",
+        "category": "print",
+        "link": "body",
+        "mass_g": 31.434824559359107,
+        "volume_cm3": 24.751830361700087,
+        "bounds_partlocal_mm": [
+          [
+            -86.6,
+            -86.6,
+            104.0
+          ],
+          [
+            77.06691897305872,
+            86.6,
+            122.0
+          ]
+        ],
+        "note": ""
+      },
+      {
+        "name": "B13_face_phone_cassette",
+        "group": "body",
+        "category": "print",
+        "link": "body",
+        "mass_g": 25.073445570175874,
+        "volume_cm3": 19.742870527697537,
+        "bounds_partlocal_mm": [
+          [
+            66.9,
+            -38.05,
+            64.5
+          ],
+          [
+            78.25,
+            38.05,
+            215.5
+          ]
+        ],
+        "note": "Portrait Mi9SE,0.4mm pocket clearance per side; removable from open lid after unplugging"
+      },
+      {
+        "name": "B06_lower_shell_front",
+        "group": "body",
+        "category": "print",
+        "link": "body",
+        "mass_g": 15.300113512366028,
+        "volume_cm3": 12.04733347430396,
+        "bounds_partlocal_mm": [
+          [
+            -5.848757550781549e-14,
+            -90.0,
+            81.99999999999999
+          ],
+          [
+            90.0,
+            90.0,
+            106.0
+          ]
+        ],
+        "note": "2.4mm cosmetic wall; hip-window size awaits moving pod interference audit"
+      }
+    ],
+    "reduction_needed_as_fraction_of_all_printed_mass": 0.5018449926777737
+  },
+  "saved_three_contact_fixture": {
+    "source": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\mist_v2_20260906\\simulation\\proximal_cad_20260907\\load_three_contacts.json",
+    "source_sha256": "fe677e2c365f67fd19760f6c202c66cbdba3afbd9b535064d9d77295e80d79fb",
+    "actual_mass_kg": 7.108160063387575,
+    "knee_rms_Nm": 0.7278991406042172,
+    "continuous_cap_Nm": 0.7281437625,
+    "reserve_definition": "Demand <=80%ofassumedtorquecap",
+    "target_Nm": 0.58251501,
+    "uniform_mass_target_kg": 5.688439097439738,
+    "uniform_reduction_kg": 1.4197209659478371,
+    "base_only_mass_target_kg": 5.858133121210819,
+    "base_only_reduction_kg": 1.2500269421767563,
+    "affine_knee_motor_torque_Nm": "0.116285*M-0.098698",
+    "limitation": "Old130mm tibia and recorded loaded stance. New140mm tibia and relocated motors require new coefficients."
+  },
+  "unrun_two_contact_1p5_counterfactual": {
+    "force_multiplier_relative_three_contacts": 2.25,
+    "peak_cap_Nm": 1.33493023125,
+    "target_Nm": 1.067944185,
+    "uniform_mass_target_kg": 4.310466077804919,
+    "base_only_mass_target_kg": 4.458938279036658,
+    "unchanged_limb_mass_kg": 4.659,
+    "base_only_feasible": false,
+    "limitation": "Same old pose and limb self-weight. This is not a dynamic run or stair test."
+  }
+}

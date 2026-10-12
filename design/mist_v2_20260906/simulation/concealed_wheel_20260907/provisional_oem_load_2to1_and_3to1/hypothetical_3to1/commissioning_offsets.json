@@ -1,0 +1,5168 @@
+{
+  "schema_version": 1,
+  "status": "mathematical_commissioning_reference_analysis_not_hardware_calibration",
+  "sources": {
+    "dense_front": {
+      "path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\mist_v2_20260906\\simulation\\concealed_wheel_20260907\\provisional_oem_load_2to1_and_3to1\\reference_snapshots\\first_leg_candidate.json",
+      "sha256": "4edf162f8474a921acc0c62ba2612e0ac6d96c34bb5f3dcc70a5afc1f486a8f0"
+    },
+    "rear_pose": {
+      "path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\mist_v2_20260906\\simulation\\concealed_wheel_20260907\\provisional_oem_load_2to1_and_3to1\\reference_snapshots\\first_rear_pitch_5.0deg.json",
+      "sha256": "5c9a436dd219a4bb4bf9bf8b64bdbb500cc14074e3d7278f2986f92ba4c6afaf"
+    },
+    "old_geometry_parameters": {
+      "path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\mist_v2_20260906\\simulation\\concealed_wheel_20260907\\provisional_oem_load_2to1_and_3to1\\reference_snapshots\\parameters_snapshot.json",
+      "sha256": "a37a97a046164323975bd126959d50e892eb78a6f2225c341ac5cd3dffa399b2"
+    }
+  },
+  "current_parameters_sha256": "1a0cb14c880d5f36a8124f12f901bc29e890274f17639705869a4aad6ba68e1f",
+  "geometry_differences": {
+    "tibia_m": {
+      "reference": 0.13,
+      "current": 0.14
+    }
+  },
+  "reference_counts": {
+    "old_front": 815,
+    "old_rear": 1,
+    "current_fixture_and_flat": 548
+  },
+  "old_target_interpretation": {
+    "max_world_FK_residual_m": 1.498303070619016e-16,
+    "passed": true,
+    "pitch_convention": "pitch_search.rotation(p): standard active Ry(-p)",
+    "rear_geometry_provenance": "Caller-supplied shared old geometry; rear JSON has no embedded parameter hash."
+  },
+  "old_exact_angle_assessment": {
+    "status": "ANGLE_ENVELOPE_CONFLICT",
+    "sample_count": 1364,
+    "leg_order": [
+      "FL",
+      "FR",
+      "RL",
+      "RR"
+    ],
+    "joint_order": [
+      "yaw",
+      "hip",
+      "knee"
+    ],
+    "ratios": [
+      2.0,
+      3.0,
+      3.0
+    ],
+    "all_required_angles_fit": false,
+    "all_required_shaft_spans_fit": false,
+    "all_required_angles_within_physical_limits": true,
+    "travel_reference_q_rad": [
+      [
+        -0.5164160618026016,
+        1.2970060289064156,
+        -1.5571859591502302
+      ],
+      [
+        0.7601513526545318,
+        1.2550361350688704,
+        -1.5922256017364893
+      ],
+      [
+        0.5126375253937765,
+        1.2618893701266483,
+        -1.1099314686020854
+      ],
+      [
+        -0.6250362113799751,
+        0.9105418652588146,
+        -0.9448154915481733
+      ]
+    ],
+    "travel_reference_shaft_rad": [
+      [
+        -1.0328321236052032,
+        3.8910180867192468,
+        -4.671557877450691
+      ],
+      [
+        1.5203027053090636,
+        3.765108405206611,
+        -4.776676805209468
+      ],
+      [
+        1.025275050787553,
+        3.7856681103799446,
+        -3.3297944058062563
+      ],
+      [
+        -1.2500724227599502,
+        2.7316255957764435,
+        -2.83444647464452
+      ]
+    ],
+    "per_leg_output_limits_deg": [
+      [
+        [
+          -100.0,
+          57.911539185943845
+        ],
+        [
+          15.979638126027133,
+          125.0
+        ],
+        [
+          -147.55351670967255,
+          -30.88685004300587
+        ]
+      ],
+      [
+        [
+          -43.94653570173466,
+          100.0
+        ],
+        [
+          13.574940342523668,
+          125.0
+        ],
+        [
+          -149.56114034551206,
+          -32.89447367884538
+        ]
+      ],
+      [
+        [
+          -58.12803337490604,
+          100.0
+        ],
+        [
+          13.967601787345437,
+          125.0
+        ],
+        [
+          -121.92772203299008,
+          -15.0
+        ]
+      ],
+      [
+        [
+          -100.0,
+          51.68806304508063
+        ],
+        [
+          -6.163127384033579,
+          110.50353928263308
+        ],
+        [
+          -112.46727341762197,
+          -15.0
+        ]
+      ]
+    ],
+    "raw_per_leg_output_corridor_deg": [
+      [
+        [
+          -117.08846081405616,
+          57.911539185943845
+        ],
+        [
+          15.979638126027133,
+          132.6463047926938
+        ],
+        [
+          -147.55351670967255,
+          -30.88685004300587
+        ]
+      ],
+      [
+        [
+          -43.94653570173466,
+          131.05346429826534
+        ],
+        [
+          13.574940342523668,
+          130.24160700919035
+        ],
+        [
+          -149.56114034551206,
+          -32.89447367884538
+        ]
+      ],
+      [
+        [
+          -58.12803337490604,
+          116.87196662509396
+        ],
+        [
+          13.967601787345437,
+          130.6342684540121
+        ],
+        [
+          -121.92772203299008,
+          -5.261055366323404
+        ]
+      ],
+      [
+        [
+          -123.31193695491936,
+          51.68806304508063
+        ],
+        [
+          -6.163127384033579,
+          110.50353928263308
+        ],
+        [
+          -112.46727341762197,
+          4.199393249044704
+        ]
+      ]
+    ],
+    "original_shaft_limits_deg": [
+      [
+        -175.0,
+        175.0
+      ],
+      [
+        -175.0,
+        175.0
+      ],
+      [
+        -175.0,
+        175.0
+      ]
+    ],
+    "joints": [
+      {
+        "leg": "FL",
+        "joint": "yaw",
+        "ratio": 2.0,
+        "required_output_min_deg": -79.43317761462625,
+        "required_output_max_deg": 20.25625598651393,
+        "required_output_span_deg": 99.68943360114018,
+        "available_output_span_deg": 175.0,
+        "required_shaft_span_deg": 199.37886720228036,
+        "available_shaft_span_deg": 350.0,
+        "minimum_centered_shaft_margin_deg": 75.31056639885982,
+        "travel_reference_q_deg": -29.588460814056155,
+        "travel_reference_shaft_deg": -59.17692162811231,
+        "required_shaft_offsets_deg": [
+          -99.68943360114018,
+          99.68943360114018
+        ],
+        "raw_output_corridor_deg": [
+          -117.08846081405616,
+          57.911539185943845
+        ],
+        "physical_output_limits_deg": [
+          -100.0,
+          100.0
+        ],
+        "intersected_output_limits_deg": [
+          -100.0,
+          57.911539185943845
+        ],
+        "span_conflict": false,
+        "physical_limit_conflict": false,
+        "minimum_source": "current_flat[159]",
+        "maximum_source": "old_rear_feasible_pose"
+      },
+      {
+        "leg": "FL",
+        "joint": "hip",
+        "ratio": 3.0,
+        "required_output_min_deg": 25.718791400938834,
+        "required_output_max_deg": 122.90715151778211,
+        "required_output_span_deg": 97.18836011684328,
+        "available_output_span_deg": 116.66666666666667,
+        "required_shaft_span_deg": 291.56508035052985,
+        "available_shaft_span_deg": 350.0,
+        "minimum_centered_shaft_margin_deg": 29.217459824735073,
+        "travel_reference_q_deg": 74.31297145936047,
+        "travel_reference_shaft_deg": 222.9389143780814,
+        "required_shaft_offsets_deg": [
+          -145.78254017526493,
+          145.78254017526493
+        ],
+        "raw_output_corridor_deg": [
+          15.979638126027133,
+          132.6463047926938
+        ],
+        "physical_output_limits_deg": [
+          -40.0,
+          125.0
+        ],
+        "intersected_output_limits_deg": [
+          15.979638126027133,
+          125.0
+        ],
+        "span_conflict": false,
+        "physical_limit_conflict": false,
+        "minimum_source": "old_front[0]",
+        "maximum_source": "old_front[566]"
+      },
+      {
+        "leg": "FL",
+        "joint": "knee",
+        "ratio": 3.0,
+        "required_output_min_deg": -147.89998895362433,
+        "required_output_max_deg": -30.540377799054095,
+        "required_output_span_deg": 117.35961115457023,
+        "available_output_span_deg": 116.66666666666667,
+        "required_shaft_span_deg": 352.0788334637107,
+        "available_shaft_span_deg": 350.0,
+        "minimum_centered_shaft_margin_deg": -1.03941673185534,
+        "travel_reference_q_deg": -89.22018337633921,
+        "travel_reference_shaft_deg": -267.6605501290176,
+        "required_shaft_offsets_deg": [
+          -176.03941673185534,
+          176.03941673185534
+        ],
+        "raw_output_corridor_deg": [
+          -147.55351670967255,
+          -30.88685004300587
+        ],
+        "physical_output_limits_deg": [
+          -150.0,
+          -15.0
+        ],
+        "intersected_output_limits_deg": [
+          -147.55351670967255,
+          -30.88685004300587
+        ],
+        "span_conflict": true,
+        "physical_limit_conflict": false,
+        "minimum_source": "old_front[320]",
+        "maximum_source": "old_front[0]"
+      },
+      {
+        "leg": "FR",
+        "joint": "yaw",
+        "ratio": 2.0,
+        "required_output_min_deg": -4.727096245703578,
+        "required_output_max_deg": 91.83402484223426,
+        "required_output_span_deg": 96.56112108793783,
+        "available_output_span_deg": 175.0,
+        "required_shaft_span_deg": 193.12224217587567,
+        "available_shaft_span_deg": 350.0,
+        "minimum_centered_shaft_margin_deg": 78.43887891206217,
+        "travel_reference_q_deg": 43.55346429826534,
+        "travel_reference_shaft_deg": 87.10692859653068,
+        "required_shaft_offsets_deg": [
+          -96.56112108793783,
+          96.56112108793783
+        ],
+        "raw_output_corridor_deg": [
+          -43.94653570173466,
+          131.05346429826534
+        ],
+        "physical_output_limits_deg": [
+          -100.0,
+          100.0
+        ],
+        "intersected_output_limits_deg": [
+          -43.94653570173466,
+          100.0
+        ],
+        "span_conflict": false,
+        "physical_limit_conflict": false,
+        "minimum_source": "current_flat[155]",
+        "maximum_source": "current_flat[30]"
+      },
+      {
+        "leg": "FR",
+        "joint": "hip",
+        "ratio": 3.0,
+        "required_output_min_deg": 20.821072070199623,
+        "required_output_max_deg": 122.99547528151439,
+        "required_output_span_deg": 102.17440321131477,
+        "available_output_span_deg": 116.66666666666667,
+        "required_shaft_span_deg": 306.5232096339443,
+        "available_shaft_span_deg": 350.0,
+        "minimum_centered_shaft_margin_deg": 21.738395183027848,
+        "travel_reference_q_deg": 71.908273675857,
+        "travel_reference_shaft_deg": 215.724821027571,
+        "required_shaft_offsets_deg": [
+          -153.26160481697215,
+          153.26160481697215
+        ],
+        "raw_output_corridor_deg": [
+          13.574940342523668,
+          130.24160700919035
+        ],
+        "physical_output_limits_deg": [
+          -40.0,
+          125.0
+        ],
+        "intersected_output_limits_deg": [
+          13.574940342523668,
+          125.0
+        ],
+        "span_conflict": false,
+        "physical_limit_conflict": false,
+        "minimum_source": "old_front[596]",
+        "maximum_source": "old_rear_feasible_pose"
+      },
+      {
+        "leg": "FR",
+        "joint": "knee",
+        "ratio": 3.0,
+        "required_output_min_deg": -147.99998516643427,
+        "required_output_max_deg": -34.455628857923145,
+        "required_output_span_deg": 113.54435630851113,
+        "available_output_span_deg": 116.66666666666667,
+        "required_shaft_span_deg": 340.6330689255334,
+        "available_shaft_span_deg": 350.0,
+        "minimum_centered_shaft_margin_deg": 4.683465537233303,
+        "travel_reference_q_deg": -91.22780701217872,
+        "travel_reference_shaft_deg": -273.6834210365362,
+        "required_shaft_offsets_deg": [
+          -170.3165344627667,
+          170.3165344627667
+        ],
+        "raw_output_corridor_deg": [
+          -149.56114034551206,
+          -32.89447367884538
+        ],
+        "physical_output_limits_deg": [
+          -150.0,
+          -15.0
+        ],
+        "intersected_output_limits_deg": [
+          -149.56114034551206,
+          -32.89447367884538
+        ],
+        "span_conflict": false,
+        "physical_limit_conflict": false,
+        "minimum_source": "old_rear_feasible_pose",
+        "maximum_source": "old_front[594]"
+      },
+      {
+        "leg": "RL",
+        "joint": "yaw",
+        "ratio": 2.0,
+        "required_output_min_deg": -39.9500051076814,
+        "required_output_max_deg": 98.69393835786931,
+        "required_output_span_deg": 138.6439434655507,
+        "available_output_span_deg": 175.0,
+        "required_shaft_span_deg": 277.2878869311014,
+        "available_shaft_span_deg": 350.0,
+        "minimum_centered_shaft_margin_deg": 36.356056534449294,
+        "travel_reference_q_deg": 29.371966625093958,
+        "travel_reference_shaft_deg": 58.743933250187915,
+        "required_shaft_offsets_deg": [
+          -138.6439434655507,
+          138.6439434655507
+        ],
+        "raw_output_corridor_deg": [
+          -58.12803337490604,
+          116.87196662509396
+        ],
+        "physical_output_limits_deg": [
+          -100.0,
+          100.0
+        ],
+        "intersected_output_limits_deg": [
+          -58.12803337490604,
+          100.0
+        ],
+        "span_conflict": false,
+        "physical_limit_conflict": false,
+        "minimum_source": "old_front[781]",
+        "maximum_source": "current_flat[238]"
+      },
+      {
+        "leg": "RL",
+        "joint": "hip",
+        "ratio": 3.0,
+        "required_output_min_deg": 24.23736295986372,
+        "required_output_max_deg": 120.36450728149383,
+        "required_output_span_deg": 96.12714432163011,
+        "available_output_span_deg": 116.66666666666667,
+        "required_shaft_span_deg": 288.38143296489034,
+        "available_shaft_span_deg": 350.0,
+        "minimum_centered_shaft_margin_deg": 30.80928351755483,
+        "travel_reference_q_deg": 72.30093512067877,
+        "travel_reference_shaft_deg": 216.9028053620363,
+        "required_shaft_offsets_deg": [
+          -144.19071648244517,
+          144.19071648244517
+        ],
+        "raw_output_corridor_deg": [
+          13.967601787345437,
+          130.6342684540121
+        ],
+        "physical_output_limits_deg": [
+          -40.0,
+          125.0
+        ],
+        "intersected_output_limits_deg": [
+          13.967601787345437,
+          125.0
+        ],
+        "span_conflict": false,
+        "physical_limit_conflict": false,
+        "minimum_source": "old_front[596]",
+        "maximum_source": "old_rear_feasible_pose"
+      },
+      {
+        "leg": "RL",
+        "joint": "knee",
+        "ratio": 3.0,
+        "required_output_min_deg": -98.14251601802877,
+        "required_output_max_deg": -29.046261381284708,
+        "required_output_span_deg": 69.09625463674406,
+        "available_output_span_deg": 116.66666666666667,
+        "required_shaft_span_deg": 207.2887639102322,
+        "available_shaft_span_deg": 350.0,
+        "minimum_centered_shaft_margin_deg": 71.3556180448839,
+        "travel_reference_q_deg": -63.59438869965674,
+        "travel_reference_shaft_deg": -190.7831660989702,
+        "required_shaft_offsets_deg": [
+          -103.6443819551161,
+          103.6443819551161
+        ],
+        "raw_output_corridor_deg": [
+          -121.92772203299008,
+          -5.261055366323404
+        ],
+        "physical_output_limits_deg": [
+          -150.0,
+          -15.0
+        ],
+        "intersected_output_limits_deg": [
+          -121.92772203299008,
+          -15.0
+        ],
+        "span_conflict": false,
+        "physical_limit_conflict": false,
+        "minimum_source": "current_flat[43]",
+        "maximum_source": "old_front[671]"
+      },
+      {
+        "leg": "RR",
+        "joint": "yaw",
+        "ratio": 2.0,
+        "required_output_min_deg": -97.99305872514097,
+        "required_output_max_deg": 26.369184815302233,
+        "required_output_span_deg": 124.3622435404432,
+        "available_output_span_deg": 175.0,
+        "required_shaft_span_deg": 248.7244870808864,
+        "available_shaft_span_deg": 350.0,
+        "minimum_centered_shaft_margin_deg": 50.6377564595568,
+        "travel_reference_q_deg": -35.81193695491937,
+        "travel_reference_shaft_deg": -71.62387390983874,
+        "required_shaft_offsets_deg": [
+          -124.3622435404432,
+          124.3622435404432
+        ],
+        "raw_output_corridor_deg": [
+          -123.31193695491936,
+          51.68806304508063
+        ],
+        "physical_output_limits_deg": [
+          -100.0,
+          100.0
+        ],
+        "intersected_output_limits_deg": [
+          -100.0,
+          51.68806304508063
+        ],
+        "span_conflict": false,
+        "physical_limit_conflict": false,
+        "minimum_source": "old_rear_feasible_pose",
+        "maximum_source": "old_front[319]"
+      },
+      {
+        "leg": "RR",
+        "joint": "hip",
+        "ratio": 3.0,
+        "required_output_min_deg": 23.818211399865785,
+        "required_output_max_deg": 80.52220049873372,
+        "required_output_span_deg": 56.703989098867936,
+        "available_output_span_deg": 116.66666666666667,
+        "required_shaft_span_deg": 170.1119672966038,
+        "available_shaft_span_deg": 350.0,
+        "minimum_centered_shaft_margin_deg": 89.9440163516981,
+        "travel_reference_q_deg": 52.170205949299756,
+        "travel_reference_shaft_deg": 156.51061784789925,
+        "required_shaft_offsets_deg": [
+          -85.0559836483019,
+          85.0559836483019
+        ],
+        "raw_output_corridor_deg": [
+          -6.163127384033579,
+          110.50353928263308
+        ],
+        "physical_output_limits_deg": [
+          -40.0,
+          125.0
+        ],
+        "intersected_output_limits_deg": [
+          -6.163127384033579,
+          110.50353928263308
+        ],
+        "span_conflict": false,
+        "physical_limit_conflict": false,
+        "minimum_source": "old_front[604]",
+        "maximum_source": "current_flat[164]"
+      },
+      {
+        "leg": "RR",
+        "joint": "knee",
+        "ratio": 3.0,
+        "required_output_min_deg": -91.16787686816281,
+        "required_output_max_deg": -17.100003300414457,
+        "required_output_span_deg": 74.06787356774835,
+        "available_output_span_deg": 116.66666666666667,
+        "required_shaft_span_deg": 222.20362070324506,
+        "available_shaft_span_deg": 350.0,
+        "minimum_centered_shaft_margin_deg": 63.89818964837747,
+        "travel_reference_q_deg": -54.13394008428863,
+        "travel_reference_shaft_deg": -162.4018202528659,
+        "required_shaft_offsets_deg": [
+          -111.10181035162253,
+          111.10181035162253
+        ],
+        "raw_output_corridor_deg": [
+          -112.46727341762197,
+          4.199393249044704
+        ],
+        "physical_output_limits_deg": [
+          -150.0,
+          -15.0
+        ],
+        "intersected_output_limits_deg": [
+          -112.46727341762197,
+          -15.0
+        ],
+        "span_conflict": false,
+        "physical_limit_conflict": false,
+        "minimum_source": "current_flat[168]",
+        "maximum_source": "old_front[572]"
+      }
+    ],
+    "span_conflicts": [
+      {
+        "leg": "FL",
+        "joint": "knee",
+        "ratio": 3.0,
+        "required_output_min_deg": -147.89998895362433,
+        "required_output_max_deg": -30.540377799054095,
+        "required_output_span_deg": 117.35961115457023,
+        "available_output_span_deg": 116.66666666666667,
+        "required_shaft_span_deg": 352.0788334637107,
+        "available_shaft_span_deg": 350.0,
+        "minimum_centered_shaft_margin_deg": -1.03941673185534,
+        "travel_reference_q_deg": -89.22018337633921,
+        "travel_reference_shaft_deg": -267.6605501290176,
+        "required_shaft_offsets_deg": [
+          -176.03941673185534,
+          176.03941673185534
+        ],
+        "raw_output_corridor_deg": [
+          -147.55351670967255,
+          -30.88685004300587
+        ],
+        "physical_output_limits_deg": [
+          -150.0,
+          -15.0
+        ],
+        "intersected_output_limits_deg": [
+          -147.55351670967255,
+          -30.88685004300587
+        ],
+        "span_conflict": true,
+        "physical_limit_conflict": false,
+        "minimum_source": "old_front[320]",
+        "maximum_source": "old_front[0]"
+      }
+    ],
+    "physical_limit_conflicts": [],
+    "commissioned": false,
+    "interpretation": "One static reference per physical joint; no per-mode recentering, clipping or angular wrapping. Offsets maximize endpoint reserve but cannot reduce required span.",
+    "basis": "Original saved joint angles plus the current fixture/flat envelope",
+    "reference_geometry_mismatch": true,
+    "maximum_current_geometry_world_target_error_m": 0.010000000000000099,
+    "old_geometry_angles_do_not_reproduce_current_world_targets": true
+  },
+  "reprojected_world_target_assessment": {
+    "status": "REPROJECTED_REFERENCE_INVALID",
+    "sample_count": 1364,
+    "leg_order": [
+      "FL",
+      "FR",
+      "RL",
+      "RR"
+    ],
+    "joint_order": [
+      "yaw",
+      "hip",
+      "knee"
+    ],
+    "ratios": [
+      2.0,
+      3.0,
+      3.0
+    ],
+    "all_required_angles_fit": false,
+    "all_required_shaft_spans_fit": true,
+    "all_required_angles_within_physical_limits": false,
+    "travel_reference_q_rad": [
+      [
+        -0.5164160618026016,
+        1.417358776171195,
+        -1.6746633837486877
+      ],
+      [
+        0.7601513526545318,
+        1.379060638259473,
+        -1.6998319778145567
+      ],
+      [
+        0.5126375253937765,
+        1.3592406856432357,
+        -1.2233372679895678
+      ],
+      [
+        -0.6250362113799751,
+        0.991905574308319,
+        -1.101679441604345
+      ]
+    ],
+    "travel_reference_shaft_rad": [
+      [
+        -1.0328321236052032,
+        4.252076328513585,
+        -5.023990151246063
+      ],
+      [
+        1.5203027053090636,
+        4.137181914778418,
+        -5.09949593344367
+      ],
+      [
+        1.025275050787553,
+        4.077722056929708,
+        -3.6700118039687033
+      ],
+      [
+        -1.2500724227599502,
+        2.975716722924957,
+        -3.3050383248130353
+      ]
+    ],
+    "per_leg_output_limits_deg": [
+      [
+        [
+          -100.0,
+          57.911539185943845
+        ],
+        [
+          22.875342597103646,
+          125.0
+        ],
+        [
+          -150.0,
+          -37.61781066056384
+        ]
+      ],
+      [
+        [
+          -43.94653570173466,
+          100.0
+        ],
+        [
+          20.681020931552005,
+          125.0
+        ],
+        [
+          -150.0,
+          -39.05986487681614
+        ]
+      ],
+      [
+        [
+          -58.12803337490604,
+          100.0
+        ],
+        [
+          19.545421296492343,
+          125.0
+        ],
+        [
+          -128.42539571020012,
+          -15.0
+        ]
+      ],
+      [
+        [
+          -100.0,
+          51.68806304508063
+        ],
+        [
+          -1.5013302499665926,
+          115.16533641670009
+        ],
+        [
+          -121.45491571359153,
+          -15.0
+        ]
+      ]
+    ],
+    "raw_per_leg_output_corridor_deg": [
+      [
+        [
+          -117.08846081405616,
+          57.911539185943845
+        ],
+        [
+          22.875342597103646,
+          139.54200926377032
+        ],
+        [
+          -154.28447732723052,
+          -37.61781066056384
+        ]
+      ],
+      [
+        [
+          -43.94653570173466,
+          131.05346429826534
+        ],
+        [
+          20.681020931552005,
+          137.34768759821867
+        ],
+        [
+          -155.72653154348282,
+          -39.05986487681614
+        ]
+      ],
+      [
+        [
+          -58.12803337490604,
+          116.87196662509396
+        ],
+        [
+          19.545421296492343,
+          136.212087963159
+        ],
+        [
+          -128.42539571020012,
+          -11.758729043533442
+        ]
+      ],
+      [
+        [
+          -123.31193695491936,
+          51.68806304508063
+        ],
+        [
+          -1.5013302499665926,
+          115.16533641670009
+        ],
+        [
+          -121.45491571359153,
+          -4.788249046924868
+        ]
+      ]
+    ],
+    "original_shaft_limits_deg": [
+      [
+        -175.0,
+        175.0
+      ],
+      [
+        -175.0,
+        175.0
+      ],
+      [
+        -175.0,
+        175.0
+      ]
+    ],
+    "joints": [
+      {
+        "leg": "FL",
+        "joint": "yaw",
+        "ratio": 2.0,
+        "required_output_min_deg": -79.43317761462625,
+        "required_output_max_deg": 20.25625598651393,
+        "required_output_span_deg": 99.68943360114018,
+        "available_output_span_deg": 175.0,
+        "required_shaft_span_deg": 199.37886720228036,
+        "available_shaft_span_deg": 350.0,
+        "minimum_centered_shaft_margin_deg": 75.31056639885982,
+        "travel_reference_q_deg": -29.588460814056155,
+        "travel_reference_shaft_deg": -59.17692162811231,
+        "required_shaft_offsets_deg": [
+          -99.68943360114018,
+          99.68943360114018
+        ],
+        "raw_output_corridor_deg": [
+          -117.08846081405616,
+          57.911539185943845
+        ],
+        "physical_output_limits_deg": [
+          -100.0,
+          100.0
+        ],
+        "intersected_output_limits_deg": [
+          -100.0,
+          57.911539185943845
+        ],
+        "span_conflict": false,
+        "physical_limit_conflict": false,
+        "minimum_source": "current_flat[159]",
+        "maximum_source": "old_rear_feasible_pose"
+      },
+      {
+        "leg": "FL",
+        "joint": "hip",
+        "ratio": 3.0,
+        "required_output_min_deg": 32.5709104425388,
+        "required_output_max_deg": 129.84644141833516,
+        "required_output_span_deg": 97.27553097579636,
+        "available_output_span_deg": 116.66666666666667,
+        "required_shaft_span_deg": 291.8265929273891,
+        "available_shaft_span_deg": 350.0,
+        "minimum_centered_shaft_margin_deg": 29.086703536305464,
+        "travel_reference_q_deg": 81.20867593043698,
+        "travel_reference_shaft_deg": 243.62602779131095,
+        "required_shaft_offsets_deg": [
+          -145.91329646369454,
+          145.91329646369454
+        ],
+        "raw_output_corridor_deg": [
+          22.875342597103646,
+          139.54200926377032
+        ],
+        "physical_output_limits_deg": [
+          -40.0,
+          125.0
+        ],
+        "intersected_output_limits_deg": [
+          22.875342597103646,
+          125.0
+        ],
+        "span_conflict": false,
+        "physical_limit_conflict": true,
+        "minimum_source": "old_front[0]",
+        "maximum_source": "old_rear_feasible_pose"
+      },
+      {
+        "leg": "FL",
+        "joint": "knee",
+        "ratio": 3.0,
+        "required_output_min_deg": -148.84131095095702,
+        "required_output_max_deg": -43.06097703683734,
+        "required_output_span_deg": 105.78033391411968,
+        "available_output_span_deg": 116.66666666666667,
+        "required_shaft_span_deg": 317.341001742359,
+        "available_shaft_span_deg": 350.0,
+        "minimum_centered_shaft_margin_deg": 16.329499128820487,
+        "travel_reference_q_deg": -95.95114399389718,
+        "travel_reference_shaft_deg": -287.85343198169153,
+        "required_shaft_offsets_deg": [
+          -158.6705008711795,
+          158.6705008711795
+        ],
+        "raw_output_corridor_deg": [
+          -154.28447732723052,
+          -37.61781066056384
+        ],
+        "physical_output_limits_deg": [
+          -150.0,
+          -15.0
+        ],
+        "intersected_output_limits_deg": [
+          -150.0,
+          -37.61781066056384
+        ],
+        "span_conflict": false,
+        "physical_limit_conflict": false,
+        "minimum_source": "old_front[319]",
+        "maximum_source": "old_front[0]"
+      },
+      {
+        "leg": "FR",
+        "joint": "yaw",
+        "ratio": 2.0,
+        "required_output_min_deg": -4.727096245703578,
+        "required_output_max_deg": 91.83402484223426,
+        "required_output_span_deg": 96.56112108793783,
+        "available_output_span_deg": 175.0,
+        "required_shaft_span_deg": 193.12224217587567,
+        "available_shaft_span_deg": 350.0,
+        "minimum_centered_shaft_margin_deg": 78.43887891206217,
+        "travel_reference_q_deg": 43.55346429826534,
+        "travel_reference_shaft_deg": 87.10692859653068,
+        "required_shaft_offsets_deg": [
+          -96.56112108793783,
+          96.56112108793783
+        ],
+        "raw_output_corridor_deg": [
+          -43.94653570173466,
+          131.05346429826534
+        ],
+        "physical_output_limits_deg": [
+          -100.0,
+          100.0
+        ],
+        "intersected_output_limits_deg": [
+          -43.94653570173466,
+          100.0
+        ],
+        "span_conflict": false,
+        "physical_limit_conflict": false,
+        "minimum_source": "current_flat[155]",
+        "maximum_source": "current_flat[30]"
+      },
+      {
+        "leg": "FR",
+        "joint": "hip",
+        "ratio": 3.0,
+        "required_output_min_deg": 27.187719988966883,
+        "required_output_max_deg": 130.8409885408038,
+        "required_output_span_deg": 103.65326855183693,
+        "available_output_span_deg": 116.66666666666667,
+        "required_shaft_span_deg": 310.95980565551076,
+        "available_shaft_span_deg": 350.0,
+        "minimum_centered_shaft_margin_deg": 19.52009717224462,
+        "travel_reference_q_deg": 79.01435426488534,
+        "travel_reference_shaft_deg": 237.043062794656,
+        "required_shaft_offsets_deg": [
+          -155.47990282775538,
+          155.47990282775538
+        ],
+        "raw_output_corridor_deg": [
+          20.681020931552005,
+          137.34768759821867
+        ],
+        "physical_output_limits_deg": [
+          -40.0,
+          125.0
+        ],
+        "intersected_output_limits_deg": [
+          20.681020931552005,
+          125.0
+        ],
+        "span_conflict": false,
+        "physical_limit_conflict": true,
+        "minimum_source": "old_front[596]",
+        "maximum_source": "old_rear_feasible_pose"
+      },
+      {
+        "leg": "FR",
+        "joint": "knee",
+        "ratio": 3.0,
+        "required_output_min_deg": -148.9366735373341,
+        "required_output_max_deg": -45.84972288296488,
+        "required_output_span_deg": 103.0869506543692,
+        "available_output_span_deg": 116.66666666666667,
+        "required_shaft_span_deg": 309.2608519631076,
+        "available_shaft_span_deg": 350.0,
+        "minimum_centered_shaft_margin_deg": 20.3695740184462,
+        "travel_reference_q_deg": -97.39319821014948,
+        "travel_reference_shaft_deg": -292.17959463044843,
+        "required_shaft_offsets_deg": [
+          -154.6304259815538,
+          154.6304259815538
+        ],
+        "raw_output_corridor_deg": [
+          -155.72653154348282,
+          -39.05986487681614
+        ],
+        "physical_output_limits_deg": [
+          -150.0,
+          -15.0
+        ],
+        "intersected_output_limits_deg": [
+          -150.0,
+          -39.05986487681614
+        ],
+        "span_conflict": false,
+        "physical_limit_conflict": false,
+        "minimum_source": "old_rear_feasible_pose",
+        "maximum_source": "old_front[594]"
+      },
+      {
+        "leg": "RL",
+        "joint": "yaw",
+        "ratio": 2.0,
+        "required_output_min_deg": -39.9500051076814,
+        "required_output_max_deg": 98.69393835786931,
+        "required_output_span_deg": 138.6439434655507,
+        "available_output_span_deg": 175.0,
+        "required_shaft_span_deg": 277.2878869311014,
+        "available_shaft_span_deg": 350.0,
+        "minimum_centered_shaft_margin_deg": 36.356056534449294,
+        "travel_reference_q_deg": 29.371966625093958,
+        "travel_reference_shaft_deg": 58.743933250187915,
+        "required_shaft_offsets_deg": [
+          -138.6439434655507,
+          138.6439434655507
+        ],
+        "raw_output_corridor_deg": [
+          -58.12803337490604,
+          116.87196662509396
+        ],
+        "physical_output_limits_deg": [
+          -100.0,
+          100.0
+        ],
+        "intersected_output_limits_deg": [
+          -58.12803337490604,
+          100.0
+        ],
+        "span_conflict": false,
+        "physical_limit_conflict": false,
+        "minimum_source": "old_front[781]",
+        "maximum_source": "current_flat[238]"
+      },
+      {
+        "leg": "RL",
+        "joint": "hip",
+        "ratio": 3.0,
+        "required_output_min_deg": 31.28312221556708,
+        "required_output_max_deg": 124.47438704408428,
+        "required_output_span_deg": 93.1912648285172,
+        "available_output_span_deg": 116.66666666666667,
+        "required_shaft_span_deg": 279.5737944855516,
+        "available_shaft_span_deg": 350.0,
+        "minimum_centered_shaft_margin_deg": 35.21310275722419,
+        "travel_reference_q_deg": 77.87875462982568,
+        "travel_reference_shaft_deg": 233.63626388947705,
+        "required_shaft_offsets_deg": [
+          -139.7868972427758,
+          139.7868972427758
+        ],
+        "raw_output_corridor_deg": [
+          19.545421296492343,
+          136.212087963159
+        ],
+        "physical_output_limits_deg": [
+          -40.0,
+          125.0
+        ],
+        "intersected_output_limits_deg": [
+          19.545421296492343,
+          125.0
+        ],
+        "span_conflict": false,
+        "physical_limit_conflict": false,
+        "minimum_source": "old_front[596]",
+        "maximum_source": "old_rear_feasible_pose"
+      },
+      {
+        "leg": "RL",
+        "joint": "knee",
+        "ratio": 3.0,
+        "required_output_min_deg": -98.14251601802877,
+        "required_output_max_deg": -42.0416087357048,
+        "required_output_span_deg": 56.10090728232397,
+        "available_output_span_deg": 116.66666666666667,
+        "required_shaft_span_deg": 168.3027218469719,
+        "available_shaft_span_deg": 350.0,
+        "minimum_centered_shaft_margin_deg": 90.84863907651405,
+        "travel_reference_q_deg": -70.09206237686678,
+        "travel_reference_shaft_deg": -210.27618713060033,
+        "required_shaft_offsets_deg": [
+          -84.15136092348595,
+          84.15136092348595
+        ],
+        "raw_output_corridor_deg": [
+          -128.42539571020012,
+          -11.758729043533442
+        ],
+        "physical_output_limits_deg": [
+          -150.0,
+          -15.0
+        ],
+        "intersected_output_limits_deg": [
+          -128.42539571020012,
+          -15.0
+        ],
+        "span_conflict": false,
+        "physical_limit_conflict": false,
+        "minimum_source": "current_flat[43]",
+        "maximum_source": "old_front[671]"
+      },
+      {
+        "leg": "RR",
+        "joint": "yaw",
+        "ratio": 2.0,
+        "required_output_min_deg": -97.99305872514097,
+        "required_output_max_deg": 26.369184815302233,
+        "required_output_span_deg": 124.3622435404432,
+        "available_output_span_deg": 175.0,
+        "required_shaft_span_deg": 248.7244870808864,
+        "available_shaft_span_deg": 350.0,
+        "minimum_centered_shaft_margin_deg": 50.6377564595568,
+        "travel_reference_q_deg": -35.81193695491937,
+        "travel_reference_shaft_deg": -71.62387390983874,
+        "required_shaft_offsets_deg": [
+          -124.3622435404432,
+          124.3622435404432
+        ],
+        "raw_output_corridor_deg": [
+          -123.31193695491936,
+          51.68806304508063
+        ],
+        "physical_output_limits_deg": [
+          -100.0,
+          100.0
+        ],
+        "intersected_output_limits_deg": [
+          -100.0,
+          51.68806304508063
+        ],
+        "span_conflict": false,
+        "physical_limit_conflict": false,
+        "minimum_source": "old_rear_feasible_pose",
+        "maximum_source": "old_front[319]"
+      },
+      {
+        "leg": "RR",
+        "joint": "hip",
+        "ratio": 3.0,
+        "required_output_min_deg": 33.14180566799976,
+        "required_output_max_deg": 80.52220049873372,
+        "required_output_span_deg": 47.38039483073396,
+        "available_output_span_deg": 116.66666666666667,
+        "required_shaft_span_deg": 142.1411844922019,
+        "available_shaft_span_deg": 350.0,
+        "minimum_centered_shaft_margin_deg": 103.92940775389906,
+        "travel_reference_q_deg": 56.83200308336674,
+        "travel_reference_shaft_deg": 170.49600925010023,
+        "required_shaft_offsets_deg": [
+          -71.07059224610094,
+          71.07059224610094
+        ],
+        "raw_output_corridor_deg": [
+          -1.5013302499665926,
+          115.16533641670009
+        ],
+        "physical_output_limits_deg": [
+          -40.0,
+          125.0
+        ],
+        "intersected_output_limits_deg": [
+          -1.5013302499665926,
+          115.16533641670009
+        ],
+        "span_conflict": false,
+        "physical_limit_conflict": false,
+        "minimum_source": "old_front[604]",
+        "maximum_source": "current_flat[164]"
+      },
+      {
+        "leg": "RR",
+        "joint": "knee",
+        "ratio": 3.0,
+        "required_output_min_deg": -91.16787686816281,
+        "required_output_max_deg": -35.0752878923536,
+        "required_output_span_deg": 56.09258897580921,
+        "available_output_span_deg": 116.66666666666667,
+        "required_shaft_span_deg": 168.27776692742762,
+        "available_shaft_span_deg": 350.0,
+        "minimum_centered_shaft_margin_deg": 90.86111653628619,
+        "travel_reference_q_deg": -63.121582380258204,
+        "travel_reference_shaft_deg": -189.36474714077463,
+        "required_shaft_offsets_deg": [
+          -84.13888346371381,
+          84.13888346371381
+        ],
+        "raw_output_corridor_deg": [
+          -121.45491571359153,
+          -4.788249046924868
+        ],
+        "physical_output_limits_deg": [
+          -150.0,
+          -15.0
+        ],
+        "intersected_output_limits_deg": [
+          -121.45491571359153,
+          -15.0
+        ],
+        "span_conflict": false,
+        "physical_limit_conflict": false,
+        "minimum_source": "current_flat[168]",
+        "maximum_source": "old_front[572]"
+      }
+    ],
+    "span_conflicts": [],
+    "physical_limit_conflicts": [
+      {
+        "leg": "FL",
+        "joint": "hip",
+        "ratio": 3.0,
+        "required_output_min_deg": 32.5709104425388,
+        "required_output_max_deg": 129.84644141833516,
+        "required_output_span_deg": 97.27553097579636,
+        "available_output_span_deg": 116.66666666666667,
+        "required_shaft_span_deg": 291.8265929273891,
+        "available_shaft_span_deg": 350.0,
+        "minimum_centered_shaft_margin_deg": 29.086703536305464,
+        "travel_reference_q_deg": 81.20867593043698,
+        "travel_reference_shaft_deg": 243.62602779131095,
+        "required_shaft_offsets_deg": [
+          -145.91329646369454,
+          145.91329646369454
+        ],
+        "raw_output_corridor_deg": [
+          22.875342597103646,
+          139.54200926377032
+        ],
+        "physical_output_limits_deg": [
+          -40.0,
+          125.0
+        ],
+        "intersected_output_limits_deg": [
+          22.875342597103646,
+          125.0
+        ],
+        "span_conflict": false,
+        "physical_limit_conflict": true,
+        "minimum_source": "old_front[0]",
+        "maximum_source": "old_rear_feasible_pose"
+      },
+      {
+        "leg": "FR",
+        "joint": "hip",
+        "ratio": 3.0,
+        "required_output_min_deg": 27.187719988966883,
+        "required_output_max_deg": 130.8409885408038,
+        "required_output_span_deg": 103.65326855183693,
+        "available_output_span_deg": 116.66666666666667,
+        "required_shaft_span_deg": 310.95980565551076,
+        "available_shaft_span_deg": 350.0,
+        "minimum_centered_shaft_margin_deg": 19.52009717224462,
+        "travel_reference_q_deg": 79.01435426488534,
+        "travel_reference_shaft_deg": 237.043062794656,
+        "required_shaft_offsets_deg": [
+          -155.47990282775538,
+          155.47990282775538
+        ],
+        "raw_output_corridor_deg": [
+          20.681020931552005,
+          137.34768759821867
+        ],
+        "physical_output_limits_deg": [
+          -40.0,
+          125.0
+        ],
+        "intersected_output_limits_deg": [
+          20.681020931552005,
+          125.0
+        ],
+        "span_conflict": false,
+        "physical_limit_conflict": true,
+        "minimum_source": "old_front[596]",
+        "maximum_source": "old_rear_feasible_pose"
+      }
+    ],
+    "commissioned": false,
+    "interpretation": "One static reference per physical joint; no per-mode recentering, clipping or angular wrapping. Offsets maximize endpoint reserve but cannot reduce required span.",
+    "basis": "Current-geometry IK of the unchanged old body poses and world axle targets, plus current fixture/flat angles",
+    "reference_geometry_mismatch": true,
+    "maximum_world_FK_residual_m": 1.1443916996305594e-16,
+    "geometric_reach_failure_count": 0,
+    "physical_limit_failure_count": 291,
+    "ik_invalid_leg_pose_count": 291,
+    "failed_leg_poses": [
+      {
+        "source": "old_front[435]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.1031676915590914e-17,
+        "attempted_q_deg": [
+          -4.147472780609668,
+          125.00189574735687,
+          -143.33928310980087
+        ]
+      },
+      {
+        "source": "old_front[436]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.1031676915590914e-17,
+        "attempted_q_deg": [
+          -4.289963308190476,
+          125.05126062400305,
+          -143.26018315987065
+        ]
+      },
+      {
+        "source": "old_front[437]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 1.3877787807814457e-17,
+        "attempted_q_deg": [
+          -4.431734618703573,
+          125.10041805029182,
+          -143.18061748967776
+        ]
+      },
+      {
+        "source": "old_front[438]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 1.3877787807814457e-17,
+        "attempted_q_deg": [
+          -4.5727896695630745,
+          125.14936302950997,
+          -143.10058739134303
+        ]
+      },
+      {
+        "source": "old_front[439]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -4.713131435427936,
+          125.19809064163526,
+          -143.0200941616735
+        ]
+      },
+      {
+        "source": "old_front[440]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 1.3877787807814457e-17,
+        "attempted_q_deg": [
+          -4.852762907408519,
+          125.24659604320645,
+          -142.93913910196508
+        ]
+      },
+      {
+        "source": "old_front[441]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 6.359601310784502e-17,
+        "attempted_q_deg": [
+          -4.991687092286846,
+          125.29487446716936,
+          -142.85772351780514
+        ]
+      },
+      {
+        "source": "old_front[442]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.1031676915590914e-17,
+        "attempted_q_deg": [
+          -5.129907011749987,
+          125.34292122269892,
+          -142.77584871887518
+        ]
+      },
+      {
+        "source": "old_front[443]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 4.163336342344337e-17,
+        "attempted_q_deg": [
+          -5.267425701636647,
+          125.3907316949986,
+          -142.6935160187538
+        ]
+      },
+      {
+        "source": "old_front[444]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.1031676915590914e-17,
+        "attempted_q_deg": [
+          -5.404246211197091,
+          125.43830134507758,
+          -142.61072673471978
+        ]
+      },
+      {
+        "source": "old_front[445]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 4.163336342344337e-17,
+        "attempted_q_deg": [
+          -5.540371602366043,
+          125.48562570950573,
+          -142.52748218755517
+        ]
+      },
+      {
+        "source": "old_front[446]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 1.3877787807814457e-17,
+        "attempted_q_deg": [
+          -5.6758049490487155,
+          125.53270040014817,
+          -142.4437837013496
+        ]
+      },
+      {
+        "source": "old_front[447]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 1.3877787807814457e-17,
+        "attempted_q_deg": [
+          -5.810549336419765,
+          125.57952110387899,
+          -142.359632603304
+        ]
+      },
+      {
+        "source": "old_front[448]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 5.721958498152797e-17,
+        "attempted_q_deg": [
+          -5.944607860235373,
+          125.62608358227507,
+          -142.2750302235359
+        ]
+      },
+      {
+        "source": "old_front[449]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 4.8074067159589095e-17,
+        "attempted_q_deg": [
+          -6.077983626157853,
+          125.67238367129093,
+          -142.18997789488458
+        ]
+      },
+      {
+        "source": "old_front[450]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 4.163336342344337e-17,
+        "attempted_q_deg": [
+          -6.21067974909328,
+          125.71841728091472,
+          -142.10447695271716
+        ]
+      },
+      {
+        "source": "old_front[451]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 2.7755575615628914e-17,
+        "attempted_q_deg": [
+          -6.342699352541584,
+          125.76418039480625,
+          -142.01852873473575
+        ]
+      },
+      {
+        "source": "old_front[452]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 2.7755575615628914e-17,
+        "attempted_q_deg": [
+          -6.474045567959531,
+          125.80966906991765,
+          -141.93213458078492
+        ]
+      },
+      {
+        "source": "old_front[453]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 5.721958498152797e-17,
+        "attempted_q_deg": [
+          -6.604721534135648,
+          125.85487943609711,
+          -141.84529583266033
+        ]
+      },
+      {
+        "source": "old_front[454]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 6.359601310784502e-17,
+        "attempted_q_deg": [
+          -6.734730396578136,
+          125.89980769567634,
+          -141.75801383391845
+        ]
+      },
+      {
+        "source": "old_front[455]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 5.003707553108401e-17,
+        "attempted_q_deg": [
+          -6.864075306914633,
+          125.94445012304247,
+          -141.67028992968685
+        ]
+      },
+      {
+        "source": "old_front[456]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 2.7755575615628914e-17,
+        "attempted_q_deg": [
+          -6.992759422304373,
+          125.98880306419451,
+          -141.5821254664761
+        ]
+      },
+      {
+        "source": "old_front[457]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.1031676915590914e-17,
+        "attempted_q_deg": [
+          -7.120785904862198,
+          126.03286293628585,
+          -141.49352179199246
+        ]
+      },
+      {
+        "source": "old_front[458]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -7.248157921094739,
+          126.07662622715218,
+          -141.40448025495175
+        ]
+      },
+      {
+        "source": "old_front[459]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 1.3877787807814457e-17,
+        "attempted_q_deg": [
+          -7.374878641348343,
+          126.12008949482623,
+          -141.31500220489463
+        ]
+      },
+      {
+        "source": "old_front[460]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -7.500951239268586,
+          126.16324936703974,
+          -141.2250889920031
+        ]
+      },
+      {
+        "source": "old_front[461]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.1031676915590914e-17,
+        "attempted_q_deg": [
+          -7.626378891271635,
+          126.20610254071276,
+          -141.13474196691817
+        ]
+      },
+      {
+        "source": "old_front[462]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 4.8074067159589095e-17,
+        "attempted_q_deg": [
+          -7.751164776026894,
+          126.24864578143149,
+          -141.04396248055923
+        ]
+      },
+      {
+        "source": "old_front[463]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -7.875312073950981,
+          126.29087592291444,
+          -140.95275188394473
+        ]
+      },
+      {
+        "source": "old_front[464]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -7.998823966713121,
+          126.33278986646818,
+          -140.86111152801394
+        ]
+      },
+      {
+        "source": "old_front[465]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 4.8074067159589095e-17,
+        "attempted_q_deg": [
+          -8.121703636751368,
+          126.3743845804325,
+          -140.769042763451
+        ]
+      },
+      {
+        "source": "old_front[466]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 4.8074067159589095e-17,
+        "attempted_q_deg": [
+          -8.243954266800124,
+          126.41565709961597,
+          -140.6765469405098
+        ]
+      },
+      {
+        "source": "old_front[467]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 5.721958498152797e-17,
+        "attempted_q_deg": [
+          -8.365579039428052,
+          126.45660452472217,
+          -140.58362540884087
+        ]
+      },
+      {
+        "source": "old_front[468]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 1.3877787807814457e-17,
+        "attempted_q_deg": [
+          -8.486581136587164,
+          126.49722402176688,
+          -140.49027951731975
+        ]
+      },
+      {
+        "source": "old_front[469]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -8.606963739172103,
+          126.53751282148755,
+          -140.39651061387698
+        ]
+      },
+      {
+        "source": "old_front[470]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.1031676915590914e-17,
+        "attempted_q_deg": [
+          -8.726730026590086,
+          126.57746821874403,
+          -140.30232004532994
+        ]
+      },
+      {
+        "source": "old_front[471]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -8.845883176341035,
+          126.61708757191255,
+          -140.20770915721621
+        ]
+      },
+      {
+        "source": "old_front[472]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 5.721958498152797e-17,
+        "attempted_q_deg": [
+          -8.964426363607929,
+          126.65636830227257,
+          -140.11267929362893
+        ]
+      },
+      {
+        "source": "old_front[473]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 4.8074067159589095e-17,
+        "attempted_q_deg": [
+          -9.082362760857121,
+          126.69530789338681,
+          -140.01723179705363
+        ]
+      },
+      {
+        "source": "old_front[474]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 4.163336342344337e-17,
+        "attempted_q_deg": [
+          -9.199695537448632,
+          126.73390389047569,
+          -139.92136800820717
+        ]
+      },
+      {
+        "source": "old_front[475]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.1031676915590914e-17,
+        "attempted_q_deg": [
+          -9.31642785925603,
+          126.7721538997854,
+          -139.8250892658782
+        ]
+      },
+      {
+        "source": "old_front[476]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 8.441528768080324e-17,
+        "attempted_q_deg": [
+          -9.432562888296228,
+          126.81005558795148,
+          -139.72839690676997
+        ]
+      },
+      {
+        "source": "old_front[477]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -9.54810378236841,
+          126.84760668135692,
+          -139.63129226534417
+        ]
+      },
+      {
+        "source": "old_front[478]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -9.6630536947025,
+          126.88480496548601,
+          -139.5337766736677
+        ]
+      },
+      {
+        "source": "old_front[479]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 4.8074067159589095e-17,
+        "attempted_q_deg": [
+          -9.777415773616731,
+          126.92164828427413,
+          -139.43585146126043
+        ]
+      },
+      {
+        "source": "old_front[480]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 1.3877787807814457e-17,
+        "attempted_q_deg": [
+          -9.891193162184528,
+          126.95813453945372,
+          -139.33751795494547
+        ]
+      },
+      {
+        "source": "old_front[481]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.1031676915590914e-17,
+        "attempted_q_deg": [
+          -10.004388997909755,
+          126.99426168989709,
+          -139.23877747870114
+        ]
+      },
+      {
+        "source": "old_front[482]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 8.886119947416683e-17,
+        "attempted_q_deg": [
+          -10.117006412411431,
+          127.0300277509559,
+          -139.13963135351477
+        ]
+      },
+      {
+        "source": "old_front[483]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 4.163336342344337e-17,
+        "attempted_q_deg": [
+          -10.229048531116579,
+          127.06543079379838,
+          -139.04008089723882
+        ]
+      },
+      {
+        "source": "old_front[484]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.1031676915590914e-17,
+        "attempted_q_deg": [
+          -10.340518472961897,
+          127.10046894474408,
+          -138.94012742444875
+        ]
+      },
+      {
+        "source": "old_front[485]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 5.003707553108401e-17,
+        "attempted_q_deg": [
+          -10.4514193501035,
+          127.13514038459644,
+          -138.8397722463027
+        ]
+      },
+      {
+        "source": "old_front[486]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 5.003707553108401e-17,
+        "attempted_q_deg": [
+          -10.561754267635196,
+          127.16944334797415,
+          -138.73901667040346
+        ]
+      },
+      {
+        "source": "old_front[487]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.1031676915590914e-17,
+        "attempted_q_deg": [
+          -10.671526323314783,
+          127.20337612264078,
+          -138.63786200066244
+        ]
+      },
+      {
+        "source": "old_front[488]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.1031676915590914e-17,
+        "attempted_q_deg": [
+          -10.78073860729807,
+          127.23693704883372,
+          -138.53630953716524
+        ]
+      },
+      {
+        "source": "old_front[489]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 1.3877787807814457e-17,
+        "attempted_q_deg": [
+          -10.88939420188121,
+          127.27012451859208,
+          -138.4343605760398
+        ]
+      },
+      {
+        "source": "old_front[490]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -10.997496181250167,
+          127.30293697508432,
+          -138.33201640932597
+        ]
+      },
+      {
+        "source": "old_front[491]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 7.850462293418876e-17,
+        "attempted_q_deg": [
+          -11.10504761123824,
+          127.33537291193575,
+          -138.2292783248476
+        ]
+      },
+      {
+        "source": "old_front[492]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 2.7755575615628914e-17,
+        "attempted_q_deg": [
+          -11.212051549090663,
+          127.367430872556,
+          -138.1261476060862
+        ]
+      },
+      {
+        "source": "old_front[493]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 4.8074067159589095e-17,
+        "attempted_q_deg": [
+          -11.31851104323674,
+          127.3991094494671,
+          -138.02262553205696
+        ]
+      },
+      {
+        "source": "old_front[494]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -11.424429133069047,
+          127.43040728363187,
+          -137.91871337718666
+        ]
+      },
+      {
+        "source": "old_front[495]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 6.359601310784502e-17,
+        "attempted_q_deg": [
+          -11.529808848729694,
+          127.46132306378342,
+          -137.81441241119333
+        ]
+      },
+      {
+        "source": "old_front[496]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 2.7755575615628914e-17,
+        "attempted_q_deg": [
+          -11.634653210903538,
+          127.49185552575595,
+          -137.7097238989683
+        ]
+      },
+      {
+        "source": "old_front[497]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 4.163336342344337e-17,
+        "attempted_q_deg": [
+          -11.738965230618012,
+          127.52200345181637,
+          -137.60464910046005
+        ]
+      },
+      {
+        "source": "old_front[498]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 6.938893903907228e-17,
+        "attempted_q_deg": [
+          -11.84274790904998,
+          127.55176566999788,
+          -137.49918927056004
+        ]
+      },
+      {
+        "source": "old_front[499]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 6.206335383118183e-17,
+        "attempted_q_deg": [
+          -11.946004237338736,
+          127.58114105343536,
+          -137.39334565899037
+        ]
+      },
+      {
+        "source": "old_front[500]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -12.048737196405595,
+          127.61012851970278,
+          -137.28711951019397
+        ]
+      },
+      {
+        "source": "old_front[501]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 6.206335383118183e-17,
+        "attempted_q_deg": [
+          -12.150949756779852,
+          127.63872703015235,
+          -137.18051206322593
+        ]
+      },
+      {
+        "source": "old_front[502]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.1031676915590914e-17,
+        "attempted_q_deg": [
+          -12.25264487843083,
+          127.66693558925685,
+          -137.07352455164755
+        ]
+      },
+      {
+        "source": "old_front[503]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 6.938893903907228e-17,
+        "attempted_q_deg": [
+          -12.353825510605873,
+          127.69475324395387,
+          -136.96615820342183
+        ]
+      },
+      {
+        "source": "old_front[504]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 4.163336342344337e-17,
+        "attempted_q_deg": [
+          -12.454494591674386,
+          127.72217908299318,
+          -136.858414240811
+        ]
+      },
+      {
+        "source": "old_front[505]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -12.554655048977837,
+          127.74921223628695,
+          -136.7502938802763
+        ]
+      },
+      {
+        "source": "old_front[506]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 5.721958498152797e-17,
+        "attempted_q_deg": [
+          -12.654309798685134,
+          127.77585187426318,
+          -136.64179833237918
+        ]
+      },
+      {
+        "source": "old_front[507]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 5.003707553108401e-17,
+        "attempted_q_deg": [
+          -12.75346174565381,
+          127.802097207222,
+          -136.5329288016847
+        ]
+      },
+      {
+        "source": "old_front[508]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 5.551115123125783e-17,
+        "attempted_q_deg": [
+          -12.852113783296625,
+          127.82794748469621,
+          -136.4236864866667
+        ]
+      },
+      {
+        "source": "old_front[509]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -12.950268793453535,
+          127.85340199481432,
+          -136.314072579615
+        ]
+      },
+      {
+        "source": "old_front[510]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -13.047929646268871,
+          127.87846006366824,
+          -136.2040882665441
+        ]
+      },
+      {
+        "source": "old_front[511]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 4.163336342344337e-17,
+        "attempted_q_deg": [
+          -13.14509920007374,
+          127.90312105468435,
+          -136.09373472710413
+        ]
+      },
+      {
+        "source": "old_front[512]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 1.3877787807814457e-17,
+        "attempted_q_deg": [
+          -13.24178030127334,
+          127.92738436799867,
+          -135.98301313449346
+        ]
+      },
+      {
+        "source": "old_front[513]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 1.3877787807814457e-17,
+        "attempted_q_deg": [
+          -13.337975784239335,
+          127.95124943983596,
+          -135.87192465537302
+        ]
+      },
+      {
+        "source": "old_front[514]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 0.0,
+        "attempted_q_deg": [
+          -13.433688471206892,
+          127.97471574189336,
+          -135.76047044978242
+        ]
+      },
+      {
+        "source": "old_front[515]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 5.721958498152797e-17,
+        "attempted_q_deg": [
+          -13.528921172176611,
+          127.99778278072802,
+          -135.64865167105808
+        ]
+      },
+      {
+        "source": "old_front[516]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.1031676915590914e-17,
+        "attempted_q_deg": [
+          -13.623676684820976,
+          128.0204500971494,
+          -135.53646946575282
+        ]
+      },
+      {
+        "source": "old_front[517]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 1.3877787807814457e-17,
+        "attempted_q_deg": [
+          -13.717957794395259,
+          128.04271726561612,
+          -135.42392497355738
+        ]
+      },
+      {
+        "source": "old_front[518]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 8.777083671441753e-17,
+        "attempted_q_deg": [
+          -13.811767273652986,
+          128.06458389363698,
+          -135.31101932722353
+        ]
+      },
+      {
+        "source": "old_front[519]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 6.359601310784502e-17,
+        "attempted_q_deg": [
+          -13.905107882765614,
+          128.08604962117752,
+          -135.19775365248896
+        ]
+      },
+      {
+        "source": "old_front[520]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 4.163336342344337e-17,
+        "attempted_q_deg": [
+          -13.997982369246476,
+          128.10711412007046,
+          -135.08412906800385
+        ]
+      },
+      {
+        "source": "old_front[521]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 5.721958498152797e-17,
+        "attempted_q_deg": [
+          -14.090393467878718,
+          128.1277770934319,
+          -134.97014668525918
+        ]
+      },
+      {
+        "source": "old_front[522]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 4.163336342344337e-17,
+        "attempted_q_deg": [
+          -14.18234390064768,
+          128.1480382750816,
+          -134.85580760851627
+        ]
+      },
+      {
+        "source": "old_front[523]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -14.273836376676531,
+          128.16789742896916,
+          -134.74111293473865
+        ]
+      },
+      {
+        "source": "old_front[524]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 4.8074067159589095e-17,
+        "attempted_q_deg": [
+          -14.364873592166438,
+          128.18735434860452,
+          -134.62606375352482
+        ]
+      },
+      {
+        "source": "old_front[525]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.1031676915590914e-17,
+        "attempted_q_deg": [
+          -14.455458230340117,
+          128.20640885649414,
+          -134.51066114704298
+        ]
+      },
+      {
+        "source": "old_front[526]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.1031676915590914e-17,
+        "attempted_q_deg": [
+          -14.545592961389048,
+          128.22506080358212,
+          -134.3949061899673
+        ]
+      },
+      {
+        "source": "old_front[527]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 2.7755575615628914e-17,
+        "attempted_q_deg": [
+          -14.635280442424538,
+          128.24331006869676,
+          -134.27879994941568
+        ]
+      },
+      {
+        "source": "old_front[528]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 6.798699777552591e-17,
+        "attempted_q_deg": [
+          -14.724523317432,
+          128.2611565580021,
+          -134.16234348488888
+        ]
+      },
+      {
+        "source": "old_front[529]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 6.206335383118183e-17,
+        "attempted_q_deg": [
+          -14.81387324201061,
+          128.2723578200819,
+          -134.044150057367
+        ]
+      },
+      {
+        "source": "old_front[530]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -14.902784140456074,
+          128.28318459760763,
+          -133.92561791671667
+        ]
+      },
+      {
+        "source": "old_front[531]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 8.886119947416683e-17,
+        "attempted_q_deg": [
+          -14.991258583189378,
+          128.29363681758971,
+          -133.80674805016574
+        ]
+      },
+      {
+        "source": "old_front[532]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.1031676915590914e-17,
+        "attempted_q_deg": [
+          -15.079299127948834,
+          128.30371443062964,
+          -133.6875414370025
+        ]
+      },
+      {
+        "source": "old_front[533]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 4.8074067159589095e-17,
+        "attempted_q_deg": [
+          -15.16690831975308,
+          128.31341741043462,
+          -133.56799904853145
+        ]
+      },
+      {
+        "source": "old_front[534]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 4.8074067159589095e-17,
+        "attempted_q_deg": [
+          -15.254088690867212,
+          128.32274575333713,
+          -133.4481218480294
+        ]
+      },
+      {
+        "source": "old_front[535]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 0.0,
+        "attempted_q_deg": [
+          -15.340842760771896,
+          128.33169947781985,
+          -133.32791079070353
+        ]
+      },
+      {
+        "source": "old_front[536]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 4.8074067159589095e-17,
+        "attempted_q_deg": [
+          -15.427173036135375,
+          128.34027862404562,
+          -133.2073668236502
+        ]
+      },
+      {
+        "source": "old_front[537]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 2.7755575615628914e-17,
+        "attempted_q_deg": [
+          -15.513082010788416,
+          128.34848325339289,
+          -133.08649088581484
+        ]
+      },
+      {
+        "source": "old_front[538]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 1.3877787807814457e-17,
+        "attempted_q_deg": [
+          -15.59857216570191,
+          128.356313447996,
+          -132.96528390795328
+        ]
+      },
+      {
+        "source": "old_front[539]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -15.683645968967259,
+          128.36376931029122,
+          -132.8437468125939
+        ]
+      },
+      {
+        "source": "old_front[540]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 4.163336342344337e-17,
+        "attempted_q_deg": [
+          -15.759444118499735,
+          128.36057114488563,
+          -132.72553688413655
+        ]
+      },
+      {
+        "source": "old_front[541]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 5.721958498152797e-17,
+        "attempted_q_deg": [
+          -15.834897274061815,
+          128.35707545249753,
+          -132.60706164798353
+        ]
+      },
+      {
+        "source": "old_front[542]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.1031676915590914e-17,
+        "attempted_q_deg": [
+          -15.91000737447546,
+          128.3532824391677,
+          -132.48832174436583
+        ]
+      },
+      {
+        "source": "old_front[543]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 4.8074067159589095e-17,
+        "attempted_q_deg": [
+          -15.984776348232574,
+          128.34919232175383,
+          -132.36931780686274
+        ]
+      },
+      {
+        "source": "old_front[544]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 6.798699777552591e-17,
+        "attempted_q_deg": [
+          -16.059206113506015,
+          128.34480532766665,
+          -132.25005046239164
+        ]
+      },
+      {
+        "source": "old_front[545]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -16.133298578161817,
+          128.34012169460985,
+          -132.13052033119834
+        ]
+      },
+      {
+        "source": "old_front[546]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 4.163336342344337e-17,
+        "attempted_q_deg": [
+          -16.207055639772513,
+          128.33514167032308,
+          -132.0107280268482
+        ]
+      },
+      {
+        "source": "old_front[547]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 5.721958498152797e-17,
+        "attempted_q_deg": [
+          -16.28047918563182,
+          128.32986551232864,
+          -131.8906741562169
+        ]
+      },
+      {
+        "source": "old_front[548]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -16.35357109277034,
+          128.3242934876812,
+          -131.77035931948237
+        ]
+      },
+      {
+        "source": "old_front[549]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 2.7755575615628914e-17,
+        "attempted_q_deg": [
+          -16.42633322797234,
+          128.3184258727213,
+          -131.64978411011668
+        ]
+      },
+      {
+        "source": "old_front[550]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 6.798699777552591e-17,
+        "attempted_q_deg": [
+          -16.49876744779363,
+          128.31226295283193,
+          -131.52894911487843
+        ]
+      },
+      {
+        "source": "old_front[551]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 2.7755575615628914e-17,
+        "attempted_q_deg": [
+          -16.541966706299164,
+          128.3028300834406,
+          -131.38656632372624
+        ]
+      },
+      {
+        "source": "old_front[552]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -16.58494571823573,
+          128.29299223942974,
+          -131.2439653554065
+        ]
+      },
+      {
+        "source": "old_front[553]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.1031676915590914e-17,
+        "attempted_q_deg": [
+          -16.627706062056944,
+          128.28275129045582,
+          -131.10114656270477
+        ]
+      },
+      {
+        "source": "old_front[554]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 4.163336342344337e-17,
+        "attempted_q_deg": [
+          -16.670249302229333,
+          128.27210909385406,
+          -130.95811028930302
+        ]
+      },
+      {
+        "source": "old_front[555]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 7.473417450352271e-17,
+        "attempted_q_deg": [
+          -16.712576989373147,
+          128.26106749460794,
+          -130.81485686981412
+        ]
+      },
+      {
+        "source": "old_front[556]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 2.7755575615628914e-17,
+        "attempted_q_deg": [
+          -16.75469066040144,
+          128.2496283253211,
+          -130.67138662981614
+        ]
+      },
+      {
+        "source": "old_front[557]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -16.79659183865762,
+          128.23779340619197,
+          -130.5276998858862
+        ]
+      },
+      {
+        "source": "old_front[558]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.1031676915590914e-17,
+        "attempted_q_deg": [
+          -16.83828203405175,
+          128.225564544991,
+          -130.38379694563386
+        ]
+      },
+      {
+        "source": "old_front[559]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 2.7755575615628914e-17,
+        "attempted_q_deg": [
+          -16.879762743195474,
+          128.2129435370401,
+          -130.2396781077342
+        ]
+      },
+      {
+        "source": "old_front[560]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 5.003707553108401e-17,
+        "attempted_q_deg": [
+          -16.921035449535182,
+          128.19993216519487,
+          -130.09534366195993
+        ]
+      },
+      {
+        "source": "old_front[561]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.1031676915590914e-17,
+        "attempted_q_deg": [
+          -16.962101623484262,
+          128.1865321998285,
+          -129.9507938892139
+        ]
+      },
+      {
+        "source": "old_front[562]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 5.003707553108401e-17,
+        "attempted_q_deg": [
+          -17.011902589648784,
+          128.1778456348908,
+          -129.80545271047578
+        ]
+      },
+      {
+        "source": "old_front[563]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -17.06144935925758,
+          128.16873858929813,
+          -129.65986050931983
+        ]
+      },
+      {
+        "source": "old_front[564]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.1031676915590914e-17,
+        "attempted_q_deg": [
+          -17.110743730598795,
+          128.1592127778497,
+          -129.51401770001388
+        ]
+      },
+      {
+        "source": "old_front[565]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 2.7755575615628914e-17,
+        "attempted_q_deg": [
+          -17.159787486546726,
+          128.14926990650673,
+          -129.36792468652888
+        ]
+      },
+      {
+        "source": "old_front[566]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -17.208582394706443,
+          128.13891167228485,
+          -129.22158186256647
+        ]
+      },
+      {
+        "source": "old_front[567]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 4.163336342344337e-17,
+        "attempted_q_deg": [
+          -17.257130207556962,
+          128.1281397631505,
+          -129.0749896115865
+        ]
+      },
+      {
+        "source": "old_front[568]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 6.359601310784502e-17,
+        "attempted_q_deg": [
+          -17.305432662593248,
+          128.116955857921,
+          -128.92814830683398
+        ]
+      },
+      {
+        "source": "old_front[569]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 6.798699777552591e-17,
+        "attempted_q_deg": [
+          -17.353491482466943,
+          128.1053616261686,
+          -128.781058311366
+        ]
+      },
+      {
+        "source": "old_front[570]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 6.938893903907228e-17,
+        "attempted_q_deg": [
+          -17.40130837512573,
+          128.09335872812775,
+          -128.63371997807786
+        ]
+      },
+      {
+        "source": "old_front[571]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 4.163336342344337e-17,
+        "attempted_q_deg": [
+          -17.44888503395161,
+          128.08094881460633,
+          -128.48613364972942
+        ]
+      },
+      {
+        "source": "old_front[572]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.1031676915590914e-17,
+        "attempted_q_deg": [
+          -17.49622313789779,
+          128.0681335268996,
+          -128.33829965897039
+        ]
+      },
+      {
+        "source": "old_front[573]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.1031676915590914e-17,
+        "attempted_q_deg": [
+          -17.550215232013155,
+          128.05975175307188,
+          -128.19175928041994
+        ]
+      },
+      {
+        "source": "old_front[574]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 6.798699777552591e-17,
+        "attempted_q_deg": [
+          -17.603935725892637,
+          128.0509463820516,
+          -128.0449448124187
+        ]
+      },
+      {
+        "source": "old_front[575]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 5.721958498152797e-17,
+        "attempted_q_deg": [
+          -17.65738649169461,
+          128.04171893856943,
+          -127.89785668784569
+        ]
+      },
+      {
+        "source": "old_front[576]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -17.710569386215166,
+          128.03207094139626,
+          -127.75049532873706
+        ]
+      },
+      {
+        "source": "old_front[577]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 4.163336342344337e-17,
+        "attempted_q_deg": [
+          -17.763486251021114,
+          128.02200390318927,
+          -127.60286114630372
+        ]
+      },
+      {
+        "source": "old_front[578]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.1031676915590914e-17,
+        "attempted_q_deg": [
+          -17.816138912581906,
+          128.0115193303422,
+          -127.45495454094966
+        ]
+      },
+      {
+        "source": "old_front[579]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.1031676915590914e-17,
+        "attempted_q_deg": [
+          -17.868529182400962,
+          128.00061872283976,
+          -127.30677590228933
+        ]
+      },
+      {
+        "source": "old_front[580]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 7.473417450352271e-17,
+        "attempted_q_deg": [
+          -17.92065885714558,
+          127.98930357411645,
+          -127.15832560916527
+        ]
+      },
+      {
+        "source": "old_front[581]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 2.7755575615628914e-17,
+        "attempted_q_deg": [
+          -17.9725297187762,
+          127.97757537091881,
+          -127.00960402966506
+        ]
+      },
+      {
+        "source": "old_front[582]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 6.206335383118183e-17,
+        "attempted_q_deg": [
+          -18.02414353467467,
+          127.96543559317222,
+          -126.86061152113847
+        ]
+      },
+      {
+        "source": "old_front[583]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.1031676915590914e-17,
+        "attempted_q_deg": [
+          -18.075502057771132,
+          127.95288571385109,
+          -126.71134843021383
+        ]
+      },
+      {
+        "source": "old_front[584]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 2.7755575615628914e-17,
+        "attempted_q_deg": [
+          -18.140057746406633,
+          127.94650836314783,
+          -126.57284749775054
+        ]
+      },
+      {
+        "source": "old_front[585]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 6.206335383118183e-17,
+        "attempted_q_deg": [
+          -18.204310143611515,
+          127.93974683940206,
+          -126.43404820994134
+        ]
+      },
+      {
+        "source": "old_front[586]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.1031676915590914e-17,
+        "attempted_q_deg": [
+          -18.26826111925709,
+          127.93260201193938,
+          -126.29495105937728
+        ]
+      },
+      {
+        "source": "old_front[587]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 4.8074067159589095e-17,
+        "attempted_q_deg": [
+          -18.331912530526655,
+          127.92507475231015,
+          -126.15555652894713
+        ]
+      },
+      {
+        "source": "old_front[588]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 6.206335383118183e-17,
+        "attempted_q_deg": [
+          -18.395266221987868,
+          127.91716593406778,
+          -126.01586509183169
+        ]
+      },
+      {
+        "source": "old_front[589]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 1.3877787807814457e-17,
+        "attempted_q_deg": [
+          -18.458324025665178,
+          127.908876432551,
+          -125.87587721149889
+        ]
+      },
+      {
+        "source": "old_front[590]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 2.7755575615628914e-17,
+        "attempted_q_deg": [
+          -18.52108776111245,
+          127.90020712466986,
+          -125.73559334169856
+        ]
+      },
+      {
+        "source": "old_front[591]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -18.583559235485613,
+          127.89115888869574,
+          -125.59501392645741
+        ]
+      },
+      {
+        "source": "old_front[592]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 5.003707553108401e-17,
+        "attempted_q_deg": [
+          -18.645740243615435,
+          127.88173260405507,
+          -125.4541394000741
+        ]
+      },
+      {
+        "source": "old_front[593]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 4.8074067159589095e-17,
+        "attempted_q_deg": [
+          -18.707632568080278,
+          127.87192915112703,
+          -125.31297018711446
+        ]
+      },
+      {
+        "source": "old_front[594]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 6.938893903907228e-17,
+        "attempted_q_deg": [
+          -18.76923797927911,
+          127.86174941104446,
+          -125.17150670240649
+        ]
+      },
+      {
+        "source": "old_front[595]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 4.163336342344337e-17,
+        "attempted_q_deg": [
+          -18.836037295562917,
+          127.85391124129981,
+          -125.0353482460808
+        ]
+      },
+      {
+        "source": "old_front[596]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 5.003707553108401e-17,
+        "attempted_q_deg": [
+          -18.90253629014363,
+          127.84571281656088,
+          -124.89888632982682
+        ]
+      },
+      {
+        "source": "old_front[597]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -18.96873670376905,
+          127.83715476955241,
+          -124.76212140414832
+        ]
+      },
+      {
+        "source": "old_front[598]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 4.8074067159589095e-17,
+        "attempted_q_deg": [
+          -19.03464026650215,
+          127.82823773646406,
+          -124.62505391045947
+        ]
+      },
+      {
+        "source": "old_front[599]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 1.3877787807814457e-17,
+        "attempted_q_deg": [
+          -19.10024869776723,
+          127.81896235674397,
+          -124.48768428107154
+        ]
+      },
+      {
+        "source": "old_front[600]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 4.8074067159589095e-17,
+        "attempted_q_deg": [
+          -19.165563706396707,
+          127.80932927289493,
+          -124.35001293917999
+        ]
+      },
+      {
+        "source": "old_front[601]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -19.230586990677978,
+          127.79933913027394,
+          -124.21204029885152
+        ]
+      },
+      {
+        "source": "old_front[602]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 1.3877787807814457e-17,
+        "attempted_q_deg": [
+          -19.295320238400983,
+          127.78899257689494,
+          -124.07376676501136
+        ]
+      },
+      {
+        "source": "old_front[603]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -19.35976512690589,
+          127.77829026323425,
+          -123.93519273343041
+        ]
+      },
+      {
+        "source": "old_front[604]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 6.359601310784502e-17,
+        "attempted_q_deg": [
+          -19.42392332313123,
+          127.76723284203965,
+          -123.79631859071259
+        ]
+      },
+      {
+        "source": "old_front[605]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 4.163336342344337e-17,
+        "attempted_q_deg": [
+          -19.487796483662265,
+          127.75582096814195,
+          -123.6571447142823
+        ]
+      },
+      {
+        "source": "old_front[606]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.1031676915590914e-17,
+        "attempted_q_deg": [
+          -19.55138625477977,
+          127.74405529826974,
+          -123.51767147237173
+        ]
+      },
+      {
+        "source": "old_front[607]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 6.206335383118183e-17,
+        "attempted_q_deg": [
+          -19.614694272508995,
+          127.73193649086693,
+          -123.37789922400817
+        ]
+      },
+      {
+        "source": "old_front[608]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 6.206335383118183e-17,
+        "attempted_q_deg": [
+          -19.677722162668932,
+          127.71946520591348,
+          -123.23782831900172
+        ]
+      },
+      {
+        "source": "old_front[609]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 4.8074067159589095e-17,
+        "attempted_q_deg": [
+          -19.740471540921845,
+          127.70664210474854,
+          -123.09745909793246
+        ]
+      },
+      {
+        "source": "old_front[610]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 6.359601310784502e-17,
+        "attempted_q_deg": [
+          -19.802944012823005,
+          127.69346784989672,
+          -122.9567918921379
+        ]
+      },
+      {
+        "source": "old_front[611]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.1031676915590914e-17,
+        "attempted_q_deg": [
+          -19.865141173870757,
+          127.67994310489688,
+          -122.81582702370031
+        ]
+      },
+      {
+        "source": "old_front[612]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -19.927064609556485,
+          127.66606853413387,
+          -122.67456480543406
+        ]
+      },
+      {
+        "source": "old_front[613]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -19.98871589541521,
+          127.65184480267278,
+          -122.53300554087282
+        ]
+      },
+      {
+        "source": "old_front[614]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 7.97218214573518e-17,
+        "attempted_q_deg": [
+          -20.050096597076013,
+          127.63727257609591,
+          -122.39114952425669
+        ]
+      },
+      {
+        "source": "old_front[615]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 7.473417450352271e-17,
+        "attempted_q_deg": [
+          -20.111208270312737,
+          127.62235252034225,
+          -122.24899704051926
+        ]
+      },
+      {
+        "source": "old_front[616]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.1031676915590914e-17,
+        "attempted_q_deg": [
+          -20.17205246109495,
+          127.60708530154972,
+          -122.10654836527449
+        ]
+      },
+      {
+        "source": "old_front[617]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 2.7755575615628914e-17,
+        "attempted_q_deg": [
+          -20.232630705638783,
+          127.59147158589974,
+          -121.96380376480383
+        ]
+      },
+      {
+        "source": "old_front[618]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -20.2929445304582,
+          127.57551203946419,
+          -121.82076349604249
+        ]
+      },
+      {
+        "source": "old_front[619]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 0.0,
+        "attempted_q_deg": [
+          -20.35299545241611,
+          127.55920732805531,
+          -121.67742780656621
+        ]
+      },
+      {
+        "source": "old_front[620]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -20.412784978775775,
+          127.54255811707738,
+          -121.53379693457782
+        ]
+      },
+      {
+        "source": "old_front[621]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 5.551115123125783e-17,
+        "attempted_q_deg": [
+          -20.472314607252173,
+          127.52556507138124,
+          -121.38987110889313
+        ]
+      },
+      {
+        "source": "old_front[622]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 0.0,
+        "attempted_q_deg": [
+          -20.531585826063562,
+          127.50822885512078,
+          -121.24565054892712
+        ]
+      },
+      {
+        "source": "old_front[623]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.1031676915590914e-17,
+        "attempted_q_deg": [
+          -20.590600113982934,
+          127.49055013161205,
+          -121.10113546467979
+        ]
+      },
+      {
+        "source": "old_front[624]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 5.003707553108401e-17,
+        "attempted_q_deg": [
+          -20.649358940389735,
+          127.47252956319457,
+          -120.95632605672185
+        ]
+      },
+      {
+        "source": "old_front[625]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -20.70786376532146,
+          127.45416781109445,
+          -120.81122251617997
+        ]
+      },
+      {
+        "source": "old_front[626]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 5.721958498152797e-17,
+        "attempted_q_deg": [
+          -20.766116039525354,
+          127.43546553529029,
+          -120.66582502472195
+        ]
+      },
+      {
+        "source": "old_front[627]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 7.473417450352271e-17,
+        "attempted_q_deg": [
+          -20.82411720451012,
+          127.41642339438098,
+          -120.52013375454189
+        ]
+      },
+      {
+        "source": "old_front[628]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 4.163336342344337e-17,
+        "attempted_q_deg": [
+          -20.88186869259772,
+          127.39704204545524,
+          -120.37414886834452
+        ]
+      },
+      {
+        "source": "old_front[629]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 5.721958498152797e-17,
+        "attempted_q_deg": [
+          -20.93937192697503,
+          127.37732214396392,
+          -120.22787051932976
+        ]
+      },
+      {
+        "source": "old_front[630]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 5.551115123125783e-17,
+        "attempted_q_deg": [
+          -20.99662832174554,
+          127.35726434359384,
+          -120.08129885117681
+        ]
+      },
+      {
+        "source": "old_front[631]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.1031676915590914e-17,
+        "attempted_q_deg": [
+          -21.053639281981237,
+          127.33686929614372,
+          -119.93443399802797
+        ]
+      },
+      {
+        "source": "old_front[632]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 4.163336342344337e-17,
+        "attempted_q_deg": [
+          -21.110406203774104,
+          127.31613765140216,
+          -119.78727608447197
+        ]
+      },
+      {
+        "source": "old_front[633]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 2.7755575615628914e-17,
+        "attempted_q_deg": [
+          -21.16693047428793,
+          127.29507005702757,
+          -119.63982522552732
+        ]
+      },
+      {
+        "source": "old_front[634]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.1031676915590914e-17,
+        "attempted_q_deg": [
+          -21.223213471809853,
+          127.27366715842983,
+          -119.49208152662506
+        ]
+      },
+      {
+        "source": "old_front[635]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 5.551115123125783e-17,
+        "attempted_q_deg": [
+          -21.27925656580201,
+          127.25192959865394,
+          -119.34404508359118
+        ]
+      },
+      {
+        "source": "old_front[636]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 6.206335383118183e-17,
+        "attempted_q_deg": [
+          -21.33506111695305,
+          127.22985801826552,
+          -119.19571598262883
+        ]
+      },
+      {
+        "source": "old_front[637]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 4.8074067159589095e-17,
+        "attempted_q_deg": [
+          -21.39062847722954,
+          127.20745305523792,
+          -119.04709430029997
+        ]
+      },
+      {
+        "source": "old_front[638]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 2.7755575615628914e-17,
+        "attempted_q_deg": [
+          -21.445959989927456,
+          127.18471534484134,
+          -118.89818010350685
+        ]
+      },
+      {
+        "source": "old_front[639]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 7.473417450352271e-17,
+        "attempted_q_deg": [
+          -21.500492334736077,
+          127.16098907104121,
+          -118.74275055536523
+        ]
+      },
+      {
+        "source": "old_front[640]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 6.798699777552591e-17,
+        "attempted_q_deg": [
+          -21.55478460351037,
+          127.13690295473238,
+          -118.5870131271905
+        ]
+      },
+      {
+        "source": "old_front[641]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 6.206335383118183e-17,
+        "attempted_q_deg": [
+          -21.608838220523214,
+          127.11245776699789,
+          -118.43096783610848
+        ]
+      },
+      {
+        "source": "old_front[642]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 2.7755575615628914e-17,
+        "attempted_q_deg": [
+          -21.66265460027442,
+          127.087654274284,
+          -118.2746146880636
+        ]
+      },
+      {
+        "source": "old_front[643]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 6.359601310784502e-17,
+        "attempted_q_deg": [
+          -21.716235147556766,
+          127.06249323829007,
+          -118.11795367779567
+        ]
+      },
+      {
+        "source": "old_front[644]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -21.76958125752149,
+          127.03697541585964,
+          -117.96098478881663
+        ]
+      },
+      {
+        "source": "old_front[645]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 2.7755575615628914e-17,
+        "attempted_q_deg": [
+          -21.822694315743977,
+          127.01110155887365,
+          -117.80370799338618
+        ]
+      },
+      {
+        "source": "old_front[646]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 2.7755575615628914e-17,
+        "attempted_q_deg": [
+          -21.875575698288717,
+          126.98487241414549,
+          -117.64612325248713
+        ]
+      },
+      {
+        "source": "old_front[647]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 5.551115123125783e-17,
+        "attempted_q_deg": [
+          -21.928226771774284,
+          126.95828872331747,
+          -117.48823051579988
+        ]
+      },
+      {
+        "source": "old_front[648]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 6.798699777552591e-17,
+        "attempted_q_deg": [
+          -21.980648893437884,
+          126.93135122275909,
+          -117.33002972167633
+        ]
+      },
+      {
+        "source": "old_front[649]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 2.7755575615628914e-17,
+        "attempted_q_deg": [
+          -22.032843411199867,
+          126.90406064346718,
+          -117.17152079711303
+        ]
+      },
+      {
+        "source": "old_front[650]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 2.7755575615628914e-17,
+        "attempted_q_deg": [
+          -22.083039598979976,
+          126.87613617580868,
+          -117.00783600133249
+        ]
+      },
+      {
+        "source": "old_front[651]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -22.133012100378355,
+          126.84783699212802,
+          -116.84383402072125
+        ]
+      },
+      {
+        "source": "old_front[652]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 5.721958498152797e-17,
+        "attempted_q_deg": [
+          -22.182762280836794,
+          126.81916395005653,
+          -116.67951471161594
+        ]
+      },
+      {
+        "source": "old_front[653]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 5.551115123125783e-17,
+        "attempted_q_deg": [
+          -22.232291495887242,
+          126.79011789964862,
+          -116.51487791775934
+        ]
+      },
+      {
+        "source": "old_front[654]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -22.28160109122758,
+          126.76069968329234,
+          -116.3499234702677
+        ]
+      },
+      {
+        "source": "old_front[655]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 2.7755575615628914e-17,
+        "attempted_q_deg": [
+          -22.33069240279656,
+          126.73091013562168,
+          -116.18465118759735
+        ]
+      },
+      {
+        "source": "old_front[656]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -22.379566756848554,
+          126.70075008342991,
+          -116.01906087551022
+        ]
+      },
+      {
+        "source": "old_front[657]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 2.7755575615628914e-17,
+        "attempted_q_deg": [
+          -22.428225470027773,
+          126.67022034558464,
+          -115.85315232703846
+        ]
+      },
+      {
+        "source": "old_front[658]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 6.359601310784502e-17,
+        "attempted_q_deg": [
+          -22.476669849441766,
+          126.63932173294386,
+          -115.68692532244792
+        ]
+      },
+      {
+        "source": "old_front[659]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -22.52490119273486,
+          126.60805504827363,
+          -115.52037962920072
+        ]
+      },
+      {
+        "source": "old_front[660]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 5.721958498152797e-17,
+        "attempted_q_deg": [
+          -22.57292078816075,
+          126.57642108616658,
+          -115.35351500191666
+        ]
+      },
+      {
+        "source": "old_front[661]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 5.721958498152797e-17,
+        "attempted_q_deg": [
+          -22.620737486472816,
+          126.5443791334225,
+          -115.18629875452409
+        ]
+      },
+      {
+        "source": "old_front[662]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.1031676915590914e-17,
+        "attempted_q_deg": [
+          -22.66834493040782,
+          126.51197153082047,
+          -115.01876301088079
+        ]
+      },
+      {
+        "source": "old_front[663]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 5.003707553108401e-17,
+        "attempted_q_deg": [
+          -22.715744380934606,
+          126.47919904751258,
+          -114.8509074863273
+        ]
+      },
+      {
+        "source": "old_front[664]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 4.163336342344337e-17,
+        "attempted_q_deg": [
+          -22.76293708991351,
+          126.44606244415995,
+          -114.6827318831916
+        ]
+      },
+      {
+        "source": "old_front[665]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 5.003707553108401e-17,
+        "attempted_q_deg": [
+          -22.809924300166717,
+          126.4125624728569,
+          -114.51423589074486
+        ]
+      },
+      {
+        "source": "old_front[666]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 0.0,
+        "attempted_q_deg": [
+          -22.856707245548094,
+          126.37869987705622,
+          -114.34541918515636
+        ]
+      },
+      {
+        "source": "old_front[667]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -22.903287151012705,
+          126.34447539149522,
+          -114.17628142944695
+        ]
+      },
+      {
+        "source": "old_front[668]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 6.798699777552591e-17,
+        "attempted_q_deg": [
+          -22.949665232685636,
+          126.30988974212272,
+          -114.00682227344137
+        ]
+      },
+      {
+        "source": "old_front[669]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 5.721958498152797e-17,
+        "attempted_q_deg": [
+          -22.99584269793058,
+          126.27494364602708,
+          -113.83704135371939
+        ]
+      },
+      {
+        "source": "old_front[670]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 2.7755575615628914e-17,
+        "attempted_q_deg": [
+          -23.04182074541768,
+          126.23963781136452,
+          -113.66693829356561
+        ]
+      },
+      {
+        "source": "old_front[671]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 4.163336342344337e-17,
+        "attempted_q_deg": [
+          -23.087600565191174,
+          126.20397293728887,
+          -113.49651270291814
+        ]
+      },
+      {
+        "source": "old_front[672]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.1031676915590914e-17,
+        "attempted_q_deg": [
+          -23.13624041534508,
+          126.16930712291506,
+          -113.32654559081799
+        ]
+      },
+      {
+        "source": "old_front[673]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 2.7755575615628914e-17,
+        "attempted_q_deg": [
+          -23.18467112952313,
+          126.13427769071707,
+          -113.15624406587806
+        ]
+      },
+      {
+        "source": "old_front[674]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 8.326672684688674e-17,
+        "attempted_q_deg": [
+          -23.23289394085224,
+          126.09888528354104,
+          -112.98560773945596
+        ]
+      },
+      {
+        "source": "old_front[675]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.1031676915590914e-17,
+        "attempted_q_deg": [
+          -23.280910073801095,
+          126.06313053578604,
+          -112.81463620899645
+        ]
+      },
+      {
+        "source": "old_front[676]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 5.003707553108401e-17,
+        "attempted_q_deg": [
+          -23.328720744244276,
+          126.02701407332029,
+          -112.64332905797156
+        ]
+      },
+      {
+        "source": "old_front[677]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 5.721958498152797e-17,
+        "attempted_q_deg": [
+          -23.376327159526067,
+          125.99053651339759,
+          -112.47168585581915
+        ]
+      },
+      {
+        "source": "old_front[678]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 2.7755575615628914e-17,
+        "attempted_q_deg": [
+          -23.423730518523573,
+          125.95369846457535,
+          -112.29970615788034
+        ]
+      },
+      {
+        "source": "old_front[679]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.1031676915590914e-17,
+        "attempted_q_deg": [
+          -23.47093201170985,
+          125.91650052663223,
+          -112.12738950533513
+        ]
+      },
+      {
+        "source": "old_front[680]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.1031676915590914e-17,
+        "attempted_q_deg": [
+          -23.517932821216142,
+          125.87894329048736,
+          -111.95473542513697
+        ]
+      },
+      {
+        "source": "old_front[681]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 5.003707553108401e-17,
+        "attempted_q_deg": [
+          -23.56473412089431,
+          125.84102733811966,
+          -111.78174342994541
+        ]
+      },
+      {
+        "source": "old_front[682]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.1031676915590914e-17,
+        "attempted_q_deg": [
+          -23.611337076378327,
+          125.80275324248761,
+          -111.60841301805749
+        ]
+      },
+      {
+        "source": "old_front[683]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.1031676915590914e-17,
+        "attempted_q_deg": [
+          -23.690846369709803,
+          125.81538726061986,
+          -111.48674371653381
+        ]
+      },
+      {
+        "source": "old_front[684]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.1031676915590914e-17,
+        "attempted_q_deg": [
+          -23.770076795965785,
+          125.82762839970516,
+          -111.36462545421335
+        ]
+      },
+      {
+        "source": "old_front[685]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 4.163336342344337e-17,
+        "attempted_q_deg": [
+          -23.849029424092713,
+          125.83947640614925,
+          -111.24205853303692
+        ]
+      },
+      {
+        "source": "old_front[686]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -23.92770532094972,
+          125.85093103523884,
+          -111.11904324665782
+        ]
+      },
+      {
+        "source": "old_front[687]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.1031676915590914e-17,
+        "attempted_q_deg": [
+          -24.006105551269716,
+          125.86199205096065,
+          -110.99557988035005
+        ]
+      },
+      {
+        "source": "old_front[688]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 4.163336342344337e-17,
+        "attempted_q_deg": [
+          -24.084231177621884,
+          125.87265922582048,
+          -110.87166871091668
+        ]
+      },
+      {
+        "source": "old_front[689]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -24.1620832603747,
+          125.88293234066279,
+          -110.74731000659817
+        ]
+      },
+      {
+        "source": "old_front[690]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 4.163336342344337e-17,
+        "attempted_q_deg": [
+          -24.23966285765991,
+          125.89281118449051,
+          -110.62250402698072
+        ]
+      },
+      {
+        "source": "old_front[691]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -24.31697102533726,
+          125.90229555428508,
+          -110.49725102290436
+        ]
+      },
+      {
+        "source": "old_front[692]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 1.3877787807814457e-17,
+        "attempted_q_deg": [
+          -24.394008816960106,
+          125.91138525482674,
+          -110.37155123637106
+        ]
+      },
+      {
+        "source": "old_front[693]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 6.359601310784502e-17,
+        "attempted_q_deg": [
+          -24.47077728374181,
+          125.92008009851556,
+          -110.2454049004529
+        ]
+      },
+      {
+        "source": "old_front[694]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -24.74211417164034,
+          125.91709273779455,
+          -110.26323032236014
+        ]
+      },
+      {
+        "source": "old_front[695]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 2.7755575615628914e-17,
+        "attempted_q_deg": [
+          -25.01336801577403,
+          125.91360079009165,
+          -110.27906679864618
+        ]
+      },
+      {
+        "source": "old_front[696]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 2.7755575615628914e-17,
+        "attempted_q_deg": [
+          -25.28452659876948,
+          125.90960557234493,
+          -110.29291402273616
+        ]
+      },
+      {
+        "source": "old_front[697]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -25.555577714954246,
+          125.90510831827424,
+          -110.3047717325787
+        ]
+      },
+      {
+        "source": "old_front[698]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -25.82650917366084,
+          125.90011017781708,
+          -110.31463971085812
+        ]
+      },
+      {
+        "source": "old_front[699]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 5.003707553108401e-17,
+        "attempted_q_deg": [
+          -26.097308802525543,
+          125.89461221660885,
+          -110.3225177851725
+        ]
+      },
+      {
+        "source": "old_front[700]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 6.938893903907228e-17,
+        "attempted_q_deg": [
+          -26.367964450779358,
+          125.88861541550807,
+          -110.32840582817822
+        ]
+      },
+      {
+        "source": "old_front[701]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 5.721958498152797e-17,
+        "attempted_q_deg": [
+          -26.638463992529264,
+          125.8821206701667,
+          -110.33230375770012
+        ]
+      },
+      {
+        "source": "old_front[702]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 5.721958498152797e-17,
+        "attempted_q_deg": [
+          -26.908795330027303,
+          125.87512879064707,
+          -110.33421153680781
+        ]
+      },
+      {
+        "source": "old_front[703]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 4.8074067159589095e-17,
+        "attempted_q_deg": [
+          -27.17894639692556,
+          125.86764050108442,
+          -110.33412917385812
+        ]
+      },
+      {
+        "source": "old_front[704]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -27.44890516151449,
+          125.8596564393965,
+          -110.33205672250288
+        ]
+      },
+      {
+        "source": "old_front[705]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 7.850462293418876e-17,
+        "attempted_q_deg": [
+          -27.448905161514464,
+          125.8596564393965,
+          -110.33205672250291
+        ]
+      },
+      {
+        "source": "old_front[706]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -27.44890516151449,
+          125.8596564393965,
+          -110.33205672250288
+        ]
+      },
+      {
+        "source": "old_front[707]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -27.44890516151449,
+          125.8596564393965,
+          -110.33205672250288
+        ]
+      },
+      {
+        "source": "old_front[708]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -27.44890516151449,
+          125.8596564393965,
+          -110.33205672250288
+        ]
+      },
+      {
+        "source": "old_front[709]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -27.44890516151449,
+          125.8596564393965,
+          -110.33205672250288
+        ]
+      },
+      {
+        "source": "old_front[710]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -27.44890516151449,
+          125.8596564393965,
+          -110.33205672250288
+        ]
+      },
+      {
+        "source": "old_front[711]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -27.44890516151449,
+          125.8596564393965,
+          -110.33205672250288
+        ]
+      },
+      {
+        "source": "old_front[712]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -27.44890516151449,
+          125.8596564393965,
+          -110.33205672250288
+        ]
+      },
+      {
+        "source": "old_front[713]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -27.44890516151449,
+          125.8596564393965,
+          -110.33205672250288
+        ]
+      },
+      {
+        "source": "old_front[714]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -27.44890516151449,
+          125.8596564393965,
+          -110.33205672250288
+        ]
+      },
+      {
+        "source": "old_front[715]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -27.44890516151449,
+          125.8596564393965,
+          -110.33205672250288
+        ]
+      },
+      {
+        "source": "old_front[716]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 5.721958498152797e-17,
+        "attempted_q_deg": [
+          -27.448905161514464,
+          125.76373964263249,
+          -110.29417287906588
+        ]
+      },
+      {
+        "source": "old_front[717]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 5.551115123125783e-17,
+        "attempted_q_deg": [
+          -27.44890516151449,
+          125.66781949298854,
+          -110.25613677080334
+        ]
+      },
+      {
+        "source": "old_front[718]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.1031676915590914e-17,
+        "attempted_q_deg": [
+          -27.44890516151449,
+          125.5718962107084,
+          -110.21794849294162
+        ]
+      },
+      {
+        "source": "old_front[719]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 2.7755575615628914e-17,
+        "attempted_q_deg": [
+          -27.44890516151449,
+          125.4759700146309,
+          -110.17960814065275
+        ]
+      },
+      {
+        "source": "old_front[720]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 2.7755575615628914e-17,
+        "attempted_q_deg": [
+          -27.44890516151449,
+          125.38004112218874,
+          -110.14111580905009
+        ]
+      },
+      {
+        "source": "old_front[721]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.925231146709438e-17,
+        "attempted_q_deg": [
+          -27.44890516151449,
+          125.28410974940729,
+          -110.10247159318347
+        ]
+      },
+      {
+        "source": "old_front[722]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 5.003707553108401e-17,
+        "attempted_q_deg": [
+          -27.44890516151449,
+          125.18817611090346,
+          -110.0636755880347
+        ]
+      },
+      {
+        "source": "old_front[723]",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.1031676915590914e-17,
+        "attempted_q_deg": [
+          -27.44890516151449,
+          125.09224041988467,
+          -110.02472788851286
+        ]
+      },
+      {
+        "source": "old_rear_feasible_pose",
+        "leg": "FL",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 5.551115123125783e-17,
+        "attempted_q_deg": [
+          20.25625598651393,
+          129.84644141833516,
+          -147.01143496772826
+        ]
+      },
+      {
+        "source": "old_rear_feasible_pose",
+        "leg": "FR",
+        "ik_valid": false,
+        "world_target_reached": true,
+        "physical_limits_valid": false,
+        "FK_residual_m": 3.1031676915590914e-17,
+        "attempted_q_deg": [
+          11.489247692582293,
+          130.8409885408038,
+          -148.9366735373341
+        ]
+      }
+    ],
+    "usable_for_required_reference": false,
+    "attempted_IK_angles_retained_without_clipping_by_this_helper": true
+  },
+  "source_sha256": {
+    "commissioning_offsets.py": "616cab4f641f02b094fde458ce8a80c17b35d779701f987b947b5eb40e8a8ebe",
+    "model.py": "1884758417c3d6fa66fd90f87dd50da56cd44ccd3580dd9fe5a562c3c268a3fa"
+  },
+  "limitations": [
+    "Only required angle envelopes are assessed. No load, mass, contact, collision, speed, thermal or stair validation.",
+    "The old dense front motion and rear pose are separate references, not a verified continuous four-leg stair sequence.",
+    "Static offsets are normalized mathematical references; encoder zeros, signs and hardware homing remain uncommissioned."
+  ]
+}

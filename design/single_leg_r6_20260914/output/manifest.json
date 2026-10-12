@@ -1,0 +1,1281 @@
+{
+  "revision": "single_leg_r6_20260914",
+  "units": "mm",
+  "parts": [
+    {
+      "name": "yaw_case_saddle",
+      "link": "base_mount",
+      "printable": true,
+      "material": "pla",
+      "solid_mass_kg": 0.024395053311624688,
+      "volume_mm3": 19673.43009001991,
+      "com_mm": [
+        -13.341060411082596,
+        -5.064160901166867,
+        -18.825905970116608
+      ],
+      "assembly_stl": "assembly_mesh/yaw_case_saddle.stl",
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "print_rotation": [
+        0,
+        0,
+        0
+      ],
+      "dimensions_mm": [
+        61.22999999999999,
+        52.0,
+        32.916580753730955
+      ],
+      "print_stl": "print_stl/yaw_case_saddle.stl",
+      "stl_sha256": "4f134e66bc79f9ae4b2ed060d22889ca9e307bd191bea93fdc08cd7a57547abd"
+    },
+    {
+      "name": "case_cap_yaw",
+      "link": "base_mount",
+      "printable": true,
+      "material": "pla",
+      "solid_mass_kg": 0.00806482306279914,
+      "volume_mm3": 6503.8895667735,
+      "com_mm": [
+        -12.64749767115667,
+        14.364999999999997,
+        -15.561422463854756
+      ],
+      "assembly_stl": "assembly_mesh/case_cap_yaw.stl",
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "print_rotation": [
+        90,
+        0,
+        0
+      ],
+      "dimensions_mm": [
+        61.22999999999999,
+        27.000000000000004,
+        4.0
+      ],
+      "print_stl": "print_stl/case_cap_yaw.stl",
+      "stl_sha256": "ba7a100b8b5196e6753f648ed50467291f1f49b6f6e39ed0bb6870916fe67a57"
+    },
+    {
+      "name": "servo_yaw",
+      "link": "base_mount",
+      "printable": false,
+      "material": "servo",
+      "solid_mass_kg": 0.055,
+      "volume_mm3": 32868.90280195757,
+      "com_mm": [
+        -12.824814766221087,
+        -5.795722117529486e-05,
+        -14.161756810574937
+      ],
+      "assembly_stl": "assembly_mesh/servo_yaw.stl",
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "coxa_upper_and_hip_saddle",
+      "link": "coxa",
+      "printable": true,
+      "material": "pla",
+      "solid_mass_kg": 0.03596860388865063,
+      "volume_mm3": 29006.93861987954,
+      "com_mm": [
+        52.34439050342932,
+        -1.3098952916016569,
+        -0.7336116462981586
+      ],
+      "assembly_stl": "assembly_mesh/coxa_upper_and_hip_saddle.stl",
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "print_rotation": [
+        90,
+        0,
+        0
+      ],
+      "dimensions_mm": [
+        114.115,
+        60.364999999999995,
+        31.5
+      ],
+      "print_stl": "print_stl/coxa_upper_and_hip_saddle.stl",
+      "stl_sha256": "24f9a26fbae14b32ceaf90b6774c5cc8990dad821a7275f0394794e7df15163f"
+    },
+    {
+      "name": "coxa_lower_auxiliary_arm",
+      "link": "coxa",
+      "printable": true,
+      "material": "pla",
+      "solid_mass_kg": 0.01338838362526105,
+      "volume_mm3": 10797.083568758911,
+      "com_mm": [
+        16.944991081745506,
+        0.0971359108398739,
+        -48.34830641677761
+      ],
+      "assembly_stl": "assembly_mesh/coxa_lower_auxiliary_arm.stl",
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "print_rotation": [
+        180,
+        0,
+        0
+      ],
+      "dimensions_mm": [
+        59.000000000000014,
+        28.0,
+        9.0
+      ],
+      "print_stl": "print_stl/coxa_lower_auxiliary_arm.stl",
+      "stl_sha256": "da509ad48ae4e31dfba3413712ae0cac31080646babcfe58c0cd1f3b1bc4bc51"
+    },
+    {
+      "name": "case_cap_hip",
+      "link": "coxa",
+      "printable": true,
+      "material": "pla",
+      "solid_mass_kg": 0.007340663062799139,
+      "volume_mm3": 5919.8895667735,
+      "com_mm": [
+        71.97912250218539,
+        -1.4558387530259769,
+        -14.365
+      ],
+      "assembly_stl": "assembly_mesh/case_cap_hip.stl",
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "print_rotation": [
+        0,
+        0,
+        0
+      ],
+      "dimensions_mm": [
+        61.22999999999999,
+        30.000000000000004,
+        4.0
+      ],
+      "print_stl": "print_stl/case_cap_hip.stl",
+      "stl_sha256": "07214bbd8f56404fc5d16642c07fb3103373f4fd7a5a25e97e8ac9f9aab39f8a"
+    },
+    {
+      "name": "servo_hip",
+      "link": "coxa",
+      "printable": false,
+      "material": "servo",
+      "solid_mass_kg": 0.055,
+      "volume_mm3": 32868.90280195664,
+      "com_mm": [
+        69.17518523377798,
+        0.33824318942489945,
+        5.795722117554144e-05
+      ],
+      "assembly_stl": "assembly_mesh/servo_hip.stl",
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "horn_yaw_main",
+      "link": "coxa",
+      "printable": false,
+      "material": "metal",
+      "solid_mass_kg": 0.0019006507337968068,
+      "volume_mm3": 703.9447162210396,
+      "com_mm": [
+        3.5328052300906266e-17,
+        -4.391906177191988e-16,
+        3.1479614025702065
+      ],
+      "assembly_stl": "assembly_mesh/horn_yaw_main.stl",
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "horn_yaw_auxiliary",
+      "link": "coxa",
+      "printable": false,
+      "material": "metal",
+      "solid_mass_kg": 0.0015922072624768148,
+      "volume_mm3": 589.7063935099314,
+      "com_mm": [
+        3.6147279913192953e-17,
+        -6.891311080270962e-16,
+        -31.258347511945
+      ],
+      "assembly_stl": "assembly_mesh/horn_yaw_auxiliary.stl",
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "yaw_auxiliary_spacer_1",
+      "link": "coxa",
+      "printable": true,
+      "material": "pla",
+      "solid_mass_kg": 0.0002494414513853804,
+      "volume_mm3": 201.16246079466163,
+      "com_mm": [
+        7.0,
+        -1.1379458035295484e-16,
+        -38.2
+      ],
+      "assembly_stl": "assembly_mesh/yaw_auxiliary_spacer_1.stl",
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "print_rotation": [
+        0,
+        0,
+        0
+      ],
+      "dimensions_mm": [
+        5.800000000000001,
+        5.8,
+        11.600000000000001
+      ],
+      "print_stl": "print_stl/yaw_auxiliary_spacer_1.stl",
+      "stl_sha256": "76eae4d6cfe9611f405b4b844d253368211e40da73b23727d7d420e0c25e3a86"
+    },
+    {
+      "name": "yaw_auxiliary_spacer_2",
+      "link": "coxa",
+      "printable": true,
+      "material": "pla",
+      "solid_mass_kg": 0.0002494414513853804,
+      "volume_mm3": 201.16246079466163,
+      "com_mm": [
+        -7.0,
+        -1.8874594792912672e-16,
+        -38.2
+      ],
+      "assembly_stl": "assembly_mesh/yaw_auxiliary_spacer_2.stl",
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "print_rotation": [
+        0,
+        0,
+        0
+      ],
+      "dimensions_mm": [
+        5.800000000000001,
+        5.8,
+        11.600000000000001
+      ],
+      "print_stl": "print_stl/yaw_auxiliary_spacer_2.stl",
+      "stl_sha256": "76eae4d6cfe9611f405b4b844d253368211e40da73b23727d7d420e0c25e3a86"
+    },
+    {
+      "name": "yaw_auxiliary_spacer_3",
+      "link": "coxa",
+      "printable": true,
+      "material": "pla",
+      "solid_mass_kg": 0.0002494414513853804,
+      "volume_mm3": 201.1624607946616,
+      "com_mm": [
+        6.887757930872185e-16,
+        7.000000000000001,
+        -38.199999999999996
+      ],
+      "assembly_stl": "assembly_mesh/yaw_auxiliary_spacer_3.stl",
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "print_rotation": [
+        0,
+        0,
+        0
+      ],
+      "dimensions_mm": [
+        5.8,
+        5.800000000000001,
+        11.600000000000001
+      ],
+      "print_stl": "print_stl/yaw_auxiliary_spacer_3.stl",
+      "stl_sha256": "3602472470bee190351a33e77d9d8b394ec228b379e70e88d5302f5dcb88e81c"
+    },
+    {
+      "name": "yaw_auxiliary_spacer_4",
+      "link": "coxa",
+      "printable": true,
+      "material": "pla",
+      "solid_mass_kg": 0.0002494414513853804,
+      "volume_mm3": 201.16246079466163,
+      "com_mm": [
+        8.124022174874883e-16,
+        -7.000000000000001,
+        -38.2
+      ],
+      "assembly_stl": "assembly_mesh/yaw_auxiliary_spacer_4.stl",
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "print_rotation": [
+        0,
+        0,
+        0
+      ],
+      "dimensions_mm": [
+        5.8,
+        5.800000000000001,
+        11.600000000000001
+      ],
+      "print_stl": "print_stl/yaw_auxiliary_spacer_4.stl",
+      "stl_sha256": "3602472470bee190351a33e77d9d8b394ec228b379e70e88d5302f5dcb88e81c"
+    },
+    {
+      "name": "femur_main_and_knee_saddle",
+      "link": "femur",
+      "printable": true,
+      "material": "pla",
+      "solid_mass_kg": 0.04386193467466131,
+      "volume_mm3": 35372.52796343654,
+      "com_mm": [
+        61.43174231678945,
+        6.629780530252324,
+        7.159605991238103
+      ],
+      "assembly_stl": "assembly_mesh/femur_main_and_knee_saddle.stl",
+      "transform": [
+        [
+          0.8660254037844387,
+          0.0,
+          0.49999999999999994,
+          82.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          -0.49999999999999994,
+          0.0,
+          0.8660254037844387,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "print_rotation": [
+        -90,
+        0,
+        0
+      ],
+      "dimensions_mm": [
+        122.115,
+        46.50000000000046,
+        42.00000000000001
+      ],
+      "print_stl": "print_stl/femur_main_and_knee_saddle.stl",
+      "stl_sha256": "ecd97537140459f09a47957da3be42f37fc931042b478b4e6a6132dfdbaf0113"
+    },
+    {
+      "name": "femur_auxiliary_cheek",
+      "link": "femur",
+      "printable": true,
+      "material": "pla",
+      "solid_mass_kg": 0.015701815782392197,
+      "volume_mm3": 12662.754663219514,
+      "com_mm": [
+        39.87134893481146,
+        -20.696262182229972,
+        2.0911366260910595
+      ],
+      "assembly_stl": "assembly_mesh/femur_auxiliary_cheek.stl",
+      "transform": [
+        [
+          0.8660254037844387,
+          0.0,
+          0.49999999999999994,
+          82.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          -0.49999999999999994,
+          0.0,
+          0.8660254037844387,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "print_rotation": [
+        90,
+        0,
+        0
+      ],
+      "dimensions_mm": [
+        93.00000000000026,
+        46.5,
+        8.000000000000007
+      ],
+      "print_stl": "print_stl/femur_auxiliary_cheek.stl",
+      "stl_sha256": "7e8155f89dded24dd7873c5d35400d8d365cfb5a48b1da6536d636777f8539e7"
+    },
+    {
+      "name": "case_cap_knee",
+      "link": "femur",
+      "printable": true,
+      "material": "pla",
+      "solid_mass_kg": 0.00806482306279914,
+      "volume_mm3": 6503.8895667735,
+      "com_mm": [
+        77.35250232884336,
+        -1.061422463854756,
+        -14.364999999999998
+      ],
+      "assembly_stl": "assembly_mesh/case_cap_knee.stl",
+      "transform": [
+        [
+          0.8660254037844387,
+          0.0,
+          0.49999999999999994,
+          82.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          -0.49999999999999994,
+          0.0,
+          0.8660254037844387,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "print_rotation": [
+        0,
+        0,
+        0
+      ],
+      "dimensions_mm": [
+        61.22999999999999,
+        27.000000000000004,
+        4.0
+      ],
+      "print_stl": "print_stl/case_cap_knee.stl",
+      "stl_sha256": "9d926173d96257e6473c5430ba0e05cac2bb52dffd2a07d9f5a29c3103bc328c"
+    },
+    {
+      "name": "servo_knee",
+      "link": "femur",
+      "printable": false,
+      "material": "servo",
+      "solid_mass_kg": 0.055,
+      "volume_mm3": 32868.902801957,
+      "com_mm": [
+        77.17518523377788,
+        0.338243189424751,
+        5.795722113637204e-05
+      ],
+      "assembly_stl": "assembly_mesh/servo_knee.stl",
+      "transform": [
+        [
+          0.8660254037844387,
+          0.0,
+          0.49999999999999994,
+          82.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          -0.49999999999999994,
+          0.0,
+          0.8660254037844387,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "horn_hip_main",
+      "link": "femur",
+      "printable": false,
+      "material": "metal",
+      "solid_mass_kg": 0.0019006507337968068,
+      "volume_mm3": 703.9447162210396,
+      "com_mm": [
+        1.312184799747947e-16,
+        17.647961402570207,
+        5.623121024618004e-16
+      ],
+      "assembly_stl": "assembly_mesh/horn_hip_main.stl",
+      "transform": [
+        [
+          0.8660254037844387,
+          0.0,
+          0.49999999999999994,
+          82.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          -0.49999999999999994,
+          0.0,
+          0.8660254037844387,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "horn_hip_auxiliary",
+      "link": "femur",
+      "printable": false,
+      "material": "metal",
+      "solid_mass_kg": 0.0015922072624768148,
+      "volume_mm3": 589.7063935099314,
+      "com_mm": [
+        9.639274643518121e-17,
+        -16.758347511944997,
+        -3.488160265865763e-15
+      ],
+      "assembly_stl": "assembly_mesh/horn_hip_auxiliary.stl",
+      "transform": [
+        [
+          0.8660254037844387,
+          0.0,
+          0.49999999999999994,
+          82.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          -0.49999999999999994,
+          0.0,
+          0.8660254037844387,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "tibia_curved_main_and_foot",
+      "link": "tibia",
+      "printable": true,
+      "material": "pla",
+      "solid_mass_kg": 0.03526563823636916,
+      "volume_mm3": 28440.030835781585,
+      "com_mm": [
+        52.314480221749136,
+        4.494994444141664,
+        0.16593041767801162
+      ],
+      "assembly_stl": "assembly_mesh/tibia_curved_main_and_foot.stl",
+      "transform": [
+        [
+          -0.3583679495453002,
+          0.0,
+          0.9335804264972019,
+          159.94228634059948
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          -0.9335804264972019,
+          0.0,
+          -0.35836794954530016,
+          -44.99999999999999
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "print_rotation": [
+        -90,
+        0,
+        0
+      ],
+      "dimensions_mm": [
+        123.99879062933105,
+        28.0,
+        42.0
+      ],
+      "print_stl": "print_stl/tibia_curved_main_and_foot.stl",
+      "stl_sha256": "ecf5870a9853c5bbb3fffab3ea8f50b092ffe2c1eb5c89f0037bbf8fbaeb1370"
+    },
+    {
+      "name": "tibia_auxiliary_cheek",
+      "link": "tibia",
+      "printable": true,
+      "material": "pla",
+      "solid_mass_kg": 0.006979733029074789,
+      "volume_mm3": 5628.816958931281,
+      "com_mm": [
+        19.83488803147828,
+        -20.953039059804343,
+        1.3247866668375652
+      ],
+      "assembly_stl": "assembly_mesh/tibia_auxiliary_cheek.stl",
+      "transform": [
+        [
+          -0.3583679495453002,
+          0.0,
+          0.9335804264972019,
+          159.94228634059948
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          -0.9335804264972019,
+          0.0,
+          -0.35836794954530016,
+          -44.99999999999999
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "print_rotation": [
+        90,
+        0,
+        0
+      ],
+      "dimensions_mm": [
+        65.0,
+        28.0,
+        5.100000000000005
+      ],
+      "print_stl": "print_stl/tibia_auxiliary_cheek.stl",
+      "stl_sha256": "6a24294804e6e19517d69a64c634bb63784fc5f115e12b3bb6d00a31d8905c6e"
+    },
+    {
+      "name": "horn_knee_main",
+      "link": "tibia",
+      "printable": false,
+      "material": "metal",
+      "solid_mass_kg": 0.0019006507337968066,
+      "volume_mm3": 703.9447162210395,
+      "com_mm": [
+        -1.8673399073336173e-16,
+        17.647961402570203,
+        -4.389596195956362e-16
+      ],
+      "assembly_stl": "assembly_mesh/horn_knee_main.stl",
+      "transform": [
+        [
+          -0.3583679495453002,
+          0.0,
+          0.9335804264972019,
+          159.94228634059948
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          -0.9335804264972019,
+          0.0,
+          -0.35836794954530016,
+          -44.99999999999999
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "horn_knee_auxiliary",
+      "link": "tibia",
+      "printable": false,
+      "material": "metal",
+      "solid_mass_kg": 0.0015922072624768148,
+      "volume_mm3": 589.7063935099314,
+      "com_mm": [
+        7.651174248292509e-16,
+        -16.758347511944997,
+        -4.624814047910696e-15
+      ],
+      "assembly_stl": "assembly_mesh/horn_knee_auxiliary.stl",
+      "transform": [
+        [
+          -0.3583679495453002,
+          0.0,
+          0.9335804264972019,
+          159.94228634059948
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          -0.9335804264972019,
+          0.0,
+          -0.35836794954530016,
+          -44.99999999999999
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "bench_mounting_plate",
+      "link": "base_mount",
+      "printable": true,
+      "material": "pla",
+      "solid_mass_kg": 0.060756686335991635,
+      "volume_mm3": 48997.32769031583,
+      "com_mm": [
+        -52.89233393584785,
+        1.8098075467162057e-15,
+        -35.499999999999986
+      ],
+      "assembly_stl": "assembly_mesh/bench_mounting_plate.stl",
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "print_rotation": [
+        0,
+        0,
+        0
+      ],
+      "dimensions_mm": [
+        128.0,
+        88.0,
+        7.000000000000007
+      ],
+      "print_stl": "print_stl/bench_mounting_plate.stl",
+      "stl_sha256": "3025fc97c0b1c27be913e07bdf969f164923b9c03713a9d55ca1196049690303"
+    }
+  ],
+  "frames": {
+    "base_mount": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "coxa": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "femur": [
+      [
+        0.8660254037844387,
+        0.0,
+        0.49999999999999994,
+        82.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        -0.49999999999999994,
+        0.0,
+        0.8660254037844387,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "tibia": [
+      [
+        -0.3583679495453002,
+        0.0,
+        0.9335804264972019,
+        159.94228634059948
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        -0.9335804264972019,
+        0.0,
+        -0.35836794954530016,
+        -44.99999999999999
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ]
+  },
+  "source_hashes": {
+    "build.py": "1376011dc72bd51c9c5956ac5fafd6291f460e902ca6e8670f297635d0abc07a",
+    "fastener_revision.py": "ebe47f9bd6e49b3c1eb5727318f7b5f1c05838f069b00b148e538ef73271ac55",
+    "geom.py": "655e7d2b8b05226cc9e0f3782dcd1a58599dd81226b6e918c60eac91f5526626",
+    "hip_revision.py": "28fbe2b7ea4e701b83227bb6b1db9b9c9766eec308204d4085ec7254da1803e1",
+    "leg.py": "2449acfc2306d436b7084b4108a561b82d1cff8da1959ea88f06374c8fcccf03",
+    "servo_contract.py": "eeb09be505f2a4e80cd710d193592099df1f98f849f7ce3eac0f1ba1d3f2dcaa",
+    "study_yaw.py": "41de223b9932a881844750371d7abb0f4ce908d0a3bfd995f8b7cc67c30bb7d7",
+    "tibia_revision.py": "3f6656b7c423b274c14f9206b6d6bbe6bad3092273499e2281d3c9dd14a465f7",
+    "verify.py": "f3092cde9d0e94840656d3300c9df895bc546598797e6dfa7dd608988f6341cd",
+    "verify_washer_delta.py": "28a9a9f6f3276b37680936e3a1dd2282e96a30d9abdd9f64f97b02dec1b36527"
+  },
+  "static_check": {
+    "boolean_pairs": 60,
+    "intersections": []
+  },
+  "lengths_mm": [
+    82,
+    90,
+    105
+  ],
+  "neutral_deg": [
+    0,
+    30,
+    81
+  ],
+  "nut_pocket_AF_mm": 5.6,
+  "nut_entry_thickness_mm": 2.7,
+  "scope": "One complete three-servo leg and bench mounting plate, physical qualification pending."
+}

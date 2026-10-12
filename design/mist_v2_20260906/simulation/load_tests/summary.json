@@ -1,0 +1,106 @@
+[
+  {
+    "hip_ratio": 2,
+    "contacts_equivalent": 3,
+    "load_multiplier": 1,
+    "force_n": 12.928804831948502,
+    "fixed_base": true,
+    "status": "PASS_IN_MODEL",
+    "criteria": {
+      "foot_error_below_15mm": true,
+      "motor_rms_below_continuous": true
+    },
+    "hold_max_foot_error_m": 0.009553377074131378,
+    "hold_servo_rms_nm": [
+      0.00011411067896319861,
+      0.7264973108919812,
+      0.4022145945957919
+    ],
+    "motor_saturation_fraction": 0.0,
+    "parameters_sha256": "2c647a8fabf5350b04ceee89e3feff30cbfb7f661551bdb1e8e69bc2ba86cae4",
+    "source_sha256": {
+      "model.py": "7da904de9f18a7e7c164d62e1b939a8b51af91a55bf1c357c62dc7707cb35392",
+      "run_sim.py": "0b35d5a776b8479b2bbe7238c191ccf8e890e4024b749d600639f0ca0878cddc",
+      "load_test.py": "69a107302449a0fb328096b483cfd8a18f251f08429263579f79dd1648b19eff"
+    },
+    "limitations": "Ideal external vertical force on one suspended wheel, body fixed. This is a loading fixture surrogate, not a gait or measured servo test. Uses the same command-play and compliance approximations as run_sim.py."
+  },
+  {
+    "hip_ratio": 2,
+    "contacts_equivalent": 2,
+    "load_multiplier": 1.5,
+    "force_n": 29.08981087188413,
+    "fixed_base": true,
+    "status": "FAIL_IN_MODEL",
+    "criteria": {
+      "foot_error_below_15mm": false,
+      "motor_rms_below_continuous": false
+    },
+    "hold_max_foot_error_m": 0.14813061984709763,
+    "hold_servo_rms_nm": [
+      0.00022063988897818245,
+      1.3349302312499993,
+      0.49256724648040084
+    ],
+    "motor_saturation_fraction": 0.53,
+    "parameters_sha256": "2c647a8fabf5350b04ceee89e3feff30cbfb7f661551bdb1e8e69bc2ba86cae4",
+    "source_sha256": {
+      "model.py": "7da904de9f18a7e7c164d62e1b939a8b51af91a55bf1c357c62dc7707cb35392",
+      "run_sim.py": "0b35d5a776b8479b2bbe7238c191ccf8e890e4024b749d600639f0ca0878cddc",
+      "load_test.py": "69a107302449a0fb328096b483cfd8a18f251f08429263579f79dd1648b19eff"
+    },
+    "limitations": "Ideal external vertical force on one suspended wheel, body fixed. This is a loading fixture surrogate, not a gait or measured servo test. Uses the same command-play and compliance approximations as run_sim.py."
+  },
+  {
+    "hip_ratio": 3.5,
+    "contacts_equivalent": 3,
+    "load_multiplier": 1,
+    "force_n": 12.928804831948502,
+    "fixed_base": true,
+    "status": "PASS_IN_MODEL",
+    "criteria": {
+      "foot_error_below_15mm": true,
+      "motor_rms_below_continuous": true
+    },
+    "hold_max_foot_error_m": 0.00597454105396725,
+    "hold_servo_rms_nm": [
+      3.4422094622452254e-06,
+      0.40762353564909937,
+      0.4022139814368277
+    ],
+    "motor_saturation_fraction": 0.0,
+    "parameters_sha256": "9083876f3a2a2e9a960c00fd5c84868c75023d59c070032bd064b05e9566c89b",
+    "source_sha256": {
+      "model.py": "7da904de9f18a7e7c164d62e1b939a8b51af91a55bf1c357c62dc7707cb35392",
+      "run_sim.py": "0b35d5a776b8479b2bbe7238c191ccf8e890e4024b749d600639f0ca0878cddc",
+      "load_test.py": "69a107302449a0fb328096b483cfd8a18f251f08429263579f79dd1648b19eff"
+    },
+    "limitations": "Ideal external vertical force on one suspended wheel, body fixed. This is a loading fixture surrogate, not a gait or measured servo test. Uses the same command-play and compliance approximations as run_sim.py."
+  },
+  {
+    "hip_ratio": 3.5,
+    "contacts_equivalent": 2,
+    "load_multiplier": 1.5,
+    "force_n": 29.08981087188413,
+    "fixed_base": true,
+    "status": "FAIL_IN_MODEL",
+    "criteria": {
+      "foot_error_below_15mm": false,
+      "motor_rms_below_continuous": false
+    },
+    "hold_max_foot_error_m": 0.01585619531258587,
+    "hold_servo_rms_nm": [
+      8.576742696040985e-06,
+      1.0906227472290404,
+      1.1036999500677667
+    ],
+    "motor_saturation_fraction": 0.0,
+    "parameters_sha256": "9083876f3a2a2e9a960c00fd5c84868c75023d59c070032bd064b05e9566c89b",
+    "source_sha256": {
+      "model.py": "7da904de9f18a7e7c164d62e1b939a8b51af91a55bf1c357c62dc7707cb35392",
+      "run_sim.py": "0b35d5a776b8479b2bbe7238c191ccf8e890e4024b749d600639f0ca0878cddc",
+      "load_test.py": "69a107302449a0fb328096b483cfd8a18f251f08429263579f79dd1648b19eff"
+    },
+    "limitations": "Ideal external vertical force on one suspended wheel, body fixed. This is a loading fixture surrogate, not a gait or measured servo test. Uses the same command-play and compliance approximations as run_sim.py."
+  }
+]

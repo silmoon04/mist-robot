@@ -1,0 +1,1082 @@
+[
+ {
+  "file": "01_angry_01_manual",
+  "eye_L": {
+   "family": "open_C",
+   "open": true,
+   "gap_direction": "9 oclock (outer/left side)",
+   "rotation": "~10 deg clockwise vs a canonical mirrored-C; top bar slopes down toward face center (angry slant)",
+   "detail": "Shape like a superset symbol (rotated ~10 deg CW): a near-straight top bar starts with a round cap at upper-left and runs right with a shallow ~8-12 deg downward slope for ~70% of the eye width, slightly convex-up. At the right (inner) end it makes a rounded ~160-180 deg U-turn (turn radius ~= 0.8-1x stroke width, no sharp corner) through 3 oclock, then the lower stroke sweeps back left as a shallow downward bowl (convex-down smile arc, sag ~25-30% of eye height below the turn), reaching its lowest point ~60% of the way back, then rises slightly and ends with a small upward flick and round cap at lower-left, roughly vertically below the top bar's start cap. Opening gap on the left spans ~60% of total eye height. Overall bounding box ~370x275 (aspect ~1.35:1 wide), stroke width ~15-18% of eye width, all round caps."
+  },
+  "eye_R": {
+   "family": "open_C",
+   "open": true,
+   "gap_direction": "2-3 oclock (outer/right side), slightly upward",
+   "rotation": "~10-15 deg counterclockwise vs canonical C; top stroke slopes down toward face center (angry slant) \u2014 mirror of left eye's tilt",
+   "detail": "Letter-C shape, slightly rotated CCW: top stroke starts with a round cap at upper-right (with a tiny knob/bump just after the cap) and runs left-and-down at ~12-15 deg below horizontal, slightly convex-up, for ~70% of eye width. At the left (inner) side it makes a rounded ~180 deg U-turn through 9 oclock (radius ~= 1x stroke width). The lower stroke sweeps right as a downward bowl (convex-down), lowest point ~45% along, then rises and ends with a pronounced upward curl \u2014 final tangent ~35-45 deg above horizontal \u2014 round cap at mid-right, lower and slightly right of the top cap. The right-facing opening spans ~40-50% of eye height between the two caps. Bounding box ~330x300 (aspect ~1.1:1, rounder/taller than eye_L), stroke width ~17-20% of eye width, all round caps."
+  },
+  "eyes_mirror_pair": true,
+  "mouth": {
+   "present": true,
+   "family": "line",
+   "filled": false,
+   "detail": "Single thick horizontal straight stroke with fully rounded semicircular end caps \u2014 reads as a rounded bar. Length:thickness ~= 5:1 (about 390x80 px in the ~1600px-wide render; stroke thickness matches the eye strokes). Zero curvature, ~0 deg tilt (dead horizontal), flat and parallel top/bottom edges apart from minor tracing wobble. Positioned centered horizontally between the eyes, at a level just below the eyes' bottoms (mouth center ~70% down the face height)."
+  },
+  "tear": null,
+  "hypothesis_corrections": "Mouth \"flat line\" is correct. Eyes correction: not simple angry hooks curling down-outward \u2014 each eye is a full open-C shape with a near-straight top bar sloping down toward the nose, a rounded ~180 deg U-turn on the INNER side, and a long bowl-shaped lower return stroke; the opening/gap points OUTWARD (left eye opens toward 9 oclock, right eye toward 2-3 oclock). The right eye's lower stroke additionally curls upward at its end.",
+  "anomalies": "Hand-traced wobble throughout: stroke width varies ~\u00b120% (left eye thickens at its right U-turn and along the lower bowl; right eye top stroke has a small bump/knob near its right end cap). Eyes are mirror images only approximately \u2014 the right eye is rounder/taller (aspect ~1.1 vs ~1.35) with a stronger upward end-curl, while the left eye has a longer, straighter top bar. Mouth top edge is slightly uneven in the cleaned render (tracing artifact). No tear, brows, or other elements present."
+ },
+ {
+  "file": "02_angry_02_manual.png",
+  "eye_L": {
+   "family": "angry_hook",
+   "open": false,
+   "gap_direction": "9 o'clock (outward-left); gap between the two round caps spans ~170px vertically, about 2.4 stroke-widths",
+   "rotation": "reads as a '>' with apex pointing inward (toward nose); upper arm descends inward at ~22 deg below horizontal, no additional glyph tilt",
+   "detail": "Boomerang/hook, stroke ~70px with round caps, bbox 331w x 296h (px in 1600x1024 render). Upper arm: nearly straight bar from outer cap at (315,346) descending inward-right at ~22 deg to a rounded bend apex at (610,472). Bend: tight rounded turn, outer radius ~65px (~1 stroke-width), interior opening angle ~55-60 deg. Lower arm: convex-down arc sweeping back outward-left from the bend, chord ~320px, sagitta ~70px (~22% of chord, arc span roughly 80-90 deg), bottom of arc at (432,~575 centerline), ending at outer cap (282,516). Lower cap sits ~170px below and ~30px further out than the upper cap. Shape resembles Japanese 'tsu' rotated slightly CCW."
+  },
+  "eye_R": {
+   "family": "angry_hook",
+   "open": false,
+   "gap_direction": "3 o'clock (outward-right); gap between caps ~170px vertical, ~2.4 stroke-widths",
+   "rotation": "mirror of eye_L: a '<' with apex pointing inward; upper arm descends inward at ~27 deg below horizontal",
+   "detail": "Mirror boomerang, stroke ~70px round caps, bbox 324w x 303h. Upper arm: nearly straight from outer cap at (1280,320) descending inward-left at ~27 deg to rounded bend apex at (990,477). Bend: rounded, outer radius ~65px, interior angle ~55-60 deg. Lower arm: convex-down arc from bend sweeping outward-right, chord ~320px, sagitta ~65-70px, arc bottom near (1166,~555 centerline), ending at outer cap (1314,487). Whole glyph sits ~15-20px higher than eye_L (top y293 vs y313), otherwise a clean mirror."
+  },
+  "eyes_mirror_pair": true,
+  "mouth": {
+   "present": true,
+   "family": "oval_tall_filled",
+   "filled": true,
+   "detail": "Solid filled vertical oval/egg (open-shout), 271w x 381h px, w:h ~0.71 (about 1:1.4). Upright, tilt negligible (<2 deg; bottom center shifted ~10px left of top center). Widest (270px) at 50-58% of height. Both top and bottom edges are fully CURVED domes, no flat edges and no corners: width is only ~64% of max at 8% from top and ~63% at 92% down, reaching ~91% of max by 25% height - i.e., slightly boxier than a true ellipse (mild superellipse), with the middle ~55% of height near-constant width (gently convex sides). Centered horizontally between the eyes (mouth center x~793 vs eye-span center x~798); its top edge (y527) overlaps the vertical level of the eyes' lower arcs."
+  },
+  "tear": null,
+  "hypothesis_corrections": "\"Steep angry hooks\" is half right: they are angry hook/boomerang eyes, but NOT steep - upper arms slope only ~22-27 deg below horizontal. More precisely each eye is an open '>' (left) / '<' (right) glyph with curved arms, rounded inward-pointing apex, and gap opening outward - the classic '>_<' squeezed-shut eye (reads closed, not open). Mouth hypothesis \"tall filled oval (open shout)\" is correct.",
+  "anomalies": "Minor hand-drawn asymmetry only: eye_R sits ~15-20px higher and its upper arm is ~5 deg steeper than eye_L; mouth bottom is a touch more tapered on the left. Cleaned render strokes are much thicker than the thin LED lines in the original photo (isolated_screens_highres), but shapes/topology match. No tear, no extra components (3 blobs total)."
+ },
+ {
+  "file": "03_angry_07_manual",
+  "eye_L": {
+   "family": "open_C",
+   "open": false,
+   "gap_direction": "9 o'clock (outer, away from face center)",
+   "rotation": "none - bars perfectly horizontal",
+   "detail": "Single uniform stroke (~55 px wide, round caps) forming a squared, flattened '\u2283': a top horizontal bar and a bottom horizontal bar, each ~337 px long, center-to-center vertical spacing ~111 px (clear dark slot ~55 px tall between them), joined at the RIGHT (inner) end by a 180-degree U-turn whose outer right edge is nearly flat/vertical with rounded corners (outer corner radius ~30-40 px; centerline U-turn radius ~55 px). Both LEFT ends terminate in open round caps, vertically aligned. Overall bbox ~337x168 px (2:1 aspect). The open slot runs from the left edge to ~83% of the width. Reads as a squeezed-shut/squint eye."
+  },
+  "eye_R": {
+   "family": "open_C",
+   "open": false,
+   "gap_direction": "3 o'clock (outer, away from face center)",
+   "rotation": "none - bars perfectly horizontal",
+   "detail": "Exact mirror of eye_L: single uniform stroke (~55 px, round caps) forming a squared '\u2282': top and bottom horizontal bars ~335 px long, center-to-center spacing ~111 px (slot ~55 px), joined at the LEFT (inner) end by a 180-degree U-turn with a nearly flat vertical outer-left edge and rounded corners (centerline radius ~55 px). Right ends are open round caps, vertically aligned. Bbox ~335x168 px (2:1). Slot opens to the right, depth ~83% of width."
+  },
+  "eyes_mirror_pair": true,
+  "mouth": {
+   "present": true,
+   "family": "frown_arc",
+   "filled": false,
+   "detail": "Stroked circular arc, stroke width ~52 px with round caps (right cap slightly thinner from render blur). Centerline fits a circle of radius ~197 px whose center lies well BELOW the mouth; the arc runs from 152 deg (left end, low) over the top (apex at ~92 deg, i.e. straight above center) to 63 deg (right end), total sweep ~89 deg, chord ~265 px, bbox ~294x166 px. Strongly asymmetric: left endpoint sits ~105 px below the apex while the right endpoint sits only ~20 px below it - equivalent to a symmetric 90-deg frown arc rotated ~15 deg counterclockwise (left corner dropped). Apex is at ~65% of the mouth width from the left, so the shape reads like a lopsided 'hmph' wave crest."
+  },
+  "tear": null,
+  "hypothesis_corrections": "Two corrections. (1) Eyes: they are indeed double horizontal bars, but they are joined at the INNER edge (the side toward the face center), not the outer edge - openings point outward (eye_L opens left/9 o'clock, eye_R opens right/3 o'clock), forming a '\u2283 \u2282' pair. (2) Mouth: 'small frown arc' understates it - it is a fairly large (~265 px chord vs ~337 px eye width) ~90-degree frown arc that is markedly tilted ~15 deg counterclockwise, with the left end dropping ~105 px below the apex while the right end drops only ~20 px; it is not a small symmetric frown.",
+  "anomalies": "Mouth is not centered between the eyes: eye centers sit at ~x440 and ~x1160 in the 1600 px render (midpoint ~800) while the mouth spans ~x740-1040 (center ~890), i.e. shifted right toward eye_R; combined with the dropped-left arc end this gives the sulky asymmetric look. Minor photo-derived stroke-width wobble (mouth right cap ~42 px vs ~52 px body); eyes otherwise clean, same size, same baseline. No tear or extra elements."
+ },
+ {
+  "file": "04_angry_08_manual.png",
+  "eye_L": {
+   "family": "angry_hook",
+   "open": true,
+   "gap_direction": "9-11 oclock (outer-left, gap between the two free ends is roughly vertical, ~1 stroke-width tall)",
+   "rotation": "brow arm slants ~25-30 deg below horizontal, descending inward (toward face center); whole glyph points inward like '>'",
+   "detail": "Single continuous stroke shaped like a rotated checkmark / 'J' lying on its side. Upper arm: nearly straight line from outer-top (10-11 oclock of glyph, ~x0.15/y0.25 of bbox) descending inward-right at ~28 deg to the inner vertex (~x0.9/y0.55). Vertex: tight but rounded corner, interior angle ~35-45 deg. Lower arm: shallow downward-bulging arc (~100 deg span) leaving the vertex heading down-outward, bottoming out at ~x0.4/y0.85, then rising to end at ~x0.1/y0.6 with a small upward curl at the tip (tip tangent points toward 10-11 oclock). Free ends stacked vertically on the outer (left) side: brow start above, hook tip below. Bbox ~1.25:1 wide:tall. Reads as a narrowed glaring eye framed by brow line + lower lid; no pupil, dark interior."
+  },
+  "eye_R": {
+   "family": "angry_hook",
+   "open": true,
+   "gap_direction": "1-3 oclock (outer-right)",
+   "rotation": "brow arm slants ~25-30 deg below horizontal, descending inward (down toward face center from upper-outer-right); glyph points inward like '<'",
+   "detail": "Vertical mirror of eye_L: straight brow arm from outer-top-right (1-2 oclock, ~x0.85/y0.2 of bbox) descending inward-left at ~28 deg to a tight rounded vertex at inner-left (~x0.1/y0.55, interior angle ~35-45 deg); lower arm sweeps back outward-right as a shallow downward-bulging arc (~100-110 deg span), lowest point ~x0.6/y0.85, ending at ~x0.9/y0.55-0.6 with a slight upward curl (tip tangent toward 1-2 oclock, resembling a lowercase 'c'/'e' opening right). Free ends stacked on the outer (right) side. Bbox ~1.25:1 wide:tall. Stroke width uniform with round caps; hand-drawn wobble along the brow."
+  },
+  "eyes_mirror_pair": true,
+  "mouth": {
+   "present": true,
+   "family": "frown_arc",
+   "filled": false,
+   "detail": "Stroked inverted-U frown centered between and below the eyes. Wide flattened elliptical arc: chord width ~350px vs rise ~140px in the full render (width:height ~2.4:1), spanning ~160-180 deg. Top of the dome is gently flattened (not a perfect semicircle). Both ends point straight down to down-outward with round caps, terminating at nearly equal heights (right end ~3-5 deg lower / very slight clockwise tilt). Constant stroke width equal to the eye strokes."
+  },
+  "tear": null,
+  "hypothesis_corrections": "\"Sharp angry slants curving down-inward\" undersells the eyes: each eye is one continuous checkmark-like stroke, not a lone slant \u2014 a straight brow descending inward that turns at a tight rounded inner-corner (~35-45 deg) into a lower-lid hook arcing back outward and sagging below the brow, with the opening facing outward (left eye opens left, right eye opens right). \"Deep frown arc\" for the mouth is correct in kind but it is wide and flattened (~2.4:1 width:height, ~170 deg span), not a deep narrow arc.",
+  "anomalies": "Hand-traced wobble and slight stroke-width variation throughout; eye_L's hook tip curls upward a bit more sharply than eye_R's; mouth is marginally asymmetric with the right terminal slightly lower and extending a touch further out; cleaned render has a strong cyan glow halo around all strokes (original photo shows the same shapes on the dark LED panel, confirming no elements were lost or added in cleaning)."
+ },
+ {
+  "file": "05_annoyed_01_manual.png",
+  "eye_L": {
+   "family": "droop_hook",
+   "open": false,
+   "gap_direction": "8 oclock (outer-down, toward image-left)",
+   "rotation": "top bar near-horizontal, tilted ~5 deg down toward face center (inner end lower = annoyed brow)",
+   "detail": "One continuous thick stroke, round caps, shaped like a fat '7'/reversed-C hybrid. (1) Top bar: near-straight, length ~5.5-6x stroke width, runs from a round outer-left tip rightward with a very slight convex-up bow, dropping ~5 deg toward the inner end. (2) Inner hairpin: at the right (inner, face-center) end the stroke makes a tight ~180-200 deg clockwise U-turn downward and back left; inner radius ~0.5-0.75x stroke width, outer corner reads as a rounded square corner. (3) Lower tail: returns leftward while descending, convex-up curve steepening near the end (total sweep ~50 deg), ending with a round cap pointing ~7:30, length ~60-70% of the top bar. End tip sits ~1.5-2 stroke widths below the start tip and inboard of it by ~15-20% of glyph width, so the opening faces outer-down. Bounding box aspect ~4:3 (w:h)."
+  },
+  "eye_R": {
+   "family": "droop_hook",
+   "open": false,
+   "gap_direction": "4 oclock (outer-down, toward image-right)",
+   "rotation": "top bar near-horizontal, tilted ~5 deg down toward face center (inner end lower), mirroring eye_L",
+   "detail": "Exact vertical-axis mirror of eye_L, like a fat 'C' with an extended drooping lower limb. (1) Top bar: near-straight, ~5.5-6x stroke width long, round outer-right tip, running leftward with slight convex-up bow, inner (left) end ~5 deg lower. (2) Inner hairpin at the left (face-center) end: tight ~180-200 deg counter-clockwise U-turn down and back to the right, inner radius ~0.5-0.75x stroke width, rounded square outer corner at top-left. (3) Lower tail sweeps right and down (convex-up, sweep ~50 deg), round-capped tip pointing ~4:30, length ~60-70% of top bar, ending ~1.5-2 stroke widths below the outer tip and slightly inboard. Opening faces outer-down (right side)."
+  },
+  "eyes_mirror_pair": true,
+  "mouth": {
+   "present": true,
+   "family": "chevron_up",
+   "filled": false,
+   "detail": "Stroked up-pointing chevron '^', same stroke width as eyes, round caps. Two near-straight legs meet at a rounded apex: each leg descends ~40 deg below horizontal, giving an included apex angle of ~100 deg; apex bend is soft, outer radius ~1x stroke width (not a sharp miter). Leg lengths nearly equal, ~3.5-4x stroke width each; overall width:height ~2.2-2.3:1. Baseline level: left and right tips end at almost the same height (right tip a hair higher). Centered horizontally under the gap between the eyes, apex top roughly level with the eyes' lower tail tips."
+  },
+  "tear": null,
+  "hypothesis_corrections": "Hypothesis is essentially correct, with clarifications: the mouth is indeed an upward chevron '^' (stroked, not filled). For the eyes, 'droopy hooks facing inward' is right if 'facing' means the hairpin curl \u2014 each eye's tight U-turn curl is on the INNER (face-center) side \u2014 but the stroke OPENING/gap faces OUTWARD-down (8 oclock for eye_L, 4 oclock for eye_R). Eyes read as closed/squinted annoyed lids, not open eyes.",
+  "anomalies": "Cleaned render strokes are much heavier/blobbier than the thin neon lines in the original photo (thickened during cleanup) with a glow halo; geometry and topology otherwise match the photo. Part crops include stray fragments of neighboring strokes at their edges (mouth tail bits in eye_R crop's lower-left, eye tails in the mouth crop's top corners) \u2014 these belong to other parts, not extra face elements."
+ },
+ {
+  "file": "06_annoyed_02_manual",
+  "eye_L": {
+   "family": "happy_arc",
+   "open": false,
+   "gap_direction": "opening points up, tipped slightly right toward 12-1 oclock",
+   "rotation": "~5 deg clockwise: outer (left) tip higher than inner (right) tip by ~9% of chord",
+   "detail": "Single concave-up circular arc (U / closed-lid shape), sweep ~95-100 deg, no inflection. Chord ~310px in the 1600px render, tilted ~5 deg down toward the face center (left tip at y418, right tip y440, valley y504 at the horizontal midpoint x463). Valley depth ~86px below outer tip, ~60px below inner tip. Very thick stroke: ~75px wide (~24% of chord) with fully round caps; tips may flatten a hair at the very ends but it reads as one clean arc. Bbox ~320x125 (centerline)."
+  },
+  "eye_R": {
+   "family": "happy_arc",
+   "open": false,
+   "gap_direction": "opening points up, tipped slightly left toward 11-12 oclock",
+   "rotation": "~5-6 deg counter-clockwise: outer (right) tip higher than inner (left) tip",
+   "detail": "Mirror of eye_L: single concave-up circular arc, sweep ~95-100 deg, no inflection. Chord ~308px, tilted ~5-6 deg down toward face center (inner/left tip y447, outer/right tip y415, valley y494 at the midpoint x1135). Valley depth ~78px below outer tip, ~45px below inner tip (slightly shallower than eye_L). Same ~75px round-capped stroke. Its inner (lower-left) tip is nearly touched by the mouth's right tip."
+  },
+  "eyes_mirror_pair": true,
+  "mouth": {
+   "present": true,
+   "family": "frown_arc",
+   "filled": false,
+   "detail": "Stroked (not filled) single concave-down arch, sweep ~70-75 deg, tilted so the whole arch leans counter-clockwise: chord rises ~15 deg from lower-left tip (755,621) to right tip (1032,545). Asymmetric limbs: long steep left limb climbing at ~40-45 deg near the tip, crest at ~58% of the length (925,530), then a short shallow ~10 deg descent to the right tip. No S-inflection anywhere (slope sign changes exactly once, at the crest). Chord ~285px, same ~75px round-capped stroke as the eyes. Positioned right of the face midline and high: crest sits at eye-valley height, right tip tucked just below eye_R's inner tip (~15-18px gap)."
+  },
+  "tear": null,
+  "hypothesis_corrections": "Both parts of the hypothesis are wrong. Eyes are NOT wavy tildes: each is a plain concave-up U-arc (~95-100 deg sweep, closed-lid happy-arc shape) with zero inflection, mirrored with outer tips raised ~5 deg. Mouth is NOT wavy: it is a single concave-down arch (~70-75 deg sweep) rotated ~15-25 deg CCW with a long steep left limb and short flat right limb \u2014 one curvature sign throughout, no tilde/S wave. Also it is not especially small: its chord (~285px) is nearly the same as an eye's (~310px).",
+  "anomalies": "Mouth placement is the defining oddity: shifted right of the face midline and riding high, its right tip nearly touching eye_R's inner tip (glows merge in the original photo, ~15-18px gap in the cleaned render) \u2014 the annoyed read comes from this off-kilter tilted mouth, since the eyes alone would read content. Part crops cross-contaminate: eye_R crop contains the mouth's tip at bottom-left, and the mouth crop contains part of eye_R at top-right \u2014 do not mistake these for extra strokes. All three strokes share identical, very chubby proportions (thickness ~24% of chord, round caps)."
+ },
+ {
+  "file": "07_annoyed_03_manual",
+  "eye_L": {
+   "family": "circle_gap",
+   "open": true,
+   "gap_direction": "9-10 oclock (left-middle, faces outward toward image-left)",
+   "rotation": "none overall; loop reads as letter D rotated 90 deg clockwise (flat bar on top, bowl below); top bar essentially horizontal (<5 deg)",
+   "detail": "ONE continuous stroke, uniform thickness ~75 px, round caps; bbox ~375w x 285h px (1.3:1 wide) at approx x255-630, y330-590 in the 1600x1024 render. Path: start round cap at top-left (~275,330); run right along a near-horizontal, very slightly arched top bar ~300 px; at the right end turn clockwise ~100 deg with tight radius ~80-90 px; continue clockwise around a deep bottom bowl (~160 deg arc, mid-stroke radius ~150 px, lowest point at center-x ~430, y~590); rise up the left side and finish with the tip curling up/up-left, end cap at (~270,445). Total sweep ~300 deg. The two round end caps stack vertically on the left ~115 px apart, forming a narrow left-side notch/gap. Encloses a dark interior, giving a heavy-lidded annoyed half-open eye (like Japanese tsu / a D rotated 90 CW with a left gap)."
+  },
+  "eye_R": {
+   "family": "open_C",
+   "open": true,
+   "gap_direction": "3 oclock (right-middle, faces outward toward image-right), centered ~5 deg below horizontal",
+   "rotation": "none; canonical letter-C orientation",
+   "detail": "Near-circular C ring: outer bbox ~365w x 378h px at approx x980-1346, y251-629; stroke ~80 px (~22% of diameter), round caps; mid-stroke radius ~148 px, center ~(1164,440). Arc sweeps ~300 deg counterclockwise from the upper terminal (~25 deg above 3 oclock) up over 12, through 9 and 6, ending at the lower terminal (~35 deg below 3 oclock). Gap ~60 deg between cap centers; the two rounded tips are nearly vertically aligned with ~80 px clear space between cap edges and curl slightly inward toward each other. Noticeably larger and set higher on the face than eye_L."
+  },
+  "eyes_mirror_pair": false,
+  "mouth": {
+   "present": true,
+   "family": "dome_filled",
+   "filled": true,
+   "detail": "Solid filled loaf/dome ~430w x 140h px (~3:1 aspect) at approx x585-1015, y638-778, centered slightly left of face midline. BOTTOM edge: straight and horizontal (flat), with rounded bottom corners r~30-40 px. TOP edge: gentle convex arc, apex located ~40-45% of width from the left (slightly left of center), rising ~30-35 px above the shoulders; from the apex a long shallow slope descends to the right so the right shoulder sits ~15-20 px lower than the left. Both ends fully rounded (left end blunter ~55 px radius, right end slightly more tapered). No tilt of the flat bottom."
+  },
+  "tear": null,
+  "hypothesis_corrections": "Left eye correction: it is not a bar plus separate droop hook - it is a SINGLE continuous ~300 deg stroke forming a D-rotated-90-CW loop (flat horizontal bar on top, deep bowl below) whose only opening is a narrow notch on the LEFT at 9-10 oclock; the free bowl end curls upward there. 'D-like' gestalt was right, 'droop hook' topology was wrong. Right eye 'open C' confirmed (gap at 3 oclock, ~60 deg). Mouth 'filled flat dome' confirmed, with refinement: flat horizontal bottom, apex of the convex top slightly left of center with a long shallow slope down to the right.",
+  "anomalies": "None significant. Cleaned render matches the original photo in shape and placement; cleaned strokes are thicker/blobbier than the photo due to glow dilation. Part crops contain slivers of neighboring components (mouth glow intrudes at eye_L crop bottom-right, right-eye lower arc intrudes at mouth crop top-right) - ignore these when redrawing."
+ },
+ {
+  "file": "08_annoyed_04_manual.png",
+  "eye_L": {
+   "family": "chevron",
+   "open": false,
+   "gap_direction": "9 o'clock (opens outward/left toward image edge)",
+   "rotation": "chevron rotated 90\u00b0 CW from canonical '^' so apex points RIGHT ('>'), toward face center; overall axis near-horizontal with maybe 2-3\u00b0 downward tilt of the apex",
+   "detail": "Two straight thick bars of near-equal length joined at a rounded right-hand apex forming '>'. Upper bar runs from upper-left free end down-right to apex at ~23-25\u00b0 below horizontal; lower bar runs from apex down-left to lower-left free end at ~20-24\u00b0. Included apex angle ~48-55\u00b0. Apex vertically centered between the two free ends (maybe 1-2% low). Free ends have round caps; join is rounded, not sharp. Stroke width ~1/5 of arm length; arm length ~2.6x stroke width visible run. Bars are essentially straight with only photo-trace wobble, no curl."
+  },
+  "eye_R": {
+   "family": "chevron",
+   "open": false,
+   "gap_direction": "3 o'clock (opens outward/right toward image edge)",
+   "rotation": "chevron rotated 90\u00b0 CCW from canonical '^' so apex points LEFT ('<'), toward face center; axis near-horizontal",
+   "detail": "Mirror of eye_L: two straight thick bars joined at a rounded left-hand apex forming '<'. Upper bar rises from apex to upper-right free end at ~25\u00b0 above horizontal; lower bar descends from apex to lower-right free end at ~21-27\u00b0 below horizontal. Included apex angle ~50-55\u00b0. Round caps on free ends, rounded join at apex, equal arm lengths, same stroke weight as eye_L (~1/5 arm length). Straight segments, no hook or curvature."
+  },
+  "eyes_mirror_pair": true,
+  "mouth": {
+   "present": true,
+   "family": "rounded_rect_filled",
+   "filled": true,
+   "detail": "Solid filled horizontal capsule / rounded rectangle, centered slightly left of face midline, below and between the chevron apexes. Aspect ratio ~1.8:1 (width:height), e.g. ~335 x 185 in the crop. Left and right ends are near-semicircular; corner radii ~45-50% of shape height, so it approaches a stadium shape. Top edge is very gently convex, nearly flat across the middle ~60% (with a subtle flat/dip at center from the trace); bottom edge similarly near-flat with slight convexity. No tilt; long axis horizontal. Uniform fill, no interior opening."
+  },
+  "tear": null,
+  "hypothesis_corrections": "Eyes as chevrons '>' '<' confirmed (both point inward, openings face outward; they read as squeezed-shut eyes). Mouth correction: not a small filled oval \u2014 it is a comparatively wide filled capsule/rounded rectangle, ~1.8:1 width:height, with near-flat gently convex top and bottom edges and semicircular ends; larger relative to the face than 'small' implies (mouth width ~= one chevron's arm span).",
+  "anomalies": "Minor hand-trace wobble along all stroke edges; eye_L upper arm is slightly steeper (~24\u00b0) than its lower arm (~20\u00b0), so eye_L is not perfectly self-symmetric; mouth top edge has a subtle central flattening/dip; mouth sits slightly left of the midpoint between the two eye apexes. Nothing else unusual; no tear, brows, or extra marks."
+ },
+ {
+  "file": "09_happy_03_manual",
+  "eye_L": {
+   "family": "circle_gap",
+   "open": true,
+   "gap_direction": "10-10:30 oclock (upper-left, outward-up)",
+   "rotation": "none beyond gap placement; ring is upright and circular",
+   "detail": "Open ring, outer diameter ~1 unit, stroke width ~0.18 of diameter, round caps. Single arc of ~305-315 degrees: starts at ~11 oclock, runs clockwise through 12, 3, 6, ends at ~9:30. Gap spans ~45-55 degrees centered at ~10:15. Both endpoints are simple round caps, no hooks or flicks. Slight hand-drawn wobble in stroke width from the photo source."
+  },
+  "eye_R": {
+   "family": "circle_gap",
+   "open": true,
+   "gap_direction": "2 oclock (upper-right, outward-up)",
+   "rotation": "none beyond gap placement; upright circular ring, mirror of left eye",
+   "detail": "Open ring, same diameter and stroke width (~0.18 of diameter) as left eye. Single arc of ~290-305 degrees: starts at ~1 oclock, runs counterclockwise through 12, 9, 6, ends at ~2:30-3:30. Gap spans ~55-70 degrees centered at ~2 oclock, marginally wider than the left eye gap. Lower endpoint (at ~3 oclock) shows a tiny upward/outward flick at the round cap; upper endpoint is a plain round cap."
+  },
+  "eyes_mirror_pair": true,
+  "mouth": {
+   "present": true,
+   "family": "open_smile_filled",
+   "filled": true,
+   "detail": "Solid filled bowl shaped like a circular segment, width:height ~1.9-2:1 (approx 430x225 px in the 1600px render). Top edge is a near-straight horizontal chord with a very slight upward bow (~3-5% of width at midpoint) - not perfectly flat but reads as flat. Bottom edge is one smooth deep convex-down arc, roughly a half-ellipse, deepest point near center (a hair left of center). Top corners rounded with small radii ~8-12% of width; left corner slightly softer than right. No tilt; mouth centered horizontally under the gap between the eyes, slightly left of face midline."
+  },
+  "tear": null,
+  "hypothesis_corrections": "Essentially correct. Refinements: eye gaps are not arbitrary - they point outward-and-up as a mirror pair (left eye gap ~10 oclock, right eye gap ~2 oclock), with the right gap slightly wider; mouth top edge is a near-flat chord with a slight upward bow rather than perfectly flat.",
+  "anomalies": "Photo-derived wobble: stroke width varies slightly around each ring and the mouth outline is slightly lumpy (bottom arc has minor waviness). Right eye gap (~55-70 deg) is wider than left (~45-55 deg), and its lower cap has a tiny upward flick - likely render artifact but visible in both cleaned and original images. No tear, no eyebrows, no other components."
+ },
+ {
+  "file": "10_happy_04_manual.png",
+  "eye_L": {
+   "family": "happy_arc",
+   "open": false,
+   "gap_direction": "6 oclock (opening faces straight down)",
+   "rotation": "essentially level; inner (right) limb reaches ~10-15px lower than outer limb, giving a hint of clockwise tilt (<5 deg)",
+   "detail": "Single stroked circular arc, convex up (n-shape). Spans ~140-155 deg of a circle: endpoints sit at roughly 7:30 and 4:30 clock positions, apex at 12. Chord (end-to-end width) ~300px in crop with sagitta (apex height above chord) ~95-100px, i.e. height ~1/3 of width; implied radius ~1.05x half-width. End tangents point steeply down (~60-70 deg from horizontal) but do NOT curl inward/under \u2014 no hook. Round caps; stroke thickness ~1/6 of arc width (thick, chubby stroke). Apex slightly left of center in the crop, so the right (inner) limb is marginally longer. Uniform thickness apart from a slightly bulbous look at the left cap (glow artifact)."
+  },
+  "eye_R": {
+   "family": "happy_arc",
+   "open": false,
+   "gap_direction": "6 oclock (opening faces straight down)",
+   "rotation": "level; near-zero tilt, outer (right) limb ends a touch lower in the full render",
+   "detail": "Same construction as eye_L: single upward-convex circular arc spanning ~140-155 deg, endpoints ~7:30 and ~4:30, apex at 12. Width ~300px chord, apex rise ~95px (height:width ~1:3). Round caps, no end curl/hook; end tangents ~60-70 deg downward. Stroke thickness ~1/6 of width, identical to eye_L. This arc reads slightly more left-right symmetric than eye_L (apex nearly centered). Same size as eye_L to within a few px; the pair sit level at the same baseline, separated by ~2.3 eye-widths center-to-center."
+  },
+  "eyes_mirror_pair": true,
+  "mouth": {
+   "present": true,
+   "family": "w_squiggle",
+   "filled": false,
+   "detail": "Classic cat/omega mouth: one continuous stroked squiggle, width:height ~3.8:1 (path spans ~355px wide by ~90-95px tall in crop; stroke thickness ~45px, same chubby weight as the eyes). Reading left to right: left tip starts high (round cap, tip curls slightly upward), descends into a rounded U valley (left smile arc, ~120-140 deg of curvature), rises to a rounded central n-peak whose apex reaches back up to roughly the same height as the two end tips, descends into a mirrored right U valley, then rises to the right tip which also curls slightly upward. The three high points (left tip, center peak, right tip) are nearly co-linear horizontally; the two valley bottoms are also level with each other. Fully smooth \u2014 no sharp corners anywhere; valley and peak radii ~= 1.5-2x stroke width. No tilt; horizontally centered under the midpoint between the eyes, sitting about one eye-height below the eye baseline. Left tip slightly thicker/bulbous in the cleaned render (artifact)."
+  },
+  "tear": null,
+  "hypothesis_corrections": "none \u2014 hypothesis is fully correct: eyes are happy n-shape arcs (closed-lid smile eyes), mouth is a w/omega cat mouth. Only refinement: the eye arcs span ~140-155 deg (not full semicircles) and the mouth's center peak rises to the same height as its end tips.",
+  "anomalies": "Original photo shows a magenta/purple chromatic fringe under the right eye's right limb and general LED bloom \u2014 photographic artifacts, not design features (cleaned render correctly omits the fringe). In the cleaned render the left cap of eye_L and the left tip of the mouth look slightly bulged/blobby from the manual cleanup; strokes should be redrawn at uniform width. Strong outer glow halo around all strokes is LED bloom, reproduce as a soft blur if desired, not as geometry."
+ },
+ {
+  "file": "11_happy_05_manual.png",
+  "eye_L": {
+   "family": "circle_gap",
+   "open": true,
+   "gap_direction": "8:30-9 oclock (outer/left side, slightly below horizontal)",
+   "rotation": "gap center rotated ~5-10 deg clockwise below the pure 9-oclock position",
+   "detail": "Near-circular ring, outer diameter ~350px in the cleaned render, stroke width ~0.18-0.20 of diameter, round caps. Arc spans ~305-315 deg; the ~45-55 deg gap opens to the LEFT (outer side of face), centered slightly below 9 oclock. Upper terminus sits at ~10 oclock with its round-capped tip curling very slightly downward/inward toward the gap; lower terminus sits at ~8 oclock with a plain round cap, its last few degrees straightening slightly outward. Ring is essentially circular (aspect ~1.0) with mild hand-traced wobble in radius and stroke width (+/-10%). No tilt of the overall ring; only the gap placement defines orientation."
+  },
+  "eye_R": {
+   "family": "circle_gap",
+   "open": true,
+   "gap_direction": "2:30-3 oclock (outer/right side, slightly above horizontal)",
+   "rotation": "gap center rotated ~5-10 deg counter-clockwise above the pure 3-oclock position; near mirror of eye_L",
+   "detail": "Letter-C shaped near-circular ring, same size as eye_L (outer diameter ~350px, stroke ~0.18-0.20 of diameter, round caps). Arc spans ~295-310 deg; gap of ~50-65 deg opens to the RIGHT (outer side of face), centered at/just above 3 oclock. Upper terminus at ~1:30-2 oclock with the tip curling slightly inward-down toward the gap; lower terminus at ~4-4:30 oclock with a small outward-right flick at the very tip (short hook, <1 stroke-width long). Gap reads marginally wider than the left eye's. Circular aspect ~1.0, mild organic wobble."
+  },
+  "eyes_mirror_pair": true,
+  "mouth": {
+   "present": true,
+   "family": "smile_arc",
+   "filled": false,
+   "detail": "Single stroked U-shaped smile, not filled. Overall bounding box ~2.4-2.6:1 wide:tall (about 470x190px in crop; ~390px wide, ~150px deep at stroke centerline in the face render). Approximates a circular arc of ~135-140 deg (bottom of a circle, radius ~1.05x the half-width): shallow flat-ish sag at bottom center, both ends sweeping upward so the terminal tangents point up-and-outward at roughly 55-70 deg from horizontal. Left end is a plain round cap; right end rises slightly higher and its tip has a subtle outward (rightward) flick over the last half stroke-width. Essentially level chord (tilt <3 deg, right end marginally higher). Stroke width matches the eyes (~70-80px), round caps, slight hand-drawn width variation with the bottom-center a touch thicker."
+  },
+  "tear": null,
+  "hypothesis_corrections": "Hypothesis is correct in family terms but incomplete: the eye gaps specifically face OUTWARD laterally (left eye gap at ~8:30-9 oclock, right eye gap at ~2:30-3 oclock), making the eyes mirror images rather than identically oriented; also the right eye's lower terminus has a tiny outward flick and the mouth's right end sits slightly higher with a subtle outward tip flick.",
+  "anomalies": "Manual/hand-traced source: strokes show organic wobble in both path and width (+/-10%); cleaned render has a soft outer glow halo around all strokes; right eye gap slightly wider than left and mouth is not perfectly symmetric (right end higher with a small flick) \u2014 likely tracing artifacts rather than intentional asymmetry. No nose, brows, or tear elements present."
+ },
+ {
+  "file": "12_happy_09_manual.png",
+  "eye_L": {
+   "family": "chevron",
+   "open": false,
+   "gap_direction": "9 o'clock (outer/left, away from face center)",
+   "rotation": "none \u2014 apex sits at the vertical midpoint of the two arm ends, chevron axis is horizontal",
+   "detail": "A '>' chevron whose apex points RIGHT (toward face center). Two straight strokes of near-equal length meet at a sharp-but-round-joined vertex on the right. Upper arm runs from upper-left down to the vertex at ~20-22 deg below horizontal; lower arm runs from the vertex down-left at ~20-21 deg below horizontal, giving an included apex angle of ~40-44 deg. Each arm length is ~5x the stroke width (in the 1600px render: arms ~290px, stroke ~55-60px). Round caps on both free ends; vertex is a rounded join that still reads pointed. Bounding box ~1.3:1 wide (approx 300x230). Slight hand-drawn wobble; stroke thickness essentially constant with a faint thickening at the vertex."
+  },
+  "eye_R": {
+   "family": "chevron",
+   "open": false,
+   "gap_direction": "3 o'clock (outer/right, away from face center)",
+   "rotation": "none \u2014 horizontally symmetric about its own midline, no tilt",
+   "detail": "A '<' chevron, mirror of eye_L: apex points LEFT (toward face center). Upper arm runs from upper-right down to the vertex at ~21-23 deg below horizontal; lower arm runs from the vertex down-right at ~20-22 deg below horizontal; included apex angle ~40-45 deg. Arms near-equal length, ~5x stroke width (arms ~280-290px, stroke ~55-60px in the 1600px render). Round caps on the two free right-side ends, rounded vertex join on the left that reads pointed. Bounding box ~1.3:1 wide. Same hand-drawn wobble and slight vertex thickening as eye_L."
+  },
+  "eyes_mirror_pair": true,
+  "mouth": {
+   "present": false,
+   "family": "none",
+   "filled": false,
+   "detail": "No mouth in either the cleaned render or the original photo \u2014 face area below the eyes is completely dark."
+  },
+  "tear": null,
+  "hypothesis_corrections": "none",
+  "anomalies": "This is the classic '> <' scrunched/squeezed-shut expression: both chevron apexes point inward at each other, roughly on the same horizontal axis, separated by a gap of ~1.3x one eye's width. Strokes have mild hand-drawn wobble and very slight thickening at each chevron vertex; original photo shows faint magenta LED bleed around stroke edges (an artifact, not geometry). No other marks on the screen."
+ },
+ {
+  "file": "13_happy_14_manual.png",
+  "eye_L": {
+   "family": "happy_arc",
+   "open": false,
+   "gap_direction": "6 oclock (concave side faces straight down)",
+   "rotation": "essentially level; both end tips sit at the same height, apex shifted ~5% left of chord midpoint (outer/left limb marginally steeper), reads as 0 to at most 3 deg clockwise",
+   "detail": "Single thick convex-up circular arc (n-shape). Chord between end-cap centers ~340 px, centerline sagitta ~60 px (sagitta/chord ~0.18), giving a circular arc span of ~90-100 deg (radius ~270 px). Apex tangent horizontal; end tangents ~45 deg below horizontal, so left tip points down-left (~7-8 oclock) and right tip points down-right (~4-5 oclock), tips just barely curling below the shoulder line with no extra hook. Stroke width ~70 px, ~20% of chord, constant along the arc; round caps; underside concavity mirrors the arch smoothly (no kink). Overall bounding box ~340 x 130 px (h/w ~0.38)."
+  },
+  "eye_R": {
+   "family": "happy_arc",
+   "open": false,
+   "gap_direction": "6 oclock (concave side faces straight down)",
+   "rotation": "essentially level; tips at equal height, apex ~3-5% left of chord midpoint like eye_L, effective tilt 0 deg",
+   "detail": "Same construction as eye_L: thick convex-up circular arc, chord ~310-320 px, centerline sagitta ~60 px (sagitta/chord ~0.19), arc span ~95-105 deg. End tangents ~45 deg below horizontal (tips at ~7-8 and ~4-5 oclock), no hooks or curls beyond the arc itself. Stroke width ~70 px (~21% of chord), round caps, smooth concave underside. Bounding box ~320 x 130 px. Slightly more compact horizontally than eye_L but otherwise identical."
+  },
+  "eyes_mirror_pair": true,
+  "mouth": {
+   "present": true,
+   "family": "smile_arc",
+   "filled": false,
+   "detail": "Thick stroked U-arc (not a filled shape). Chord between end-cap centers ~340-350 px, centerline sagitta ~100 px (sagitta/chord ~0.30-0.32), giving a circular arc span of ~130 deg (deeper than the eye arcs). Opening faces 12 oclock; end tangents ~60-65 deg above horizontal, so the left tip points up toward ~10-11 oclock and the right tip toward ~1-2 oclock \u2014 the corners curl distinctly upward past the bowl but stop short of vertical. Stroke width ~70-80 px (~21% of chord), same weight as the eyes; round caps. Lowest point of the bowl at chord midpoint. Right tip sits ~10 px higher and its end cap is slightly bulkier than the left, an effective ~2 deg counterclockwise tilt (right corner raised). Bounding box ~415 x 195 px (h/w ~0.47)."
+  },
+  "tear": null,
+  "hypothesis_corrections": "none \u2014 eyes are indeed happy (convex-up) arcs and the mouth is a smile arc; refinement only: eye arcs are shallow (~95 deg span) while the mouth is a deeper ~130 deg U with upturned corners, and all three are strokes of matching ~70 px weight",
+  "anomalies": "Manual/photo-derived cleanup leaves slightly lumpy outlines and ~\u00b110% stroke-width wobble (mouth right end noticeably fatter, small bulge irregularities on eye undersides). Both eyes have their apex slightly LEFT of chord midpoint (same direction on both), so strictly they are translated near-copies rather than true mirrors \u2014 but the asymmetry is within tracing noise (~5%) and they read as a symmetric mirror pair; recommend drawing one symmetric arc and reusing it. No tear, brows, blush, or other components."
+ },
+ {
+  "file": "14_happy_16_manual.png",
+  "eye_L": {
+   "family": "happy_arc",
+   "open": false,
+   "gap_direction": "6 oclock (opening faces straight down)",
+   "rotation": "negligible; apex sits ~5-8% left of chord midpoint, giving a hint of clockwise lean",
+   "detail": "Upward-convex arch (inverted-U) approximating a circular arc of ~140-150 deg central angle. Chord is horizontal, ~300 units; total rise from tip baseline to apex top ~0.30-0.33 of chord. Endpoints sit at roughly 7:30 (left tip) and 4:45 (right tip) clock positions, both tips ending at nearly the same height. Left limb is slightly shorter and steeper (tip tangent ~55-65 deg below horizontal); right limb is slightly longer and flatter, its final ~20% straightening so the tip tangent is only ~30-35 deg below horizontal. Stroke width ~0.18-0.20 of chord, round caps. Apex is very slightly flattened with a tiny hand-drawn bump on the upper-left shoulder."
+  },
+  "eye_R": {
+   "family": "happy_arc",
+   "open": false,
+   "gap_direction": "6 oclock (opening faces straight down)",
+   "rotation": "negligible; apex ~5% left of chord midpoint, same faint clockwise lean as eye_L",
+   "detail": "Same upward-convex arch as eye_L: circular-ish arc, ~140-150 deg span, chord ~300 units horizontal, rise ~0.30 of chord. Left tip descends steeply (~55-60 deg below horizontal) to about 7:30 position; right limb is longer and flatter, tail tangent ~30-35 deg below horizontal at ~4:45 position; both tips end at nearly equal height. Stroke width ~0.18-0.20 of chord, round caps. Slightly smoother/rounder apex than eye_L (no bump). Note: it is a near-identical translated COPY of eye_L (same left-steep/right-flat asymmetry), not a strict reflection."
+  },
+  "eyes_mirror_pair": true,
+  "mouth": {
+   "present": true,
+   "family": "line",
+   "filled": false,
+   "detail": "Thick horizontal straight bar: a stroked line with round caps. Length-to-thickness ratio ~5.5-6:1 (in the crop: ~770 units long, ~130 thick). Essentially zero tilt (right end at most 1-2% lower than left). Top and bottom edges are flat and parallel with minor hand-traced wobble; a shallow notch/dip in the bottom edge at ~60% of the width and a slight bump on the top edge at ~55%. Both ends are full semicircular round caps. Mouth width is ~1.2x one eye's chord, centered horizontally under the midpoint between the eyes."
+  },
+  "tear": null,
+  "hypothesis_corrections": "Essentially none. \"Eyes: happy arcs\" confirmed (closed \u2229 arches, opening down). \"Mouth: flat line\" confirmed, with the refinement that it is a very THICK flat bar (~6:1 aspect, round caps), not a thin line; and the eyes are translated copies of each other rather than strict mirror reflections (each has a steeper left limb and a longer, flatter right tail).",
+  "anomalies": "Hand-traced wobble throughout the cleaned render (edge jitter on all three strokes). Eye_L has a small bump on its upper-left shoulder near the apex. Mouth bottom edge has a shallow notch at ~60% width. The cleaned render's mouth stroke reads slightly thicker relative to the eyes than in the original photo (glow/threshold inflation); original confirms the same neutral-flat mouth and \u2229 eyes. No tear, no other marks."
+ },
+ {
+  "file": "15_misc_15_manual.png",
+  "eye_L": {
+   "family": "flat_bar",
+   "open": false,
+   "gap_direction": null,
+   "rotation": "essentially horizontal, 0-2 deg; if anything a hair of sag at the bottom-center",
+   "detail": "Single thick horizontal stadium bar (filled stroke with round caps). Approx 300 px long x 55 px thick in the 1600px-wide render, aspect ~5.5:1. Both end caps are full semicircles (radius = half thickness). Top and bottom edges run straight and parallel; the bottom edge has a very slight concave notch/dip just right of center (photo-tracing artifact, ~5% of thickness). Reads as a closed/sleepy lid rather than an open eye."
+  },
+  "eye_R": {
+   "family": "flat_bar",
+   "open": false,
+   "gap_direction": null,
+   "rotation": "essentially horizontal, 0-2 deg; faint rise toward center then slight dip at the right-bottom edge",
+   "detail": "Single thick horizontal stadium bar identical in style to eye_L. Approx 305 px long x 50 px thick (aspect ~6:1) in the 1600px-wide render. Round semicircular end caps, straight parallel top/bottom edges with minor waviness: a shallow dip on the bottom edge right of center and a slight bump on the top edge left of center (extraction noise, <10% of thickness). Reads as a closed/sleepy lid."
+  },
+  "eyes_mirror_pair": true,
+  "mouth": {
+   "present": true,
+   "family": "rounded_rect_filled",
+   "filled": true,
+   "detail": "Large solid filled stadium / rounded-rectangle, approx 370 px wide x 170 px tall (aspect ~2.15:1), horizontally centered on the face and sitting well below the eye line. Left and right ends are near-semicircular with corner radius ~45-50% of the height, so the corners blend smoothly with no visible flat corner break. Top and bottom edges are gently convex (very shallow outward bow, near-flat through the middle third) rather than perfectly straight \u2014 closer to a flattened oval than a crisp rectangle. No tilt; symmetric left-right. In the original photo it is the same solid pill with a slightly flatter bottom edge than top."
+  },
+  "tear": null,
+  "hypothesis_corrections": "Essentially correct. Eyes are indeed single flat horizontal bars (closed-lid look, aspect ~5.5-6:1). Mouth is a wide filled rounded shape as hypothesized, but it is better described as a stadium/flattened oval: the corner radii are so large (~half the height) that there are no distinct corners, and the top/bottom edges have a slight convex bow rather than being perfectly flat.",
+  "anomalies": "Minor edge waviness on all three shapes (small notches/bumps on the bar edges and mouth outline) is a photo-extraction artifact, not intentional geometry \u2014 redraw with clean smooth edges. Original photo shows a faint red/magenta fringe just above each eye bar (chromatic aberration from the LED panel), not a face feature. Overall expression reads as sleeping/relaxed with an open oval mouth."
+ },
+ {
+  "file": "16_misc_16_manual",
+  "eye_L": {
+   "family": "closed_lid_arc",
+   "open": false,
+   "gap_direction": "12 o'clock (concave side faces straight up; the stroke itself is a continuous arc with no gap)",
+   "rotation": "essentially level; line through the two tips is within ~2 degrees of horizontal",
+   "detail": "Shallow U-arc (smile-shaped closed lid). Chord between tip centers ~315 px; trough sits ~105 px below the tip line, giving roughly a 130-140 degree arc of a circle with R ~165 px. Both ends flare slightly upward-outward beyond a pure circle: end tangents rise ~40-50 degrees above horizontal, upturn length about one stroke-width. Stroke thickness ~55 px (~17% of chord width), round caps, uniform weight. Trough is centered horizontally; tips nearly level with each other."
+  },
+  "eye_R": {
+   "family": "closed_lid_arc",
+   "open": false,
+   "gap_direction": "12 o'clock (concave side faces straight up; continuous stroke, no gap)",
+   "rotation": "very slight tilt, outer (right) tip rides ~15-25 px higher than the inner tip (~3-5 degrees, outer end up)",
+   "detail": "Same shallow U-arc as eye_L: ~315 px chord, ~100-110 px sagitta, ~130-140 degree arc of an R ~165 px circle, stroke ~55 px with round caps. Both tips upturn mildly (end tangents ~40-50 degrees above horizontal, upturn about one stroke-width long); the outer tip's upturn is a touch stronger/higher than the inner tip's."
+  },
+  "eyes_mirror_pair": true,
+  "mouth": {
+   "present": true,
+   "family": "oval_tall_filled",
+   "filled": true,
+   "detail": "Solid tall capsule-like oval, ~250 px wide x ~370 px tall (W:H ~0.68, height ~1.45x width). Sides are near-vertical/only slightly bowed through the middle ~40% of the height, so it reads between an ellipse and a stadium (rounded rect with corner radius ~ half the width). Top and bottom edges are fully curved domes, NOT flat \u2014 the top dome is marginally flatter/narrower than the broader bottom dome. No tilt. Placement: horizontally centered between the eyes; its top edge sits at eye-tip height (~y of the lid tips) so it overlaps the eye band vertically, hanging down like a yawn/tongue."
+  },
+  "tear": null,
+  "hypothesis_corrections": "none - hypothesis confirmed (closed u-arc lids with upturned tips, tall filled oval yawn mouth); only nuance: the mouth's sides are slightly flattened making it capsule/stadium-like rather than a pure ellipse, and the tip upturn on the lids is mild (~one stroke-width kick, not a strong hook)",
+  "anomalies": "Photo-trace wobble on the mouth's left edge (small notch/bump around lower-left and a slight mid-left flat spot); mouth outline is otherwise clean. Right eye's outer tip sits slightly higher than all other tips, likely camera perspective. Strong cyan glow halo around all shapes in both renders; core fill color is a lighter cyan than the halo."
+ },
+ {
+  "file": "17_misc_2_01_manual.png",
+  "eye_L": {
+   "family": "flat_bar",
+   "open": false,
+   "gap_direction": null,
+   "rotation": "horizontal, 0 deg (any apparent tilt is under ~1-2 deg photo jitter)",
+   "detail": "Solid filled horizontal stadium/pill bar. Length-to-height ratio ~6.5:1 (approx 310 x 48 px in the 1600px-wide render). Both ends are full semicircular round caps (radius = half the bar height); top and bottom edges are straight and parallel. Uniform thickness along its length. Sits at the same vertical level as eye_R, centered roughly 28% from the left edge of the face at ~46% height."
+  },
+  "eye_R": {
+   "family": "flat_bar",
+   "open": false,
+   "gap_direction": null,
+   "rotation": "horizontal, 0 deg (within ~1-2 deg jitter)",
+   "detail": "Solid filled horizontal stadium/pill bar, essentially identical to eye_L: length-to-height ratio ~6.5-7:1 (approx 315 x 46 px), semicircular round end caps, straight parallel top/bottom edges, uniform thickness. Same vertical level as eye_L (~46% height), centered roughly 72% from the left edge."
+  },
+  "eyes_mirror_pair": true,
+  "mouth": {
+   "present": true,
+   "family": "wide_bar_filled",
+   "filled": true,
+   "detail": "Solid filled horizontal stadium/pill bar, ~1.25x the length of an eye: length-to-height ratio ~8:1 (approx 395 x 50 px). Top and bottom edges are FLAT (straight, parallel \u2014 no curvature/smile bend); ends are full semicircular round caps. Zero tilt. Horizontally centered on the face (its center aligns with the midpoint between the two eyes), positioned at ~72% face height. Bar thickness matches the eyes' thickness."
+  },
+  "tear": null,
+  "hypothesis_corrections": "none \u2014 \"eyes: flat bars; mouth: flat bar\" is exactly right. Only refinement: the mouth bar is noticeably longer (~1.25x) than each eye bar, and all three are stadium shapes with fully rounded semicircular end caps, not sharp-cornered rectangles.",
+  "anomalies": "Photo-derived edge jitter: small bumps/nicks along the top and bottom edges of all three bars in the zoomed crops (artifacts of thresholding the LED glow, not intentional geometry \u2014 redraw with clean straight edges). Cyan glow halo surrounds each bar. Face reads as a neutral/sleepy \"dash face\" (-_-). No other marks on the screen."
+ },
+ {
+  "file": "18_misc_2_02_manual",
+  "eye_L": {
+   "family": "e_shape",
+   "open": true,
+   "gap_direction": "8:30-9:30 oclock (lower-left / outer-down)",
+   "rotation": "near-canonical; crossbar horizontal within ~5 deg, whole glyph maybe 3-5 deg CCW",
+   "detail": "Horizontally MIRRORED lowercase e (like '\u0258'). Bowl is a near-circle ~1 unit dia, stroke width ~0.17 dia, round caps. Horizontal crossbar chord sits ~40-45% down from bowl top; its LEFT end fuses with the descending top arc at ~9:30-10 oclock (counter fully enclosed), its RIGHT end fuses into the bowl wall at ~3 oclock (junction visibly thick/blobby). Continuous bowl stroke: from the 10-oclock junction it arcs over the top (12), down the right side (3), around the bottom (6), then up the lower-left where the terminal kicks slightly OUTSIDE the circle radius and hooks upward, tip ending at ~8:30. Aperture gap spans ~40-50 deg between terminal tip (~8:30) and crossbar-left junction (~9:30-10). Enclosed counter is a wide shallow lens (~55-60% bowl width, pointed ends) between crossbar top edge and top-arc inner edge. Crossbar slightly thicker than the arc stroke."
+  },
+  "eye_R": {
+   "family": "e_shape",
+   "open": true,
+   "gap_direction": "3-4 oclock (lower-right / outer-down)",
+   "rotation": "near-canonical; crossbar horizontal within ~5 deg (counter tilts slightly, left end a touch lower)",
+   "detail": "Standard lowercase 'e'. Bowl near-circle ~1 unit dia (very slightly larger than eye_L), stroke width ~0.17 dia, round caps. Horizontal crossbar chord ~42% down from bowl top; LEFT end fuses into bowl wall at ~9-9:30, RIGHT end fuses with the top arc at ~2-2:30 (counter fully enclosed). Continuous bowl stroke: from the 2:30 junction over the top (12), down the left (9), around the bottom (6), then up the lower-right where the terminal kicks OUTSIDE the circle radius and flicks upward \u2014 this tail flick is slightly longer/more pronounced than eye_L's \u2014 tip ending at ~3:30-4. Aperture gap ~35-50 deg between crossbar-right junction (~2:30) and terminal tip (~3:30-4). Enclosed counter is a wide shallow lens (~55% bowl width, pointed ends) above the crossbar."
+  },
+  "eyes_mirror_pair": true,
+  "mouth": {
+   "present": true,
+   "family": "rounded_rect_filled",
+   "filled": true,
+   "detail": "Solid filled stadium / heavily-rounded rectangle, aspect ~2.1:1 (w:h), width ~1.2x one eye diameter. Corner radius ~45-50% of height so left and right ends are nearly semicircular. TOP edge: gently convex (very slight upward bow, small bump near left third). BOTTOM edge: essentially flat with minor hand-drawn wobble and a subtle shallow notch right of center. No tilt (horizontal within ~2 deg). Positioned centered between the eyes horizontally, sitting low \u2014 its top edge starts near the eyes' bottom level, like the underscore in the '\u0259_e' emoticon."
+  },
+  "tear": null,
+  "hypothesis_corrections": "Mostly right, two fixes: (1) left eye is a horizontally MIRRORED e ('\u0258'), not a schwa \u2014 schwa ('\u0259') is a 180-deg ROTATED e with the counter below the crossbar; here the counter sits ABOVE the crossbar exactly as in the right eye, confirming mirror not rotation. (2) mouth is not 'small' \u2014 it is a medium-wide filled stadium about 2:1 aspect and ~1.2x an eye's diameter wide; 'filled rounded rect' itself is correct.",
+  "anomalies": "Hand-traced look with variable stroke width: eye_L crossbar and its 3-oclock junction are noticeably thicker/blobbier; eye_R tail flick extends further outside its bowl than eye_L's mirror equivalent. Mouth outline has minor wobble (top-left bump, shallow bottom notch). All shapes have LED bloom/glow halo in both renders. Cleaned render matches the original photo faithfully; no extra elements, no tear, no nose."
+ },
+ {
+  "file": "19_misc_2_03_manual.png",
+  "eye_L": {
+   "family": "chevron",
+   "open": false,
+   "gap_direction": "opening faces outer-left (9 oclock); apex points inward toward face center (3 oclock)",
+   "rotation": "none - symmetric about a horizontal axis through the apex",
+   "detail": "'>' chevron: apex at right ~(610,470) in a 1600-wide face. Upper arm from ~(310,360) descends right at ~19-20deg below horizontal to apex; lower arm leaves apex down-left at ~20deg to ~(320,585). Included apex angle ~40deg. Arms equal length (~310px, ~6.5x stroke width). Uniform stroke ~45-48px in crop terms, round caps on free ends, rounded (not sharp) apex join with radius ~half stroke width."
+  },
+  "eye_R": {
+   "family": "chevron",
+   "open": false,
+   "gap_direction": "opening faces outer-right (3 oclock); apex points inward toward face center (9 oclock)",
+   "rotation": "none - symmetric about a horizontal axis through the apex",
+   "detail": "'<' chevron: exact horizontal mirror of eye_L. Apex at left ~(1000,468); upper arm rises right at ~20deg to ~(1290,350), lower arm descends right at ~20deg to ~(1295,590). Apex angle ~40deg, equal arm lengths ~310px, same stroke weight (~6.5x stroke width per arm), round caps, rounded apex join."
+  },
+  "eyes_mirror_pair": true,
+  "mouth": {
+   "present": true,
+   "family": "line",
+   "filled": false,
+   "detail": "Flat horizontal stroked bar (the underscore of '>_<'): spans x~620-990 (~370px) at y~730, ~40px stroke, length:thickness ~9:1, zero tilt, round caps both ends, straight (no curvature). Horizontally centered under the midpoint between the two chevron apexes, sitting low on the face. Length ~= 1.2x one chevron arm's horizontal extent. The part crop looks chunkier only due to LED glow bloom."
+  },
+  "tear": null,
+  "hypothesis_corrections": "none - eyes are indeed '>' and '<' chevrons and the mouth is a flat line; added detail: apex angles ~40deg (arms ~20deg from horizontal), apexes point inward, and the mouth sits low like the underscore in '>_<'",
+  "anomalies": "None structural. Cleaned render adds neon glow halo around all strokes; original photo shows slight camera blur but identical geometry. Chevron apex joins are rounded rather than sharp miters."
+ },
+ {
+  "file": "20_neutral_06_manual.png",
+  "eye_L": {
+   "family": "circle_gap",
+   "open": true,
+   "gap_direction": "9:30-10 oclock (outer-upper-left)",
+   "rotation": "gap rotated to upper-outer-left; ring itself untilted",
+   "detail": "Thick open ring, outer diameter ~395 px in full render; stroke width ~20% of outer diameter with round caps. Arc spans ~295-300 deg, drawn clockwise from upper end at ~11 oclock through 12, 3, and 6, terminating at ~9 oclock. Gap ~60-65 deg wide centered at ~10 oclock. Upper cap slightly tapered, lower (9 oclock) cap slightly bulbous; minor hand-drawn wobble in stroke width but circular overall, aspect ~1:1."
+  },
+  "eye_R": {
+   "family": "circle_gap",
+   "open": true,
+   "gap_direction": "2-2:30 oclock (outer-upper-right)",
+   "rotation": "gap rotated to upper-outer-right; ring itself untilted",
+   "detail": "Thick open ring, same outer diameter and ~20% stroke width as eye_L, round caps. Arc spans ~300-310 deg, drawn counterclockwise from upper end at ~1:30 oclock through 12, 9, and 6, terminating at ~3-3:30 oclock where the end cap curls very slightly inward toward the ring center. Gap ~50-60 deg wide centered at ~2-2:30 oclock. Circular, aspect ~1:1."
+  },
+  "eyes_mirror_pair": true,
+  "mouth": {
+   "present": true,
+   "family": "dot",
+   "filled": true,
+   "detail": "Tiny solid filled dot ~60 px across (~15% of eye outer diameter), reads as a rounded square/circle: aspect ~1.05:1 slightly wider than tall, all edges convex (no flat top or bottom), corner radius ~40% of width. Centered horizontally at the midpoint between eye centers, vertically at ~0.72 of face height, well below the eye baseline."
+  },
+  "tear": null,
+  "hypothesis_corrections": "Hypothesis essentially correct. Refinements: each eye's gap points to its own OUTER upper side (left eye gap ~10 oclock, right eye gap ~2-2:30 oclock), making the eyes near-mirror images rather than identical rotations; rings are very thick-stroked (~20% of diameter); the mouth dot is slightly squarish (rounded square) rather than a perfect circle.",
+  "anomalies": "Photo-derived stroke wobble: eye_L lower cap slightly bulbous vs its tapered upper cap; eye_R terminal cap at ~3 oclock curls slightly inward. Right eye gap center sits ~15-20 deg lower than an exact mirror of the left eye gap. Mouth dot faintly squarish. No other artifacts."
+ },
+ {
+  "file": "21_neutral_11_manual",
+  "eye_L": {
+   "family": "closed_lid_arc",
+   "open": false,
+   "gap_direction": "opening faces up, ~11-12 oclock (concave-up U arc)",
+   "rotation": "chord tilted ~5 deg CCW: inner (right) end higher than outer (left) end",
+   "detail": "Concave-up valley arc (U shape), ~100 deg of a circle (radius ~185px for a 282x129px bbox at 1600px image width). Centerline: outer/left tip at (297,424), valley bottom at (~427,476) about 46% of width from the outer end, inner/right tip at (577,399). Inner tip rises ~77px above the valley, outer tip only ~52px, so the arc looks tilted inner-end-up. Sagitta/chord ratio ~0.23. Stroke width ~60-65px at the valley (~22% of eye width), round caps, both tips taper; the outer/left tip is noticeably thinner and shorter-curled than the inner tip."
+  },
+  "eye_R": {
+   "family": "closed_lid_arc",
+   "open": false,
+   "gap_direction": "opening faces up, ~12-1 oclock (concave-up U arc)",
+   "rotation": "chord tilted ~5 deg CW: inner (left) end higher than outer (right) end - mirror of eye_L",
+   "detail": "Concave-up valley arc (U shape), ~90-95 deg span (radius ~215px, bbox 315x142px). Centerline: inner/left tip at (997,435), valley bottom at (~1173,513) about 56% of width from the inner end, outer/right tip at (1305,460). Inner tip rises ~78px above valley, outer ~53px. Sagitta/chord ~0.21. Stroke width ~73px at valley (~23% of eye width), round caps, tips taper (inner tip thinner). Slightly larger than eye_L (315 vs 282 wide) and positioned ~30px lower on the face."
+  },
+  "eyes_mirror_pair": true,
+  "mouth": {
+   "present": true,
+   "family": "dome_filled",
+   "filled": true,
+   "detail": "Large solid dome/loaf, 427w x 230h (h/w ~0.54, close to a half-ellipse). Top edge is a smooth arch peaking at y=443 at x~785 (essentially the horizontal center), falling to shoulder height y~485-520 at the sides. Bottom edge is NEAR-flat but gently convex downward: ~20px sag over the 400px width, lowest point (y=671) slightly right of center, giving a subtle ~2 deg clockwise lean. Corners between bottom and sides are large-radius rounded (no sharp corners anywhere). Sides bulge outward with maximum width slightly below vertical mid-height (widest at y~595-600 vs bbox mid y=556). Left edge has a small mid-height tapered bulge. Reads as a slightly organic hand-drawn dome, not a geometric semicircle."
+  },
+  "tear": null,
+  "hypothesis_corrections": "Mostly correct. \"Closed lid arcs\" confirmed, but specify orientation: they are concave-UP valley arcs (U shape, opening at 12 oclock) with inner ends raised, not the more common convex-up happy arcs. \"Filled dome (flat bottom)\" is right in spirit, but the bottom is not perfectly flat: it bows gently downward (~20px sag over 427px width, ~4-5%) with large rounded corners, and the whole shape leans ~2 deg clockwise.",
+  "anomalies": "Eyes are not perfectly matched: eye_R is ~12% wider, has a ~15% thicker stroke, and sits ~30px lower than eye_L; eye_L's outer (left) tip is thinner and curls up less than the photo suggests, likely slight loss in cleaning. Mouth left edge shows a small tapered mid-height protrusion (x=575, y~596) that is probably a render artifact rather than intended geometry. Original photo agrees with the cleaned render overall (two U lid arcs plus dome mouth, no tear)."
+ },
+ {
+  "file": "22_neutral_12_manual",
+  "eye_L": {
+   "family": "closed_lid_arc",
+   "open": false,
+   "gap_direction": "12 o'clock (opening points straight up)",
+   "rotation": "essentially level; right endpoint sits maybe 2-3 deg lower than left (negligible clockwise tilt)",
+   "detail": "Bottom half of a slightly flattened circle: a U-arc spanning ~175-185 deg, from a ~9 o'clock endpoint down through 6 o'clock and back up to a ~3 o'clock endpoint. Endpoints rise to approximately the height of the horizontal diameter (semicircle-like), with tips flicking very slightly outward-up. Bounding box aspect ~2.1:1 wide (e.g. 320 wide x 150 tall in a 1600px face), so marginally flatter than a true semicircle. Constant-width stroke ~0.17x of the eye width (~55px at 1600px face width), round caps; left endpoint slightly bulbous in this eye. No corners anywhere - one continuous smooth arc."
+  },
+  "eye_R": {
+   "family": "closed_lid_arc",
+   "open": false,
+   "gap_direction": "12 o'clock (opening points straight up)",
+   "rotation": "essentially level; left endpoint sits ~2-3 deg lower than right (negligible counter-clockwise tilt), mirroring eye_L",
+   "detail": "Same construction as eye_L mirrored: U-arc of ~175-185 deg (bottom half of a slightly flattened circle), endpoints at roughly 9 and 3 o'clock height, tips curling slightly outward-up. Bounding box ~2.1:1 wide (~320 x 150 at 1600px face width). Stroke thickness ~55px with round caps; the outer (right) endpoint is the slightly bulbous one here, mirroring the left eye. Smooth continuous curve, no corners."
+  },
+  "eyes_mirror_pair": true,
+  "mouth": {
+   "present": true,
+   "family": "line",
+   "filled": false,
+   "detail": "Single straight horizontal stroke with round caps - renders as a stadium/pill: length ~400px, stroke thickness ~55px at 1600px face width (aspect ~7.5:1). Top and bottom edges are flat/straight; only the two end caps are semicircular. Slight tilt: rises ~2-3 deg from left to right (right end ~15px higher over the 400px length). Horizontally centered on the face midline, vertical position just below eye-bottom level (mouth center ~0.60 of face height vs eye arc bottoms ~0.52). No curvature along its length."
+  },
+  "tear": null,
+  "hypothesis_corrections": "none - \"closed lid u-arcs + flat line mouth\" is correct. Refinements only: the u-arcs are near-perfect ~180 deg semicircle bottoms (slightly flattened, ~2.1:1 wide), and the \"flat line\" is a thick round-capped bar the same stroke weight as the eyes, tilted up ~2-3 deg toward the right.",
+  "anomalies": "Original photo shows a faint dim horizontal streak (slightly reddish on the left eye) grazing the tops of both eye arcs - looks like LED bleed or a residual upper-lid line from the panel; correctly absent in the cleaned render, so ignore for SVG. Mouth's ~2-3 deg rightward-rising tilt appears in both photo and cleaned render, so it is real, though it may be a photo/perspective artifact; a canonical redraw could level it. Minor stroke-width lumpiness at arc endpoints (photo blur), one bulbous end per eye on the outer... on left eye it is the inner-left end, on right eye the outer-right end - i.e., the bulge is on the same absolute side (leftmost end of L, rightmost end of R), consistent with mirroring."
+ },
+ {
+  "file": "23_neutral_13_manual",
+  "eye_L": {
+   "family": "closed_lid_arc",
+   "open": false,
+   "gap_direction": "12 oclock (concave side faces straight up; endpoints are the two high points)",
+   "rotation": "essentially level; endpoints within ~3px of same height, right tail has a tiny upward flick at its cap",
+   "detail": "Thick U-shaped circular arc spanning ~145-150 deg (from ~10 oclock around the bottom to ~2 oclock). Chord ~290 units wide, sagitta (dip depth) ~105-110 units, so depth/width ~0.37 \u2014 a deep bowl, not a shallow smile. Slightly asymmetric: deepest point sits at ~40% of the width from the left end, so the left limb descends steeply (~55 deg slope) while the right limb is longer and shallower, flattening near the tip with a slight up-flick. Stroke width ~13-14% of chord length, roughly uniform with mild hand-drawn thickness wobble; round caps on both ends."
+  },
+  "eye_R": {
+   "family": "closed_lid_arc",
+   "open": false,
+   "gap_direction": "12 oclock (opening/concavity points straight up)",
+   "rotation": "level; right endpoint maybe 2-3px higher than left, negligible tilt",
+   "detail": "Same construction as eye_L: thick U-arc, ~140-150 deg span, chord ~295 units, sagitta ~100-105 (depth/width ~0.35). Also has its deepest point slightly LEFT of center (same asymmetry as eye_L, not flipped): steep short left limb, long shallow right limb. Distinguishing quirk: a small wobble/kink bump on the right limb at ~75-80% along the arc (the underside bulges then the stroke straightens toward the right cap). Stroke width ~13% of chord, round caps."
+  },
+  "eyes_mirror_pair": false,
+  "mouth": {
+   "present": true,
+   "family": "oval_tall_filled",
+   "filled": true,
+   "detail": "Large filled blob, nearly circular but slightly taller than wide: width ~180 units, height ~195 units (h/w ~1.08). All edges convex and curved \u2014 no flat top or bottom; outline is a hand-drawn wobbly circle with a mildly flatter segment on the lower-left and a faintly squared upper-right shoulder. Diameter ~60-65% of one eye's chord width, i.e. large \u2014 comparable visual mass to an eye, not a small dot. Positioned centered horizontally between the eyes and high on the face: its top edge starts only slightly below the eyes' baseline (mouth center ~1 eye-chord-width below the eye endpoints' line). Reads as an open 'ooh/blowing' mouth."
+  },
+  "tear": null,
+  "hypothesis_corrections": "Eyes: correct \u2014 both are closed-lid downward-bowing arcs. Mouth: 'dot' is directionally right (a filled round blob) but misleading in scale \u2014 it is a LARGE filled near-circle, ~60% of an eye's width in diameter and slightly taller than wide, sitting high between the eyes; better described as a big open 'blowing' O than a dot.",
+  "anomalies": "Eyes are same-orientation duplicates rather than true mirror images (both have the deep point left of center and a longer shallow right limb). Right eye has a small kink/bump on its right limb ~75-80% along the arc. Mouth is unusually large and placed high, its top nearly level with the bottoms of the eye arcs. All strokes show hand-drawn wobble in path and thickness; round caps throughout; original photo confirms the same shapes with no extra elements lost in cleaning."
+ },
+ {
+  "file": "24_neutral_2_01_manual",
+  "eye_L": {
+   "family": "open_C",
+   "open": true,
+   "gap_direction": "9 o'clock (outer/left)",
+   "rotation": "essentially level, <3 deg wobble; bottom bar sits slightly lower-left than top bar",
+   "detail": "Squared, flattened C rotated to open leftward (a '\u2290' glyph): two thick horizontal bars joined on the RIGHT (inner, face-center) side by a short vertical connector. Bounding box ~345w x 190h px in full-face scale (aspect ~1.8:1 wide). Stroke thickness ~55-65px (bars ~30-35% of glyph height each). A dark slot ~35px tall enters from the LEFT edge at mid-height and runs ~80% of the width, terminating in a rounded (round-cap) closed end ~55px short of the right inner wall. Outer corners rounded r~25-35px; right-side connector corners slightly squarer. Hand-drawn wobble: top bar's underside dips gently mid-span, and the top bar's upper-right edge has a small step/notch just before the corner; bottom bar's top edge is slightly wavy. Both free bar ends (left side) are round-capped, bottom bar extends marginally further left than top bar."
+  },
+  "eye_R": {
+   "family": "open_C",
+   "open": true,
+   "gap_direction": "3 o'clock (outer/right)",
+   "rotation": "essentially level, <3 deg; bottom bar's right tip dips slightly downward",
+   "detail": "Squared, flattened C opening rightward (a '\u228f' glyph): two thick horizontal bars joined on the LEFT (inner, face-center) side by a short vertical connector ~55-60px wide. Bounding box ~345w x 190h px (aspect ~1.8:1), same scale as eye_L. Bar thickness ~55-65px; dark slot ~35-40px tall enters from the RIGHT edge at mid-height, runs ~75% of width leftward, ending in a rounded closed terminus ~60px from the left wall. Top bar ends ~25px short of the bottom bar's reach; the bottom bar's right tip flares into a slightly wider rounded wedge that angles a few degrees down-right. Outer corners rounded r~25-35px; free ends round-capped. Minor wobble along bar edges consistent with hand-drawn strokes."
+  },
+  "eyes_mirror_pair": true,
+  "mouth": {
+   "present": true,
+   "family": "line",
+   "filled": false,
+   "detail": "Single thick horizontal stroke with round caps, spanning ~405px wide x ~70px thick in full-face scale (length:thickness ~5.7:1), centered on the face midline (x~595-1000, center-y ~740, face midline ~800). Essentially level: both round-capped ends sit at the same height. Gentle wobble: the top edge rises in a low hump (~5-8px) just right of center (~55-65% of span) then settles; the bottom edge is nearly straight with faint waviness. No curvature that reads as smile or frown \u2014 a flat neutral line."
+  },
+  "tear": null,
+  "hypothesis_corrections": "Partially wrong: the eyes are double bars joined at the INNER edge (toward the face center), not the outer edge \u2014 each eye is a squared C/'\u2290'-'\u228f' shape whose gap opens OUTWARD (eye_L opens at 9 o'clock, eye_R at 3 o'clock). 'Mouth: flat line' is correct (thick level stroke with round caps).",
+  "anomalies": "Hand-drawn irregularities throughout: eye_L top bar has a small step/notch on its upper edge near the right corner and a mid-span dip on its underside; eye_R bottom bar's outer (right) tip flares into a wider rounded wedge angled slightly down; mouth top edge has a low hump right of center. Slot heights are noticeably thinner than the bar strokes (~35px vs ~60px), so the glyphs read as chunky outlines rather than uniform-stroke rectangles. No tear, no other face elements."
+ },
+ {
+  "file": "25_neutral_2_03_manual.png",
+  "eye_L": {
+   "family": "circle_gap",
+   "open": true,
+   "gap_direction": "9 oclock (outer side, toward image-left edge)",
+   "rotation": "essentially upright; gap centered at ~9 oclock, maybe tilted 5-10 deg so gap sits a hair above true west",
+   "detail": "Thick-stroked open circle, a reversed-C ('\u0186'). Outer diameter ~370px in cleaned render; stroke width ~20-22% of outer diameter (heavy, marker-like, slight hand-drawn wobble). Arc spans ~295-305 deg, leaving a ~55-65 deg gap centered at 9 oclock. Upper terminus ends around 10 oclock, lower terminus around 7:30-8 oclock; both ends have round caps and taper very slightly. Ring is near-circular with minor irregularity (top of ring slightly flattened). No hooks or curls at the ends - they simply stop on the circle path."
+  },
+  "eye_R": {
+   "family": "circle_gap",
+   "open": true,
+   "gap_direction": "3 oclock (outer side, toward image-right edge)",
+   "rotation": "essentially upright; gap centered at ~2:30-3 oclock, i.e. possibly rotated ~10 deg counterclockwise so the gap sits slightly above true east",
+   "detail": "Thick-stroked open circle, a 'C'. Outer diameter ~345-370px, matching eye_L; stroke width ~20-22% of outer diameter. Arc spans ~295-305 deg with a ~55-65 deg gap centered at ~2:30-3 oclock: upper terminus ends around 1:30-2 oclock, lower terminus around 4 oclock. Round caps, slight taper at tips, no curl/hook. Same hand-drawn wobble and near-circular ring as eye_L."
+  },
+  "eyes_mirror_pair": true,
+  "mouth": {
+   "present": true,
+   "family": "dot",
+   "filled": true,
+   "detail": "Large solid filled blob, near-circular but slightly taller than wide: width:height ~0.9:1 (approx 195px wide x 215px tall in cleaned render), i.e. diameter ~55-60% of an eye's outer diameter - much bigger than a typical pixel-dot. All edges convex and smoothly rounded (no flat top/bottom edge); outline has slight hand-traced irregularity, faintly polygonal. Centered horizontally on the face midline between the eyes, positioned low: its top edge starts roughly level with the eyes' bottom arcs and it hangs below them. No tilt."
+  },
+  "tear": null,
+  "hypothesis_corrections": "Hypothesis \"eyes: circles with gap; mouth: dot\" is directionally correct but incomplete: (1) the gaps face OUTWARD and the eyes are mirror images - left eye gap at 9 oclock, right eye gap at 3 oclock (not stated in hypothesis); (2) the \"dot\" mouth is a large filled near-circle ~55-60% of eye diameter, slightly taller than wide, not a small dot.",
+  "anomalies": "Stroke width varies slightly along each eye ring (bottom arcs a touch thicker) from hand-tracing; eye rings and mouth outline show mild polygonal wobble rather than perfect circles. Right eye gap appears rotated slightly above 3 oclock while left eye gap is close to true 9 oclock, so the mirror is approximate. Original photo confirms same geometry (thinner apparent stroke there due to glow/exposure; cleaned render's stroke is proportionally thicker)."
+ },
+ {
+  "file": "26_sad_01_manual.png",
+  "eye_L": {
+   "family": "closed_lid_arc",
+   "open": false,
+   "gap_direction": "11:30-12 oclock (opening faces up, tilted slightly outer/left)",
+   "rotation": "rotated ~25-30 deg CCW vs a symmetric U, so the inner (right) tip sits much higher than the outer (left) tip",
+   "detail": "Concave-UP circular arc (a 'U'/valley shape), sweep ~170 deg of a circle radius ~145 px (stroke ~55 px, round caps, uniform width). Outer (left) endpoint at the ~8:30 clock position on that circle (left and slightly BELOW center height), sweeping down through 6 oclock (lowest point = mid valley), then up to the inner (right) endpoint at ~2:45-3 oclock. Chord from outer tip to inner tip tilts up-toward-center at ~+30 deg. Inner limb is the long limb: inner tip rises ~160 px above the valley and ends pointing toward ~1 oclock; outer tip rises only ~60 px above the valley and curls slightly back up (it is NOT the lowest point). Smooth constant curvature, no corners, no hooks."
+  },
+  "eye_R": {
+   "family": "closed_lid_arc",
+   "open": false,
+   "gap_direction": "12-12:30 oclock (opening faces up, tilted slightly outer/right)",
+   "rotation": "rotated ~25-30 deg CW vs a symmetric U, so the inner (left) tip sits much higher than the outer (right) tip",
+   "detail": "Exact mirror of eye_L. Concave-UP arc, ~170 deg sweep, radius ~145 px, stroke ~55 px round caps. Inner (left) endpoint high at the ~9:15 clock position area of its circle (tip ends pointing ~11 oclock, at y roughly level with eye_L's inner tip), sweeps down through the 6 oclock valley (lowest point, ~145 px below inner tip), then rises to the outer (right) endpoint at ~3:30 clock position, ~60 px above the valley. Outer tip has a very slight bulb/thickening from the trace but reads as a plain round cap. No corners or hooks."
+  },
+  "eyes_mirror_pair": true,
+  "mouth": {
+   "present": true,
+   "family": "line",
+   "filled": false,
+   "detail": "Single straight horizontal stroked line, ~425 px long x ~60 px stroke (length:thickness ~7:1), round capsule end caps. Essentially zero tilt (<2 deg) and zero curvature - both top and bottom edges flat/parallel (tiny top-edge waviness is a tracing artifact, not intent). Centered on the face midline (mouth center x~797 vs eye-gap center x~800), sitting ~100 px below the eyes' valley level. In the original photo it is the same flat line, just much thinner."
+  },
+  "tear": null,
+  "hypothesis_corrections": "Partially wrong on the eyes: they are not lids that droop down at the outer ends. Each eye is a concave-UP 'U' arc whose LOWEST point is the middle valley; both tips curl upward, with the INNER tip rising far higher (~30 deg chord tilt toward the face center) and the outer tip only slightly above the valley. So the shape reads as sad/resigned closed lids rotated inward-up, not outward-drooping. 'Mouth: flat line' is correct.",
+  "anomalies": "Cleaned render strokes are ~4-5x thicker than the thin LED lines in the original photo (original stroke ~1/10 of arc width; cleaned ~1/3) - recreate with the thinner original weight if fidelity to the device matters. Minor manual-trace lumpiness: slight bulb at eye_R's outer tip and mild waviness along the mouth's top edge; intended geometry is smooth. No other components (no tear, no blush, no brows)."
+ },
+ {
+  "file": "27_sad_02_manual.png",
+  "eye_L": {
+   "family": "e_shape",
+   "open": false,
+   "gap_direction": "8-10 oclock (outer/lower-left)",
+   "rotation": "mirrored 'e' (like \u0258) rotated ~15 deg CCW so the crossbar rises to the right",
+   "detail": "Horizontally mirrored lowercase 'e', overall circular footprint ~1:1, stroke thickness ~18-20% of eye diameter, round caps. Outer ring: starts at the crossbar's free tip near 9:30-10 oclock (tip protrudes slightly PAST the ring circle and curls gently downward), arcs clockwise over the top (10 -> 12 -> 2 oclock), down the right side (2 -> 5 oclock), around the bottom (6 oclock), and terminates with a round cap at ~7:30 with a slight up-left flick. Aperture in the outer contour spans ~7:30 to ~9:30 (faces lower-left). Crossbar: a thick bar from the protruding left tip across to merge into the ring interior at ~2-3 oclock, tilted ~15-20 deg (left end lower, right end higher). Counter: closed lens/crescent-shaped dark negative space sitting above the crossbar under the top arc, long axis tilted ~15 deg rising to the right, pointed at both ends (sharper point at the left junction). Hand-drawn wobble; arc sweep of outer ring ~300 deg."
+  },
+  "eye_R": {
+   "family": "e_shape",
+   "open": false,
+   "gap_direction": "3-4:30 oclock (outer/lower-right)",
+   "rotation": "near-canonical lowercase 'e'; crossbar tilts up-to-the-right only ~5-10 deg",
+   "detail": "Standard lowercase 'e', circular footprint ~1:1, stroke ~18-20% of diameter, round caps. Crossbar: thick, near-horizontal (slight ~5-10 deg rise to the right), left end merging into the ring at ~9-10 oclock, right end tapering and curling slightly down to close against the descending top arc at ~2:30, sealing the counter. Counter: closed lens/crescent dark negative space above the crossbar, long axis rising to the right ~10 deg, pointed ends (sharper at the right junction). Outer stroke: from the ~2:30 junction the arc runs counterclockwise over the top (2 -> 12 -> 10 oclock), down the left side (9 -> 7 oclock), around the bottom (6 -> 5 oclock), terminating at ~4 oclock with a round cap and a small upward flick/hook at the very end. Aperture spans ~3 to ~4:30 (faces right/lower-right). Outer arc sweep ~315 deg."
+  },
+  "eyes_mirror_pair": true,
+  "mouth": {
+   "present": true,
+   "family": "rounded_rect_filled",
+   "filled": true,
+   "detail": "Wide filled horizontal pill/stadium, NOT small: width ~= one eye diameter, aspect ratio ~2.4-2.6:1 (w:h). End caps fully rounded, radius ~= half the height (near-semicircular). Top edge gently convex (bulges upward slightly, sag-free); bottom edge gently convex downward \u2014 neither long edge is truly flat, both bow outward slightly. Essentially horizontal, tilt < 3 deg; slight hand-drawn corner irregularity at lower-left where the cap meets the bottom edge. Centered horizontally between the eyes, sitting below eye level."
+  },
+  "tear": null,
+  "hypothesis_corrections": "\"eyes: e-shapes\" is correct but incomplete: the two eyes are not identical glyphs \u2014 eye_L is a horizontally MIRRORED 'e' (\u0258, aperture lower-left) and eye_R a standard 'e' (aperture lower-right), forming an approximate mirror pair; eye_L is additionally rotated ~10-15 deg CCW beyond a perfect mirror. \"mouth: small filled rounded rect\" is wrong on size and edge flatness: it is a fairly WIDE filled pill (~2.5:1, about one eye-width wide) with slightly convex (not flat) top and bottom edges and fully rounded semicircular ends.",
+  "anomalies": "Hand-drawn stroke wobble and thickness variation throughout. eye_L's crossbar tip protrudes slightly outside the outer ring circle at ~9:30-10 oclock. The pair is not a geometrically exact mirror: eye_L's crossbar/counter tilt (~15-20 deg rising rightward) is steeper than eye_R's (~5-10 deg), so eye_L reads slightly rotated CCW. LED glow halo surrounds all strokes in the cleaned render; no tear, blush, or brow elements present."
+ },
+ {
+  "file": "28_sad_03_manual",
+  "eye_L": {
+   "family": "e_shape",
+   "open": true,
+   "gap_direction": "7:48-8:36 o'clock (center ~8:12)",
+   "rotation": "mirrored (reversed) lowercase 'e', i.e. eye_R flipped horizontally; crossbar sits high and rises ~20 deg left-to-right",
+   "detail": "Near-circular outer ring, outer dia ~340px (bbox 345x334), uniform stroke ~53-55px (~16% of dia), round caps. Ring is complete except ONE gap of ~24 deg arc centered at 8:12 o'clock (gap length ~1 stroke width between cap centers). Interior crossbar chord, same ~55px thickness, runs from an inner-rim junction at ~9:00-9:15 to a junction at ~1:15-1:30, its centerline passing ~55-60px ABOVE eye center (~0.35R high), tilted +20 deg (rising toward face midline). Crossbar + top rim enclose a slim lens-shaped dark counter in the upper-LEFT quadrant: ~140px long x ~38px wide (aspect 3.7:1), major axis +19.6 deg, centroid at 39% width / 24% height of the eye bbox. The ring gap sits just below the 9:00 crossbar junction (like the opening of a mirrored letter e). Terminals end flush with the circle, no outward flare. Reads as a big open ring eye with a high lid-crease bar."
+  },
+  "eye_R": {
+   "family": "e_shape",
+   "open": true,
+   "gap_direction": "3:24-4:00 o'clock (center ~3:42)",
+   "rotation": "standard lowercase 'e' with the crossbar raised high and tilted ~18 deg falling left-to-right (rising toward face midline); reads slightly hand-rotated, mirror of eye_L",
+   "detail": "Near-circular outer ring, outer dia ~356px (bbox 360x341, ~4% larger than eye_L), uniform stroke ~52-55px, round caps. Ring complete except ONE gap of ~17 deg arc centered at 3:42 o'clock (~1 stroke width wide). Interior crossbar chord ~55px thick from inner-rim junction at ~10:30 to junction at ~3:00, centerline ~55-60px above eye center (~0.35R), tilt -18 deg. Encloses a slim lens-shaped counter in the upper-RIGHT quadrant: ~152px long x ~40px wide (aspect 3.8:1), major axis -18 deg, centroid at 60% width / 23% height of bbox. Gap sits just below the 3:00 crossbar junction, exactly like a written 'e' opening. Terminals flush with circle, no outward flare (the small blob at lower-right of the eye_R crop is the TEAR top, and lower-left blob is the mouth's right end - not part of the eye)."
+  },
+  "eyes_mirror_pair": true,
+  "mouth": {
+   "present": true,
+   "family": "w_squiggle",
+   "filled": false,
+   "detail": "Stroked wavy line, NOT filled: overall 363px wide x 116px tall (w/h ~3.1:1), stroke ~56-61px, round caps. Centerline (measured): left cap at x-offset 0 y=686, crest 1 at 21% of span (x-offset 78, y=631), central trough at 48% (y=686), crest 2 at 76% (x-offset 275, y=633), right cap at 100% (y=693). So it is an 'm'-orientation squiggle: TWO rounded upward humps with a central dip; both end caps and the central trough lie at the same level (within 7px) and the two crests are ~55px higher; crest-to-crest spacing ~197px; fully sinusoidal, no sharp corners, no overall tilt. Position: spans the entire horizontal gap between the eyes (caps nearly touch each eye's lower inner tail, clearance only a few px) and sits HIGH - its band (y 605-720) starts at the eyes' bottom-arc level (eye bottoms y~650-655), i.e. mouth midline ~175px below eye centers."
+  },
+  "tear": "Present: a single vertical bar hanging below-right of eye_R. 56px wide x 376px tall (aspect ~1:6.7), round caps both ends, essentially vertical (bottom ~5px left of top, <1.5 deg lean). Centered at x=1345, i.e. ~10px right of eye_R's outer rim extreme (x=1335); spans y 573-948, so its top starts beside the eye's 4-o'clock gap/tail region and it extends ~290px below the eye's bottom edge. It is a separate stroke with ~35px clearance from the eye tail (never touching). Same stroke width as all other parts.",
+  "hypothesis_corrections": "Hypothesis largely correct, with refinements: (1) \"e-shapes\" - yes, but the eyes are a MIRRORED pair, not two identical glyphs: eye_L is a reversed/mirrored 'e' (gap at ~8:12, counter tilted +20 deg) and eye_R a standard 'e' (gap at ~3:42, counter -18 deg); both crossbars sit high (~0.35R above center), not mid-height like a typographic e. (2) \"high w-squiggle\" - it is a squiggle between the eyes, but in 'm' orientation (two upward humps, ends and central trough down), and it sits at the eyes' BOTTOM-arc level spanning the full inter-eye gap, not up at eye-center height. (3) \"tear: vertical bar right of right eye\" - confirmed, but it hangs mostly BELOW the eye (top at the eye's 4-o'clock region, extending ~290px below the eye's bottom).",
+  "anomalies": "All four strokes share a uniform ~52-61px width with round caps (LED-marker style). Right eye is ~4% larger than left (dia ~356 vs ~340) - minor hand-drawn asymmetry. Mouth caps come within a few px of both eyes' lower tails and the tear bbox overlaps eye_R's bbox by ~21px horizontally, though all 4 components are fully disconnected (min ~35px ink clearance) - keep these clearances when redrawing at this scale. Cleaned render matches the original photo faithfully; renders have a soft glow halo around strokes that should not be traced as geometry."
+ },
+ {
+  "file": "29_sad_04_manual",
+  "eye_L": {
+   "family": "happy_arc",
+   "open": false,
+   "gap_direction": "10-11 oclock (concave side faces up and slightly toward outer/left)",
+   "rotation": "chord tilted ~15 deg, inner (right) end high, outer (left) end low",
+   "detail": "Single stroked swoosh arc, concave-up, round caps, uniform stroke ~56px on 1600px canvas (~17% of eye width). Bbox 333w x 192h px. Outer (left) end cap at ~(280,458) with tangent pointing down-right ~16-20 deg below horizontal; centerline dips to lowest point at ~(415,508); then rises with progressively tightening curvature to the inner (right) tip at ~(585,378), tangent at tip ~50-60 deg above horizontal. Total tangent sweep ~80-100 deg. Asymmetric: outer arm is a shallow arc rising only ~50px above the bottom, inner arm hooks up steeply ~130px above the bottom (like a rounded check-mark / comma swoosh). Chord depth/length ~0.27 (equivalent to a ~110-120 deg circular arc, but curvature biased tighter in the inner third). No pupil, no second stroke."
+  },
+  "eye_R": {
+   "family": "happy_arc",
+   "open": false,
+   "gap_direction": "1-2 oclock (concave side faces up and slightly toward outer/right)",
+   "rotation": "chord tilted ~15 deg, inner (left) end high, outer (right) end low",
+   "detail": "Mirror twin of eye_L. Single concave-up swoosh, round caps, stroke ~56px. Bbox 340w x 200h px (a hair larger than eye_L, sits ~10px lower). Inner (left) tip cap at ~(1005,385) with tangent pointing down-right ~50-55 deg (steep descending inner arm); centerline bottoms out at ~(1187,517); shallow outer arm rises to the outer (right) end cap at ~(1330,470), tangent up-right ~20 deg. Inner tip rises ~132px above arc bottom, outer end only ~47px. Same ~80-100 deg tangent sweep with curvature tightest on the inner third."
+  },
+  "eyes_mirror_pair": true,
+  "mouth": {
+   "present": true,
+   "family": "w_squiggle",
+   "filled": false,
+   "detail": "Stroked squiggle, round caps, stroke ~56px, NOT filled. Bbox 394w x 129h px (~3:1 w:h). Orientation is an 'm' (inverted w): left end cap at ~(615,580) pointing down-left ~45-55 deg below horizontal; rises to crest 1 apex at ~(690,520); dips to central valley bottom at ~(794,581); rises to crest 2 apex at ~(900,520); descends to right end cap at ~(985,590) pointing down-right ~45-50 deg. Perfectly symmetric about x=794 (crests at 22% and 76% of width, valley at 49%). Peak-to-valley centerline amplitude ~61px, about 1.1x stroke width. Flank slopes ~40-45 deg; crests and valley smoothly rounded (radius comparable to stroke width), sinusoid-like, no sharp corners. End tips drop to the same depth as the valley's lower edge. Mouth center aligns with face midline between the eyes, top of crests roughly level with the eyes' arc bottoms."
+  },
+  "tear": null,
+  "hypothesis_corrections": "Two corrections. (1) Eyes are not 'droopy lids' (convex-down arcs): they are concave-UP swoosh arcs (\u222a-family) whose inner ends curl up steeply, giving a pleading/wincing sad look; outer ends sit low and shallow. (2) 'W-squiggle' is right in spirit but inverted: the mouth is an m-shaped squiggle \u2014 two rounded crests with one central valley and both end tips turned down \u2014 not a w (which would have two valleys and a central peak).",
+  "anomalies": "Cleaned render matches the original photo well. In the original photo the mouth valley's right flank appears dimmer/darker teal (LED brightness falloff), not a geometry feature. Apparent stroke thickening near eye_L's inner bend in the render is glow bloom, not a real width change; true stroke width is uniform (~56px) across all three parts. eye_R is ~2-4% larger than eye_L and sits ~10px lower \u2014 within photo-perspective tolerance, treat as exact mirrors when redrawing. No tear, no eyebrows, no other marks."
+ },
+ {
+  "file": "30_sad_05_manual",
+  "eye_L": {
+   "family": "chevron",
+   "open": false,
+   "gap_direction": "9 oclock (opening faces outward/left; apex points inward toward face center at 3 oclock)",
+   "rotation": "none \u2014 apex axis is horizontal; arms symmetric about a horizontal line through the apex",
+   "detail": "'>' chevron: two straight strokes meeting at a rounded apex on the RIGHT (inner) side. Upper arm runs from apex up-and-left at ~21 deg above horizontal; lower arm runs from apex down-and-left at ~20 deg below horizontal; interior angle at apex ~40-42 deg (sharp/acute V lying on its side). Arms equal length, each ~5x the stroke width (arm ~300px vs stroke ~58px at 1600px face width). Apex join is rounded (round join, roughly stroke-width radius, slight blob thickening at the vertex), ends have round caps. Vertical extent ~215px, horizontal extent ~285px."
+  },
+  "eye_R": {
+   "family": "chevron",
+   "open": false,
+   "gap_direction": "3 oclock (opening faces outward/right; apex points inward toward face center at 9 oclock)",
+   "rotation": "none \u2014 apex axis horizontal, mirror of left eye",
+   "detail": "'<' chevron: exact mirror of eye_L. Rounded apex on the LEFT (inner) side at ~(990,465); upper arm rises to the right at ~21 deg to ~(1275,355), lower arm falls to the right at ~20 deg to ~(1280,570). Interior angle ~40-42 deg. Equal arm lengths ~5x stroke width, round caps, rounded vertex. Same stroke weight as left eye (~58px at 1600px face width)."
+  },
+  "eyes_mirror_pair": true,
+  "mouth": {
+   "present": true,
+   "family": "chevron_up",
+   "filled": false,
+   "detail": "Upward '^' chevron (scrunched-cry mouth), much wider/shallower than the eyes: apex at top center ~(790,610), left arm descends at ~38 deg below horizontal to ~(630,735), right arm descends at ~33 deg to ~(965,725). Interior angle at apex ~105-110 deg (obtuse). Right arm slightly longer/shallower than left (arm lengths ~205px vs ~215px \u2014 near symmetric). Overall bbox ~340px wide x ~125px tall (~2.7:1 W:H). Rounded apex join, round end caps, same stroke width as eyes (~55-60px). Apex sits slightly left of the face midline and slightly below/behind the eyes' lower arms, tucked between them."
+  },
+  "tear": null,
+  "hypothesis_corrections": "none \u2014 hypothesis is correct: eyes are inward-pointing chevrons > < (openings face outward), mouth is an upward chevron ^; only refinement is that the eye chevrons are acute (~40 deg) while the mouth chevron is obtuse (~108 deg), and the whole trio is tightly clustered like '>^<'.",
+  "anomalies": "Strokes show slight hand-traced wobble (edges not perfectly straight) and the left eye's apex has a small blob thickening; mouth apex is a touch left of face center and its right arm marginally shallower than the left. No tear, no eyebrow, no other marks; render matches original photo faithfully."
+ },
+ {
+  "file": "31_sad_06_manual.png",
+  "eye_L": {
+   "family": "droop_hook",
+   "open": false,
+   "gap_direction": "9-10 oclock (outer-left, slightly up)",
+   "rotation": "top bar tilted ~10-12 deg, outer (left) end lower, rising toward face center",
+   "detail": "Single thick stroke (~45px wide on 1600px face, round caps), shaped like Japanese 'tsu'. Start at outer-left tip; travel right ~1.5 hook-diameters with a gentle upslope (~10-12 deg, inner end higher). At the inner end there is a slight kink/step, then the stroke curls CLOCKWISE into a C-hook: from 12 oclock down the right side (3 oclock), across the bottom (6 oclock), ending near 8 oclock \u2014 approx 230-240 deg of arc. Hook curl diameter ~55-60% of the total glyph width; end cap points west-southwest. Gap between the two round-cap tips opens toward outer-left. Overall bbox ~365px wide x ~280px tall (~23% x 27% of face). Corners are rounded, no sharp angles; hand-traced wobble in thickness."
+  },
+  "eye_R": {
+   "family": "droop_hook",
+   "open": false,
+   "gap_direction": "2-3 oclock (outer-right, slightly down)",
+   "rotation": "top bar tilted ~10-12 deg, outer (right) end lower, rising toward face center",
+   "detail": "Mirror of eye_L. Thick stroke (~45px), reads as a 'C' with a long lash bar. From outer-right tip the bar runs left ~1.5 hook-diameters, rising ~10-12 deg (inner/left end higher). At the inner end it curls COUNTERCLOCKWISE: from 12 oclock down the left side (9 oclock), across the bottom (6 oclock), ending near 4-5 oclock \u2014 approx 220-240 deg of arc; the bottom end has a tiny upward flick before the round cap. Gap opens toward outer-right. Overall bbox ~360px wide x ~285px tall; hook curl occupies the inner ~55-60% of the glyph width. All bends rounded; slight hand-drawn waviness along the bar."
+  },
+  "eyes_mirror_pair": true,
+  "mouth": {
+   "present": true,
+   "family": "oval_tall_filled",
+   "filled": true,
+   "detail": "Solid filled tall blob, ~270px wide x ~395px tall (width/height ~0.68), centered slightly left of face midline, top at roughly the eyes' bottom level. Reads as a tall oval verging on a rounded rectangle: sides are near-vertical and only slightly bowed; TOP edge is a full rounded dome (curved, not flat) with a small diagonal chamfer/flatten at the upper-left corner; BOTTOM edge is also rounded but slightly flatter/wider-radius than the top, like a stadium end. Corner radii ~35-40% of width. No tilt; outline has minor hand-traced irregularity (small bulge on left mid-height)."
+  },
+  "tear": null,
+  "hypothesis_corrections": "Family calls were right, size was not: the eyes are NOT small \u2014 each droopy hook spans ~23% of the face width with a long tilted lash bar plus a ~230 deg curl, i.e. large closed-lid hooks, not small ticks. Also worth adding: the two eyes are true mirror images with gaps opening outward, and the \"tall filled oval\" mouth is slightly rectangle-like (near-vertical sides, stadium-ish bottom), aspect ~0.68.",
+  "anomalies": "Hand-traced/manual render: stroke width varies ~15% along the eye strokes; left eye has a small step/notch where the bar meets the curl; right eye bottom tip has a slight upward flick; mouth outline has a small top-left chamfer and left-side bulge. Despite the 'sad' filename there is no tear element. Cleaned render matches the original photo geometry faithfully (photo is blurrier but identical shapes/positions)."
+ },
+ {
+  "file": "32_sad_07_manual.png",
+  "eye_L": {
+   "family": "circle_gap",
+   "open": true,
+   "gap_direction": "8:30-9 oclock (outer-left, slightly low)",
+   "rotation": "gap rotated to the west; like a letter C mirrored horizontally",
+   "detail": "Open circle, outer radius ~145 px in the 1600px-wide render, stroke width ~55 px, round caps. Arc drawn spans ~290-300 deg, leaving a ~60-70 deg gap centered at ~8:30-9 oclock. Upper terminal sits at ~10 oclock with a plain round cap on the circular path. Stroke sweeps clockwise over 12, 3, and 6 oclock; the lower terminal at ~7:30-8 oclock straightens out of the circle into a short down-left flick/tail (~1 stroke-width long past the circular path), so the bottom end reads slightly extended rather than stopping cleanly on the circle. Circle is essentially upright, no ellipse squash."
+  },
+  "eye_R": {
+   "family": "circle_gap",
+   "open": true,
+   "gap_direction": "2:30-3 oclock (outer-right)",
+   "rotation": "gap rotated to the east; like a plain letter C mirrored vs the left eye",
+   "detail": "Open circle, same scale as left eye (outer radius ~145 px, stroke ~55 px, round caps). Arc spans ~285-300 deg with a ~60-75 deg gap centered at ~2:30-3 oclock. Upper terminal at ~1:30-2 oclock curls slightly inward/downward toward the gap (small hook, less than half a stroke-width of curl). Lower terminal at ~4 oclock ends on the circular path with a plain round cap, angled down-right. Together with the separate vertical bar below-right it reads like a lowercase q, but the bar is NOT connected - clear black gap of roughly one stroke-width between the circle's lower-right end and the bar's top."
+  },
+  "eyes_mirror_pair": true,
+  "mouth": {
+   "present": true,
+   "family": "frown_arc",
+   "filled": false,
+   "detail": "Stroked n-shaped (downward-opening) circular arc, stroke ~55 px, round caps. Spans ~160 deg of a circle whose center is below the arc (midline radius ~200 px). Overall bounding box ~400 px wide x ~165 px tall, width:height ~2.4:1. Peak is at the top-center; both ends descend nearly vertically with a slight outward flare (end tangents ~10 deg off vertical, splayed away from center). Symmetric, no tilt. Positioned low on the face, roughly centered between the two eyes but a touch left of the midpoint, with its peak at about the eyes' lower-third height."
+  },
+  "tear": "Separate near-vertical bar below-right of the right eye, forming the q-descender look. Round-capped stroke, ~55 px wide, ~390 px long tip-to-tip (length:width ~7:1) - slightly longer than the eye's diameter. Essentially straight and vertical (lean no more than ~2-3 deg, top end tipping very slightly toward the eye; a barely perceptible bow). Its top starts just below and right of the right eye's gap, offset outside the circle's right edge, and it hangs down past the mouth's baseline, ending near the bottom of the face area.",
+  "hypothesis_corrections": "none - hypothesis confirmed. Refinements only: the two eye gaps face outward and mirror each other (left eye gap ~8:30-9 oclock, right eye gap ~2:30-3 oclock); the tear bar is clearly a separate stroke with a visible gap from the circle, not touching it.",
+  "anomalies": "Asymmetric terminal treatments on the eyes: the left eye's lower terminal has a short straight down-left tail extending past the circular path, while the right eye's upper terminal curls slightly inward - so the mirror symmetry is approximate, not exact. Mouth sits slightly left of the midpoint between the eyes. The right-eye crop's bottom-left and the tear crop's top-left corners contain slivers of neighboring strokes (mouth end and eye terminal respectively) - ignore those."
+ },
+ {
+  "file": "33_sad_08_manual",
+  "eye_L": {
+   "family": "open_C",
+   "open": true,
+   "gap_direction": "8-10 o'clock (gap faces left / slightly lower-left)",
+   "rotation": "~180 deg vs canonical C (mirrored, opening left), like Japanese katakana 'tsu' \u3064; top limb tilted so its left tip sits slightly lower than the arch peak",
+   "detail": "A tsu-shaped open loop, wider than tall (bbox ~370x235 px in the 1600px render, aspect ~1.6:1). Composed of (1) a long, nearly straight top-lid stroke that overshoots far to the LEFT past the rest of the loop: starts at a tapered round-cap tip ~(245,430), rises gently ~12 deg to a shallow convex-up peak ~(430,370), then runs slightly downhill to ~(555,395); (2) a tight clockwise curl at the right end (radius ~55-70 px) turning down through ~(605,470); (3) a bottom arc of radius ~110 px sweeping leftward through the 6-o'clock point ~(480,590) and back up to terminate at ~(300,545), where the last ~40 px flick UP-left slightly (small upturned tick at the terminus). Total sweep ~300 deg clockwise from the 10-o'clock tip to the 8-o'clock tip; gap ~60-70 deg wide on the left side. Right+bottom read as circular arc; top reads as a flattened straight lid. Stroke ~40 px, round caps, hand-drawn wobble."
+  },
+  "eye_R": {
+   "family": "open_C",
+   "open": true,
+   "gap_direction": "3 o'clock (gap faces right, centered maybe a touch below 3)",
+   "rotation": "canonical C orientation, essentially no tilt",
+   "detail": "Clean letter-C: near-circular arc, center ~(1165,455), outer radius ~145 px, roughly 1:1 aspect (very slightly taller than wide). Arc spans ~295-305 deg counterclockwise from the upper terminus at ~1:30-2 o'clock (~(1290,360)) around through 12, 9, 6 to the lower terminus at ~4 o'clock (~(1300,530)). Gap angular width ~55-65 deg centered at 3 o'clock. Both termini are plain round caps with no hooks or flicks. Stroke ~40 px, slight hand-drawn radius wobble but reads as a smooth circle segment."
+  },
+  "eyes_mirror_pair": false,
+  "mouth": {
+   "present": true,
+   "family": "w_squiggle",
+   "filled": false,
+   "detail": "Stroked two-hump squiggle with humps pointing UP (an 'm'/inverted-w orientation, like a rounded \u1d0d): left round-cap end low at ~(630,655), rises to rounded hump 1 peak ~(705,590), dips to a rounded-V central valley ~(800,650), rises to rounded hump 2 peak ~(905,585) (right hump a hair higher than left), then falls to right round-cap end ~(965,650). Width ~335 px, peak-to-valley amplitude ~65-70 px, so ~4.8:1 width:height. Both end tips and the central valley sit on roughly the same baseline; overall tilt ~0 deg. Hump crest radii ~35 px; central valley slightly tighter/sharper than the crests but still rounded, not a hard corner. Stroke ~40 px, round caps."
+  },
+  "tear": null,
+  "hypothesis_corrections": "Left eye is NOT a droop hook \u2014 it is a mirrored open-C / katakana-tsu (\u3064) shape: a ~300 deg loop opening LEFT whose top limb is a flattened, nearly straight lid stroke that overshoots left, with a small upward flick at the lower terminus. Right eye = open C: confirmed. Mouth = w-squiggle: confirmed as family, but note the orientation is humps-UP (m/\u03c9-style two crests with a central valley), not two valleys like a literal 'w'.",
+  "anomalies": "Hand-drawn wobble throughout; stroke width varies ~10%. Left eye's top-lid stroke tapers slightly at its far-left tip, and its lower terminus has a distinctive small up-left flick \u2014 both should be reproduced. Mouth's right hump is slightly higher than the left. No tear, no eyebrows, no nose; eyes differ in style (flat-lidded tsu vs round C), giving an asymmetric sad/uneasy expression."
+ },
+ {
+  "file": "34_sad_09_manual",
+  "eye_L": {
+   "family": "e_shape",
+   "open": true,
+   "gap_direction": "8-9 oclock (outer-left, slightly below horizontal; measured ~8:20)",
+   "rotation": "~15-20 deg counterclockwise from canonical mirrored-e: crossbar/counter rises left-to-right ~20 deg (inner, nose-side end raised)",
+   "detail": "MIRRORED lowercase 'e' (backwards e), near-circular, ~365x350 px in the full render, very thick hand-drawn stroke (~50-60 px, ~15-18% of diameter, round caps, width wobbles). Ring path: from a thick merged junction blob at upper-left (~10 oclock) it sweeps clockwise over 12, down the inner/right side through 3, around the bottom through 6, and terminates with a round cap at ~8:20; gap in the ring is narrow, ~25-35 deg wide. Crossbar: near-straight chord from the ring wall at ~9:30-10 oclock rising ~20 deg to the right, merging into the ring inner wall at ~1-2 oclock, fully enclosing a thin lens-shaped counter above it (~115x45 px, long axis rising ~20 deg, pointed tips: left tip lower, right tip higher). Upper-left junction is the heaviest/thickest part; the bottom tail thins slightly toward the terminal. Reads as a drowsy half-lidded open eye."
+  },
+  "eye_R": {
+   "family": "e_shape",
+   "open": true,
+   "gap_direction": "~4 oclock (outer-lower-right; measured ~3:50-4:10)",
+   "rotation": "~15-20 deg clockwise from canonical 'e': crossbar/counter falls left-to-right ~18 deg (inner, nose-side end raised)",
+   "detail": "Standard lowercase 'e', near-circular, ~330x355 px, same thick wobbly stroke (~50-60 px, round caps). Ring path: from the crossbar junction at upper-right (~2 oclock) it sweeps counterclockwise over 12, down the outer/left side through 9 (left wall is the heaviest, blob-like section), around the bottom through 6, terminating with a round cap at ~4:00 whose tip flicks slightly upward/outward; gap ~20-30 deg wide. Crossbar: near-straight chord from the ring inner wall at ~10-11 oclock descending ~18 deg to the right, merging into the ring at ~2-3 oclock, enclosing a thin lens counter above it (~120x45 px, long axis falling ~18 deg: left tip higher at approx (194,108), right tip lower at approx (312,145) in crop coords). Reads as a drowsy half-lidded open eye."
+  },
+  "eyes_mirror_pair": true,
+  "mouth": {
+   "present": true,
+   "family": "frown_arc",
+   "filled": false,
+   "detail": "Stroked inverted-U (cap/frown) arc, no fill, round caps, stroke ~45-55 px (same weight as eyes). Near-semicircular span ~180-185 deg: outer bbox ~365 px wide x ~195 px tall (w:h ~1.9:1); centerline is close to a semicircle of radius ~165-172 px, slightly wider than tall with a mildly flattened apex. Apex at top-center (~(785,600) full-face coords); both limbs descend symmetrically to end at roughly the level of the horizontal diameter (left end ~(615,780), right end ~(960,770); right end a touch higher/shorter). Ends splay very slightly outward. Overall level, tilt under 5 deg. Positioned centered between the eyes, apex at about the eyes' lower-third height."
+  },
+  "tear": null,
+  "hypothesis_corrections": "Mostly correct, two refinements: (1) only eye_R is a standard 'e' - eye_L is a MIRRORED 'e', so the eyes form a mirror pair with gaps pointing outward-down (~8:20 and ~4:00) rather than two identically-oriented rotated e's; (2) the rotation is modest (~15-20 deg each, inner/nose-side end of the crossbar raised), not a strong rotation. Mouth frown arc confirmed (stroked ~180 deg semicircular cap, not filled).",
+  "anomalies": "Part crops bleed into neighbors: mouth crop top corners contain eye-tail slivers, eye_R crop bottom-left contains a sliver of the mouth/left-eye tail (ignore for geometry). Hand-drawn stroke width varies noticeably (~40-65 px): eye_L upper-left junction and eye_R left wall are heavy blobs, tails thinner. In the original photo the enclosed lens counters show deep navy (unlit LCD) rather than pure black; cleaned render otherwise matches the photo faithfully. No tear or extra elements."
+ },
+ {
+  "file": "35_sad_10_manual",
+  "eye_L": {
+   "family": "happy_arc",
+   "open": false,
+   "gap_direction": "gap/opening faces ~11 oclock (up and slightly outward-left)",
+   "rotation": "rotated ~20-25 deg counterclockwise from a canonical U: inner (right) tip raised well above outer (left) tip",
+   "detail": "Concave-UP bowl arc (U), ~160 deg of a near-circle (slightly less than a semicircle). Fitted centerline radius ~135-140 px in the crop with stroke width ~55 px (stroke ~= 0.4x radius), uniform thickness, round caps. Endpoints: outer (left) tip sits ~25-30 deg BELOW the circle's horizontal at ~8 oclock; inner (right) tip sits ~10 deg ABOVE horizontal at ~2:50-3 oclock, so the tip-to-tip chord rises left-to-right at ~20 deg. Lowest point of the bowl is directly below the circle center (6 oclock). Outer limb is slightly shallower/flatter; inner limb climbs more steeply with a faint inward (leftward) curl over the last ~15 deg at the tip. Bounding box ~335 wide x 235 tall in the 1600x1030 frame (x 265-600, y 330-565); reads as a closed, drooping sad eye"
+  },
+  "eye_R": {
+   "family": "happy_arc",
+   "open": false,
+   "gap_direction": "gap/opening faces ~1 oclock (up and slightly outward-right)",
+   "rotation": "rotated ~20-25 deg clockwise from a canonical U: inner (left) tip raised well above outer (right) tip",
+   "detail": "Mirror of eye_L. Concave-UP bowl arc (U), ~160 deg span, centerline radius ~135-140 px in crop, stroke ~55 px, round caps. Inner (left) tip high at ~9-9:10 oclock (~10 deg above the circle's horizontal); outer (right) tip low at ~4 oclock (~25-30 deg below horizontal); chord falls left-to-right at ~20 deg. Bottom of bowl at 6 oclock. Inner limb steep, outer limb flattens toward the tip with a tiny upward/outward flick in the last few degrees (visible in both photo and render). Bounding box ~345 wide x 230 tall (x 995-1340, y 335-565). Inner-tip-to-inner-tip gap between the eyes ~400 px; eye centers sit at ~44% of frame height, lower half of screen empty"
+  },
+  "eyes_mirror_pair": true,
+  "mouth": {
+   "present": false,
+   "family": "none",
+   "filled": false,
+   "detail": "No mouth at all \u2014 lower half of the screen is completely dark in both the cleaned render and the original photo"
+  },
+  "tear": null,
+  "hypothesis_corrections": "Essentially none \u2014 \"deep sad u-arcs; no mouth\" is correct. Refinements: the U-arcs are slightly LESS than semicircles (~160 deg, not 220+), and the sad read comes mainly from the ~20-25 deg tilt (inner tips raised toward face center, outer tips drooping low), with gaps aimed at 11 oclock (left eye) and 1 oclock (right eye) rather than straight up",
+  "anomalies": "Cleaned render's stroke is noticeably thicker relative to arc size than the original photo's LED stroke (photo arcs are thinner/finer). Minor hand-drawn wobble: eye_L has a slight flattening near the bowl bottom and a faint inward curl at its raised inner tip; eye_R's outer tip has a small upward flick/bulge. Eyes are not perfectly circular \u2014 outer limbs are slightly shallower than inner limbs on both"
+ },
+ {
+  "file": "36_misc_03_manual",
+  "eye_L": {
+   "family": "open_C",
+   "open": true,
+   "gap_direction": "9-10 oclock (outer/left side)",
+   "rotation": "upright; horizontally mirrored vs a canonical C (opens LEFT), with flattened straight top",
+   "detail": "ONE continuous stroke (verified: single connected component), like hiragana 'tsu' or a flat-topped mirrored-C. Bbox 358w x 270h px (1.33:1 wide, flatter than the right eye). Path traced along skeleton centerline: start with round cap at upper-left (286,403); straight horizontal top bar ~250 px long (dead flat, <2 deg rise going right); rounded top-right corner, radius ~45 px, turning ~100 deg downward; short right side descends ~100 px nearly vertically with slight outward bow (rightmost centerline x=580); then flows smoothly into a ~180-deg bottom bowl (approx 145 px horizontal semi-axis x 105 px vertical, gently flattened at the bottom, lowest point at x=432,y=608); left side rises to end with round cap at (289,523), tip pointing up-and-left. Gap is on the west side: the two cap centers are vertically aligned (x approx 287) and 120 px apart; measured from shape centroid the gap spans ~152 to ~191 deg (10:00 down to just past 9:00), ~40 deg wide. Stroke width ~65 px incl. glow (~50 px core). Encloses a large dark interior, so it reads as an OPEN eye whose flat top bar suggests a lowered/skeptical lid."
+  },
+  "eye_R": {
+   "family": "open_C",
+   "open": true,
+   "gap_direction": "3 oclock (due east, outer/right side)",
+   "rotation": "none - canonical upright C",
+   "detail": "Near-perfect circular arc: centerline center (1160,450), centerline radius ~150 px, overall diameter ~365 px (bbox 365x366, round to within 1 px). Arc spans ~315 deg with constant curvature and no corners: starts round cap at (1313,386) (+21 deg above east, ~2 oclock) and sweeps counterclockwise over the top, left, and bottom to end round cap at (1306,516) (-24 deg below east, ~4 oclock). Gap ~45 deg wide, centered exactly at 3 oclock; cap centers 130 px apart vertically. Stroke width ~70 px incl. glow (~50 px core), round caps. Noticeably larger than the left eye (366 vs 270 px tall) and its center sits ~55 px higher."
+  },
+  "eyes_mirror_pair": false,
+  "mouth": {
+   "present": true,
+   "family": "diagonal",
+   "filled": false,
+   "detail": "Single dead-straight stroked line (skeleton deviates only a few px from a line), round caps. Endpoint cap centers (665,731) left-low to (918,664) right-high: length ~262 px, rising left-to-right at ~15 deg above horizontal. Stroke width ~60 px incl. glow (~45 px core), giving a ~4.5:1 capsule silhouette. Positioned horizontally centered between the eyes (mouth center x=792 vs eye-pair midpoint x=805) and below them (center y=698). Reads as a skeptical '/' slanted mouth."
+  },
+  "tear": null,
+  "hypothesis_corrections": "Left eye is NOT a droop hook (and not a closed 'D' lid): connectivity analysis shows it is one continuous ~320-deg loop stroke \u2014 a flat-topped mirrored C (hiragana-tsu shape) opening to the LEFT at 9-10 oclock, reading as an open eye. Right eye 'open C' is correct (315-deg circle, gap at 3 oclock). Mouth 'diagonal line (confused)' is correct; specifically it rises left-to-right at ~15 deg.",
+  "anomalies": "Deliberate asymmetry: right eye is a large round C (366 px tall) while left eye is smaller, flattened (270 px tall, 1.33:1 wide) with a straight top bar and squarish corner, sitting ~55 px lower \u2014 the two are NOT mirror images even though both gaps face outward. Whole face reads like the kaomoji '\u0254_C' with a slanted underscore mouth. Cleaned render matches the original photo faithfully; no extraction artifacts, all three parts single connected strokes."
+ },
+ {
+  "file": "37_misc_06_manual",
+  "eye_L": {
+   "family": "open_C",
+   "open": false,
+   "gap_direction": "9 o'clock (outer/left side of face)",
+   "rotation": "none - bars are horizontal, no tilt; mirrored vs canonical C (opens left, like '\u2290')",
+   "detail": "Squared bracket '\u2290' shape, bbox ~337x167 px (aspect ~2:1 wide). Two parallel horizontal bars, each ~55px stroke (each bar = ~1/3 of total eye height), separated by a dark slot also ~55px tall (slot height = stroke width). Bars are equal length, flush at the outer (left) edge, with round caps on their free left ends. At the inner (right) end they join via a vertical connector of the same ~55-60px stroke: the right edge has a short flat vertical section with rounded-rectangle corners (corner radius ~0.5-1x stroke width), i.e., squared elbow turns, not a semicircular D-turn. The interior slot enters from the left and penetrates ~82% of eye width; its inner (right) end is rounded (semicircular). Reads as a relaxed/smug squint rather than a wide-open eye."
+  },
+  "eye_R": {
+   "family": "open_C",
+   "open": false,
+   "gap_direction": "3 o'clock (outer/right side of face)",
+   "rotation": "none - bars horizontal, no tilt; matches canonical C orientation (opens right, like '\u228f')",
+   "detail": "Exact horizontal mirror of eye_L: squared bracket '\u228f', bbox ~344x168 px (aspect ~2:1). Two horizontal bars ~55px stroke each, dark slot ~55px between them, flush and round-capped at the outer (right) ends. Joined at the inner (left) end by a ~60px vertical connector with rounded-rectangle elbows (radius ~0.5-1x stroke) and a short flat vertical outer edge. Slot enters from the right, depth ~82% of width, rounded inner end. The two connectors face each other across the nose gap; both openings point outward."
+  },
+  "eyes_mirror_pair": true,
+  "mouth": {
+   "present": true,
+   "family": "smile_arc",
+   "filled": false,
+   "detail": "Single stroked curve, stroke ~56px thick (same as eye strokes), round caps both ends. Chord ~348px long (~ same as one eye's width), tilted upward to the right ~7 degrees (right endpoint ~41px higher than left). Concave-up smile curvature: centerline sags max ~23px below the chord near mid-span (sagitta ~6.5% of chord, equivalent circular arc span ~30 deg), but asymmetric - the left two-thirds is a gentle uniform curve while the right third straightens and sweeps upward, so the right corner kicks up. Reads as a lopsided smirk/smug smile. Positioned slightly right of face center, below the midpoint between the eyes."
+  },
+  "tear": null,
+  "hypothesis_corrections": "\"Eyes: double bars\" is topologically wrong - the two bars in each eye are CONNECTED at the inner end by a vertical stroke, forming a squared open-C / bracket shape (left eye '\u2290' opening left/outward, right eye '\u228f' opening right/outward), not two free-floating bars. \"Mouth: gentle smile curve\" is close but incomplete: the smile is asymmetric and tilted ~7 deg upward to the right with the right end sweeping higher - a smirk, not a symmetric smile.",
+  "anomalies": "Photo-traced edges have slight organic waviness (esp. bar top/bottom edges) and an LED glow halo around all strokes; redraw with clean straight bars. Right eye bbox is ~7px wider than left (344 vs 337) - within tracing noise, treat as exact mirrors. Mouth is offset right of face center, reinforcing the smug/smirk expression. Whether the bracket eyes read as 'open' is ambiguous; they read as relaxed/smug squints consistent with the smirk mouth."
+ },
+ {
+  "file": "38_misc_2_06_manual",
+  "eye_L": {
+   "family": "e_shape",
+   "open": true,
+   "gap_direction": "9-10:30 oclock (outer-left side)",
+   "rotation": "crossbar roughly horizontal; glyph reads as a mirror of the right eye rotated ~5-10 deg counterclockwise so its free terminal sits higher on the left side",
+   "detail": "Reversed lowercase e (like '\u0258'). Outer form near-circular, aspect ~1:1, very thick stroke (~1/6 of outer diameter) with round caps. Horizontal crossbar at ~40-45% height from the top spans the full inner width; above it a shallow lens-shaped dark counter (flat bottom = crossbar, low domed top = top arc) \u2014 the counter is noticeably flatter/shallower than the right eye's. Single-stroke path: from the left end of the crossbar the top arc sweeps clockwise over 12 oclock, merges into the outer curve down the right side (3 oclock), around the bottom (6 oclock), then climbs the left side ending in a free round-capped terminal at ~8:30-9 oclock with a small outward/upward flick. Closed outer arc covers ~300 deg; open gap ~50-60 deg on the left between the terminal and the merged bar/top-arc left end."
+  },
+  "eye_R": {
+   "family": "e_shape",
+   "open": true,
+   "gap_direction": "3:30-4:30 oclock (outer-right-down)",
+   "rotation": "essentially canonical; crossbar sags ~3-5 deg down toward the right where it meets the loop",
+   "detail": "Standard lowercase e. Outer form near-circular, aspect ~1:1, thick round-capped stroke (~1/6 of outer diameter). Horizontal crossbar at ~45-50% height spans the full inner width; above it a lens-shaped dark counter with a higher domed top than the left eye's (more open loop). Path: crossbar right end joins the loop at ~2:30-3 oclock, the top arc sweeps counterclockwise over 12, down the left side (9 oclock), around the bottom (6 oclock), and ends in a free round-capped terminal at ~4-4:30 oclock curling slightly upward/outward. Closed outer arc ~315 deg; gap ~40-50 deg at lower right between the terminal and the crossbar/loop junction."
+  },
+  "eyes_mirror_pair": true,
+  "mouth": {
+   "present": true,
+   "family": "oval_tall_filled",
+   "filled": true,
+   "detail": "Tall filled rounded shape between/below the eyes, horizontally centered on the face. Width:height ~0.7 (about 250x360 px in crop). Reads as a tall stadium / very rounded rectangle rather than a pure ellipse: left and right sides are nearly straight verticals, top edge is a broad smooth dome (curved, not flat), bottom edge is also curved but slightly flatter than the top, with a small hand-drawn wobble/notch on the lower-left contour. Corner transitions are large-radius and seamless (no sharp corners). No tilt. Positioned high \u2014 its top edge nearly reaches the eyes' lower arcs."
+  },
+  "tear": null,
+  "hypothesis_corrections": "Mostly right, two refinements: (1) the eyes are not two identical e-shapes \u2014 the LEFT eye is a mirrored/reversed e ('\u0258') opening to the left (~9-10 oclock) while the RIGHT eye is a standard e opening lower-right (~4 oclock), i.e. they form an approximate mirror pair; (2) the mouth is closer to a tall stadium/rounded-rectangle with near-straight vertical sides and curved top/bottom than a true oval, though 'tall filled oval' is an acceptable approximation.",
+  "anomalies": "Mirror pair is imperfect: the left eye's counter (dark lens) is shallower/flatter and its gap sits higher on the left side than a strict mirror of the right eye would place it; left eye is also marginally larger. Mouth has a small wobble/bump on its lower-left edge (hand-drawn quality). Mouth sits unusually high, its top nearly touching the eye baseline, giving a startled/singing '\u0258_e + O' expression. Strong LED bloom/halo around all strokes in the cleaned render."
+ },
+ {
+  "file": "39_neutral_02_manual",
+  "eye_L": {
+   "family": "circle_gap",
+   "open": true,
+   "gap_direction": "9 o'clock (due left = OUTWARD side of face); gap center within ~1 deg of horizontal",
+   "rotation": "none - gap axis is exactly horizontal",
+   "detail": "Near-perfect circular ring with one gap. Outer diameter ~341 px (full-face scale), centerline radius ~154 px, stroke width ~60 px (~18% of outer diameter, 0.39x centerline radius), round caps. Painted gap between cap edges spans ~31 deg centered at 9 o'clock; centerline arc therefore runs ~305-310 deg, from upper terminus at ~10 o'clock clockwise through 12, 3, and 6 back to lower terminus at ~8 o'clock. Ends are plain round caps - no hooks, curls, or flattening. Circle is round (bbox 341x359 incl. glow, ~1:1)."
+  },
+  "eye_R": {
+   "family": "circle_gap",
+   "open": true,
+   "gap_direction": "3 o'clock (due right = OUTWARD side of face); gap center within ~2 deg of horizontal",
+   "rotation": "none - gap axis is exactly horizontal",
+   "detail": "Exact mirror of eye_L: circular ring, outer diameter ~350 px, centerline radius ~156 px, stroke ~58 px, round caps. Painted gap ~34 deg centered at 3 o'clock (measured cap edges at 16 deg above and 17 deg below horizontal); arc spans ~305 deg from upper terminus at ~2 o'clock counterclockwise through 12, 9, 6 to lower terminus at ~4 o'clock. Plain round-cap ends, no hooks. Reads as a 'C'. Same stroke weight and size as eye_L (within 3%)."
+  },
+  "eyes_mirror_pair": true,
+  "mouth": {
+   "present": true,
+   "family": "line",
+   "filled": false,
+   "detail": "Thick straight horizontal line with round caps - renders as a solid capsule/stadium but its height (~62 px) equals the eye stroke width (~60 px), so it is the same pen stroke, not a separately-proportioned filled bar. Total length ~400 px incl. caps (~1.15x eye outer diameter), width:height ~6.5:1. Tilt negligible: midline varies <7 px over 800 px (<0.6 deg); tiny downward sag of ~5 px at center - draw straight. Top and bottom edges flat and parallel; ends fully rounded semicircular caps. Centered horizontally on face midline (mouth cx 806 vs eye midpoint 800); vertically low - its top edge sits ~75 px (~1.25 stroke widths) below the bottom of the eyes, underscore-style."
+  },
+  "tear": null,
+  "hypothesis_corrections": "Gap direction was wrong: the eye-circle gaps face OUTWARD, not inward - left eye opens due left (9 o'clock), right eye opens due right (3 o'clock), giving a '\u0186 C' look. 'Large circles with gap' and 'flat line mouth' are otherwise correct, with the note that the mouth line is thick (stroke weight equal to the eyes', ~60 px) rather than thin.",
+  "anomalies": "None significant. Original photo matches the cleaned render; slight edge waviness on the mouth in the photo is compression/blur artifact, not geometry. Gap spans differ trivially between eyes (31 vs 34 deg) - treat as identical mirrored arcs (~305 deg arc, ~55 deg gap between cap-tip centers after accounting for round caps). Whole face composition resembles a '\u0186_C' / wide-eyed neutral expression."
+ },
+ {
+  "file": "40_neutral_03_manual",
+  "eye_L": {
+   "family": "open_C",
+   "open": false,
+   "gap_direction": "9 o'clock (outer, toward image-left)",
+   "rotation": "essentially horizontal; top bar ~0-2 deg, bottom bar horizontal with slight waviness",
+   "detail": "Single continuous stroke shaped like a squared superset symbol '\u2283' (katakana-ko mirrored): two near-horizontal bars joined by a short vertical connector on the RIGHT (inner/face-center) side, opening to the LEFT. Bounding box ~346x182 px in the 1600x1035 render (aspect ~1.9:1 wide). Stroke width ~50-55 px (~30% of shape height); interior slot between the bars is about one stroke-width tall (~50 px) and runs open all the way out the left side. Path: round-cap start at top-left (~x262), run right ~85% of width along a nearly straight, slightly wavy top bar; two rounded ~90-degree corners (outer corner radius ~= stroke width, inner slot end fully rounded) forming the right-side U-turn down ~130 px; return left along the bottom bar to a round cap roughly flush below the start point. Bars are close to parallel; mild organic waviness (+/-3% of height bumps) from the LED/photo source."
+  },
+  "eye_R": {
+   "family": "open_C",
+   "open": false,
+   "gap_direction": "3 o'clock (outer, toward image-right)",
+   "rotation": "top bar horizontal; bottom bar droops ~5-8 deg downward toward its right (outer) end",
+   "detail": "Mirror construction of eye_L: squared 'C' / '\u2282' \u2014 two near-horizontal bars joined by a short vertical connector on the LEFT (inner/face-center) side, opening to the RIGHT. Bounding box ~335x185 px, aspect ~1.8:1. Stroke width ~50-55 px; interior slot ~one stroke-width tall, open out the right side. Rounded ~90-degree corners at the left U-turn (outer radius ~= stroke width). Free ends on the right have round caps. Asymmetry vs left eye: the bottom bar sags \u2014 it slants down toward the right, ending ~15-20% of shape height lower than the top bar's end, and extends slightly further right than the top bar, giving a slight tapered droop at its cap; top bar stays level."
+  },
+  "eyes_mirror_pair": true,
+  "mouth": {
+   "present": true,
+   "family": "dot",
+   "filled": true,
+   "detail": "Tiny solid filled dot, near-circular ellipse very slightly wider than tall (~1.1:1), diameter ~45-50 px (~ equal to the eye stroke width, ~1/7 of an eye's width). Centered horizontally on the face (x~800/1600), sitting well below the eye line (center y~745 vs eye centers y~470, i.e. ~1.5 eye-heights below). No flat edges \u2014 smooth round blob with soft glow halo."
+  },
+  "tear": null,
+  "hypothesis_corrections": "\"eyes: double bars\" is wrong \u2014 each eye is NOT two separate parallel bars; the two horizontal bars are joined at the inner (face-center) end by a rounded vertical connector, forming a single square-cornered open-C bracket (left eye '\u2283' opening outward-left, right eye '\u2282' opening outward-right). \"mouth: dot\" is correct.",
+  "anomalies": "Photo-derived stroke waviness: left eye's top bar has a slight bump mid-span; right eye's bottom bar thickens, droops downward, and overshoots the top bar toward its outer end (present in both original photo and cleaned render, so it is a real feature of the LED artwork, not an artifact). Eyes read ambiguously between 'neutral squint' and stylized open eyes; classified open=false because the flat 1.9:1 horizontal slot form reads as closed/neutral lids. All elements have a cyan glow halo; strokes use round caps throughout."
+ }
+]

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>MIST / A conversation with Geraldine</title><link rel="stylesheet" href="../preview/style.css"><script>
+const probe=window.__qaLifecycle={contexts:[],nodes:[],intervals:new Set()};
+const NativeAudio=window.AudioContext;
+window.AudioContext=class extends NativeAudio {
+  constructor(...args){super(...args);probe.contexts.push(this);}
+  createBufferSource(){
+    const node=super.createBufferSource(),record={starts:0,stops:0,disconnects:0};probe.nodes.push(record);
+    for(const [method,key] of [['start','starts'],['stop','stops'],['disconnect','disconnects']]){
+      const original=node[method].bind(node);node[method]=(...args)=>{record[key]++;return original(...args);};
+    }
+    return node;
+  }
+};
+const originalInterval=window.setInterval.bind(window),originalClear=window.clearInterval.bind(window);
+window.setInterval=(...args)=>{const id=originalInterval(...args);probe.intervals.add(id);return id;};
+window.clearInterval=id=>{probe.intervals.delete(id);return originalClear(id);};
+probe.installTeardownObserver=()=>window.addEventListener('pagehide',()=>{
+  sessionStorage.setItem('geraldine-qa-teardown',JSON.stringify({contexts:probe.contexts.map(c=>c.state),nodes:probe.nodes,intervals:probe.intervals.size,snapshot:window.characterPreview?.snapshot()}));
+});
+if(new URLSearchParams(location.search).get('failure')==='missing-wav'){
+  const originalFetch=window.fetch.bind(window);
+  window.fetch=(input,...args)=>/\.wav(?:$|\?)/i.test(String(input))?Promise.resolve(new Response('Intentional QA missing WAV',{status:404,statusText:'QA missing asset'})):originalFetch(input,...args);
+}
+</script><script type="module" src="../preview/app.mjs"></script></head>
+<body><a class="skip" href="#controls">Skip to playback</a>
+<header><div class="identity"><span class="wordmark">MIST</span><h1>Geraldine in conversation</h1></div><button id="review-toggle" aria-expanded="false" aria-controls="review">Review a moment</button></header>
+<main><div id="error" role="alert" hidden></div>
+<div class="chooser"><label>Scene <select id="scene" disabled><option>Loading scenes…</option></select></label><fieldset id="profiles" disabled><legend>Timing · provisional</legend><button data-profile="restrained" aria-pressed="true">Restrained</button><button data-profile="expressive" aria-pressed="false">Expressive</button></fieldset></div>
+<section class="stage" aria-label="Conversation preview"><div class="art"><canvas id="face" width="1000" height="640" role="img" aria-label="Geraldine’s animated face"></canvas></div><div class="conversation"><div class="scene-context"><h2 id="scene-title">Loading Geraldine…</h2><p id="scene-description"></p></div><div class="context"><span class="label" id="speaker">Simulated context</span><p id="context"></p></div><div class="caption"><span class="label" id="caption-label">Recorded response</span><p id="caption">Press Play to begin.</p></div><p id="state" role="status">Loading local assets…</p></div></section>
+<div id="controls" class="controls" tabindex="-1"><button id="play" disabled>Play</button><button id="interrupt" disabled>Interrupt</button><button id="replay" disabled>Replay</button><progress id="progress" max="1" value="0" aria-label="Scene progress"></progress><output id="time">0:00 / 0:00</output></div>
+<p class="footnote">Synthetic conversation · original recordings and artwork. <span id="motion-note">Same audio in both timing profiles.</span></p>
+<section id="review" hidden aria-labelledby="review-title"><div class="review-heading"><h2 id="review-title">Review this moment</h2><span id="moment"></span></div><div class="note-controls"><button data-verdict="keep" aria-pressed="false">Keep</button><button data-verdict="revise" aria-pressed="false">Revise</button><button id="new-note">New moment</button><button id="export">Export notes</button></div><label for="note">What would you keep or change?</label><textarea id="note" rows="2" maxlength="20000" placeholder="Eyes, mouth, or conversational timing…"></textarea><p id="saved" role="status">Notes stay in this browser.</p>
+<details id="inspector"><summary>Timing inspector</summary><p>Pronunciation timing is estimated. This view reports scheduling and rendered frames; it is not an acoustic measurement.</p><pre id="inspection"></pre><ol id="events" aria-label="Scene events"></ol></details>
+<div id="export-panel" hidden><label for="json">Notes JSON</label><textarea id="json" readonly rows="8" spellcheck="false"></textarea><button id="copy">Copy JSON</button><button id="download">Download JSON</button><span id="copy-status" role="status"></span></div></section></main><noscript>Enable JavaScript, then reload to play this local preview.</noscript></body></html>

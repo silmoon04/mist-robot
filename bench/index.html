@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MIST servo bench</title>
+<style>
+  :root {
+    --bg: #0f1115; --panel: #171a21; --line: #262b36; --ink: #e6e9ef;
+    --dim: #8b93a7; --accent: #4da3ff; --ok: #3ddc84; --warn: #ffb020; --bad: #ff5c5c;
+    --pos: #4da3ff; --goal: #b98bff; --load: #ffb020; --volt: #3ddc84; --temp: #ff7a59;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 13px/1.45 ui-monospace, "Cascadia Code", Consolas, monospace; }
+  header { display: flex; align-items: center; gap: 12px; padding: 10px 16px; border-bottom: 1px solid var(--line); background: var(--panel); position: sticky; top: 0; z-index: 5; flex-wrap: wrap; }
+  h1 { font-size: 14px; margin: 0 12px 0 0; font-weight: 600; letter-spacing: .04em; }
+  .wrap { display: grid; grid-template-columns: 320px 1fr; gap: 14px; padding: 14px; align-items: start; }
+  @media (max-width: 900px) { .wrap { grid-template-columns: 1fr; } }
+  .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 12px; margin-bottom: 12px; }
+  .panel h2 { font-size: 11px; text-transform: uppercase; letter-spacing: .1em; color: var(--dim); margin: 0 0 10px; font-weight: 600; }
+  label { display: block; color: var(--dim); font-size: 11px; margin: 8px 0 3px; }
+  select, input[type=text], input[type=number] { width: 100%; background: #0c0e12; color: var(--ink); border: 1px solid var(--line); border-radius: 5px; padding: 6px 8px; font: inherit; }
+  input[type=range] { width: 100%; accent-color: var(--accent); }
+  button { background: #222836; color: var(--ink); border: 1px solid var(--line); border-radius: 5px; padding: 7px 11px; font: inherit; cursor: pointer; }
+  button:hover:not(:disabled) { border-color: var(--accent); }
+  button:disabled { opacity: .4; cursor: not-allowed; }
+  button.primary { background: var(--accent); color: #04101f; border-color: var(--accent); font-weight: 600; }
+  button.danger { background: var(--bad); color: #2a0000; border-color: var(--bad); font-weight: 700; }
+  .row { display: flex; gap: 8px; align-items: center; }
+  .row > * { flex: 1; }
+  .row.tight > * { flex: 0 0 auto; }
+  .pill { display: inline-flex; align-items: center; gap: 6px; padding: 3px 9px; border-radius: 99px; font-size: 11px; border: 1px solid var(--line); }
+  .dot { width: 7px; height: 7px; border-radius: 99px; background: var(--dim); }
+  .dot.on { background: var(--ok); } .dot.off { background: var(--bad); } .dot.warn { background: var(--warn); }
+  table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  td { padding: 3px 0; } td.k { color: var(--dim); } td.v { text-align: right; font-variant-numeric: tabular-nums; }
+  .servo-btn { display: block; width: 100%; text-align: left; margin-bottom: 4px; }
+  .servo-btn.sel { border-color: var(--accent); background: #17263a; }
+  .chart { position: relative; margin-bottom: 10px; }
+  .chart canvas { width: 100%; height: 130px; display: block; background: #0c0e12; border: 1px solid var(--line); border-radius: 6px; }
+  .chart .cap { position: absolute; top: 6px; left: 10px; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: var(--dim); pointer-events: none; }
+  .chart .now { position: absolute; top: 6px; right: 10px; font-size: 12px; font-variant-numeric: tabular-nums; pointer-events: none; }
+  #log { max-height: 150px; overflow-y: auto; font-size: 11px; color: var(--dim); white-space: pre-wrap; }
+  #log .err { color: var(--bad); } #log .ok { color: var(--ok); }
+  .hint { font-size: 11px; color: var(--dim); margin-top: 6px; }
+  .danger-zone { border-color: #4a2222; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>MIST SERVO BENCH</h1>
+  <span class="pill"><span class="dot" id="d-conn"></span><span id="s-conn">disconnected</span></span>
+  <span class="pill"><span class="dot" id="d-rail"></span><span id="s-rail">rail —</span></span>
+  <span class="pill" id="s-bus">0 txn / 0 err</span>
+  <span style="flex:1"></span>
+  <a href="/leg.html" style="color:var(--accent);text-decoration:none">LEG CALIBRATION + IK</a>
+  <button class="danger" id="estop">TORQUE OFF ALL</button>
+</header>
+
+<div class="wrap">
+  <div>
+    <div class="panel">
+      <h2>Bus</h2>
+      <label>Serial port</label>
+      <div class="row"><select id="port"></select><button id="refresh" style="flex:0 0 auto">↻</button></div>
+      <label>Baud</label>
+      <select id="baud">
+        <option value="1000000" selected>1000000 (factory default)</option>
+        <option value="500000">500000</option>
+        <option value="115200">115200</option>
+      </select>
+      <div class="row" style="margin-top:10px">
+        <button class="primary" id="connect">Connect</button>
+        <button id="scan" disabled>Scan bus</button>
+      </div>
+      <div class="hint">Scan pings IDs 0–20. Factory servos all answer as ID 1.</div>
+    </div>
+
+    <div class="panel">
+      <h2>Servos</h2>
+      <div id="servos"><div class="hint">none — connect and scan</div></div>
+    </div>
+
+    <div class="panel">
+      <h2>Control</h2>
+      <div class="row tight" style="margin-bottom:10px">
+        <button id="torque-on">Torque ON</button>
+        <button id="torque-off">Torque OFF</button>
+      </div>
+      <label>Goal position <span id="goal-val" style="color:var(--ink)">2048</span> / 4095</label>
+      <input type="range" id="goal" min="0" max="4095" value="2048">
+      <label>Goal speed (0 = servo max)</label>
+      <input type="range" id="speed" min="0" max="4095" value="0">
+      <div class="hint" id="speed-val">0</div>
+      <label>Acceleration (0 = instant)</label>
+      <input type="range" id="accel" min="0" max="255" value="0">
+      <div class="hint" id="accel-val">0</div>
+      <div class="row" style="margin-top:12px">
+        <button id="sweep">Start sweep</button>
+        <button id="centre">Go to 2048</button>
+      </div>
+      <label>Sweep range ± counts</label>
+      <input type="number" id="sweep-amp" value="400" min="20" max="2000">
+      <label>Sweep dwell (ms)</label>
+      <input type="number" id="sweep-ms" value="1200" min="200" max="10000">
+    </div>
+
+    <div class="panel">
+      <h2>Registers</h2>
+      <div class="row"><input type="number" id="reg-addr" placeholder="addr" value="56">
+        <select id="reg-size"><option value="1">1 byte</option><option value="2" selected>2 bytes</option></select></div>
+      <div class="row" style="margin-top:8px"><input type="number" id="reg-val" placeholder="value">
+        <button id="reg-read" style="flex:0 0 auto">Read</button>
+        <button id="reg-write" style="flex:0 0 auto">Write</button></div>
+      <div class="hint">Addresses below 40 are EEPROM and are refused by default.</div>
+    </div>
+
+    <div class="panel danger-zone">
+      <h2>Assign ID</h2>
+      <div class="row"><input type="number" id="new-id" placeholder="new id" min="0" max="253">
+        <button id="set-id" style="flex:0 0 auto">Set</button></div>
+      <div class="hint">EEPROM write. One factory servo on the bus at a time — they all ship as ID 1.</div>
+    </div>
+  </div>
+
+  <div>
+    <div class="panel">
+      <h2>Telemetry — servo <span id="tel-id">—</span></h2>
+      <div class="chart"><canvas id="c-pos"></canvas><span class="cap">position / goal</span><span class="now" id="n-pos"></span></div>
+      <div class="chart"><canvas id="c-load"></canvas><span class="cap">load (±1000)</span><span class="now" id="n-load"></span></div>
+      <div class="chart"><canvas id="c-speed"></canvas><span class="cap">speed</span><span class="now" id="n-speed"></span></div>
+      <div class="chart"><canvas id="c-volt"></canvas><span class="cap">rail voltage</span><span class="now" id="n-volt"></span></div>
+      <div class="chart"><canvas id="c-temp"></canvas><span class="cap">temperature °C</span><span class="now" id="n-temp"></span></div>
+    </div>
+
+    <div class="panel">
+      <h2>Live values</h2>
+      <table id="vals"><tr><td class="k">no data</td></tr></table>
+    </div>
+
+    <div class="panel">
+      <h2>Log</h2>
+      <div id="log"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+const WINDOW_MS = 30000;
+let sel = null, since = 0, series = {}, goalTrace = [], sweepTimer = null, sweepDir = -1, sweepBase = null;
+
+function log(msg, cls = '') {
+  const t = new Date().toLocaleTimeString();
+  const d = document.createElement('div');
+  d.className = cls; d.textContent = `${t}  ${msg}`;
+  $('log').prepend(d);
+  while ($('log').children.length > 200) $('log').lastChild.remove();
+}
+
+async function api(path, body) {
+  const opt = body ? { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) } : {};
+  const r = await fetch(path, opt);
+  const j = await r.json().catch(() => ({ error: 'bad response' }));
+  if (!r.ok || j.error) throw new Error(j.error || r.statusText);
+  return j;
+}
+
+// --- charts ---------------------------------------------------------------
+function draw(canvas, sets, opts = {}) {
+  const dpr = window.devicePixelRatio || 1;
+  const w = canvas.clientWidth, h = canvas.clientHeight;
+  if (canvas.width !== w * dpr || canvas.height !== h * dpr) { canvas.width = w * dpr; canvas.height = h * dpr; }
+  const g = canvas.getContext('2d');
+  g.setTransform(dpr, 0, 0, dpr, 0, 0);
+  g.clearRect(0, 0, w, h);
+
+  const all = sets.flatMap(s => s.pts.map(p => p.v));
+  if (!all.length) return;
+  let lo = opts.min !== undefined ? opts.min : Math.min(...all);
+  let hi = opts.max !== undefined ? opts.max : Math.max(...all);
+  if (hi - lo < 1e-6) { hi = lo + 1; lo -= 1; }
+  const pad = (hi - lo) * 0.12; lo -= pad; hi += pad;
+  const now = Date.now();
+  const x = t => ((t - (now - WINDOW_MS)) / WINDOW_MS) * (w - 8) + 4;
+  const y = v => h - 6 - ((v - lo) / (hi - lo)) * (h - 12);
+
+  g.strokeStyle = '#1d2230'; g.lineWidth = 1;
+  for (let i = 0; i <= 3; i++) { const yy = 6 + i * (h - 12) / 3; g.beginPath(); g.moveTo(0, yy); g.lineTo(w, yy); g.stroke(); }
+  g.fillStyle = '#4a5266'; g.font = '9px ui-monospace, monospace';
+  g.fillText(hi.toFixed(opts.dp ?? 0), 4, 12);
+  g.fillText(lo.toFixed(opts.dp ?? 0), 4, h - 4);
+
+  for (const s of sets) {
+    if (!s.pts.length) continue;
+    g.strokeStyle = s.color; g.lineWidth = s.width || 1.6;
+    if (s.dash) g.setLineDash(s.dash); else g.setLineDash([]);
+    g.beginPath();
+    s.pts.forEach((p, i) => { const px = x(p.t), py = y(p.v); i ? g.lineTo(px, py) : g.moveTo(px, py); });
+    g.stroke();
+  }
+  g.setLineDash([]);
+}
+
+function prune(arr) {
+  const cut = Date.now() - WINDOW_MS - 2000;
+  while (arr.length && arr[0].t < cut) arr.shift();
+}
+
+function render() {
+  const s = series[sel] || {};
+  for (const k of ['position', 'load', 'speed', 'voltage', 'temperature']) if (s[k]) prune(s[k]);
+  prune(goalTrace);
+  draw($('c-pos'), [
+    { pts: goalTrace, color: 'var(--goal)'.replace('var(--goal)', '#b98bff'), dash: [4, 3], width: 1.2 },
+    { pts: s.position || [], color: '#4da3ff' }], { min: 0, max: 4095 });
+  draw($('c-load'), [{ pts: s.load || [], color: '#ffb020' }], { min: -1000, max: 1000 });
+  draw($('c-speed'), [{ pts: s.speed || [], color: '#7fd4ff' }]);
+  draw($('c-volt'), [{ pts: s.voltage || [], color: '#3ddc84' }], { dp: 1 });
+  draw($('c-temp'), [{ pts: s.temperature || [], color: '#ff7a59' }], { dp: 0 });
+  requestAnimationFrame(render);
+}
+
+// --- polling --------------------------------------------------------------
+async function poll() {
+  try {
+    const j = await api(`/api/telemetry?since=${since}`);
+    since = j.seq;
+    $('s-bus').textContent = `${j.txns} txn / ${j.errors} err`;
+    for (const [sid, rows] of Object.entries(j.rows || {})) {
+      series[sid] = series[sid] || { position: [], load: [], speed: [], voltage: [], temperature: [] };
+      for (const r of rows) {
+        const t = r.t * 1000;
+        series[sid].position.push({ t, v: r.position });
+        series[sid].load.push({ t, v: r.load });
+        series[sid].speed.push({ t, v: r.speed });
+        series[sid].voltage.push({ t, v: r.voltage });
+        series[sid].temperature.push({ t, v: r.temperature });
+      }
+    }
+    const cur = j.latest && j.latest[sel];
+    if (cur) {
+      $('n-pos').textContent = cur.position;
+      $('n-load').textContent = cur.load;
+      $('n-speed').textContent = cur.speed;
+      $('n-volt').textContent = cur.voltage.toFixed(1) + ' V';
+      $('n-temp').textContent = cur.temperature + ' °C';
+      $('vals').innerHTML = Object.entries({
+        position: cur.position, 'slider (commanded)': $('goal').value, speed: cur.speed, load: cur.load,
+        voltage: cur.voltage.toFixed(1) + ' V', temperature: cur.temperature + ' °C',
+        moving: cur.moving, current: cur.current_ma + ' mA'
+      }).map(([k, v]) => `<tr><td class="k">${k}</td><td class="v">${v}</td></tr>`).join('');
+      const v = cur.voltage, d = $('d-rail');
+      d.className = 'dot ' + (v >= 9 && v <= 12.6 ? 'on' : v > 4 ? 'warn' : 'off');
+      $('s-rail').textContent = `rail ${v.toFixed(1)} V` + (v < 9 ? ' — logic only' : '');
+    }
+    serverDown(false);
+  } catch (e) {
+    // Never swallow this silently: a dead server and an idle bus look identical
+    // on screen, and you end up debugging the wiring instead of the process.
+    serverDown(true);
+  }
+  setTimeout(poll, 120);
+}
+
+let wasDown = false;
+function serverDown(down) {
+  if (down === wasDown) return;
+  wasDown = down;
+  $('d-conn').className = 'dot ' + (down ? 'off' : 'on');
+  if (down) {
+    $('s-conn').textContent = 'SERVER NOT RUNNING — python bench/servo_bench.py';
+    $('s-rail').textContent = 'rail —';
+    $('d-rail').className = 'dot off';
+    $('servos').innerHTML = '<div class="hint" style="color:var(--bad)">no server. '
+      + 'Start it with <code>python bench/servo_bench.py</code>, then reload.</div>';
+    log('server unreachable on :8124 — is servo_bench.py running?', 'err');
+  } else {
+    log('server back', 'ok');
+    // Re-read real state rather than leaving the "NOT RUNNING" label stuck up.
+    $('servos').innerHTML = '<div class="hint">reconnected — press Scan bus</div>';
+    loadPorts().catch(() => {});
+  }
+}
+
+// --- actions --------------------------------------------------------------
+async function loadPorts() {
+  const j = await api('/api/ports');
+  $('port').innerHTML = j.ports.map(p =>
+    `<option value="${p.device}">${p.device} — ${p.desc}</option>`).join('') || '<option>no ports</option>';
+  const ch343 = j.ports.find(p => /55D3|CH343/i.test(p.hwid + p.desc));
+  if (ch343) $('port').value = ch343.device;
+  // Reflect the backend's real state - it holds the port across page reloads,
+  // so rendering "disconnected" on load is a lie that costs debugging time.
+  if (j.connected) {
+    $('port').value = j.connected;
+    if (j.baud) $('baud').value = String(j.baud);
+    $('connect').textContent = 'Disconnect';
+    $('scan').disabled = false;
+    $('d-conn').className = 'dot on';
+    $('s-conn').textContent = j.connected + ' (already open)';
+  }
+}
+
+function selectServo(sid) {
+  sel = String(sid);
+  $('tel-id').textContent = sid;
+  goalTrace = [];
+  document.querySelectorAll('.servo-btn').forEach(b => b.classList.toggle('sel', b.dataset.id === sel));
+  api('/api/reg_read', { id: +sid, addr: 56, size: 2 }).then(j => {
+    if (j.value != null) { $('goal').value = j.value; $('goal-val').textContent = j.value; }
+  });
+}
+
+$('refresh').onclick = loadPorts;
+$('connect').onclick = async () => {
+  try {
+    if ($('connect').textContent === 'Connect') {
+      await api('/api/connect', { port: $('port').value, baud: +$('baud').value });
+      $('connect').textContent = 'Disconnect';
+      $('scan').disabled = false;
+      $('d-conn').className = 'dot on'; $('s-conn').textContent = $('port').value;
+      log('connected to ' + $('port').value, 'ok');
+    } else {
+      stopSweep();
+      await api('/api/disconnect', {});
+      $('connect').textContent = 'Connect'; $('scan').disabled = true;
+      $('d-conn').className = 'dot off'; $('s-conn').textContent = 'disconnected';
+      log('disconnected');
+    }
+  } catch (e) { log('connect failed: ' + e.message, 'err'); }
+};
+
+$('scan').onclick = async () => {
+  $('scan').disabled = true; $('scan').textContent = 'scanning…';
+  try {
+    const j = await api('/api/scan', { from: 0, to: 20 });
+    $('servos').innerHTML = j.found.length
+      ? j.found.map(id => {
+          const i = j.info[id] || {};
+          const variant = i.max_volt >= 13 ? '12 V C018' : i.max_volt ? `${i.max_volt.toFixed(1)} V limit` : '?';
+          return `<button class="servo-btn" data-id="${id}">ID ${id} · ${variant} · mode ${i.mode}</button>`;
+        }).join('')
+      : '<div class="hint">nothing answered</div>';
+    document.querySelectorAll('.servo-btn').forEach(b => b.onclick = () => selectServo(b.dataset.id));
+    log(`scan found: ${j.found.join(', ') || 'none'}`, j.found.length ? 'ok' : 'err');
+    if (j.found.length) selectServo(j.found[0]);
+  } catch (e) { log('scan failed: ' + e.message, 'err'); }
+  $('scan').disabled = false; $('scan').textContent = 'Scan bus';
+};
+
+// Guard every action that names a servo. Without this, `+null` coerces to 0 and
+// the command goes to ID 0 - a valid address that may be a real servo.
+function need() {
+  if (sel == null || sel === '') { log('select a servo first', 'err'); return null; }
+  return +sel;
+}
+
+async function sendGoal(pos) {
+  if (need() === null) return;
+  try {
+    await api('/api/goal', { id: +sel, position: pos, speed: +$('speed').value, acceleration: +$('accel').value });
+    goalTrace.push({ t: Date.now(), v: pos });
+  } catch (e) { log('goal refused: ' + e.message, 'err'); stopSweep(); }
+}
+
+$('goal').oninput = e => { $('goal-val').textContent = e.target.value; sendGoal(+e.target.value); };
+$('speed').oninput = e => $('speed-val').textContent = e.target.value === '0' ? '0 (max)' : e.target.value;
+$('accel').oninput = e => $('accel-val').textContent = e.target.value === '0' ? '0 (instant)' : e.target.value;
+$('centre').onclick = () => { $('goal').value = 2048; $('goal-val').textContent = 2048; sendGoal(2048); };
+
+$('torque-on').onclick = async () => { const id = need(); if (id === null) return; await api('/api/torque', { id, on: true }); log(`ID ${id} torque ON`); };
+$('torque-off').onclick = async () => { const id = need(); if (id === null) return; stopSweep(); await api('/api/torque', { id, on: false }); log(`ID ${id} torque OFF`); };
+
+function stopSweep() {
+  if (sweepTimer) { clearInterval(sweepTimer); sweepTimer = null; $('sweep').textContent = 'Start sweep'; }
+}
+$('sweep').onclick = () => {
+  if (sweepTimer) return stopSweep();
+  if (sel == null) return log('select a servo first', 'err');
+  sweepBase = +$('goal').value;
+  const amp = +$('sweep-amp').value;
+  sweepDir = -1;
+  $('sweep').textContent = 'Stop sweep';
+  const step = () => {
+    const target = Math.max(0, Math.min(4095, sweepBase + sweepDir * amp));
+    sendGoal(target);
+    sweepDir *= -1;
+  };
+  step();
+  sweepTimer = setInterval(step, +$('sweep-ms').value);
+};
+
+$('estop').onclick = async () => {
+  stopSweep();
+  try { const j = await api('/api/estop', {}); log('E-STOP: torque off ' + j.torque_off.join(', '), 'ok'); }
+  catch (e) { log('estop failed: ' + e.message, 'err'); }
+};
+
+$('reg-read').onclick = async () => {
+  const id = need(); if (id === null) return;
+  try {
+    const j = await api('/api/reg_read', { id, addr: +$('reg-addr').value, size: +$('reg-size').value });
+    $('reg-val').value = j.value;
+    log(`ID ${sel} reg ${$('reg-addr').value} = ${j.value}`);
+  } catch (e) { log('read failed: ' + e.message, 'err'); }
+};
+$('reg-write').onclick = async () => {
+  const id = need(); if (id === null) return;
+  const addr = +$('reg-addr').value;
+  if (addr < 40 && !confirm(`Address ${addr} is EEPROM. Write anyway?`)) return;
+  try {
+    await api('/api/reg_write', { id, addr, size: +$('reg-size').value, value: +$('reg-val').value, eeprom_ok: addr < 40 });
+    log(`ID ${sel} reg ${addr} <- ${$('reg-val').value}`, 'ok');
+  } catch (e) { log('write failed: ' + e.message, 'err'); }
+};
+
+$('set-id').onclick = async () => {
+  const id = need(); if (id === null) return;
+  const nid = +$('new-id').value;
+  if (!confirm(`Change ID ${id} -> ${nid}? This is an EEPROM write.`)) return;
+  try {
+    const j = await api('/api/set_id', { id, new_id: nid });
+    log(j.ok ? `ID ${sel} -> ${nid} confirmed` : `ID change reported ${j.confirmed}`, j.ok ? 'ok' : 'err');
+    $('scan').click();
+  } catch (e) { log('set id failed: ' + e.message, 'err'); }
+};
+
+loadPorts(); poll(); render();
+</script>
+</body>
+</html>

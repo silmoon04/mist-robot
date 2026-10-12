@@ -1,0 +1,24 @@
+Use case: stylized-concept
+Asset type: transparent PNG sprite atlas for the MIST Geraldine robot face, mouth layer only.
+
+Create ONE original mouth-only atlas. Use the supplied reference only to match the simple smooth turquoise MIST marks: the attentive face's SMALL closed upward curve and the amused face's modest filled open bowl. Do not reproduce the full faces or background. These are abstract graphic mouth marks, not human lips or realistic anatomy.
+
+Canvas and registration: native 1536 x 1024 landscape PNG with genuine alpha transparency. EXACTLY 12 marks in a regular invisible 4-column by 3-row atlas, read left-to-right then top-to-bottom. Equal cells 384 pixels wide and approximately 341 pixels high. The local center of every mouth is (192,170), the same uniform center and baseline registration throughout. Global center positions: x = 192,576,960,1344; y = 170,511,852. Each mark is SMALL and surrounded by a large area of fully transparent padding. No marks touch another cell. DO NOT enlarge these marks to fill the cells. Rest width about 100 pixels; speech widths about 44 to 115 pixels; heights up to about 72 pixels. Preserve these compact sizes at native resolution.
+
+Rendering: every cell contains exactly ONE connected turquoise shape. Smooth soft cyan, rounded edges, clean flat fill, softly rounded terminals. Uniform color and edge treatment across all 12 marks. Use solid filled cyan graphic silhouettes for opening shapes, just like the amused bowl in the reference. No floating interior pieces. Friendly warmth is communicated by gentle contours, while each speech shape retains its phonemic distinction. The atlas must contain varied articulation shapes rather than twelve smiles.
+
+EXACT row-major sequence, with invisible cells and NO printed names or numbers:
+Row 1, column 1, frame 0, rest: one shallow closed upward smile curve, 100 wide, compact rounded stroke, restrained attentive warmth.
+Row 1, column 2, frame 1, MBP: one short flat horizontal closed stroke with rounded ends, about 90 wide, slight warmth at its corners. Clear closure.
+Row 1, column 3, frame 2, release: very thin open rounded horizontal slit, about 90 wide and 12 high.
+Row 1, column 4, frame 3, small-AA: modest compact open bowl, about 95 wide and 32 high, gently flat top and round bottom, like the reference's amused mouth but smaller.
+Row 2, column 1, frame 4, AA: rounded open bowl, about 105 wide and 64 high. Stronger opening than small-AA but never a gigantic grin.
+Row 2, column 2, frame 5, EH: rounded rectangular opening, about 90 wide and 38 high, softly warm corners.
+Row 2, column 3, frame 6, EE: wider low open bean, about 115 wide and 25 high.
+Row 2, column 4, frame 7, OH: upright soft oval, about 60 wide and 72 high.
+Row 3, column 1, frame 8, OO: small rounder upright oval, about 44 wide and 52 high.
+Row 3, column 2, frame 9, FV: compact narrow horizontal closed slit, about 85 wide and 16 high, a subtle notch in its UPPER edge formed by the contour of the single shape. No separate piece, no teeth or tongue.
+Row 3, column 3, frame 10, LNT: compact narrow rounded opening, about 70 wide and 28 high, no tongue and no protrusion.
+Row 3, column 4, frame 11, S: narrow flat open oval, about 95 wide and 18 high.
+
+Hard constraints: mouth shapes ONLY. No eyes, heads, brows, noses, faces, lips, teeth, tongues, cheek marks, detached fragments, human anatomy, accessories, characters, panels, labels, numbering, grid lines, borders, text, watermarks, or extra shapes. No background color or scene. NO glow, halo, grain, texture, gradient, shadow, bevel, lighting, or reflections. No baked checkerboard. Every pixel outside the 12 clean native mouth marks must be actually transparent. Do not stretch or transform any frames. Output the complete atlas at its original native 1536 x 1024 resolution.

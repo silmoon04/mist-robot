@@ -1,0 +1,152 @@
+{
+  "passed": true,
+  "checkedAt": "2026-09-23T14:52:47.829Z",
+  "rendererSha256": "9ade474f61fc9a6f3eee260b6bb07ef4adc2a4e6f56cae3a4871acbc531563ff",
+  "faces": 1,
+  "eyes": 2,
+  "failedEyes": 0,
+  "maxErrorDeg": 0,
+  "restChecks": 2,
+  "phaseChecks": 16,
+  "arcChecks": 0,
+  "rawRasterChecks": 2,
+  "transitionChecks": 40,
+  "retargetChecks": 4,
+  "method": "Actual renderer closed-eye output versus independent canonical-geometry targets. Raster axes combine captured Canvas matrices with read-only source PNG PCA; source arcs use emitted path endpoints. Early phases verify unchanged canonical points behind a plane clip.",
+  "sourceInk": {
+    "round": {
+      "frame": 4,
+      "pose": "closed",
+      "file": "brain/art_direction/artist_studio_20260916/reuse/drawn/sheets/v2/eyes_round_loop_arc_v2.png",
+      "sha256": "853f9cf5a7b9e79fcb5f9773c4c74990c1d72deddc8a73618ef1ca04086379ba",
+      "inkPixels": 4846,
+      "principalAngleDegrees": -0.07034384685202914,
+      "principalVector": [
+        0.9999992463374868,
+        -0.0012277314276547464
+      ],
+      "axisRatio": 3.6170342393291035
+    },
+    "hook": {
+      "frame": 4,
+      "pose": "closed",
+      "file": "brain/art_direction/artist_studio_20260916/reuse/drawn/sheets/blink_detail_v2.png",
+      "sha256": "989d3bcc5600b44c9669670dd2e6f0f97c256069201bcaa6148575a96caee629",
+      "inkPixels": 8601,
+      "principalAngleDegrees": 10.295432606808106,
+      "principalVector": [
+        0.9838992882136235,
+        0.178723783120001
+      ],
+      "axisRatio": 4.101650817762066
+    },
+    "arc": {
+      "frame": 4,
+      "pose": "closed",
+      "file": "brain/art_direction/artist_studio_20260916/reuse/drawn/sheets/v2/eyes_round_loop_arc_v2.png",
+      "sha256": "853f9cf5a7b9e79fcb5f9773c4c74990c1d72deddc8a73618ef1ca04086379ba",
+      "inkPixels": 4593,
+      "principalAngleDegrees": -0.5984083489099324,
+      "principalVector": [
+        0.9999454598811536,
+        -0.01044400608331464
+      ],
+      "axisRatio": 5.504384684805036
+    },
+    "loop": {
+      "frame": 4,
+      "pose": "closed",
+      "file": "brain/art_direction/artist_studio_20260916/reuse/drawn/sheets/v2/eyes_round_loop_arc_v2.png",
+      "sha256": "853f9cf5a7b9e79fcb5f9773c4c74990c1d72deddc8a73618ef1ca04086379ba",
+      "inkPixels": 4882,
+      "principalAngleDegrees": -0.19076376134514597,
+      "principalVector": [
+        0.9999944573673946,
+        -0.003329449577642584
+      ],
+      "axisRatio": 3.7332455707849546
+    },
+    "slot": {
+      "frame": 3,
+      "pose": "closed",
+      "file": "brain/art_direction/artist_studio_20260916/reuse/drawn/sheets/slot.png",
+      "sha256": "74e4376c72faf4c590abdacad64ff668c3df40378ba27f08ad325bbd7172d585",
+      "inkPixels": 12684,
+      "principalAngleDegrees": 0.4794627620108257,
+      "principalVector": [
+        0.9999649867865873,
+        0.008368106171664638
+      ],
+      "axisRatio": 4.415539173960342
+    },
+    "chevron": {
+      "frame": 4,
+      "pose": "closed",
+      "file": "brain/art_direction/artist_studio_20260916/reuse/drawn/sheets/blink_detail_v2.png",
+      "sha256": "989d3bcc5600b44c9669670dd2e6f0f97c256069201bcaa6148575a96caee629",
+      "inkPixels": 7426,
+      "principalAngleDegrees": 4.13163660729817,
+      "principalVector": [
+        0.9974011526405145,
+        0.07204818326212681
+      ],
+      "axisRatio": 4.655171190206253
+    },
+    "bar": {
+      "frame": 3,
+      "pose": "closed",
+      "file": "brain/art_direction/artist_studio_20260916/reuse/drawn/sheets/bar.png",
+      "sha256": "1173e1892a41bf96874e6ba127fc09d34c68a4587e8634bf63e1d010b87ddd73",
+      "inkPixels": 9768,
+      "principalAngleDegrees": -0.6968008377043102,
+      "principalVector": [
+        0.9999260502491679,
+        -0.012161169067919891
+      ],
+      "axisRatio": 3.642271606633504
+    }
+  },
+  "failures": [],
+  "eyesMeasured": [
+    {
+      "face": "09_happy_03_manual",
+      "role": "eye_L",
+      "part": "circle_gap_02",
+      "family": "round",
+      "actualClosedAxisDeg": 0.027,
+      "reviewedTargetDeg": 0.027,
+      "errorDeg": 0,
+      "method": "actual raster draw matrix + source PNG PCA",
+      "passed": true
+    },
+    {
+      "face": "09_happy_03_manual",
+      "role": "eye_R",
+      "part": "circle_gap_02",
+      "family": "round",
+      "actualClosedAxisDeg": 0.027,
+      "reviewedTargetDeg": 0.027,
+      "errorDeg": 0,
+      "method": "actual raster draw matrix + source PNG PCA",
+      "passed": true
+    }
+  ],
+  "fleckChecks": 4,
+  "reflectionChecks": 2,
+  "checks": [
+    "Original paths exact at rest",
+    "Reviewed closing directions with source-cel PCA compensation",
+    "Original contour orientation during early closing",
+    "Distinct manual pose apertures",
+    "Closed arcs retain concavity",
+    "One visible eye per phase and transition",
+    "Closed retarget preserves displayed picture",
+    "Round mid-phase paths have rounded endpoints and no detached gap flecks",
+    "Reflected face 24 keeps opposite closed-lid directions",
+    "Raw-sheet diagnostic preserved"
+  ],
+  "limitations": [
+    "Geometry cannot establish natural motion quality; root performs browser review.",
+    "Headless image handles use accepted-sheet PCA; browsers also measure keyed pixels when available."
+  ]
+}

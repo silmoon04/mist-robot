@@ -1,0 +1,18 @@
+{
+  "result": "pass",
+  "test_count": 8,
+  "tests": [
+    "10 mm straight rod mass, COM and analytic inertia",
+    "STL-to-machine translation is removed from COM and inertia",
+    "Rotated frame transforms segment inertia correctly",
+    "M82/M83, G90/G91, G92 XYZ/E and stationary retraction recovery",
+    "Support, interface and skirt are excluded from model properties",
+    "Moving recovery deposits only its fresh-material tail",
+    "Unsupported units, volumetric E, arcs and extruding Z moves fail explicitly",
+    "Malformed homogeneous transforms fail explicitly"
+  ],
+  "references": [
+    "https://marlinfw.org/docs/gcode/M082.html",
+    "https://marlinfw.org/docs/gcode/G092.html"
+  ]
+}

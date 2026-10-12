@@ -1,0 +1,138 @@
+import assert from 'node:assert/strict';
+import test from 'node:test';
+
+class Element {
+  constructor() { Object.assign(this, {children:[], hidden:false, value:'', textContent:'', dataset:{}, listeners:{}, style:{}, attrs:{}, paused:true, currentTime:0, contentWindow:{messages:[],postMessage(message){this.messages.push(message);}}}); }
+  append(...items) { this.children.push(...items); }
+  replaceChildren(...items) { this.children = items; }
+  addEventListener(name, callback, capture=false) { (this.listeners[name] ||= []).push({callback,capture}); }
+  dispatch(name, event={}) { for(const listener of this.listeners[name]||[]) listener.callback(event); }
+  setAttribute(key, value) { this.attrs[key] = value; }
+  getAttribute(key) { return this.attrs[key]; }
+  removeAttribute(key) { delete this.attrs[key]; }
+  querySelectorAll(selector) { return selector==='.track-segment'?this.children.filter(child=>child.className==='track-segment'):[]; }
+  getBoundingClientRect() { return this.rect||{left:0,right:0,top:0,bottom:0}; }
+  pause() { this.paused = true; }
+  load() {}
+}
+
+const ids = ['review-audio','review-face','review-tracks','review-time','review-seek','review-audio-note','review-play','review-source','review-view','live-view','view-title','view-badge','pause','transcript-list','transcript-search','failure-list','failure-count','metrics','tab-transcript','tab-failures','tab-timing','tab-events','panel-transcript','panel-failures','panel-timing','panel-events','review-speed','review-back','review-forward'];
+function setup(fetchImpl) {
+  const nodes = new Map(ids.map(id => [id, new Element()]));
+  nodes.get('review-audio').paused = true;
+  const timers = new Map(); let timerId = 0;
+  globalThis.document = {getElementById:id=>nodes.get(id), createElement:()=>new Element(), createDocumentFragment:()=>new Element(), createTextNode:text=>({textContent:text}), querySelector:()=>new Element()};
+  globalThis.location = {origin:'https://mist.example'};
+  globalThis.window = {};
+  globalThis.fetch = fetchImpl;
+  globalThis.setTimeout = callback => {const id=++timerId;timers.set(id,callback);return id;};
+  globalThis.clearTimeout = id => timers.delete(id);
+  globalThis.cancelAnimationFrame = ()=>{};
+  globalThis.requestAnimationFrame = callback=>{globalThis.testAnimationFrame=callback;return 1;};
+  return {nodes,timers};
+}
+const settle = async () => { for(let i=0;i<8;i++) await new Promise(setImmediate); };
+const text = node => [node.textContent,...(node.children||[]).map(child=>typeof child==='string'?child:text(child))].join(' ');
+
+async function createUI() {
+  const {createReviewUI} = await import('../duplex/static/trial_review.mjs?test');
+  return createReviewUI();
+}
+
+test('stalled review is aborted at 20 seconds and shows an explicit retry', async () => {
+  let request;
+  const {nodes,timers} = setup((url, options) => {request={url,options};return new Promise(()=>{});});
+  const ui = await createUI();
+  const loading = ui.load('recording'); await settle();
+  assert.equal(request.options.credentials,'same-origin');
+  assert.equal(request.options.signal.aborted,false);
+  assert.equal(timers.size,1);
+  [...timers.values()][0](); await loading;
+  assert.equal(request.options.signal.aborted,true);
+  assert.match(text(nodes.get('transcript-list')),/within 20 seconds/);
+  assert.equal(nodes.get('transcript-list').children.at(-1).textContent,'Retry review');
+  assert.match(nodes.get('review-audio-note').textContent,/Raw events remain available/);
+});
+
+test('an AbortError caused by the timeout is still shown as a timeout', async () => {
+  const {nodes,timers} = setup((url, options) => new Promise((resolve,reject)=>{
+    options.signal.addEventListener('abort',()=>{const error=Error('aborted');error.name='AbortError';reject(error);});
+  }));
+  const ui = await createUI();
+  const loading = ui.load('recording'); await settle();
+  [...timers.values()][0](); await loading;
+  assert.match(text(nodes.get('transcript-list')),/within 20 seconds/);
+  assert.equal(nodes.get('transcript-list').children.at(-1).textContent,'Retry review');
+});
+
+test('changing session aborts the old review and ignores its stale failure', async () => {
+  const pending = [];
+  const {nodes} = setup((url, options) => new Promise(resolve=>pending.push({url,options,resolve})));
+  const ui = await createUI();
+  const old = ui.load('old'); await settle();
+  const current = ui.load('current'); await settle();
+  assert.equal(pending[0].options.signal.aborted,true);
+  pending[0].resolve({ok:false,status:500}); await old;
+  pending[1].resolve({ok:false,status:503}); await current;
+  assert.match(text(nodes.get('transcript-list')),/Request failed \(503\)/);
+  assert.doesNotMatch(text(nodes.get('transcript-list')),/500/);
+});
+
+test('leaving history mode aborts pending review and suppresses cancellation UI', async () => {
+  let request;
+  const {nodes,timers} = setup((url, options) => {request={options};return new Promise((resolve,reject)=>options.signal.addEventListener('abort',()=>{const error=Error('aborted');error.name='AbortError';reject(error);}));});
+  const ui = await createUI();
+  const loading = ui.load('recording'); await settle();
+  ui.showMode('live'); await loading;
+  assert.equal(request.options.signal.aborted,true);
+  assert.equal(text(nodes.get('transcript-list')).includes('Retry review'),false);
+});
+
+test('paused seeks into gaps retain the selected wall time until playback resumes', async () => {
+  const data = {session:{trace_id:'gap'},duration_ms:20000,turns:[],issues:[],timings:[],events:[],tracks:{face:[{start_ms:0,end_ms:20000,expression:'curious',face_id:'face-a'}]},audio:[{stream:'mic',url:'/trial/audio?session=gap&stream=mic',segments:[
+    {start_ms:1000,end_ms:2000,audio_start_ms:0,audio_end_ms:1000},
+    {start_ms:12000,end_ms:13000,audio_start_ms:1000,audio_end_ms:2000},
+  ]}]};
+  const {nodes} = setup(async()=>({ok:true,json:async()=>data}));
+  const ui = await createUI();
+  await ui.load('gap');
+  const audio = nodes.get('review-audio');
+  nodes.get('review-seek').value = '550';
+  nodes.get('review-seek').dispatch('input');
+  const requestedWallTime = 11000;
+  const requestedAudioTime = audio.currentTime;
+  audio.dispatch('timeupdate');
+  assert.equal(nodes.get('review-time').textContent,'0:11 / 0:20');
+  assert.equal(nodes.get('review-face').contentWindow.messages.at(-1).time_ms,requestedWallTime);
+  assert.equal(requestedAudioTime,1);
+  audio.paused = false;
+  audio.dispatch('play');
+  audio.currentTime = 1.1;
+  audio.dispatch('timeupdate');
+  globalThis.testAnimationFrame(100);
+  assert.equal(nodes.get('review-time').textContent,'0:12 / 0:20');
+  assert.equal(nodes.get('review-face').contentWindow.messages.at(-1).time_ms,12100);
+});
+
+test('overlapping pointer markers choose the nearest rectangle centre while keyboard clicks stay direct', async () => {
+  const data = {session:{trace_id:'overlap'},duration_ms:20000,turns:[],issues:[],timings:[],events:[],audio:[],tracks:{
+    face:[{start_ms:11000,end_ms:12000,expression:'curious'},{start_ms:12000,end_ms:20000,expression:'neutral'}],
+  }};
+  const {nodes} = setup(async()=>({ok:true,json:async()=>data}));
+  const ui = await createUI(); await ui.load('overlap');
+  const rail = nodes.get('review-tracks').children.flatMap(row=>row.children).find(element=>element.className==='track-rail'&&element.children.some(child=>child.className==='track-segment'));
+  const [curious,neutral] = rail.querySelectorAll('.track-segment');
+  curious.rect={left:151,right:155,top:8,bottom:16};
+  neutral.rect={left:153,right:158,top:8,bottom:16};
+  const event={detail:1,clientX:153.896,clientY:12,preventDefault(){this.defaultPrevented=true;},stopPropagation(){this.stopped=true;}};
+  rail.dispatch('click',event);
+  if(!event.stopped)neutral.dispatch('click',{detail:1});
+  assert.equal(event.defaultPrevented,true);
+  assert.equal(nodes.get('review-time').textContent,'0:11 / 0:20');
+  assert.equal(nodes.get('review-face').contentWindow.messages.at(-1).expression,'curious');
+  assert.equal(nodes.get('review-face').contentWindow.messages.at(-1).time_ms,11000);
+  neutral.dispatch('click',{detail:0});
+  assert.equal(nodes.get('review-time').textContent,'0:12 / 0:20');
+  assert.equal(nodes.get('review-face').contentWindow.messages.at(-1).expression,'neutral');
+  assert.equal(nodes.get('review-face').contentWindow.messages.at(-1).time_ms,12000);
+});

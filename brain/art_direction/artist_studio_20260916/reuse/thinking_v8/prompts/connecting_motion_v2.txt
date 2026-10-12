@@ -1,0 +1,26 @@
+Create one transparent cyan line-art animation sprite sheet. EXACTLY SIX COLUMNS and FOUR ROWS: 24 drawings, 1536x1024 canvas, 256x256 invisible cells, row-major order. No cell borders, numbers, labels, text, dark backdrop, glow, shadows, haze, eyes, faces, checkmarks, stars, or success symbols. Genuine alpha background. Rounded medium cyan outlines with a lightly hand-drawn contour.
+
+Subject: connecting in progress. Two SMALL hollow rounded-square endpoints, left at x=50..72 and right at x=184..206, both y=123..145 in each cell. A thin incomplete segmented path spans between them at y=134. NEVER turn it into a solid connection. One short thicker packet dash travels right, turns around, and travels left. Keep endpoints stationary with identical shape and size in all sixteen active drawings.
+
+Critical animation requirement: SIXTEEN DISTINCT packet positions, no repeated poses, no teleporting from right to left. Draw a genuinely different packet location in every active cell. The packet's x coordinate changes gradually and visibly between adjacent cells, including across sheet-row breaks.
+
+Each packet is a small 8px-long horizontal capsule centered on the path. Do not make it large enough to overlap a node.
+
+ROW 1:
+cell1: tiny square endpoint stubs, path beginning.
+cell2: half-sized endpoints and short incomplete path.
+cell3: almost-full endpoints and incomplete path.
+cell4: full endpoints and incomplete path, packet center x=82.
+cell5: full endpoints, packet center x=88.
+cell6: full endpoints, packet center x=100.
+ROW 2: identical stationary endpoints and incomplete path in all six cells. Packet centers, left to right, are x=112,124,136,148,160,172. These are six progressively farther-right positions, never a hold.
+ROW 3: packet returns smoothly LEFT. Packet centers, left to right, are x=167,155,143,131,119,107. Do not reset to the left at the start of this row.
+ROW 4:
+cell1: full endpoints and path, packet center x=95.
+cell2: full endpoints and path, packet center x=83.
+cell3: packet retracts at left, path 75% remaining.
+cell4: half-sized endpoints, half path, visibly smaller packet.
+cell5: quarter-sized endpoints, short path stubs and tiny packet.
+cell6: tiny endpoint stubs, tiny packet still visible.
+
+Active sequence is row1 last two cells, all row2, all row3, row4 first two cells. Its sixteen packet positions are 88,100,112,124,136,148,160,172,167,155,143,131,119,107,95,83. Every position is distinct. Frame 19 at x=83 loops to frame4 x=88 with only a 5px step. Keep object position, stroke width, node proportions and scale stable, generous transparent margins, all24 drawings separate.

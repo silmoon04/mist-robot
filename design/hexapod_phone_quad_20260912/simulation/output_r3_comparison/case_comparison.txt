@@ -1,0 +1,38 @@
+R3 RIGID-BODY DYNAMICS CASES
+Comparison of the explicitly listed rigid-body runs. No material-strength, hardware-control or physical-walking qualification is implied.
+Compare controller sensitivity only within matching manifest, posture, gait and effort settings. Full-solid and part-only extrusion masses are distinct scenarios.
+
+output_r3_printed_nominal
+  Status: bounded_simulation_pass; mass: 2.709883 kg; torque cap: 0.588 Nm
+  Advance: 22.260 mm; maximum stance error: 3.240 mm
+  Failed dynamics gates: none
+  Manifest SHA256: 2f9b5b5ec8d4eb102be6f541676e70d8119385c6660e21d4ee68607e49f28750
+  Report SHA256: 5edd4a7ffe5516ca630bc9e840635f6c129fcf67376262738444d48b987c97d2
+
+output_r3_printed_half_stiffness
+  Status: bounded_simulation_pass; mass: 2.709883 kg; torque cap: 0.588 Nm
+  Advance: 22.722 mm; maximum stance error: 4.465 mm
+  Failed dynamics gates: none
+  Manifest SHA256: 2f9b5b5ec8d4eb102be6f541676e70d8119385c6660e21d4ee68607e49f28750
+  Report SHA256: 5e827dad398723650e2828b31e3024f4ffff071cd2738f3aab0a9280a94881db
+
+output_r3_printed_feedback_05
+  Status: bounded_simulation_pass; mass: 2.709883 kg; torque cap: 0.588 Nm
+  Advance: 20.376 mm; maximum stance error: 6.003 mm
+  Failed dynamics gates: none
+  Manifest SHA256: 2f9b5b5ec8d4eb102be6f541676e70d8119385c6660e21d4ee68607e49f28750
+  Report SHA256: 50acaf9b1c00d2759e8ed211ea1be6168398697f64b2dcd922652c4e2b214dc2
+
+output_r3_printed_feedback_10
+  Status: not_validated; mass: 2.709883 kg; torque cap: 0.588 Nm
+  Advance: -0.043 mm; maximum stance error: 36.807 mm
+  Failed dynamics gates: crawl, actual_foot_steps, stance_position
+  Manifest SHA256: 2f9b5b5ec8d4eb102be6f541676e70d8119385c6660e21d4ee68607e49f28750
+  Report SHA256: e455addcf68dfbde974c39c4b59922f9e160b101c2606bab8da33e6a93335a01
+
+output_r3_solid_nominal
+  Status: bounded_simulation_pass; mass: 2.857856 kg; torque cap: 0.588 Nm
+  Advance: 24.425 mm; maximum stance error: 3.623 mm
+  Failed dynamics gates: none
+  Manifest SHA256: ed3b458fd8c5929c04652dcaf8b7686c31f8b987f2cead30e14f12191bfa71a2
+  Report SHA256: 5badfcd94d6373f39c6489b1c9d578132bb7bffb3a2b0a65f5f8f0f62a17450c

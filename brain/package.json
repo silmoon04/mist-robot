@@ -1,0 +1,20 @@
+{
+  "name": "brain",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "python harness/run_offline_tests.py",
+    "duplex": "python duplex/server.py",
+    "duplex:trials": "python duplex/live_studio.py",
+    "test:duplex": "python harness/test_duplex.py && node harness/test_duplex_playback.mjs",
+    "test:expressions": "python harness/test_expression_policy.py && node harness/test_expression_policy.mjs && node harness/test_expression_app.mjs && node harness/test_delivery.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@earendil-works/pi-coding-agent": "^0.80.3",
+    "typebox": "^1.3.3"
+  }
+}

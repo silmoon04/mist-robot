@@ -1,0 +1,369 @@
+{
+  "status": "PROVISIONAL_LOAD_ONLY_SCREEN_COMPLETE",
+  "scope": "PROVISIONAL LOAD ONLY: mirrored OEM FL shape inertials; known CAD clashes; no collision-safe acceptance or physical release",
+  "mass_kg": 7.896084239760452,
+  "actual_2to1_stand": {
+    "case": "stand",
+    "status": "PASS_IN_MODEL",
+    "criteria": {
+      "did_not_fall": true,
+      "joint_tracking_rms": true,
+      "continuous_motor_rms": true,
+      "reachable_targets": true,
+      "motor_travel_limits": true,
+      "no_nonwheel_ground_support": true,
+      "coarse_self_collision": true
+    },
+    "mass_kg": 7.896084239760452,
+    "duration_s": 8,
+    "dt_s": 0.001,
+    "base_displacement_m": [
+      4.630085043109272e-05,
+      8.006380610326816e-06,
+      -0.005128036024480892
+    ],
+    "max_tilt_deg": 0.0392420570194063,
+    "joint_tracking_rms_deg": 1.919410317891131,
+    "max_servo_rms_nm": 0.5348222868090637,
+    "servo_continuous_limit_nm": 0.7281437625000001,
+    "servo_peak_limit_nm": 1.3349302312500002,
+    "motor_saturation_fraction": 0.00325,
+    "unreachable_target_fraction": 0.0,
+    "motor_travel_violation_fraction": 0.0,
+    "min_sampled_support_margin_m": 0.09678210393142962,
+    "max_wheel_normal_force_n": 31.617311060262022,
+    "wheel_lateral_velocity_rms_m_s": 1.829658028393036e-05,
+    "self_collision_samples": 0,
+    "self_collision_examples": [],
+    "base_contact_samples": 0,
+    "fixed_base": false,
+    "limitations": [
+      "Unmeasured backlash, compliance, friction, servo dynamics, thermal duty and mass estimates.",
+      "Command play hysteresis and reduced series stiffness do not model true load-side gap engagement under force reversal. Rotor/reflected gearbox inertia omitted.",
+      "Simple boxes/cylinders, selected adjacent self collisions excluded; no printed-part stress or wire model.",
+      "Step test is a scripted challenge; a failure may concern controller and geometry, not a proof no controller exists.",
+      "No sensor perception, obstacle avoidance planner, stair-nose or tire deformation model."
+    ],
+    "max_actual_wheel_clearance_m": [
+      0.000990189999999981,
+      0.000990189999999981,
+      0.000990189999999981,
+      0.000990189999999981
+    ],
+    "foot_tracking_rms_m": [
+      0.005222614869139113,
+      0.005279998173323393,
+      0.005182123180289216,
+      0.005125353238490632
+    ],
+    "obstacle_contact_samples": 0,
+    "minimum_obstacle_gap_m": null,
+    "source_sha256": {
+      "run_sim.py": "bc227b5b68825900b704baef1a31b2f65b789cc95d3ec17b52992dff88013ba3",
+      "model.py": "1884758417c3d6fa66fd90f87dd50da56cd44ccd3580dd9fe5a562c3c268a3fa"
+    },
+    "parameters_sha256": "d6ff84804090521cb366675931f0eb07985cc46cb4a3775ea6857461d062535d",
+    "scope": "PROVISIONAL LOAD ONLY: mirrored OEM FL shape inertials; known CAD clashes; no collision-safe acceptance or physical release"
+  },
+  "actual_2to1_fixture": {
+    "status": "FAIL_IN_MODEL",
+    "criteria": {
+      "foot_error_below_15mm": true,
+      "motor_rms_below_continuous": false,
+      "no_active_hold_saturation": true,
+      "no_active_shaft_travel_violation": true
+    },
+    "fixed_base": true,
+    "mass_kg": 7.896084239760452,
+    "contacts_equivalent": 3,
+    "load_multiplier": 1,
+    "force_n": 25.820195464016678,
+    "applied_point": "wheel link-frame axle origin; vertical tire contact line",
+    "hold_window_s": [
+      3,
+      4.4
+    ],
+    "physics_dt_s": 0.001,
+    "hold_samples": 1401,
+    "hold_max_foot_error_m": 0.007865044639063503,
+    "hold_servo_rms_nm": [
+      0.0009510445874790484,
+      0.44174392723427613,
+      0.9067838377025617
+    ],
+    "servo_continuous_limit_nm": 0.7281437625000001,
+    "servo_peak_limit_nm": 1.3349302312500002,
+    "continuous_torque_reserve_fraction": -0.24533627066888664,
+    "active_hold_saturated_steps": 0,
+    "active_hold_travel_violations": 0,
+    "active_all_run_travel_violations": 0,
+    "all_servo_saturation_fraction": 0.0,
+    "parameters_sha256": "d6ff84804090521cb366675931f0eb07985cc46cb4a3775ea6857461d062535d",
+    "source_sha256": {
+      "model.py": "1884758417c3d6fa66fd90f87dd50da56cd44ccd3580dd9fe5a562c3c268a3fa",
+      "run_sim.py": "bc227b5b68825900b704baef1a31b2f65b789cc95d3ec17b52992dff88013ba3",
+      "concealed_fixture.py": "51020579efbde9a35b95d1b44c0bff91f1c2c7e546e08d2134efb41c4d975013"
+    },
+    "limitations": [
+      "An ideal vertical force acts on one suspended wheel with the body fixed. This is a load fixture, not locomotion.",
+      "The wheel-axis load point and full-rate hold RMS differ from the older load_test.py COM-force/50Hz metrics.",
+      "Backlash, compliance, bandwidth, friction and continuous limits remain unmeasured assumptions."
+    ]
+  },
+  "hypothetical_3to1_stand": {
+    "case": "stand",
+    "status": "PASS_IN_MODEL",
+    "criteria": {
+      "did_not_fall": true,
+      "joint_tracking_rms": true,
+      "continuous_motor_rms": true,
+      "reachable_targets": true,
+      "motor_travel_limits": true,
+      "no_nonwheel_ground_support": true,
+      "coarse_self_collision": true
+    },
+    "mass_kg": 7.896084239760452,
+    "duration_s": 8,
+    "dt_s": 0.001,
+    "base_displacement_m": [
+      5.552279370577224e-05,
+      -0.00012500666509693262,
+      -0.0031273719195419325
+    ],
+    "max_tilt_deg": 0.016508633071272247,
+    "joint_tracking_rms_deg": 1.1020773381047235,
+    "max_servo_rms_nm": 0.3301678760331356,
+    "servo_continuous_limit_nm": 0.7281437625000001,
+    "servo_peak_limit_nm": 1.3349302312500002,
+    "motor_saturation_fraction": 0.0,
+    "unreachable_target_fraction": 0.0,
+    "motor_travel_violation_fraction": 0.0,
+    "min_sampled_support_margin_m": 0.09083135432193395,
+    "max_wheel_normal_force_n": 30.73815696620836,
+    "wheel_lateral_velocity_rms_m_s": 1.980467329648021e-05,
+    "self_collision_samples": 0,
+    "self_collision_examples": [],
+    "base_contact_samples": 0,
+    "fixed_base": false,
+    "limitations": [
+      "Unmeasured backlash, compliance, friction, servo dynamics, thermal duty and mass estimates.",
+      "Command play hysteresis and reduced series stiffness do not model true load-side gap engagement under force reversal. Rotor/reflected gearbox inertia omitted.",
+      "Simple boxes/cylinders, selected adjacent self collisions excluded; no printed-part stress or wire model.",
+      "Step test is a scripted challenge; a failure may concern controller and geometry, not a proof no controller exists.",
+      "No sensor perception, obstacle avoidance planner, stair-nose or tire deformation model."
+    ],
+    "max_actual_wheel_clearance_m": [
+      0.000990189999999981,
+      0.000990189999999981,
+      0.000990189999999981,
+      0.000990189999999981
+    ],
+    "foot_tracking_rms_m": [
+      0.0030594609350241973,
+      0.0031286904925741156,
+      0.0030579115233536768,
+      0.0029936308964263122
+    ],
+    "obstacle_contact_samples": 0,
+    "minimum_obstacle_gap_m": null,
+    "source_sha256": {
+      "run_sim.py": "bc227b5b68825900b704baef1a31b2f65b789cc95d3ec17b52992dff88013ba3",
+      "model.py": "1884758417c3d6fa66fd90f87dd50da56cd44ccd3580dd9fe5a562c3c268a3fa"
+    },
+    "parameters_sha256": "092ebf9555bacc44ca5250af03a8e7baf3b472b1bf98ab1d95a22fea0e939343",
+    "scope": "PROVISIONAL LOAD ONLY: mirrored OEM FL shape inertials; known CAD clashes; no collision-safe acceptance or physical release; 3:1 gear geometry and commissioning offsets are hypothetical"
+  },
+  "hypothetical_3to1": {
+    "status": "hypothetical_gearing_screen_complete_not_CAD_release",
+    "rom": {
+      "status": "KINEMATIC_CORRIDOR_FOUND",
+      "reference": "One ideal60mm/40mmlift cycle with30mm COM inset; no dynamic feedback, collision or stair validation",
+      "sample_count": 248,
+      "all_ik_reachable": true,
+      "all_shaft_targets_inside_original_span": true,
+      "all_targets_inside_per_leg_physical_corridor": true,
+      "shaft_travel_min_deg": [
+        -99.6894336011402,
+        -86.64506396962894,
+        -84.15136092348598
+      ],
+      "shaft_travel_max_deg": [
+        138.6439434655507,
+        71.07059224610094,
+        127.22454132404452
+      ],
+      "minimum_shaft_span_margin_deg": [
+        36.356056534449294,
+        88.35493603037106,
+        47.77545867595548
+      ],
+      "restricted_output_limits_by_leg_deg": [
+        [
+          [
+            -100.0,
+            57.911539185943845
+          ],
+          [
+            22.875342597103646,
+            125.0
+          ],
+          [
+            -150.0,
+            -37.61781066056384
+          ]
+        ],
+        [
+          [
+            -43.94653570173466,
+            100.0
+          ],
+          [
+            20.681020931552005,
+            125.0
+          ],
+          [
+            -150.0,
+            -39.05986487681614
+          ]
+        ],
+        [
+          [
+            -58.12803337490604,
+            100.0
+          ],
+          [
+            19.545421296492343,
+            125.0
+          ],
+          [
+            -128.42539571020012,
+            -15.0
+          ]
+        ],
+        [
+          [
+            -100.0,
+            51.68806304508063
+          ],
+          [
+            -1.5013302499665926,
+            115.16533641670009
+          ],
+          [
+            -121.45491571359153,
+            -15.0
+          ]
+        ]
+      ],
+      "no_load_output_speed_rpm": [
+        18.5625,
+        12.375,
+        12.375
+      ]
+    },
+    "fixture": {
+      "status": "PASS_IN_MODEL",
+      "criteria": {
+        "foot_error_below_15mm": true,
+        "motor_rms_below_continuous": true,
+        "no_active_hold_saturation": true,
+        "no_active_shaft_travel_violation": true
+      },
+      "fixed_base": true,
+      "mass_kg": 7.896084239760452,
+      "contacts_equivalent": 3,
+      "load_multiplier": 1,
+      "force_n": 25.820195464016678,
+      "applied_point": "wheel link-frame axle origin; vertical tire contact line",
+      "hold_window_s": [
+        3,
+        4.4
+      ],
+      "physics_dt_s": 0.001,
+      "hold_samples": 1401,
+      "hold_max_foot_error_m": 0.004350181388494762,
+      "hold_servo_rms_nm": [
+        1.5021749366591993e-05,
+        0.30766370231062196,
+        0.5844910655811296
+      ],
+      "servo_continuous_limit_nm": 0.7281437625000001,
+      "servo_peak_limit_nm": 1.3349302312500002,
+      "continuous_torque_reserve_fraction": 0.1972861738534366,
+      "active_hold_saturated_steps": 0,
+      "active_hold_travel_violations": 0,
+      "active_all_run_travel_violations": 0,
+      "all_servo_saturation_fraction": 0.0,
+      "parameters_sha256": "092ebf9555bacc44ca5250af03a8e7baf3b472b1bf98ab1d95a22fea0e939343",
+      "source_sha256": {
+        "model.py": "1884758417c3d6fa66fd90f87dd50da56cd44ccd3580dd9fe5a562c3c268a3fa",
+        "run_sim.py": "bc227b5b68825900b704baef1a31b2f65b789cc95d3ec17b52992dff88013ba3",
+        "concealed_fixture.py": "51020579efbde9a35b95d1b44c0bff91f1c2c7e546e08d2134efb41c4d975013"
+      },
+      "limitations": [
+        "An ideal vertical force acts on one suspended wheel with the body fixed. This is a load fixture, not locomotion.",
+        "The wheel-axis load point and full-rate hold RMS differ from the older load_test.py COM-force/50Hz metrics.",
+        "Backlash, compliance, bandwidth, friction and continuous limits remain unmeasured assumptions."
+      ]
+    },
+    "torque_reserve_gate_pass": false,
+    "actual_2to1_CAD_unchanged": true,
+    "new_gears_manufactured_or_packaged": false
+  },
+  "source_parameters_sha256": "d347723757b9f33db1176eb390b6ceb1676d1aa2e9a919e9104328bae3b716ec",
+  "sources": {
+    "model.py": {
+      "source_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\mist_v2_20260906\\simulation\\model.py",
+      "original_sha256": "d7fc5c843553da04feebf93f0bf59be60033e4f52c858117bfea95e23de59619",
+      "executed_sha256": "1884758417c3d6fa66fd90f87dd50da56cd44ccd3580dd9fe5a562c3c268a3fa"
+    },
+    "run_sim.py": {
+      "source_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\mist_v2_20260906\\simulation\\run_sim.py",
+      "original_sha256": "4e0d61802a5d74074deb67e4abbfccb0d8fda5b1ce1787f2bc2ec3a7b74a9d24",
+      "executed_sha256": "bc227b5b68825900b704baef1a31b2f65b789cc95d3ec17b52992dff88013ba3"
+    },
+    "load_test.py": {
+      "source_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\mist_v2_20260906\\simulation\\load_test.py",
+      "original_sha256": "69a107302449a0fb328096b483cfd8a18f251f08429263579f79dd1648b19eff",
+      "executed_sha256": "69a107302449a0fb328096b483cfd8a18f251f08429263579f79dd1648b19eff"
+    },
+    "reconcile_proximal_cad.py": {
+      "source_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\mist_v2_20260906\\simulation\\reconcile_proximal_cad.py",
+      "original_sha256": "cd6d9c3791935219a92c332983672d18618fcfabcec083f48a66b14059c68c6b",
+      "executed_sha256": "cd6d9c3791935219a92c332983672d18618fcfabcec083f48a66b14059c68c6b"
+    },
+    "concealed_fixture.py": {
+      "source_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\mist_v2_20260906\\simulation\\concealed_wheel_20260907\\concealed_fixture.py",
+      "original_sha256": "51020579efbde9a35b95d1b44c0bff91f1c2c7e546e08d2134efb41c4d975013",
+      "executed_sha256": "51020579efbde9a35b95d1b44c0bff91f1c2c7e546e08d2134efb41c4d975013"
+    },
+    "supported_crawl.py": {
+      "source_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\mist_v2_20260906\\simulation\\proximal_gait_20260907\\supported_crawl.py",
+      "original_sha256": "a3f538b1c49ad33fed91f23fcc4784e40e521500dd605833cc003951ec563e36",
+      "executed_sha256": "a3f538b1c49ad33fed91f23fcc4784e40e521500dd605833cc003951ec563e36"
+    },
+    "validate_concealed.py": {
+      "source_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\mist_v2_20260906\\simulation\\concealed_wheel_20260907\\validate_concealed.py",
+      "original_sha256": "5b948e9ef8df961d8b860cdaf6f9ed866506017114007964e4d899453f19c843",
+      "executed_sha256": "5b948e9ef8df961d8b860cdaf6f9ed866506017114007964e4d899453f19c843"
+    },
+    "commissioning_offsets.py": {
+      "source_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\mist_v2_20260906\\simulation\\concealed_wheel_20260907\\commissioning_offsets.py",
+      "original_sha256": "616cab4f641f02b094fde458ce8a80c17b35d779701f987b947b5eb40e8a8ebe",
+      "executed_sha256": "616cab4f641f02b094fde458ce8a80c17b35d779701f987b947b5eb40e8a8ebe"
+    },
+    "geometry_study/geometry_study.py": {
+      "source_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\mist_v2_20260906\\simulation\\proximal_gait_20260907\\geometry_study\\geometry_study.py",
+      "original_sha256": "ba46b6d1dac204da9b3360f37b0ea30accd14d2456c19b9cf4ad5ac673766cdb",
+      "executed_sha256": "ba46b6d1dac204da9b3360f37b0ea30accd14d2456c19b9cf4ad5ac673766cdb"
+    },
+    "geometry_study/__init__.py": {
+      "source_path": "generated empty package initializer",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "executed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "gait_dispatched": false,
+  "clean_CAD_gate_bypassed": false,
+  "separate_authorization": "Root explicitly requested a provisional load-only sensitivity while final CAD collision cleanup continues."
+}

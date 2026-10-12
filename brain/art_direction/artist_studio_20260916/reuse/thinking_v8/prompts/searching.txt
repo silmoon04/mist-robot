@@ -1,0 +1,41 @@
+Use case: illustration-story
+Asset type: ORIGINAL raster animation sprite sheet, a searching-document prop that sits below a robot face.
+
+CANVAS AND EXACT COUNT: 1536x1024 landscape RGBA with TRUE transparent background. Exactly SIX columns by FOUR rows, 24 separate drawings in row-major reading order. Invisible equal 256x256 cells. No grid lines, labels, frame numbers, captions, borders around the sheet or written words. Each cell has one isolated document prop, fully inside its cell with ample transparent padding.
+
+STYLE: clean delicate turquoise-cyan #34e4eb hand-drawn outline, rounded ends, approximately 3-pixel line weight. Simple 2D animation cels. Only the ink strokes have opacity. The document interior, all margins and all unused regions have alpha=0. No paper fill, no shadows, no bloom, no glow, no atmospheric light, no texture, no fake checkerboard, no painted background.
+
+SUBJECT: one WIDE RECTANGULAR DOCUMENT / SEARCH FIELD, ratio about 1.65:1, a thin rectangular outline with very slightly softened corners. Fixed landscape orientation. Inside are FOUR horizontally arranged text rows made of short cyan bars with differing lengths, all evenly spaced; abstract marks only, never letters. A single VERTICAL CYAN SCAN LINE, with tiny flat horizontal cap strokes at top and bottom, travels left-to-right over the rows. This angular scan line is the only moving active feature. It visually means scanning a document. No magnifying glass, no lens, no circles, no ovals, no dots, no pupils, no eyes, no facial features, no head, no handles, no hands. No checkmark, result badge, success symbol or completion message. It is an ongoing search.
+
+REGISTRATION: during all sixteen active frames 4-19 the document is IDENTICAL in size, position and row layout, centered at local (128,145), rectangle from x=45 to211 and y=93 to197 in each 256px cell. Four rows occupy y=113,132,151,170, with short bars between x=66 and188. Keep text bars fixed while the vertical scan line crosses them. The scan line extends y=103 to186 and has 7px flat caps; it is a bar, never a rounded lens. Keep it brighter/heavier than the text bars, so it is legible at small scale. The scan travels left to right, fades near the far-right margin, then returns invisibly to the start and reappears softly. This gives a seamless loop with no backward snap.
+
+EXACT DRAWINGS, NO OMITTED CELLS:
+Row 1 col 1 = frame 0: document at 45% scale, low in cell, four tiny rows, scan absent.
+Row 1 col 2 = frame 1: same document at 65%, rising toward its anchor, scan absent.
+Row 1 col 3 = frame 2: same document at 85%, almost anchored, scan absent.
+Row 1 col 4 = frame 3: document at 98% scale and final anchor; scan faint near left interior x=57.
+Row 1 col 5 = frame 4: full-size canonical document at fixed anchor, four fixed rows. Scan line at x=57, low but legible opacity. This is loop-start pose.
+Row 1 col 6 = frame 5: exact same document, scan x=60 and half opacity.
+
+Row 2 col 1 = frame 6: exact same document, scan x=66 full opacity.
+Row 2 col 2 = frame 7: exact same document, scan x=78 full opacity.
+Row 2 col 3 = frame 8: exact same document, scan x=91 full opacity.
+Row 2 col 4 = frame 9: exact same document, scan x=105 full opacity.
+Row 2 col 5 = frame 10: exact same document, scan x=120 full opacity.
+Row 2 col 6 = frame 11: exact same document, scan x=136 full opacity.
+
+Row 3 col 1 = frame 12: exact same document, scan x=152 full opacity.
+Row 3 col 2 = frame 13: exact same document, scan x=169 full opacity.
+Row 3 col 3 = frame 14: exact same document, scan x=185 full opacity.
+Row 3 col 4 = frame 15: exact same document, scan x=197 half opacity, fading before the right border.
+Row 3 col 5 = frame 16: exact same document, scan x=201 very faint.
+Row 3 col 6 = frame 17: exact same document with just the four rows, scan has faded out completely, a breathing hold.
+
+Row 4 col 1 = frame 18: exact same document with just the four rows, scan still absent while it resets invisibly to left.
+Row 4 col 2 = frame 19: exact same document, scan reappears faintly at x=57. Same geometry as frame 4; this is the quiet seam back to frame 4.
+Row 4 col 3 = frame 20: open rectangular document at 90% scale, slightly lower, scan absent.
+Row 4 col 4 = frame 21: same document at 72%, lower.
+Row 4 col 5 = frame 22: same document at 52%, lower.
+Row 4 col 6 = frame 23: same document at 30%, low in cell, ready to disappear.
+
+The sheet MUST contain exactly 24 individual rectangular document drawings in six columns and four rows. Match camera, position and scale among all active cells. Genuine transparent alpha, cyan ink only.

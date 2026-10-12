@@ -1,0 +1,525 @@
+{
+  "version": 2,
+  "created": "2026-09-28",
+  "basis": "Main conversation faces, plus expressive alternatives. The current defaults and seven selected faces account for 387 of 391 recorded expression transitions across 33 saved studio traces. Those traces include fixtures and test sessions, so this is not an organic popularity ranking. Deadpan, Sleepy and Delighted add expressive range and appeared in earlier Luna conversation tests.",
+  "faces": [
+    {
+      "id": "39_neutral_02_manual",
+      "label": "Calm",
+      "basis": "Default available and speaking face",
+      "index": 0,
+      "original": "originals/39_neutral_02_manual.png"
+    },
+    {
+      "id": "25_neutral_2_03_manual",
+      "label": "Listening",
+      "basis": "Default listening face",
+      "index": 1,
+      "original": "originals/25_neutral_2_03_manual.png"
+    },
+    {
+      "id": "20_neutral_06_manual",
+      "label": "Curious",
+      "basis": "Thinking rotation; two evaluation selections",
+      "index": 2,
+      "original": "originals/20_neutral_06_manual.png"
+    },
+    {
+      "id": "40_neutral_03_manual",
+      "label": "Quiet thought",
+      "basis": "Thinking rotation",
+      "index": 3,
+      "original": "originals/40_neutral_03_manual.png"
+    },
+    {
+      "id": "09_happy_03_manual",
+      "label": "Happy",
+      "basis": "Primary happy face; three evaluation selections",
+      "index": 4,
+      "original": "originals/09_happy_03_manual.png"
+    },
+    {
+      "id": "37_misc_06_manual",
+      "label": "Playful",
+      "basis": "Primary smug face; one evaluation selection",
+      "index": 5,
+      "original": "originals/37_misc_06_manual.png"
+    },
+    {
+      "id": "35_sad_10_manual",
+      "label": "Deadpan",
+      "basis": "Primary deadpan face; one evaluation selection",
+      "index": 6,
+      "original": "originals/35_sad_10_manual.png"
+    },
+    {
+      "id": "16_misc_16_manual",
+      "label": "Sleepy",
+      "basis": "Primary sleepy face; one evaluation selection",
+      "index": 7,
+      "original": "originals/16_misc_16_manual.png"
+    },
+    {
+      "id": "12_happy_09_manual",
+      "label": "Delighted",
+      "basis": "Happy alternative; one evaluation selection",
+      "index": 8,
+      "original": "originals/12_happy_09_manual.png"
+    },
+    {
+      "id": "32_sad_07_manual",
+      "label": "Sad",
+      "basis": "Primary sad face; one evaluation selection",
+      "index": 9,
+      "original": "originals/32_sad_07_manual.png"
+    }
+  ],
+  "styles": [
+    {
+      "id": "original",
+      "label": "Current",
+      "description": "Existing MIST contours."
+    },
+    {
+      "id": "pen",
+      "label": "Gesture ink",
+      "description": "Tilted loops, tapered lines and drawn mouth shapes."
+    },
+    {
+      "id": "brush",
+      "label": "Dry brush",
+      "description": "Painted sweeps, bristle gaps and tapered marks."
+    },
+    {
+      "id": "cel",
+      "label": "Cartoon cel",
+      "description": "Bean shapes, crescent lids and expressive silhouettes."
+    }
+  ],
+  "assets": {
+    "39_neutral_02_manual": {
+      "original": {
+        "file": "originals/39_neutral_02_manual.png",
+        "sha256": "55a50fdeb90997fae459ee4b6506104841256ad7e57e143458aa6b75cd1db067"
+      },
+      "pen": {
+        "file": "variants/pen/39_neutral_02_manual.png",
+        "sha256": "a5f2b5e5d85db12ad435b0367cfcce4f0f6343aa6fe336487d9e985b8924dd15",
+        "source": "source/pen.png",
+        "sourceRect": [
+          0,
+          0,
+          512,
+          307
+        ]
+      },
+      "brush": {
+        "file": "variants/brush/39_neutral_02_manual.png",
+        "sha256": "0f1baf94ea4d304eb6fec5bffad669adf9ee8761e3c29ea5631f4c425608db2a",
+        "source": "source/brush.png",
+        "sourceRect": [
+          0,
+          0,
+          512,
+          307
+        ]
+      },
+      "cel": {
+        "file": "variants/cel/39_neutral_02_manual.png",
+        "sha256": "39d4f61eaaaddd45a9105296f1e47e605aeb285d61547af343ca8c247c6279e3",
+        "source": "source/cel.png",
+        "sourceRect": [
+          0,
+          0,
+          512,
+          307
+        ]
+      }
+    },
+    "25_neutral_2_03_manual": {
+      "original": {
+        "file": "originals/25_neutral_2_03_manual.png",
+        "sha256": "0f2410ae6ee393ece4155fa9780f19448d469c04eed33efaabe31ea715e4f2e0"
+      },
+      "pen": {
+        "file": "variants/pen/25_neutral_2_03_manual.png",
+        "sha256": "ac093c02d8f35b1a1fdee24539e4c60ce1cbda34a0b530411f75980b60eb93f6",
+        "source": "source/pen.png",
+        "sourceRect": [
+          512,
+          0,
+          512,
+          307
+        ]
+      },
+      "brush": {
+        "file": "variants/brush/25_neutral_2_03_manual.png",
+        "sha256": "b972eee946389ce10840df06aadf27f46b3852166bbac7a26ee5f6a9b970a1ac",
+        "source": "source/brush.png",
+        "sourceRect": [
+          512,
+          0,
+          512,
+          307
+        ]
+      },
+      "cel": {
+        "file": "variants/cel/25_neutral_2_03_manual.png",
+        "sha256": "e7f0e995188a26a9b3bbf952b7e1c7c8fb2306865812c69dd6146f3f16c0a919",
+        "source": "source/cel.png",
+        "sourceRect": [
+          512,
+          0,
+          512,
+          307
+        ]
+      }
+    },
+    "20_neutral_06_manual": {
+      "original": {
+        "file": "originals/20_neutral_06_manual.png",
+        "sha256": "634c20e142c1014103a95f6f9a3e5211a0c429ede0b8a20b2faf74b68ecda583"
+      },
+      "pen": {
+        "file": "variants/pen/20_neutral_06_manual.png",
+        "sha256": "ed02893aaab14b9588511c7f41e6b3edfe3c269dd6ab8836bc72adb30cc8e527",
+        "source": "source/pen.png",
+        "sourceRect": [
+          0,
+          307,
+          512,
+          307
+        ]
+      },
+      "brush": {
+        "file": "variants/brush/20_neutral_06_manual.png",
+        "sha256": "c4edfdfc11d156be8f1faa56bfb52bf8effb8e894811eb02bb7ff86158fd1406",
+        "source": "source/brush.png",
+        "sourceRect": [
+          0,
+          307,
+          512,
+          307
+        ]
+      },
+      "cel": {
+        "file": "variants/cel/20_neutral_06_manual.png",
+        "sha256": "128f067e86a6aefe76752899f63d019cd2e7d5c40c8d7b3c0399b4f7b6724231",
+        "source": "source/cel.png",
+        "sourceRect": [
+          0,
+          307,
+          512,
+          307
+        ]
+      }
+    },
+    "40_neutral_03_manual": {
+      "original": {
+        "file": "originals/40_neutral_03_manual.png",
+        "sha256": "5ef6a6be85f4e336f0f1f658731347f7d75de9b044f10bed5e22598d69b19d9e"
+      },
+      "pen": {
+        "file": "variants/pen/40_neutral_03_manual.png",
+        "sha256": "0e0c75385b982fe0d407925a2d08930f58d4a1c4c5f247c67e98817a7dd79db6",
+        "source": "source/pen.png",
+        "sourceRect": [
+          512,
+          307,
+          512,
+          307
+        ]
+      },
+      "brush": {
+        "file": "variants/brush/40_neutral_03_manual.png",
+        "sha256": "a3803dcb2317d0740558ff6239ad1a0df07156df648fc83afae3b4aaeef0da66",
+        "source": "source/brush.png",
+        "sourceRect": [
+          512,
+          307,
+          512,
+          307
+        ]
+      },
+      "cel": {
+        "file": "variants/cel/40_neutral_03_manual.png",
+        "sha256": "44a7d7c1da6d1f63a2eddf5b6e6e3c29f86c0c42779f402265a28ca1e10b8287",
+        "source": "source/cel.png",
+        "sourceRect": [
+          512,
+          307,
+          512,
+          307
+        ]
+      }
+    },
+    "09_happy_03_manual": {
+      "original": {
+        "file": "originals/09_happy_03_manual.png",
+        "sha256": "e703462f97d7d01044e97f615cd35522a3b146a6387412b3d87f2196db5d7c04"
+      },
+      "pen": {
+        "file": "variants/pen/09_happy_03_manual.png",
+        "sha256": "34e2185b53c37b88724378117be76e872d269552eaae4c1d6cbbd49298d1f5c9",
+        "source": "source/pen.png",
+        "sourceRect": [
+          0,
+          614,
+          512,
+          308
+        ]
+      },
+      "brush": {
+        "file": "variants/brush/09_happy_03_manual.png",
+        "sha256": "9cd8e48fd071e0b33cd312c8d20dc6435664b73974851a67b137e38c87030eb6",
+        "source": "source/brush.png",
+        "sourceRect": [
+          0,
+          614,
+          512,
+          308
+        ]
+      },
+      "cel": {
+        "file": "variants/cel/09_happy_03_manual.png",
+        "sha256": "324d172b3200cf02beb18ea8ad89f57a152a84f82bfb39e0eb2118e87a3a9dab",
+        "source": "source/cel.png",
+        "sourceRect": [
+          0,
+          614,
+          512,
+          308
+        ]
+      }
+    },
+    "37_misc_06_manual": {
+      "original": {
+        "file": "originals/37_misc_06_manual.png",
+        "sha256": "3668d5d2f63785ee6dfe5a1288d255d02b8e0297006ba52810bc534bd4abb75c"
+      },
+      "pen": {
+        "file": "variants/pen/37_misc_06_manual.png",
+        "sha256": "e98f71e467f67775485eee72935082b8ea49c1b51434b6319b57cbcd0d52ef7d",
+        "source": "source/pen.png",
+        "sourceRect": [
+          512,
+          614,
+          512,
+          308
+        ]
+      },
+      "brush": {
+        "file": "variants/brush/37_misc_06_manual.png",
+        "sha256": "76f56aa31346b59673c658797ed13f6de749cbfff8b61cd7d8328bb12d7ef9c2",
+        "source": "source/brush.png",
+        "sourceRect": [
+          512,
+          614,
+          512,
+          308
+        ]
+      },
+      "cel": {
+        "file": "variants/cel/37_misc_06_manual.png",
+        "sha256": "020aa29715c3542484cc6d717e5753064e5c64987505134b4939c3007b65d9ef",
+        "source": "source/cel.png",
+        "sourceRect": [
+          512,
+          614,
+          512,
+          308
+        ]
+      }
+    },
+    "35_sad_10_manual": {
+      "original": {
+        "file": "originals/35_sad_10_manual.png",
+        "sha256": "0914748c43c8e87a3efdc287fe204462e4dce3404394174dbd252b19e1d28355"
+      },
+      "pen": {
+        "file": "variants/pen/35_sad_10_manual.png",
+        "sha256": "ae4c826e2775099c3de217e494eedd657e905f0fcd244fa47d906688d8e46c3d",
+        "source": "source/pen.png",
+        "sourceRect": [
+          0,
+          922,
+          512,
+          307
+        ]
+      },
+      "brush": {
+        "file": "variants/brush/35_sad_10_manual.png",
+        "sha256": "41d71fee52c70853132e4a5dc488b973535bd8aa89ba7dbf38e75aa0965f085d",
+        "source": "source/brush.png",
+        "sourceRect": [
+          0,
+          922,
+          512,
+          307
+        ]
+      },
+      "cel": {
+        "file": "variants/cel/35_sad_10_manual.png",
+        "sha256": "53779f4e2c807b3cba005932d671ff2500d2c1176ebaf74cdc87ab911f723daf",
+        "source": "source/cel.png",
+        "sourceRect": [
+          0,
+          922,
+          512,
+          307
+        ]
+      }
+    },
+    "16_misc_16_manual": {
+      "original": {
+        "file": "originals/16_misc_16_manual.png",
+        "sha256": "e5ab66b5353402b28da792d0292363d78b8950b0432067ecaddf662b79296a79"
+      },
+      "pen": {
+        "file": "variants/pen/16_misc_16_manual.png",
+        "sha256": "73ea4edcb5374b17de99aa1333ba5c427fb2ccb975324cd8703ed6cbd166ba94",
+        "source": "source/pen.png",
+        "sourceRect": [
+          512,
+          922,
+          512,
+          307
+        ]
+      },
+      "brush": {
+        "file": "variants/brush/16_misc_16_manual.png",
+        "sha256": "7b3c24e5e296a2ef37810be3d7f4fd0dbd9aa47e9031bc53800cdb851be87c75",
+        "source": "source/brush.png",
+        "sourceRect": [
+          512,
+          922,
+          512,
+          307
+        ]
+      },
+      "cel": {
+        "file": "variants/cel/16_misc_16_manual.png",
+        "sha256": "989b4839211e1c1783b7f6cf66e5d0dfd4e5d7adfc365b585892523cb8fb7408",
+        "source": "source/cel.png",
+        "sourceRect": [
+          512,
+          922,
+          512,
+          307
+        ]
+      }
+    },
+    "12_happy_09_manual": {
+      "original": {
+        "file": "originals/12_happy_09_manual.png",
+        "sha256": "b46d5942d43414526c18e85ac00d81348257e2c4c5b4dfbf3c2ce851d2f26a9d"
+      },
+      "pen": {
+        "file": "variants/pen/12_happy_09_manual.png",
+        "sha256": "c820d968529ac0934362165e6c6642ef20c30f90ad9eb5d10525c8ec04da2c2e",
+        "source": "source/pen.png",
+        "sourceRect": [
+          0,
+          1229,
+          512,
+          307
+        ]
+      },
+      "brush": {
+        "file": "variants/brush/12_happy_09_manual.png",
+        "sha256": "6174997f94fca9c5caf59d4c7a7d48f85cc452d9e003c91dc9daec40e31fee48",
+        "source": "source/brush.png",
+        "sourceRect": [
+          0,
+          1229,
+          512,
+          307
+        ]
+      },
+      "cel": {
+        "file": "variants/cel/12_happy_09_manual.png",
+        "sha256": "669b559ed6b5cd3de716ecbcbaaf8ff0003f4e12aeab0dbf91dd25463a4c913d",
+        "source": "source/cel.png",
+        "sourceRect": [
+          0,
+          1229,
+          512,
+          307
+        ]
+      }
+    },
+    "32_sad_07_manual": {
+      "original": {
+        "file": "originals/32_sad_07_manual.png",
+        "sha256": "2180231b7da292404145aec39cd4c423c85cde00f9443c314ab4a77b087130f8"
+      },
+      "pen": {
+        "file": "variants/pen/32_sad_07_manual.png",
+        "sha256": "1d0a7b6ccefd8b915cfd2b3f3426ec3166bf0eadef24a9149b14f6b41e5be817",
+        "source": "source/pen.png",
+        "sourceRect": [
+          512,
+          1229,
+          512,
+          307
+        ]
+      },
+      "brush": {
+        "file": "variants/brush/32_sad_07_manual.png",
+        "sha256": "25e567dfa1f6455d826d167175f700a8958675d5518c8c4b15800f1fa14f8605",
+        "source": "source/brush.png",
+        "sourceRect": [
+          512,
+          1229,
+          512,
+          307
+        ]
+      },
+      "cel": {
+        "file": "variants/cel/32_sad_07_manual.png",
+        "sha256": "759200fd558c1d99a38db18b9594dc2a437ec768ebe3fa467a02448330ce73be",
+        "source": "source/cel.png",
+        "sourceRect": [
+          512,
+          1229,
+          512,
+          307
+        ]
+      }
+    }
+  },
+  "sources": {
+    "pen": {
+      "file": "source/pen.png",
+      "sha256": "78583a51f9b8821fe450423d79513769517602c4cb1963090c5d8ed0e787e812",
+      "width": 1024,
+      "height": 1536,
+      "columns": 2,
+      "rows": 5,
+      "tool": "Built-in ImageGen",
+      "prompt": "prompts/pen.txt"
+    },
+    "brush": {
+      "file": "source/brush.png",
+      "sha256": "99089fbc66ec53944009549aa1b32012c5f488b4d1a32d31bc0b143436be4bd4",
+      "width": 1024,
+      "height": 1536,
+      "columns": 2,
+      "rows": 5,
+      "tool": "Built-in ImageGen",
+      "prompt": "prompts/brush.txt"
+    },
+    "cel": {
+      "file": "source/cel.png",
+      "sha256": "017b5bda54c0c64128745ee5807b08d0d4c9c6f08ca9bc444c3807b047136985",
+      "width": 1024,
+      "height": 1536,
+      "columns": 2,
+      "rows": 5,
+      "tool": "Built-in ImageGen",
+      "prompt": "prompts/cel.txt"
+    }
+  },
+  "kind": "static drawing style exploration",
+  "liveAssetsChanged": false
+}

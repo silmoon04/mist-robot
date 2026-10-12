@@ -1,0 +1,21 @@
+{
+  "status": "accepted",
+  "families": ["round", "loop", "arc"],
+  "outputDirectory": "sheets/v2",
+  "file": "sheets/v2/eyes_round_loop_arc_v2.png",
+  "layout": {"columns": 4, "rows": 6, "rowBoundaries": [0,314,552,792,1040,1228,1536], "order": ["rest", "anticipation", "closing", "near_closed", "closed", "opening_low", "opening", "settled"]},
+  "assets": {"round": {"frameOffset": 0, "frameCount": 8}, "loop": {"frameOffset": 8, "frameCount": 8}, "arc": {"frameOffset": 16, "frameCount": 8}},
+  "audit": "eye_v2_audit.json",
+  "provenance": "generated_eyes_v2.json",
+  "integration": "IMPORTANT: use measured rowBoundaries; generated rows are not uniformly spaced. The audit has exact cells and inkBounds. Use frame 0 for steady rest and loop closure. Keep one scale per sheet. Anchor lower lid throughout. Frame 4 is closed; frame 3 is nearly closed. The eight drawings are a pose library, not eight equal-duration steps at 8 fps.",
+  "findings": {
+    "round": "Opening contracts from 262 px wide to 200 px, creating width pulsing; closing jumps directly from a 196 px tall opening to a closed arc.",
+    "loop": "Opening frame has disconnected top and bottom strokes, losing the connected e-shaped identity. Closing loses the crossbar in one jump.",
+    "arc": "Closed pose abruptly inverts curvature and width varies 241-322 px. Redraw a stable-width squeeze retaining the existing arch polarity.",
+    "hook": "Mostly coherent closure. Width stable; avoid replacing without clear improvement.",
+    "slot": "Closure leg bulges slightly; existing sequence is usable with consistent lower-lid registration.",
+    "chevron": "Closing shrinks width rather than articulating the lid. Could improve later; present three priorities have broader face coverage.",
+    "bar": "Closed frame width is 61% of open width; this is an intentional squeeze but reduce its duration and use intermediate frames to avoid popping."
+  },
+  "communication": "This agent has no callable collaboration tool in its exposed tool list; status is shared in this workspace file."
+}

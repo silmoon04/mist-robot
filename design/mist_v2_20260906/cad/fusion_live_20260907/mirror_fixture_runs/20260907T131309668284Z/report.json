@@ -1,0 +1,237 @@
+{
+  "status": "native_mirror_diagnostic_failed",
+  "test_only": true,
+  "errors": [
+    "Traceback (most recent call last):\n  File \"C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\mist_v2_20260906\\cad\\fusion_live_20260907\\mirror_fixture.py\", line 173, in run\n    for i in range(mirrored.patternElements.count):\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'NoneType' object has no attribute 'count'\n"
+  ],
+  "main_document_unchanged": true,
+  "source_sha256": {
+    "fixture": "f08842f673c7ccdcdaef88f31f23858d6b9745acbbb42ea147995f5e616aa64a",
+    "motion": "380e415982d8bd51da85a7a0576b23a76e8f9d821dbb58929f00c6d261260ff2",
+    "native_parts": "b83cef069437a272138e72dab0c0ca83e0f0a807ff842ecdd8a62392647ac17b",
+    "mirror_fixture": "aedaa5dd5f1aa99c900912127ffab4cd8adf317b514b60486a616453e079c7f2"
+  },
+  "source": [
+    {
+      "path": "TEST_SOURCE_LEG:1+TEST_PART_A:1",
+      "relative_path": "TEST_PART_A:1",
+      "occurrence_name": "TEST_PART_A:1",
+      "component_name": "TEST_PART_A",
+      "body_name": "TEST_BODY_A",
+      "source_is_root": true,
+      "transform_cm": [
+        [
+          0.9445310575203688,
+          -0.2923717047227368,
+          0.14959902291450597,
+          7.5
+        ],
+        [
+          0.28877212387457146,
+          0.9563047559630354,
+          0.04573701122120167,
+          7.0
+        ],
+        [
+          -0.15643446504023087,
+          0.0,
+          0.9876883405951378,
+          0.49999999999999994
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "rotation_determinant": 1.0000000000000002,
+      "local_bounds_mm": [
+        [
+          -4.893038353312207,
+          -4.251192535168973,
+          -5.0
+        ],
+        [
+          9.106961646687793,
+          5.748807464831027,
+          3.0000000000000004
+        ]
+      ],
+      "world_bounds_mm": [
+        [
+          67.94958955647033,
+          64.29290622651165,
+          -1.3630843763171945
+        ],
+        [
+          85.2935335922989,
+          78.2646596101556,
+          8.72850485900714
+        ]
+      ],
+      "local_com_mm": [
+        1.933092122492115,
+        0.6496764357968687,
+        -1.0794450463254694
+      ],
+      "world_com_mm": [
+        76.47443461546945,
+        71.13014119305046,
+        3.6314424813756165
+      ],
+      "proxy_physical_com_reported_mm": [
+        76.47443461546945,
+        71.13014119305046,
+        3.6314424813756165
+      ],
+      "volume_mm3": 1085.5048080937877,
+      "solid": true,
+      "occurrence_attributes": [
+        {
+          "group": "MIST_fixture",
+          "name": "part_id",
+          "value": "A"
+        }
+      ],
+      "component_attributes": [
+        {
+          "group": "MIST_fixture",
+          "name": "part_id",
+          "value": "A"
+        }
+      ],
+      "body_attributes": [
+        {
+          "group": "MIST_fixture",
+          "name": "part_id",
+          "value": "A"
+        }
+      ]
+    },
+    {
+      "path": "TEST_SOURCE_LEG:1+TEST_NESTED_WRAPPER:1+TEST_PART_B:1",
+      "relative_path": "TEST_NESTED_WRAPPER:1+TEST_PART_B:1",
+      "occurrence_name": "TEST_PART_B:1",
+      "component_name": "TEST_PART_B",
+      "body_name": "TEST_BODY_B",
+      "source_is_root": true,
+      "transform_cm": [
+        [
+          0.9564681423308484,
+          0.22495105434386503,
+          -0.18591857318664962,
+          9.5
+        ],
+        [
+          -0.2208180698891506,
+          0.9743700647852355,
+          0.04292268468824741,
+          11.2
+        ],
+        [
+          0.1908089953765448,
+          0.0,
+          0.981627183447664,
+          -3.5
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "rotation_determinant": 1.0000000000000002,
+      "local_bounds_mm": [
+        [
+          -7.733899768113672,
+          -1.1492996665019128,
+          -1.5
+        ],
+        [
+          2.2661002318863277,
+          5.850700333498087,
+          3.5
+        ]
+      ],
+      "world_bounds_mm": [
+        [
+          86.6935200779294,
+          110.31537690308001,
+          -37.94813842026816
+        ],
+        [
+          98.7624517475782,
+          119.5587614789094,
+          -31.131912549264392
+        ]
+      ],
+      "local_com_mm": [
+        -2.6325374651052225,
+        2.26682565656984,
+        0.9539581522736451
+      ],
+      "world_com_mm": [
+        92.81462806404306,
+        114.83098534878002,
+        -34.56588057486453
+      ],
+      "proxy_physical_com_reported_mm": [
+        92.81462806404306,
+        114.83098534878002,
+        -34.56588057486453
+      ],
+      "volume_mm3": 339.57683666330064,
+      "solid": true,
+      "occurrence_attributes": [
+        {
+          "group": "MIST_fixture",
+          "name": "part_id",
+          "value": "B"
+        }
+      ],
+      "component_attributes": [
+        {
+          "group": "MIST_fixture",
+          "name": "part_id",
+          "value": "B"
+        }
+      ],
+      "body_attributes": [
+        {
+          "group": "MIST_fixture",
+          "name": "part_id",
+          "value": "B"
+        }
+      ]
+    }
+  ],
+  "source_top_transform_cm": [
+    [
+      0.992546151641322,
+      -0.12186934340514748,
+      0.0,
+      1.3
+    ],
+    [
+      0.12186934340514748,
+      0.992546151641322,
+      0.0,
+      1.1
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "body_reactivated": true
+}

@@ -1,0 +1,23 @@
+{
+  "date": "2026-09-28",
+  "method": "Existing in-app browser, actual page interactions and rendered screenshot",
+  "url": "http://127.0.0.1:9041/reuse/style_studies_v2/",
+  "passed": true,
+  "checks": {
+    "allStyleTiles": 40,
+    "singleStyleComparisonTiles": 20,
+    "loadedImagesAfterVisitingFinalRow": 40,
+    "missingImageErrors": 0,
+    "inspectorOpens": true,
+    "inspectorStyleSwitch": "Gesture ink to Cartoon cel",
+    "nextFace": "Calm to Listening",
+    "individualDownloadLinksMatchFaceAndStyle": true,
+    "escapeClosesDialog": true,
+    "focusReturnsToTrigger": true,
+    "screenshot": "preview.jpg"
+  },
+  "limitations": [
+    "Desktop browser checked; mobile layout was not separately exercised in this revision.",
+    "These are static concept images, not animated or voice-synchronised assets."
+  ]
+}

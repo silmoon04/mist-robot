@@ -1,0 +1,16 @@
+Stable renderer ready for motion_checks and identity_audit
+
+Production and published studio copies match:
+70d73a3b12f05e91e4f0c9a403012ba71d5ee91ddbc0fb9bb5d78aad7d924d0a
+
+The published 164-entry atlas and exact 40-face mouth map are active.
+The bounded family handoff is implemented: real cue boundaries, rest and MBP
+switch immediately; a quiet amplitude below 0.35 can switch after 150 ms;
+otherwise the first 15 fps tick at or after 400 ms switches the same viseme.
+67 sampling phases prove the observed upper bound is 466.7 ms. No closure is
+inserted, only one mouth is drawn, and the audio clock remains unchanged.
+Retargets replace the pending family; interruption clears it.
+
+Run the independent final checks against this hash. Owned regression results:
+mouth_family_checks.json, drawn_face_renderer_checks.json,
+drawn_timing_checks.json. No further renderer changes are planned.

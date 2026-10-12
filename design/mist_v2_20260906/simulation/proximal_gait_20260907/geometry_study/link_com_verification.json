@@ -1,0 +1,846 @@
+{
+  "scope": "Kinematic fixture verification only. No physics steps, dynamic success claims or hardware.",
+  "model_source": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\mist_v2_20260906\\simulation\\proximal_gait_20260907\\runtime_snapshot\\model.py",
+  "model_sha256": "d7fc5c843553da04feebf93f0bf59be60033e4f52c858117bfea95e23de59619",
+  "helper_sha256": "ba46b6d1dac204da9b3360f37b0ea30accd14d2456c19b9cf4ad5ac673766cdb",
+  "synthetic_parameters": {
+    "schema_version": 1,
+    "status": "synthetic_COM_verification_fixture_not_robot_mass_estimate",
+    "units": "SI except explicitly named _deg and _rpm",
+    "coordinate_system": "+X forward, +Y left, +Z up; q1 yaw about +Z, q2/q3 about local -Y; zero links down",
+    "geometry": {
+      "body_diameter_m": 0.18,
+      "body_height_m": 0.22,
+      "overall_body_lid_handle_height_m": 0.26,
+      "hip_mount_height_above_body_bottom_m": 0.035,
+      "hip_mount_radius_m": 0.103,
+      "mount_azimuths_deg": [
+        45,
+        -45,
+        135,
+        -135
+      ],
+      "leg_names": [
+        "FL",
+        "FR",
+        "RL",
+        "RR"
+      ],
+      "hip_radial_offset_m": 0.035,
+      "hip_transverse_offset_m": 0.03,
+      "femur_m": 0.1395,
+      "tibia_m": 0.13,
+      "link_width_m": 0.024,
+      "link_thickness_m": 0.018,
+      "wheel_diameter_m": 0.085,
+      "wheel_width_m": 0.024,
+      "joint_limits_deg": [
+        [
+          -100,
+          100
+        ],
+        [
+          -40,
+          125
+        ],
+        [
+          -150,
+          -15
+        ]
+      ],
+      "drive_heading_deg": [
+        0,
+        0,
+        180,
+        -180
+      ],
+      "hip_to_wheel_axle_height_m": 0.19,
+      "drive_radial_reach_from_pitch_m": 0.06
+    },
+    "mass": {
+      "coordinate_origin": "Body hip yaw mount plane. Body bottom is z=-0.035m. All following COM positions use that frame.",
+      "shell_kg": 1.3295892292003746,
+      "shell_com_m": [
+        -0.003025428489889493,
+        2.7508887388352022e-06,
+        0.039226052874322535
+      ],
+      "battery_kg": 0.174,
+      "battery_com_m": [
+        -0.025,
+        0,
+        -0.0145
+      ],
+      "brain_phone_kg": 0.155,
+      "brain_phone_com_m": [
+        0,
+        0,
+        0.034
+      ],
+      "face_phone_with_frame_kg": 0.2185553865500433,
+      "face_phone_com_m": [
+        0.07628017926376195,
+        -6.764759315888748e-19,
+        0.10420817613565349
+      ],
+      "electronics_kg": 0.25,
+      "harness_kg": 0.15,
+      "proximal_servo_kg": 0.055,
+      "yaw_carriage_without_servos_kg": 0.32185924208629096,
+      "femur_with_pulleys_kg": 0.1715272545917623,
+      "tibia_with_carrier_kg": 0.11280122025535941,
+      "wheel_motor_with_mount_kg": 0.16024791273614084,
+      "wheel_hub_and_tire_kg": 0.08454368068314383,
+      "provenance": "Mass-only reconciliation to actual candidate CAD, solid-print/bearing-envelope assumptions plus stated allowances. Link COM/inertias and collision shapes remain coarse. The same physical 55 g knee servo moves from yaw to 40 mm down the femur. No hypothetical mass saving is applied. New mount mass and exact collision geometry are absent.",
+      "knee_servo_com_m": [
+        0,
+        0,
+        -0.04
+      ],
+      "knee_servo_box_m": [
+        0.02473,
+        0.035,
+        0.04523
+      ]
+    },
+    "servo": {
+      "model": "Feetech STS3215 C018 12V assumed correct ordered variant",
+      "nominal_voltage_v": 12.0,
+      "simulation_voltage_v": 9.9,
+      "stall_torque_nm": 2.941995,
+      "no_load_speed_rpm": 45,
+      "stall_current_a": 2.7,
+      "idle_current_a": 0.18,
+      "rated_torque_nm": 0.980665,
+      "continuous_fraction_of_stall": 0.3,
+      "peak_fraction_of_stall": 0.55,
+      "command_delay_s": 0.025,
+      "command_period_s": 0.01,
+      "response_time_constant_s": 0.025,
+      "deadband_deg": 0.35,
+      "gearbox_backlash_full_width_deg": 1.0,
+      "provenance": "Electrical endpoints from C018 datasheet research; linear voltage/torque-speed scaling, current approximation, delay, bandwidth, deadband, backlash, continuous/peak derating are unmeasured assumptions."
+    },
+    "transmission": {
+      "topology": "proximal_femur_relative_knee",
+      "motor_coordinate_equation": "s=[ry*q1,rh*q2,rk*q3]; knee motor housing moves with femur; other hardware masses held fixed for sensitivity",
+      "ratios": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "efficiency": [
+        0.85,
+        0.85,
+        0.85
+      ],
+      "output_backlash_full_width_deg": [
+        0.5,
+        0.6,
+        0.6
+      ],
+      "output_stiffness_nm_per_rad": [
+        150,
+        120,
+        100
+      ],
+      "output_viscous_friction_nm_s_per_rad": [
+        0.008,
+        0.01,
+        0.01
+      ],
+      "motor_travel_limits_deg": [
+        [
+          -175,
+          175
+        ],
+        [
+          -175,
+          175
+        ],
+        [
+          -175,
+          175
+        ]
+      ],
+      "provenance": "Design assumptions pending packaging and loaded reversal/deflection/efficiency measurement; motor travel is usable span around calibrated neutral, not absolute zero.",
+      "remote_belt": {
+        "pitch_mm": 3,
+        "pulley_teeth": 32,
+        "width_mm": 9,
+        "pitch_length_mm": 375
+      },
+      "knee_motor_mount": "femur"
+    },
+    "wheel_motor": {
+      "model": "DFRobot FIT0493 25D 12V encoder conditional candidate",
+      "nominal_voltage_v": 12,
+      "no_load_speed_rpm": 350,
+      "stall_torque_nm": 1.176798,
+      "stall_current_a": 5.5,
+      "no_load_current_a": 0.23,
+      "current_limit_a": 1.0,
+      "provenance": "Manufacturer reference, not selected purchase: GBP25.61 motor plus driver exceeds requested circa GBP15. Current cap is an unvalidated engineering assumption, not a published continuous rating."
+    },
+    "environment": {
+      "gravity_m_s2": 9.81,
+      "tire_friction_coefficient": 0.75,
+      "rolling_friction_coefficient": 0.002,
+      "contact_restitution": 0,
+      "step_rise_m": 0.18,
+      "step_tread_m": 0.27,
+      "toe_clearance_m": 0.015,
+      "provenance": "All assumed; stair geometry, floor grip, tire behavior and stair noses need measurement. No human or hardware measurements made."
+    },
+    "simulation": {
+      "physics_hz": 1000,
+      "solver_iterations": 100,
+      "duration_s": 8,
+      "record_hz": 50,
+      "motor_kp_nm_per_rad": 8,
+      "motor_kd_nm_s_per_rad": 0.15,
+      "fall_tilt_deg": 35,
+      "joint_tracking_rms_limit_deg": 8,
+      "step_tracking_rms_limit_m": 0.015,
+      "provenance": "Explicit controller and numerical assumptions, not identified STS firmware."
+    },
+    "sources": [
+      "../../../docs/mist/MIST_ACTUAL_INVENTORY.md",
+      "../../../docs/mist/MIST_FUSION_MASTER_DIMENSIONS.md",
+      "../../../bench/leg_calibration.json",
+      "https://www.pololu.com/product/4843",
+      "https://raw.githubusercontent.com/bulletphysics/bullet3/master/docs/pybullet_quickstartguide.pdf",
+      "../package/belt_selection_20260907/remote_belt_spec.json"
+    ],
+    "revision": "20260907_belt139p5_root4M4_knee8",
+    "cad_mass_report_sha256": "aeae9cb3ff334459e7fb26295cead0adc99cbc6ba64fb30788a709edcb953320",
+    "link_mass_properties": {
+      "base_link": {
+        "mass_kg": 2.497144615750418,
+        "com_m": [
+          0.0063233425400000005,
+          -0.004998535306279,
+          0.037208647629999994
+        ],
+        "inertia_kg_m2": [
+          [
+            0.00021872233643832343,
+            -9.859355184448488e-06,
+            -5.158279100756168e-05
+          ],
+          [
+            -9.859355184448483e-06,
+            0.00030460352127948136,
+            -3.1447118131143253e-05
+          ],
+          [
+            -5.158279100756167e-05,
+            -3.1447118131143253e-05,
+            0.00037667414228219527
+          ]
+        ]
+      },
+      "FL_yaw": {
+        "mass_kg": 0.3806278345071539,
+        "com_m": [
+          0.020700000000000003,
+          0.0101,
+          0.0039000000000000003
+        ],
+        "inertia_kg_m2": [
+          [
+            0.0002230967831670899,
+            -1.0056542288137438e-05,
+            -5.2614446827712906e-05
+          ],
+          [
+            -1.005654228813744e-05,
+            0.00031069559170507095,
+            -3.207606049376613e-05
+          ],
+          [
+            -5.2614446827712906e-05,
+            -3.2076060493766134e-05,
+            0.0003842076251278392
+          ]
+        ]
+      },
+      "FL_femur": {
+        "mass_kg": 0.23105779968359755,
+        "com_m": [
+          0.0034000000000000002,
+          -0.0048000000000000004,
+          -0.05872680735000001
+        ],
+        "inertia_kg_m2": [
+          [
+            0.00022747122989585637,
+            -1.0253729391826429e-05,
+            -5.364610264786413e-05
+          ],
+          [
+            -1.025372939182642e-05,
+            0.00031678766213066064,
+            -3.270500285638899e-05
+          ],
+          [
+            -5.364610264786414e-05,
+            -3.2705002856388994e-05,
+            0.0003917411079734831
+          ]
+        ]
+      },
+      "FL_tibia": {
+        "mass_kg": 0.28124060698124526,
+        "com_m": [
+          0.0036,
+          -0.0047,
+          -0.09181791951
+        ],
+        "inertia_kg_m2": [
+          [
+            0.00023184567662462284,
+            -1.045091649551538e-05,
+            -5.467775846801538e-05
+          ],
+          [
+            -1.0450916495515378e-05,
+            0.0003228797325562502,
+            -3.3333945219011874e-05
+          ],
+          [
+            -5.4677758468015375e-05,
+            -3.3333945219011853e-05,
+            0.00039927459081912705
+          ]
+        ]
+      },
+      "FL_wheel": {
+        "mass_kg": 0.08792542791046959,
+        "com_m": [
+          0.0038,
+          -0.0046,
+          0.0036
+        ],
+        "inertia_kg_m2": [
+          [
+            0.00023622012335338928,
+            -1.0648103599204372e-05,
+            -5.5709414288166616e-05
+          ],
+          [
+            -1.0648103599204355e-05,
+            0.0003289718029818398,
+            -3.396288758163472e-05
+          ],
+          [
+            -5.570941428816661e-05,
+            -3.3962887581634713e-05,
+            0.00040680807366477094
+          ]
+        ]
+      },
+      "FR_yaw": {
+        "mass_kg": 0.39570220419060553,
+        "com_m": [
+          0.021500000000000002,
+          -0.0195,
+          0.0035
+        ],
+        "inertia_kg_m2": [
+          [
+            0.00024059457008215578,
+            -1.0845290702893332e-05,
+            -5.674107010831784e-05
+          ],
+          [
+            -1.0845290702893329e-05,
+            0.0003350638734074295,
+            -3.4591829944257594e-05
+          ],
+          [
+            -5.674107010831785e-05,
+            -3.459182994425761e-05,
+            0.0004143415565104149
+          ]
+        ]
+      },
+      "FR_femur": {
+        "mass_kg": 0.24011888986726804,
+        "com_m": [
+          0.004200000000000001,
+          -0.0044,
+          -0.059126807350000005
+        ],
+        "inertia_kg_m2": [
+          [
+            0.0002449690168109223,
+            -1.1042477806582293e-05,
+            -5.777272592846908e-05
+          ],
+          [
+            -1.1042477806582303e-05,
+            0.0003411559438330191,
+            -3.522077230688045e-05
+          ],
+          [
+            -5.777272592846907e-05,
+            -3.522077230688045e-05,
+            0.0004218750393560587
+          ]
+        ]
+      },
+      "FR_tibia": {
+        "mass_kg": 0.29216257230090525,
+        "com_m": [
+          0.0044,
+          -0.0043,
+          -0.09221791951
+        ],
+        "inertia_kg_m2": [
+          [
+            0.00024934346353968874,
+            -1.123966491027128e-05,
+            -5.8804381748620306e-05
+          ],
+          [
+            -1.123966491027127e-05,
+            0.0003472480142586088,
+            -3.584971466950333e-05
+          ],
+          [
+            -5.880438174862031e-05,
+            -3.584971466950333e-05,
+            0.00042940852220170266
+          ]
+        ]
+      },
+      "FR_wheel": {
+        "mass_kg": 0.09130717513779534,
+        "com_m": [
+          0.0046,
+          -0.0042,
+          0.0032
+        ],
+        "inertia_kg_m2": [
+          [
+            0.0002537179102684551,
+            -1.1436852013960237e-05,
+            -5.983603756877154e-05
+          ],
+          [
+            -1.143685201396023e-05,
+            0.0003533400846841983,
+            -3.647865703212618e-05
+          ],
+          [
+            -5.983603756877155e-05,
+            -3.647865703212619e-05,
+            0.00043694200504734655
+          ]
+        ]
+      },
+      "RL_yaw": {
+        "mass_kg": 0.4107765738740572,
+        "com_m": [
+          0.0223,
+          -0.0191,
+          0.0031
+        ],
+        "inertia_kg_m2": [
+          [
+            0.00025809235699722163,
+            -1.1634039117649204e-05,
+            -6.0867693388922775e-05
+          ],
+          [
+            -1.1634039117649198e-05,
+            0.0003594321551097879,
+            -3.7107599394749054e-05
+          ],
+          [
+            -6.086769338892277e-05,
+            -3.7107599394749027e-05,
+            0.0004444754878929904
+          ]
+        ]
+      },
+      "RL_femur": {
+        "mass_kg": 0.24917998005093853,
+        "com_m": [
+          0.005,
+          -0.004,
+          -0.05952680735
+        ],
+        "inertia_kg_m2": [
+          [
+            0.0002624668037259881,
+            -1.1831226221338178e-05,
+            -6.189934920907401e-05
+          ],
+          [
+            -1.1831226221338185e-05,
+            0.00036552422553537764,
+            -3.77365417573719e-05
+          ],
+          [
+            -6.189934920907401e-05,
+            -3.773654175737191e-05,
+            0.00045200897073863433
+          ]
+        ]
+      },
+      "RL_tibia": {
+        "mass_kg": 0.3030845376205653,
+        "com_m": [
+          0.0052,
+          -0.0039,
+          -0.09261791951
+        ],
+        "inertia_kg_m2": [
+          [
+            0.00026684125045475457,
+            -1.2028413325027146e-05,
+            -6.293100502922523e-05
+          ],
+          [
+            -1.2028413325027159e-05,
+            0.00037161629596096723,
+            -3.8365484119994773e-05
+          ],
+          [
+            -6.293100502922523e-05,
+            -3.836548411999478e-05,
+            0.0004595424535842782
+          ]
+        ]
+      },
+      "RL_wheel": {
+        "mass_kg": 0.0946889223651211,
+        "com_m": [
+          0.0054,
+          -0.0038,
+          0.0028
+        ],
+        "inertia_kg_m2": [
+          [
+            0.00027121569718352104,
+            -1.2225600428716125e-05,
+            -6.396266084937645e-05
+          ],
+          [
+            -1.2225600428716133e-05,
+            0.00037770836638655687,
+            -3.899442648261762e-05
+          ],
+          [
+            -6.396266084937648e-05,
+            -3.899442648261763e-05,
+            0.00046707593642992217
+          ]
+        ]
+      },
+      "RR_yaw": {
+        "mass_kg": 0.42585094355750874,
+        "com_m": [
+          0.023100000000000002,
+          0.0113,
+          0.0027
+        ],
+        "inertia_kg_m2": [
+          [
+            0.0002755901439122875,
+            -1.2422787532405092e-05,
+            -6.499431666952771e-05
+          ],
+          [
+            -1.2422787532405087e-05,
+            0.00038380043681214646,
+            -3.962336884524049e-05
+          ],
+          [
+            -6.499431666952771e-05,
+            -3.96233688452405e-05,
+            0.00047460941927556606
+          ]
+        ]
+      },
+      "RR_femur": {
+        "mass_kg": 0.258241070234609,
+        "com_m": [
+          0.0058,
+          -0.0036,
+          -0.05992680735000001
+        ],
+        "inertia_kg_m2": [
+          [
+            0.000279964590641054,
+            -1.2619974636094045e-05,
+            -6.602597248967895e-05
+          ],
+          [
+            -1.261997463609404e-05,
+            0.00038989250723773605,
+            -4.025231120786338e-05
+          ],
+          [
+            -6.602597248967893e-05,
+            -4.0252311207863394e-05,
+            0.00048214290212121
+          ]
+        ]
+      },
+      "RR_tibia": {
+        "mass_kg": 0.31400650294022525,
+        "com_m": [
+          0.006,
+          -0.0035,
+          -0.09301791950999999
+        ],
+        "inertia_kg_m2": [
+          [
+            0.0002843390373698205,
+            -1.281716173978302e-05,
+            -6.705762830983018e-05
+          ],
+          [
+            -1.2817161739783021e-05,
+            0.00039598457766332575,
+            -4.088125357048624e-05
+          ],
+          [
+            -6.705762830983017e-05,
+            -4.088125357048624e-05,
+            0.000489676384966854
+          ]
+        ]
+      },
+      "RR_wheel": {
+        "mass_kg": 0.09807066959244684,
+        "com_m": [
+          0.006200000000000001,
+          -0.0034000000000000002,
+          0.0024000000000000002
+        ],
+        "inertia_kg_m2": [
+          [
+            0.0002887134840985869,
+            -1.3014348843472e-05,
+            -6.80892841299814e-05
+          ],
+          [
+            -1.3014348843472002e-05,
+            0.0004020766480889154,
+            -4.15101959331091e-05
+          ],
+          [
+            -6.808928412998142e-05,
+            -4.15101959331091e-05,
+            0.0004972098678124978
+          ]
+        ]
+      }
+    }
+  },
+  "cases": [
+    {
+      "fixture": "original_diagonal",
+      "state_index": 0,
+      "analytic_world_com_m": [
+        0.0013087503509925408,
+        5.768043460642252e-07,
+        0.2107970735298769
+      ],
+      "pybullet_world_com_m": [
+        0.0013087504633242084,
+        5.768043213611394e-07,
+        0.2107970643297452
+      ],
+      "com_error_m": 9.200817431723937e-09,
+      "packed_q_error_m": 0.0,
+      "existing_base_link_pose_projection_error_m": 1.2240552439900498e-12,
+      "base_local_inertial_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "true_base_position_m": [
+        0.0,
+        0.0,
+        0.24000000953674316
+      ],
+      "existing_base_position_m": [
+        1.1112876894744939e-10,
+        -2.489286662236479e-14,
+        0.24000000033638488
+      ]
+    },
+    {
+      "fixture": "original_diagonal",
+      "state_index": 1,
+      "analytic_world_com_m": [
+        0.11005719291064055,
+        -0.03642313879337018,
+        0.23079889701019968
+      ],
+      "pybullet_world_com_m": [
+        0.1100571912234978,
+        -0.03642313798500158,
+        0.230798903021895
+      ],
+      "com_error_m": 6.296061566565561e-09,
+      "packed_q_error_m": 0.0,
+      "existing_base_link_pose_projection_error_m": 4.118577162870164e-09,
+      "base_local_inertial_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "true_base_position_m": [
+        0.10999999940395355,
+        -0.03999999910593033,
+        0.25999999046325684
+      ],
+      "existing_base_position_m": [
+        0.10999999753934014,
+        -0.039999997701091757,
+        0.259999992401938
+      ]
+    },
+    {
+      "fixture": "original_diagonal",
+      "state_index": 2,
+      "analytic_world_com_m": [
+        0.21763894545412876,
+        -0.0736267432754052,
+        0.2511934569065512
+      ],
+      "pybullet_world_com_m": [
+        0.21763894419812152,
+        -0.07362674627534974,
+        0.2511934697738274
+      ],
+      "com_error_m": 1.3271925933227045e-08,
+      "packed_q_error_m": 0.0,
+      "existing_base_link_pose_projection_error_m": 2.113549660738089e-09,
+      "base_local_inertial_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "true_base_position_m": [
+        0.2199999988079071,
+        -0.07999999821186066,
+        0.2799999713897705
+      ],
+      "existing_base_position_m": [
+        0.21999999768070247,
+        -0.08000000159690396,
+        0.2799999863312215
+      ]
+    },
+    {
+      "fixture": "synthetic_full_inertia",
+      "state_index": 0,
+      "analytic_world_com_m": [
+        -0.0013864514885682361,
+        -0.0031501555163901468,
+        0.21173028562130153
+      ],
+      "pybullet_world_com_m": [
+        -0.0013864503015825998,
+        -0.0031501563346248026,
+        0.21173028345083347
+      ],
+      "com_error_m": 2.6056428058669425e-09,
+      "packed_q_error_m": 0.0,
+      "existing_base_link_pose_projection_error_m": 0.02361380682398591,
+      "base_local_inertial_quaternion_xyzw": [
+        0.12740718073231921,
+        -0.14191481011241136,
+        0.11073566378858456,
+        0.975379520870672
+      ],
+      "true_base_position_m": [
+        -4.656612873077393e-10,
+        0.0,
+        0.23999997973442078
+      ],
+      "existing_base_position_m": [
+        0.008400231064883676,
+        0.008995171821744674,
+        0.24186295938146293
+      ]
+    },
+    {
+      "fixture": "synthetic_full_inertia",
+      "state_index": 1,
+      "analytic_world_com_m": [
+        0.10802505090078779,
+        -0.039912949225836714,
+        0.23132487044054398
+      ],
+      "pybullet_world_com_m": [
+        0.10802505179845612,
+        -0.039912951871613256,
+        0.23132485190416713
+      ],
+      "com_error_m": 1.8745751749917686e-08,
+      "packed_q_error_m": 0.0,
+      "existing_base_link_pose_projection_error_m": 0.02319429007897746,
+      "base_local_inertial_quaternion_xyzw": [
+        0.12740718073231921,
+        -0.14191481011241136,
+        0.11073566378858456,
+        0.975379520870672
+      ],
+      "true_base_position_m": [
+        0.10999999940395355,
+        -0.03999999910593033,
+        0.25999999046325684
+      ],
+      "existing_base_position_m": [
+        0.11663529089802913,
+        -0.02991451859382447,
+        0.26303372585011187
+      ]
+    },
+    {
+      "fixture": "synthetic_full_inertia",
+      "state_index": 2,
+      "analytic_world_com_m": [
+        0.21636139175163635,
+        -0.07728576672630022,
+        0.25142595723045147
+      ],
+      "pybullet_world_com_m": [
+        0.21636139145723904,
+        -0.07728576799710478,
+        0.25142595056650285
+      ],
+      "com_error_m": 6.790421573760165e-09,
+      "packed_q_error_m": 0.0,
+      "existing_base_link_pose_projection_error_m": 0.022700684796734517,
+      "base_local_inertial_quaternion_xyzw": [
+        0.12740718073231921,
+        -0.14191481011241136,
+        0.11073566378858456,
+        0.975379520870672
+      ],
+      "true_base_position_m": [
+        0.2199999988079071,
+        -0.07999999821186066,
+        0.2800000011920929
+      ],
+      "existing_base_position_m": [
+        0.22467035287222936,
+        -0.06924324971474384,
+        0.2841746643978277
+      ]
+    }
+  ],
+  "analytic_COM_pass_1micrometre": true
+}

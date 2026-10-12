@@ -1,0 +1,95 @@
+{
+  "version": 1,
+  "syntheticFixturesOnly": true,
+  "newPaidApiCalls": 0,
+  "unchangedRuntimeIntegration": true,
+  "clipCount": 3,
+  "fixtureChecks": [
+    {
+      "id": "mist-hinge",
+      "nativeCopyIdentical": true,
+      "durationSeconds": 6.233333333333333,
+      "cueCount": 508,
+      "visemeCounts": {
+        "AA": 94,
+        "EE": 46,
+        "EH": 39,
+        "FV": 8,
+        "LNT": 100,
+        "MBP": 21,
+        "OH": 15,
+        "OO": 56,
+        "S": 44,
+        "TH": 11,
+        "rest": 74
+      },
+      "strictlyIncreasingFiniteCues": true,
+      "amountsInRange": true,
+      "restCuesClosed": true,
+      "syntheticOnly": true,
+      "alignmentSource": "recovered_provider_caption_word_bounds_estimated_phonemes_audio_gated"
+    },
+    {
+      "id": "mist-second-attempt",
+      "nativeCopyIdentical": true,
+      "durationSeconds": 4.301,
+      "cueCount": 357,
+      "visemeCounts": {
+        "AA": 63,
+        "EE": 33,
+        "EH": 19,
+        "FV": 7,
+        "LNT": 89,
+        "MBP": 20,
+        "OH": 11,
+        "OO": 33,
+        "S": 27,
+        "TH": 10,
+        "rest": 45
+      },
+      "strictlyIncreasingFiniteCues": true,
+      "amountsInRange": true,
+      "restCuesClosed": true,
+      "syntheticOnly": true,
+      "alignmentSource": "recovered_provider_caption_word_bounds_estimated_phonemes_audio_gated"
+    },
+    {
+      "id": "mist-patience",
+      "nativeCopyIdentical": true,
+      "durationSeconds": 2.618,
+      "cueCount": 131,
+      "visemeCounts": {
+        "AA": 94,
+        "rest": 37
+      },
+      "strictlyIncreasingFiniteCues": true,
+      "amountsInRange": true,
+      "restCuesClosed": true,
+      "syntheticOnly": true,
+      "alignmentSource": "audio_energy"
+    }
+  ],
+  "tests": {
+    "command": "python brain/harness/test_geraldine_phoneme_cues.py",
+    "exitCode": 0,
+    "output": "speech/test-geraldine-phoneme-cues.txt"
+  },
+  "timing": {
+    "method": "40 local calls on a 100 ms PCM chunk with provider-format alignment; wall-clock performance, no network.",
+    "dictionaryLoadAndFirstChunkMs": 2.9538000089814886,
+    "warmMedianChunkMs": 1.4290999970398843,
+    "warmMaximumChunkMs": 138.23630000115372,
+    "wholeUtteranceWait": false
+  },
+  "limitations": [
+    "Timing measurements are local to this run and exclude synthesis/network latency.",
+    "Pronunciation duration weights estimate animation inside measured or recovered word bounds.",
+    "Audio silence gating uses 20 ms RMS windows and cannot prove perceptual sync quality."
+  ],
+  "dictionary": {
+    "file": "speech/cmudict-subset.json",
+    "sha256": "689e4190030bdd9dd32b7231c21693c62d9dd13faa86301ba2829377b5f17537",
+    "license": "speech/CMUDICT-LICENSE.txt",
+    "wordCount": 319
+  }
+}

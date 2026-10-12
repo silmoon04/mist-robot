@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="icon" href="data:,"><title>MIST · Conversation test</title>
+<style>body{max-width:880px;margin:32px auto;padding:0 20px;background:#f5f5ef;color:#263832;font:15px/1.6 system-ui}h1{font-size:23px}h2{font-size:17px;margin-top:28px}a{color:#176f63}nav{display:flex;gap:22px;flex-wrap:wrap}table{width:100%;border-collapse:collapse;background:white}th,td{text-align:left;padding:12px;border-bottom:1px solid #d7dfd9}th{font-size:12px}.scroll{overflow:auto}.note{color:#59655f;font-size:13px}li{margin:8px 0}code{font-size:13px}</style>
+<nav><a href="/try">Try it</a><a href="/duplex/qwen-results.html">Model comparison</a><a href="/duplex/qwen-review.html">Blind answer review</a></nav>
+<h1>Conversation + analyst</h1>
+<p>Select <strong>Qwen · conversation + analyst</strong> in the voice studio. Qwen low handles the conversation, expressions and tools. It can ask GPT-OSS medium for deeper, read-only analysis. The existing default is unchanged.</p>
+<p>Qwen has not been established as generally smarter. Its earlier quality ratings were close to GPT-OSS high; the strongest speed result here comes from making fewer model requests around tools.</p>
+<div class="scroll"><table><thead><tr><th>Measured change</th><th>Baseline</th><th>Candidate</th></tr></thead><tbody>
+<tr><td>First answer text after two tools<br><small>8 provider turns; grouping only</small></td><td>1.90 s</td><td>1.25 s</td></tr>
+<tr><td>Browser playback after the same typed two-tool request<br><small>4 trials; complete presets</small></td><td>3.90 s</td><td>1.91 s</td></tr>
+<tr><td>Model requests in those tool trials</td><td>3</td><td>2</td></tr>
+<tr><td>Playback reserve</td><td>200 ms</td><td>120 ms</td></tr>
+</tbody></table></div>
+<p class="note">Times are medians. Browser comparison: one distinct prompt, two repetitions per preset, ABBA order, saved configurations checked. Both tools worked exactly once in every trial. No analyst ran in this comparison. It combines several changes and provider variation; typed input skips recognition. Browser timestamps are not acoustic recordings.</p>
+<h2>What changed</h2>
+<ul><li>Related tools can be selected together. The application still validates and executes them in order.</li><li>The conversation policy asks for context-aware clarification, fewer automatic questions and appropriate responses to emotional cues. In 12 held-out snapshots it improved one ambiguous reference; eleven pairs tied. The policy alone added about 70 ms to median first text.</li><li>The optional analyst gets public conversation context. Only the foreground speaks. Cancelled or obsolete results are suppressed, including queued speech; retries cannot enqueue the same job twice.</li></ul>
+<h2>Playback repairs</h2><p>A fast-generated long reply used to trigger a false 30-second backlog cutoff. The repaired player completed a 57-second answer with its full caption. Cancelled results cannot speak later, and an analyst failure now produces one clear failure notice.</p><p class="note">The initial high-effort analyst exhausted its 4,096-token cap in one instrumented live run. This option now uses medium effort at the same cap. The speed comparison above did not invoke the analyst.</p><h2>Still experimental</h2>
+<p>A new user turn currently invalidates pending analysis, including a same-topic status question. This prevents old answers from resurfacing but can waste useful work. A second model can also add delay when one model could answer directly.</p>
+<p>One candidate answer missed the two-sentence instruction. A baseline answer invented a “phone on a stand” description. The curious expression sometimes expired before or during speech. These are remaining quality issues, not passes hidden by the timing results.</p>
+<p class="note">No human listening study has established better naturalness, emotional intelligence, interruption timing or voice quality. The debug view saves model configuration, tool receipts, analyst activity, timings, audio queues, captions and expressions across architecture switches.</p>
+</html>

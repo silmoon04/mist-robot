@@ -1,0 +1,54 @@
+{
+  "id": "cards",
+  "version": 7,
+  "tool": "built-in image_gen.imagegen",
+  "sourceFile": "cards.png",
+  "width": 1254,
+  "height": 1254,
+  "mode": "RGBA",
+  "grid": {
+    "columns": 4,
+    "rows": 4
+  },
+  "frameCount": 16,
+  "phases": {
+    "enter": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "loop": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "exit": [
+      12,
+      13,
+      14,
+      15
+    ]
+  },
+  "promptFiles": [
+    "../prompts/cards.txt",
+    "../prompts/cards_refine.txt"
+  ],
+  "source": "<LOCAL_HOME>/.codex/generated_images/01a0d2ad-f9c4-7ac1-88ee-7e4e79439130/exec-606d0cef-be60-4bbb-b463-af5896de0db3.png",
+  "sha256": "a412f6be61e4ee8326dd138b4d2261cc465a384c2eb802e8e8cd553e53ea2d65",
+  "motion": "Three cards spread; middle card pulls forward and settles; left card pulls forward and settles; cards tuck into a stack.",
+  "registration": "Use common-scale bottom-center registration, with loop 4-11 anchored to their lower fan edge; retain the forward/upward difference of the inspected card.",
+  "reference": "<LOCAL_HOME>/.codex/generated_images/01a0d2ad-f9c4-7ac1-88ee-7e4e79439130/exec-3840fb29-f018-4d28-a196-d3ed3dfe5b3a.png",
+  "review": {
+    "allCellsVisible": true,
+    "noFaceOrText": true,
+    "transparentBackground": true,
+    "minimumSignificantAlpha": 32,
+    "notes": "Original ImageGen RGBA saved without pixel modification. Alpha contains faint low-opacity matte residue that can appear brighter in raw black-backed previews; use actual alpha compositing. Root owns mechanical crop, registration and final playback check."
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "revision": "Playback continuity and thinking expression, 2026-09-14",
+  "status": "Ready for another listening trial; subjective quality and room echo are not verified.",
+  "tests": [
+    {
+      "name": "33 offline contracts",
+      "passed": true
+    },
+    {
+      "name": "6 converter recovery contracts",
+      "passed": true
+    },
+    {
+      "name": "Browser audio scheduler contracts",
+      "passed": true
+    },
+    {
+      "name": "40 faces and 31,050 renderer states",
+      "passed": true
+    }
+  ],
+  "live_conversations": [
+    {
+      "case": "greeting",
+      "errors": [],
+      "warnings": [],
+      "last_fixture_frame_to_first_converted_audio_s": 2.562999999965541,
+      "conversion_requests": 2
+    },
+    {
+      "case": "correction",
+      "errors": [],
+      "warnings": [],
+      "last_fixture_frame_to_first_converted_audio_s": 3.9060000000172295,
+      "conversion_requests": 3
+    },
+    {
+      "case": "tired",
+      "errors": [],
+      "warnings": [],
+      "last_fixture_frame_to_first_converted_audio_s": 2.672000000020489,
+      "conversion_requests": 2
+    }
+  ],
+  "interruption_observations": [
+    {
+      "name": "interruption",
+      "interrupted": true,
+      "reset_ack_ms": 0.0,
+      "stale_generation_packets_after_reset": 0,
+      "new_generation_audio_packets": 0,
+      "correction_followed": true,
+      "passed": false,
+      "limits": [
+        "Synthetic audio input and client-observed packets; not a measurement of room echo or human perception.",
+        "The browser playback stop is independently tested with fake audio sources."
+      ]
+    },
+    {
+      "name": "native_interruption_diagnostic",
+      "interrupted": true,
+      "reset_ack_ms": 4077.999999979511,
+      "stale_generation_packets_after_reset": 0,
+      "new_generation_audio_packets": 8,
+      "correction_followed": true,
+      "passed": true,
+      "limits": [
+        "Synthetic audio input and client-observed packets; not a measurement of room echo or human perception.",
+        "The browser playback stop is independently tested with fake audio sources."
+      ]
+    },
+    {
+      "name": "manual_interruption_diagnostic",
+      "interrupted": true,
+      "reset_ack_ms": 0.0,
+      "stale_generation_packets_after_reset": 0,
+      "new_generation_audio_packets": 8,
+      "correction_followed": true,
+      "passed": true,
+      "limits": [
+        "Synthetic audio input and client-observed packets; not a measurement of room echo or human perception.",
+        "The browser playback stop is independently tested with fake audio sources."
+      ]
+    }
+  ],
+  "limits": [
+    "One initial explicit-interruption trial produced a corrected native transcript but no converted correction audio within the test window. Subsequent native and explicit interruption trials returned new audio. This intermittent observation is not resolved by the passing repeats.",
+    "Live tests use synthetic input. No claim is made about loudspeaker echo or recognition of a real user speaking over playback.",
+    "The 200 ms startup reserve is additional to server-measured first-packet timings.",
+    "A native-interruption acknowledgement measurement includes synthetic speech generation and delivery; it is not a microphone-to-stop latency measurement.",
+    "Acoustic pause detection is not sentence segmentation. Long voiced passages can still be cut at the 1.8-second cap.",
+    "Independent Voice Changer requests can still introduce seams. No listening-panel quality score is available."
+  ],
+  "sources": [
+    "https://elevenlabs.io/docs/api-reference/speech-to-speech/stream",
+    "https://elevenlabs.io/docs/eleven-api/guides/how-to/websockets/realtime-tts"
+  ],
+  "implementation_sha256": {
+    "duplex/__init__.py": "5d72754d88de174c794e9c99541783681f2e5b26eb251c42d084bbf5dd88659a",
+    "duplex/build_evaluation.py": "e66a7ae0b775eaa4464f5737f2fc44c5cb6b001d174c501e3090ea66972c15d7",
+    "duplex/build_fix_report.py": "de31b9df575695e118c88ec9cc12e6031b3709302bba204f979f06e7f157516a",
+    "duplex/build_quality_report.py": "99daa53945c9b0ee2e23118c19df19d88a9c8d193be98cd95e7c889666a0333c",
+    "duplex/conversion.py": "70bcc6af031e80719b04da587125233221487df1496fa5c2ead02fc1b58871ab",
+    "duplex/face_map.json": "7a49c10b77d90a38e9c39903316976a990de6f3a4ed473de88f54feb7824dd62",
+    "duplex/native.py": "26b652edc519c25eb04d37590abc342e18272b23c2a124f6f4cc961f50b2cb06",
+    "duplex/package.py": "5c1e628af4f27a0f4c6a97176346e4b936dca4b69b5edbe80df115ef42dd227b",
+    "duplex/persona.txt": "d498e522d085f866d98e35570d72e44a3777fd9edbf07f7a3caa1ed4b74a38c7",
+    "duplex/runtime.py": "265b31fb380177778b443744831a6c0e4548b3ab0f3ed3b5fbaf30923e5710e6",
+    "duplex/sensors.py": "af152877bb82b8c5de94b6f84b6b468bbec8e37f7e2496226f61b4b507629d2e",
+    "duplex/server.py": "671eceaa72e534eba4a9e05c76aad8dc452342f57429a1a4408f900d7a5d26e7",
+    "duplex/static/app.js": "a6dacd87a94ec9eb48360c4cf21446d2f3d1d0b7d8f42099bced7376cfb03476",
+    "duplex/static/capture-worklet.js": "ad51a795254e79de00b7951e5ce31bfd32ca57361cda705be8fed0908a862259",
+    "duplex/static/index.html": "e18a5b9a98713a5275dc43b4c6884749dbfc8d42c75a3f9e75ef3884c83c4c5a",
+    "duplex/static/playback.js": "97d19706a40a81782157b6f6fc4be14e6c17c4c9e937eae7bc8ab7f2edbc3a7b",
+    "duplex/static/style.css": "8f2483ddc664d88b71c7380a3346bf65b714ff39afc48cfca07ac015eb4d180a"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "reviewedOn": "2026-09-29",
+  "reviewer": "independent styles_v2_art_direction agent",
+  "passed": true,
+  "approved": true,
+  "approvalScope": "Static style-direction comparison against the user's supplied visual reference. This is not approval of final runtime emotion mappings or animation assets.",
+  "manifestSha256": "71eae9762e04cc0848da7731e86e5d62e316ce2c75d4c4c06c73d6d5b717da69",
+  "comparisonSha256": "6fbf63e27e939f26c9edaeb46980e88b37ff8354c071c80cfa96763abc21f89a",
+  "reference": {"file": "user_reference.png", "sha256": "ffac6231d241610da27680f0d46567e0240349b07289e6ba4754157e4caeec28"},
+  "sources": {
+    "reference_glow": {"file": "source/reference_glow.png", "sha256": "756ec42e0f47a61077532d3b2963375bd1ba4ae1c62c73d240426ffd945f5914"},
+    "character": {"file": "source/character.png", "sha256": "45828424bf484d959c2cb92fe7d576ae2a3717a23a991aec0cab4660e6e3c5be"}
+  },
+  "method": "Viewed the user's reference, both complete source sheets and the final 30-tile comparison. Compared eye construction, gaze, asymmetry and emotional gesture at source and contact-sheet sizes. Verified exact file hashes. Glow and stroke weight alone were not accepted as evidence of a new style.",
+  "checks": {
+    "roundedHanddrawnCyanStyleMatchesReference": true,
+    "changesEyeConstructionBeyondThicknessAndGlow": true,
+    "multipleLidAndGazeConstructionsAcrossSet": true,
+    "quietThoughtUsesUpwardGaze": true,
+    "faceOnlyWithoutActivityProps": true,
+    "deadpanAndDelightedRemainMouthless": true,
+    "sadKeepsFrownAndSingleTear": true,
+    "noVisibleClippingOrNeighborContamination": true,
+    "readyForAnimation": false,
+    "finalEmotionMappingApproved": false
+  },
+  "directions": {
+    "reference_glow": "The rounded lid-and-cup eyes, asymmetric open and half-lidded pairs, upward-looking pupil cutouts and restrained cyan halo closely follow the supplied reference. Happy and Delighted use closed upward arches, while Quiet thought uses filled upward-looking eyes. The change is visible in the eye shapes even without considering glow.",
+    "character": "The stronger direction uses squashed filled eyes, large dark pupil cutouts, unequal eye height and different constructions within a pair. Quiet thought looks upward; Curious combines a tall eye with a low half-lid. These structural changes distinguish it from v2's contour and material variations."
+  },
+  "faceNotes": [
+    {"face": "Calm", "result": "Reference style reads friendly and relaxed. More expressive reads cheeky because of the half-lid and sideways gaze, and is close to that direction's Playful pose."},
+    {"face": "Listening", "result": "Both directions have an attentive open eye and small closed mouth. Strong eye asymmetry can also suggest curiosity; the label needs testing before runtime adoption."},
+    {"face": "Curious", "result": "Reference style reads skeptical or questioning. More expressive reads puzzled or confused, with a slight frown. Both are exploratory alternatives rather than exact neutral-curiosity matches."},
+    {"face": "Quiet thought", "result": "Upward-looking pupil cutouts communicate thought more directly than the old neutral squint. This is a clear improvement against the reference criterion."},
+    {"face": "Happy", "result": "Closed smiling eyes communicate happiness in both directions; the reference direction has a larger open smile."},
+    {"face": "Playful", "result": "Asymmetric lid and open-eye pair with a curled smile reads playful. More expressive shares most of its eye construction with Calm."},
+    {"face": "Deadpan", "result": "Level half-lids and no mouth read more unimpressed or deadpan than the original closed arcs."},
+    {"face": "Sleepy", "result": "Reference style uses drooping lids and an oval mouth; More expressive uses closed eyes and a small yawn. Both retain a tired gesture."},
+    {"face": "Delighted", "result": "Mouthless happy arches or squeezed chevrons retain the delighted role."},
+    {"face": "Sad", "result": "Drooping asymmetric lids, a frown and one tear clearly retain sadness in both directions."}
+  ],
+  "limitations": [
+    "The approval is for showing two static style directions to the user. Several expression labels remain interpretive, particularly Calm, Listening and Curious.",
+    "More expressive Calm and Playful are too similar to treat as clearly separated runtime emotions without further drawing changes.",
+    "The supplied reference includes activity symbols that help communicate state. Those symbols were intentionally omitted, so the face alone carries less task-specific meaning.",
+    "These studies have no newly tested blinks, transitions, speech mouths or voice synchronization. Pupil movement and the cyan halo need motion and small-screen testing before animation adoption.",
+    "Visual judgments are not a user study and do not establish that every viewer will read each expression identically."
+  ]
+}

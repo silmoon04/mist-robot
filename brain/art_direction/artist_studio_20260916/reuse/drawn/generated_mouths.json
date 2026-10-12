@@ -1,0 +1,48 @@
+{
+  "mode": "built-in image_gen",
+  "reference": "/brain/art_direction/artist_studio_20260916/reuse/mouths_sheet.png",
+  "layout": {
+    "columns": 4,
+    "rows": 3,
+    "cels": [
+      "rest",
+      "MBP",
+      "small_AA",
+      "AA",
+      "EH",
+      "EE",
+      "OH",
+      "OO",
+      "FV",
+      "LNT",
+      "S",
+      "SMILE"
+    ]
+  },
+  "assets": [
+    {
+      "id": "mouth_neutral",
+      "sheet": "sheets/mouth_neutral.png",
+      "prompt": "Use case: stylized-concept. Asset type: production raster sprite sheet for a friendly robot face's lip-sync.\nInput image: style reference only, use the flat turquoise shape language of these existing MIST mouths. Do not copy labels, borders, background, or the contact sheet layout.\nCreate ONE clean sprite sheet, EXACTLY 4 equal columns and 3 equal rows, 12 isolated mouth cels in reading order. Plain pure white (#FFFFFF) background across entire image. No grid lines, text, labels, eyes, face, frame numbers, shadows, glow, gradients, texture, noise, teeth, tongue, realistic lips, extra accents, or watermark.\nEvery mouth is flat solid turquoise #5eeadd with clean antialiased edges, confident rounded hand-drawn contours. Mouth silhouettes must be readable on their own, highly simplified stylized robot shapes. Expressive articulation by redrawing actual shapes, not stretching the same oval. Slight organic asymmetry is welcome but no jitter. Mouth centered horizontally within each equal cell; consistent upper-lip anchor in each cell, with aperture opening downwards. Keep abundant empty margins, each cel fully within its cell. The largest mouth width is 65% of a cell, aperture height no more than 35% cell height. No detached components.\nCels reading left-to-right across each row:\nRow 1: (1) REST relaxed thin closed rounded stroke with subtle curve, (2) MBP short closed gently pressed stroke, (3) small AA a small relaxed bean-shaped opening, (4) AA a broader and taller relaxed open aperture.\nRow 2: (5) EH medium-wide shallow aperture with natural corners, (6) EE wide corner-pulled slim opening, (7) OH rounded medium aperture, (8) OO small softly pursed aperture.\nRow 3: (9) FV narrow lower opening with slightly folded upper edge, (10) LNT mid opening with only a tiny upper contour ledge, (11) S almost closed thin opening, (12) SMILE friendly open curved smile.\nThe outline of the filled turquoise shape IS the mouth, exactly like a flat digital robot display. Use white negative-space contour cuts only where essential. No turquoise lip outlines surrounding white holes.\nExpression throughout: calm neutral, relaxed corners, subtle natural warmth. Even open speech apertures remain calm. Rest corresponds in style to source mouth_line_30.",
+      "source_output": "C:\\Users\\hssil\\.codex\\generated_images\\01a0ca65-30a8-7040-a18b-4934d5f9b166\\exec-094f5014-d5e5-45f2-9058-6e83bd185b8b.png",
+      "review": {
+        "accepted_as": "newly drawn mouth pose study for atlas registration",
+        "cell_count": 12,
+        "grid": "4 columns by 3 rows, one mouth per cell",
+        "notes": "Both variants inspected. Rounded clean contours, no labels, eyes or realistic lip detail. Smile variant has more lifted corners. The image model added faint background and fill variation despite the flat-color request; atlas extraction should preserve the contour while enforcing the existing flat turquoise color. Upper-lip anchors need registration before playback. These are pose drawings, not proven audio lip-sync."
+      }
+    },
+    {
+      "id": "mouth_smile",
+      "sheet": "sheets/mouth_smile.png",
+      "prompt": "Use case: stylized-concept. Asset type: production raster sprite sheet for a friendly robot face's lip-sync.\nInput image: style reference only, use the flat turquoise shape language of these existing MIST mouths. Do not copy labels, borders, background, or the contact sheet layout.\nCreate ONE clean sprite sheet, EXACTLY 4 equal columns and 3 equal rows, 12 isolated mouth cels in reading order. Plain pure white (#FFFFFF) background across entire image. No grid lines, text, labels, eyes, face, frame numbers, shadows, glow, gradients, texture, noise, teeth, tongue, realistic lips, extra accents, or watermark.\nEvery mouth is flat solid turquoise #5eeadd with clean antialiased edges, confident rounded hand-drawn contours. Mouth silhouettes must be readable on their own, highly simplified stylized robot shapes. Expressive articulation by redrawing actual shapes, not stretching the same oval. Slight organic asymmetry is welcome but no jitter. Mouth centered horizontally within each equal cell; consistent upper-lip anchor in each cell, with aperture opening downwards. Keep abundant empty margins, each cel fully within its cell. The largest mouth width is 65% of a cell, aperture height no more than 35% cell height. No detached components.\nCels reading left-to-right across each row:\nRow 1: (1) REST relaxed thin closed rounded stroke with subtle curve, (2) MBP short closed gently pressed stroke, (3) small AA a small relaxed bean-shaped opening, (4) AA a broader and taller relaxed open aperture.\nRow 2: (5) EH medium-wide shallow aperture with natural corners, (6) EE wide corner-pulled slim opening, (7) OH rounded medium aperture, (8) OO small softly pursed aperture.\nRow 3: (9) FV narrow lower opening with slightly folded upper edge, (10) LNT mid opening with only a tiny upper contour ledge, (11) S almost closed thin opening, (12) SMILE friendly open curved smile.\nThe outline of the filled turquoise shape IS the mouth, exactly like a flat digital robot display. Use white negative-space contour cuts only where essential. No turquoise lip outlines surrounding white holes.\nExpression throughout: warm happy, subtly lifted corners maintained across all speech phonemes. Rest is a soft upturned smile in the style of source mouth_smile_arc_37. Rounded open smiling mouths should be bean or wedge-like and varied, never 12 copies of an oval. Keep the smile gentle rather than enormous.",
+      "source_output": "C:\\Users\\hssil\\.codex\\generated_images\\01a0ca65-30a8-7040-a18b-4934d5f9b166\\exec-9a84337d-22c2-4992-b63b-333b21520ae3.png",
+      "review": {
+        "accepted_as": "newly drawn mouth pose study for atlas registration",
+        "cell_count": 12,
+        "grid": "4 columns by 3 rows, one mouth per cell",
+        "notes": "Both variants inspected. Rounded clean contours, no labels, eyes or realistic lip detail. Smile variant has more lifted corners. The image model added faint background and fill variation despite the flat-color request; atlas extraction should preserve the contour while enforcing the existing flat turquoise color. Upper-lip anchors need registration before playback. These are pose drawings, not proven audio lip-sync."
+      }
+    }
+  ]
+}

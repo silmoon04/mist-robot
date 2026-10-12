@@ -1,0 +1,76 @@
+{
+  "passed": true,
+  "scope": "Final manifest runtime and geometry",
+  "checkedAt": "2026-09-24T22:26:27.269Z",
+  "checks": [
+    "Manifest and automatic faces agree on three original identities",
+    "reading reaches every cel at 15 fps with bounded, continuous gaze",
+    "coding reaches every cel at 15 fps with bounded, continuous gaze",
+    "writing reaches every cel at 15 fps with bounded, continuous gaze",
+    "sorting reaches every cel at 15 fps with bounded, continuous gaze",
+    "searching reaches every cel at 15 fps with bounded, continuous gaze",
+    "pondering reaches every cel at 15 fps with bounded, continuous gaze",
+    "connecting reaches every cel at 15 fps with bounded, continuous gaze",
+    "checking reaches every cel at 15 fps with bounded, continuous gaze",
+    "Automatic faces rotate on starts and slow phrase boundaries",
+    "Speech freezes automatic faces and activity while keeping the audio clock unquantized",
+    "All activity replacements reject stale completion tokens",
+    "All forty faces and blinks preserve the verified original drawing paths and source cels",
+    "Speech mouths match the original renderer and close promptly between display ticks",
+    "Search prop remains geometrically clear of all forty original eye shapes",
+    "Runtime and manifest stayed stable during this run"
+  ],
+  "failures": [],
+  "counts": {
+    "automaticFaces": 3,
+    "longWaitFaceChanges": 6,
+    "speechFaceSamples": 270,
+    "staleCompletionPairs": 64,
+    "originalFaceSamples": 840,
+    "originalExpressions": 40,
+    "speechClockSamples": 120,
+    "speechPaintsPerSecond": 15
+  },
+  "timings": {
+    "reading": 3000,
+    "coding": 2400,
+    "writing": 2400,
+    "sorting": 2600,
+    "searching": 2133.3333333333335,
+    "pondering": 2900,
+    "connecting": 2133.3333333333335,
+    "checking": 2133.3333333333335
+  },
+  "searchClearance": {
+    "minimum": 10.964474536020322,
+    "samples": 1960,
+    "closest": {
+      "face": "34_sad_09_manual",
+      "frame": 22,
+      "phase": "exit",
+      "prop": [
+        41.03515625,
+        50.45733667695453,
+        59.0703125,
+        59.94952417695453
+      ],
+      "eye": [
+        61.10297119906047,
+        18.830857771981783,
+        81.4111198959052,
+        39.6829225182092
+      ]
+    },
+    "propLayerSamples": 2040,
+    "overlaps": []
+  },
+  "limits": [
+    "Recorded drawing calls verify source art and geometry, not pixel antialiasing or subjective animation quality.",
+    "Search clearance uses conservative bounding rectangles for visible export bounds and recorded eye paths/crops.",
+    "DOM selector wiring and audible voice playback require the separate browser review."
+  ],
+  "runtimeSha256": "0a08259942ac3fa32c1c7dc51372ba0bf3e008553ec1a1860cc6421f36a8a55f",
+  "manifestSha256": "48562750d59e7fa052a3737038177cfdd311bd4c67f577786da1437337baec5a",
+  "originalRendererSha256": "22084e744e8d11ed0484b273b8f82ee3af8c9e9e11070c6290a3e535f6d48ce3",
+  "referenceRendererSha256": "9ade474f61fc9a6f3eee260b6bb07ef4adc2a4e6f56cae3a4871acbc531563ff"
+}

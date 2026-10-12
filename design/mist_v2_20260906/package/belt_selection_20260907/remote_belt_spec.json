@@ -1,0 +1,203 @@
+{
+  "created_date": "2026-09-07",
+  "selection_status": "manufacturer_belt_capacity_screen_pass; assembly_unvalidated; no_purchase",
+  "transmission": {
+    "remote_belt": {
+      "pitch_mm": 3,
+      "pulley_teeth": 32,
+      "width_mm": 9,
+      "pitch_length_mm": 375
+    }
+  },
+  "remote_belt": {
+    "pitch_mm": 3,
+    "pulley_teeth": 32,
+    "width_mm": 9,
+    "pitch_length_mm": 375
+  },
+  "belt": {
+    "manufacturer": "Gates",
+    "family": "PowerGrip GT3",
+    "designation": "375-3MGT-09",
+    "eu_product_code": "940053320",
+    "reinforcement": "fibreglass tensile cords",
+    "belt_teeth": 125,
+    "profile": "Gates 3MGT; use manufacturer-matched GT groove"
+  },
+  "geometry": {
+    "nominal_centre_distance_mm": 139.5,
+    "pitch_radius_mm": 15.278874536821952,
+    "pitch_diameter_mm": 30.557749073643905,
+    "wrap_degrees": 180,
+    "teeth_in_mesh": 16,
+    "ratio": 1,
+    "belt_face_guideline_mm": 10.25,
+    "tensioner_travel_mm": null,
+    "tensioner_travel_status": "determine with actual belt and stack; centre calculation is nominal"
+  },
+  "pulley_reference": {
+    "manufacturer": "Gates",
+    "part": "3MR-32S-09",
+    "material": "aluminium",
+    "catalog_outside_diameter_mm": 29.7942,
+    "catalog_flange_diameter_mm": 33.6042,
+    "catalog_face_width_mm": 10.16,
+    "catalog_total_length_mm": 20.6248,
+    "catalog_hub_diameter_mm": 21.615399999999998,
+    "catalog_pilot_bore_mm": 6.35,
+    "catalog_maximum_bore_mm": 15.875,
+    "actual_tooth_profile_file": null,
+    "fdm_status": "prototype only until exact profile and printed pulley performance are validated"
+  },
+  "ratings": {
+    "source": "https://www.gates.com/content/dam/documents-library/catalogs/light-power-and-precision-manual.pdf",
+    "printed_page": 19,
+    "pdf_page_1_based": 21,
+    "lookup_policy": "use smaller 30-tooth column, without interpolation, to bound 32-tooth selection conservatively",
+    "base_width_mm": 6,
+    "width_multiplier": 1.64,
+    "length_multiplier": 1.05,
+    "length_band_mm": [
+      348,
+      405
+    ],
+    "teeth_in_mesh_multiplier": 1.0,
+    "service_factor_working_peak": 2.0,
+    "assumed_max_relative_rpm": 100,
+    "rows": [
+      {
+        "relative_rpm": 10,
+        "conservative_30_tooth_6mm_base_Nm": 4.31,
+        "corrected_9mm_Nm": 7.4218199999999985,
+        "allowable_with_service_factor_2_Nm": 3.7109099999999993
+      },
+      {
+        "relative_rpm": 20,
+        "conservative_30_tooth_6mm_base_Nm": 4.03,
+        "corrected_9mm_Nm": 6.939660000000001,
+        "allowable_with_service_factor_2_Nm": 3.4698300000000004
+      },
+      {
+        "relative_rpm": 40,
+        "conservative_30_tooth_6mm_base_Nm": 3.74,
+        "corrected_9mm_Nm": 6.4402800000000004,
+        "allowable_with_service_factor_2_Nm": 3.2201400000000002
+      },
+      {
+        "relative_rpm": 60,
+        "conservative_30_tooth_6mm_base_Nm": 3.58,
+        "corrected_9mm_Nm": 6.16476,
+        "allowable_with_service_factor_2_Nm": 3.08238
+      },
+      {
+        "relative_rpm": 100,
+        "conservative_30_tooth_6mm_base_Nm": 3.37,
+        "corrected_9mm_Nm": 5.80314,
+        "allowable_with_service_factor_2_Nm": 2.90157
+      },
+      {
+        "relative_rpm": 200,
+        "conservative_30_tooth_6mm_base_Nm": 3.09,
+        "corrected_9mm_Nm": 5.32098,
+        "allowable_with_service_factor_2_Nm": 2.66049
+      }
+    ],
+    "continuous_demand_Nm": [
+      1.24,
+      1.67
+    ],
+    "working_peak_demand_Nm": [
+      2.27,
+      2.75
+    ],
+    "margin_at_100rpm_vs_2p75_peak_with_SF2": 1.0551163636363636,
+    "stall_torque_ideal_after_2to1_Nm": 5.88399,
+    "stall_status": "separate from 2.75Nm working peak; no zero-speed rating claimed; requires torque limit and/or stall verification",
+    "relative_rpm_note": "Parent estimates <=45rpm relative to the femur from opposite-direction joint motion at nominal12V no-load servo speeds;100rpm is conservative screening speed."
+  },
+  "preload_estimates": {
+    "basis_torque_Nm": 2.75,
+    "static_each_span_N": 108.89218286270871,
+    "shaft_radial_load_N": 217.78436572541742,
+    "formula": "Gates printed p65 Formula1; speed term negligible at100rpm; engineering calculation, not final installation setting"
+  },
+  "shaft_screen": {
+    "recommendation": "prefer at least 7-8mm supported steel throughshaft; verify fatigue/bending/coupling; 4mm may only remain if it is an independently checked support axle rather than a torque shaft",
+    "at_2p75Nm_nominal_torsion_MPa": {
+      "4": 218.8380467513561,
+      "7": 40.83275507897023,
+      "8": 27.354755843919513
+    },
+    "selected_input_shaft_mm": 7,
+    "selected_knee_shaft_mm": 8,
+    "selected_bearings": {
+      "input": "627",
+      "knee": "608"
+    },
+    "status": "Parent confirms new CAD uses supported 7mm input and 8mm knee; strength and hub holding checks remain necessary."
+  },
+  "runner_up": {
+    "belt": "364-2MGT-09",
+    "pitch_mm": 2,
+    "pulley_teeth": 40,
+    "width_mm": 9,
+    "pitch_length_mm": 364,
+    "nominal_centre_distance_mm": 142,
+    "pitch_radius_mm": 12.732395447351628,
+    "base_lookup_teeth": 38,
+    "base_at100rpm_Nm": 2.1,
+    "width_factor": 1.64,
+    "length_factor": 1.1,
+    "corrected_capacity100rpm_Nm": 3.7884,
+    "SF2_allowable100rpm_Nm": 1.8942,
+    "verdict": "continuous demand passes at100rpm; 2.75Nm working peak fails SF2; inferior margin and exact 360mm Gates belt not catalogue listed"
+  },
+  "open_items": [
+    "Acquire exact manufacturer pulley model/profile or select a confirmed matched machined pulley",
+    "Confirm pulley rotation speed relative to the moving femur",
+    "Final shaft, bearing, hub and fastener stress/deflection checks",
+    "Measured belt tension and reversing backlash/durability test",
+    "Check actual UK pulley quotation and compatibility statement before purchase"
+  ],
+  "procurement": {
+    "belt_preferred_retail": {
+      "supplier": "BearingBoys",
+      "url": "https://www.bearingboys.co.uk/3M-Poly-Chain-PowerGrip-GT3-Timing-Belts-/GT3-3753MGT9-Gates-PowerGrip-GT3-Timing-Belt-344100-p",
+      "GBP_ex_VAT": 11.92,
+      "GBP_inc_VAT": 14.3,
+      "lead_time": "approximately 8-10 working days"
+    },
+    "belt_alternative": {
+      "supplier": "Rubix UK",
+      "url": "https://uk.rubix.com/en/powergrip-gt3-belt/p-G1129009370",
+      "GBP_ex_VAT": 11.14,
+      "GBP_inc_VAT": 13.37,
+      "lead_time": "usually within 14 working days"
+    },
+    "matched_metal_preference": {
+      "part": "Gates 3MR-32S-09",
+      "UK_price_status": "quotation required"
+    },
+    "matched_metal_alternative": {
+      "part": "SDP/SI A 6A53M032DF0906",
+      "UK_distributor": "Davall",
+      "drawing_url": "https://shop.sdp-si.com/media/pdf/80502158.pdf",
+      "UK_price_status": "quotation required",
+      "bore_work": "Machine supplied 6 mm bore to 7 mm input and 8 mm knee; control runout; verify hub holding torque."
+    },
+    "direct_bore_option": {
+      "input": "MISUMI GPA32GT3090-B-P7",
+      "knee": "MISUMI GPA32GT3090-B-P8",
+      "input_unit_EUR_ex_VAT": 27.63,
+      "knee_price_verified": false,
+      "restriction": "Business customers; UK storefront dispatches from Frankfurt; displayed price is not a GBP landed quote.",
+      "profile_evidence": "Manufacturer states Gates Unitta 3GT compatibility; confirm selected belt pairing when quoting."
+    }
+  },
+  "sources": {
+    "ratings": "https://www.gates.com/content/dam/documents-library/catalogs/light-power-and-precision-manual.pdf",
+    "pulley_public_drawing": "sources/misumi_3gt_pulleys.pdf",
+    "pulley_public_drawing_render": "sources/misumi_3gt_pulleys.png",
+    "supplier_details": "supplier_notes.md"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "path_source": "first_leg_path_033703213748.json",
+  "dense_count": 815,
+  "dense_feasible": true,
+  "dense_min_constraint": 0.0,
+  "min_support_margin_m": 0.015099854933583387,
+  "max_torque_nm": 0.6546012443497818,
+  "gravity_gradient_max_error_nm": 1.358428647346699e-10,
+  "leg_mass_closure_kg": 1.1102230246251565e-16,
+  "pitched_axle_jacobian_max_error_m_rad": 2.6376675583278386e-11,
+  "wheel_camber_derivative_error_m_rad": 3.5616754771178316e-12,
+  "equilibrium_residual_max": 7.105427357601002e-15,
+  "provisional_14s_schedule": {
+    "max_motor_speed_rad_s": 1.6215028867818433,
+    "min_static_torque_speed_headroom_nm": 0.6803354046162899,
+    "interpretation": "Only a static torque plus finite-difference speed screen. Acceleration, tyre scrub, actuator transients and thermal behavior are not simulated."
+  },
+  "failed_dense_samples": [],
+  "source_hashes": {
+    "model_snapshot.py": "d7fc5c843553da04feebf93f0bf59be60033e4f52c858117bfea95e23de59619",
+    "parameters_snapshot.json": "a37a97a046164323975bd126959d50e892eb78a6f2225c341ac5cd3dffa399b2",
+    "search.py": "cbd95a7af571ed9944a6c0d1403c72d42162cff490974b0b47c7edb7f1416fd8",
+    "pitch_search.py": "0e3482818927c1d264e7315d2a2f5fe8d377e75c629f43dc7b0a3157bf559501",
+    "first_leg_path.py": "535e0f527206182ecc9fdc689bdd9480bd1bb051da70ce3d0aacd51910996b6a"
+  },
+  "body_envelope_reference_sha256": "a22ab663c0c6b3e87645865b9caee65ca5195a2af82e45d42cbee958590a74a2"
+}

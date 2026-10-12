@@ -1,0 +1,37 @@
+{
+  "version": "1.0.1",
+  "adapterVersion": "1.0.0",
+  "command": "node --test preview/transport.test.mjs preview/playback.test.mjs",
+  "passed": 12,
+  "failed": 0,
+  "combinedPassed": 26,
+  "combinedFailed": 0,
+  "scope": "The app-used PreviewPlayback lifecycle, actual Geraldine adapter and native state engine, with injected audio, renderer and wall clock. Reads the existing native manifest without changing it.",
+  "cases": [
+    "replay resets blink epoch at scene zero and reproduces poses",
+    "interruption immediately starts the native 400 ms return to ongoing emotion",
+    "paused recovery settles on wall time and resumes without a backward face timestamp",
+    "recovery inside one render bucket cannot freeze an opening cel",
+    "resume during recovery retains active speech beyond the 400 ms boundary",
+    "pause and paused interruption settle half-blinks and cannot revive speech",
+    "packet gap closes speech while retaining emotional intent",
+    "reset cancels pending play and retires stale sampler and expression traffic",
+    "audio suspension closes speech, retires sources and preserves clip position",
+    "scene end during the final return transition settles the face",
+    "scene end during an active reaction completes the return without audio",
+    "reduced motion suppresses idle blinks and keeps explicit native transitions and speech"
+  ],
+  "recovery": {
+    "nativeTransitionMs": 400,
+    "nativeFramePeriods": 6,
+    "renderPeriodMs": 66.66666666666667,
+    "completionQuantizationBoundMs": 66.66666666666667,
+    "browserEventLoopDelayMeasured": false,
+    "listeningReplacesEmotionalIntent": false
+  },
+  "limitations": [
+    "Injected-clock checks do not prove browser timer precision, measured acoustic latency, perceptual lip sync or visual approval",
+    "Independent acceptance owns browser review and screenshots",
+    "The existing direction proposal for mandatory quiet-listening replacement is superseded by preserved emotional intent"
+  ]
+}

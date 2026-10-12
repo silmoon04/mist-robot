@@ -1,0 +1,271 @@
+{
+  "scope": "Comparison of the explicitly listed rigid-body runs. No material-strength, hardware-control or physical-walking qualification is implied.",
+  "interpretation": "Compare controller sensitivity only within matching manifest, posture, gait and effort settings. Full-solid and part-only extrusion masses are distinct scenarios.",
+  "case_count": 5,
+  "cases": [
+    {
+      "case": "output_r5_printed_nominal",
+      "report_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\simulation\\output_r5_printed_nominal\\simulation_report.json",
+      "report_sha256": "b4a0188e8f0508ab28f7c1d6a6ada77f1ae487243654a92ab80cf0849f62a3a8",
+      "manifest_sha256": "15f5af97a24525fb5b8539e5f05094fd7455b7da621992cd39ce1c29796a5513",
+      "mass_model": {
+        "kind": "Cura_model_deposition_high_fasteners",
+        "as_sliced": true,
+        "physical_measurement": false,
+        "printed_parts": "Line-integrated commanded model deposition at layer mid-height",
+        "fasteners": "high",
+        "wire_allowance_kg": 0.15,
+        "source_solid_manifest_sha256": "ce504f86e7779430ae50394041a0d02d92c47ab61b77c710cbcfba79fbdd9470",
+        "source_production_properties_sha256": "01cc1953619571307f23be8bad3e27cca371c89b778abeccf662b6ad8fd42468",
+        "integrator_sha256": "0c18737f7d822da0915c6f8aecf165dc80b7afe94d13f0eede0e83022000c80d",
+        "notes": [
+          "Printed COM and full inertia tensors are transformed, not scaled from solid CAD.",
+          "Support and bed-adhesion material are not included on the robot.",
+          "These are toolpath estimates and nominal hardware geometry, not weighed parts."
+        ]
+      },
+      "mass_kg": 2.756961896899023,
+      "status": "bounded_simulation_pass",
+      "inputs_unchanged": true,
+      "uncertainty": {
+        "position_stiffness_scale": 1.0,
+        "derivative_damping_scale": 0.1,
+        "feedback_deadband_half_width_deg": 0.0,
+        "feedback_deadband_full_width_deg": 0.0,
+        "scope": "Finite actuator and fixture response sensitivity represented by joint control gains and a position-feedback dead zone. Links remain rigid.",
+        "material_properties_measured": false,
+        "structural_flexibility_simulated": false,
+        "mechanical_backlash_simulated": false,
+        "note": "The dead zone is a feedback uncertainty proxy. It does not simulate separate motor and output shafts, contact between backlash flanks, anisotropic printed material, creep, fracture or joint separation. Gravity feedforward remains active."
+      },
+      "initial_joint_deg": [
+        0,
+        30.0,
+        81.0
+      ],
+      "stride_mm": 22.0,
+      "lift_mm": 15.0,
+      "com_shift_mm": 10.0,
+      "effort_cap_nm": 0.588,
+      "advance_mm": 24.552773917093873,
+      "maximum_stance_error_mm": 7.212417054072033,
+      "minimum_mid_swing_margin_mm": 13.152705763383063,
+      "peak_static_torque_nm": 0.546521375263394,
+      "peak_sampled_torque_nm": 0.579290703544328,
+      "failed_dynamics_gates": [],
+      "failure": null,
+      "printed_strength_verified": false
+    },
+    {
+      "case": "output_r5_printed_half_stiffness",
+      "report_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\simulation\\output_r5_printed_half_stiffness\\simulation_report.json",
+      "report_sha256": "ffc9a4c6a98232587dbc373d08089bf129c801d0945fd4d6ea5cfc448eee25fe",
+      "manifest_sha256": "15f5af97a24525fb5b8539e5f05094fd7455b7da621992cd39ce1c29796a5513",
+      "mass_model": {
+        "kind": "Cura_model_deposition_high_fasteners",
+        "as_sliced": true,
+        "physical_measurement": false,
+        "printed_parts": "Line-integrated commanded model deposition at layer mid-height",
+        "fasteners": "high",
+        "wire_allowance_kg": 0.15,
+        "source_solid_manifest_sha256": "ce504f86e7779430ae50394041a0d02d92c47ab61b77c710cbcfba79fbdd9470",
+        "source_production_properties_sha256": "01cc1953619571307f23be8bad3e27cca371c89b778abeccf662b6ad8fd42468",
+        "integrator_sha256": "0c18737f7d822da0915c6f8aecf165dc80b7afe94d13f0eede0e83022000c80d",
+        "notes": [
+          "Printed COM and full inertia tensors are transformed, not scaled from solid CAD.",
+          "Support and bed-adhesion material are not included on the robot.",
+          "These are toolpath estimates and nominal hardware geometry, not weighed parts."
+        ]
+      },
+      "mass_kg": 2.756961896899023,
+      "status": "bounded_simulation_pass",
+      "inputs_unchanged": true,
+      "uncertainty": {
+        "position_stiffness_scale": 0.5,
+        "derivative_damping_scale": 0.1,
+        "feedback_deadband_half_width_deg": 0.0,
+        "feedback_deadband_full_width_deg": 0.0,
+        "scope": "Finite actuator and fixture response sensitivity represented by joint control gains and a position-feedback dead zone. Links remain rigid.",
+        "material_properties_measured": false,
+        "structural_flexibility_simulated": false,
+        "mechanical_backlash_simulated": false,
+        "note": "The dead zone is a feedback uncertainty proxy. It does not simulate separate motor and output shafts, contact between backlash flanks, anisotropic printed material, creep, fracture or joint separation. Gravity feedforward remains active."
+      },
+      "initial_joint_deg": [
+        0,
+        30.0,
+        81.0
+      ],
+      "stride_mm": 22.0,
+      "lift_mm": 15.0,
+      "com_shift_mm": 10.0,
+      "effort_cap_nm": 0.588,
+      "advance_mm": 22.659337031655014,
+      "maximum_stance_error_mm": 4.4286910855833,
+      "minimum_mid_swing_margin_mm": 6.459894549930747,
+      "peak_static_torque_nm": 0.546521375263394,
+      "peak_sampled_torque_nm": 0.5366132922283092,
+      "failed_dynamics_gates": [],
+      "failure": null,
+      "printed_strength_verified": false
+    },
+    {
+      "case": "output_r5_printed_feedback_05",
+      "report_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\simulation\\output_r5_printed_feedback_05\\simulation_report.json",
+      "report_sha256": "72219a5c128ff6aad3f0b99f5fba5d7bced5c55a39ea9ec3912da31c6b6ab85d",
+      "manifest_sha256": "15f5af97a24525fb5b8539e5f05094fd7455b7da621992cd39ce1c29796a5513",
+      "mass_model": {
+        "kind": "Cura_model_deposition_high_fasteners",
+        "as_sliced": true,
+        "physical_measurement": false,
+        "printed_parts": "Line-integrated commanded model deposition at layer mid-height",
+        "fasteners": "high",
+        "wire_allowance_kg": 0.15,
+        "source_solid_manifest_sha256": "ce504f86e7779430ae50394041a0d02d92c47ab61b77c710cbcfba79fbdd9470",
+        "source_production_properties_sha256": "01cc1953619571307f23be8bad3e27cca371c89b778abeccf662b6ad8fd42468",
+        "integrator_sha256": "0c18737f7d822da0915c6f8aecf165dc80b7afe94d13f0eede0e83022000c80d",
+        "notes": [
+          "Printed COM and full inertia tensors are transformed, not scaled from solid CAD.",
+          "Support and bed-adhesion material are not included on the robot.",
+          "These are toolpath estimates and nominal hardware geometry, not weighed parts."
+        ]
+      },
+      "mass_kg": 2.756961896899023,
+      "status": "not_validated",
+      "inputs_unchanged": true,
+      "uncertainty": {
+        "position_stiffness_scale": 0.5,
+        "derivative_damping_scale": 0.1,
+        "feedback_deadband_half_width_deg": 0.5,
+        "feedback_deadband_full_width_deg": 1.0,
+        "scope": "Finite actuator and fixture response sensitivity represented by joint control gains and a position-feedback dead zone. Links remain rigid.",
+        "material_properties_measured": false,
+        "structural_flexibility_simulated": false,
+        "mechanical_backlash_simulated": false,
+        "note": "The dead zone is a feedback uncertainty proxy. It does not simulate separate motor and output shafts, contact between backlash flanks, anisotropic printed material, creep, fracture or joint separation. Gravity feedforward remains active."
+      },
+      "initial_joint_deg": [
+        0,
+        30.0,
+        81.0
+      ],
+      "stride_mm": 22.0,
+      "lift_mm": 15.0,
+      "com_shift_mm": 10.0,
+      "effort_cap_nm": 0.588,
+      "advance_mm": 5.184722365811467,
+      "maximum_stance_error_mm": 37.9225329449198,
+      "minimum_mid_swing_margin_mm": 12.052866963206295,
+      "peak_static_torque_nm": 0.546521375263394,
+      "peak_sampled_torque_nm": 0.588,
+      "failed_dynamics_gates": [
+        "crawl",
+        "actual_foot_steps",
+        "stance_position"
+      ],
+      "failure": null,
+      "printed_strength_verified": false
+    },
+    {
+      "case": "output_r5_printed_feedback_10",
+      "report_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\simulation\\output_r5_printed_feedback_10\\simulation_report.json",
+      "report_sha256": "3a240878bee5a5f223e826c7381407a62794e662635cfcdd1b0aa61738b97965",
+      "manifest_sha256": "15f5af97a24525fb5b8539e5f05094fd7455b7da621992cd39ce1c29796a5513",
+      "mass_model": {
+        "kind": "Cura_model_deposition_high_fasteners",
+        "as_sliced": true,
+        "physical_measurement": false,
+        "printed_parts": "Line-integrated commanded model deposition at layer mid-height",
+        "fasteners": "high",
+        "wire_allowance_kg": 0.15,
+        "source_solid_manifest_sha256": "ce504f86e7779430ae50394041a0d02d92c47ab61b77c710cbcfba79fbdd9470",
+        "source_production_properties_sha256": "01cc1953619571307f23be8bad3e27cca371c89b778abeccf662b6ad8fd42468",
+        "integrator_sha256": "0c18737f7d822da0915c6f8aecf165dc80b7afe94d13f0eede0e83022000c80d",
+        "notes": [
+          "Printed COM and full inertia tensors are transformed, not scaled from solid CAD.",
+          "Support and bed-adhesion material are not included on the robot.",
+          "These are toolpath estimates and nominal hardware geometry, not weighed parts."
+        ]
+      },
+      "mass_kg": 2.756961896899023,
+      "status": "not_validated",
+      "inputs_unchanged": true,
+      "uncertainty": {
+        "position_stiffness_scale": 0.5,
+        "derivative_damping_scale": 0.1,
+        "feedback_deadband_half_width_deg": 1.0,
+        "feedback_deadband_full_width_deg": 2.0,
+        "scope": "Finite actuator and fixture response sensitivity represented by joint control gains and a position-feedback dead zone. Links remain rigid.",
+        "material_properties_measured": false,
+        "structural_flexibility_simulated": false,
+        "mechanical_backlash_simulated": false,
+        "note": "The dead zone is a feedback uncertainty proxy. It does not simulate separate motor and output shafts, contact between backlash flanks, anisotropic printed material, creep, fracture or joint separation. Gravity feedforward remains active."
+      },
+      "initial_joint_deg": [
+        0,
+        30.0,
+        81.0
+      ],
+      "stride_mm": 22.0,
+      "lift_mm": 15.0,
+      "com_shift_mm": 10.0,
+      "effort_cap_nm": 0.588,
+      "advance_mm": -0.6172001594677567,
+      "maximum_stance_error_mm": 56.62854913669705,
+      "minimum_mid_swing_margin_mm": 12.993359299323139,
+      "peak_static_torque_nm": 0.546521375263394,
+      "peak_sampled_torque_nm": 0.588,
+      "failed_dynamics_gates": [
+        "crawl",
+        "actual_foot_steps",
+        "stance_position"
+      ],
+      "failure": null,
+      "printed_strength_verified": false
+    },
+    {
+      "case": "output_r5_solid_nominal",
+      "report_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\simulation\\output_r5_solid_nominal\\simulation_report.json",
+      "report_sha256": "75a17e6f9378cf696416b8fb5c2ceedefc3cf5063eeedaeae3a8b3d82120309a",
+      "manifest_sha256": "ce504f86e7779430ae50394041a0d02d92c47ab61b77c710cbcfba79fbdd9470",
+      "mass_model": {
+        "kind": "solid_CAD_high_fasteners",
+        "printed_parts": "fully solid PLA volume at 1240 kg/m3",
+        "fasteners": "high",
+        "wire_allowance_kg": 0.15,
+        "as_sliced": false
+      },
+      "mass_kg": 2.9361351166383387,
+      "status": "bounded_simulation_pass",
+      "inputs_unchanged": true,
+      "uncertainty": {
+        "position_stiffness_scale": 1.0,
+        "derivative_damping_scale": 0.1,
+        "feedback_deadband_half_width_deg": 0.0,
+        "feedback_deadband_full_width_deg": 0.0,
+        "scope": "Finite actuator and fixture response sensitivity represented by joint control gains and a position-feedback dead zone. Links remain rigid.",
+        "material_properties_measured": false,
+        "structural_flexibility_simulated": false,
+        "mechanical_backlash_simulated": false,
+        "note": "The dead zone is a feedback uncertainty proxy. It does not simulate separate motor and output shafts, contact between backlash flanks, anisotropic printed material, creep, fracture or joint separation. Gravity feedforward remains active."
+      },
+      "initial_joint_deg": [
+        0,
+        30.0,
+        81.0
+      ],
+      "stride_mm": 22.0,
+      "lift_mm": 15.0,
+      "com_shift_mm": 10.0,
+      "effort_cap_nm": 0.588,
+      "advance_mm": 24.64136597700417,
+      "maximum_stance_error_mm": 4.108852327131406,
+      "minimum_mid_swing_margin_mm": 13.391955892257895,
+      "peak_static_torque_nm": 0.5806163258839983,
+      "peak_sampled_torque_nm": 0.588,
+      "failed_dynamics_gates": [],
+      "failure": null,
+      "printed_strength_verified": false
+    }
+  ]
+}

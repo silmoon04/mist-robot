@@ -1,0 +1,31 @@
+MIST face study: existing assets restored
+
+The studio and frame downloads now use the original MIST face assets and animation renderer. No newly drawn eyes, mouths, waveforms, headphones or loading indicators are used. Available, listening and thinking offer existing variants for comparison. The proposed artist workload remains separate from these existing reference frames.
+
+Four faces can speak: available, happy, focused and concerned. Share the talking mouth across those eyes. Listening and thinking stay silent. Surprise, sleepiness, skepticism and delight are short reactions. Return to a speaking face before starting the next sentence.
+
+Start with neutral, listening and thinking concepts in two styles. Then try one blink and the shared mouth cycle. Keep the eyes and mouth on separate layers. Uneven contours and small asymmetries are welcome, but don't shake the whole face or loop every reaction constantly.
+
+Proposed production drawing count: 36 components.
+8 eye pairs + 8 mouths + 12 blink pairs (half and closed for 6 families) + 4 reaction keys + 4 alternate redraws.
+An eye pair has two separately editable eyes. That is 64 exported eye/mouth parts. Each entry is a design task, not an equal amount of work.
+
+Core timeline: 23 clips, 516 frames at 24 fps.
+State loops: 72 available + 48 listening + 72 thinking = 192.
+Speaking: 4 faces x 48 = 192.
+Blinks: 6 families x 6 = 36.
+Eye-family entry transitions: 6 x 8 = 48.
+Reactions: 4 x 12 = 48.
+Total: 192 + 192 + 36 + 48 + 48 = 516 timeline exposures.
+
+The alternative state previews add 312 exposures: 72 for a second available face, 96 for two other listening options, and 144 for two other thinking options. The complete reference download has 828 PNG frames plus matching SVGs. These are generated frames from existing assets. You do NOT need to draw 828 originals.
+
+Blinks reuse OPEN, HALF, CLOSED, CLOSED, HALF, OPEN. OPEN already exists. Each eye family gets its own two blink drawings. Don't force happy or heavy eyes through a round-eye blink.
+
+Transitions use source, source half-lid, a compatible closed-lid shape, destination half-lid, destination. The six exports demonstrate entry into each family from round eyes. They are not proof that every family pair works. Check the difficult pairs and add a breakdown only where needed. Reuse mouth rest as the speech transition point. Hand-drawn frame swaps are fine; interpolation is optional and only works well for compatible shapes.
+
+Any new waveform, headphones or loading indicator would be future work. Those concepts have been removed. Reaction clips hold existing expressions; no new reaction contour is drawn. The six-frame blink exports sample the existing 185 ms procedural blink. The eight-frame transitions sample the existing 260 ms renderer transition. The artist blink/transition recipes above remain proposals, not replacements for those routines.
+
+Templates: 1600 x 1024 master, full canvas registration. eye_L and eye_R mean viewer left and right. Keep eyes, mouth, accents and guides separate. Hide GUIDES on export. Transparent PNG or SVG plus your normal layered source file. Don't bake glow into the lines.
+
+Reference frames: transparent 800 x 512 PNGs and SVGs, 24 fps. Each clip has frame durations in frames.csv. Blink and transition exports contain eyes only. Use the frame plan CSV to assemble clips. Available/listening/thinking are loops; reactions play once. Artist handwriting, contour redraws and improved lip-sync are later work, not claims about these generated references.

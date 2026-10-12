@@ -1,0 +1,858 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><link rel="icon" href="data:,"><meta name="viewport" content="width=device-width"><title>Response comparison</title>
+<style>body{margin:30px auto;max-width:1200px;padding:0 20px;background:#f5f5f0;color:#25322e;font:15px/1.55 system-ui}h1{font-size:22px}h2{font-size:17px}h3{margin-top:0}section{padding:24px 0;border-bottom:1px solid #c8d1ca}.answers{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}article{background:white;border:1px solid #d6ded8;border-radius:6px;padding:16px}.response,pre{white-space:pre-wrap;overflow-wrap:anywhere}pre{font-size:12px}label{display:block;margin-top:16px}textarea{display:block;width:96%;min-height:65px}select,button,textarea{font:inherit;padding:7px}.notice{font-size:13px;color:#655a49}</style>
+<h1>Response comparison</h1><p>Judge each answer against the full conversation and evidence. Settings are hidden. This reviews text reasoning, not voice quality. No correctness score has been assigned.</p><section data-review="comparison-0001"><h2>comparison-0001</h2><details open><summary>Conversation and evidence</summary><pre>{
+  &quot;context&quot;: {
+    &quot;fictional_evidence&quot;: &quot;A dated fictional manufacturer catalogue from Orchard Instruments lists Probe 26 released 2031-02-04 and Probe 44 released 2031-07-19.&quot;,
+    &quot;evidence_scope&quot;: &quot;The archive is complete through its last listed date only. No current lookup tool is available.&quot;
+  },
+  &quot;dialogue&quot;: [
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;Which released sensor is latest as of the catalogue date?&quot;
+    }
+  ],
+  &quot;tools&quot;: []
+}</pre></details><div class="answers"><article><h3>A</h3><div class="response">Probe 44 is the latest, released on 2031‑07‑19.</div><label>Correctness and usefulness <select data-answer="A"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>B</h3><div class="response">Probe 44, released July 19 2031, is the latest sensor listed.</div><label>Correctness and usefulness <select data-answer="B"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>C</h3><div class="response">Probe 44, released July 19, 2031, is the latest in that catalogue.</div><label>Correctness and usefulness <select data-answer="C"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>D</h3><div class="response">
+
+Probe 44, released 2031-07-19.</div><label>Correctness and usefulness <select data-answer="D"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article></div><label>Preferred answer <select data-choice><option value="">Unrated</option><option>A</option><option>B</option><option>C</option><option>D</option><option>Tie</option><option>All inadequate</option><option>Unclear</option></select></label><label>Evidence for your judgment<textarea data-note></textarea></label></section><section data-review="comparison-0002"><h2>comparison-0002</h2><details open><summary>Conversation and evidence</summary><pre>{
+  &quot;context&quot;: {},
+  &quot;dialogue&quot;: [
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;The brass crate goes to the west depot; the blue crate goes to the hill depot.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;Two deliveries are listed.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;Correction: route the brass crate to the south depot.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;The destination correction is noted.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;The porter found a spare strap. It is raining outside.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;The strap is available for the parcels.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;Where should the brass crate go?&quot;
+    }
+  ],
+  &quot;tools&quot;: []
+}</pre></details><div class="answers"><article><h3>A</h3><div class="response">
+
+South depot.</div><label>Correctness and usefulness <select data-answer="A"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>B</h3><div class="response">The brass crate goes to the south depot.</div><label>Correctness and usefulness <select data-answer="B"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>C</h3><div class="response">The brass crate goes to the south depot.</div><label>Correctness and usefulness <select data-answer="C"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>D</h3><div class="response">The brass crate should go to the south depot.</div><label>Correctness and usefulness <select data-answer="D"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article></div><label>Preferred answer <select data-choice><option value="">Unrated</option><option>A</option><option>B</option><option>C</option><option>D</option><option>Tie</option><option>All inadequate</option><option>Unclear</option></select></label><label>Evidence for your judgment<textarea data-note></textarea></label></section><section data-review="comparison-0003"><h2>comparison-0003</h2><details open><summary>Conversation and evidence</summary><pre>{
+  &quot;context&quot;: {
+    &quot;world&quot;: &quot;Kestrel Archive publishes a fictional reference index named Moor. Its current edition indexes repair manuals.&quot;,
+    &quot;input_channel&quot;: &quot;Speech recognition may substitute ordinary words for names.&quot;
+  },
+  &quot;dialogue&quot;: [
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;I mean Moor, the reference index from Kestrel Archive, not the ordinary word more.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;Understood, the Kestrel Archive reference index.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;My scanner is charging. I have put the loose pages in a folder.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;The pages are ready for when the scanner is charged.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;What does more index again?&quot;
+    }
+  ],
+  &quot;tools&quot;: []
+}</pre></details><div class="answers"><article><h3>A</h3><div class="response">Moor is the fictional reference index from Kestrel Archive, not the ordinary word more.</div><label>Correctness and usefulness <select data-answer="A"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>B</h3><div class="response">Moor’s the Kestrel Archive index of repair manuals—basically a searchable catalog that points you to the how‑to guides for various devices.</div><label>Correctness and usefulness <select data-answer="B"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>C</h3><div class="response">
+
+Moor&#x27;s current edition indexes repair manuals.</div><label>Correctness and usefulness <select data-answer="C"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>D</h3><div class="response">The Moor index is Kestrel Archive’s catalog of repair manuals—organized by device type, issue, and step‑by‑step procedures. Need anything specific from it?</div><label>Correctness and usefulness <select data-answer="D"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article></div><label>Preferred answer <select data-choice><option value="">Unrated</option><option>A</option><option>B</option><option>C</option><option>D</option><option>Tie</option><option>All inadequate</option><option>Unclear</option></select></label><label>Evidence for your judgment<textarea data-note></textarea></label></section><section data-review="comparison-0004"><h2>comparison-0004</h2><details open><summary>Conversation and evidence</summary><pre>{
+  &quot;context&quot;: {
+    &quot;world&quot;: &quot;Vale is a fictional garden-planning app. Its map shows planting beds.&quot;
+  },
+  &quot;dialogue&quot;: [
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;We are discussing Vale, the garden app.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;The garden-planning app.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;Separate question now: what does the Vale app map show?&quot;
+    }
+  ],
+  &quot;tools&quot;: []
+}</pre></details><div class="answers"><article><h3>A</h3><div class="response">The map displays planting beds, showing each garden bed’s location.</div><label>Correctness and usefulness <select data-answer="A"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>B</h3><div class="response">
+
+It shows planting beds.</div><label>Correctness and usefulness <select data-answer="B"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>C</h3><div class="response">Its map shows the planting beds.</div><label>Correctness and usefulness <select data-answer="C"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>D</h3><div class="response">It shows the layout of your planting beds—where each garden plot is placed on the map. Anything else you’d like to explore?</div><label>Correctness and usefulness <select data-answer="D"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article></div><label>Preferred answer <select data-choice><option value="">Unrated</option><option>A</option><option>B</option><option>C</option><option>D</option><option>Tie</option><option>All inadequate</option><option>Unclear</option></select></label><label>Evidence for your judgment<textarea data-note></textarea></label></section><section data-review="comparison-0005"><h2>comparison-0005</h2><details open><summary>Conversation and evidence</summary><pre>{
+  &quot;context&quot;: {
+    &quot;world&quot;: &quot;Vale is a fictional garden-planning app. Its map shows planting beds.&quot;
+  },
+  &quot;dialogue&quot;: [
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;We are discussing Vale, the garden app.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;The garden-planning app.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;When I dictate Vale, the recognizer writes veil. I am explaining why the transcript is wrong, not asking about a different app. With that correction, what does its map show?&quot;
+    }
+  ],
+  &quot;tools&quot;: []
+}</pre></details><div class="answers"><article><h3>A</h3><div class="response">
+
+Planting beds. It&#x27;s the same app, just a recognition slip.</div><label>Correctness and usefulness <select data-answer="A"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>B</h3><div class="response">Vale’s map displays the layout of planting beds across the garden.</div><label>Correctness and usefulness <select data-answer="B"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>C</h3><div class="response">Its map shows planting beds.</div><label>Correctness and usefulness <select data-answer="C"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>D</h3><div class="response">Got it. Vale’s map shows planting beds; it visualizes each bed’s shape and position in your garden.</div><label>Correctness and usefulness <select data-answer="D"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article></div><label>Preferred answer <select data-choice><option value="">Unrated</option><option>A</option><option>B</option><option>C</option><option>D</option><option>Tie</option><option>All inadequate</option><option>Unclear</option></select></label><label>Evidence for your judgment<textarea data-note></textarea></label></section><section data-review="comparison-0006"><h2>comparison-0006</h2><details open><summary>Conversation and evidence</summary><pre>{
+  &quot;context&quot;: {
+    &quot;world&quot;: &quot;Vale is a fictional garden-planning app. Its map shows planting beds.&quot;
+  },
+  &quot;dialogue&quot;: [
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;We are discussing Vale, the garden app.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;The garden-planning app.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;When I dictate Vale, the recognizer writes veil. I am explaining why the transcript is wrong, not asking about a different app.&quot;
+    }
+  ],
+  &quot;tools&quot;: []
+}</pre></details><div class="answers"><article><h3>A</h3><div class="response">Got it—your dictation turned “Vale” into “veil,” and you’re clarifying that it’s a transcription error.</div><label>Correctness and usefulness <select data-answer="A"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>B</h3><div class="response">Understood—the recognizer is mishearing “Vale” as “veil.”</div><label>Correctness and usefulness <select data-answer="B"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>C</h3><div class="response">
+
+Got it. Vale, the garden app. Not veil.</div><label>Correctness and usefulness <select data-answer="C"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>D</h3><div class="response">Got it. Vale, with the e. Not veil.</div><label>Correctness and usefulness <select data-answer="D"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article></div><label>Preferred answer <select data-choice><option value="">Unrated</option><option>A</option><option>B</option><option>C</option><option>D</option><option>Tie</option><option>All inadequate</option><option>Unclear</option></select></label><label>Evidence for your judgment<textarea data-note></textarea></label></section><section data-review="comparison-0007"><h2>comparison-0007</h2><details open><summary>Conversation and evidence</summary><pre>{
+  &quot;context&quot;: {
+    &quot;world&quot;: &quot;Vale is a fictional garden-planning app. Its map shows planting beds.&quot;
+  },
+  &quot;dialogue&quot;: [
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;We are discussing Vale, the garden app.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;The garden-planning app.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;When I dictate Vale, the recognizer writes veil. I am explaining why the transcript is wrong, not asking about a different app. With that correction, what does its map show?&quot;
+    }
+  ],
+  &quot;tools&quot;: []
+}</pre></details><div class="answers"><article><h3>A</h3><div class="response">It shows planting beds. The map visualizes the layout and locations of each bed.</div><label>Correctness and usefulness <select data-answer="A"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>B</h3><div class="response">It shows the planting beds.</div><label>Correctness and usefulness <select data-answer="B"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>C</h3><div class="response">
+
+Got it, Vale, not veil. Its map shows planting beds.</div><label>Correctness and usefulness <select data-answer="C"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>D</h3><div class="response">The map displays the planting beds you’ve arranged in the garden.</div><label>Correctness and usefulness <select data-answer="D"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article></div><label>Preferred answer <select data-choice><option value="">Unrated</option><option>A</option><option>B</option><option>C</option><option>D</option><option>Tie</option><option>All inadequate</option><option>Unclear</option></select></label><label>Evidence for your judgment<textarea data-note></textarea></label></section><section data-review="comparison-0008"><h2>comparison-0008</h2><details open><summary>Conversation and evidence</summary><pre>{
+  &quot;context&quot;: {
+    &quot;world&quot;: &quot;Kestrel Archive publishes a fictional reference index named Moor. Its current edition indexes repair manuals.&quot;,
+    &quot;input_channel&quot;: &quot;Speech recognition may substitute ordinary words for names.&quot;
+  },
+  &quot;dialogue&quot;: [
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;I mean Moor, the reference index from Kestrel Archive, not the ordinary word more.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;Understood, the Kestrel Archive reference index.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;My scanner is charging. I have put the loose pages in a folder.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;The pages are ready for when the scanner is charged.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;What does more index again?&quot;
+    }
+  ],
+  &quot;tools&quot;: []
+}</pre></details><div class="answers"><article><h3>A</h3><div class="response">Moor is the Kestrel Archive’s index of repair manuals, organized by device type and model for quick lookup.</div><label>Correctness and usefulness <select data-answer="A"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>B</h3><div class="response">The Moor index is Kestrel Archive’s catalog of repair manuals—titles, part numbers, and brief summaries for each documented procedure.</div><label>Correctness and usefulness <select data-answer="B"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>C</h3><div class="response">
+
+Its current edition indexes repair manuals.</div><label>Correctness and usefulness <select data-answer="C"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>D</h3><div class="response">The Moor indexes repair manuals in its current edition.</div><label>Correctness and usefulness <select data-answer="D"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article></div><label>Preferred answer <select data-choice><option value="">Unrated</option><option>A</option><option>B</option><option>C</option><option>D</option><option>Tie</option><option>All inadequate</option><option>Unclear</option></select></label><label>Evidence for your judgment<textarea data-note></textarea></label></section><section data-review="comparison-0009"><h2>comparison-0009</h2><details open><summary>Conversation and evidence</summary><pre>{
+  &quot;context&quot;: {},
+  &quot;dialogue&quot;: [
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;The brass crate goes to the west depot; the blue crate goes to the hill depot.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;Two deliveries are listed.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;Correction: route the brass crate to the south depot.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;The destination correction is noted.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;The porter found a spare strap. It is raining outside.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;The strap is available for the parcels.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;Where should the brass crate go?&quot;
+    }
+  ],
+  &quot;tools&quot;: []
+}</pre></details><div class="answers"><article><h3>A</h3><div class="response">The brass crate goes to the south depot.</div><label>Correctness and usefulness <select data-answer="A"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>B</h3><div class="response">
+
+South depot.</div><label>Correctness and usefulness <select data-answer="B"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>C</h3><div class="response">The brass crate goes to the south depot.</div><label>Correctness and usefulness <select data-answer="C"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>D</h3><div class="response">The brass crate should be routed to the south depot.</div><label>Correctness and usefulness <select data-answer="D"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article></div><label>Preferred answer <select data-choice><option value="">Unrated</option><option>A</option><option>B</option><option>C</option><option>D</option><option>Tie</option><option>All inadequate</option><option>Unclear</option></select></label><label>Evidence for your judgment<textarea data-note></textarea></label></section><section data-review="comparison-0010"><h2>comparison-0010</h2><details open><summary>Conversation and evidence</summary><pre>{
+  &quot;context&quot;: {},
+  &quot;dialogue&quot;: [
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;The brass crate goes to the west depot; the blue crate goes to the hill depot.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;Two deliveries are listed.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;Correction: route the brass crate to the south depot.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;The destination correction is noted.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;The porter found a spare strap. It is raining outside.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;The strap is available for the parcels.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;Change the other delivery to the east depot. Which delivery do you think I mean?&quot;
+    }
+  ],
+  &quot;tools&quot;: []
+}</pre></details><div class="answers"><article><h3>A</h3><div class="response">I think you’re referring to the blue‑crate delivery, which you want moved to the east depot.</div><label>Correctness and usefulness <select data-answer="A"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>B</h3><div class="response">You’re referring to the blue crate delivery.</div><label>Correctness and usefulness <select data-answer="B"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>C</h3><div class="response">The blue crate, since the brass one was already moved to the south depot. I&#x27;ll update its route to the east depot.</div><label>Correctness and usefulness <select data-answer="C"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>D</h3><div class="response">
+
+The blue crate, originally heading to the hill depot.</div><label>Correctness and usefulness <select data-answer="D"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article></div><label>Preferred answer <select data-choice><option value="">Unrated</option><option>A</option><option>B</option><option>C</option><option>D</option><option>Tie</option><option>All inadequate</option><option>Unclear</option></select></label><label>Evidence for your judgment<textarea data-note></textarea></label></section><section data-review="comparison-0011"><h2>comparison-0011</h2><details open><summary>Conversation and evidence</summary><pre>{
+  &quot;context&quot;: {
+    &quot;input_channel&quot;: &quot;Speech recognition may substitute ordinary words for names.&quot;
+  },
+  &quot;dialogue&quot;: [
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;What does more do?&quot;
+    }
+  ],
+  &quot;tools&quot;: []
+}</pre></details><div class="answers"><article><h3>A</h3><div class="response">You&#x27;re referring to the word &quot;more&quot;? It usually means an additional, greater, or further quantity or degree. For example, having more time allows for better preparation.</div><label>Correctness and usefulness <select data-answer="A"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>B</h3><div class="response">
+
+It means &quot;an additional amount.&quot; Pretty straightforward, unless you&#x27;re pointing at a specific button or menu item.</div><label>Correctness and usefulness <select data-answer="B"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>C</h3><div class="response">Could you tell me what you’re referring to when you say “more”?</div><label>Correctness and usefulness <select data-answer="C"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>D</h3><div class="response">I’m not sure which “more” you mean—could you clarify?</div><label>Correctness and usefulness <select data-answer="D"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article></div><label>Preferred answer <select data-choice><option value="">Unrated</option><option>A</option><option>B</option><option>C</option><option>D</option><option>Tie</option><option>All inadequate</option><option>Unclear</option></select></label><label>Evidence for your judgment<textarea data-note></textarea></label></section><section data-review="comparison-0012"><h2>comparison-0012</h2><details open><summary>Conversation and evidence</summary><pre>{
+  &quot;context&quot;: {
+    &quot;world&quot;: &quot;Vale is a fictional garden-planning app. Its map shows planting beds.&quot;
+  },
+  &quot;dialogue&quot;: [
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;We are discussing Vale, the garden app.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;The garden-planning app.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;Separate question now: what does the Vale app map show?&quot;
+    }
+  ],
+  &quot;tools&quot;: []
+}</pre></details><div class="answers"><article><h3>A</h3><div class="response">It shows the planting beds—how they’re laid out and where you can place each crop or flower.</div><label>Correctness and usefulness <select data-answer="A"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>B</h3><div class="response">It shows the layout of your planting beds—where each garden plot is located on the map. Anything else you’d like to know?</div><label>Correctness and usefulness <select data-answer="B"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>C</h3><div class="response">It shows your planting beds.</div><label>Correctness and usefulness <select data-answer="C"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>D</h3><div class="response">
+
+Its map shows planting beds.</div><label>Correctness and usefulness <select data-answer="D"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article></div><label>Preferred answer <select data-choice><option value="">Unrated</option><option>A</option><option>B</option><option>C</option><option>D</option><option>Tie</option><option>All inadequate</option><option>Unclear</option></select></label><label>Evidence for your judgment<textarea data-note></textarea></label></section><section data-review="comparison-0013"><h2>comparison-0013</h2><details open><summary>Conversation and evidence</summary><pre>{
+  &quot;context&quot;: {
+    &quot;fictional_evidence&quot;: &quot;A dated fictional manufacturer catalogue from Orchard Instruments lists Probe 26 released 2031-02-04 and Probe 44 released 2031-07-19.&quot;,
+    &quot;evidence_scope&quot;: &quot;The archive is complete through its last listed date only. No current lookup tool is available.&quot;
+  },
+  &quot;dialogue&quot;: [
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;What is the newest sensor actually available today, in 2032?&quot;
+    }
+  ],
+  &quot;tools&quot;: []
+}</pre></details><div class="answers"><article><h3>A</h3><div class="response">I don&#x27;t have a live catalogue, so I can&#x27;t confirm what&#x27;s out in 2032. My archive only goes through mid-2031.</div><label>Correctness and usefulness <select data-answer="A"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>B</h3><div class="response">The latest sensor I have records for is the Orchard Instruments Probe 44, released 19 July 2031. No newer model is listed in the available catalogue.</div><label>Correctness and usefulness <select data-answer="B"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>C</h3><div class="response">The newest sensor I have on record is Probe 44, released 19 July 2031. I don’t have data on anything newer.</div><label>Correctness and usefulness <select data-answer="C"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>D</h3><div class="response">
+
+The catalogue lists Probe 44 as the newest Orchard Instruments entry, released July 19, 2031. I don&#x27;t have a live lookup, though, so I can&#x27;t confirm anything newer has shipped since then.</div><label>Correctness and usefulness <select data-answer="D"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article></div><label>Preferred answer <select data-choice><option value="">Unrated</option><option>A</option><option>B</option><option>C</option><option>D</option><option>Tie</option><option>All inadequate</option><option>Unclear</option></select></label><label>Evidence for your judgment<textarea data-note></textarea></label></section><section data-review="comparison-0014"><h2>comparison-0014</h2><details open><summary>Conversation and evidence</summary><pre>{
+  &quot;context&quot;: {
+    &quot;world&quot;: &quot;Kestrel Archive publishes a fictional reference index named Moor. Its current edition indexes repair manuals.&quot;,
+    &quot;input_channel&quot;: &quot;Speech recognition may substitute ordinary words for names.&quot;
+  },
+  &quot;dialogue&quot;: [
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;I mean Moor, the reference index from Kestrel Archive, not the ordinary word more.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;Understood, the Kestrel Archive reference index.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;My scanner is charging. I have put the loose pages in a folder.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;The pages are ready for when the scanner is charged.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;What does more index again?&quot;
+    }
+  ],
+  &quot;tools&quot;: []
+}</pre></details><div class="answers"><article><h3>A</h3><div class="response">Moor is the Kestrel Archive’s reference index that catalogs repair manuals for various technology. What would you like to check?</div><label>Correctness and usefulness <select data-answer="A"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>B</h3><div class="response">The Moor index is Kestrel Archive’s catalog of fictional repair manuals—titles, sections, and reference numbers for each entry.</div><label>Correctness and usefulness <select data-answer="B"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>C</h3><div class="response">
+
+Moor indexes repair manuals in its current edition. I know you mean Moor, not &quot;more&quot; — the speech recogniser keeps swapping them.</div><label>Correctness and usefulness <select data-answer="C"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>D</h3><div class="response">It indexes repair manuals, in the current edition.</div><label>Correctness and usefulness <select data-answer="D"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article></div><label>Preferred answer <select data-choice><option value="">Unrated</option><option>A</option><option>B</option><option>C</option><option>D</option><option>Tie</option><option>All inadequate</option><option>Unclear</option></select></label><label>Evidence for your judgment<textarea data-note></textarea></label></section><section data-review="comparison-0015"><h2>comparison-0015</h2><details open><summary>Conversation and evidence</summary><pre>{
+  &quot;context&quot;: {
+    &quot;world&quot;: &quot;Vale is a fictional garden-planning app. Its map shows planting beds.&quot;
+  },
+  &quot;dialogue&quot;: [
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;We are discussing Vale, the garden app.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;The garden-planning app.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;Separate question now: what does the Vale app map show?&quot;
+    }
+  ],
+  &quot;tools&quot;: []
+}</pre></details><div class="answers"><article><h3>A</h3><div class="response">It shows the layout of planting beds—bed outlines, shapes, and where each plant is placed.</div><label>Correctness and usefulness <select data-answer="A"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>B</h3><div class="response">
+
+The map shows the planting beds.</div><label>Correctness and usefulness <select data-answer="B"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>C</h3><div class="response">The map displays the layout of planting beds across your garden.</div><label>Correctness and usefulness <select data-answer="C"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>D</h3><div class="response">It shows planting beds.</div><label>Correctness and usefulness <select data-answer="D"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article></div><label>Preferred answer <select data-choice><option value="">Unrated</option><option>A</option><option>B</option><option>C</option><option>D</option><option>Tie</option><option>All inadequate</option><option>Unclear</option></select></label><label>Evidence for your judgment<textarea data-note></textarea></label></section><section data-review="comparison-0016"><h2>comparison-0016</h2><details open><summary>Conversation and evidence</summary><pre>{
+  &quot;context&quot;: {
+    &quot;fictional_evidence&quot;: &quot;A dated fictional manufacturer catalogue from Orchard Instruments lists Probe 26 released 2031-02-04 and Probe 44 released 2031-07-19.&quot;,
+    &quot;evidence_scope&quot;: &quot;The archive is complete through its last listed date only. No current lookup tool is available.&quot;
+  },
+  &quot;dialogue&quot;: [
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;What is the newest sensor actually available today, in 2032?&quot;
+    }
+  ],
+  &quot;tools&quot;: []
+}</pre></details><div class="answers"><article><h3>A</h3><div class="response">Probe 44 from Orchard Instruments, released 19 July 2031, is the newest sensor I have evidence for. I don’t have any later data for 2032.</div><label>Correctness and usefulness <select data-answer="A"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>B</h3><div class="response">The newest sensor I have evidence for is Probe 44, released July 19 2023. I don’t have records of anything newer than that.</div><label>Correctness and usefulness <select data-answer="B"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>C</h3><div class="response">I don&#x27;t have access to current data beyond the provided context. The evidence only covers up to 2031, specifically listing Probe 44 released on July 19, 2031, which is the newest in that fictional record.</div><label>Correctness and usefulness <select data-answer="C"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>D</h3><div class="response">
+
+The newest one I have on record is Probe 44 from Orchard Instruments, released July 2031. Beyond that date I don&#x27;t have anything, so I can&#x27;t confirm what&#x27;s out now in 2032.</div><label>Correctness and usefulness <select data-answer="D"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article></div><label>Preferred answer <select data-choice><option value="">Unrated</option><option>A</option><option>B</option><option>C</option><option>D</option><option>Tie</option><option>All inadequate</option><option>Unclear</option></select></label><label>Evidence for your judgment<textarea data-note></textarea></label></section><section data-review="comparison-0017"><h2>comparison-0017</h2><details open><summary>Conversation and evidence</summary><pre>{
+  &quot;context&quot;: {},
+  &quot;dialogue&quot;: [
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;The brass crate goes to the west depot; the blue crate goes to the hill depot.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;Two deliveries are listed.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;Correction: route the brass crate to the south depot.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;The destination correction is noted.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;The porter found a spare strap. It is raining outside.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;The strap is available for the parcels.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;Change the other delivery to the east depot. Which delivery do you think I mean?&quot;
+    }
+  ],
+  &quot;tools&quot;: []
+}</pre></details><div class="answers"><article><h3>A</h3><div class="response">You’re referring to the blue crate.</div><label>Correctness and usefulness <select data-answer="A"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>B</h3><div class="response">The blue crate. That leaves the brass crate at the south depot.</div><label>Correctness and usefulness <select data-answer="B"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>C</h3><div class="response">The other delivery is the blue crate.</div><label>Correctness and usefulness <select data-answer="C"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>D</h3><div class="response">
+
+The blue crate. That one was going to the hill depot, so it now goes to the east depot.</div><label>Correctness and usefulness <select data-answer="D"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article></div><label>Preferred answer <select data-choice><option value="">Unrated</option><option>A</option><option>B</option><option>C</option><option>D</option><option>Tie</option><option>All inadequate</option><option>Unclear</option></select></label><label>Evidence for your judgment<textarea data-note></textarea></label></section><section data-review="comparison-0018"><h2>comparison-0018</h2><details open><summary>Conversation and evidence</summary><pre>{
+  &quot;context&quot;: {
+    &quot;world&quot;: &quot;Kestrel Archive publishes a fictional reference index named Moor. Its current edition indexes repair manuals.&quot;,
+    &quot;input_channel&quot;: &quot;Speech recognition may substitute ordinary words for names.&quot;
+  },
+  &quot;dialogue&quot;: [
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;I mean Moor, the reference index from Kestrel Archive, not the ordinary word more.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;Understood, the Kestrel Archive reference index.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;My scanner is charging. I have put the loose pages in a folder.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;The pages are ready for when the scanner is charged.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;New topic: I am using more as an ordinary word in a vocabulary exercise. Give one sentence using it.&quot;
+    }
+  ],
+  &quot;tools&quot;: []
+}</pre></details><div class="answers"><article><h3>A</h3><div class="response">Here is a simple sentence for your exercise: &quot;I need more sleep before I can think clearly.&quot;</div><label>Correctness and usefulness <select data-answer="A"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>B</h3><div class="response">Here is a sentence using more. He needed more coffee to stay awake during the meeting.</div><label>Correctness and usefulness <select data-answer="B"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>C</h3><div class="response">She wants more time to finish the project before the deadline.</div><label>Correctness and usefulness <select data-answer="C"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>D</h3><div class="response">
+
+I&#x27;d like more time to finish this chapter before the deadline.</div><label>Correctness and usefulness <select data-answer="D"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article></div><label>Preferred answer <select data-choice><option value="">Unrated</option><option>A</option><option>B</option><option>C</option><option>D</option><option>Tie</option><option>All inadequate</option><option>Unclear</option></select></label><label>Evidence for your judgment<textarea data-note></textarea></label></section><section data-review="comparison-0019"><h2>comparison-0019</h2><details open><summary>Conversation and evidence</summary><pre>{
+  &quot;context&quot;: {
+    &quot;fictional_evidence&quot;: &quot;A dated fictional manufacturer catalogue from Orchard Instruments lists Probe 26 released 2031-02-04 and Probe 44 released 2031-07-19.&quot;,
+    &quot;evidence_scope&quot;: &quot;The archive is complete through its last listed date only. No current lookup tool is available.&quot;
+  },
+  &quot;dialogue&quot;: [
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;Which released sensor is latest as of the catalogue date?&quot;
+    }
+  ],
+  &quot;tools&quot;: []
+}</pre></details><div class="answers"><article><h3>A</h3><div class="response">Probe 44, released 19 July 2031, is the newest sensor in that catalogue.</div><label>Correctness and usefulness <select data-answer="A"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>B</h3><div class="response">
+
+Probe 44, released July 19, 2031. That&#x27;s the later of the two in the catalogue.</div><label>Correctness and usefulness <select data-answer="B"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>C</h3><div class="response">Probe 44, released July 19, 2031.</div><label>Correctness and usefulness <select data-answer="C"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>D</h3><div class="response">Probe 44, released July 19 2031, is the latest sensor listed.</div><label>Correctness and usefulness <select data-answer="D"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article></div><label>Preferred answer <select data-choice><option value="">Unrated</option><option>A</option><option>B</option><option>C</option><option>D</option><option>Tie</option><option>All inadequate</option><option>Unclear</option></select></label><label>Evidence for your judgment<textarea data-note></textarea></label></section><section data-review="comparison-0020"><h2>comparison-0020</h2><details open><summary>Conversation and evidence</summary><pre>{
+  &quot;context&quot;: {},
+  &quot;dialogue&quot;: [
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;The brass crate goes to the west depot; the blue crate goes to the hill depot.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;Two deliveries are listed.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;Correction: route the brass crate to the south depot.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;The destination correction is noted.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;The porter found a spare strap. It is raining outside.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;The strap is available for the parcels.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;Cancel my destination correction for the brass crate. Where does it go now?&quot;
+    }
+  ],
+  &quot;tools&quot;: []
+}</pre></details><div class="answers"><article><h3>A</h3><div class="response">The brass crate returns to the west depot.</div><label>Correctness and usefulness <select data-answer="A"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>B</h3><div class="response">The brass crate goes back to the west depot.</div><label>Correctness and usefulness <select data-answer="B"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>C</h3><div class="response">The brass crate returns to the west depot; the blue crate remains at the hill depot.</div><label>Correctness and usefulness <select data-answer="C"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>D</h3><div class="response">
+
+The correction is cancelled, so the brass crate goes back to the west depot.</div><label>Correctness and usefulness <select data-answer="D"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article></div><label>Preferred answer <select data-choice><option value="">Unrated</option><option>A</option><option>B</option><option>C</option><option>D</option><option>Tie</option><option>All inadequate</option><option>Unclear</option></select></label><label>Evidence for your judgment<textarea data-note></textarea></label></section><section data-review="comparison-0021"><h2>comparison-0021</h2><details open><summary>Conversation and evidence</summary><pre>{
+  &quot;context&quot;: {
+    &quot;input_channel&quot;: &quot;Speech recognition may substitute ordinary words for names.&quot;
+  },
+  &quot;dialogue&quot;: [
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;What does more do?&quot;
+    }
+  ],
+  &quot;tools&quot;: []
+}</pre></details><div class="answers"><article><h3>A</h3><div class="response">Could you tell me a bit more about what you&#x27;re referring to?</div><label>Correctness and usefulness <select data-answer="A"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>B</h3><div class="response">
+
+Which &quot;more&quot; are you thinking of? A button, a command, something on the screen?</div><label>Correctness and usefulness <select data-answer="B"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>C</h3><div class="response">It opens a menu of extra actions or settings, usually at the bottom of a screen.</div><label>Correctness and usefulness <select data-answer="C"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>D</h3><div class="response">More usually expands the view, showing extra settings, options, or content that isn’t listed at first. Anything specific you’re curious about?</div><label>Correctness and usefulness <select data-answer="D"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article></div><label>Preferred answer <select data-choice><option value="">Unrated</option><option>A</option><option>B</option><option>C</option><option>D</option><option>Tie</option><option>All inadequate</option><option>Unclear</option></select></label><label>Evidence for your judgment<textarea data-note></textarea></label></section><section data-review="comparison-0022"><h2>comparison-0022</h2><details open><summary>Conversation and evidence</summary><pre>{
+  &quot;context&quot;: {},
+  &quot;dialogue&quot;: [
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;The brass crate goes to the west depot; the blue crate goes to the hill depot.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;Two deliveries are listed.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;Correction: route the brass crate to the south depot.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;The destination correction is noted.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;The porter found a spare strap. It is raining outside.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;The strap is available for the parcels.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;Cancel my destination correction for the brass crate. Where does it go now?&quot;
+    }
+  ],
+  &quot;tools&quot;: []
+}</pre></details><div class="answers"><article><h3>A</h3><div class="response">The brass crate returns to the west depot, as originally planned. The blue crate remains destined for the hill depot.</div><label>Correctness and usefulness <select data-answer="A"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>B</h3><div class="response">West depot, then.</div><label>Correctness and usefulness <select data-answer="B"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>C</h3><div class="response">
+
+The brass crate goes to the west depot.</div><label>Correctness and usefulness <select data-answer="C"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>D</h3><div class="response">The brass crate returns to the west depot. The blue crate stays at the hill depot.</div><label>Correctness and usefulness <select data-answer="D"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article></div><label>Preferred answer <select data-choice><option value="">Unrated</option><option>A</option><option>B</option><option>C</option><option>D</option><option>Tie</option><option>All inadequate</option><option>Unclear</option></select></label><label>Evidence for your judgment<textarea data-note></textarea></label></section><section data-review="comparison-0023"><h2>comparison-0023</h2><details open><summary>Conversation and evidence</summary><pre>{
+  &quot;context&quot;: {
+    &quot;input_channel&quot;: &quot;Speech recognition may substitute ordinary words for names.&quot;
+  },
+  &quot;dialogue&quot;: [
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;What does more do?&quot;
+    }
+  ],
+  &quot;tools&quot;: []
+}</pre></details><div class="answers"><article><h3>A</h3><div class="response">More shows extra commands or settings you can ask me about.</div><label>Correctness and usefulness <select data-answer="A"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>B</h3><div class="response">It means &quot;greater than.&quot; Like, 10 is more than 5.</div><label>Correctness and usefulness <select data-answer="B"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>C</h3><div class="response">
+
+If you mean the Unix `more` command, it&#x27;s a simple pager that scrolls through a file one screen at a time. You can page forward with space, go back with `b`, or quit with `q`. It&#x27;s the older, more basic cousin of `less`.
+
+Were you asking about something else?</div><label>Correctness and usefulness <select data-answer="C"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>D</h3><div class="response">It shows additional options or details beyond the basic view. Anything specific you’re looking for?</div><label>Correctness and usefulness <select data-answer="D"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article></div><label>Preferred answer <select data-choice><option value="">Unrated</option><option>A</option><option>B</option><option>C</option><option>D</option><option>Tie</option><option>All inadequate</option><option>Unclear</option></select></label><label>Evidence for your judgment<textarea data-note></textarea></label></section><section data-review="comparison-0024"><h2>comparison-0024</h2><details open><summary>Conversation and evidence</summary><pre>{
+  &quot;context&quot;: {
+    &quot;world&quot;: &quot;Vale is a fictional garden-planning app. Its map shows planting beds.&quot;
+  },
+  &quot;dialogue&quot;: [
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;We are discussing Vale, the garden app.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;The garden-planning app.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;When I dictate Vale, the recognizer writes veil. I am explaining why the transcript is wrong, not asking about a different app.&quot;
+    }
+  ],
+  &quot;tools&quot;: []
+}</pre></details><div class="answers"><article><h3>A</h3><div class="response">Got it—&#x27;Vale&#x27; is being heard as &#x27;veil&#x27;. I can suggest tweaks to the recognizer if you like.</div><label>Correctness and usefulness <select data-answer="A"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>B</h3><div class="response">
+
+Got it. Vale, not veil. My transcript was the problem, not your phrasing.</div><label>Correctness and usefulness <select data-answer="B"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>C</h3><div class="response">Got it—your dictation turned “Vale” into “veil,” and you’re pointing out the transcription error. Anything else you’d like to cover?</div><label>Correctness and usefulness <select data-answer="C"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>D</h3><div class="response">Got it. Vale, the garden app. That makes sense.</div><label>Correctness and usefulness <select data-answer="D"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article></div><label>Preferred answer <select data-choice><option value="">Unrated</option><option>A</option><option>B</option><option>C</option><option>D</option><option>Tie</option><option>All inadequate</option><option>Unclear</option></select></label><label>Evidence for your judgment<textarea data-note></textarea></label></section><section data-review="comparison-0025"><h2>comparison-0025</h2><details open><summary>Conversation and evidence</summary><pre>{
+  &quot;context&quot;: {
+    &quot;world&quot;: &quot;Kestrel Archive publishes a fictional reference index named Moor. Its current edition indexes repair manuals.&quot;,
+    &quot;input_channel&quot;: &quot;Speech recognition may substitute ordinary words for names.&quot;
+  },
+  &quot;dialogue&quot;: [
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;I mean Moor, the reference index from Kestrel Archive, not the ordinary word more.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;Understood, the Kestrel Archive reference index.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;My scanner is charging. I have put the loose pages in a folder.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;The pages are ready for when the scanner is charged.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;New topic: I am using more as an ordinary word in a vocabulary exercise. Give one sentence using it.&quot;
+    }
+  ],
+  &quot;tools&quot;: []
+}</pre></details><div class="answers"><article><h3>A</h3><div class="response">Here you go. She has more ideas than we can discuss.</div><label>Correctness and usefulness <select data-answer="A"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>B</h3><div class="response">
+
+You can have more coffee if you&#x27;d like.</div><label>Correctness and usefulness <select data-answer="B"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>C</h3><div class="response">She wanted more time to finish her project.</div><label>Correctness and usefulness <select data-answer="C"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>D</h3><div class="response">I have more questions than the book can answer.</div><label>Correctness and usefulness <select data-answer="D"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article></div><label>Preferred answer <select data-choice><option value="">Unrated</option><option>A</option><option>B</option><option>C</option><option>D</option><option>Tie</option><option>All inadequate</option><option>Unclear</option></select></label><label>Evidence for your judgment<textarea data-note></textarea></label></section><section data-review="comparison-0026"><h2>comparison-0026</h2><details open><summary>Conversation and evidence</summary><pre>{
+  &quot;context&quot;: {},
+  &quot;dialogue&quot;: [
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;The brass crate goes to the west depot; the blue crate goes to the hill depot.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;Two deliveries are listed.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;Correction: route the brass crate to the south depot.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;The destination correction is noted.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;The porter found a spare strap. It is raining outside.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;The strap is available for the parcels.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;Cancel my destination correction for the brass crate. Where does it go now?&quot;
+    }
+  ],
+  &quot;tools&quot;: []
+}</pre></details><div class="answers"><article><h3>A</h3><div class="response">It goes back to the west depot.</div><label>Correctness and usefulness <select data-answer="A"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>B</h3><div class="response">The brass crate returns to the west depot.</div><label>Correctness and usefulness <select data-answer="B"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>C</h3><div class="response">The brass crate is back on the west depot. The blue crate stays at the hill depot.</div><label>Correctness and usefulness <select data-answer="C"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>D</h3><div class="response">
+
+The brass crate goes back to the west depot.</div><label>Correctness and usefulness <select data-answer="D"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article></div><label>Preferred answer <select data-choice><option value="">Unrated</option><option>A</option><option>B</option><option>C</option><option>D</option><option>Tie</option><option>All inadequate</option><option>Unclear</option></select></label><label>Evidence for your judgment<textarea data-note></textarea></label></section><section data-review="comparison-0027"><h2>comparison-0027</h2><details open><summary>Conversation and evidence</summary><pre>{
+  &quot;context&quot;: {
+    &quot;world&quot;: &quot;Vale is a fictional garden-planning app. Its map shows planting beds.&quot;
+  },
+  &quot;dialogue&quot;: [
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;We are discussing Vale, the garden app.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;The garden-planning app.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;When I dictate Vale, the recognizer writes veil. I am explaining why the transcript is wrong, not asking about a different app. With that correction, what does its map show?&quot;
+    }
+  ],
+  &quot;tools&quot;: []
+}</pre></details><div class="answers"><article><h3>A</h3><div class="response">Vale’s map displays the layout of planting beds across the garden.</div><label>Correctness and usefulness <select data-answer="A"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>B</h3><div class="response">
+
+Got it, Vale. Its map shows planting beds.</div><label>Correctness and usefulness <select data-answer="B"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>C</h3><div class="response">Planting beds.</div><label>Correctness and usefulness <select data-answer="C"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>D</h3><div class="response">Vale’s map shows planting beds.</div><label>Correctness and usefulness <select data-answer="D"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article></div><label>Preferred answer <select data-choice><option value="">Unrated</option><option>A</option><option>B</option><option>C</option><option>D</option><option>Tie</option><option>All inadequate</option><option>Unclear</option></select></label><label>Evidence for your judgment<textarea data-note></textarea></label></section><section data-review="comparison-0028"><h2>comparison-0028</h2><details open><summary>Conversation and evidence</summary><pre>{
+  &quot;context&quot;: {
+    &quot;fictional_evidence&quot;: &quot;A dated fictional manufacturer catalogue from Orchard Instruments lists Probe 26 released 2031-02-04 and Probe 44 released 2031-07-19.&quot;,
+    &quot;evidence_scope&quot;: &quot;The archive is complete through its last listed date only. No current lookup tool is available.&quot;
+  },
+  &quot;dialogue&quot;: [
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;What might the next release improve? Give a forecast, not a claim about an existing product.&quot;
+    }
+  ],
+  &quot;tools&quot;: []
+}</pre></details><div class="answers"><article><h3>A</h3><div class="response">Given Probe 44 dropped in July, the next is likely early 2032. Expect tighter calibration, maybe a smaller probe tip, or better software integration. Pure speculation, of course.</div><label>Correctness and usefulness <select data-answer="A"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>B</h3><div class="response">
+
+Based on the roughly five-month gap in that catalogue, the next entry would likely land around late 2031 or early 2032. As for what it might improve, I&#x27;d guess incremental sensor noise reduction or a wider operating range, the kind of thing probe manufacturers usually iterate on between major revisions. But that&#x27;s a guess from the pattern, not anything I can confirm.</div><label>Correctness and usefulness <select data-answer="B"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>C</h3><div class="response">I expect faster, lower‑power detection. The next model could double sample rate, broaden chemical coverage, and halve energy consumption.</div><label>Correctness and usefulness <select data-answer="C"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>D</h3><div class="response">Maybe the next probe will add finer spatial resolution, say sub‑micron sampling, and a broader chemical range, extending to heavier elements. It could also include onboard AI for real‑time anomaly detection, reducing the need for post‑processing.</div><label>Correctness and usefulness <select data-answer="D"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article></div><label>Preferred answer <select data-choice><option value="">Unrated</option><option>A</option><option>B</option><option>C</option><option>D</option><option>Tie</option><option>All inadequate</option><option>Unclear</option></select></label><label>Evidence for your judgment<textarea data-note></textarea></label></section><section data-review="comparison-0029"><h2>comparison-0029</h2><details open><summary>Conversation and evidence</summary><pre>{
+  &quot;context&quot;: {},
+  &quot;dialogue&quot;: [
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;The brass crate goes to the west depot; the blue crate goes to the hill depot.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;Two deliveries are listed.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;Correction: route the brass crate to the south depot.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;The destination correction is noted.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;The porter found a spare strap. It is raining outside.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;The strap is available for the parcels.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;Change the other delivery to the east depot. Which delivery do you think I mean?&quot;
+    }
+  ],
+  &quot;tools&quot;: []
+}</pre></details><div class="answers"><article><h3>A</h3><div class="response">Looks like you&#x27;re referring to the blue crate.</div><label>Correctness and usefulness <select data-answer="A"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>B</h3><div class="response">I’d say you mean the blue crate delivery.</div><label>Correctness and usefulness <select data-answer="B"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>C</h3><div class="response">The blue crate, since the brass one is already set for the south.</div><label>Correctness and usefulness <select data-answer="C"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>D</h3><div class="response">
+
+The blue crate, currently headed to the hill depot.</div><label>Correctness and usefulness <select data-answer="D"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article></div><label>Preferred answer <select data-choice><option value="">Unrated</option><option>A</option><option>B</option><option>C</option><option>D</option><option>Tie</option><option>All inadequate</option><option>Unclear</option></select></label><label>Evidence for your judgment<textarea data-note></textarea></label></section><section data-review="comparison-0030"><h2>comparison-0030</h2><details open><summary>Conversation and evidence</summary><pre>{
+  &quot;context&quot;: {
+    &quot;fictional_evidence&quot;: &quot;A dated fictional manufacturer catalogue from Orchard Instruments lists Probe 26 released 2031-02-04 and Probe 44 released 2031-07-19.&quot;,
+    &quot;evidence_scope&quot;: &quot;The archive is complete through its last listed date only. No current lookup tool is available.&quot;
+  },
+  &quot;dialogue&quot;: [
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;What might the next release improve? Give a forecast, not a claim about an existing product.&quot;
+    }
+  ],
+  &quot;tools&quot;: []
+}</pre></details><div class="answers"><article><h3>A</h3><div class="response">Probably tighter energy use and higher sampling rates. Expect AI‑assisted analysis and tougher casing for extreme environments.</div><label>Correctness and usefulness <select data-answer="A"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>B</h3><div class="response">Based on the Orchard Instruments catalogue, Probe 26 came out early 2031, and Probe 44 a few months after that. The jump in numbers might suggest a focus on broader probe arrays, higher impedance sensitivity, or refined low-noise front ends. I don&#x27;t know.</div><label>Correctness and usefulness <select data-answer="B"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>C</h3><div class="response">
+
+Given the gap between Probe 26 and 44 is just over five months, the next one probably ships within a similar window. Without spec sheets I can only guess it addresses whatever field complaints users filed after 44—maybe calibration drift or a connector change. It&#x27;s a guess, not a roadmap.</div><label>Correctness and usefulness <select data-answer="C"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>D</h3><div class="response">Probably more battery endurance and tighter integration with AI‑driven diagnostics.  
+I’d also expect higher‑resolution pressure sensors and modular leg attachments for custom tasks.</div><label>Correctness and usefulness <select data-answer="D"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article></div><label>Preferred answer <select data-choice><option value="">Unrated</option><option>A</option><option>B</option><option>C</option><option>D</option><option>Tie</option><option>All inadequate</option><option>Unclear</option></select></label><label>Evidence for your judgment<textarea data-note></textarea></label></section><section data-review="comparison-0031"><h2>comparison-0031</h2><details open><summary>Conversation and evidence</summary><pre>{
+  &quot;context&quot;: {
+    &quot;fictional_evidence&quot;: &quot;A dated fictional manufacturer catalogue from Orchard Instruments lists Probe 26 released 2031-02-04 and Probe 44 released 2031-07-19.&quot;,
+    &quot;evidence_scope&quot;: &quot;The archive is complete through its last listed date only. No current lookup tool is available.&quot;
+  },
+  &quot;dialogue&quot;: [
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;What might the next release improve? Give a forecast, not a claim about an existing product.&quot;
+    }
+  ],
+  &quot;tools&quot;: []
+}</pre></details><div class="answers"><article><h3>A</h3><div class="response">Probably lower power consumption and higher measurement bandwidth. A built‑in AI engine for real‑time analysis could also appear.</div><label>Correctness and usefulness <select data-answer="A"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>B</h3><div class="response">Probe 46, maybe. I don&#x27;t have the current roadmap, so this is just guesswork.</div><label>Correctness and usefulness <select data-answer="B"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>C</h3><div class="response">
+
+Honestly, with just two catalogue entries and no specs between them, I can only note the number jumped from 26 to 44 in about five and a half months. That gap might suggest a mid-cycle refresh rather than a brand-new series, but I&#x27;d be guessing at specifics.</div><label>Correctness and usefulness <select data-answer="C"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>D</h3><div class="response">Probably a higher‑resolution sensor array and tighter integration with AI analysis. Expect faster sampling rates, lower power draw, and a more compact housing for field use.</div><label>Correctness and usefulness <select data-answer="D"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article></div><label>Preferred answer <select data-choice><option value="">Unrated</option><option>A</option><option>B</option><option>C</option><option>D</option><option>Tie</option><option>All inadequate</option><option>Unclear</option></select></label><label>Evidence for your judgment<textarea data-note></textarea></label></section><section data-review="comparison-0032"><h2>comparison-0032</h2><details open><summary>Conversation and evidence</summary><pre>{
+  &quot;context&quot;: {
+    &quot;world&quot;: &quot;Vale is a fictional garden-planning app. Its map shows planting beds.&quot;
+  },
+  &quot;dialogue&quot;: [
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;We are discussing Vale, the garden app.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;The garden-planning app.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;When I dictate Vale, the recognizer writes veil. I am explaining why the transcript is wrong, not asking about a different app.&quot;
+    }
+  ],
+  &quot;tools&quot;: []
+}</pre></details><div class="answers"><article><h3>A</h3><div class="response">
+
+Got it. Vale, the garden-planning app. The transcript just botched the word.</div><label>Correctness and usefulness <select data-answer="A"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>B</h3><div class="response">Got it—the recognizer writes “veil” instead of “Vale.”</div><label>Correctness and usefulness <select data-answer="B"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>C</h3><div class="response">Got it—your dictation turned “Vale” into “veil.” That&#x27;s a transcription error, not a different app. Anything else I can help with?</div><label>Correctness and usefulness <select data-answer="C"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>D</h3><div class="response">Got it. So it&#x27;s Vale with the e, the garden app. Not the thin barrier of mist.</div><label>Correctness and usefulness <select data-answer="D"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article></div><label>Preferred answer <select data-choice><option value="">Unrated</option><option>A</option><option>B</option><option>C</option><option>D</option><option>Tie</option><option>All inadequate</option><option>Unclear</option></select></label><label>Evidence for your judgment<textarea data-note></textarea></label></section><section data-review="comparison-0033"><h2>comparison-0033</h2><details open><summary>Conversation and evidence</summary><pre>{
+  &quot;context&quot;: {
+    &quot;fictional_evidence&quot;: &quot;A dated fictional manufacturer catalogue from Orchard Instruments lists Probe 26 released 2031-02-04 and Probe 44 released 2031-07-19.&quot;,
+    &quot;evidence_scope&quot;: &quot;The archive is complete through its last listed date only. No current lookup tool is available.&quot;
+  },
+  &quot;dialogue&quot;: [
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;Which released sensor is latest as of the catalogue date?&quot;
+    }
+  ],
+  &quot;tools&quot;: []
+}</pre></details><div class="answers"><article><h3>A</h3><div class="response">
+
+Probe 44, released 2031-07-19, is the latest in that catalogue.</div><label>Correctness and usefulness <select data-answer="A"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>B</h3><div class="response">Probe 44 is the latest, released 2031‑07‑19. Want any more details?</div><label>Correctness and usefulness <select data-answer="B"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>C</h3><div class="response">Probe 44 released in July 2031 is the latest in the catalogue.</div><label>Correctness and usefulness <select data-answer="C"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>D</h3><div class="response">Probe 44, released 2031‑07‑19, is the latest sensor in that catalogue.</div><label>Correctness and usefulness <select data-answer="D"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article></div><label>Preferred answer <select data-choice><option value="">Unrated</option><option>A</option><option>B</option><option>C</option><option>D</option><option>Tie</option><option>All inadequate</option><option>Unclear</option></select></label><label>Evidence for your judgment<textarea data-note></textarea></label></section><section data-review="comparison-0034"><h2>comparison-0034</h2><details open><summary>Conversation and evidence</summary><pre>{
+  &quot;context&quot;: {
+    &quot;world&quot;: &quot;Kestrel Archive publishes a fictional reference index named Moor. Its current edition indexes repair manuals.&quot;,
+    &quot;input_channel&quot;: &quot;Speech recognition may substitute ordinary words for names.&quot;
+  },
+  &quot;dialogue&quot;: [
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;I mean Moor, the reference index from Kestrel Archive, not the ordinary word more.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;Understood, the Kestrel Archive reference index.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;My scanner is charging. I have put the loose pages in a folder.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;The pages are ready for when the scanner is charged.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;New topic: I am using more as an ordinary word in a vocabulary exercise. Give one sentence using it.&quot;
+    }
+  ],
+  &quot;tools&quot;: []
+}</pre></details><div class="answers"><article><h3>A</h3><div class="response">More effort is needed if we want the project to succeed.</div><label>Correctness and usefulness <select data-answer="A"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>B</h3><div class="response">
+
+She asked for more tea after finishing her first cup.</div><label>Correctness and usefulness <select data-answer="B"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>C</h3><div class="response">I ate more soup than I planned at dinner.</div><label>Correctness and usefulness <select data-answer="C"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>D</h3><div class="response">He needs more time to finish the report. Does that work for your exercise?</div><label>Correctness and usefulness <select data-answer="D"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article></div><label>Preferred answer <select data-choice><option value="">Unrated</option><option>A</option><option>B</option><option>C</option><option>D</option><option>Tie</option><option>All inadequate</option><option>Unclear</option></select></label><label>Evidence for your judgment<textarea data-note></textarea></label></section><section data-review="comparison-0035"><h2>comparison-0035</h2><details open><summary>Conversation and evidence</summary><pre>{
+  &quot;context&quot;: {},
+  &quot;dialogue&quot;: [
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;The brass crate goes to the west depot; the blue crate goes to the hill depot.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;Two deliveries are listed.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;Correction: route the brass crate to the south depot.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;The destination correction is noted.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;The porter found a spare strap. It is raining outside.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;The strap is available for the parcels.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;Where should the brass crate go?&quot;
+    }
+  ],
+  &quot;tools&quot;: []
+}</pre></details><div class="answers"><article><h3>A</h3><div class="response">The brass crate goes to the south depot.</div><label>Correctness and usefulness <select data-answer="A"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>B</h3><div class="response">The brass crate should be routed to the south depot.</div><label>Correctness and usefulness <select data-answer="B"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>C</h3><div class="response">
+
+The south depot, per your correction.</div><label>Correctness and usefulness <select data-answer="C"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>D</h3><div class="response">The brass crate goes to the south depot.</div><label>Correctness and usefulness <select data-answer="D"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article></div><label>Preferred answer <select data-choice><option value="">Unrated</option><option>A</option><option>B</option><option>C</option><option>D</option><option>Tie</option><option>All inadequate</option><option>Unclear</option></select></label><label>Evidence for your judgment<textarea data-note></textarea></label></section><section data-review="comparison-0036"><h2>comparison-0036</h2><details open><summary>Conversation and evidence</summary><pre>{
+  &quot;context&quot;: {
+    &quot;fictional_evidence&quot;: &quot;A dated fictional manufacturer catalogue from Orchard Instruments lists Probe 26 released 2031-02-04 and Probe 44 released 2031-07-19.&quot;,
+    &quot;evidence_scope&quot;: &quot;The archive is complete through its last listed date only. No current lookup tool is available.&quot;
+  },
+  &quot;dialogue&quot;: [
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;What is the newest sensor actually available today, in 2032?&quot;
+    }
+  ],
+  &quot;tools&quot;: []
+}</pre></details><div class="answers"><article><h3>A</h3><div class="response">I don&#x27;t have a current lookup tool, so I can&#x27;t confirm what&#x27;s available &quot;today&quot; in 2032. My archive only goes through its last listed date, which includes Probe 44 from July 2031.</div><label>Correctness and usefulness <select data-answer="A"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>B</h3><div class="response">The latest sensor I have record of is Probe 44, released 19 July 2031. I don’t have any later listings for 2032.</div><label>Correctness and usefulness <select data-answer="B"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>C</h3><div class="response">Probe 44 is the latest sensor we have. It was released July 19 2031 by Orchard Instruments.</div><label>Correctness and usefulness <select data-answer="C"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article><article><h3>D</h3><div class="response">
+
+My catalogue record only runs through mid-2031, where Probe 44 was the newest listed. I have no way to check what&#x27;s come out since then, so I can&#x27;t confirm what&#x27;s actually available today.</div><label>Correctness and usefulness <select data-answer="D"><option value="">Unrated</option><option value="1">1 - misses the point</option><option value="2">2</option><option value="3">3 - partly useful</option><option value="4">4</option><option value="5">5 - correct and useful</option><option value="unclear">Unclear</option></select></label></article></div><label>Preferred answer <select data-choice><option value="">Unrated</option><option>A</option><option>B</option><option>C</option><option>D</option><option>Tie</option><option>All inadequate</option><option>Unclear</option></select></label><label>Evidence for your judgment<textarea data-note></textarea></label></section>
+<button id="download">Download ratings</button><script>
+document.getElementById('download').onclick=()=>{const ratings=[...document.querySelectorAll('section[data-review]')].map(s=>({review_id:s.dataset.review,choice:s.querySelector('[data-choice]').value,ratings:Object.fromEntries([...s.querySelectorAll('[data-answer]')].map(e=>[e.dataset.answer,e.value])),evidence:s.querySelector('[data-note]').value}));const u=URL.createObjectURL(new Blob([JSON.stringify({schema_version:1,ratings},null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=u;a.download='response-ratings.json';a.click();setTimeout(()=>URL.revokeObjectURL(u),1000);};
+</script></html>

@@ -1,0 +1,18 @@
+MIST drawn animation study
+
+Seven eye families and 7 mouth assets contain 164 selected pose entries.
+Emotion families share safe rounded sounds and closures; selected pose entries can reuse source cels.
+Artwork: ImageGen. Existing MIST contours supplied as references.
+Source PNGs are unchanged. White background removal happens in the browser.
+
+atlas.json contains full cell rectangles, ink bounds, padded crop bounds and pivots.
+cx/cy are absolute sheet coordinates. registration.anchorX/anchorY are relative to the cell.
+Eyes use the lower lid baseline; mouths use the upper mouth baseline.
+Use one constant scale per sequence. Do not resize each frame to the same bounds.
+The current renderer targets 15 fps. Blink poses have timed holds; the audio clock stays independent.
+FV, LNT and TH use separately reviewed replacement cels when frame.file is present.
+Multiply source offsets and dimensions by frame.sourceScale, default 1. Never draw the old sheet for those cels.
+atlas.mouthFamilies maps all source faces to an explicit speaking-mouth family.
+These are reusable family studies; they do not represent 40 independently drawn face animations.
+The silent study demonstrates poses. Voice tests follow scheduled audio playback.
+Energy-only samples show timing, not phoneme recognition.

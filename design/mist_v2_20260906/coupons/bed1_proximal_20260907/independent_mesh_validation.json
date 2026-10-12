@@ -1,0 +1,182 @@
+{
+  "status": "independent_mesh_3mf_checks_passed",
+  "cadquery_imported": false,
+  "part_count": 7,
+  "combined_positive_material_shells": 7,
+  "combined_surface_shells": 8,
+  "checks": [
+    {
+      "part": "01_bearing_boss_carrier",
+      "watertight": true,
+      "winding_consistent": true,
+      "mesh_shell_checks": {
+        "positive_material_shells": 1,
+        "surface_shells": 1,
+        "enclosed_void_shells": 0,
+        "void_shell_checks": []
+      },
+      "triangles": 106682
+    },
+    {
+      "part": "02_hardware_interface_board",
+      "watertight": true,
+      "winding_consistent": true,
+      "mesh_shell_checks": {
+        "positive_material_shells": 1,
+        "surface_shells": 2,
+        "enclosed_void_shells": 1,
+        "void_shell_checks": [
+          {
+            "signed_volume_mm3": -0.5400089502289802,
+            "bounds_mm": [
+              [
+                145.4499969482422,
+                75.5,
+                1.600000023841858
+              ],
+              [
+                146.5500030517578,
+                77.5,
+                2.0999999046325684
+              ]
+            ],
+            "containment_sample_count": 32,
+            "absolute_winding_min": 0.9999999999999996,
+            "absolute_winding_max": 1.0000000000000009,
+            "containment": "All vertices and triangle centroids lie inside the positive shell"
+          }
+        ]
+      },
+      "triangles": 39898
+    },
+    {
+      "part": "03_servo_width_gauge",
+      "watertight": true,
+      "winding_consistent": true,
+      "mesh_shell_checks": {
+        "positive_material_shells": 1,
+        "surface_shells": 1,
+        "enclosed_void_shells": 0,
+        "void_shell_checks": []
+      },
+      "triangles": 132
+    },
+    {
+      "part": "04_split_clamp_lower",
+      "watertight": true,
+      "winding_consistent": true,
+      "mesh_shell_checks": {
+        "positive_material_shells": 1,
+        "surface_shells": 1,
+        "enclosed_void_shells": 0,
+        "void_shell_checks": []
+      },
+      "triangles": 400
+    },
+    {
+      "part": "05_split_clamp_upper",
+      "watertight": true,
+      "winding_consistent": true,
+      "mesh_shell_checks": {
+        "positive_material_shells": 1,
+        "surface_shells": 1,
+        "enclosed_void_shells": 0,
+        "void_shell_checks": []
+      },
+      "triangles": 836
+    },
+    {
+      "part": "06_624_retainer_boss",
+      "watertight": true,
+      "winding_consistent": true,
+      "mesh_shell_checks": {
+        "positive_material_shells": 1,
+        "surface_shells": 1,
+        "enclosed_void_shells": 0,
+        "void_shell_checks": []
+      },
+      "triangles": 27112
+    },
+    {
+      "part": "07_624_retainer_cap",
+      "watertight": true,
+      "winding_consistent": true,
+      "mesh_shell_checks": {
+        "positive_material_shells": 1,
+        "surface_shells": 1,
+        "enclosed_void_shells": 0,
+        "void_shell_checks": []
+      },
+      "triangles": 2424
+    }
+  ],
+  "raised_datum_pads": [
+    {
+      "center_xy_mm": [
+        73.5,
+        213
+      ],
+      "raised_mesh_bounds_mm": [
+        [
+          71.0,
+          210.5,
+          6.0
+        ],
+        [
+          76.0,
+          215.5,
+          6.0
+        ]
+      ]
+    },
+    {
+      "center_xy_mm": [
+        213,
+        213
+      ],
+      "raised_mesh_bounds_mm": [
+        [
+          210.5,
+          210.5,
+          6.0
+        ],
+        [
+          215.5,
+          215.5,
+          6.0
+        ]
+      ]
+    },
+    {
+      "center_xy_mm": [
+        213,
+        73.5
+      ],
+      "raised_mesh_bounds_mm": [
+        [
+          210.5,
+          71.0,
+          6.0
+        ],
+        [
+          215.5,
+          76.0,
+          6.0
+        ]
+      ]
+    }
+  ],
+  "long_datum_center_distance_xy_mm": [
+    139.5,
+    139.5
+  ],
+  "long_datum_outer_face_mm": 144.5,
+  "long_datum_inner_face_mm": 134.5,
+  "extent_mm": [
+    216.0,
+    216.0,
+    22.0
+  ],
+  "units_3mf": "millimeter",
+  "original_files_unchanged": true
+}

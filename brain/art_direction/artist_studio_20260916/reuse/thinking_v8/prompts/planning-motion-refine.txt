@@ -1,0 +1,24 @@
+Use case: precise-object-edit
+Correct the animation in the attached quiet-thought sprite sheet. Keep clean rounded cyan line art and native transparent alpha. Replace ALL the thought arcs with the SAME fixed shallow curve, and draw the moving solid bead at the sixteen distinct positions below. No consecutive duplicate or near-identical bead poses. This is an animation sheet with measured motion, not a repeated icon pattern.
+Canvas1536x1024, SIX columns FOUR rows, 24 cels, invisible256x256 cell grid, left-to-right row-major. Every fully formed cel has exactly the same arch at the same local position and scale. Fixed thin arc from(46,158), through top(128,122), to(210,158); a smooth shallow quadratic-like curve. Thickness4px, flat cyan #29DCE6. Tiny solid endpoint dots radius2.5px. One solid moving bead radius6px. No hollow circles. No central node. Do not bend, flatten, rotate, scale or reposition the curve between cells. The bead moves; the outline does not.
+Entrance four cells row1cols1-4: curve draws on in four stages, bead held at left endpoint, complete curve in col4.
+Active sixteen cells have the FULL FIXED CURVE and these bead center coordinates relative to each cell:
+row1col5:(46,158)
+row1col6:(69,141)
+row2col1:(92,129)
+row2col2:(115,123)
+row2col3:(138,123)
+row2col4:(161,128)
+row2col5:(184,139)
+row2col6:(207,155)
+row3col1:(199,149), turning back
+row3col2:(176,134)
+row3col3:(153,125)
+row3col4:(130,122)
+row3col5:(107,124)
+row3col6:(84,132)
+row4col1:(61,146)
+row4col2:(51,154), almost back at left endpoint for smooth loop to row1col5
+The coordinates are sixteen actually different bead positions. Follow them rather than repeating attractive key poses. Keep the same thin curve behind the bead, no trace or glow.
+Exit row4cols3-6: curve retracts in four stages toward left endpoint, bead stays at left, final tiny dot.
+All empty pixels and spaces around the curve must have actual alpha=0; only the cyan arc and dots are visible. No matte, fill, shadow, glow, gradient, colored background, checkerboard, border, frame labels, text, numbers, faces, eyes, pupils, mouths or success ticks. Same24-cel layout and clean style as the reference, corrected stable arc and moving bead.

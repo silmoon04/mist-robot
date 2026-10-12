@@ -1,0 +1,15 @@
+{
+  "status": "ready_for_integration",
+  "columns": 4,
+  "rows": 8,
+  "order": ["rest", "MBP", "release", "small_AA", "AA", "EH", "EE", "OH", "OO", "FV", "LNT", "S", "TH", "wide_close", "round_close", "SMILE"],
+  "destination": "sheets/mouth_combined_v2.png",
+  "sheetLayout": "4 columns by 8 rows: neutral indices 0-15, smile indices 16-31. Initial separate 4x4 sheets rejected for alpha speckles. Final combined repair preserves the same pose order in both families. mouth_v2_validation.json has exact crop bounds and anchors for all 32 poses.",
+  "registration": "constant scale, horizontal center and upper mouth line; all cels need atlas-bound review",
+  "audit": [
+    "Current sheets are clean enough to display, but FV, S, MBP and rest are not clearly differentiated.",
+    "AA has a dome-like silhouette while lower jaw opening reads better when its top edge remains stable.",
+    "Rest, full smile and some speech widths vary enough to look like a change of face.",
+    "A timed mouth selector should use speech timestamps rather than run the whole sheet as a loop. Extra frames alone do not create voice sync."
+  ]
+}

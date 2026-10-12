@@ -1,0 +1,15 @@
+<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<title>MIST · Live integration check</title><style>body{font:15px/1.5 system-ui;margin:30px;color:#25332e;background:#f4f3ee}table{border-collapse:collapse;width:100%}td,th{text-align:left;padding:12px;border-bottom:1px solid #ccd1c8}a{color:#205f4e}</style>
+<a href="../index.html">Face and voice</a><h1>Live integration check</h1>
+<p>3 typed turns through the real conversation server, Qwen speaker, Qwen expression reader and ElevenLabs. 3 returned audio. 1 reader results arrived before speech generation; 2 were discarded as late.</p>
+<p>This tests provider integration. It does not measure microphone recognition, browser playback or human quality.</p>
+<table><thead><tr><th>Turn</th><th>Input</th><th>Reader outcome</th><th>Reader ms</th><th>Audio seconds</th><th>Reply</th></tr></thead><tbody><tr><td>1</td><td>Please show a curious face while you answer in one sentence: what is a hinge?</td><td>applied_before_speech</td><td>2047.0</td><td>6.233</td><td>
+
+
+
+A hinge is a joint that connects two rigid parts and lets them pivot around a line, like the strip that holds a door to its frame.</td></tr><tr><td>2</td><td>I worked all weekend on an exhibition model, and its stand collapsed before anyone saw it. Please respond briefly.</td><td>speech_already_started</td><td>1500.0</td><td>2.119</td><td>
+
+That&#x27;s a rough way to lose a weekend of work.</td></tr><tr><td>3</td><td>Keep the current face unchanged. Please say one brief encouraging sentence about trying the print again.</td><td>speech_already_started</td><td>562.0</td><td>4.301</td><td>
+
+A second attempt with the stand reinforced probably won&#x27;t hurt as much as the first one did.</td></tr></tbody></table>
+<p><a href="public-trace.json" download>Public trace</a> · <a href="probe-summary.json" download>Measurements</a></p>

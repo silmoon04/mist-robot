@@ -1,0 +1,217 @@
+Independent R4 exported phone mesh validation
+Status: PASS
+Checked at UTC: 2026-09-12T18:15:09.490953+00:00
+Manifest: /design/hexapod_phone_quad_20260912/cad/output/assembly_manifest.json
+Manifest SHA256 before: 6cac852c196e29e2da100816a7d3b96f545e62dba92c3009a46417eb7d9bc449
+Manifest SHA256 after: 6cac852c196e29e2da100816a7d3b96f545e62dba92c3009a46417eb7d9bc449
+Requested manifest SHA256 matches: True
+Manifest unchanged: True
+All mesh bytes unchanged: True
+Scope: 9 production phone meshes and 11 phone coupons, read from their existing exported files.
+Checks: finite stored and calculated geometry, watertightness, consistent winding, positive volume, one face-connected component and manifest dimensions.
+Dimension tolerance: 0.10 mm absolute per axis.
+Maximum dimension error: 0.035934448 mm.
+Maximum production STL/manifest volume difference: 0.182237%.
+No geometry was regenerated or modified. No mesh repairs were performed.
+
+PASS phone_pan_servo_saddle
+  Group: production
+  Mesh: /design/hexapod_phone_quad_20260912/cad/output/print_stl/phone_pan_servo_saddle.stl
+  SHA256 before: aa079dad57ddb0871e10a65cb4b85bc074500f72f8fe1de02a43bd1ba20e85f6
+  SHA256 after: aa079dad57ddb0871e10a65cb4b85bc074500f72f8fe1de02a43bd1ba20e85f6
+  Dimensions mm: 67.991456, 49.991456, 22.500000
+  Manifest dimensions mm: 68.000000, 50.000000, 22.500000
+  Triangles: 4032; face components: 1; volume: 18754.036979 mm3.
+  Checks: binary_stl_layout_valid=True, raw_vertices_finite=True, raw_normals_finite=True, loaded_vertices_finite=True, computed_face_normals_finite=True, computed_vertex_normals_finite=True, face_count_preserved=True, watertight=True, winding_consistent=True, positive_finite_volume=True, one_face_connected_component=True, manifest_dimensions_match=True, manifest_volume_within_tessellation_tolerance=True, mesh_bytes_unchanged=True
+
+PASS phone_pan_servo_cap
+  Group: production
+  Mesh: /design/hexapod_phone_quad_20260912/cad/output/print_stl/phone_pan_servo_cap.stl
+  SHA256 before: ef7357722f95d5ff5722eaccdbb5954a12ea13cb510b8c9dfcad75597d1a843d
+  SHA256 after: ef7357722f95d5ff5722eaccdbb5954a12ea13cb510b8c9dfcad75597d1a843d
+  Dimensions mm: 52.230000, 48.000000, 14.200000
+  Manifest dimensions mm: 52.230000, 48.000000, 14.200000
+  Triangles: 1408; face components: 1; volume: 7787.001507 mm3.
+  Checks: binary_stl_layout_valid=True, raw_vertices_finite=True, raw_normals_finite=True, loaded_vertices_finite=True, computed_face_normals_finite=True, computed_vertex_normals_finite=True, face_count_preserved=True, watertight=True, winding_consistent=True, positive_finite_volume=True, one_face_connected_component=True, manifest_dimensions_match=True, manifest_volume_within_tessellation_tolerance=True, mesh_bytes_unchanged=True
+
+PASS phone_pan_hub
+  Group: production
+  Mesh: /design/hexapod_phone_quad_20260912/cad/output/print_stl/phone_pan_hub.stl
+  SHA256 before: 92c72911c1c91508e596bf86d895ca00e4d9cd029e23eefa747c3330bb5501cf
+  SHA256 after: 92c72911c1c91508e596bf86d895ca00e4d9cd029e23eefa747c3330bb5501cf
+  Dimensions mm: 47.964066, 58.595288, 5.000000
+  Manifest dimensions mm: 48.000000, 58.600000, 5.000000
+  Triangles: 3616; face components: 1; volume: 9798.644836 mm3.
+  Checks: binary_stl_layout_valid=True, raw_vertices_finite=True, raw_normals_finite=True, loaded_vertices_finite=True, computed_face_normals_finite=True, computed_vertex_normals_finite=True, face_count_preserved=True, watertight=True, winding_consistent=True, positive_finite_volume=True, one_face_connected_component=True, manifest_dimensions_match=True, manifest_volume_within_tessellation_tolerance=True, mesh_bytes_unchanged=True
+
+PASS phone_cradle_rear_frame
+  Group: production
+  Mesh: /design/hexapod_phone_quad_20260912/cad/output/print_stl/phone_cradle_rear_frame.stl
+  SHA256 before: d726550ab902c617177201b8e7626db48ad59ac3650e966428288e1127d050b9
+  SHA256 after: d726550ab902c617177201b8e7626db48ad59ac3650e966428288e1127d050b9
+  Dimensions mm: 83.500000, 164.500000, 16.500000
+  Manifest dimensions mm: 83.500000, 164.500000, 16.500000
+  Triangles: 3024; face components: 1; volume: 23865.422819 mm3.
+  Checks: binary_stl_layout_valid=True, raw_vertices_finite=True, raw_normals_finite=True, loaded_vertices_finite=True, computed_face_normals_finite=True, computed_vertex_normals_finite=True, face_count_preserved=True, watertight=True, winding_consistent=True, positive_finite_volume=True, one_face_connected_component=True, manifest_dimensions_match=True, manifest_volume_within_tessellation_tolerance=True, mesh_bytes_unchanged=True
+
+PASS phone_cradle_top_cap
+  Group: production
+  Mesh: /design/hexapod_phone_quad_20260912/cad/output/print_stl/phone_cradle_top_cap.stl
+  SHA256 before: c18801c2e640b04a32f9267109c076504d48f801d0323b9a62ef383ee141ea70
+  SHA256 after: c18801c2e640b04a32f9267109c076504d48f801d0323b9a62ef383ee141ea70
+  Dimensions mm: 23.500000, 164.500000, 19.000000
+  Manifest dimensions mm: 23.500000, 164.500000, 19.000000
+  Triangles: 500; face components: 1; volume: 17189.662510 mm3.
+  Checks: binary_stl_layout_valid=True, raw_vertices_finite=True, raw_normals_finite=True, loaded_vertices_finite=True, computed_face_normals_finite=True, computed_vertex_normals_finite=True, face_count_preserved=True, watertight=True, winding_consistent=True, positive_finite_volume=True, one_face_connected_component=True, manifest_dimensions_match=True, manifest_volume_within_tessellation_tolerance=True, mesh_bytes_unchanged=True
+
+PASS phone_cradle_lower_clip_left
+  Group: production
+  Mesh: /design/hexapod_phone_quad_20260912/cad/output/print_stl/phone_cradle_lower_clip_left.stl
+  SHA256 before: 4db781092904fd35511c35968b307e2960a0bda0de63ba019b689b1d421a994a
+  SHA256 after: 4db781092904fd35511c35968b307e2960a0bda0de63ba019b689b1d421a994a
+  Dimensions mm: 11.000000, 16.500000, 3.000000
+  Manifest dimensions mm: 11.000000, 16.500000, 3.000000
+  Triangles: 220; face components: 1; volume: 517.331241 mm3.
+  Checks: binary_stl_layout_valid=True, raw_vertices_finite=True, raw_normals_finite=True, loaded_vertices_finite=True, computed_face_normals_finite=True, computed_vertex_normals_finite=True, face_count_preserved=True, watertight=True, winding_consistent=True, positive_finite_volume=True, one_face_connected_component=True, manifest_dimensions_match=True, manifest_volume_within_tessellation_tolerance=True, mesh_bytes_unchanged=True
+
+PASS phone_cradle_lower_clip_right
+  Group: production
+  Mesh: /design/hexapod_phone_quad_20260912/cad/output/print_stl/phone_cradle_lower_clip_right.stl
+  SHA256 before: e2b774fdbb8bcbc2da909ee0a43575577253e3c248cf7fdee7f92e922521a886
+  SHA256 after: e2b774fdbb8bcbc2da909ee0a43575577253e3c248cf7fdee7f92e922521a886
+  Dimensions mm: 11.000000, 16.500000, 3.000000
+  Manifest dimensions mm: 11.000000, 16.500000, 3.000000
+  Triangles: 220; face components: 1; volume: 517.331243 mm3.
+  Checks: binary_stl_layout_valid=True, raw_vertices_finite=True, raw_normals_finite=True, loaded_vertices_finite=True, computed_face_normals_finite=True, computed_vertex_normals_finite=True, face_count_preserved=True, watertight=True, winding_consistent=True, positive_finite_volume=True, one_face_connected_component=True, manifest_dimensions_match=True, manifest_volume_within_tessellation_tolerance=True, mesh_bytes_unchanged=True
+
+PASS phone_cradle_foot_left
+  Group: production
+  Mesh: /design/hexapod_phone_quad_20260912/cad/output/print_stl/phone_cradle_foot_left.stl
+  SHA256 before: f383e019d7845814156dedb37e1b2feaa29f2fa84ad9e59a8958453b38ff6a0a
+  SHA256 after: f383e019d7845814156dedb37e1b2feaa29f2fa84ad9e59a8958453b38ff6a0a
+  Dimensions mm: 37.000000, 30.500000, 14.000000
+  Manifest dimensions mm: 37.000000, 30.500000, 14.000000
+  Triangles: 860; face components: 1; volume: 4116.874950 mm3.
+  Checks: binary_stl_layout_valid=True, raw_vertices_finite=True, raw_normals_finite=True, loaded_vertices_finite=True, computed_face_normals_finite=True, computed_vertex_normals_finite=True, face_count_preserved=True, watertight=True, winding_consistent=True, positive_finite_volume=True, one_face_connected_component=True, manifest_dimensions_match=True, manifest_volume_within_tessellation_tolerance=True, mesh_bytes_unchanged=True
+
+PASS phone_cradle_foot_right
+  Group: production
+  Mesh: /design/hexapod_phone_quad_20260912/cad/output/print_stl/phone_cradle_foot_right.stl
+  SHA256 before: a9a581b34e4bd3deabef61ce97877a8ea8765a100cf17a0ed01fb89daf48a288
+  SHA256 after: a9a581b34e4bd3deabef61ce97877a8ea8765a100cf17a0ed01fb89daf48a288
+  Dimensions mm: 37.000000, 30.500000, 14.000000
+  Manifest dimensions mm: 37.000000, 30.500000, 14.000000
+  Triangles: 860; face components: 1; volume: 4116.874950 mm3.
+  Checks: binary_stl_layout_valid=True, raw_vertices_finite=True, raw_normals_finite=True, loaded_vertices_finite=True, computed_face_normals_finite=True, computed_vertex_normals_finite=True, face_count_preserved=True, watertight=True, winding_consistent=True, positive_finite_volume=True, one_face_connected_component=True, manifest_dimensions_match=True, manifest_volume_within_tessellation_tolerance=True, mesh_bytes_unchanged=True
+
+PASS phone_fit_0p3_tray
+  Group: coupon
+  Mesh: /design/hexapod_phone_quad_20260912/cad/output/coupons_stl/phone_fit_0p3_tray.stl
+  SHA256 before: 862cea13ee2af2587fb6a097c3ea31ebbbcb32aa330f0877ec967dd3c21185a5
+  SHA256 after: 862cea13ee2af2587fb6a097c3ea31ebbbcb32aa330f0877ec967dd3c21185a5
+  Dimensions mm: 29.299999, 164.100006, 16.250000
+  Manifest dimensions mm: 29.300000, 164.100000, 16.250000
+  Triangles: 1968; face components: 1; volume: 17045.847834 mm3.
+  Checks: binary_stl_layout_valid=True, raw_vertices_finite=True, raw_normals_finite=True, loaded_vertices_finite=True, computed_face_normals_finite=True, computed_vertex_normals_finite=True, face_count_preserved=True, watertight=True, winding_consistent=True, positive_finite_volume=True, one_face_connected_component=True, manifest_dimensions_match=True, mesh_bytes_unchanged=True
+
+PASS phone_fit_0p3_clip_left
+  Group: coupon
+  Mesh: /design/hexapod_phone_quad_20260912/cad/output/coupons_stl/phone_fit_0p3_clip_left.stl
+  SHA256 before: 4db781092904fd35511c35968b307e2960a0bda0de63ba019b689b1d421a994a
+  SHA256 after: 4db781092904fd35511c35968b307e2960a0bda0de63ba019b689b1d421a994a
+  Dimensions mm: 11.000000, 16.500000, 3.000000
+  Manifest dimensions mm: 11.000000, 16.500000, 3.000000
+  Triangles: 220; face components: 1; volume: 517.331241 mm3.
+  Checks: binary_stl_layout_valid=True, raw_vertices_finite=True, raw_normals_finite=True, loaded_vertices_finite=True, computed_face_normals_finite=True, computed_vertex_normals_finite=True, face_count_preserved=True, watertight=True, winding_consistent=True, positive_finite_volume=True, one_face_connected_component=True, manifest_dimensions_match=True, mesh_bytes_unchanged=True
+
+PASS phone_fit_0p3_clip_right
+  Group: coupon
+  Mesh: /design/hexapod_phone_quad_20260912/cad/output/coupons_stl/phone_fit_0p3_clip_right.stl
+  SHA256 before: e2b774fdbb8bcbc2da909ee0a43575577253e3c248cf7fdee7f92e922521a886
+  SHA256 after: e2b774fdbb8bcbc2da909ee0a43575577253e3c248cf7fdee7f92e922521a886
+  Dimensions mm: 11.000000, 16.500000, 3.000000
+  Manifest dimensions mm: 11.000000, 16.500000, 3.000000
+  Triangles: 220; face components: 1; volume: 517.331243 mm3.
+  Checks: binary_stl_layout_valid=True, raw_vertices_finite=True, raw_normals_finite=True, loaded_vertices_finite=True, computed_face_normals_finite=True, computed_vertex_normals_finite=True, face_count_preserved=True, watertight=True, winding_consistent=True, positive_finite_volume=True, one_face_connected_component=True, manifest_dimensions_match=True, mesh_bytes_unchanged=True
+
+PASS phone_fit_0p5_tray
+  Group: coupon
+  Mesh: /design/hexapod_phone_quad_20260912/cad/output/coupons_stl/phone_fit_0p5_tray.stl
+  SHA256 before: 1cb7793b785b5346cfc905e5defc0f555aadba2a473a62ab971564300c8be69e
+  SHA256 after: 1cb7793b785b5346cfc905e5defc0f555aadba2a473a62ab971564300c8be69e
+  Dimensions mm: 29.299999, 164.500000, 16.450001
+  Manifest dimensions mm: 29.300000, 164.500000, 16.450000
+  Triangles: 1968; face components: 1; volume: 17162.865175 mm3.
+  Checks: binary_stl_layout_valid=True, raw_vertices_finite=True, raw_normals_finite=True, loaded_vertices_finite=True, computed_face_normals_finite=True, computed_vertex_normals_finite=True, face_count_preserved=True, watertight=True, winding_consistent=True, positive_finite_volume=True, one_face_connected_component=True, manifest_dimensions_match=True, mesh_bytes_unchanged=True
+
+PASS phone_fit_0p5_clip_left
+  Group: coupon
+  Mesh: /design/hexapod_phone_quad_20260912/cad/output/coupons_stl/phone_fit_0p5_clip_left.stl
+  SHA256 before: 4db781092904fd35511c35968b307e2960a0bda0de63ba019b689b1d421a994a
+  SHA256 after: 4db781092904fd35511c35968b307e2960a0bda0de63ba019b689b1d421a994a
+  Dimensions mm: 11.000000, 16.500000, 3.000000
+  Manifest dimensions mm: 11.000000, 16.500000, 3.000000
+  Triangles: 220; face components: 1; volume: 517.331241 mm3.
+  Checks: binary_stl_layout_valid=True, raw_vertices_finite=True, raw_normals_finite=True, loaded_vertices_finite=True, computed_face_normals_finite=True, computed_vertex_normals_finite=True, face_count_preserved=True, watertight=True, winding_consistent=True, positive_finite_volume=True, one_face_connected_component=True, manifest_dimensions_match=True, mesh_bytes_unchanged=True
+
+PASS phone_fit_0p5_clip_right
+  Group: coupon
+  Mesh: /design/hexapod_phone_quad_20260912/cad/output/coupons_stl/phone_fit_0p5_clip_right.stl
+  SHA256 before: e2b774fdbb8bcbc2da909ee0a43575577253e3c248cf7fdee7f92e922521a886
+  SHA256 after: e2b774fdbb8bcbc2da909ee0a43575577253e3c248cf7fdee7f92e922521a886
+  Dimensions mm: 11.000000, 16.500000, 3.000000
+  Manifest dimensions mm: 11.000000, 16.500000, 3.000000
+  Triangles: 220; face components: 1; volume: 517.331243 mm3.
+  Checks: binary_stl_layout_valid=True, raw_vertices_finite=True, raw_normals_finite=True, loaded_vertices_finite=True, computed_face_normals_finite=True, computed_vertex_normals_finite=True, face_count_preserved=True, watertight=True, winding_consistent=True, positive_finite_volume=True, one_face_connected_component=True, manifest_dimensions_match=True, mesh_bytes_unchanged=True
+
+PASS phone_fit_0p7_tray
+  Group: coupon
+  Mesh: /design/hexapod_phone_quad_20260912/cad/output/coupons_stl/phone_fit_0p7_tray.stl
+  SHA256 before: 596dd1029a9ec9598512fac881c3420b6a28ad262736f92e8e11b14b72e2bd73
+  SHA256 after: 596dd1029a9ec9598512fac881c3420b6a28ad262736f92e8e11b14b72e2bd73
+  Dimensions mm: 29.299999, 164.899994, 16.650000
+  Manifest dimensions mm: 29.300000, 164.900000, 16.650000
+  Triangles: 1968; face components: 1; volume: 17280.521621 mm3.
+  Checks: binary_stl_layout_valid=True, raw_vertices_finite=True, raw_normals_finite=True, loaded_vertices_finite=True, computed_face_normals_finite=True, computed_vertex_normals_finite=True, face_count_preserved=True, watertight=True, winding_consistent=True, positive_finite_volume=True, one_face_connected_component=True, manifest_dimensions_match=True, mesh_bytes_unchanged=True
+
+PASS phone_fit_0p7_clip_left
+  Group: coupon
+  Mesh: /design/hexapod_phone_quad_20260912/cad/output/coupons_stl/phone_fit_0p7_clip_left.stl
+  SHA256 before: 9dd0e932d7d65ff46c3d2c60ca93a6cd381a896fcdb3bcee694985d8565d6942
+  SHA256 after: 9dd0e932d7d65ff46c3d2c60ca93a6cd381a896fcdb3bcee694985d8565d6942
+  Dimensions mm: 11.000000, 16.500000, 3.000000
+  Manifest dimensions mm: 11.000000, 16.500000, 3.000000
+  Triangles: 220; face components: 1; volume: 517.331241 mm3.
+  Checks: binary_stl_layout_valid=True, raw_vertices_finite=True, raw_normals_finite=True, loaded_vertices_finite=True, computed_face_normals_finite=True, computed_vertex_normals_finite=True, face_count_preserved=True, watertight=True, winding_consistent=True, positive_finite_volume=True, one_face_connected_component=True, manifest_dimensions_match=True, mesh_bytes_unchanged=True
+
+PASS phone_fit_0p7_clip_right
+  Group: coupon
+  Mesh: /design/hexapod_phone_quad_20260912/cad/output/coupons_stl/phone_fit_0p7_clip_right.stl
+  SHA256 before: da1cdf2f33e04ae48269bdc14c6aeb500a32cf87e443c90acc304e7c5b9d408e
+  SHA256 after: da1cdf2f33e04ae48269bdc14c6aeb500a32cf87e443c90acc304e7c5b9d408e
+  Dimensions mm: 11.000000, 16.500000, 3.000000
+  Manifest dimensions mm: 11.000000, 16.500000, 3.000000
+  Triangles: 220; face components: 1; volume: 517.331243 mm3.
+  Checks: binary_stl_layout_valid=True, raw_vertices_finite=True, raw_normals_finite=True, loaded_vertices_finite=True, computed_face_normals_finite=True, computed_vertex_normals_finite=True, face_count_preserved=True, watertight=True, winding_consistent=True, positive_finite_volume=True, one_face_connected_component=True, manifest_dimensions_match=True, mesh_bytes_unchanged=True
+
+PASS phone_usb_spine_6mm_coupon
+  Group: coupon
+  Mesh: /design/hexapod_phone_quad_20260912/cad/output/coupons_stl/phone_usb_spine_6mm_coupon.stl
+  SHA256 before: ac4f363b6b33c658e603df046e11f1cc94b961c9616ad9aab422917eb92093ea
+  SHA256 after: ac4f363b6b33c658e603df046e11f1cc94b961c9616ad9aab422917eb92093ea
+  Dimensions mm: 44.000000, 8.000000, 16.500000
+  Manifest dimensions mm: 44.000000, 8.000000, 16.500000
+  Triangles: 128; face components: 1; volume: 3225.856740 mm3.
+  Checks: binary_stl_layout_valid=True, raw_vertices_finite=True, raw_normals_finite=True, loaded_vertices_finite=True, computed_face_normals_finite=True, computed_vertex_normals_finite=True, face_count_preserved=True, watertight=True, winding_consistent=True, positive_finite_volume=True, one_face_connected_component=True, manifest_dimensions_match=True, mesh_bytes_unchanged=True
+
+PASS phone_pan_horn_stack_fit
+  Group: coupon
+  Mesh: /design/hexapod_phone_quad_20260912/cad/output/coupons_stl/phone_pan_horn_stack_fit.stl
+  SHA256 before: 92c72911c1c91508e596bf86d895ca00e4d9cd029e23eefa747c3330bb5501cf
+  SHA256 after: 92c72911c1c91508e596bf86d895ca00e4d9cd029e23eefa747c3330bb5501cf
+  Dimensions mm: 47.964066, 58.595288, 5.000000
+  Manifest dimensions mm: 48.000000, 58.600000, 5.000000
+  Triangles: 3616; face components: 1; volume: 9798.644836 mm3.
+  Checks: binary_stl_layout_valid=True, raw_vertices_finite=True, raw_normals_finite=True, loaded_vertices_finite=True, computed_face_normals_finite=True, computed_vertex_normals_finite=True, face_count_preserved=True, watertight=True, winding_consistent=True, positive_finite_volume=True, one_face_connected_component=True, manifest_dimensions_match=True, mesh_bytes_unchanged=True
+
+Limitations: Mesh integrity and dimensional agreement do not verify physical fit, load capacity, print settings, cable routing or assembly motion.

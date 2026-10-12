@@ -1,0 +1,15 @@
+{
+  "name": "wave_hello",
+  "kind": "gesture",
+  "description": "Lift front-right leg and wave it twice while making a happy face. Low energy, safe anytime.",
+  "duration_s": 4,
+  "energy": "low",
+  "tracks": {
+    "leg_fr": [
+      { "t": 0.0, "joints": [30, -60, 40] },
+      { "t": 0.5, "joints": [30, -60, 70] },
+      { "t": 1.0, "joints": [30, -60, 40] }
+    ],
+    "face": [{ "t": 0.0, "expr": "happy" }]
+  }
+}

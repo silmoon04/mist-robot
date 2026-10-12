@@ -1,0 +1,137 @@
+{
+  "status": "hypothetical_gearing_screen_complete_not_CAD_release",
+  "rom": {
+    "status": "KINEMATIC_CORRIDOR_FOUND",
+    "reference": "One ideal60mm/40mmlift cycle with30mm COM inset; no dynamic feedback, collision or stair validation",
+    "sample_count": 248,
+    "all_ik_reachable": true,
+    "all_shaft_targets_inside_original_span": true,
+    "all_targets_inside_per_leg_physical_corridor": true,
+    "shaft_travel_min_deg": [
+      -99.6894336011402,
+      -86.64506396962894,
+      -84.15136092348598
+    ],
+    "shaft_travel_max_deg": [
+      138.6439434655507,
+      71.07059224610094,
+      127.22454132404452
+    ],
+    "minimum_shaft_span_margin_deg": [
+      36.356056534449294,
+      88.35493603037106,
+      47.77545867595548
+    ],
+    "restricted_output_limits_by_leg_deg": [
+      [
+        [
+          -100.0,
+          57.911539185943845
+        ],
+        [
+          22.875342597103646,
+          125.0
+        ],
+        [
+          -150.0,
+          -37.61781066056384
+        ]
+      ],
+      [
+        [
+          -43.94653570173466,
+          100.0
+        ],
+        [
+          20.681020931552005,
+          125.0
+        ],
+        [
+          -150.0,
+          -39.05986487681614
+        ]
+      ],
+      [
+        [
+          -58.12803337490604,
+          100.0
+        ],
+        [
+          19.545421296492343,
+          125.0
+        ],
+        [
+          -128.42539571020012,
+          -15.0
+        ]
+      ],
+      [
+        [
+          -100.0,
+          51.68806304508063
+        ],
+        [
+          -1.5013302499665926,
+          115.16533641670009
+        ],
+        [
+          -121.45491571359153,
+          -15.0
+        ]
+      ]
+    ],
+    "no_load_output_speed_rpm": [
+      18.5625,
+      12.375,
+      12.375
+    ]
+  },
+  "fixture": {
+    "status": "PASS_IN_MODEL",
+    "criteria": {
+      "foot_error_below_15mm": true,
+      "motor_rms_below_continuous": true,
+      "no_active_hold_saturation": true,
+      "no_active_shaft_travel_violation": true
+    },
+    "fixed_base": true,
+    "mass_kg": 7.896084239760452,
+    "contacts_equivalent": 3,
+    "load_multiplier": 1,
+    "force_n": 25.820195464016678,
+    "applied_point": "wheel link-frame axle origin; vertical tire contact line",
+    "hold_window_s": [
+      3,
+      4.4
+    ],
+    "physics_dt_s": 0.001,
+    "hold_samples": 1401,
+    "hold_max_foot_error_m": 0.004350181388494762,
+    "hold_servo_rms_nm": [
+      1.5021749366591993e-05,
+      0.30766370231062196,
+      0.5844910655811296
+    ],
+    "servo_continuous_limit_nm": 0.7281437625000001,
+    "servo_peak_limit_nm": 1.3349302312500002,
+    "continuous_torque_reserve_fraction": 0.1972861738534366,
+    "active_hold_saturated_steps": 0,
+    "active_hold_travel_violations": 0,
+    "active_all_run_travel_violations": 0,
+    "all_servo_saturation_fraction": 0.0,
+    "parameters_sha256": "092ebf9555bacc44ca5250af03a8e7baf3b472b1bf98ab1d95a22fea0e939343",
+    "source_sha256": {
+      "model.py": "1884758417c3d6fa66fd90f87dd50da56cd44ccd3580dd9fe5a562c3c268a3fa",
+      "run_sim.py": "bc227b5b68825900b704baef1a31b2f65b789cc95d3ec17b52992dff88013ba3",
+      "concealed_fixture.py": "51020579efbde9a35b95d1b44c0bff91f1c2c7e546e08d2134efb41c4d975013"
+    },
+    "limitations": [
+      "An ideal vertical force acts on one suspended wheel with the body fixed. This is a load fixture, not locomotion.",
+      "The wheel-axis load point and full-rate hold RMS differ from the older load_test.py COM-force/50Hz metrics.",
+      "Backlash, compliance, bandwidth, friction and continuous limits remain unmeasured assumptions."
+    ]
+  },
+  "torque_reserve_gate_pass": false,
+  "actual_2to1_CAD_unchanged": true,
+  "new_gears_manufactured_or_packaged": false
+}

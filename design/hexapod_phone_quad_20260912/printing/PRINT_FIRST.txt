@@ -1,0 +1,36 @@
+R4 FIRST PRINT: CORRECTED DATUM AND INWARD KNEE
+
+Read FIRST_FIT_CHECKS.txt for the controlled first-fit disposition and remaining physical gates.
+1. Open coupon_plate_01.3mf in your Neptune 4 Pro slicer.
+   These are 13 fit pieces plus three section specimens required before loading.
+   Keep millimetres, orientation and plate positions.
+   The 3MF files contain geometry only. They do not contain a machine profile or G-code.
+2. Use 0.4 mm nozzle, 0.20 mm layers, 0.42 mm lines, five walls, six top/bottom layers
+   and 35% gyroid. Start PLA at 210/60 C within the filament maker's range.
+   Cap flow at 8 mm3/s. Check supports under raised sections and the phone tray rear plate.
+   Read PRINT_AND_ASSEMBLE.md for support settings and inspect every first unsupported layer.
+3. Print the nominal 0.3 mm case fit and reuse its single cap for alternative end gaps.
+   Preload clamp nuts into bare carriers before servos/caps; hip-front nuts use staged side entry.
+   Use the nominal 0.5 mm landscape phone tray with TWO SHORT CLIPS, not the old long bar.
+4. Clamp the real servo and use the case-to-shaft registration plate with its metal horn.
+   The output axis is 12.5 mm from the CASE MIDPOINT. Verify this fit before a whole leg.
+   Assemble horn/auxiliary fits and the three R4 section coupons. Use real metal discs.
+   Have M3x35 clamp screws, M3x50 external bridge bolts, plain M3 nuts and OD7 washers.
+   Pitch auxiliary screws are M3x8 with TWO OD6 x 0.5 mm washers and integral 1.1 mm lands.
+   Yaw uses M3x20, TWO OD6 x 0.5 mm washers, 3.5 mm counterbores and 11.6 mm spacers.
+   Each auxiliary center retainer also needs the specified OD7 washer against the fixed stub.
+   After initial fit, print the full production coxa_upper_and_hip_saddle.stl and lower arm
+   coxa_lower_auxiliary_arm.stl for the frame load test. The cropped post misses the Z=-25 access cut.
+5. Record results in coupon_feedback.csv. Stop on binding, roof lift, cracking or permanent set.
+   Use captured fixtures and a dummy phone; follow the incremental force/deflection loop
+   in PRINT_AND_ASSEMBLE.md before any full robot run. No full strength certificate exists.
+6. Only if a nominal fit needs adjustment, print individual alternatives from coupon_bom.csv
+   or the complete optional set: coupon_plate_02.3mf.
+   The twelve optional pieces include two duplicate caps that can normally be omitted.
+
+All 28 coupons remain available. manufacturing_bom.csv lists the current production quantities.
+Consult the current R4 production slicing report for material and time totals when available.
+R3 mass, support and time estimates are historical and do not qualify the corrected geometry.
+Use the slicer's time for the actual coupon plate. Infill percentage is not a mass fraction.
+The phone stays landscape and upright. Park pan before charging through a short-side USB opening.
+Source CAD manifest SHA-256: 6cac852c196e29e2da100816a7d3b96f545e62dba92c3009a46417eb7d9bc449

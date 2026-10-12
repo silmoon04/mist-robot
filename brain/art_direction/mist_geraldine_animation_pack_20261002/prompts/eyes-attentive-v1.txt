@@ -1,0 +1,26 @@
+Use case: stylized-concept
+Asset type: production transparent eye-pair sprite atlas for MIST Geraldine, attentive family.
+Primary request: Generate ONE native transparent PNG atlas, ideally 1536 x 1024 pixels, containing EXACTLY twelve eye pairs in EXACTLY four columns and three rows. Read order is left-to-right, top-to-bottom. Each invisible equal cell contains two eyes only. No labels and no drawn grid.
+Input image 1 is the visual style and identity reference: later-alligator-sweet-geraldine.png. Use ONLY the TWO EYES in its TOP-LEFT attentive face as the primary reference. Ignore every mouth, every other expression and the dark reference background. The requested asset has actual transparent alpha everywhere outside the eyes.
+
+Style and identity: Match the reference's simple bright turquoise filled C-shaped graphic eye contours. These are solid thick contours with transparent inner apertures, clean smooth rounded tips, and a gentle hand-drawn unevenness. They have no pupils, iris, whites, eyebrows, extra eyelids floating above them, shading, light effects or texture. The left eye is slightly larger than the right eye. LEFT eye's C opens outward to the LEFT; RIGHT eye's C opens outward to the RIGHT. Keep this identity and orientation throughout. In the rest frame the two original C eyes are attentive and softly friendly, close to circular, without an exaggerated new emotion.
+
+Atlas registration: At 1536 x 1024, invisible cell size is 384 x about 341 pixels. Eye centers remain approximately x=120 and x=265, y=170 within EACH cell; keep the same fixed eye anchors in all twelve cells. Pair occupies about 210 to 230 pixels of width and tallest eye about 95 pixels. Leave very generous transparent margins around each pair; no eye approaches a cell edge. Maintain the original left/right size relationship and eye widths through the blink. The blink changes the aperture using freshly drawn eyelid contours; never rotate an open C, shrink the whole eye or swap eyes to imitate blinking. Closed arcs naturally have less height while their overall horizontal eye width remains comparable. Tiny expression variation belongs inside the fixed anchors, not in shifting or zooming the pair.
+
+The twelve CELLS are:
+Row 1 column 1, frame 0 REST: the original attentive outward-opening C eye pair.
+Row 1 column 2, frame 1 ANTICIPATION: a gentle small lowering of the upper eyelid, keeping the integrated continuous C contour and attentive identity.
+Row 1 column 3, frame 2 HALF-CLOSED: both apertures genuinely about half closed from the TOP; draw the upper eyelid as an integrated continuation of the thick eye contour, with clear curved cuts and no detached extra bar. Keep horizontal widths.
+Row 1 column 4, frame 3 NEAR-CLOSED: both eyes have thin short horizontal apertures, upper lids lowered almost to the lower curves; still continuously drawn shapes, no rotated Cs.
+Row 2 column 1, frame 4 FULLY CLOSED: exactly TWO soft clean closed-eye arcs, one per eye, drawn as native closed eyelid shapes. No hole, no pupil and no surrounding open C. They have similar horizontal eye widths as the resting eyes, positioned around the same eye anchors. These should unmistakably read as a natural attentive blink fully shut.
+Row 2 column 2, frame 5 OPENING LOW: lids reopen slightly into a narrow low aperture, natural continuous eye contours, same anchors.
+Row 2 column 3, frame 6 OPENING THREE-QUARTERS: apertures reopened about three quarters of resting height, same C orientation and identity.
+Row 2 column 4, frame 7 REST AFTER BLINK: match frame 0's original attentive C pair.
+Row 3 column 1, frame 8 SUBTLE LOOK LEFT: reshape the transparent inner openings subtly toward left, preserving the outer fixed eye anchors, pair scale and outward C orientations. Do not translate either eye or add pupils.
+Row 3 column 2, frame 9 SUBTLE LOOK RIGHT: reshape the inner openings subtly toward right, preserving outer fixed eye anchors, pair scale and outward C orientations. Do not translate either eye or add pupils.
+Row 3 column 3, frame 10 SOFT SETTLE: gentle return toward the original attentive rest C pair with only a tiny integrated upper-lid relaxation.
+Row 3 column 4, frame 11 REST END: match frame 0's original attentive C pair.
+
+Color palette: the single bright turquoise/cyan of the reference eye art, flat solid fill, consistent across all cells. Antialiased boundary pixels are allowed. No dark fill, gradient, glow or noise.
+Critical constraints: EXACT 12 pairs = EXACT 24 eye shapes, one pair centered in each equal invisible cell; all poses must be drawn; no missing cell; no duplicates replacing half/near-closed/opening poses; fixed horizontal eye widths; fixed anchors; true transparent background.
+Avoid: any mouth, body, head, brow, pupil, text, number, label, watermark, border, gridline, checkerboard baked into pixels, black or white background, detached eyelid fragment, extra eye, stray dot, shadow, glow, texture, light gradient, tilt, rotating Cs for a blink, compressed or enlarged whole pair.

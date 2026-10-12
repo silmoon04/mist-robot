@@ -1,0 +1,229 @@
+{
+  "passed": false,
+  "checkedAt": "2026-09-23T14:28:19.492Z",
+  "rendererSha256": "70d73a3b12f05e91e4f0c9a403012ba71d5ee91ddbc0fb9bb5d78aad7d924d0a",
+  "faces": 1,
+  "eyes": 2,
+  "symptomRule": "A closed lid should stay within 30 degrees of its face slot plane and its source upper-lid direction should not invert relative to that plane.",
+  "method": "Execute actual renderTo with closed-frame overrides, record actual Canvas affine matrices, and transform PCA axes from read-only source PNG ink. Exact scale uses headless support, which cannot change these orientation angles.",
+  "failedEyes": 2,
+  "extraTiltEyes": 2,
+  "invertedTravelEyes": 0,
+  "nearVerticalEyes": 0,
+  "sourceInk": {
+    "round": {
+      "frame": 4,
+      "pose": "closed",
+      "file": "brain/art_direction/artist_studio_20260916/reuse/drawn/sheets/v2/eyes_round_loop_arc_v2.png",
+      "sha256": "853f9cf5a7b9e79fcb5f9773c4c74990c1d72deddc8a73618ef1ca04086379ba",
+      "inkPixels": 4846,
+      "principalAngleDegrees": -0.07034384685202914,
+      "principalVector": [
+        0.9999992463374868,
+        -0.0012277314276547464
+      ],
+      "axisRatio": 3.6170342393291035
+    },
+    "hook": {
+      "frame": 4,
+      "pose": "closed",
+      "file": "brain/art_direction/artist_studio_20260916/reuse/drawn/sheets/blink_detail_v2.png",
+      "sha256": "989d3bcc5600b44c9669670dd2e6f0f97c256069201bcaa6148575a96caee629",
+      "inkPixels": 8601,
+      "principalAngleDegrees": 10.295432606808106,
+      "principalVector": [
+        0.9838992882136235,
+        0.178723783120001
+      ],
+      "axisRatio": 4.101650817762066
+    },
+    "arc": {
+      "frame": 4,
+      "pose": "closed",
+      "file": "brain/art_direction/artist_studio_20260916/reuse/drawn/sheets/v2/eyes_round_loop_arc_v2.png",
+      "sha256": "853f9cf5a7b9e79fcb5f9773c4c74990c1d72deddc8a73618ef1ca04086379ba",
+      "inkPixels": 4593,
+      "principalAngleDegrees": -0.5984083489099324,
+      "principalVector": [
+        0.9999454598811536,
+        -0.01044400608331464
+      ],
+      "axisRatio": 5.504384684805036
+    },
+    "loop": {
+      "frame": 4,
+      "pose": "closed",
+      "file": "brain/art_direction/artist_studio_20260916/reuse/drawn/sheets/v2/eyes_round_loop_arc_v2.png",
+      "sha256": "853f9cf5a7b9e79fcb5f9773c4c74990c1d72deddc8a73618ef1ca04086379ba",
+      "inkPixels": 4882,
+      "principalAngleDegrees": -0.19076376134514597,
+      "principalVector": [
+        0.9999944573673946,
+        -0.003329449577642584
+      ],
+      "axisRatio": 3.7332455707849546
+    },
+    "slot": {
+      "frame": 3,
+      "pose": "closed",
+      "file": "brain/art_direction/artist_studio_20260916/reuse/drawn/sheets/slot.png",
+      "sha256": "74e4376c72faf4c590abdacad64ff668c3df40378ba27f08ad325bbd7172d585",
+      "inkPixels": 12684,
+      "principalAngleDegrees": 0.4794627620108257,
+      "principalVector": [
+        0.9999649867865873,
+        0.008368106171664638
+      ],
+      "axisRatio": 4.415539173960342
+    },
+    "chevron": {
+      "frame": 4,
+      "pose": "closed",
+      "file": "brain/art_direction/artist_studio_20260916/reuse/drawn/sheets/blink_detail_v2.png",
+      "sha256": "989d3bcc5600b44c9669670dd2e6f0f97c256069201bcaa6148575a96caee629",
+      "inkPixels": 7426,
+      "principalAngleDegrees": 4.13163660729817,
+      "principalVector": [
+        0.9974011526405145,
+        0.07204818326212681
+      ],
+      "axisRatio": 4.655171190206253
+    },
+    "bar": {
+      "frame": 3,
+      "pose": "closed",
+      "file": "brain/art_direction/artist_studio_20260916/reuse/drawn/sheets/bar.png",
+      "sha256": "1173e1892a41bf96874e6ba127fc09d34c68a4587e8634bf63e1d010b87ddd73",
+      "inkPixels": 9768,
+      "principalAngleDegrees": -0.6968008377043102,
+      "principalVector": [
+        0.9999260502491679,
+        -0.012161169067919891
+      ],
+      "axisRatio": 3.642271606633504
+    }
+  },
+  "failures": [
+    {
+      "face": "09_happy_03_manual",
+      "role": "eye_L",
+      "part": "circle_gap_02",
+      "family": "round",
+      "pose": "closed",
+      "frame": 4,
+      "sourceClosedInkAngleDeg": -0.07,
+      "fitRotationDeg": 31.182,
+      "fitMirror": false,
+      "slotRotationDeg": 2.25,
+      "slotMirror": false,
+      "actualClosedAxisDeg": 33.362,
+      "intendedSlotPlaneDeg": 2.25,
+      "extraPlaneRotationDeg": 31.112,
+      "actualUpperLidVectorDeg": -56.568,
+      "nearVertical": false,
+      "inverted": false,
+      "rotationFault": true,
+      "slotAndSourceOnlyAxisDeg": 2.18,
+      "inkAxisRatio": 3.617,
+      "sourceSheet": "brain/art_direction/artist_studio_20260916/reuse/drawn/sheets/v2/eyes_round_loop_arc_v2.png"
+    },
+    {
+      "face": "09_happy_03_manual",
+      "role": "eye_R",
+      "part": "circle_gap_02",
+      "family": "round",
+      "pose": "closed",
+      "frame": 4,
+      "sourceClosedInkAngleDeg": -0.07,
+      "fitRotationDeg": 31.182,
+      "fitMirror": false,
+      "slotRotationDeg": -0.94,
+      "slotMirror": true,
+      "actualClosedAxisDeg": -32.052,
+      "intendedSlotPlaneDeg": -0.94,
+      "extraPlaneRotationDeg": -31.112,
+      "actualUpperLidVectorDeg": -122.122,
+      "nearVertical": false,
+      "inverted": false,
+      "rotationFault": true,
+      "slotAndSourceOnlyAxisDeg": -0.87,
+      "inkAxisRatio": 3.617,
+      "sourceSheet": "brain/art_direction/artist_studio_20260916/reuse/drawn/sheets/v2/eyes_round_loop_arc_v2.png"
+    }
+  ],
+  "eyesMeasured": [
+    {
+      "face": "09_happy_03_manual",
+      "role": "eye_L",
+      "part": "circle_gap_02",
+      "family": "round",
+      "pose": "closed",
+      "frame": 4,
+      "sourceClosedInkAngleDeg": -0.07,
+      "fitRotationDeg": 31.182,
+      "fitMirror": false,
+      "slotRotationDeg": 2.25,
+      "slotMirror": false,
+      "actualClosedAxisDeg": 33.362,
+      "intendedSlotPlaneDeg": 2.25,
+      "extraPlaneRotationDeg": 31.112,
+      "actualUpperLidVectorDeg": -56.568,
+      "nearVertical": false,
+      "inverted": false,
+      "rotationFault": true,
+      "slotAndSourceOnlyAxisDeg": 2.18,
+      "inkAxisRatio": 3.617,
+      "sourceSheet": "brain/art_direction/artist_studio_20260916/reuse/drawn/sheets/v2/eyes_round_loop_arc_v2.png"
+    },
+    {
+      "face": "09_happy_03_manual",
+      "role": "eye_R",
+      "part": "circle_gap_02",
+      "family": "round",
+      "pose": "closed",
+      "frame": 4,
+      "sourceClosedInkAngleDeg": -0.07,
+      "fitRotationDeg": 31.182,
+      "fitMirror": false,
+      "slotRotationDeg": -0.94,
+      "slotMirror": true,
+      "actualClosedAxisDeg": -32.052,
+      "intendedSlotPlaneDeg": -0.94,
+      "extraPlaneRotationDeg": -31.112,
+      "actualUpperLidVectorDeg": -122.122,
+      "nearVertical": false,
+      "inverted": false,
+      "rotationFault": true,
+      "slotAndSourceOnlyAxisDeg": -0.87,
+      "inkAxisRatio": 3.617,
+      "sourceSheet": "brain/art_direction/artist_studio_20260916/reuse/drawn/sheets/v2/eyes_round_loop_arc_v2.png"
+    }
+  ],
+  "hypotheses": [
+    {
+      "rank": 1,
+      "cause": "Open-glyph alignment rotation is reused as the eyelid closing plane.",
+      "prediction": "Keeping the source closed-lid angle and face slot rotation, but removing open-glyph fit rotation, removes the extra 31-degree tilt on circle_gap_02. Do not rotate the visible open eye to reach this frame; closing cels need separate registration."
+    },
+    {
+      "rank": 2,
+      "cause": "Mirroring alone creates the bad lid direction.",
+      "prediction": "If this were the root cause, an unmirrored instance would be correctly oriented. Face09 eye_L is unmirrored yet tilts 33.36 degrees, so mirroring is an amplifier, not the initiating fault."
+    },
+    {
+      "rank": 3,
+      "cause": "The generated closed artwork itself is diagonal.",
+      "prediction": "Its measured ink PCA should have the same large angle before any fit transform. Round source is near-horizontal, so this cannot explain face09; hook has a real gentle tilt that should remain."
+    },
+    {
+      "rank": 4,
+      "cause": "Face placement intentionally tilted the closing plane.",
+      "prediction": "The final lid angle should agree with slot rotation plus source tilt. Face09 slots are approximately 2 and -1 degrees, excluding the observed mirrored 33-degree slopes."
+    }
+  ],
+  "limitations": [
+    "The slot plane is a diagnostic baseline; some original closed arcs can intentionally curve the opposite way. Inverted travel flags are review candidates, not all proven defects.",
+    "No measured closed axes exceed 60 degrees; this run reproduces diagonal and inverted closure, not a fully vertical closed lid.",
+    "The directional test uses actual renderer transforms and actual source ink orientation. Source-contour scale fallback does not affect the measured angle."
+  ]
+}

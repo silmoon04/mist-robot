@@ -1,0 +1,34 @@
+Use case: illustration-story.
+Asset type: production raster animation sprite sheet, 24 separate hand-drawn cels.
+Create a new writing/notepad animation sheet based on the attached reference image's recognizable small rounded spiral notepad and diagonal fountain pen. The reference is STYLE AND SUBJECT ONLY. Replace its old 4 by 4 layout with EXACTLY SIX COLUMNS AND FOUR ROWS, 24 CELLS TOTAL in row-major animation order. Target canvas 1536 by 1024 pixels; every invisible cell 256 by 256. No visible grid, no captions, no frame numbers. Native transparent RGBA background, fully transparent within and around outlines. No opaque black or white ground, checkerboard, matte, glow or shadows.
+Draw thin bright cyan/turquoise rounded hand-drawn outlines, close to #21E6DD, approximately 3px line at 256px cel scale. Smooth restrained sketch character, clean readable strokes. Preserve a rounded pad with four rounded top spiral loops and the little diagonal pen. No solid cyan fill, no heavy double outline, texture speckles, hands, characters, eyes, mouth, face, labels, letters, numbers, watermark or legible writing. Writing is two simple soft slightly wavy horizontal strokes. All paper and pen interiors remain transparent.
+REGISTRATION: in every active frame the pad stays at the exact same scale, angle, and position, x=60..182, y=76..216 in each cell. Four top spiral loops stay fixed. The pen is a consistent single pen about 72px long, angled 35 degrees from vertical with tip down-left; it moves smoothly in short increments near the paper. No teleporting, changing pen count or morphing pen. All 24 cells contain one complete deliberate drawing with generous transparent gutters. Draw 4 entrance cels, 16 unique active cels, 4 exit cels.
+
+CHOREOGRAPHY, left to right then down:
+Frame 0 row1 col1: pad is small at its ground anchor near y216, pen rests alongside on right, blank page.
+Frame 1 row1 col2: pad grows to 80 percent around that same ground anchor; pen follows alongside.
+Frame 2 row1 col3: pad reaches full size; pen lifts slightly above right side.
+Frame 3 row1 col4: pad full size and stable; pen swings in a short arc toward first writing origin.
+Frame 4 row1 col5 ACTIVE START: pen tip at first-line origin (89,121), blank page, pen body extends up-right.
+Frame 5 row1 col6: tip advances to (104,121), a short 15px wavy stroke appears behind it.
+Frame 6 row2 col1: tip advances to (119,121), first stroke lengthens to tip.
+Frame 7 row2 col2: tip advances to (134,121), first stroke lengthens to tip.
+Frame 8 row2 col3: tip advances to (150,121), first stroke completes; brief pause, same continuous stroke.
+Frame 9 row2 col4: pen tip lifts a few pixels upward from end of first line, same writing remains.
+Frame 10 row2 col5: pen moves leftward halfway to next-line start, following a smooth shallow arc above paper; first line intact.
+Frame 11 row2 col6: pen arrives at second-line origin (89,151); first line intact.
+Frame 12 row3 col1: tip advances to (105,151); second short wavy stroke begins behind tip.
+Frame 13 row3 col2: tip advances to (121,151); second stroke grows.
+Frame 14 row3 col3: tip advances to (137,151); second stroke grows.
+Frame 15 row3 col4: tip reaches (150,151); second line completes and pauses, first line unchanged.
+Frame 16 row3 col5: pen lifts smoothly up-right a few pixels; page's bottom-right corner starts curling upward, both writing lines stay on this page.
+Frame 17 row3 col6: page flips upward around the fixed top spirals; curled sheet with its writing is halfway raised; a new blank page appears underneath, pen held just above the right edge.
+Frame 18 row4 col1: old sheet finishes folding behind top spirals; blank new page visible; pen follows a short return arc leftward toward first-line origin.
+Frame 19 row4 col2 ACTIVE END: new blank page settled, pen tip a few pixels above (89,121), same angle and silhouette as frame4. Tiny smooth descent into frame4 makes a coherent loop, no instant relocation.
+Frame 20 row4 col3 EXIT START: blank pad full size; pen lifts and moves slightly right.
+Frame 21 row4 col4: pen rests along right side; pad shrinks modestly toward ground anchor.
+Frame 22 row4 col5: pad and resting pen shrink to 80 percent, same ground anchor.
+Frame 23 row4 col6: small pad and pen at the same ground anchor as frame0.
+
+Sixteen active drawings must visibly advance the pen, ink and page action in small ordered increments. Do not repeat or stretch four drawings across sixteen cells. The pad never moves during active action. Existing written strokes remain unchanged until carried away by the page flip; no backward erasing. Keep the pen's path spatially continuous. Result: one clean native-transparent PNG sprite sheet, exactly 6 columns by 4 rows, 24 complete drawings.
+TARGETED RETRY REQUIREMENTS: The previous attempt had missing pens and complete writing appearing too early. Fix those defects. There must be ONE CLEARLY VISIBLE OUTLINED PEN IN EVERY ONE OF THE 24 CELLS, especially row3 col2, row3 col3 and row3 col4. Those three cels must show the pen tip respectively at x105, x121 and x137 on the second writing row. The writing stroke grows precisely behind the moving tip; frame5 shows only a SHORT 15px first stroke, frame6 a 30px stroke, frame7 a 45px stroke, then frame8 a 61px stroke. Blank cells, vanishing pens and duplicated full-line drawings are unacceptable. For row2 col4 through row2 col6, draw the pen smoothly travelling back LEFT to the second-line start, not hovering at the right edge. During the page flip keep that same pen floating visibly above-right, then move it left toward the writing origin across frames18 and19. Honor native transparency; transparent backdrop with clean bright cyan strokes and no colored haze.

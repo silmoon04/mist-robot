@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "visibility": "inspector-only",
+  "selectionStatus": "provisional",
+  "candidatePresets": ["attentive", "considering", "skeptical", "amused", "concerned", "quiet-listening", "friendly-curiosity", "wry-teasing", "reassuring", "quietly-pleased", "laughing", "doubtful", "eager-delight"],
+  "moments": [
+    {"sceneId": "hinge", "atMs": 850, "why": "One consideration beat acknowledges the question before the answer. Avoid a face change at every noun."},
+    {"sceneId": "hinge", "atMs": 8500, "why": "A brief pleased acknowledgement follows the synthetic user's understanding. Compare the return to attentive at 8900 or 9300 ms."},
+    {"sceneId": "second-attempt", "atMs": 900, "why": "A wry look responds to the failed model stand without holding a taunting face over the whole reply. Compare its return at 1500 or 1900 ms."},
+    {"sceneId": "second-attempt", "atMs": 5000, "why": "The user cuts in. Close speech immediately, cancel pending returns, and make quiet-listening the new intent within the native 400 ms transition."},
+    {"sceneId": "patience", "atMs": 1100, "why": "Concern remains through the deliberate wait. Waiting is activity; it does not imply a new emotional preset."},
+    {"sceneId": "patience", "atMs": 3500, "why": "The synthetic user reports progress. Change from concerned to reassuring before the recorded acknowledgement begins."},
+    {"sceneId": "patience", "atMs": 5100, "why": "The delivery gap rests the mouth and freezes audible position at 1100 ms, while reassuring remains the emotional intent."},
+    {"sceneId": "patience", "atMs": 7800, "why": "After the answer resumes and ends, a small pleased reaction acknowledges recovery. Compare the return to reassuring at 8200 or 8600 ms."}
+  ],
+  "adversarialChecks": [
+    {"name": "new-intent-during-reaction", "steps": "At second-attempt 1200 ms inject concerned as current intent. After the old reaction deadline, concerned must remain; quiet-listening must not be restored by a captured old value."},
+    {"name": "interrupt-before-audio", "steps": "Manually interrupt hinge at 1000 ms. Its scheduled 2000 ms audio start must stay canceled."},
+    {"name": "interrupt-in-gap", "steps": "Manually interrupt patience at 5500 ms. The scheduled 6000 ms resume and 7800 ms reaction must stay canceled."},
+    {"name": "pause-in-gap", "steps": "Pause patience at 5500 ms for arbitrary wall time. On resume, 500 ms of scene gap remains and audible position is still 1100 ms."},
+    {"name": "replay-before-reaction-return", "steps": "Replay second-attempt at 1300 ms. Old reaction expiry cannot change the new scene epoch."}
+  ]
+}

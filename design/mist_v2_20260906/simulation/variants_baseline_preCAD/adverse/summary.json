@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "reports": [
+    {
+      "case": "drive",
+      "status": "PASS_IN_MODEL",
+      "criteria": {
+        "did_not_fall": true,
+        "joint_tracking_rms": true,
+        "continuous_motor_rms": true,
+        "reachable_targets": true,
+        "motor_travel_limits": true,
+        "no_nonwheel_ground_support": true,
+        "coarse_self_collision": true,
+        "forward_distance_2m": true
+      },
+      "mass_kg": 3.8840000000000003,
+      "duration_s": 8,
+      "dt_s": 0.001,
+      "base_displacement_m": [
+        5.031812677261018,
+        0.03230316777568941,
+        0.00014642132711262246
+      ],
+      "max_tilt_deg": 0.8796379179072906,
+      "joint_tracking_rms_deg": 4.248515721839313,
+      "max_servo_rms_nm": 0.5851097476952376,
+      "servo_continuous_limit_nm": 0.7281437625000001,
+      "servo_peak_limit_nm": 1.3349302312500002,
+      "motor_saturation_fraction": 0.3155,
+      "unreachable_target_fraction": 0.0,
+      "motor_travel_violation_fraction": 0.0,
+      "min_sampled_support_margin_m": -0.012522529611105698,
+      "max_wheel_normal_force_n": 61.694589923764674,
+      "wheel_lateral_velocity_rms_m_s": 0.005518931017038487,
+      "self_collision_samples": 0,
+      "self_collision_examples": [],
+      "base_contact_samples": 0,
+      "fixed_base": false,
+      "limitations": [
+        "Unmeasured backlash, compliance, friction, servo dynamics, thermal duty and mass estimates.",
+        "Command play hysteresis and reduced series stiffness do not model true load-side gap engagement under force reversal. Rotor/reflected gearbox inertia omitted.",
+        "Simple boxes/cylinders, selected adjacent self collisions excluded; no printed-part stress or wire model.",
+        "Step test is a scripted challenge; a failure may concern controller and geometry, not a proof no controller exists.",
+        "No sensor perception, obstacle avoidance planner, stair-nose or tire deformation model."
+      ],
+      "max_actual_wheel_clearance_m": [
+        0.0012597048924462145,
+        0.0012551342260574694,
+        0.0012595184816045213,
+        0.0012588282560188277
+      ],
+      "foot_tracking_rms_m": [
+        0.010911379462740749,
+        0.010903368418883858,
+        0.011136094153170401,
+        0.011141565150772968
+      ],
+      "obstacle_contact_samples": 0,
+      "minimum_obstacle_gap_m": null,
+      "source_sha256": {
+        "run_sim.py": "d95047507b5130b1a2d4e31166c1c14d411596f97fc1e2ed4900f1634aa8148b",
+        "model.py": "be18e5074f94d457e4a3b7b01fd80f1f89011537f824c023eb1170f38f6aad78"
+      },
+      "parameters_sha256": "8aebb48d489ccab89fae20a0eab739fc2024cf4a655a2637ba2be0f1b65eb8c1"
+    }
+  ],
+  "note": "Each case keeps its own input snapshot. PASS_IN_MODEL never implies hardware validation."
+}

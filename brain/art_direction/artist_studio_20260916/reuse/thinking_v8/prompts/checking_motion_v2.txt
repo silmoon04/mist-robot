@@ -1,0 +1,40 @@
+Use case: stylized-concept
+Create a transparent animation sprite sheet, exactly SIX COLUMNS by FOUR ROWS, 24 drawings in row-major order. Canvas 1536x1024, each invisible cell 256x256. Flat cyan line art, rounded 4px strokes, slightly hand-drawn, genuine alpha transparency. No dark background, glow, halo, gradients, shadow, text, cell borders, grid, numbers, labels, eyes, faces, mouths or success marks.
+
+This is a checking-in-progress animation. A stationary upright document contains exactly THREE EMPTY SQUARE CHECKBOXES and one short horizontal text stroke beside each. Small folded upper right corner. Beside the page is ONE small right scan bracket shaped like ], always physically separate from the page with a 12px clear gap. The bracket smoothly scans DOWN the page then UP. It NEVER vanishes, teleports, merges with the page border, or pauses during the sixteen active drawings.
+
+Make sixteen genuinely different active poses. Do NOT repeat top/middle/bottom poses. Every consecutive active frame must move the bracket by a visible small distance. This continuous scan is the whole purpose of the sheet. No checkmarks or completed boxes.
+
+Shared full-size local geometry: page outer rectangle x=75..172 y=49..207; three empty boxes centered at (95,87),(95,127),(95,167); short text strokes x=113..147 at those same y positions. Fixed page shape, position and scale in every active frame. Bracket at x=188..196, 12px tall, opening toward the page. Keep the bracket outside the page in ALL frames.
+
+Here is the exact drawing plan. These labels and coordinate numbers are instructions only and must NOT appear as text in the image:
+ROW 1:
+cell 1/frame 0: quarter-size emerging paper plus tiny visible bracket, bottom centered (128,207).
+cell 2/frame 1: half-size paper plus half-size bracket.
+cell 3/frame 2: three-quarter-size paper and bracket.
+cell 4/frame 3: full-size paper, bracket centered at y=75.
+cell 5/frame 4: full-size paper, bracket centered at y=80.
+cell 6/frame 5: identical page, bracket centered at y=94.
+ROW 2:
+cell 1/frame 6: bracket y=108.
+cell 2/frame 7: bracket y=122.
+cell 3/frame 8: bracket y=136.
+cell 4/frame 9: bracket y=150.
+cell 5/frame 10: bracket y=164.
+cell 6/frame 11: bracket y=178.
+ROW 3:
+cell 1/frame 12: bracket y=173, beginning to return upward.
+cell 2/frame 13: bracket y=159.
+cell 3/frame 14: bracket y=145.
+cell 4/frame 15: bracket y=131.
+cell 5/frame 16: bracket y=117.
+cell 6/frame 17: bracket y=103.
+ROW 4:
+cell 1/frame 18: bracket y=89.
+cell 2/frame 19: bracket y=75. This joins cleanly back to frame 4, y=80.
+cell 3/frame 20: page still full-size, bracket visibly retracts to 75% length at y=75.
+cell 4/frame 21: three-quarter-size closing paper, bracket visibly retracts to half length.
+cell 5/frame 22: half-size closing paper, small bracket still visible.
+cell 6/frame 23: quarter-size closed paper and tiny bracket, both still visible.
+
+The middle sixteen drawings, frames 4 through 19, MUST contain sixteen different bracket heights: 80,94,108,122,136,150,164,178,173,159,145,131,117,103,89,75. Do not quantize these into only three row positions. Keep the entire page unchanged across these sixteen drawings. All boxes remain empty. Preserve six separate drawings in every row.

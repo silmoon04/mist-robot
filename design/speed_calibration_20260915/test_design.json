@@ -1,0 +1,154 @@
+{
+  "gcode_file": "EN4Pro_One_Run_Speed_Flow_Accel_Stringing.gcode",
+  "gcode_sha256": "a1fde7f484eee9e3127ad454d9786828303abe73eb1f84b7841aff7169db42eb",
+  "nozzle_mm": 0.4,
+  "filament_mm": 1.75,
+  "nozzle_C": 210,
+  "bed_C": 60,
+  "line_width_mm": 0.42,
+  "test_layer_height_mm": 0.28,
+  "base_height_mm": 0.56,
+  "band_height_mm": 5.6,
+  "height_mm": 34.72,
+  "schedule": [
+    {
+      "band": 1,
+      "z_bottom_mm": 0.56,
+      "z_top_mm": 6.16,
+      "F_flow_mm3_s": 8,
+      "F_speed_mm_s": 68.02721088435374,
+      "A_acceleration_mm_s2": 1000,
+      "A_speed_mm_s": 120,
+      "A_layer_height_mm": 0.14,
+      "A_flow_mm3_s": 7.056,
+      "R_speed_mm_s": 40,
+      "R_flow_mm3_s": 4.704000000000001,
+      "C_speed_mm_s": 40,
+      "S_retraction_mm": 0.2,
+      "T_retraction_mm": 0.5
+    },
+    {
+      "band": 2,
+      "z_bottom_mm": 6.16,
+      "z_top_mm": 11.76,
+      "F_flow_mm3_s": 12,
+      "F_speed_mm_s": 102.0408163265306,
+      "A_acceleration_mm_s2": 2000,
+      "A_speed_mm_s": 120,
+      "A_layer_height_mm": 0.14,
+      "A_flow_mm3_s": 7.056,
+      "R_speed_mm_s": 65,
+      "R_flow_mm3_s": 7.644000000000001,
+      "C_speed_mm_s": 40,
+      "S_retraction_mm": 0.35,
+      "T_retraction_mm": 0.5
+    },
+    {
+      "band": 3,
+      "z_bottom_mm": 11.76,
+      "z_top_mm": 17.36,
+      "F_flow_mm3_s": 16,
+      "F_speed_mm_s": 136.05442176870747,
+      "A_acceleration_mm_s2": 3000,
+      "A_speed_mm_s": 120,
+      "A_layer_height_mm": 0.14,
+      "A_flow_mm3_s": 7.056,
+      "R_speed_mm_s": 90,
+      "R_flow_mm3_s": 10.584000000000001,
+      "C_speed_mm_s": 40,
+      "S_retraction_mm": 0.5,
+      "T_retraction_mm": 0.5
+    },
+    {
+      "band": 4,
+      "z_bottom_mm": 17.36,
+      "z_top_mm": 22.96,
+      "F_flow_mm3_s": 20,
+      "F_speed_mm_s": 170.06802721088434,
+      "A_acceleration_mm_s2": 5000,
+      "A_speed_mm_s": 120,
+      "A_layer_height_mm": 0.14,
+      "A_flow_mm3_s": 7.056,
+      "R_speed_mm_s": 120,
+      "R_flow_mm3_s": 14.112000000000002,
+      "C_speed_mm_s": 40,
+      "S_retraction_mm": 0.65,
+      "T_retraction_mm": 0.5
+    },
+    {
+      "band": 5,
+      "z_bottom_mm": 22.96,
+      "z_top_mm": 28.56,
+      "F_flow_mm3_s": 24,
+      "F_speed_mm_s": 204.0816326530612,
+      "A_acceleration_mm_s2": 8000,
+      "A_speed_mm_s": 120,
+      "A_layer_height_mm": 0.14,
+      "A_flow_mm3_s": 7.056,
+      "R_speed_mm_s": 150,
+      "R_flow_mm3_s": 17.64,
+      "C_speed_mm_s": 40,
+      "S_retraction_mm": 0.8,
+      "T_retraction_mm": 0.5
+    },
+    {
+      "band": 6,
+      "z_bottom_mm": 28.56,
+      "z_top_mm": 34.16,
+      "F_flow_mm3_s": 28,
+      "F_speed_mm_s": 238.09523809523807,
+      "A_acceleration_mm_s2": 10000,
+      "A_speed_mm_s": 120,
+      "A_layer_height_mm": 0.14,
+      "A_flow_mm3_s": 7.056,
+      "R_speed_mm_s": 180,
+      "R_flow_mm3_s": 21.168000000000003,
+      "C_speed_mm_s": 40,
+      "S_retraction_mm": 0.5,
+      "T_retraction_mm": 0.5
+    }
+  ],
+  "phase_order": "Bases and labels first; continuous front flow tower with recovery rim; then all rear specimens together in layers. Front/rear clearance is explicitly checked with a conservative 50 mm head footprint.",
+  "zone_footprints": {
+    "F": [
+      18.0,
+      20.0,
+      202.0,
+      53.0
+    ],
+    "A": [
+      18.0,
+      103.0,
+      97.0,
+      166.0
+    ],
+    "R": [
+      118.0,
+      103.0,
+      177.0,
+      120.0
+    ],
+    "C": [
+      118.0,
+      123.0,
+      177.0,
+      140.0
+    ],
+    "T": [
+      24.0,
+      183.0,
+      66.0,
+      206.0
+    ],
+    "S": [
+      129.0,
+      183.0,
+      171.0,
+      206.0
+    ]
+  },
+  "source_sha256": "c14bfeeadd0d0b5adf70faa88f14e0421717f7878b25ba997da31e765599dc62",
+  "startup": "Stock Cura Neptune 4/4 Pro pattern: warm bed, home, warm nozzle, purge. Purge is explicitly volumetric and moved inboard. Existing G28/mesh behaviour is retained; no guessed named bed mesh is loaded.",
+  "restore": "Runtime velocity cap is set to 300 mm/s. M204 S2500 at end, then heaters/fan off. These are documented runtime settings, not restoration of unknown prior values. No SAVE_CONFIG command.",
+  "scope": "Known printer model and successful material settings, but no measured live firmware configuration. Printer host from Orca settings timed out. Feedrates may be firmware-limited. Pressure advance, shaping and corner settings remain as currently configured."
+}

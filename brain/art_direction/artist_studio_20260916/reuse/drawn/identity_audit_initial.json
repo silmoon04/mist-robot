@@ -1,0 +1,11 @@
+{
+  "status": "Audit in progress; no production edits",
+  "urgentFindings": [
+    "Both preview and production replace every original eye at rest with a single generated exemplar per broad family. This necessarily loses the 30 canonical eye identities; only 7 silhouettes remain.",
+    "The rigid alignment compares original source part shapes, but generated sheet dimensions and proportions are not the same as those source shapes. Fitting rotated rectangle dimensions with a uniform min scale shrinks some eyes even if their bounding box and original slots are known.",
+    "Production rigAt switches previous/current face halfway through transition; there is no interpolated eye placement or mouth transition. A scheduled blink does not hide movement in mouth/tears/slot positions.",
+    "Preview mouthPlacement ignores original mouth rotation/mirror and clamps original width to 10..24. Production mouthPlacement has original rotation/mirror and different scaling; the preview is not a faithful integration proof.",
+    "Generated eye rest thickness is visibly heavier than original source artwork, especially hook and chevron. Canonical shapes at rest are the safest identity-preserving fix. Use generated intermediate blinks with per-part registration, then return exactly to canonical shape."
+  ],
+  "recommendedFix": "Preserve original canonical eye artwork at rest and settled. Retarget intermediate generated blink cels using per-part width and explicit orientation, rather than treating every family member as an identical eye. Share the same runtime for preview and production."
+}

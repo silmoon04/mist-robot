@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MIST / Activity motion</title><link rel="stylesheet" href="style.css?v=6"></head>
+<body>
+<header><a class="brand" href="../">MIST</a><span>Activity motion</span><span id="status" role="status">Loading drawings</span><a href="MIST_handdrawn_v6.zip" download>Download pack</a></header>
+<main>
+<div class="toolbar"><button id="play">Pause</button><button id="step">Step</button><button id="blink">Blink</button><button id="enter">Replay entrances</button><button id="exit">Exit</button><label>Speed <select id="speed"><option value=".5">0.5x</option><option value="1" selected>1x</option></select></label><span class="rate">15 fps</span></div>
+<div class="toolbar secondary"><label>Voice <select id="voice-sample"><option>Loading</option></select></label><button id="voice-play" disabled>Play recording</button><button id="voice-stop" disabled>Stop voice</button><span id="voice-status">Saved MIST voice</span><label>Expression <select id="expression"><option value="">Activity default</option></select></label></div>
+<p id="error" role="alert" hidden></p>
+<section id="grid" aria-label="Nine activity animations"></section>
+</main>
+<dialog id="inspector"><div class="dialog-head"><span id="inspect-name"></span><button id="close">Close</button></div>
+<canvas id="focus" width="1000" height="640" aria-label="Selected animation"></canvas>
+<div class="toolbar"><button id="inspect-play">Pause</button><button id="inspect-step">Step</button><button id="inspect-blink">Blink</button><button id="inspect-follow">Follow animation</button><label>Layer <select id="layers"><option value="all">Together</option><option value="eyes">Eyes</option><option value="mouth">Mouth</option><option value="activity">Activity</option></select></label></div>
+<div class="phase" id="phase"></div><div class="strip-label"><a href="../drawn/transitions.html" target="_blank" rel="noopener">Original eyes and blink frames</a></div>
+<div class="strip-label">Activity / entrance, loop, exit</div><div id="activity-strip" class="strip"></div>
+</dialog>
+<script src="../runtime/app_data.js"></script><script src="../runtime/face_runtime.js"></script><script src="../runtime/drawn_face_renderer.js?v=original-eyes6"></script><script src="runtime.js?v=original-eyes6"></script><script src="preview.js?v=original-eyes6"></script>
+</body></html>

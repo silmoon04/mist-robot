@@ -1,0 +1,354 @@
+{
+  "schema_version": 1,
+  "design_revision": "hex_quad_r4_inward_knee",
+  "manifest_path": "cad/output/assembly_manifest.json",
+  "manifest_sha256": "6cac852c196e29e2da100816a7d3b96f545e62dba92c3009a46417eb7d9bc449",
+  "execution": "dry_run",
+  "hardware_connected": false,
+  "actuation_supported": false,
+  "body": "four legs with three direct joints each and one phone pan; no wheels",
+  "id_status": "Proposal from printing/WIRING.md; no IDs were read or assigned",
+  "angle_units": "radians in the new CAD and URDF joint frames",
+  "limit_status": "Geometric preview ranges only; physical servo limits are unmeasured",
+  "pan_status": "Principal-angle preview only; no wrap counting or startup recovery",
+  "joints": [
+    {
+      "joint_name": "yaw_FL",
+      "child_link": "coxa_FL",
+      "parent_link": "base",
+      "proposed_servo_id": 1,
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "joint_type": "revolute",
+      "preview_limits_rad": [
+        -0.3839724354387525,
+        0.3839724354387525
+      ],
+      "neutral_angle_rad": 0.0,
+      "calibration": {
+        "status": "not_commissioned",
+        "delivered_servo_identity": null,
+        "reference_tick": null,
+        "direction_sign": null,
+        "minimum_tick": null,
+        "maximum_tick": null,
+        "mode_and_startup_position_verified": false
+      }
+    },
+    {
+      "joint_name": "hip_FL",
+      "child_link": "femur_FL",
+      "parent_link": "coxa_FL",
+      "proposed_servo_id": 2,
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "joint_type": "revolute",
+      "preview_limits_rad": [
+        0.05235987755982989,
+        0.6108652381980153
+      ],
+      "neutral_angle_rad": 0.5235987755982988,
+      "calibration": {
+        "status": "not_commissioned",
+        "delivered_servo_identity": null,
+        "reference_tick": null,
+        "direction_sign": null,
+        "minimum_tick": null,
+        "maximum_tick": null,
+        "mode_and_startup_position_verified": false
+      }
+    },
+    {
+      "joint_name": "knee_FL",
+      "child_link": "tibia_FL",
+      "parent_link": "femur_FL",
+      "proposed_servo_id": 3,
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "joint_type": "revolute",
+      "preview_limits_rad": [
+        0.5235987755982988,
+        1.7453292519943295
+      ],
+      "neutral_angle_rad": 1.3089969389957472,
+      "calibration": {
+        "status": "not_commissioned",
+        "delivered_servo_identity": null,
+        "reference_tick": null,
+        "direction_sign": null,
+        "minimum_tick": null,
+        "maximum_tick": null,
+        "mode_and_startup_position_verified": false
+      }
+    },
+    {
+      "joint_name": "yaw_FR",
+      "child_link": "coxa_FR",
+      "parent_link": "base",
+      "proposed_servo_id": 4,
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "joint_type": "revolute",
+      "preview_limits_rad": [
+        -0.3839724354387525,
+        0.3839724354387525
+      ],
+      "neutral_angle_rad": 0.0,
+      "calibration": {
+        "status": "not_commissioned",
+        "delivered_servo_identity": null,
+        "reference_tick": null,
+        "direction_sign": null,
+        "minimum_tick": null,
+        "maximum_tick": null,
+        "mode_and_startup_position_verified": false
+      }
+    },
+    {
+      "joint_name": "hip_FR",
+      "child_link": "femur_FR",
+      "parent_link": "coxa_FR",
+      "proposed_servo_id": 5,
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "joint_type": "revolute",
+      "preview_limits_rad": [
+        0.05235987755982989,
+        0.6108652381980153
+      ],
+      "neutral_angle_rad": 0.5235987755982988,
+      "calibration": {
+        "status": "not_commissioned",
+        "delivered_servo_identity": null,
+        "reference_tick": null,
+        "direction_sign": null,
+        "minimum_tick": null,
+        "maximum_tick": null,
+        "mode_and_startup_position_verified": false
+      }
+    },
+    {
+      "joint_name": "knee_FR",
+      "child_link": "tibia_FR",
+      "parent_link": "femur_FR",
+      "proposed_servo_id": 6,
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "joint_type": "revolute",
+      "preview_limits_rad": [
+        0.5235987755982988,
+        1.7453292519943295
+      ],
+      "neutral_angle_rad": 1.3089969389957472,
+      "calibration": {
+        "status": "not_commissioned",
+        "delivered_servo_identity": null,
+        "reference_tick": null,
+        "direction_sign": null,
+        "minimum_tick": null,
+        "maximum_tick": null,
+        "mode_and_startup_position_verified": false
+      }
+    },
+    {
+      "joint_name": "yaw_RL",
+      "child_link": "coxa_RL",
+      "parent_link": "base",
+      "proposed_servo_id": 7,
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "joint_type": "revolute",
+      "preview_limits_rad": [
+        -0.3839724354387525,
+        0.3839724354387525
+      ],
+      "neutral_angle_rad": 0.0,
+      "calibration": {
+        "status": "not_commissioned",
+        "delivered_servo_identity": null,
+        "reference_tick": null,
+        "direction_sign": null,
+        "minimum_tick": null,
+        "maximum_tick": null,
+        "mode_and_startup_position_verified": false
+      }
+    },
+    {
+      "joint_name": "hip_RL",
+      "child_link": "femur_RL",
+      "parent_link": "coxa_RL",
+      "proposed_servo_id": 8,
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "joint_type": "revolute",
+      "preview_limits_rad": [
+        0.05235987755982989,
+        0.6108652381980153
+      ],
+      "neutral_angle_rad": 0.5235987755982988,
+      "calibration": {
+        "status": "not_commissioned",
+        "delivered_servo_identity": null,
+        "reference_tick": null,
+        "direction_sign": null,
+        "minimum_tick": null,
+        "maximum_tick": null,
+        "mode_and_startup_position_verified": false
+      }
+    },
+    {
+      "joint_name": "knee_RL",
+      "child_link": "tibia_RL",
+      "parent_link": "femur_RL",
+      "proposed_servo_id": 9,
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "joint_type": "revolute",
+      "preview_limits_rad": [
+        0.5235987755982988,
+        1.7453292519943295
+      ],
+      "neutral_angle_rad": 1.3089969389957472,
+      "calibration": {
+        "status": "not_commissioned",
+        "delivered_servo_identity": null,
+        "reference_tick": null,
+        "direction_sign": null,
+        "minimum_tick": null,
+        "maximum_tick": null,
+        "mode_and_startup_position_verified": false
+      }
+    },
+    {
+      "joint_name": "yaw_RR",
+      "child_link": "coxa_RR",
+      "parent_link": "base",
+      "proposed_servo_id": 10,
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "joint_type": "revolute",
+      "preview_limits_rad": [
+        -0.3839724354387525,
+        0.3839724354387525
+      ],
+      "neutral_angle_rad": 0.0,
+      "calibration": {
+        "status": "not_commissioned",
+        "delivered_servo_identity": null,
+        "reference_tick": null,
+        "direction_sign": null,
+        "minimum_tick": null,
+        "maximum_tick": null,
+        "mode_and_startup_position_verified": false
+      }
+    },
+    {
+      "joint_name": "hip_RR",
+      "child_link": "femur_RR",
+      "parent_link": "coxa_RR",
+      "proposed_servo_id": 11,
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "joint_type": "revolute",
+      "preview_limits_rad": [
+        0.05235987755982989,
+        0.6108652381980153
+      ],
+      "neutral_angle_rad": 0.5235987755982988,
+      "calibration": {
+        "status": "not_commissioned",
+        "delivered_servo_identity": null,
+        "reference_tick": null,
+        "direction_sign": null,
+        "minimum_tick": null,
+        "maximum_tick": null,
+        "mode_and_startup_position_verified": false
+      }
+    },
+    {
+      "joint_name": "knee_RR",
+      "child_link": "tibia_RR",
+      "parent_link": "femur_RR",
+      "proposed_servo_id": 12,
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "joint_type": "revolute",
+      "preview_limits_rad": [
+        0.5235987755982988,
+        1.7453292519943295
+      ],
+      "neutral_angle_rad": 1.3089969389957472,
+      "calibration": {
+        "status": "not_commissioned",
+        "delivered_servo_identity": null,
+        "reference_tick": null,
+        "direction_sign": null,
+        "minimum_tick": null,
+        "maximum_tick": null,
+        "mode_and_startup_position_verified": false
+      }
+    },
+    {
+      "joint_name": "phone_pan",
+      "child_link": "phone_pan",
+      "parent_link": "base",
+      "proposed_servo_id": 13,
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "joint_type": "continuous",
+      "preview_limits_rad": [
+        -3.141592653589793,
+        3.141592653589793
+      ],
+      "neutral_angle_rad": 0.0,
+      "calibration": {
+        "status": "not_commissioned",
+        "delivered_servo_identity": null,
+        "reference_tick": null,
+        "direction_sign": null,
+        "minimum_tick": null,
+        "maximum_tick": null,
+        "mode_and_startup_position_verified": false
+      }
+    }
+  ]
+}

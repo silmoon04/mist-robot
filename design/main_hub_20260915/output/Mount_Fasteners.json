@@ -1,0 +1,54 @@
+{
+  "status": "pass",
+  "hub_stl_sha256": "4fc9eb811ccb80b4bc59540ee7b2dd50e20a358c763ed6b26c11e60148ccbc95",
+  "checks": 116,
+  "intersections": [],
+  "fastener_stacks": [
+    {
+      "mount_local_xy_mm": [
+        -29.0,
+        -20.0
+      ],
+      "screw_under_head_length_mm": 12,
+      "printed_stack_mm": 9,
+      "flat_washer_mm": 0.5,
+      "nut_mm": 2.2,
+      "tip_beyond_nut_mm": 0.3
+    },
+    {
+      "mount_local_xy_mm": [
+        -29.0,
+        20.0
+      ],
+      "screw_under_head_length_mm": 12,
+      "printed_stack_mm": 9,
+      "flat_washer_mm": 0.5,
+      "nut_mm": 2.2,
+      "tip_beyond_nut_mm": 0.3
+    },
+    {
+      "mount_local_xy_mm": [
+        9.0,
+        -20.0
+      ],
+      "screw_under_head_length_mm": 12,
+      "printed_stack_mm": 9,
+      "flat_washer_mm": 0.5,
+      "nut_mm": 2.2,
+      "tip_beyond_nut_mm": 0.3
+    },
+    {
+      "mount_local_xy_mm": [
+        9.0,
+        20.0
+      ],
+      "screw_under_head_length_mm": 12,
+      "printed_stack_mm": 9,
+      "flat_washer_mm": 0.5,
+      "nut_mm": 2.2,
+      "tip_beyond_nut_mm": 0.3
+    }
+  ],
+  "hardware_per_leg": "Four M3x12 screws, four M3 nuts, four flat washers below deck. No top washers because OD7.7 washers touch the clamp.",
+  "limitation": "Nominal0.3mm beyond nut is small; confirm the actual screw traverses the entire nut before loading. Nut thickness2.2mm is the user approximation; washer0.5mm remains unmeasured. Longer M18 screws must not be substituted without checking the rotating lower-arm path."
+}

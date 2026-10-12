@@ -1,0 +1,8 @@
+const fs=require('fs'),path=require('path'),vm=require('vm');
+const base=__dirname;const context={window:{}};vm.createContext(context);vm.runInContext(fs.readFileSync(path.join(base,'assets/app_data.js'),'utf8'),context);const data=context.window.MIST_DATA;
+const renderer=require(path.join(base,'assets/face_runtime.js'));
+function render(id){const face=renderer.create(null,{data,expression:id,now:()=>0,autoStart:false,reducedMotion:true});const state=face.snapshot(0);const layers=state.layers.map(l=>`<path data-role="${l.role}" d="${renderer.pathData(l.points,l.mode==='fill')}" fill="${l.mode==='fill'?'#5eeadd':'none'}" stroke="${l.mode==='stroke'?'#5eeadd':'none'}" stroke-width="${l.width}" stroke-linecap="round" stroke-linejoin="round" opacity="${l.opacity}"/>`).join('');return `<svg xmlns="http://www.w3.org/2000/svg" width="800" height="512" viewBox="0 0 100 64"><title>Existing reference ${id}</title><rect width="100" height="64" fill="#0c1013"/>${layers}</svg>`;}
+for(const face of data.faces)fs.writeFileSync(path.join(base,'references',face.id+'.svg'),render(face.id));
+const sheet=data.faces.map((f,i)=>`<g transform="translate(${i%5*320},${Math.floor(i/5)*232})"><svg width="308" height="198" viewBox="0 0 100 64">${render(f.id).replace(/^.*?<rect/,'<rect').replace(/<\/svg>$/,'')}</svg><text x="10" y="217" font-size="13" fill="#152629">${f.id}</text></g>`).join('');
+fs.writeFileSync(path.join(base,'references/ALL_40_CONTACT_SHEET.svg'),`<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1856" viewBox="0 0 1600 1856"><rect width="1600" height="1856" fill="#f4f0e7"/>${sheet}</svg>`);
+console.log('Rendered 40 existing reference faces and one contact sheet.');

@@ -1,0 +1,660 @@
+{
+  "sku": "phone_pan_hub",
+  "quantity": 1,
+  "source_stl_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\cad\\output\\print_stl\\phone_pan_hub.stl",
+  "source_stl_hash": "92c72911c1c91508e596bf86d895ca00e4d9cd029e23eefa747c3330bb5501cf",
+  "source_print_rotation_deg": [
+    0,
+    0,
+    0
+  ],
+  "mass_kg": 0.009651545028144009,
+  "com_mm": [
+    23.457140471613354,
+    29.292832746354595,
+    2.5116159748148132
+  ],
+  "inertia_kg_m2": [
+    [
+      2.19733550204915e-06,
+      4.473749214110663e-10,
+      5.072314146775377e-10
+    ],
+    [
+      4.473749214110611e-10,
+      1.6096867580960733e-06,
+      -4.824120240178587e-11
+    ],
+    [
+      5.072314146775377e-10,
+      -4.824120240178573e-11,
+      3.7591690265432387e-06
+    ]
+  ],
+  "support_mass_g": 0.10059826381817409,
+  "adhesion_mass_g": 0.015330006306126754,
+  "total_deposited_mass_g": 9.767473298268309,
+  "estimated_print_time_s": 3659.646896,
+  "peak_nominal_deposition_flow_mm3_s": 6.762307690681244,
+  "solid_scenario": {
+    "mass_kg": 0.012150319596487675,
+    "mass_g": 12.150319596487675,
+    "com_mm": [
+      23.587232347272334,
+      29.29999991414761,
+      2.5030053771611485
+    ],
+    "inertia_kg_m2": [
+      [
+        2.537660265376719e-06,
+        5.249173901975155e-15,
+        6.063118810399483e-10
+      ],
+      [
+        5.249173901975155e-15,
+        1.9545704613759223e-06,
+        -6.823761854320764e-17
+      ],
+      [
+        6.063118810399483e-10,
+        -6.823761854320764e-17,
+        4.4419287580878e-06
+      ]
+    ],
+    "volume_mm3": 9798.644835877158,
+    "assumption": "Uniform full-solid PLA at 1.24 g/cm3"
+  },
+  "deposited_to_full_solid_mass_ratio": 0.7943449512993885,
+  "rectangular_bead_inertia_correction_fraction": 3.7890185730382786e-05,
+  "extrusion_accounting_relative_difference": 0.00012628178995262608,
+  "extrusion_accounting_tolerance": 0.001,
+  "deposition": {
+    "coordinate_frame": "Exact supplied print STL coordinates in millimetres",
+    "density_g_cm3": 1.24,
+    "filament_diameter_mm": 1.75,
+    "layer_height_mm": 0.2,
+    "gcode_to_source_transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        -88.518
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        -83.200643455863
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "properties": {
+      "model": {
+        "mass_kg": 0.009651545028144009,
+        "mass_g": 9.651545028144008,
+        "deposited_volume_mm3": 7783.504054954844,
+        "segment_count": 80328,
+        "com_mm": [
+          23.457140471613354,
+          29.292832746354595,
+          2.5116159748148132
+        ],
+        "inertia_line_about_com_kg_m2": [
+          [
+            2.19733550204915e-06,
+            4.473749214110663e-10,
+            5.072314146775377e-10
+          ],
+          [
+            4.473749214110611e-10,
+            1.6096867580960733e-06,
+            -4.824120240178587e-11
+          ],
+          [
+            5.072314146775377e-10,
+            -4.824120240178573e-11,
+            3.7591690265432387e-06
+          ]
+        ],
+        "inertia_rectangular_bead_about_com_kg_m2": [
+          [
+            2.1974370845719147e-06,
+            4.481856998677511e-10,
+            5.072314146775377e-10
+          ],
+          [
+            4.481856998677459e-10,
+            1.6097919548257195e-06,
+            -4.824120240178587e-11
+          ],
+          [
+            5.072314146775377e-10,
+            -4.824120240178573e-11,
+            3.759311462162129e-06
+          ]
+        ],
+        "rectangular_section_correction_kg_m2": [
+          [
+            1.0158252276483333e-10,
+            8.107784566848197e-13,
+            0.0
+          ],
+          [
+            8.107784566848189e-13,
+            1.0519672964624804e-10,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.4243561889012127e-10
+          ]
+        ],
+        "rectangular_section_spectral_fraction": 3.7890185730382786e-05,
+        "line_inertia_eigenvalues_kg_m2": [
+          1.6096864164112293e-06,
+          2.1973356779259987e-06,
+          3.7591691923512336e-06
+        ],
+        "inferred_rectangular_bead_width_mm": {
+          "min": 0.19895277501610673,
+          "median": 0.420000722626422,
+          "p99": 0.5438412772204262,
+          "max": 0.587058132206616
+        },
+        "deposited_centreline_bounds_mm": [
+          [
+            0.20900000000000318,
+            0.21035654413699945,
+            0.1
+          ],
+          [
+            47.75200000000001,
+            58.384356544137006,
+            4.9
+          ]
+        ],
+        "deposited_path_time_without_acceleration_s": 2327.2427496145,
+        "peak_nominal_deposition_flow_mm3_s": 6.762307690681244
+      },
+      "support": {
+        "mass_kg": 0.0001005982638181741,
+        "mass_g": 0.10059826381817409,
+        "deposited_volume_mm3": 81.12763211143074,
+        "segment_count": 690,
+        "com_mm": [
+          22.000340532094718,
+          29.032620278703288,
+          1.357558684750043
+        ],
+        "inertia_line_about_com_kg_m2": [
+          [
+            5.815761270060398e-08,
+            -7.142848183490037e-11,
+            9.241571665004865e-14
+          ],
+          [
+            -7.142848183490061e-11,
+            1.9995170016402753e-08,
+            2.0781878336984253e-12
+          ],
+          [
+            9.241571665004188e-14,
+            2.0781878336984516e-12,
+            7.806095127029569e-08
+          ]
+        ],
+        "inertia_rectangular_bead_about_com_kg_m2": [
+          [
+            5.815848074616489e-08,
+            -7.14902111251222e-11,
+            9.241571665004865e-14
+          ],
+          [
+            -7.149021112512244e-11,
+            1.9996451418543686e-08,
+            2.0781878336984253e-12
+          ],
+          [
+            9.241571665004188e-14,
+            2.0781878336984516e-12,
+            7.80624300629054e-08
+          ]
+        ],
+        "rectangular_section_correction_kg_m2": [
+          [
+            8.68045560909712e-13,
+            -6.172929022182988e-14,
+            0.0
+          ],
+          [
+            -6.17292902218299e-14,
+            1.2814021409329041e-12,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.4787926097214556e-12
+          ]
+        ],
+        "rectangular_section_spectral_fraction": 1.8944076189697326e-05,
+        "line_inertia_eigenvalues_kg_m2": [
+          1.9995036250094345e-08,
+          5.815774639212786e-08,
+          7.806095134508021e-08
+        ],
+        "inferred_rectangular_bead_width_mm": {
+          "min": 0.41957186350035436,
+          "median": 0.4199977577386484,
+          "p99": 0.42033962211264964,
+          "max": 0.4203929940083699
+        },
+        "deposited_centreline_bounds_mm": [
+          [
+            5.599999999999994,
+            2.594356544137,
+            0.1
+          ],
+          [
+            38.400999999999996,
+            56.00535654413699,
+            2.3
+          ]
+        ],
+        "deposited_path_time_without_acceleration_s": 24.19872254370967,
+        "peak_nominal_deposition_flow_mm3_s": 4.203929940083699
+      },
+      "adhesion": {
+        "mass_kg": 1.5330006306126754e-05,
+        "mass_g": 0.015330006306126754,
+        "deposited_volume_mm3": 12.362908311392541,
+        "segment_count": 72,
+        "com_mm": [
+          22.000002130391636,
+          29.29986023487028,
+          0.09999999999999996
+        ],
+        "inertia_line_about_com_kg_m2": [
+          [
+            8.859772327208169e-09,
+            -1.9995944914252746e-14,
+            -4.94883121696183e-42
+          ],
+          [
+            -1.9995944914306962e-14,
+            3.034376628603964e-09,
+            -3.76158192263132e-43
+          ],
+          [
+            -4.937076273453607e-42,
+            -7.0529661049337244e-43,
+            1.1894148955812132e-08
+          ]
+        ],
+        "inertia_rectangular_bead_about_com_kg_m2": [
+          [
+            8.859936108199338e-09,
+            -1.999537573802416e-14,
+            -4.94883121696183e-42
+          ],
+          [
+            -1.9995375738078372e-14,
+            3.0345403986079934e-09,
+            -3.76158192263132e-43
+          ],
+          [
+            -4.937076273453607e-42,
+            -7.0529661049337244e-43,
+            1.1894374306765291e-08
+          ]
+        ],
+        "rectangular_section_correction_kg_m2": [
+          [
+            1.6378099116923648e-13,
+            5.691762285878665e-19,
+            0.0
+          ],
+          [
+            5.691762285891072e-19,
+            1.6377000402939436e-13,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            2.253509531577858e-13
+          ]
+        ],
+        "rectangular_section_spectral_fraction": 1.8946370521757e-05,
+        "line_inertia_eigenvalues_kg_m2": [
+          3.0343766285353267e-09,
+          8.859772327276807e-09,
+          1.1894148955812132e-08
+        ],
+        "inferred_rectangular_bead_width_mm": {
+          "min": 0.4199569366823404,
+          "median": 0.41999775773808684,
+          "p99": 0.4200585797887598,
+          "max": 0.4200585797887598
+        },
+        "deposited_centreline_bounds_mm": [
+          [
+            5.810000000000002,
+            2.7713565441369923,
+            0.1
+          ],
+          [
+            38.19,
+            55.828356544136994,
+            0.1
+          ]
+        ],
+        "deposited_path_time_without_acceleration_s": 7.358876302886276,
+        "peak_nominal_deposition_flow_mm3_s": 1.6802343191550395
+      },
+      "unclassified": {
+        "mass_kg": 0.0,
+        "mass_g": 0.0,
+        "deposited_volume_mm3": 0.0,
+        "segment_count": 0,
+        "com_mm": null,
+        "inertia_line_about_com_kg_m2": null,
+        "inertia_rectangular_bead_about_com_kg_m2": null,
+        "deposited_path_time_without_acceleration_s": 0.0
+      }
+    },
+    "features": {
+      "SKIRT": {
+        "category": "adhesion",
+        "deposited_volume_mm3": 12.362908311392541,
+        "mass_g": 0.015330006306126751,
+        "segment_count": 72
+      },
+      "SUPPORT": {
+        "category": "support",
+        "deposited_volume_mm3": 59.57298721881734,
+        "mass_g": 0.0738705041513335,
+        "segment_count": 558
+      },
+      "WALL-INNER": {
+        "category": "model",
+        "deposited_volume_mm3": 2809.955301454438,
+        "mass_g": 3.4843445738035035,
+        "segment_count": 36879
+      },
+      "WALL-OUTER": {
+        "category": "model",
+        "deposited_volume_mm3": 790.8105232738687,
+        "mass_g": 0.9806050488595972,
+        "segment_count": 10714
+      },
+      "SKIN": {
+        "category": "model",
+        "deposited_volume_mm3": 2958.1153252535973,
+        "mass_g": 3.668063003314461,
+        "segment_count": 4312
+      },
+      "FILL": {
+        "category": "model",
+        "deposited_volume_mm3": 1224.6229049729407,
+        "mass_g": 1.5185324021664464,
+        "segment_count": 28423
+      },
+      "SUPPORT-INTERFACE": {
+        "category": "support",
+        "deposited_volume_mm3": 21.554644892613403,
+        "mass_g": 0.026727759666840618,
+        "segment_count": 132
+      }
+    },
+    "total_deposited_volume_mm3": 7876.994595377667,
+    "total_deposited_mass_g": 9.767473298268309,
+    "estimated_total_print_time_s": 3659.646896,
+    "layer_count": 25,
+    "extrusion_accounting": {
+      "fresh_deposited_filament_mm": 3274.8738,
+      "retracted_filament_mm": 104.0,
+      "repaid_retraction_filament_mm": 103.5,
+      "outstanding_retraction_filament_mm": 0.5,
+      "nonmoving_fresh_prime_filament_mm": 0.0
+    },
+    "unclassified_deposition_is_zero": true,
+    "limitations": [
+      "Filament E is commanded material; actual extrusion, density and shrinkage need a scale and coupons.",
+      "The primary inertia integrates uniform deposited line segments at the middle of each layer.",
+      "The optional rectangular section correction estimates sensitivity to finite bead width; it does not reconstruct pressure, corner overlap or real cross-sections.",
+      "Retraction recovery is excluded. A moving recovery deposits fresh material only along the remaining tail under a simple no-pressure-storage model.",
+      "Per-category path times omit acceleration, travel, cooling and other delays. Only Cura total time estimates the complete slice.",
+      "Support and adhesion mass are excluded from robot-part mass, COM and inertia.",
+      "These deposition properties do not establish strength or replace the full-solid comparison scenario."
+    ]
+  },
+  "engine": {
+    "sku": "phone_pan_hub",
+    "source_stl_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\cad\\output\\print_stl\\phone_pan_hub.stl",
+    "source_sha256": "92c72911c1c91508e596bf86d895ca00e4d9cd029e23eefa747c3330bb5501cf",
+    "original_snapshot_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\manufacturing\\slicing_r3\\output\\ANALYSIS_ONLY\\phone_pan_hub\\phone_pan_hub.source.stl",
+    "original_snapshot_sha256": "92c72911c1c91508e596bf86d895ca00e4d9cd029e23eefa747c3330bb5501cf",
+    "normalized_snapshot_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\manufacturing\\slicing_r3\\output\\ANALYSIS_ONLY\\phone_pan_hub\\phone_pan_hub.normalized.stl",
+    "normalized_snapshot_sha256": "08014d2bca8a08ece7816bbeb784d3542852fffebfa1feb4adb0f7396a6caf0e",
+    "source_bounds_mm": [
+      [
+        -7.105427357601002e-15,
+        0.0023565441370010376,
+        0.0
+      ],
+      [
+        47.96406555175781,
+        58.5976448059082,
+        5.0
+      ]
+    ],
+    "normalized_snapshot_bounds_mm": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        47.96406555175781,
+        58.59528732299805,
+        5.0
+      ]
+    ],
+    "source_to_normalized_snapshot_transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        7.105427357601002e-15
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        -0.0023565441370010376
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        -0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "normalized_snapshot_to_gcode_transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        88.518
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        83.203
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "source_to_gcode_transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        88.518
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        83.200643455863
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "gcode_to_source_transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        -88.518
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        -83.200643455863
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "transform_convention": "Row-major 4x4 matrices multiply homogeneous column vectors; translations are millimetres.",
+    "model_bounds_in_gcode_mm": [
+      [
+        88.518,
+        83.203,
+        0.0
+      ],
+      [
+        136.482,
+        141.798,
+        5.0
+      ]
+    ],
+    "build_envelope_mm": [
+      225.0,
+      225.0,
+      265.0
+    ],
+    "engine_coordinate_quantization_mm": 0.001,
+    "maximum_float32_export_error_mm": 9.387731552124023e-07,
+    "maximum_engine_vertex_rounding_error_mm": 0.0004984283447271309,
+    "coordinate_limitation": "The matrix exactly records commanded frame translations. Float32 export and 0.001 mm engine vertex quantization alter geometry separately.",
+    "coordinate_source_url": "https://github.com/Ultimaker/CuraEngine/blob/5.13.0/src/MeshGroup.cpp#L97-L121",
+    "rounding_source_url": "https://github.com/Ultimaker/CuraEngine/blob/5.13.0/include/utils/Coord_t.h#L23-L25",
+    "profile_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\manufacturing\\slicing_r3\\output\\ANALYSIS_ONLY\\phone_pan_hub\\phone_pan_hub.resolved.def.json",
+    "profile_sha256": "f47ab683a50199ac5d26dfbf10b0c432c4dbd163868a1f266feb2b641d3aced2",
+    "resolved_settings_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\manufacturing\\slicing_r3\\output\\ANALYSIS_ONLY\\phone_pan_hub\\phone_pan_hub.resolved_settings.json",
+    "resolved_settings_sha256": "640e726c630f994b509e06c4996b224afdbf71ead3a915de06b66ec0222692a9",
+    "base_profile_sha256": "ddf583bf158bc99bb7cbda228cc8ee3e0552ece2764176a89afb9c83048ada1b",
+    "settings_overrides": {},
+    "log_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\manufacturing\\slicing_r3\\output\\ANALYSIS_ONLY\\phone_pan_hub\\phone_pan_hub.engine.log.txt",
+    "log_sha256": "43b8c84167eee86f696ba4b19fd570a538adbff0578158494533a95f3356bc11",
+    "raw_temporary_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\manufacturing\\slicing_r3\\output\\ANALYSIS_ONLY\\phone_pan_hub\\phone_pan_hub.temporary.gcode",
+    "raw_temporary_sha256": "56a99ca39bb5c2e17a90e5a6f83f9574136767397ad2755ed399ae773c601ed3",
+    "raw_file_disposition": "Removed after parsing; only disabled compressed evidence remains.",
+    "engine_path": "C:\\Program Files\\UltiMaker Cura 5.13.0\\CuraEngine.exe",
+    "engine_version": "5.13.0",
+    "engine_sha256": "36e36d4618cd09a0cd8802a565c2cdbe54804eb750ac84303a0c6d6f784afde2",
+    "return_code": 0,
+    "command": [
+      "C:\\Program Files\\UltiMaker Cura 5.13.0\\CuraEngine.exe",
+      "slice",
+      "-m4",
+      "-v",
+      "-j",
+      "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\manufacturing\\slicing_r3\\output\\ANALYSIS_ONLY\\phone_pan_hub\\phone_pan_hub.resolved.def.json",
+      "-e0",
+      "-o",
+      "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\manufacturing\\slicing_r3\\output\\ANALYSIS_ONLY\\phone_pan_hub\\phone_pan_hub.temporary.gcode",
+      "-l",
+      "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\manufacturing\\slicing_r3\\output\\ANALYSIS_ONLY\\phone_pan_hub\\phone_pan_hub.normalized.stl"
+    ],
+    "elapsed_seconds": 1.077999999979511,
+    "total_wrapper_seconds": 1.687999999965541,
+    "engine_filament_volume_mm3": 7876.0,
+    "motion_bounds_mm": [
+      [
+        88.727,
+        83.411,
+        0.2
+      ],
+      [
+        136.27,
+        141.585,
+        5.0
+      ]
+    ],
+    "motion_count": 89878,
+    "motion_inside_build_envelope": true,
+    "estimated_time_seconds": 3659.646896
+  },
+  "status": "pass",
+  "gcode_evidence": {
+    "path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\manufacturing\\slicing_r3\\output\\ANALYSIS_ONLY\\phone_pan_hub\\phone_pan_hub.disabled.gcode.gz",
+    "sha256": "a98d791fd075505464d6d7e2adbd027cb236d357a4ef9849f526991b86fc6fae",
+    "raw_text_sha256": "8597aa1a7e55c70b7c2d39c224cc86015f1e6f3e359eaba567e0a907834fdc4e",
+    "all_commands_disabled": true,
+    "raw_temporary_removed": true
+  },
+  "elapsed_analysis_seconds": 3.187999999965541
+}

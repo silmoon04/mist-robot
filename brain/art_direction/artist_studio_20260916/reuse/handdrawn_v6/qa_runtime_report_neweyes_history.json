@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "checkedAt": "2026-09-23T22:59:34.498Z",
+  "runtimeSha256": "70de256c1f04a41680ab3bfee3bba4208adf340c0a6dac98f3ba285b0126d09d",
+  "rendererSha256": "959b3c3ccf8ef58d4a7dd61cd37363fd07be4b49057e3228f1bf275d827e73d0",
+  "manifestSha256": "dab8af8a3182390075ee3c9a3fecdcb5e8ae1ce208af4ec331d42a73fec521a9",
+  "checks": [
+    "Hand-drawn eyes paint through the real existing renderer",
+    "All nine activities enter, use every loop cel for twelve seconds, remain active until cleared, then exit",
+    "All five eye families are reachable, and mixed left/right pairs for writing, email, and checking retain their assigned family and mirroring",
+    "All 81 ordered activity replacements reject stale completion tokens",
+    "Explicit event ownership prevents an old tool or brain completion from clearing a newer activity",
+    "All forty expression IDs select valid new eye assets",
+    "Blink uses drawn closure cels and two held closed frames at 15 fps",
+    "Existing audio clock stays unquantized, 120 Hz updates paint at 15 fps, and lip closures and stopped audio update immediately",
+    "Invalid activity names leave the running activity intact, bad manifests use fallback, and destroyed runtimes no longer update"
+  ],
+  "counts": {
+    "lifecycleSamples": 1692,
+    "replacements": 81,
+    "expressions": 40,
+    "speechSamples": 120,
+    "paintsInOneSecond": 15
+  },
+  "limits": [
+    "Canvas calls are inspected with a recording context; this does not rate artistic quality or replace browser review.",
+    "No microphone, provider, or live tool connection is used. Speech is tested against a deterministic audio clock."
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "checkedAt": "2026-09-24T09:41:39.745Z",
+  "runtimeSha256": "a2507a412b5c2e91620bedfcb6c2d2bddb39601e884d4320a14e992c6ad70601",
+  "rendererSha256": "22084e744e8d11ed0484b273b8f82ee3af8c9e9e11070c6290a3e535f6d48ce3",
+  "referenceRendererSha256": "9ade474f61fc9a6f3eee260b6bb07ef4adc2a4e6f56cae3a4871acbc531563ff",
+  "manifestSha256": "5506f3df35c90060c840496f31bfb295c283889494f72bc0898f948c03219efc",
+  "counts": {
+    "samples": 815,
+    "paths": 2043,
+    "originalRasterCels": 459,
+    "generatedEyeCels": 0,
+    "expressions": 40,
+    "activities": 6,
+    "speechSamples": 120,
+    "paintsPerSecond": 15,
+    "staleOwnerPairs": 36
+  },
+  "checks": [
+    "All forty face IDs preserve the verified v5 original paths, raster eye cels, placements, and transition visuals",
+    "All forty blinks and sampled expression transitions match the verified original renderer",
+    "Activities may move or uniformly scale the whole face, but cannot distort one eye, alter eye/mouth proportions, or change source art",
+    "No generated replacement eye cel is painted",
+    "Original audio clock is unquantized while actual painting remains at 15 fps",
+    "Immediate consonant closure and stopped-audio mouth closure survive the thinking layer",
+    "All 36 ordered study replacements reject stale completion tokens"
+  ],
+  "limits": [
+    "This compares recorded canvas paths, original source-cel draw calls, and transforms. Pixel antialiasing and subjective appearance are left to browser review."
+  ]
+}

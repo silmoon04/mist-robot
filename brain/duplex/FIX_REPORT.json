@@ -1,0 +1,114 @@
+{
+  "status": "Fixed and verified; provider/network variability remains",
+  "cause": "A live replay reproduced ClientConnectorError before audio. The old converter treated a single connection failure as fatal and muted the entire conversation.",
+  "unchanged_model": "gpt-5.3-codex-spark, low reasoning",
+  "voice_id": "24AMj4dc02cYAwoUnqzN",
+  "tests": [
+    {
+      "test": "test_duplex.py",
+      "passed": true
+    },
+    {
+      "test": "test_voice_recovery.py",
+      "passed": true
+    },
+    {
+      "test": "test_duplex_playback.mjs",
+      "passed": true
+    }
+  ],
+  "full_conversation_turns_without_converter_shutdown": 9,
+  "fast_start_conversation_turns_without_warnings": 3,
+  "real_transport_retries_recovered": 2,
+  "observed_original_error": "ClientConnectorError",
+  "startup_before_ms": 19083,
+  "startup_after_ms": [
+    1868,
+    1405
+  ],
+  "buffer_comparison": {
+    "old_first_audio_s": 0.9220000000204891,
+    "new_first_audio_s": 0.5320000000065193,
+    "improvement_s": 0.39000000001396984,
+    "same_input": "50 voiced PCM frames at20 ms each",
+    "provider_fixture": "150 ms before first output; identical in both trials",
+    "scope": "Isolates buffering and scheduling; not an internet latency claim."
+  },
+  "live_short_reply_latency_s": [
+    1.9689999999827705,
+    2.2820000000065193,
+    2.3280000000377186,
+    2.2179999999934807,
+    2.1869999999762513,
+    2.375,
+    2.047000000020489,
+    3.5310000000172295
+  ],
+  "live_expression_reply_latency_s": [
+    10.96899999998277,
+    14.389999999955762,
+    8.063000000023749,
+    11.125
+  ],
+  "interruption": {
+    "interrupted": true,
+    "stale_generation_packets_after_reset": 0,
+    "new_generation_audio_packets": 10,
+    "correction_followed": true,
+    "passed": true,
+    "limits": [
+      "Synthetic audio input and client-observed packets; not a measurement of room echo or human perception.",
+      "The browser playback stop is independently tested with fake audio sources."
+    ]
+  },
+  "changes": [
+    "Retry transient connection, timeout and 5xx failures only before audio from that segment has been emitted.",
+    "Discard an unrecoverable reply without closing the native conversation. Keep account/access failures explicit.",
+    "Disable duplicate automatic startup context while retaining the explicit MIST prompt and backing tools.",
+    "Reduce initial PCM accumulation from 800 to 400 ms and browser lead-in from 45 to 25 ms.",
+    "Warm the provider connection and retain metadata-only rotating diagnostics.",
+    "Begin overlay captions with playback; detailed transcripts remain immediate."
+  ],
+  "limits": [
+    "The exact underlying internet connection failure is not determined. The failure boundary and incorrect fatal handling were reproduced.",
+    "A retry or slow provider can still delay a reply. A persistent outage can still interrupt audio.",
+    "Live response timings vary with generated phrasing and tool execution; the controlled 400 ms buffer comparison isolates the code improvement.",
+    "Expression requests still wait for backing-tool work; they are not guaranteed to speak immediately.",
+    "Captions are gated to audio start, not word-aligned forced transcription.",
+    "Tests used synthetic microphone input, not a physical handset or room-echo measurement."
+  ],
+  "evidence_sha256": {
+    "results\\voice_fix_20260914\\baseline_conversation\\conversations.json": "4e3e4e4e72917aa9e0f6136c8a0e782d0f8ec0d4202cf6567527baf7715d98fa",
+    "results\\voice_fix_20260914\\baseline_server.log": "8d2670bf1049b2aa36031a9817e15da58ff58f5d51ffe56531bc8f617ba550cd",
+    "results\\voice_fix_20260914\\recovery_red.log": "c29f76d5c613cd0c961a6634c5465191711d5e8149f889f67febbc00a4d45a5f",
+    "results\\voice_fix_20260914\\fixed_conversation\\conversations.json": "498dc0a5d741a29c278d3ba2e3df8f19f9bbb901b87a1e3d3e376796d5072a3c",
+    "results\\voice_fix_20260914\\fast_conversation\\conversations.json": "19fda784fe5d0d7f22655d5e1a59a70d488db0a6dc744ac11721cb06a2320d29",
+    "results\\voice_fix_20260914\\fixed_runtime\\voice_diagnostics.jsonl": "e53b946408a1d41d7e1968279c46ccedb343fe353761c5c6440de7c5e5db0f70",
+    "results\\voice_fix_20260914\\fast_runtime\\voice_diagnostics.jsonl": "2677bcc2077088d5f5f2eb414ed23e8654ea6d3a1e043cde80326c26d10bbbc7",
+    "results\\voice_fix_20260914\\setup\\results.json": "47bd1a682db80e64d353eb02c235ff2fa6bdc921135d333102625ea100275b69",
+    "results\\voice_fix_20260914\\buffer_comparison.json": "acf48329ad621e2b7bf333695baea708e178ff89871a1889b6310170cf214742",
+    "results\\voice_fix_20260914\\interruption\\interruption.json": "36ad243dc834874e7b45931cb2cc02230c5ad843efc3a6faa52d4dc1e5427c02"
+  },
+  "implementation_sha256": {
+    "duplex\\build_evaluation.py": "e66a7ae0b775eaa4464f5737f2fc44c5cb6b001d174c501e3090ea66972c15d7",
+    "duplex\\build_fix_report.py": "de31b9df575695e118c88ec9cc12e6031b3709302bba204f979f06e7f157516a",
+    "duplex\\conversion.py": "375915230d78782cecb9de367471a14242ad6c351375b54f837cafae333a99a3",
+    "duplex\\face_map.json": "ce1169698090f45bef87f44f9bdcf5ba61b9b6b90a0cd8178445ddd23d359a4d",
+    "duplex\\native.py": "26b652edc519c25eb04d37590abc342e18272b23c2a124f6f4cc961f50b2cb06",
+    "duplex\\package.py": "ff3cb380bf2d38e5fbd54c95693f504afaa4b76322da5c5ed52c14ce127f93fc",
+    "duplex\\persona.txt": "d498e522d085f866d98e35570d72e44a3777fd9edbf07f7a3caa1ed4b74a38c7",
+    "duplex\\runtime.py": "265b31fb380177778b443744831a6c0e4548b3ab0f3ed3b5fbaf30923e5710e6",
+    "duplex\\sensors.py": "af152877bb82b8c5de94b6f84b6b468bbec8e37f7e2496226f61b4b507629d2e",
+    "duplex\\server.py": "ce650059126b1ac9f1b0c234e8edba911149847dc991bbb54cb46eedc121479f",
+    "duplex\\__init__.py": "5d72754d88de174c794e9c99541783681f2e5b26eb251c42d084bbf5dd88659a",
+    "duplex\\static\\app.js": "37dc052f9b034f7f5703b6b40c508bff4356304af19b81490b9c7892e13aeb67",
+    "duplex\\static\\capture-worklet.js": "ad51a795254e79de00b7951e5ce31bfd32ca57361cda705be8fed0908a862259",
+    "duplex\\static\\index.html": "9142410913803e5e9683f4fe5a86ae5546a880cb9080cbb75f8a216b8fcd5846",
+    "duplex\\static\\playback.js": "e2e02163cb54c6e82a238cd0a52dd8987d4aaf508aec41332b174d035e2dd230",
+    "duplex\\static\\style.css": "8f2483ddc664d88b71c7380a3346bf65b714ff39afc48cfca07ac015eb4d180a",
+    "harness\\test_voice_recovery.py": "710ed6506534025d72ec7eb4e83ad636e00ee7c0372054f6aab2fd0b60dc2c31",
+    "harness\\test_duplex.py": "f695b453f18177979d9c7918cf3b45199dcdd0f97552bf91e9a14070a505ed2f",
+    "harness\\test_duplex_playback.mjs": "be505dc05d2ad43bddbd39982ec1d620b850bf277294f209e8dfff6ea74089cd",
+    "harness\\repro_voice_conversation.py": "3fadfbce2b1528b98ed2a06209304fc87ab85ebd993075ef56ecbe079ac3fdd6"
+  }
+}

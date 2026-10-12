@@ -1,0 +1,16 @@
+clip,timeline_frames,fps,duration_ms,reuse_components,direction,new_drawings
+idle_available,96,24,4000.0,F01 + B01/B02,Tiny gaze shift and one blink,0 beyond the 38 listed components
+listening_hold,72,24,3000.0,F02,Closed mouth; attentive hold,0 beyond the 38 listed components
+thinking_hold,96,24,4000.0,F03 + A04,Closed mouth; offset gaze; one squint,0 beyond the 38 listed components
+blink_open,6,24,250.0,base + B01/B02,OPEN HALF CLOSED CLOSED HALF OPEN,0 beyond the 38 listed components
+blink_happy,6,24,250.0,base + B03/B04,OPEN HALF CLOSED CLOSED HALF OPEN,0 beyond the 38 listed components
+blink_focused,6,24,250.0,base + B05/B06,OPEN HALF CLOSED CLOSED HALF OPEN,0 beyond the 38 listed components
+blink_downcast,6,24,250.0,base + B07/B08,OPEN HALF CLOSED CLOSED HALF OPEN,0 beyond the 38 listed components
+neutral_to_thinking,8,24,333.333,F01 -> F03; blink families,T02 blink bridge,0 beyond the 38 listed components
+neutral_to_happy,8,24,333.333,F01 -> A03 -> F04,T03 happy accent,0 beyond the 38 listed components
+neutral_to_surprise,8,24,333.333,A01 -> A02 -> F10,T03 anticipate and settle,0 beyond the 38 listed components
+happy_to_concerned,8,24,333.333,F04 -> F07; blink families,T02 test mouth and eye change,0 beyond the 38 listed components
+speech_neutral,72,24,3000.0,F01 eyes + M01/M05/M06/M07/M08,Same speech test over different eye expressions,0 beyond the 38 listed components
+speech_happy,72,24,3000.0,F04 eyes + M01/M05/M06/M07/M08,Same speech test over different eye expressions,0 beyond the 38 listed components
+speech_concerned,72,24,3000.0,F07 eyes + M01/M05/M06/M07/M08,Same speech test over different eye expressions,0 beyond the 38 listed components
+speech_interrupt,24,24,1000.0,speech mouth -> closed mouth; F02,Stop speech with audio; listening wins,0 beyond the 38 listed components

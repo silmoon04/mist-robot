@@ -1,0 +1,208 @@
+{
+  "status": "pass",
+  "gcode_sha256": "98d3446f6e979ba0eabdf96519e39dac55ddfbc2d8c4a58fb9f75ce3e479c6d2",
+  "parsed_move_count": 29730,
+  "tested_zone_bands": 36,
+  "nominal_motion_lower_bound_minutes": 173.58095450072545,
+  "stop_to_stop_motion_estimate_minutes": 193.09489110886747,
+  "heating_and_homing_included": false,
+  "estimated_deposited_mass_g": 36.89249358950772,
+  "deposited_volume_by_zone_mm3": {
+    "startup": 45.77664155264935,
+    "BASE": 8558.523450523657,
+    "LABEL": 23.538771532762865,
+    "F": 5622.6723475582185,
+    "F_RECOVERY": 93.68486314553735,
+    "A": 3618.76840226342,
+    "R": 4723.113484117262,
+    "C": 4723.113484117262,
+    "T": 1171.4097572348276,
+    "S": 1171.4097572348276
+  },
+  "filament_metres": 12.369448779999928,
+  "max_flow_mm3_s": 28.000000085037847,
+  "max_requested_feed_mm_s": 238.09523333333334,
+  "max_acceleration_mm_s2": 10000.0,
+  "finished_front_tower_minimum_clearance_mm_with_50mm_head_envelope": 12.86,
+  "straight_run_reach_checks": [
+    {
+      "zone": "F",
+      "band": 1,
+      "longest_straight_mm": 179.86,
+      "requested_speed_mm_s": 68.02721666666666,
+      "accel_mm_s2": 3000.0,
+      "conservative_stop_to_stop_cruise_mm": 178.3174325975288,
+      "note": "Simple trapezoidal calculation. Klipper lookahead, minimum cruise ratio or accel_to_decel, input shaping and pressure advance can alter realized speed."
+    },
+    {
+      "zone": "F",
+      "band": 2,
+      "longest_straight_mm": 179.86,
+      "requested_speed_mm_s": 102.04081666666666,
+      "accel_mm_s2": 3000.0,
+      "conservative_stop_to_stop_cruise_mm": 176.38922391133326,
+      "note": "Simple trapezoidal calculation. Klipper lookahead, minimum cruise ratio or accel_to_decel, input shaping and pressure advance can alter realized speed."
+    },
+    {
+      "zone": "F",
+      "band": 3,
+      "longest_straight_mm": 179.86,
+      "requested_speed_mm_s": 136.05441666666667,
+      "accel_mm_s2": 3000.0,
+      "conservative_stop_to_stop_cruise_mm": 173.68973190183104,
+      "note": "Simple trapezoidal calculation. Klipper lookahead, minimum cruise ratio or accel_to_decel, input shaping and pressure advance can alter realized speed."
+    },
+    {
+      "zone": "F",
+      "band": 4,
+      "longest_straight_mm": 179.86,
+      "requested_speed_mm_s": 170.06803333333335,
+      "accel_mm_s2": 3000.0,
+      "conservative_stop_to_stop_cruise_mm": 170.21895467937742,
+      "note": "Simple trapezoidal calculation. Klipper lookahead, minimum cruise ratio or accel_to_decel, input shaping and pressure advance can alter realized speed."
+    },
+    {
+      "zone": "F",
+      "band": 5,
+      "longest_straight_mm": 179.86,
+      "requested_speed_mm_s": 204.08163333333331,
+      "accel_mm_s2": 3000.0,
+      "conservative_stop_to_stop_cruise_mm": 165.97689564533297,
+      "note": "Simple trapezoidal calculation. Klipper lookahead, minimum cruise ratio or accel_to_decel, input shaping and pressure advance can alter realized speed."
+    },
+    {
+      "zone": "F",
+      "band": 6,
+      "longest_straight_mm": 179.86,
+      "requested_speed_mm_s": 238.09523333333334,
+      "accel_mm_s2": 3000.0,
+      "conservative_stop_to_stop_cruise_mm": 160.96355328798188,
+      "note": "Simple trapezoidal calculation. Klipper lookahead, minimum cruise ratio or accel_to_decel, input shaping and pressure advance can alter realized speed."
+    },
+    {
+      "zone": "A",
+      "band": 1,
+      "longest_straight_mm": 74.86000000000001,
+      "requested_speed_mm_s": 120.0,
+      "accel_mm_s2": 1000.0,
+      "conservative_stop_to_stop_cruise_mm": 60.460000000000015,
+      "note": "Simple trapezoidal calculation. Klipper lookahead, minimum cruise ratio or accel_to_decel, input shaping and pressure advance can alter realized speed."
+    },
+    {
+      "zone": "R",
+      "band": 1,
+      "longest_straight_mm": 54.860000000000014,
+      "requested_speed_mm_s": 40.0,
+      "accel_mm_s2": 2000.0,
+      "conservative_stop_to_stop_cruise_mm": 54.06000000000002,
+      "note": "Simple trapezoidal calculation. Klipper lookahead, minimum cruise ratio or accel_to_decel, input shaping and pressure advance can alter realized speed."
+    },
+    {
+      "zone": "A",
+      "band": 2,
+      "longest_straight_mm": 74.86000000000001,
+      "requested_speed_mm_s": 120.0,
+      "accel_mm_s2": 2000.0,
+      "conservative_stop_to_stop_cruise_mm": 67.66000000000001,
+      "note": "Simple trapezoidal calculation. Klipper lookahead, minimum cruise ratio or accel_to_decel, input shaping and pressure advance can alter realized speed."
+    },
+    {
+      "zone": "R",
+      "band": 2,
+      "longest_straight_mm": 54.860000000000014,
+      "requested_speed_mm_s": 65.0,
+      "accel_mm_s2": 2000.0,
+      "conservative_stop_to_stop_cruise_mm": 52.74750000000002,
+      "note": "Simple trapezoidal calculation. Klipper lookahead, minimum cruise ratio or accel_to_decel, input shaping and pressure advance can alter realized speed."
+    },
+    {
+      "zone": "A",
+      "band": 3,
+      "longest_straight_mm": 74.86000000000001,
+      "requested_speed_mm_s": 120.0,
+      "accel_mm_s2": 3000.0,
+      "conservative_stop_to_stop_cruise_mm": 70.06000000000002,
+      "note": "Simple trapezoidal calculation. Klipper lookahead, minimum cruise ratio or accel_to_decel, input shaping and pressure advance can alter realized speed."
+    },
+    {
+      "zone": "R",
+      "band": 3,
+      "longest_straight_mm": 54.860000000000014,
+      "requested_speed_mm_s": 90.0,
+      "accel_mm_s2": 2000.0,
+      "conservative_stop_to_stop_cruise_mm": 50.81000000000002,
+      "note": "Simple trapezoidal calculation. Klipper lookahead, minimum cruise ratio or accel_to_decel, input shaping and pressure advance can alter realized speed."
+    },
+    {
+      "zone": "A",
+      "band": 4,
+      "longest_straight_mm": 74.86000000000001,
+      "requested_speed_mm_s": 120.0,
+      "accel_mm_s2": 5000.0,
+      "conservative_stop_to_stop_cruise_mm": 71.98000000000002,
+      "note": "Simple trapezoidal calculation. Klipper lookahead, minimum cruise ratio or accel_to_decel, input shaping and pressure advance can alter realized speed."
+    },
+    {
+      "zone": "R",
+      "band": 4,
+      "longest_straight_mm": 54.860000000000014,
+      "requested_speed_mm_s": 120.0,
+      "accel_mm_s2": 2000.0,
+      "conservative_stop_to_stop_cruise_mm": 47.66000000000001,
+      "note": "Simple trapezoidal calculation. Klipper lookahead, minimum cruise ratio or accel_to_decel, input shaping and pressure advance can alter realized speed."
+    },
+    {
+      "zone": "A",
+      "band": 5,
+      "longest_straight_mm": 74.86000000000001,
+      "requested_speed_mm_s": 120.0,
+      "accel_mm_s2": 8000.0,
+      "conservative_stop_to_stop_cruise_mm": 73.06000000000002,
+      "note": "Simple trapezoidal calculation. Klipper lookahead, minimum cruise ratio or accel_to_decel, input shaping and pressure advance can alter realized speed."
+    },
+    {
+      "zone": "R",
+      "band": 5,
+      "longest_straight_mm": 54.860000000000014,
+      "requested_speed_mm_s": 150.0,
+      "accel_mm_s2": 2000.0,
+      "conservative_stop_to_stop_cruise_mm": 43.610000000000014,
+      "note": "Simple trapezoidal calculation. Klipper lookahead, minimum cruise ratio or accel_to_decel, input shaping and pressure advance can alter realized speed."
+    },
+    {
+      "zone": "A",
+      "band": 6,
+      "longest_straight_mm": 74.86000000000001,
+      "requested_speed_mm_s": 120.0,
+      "accel_mm_s2": 10000.0,
+      "conservative_stop_to_stop_cruise_mm": 73.42000000000002,
+      "note": "Simple trapezoidal calculation. Klipper lookahead, minimum cruise ratio or accel_to_decel, input shaping and pressure advance can alter realized speed."
+    },
+    {
+      "zone": "R",
+      "band": 6,
+      "longest_straight_mm": 54.860000000000014,
+      "requested_speed_mm_s": 180.0,
+      "accel_mm_s2": 2000.0,
+      "conservative_stop_to_stop_cruise_mm": 38.66000000000001,
+      "note": "Simple trapezoidal calculation. Klipper lookahead, minimum cruise ratio or accel_to_decel, input shaping and pressure advance can alter realized speed."
+    }
+  ],
+  "checks": [
+    "Four base layers: extrusion, travel, acceleration and fan limits",
+    "ASCII command allowlist",
+    "XY and Z bounds",
+    "Homing and heating before extrusion",
+    "Explicit relative extrusion mode",
+    "Retraction recovery accounting",
+    "Independent per-zone feed, flow, acceleration and fan checks",
+    "Layer band and commanded bead-area checks",
+    "No saved-config, shaping, pressure-advance, motor-current or thermal-protection changes",
+    "End heaters and fan off, runtime acceleration reset to2500"
+  ],
+  "limits": [
+    "Validation is static, not a physical print or an exact Klipper planner simulation.",
+    "Times are bounded motion estimates, not a slicer or firmware ETA.",
+    "Subtle overlap, real shrinkage, thermals and maximum usable material flow need the physical result."
+  ]
+}

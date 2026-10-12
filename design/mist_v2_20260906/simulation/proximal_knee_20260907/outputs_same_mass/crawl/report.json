@@ -1,0 +1,67 @@
+{
+  "case": "crawl",
+  "status": "PASS_IN_MODEL",
+  "criteria": {
+    "did_not_fall": true,
+    "joint_tracking_rms": true,
+    "continuous_motor_rms": true,
+    "reachable_targets": true,
+    "motor_travel_limits": true,
+    "no_nonwheel_ground_support": true,
+    "coarse_self_collision": true,
+    "tilt_below_10deg": true,
+    "full_four_leg_cycle": true,
+    "forward_distance_25mm": true,
+    "all_feet_clear_15mm": true,
+    "foot_tracking_rms": true
+  },
+  "mass_kg": 6.341061857161208,
+  "duration_s": 26,
+  "dt_s": 0.001,
+  "base_displacement_m": [
+    0.02581632810718393,
+    -0.018136977388268145,
+    -0.004166561877184727
+  ],
+  "max_tilt_deg": 2.6767879430529873,
+  "joint_tracking_rms_deg": 2.1408697519374185,
+  "max_servo_rms_nm": 0.6035965594477798,
+  "servo_continuous_limit_nm": 0.7281437625000001,
+  "servo_peak_limit_nm": 1.3349302312500002,
+  "motor_saturation_fraction": 0.0007692307692307692,
+  "unreachable_target_fraction": 0.0,
+  "motor_travel_violation_fraction": 0.0,
+  "min_sampled_support_margin_m": 0.020623434294993817,
+  "max_wheel_normal_force_n": 29.831691005516692,
+  "wheel_lateral_velocity_rms_m_s": 0.0030541176243648613,
+  "self_collision_samples": 0,
+  "self_collision_examples": [],
+  "base_contact_samples": 0,
+  "fixed_base": false,
+  "limitations": [
+    "Unmeasured backlash, compliance, friction, servo dynamics, thermal duty and mass estimates.",
+    "Command play hysteresis and reduced series stiffness do not model true load-side gap engagement under force reversal. Rotor/reflected gearbox inertia omitted.",
+    "Simple boxes/cylinders, selected adjacent self collisions excluded; no printed-part stress or wire model.",
+    "Step test is a scripted challenge; a failure may concern controller and geometry, not a proof no controller exists.",
+    "No sensor perception, obstacle avoidance planner, stair-nose or tire deformation model."
+  ],
+  "max_actual_wheel_clearance_m": [
+    0.026751681913970378,
+    0.02697328817504828,
+    0.02834034183991481,
+    0.02642508967271997
+  ],
+  "foot_tracking_rms_m": [
+    0.00795657367148437,
+    0.007122886520681408,
+    0.00740324009029766,
+    0.007901817855141451
+  ],
+  "obstacle_contact_samples": 0,
+  "minimum_obstacle_gap_m": null,
+  "source_sha256": {
+    "run_sim.py": "c17536e9ee478ffccf0c62f982ef824c954b9efce8afd11151d041160c9dc525",
+    "model.py": "89fb759b6e49c04ae7ed2389acfc31e197d21102078ec5adb0201d5b20a2ec3b"
+  },
+  "parameters_sha256": "2da1658c9b8f9d5b1532526b13f16ae52a952feb70c9a75aa5ad7432b32de306"
+}

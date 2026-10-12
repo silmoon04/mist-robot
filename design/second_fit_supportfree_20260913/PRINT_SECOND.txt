@@ -1,0 +1,97 @@
+SECOND PRINT: FULL-SIZE CLAMP WITH SELF-SUPPORTING HOLE ROOFS
+
+Use these two files together:
+  Second_Print_Full_Clamp_NoSupports.3mf
+  Neptune4Pro_SecondFit_NoSupports_028.curaprofile
+
+The plate contains a complete revised saddle and its matching full-size cap.
+It is not a small stand-in. The cap geometry is unchanged, but a fresh copy is
+included so obstructed holes in the first print do not prevent this test.
+
+EXPECTED PRINT
+Approximately 1 hour 49 minutes in the CuraEngine trial, below the requested
+two-to-three-hour budget. About 28.69 g of model PLA and 0.58 g of brim.
+Generated support material: ZERO. Your Cura/printer estimate can differ.
+
+IMPORT AND SLICE
+1. Select the Neptune 4 Pro with a 0.4 mm nozzle and PLA in Cura 5.13.
+2. Preferences > Configure Cura > Profiles > Import. Choose the supplied
+   Neptune4Pro_SecondFit_NoSupports_028.curaprofile.
+3. Activate R5 Second Fit - No Supports - 0.28mm. If Cura asks to retain old
+   print-setting overrides, choose Discard Changes so old supports stay off.
+4. Clear the previous plate. Import Second_Print_Full_Clamp_NoSupports.3mf as
+   models/geometry, preserving this profile. Keep its scale and orientations.
+5. Confirm Generate Support is OFF. Slice, then inspect the pointed hole roofs
+   in layer preview. There should be no support structures inside the holes.
+   The brim around the bottoms is intentional and is not hole support.
+6. Keep the printer speed and flow multipliers at 100% for this comparison.
+
+PROFILE DETAILS
+Layer height: 0.28 mm, matching your successful first print.
+First layer: 0.20 mm. Line width: 0.42 mm. Five walls, 15% gyroid.
+Top/bottom: five layers, 1.40 mm nominal thickness.
+PLA starting temperatures: 210 C nozzle, 60 C bed, within the filament range.
+Normal outer walls: 45 mm/s; inner walls and infill: 65 mm/s.
+First layer: 25 mm/s. Cooling ramps to 100% by layer three.
+Overhang threshold: 40 degrees in Cura, so the 45-degree roofs are covered.
+Overhang wall speeds: 30%, 25%, 20% of normal speed as overhang increases.
+Bridge walls: 15 mm/s; bridge skin: 20 mm/s; bridge fan: 100%.
+The engine check found slow paths at all three nut roofs. Normally supported
+paths nearby can still print faster. Short overhang layers have a 12 s cooling
+target. Supports, support interfaces and support brims are disabled.
+Outside bed brim remains approximately 4 mm. No 45-degree whole-part rotation
+is needed: the saddle roofs point upward, and the cap's bores print vertically.
+The profile inherits your printer's start/end code, dimensions and calibration.
+
+GEOMETRY CHANGES
+The three screw passages preserve the original 3.4 mm circular clearance and
+their original axes. A small pointed extension above each circle creates
+45-degree roofs. These are teardrop-style screw holes, not smaller hex holes.
+The nut pockets preserve the 5.7 mm locating flats and lower hex faces, with
+additional 45-degree roof clearance above them. A 5.5 mm AF plain M3 nut fits
+nominally; a 10-degree rotation is blocked by the remaining pocket faces.
+The two pockets near the top receive small external roof tabs to retain at
+least 2 mm of vertical roof material. The original very thin roofs are not
+left weaker by simply enlarging their holes.
+The servo-contact faces, case width/length, end clearance, clamp gap, mounting
+feet and every screw axis are unchanged. CAD differences within the fitted
+case region are zero. No heat-set inserts are used.
+
+YOUR FIRST-PRINT FEEDBACK, RECORDED 13 SEPTEMBER 2026
+You printed at 0.28 mm. The STS3215 case fit was reported as very good and
+almost perfect. Preserve those fitted dimensions.
+Regular support stuck inside the holes and could not be removed cleanly.
+Screw fit and final clamping were therefore not demonstrated. The expectation
+that the cap will clamp well is recorded separately from a successful test.
+No numerical caliper dimensions or loaded-strength result were reported.
+
+WHAT TO TEST AFTER THIS PRINT
+1. Remove only the brim and loose strings. Inspect each roof for sagging or
+   a hanging strand before trying hardware. Do not force a screw through it.
+2. Try an M3 screw through each empty saddle and cap hole by hand, without the
+   servo fitted. Record which hole is clear or obstructed before drilling or
+   sanding; we need to distinguish print sag from nominal hole size.
+3. Fit each plain M3 nut in its pocket. It should seat without heat or force
+   and resist turning when the screw engages. Check all three positions.
+4. Insert the actual servo and add the cap. Use the same nominal clamp stack:
+   three M3x35 screws, one OD7/ID3.2 x 0.5 mm head washer per screw, and three
+   plain M3 nuts, nominally 5.5 mm across flats and 2.4 mm thick.
+   Tighten gently and evenly, only enough to check retention. Inspect for cap
+   bottoming, nut rotation, case movement, roof cracking and blocked cables.
+5. Report roof cleanliness, screw insertion, nut seating and cap grip. A photo
+   before cleanup is useful if a roof or hole still fails.
+
+WHAT HAS BEEN CHECKED
+Both printable parts are single valid solids with watertight meshes. The 3MF
+reloads as two objects. No non-bed downward mesh face exceeds the intended
+45-degree overhang. Nominal screws, nuts and servo fit in the CAD, and the
+nut pockets still block rotation. The actual slice generates zero support,
+stays inside the 225 mm bed and peaks at about 7.80 mm3/s calculated flow.
+These are geometry and toolpath checks, not a physical guarantee. The roof
+closure and nut tolerance still need this second print on your machine.
+
+This is a separate full-size clamp trial. The released R5 robot CAD and its
+earlier print package have not been overwritten. The taller outside roof
+tabs need clearance checks in each production mounting orientation before
+this change is propagated to the complete robot. Successful case fit alone
+does not establish shaft alignment, loaded joint strength or hardware walking.

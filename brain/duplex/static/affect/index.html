@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MIST · Face and voice</title><link rel="icon" href="data:,"><style>
+*{box-sizing:border-box}body{font:16px/1.55 system-ui,sans-serif;background:#f4f3ee;color:#25332e;margin:0}
+main{max-width:940px;padding:32px 24px 64px;margin:auto}nav{display:flex;gap:24px;border-bottom:1px solid #ccd1c8;padding-bottom:16px}
+a{color:#205f4e;text-underline-offset:4px}h1{font-size:27px;font-weight:600;margin:32px 0 14px}h2{font-size:18px;font-weight:600}
+p{max-width:76ch}section{padding:16px 0;border-bottom:1px solid #ccd1c8}.row{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+small{color:#5e685f}code{font:14px ui-monospace,monospace}li{margin:8px 0}details{margin:18px 0}summary{cursor:pointer}
+@media(max-width:650px){.row{grid-template-columns:1fr;gap:0}main{padding:20px 18px}}
+</style></head><body><main>
+<nav><a href="/try">Try a conversation</a><a href="/duplex/expectations/index.html">Earlier conversation review</a></nav>
+<h1>Face and voice</h1>
+<p>A selected face now stays through listening, thinking and speaking. A timed flash returns to the previous face. Blinks and mouth timing still follow the existing animation and audio code.</p>
+<section class="row"><div><h2>Try the separate reader</h2>
+<p>In Voice trials, choose <b>Qwen · separate expression reader</b> or <b>Qwen · GPT-OSS expression reader</b>. The original default remains available.</p>
+<p>Qwen writes the reply and calls tools. The second model proposes a face and voice setting from the conversation. It cannot speak or move the robot.</p></div>
+<div><h2>Timing and ownership</h2><p>Speech does not wait for the reader. A late proposal is discarded, as is a proposal overtaken by a new user turn or a face replacement. Explicit face requests take priority.</p>
+<p>Look for <code>affect_decision</code> and <code>speech_style</code> in the saved trace. They show the proposal, evidence, elapsed time, rejection reason and setting actually sent to ElevenLabs.</p></div></section>
+<section><h2>Measurements</h2><ul>
+<li><a href="comparison-rerun/index.html">Speaker and reader comparison</a> · authored conversation cases, real model calls, no microphone or playback measurement.</li>
+<li><a href="comparison-rerun/SEMANTIC-REVIEW.md">Independent review of the choices</a> · wording, face selection and missed timing.</li>
+<li><a href="prosody/index.html">Listen to the voice samples</a> · fixed sentence, existing MIST voice, provider timing and failures.</li>
+<li><a href="live-smoke/index.html">Live integration check</a> · three typed turns through the real speaker, expression reader and voice stream.</li>
+</ul><p>These tests can show whether a proposal arrives in time and follows the contract. They do not establish that a conversation feels more human.</p>
+<details><summary>Retained failed comparison</summary><p>The first runner lost its combined-arm results after a local aggregation error. Its results are retained separately: <a href="comparison/index.html">failed run</a>. They cannot be used for a model ranking.</p></details></section>
+<section><h2>What ElevenLabs can change</h2>
+<p>The current Flash stream can vary stability per reply. The experimental profiles named warm, gentle, bright and serious are setting choices, not guaranteed emotions. All phrases in one reply use the same setting.</p>
+<p>Eleven v3 supports expressive tags through a different dialogue streaming API. It produced audio with your MIST voice for plain text, <code>[curious]</code> and <code>[excited]</code>. Listen to the samples above. It is not the live studio's voice backend.</p>
+<p><a href="https://elevenlabs.io/docs/eleven-api/guides/how-to/websockets/tts-vs-ttd-websockets">Streaming APIs</a> · <a href="https://elevenlabs.io/docs/api-reference/voices/settings/get">Voice settings</a></p></section>
+<section><h2>Listen for</h2><p>Does the voice fit what MIST is saying? Does the face remain appropriate after a correction? Does a brief interruption stop the old response without leaving an old tone on the next reply? Compare those moments across architectures, then export the session trace.</p></section>
+<p><small>Local experiments · 24 September 2026. Robot tools remain previews.</small></p>
+</main></body></html>

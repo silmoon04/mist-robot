@@ -1,0 +1,12 @@
+{
+  "id": 2,
+  "jsonrpc": "2.0",
+  "result": {
+    "content": [
+      {
+        "text": "{\n    \"error\": \"Traceback (most recent call last):\\n  File \\\"<string>\\\", line 44, in <module>\\n  File \\\"<string>\\\", line 38, in run\\n  File \\\"C:\\\\Users\\\\hssil\\\\Downloads\\\\03_Programming_Projects\\\\spider-robot\\\\design\\\\mist_v2_20260906\\\\cad\\\\fusion_live_20260907\\\\build_concealed_stage.py\\\", line 78, in run\\n    result=replay.build_leg(design.rootComponent,specs[request['leg']],request['palette'],record_part,\\n                            extend=request.get('extend',False))\\n  File \\\"C:\\\\Users\\\\hssil\\\\Downloads\\\\03_Programming_Projects\\\\spider-robot\\\\design\\\\mist_v2_20260906\\\\cad\\\\fusion_live_20260907\\\\concealed_native_replay.py\\\", line 137, in build_leg\\n    body=build_part(outer.component,part)\\n  File \\\"C:\\\\Users\\\\hssil\\\\Downloads\\\\03_Programming_Projects\\\\spider-robot\\\\design\\\\mist_v2_20260906\\\\cad\\\\fusion_live_20260907\\\\concealed_native_replay.py\\\", line 73, in build_part\\n    target=native.union(component,target,[tool],name+'_join')\\n  File \\\"C:\\\\Users\\\\hssil\\\\Downloads\\\\03_Programming_Projects\\\\spider-robot\\\\design\\\\mist_v2_20260906\\\\cad\\\\native_parts.py\\\", line 357, in union\\n    return _combine(component, target, tools, name,\\n                    adsk.fusion.FeatureOperations.JoinFeatureOperation)\\n  File \\\"C:\\\\Users\\\\hssil\\\\Downloads\\\\03_Programming_Projects\\\\spider-robot\\\\design\\\\mist_v2_20260906\\\\cad\\\\native_parts.py\\\", line 344, in _combine\\n    result = _feature_body(combines.add(feature_input), name)\\n  File \\\"C:\\\\Users\\\\hssil\\\\Downloads\\\\03_Programming_Projects\\\\spider-robot\\\\design\\\\mist_v2_20260906\\\\cad\\\\fusion_live_20260907\\\\build_concealed_stage.py\\\", line 67, in record_feature\\n    body=original(feature,name)\\n  File \\\"C:\\\\Users\\\\hssil\\\\Downloads\\\\03_Programming_Projects\\\\spider-robot\\\\design\\\\mist_v2_20260906\\\\cad\\\\native_parts.py\\\", line 149, in _feature_body\\n    raise RuntimeError(\\\"{}: expected one body, got {}\\\".format(name, feature.bodies.count))\\nRuntimeError: Y01_fixed_mount_bridge_5_join: expected one body, got 2\\n\",\n    \"success\": false\n}",
+        "type": "text"
+      }
+    ]
+  }
+}

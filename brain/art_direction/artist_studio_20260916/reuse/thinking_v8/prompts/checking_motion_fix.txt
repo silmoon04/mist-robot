@@ -1,0 +1,27 @@
+Correct ONLY the scan brackets in this existing 6-column by 4-row sprite sheet. Keep all pages, all empty boxes, all text strokes, all folded corners, canvas size, cyan style, alpha background, and cell registration unchanged. Do not add labels or numbers. This is a precise animation correction, not a redesign.
+
+The page top is near local y=49 in each full-size cell. Replace the active scan brackets with ONE separate right-facing ] bracket per cell at local x=191..205, exactly 24 pixels high. Every bracket remains outside the page with a clear gap.
+
+There are SIX cells per row. Correct bracket center heights for each of the sixteen active cells EXACTLY as this row/column map:
+row1 column5: local y=80
+row1 column6: local y=94
+row2 column1: local y=108
+row2 column2: local y=122
+row2 column3: local y=136
+row2 column4: local y=150
+row2 column5: local y=164
+row2 column6: local y=178
+row3 column1: local y=173
+row3 column2: local y=159
+row3 column3: local y=145
+row3 column4: local y=131
+row3 column5: local y=117
+row3 column6: local y=103
+row4 column1: local y=89
+row4 column2: local y=75
+
+This makes sixteen distinct heights, smooth downward travel and smooth upward travel. Do NOT snap positions to the three checkbox rows and do NOT repeat a held pose. In particular row3 column6, row4 column1 and row4 column2 must be THREE CLEARLY DIFFERENT heights moving progressively upward, not three copies at the top. Row1 column6 must be above row2 column1 so downward motion continues across the row break.
+
+Keep the first four entrance pages and last four exit pages, but adjust the entrance bracket so it moves continuously toward y=75 in row1 column4. In row4 columns3,4,5,6, progressively retract the bracket from 24 to 18 to 12 to 6 pixels high while the pages already shrink. The bracket stays visible throughout the exit.
+
+Preserve exactly 24 cells, six columns by four rows. All checkboxes stay empty. No ticks, checkmarks, faces, words, background or success state.

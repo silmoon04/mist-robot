@@ -1,0 +1,206 @@
+{
+  "version": 4,
+  "status": "ready_for_atlas_integration",
+  "method": "built-in ImageGen",
+  "family": "mouth_angry",
+  "source": "<LOCAL_HOME>/.codex/generated_images/01a0cd67-2807-7382-a6bf-e3580ee6d00f/exec-7a68379d-b6f2-4cdb-908d-874b039ab270.png",
+  "destination": "sheets/mouth_angry_v4.png",
+  "sha256": "5e8371b4a38ef4fe9179e92f2cf1a2a70f282d352da7a2416523c223436906aa",
+  "columns": 4,
+  "rows": 2,
+  "width": 1774,
+  "height": 887,
+  "order": [
+    "rest",
+    "release",
+    "small_AA",
+    "AA",
+    "EH",
+    "EE",
+    "LNT",
+    "wide_close"
+  ],
+  "logicalCellSize": 221.75,
+  "sourceScale": 0.5,
+  "registration": "Use each measured horizontal ink center and upper ink bound as its anchor. Apply sourceScale 0.5 to crop dimensions and offsets before existing family display scaling. The generated sheet vertically centers mouths rather than keeping a common upper anchor, so do not use raw cell-center placement. Preserve relative aperture sizes. The generated rest is for speech study; do not replace canonical face rest.",
+  "frames": [
+    {
+      "pose": "rest",
+      "index": 0,
+      "cell": [
+        0,
+        0,
+        444,
+        444
+      ],
+      "inkBounds": [
+        94,
+        229,
+        261,
+        45
+      ],
+      "anchor": [
+        224.5,
+        229
+      ]
+    },
+    {
+      "pose": "release",
+      "index": 1,
+      "cell": [
+        444,
+        0,
+        443,
+        444
+      ],
+      "inkBounds": [
+        546,
+        228,
+        241,
+        57
+      ],
+      "anchor": [
+        666.5,
+        228
+      ]
+    },
+    {
+      "pose": "small_AA",
+      "index": 2,
+      "cell": [
+        887,
+        0,
+        443,
+        444
+      ],
+      "inkBounds": [
+        988,
+        214,
+        246,
+        89
+      ],
+      "anchor": [
+        1111,
+        214
+      ]
+    },
+    {
+      "pose": "AA",
+      "index": 3,
+      "cell": [
+        1330,
+        0,
+        444,
+        444
+      ],
+      "inkBounds": [
+        1427,
+        190,
+        253,
+        127
+      ],
+      "anchor": [
+        1553.5,
+        190
+      ]
+    },
+    {
+      "pose": "EH",
+      "index": 4,
+      "cell": [
+        0,
+        444,
+        444,
+        443
+      ],
+      "inkBounds": [
+        94,
+        589,
+        261,
+        92
+      ],
+      "anchor": [
+        224.5,
+        589
+      ]
+    },
+    {
+      "pose": "EE",
+      "index": 5,
+      "cell": [
+        444,
+        444,
+        443,
+        443
+      ],
+      "inkBounds": [
+        511,
+        600,
+        311,
+        59
+      ],
+      "anchor": [
+        666.5,
+        600
+      ]
+    },
+    {
+      "pose": "LNT",
+      "index": 6,
+      "cell": [
+        887,
+        444,
+        443,
+        443
+      ],
+      "inkBounds": [
+        987,
+        598,
+        248,
+        74
+      ],
+      "anchor": [
+        1111,
+        598
+      ]
+    },
+    {
+      "pose": "wide_close",
+      "index": 7,
+      "cell": [
+        1330,
+        444,
+        444,
+        443
+      ],
+      "inkBounds": [
+        1413,
+        608,
+        281,
+        44
+      ],
+      "anchor": [
+        1553.5,
+        608
+      ]
+    }
+  ],
+  "prompt": "Use case: precise-object-edit. Asset: a new production sprite sheet of eight ANGRY speech-mouth drawings for MIST, the minimalist cyan robot face. The two referenced sheets provide ONLY the cyan, clean-edge rendering style and approximate mouth scale. Their smiling bowl-shaped mouths are specifically WRONG for anger: redesign the geometry rather than repeating them.\n\nOutput a landscape 2:1 image, exactly FOUR columns by TWO rows in an invisible regular grid of eight equal square cells. OPAQUE PURE WHITE #FFFFFF background. Exactly ONE mouth in each cell, no eyes, no faces, no words, no labels, no borders. Eight single connected solid CYAN #45E2DF silhouettes, clean antialiased edges. No gradients, glow, texture, teeth, tongue, notches, tabs, cutouts, internal linework, holes, floating dots, islands or multiple strokes.\n\nEmotion: controlled anger, stern tension, not sadness and definitely not happiness. Tense shapes with blunt, rounded-angular corners, no cheerful lifted corners, no U-shaped smiling bowls, no grin. Upper and lower contours remain smooth continuous strokes without little dents. All eight horizontal centers exactly aligned to the centers of their respective cells, uppermost ink near 42% cell height, comparable consistent character scale. Generous white margins. Preserve relative articulation width/height instead of making every shape equally large.\n\nRead order top row left-to-right, then bottom row left-to-right:\n1 REST: tight stern pressed lip; almost horizontal thick short line, center just slightly higher than its gently downturned outer ends; width 50% cell, height 8%. No smiling rise at corners.\n2 RELEASE: narrow compressed rounded lozenge with straight tense upper/lower middle, slightly lowered corners, width 43%, height 8%. Modest opening.\n3 SMALL_AA: modest open tense rounded rectangle, upper edge nearly flat and shoulders slightly downturned, lower edge nearly flat, width 45%, height 16%. Avoid a semicircle or smile bowl.\n4 AA: clearly open angry vowel, taller blunt rounded rectangle with minimally tapered lower sides and near-flat upper and lower middle, width 50%, height 27%. No happy raised corners.\n5 EH: firm medium-wide rounded rectangular aperture, width 54%, height 20%, short softly sloped sides. Stern straightness, not a grin.\n6 EE: wide FLAT TENSE aperture, width 61%, height 11%, slightly downturned blunt ends, not upward-curving and not smiling.\n7 LNT: restrained tense medium opening, rounded short rectangular lozenge width 47%, height 12%, continuous smooth edges, NO notch, NO tongue, NO detail.\n8 WIDE_CLOSE: broad compressed stern mouth, width 55%, height 7%, almost straight across with subtle downturned ends, no smile.\n\nThe mouths must visibly belong to one angry emotional family yet show distinct speech aperture sizes. Keep clean solid flat cyan robot-drawing style. All interior areas filled cyan. Each cell must contain exactly one silhouette. No repeated smiling source bowls.",
+  "visualAudit": {
+    "accepted": true,
+    "findings": [
+      "Eight complete cyan silhouettes in the required four-column, two-row order; no extra facial features, labels or borders.",
+      "Rest is a shallow downturned tense stroke. The vowels are blunt rounded rectangular apertures, rather than the smiling source bowls.",
+      "EE is wide and flat; LNT and wide_close have continuous smooth contours without rejected local notches or protruding tabs.",
+      "No visible teeth, tongue, internal cutouts, floating islands or happy lifted corners.",
+      "Small_AA, AA, EH and the closing poses differ in aperture height and width while retaining the stern family."
+    ],
+    "limitations": [
+      "The upper-mouth anchor varies on the generated sheet. Use the measured per-frame ink-top anchors to prevent vertical jumping.",
+      "Open angry vowels are restrained and relatively neutral in isolation. Their tension reads most clearly with the existing angry eyes; they avoid the contradictory smile.",
+      "Small generated cyan and near-white background variation is retained byte-for-byte. Existing mask extraction and runtime cyan tinting should remain enabled.",
+      "Canonical silent resting mouths must be preserved; this generated rest only belongs to the speech-study family."
+    ]
+  },
+  "generationAttempts": 1
+}

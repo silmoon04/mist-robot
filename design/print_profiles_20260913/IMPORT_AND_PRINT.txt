@@ -1,0 +1,39 @@
+NEPTUNE 4 PRO: R5 FIRST-FIT PLA PROFILE
+
+File: Neptune4Pro_R5_FirstFit_PLA_020.curaprofile
+Profile name: HexQuad R5 - First Fit PLA - 0.20mm
+Target checked: installed UltiMaker Cura 5.13, ELEGOO NEPTUNE 4 Pro, 0.4 mm nozzle, 1.75 mm PLA.
+
+IMPORT
+1. Select ELEGOO NEPTUNE 4 Pro, the 0.4 mm nozzle and PLA in Cura.
+2. Open Preferences > Configure Cura > Profiles > Import. Select the .curaprofile file.
+3. Activate HexQuad R5 - First Fit PLA - 0.20mm.
+4. If Cura asks whether to keep existing setting changes, choose Discard Changes so the new profile applies. Save an existing custom setup first if you want to retain it. This step concerns print settings, not the models on the plate.
+5. Load R5 coupon_plate_01.3mf as geometry. Keep millimetres, scale and supplied orientations. If Cura offers to load project settings, use the geometry/import-models option and retain this profile.
+6. Slice and inspect the layer preview. Confirm supports below the raised registration-gauge feet and offset phone-tray surfaces. Check brim/support edges remain on the bed.
+7. Leave printer speed and flow multipliers at 100% for the first trial. Use the actual printer's normal leveling/Z-offset setup. This profile inherits the selected machine's start/end G-code.
+
+SETTINGS
+Layer height: 0.20 mm, including the first layer.
+Line widths: 0.42 mm. Five walls, six top and bottom layers, 35% gyroid.
+PLA temperatures: 210 C nozzle and 60 C bed. Follow the filament label if it needs a different temperature.
+Speeds: first layer 20 mm/s, outer walls 35, inner walls 60, infill 80, top/bottom 35, support 50 and support interface 30. Travel 150 mm/s.
+Acceleration: outer walls 800 mm/s2, inner walls 1200, infill 1500, first-layer printing 500. This is deliberately slower than the printer's advertised maximum.
+Retraction: 0.5 mm at 35 mm/s. No Z-hop.
+Part fan: off on the first layer, ramping to 100% by layer three. The separate auxiliary fan bank is not configured by this quality profile.
+Supports: enabled, normal zigzag, everywhere, Cura 50-degree threshold, 15% density. Top interface enabled at 60%, 0.6 mm thick, with 0.20 mm Z gap and 0.50 mm XY separation.
+Brim: outside only, approximately 4 mm, 0.1 mm gap. Support brims enabled.
+Print sequence: all at once.
+
+IMPORTANT FOR THESE PARTS
+The 3MF contains part geometry, not generated supports. Slice with supports enabled. Do not lower an entire part to remove an intentionally raised feature, or change its scale to make it fit.
+Keep small captive-nut pockets accessible. Inspect any automatically generated support inside them and use support blockers selectively if a short pocket roof can bridge. Do not block support beneath genuine floating islands or long raised surfaces.
+R5 uses plain captured M3 nuts, screws, washers and the supplied servo accessories. It has no heat-set inserts to test.
+Use plate 01 first. Plate 02 contains the main revised production specimens; print it after checking common fit. Plate 03 contains optional fit alternatives.
+
+VALIDATION AND LIMITS
+The ZIP structure, both Cura INI members, all setting IDs/types/enums, machine quality definition, quality type and setting version were checked against the installed Cura 5.13 files. Both members also parse with Cura's own FastConfigParser.
+An engine trial of the actual R5 first plate used the same process overrides on the existing numeric analysis stack. It checked generated supports, flow and a conservative 225 x 225 x 265 mm build envelope. Its startup code was disabled; it was not a live Cura frontend import or physical printer test. See profile_validation.json for measured trial values.
+Cura's material maximum-flow setting is hidden in this build. The profile therefore explicitly sets conservative speeds and line widths; it does not rely solely on an automatic flow limiter. Do not increase layer height or line width and assume the same flow remains valid.
+The profile does not alter nozzle diameter, machine dimensions, Z offset, firmware calibration, start/end G-code or provider credentials. No live Cura profile was overwritten or activated, and no print was started.
+This is a first-fit starting profile. PLA brand, moisture, extrusion calibration, bed adhesion and the actual servo/nut fit still need the first physical print.

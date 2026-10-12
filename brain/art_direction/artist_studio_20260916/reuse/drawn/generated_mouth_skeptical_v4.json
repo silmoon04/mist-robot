@@ -1,0 +1,61 @@
+{
+  "version": 4,
+  "status": "ready_for_atlas_integration",
+  "method": "built-in ImageGen",
+  "family": "mouth_skeptical",
+  "source": "<LOCAL_HOME>/.codex/generated_images/01a0cd68-5da5-7233-a905-4bf97bcfadaf/exec-5c86e1ba-0c80-4e0a-b95d-aa011fd3ec6f.png",
+  "destination": "sheets/mouth_skeptical_v4.png",
+  "columns": 4,
+  "rows": 2,
+  "imageSize": [
+    1774,
+    887
+  ],
+  "order": [
+    "rest",
+    "release",
+    "small_AA",
+    "AA",
+    "EH",
+    "EE",
+    "LNT",
+    "wide_close"
+  ],
+  "originalReferenceSheets": [
+    "sheets/mouth_combined_v2.png",
+    "sheets/mouth_consonants_v3.png"
+  ],
+  "generationAttempts": 2,
+  "prompts": [
+    "Use case: stylized-concept. Asset type: mouth-only raster animation sprite sheet for MIST's dry, skeptical voice. Generate exactly EIGHT separate cyan mouth silhouettes in an invisible regular FOUR COLUMNS by TWO ROWS grid. Pure opaque white background, landscape canvas, evenly sized cells and generous empty margins. No drawn grid, no labels, no lettering, no eyes, no face, no borders.\nReference images show only the existing cyan filled MIST graphic style. Do NOT copy their happy curved-up smile shapes. This new family must look dry, skeptical, understated and asymmetrical throughout, while speaking clearly.\nAll eight mouths are ONE smooth contiguous flat cyan silhouette each, same shade close to #57DED7. No holes, no interior details, no teeth, no tongue, no notches or tabs. No glow, gradient or texture. Consistent character width, same anchor and same direction of asymmetry: the viewer's RIGHT end always slightly higher than the LEFT. Slight diagonal slant is part of the mouth shape, not eight arbitrary rotations.\nRead cells from left to right, top row then bottom:\n1 rest: a slim slightly oblique closed capsule with the right end gently pressed thinner; restrained dry mouth, no grin.\n2 release: a small low oblique opening, smooth organic tapered oval, slightly more space on its left.\n3 small_AA: a modest oblique rounded aperture, wider on the left and narrower toward the right corner.\n4 AA: an open rounded trapezoid-like aperture with a near-straight oblique top and gently rounded bottom; asymmetry on the same side; do not make a smile bowl.\n5 EH: a medium-height oblique rounded oblong opening, right side gently pressed, no smiling corners.\n6 EE: a wider but very shallow oblique capsule opening, restrained and near-straight; definitely not an upward U crescent.\n7 LNT: a small compressed oblique closed aperture, clean simple contour, no tongue or bumps.\n8 wide_close: the wider EE aperture closing into a slim compressed oblique capsule, the right corner slightly higher, no grin.\nVary aperture opening and compression convincingly across this phoneme family. Unambiguous skeptical restraint even in the open poses. All eight keep the same dry mood and consistent asymmetry, with no broad smiling U or happy half-circle mouth. Only these eight cyan shapes on white.",
+    "Use case: precise-object-edit. Correct this mouth sprite sheet while retaining its exactly FOUR COLUMNS by TWO ROWS grid, eight separate clean cyan silhouettes and consistent right-end-higher asymmetry. It is a dry skeptical speech family, never happy.\nMANDATORY BACKGROUND CHANGE: Fill the whole background with solid opaque PURE WHITE (#FFFFFF), including all corners and all space between sprites. This is a white sheet of paper, absolutely NOT a transparent image. Remove every stray fleck, mark, tab, halo and protrusion from the contours. All shapes have solid even cyan fill.\nCorrect the first mouth (top left, rest) into a SLIM CLOSED oblique capsule, substantially thinner than it is now, with smoothly joined contour and no lower bump. Correct the fourth mouth (top right, AA) into a ROUNDED RECTANGULAR / rounded trapezoid aperture with a nearly straight oblique upper edge and a nearly straight oblique lower edge. The lower edge MUST NOT form a happy deep smile bowl or semicircle. Keep rounded corners. The left part can be modestly wider and taller than the right. Preserve the same oblique dry mouth mood.\nKeep the other six mouth apertures close to the reference but make the two closing mouths in bottom row columns three and four noticeably slim and pressed. Across all eight, every right end is slightly higher than the left, while the opening changes organically, not a random rigid rotation of one repeated shape.\nExact order top row: rest, release, small_AA, AA. Bottom row: EH, EE, LNT, wide_close. Do not draw these labels. Preserve even cell spacing with large margins. Exactly eight mouth silhouettes. No eye shapes, text, lines, grid, frame, eyebrows, tongue, teeth, notches, holes, islands, gradients, glow or texture. Opaque white background is essential."
+  ],
+  "rejectedAttempt": {
+    "source": "<LOCAL_HOME>/.codex/generated_images/01a0cd68-5da5-7233-a905-4bf97bcfadaf/exec-d4ad2302-c730-4cd6-96f2-aebdd4785880.png",
+    "reason": "Transparent background despite the opaque-white prompt; overly bowl-like AA aperture; small lower protrusion on rest."
+  },
+  "logicalCellSize": 221.75,
+  "registration": "Equal cells at imageWidth / 4 by imageHeight / 2 (443.5 square). Use one common scale of 0.5 to map source pixels to the 221.75 logical cell; preserve relative aperture sizes and the consistent right-end-higher asymmetry. Measured per-pose bounds are in mouth_skeptical_v4.layout.json. These are not eight independently normalized rest-mouth widths.",
+  "visualAudit": {
+    "accepted": true,
+    "findings": [
+      "Eight distinct single-piece cyan mouth shapes in the requested order.",
+      "Consistent right-end-higher slant with fuller left apertures; opening and compression vary across phonemes.",
+      "AA is a rounded oblique quadrilateral, avoiding the rejected happy bowl.",
+      "Rest, LNT and wide_close are compressed; no teeth, tongues, notches, holes, detached islands, or decorative marks visible.",
+      "No eyes, text, labels or grid lines are present."
+    ],
+    "limitations": [
+      "The opaque background is visually white but generated corner RGB is 253,253,253 rather than literal 255,255,255. Preserve source bytes and use the existing background extraction.",
+      "Slight generated cyan tone variation remains in the original; runtime tinting can use the existing MIST cyan.",
+      "Dry skeptical expression depends on its matching eye family; these mouths deliberately use restrained asymmetry rather than an anatomical sneer.",
+      "Audio timing and 15 fps presentation are integration concerns outside this source-sheet deliverable."
+    ]
+  },
+  "validation": {
+    "mode": "RGB",
+    "opaque": true,
+    "largeConnectedComponents": 8,
+    "analysis": "Read-only PIL/NumPy/SciPy cyan segmentation; no image-processing edits performed."
+  }
+}

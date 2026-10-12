@@ -1,0 +1,25 @@
+{
+  "date": "2026-09-29",
+  "method": "Actual in-app browser interactions, DOM observations and screenshot",
+  "passed": true,
+  "checks": {
+    "allExamples": 18,
+    "allPoseImagesLoaded": 54,
+    "groupFiltersTested": ["aardman", "bluey", "pixar", "mickey", "simons_cat", "peanuts"],
+    "eachFilterShowsThreeExamplesAndNinePoses": true,
+    "missingImageErrors": 0,
+    "timingDialogOpens": true,
+    "automaticPoseAdvanceObserved": true,
+    "stopButton": true,
+    "manualNextPose": true,
+    "escapeCloses": true,
+    "focusReturnsToPlayTrigger": true,
+    "sourceAndPoseDownloadTargetsPresent": true,
+    "screenshot": "preview.jpg"
+  },
+  "limitations": [
+    "Reduced-motion behavior was inspected in code but not exercised through browser emulation.",
+    "Mobile layout was not separately exercised.",
+    "Three-pose playback is a timing sketch, not finished animation."
+  ]
+}

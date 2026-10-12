@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>MIST / Face styles</title>
+  <link rel="stylesheet" href="style.css?v=1">
+</head>
+<body>
+  <header>
+    <a class="brand" href="../thinking_v8/">MIST</a>
+    <span class="page-name">Face styles</span>
+    <nav aria-label="Other previews">
+      <a href="../thinking_v8/">Thinking animations</a>
+      <a href="../drawn/">All 40 faces</a>
+      <a href="../drawn/transitions.html">Transitions</a>
+      <a href="http://127.0.0.1:9053/try">Voice</a>
+    </nav>
+    <a class="pack" href="MIST_style_studies_v1.zip" download>Download pack</a>
+  </header>
+  <main>
+    <div class="toolbar">
+      <p>Static style studies. Live faces unchanged.</p>
+      <label for="filter">Compare <select id="filter" disabled><option value="all">All styles</option></select></label>
+    </div>
+    <div class="notes">
+      <details><summary>Why these 10?</summary><p id="selection-basis">Loading the selection notes.</p></details>
+      <details class="servers">
+        <summary>Start servers</summary>
+        <div class="server-commands">
+          <p>Run each server in its own PowerShell window. If its link already opens, leave that server running.</p>
+          <pre><code id="folder-command">Set-Location ''</code></pre>
+          <div class="command-head"><a href="../thinking_v8/">Animation studio · 9041</a><button type="button" data-copy="studio-command">Copy studio command</button></div>
+          <pre><code id="studio-command">python -m http.server 9041 --bind 127.0.0.1 --directory brain/art_direction/artist_studio_20260916</code></pre>
+          <div class="command-head"><a href="http://127.0.0.1:9053/try">Voice · 9053</a><button type="button" data-copy="voice-command">Copy voice command</button></div>
+          <pre><code id="voice-command">python -m brain.duplex.live_studio --port 9053</code></pre>
+          <p class="small">Copy includes the folder command. At setup, 9041 was restarted and 9053 was already running.</p>
+          <p id="copy-status" class="small" role="status"></p>
+        </div>
+      </details>
+    </div>
+    <p id="status" role="status">Loading faces…</p>
+    <p id="error" role="alert" hidden></p>
+    <div id="comparison" hidden>
+      <div id="column-heads" class="matrix-head" aria-hidden="true"></div>
+      <div id="rows"></div>
+    </div>
+  </main>
+  <dialog id="inspector" aria-labelledby="inspect-title">
+    <div class="dialog-head"><h2 id="inspect-title"></h2><button id="close" type="button" autofocus>Close</button></div>
+    <div class="dialog-controls">
+      <div class="face-navigation"><button id="previous" type="button" aria-label="Previous face">Previous</button><span id="face-position"></span><button id="next" type="button" aria-label="Next face">Next</button></div>
+      <label for="inspect-style">Style <select id="inspect-style"></select></label>
+    </div>
+    <div class="enlarged-pair">
+      <figure><div class="image-stage"><img id="inspect-original" alt=""></div><figcaption><span>Current</span><a id="download-original" download>Download PNG</a></figcaption></figure>
+      <figure><div class="image-stage"><img id="inspect-variant" alt=""></div><figcaption><span id="inspect-label"></span><a id="download-variant" download>Download PNG</a></figcaption></figure>
+    </div>
+    <p id="inspect-description" class="small"></p>
+  </dialog>
+  <script src="app.js?v=d72059ea4474a7dd"></script>
+</body>
+</html>

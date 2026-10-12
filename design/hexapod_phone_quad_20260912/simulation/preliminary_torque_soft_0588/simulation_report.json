@@ -1,0 +1,166 @@
+{
+  "created_utc": "2026-09-12T13:12:08.637486+00:00",
+  "status": "not_validated",
+  "failure": null,
+  "static_failure": null,
+  "gates": {
+    "standing": true,
+    "phone_full_pan": true,
+    "crawl": false,
+    "actual_foot_steps": false,
+    "mid_swing_support_margin": false,
+    "stance_position": false,
+    "quasi_static_torque": true,
+    "sustained_torque_screen": true,
+    "physical_fit": false,
+    "hardware_walking": false
+  },
+  "inputs": {
+    "manifest_sha256": "8ab24657ce960f9d5745ec217b64d5b0484ac3cac61ab73253522cdd8bc51bdb",
+    "urdf_sha256": "2ff8ea012fc606eb87bfc86c9297b137e0333e6724189cf9eb00c3cc7120f57d",
+    "settings_sha256": "b5f80af49d20faaea3645bc366a85adf9c4c9f53591321269235fc40ee6fe211",
+    "source_sha256": {
+      "run_simulation.py": "c455e63a7c3b9c519a95cb37de584563d06d1846d3996e059fa8d1e1ef2575e8",
+      "kinematics.py": "59a139cf3db17612b73aeb5121bfcc3464ace2e6b08e5c86dc290a2be8a04897",
+      "statics.py": "277ba3169ec2d0ab408d470a53eb2a63efb9e1ba9ca5e691fc49275269b461d2",
+      "export_urdf.py": "005b06f9f4dfc73693cbf50c5abc4adffeea5c4df0d93db59915014c7633d87f"
+    },
+    "unchanged_during_run": true
+  },
+  "mass_kg": 2.3965792923270386,
+  "stepping_evidence": {
+    "FL": {
+      "samples": 56,
+      "peak_clearance_mm": 0.1002503333354986,
+      "airborne_fraction": 0.03571428571428571,
+      "three_support_fraction": 0.17857142857142858
+    },
+    "FR": {
+      "samples": 56,
+      "peak_clearance_mm": 45.857498320847434,
+      "airborne_fraction": 0.44642857142857145,
+      "three_support_fraction": 0.0
+    },
+    "RL": {
+      "samples": 56,
+      "peak_clearance_mm": 3.9990891436787406,
+      "airborne_fraction": 1.0,
+      "three_support_fraction": 0.0
+    },
+    "RR": {
+      "samples": 56,
+      "peak_clearance_mm": -0.009972971761386222,
+      "airborne_fraction": 0.0,
+      "three_support_fraction": 0.0
+    }
+  },
+  "parameters": {
+    "gravity_m_s2": 9.81,
+    "timestep_s": 0.004166666666666667,
+    "solver_iterations": 150,
+    "friction": 0.7,
+    "effort_cap_nm": 0.588,
+    "speed_cap_rad_s": 1.0,
+    "controller": "torque",
+    "finite_kp_nm_rad": {
+      "yaw": 0.30000000000000004,
+      "hip": 0.8,
+      "knee": 0.6000000000000001,
+      "phone": 0.08000000000000002
+    },
+    "finite_kd_nm_s_rad": {
+      "yaw": 0.025,
+      "hip": 0.04000000000000001,
+      "knee": 0.015,
+      "phone": 0.003
+    },
+    "position_gain": 0.3,
+    "velocity_gain": 1.0,
+    "initial_joint_deg": [
+      0,
+      30.0,
+      75.0
+    ],
+    "stride_mm": 30,
+    "com_shift_mm": 15.0,
+    "lower_mm": 0,
+    "lift_mm": 20,
+    "free_base": true,
+    "base_constraints": false
+  },
+  "observed": {
+    "simulated_seconds": 64.0,
+    "advance_x_mm": 2.8154277242720127,
+    "final_base_mm": [
+      4.134499933570623,
+      194.7770118713379,
+      84.21982079744339
+    ],
+    "final_rpy_deg": [
+      -17.260699213315053,
+      -1.1617378676579793,
+      5.462992322129134
+    ],
+    "final_com_mm": [
+      3.4068740465358642,
+      201.19507361306066,
+      109.37323569484823
+    ],
+    "max_roll_pitch_deg": 18.596407364755407,
+    "minimum_stand_margin_mm": 123.02229445012206,
+    "minimum_mid_swing_margin_mm": -1000,
+    "maximum_stance_error_mm": 203.62837964244002,
+    "dynamic_peak_joint_torque_nm": {
+      "yaw_FL": 0.24465750824227814,
+      "hip_FL": 0.5453775780466744,
+      "knee_FL": 0.588,
+      "yaw_FR": 0.11285783929202962,
+      "hip_FR": 0.5339523805327567,
+      "knee_FR": 0.2891729754849996,
+      "yaw_RL": 0.14982798479945278,
+      "hip_RL": 0.588,
+      "knee_RL": 0.588,
+      "yaw_RR": 0.255405831080438,
+      "hip_RR": 0.572013634605828,
+      "knee_RR": 0.33432331157202244,
+      "phone_pan": 0.002863522397091051
+    },
+    "torque_saturation_fraction": {
+      "yaw_FL": 0.0,
+      "hip_FL": 0.0,
+      "knee_FL": 0.01171875,
+      "yaw_FR": 0.0,
+      "hip_FR": 0.0,
+      "knee_FR": 0.0,
+      "yaw_RL": 0.0,
+      "hip_RL": 0.01640625,
+      "knee_RL": 0.00390625,
+      "yaw_RR": 0.0,
+      "hip_RR": 0.0,
+      "knee_RR": 0.0,
+      "phone_pan": 0.0
+    },
+    "static_peak_joint_torque_nm": {
+      "yaw_FL": 0.0,
+      "hip_FL": 0.5481458324474611,
+      "knee_FL": 0.23848873017150923,
+      "yaw_FR": 0.0,
+      "hip_FR": 0.4887943856824428,
+      "knee_FR": 0.3081757724972516,
+      "yaw_RL": 0.0,
+      "hip_RL": 0.5186860272443193,
+      "knee_RL": 0.2843998510737661,
+      "yaw_RR": 0.0,
+      "hip_RR": 0.45178232373671345,
+      "knee_RR": 0.366873760461236
+    }
+  },
+  "limitations": [
+    "Simulation uses calculated CAD masses with nominal material density and hardware dimensions. Sliced mass and real assembly must be measured.",
+    "Five millimeter spherical floor contact proxies approximate the printed toe pads. Friction is assumed; floor slip is not physically calibrated.",
+    "Simplified collision boxes do not validate self collision, fastener clearance, cable sweep or strength. Separate CAD checks are required.",
+    "The servo controller is assumed position control with capped torque and speed. Gains, backlash, bus delay, temperature and electrical supply have not been measured.",
+    "This run contains one slow crawl cycle on a level floor. It does not establish robust walking, recovery from disturbance or safety on stairs.",
+    "Continuous phone pan requires wireless communication and the phone internal battery; USB must be unplugged during rotation."
+  ]
+}

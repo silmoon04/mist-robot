@@ -1,0 +1,68 @@
+{
+  "version": 3,
+  "status": "ready_for_atlas_integration",
+  "method": "built-in ImageGen",
+  "source": "<LOCAL_HOME>/.codex/generated_images/01a0ca9c-0dec-7221-a5ee-85d514e8ea6c/exec-da921e79-849a-4a02-adf2-df01caa8f902.png",
+  "destination": "sheets/mouth_consonants_v3.png",
+  "columns": 3,
+  "rows": 2,
+  "order": [
+    "neutral_FV",
+    "neutral_LNT",
+    "neutral_TH",
+    "smile_FV",
+    "smile_LNT",
+    "smile_TH"
+  ],
+  "replaces": [
+    {
+      "family": "mouth_neutral",
+      "pose": "FV",
+      "frameIndex": 9
+    },
+    {
+      "family": "mouth_neutral",
+      "pose": "LNT",
+      "frameIndex": 10
+    },
+    {
+      "family": "mouth_neutral",
+      "pose": "TH",
+      "frameIndex": 12
+    },
+    {
+      "family": "mouth_smile",
+      "pose": "FV",
+      "frameIndex": 9
+    },
+    {
+      "family": "mouth_smile",
+      "pose": "LNT",
+      "frameIndex": 10
+    },
+    {
+      "family": "mouth_smile",
+      "pose": "TH",
+      "frameIndex": 12
+    }
+  ],
+  "prompt": "Use case: precise-object-edit.\nCreate SIX replacement mouth drawings for the attached MIST minimalist robot mouth family. The source sheet is a style reference only. Replace only its FV, LNT and TH pose designs, represented here as a new small sheet. The attached screenshot shows the exact unwanted shapes: inward upper notches and a tongue-like lower dangling tab. REMOVE those features completely.\nAsset: a clean printed contact sheet of six flat cyan mouths on an OPAQUE PURE WHITE background (#FFFFFF), regular invisible 3-column by 2-row grid, landscape 3:2 composition, equal square cells. Exactly six mouths, no text, labels, borders, other facial features or decoration. Neutral family in first row, gently smiling family in second row. Order in EACH row left-to-right: FV, LNT, TH.\nMaintain the existing robot's simple cyan shape language. Smooth continuous uninterrupted contours, rounded corners, one solid filled shape per mouth. Cyan #45E2DF, solid flat fill. NO outline, NO gradient, NO glow, NO texture, NO grain, NO translucency. Background must be opaque pure white, not alpha transparency.\nVERY IMPORTANT: Every upper contour is a single straight line or smooth broad curve. No local indent, dip, dent, notch, bite, cleft or W shape. Every lower contour is a single smooth broad curve. No lower tab, bump, protrusion, tooth, tongue, island, cutout, slit or interior shape. No anatomical teeth or lips. These are abstract robot speech poses.\nAll six drawings horizontally centered in their own cells, same intended character scale, fixed upper-mouth anchor at 43 percent of cell height. Generous clear margins.\nRow 1 neutral:\n1 FV: compressed, narrow horizontal capsule with soft rounded ends, width 51 percent of cell, height 8 percent. Quiet and nearly closed.\n2 LNT: medium shallow open mouth, near-flat smooth upper edge, a smooth softly bowed lower edge, rounded outer corners, width 53 percent, height 17 percent. A continuous shallow bowl, without ANY notch.\n3 TH: short shallow softly oval open mouth, width 43 percent, height 12 percent. Lower contour smooth and evenly curved, no tongue or tab.\nRow 2 gentle smile:\n4 FV: similarly compressed aperture, slightly raised corners and one continuous gently bowed line on each edge, width 52 percent, height 11 percent. No local central dip.\n5 LNT: shallow friendly bowl, one smooth upper curve and one smooth lower curve with raised outer corners, width 54 percent, height 19 percent. No notch.\n6 TH: compact shallow oval with the faintest friendly curve, width 44 percent, height 13 percent. No tab.\nQuality: crisp clean antialiased cyan against WHITE, no stray dots or speckles anywhere. Keep these deliberately restrained consonant shapes smaller in height than the big open vowels. Do not repeat the exact faulty source designs.",
+  "logicalCellSize": 221.75,
+  "registration": "Use measured horizontal center and upper ink bound per frame. Multiply source crop dimensions and anchor offsets by sourceScale = 221.75 / (imageWidth / 3), then by the existing family display scale. Do not normalize every replacement independently to the rest-mouth width.",
+  "visualAudit": {
+    "accepted": true,
+    "findings": [
+      "All six shapes have continuous outer contours without the rejected localized upper notches or lower tabs.",
+      "Neutral FV is a restrained capsule, neutral LNT a shallow bowl, neutral TH a smooth oval.",
+      "Smile FV, LNT and TH use gently curved contours without isolated notches.",
+      "No teeth, tongue, holes, interior islands or extra strokes are visible.",
+      "Only these six consonant poses are replaced. Existing rest, vowels, closures and other expressions remain in the original sheet."
+    ],
+    "limitations": [
+      "Smile LNT is broader and slightly taller than the other two smile consonants; preserve relative scale rather than fitting it to the same size.",
+      "These remain stylized articulation poses. Audio synchronization depends on the unchanged timing system, not on the drawings alone.",
+      "Small generated color variation is preserved in source pixels; existing runtime cyan tinting may remain enabled."
+    ]
+  },
+  "generationAttempts": 1
+}

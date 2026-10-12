@@ -1,0 +1,56 @@
+{
+  "passed": true,
+  "scope": "Runtime behavior with in-memory placeholders; final manifest and geometry not validated",
+  "checkedAt": "2026-09-24T16:26:13.157Z",
+  "checks": [
+    "Manifest and automatic faces agree on three original identities",
+    "reading reaches every cel at 15 fps with bounded, continuous gaze",
+    "coding reaches every cel at 15 fps with bounded, continuous gaze",
+    "writing reaches every cel at 15 fps with bounded, continuous gaze",
+    "sorting reaches every cel at 15 fps with bounded, continuous gaze",
+    "searching reaches every cel at 15 fps with bounded, continuous gaze",
+    "pondering reaches every cel at 15 fps with bounded, continuous gaze",
+    "connecting reaches every cel at 15 fps with bounded, continuous gaze",
+    "checking reaches every cel at 15 fps with bounded, continuous gaze",
+    "Automatic faces rotate on starts and slow phrase boundaries",
+    "Speech freezes automatic faces and activity while keeping the audio clock unquantized",
+    "All activity replacements reject stale completion tokens",
+    "All forty faces and blinks preserve the verified original drawing paths and source cels",
+    "Speech mouths match the original renderer and close promptly between display ticks",
+    "Runtime and manifest stayed stable during this run"
+  ],
+  "failures": [],
+  "counts": {
+    "automaticFaces": 3,
+    "longWaitFaceChanges": 6,
+    "speechFaceSamples": 270,
+    "staleCompletionPairs": 64,
+    "originalFaceSamples": 840,
+    "originalExpressions": 40,
+    "speechClockSamples": 120,
+    "speechPaintsPerSecond": 15
+  },
+  "timings": {
+    "reading": 3000,
+    "coding": 2400,
+    "writing": 2400,
+    "sorting": 2600,
+    "searching": 2600,
+    "pondering": 2900,
+    "connecting": 2600,
+    "checking": 2600
+  },
+  "searchClearance": {
+    "minimum": null,
+    "samples": 0
+  },
+  "limits": [
+    "Recorded drawing calls verify source art and geometry, not pixel antialiasing or subjective animation quality.",
+    "Search clearance uses conservative bounding rectangles for visible export bounds and recorded eye paths/crops.",
+    "DOM selector wiring and audible voice playback require the separate browser review."
+  ],
+  "runtimeSha256": "454399c3fef6927ba3923223750e6184d8acb85d113a52cb5965b34e2f31b189",
+  "manifestSha256": "3070bbde0c97f30c83cf3a3b22a753d50f7789b371388561d5aa0049f307fb2f",
+  "originalRendererSha256": "22084e744e8d11ed0484b273b8f82ee3af8c9e9e11070c6290a3e535f6d48ce3",
+  "referenceRendererSha256": "9ade474f61fc9a6f3eee260b6bb07ef4adc2a4e6f56cae3a4871acbc531563ff"
+}

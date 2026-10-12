@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "checkedAt": "2026-09-23T14:52:47.778Z",
+  "rendererSha256": "9ade474f61fc9a6f3eee260b6bb07ef4adc2a4e6f56cae3a4871acbc531563ff",
+  "atlasMode": "published atlas",
+  "faceMappings": 40,
+  "poseChecks": 360,
+  "canonicalRestChecks": 40,
+  "boundPhaseChecks": 67,
+  "latestHandoffMs": 466.66666666666686,
+  "checks": [
+    "Exact map controls all 40 faces",
+    "Matched cues choose poses in the assigned family",
+    "Nonhappy SMILE cues use the family EE drawing",
+    "A held vowel preserves its cue and switches family within the bounded frame window",
+    "Real cue boundaries and closed lips activate the pending family",
+    "Quiet amplitude can hand off after 150 ms",
+    "No fake closure, duplicate mouth or changed audio clock during forced handoff",
+    "Rapid retarget replaces the pending family and preserves visible geometry",
+    "Interruption clears pending family before speech restart",
+    "Every 15 fps phase switches sustained AA between 400 and 466.7 ms",
+    "Invalid or incomplete family assignments fail to the original renderer"
+  ]
+}

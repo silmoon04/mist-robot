@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+const source=await readFile(new URL('../duplex/static/delivery.js',import.meta.url),'utf8');
+const {replyExpression}=await import('data:text/javascript;base64,'+Buffer.from(source).toString('base64'));
+assert.equal(replyExpression('That worked! We can try the next step.'),'happy');
+assert.equal(replyExpression('That’s wonderful. I am glad.'),'happy');
+assert.equal(replyExpression('Good question. Let me think.'),'curious');
+assert.equal(replyExpression('No rush. I am listening.'),'neutral');
+assert.equal(replyExpression('That did not work.'),'neutral');
+assert.equal(replyExpression('I finished the report about a sad event.'),'neutral');
+console.log('Restrained delivery cues and negative examples passed.');

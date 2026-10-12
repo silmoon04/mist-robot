@@ -1,0 +1,64 @@
+FOURTH LEG
+
+Print each of these two plates once. Together they provide all ten remaining
+printed components for one complete leg. Reuse four of your existing matching
+13 mm tall, 5.5 mm outside diameter spacers. No extra spacers or hub are needed.
+
+Plate 1: 01_Main_Parts_With_Supports.stl
+Estimated 6 h 14 min, about 109 g PLA.
+Contains coxa upper/hip saddle, femur main/knee saddle, and tibia main/foot.
+Includes the corrected removable supports beneath both femur saddle levels,
+the coxa post regions, and the raised tibia shank.
+
+Plate 2: 02_Brackets_And_Caps.stl
+Estimated 4 h 41 min, about 78 g PLA.
+Contains yaw servo saddle, yaw cap, lower coxa arm, hip cap, femur auxiliary
+cheek, knee cap and tibia auxiliary cheek. See Plate_2_Map.png.
+
+Total estimate: about 10 h 55 min and 187 g PLA, including support and adhesion
+material. Heating and differences in actual printer motion are not included.
+The full set is split to leave room for the supports and brim within the bed.
+
+USE THE SAME PROFILE FOR BOTH PLATES
+
+Import and select Neptune4Pro_Recovery_Balanced_028.curaprofile in Cura.
+Keep your existing Elegoo Neptune 4 Pro machine and startup configuration,
+0.4 mm nozzle and PLA. Import one plate at a time, at 100% scale, in its supplied
+orientation. Each 3MF is an alternative to its matching STL, not an extra plate.
+The STL keeps the arranged geometry together; do not remove its support fins.
+Loading a model does not automatically activate the profile.
+
+The profile uses 0.28 mm layers, five walls, 25% gyroid infill, a 6 mm outside
+brim with 0.1 mm gap, and the slower recovery first layer and acceleration.
+Inner walls/infill are 90 mm/s, outer walls 50 mm/s and top/bottom 60 mm/s.
+Nozzle temperature is 210 C initially then 215 C, with the bed at 60 C.
+Automatic tree support remains enabled. Remove the orange supports shown in
+the pictures after printing, retaining the main ribs and integral print feet.
+
+ASSEMBLY
+
+The part interfaces match the latest insert-compatible third-leg revision.
+Use three M3 heat inserts, 4 mm outside diameter and 5 mm long: one at the
+femur bridge and two at the tibia bridge. Fit them square and flush and let
+them cool before fitting the auxiliary cheeks. Each bridge connection uses
+an M3x10 screw with one 0.5 mm flat washer through the 5 mm cheek. Do not use
+the previous M3x30 bridge screws at these inserts. The nine servo case-clamp
+screws remain M3x30 with nuts. Metal horn fasteners remain unchanged.
+
+Use the matching spacer/hardware arrangement that you confirmed turns freely
+on your assembled legs. No new yaw axial-stack calculation is claimed here.
+You also need three STS3215 servos, the matching horns/auxiliary discs and
+their retainers, cables and the remaining assembly fasteners.
+
+CHECKS
+
+Plate 1 and the profile are exact copies of the checked balanced recovery
+files. Plate 2 was newly packed and sliced; its closed meshes and sliced bed
+envelope passed checks. No automatic support centreline midpoints were found
+inside the defined openings checked on that plate. These are bounded geometry
+and toolpath checks, not proof of adhesion or support removal force.
+
+The physical result of the balanced recovery print has not yet been reported.
+Clean and reseat the PEI sheet as planned and inspect the first layers. The
+higher flow and added supports remain subject to physical confirmation.
+This package is a prototype print set, not a new full-robot load qualification.

@@ -1,0 +1,35 @@
+{
+  "id": "speaking-warm",
+  "title": "Speaking / warm",
+  "wave": 2,
+  "summary": "Warm eyelids and restrained mouth articulation. Mouth timing will follow actual playback.",
+  "poses": [
+    {
+      "id": "speaking-warm__1",
+      "label": "Rest",
+      "filename": "speaking-warm-1.png",
+      "direction": "Warm open C eyes, small closed relaxed smile."
+    },
+    {
+      "id": "speaking-warm__2",
+      "label": "Soft vowel",
+      "filename": "speaking-warm-2.png",
+      "direction": "Exact same eyes and gaze. A compact lightly rounded open vowel mouth, with slightly lifted corners and a dark interior. No teeth or tongue; modest width."
+    },
+    {
+      "id": "speaking-warm__3",
+      "label": "Rounded vowel",
+      "filename": "speaking-warm-3.png",
+      "direction": "Exact same eyes and gaze. A compact rounded O-like open mouth, slightly narrower than soft vowel, in the same mouth centre. Keep friendly attitude in the eyes."
+    }
+  ],
+  "cycle": "Rest, soft vowel and rounded vowel are shape references; final speech selects emotion-specific visemes using the playback clock.",
+  "timing": "Audio-driven; no repeating speech loop",
+  "replaceTargets": [
+    "speaking/happy",
+    "speaking/warm"
+  ],
+  "targetFps": 15,
+  "minimumDrawnFrames": 12,
+  "status": "key-pose-concept"
+}

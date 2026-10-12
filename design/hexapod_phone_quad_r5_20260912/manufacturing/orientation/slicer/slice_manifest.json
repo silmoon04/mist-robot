@@ -1,0 +1,494 @@
+{
+  "created_utc": "2026-09-12T14:18:12.088341+00:00",
+  "tool": "CuraEngine 5.13.0",
+  "engine_path": "C:\\Program Files\\UltiMaker Cura 5.13.0\\CuraEngine.exe",
+  "engine_sha256": "36e36d4618cd09a0cd8802a565c2cdbe54804eb750ac84303a0c6d6f784afde2",
+  "source_directory": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\cad\\output\\print_stl",
+  "definition_sha256": "ddf583bf158bc99bb7cbda228cc8ee3e0552ece2764176a89afb9c83048ada1b",
+  "purpose": "Support and orientation analysis only. Every G-code command is commented out.",
+  "limitations": [
+    "This is a frozen numeric engine profile, not the Cura GUI quality profile or a validated machine profile.",
+    "Unused settings retain explicit Cura factory defaults. No frontend value expressions are evaluated.",
+    "Time estimates are slicer predictions at the recorded conservative acceleration; hardware is unmeasured.",
+    "Deposited mass uses 1.24 g/cm3 PLA density and excludes retraction-only moves, purging and startup.",
+    "No adhesion brim is used around the model; support brims are enabled.",
+    "Support volume is deposited filament, not the empty geometric support envelope.",
+    "Slicing predicts support cost, not printed strength or support removability."
+  ],
+  "jobs": [
+    {
+      "part": "femur_main_and_knee_saddle",
+      "orientation": "current",
+      "tilt_deg": 0,
+      "support_angle_deg": 50,
+      "source_sha256": "60772583553841cadbcd0245cc322bc27058612f8e8346ff389d25c114290eab",
+      "source_bounds_mm": [
+        [
+          0.0,
+          3.552713678800501e-15,
+          0.0
+        ],
+        [
+          144.5,
+          32.0,
+          42.0
+        ]
+      ],
+      "snapshot_sha256": "06a71f79e331d56f9fa1d06ad8df5949419454fb6eceab2a2fcf175fdc3337f1",
+      "print_extents_mm": [
+        144.5,
+        31.999999999999996,
+        42.0
+      ],
+      "watertight": true,
+      "return_code": 0,
+      "elapsed_seconds": 1.375,
+      "command": [
+        "C:\\Program Files\\UltiMaker Cura 5.13.0\\CuraEngine.exe",
+        "slice",
+        "-m4",
+        "-v",
+        "-j",
+        "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\manufacturing\\orientation\\slicer\\resolved_analysis.def.json",
+        "-s",
+        "support_angle=50",
+        "-e0",
+        "-o",
+        "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\manufacturing\\orientation\\slicer\\ANALYSIS_ONLY\\femur_main_and_knee_saddle__current.temporary.gcode",
+        "-l",
+        "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\manufacturing\\orientation\\slicer\\ANALYSIS_ONLY\\femur_main_and_knee_saddle__current.stl"
+      ],
+      "log_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\manufacturing\\orientation\\slicer\\ANALYSIS_ONLY\\femur_main_and_knee_saddle__current.log.txt",
+      "estimated_time_seconds": 10342.149678,
+      "motion_bounds_mm": [
+        [
+          40.459,
+          94.618,
+          0.2
+        ],
+        [
+          185.403,
+          128.289,
+          42.0
+        ]
+      ],
+      "motion_inside_build_envelope": true,
+      "extrusion_volume_mm3_by_type": {
+        "SKIRT": 47.055924392029624,
+        "SUPPORT": 2532.2476617473953,
+        "WALL-INNER": 11345.034200146692,
+        "WALL-OUTER": 3600.3623627465468,
+        "SKIN": 5405.633878231915,
+        "FILL": 1576.9414985007581,
+        "SUPPORT-INTERFACE": 353.0299556423979
+      },
+      "total_extrusion_volume_mm3": 24860.305481407737,
+      "support_extrusion_volume_mm3": 2885.2776173897932,
+      "support_mass_g_at_1_24": 3.5777442455633435,
+      "total_mass_g_at_1_24": 30.826778796945593,
+      "support_share_percent": 11.605962040762549,
+      "peak_nominal_deposition_flow_mm3_s": 6.8381424351768505,
+      "layer_count": 210,
+      "engine_filament_volume_mm3": 24860.0,
+      "extrusion_accounting_difference_percent": 0.001228806949866478,
+      "raw_gcode_sha256": "7935a7edf52235c9e285321c60b9846af8d803ee6df4bbd41a7fe04331e9b9da",
+      "disabled_gcode_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\manufacturing\\orientation\\slicer\\ANALYSIS_ONLY\\femur_main_and_knee_saddle__current.disabled.gcode.gz",
+      "disabled_gcode_sha256": "3b1cd720d238365c20a927bbe3cf84b378b5a8923eea816eff04316cbd1a9b8d"
+    },
+    {
+      "part": "tibia_curved_main_and_foot",
+      "orientation": "current",
+      "tilt_deg": 0,
+      "support_angle_deg": 50,
+      "source_sha256": "8afc6f1858674a472e764981e71eb2d09edb81ccb2b7682272148b1812b882cf",
+      "source_bounds_mm": [
+        [
+          0.01741236448287964,
+          0.004342550411820412,
+          -1.553830166849113e-15
+        ],
+        [
+          123.99878692626953,
+          41.0,
+          42.0
+        ]
+      ],
+      "snapshot_sha256": "3cde347ac9d5d38a4f89cb0b3c6e15c861d081afb0b86808d822b576162a19e2",
+      "print_extents_mm": [
+        123.98137456178665,
+        40.99565744958818,
+        42.0
+      ],
+      "watertight": true,
+      "return_code": 0,
+      "elapsed_seconds": 1.547000000020489,
+      "command": [
+        "C:\\Program Files\\UltiMaker Cura 5.13.0\\CuraEngine.exe",
+        "slice",
+        "-m4",
+        "-v",
+        "-j",
+        "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\manufacturing\\orientation\\slicer\\resolved_analysis.def.json",
+        "-s",
+        "support_angle=50",
+        "-e0",
+        "-o",
+        "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\manufacturing\\orientation\\slicer\\ANALYSIS_ONLY\\tibia_curved_main_and_foot__current.temporary.gcode",
+        "-l",
+        "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\manufacturing\\orientation\\slicer\\ANALYSIS_ONLY\\tibia_curved_main_and_foot__current.stl"
+      ],
+      "log_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\manufacturing\\orientation\\slicer\\ANALYSIS_ONLY\\tibia_curved_main_and_foot__current.log.txt",
+      "estimated_time_seconds": 7954.149476,
+      "motion_bounds_mm": [
+        [
+          50.719,
+          92.211,
+          0.2
+        ],
+        [
+          174.474,
+          132.997,
+          42.0
+        ]
+      ],
+      "motion_inside_build_envelope": true,
+      "extrusion_volume_mm3_by_type": {
+        "SKIRT": 41.9371237688871,
+        "SUPPORT": 2099.343322061977,
+        "WALL-INNER": 8336.186092309494,
+        "WALL-OUTER": 2309.372679739234,
+        "SKIN": 2842.620159804919,
+        "FILL": 2318.758570673443,
+        "SUPPORT-INTERFACE": 267.8438914225959
+      },
+      "total_extrusion_volume_mm3": 18216.06183978055,
+      "support_extrusion_volume_mm3": 2367.1872134845726,
+      "support_mass_g_at_1_24": 2.93531214472087,
+      "total_mass_g_at_1_24": 22.58791668132788,
+      "support_share_percent": 12.995054772569276,
+      "peak_nominal_deposition_flow_mm3_s": 6.927211801186933,
+      "layer_count": 210,
+      "engine_filament_volume_mm3": 18216.0,
+      "extrusion_accounting_difference_percent": 0.0003394805695450456,
+      "raw_gcode_sha256": "317cc75672a14bb73799ea425af37bd708dcd84d7c705b74816f0db9060a3fd7",
+      "disabled_gcode_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\manufacturing\\orientation\\slicer\\ANALYSIS_ONLY\\tibia_curved_main_and_foot__current.disabled.gcode.gz",
+      "disabled_gcode_sha256": "376d553ac009c89ba217e690b5426250513382613c482b450990727d1b4eb3fc"
+    },
+    {
+      "part": "coxa_upper_and_hip_saddle",
+      "orientation": "current",
+      "tilt_deg": 0,
+      "support_angle_deg": 50,
+      "source_sha256": "fc61191897bbc1d1768f450fb669eafe777fcf2544ce54bd2ab6429a2b6e30b3",
+      "source_bounds_mm": [
+        [
+          0.0,
+          -1.886483986856196e-16,
+          0.0
+        ],
+        [
+          104.5,
+          55.564998626708984,
+          31.5
+        ]
+      ],
+      "snapshot_sha256": "b894bbec412b4f531e8cbe741e7b1b8c7a3b46688de07b18311356aad92cc7e4",
+      "print_extents_mm": [
+        104.5,
+        55.564998626708984,
+        31.5
+      ],
+      "watertight": true,
+      "return_code": 0,
+      "elapsed_seconds": 1.25,
+      "command": [
+        "C:\\Program Files\\UltiMaker Cura 5.13.0\\CuraEngine.exe",
+        "slice",
+        "-m4",
+        "-v",
+        "-j",
+        "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\manufacturing\\orientation\\slicer\\resolved_analysis.def.json",
+        "-s",
+        "support_angle=50",
+        "-e0",
+        "-o",
+        "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\manufacturing\\orientation\\slicer\\ANALYSIS_ONLY\\coxa_upper_and_hip_saddle__current.temporary.gcode",
+        "-l",
+        "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\manufacturing\\orientation\\slicer\\ANALYSIS_ONLY\\coxa_upper_and_hip_saddle__current.stl"
+      ],
+      "log_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\manufacturing\\orientation\\slicer\\ANALYSIS_ONLY\\coxa_upper_and_hip_saddle__current.log.txt",
+      "estimated_time_seconds": 9408.623094,
+      "motion_bounds_mm": [
+        [
+          60.05,
+          84.065,
+          0.2
+        ],
+        [
+          165.403,
+          142.802,
+          31.4
+        ]
+      ],
+      "motion_inside_build_envelope": true,
+      "extrusion_volume_mm3_by_type": {
+        "SKIRT": 80.20583188550084,
+        "SUPPORT": 2156.338977592789,
+        "SUPPORT-INTERFACE": 525.9418212142399,
+        "WALL-INNER": 13971.203428829294,
+        "WALL-OUTER": 4199.839712202252,
+        "SKIN": 1433.4110169384078,
+        "FILL": 1266.787183562129
+      },
+      "total_extrusion_volume_mm3": 23633.727972224613,
+      "support_extrusion_volume_mm3": 2682.280798807029,
+      "support_mass_g_at_1_24": 3.326028190520716,
+      "total_mass_g_at_1_24": 29.30582268555852,
+      "support_share_percent": 11.349376628009606,
+      "peak_nominal_deposition_flow_mm3_s": 6.872233929560253,
+      "layer_count": 157,
+      "engine_filament_volume_mm3": 23633.0,
+      "extrusion_accounting_difference_percent": 0.003080320842098085,
+      "raw_gcode_sha256": "6481c094734bbf553c915bfdde1f3f870f0baeaed68a35b39f66fe37fd0da1b0",
+      "disabled_gcode_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\manufacturing\\orientation\\slicer\\ANALYSIS_ONLY\\coxa_upper_and_hip_saddle__current.disabled.gcode.gz",
+      "disabled_gcode_sha256": "e4db372a583d254c50869cbb6fd65bf7c473df11ee51225011c38c6f0541dde8"
+    },
+    {
+      "part": "femur_main_and_knee_saddle",
+      "orientation": "tilt45_about_long_axis",
+      "tilt_deg": 45,
+      "support_angle_deg": 50,
+      "source_sha256": "60772583553841cadbcd0245cc322bc27058612f8e8346ff389d25c114290eab",
+      "source_bounds_mm": [
+        [
+          0.0,
+          3.552713678800501e-15,
+          0.0
+        ],
+        [
+          144.5,
+          32.0,
+          42.0
+        ]
+      ],
+      "snapshot_sha256": "d45a56909eccd98b153180985d0fcdc9c91fab0b3415570cfc9b08d273d9cabd",
+      "print_extents_mm": [
+        144.5,
+        51.8309270694033,
+        48.83633022028467
+      ],
+      "watertight": true,
+      "return_code": 0,
+      "elapsed_seconds": 1.6099999999860302,
+      "command": [
+        "C:\\Program Files\\UltiMaker Cura 5.13.0\\CuraEngine.exe",
+        "slice",
+        "-m4",
+        "-v",
+        "-j",
+        "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\manufacturing\\orientation\\slicer\\resolved_analysis.def.json",
+        "-s",
+        "support_angle=50",
+        "-e0",
+        "-o",
+        "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\manufacturing\\orientation\\slicer\\ANALYSIS_ONLY\\femur_main_and_knee_saddle__tilt45_about_long_axis.temporary.gcode",
+        "-l",
+        "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\manufacturing\\orientation\\slicer\\ANALYSIS_ONLY\\femur_main_and_knee_saddle__tilt45_about_long_axis.stl"
+      ],
+      "log_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\manufacturing\\orientation\\slicer\\ANALYSIS_ONLY\\femur_main_and_knee_saddle__tilt45_about_long_axis.log.txt",
+      "estimated_time_seconds": 9290.783672,
+      "motion_bounds_mm": [
+        [
+          39.563,
+          86.886,
+          0.2
+        ],
+        [
+          185.403,
+          138.129,
+          48.8
+        ]
+      ],
+      "motion_inside_build_envelope": true,
+      "extrusion_volume_mm3_by_type": {
+        "SKIRT": 22.96505407871384,
+        "SUPPORT": 237.83039933619241,
+        "SUPPORT-INTERFACE": 23.81014986563583,
+        "WALL-OUTER": 4910.327434732994,
+        "WALL-INNER": 14973.59387474173,
+        "FILL": 1703.4461201494755,
+        "SKIN": 59.28122652733332
+      },
+      "total_extrusion_volume_mm3": 21931.254259432073,
+      "support_extrusion_volume_mm3": 261.64054920182826,
+      "support_mass_g_at_1_24": 0.32443428101026706,
+      "total_mass_g_at_1_24": 27.19475528169577,
+      "support_share_percent": 1.1930031274399335,
+      "peak_nominal_deposition_flow_mm3_s": 6.934286798344005,
+      "layer_count": 244,
+      "engine_filament_volume_mm3": 21931.0,
+      "extrusion_accounting_difference_percent": 0.0011593608685103879,
+      "raw_gcode_sha256": "e2078a667c603ecaed4222f9ac532fcdec29ae2a7435f2c22dd3c0c004c6b4da",
+      "disabled_gcode_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\manufacturing\\orientation\\slicer\\ANALYSIS_ONLY\\femur_main_and_knee_saddle__tilt45_about_long_axis.disabled.gcode.gz",
+      "disabled_gcode_sha256": "424e0d8a732aff4ae5f8741a364325a04a43f635df4a2c7919bcc745c71ac1d9"
+    },
+    {
+      "part": "femur_main_and_knee_saddle",
+      "orientation": "tilt45_support_angle40",
+      "tilt_deg": 45,
+      "support_angle_deg": 40,
+      "source_sha256": "60772583553841cadbcd0245cc322bc27058612f8e8346ff389d25c114290eab",
+      "source_bounds_mm": [
+        [
+          0.0,
+          3.552713678800501e-15,
+          0.0
+        ],
+        [
+          144.5,
+          32.0,
+          42.0
+        ]
+      ],
+      "snapshot_sha256": "d45a56909eccd98b153180985d0fcdc9c91fab0b3415570cfc9b08d273d9cabd",
+      "print_extents_mm": [
+        144.5,
+        51.8309270694033,
+        48.83633022028467
+      ],
+      "watertight": true,
+      "return_code": 0,
+      "elapsed_seconds": 8.202999999979511,
+      "command": [
+        "C:\\Program Files\\UltiMaker Cura 5.13.0\\CuraEngine.exe",
+        "slice",
+        "-m4",
+        "-v",
+        "-j",
+        "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\manufacturing\\orientation\\slicer\\resolved_analysis.def.json",
+        "-s",
+        "support_angle=40",
+        "-e0",
+        "-o",
+        "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\manufacturing\\orientation\\slicer\\ANALYSIS_ONLY\\femur_main_and_knee_saddle__tilt45_support_angle40.temporary.gcode",
+        "-l",
+        "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\manufacturing\\orientation\\slicer\\ANALYSIS_ONLY\\femur_main_and_knee_saddle__tilt45_support_angle40.stl"
+      ],
+      "log_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\manufacturing\\orientation\\slicer\\ANALYSIS_ONLY\\femur_main_and_knee_saddle__tilt45_support_angle40.log.txt",
+      "estimated_time_seconds": 15493.217448,
+      "motion_bounds_mm": [
+        [
+          39.557,
+          85.016,
+          0.2
+        ],
+        [
+          187.48,
+          138.5,
+          48.8
+        ]
+      ],
+      "motion_inside_build_envelope": true,
+      "extrusion_volume_mm3_by_type": {
+        "SKIRT": 122.66937564563908,
+        "SUPPORT": 9991.558228460543,
+        "SUPPORT-INTERFACE": 1735.1332314176293,
+        "WALL-OUTER": 4910.333135251036,
+        "WALL-INNER": 14973.565299992999,
+        "FILL": 1703.4460720438212,
+        "SKIN": 59.281202474509115
+      },
+      "total_extrusion_volume_mm3": 33495.98654528618,
+      "support_extrusion_volume_mm3": 11726.691459878171,
+      "support_mass_g_at_1_24": 14.541097410248932,
+      "total_mass_g_at_1_24": 41.53502331615486,
+      "support_share_percent": 35.00924340300836,
+      "peak_nominal_deposition_flow_mm3_s": 6.798930098558081,
+      "layer_count": 244,
+      "engine_filament_volume_mm3": 33495.0,
+      "extrusion_accounting_difference_percent": 0.0029453509066359627,
+      "raw_gcode_sha256": "fe55800a419781784b7df169794254d4c420f036f8968c84e203dc2c4e9c7896",
+      "disabled_gcode_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\manufacturing\\orientation\\slicer\\ANALYSIS_ONLY\\femur_main_and_knee_saddle__tilt45_support_angle40.disabled.gcode.gz",
+      "disabled_gcode_sha256": "0bedd2bdbf58adc98868fe19672fcc5980816a9d19fe0ce945d46b7018640129"
+    },
+    {
+      "part": "coxa_upper_and_hip_saddle",
+      "orientation": "flip_x180",
+      "tilt_deg": 180,
+      "support_angle_deg": 50,
+      "source_sha256": "fc61191897bbc1d1768f450fb669eafe777fcf2544ce54bd2ab6429a2b6e30b3",
+      "source_bounds_mm": [
+        [
+          0.0,
+          -1.886483986856196e-16,
+          0.0
+        ],
+        [
+          104.5,
+          55.564998626708984,
+          31.5
+        ]
+      ],
+      "snapshot_sha256": "eabe445c3fea19c00f201601be2b8619d2881aee424269bc8dce717464bed04b",
+      "print_extents_mm": [
+        104.5,
+        55.56499862670899,
+        31.500000000000004
+      ],
+      "watertight": true,
+      "return_code": 0,
+      "elapsed_seconds": 2.0630000000237487,
+      "command": [
+        "C:\\Program Files\\UltiMaker Cura 5.13.0\\CuraEngine.exe",
+        "slice",
+        "-m4",
+        "-v",
+        "-j",
+        "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\manufacturing\\orientation\\slicer\\resolved_analysis.def.json",
+        "-s",
+        "support_angle=50",
+        "-e0",
+        "-o",
+        "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\manufacturing\\orientation\\slicer\\ANALYSIS_ONLY\\coxa_upper_and_hip_saddle__flip_x180.temporary.gcode",
+        "-l",
+        "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\manufacturing\\orientation\\slicer\\ANALYSIS_ONLY\\coxa_upper_and_hip_saddle__flip_x180.stl"
+      ],
+      "log_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\manufacturing\\orientation\\slicer\\ANALYSIS_ONLY\\coxa_upper_and_hip_saddle__flip_x180.log.txt",
+      "estimated_time_seconds": 9390.645632,
+      "motion_bounds_mm": [
+        [
+          60.082,
+          82.408,
+          0.2
+        ],
+        [
+          165.403,
+          140.936,
+          31.4
+        ]
+      ],
+      "motion_inside_build_envelope": true,
+      "extrusion_volume_mm3_by_type": {
+        "SKIRT": 68.25720932432795,
+        "SUPPORT": 2192.4111101423637,
+        "WALL-INNER": 13955.38999935074,
+        "WALL-OUTER": 4197.856364873417,
+        "SKIN": 1429.4919949675,
+        "FILL": 1275.100944153177,
+        "SUPPORT-INTERFACE": 421.4152221737719
+      },
+      "total_extrusion_volume_mm3": 23539.922844985296,
+      "support_extrusion_volume_mm3": 2613.8263323161354,
+      "support_mass_g_at_1_24": 3.2411446520720077,
+      "total_mass_g_at_1_24": 29.189504327781766,
+      "support_share_percent": 11.1038016119622,
+      "peak_nominal_deposition_flow_mm3_s": 6.9594959196178054,
+      "layer_count": 157,
+      "engine_filament_volume_mm3": 23539.0,
+      "extrusion_accounting_difference_percent": 0.003920493586372621,
+      "raw_gcode_sha256": "8165291a0189192f6f718c550f25c7386b008474ac3eed078c5bd88011f2e2c4",
+      "disabled_gcode_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\manufacturing\\orientation\\slicer\\ANALYSIS_ONLY\\coxa_upper_and_hip_saddle__flip_x180.disabled.gcode.gz",
+      "disabled_gcode_sha256": "350f0233d153e05846534ac22f9c468c85e8051a00bfa9985d5033148afadd0e"
+    }
+  ]
+}

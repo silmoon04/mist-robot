@@ -1,0 +1,172 @@
+{
+  "version": 4,
+  "status": "ready_for_atlas_integration",
+  "family": "mouth_flat",
+  "emotion": "indifferent / neutral",
+  "method": "built-in ImageGen",
+  "source": "<LOCAL_HOME>/.codex/generated_images/01a0cd67-c08b-7472-99c2-c6c76ae6a215/exec-94abac76-c7b2-4dc4-adaa-58739b0a3a90.png",
+  "destination": "sheets/mouth_flat_v4.png",
+  "columns": 4,
+  "rows": 2,
+  "imageSize": [
+    1774,
+    887
+  ],
+  "order": [
+    "rest",
+    "release",
+    "small_AA",
+    "AA",
+    "EH",
+    "EE",
+    "LNT",
+    "wide_close"
+  ],
+  "prompt": "Use case: stylized-concept. Asset type: eight animation mouth cels for the MIST robot face. Generate one landscape sprite sheet on a pure opaque white background, exactly FOUR columns and TWO rows, eight equally sized invisible cells. Every cell contains ONE isolated solid turquoise-cyan mouth silhouette, centered at the same point with consistent character scale and large white margins. Referenced images are STYLE REFERENCES ONLY for cyan color, smooth flat edges and rounded forms; do NOT reuse their smiles. This sheet is the INDIFFERENT / NEUTRAL FLAT speaking family. All mouth corners remain level. No smile, no upturned corners, no frown, no downward corners, no U-shaped grins.\n\nExact row-major order and silhouettes:\n1 top left REST: thin perfectly level closed horizontal capsule with smooth rounded tips.\n2 top second RELEASE: restrained short horizontal rounded rectangle, slightly thicker and narrower than rest.\n3 top third SMALL_AA: modestly open horizontal rounded rectangle, clearly taller than release, level top and bottom.\n4 top right AA: taller open rounded rectangle approaching a vertical oval, with short flat-ish top and bottom, neutral level corners.\n5 bottom left EH: medium-height horizontal rounded rectangle with broad flat-ish upper and lower edges.\n6 bottom second EE: wide THIN flat horizontal capsule with level corners, absolutely not a grin or bowl.\n7 bottom third LNT: small narrow straight horizontal aperture, smooth capsule, without notches or raised parts.\n8 bottom right WIDE_CLOSE: compressed wide level rounded bar, visibly lower height than rest.\n\nDraw clean simple solid filled shapes with gently crafted contour softness. Single connected solid silhouette per cell. Opaque cyan interiors with NO teeth, NO tongue, NO indentation, NO tabs, NO interior holes, NO extra islands. NO text, labels, letters, frame lines, grid lines, numbers, eyes, faces, shadows, texture, outlines or glow. Pure white background throughout. Keep pose differences deliberate and readable, neutral not cheerful.",
+  "generationAttempts": 1,
+  "sha256": "9447deec989f00d4d89dc937ad0a662a5c908d2fa90f21653edb11d8604fa9e4",
+  "pixelAudit": {
+    "method": "Read-only cyan mask: G > 120, B > 120, G - R > 50; connected components and filled-hole difference per cell.",
+    "allEightHaveExactlyOneComponent": true,
+    "allEightHaveZeroInteriorHolePixels": true
+  },
+  "logicalCellSize": 221.75,
+  "registration": "Keep the same intended character scale: multiply source dimensions by 221.75 / (1774 / 4) = 0.5 before applying the family display scale. Use measured horizontal center and upper ink edge per cel. Preserve width and height differences across poses; do not individually normalize each pose to the same width.",
+  "visualAudit": {
+    "accepted": true,
+    "findings": [
+      "Eight isolated single cyan silhouettes, exactly four columns and two rows.",
+      "All corners are level with no raised smile tips or downturned frown tips.",
+      "Rest, release, small_AA, AA and EH form distinct degrees of opening.",
+      "EE is a flat wide aperture without the previous U-shaped grin; LNT is narrow and restrained.",
+      "No teeth, tongue, notches, tabs, interior holes or visible islands."
+    ],
+    "limitations": [
+      "wide_close is wide and shallow but its absolute raw height is 55 px, compared with the 43 px resting capsule. It is not strictly thinner than rest.",
+      "The generated white background and cyan fill retain small pixel variation; extraction and runtime tinting should use the existing pipeline.",
+      "Neutral geometry is intentionally restrained. Expression identity depends on pairing it with the correct original eyes."
+    ]
+  },
+  "layout": [
+    {
+      "pose": "rest",
+      "cell": [
+        0,
+        0,
+        443,
+        443
+      ],
+      "bbox": [
+        96,
+        228,
+        350,
+        271
+      ]
+    },
+    {
+      "pose": "release",
+      "cell": [
+        443,
+        0,
+        887,
+        443
+      ],
+      "bbox": [
+        556,
+        214,
+        777,
+        287
+      ]
+    },
+    {
+      "pose": "small_AA",
+      "cell": [
+        887,
+        0,
+        1330,
+        443
+      ],
+      "bbox": [
+        986,
+        195,
+        1233,
+        306
+      ]
+    },
+    {
+      "pose": "AA",
+      "cell": [
+        1330,
+        0,
+        1774,
+        443
+      ],
+      "bbox": [
+        1451,
+        161,
+        1653,
+        329
+      ]
+    },
+    {
+      "pose": "EH",
+      "cell": [
+        0,
+        443,
+        443,
+        887
+      ],
+      "bbox": [
+        94,
+        599,
+        352,
+        695
+      ]
+    },
+    {
+      "pose": "EE",
+      "cell": [
+        443,
+        443,
+        887,
+        887
+      ],
+      "bbox": [
+        504,
+        621,
+        830,
+        673
+      ]
+    },
+    {
+      "pose": "LNT",
+      "cell": [
+        887,
+        443,
+        1330,
+        887
+      ],
+      "bbox": [
+        1014,
+        622,
+        1205,
+        672
+      ]
+    },
+    {
+      "pose": "wide_close",
+      "cell": [
+        1330,
+        443,
+        1774,
+        887
+      ],
+      "bbox": [
+        1383,
+        618,
+        1721,
+        673
+      ]
+    }
+  ]
+}

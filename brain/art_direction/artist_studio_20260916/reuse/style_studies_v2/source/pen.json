@@ -1,0 +1,67 @@
+{
+  "id": "pen",
+  "label": "Gesture ink",
+  "tool": "builtin image_gen",
+  "generatedFile": "<LOCAL_HOME>/.codex/generated_images/01a0e9db-0baf-7ae2-8a74-1dc79c3472a5/exec-80d77529-d6ea-4ebe-a4d1-96fab4e6056f.png",
+  "sourceFile": "source/pen.png",
+  "sha256": "78583a51f9b8821fe450423d79513769517602c4cb1963090c5d8ed0e787e812",
+  "referenceFile": "reference.png",
+  "referenceRole": "Identity and emotion reference; not pixel or path edit target",
+  "promptFile": "prompts/pen.txt",
+  "prompt": "Use case: stylized-concept.\nAsset type: MIST robot-face drawing-style exploration sheet, static raster artwork.\n\nGenerate a NEW face-design contact sheet, 1024 by 1536, exactly 2 columns and 5 rows, 10 evenly spaced faces, dark flat background #101c20 and mint-cyan ink #55dfd3. The supplied sheet is ONLY an identity and emotion reference. Do not trace it or simply restyle its line weight. Redesign how every eye and mouth is DRAWN.\n\nSTYLE: Loose pen. A skilled animation designer's clean sketchbook gestures, alive and deliberately imperfect, drawn freehand with a flexible felt pen. Draw slightly wonky elliptical loops, expressive lid sweeps, tapered sharp stroke exits, occasional short retraced/overlapping ends. Open eye loops can be asymmetrical ovoid spirals or two quick arcs that meet imperfectly, NOT perfectly circular C shapes. Quiet/thought eyes become loose narrowed almond-like lid gestures, NOT original squared bars. Closed eyes use casually hooked curves with a little overshoot. Mouths are gestures: a short slightly angled ink dash; a tilted oval outlined with a lively imperfect join; a shallow sketched grin with a curved lower contour; an off-centre smirk. Hollow gestural mouths are encouraged. Keep the style confident and minimally detailed, not scribbly, scratchy or distressed. Make construction differences unmissable at thumbnail size, with 10-20 percent changes in contours, proportions, angles and asymmetry allowed. DO NOT make the same precise geometry with only thinner, thicker, smoother or rougher outlines.\n\nGrid order, row major:\n1 top left CALM: relaxed uneven open-loop eyes, short near-flat dry pen dash mouth.\n2 top right LISTENING: attentive taller irregular loop eyes, small outlined tilted oval mouth.\n3 row2 left CURIOUS: one subtly higher and more open eye, two irregular loops, tiny short resting mouth.\n4 row2 right QUIET THOUGHT: two inward-facing loose narrow lid/almond gestures with gently slanted tops, tiny resting mouth.\n5 row3 left HAPPY: lifted open-loop eyes, loose broad open grin drawn as one flat-ish upper stroke and shallow curved lower contour.\n6 row3 right PLAYFUL: loose narrowed lids, one slightly higher, off-centre curved smirk with a little hooked end.\n7 row4 left DEADPAN: two low relaxed curved eyelid gestures, NO mouth.\n8 row4 right SLEEPY: droopy closed lid arcs, tall asymmetric outlined yawn.\n9 row5 left DELIGHTED: two exuberant squint-chevron eye gestures made with curved pen sweeps, NO mouth.\n10 row5 right SAD: drooping irregular loop eyes, handdrawn downturned frown, one thin simple falling tear beside the right eye.\n\nKeep the recognisable MIST identity of exactly two cyan eye marks with optional small mouth, no head outline, nose, hair, pupils, eyelashes, extra symbols, ornament or eyebrows. No text, labels, frames, grid lines, paper grain, shadows or glow. Keep each face centered in its own 512 by 307.2 cell with comfortable safe margin, approximate 300px wide face area, similar overall scale throughout. Preserve emotions and ten-face arrangement, NOT original exact geometry. Quality criterion: visibly different drawing language, not line-thickness variants.",
+  "grid": {
+    "columns": 2,
+    "rows": 5,
+    "width": 1024,
+    "height": 1536
+  },
+  "names": [
+    "Calm",
+    "Listening",
+    "Curious",
+    "Quiet thought",
+    "Happy",
+    "Playful",
+    "Deadpan",
+    "Sleepy",
+    "Delighted",
+    "Sad"
+  ],
+  "review": {
+    "accepted": true,
+    "comparedAgainst": "../style_studies_v1/source/ink.png",
+    "structuralDifferences": [
+      "Slanted uneven ovoid loops and partial spirals replace precise C circles.",
+      "Thought/playful lids use tapered almond gestures rather than squared open bars.",
+      "Listening and sleepy have outlined tilted oval mouths; happy has an outlined gestural grin.",
+      "Asymmetrical lid angles, hooked smirk, sharp tapered line exits and simple teardrop."
+    ],
+    "cells": [
+      "Calm: relaxed elliptical eyes and dry dash mouth.",
+      "Listening: taller ovoid eyes and outlined tilted oval mouth.",
+      "Curious: uneven eye size/height and short rest mouth.",
+      "Quiet thought: near-level relaxed narrow lid loops, tiny rest mouth; inward angry V removed.",
+      "Happy: lively irregular eye loops and hollow grin.",
+      "Playful: asymmetric lids with hooked rising smirk.",
+      "Deadpan: relaxed closed lid sweeps, no mouth.",
+      "Sleepy: droopy arcs with outlined elongated yawn.",
+      "Delighted: curved squint chevrons, no mouth.",
+      "Sad: drooping loops, downturned frown and tear."
+    ],
+    "limitations": [
+      "The generated result reads as clean calligraphic gesture ink rather than rough sketchbook pen.",
+      "Static style proposals only, not animation-ready frames."
+    ],
+    "labelRationale": "Gesture ink describes the clean tapered calligraphic construction more accurately than Loose pen."
+  },
+  "corrections": [
+    {
+      "reason": "Quiet thought initially looked stern because both lids formed an inward V.",
+      "promptFile": "prompts/pen.quiet-thought.txt",
+      "prompt": "Edit the provided 1024x1536 MIST loose-pen face contact sheet. It has 2 columns and 5 rows. Make ONE localized correction only: the QUIET THOUGHT face, second row right (zero-based cell 3), currently has two narrowed almond eyes angled inward into an angry V.\n\nReplace ONLY those two eye marks with gentle, relaxed, nearly horizontal narrow eyelid loops. Their upper contours should be almost level with rounded softly curved ends, neither upper lid slanting downward toward the center. Let one eye be very subtly more open or a few pixels higher to suggest calm concentration. The face must read quiet, attentive reflection, not sternness, anger, suspicion or tiredness. Keep the tiny closed mouth beneath them exactly as it is.\n\nPreserve the loose freehand cyan ink style: imperfect flowing curves, tapered stroke exits, slight pen overlap; do not turn the new lids into rigid geometric bars. Preserve the other NINE faces, their exact gestures, positions, contours and mouths. Preserve the 2-column by 5-row layout, dark #101c20 background, mint-cyan color and output size 1024x1536. Do not add eyebrows, pupils, symbols, text, labels, glow or extra marks. This is a small local edit of cell 3 only.\r\n",
+      "initialFile": "source/pen.initial.png",
+      "initialSha256": "83eb9af34d41298ca487fdf2dff2402bfc3f20e74364c8dd5193988b30378fef",
+      "result": "Near-horizontal narrow flowing lids remove the angry V; tiny mouth and other nine faces visually preserved."
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "status": "Live development harness verified; handset and physical controller untested",
+  "native_voice": "Codex V3 WebRTC through installed signed-in app-server",
+  "backing_model": "gpt-5.3-codex-spark, low reasoning",
+  "voice_id": "24AMj4dc02cYAwoUnqzN",
+  "voice_name": "MIST (refined)",
+  "native_cli": "0.154.0-alpha.6.2",
+  "tests": [
+    {
+      "test": "test_duplex.py",
+      "passed": true
+    },
+    {
+      "test": "test_duplex_playback.mjs",
+      "passed": true
+    },
+    {
+      "test": "check_face_runtime.cjs",
+      "passed": true
+    }
+  ],
+  "synthetic_conversation_counts": {
+    "conversations_v1": 6,
+    "conversations_v2_retry": 1,
+    "conversations_v3": 11,
+    "conversations_v4": 11,
+    "conversations_v5": 6,
+    "conversations_v6_tools": 3
+  },
+  "final_social_mic_tail_to_audio_s": {
+    "n": 4,
+    "min": 2.172000000020489,
+    "median": 2.5314999999827705,
+    "max": 2.922000000020489
+  },
+  "final_tool_mic_tail_to_audio_s": {
+    "n": 3,
+    "min": 5.061999999976251,
+    "median": 5.375,
+    "max": 5.812999999965541
+  },
+  "converter_first_byte_s": {
+    "n": 40,
+    "min": 0.6399999999557622,
+    "median": 0.7110000000102445,
+    "max": 1.577999999979511
+  },
+  "interruption": {
+    "interrupted": true,
+    "stale_generation_packets_after_reset": 0,
+    "new_generation_audio_packets": 6,
+    "correction_followed": true,
+    "passed": true,
+    "limits": [
+      "Synthetic audio input and client-observed packets; not a measurement of room echo or human perception.",
+      "The browser playback stop is independently tested with fake audio sources."
+    ]
+  },
+  "browser": {
+    "landscape_viewport": [
+      851,
+      393
+    ],
+    "named_expression_controls_checked": 20,
+    "physical_phone_connected": false,
+    "synthetic_browser_call": "Native speech requested happy expression; the rendered happy face persisted after spoken confirmation and status returned to Listening.",
+    "observed_browser_errors": []
+  },
+  "examples": [
+    {
+      "case": "greeting",
+      "reply": "That\u2019s wonderful. I\u2019m really glad you got them done. How did the assembly go?",
+      "tools": []
+    },
+    {
+      "case": "correction",
+      "reply": "Fair correction. Printed, not walking. I\u2019ll keep it grounded.",
+      "tools": []
+    },
+    {
+      "case": "tired",
+      "reply": "Got it. No advice. I\u2019m here with you.",
+      "tools": []
+    },
+    {
+      "case": "humor",
+      "reply": "I\u2019m basically a very confident paperweight right now.",
+      "tools": []
+    },
+    {
+      "case": "sensors",
+      "reply": "I\u2019ve only got stale phone-motion data, so, no current readings, no camera or valid body sensors reporting.",
+      "tools": [
+        "get_sensor_snapshot",
+        "get_sensor_snapshot"
+      ]
+    },
+    {
+      "case": "pan",
+      "reply": "Alright, thirty degrees left is prepared as a preview; motors aren't connected.",
+      "tools": [
+        "pan_phone"
+      ]
+    },
+    {
+      "case": "stop",
+      "reply": "Preview stopped.",
+      "tools": [
+        "stop_robot",
+        "stop_robot",
+        "stop_robot"
+      ]
+    }
+  ],
+  "improvements": [
+    "Replaced full-reply TTS with native audio performance conversion.",
+    "Removed sensor context pushes that triggered unsolicited speech; snapshots are pulled through tools.",
+    "Reduced initial conversion segment from 1.2 seconds to 0.8 seconds, retaining 1.2-second follow-on chunks.",
+    "Changed tool handoff channel to commentary and added a quiet checking expression.",
+    "Preserved preview-versus-hardware wording and corrected the USB/controller distinction.",
+    "Added generation cancellation, a live conversion deadline, bounded playback and early transcript stop latching.",
+    "Kept explicitly requested expressions through delayed speech and returned the display to Listening when playback ends."
+  ],
+  "known_limits": [
+    "Observed social latency is seconds, not a claimed subsecond response.",
+    "Tool-backed turns remain slower than ordinary voice conversation.",
+    "Provider probes included one startup timeout and one early conversion failure; the latter failed silent with original audio muted.",
+    "A later slow conversion motivated the 3-second live deadline and clearing pending old speech on a new user turn.",
+    "Small audio chunks can introduce seams. Converted speech was checked with ASR, not certified by a human listening panel.",
+    "Quiet waiting can keep the native transcript turn open until the next utterance.",
+    "Saved preference wording can reflect model or recognition errors; exact stored text is shown in the transcript.",
+    "Room echo cancellation, Mi 9 SE microphone/speaker behavior, wireless transport and live sensors need handset testing.",
+    "No calibrated servo transport, camera producer or body-attitude fusion is enabled."
+  ],
+  "evidence_sha256": {
+    "results\\voice_refinement_20260914\\conversations_v5\\conversations.json": "95e799f7e9744ba1fecb947aef3c821adbb874e331e7ba64f29afe9fba9fdf8d",
+    "results\\voice_refinement_20260914\\conversations_v6_tools\\conversations.json": "a4706959d0f7f6f171a41409a90bf3cc24c2eeaceb58f871c4ceb7e0f5577f6d",
+    "results\\voice_refinement_20260914\\interrupt_v5\\interruption.json": "2e7067292f0251f852fcd733e609919e5cd957b3b3f8a8c92e1030c313647a0e",
+    "results\\voice_refinement_20260914\\voice_access.json": "939a298f07a4a78684782469bb1b34e2673885f40d85f562a0fdeb2a0128b342",
+    "results\\voice_refinement_20260914\\webrtc_probe_events.json": "8aa49212da1843a70e76b5c1696172c5610858c31d014c4bd2b15a4ffce6df32",
+    "results\\voice_refinement_20260914\\native_probe_events.json": "fea7f0e892202a35ec0569a067c16a9300b4c2b5ea9d2428db5f12165ba0cb23"
+  },
+  "implementation_sha256": {
+    "duplex\\build_evaluation.py": "e66a7ae0b775eaa4464f5737f2fc44c5cb6b001d174c501e3090ea66972c15d7",
+    "duplex\\conversion.py": "be588ab2194119a643e2661eb3a36ecd511e537f299ca582ce69d190f621b0b9",
+    "duplex\\face_map.json": "ce1169698090f45bef87f44f9bdcf5ba61b9b6b90a0cd8178445ddd23d359a4d",
+    "duplex\\native.py": "12ec055402881f8c43858dcb03c397f4a33770e9c0ce75b87d535d86fee88016",
+    "duplex\\package.py": "9da5ff1adf5a1f3486f20f43f51fdd24a4539acfefd257b99ca4ab7c7606656f",
+    "duplex\\persona.txt": "d498e522d085f866d98e35570d72e44a3777fd9edbf07f7a3caa1ed4b74a38c7",
+    "duplex\\runtime.py": "265b31fb380177778b443744831a6c0e4548b3ab0f3ed3b5fbaf30923e5710e6",
+    "duplex\\sensors.py": "af152877bb82b8c5de94b6f84b6b468bbec8e37f7e2496226f61b4b507629d2e",
+    "duplex\\server.py": "b017b7055d85901c86093e6f074b6df2bd4f69979db285cd0e95b43f08d66676",
+    "duplex\\__init__.py": "5d72754d88de174c794e9c99541783681f2e5b26eb251c42d084bbf5dd88659a",
+    "duplex\\static\\app.js": "fb25d107a5a25d3abc927d5bae155ab9dc8b663d04ff56eed4c19ec3b5db7fa3",
+    "duplex\\static\\capture-worklet.js": "ad51a795254e79de00b7951e5ce31bfd32ca57361cda705be8fed0908a862259",
+    "duplex\\static\\index.html": "9142410913803e5e9683f4fe5a86ae5546a880cb9080cbb75f8a216b8fcd5846",
+    "duplex\\static\\playback.js": "5eee2b774ec77b5828cc32446d66c51205796a41621dab3815e51176c28e0736",
+    "duplex\\static\\style.css": "8f2483ddc664d88b71c7380a3346bf65b714ff39afc48cfca07ac015eb4d180a"
+  },
+  "superseded_by": "FIX_REPORT.json"
+}

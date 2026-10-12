@@ -1,0 +1,30 @@
+Use case: stylized-concept.
+Asset type: facial expression concept model sheet for the MIST robot.
+Input image 1 is an identity and emotion lineup guide, NOT paths to trace. The user rejected previous variants because they only changed line thickness. Now draw a genuinely different facial design language called Cartoon Cel, inspired by expressive flat animation model sheets. Redesign the silhouette and negative spaces of eyes and mouths, not just stroke thickness.
+
+Create one 1024 x 1536 portrait sheet of exactly 10 faces, 2 columns by 5 rows. Each face centered in its own invisible 512 x 307 area with generous padding. No borders, labels, words, or numbers.
+
+ART DIRECTION: Organic, animation-ready bean and crescent shapes. Original perfect circular ring eyes become asymmetrical squashy bean loops with tapering ends and squashed, irregular rounded negative spaces. Replace original parallel bar eyes with broad rounded wedge lids, cutout crescent contours. Use solid shaped turquoise cutouts as well as hollow bean contours, not a monoline icon set. Rounded wedge shapes and thick-to-thin sweeps are part of the silhouette. The difference must read strongly at thumbnail size: an expressive cartoon interpretation, not the same eyes with another pen. Controlled 20–30 percent contour and proportion redesign is welcome. Smooth clean hand-drawn edges, no scratchy texture. Maintain MIST's spare two-eyes-plus-mouth identity.
+
+ROW MAJOR EMOTIONS:
+1 row1 left CALM: two organic open bean-loop eyes, tiny softly bent flat mouth.
+2 row1 right LISTENING: attentive taller bean-loop eyes, small filled oval mouth.
+3 row2 left CURIOUS: unequal slightly offset bean-loop eyes, very small mouth.
+4 row2 right QUIET THOUGHT: two broad flattened crescent wedge lids, tiny dot mouth.
+5 row3 left HAPPY: playful rounded bean-loop eyes, solid rounded open grin.
+6 row3 right PLAYFUL: half-closed crescent wedge eyes, subtle asymmetrical smirk.
+7 row4 left DEADPAN: two closed shallow crescent eyes, absolutely NO MOUTH.
+8 row4 right SLEEPY: drooping closed crescent eyelids, long oval filled yawn.
+9 row5 left DELIGHTED: two solid soft chevron/crescent wedge eyes squeezed in delight, absolutely NO MOUTH.
+10 row5 right SAD: soft bean-loop eyes lowering toward the outside corners, downturned frown, one distinct teardrop beside the right eye.
+
+Palette: pure flat cyan #58e2d8 face marks, pure flat dark background #101c20. No shading, gradients, glow, texture, 3D, lighting, gloss.
+Anatomy constraints: no pupils, irises, separate eyebrows, head outlines, nose, hair, cheeks, ears, teeth, tongues or props. Do not add anything to the mouthless faces. Do NOT trace the reference circles and bar eyes; genuinely reinterpret their shapes in the cel-cartoon shape grammar described.
+
+TARGETED CORRECTION PROMPT
+Use case: precise-object-edit.
+Edit the attached Cartoon Cel MIST sheet. The image is 1024x1536, two columns by five rows. Make exactly ONE localized correction: face in SECOND ROW, RIGHT COLUMN, the quiet-thought expression.
+
+Its current two broad crescent lids have high outer tips and droop toward the middle, which reads stern or angry. Replace ONLY THESE TWO EYE SHAPES with relaxed, near-horizontal, narrow soft organic lids. The upper contours must stay nearly level rather than slope inward into an angry V. Make the left eye subtly more open/taller and the right eye gently more closed, a tiny asymmetry that suggests calm concentration. Keep the clean organic cel-cutout shape language: soft rounded endpoints, subtle tapered corners, shallow bean/crescent silhouettes. They must remain solid cyan, no pupils or irises, no eyebrows. Preserve the little dot mouth exactly and its position. Target feeling: quiet curiosity, patient thought, relaxed and focused, neither annoyed nor sleepy.
+
+Preserve the other nine faces exactly: their silhouettes, placement, proportions, mouths, colors and background. Absolutely no edits outside the eyes of second-row-right face. Preserve sheet dimensions 1024x1536 and grid registration. Keep dark #101c20 background and cyan #58e2d8 shapes. No additional marks, letters, labels or borders, no new anatomy or texture.

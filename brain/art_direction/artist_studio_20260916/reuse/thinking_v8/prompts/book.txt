@@ -1,0 +1,39 @@
+Use case: illustration-story
+Asset type: production animation sprite sheet: a little reading-book prop for a cyan robot face. Create the entire sheet as ORIGINAL raster artwork.
+
+CANVAS AND GRID: landscape transparent RGBA canvas 1536 by 1024 pixels, EXACTLY 6 equal columns by 4 equal rows, 24 isolated drawings in reading order left-to-right then top-to-bottom. Each invisible cell is 256 by 256. No drawn grid, no numbering, no annotations. Every cell contains ONE book with ample transparent padding. Fixed registration: book center (128,145), spine x=128; active book occupies roughly x=45..211, y=89..192 within its cell. Keep each drawing inside its cell. All 24 drawings must be present.
+
+VISUAL STYLE: fine 3-4 pixel rounded cyan/turquoise #34e4eb strokes with a very slight hand-drawn softness. Simple elegant 2D animation cels. True alpha transparency in the background AND unpainted page interiors. No black backdrop, no white matte, no paper fill, no shadows, no glow, no texture, no loose stray speckles. Only cyan contour strokes and cyan short text bars. No eyes, mouths, faces, hands, people, readable words or letters. The prop will sit BELOW a face, so depict only the book.
+
+CRITICAL REDESIGN: an open book LYING FLAT on a desk, seen from nearly top-down with a slight consistent oblique angle. We look at its INNER PAGE SURFACES, never an upright book with exterior cover text. It is a broad open spread, with the center spine fixed as a shallow vertical seam. Left and right inner pages each have three small parallel horizontal cyan bars indicating text, two longer bars and one shorter bar. Both pages are readable from the SAME bottom-facing viewer direction. No mirrored switching. Keep camera, outer covers, fixed left page and center spine perfectly still in frames 4-19. Make a mechanically coherent SINGLE RIGHT-TO-LEFT PAGE TURN. The moving leaf is hinged at the center spine; its OUTER RIGHT edge rises first, travels across the spine, then settles over the left page. Before it passes vertical, the text on its inner/top face compresses with the page surface. Once it crosses the spine, its visible backside is BLANK. Do not put text onto the blank back of the turning leaf; the three bars visible on the right afterward belong to the newly revealed stationary right page. Never slide text off a surface. Never turn a left-hand leaf rightward. On landing left, blank leaf can softly reveal the same generic three-bar left text on the following held drawing, restoring the original generic spread for a seamless reading loop. This is a repeated reading gesture, not a narrative ending.
+
+EXACT 24-CEL CHOREOGRAPHY:
+Row 1, col 1, frame 0: small already-open book low in the cell, 45% of final scale, both inner pages facing up, no turning leaf.
+Row 1, col 2, frame 1: same open spread rises toward fixed anchor, 65% scale.
+Row 1, col 3, frame 2: same open spread, 85% scale, almost at anchor.
+Row 1, col 4, frame 3: open spread at 98% scale and anchor, clear three text bars on BOTH inner pages.
+Row 1, col 5, frame 4: canonical fully open spread at exact final scale, both flat inner pages show three bars each; all covers and spine fixed. This is active-loop starting pose.
+Row 1, col 6, frame 5: identical flat spread, attentive hold.
+
+Row 2, col 1, frame 6: outer upper-right corner of TOP RIGHT leaf lifts slightly, only a tiny curl; keep bottom-right and hinge coherent.
+Row 2, col 2, frame 7: whole outer-right edge of right leaf rises to 15 degrees; right leaf slightly narrows toward spine, its visible top-face text foreshortens with it.
+Row 2, col 3, frame 8: right leaf at 30 degrees, outer edge moves inward LEFT toward the spine; underlying right page begins to show at far right.
+Row 2, col 4, frame 9: right leaf at 50 degrees, raised and visibly narrower on right half, all three top-face bars compress with its surface; newly revealed right page has its own three stationary bars.
+Row 2, col 5, frame 10: right leaf at 70 degrees, a narrow tall curved shape still just to RIGHT of spine; moving text reduced to short foreshortened marks, never on empty air.
+Row 2, col 6, frame 11: moving leaf is almost vertical at 88 degrees directly over central hinge; only a thin cyan edge, essentially no visible moving text. Fixed underlying left and right pages still visibly have coherent bars.
+
+Row 3, col 1, frame 12: leaf crosses vertical to 105 degrees, now a narrow curved BLANK BACK surface just LEFT of spine. Keep stationary right page bars fixed.
+Row 3, col 2, frame 13: leaf moves further LEFT to 125 degrees, blank back grows wider over left page, occluding left-page bars it covers.
+Row 3, col 3, frame 14: leaf moves further LEFT to 145 degrees, outer edge descends toward left cover; blank back is wide, stationary right-page text unchanged.
+Row 3, col 4, frame 15: leaf almost lands at 165 degrees, a shallow blank curved page over left side; fixed right page shows its text.
+Row 3, col 5, frame 16: leaf settles flat at 180 degrees onto left stack, only a tiny trailing corner curl on OUTER LEFT. The right page remains unchanged.
+Row 3, col 6, frame 17: final settle, completely flat canonical open spread, generic three text bars on each inner page, no raised leaf.
+
+Row 4, col 1, frame 18: exact canonical flat open spread, same silhouette, same anchor and generic text bars as frame 4.
+Row 4, col 2, frame 19: exact canonical flat open spread, same silhouette, same anchor and generic text bars as frame 4. Seam 19 to 4 must be visually quiet.
+Row 4, col 3, frame 20: leave the book open, shrink to 90%, slightly lower.
+Row 4, col 4, frame 21: same open spread shrinks to 72%, lower in cell.
+Row 4, col 5, frame 22: same open spread shrinks to 52%, lower in cell.
+Row 4, col 6, frame 23: same open spread shrinks to 30%, low in cell, ready to disappear.
+
+Prioritize the page-turn physics and fixed top-down camera over decorative flair. Six columns and four rows, exactly 24 cels; not four columns, not five rows. No visible labels or numbers. Background MUST have real transparency.

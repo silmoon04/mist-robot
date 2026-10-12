@@ -1,0 +1,5 @@
+Use case: background-extraction
+Edit target: the attached 6-column by 4-row, 24-cel book animation sprite sheet.
+Make ONE precise correction: remove the entire teal/black cloudy illuminated backdrop and all cyan bloom/haze. Produce genuine RGBA alpha transparency. Every pixel outside the actual thin book contours or short text strokes must be fully transparent, including page interiors and the gaps between frames.
+Preserve all 24 book drawings in EXACTLY their current positions, sizes, page-turn poses and row-major order. Keep the current 1536x1024 canvas, exactly six columns and four rows. Preserve the already-correct right-to-left turning sequence. The turning leaf backside in row 3 must stay blank.
+Restyle the remaining visible marks as crisp, fine, rounded turquoise-cyan #34e4eb lines, roughly 3 pixels wide, subtly hand-drawn. No luminous effects, no shadow, no solid page fills. Transparency means actual alpha=0, not a painted checkerboard, not black, not white and not cyan. Only thin clean cyan contours and short cyan text-bars remain. Do not add anything, do not alter the choreography, no labels or grid.

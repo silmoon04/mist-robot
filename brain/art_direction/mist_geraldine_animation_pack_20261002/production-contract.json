@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-02",
+  "status": "published and verified; user style review pending",
+  "scope": "Thirteen layered animated face presets in the selected Geraldine MIST style, with speech and transition review. New isolated pack; keep the live default until the new artwork is reviewed in motion.",
+  "reference": "../mist_game_faces_20260929/sheets/later-alligator-sweet-geraldine.png",
+  "secondaryReference": "../mist_geraldine_variations_20261001/images/geraldine-dry.png",
+  "tool": "built-in image_gen",
+  "nativeRasterPolicy": "Preserve every selected native transparent PNG. Runtime may select atlas cells and align layers; do not repaint, stretch, rotate or synthesize new blink/viseme shapes in code.",
+  "eyeAtlas": {"columns": 4, "rows": 3, "frames": ["rest", "anticipation", "half", "near-closed", "closed", "opening-low", "opening", "rest-after-blink", "look-left", "look-right", "settle", "rest-end"], "families": ["attentive", "considering", "skeptical", "amused", "concerned", "laughing"]},
+  "mouthAtlas": {"columns": 4, "rows": 3, "frames": ["rest", "MBP", "release", "small-AA", "AA", "EH", "EE", "OH", "OO", "FV", "LNT", "S"], "families": ["friendly", "dry", "concerned"], "dentalPolicy": "TH uses the compact neutral articulation target; no tongue/tooth protrusion. A clear closure/release matters more than literal human mouth anatomy in this graphic style."},
+  "presets": [
+    {"id": "attentive", "name": "Attentive", "eyes": "attentive", "mouth": "friendly", "rest": "rest"},
+    {"id": "considering", "name": "Considering", "eyes": "considering", "mouth": "dry", "rest": "rest"},
+    {"id": "skeptical", "name": "Skeptical", "eyes": "skeptical", "mouth": "dry", "rest": "rest"},
+    {"id": "amused", "name": "Amused", "eyes": "amused", "mouth": "friendly", "rest": "small-AA"},
+    {"id": "concerned", "name": "Concerned", "eyes": "concerned", "mouth": "concerned", "rest": "rest"},
+    {"id": "quiet-listening", "name": "Quiet listening", "eyes": "attentive", "mouth": "dry", "rest": "rest"},
+    {"id": "friendly-curiosity", "name": "Friendly curiosity", "eyes": "considering", "mouth": "friendly", "rest": "rest"},
+    {"id": "wry-teasing", "name": "Wry teasing", "eyes": "skeptical", "mouth": "friendly", "rest": "rest"},
+    {"id": "reassuring", "name": "Reassuring", "eyes": "concerned", "mouth": "friendly", "rest": "rest"},
+    {"id": "quietly-pleased", "name": "Quietly pleased", "eyes": "amused", "mouth": "friendly", "rest": "rest"},
+    {"id": "laughing", "name": "Laughing", "eyes": "laughing", "mouth": "friendly", "rest": "AA"},
+    {"id": "doubtful", "name": "Doubtful", "eyes": "considering", "mouth": "concerned", "rest": "rest"},
+    {"id": "eager-delight", "name": "Eager delight", "eyes": "attentive", "mouth": "friendly", "rest": "small-AA"}
+  ],
+  "timing": {"fps": 15, "blinkMs": 267, "blinkGapMs": [3200, 5900], "transitionMs": 400, "speech": "Use audible audio time. Merge nearby equivalent cues; protect closures. Silent gaps use the closed family rest; cancellation returns to the preset rest. Pause holds the current cue for frame inspection."},
+  "qualityGates": ["Native source hash and alpha verified", "Every atlas cell inspected", "Emotion and original style compared", "No detached fragments, rotated blink or tooth/tongue protrusions", "Registration jitter bounded", "All13 presets render and speak", "All156 directed preset changes and mid-speech switches exercised", "Silence, gaps, interruptions and repeated requests", "Phone landscape and reduced motion", "Published files match release hashes"],
+  "speechLimit": "Dictionary pronunciations fit to provider character-aligned word spans improve spelling-based targets. They remain estimated phone durations, not measured acoustic phoneme timestamps. Do not claim perfect alignment.",
+  "liveDefaultChanged": false
+}

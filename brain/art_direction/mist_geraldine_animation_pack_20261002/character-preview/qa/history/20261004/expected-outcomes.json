@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "authoredBeforeImplementationInspection": true,
+  "basis": ["plan-robot-faces.md", "brain/duplex/static/playback.js", "brain/duplex/static/app.js", "production-contract.json", "site/state.mjs"],
+  "frameMs": 66.66666666666667,
+  "closureFrames": ["rest", "MBP"],
+  "claimsExcluded": ["acoustic latency", "perceptual lip-sync score", "user style approval", "live integration"],
+  "cases": [
+    {"id":"sample-rest","input":"AA active sample then rest with active true","expected":"closed mouth by next 15 fps frame"},
+    {"id":"sample-inactive","input":"AA active sample then AA active false","expected":"closed mouth by next frame"},
+    {"id":"sample-zero","input":"AA active sample then AA amount zero active true","expected":"closed mouth by next frame"},
+    {"id":"open-rest-presets","input":"each sample-rest, inactive, zero, stop and reset case with amused, laughing and eager-delight","expected":"closed speech mouth, including after stop; preset rest must not reopen it"},
+    {"id":"gap-hold","input":"concerned expression, speech AA, gap rest without epoch metadata, resumed AA","expected":"concerned intent persists; closed gap; resumed speech uses same intent"},
+    {"id":"suspended-clock","input":"running clock/open cue then unchanged clock/rest sample for multiple render frames","expected":"mouth closes even when speech clock does not advance"},
+    {"id":"resume","input":"suspended-clock then clock advances and active cue","expected":"speech resumes without duplicate attachment or catch-up cue storm"},
+    {"id":"end","input":"finite event stream reaches duration or sampled playback stops","expected":"mouth closes and speech activity ends"},
+    {"id":"stop-reset-disconnect","input":"open speech then stop/reset/disconnect, repeat each action","expected":"closed next frame; idempotent cleanup; no surviving playback source"},
+    {"id":"teardown","input":"destroy while open, invoke captured old callbacks, try later speech/expression","expected":"no reopened mouth or orphan scheduled animation loop"},
+    {"id":"stale-cue","input":"cancel epoch 7, start epoch 8, deliver epoch 7 AA","expected":"old cue cannot reopen mouth or alter current speech ownership"},
+    {"id":"stale-expression","input":"cancel epoch 7, deliver epoch 7 expression during epoch 8","expected":"current expression unchanged; stale event rejected explicitly"},
+    {"id":"rapid-replay","input":"start scene, replay repeatedly, deliver callbacks captured before replay","expected":"only newest scene owns speech and expressions; at most one active loop/source"},
+    {"id":"repeat-face","input":"request same face during transition and again after completion","expected":"transition origin and request count do not restart/increase"},
+    {"id":"reaction-return","input":"ongoing concerned intent plus finite amused reaction with speech gap","expected":"reaction ends at bounded declared time and returns to ongoing concerned intent"},
+    {"id":"unknown-face","input":"unknown face ID and missing cues","expected":"documented rejection/fallback, no crash or invented mouth shapes"},
+    {"id":"scene-determinism","input":"run all three complete authored scenes twice from clean deterministic state","expected":"same ordered event transcript and sampled facial output at every frame"},
+    {"id":"native-crops","input":"all presets and every rendered frame across scenes/transitions","expected":"registered existing eye/mouth family and cel; intact native source cells; no synthetic art"},
+    {"id":"local-assets","input":"fresh local launch plus missing asset fixture","expected":"three scenes load with local requests only; missing asset shows actionable error and acceptance failure"},
+    {"id":"browser","input":"desktop and 851x393; keyboard; reduced motion; note reload/export","expected":"usable controls; normal face not obscured; reduced motion respected; exported note retains scene, position, version and text"}
+  ]
+}

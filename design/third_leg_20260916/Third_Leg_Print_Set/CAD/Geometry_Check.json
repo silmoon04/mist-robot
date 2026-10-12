@@ -1,0 +1,46 @@
+{
+  "parts": 14,
+  "solid_checks": "One valid solid per printed component. No added material on revised leg bodies.",
+  "insert_connections": [
+    {
+      "part": "femur_main_and_knee_saddle",
+      "insert_axis_xz_mm": [
+        65,
+        20.5
+      ],
+      "nominal_insert_od_mm": 4,
+      "nominal_insert_length_mm": 5,
+      "screw": "M3x10 with one 0.5 mm flat washer through 5 mm cheek",
+      "calculated_engagement_mm": 4.5,
+      "insert_end_clearance_mm": 0.5
+    },
+    {
+      "part": "tibia_curved_main_and_foot",
+      "insert_axis_xz_mm": [
+        36,
+        0
+      ],
+      "nominal_insert_od_mm": 4,
+      "nominal_insert_length_mm": 5,
+      "screw": "M3x10 with one 0.5 mm flat washer through 5 mm cheek",
+      "calculated_engagement_mm": 4.5,
+      "insert_end_clearance_mm": 0.5
+    },
+    {
+      "part": "tibia_curved_main_and_foot",
+      "insert_axis_xz_mm": [
+        44,
+        0
+      ],
+      "nominal_insert_od_mm": 4,
+      "nominal_insert_length_mm": 5,
+      "screw": "M3x10 with one 0.5 mm flat washer through 5 mm cheek",
+      "calculated_engagement_mm": 4.5,
+      "insert_end_clearance_mm": 0.5
+    }
+  ],
+  "nut_entry_chamfer_depth_mm": 0.4,
+  "spacer_basis": "User reports 13 mm spacers are installed and rotate freely. This differs from the historical 11.6 mm CAD stack; no new axial-stack calculation is claimed.",
+  "limits": "New insert retention and chamfers require physical evaluation. Existing joint holes and horn seats retained. No new structural or full-robot load qualification.",
+  "manifest_sha256": "a65e96ce66ff78aa54e66f9e58ff3c34f345f59e7c422a00abd6b1d49584fd78"
+}

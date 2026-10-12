@@ -1,0 +1,122 @@
+{
+  "id": "eye_half",
+  "type": "eye",
+  "columns": 4,
+  "rows": 2,
+  "file": "eye_half.png",
+  "width": 1774,
+  "height": 887,
+  "frames": [
+    "open",
+    "anticipation",
+    "half_closed",
+    "closed",
+    "opening_low",
+    "opening",
+    "gaze_left",
+    "gaze_right"
+  ],
+  "generator": "built-in ImageGen",
+  "reference": "../reference.png",
+  "promptFiles": [
+    "../prompts/eye_half.txt",
+    "../prompts/eye_half_refine.txt"
+  ],
+  "sha256": "ff4ea55b2cf75c78d941f9df6d33459aac1821b1de416ed6c64c1a07995d9a17",
+  "transparent": true,
+  "review": "Eight isolated eyes; rounded drawn lids. Hook and half gaze-right mirror errors corrected through ImageGen refinement. Fine edge texture remains; root to inspect final registered crops.",
+  "alphaReview": {
+    "threshold": 128,
+    "frames": [
+      {
+        "frame": 0,
+        "opaqueComponents": 1,
+        "strayOpaquePixels": 0,
+        "opaqueBounds": [
+          78,
+          167,
+          370,
+          314
+        ]
+      },
+      {
+        "frame": 1,
+        "opaqueComponents": 1,
+        "strayOpaquePixels": 0,
+        "opaqueBounds": [
+          75,
+          178,
+          367,
+          311
+        ]
+      },
+      {
+        "frame": 2,
+        "opaqueComponents": 1,
+        "strayOpaquePixels": 0,
+        "opaqueBounds": [
+          76,
+          180,
+          367,
+          298
+        ]
+      },
+      {
+        "frame": 3,
+        "opaqueComponents": 1,
+        "strayOpaquePixels": 0,
+        "opaqueBounds": [
+          78,
+          184,
+          368,
+          249
+        ]
+      },
+      {
+        "frame": 4,
+        "opaqueComponents": 1,
+        "strayOpaquePixels": 0,
+        "opaqueBounds": [
+          78,
+          170,
+          367,
+          278
+        ]
+      },
+      {
+        "frame": 5,
+        "opaqueComponents": 1,
+        "strayOpaquePixels": 0,
+        "opaqueBounds": [
+          77,
+          151,
+          371,
+          298
+        ]
+      },
+      {
+        "frame": 6,
+        "opaqueComponents": 1,
+        "strayOpaquePixels": 0,
+        "opaqueBounds": [
+          71,
+          151,
+          367,
+          298
+        ]
+      },
+      {
+        "frame": 7,
+        "opaqueComponents": 1,
+        "strayOpaquePixels": 0,
+        "opaqueBounds": [
+          102,
+          151,
+          380,
+          291
+        ]
+      }
+    ],
+    "note": "One opaque connected component in every frame; no opaque stray pixels. Very faint alpha edge texture is intentional generated raster material."
+  }
+}

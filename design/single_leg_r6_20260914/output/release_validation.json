@@ -1,0 +1,23 @@
+{
+  "status": "pass for printing and restrained unloaded prototype evaluation",
+  "manifest_sha256": "149c4c8852f71a23029d04e42186dd1499379e9f846dade5098eab7ad9a15e5a",
+  "print_piece_count": 15,
+  "plate_count": 4,
+  "sampled_pose_count": 27,
+  "native_joint_count": 3,
+  "printable_mesh_checks": "watertight, consistently wound, positive volume, matching manifest hashes",
+  "required_reports": {
+    "verification.json": "cfe74bf252f9da7adaccec64d8a4ae9c760b33228672ec24683da59871801326",
+    "print_validation.json": "733db2f03e345eb765e7e5cbd88e6330a9bc15d96aa9beace76e9cf88f8bdbb7",
+    "support_check.json": "e74cbf33b7c65ed38fd00ff65cff20ef0e9f4fe06d2c7cc10fde8b47d4bc6b9e",
+    "motion_test.json": "9fa21e082a326ace78f01c90ce729b72731f4219baa3e6e70d0905e49b5b9774",
+    "urdf_properties.json": "ea2eeec558c7a3edf86bcf6e77c4aed6a785ca62c815460aeb4524671a83636a",
+    "section_screen.json": "2846eb3375f4d60d38d248e16fe71dffb223ab620fed4bbf5ff7086ea525f240",
+    "fusion/fusion_report.json": "7661c31933f84ff6f0997dabf6c15ed834ceec4cbbb61d8d2d2243f6a0dd00a0"
+  },
+  "limitations": [
+    "Physical print fit and washer thickness remain to be checked.",
+    "Some sections fail the assumed 5 N screen; no full-body loading approval.",
+    "No continuous sweep, real motor heating, fracture or walking balance validation."
+  ]
+}

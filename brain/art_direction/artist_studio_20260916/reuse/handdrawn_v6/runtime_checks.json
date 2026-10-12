@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "checks": 28532,
+  "activitySamples": 10800,
+  "renderedActivityFrames": 810,
+  "expressionChecks": 40,
+  "preservedOriginalSnapshots": 760,
+  "runtimeSha256": "a9dc84289d07e285b43f2af6b1b9a9c5ad561a91bb0a6388f3423f8453e0c14a",
+  "rendererSha256": "0a44101b6d8eb91f3f1349aa7d9441907d1a8147edcc299c2a368e30149976b8",
+  "coverage": [
+    "all activity entrance/loop/exit sequences",
+    "real renderer canvas hook",
+    "activity-only PNG emission",
+    "first-face readiness before activity frame decoding",
+    "requested activity readiness without blank layout switch",
+    "background asset progress",
+    "40 exact original eye identities",
+    "760 exact original eye/transition/blink geometry comparisons",
+    "40 emotion mouth families",
+    "uniform whole-face layout",
+    "unquantized audio sample timing",
+    "stale completion and overlapping tools",
+    "background resumption",
+    "inspector layers",
+    "late async failure after destroy",
+    "missing assets fallback"
+  ],
+  "limits": [
+    "Canvas calls use image placeholders; visual PNG quality is checked separately.",
+    "No paid model or voice provider calls."
+  ]
+}

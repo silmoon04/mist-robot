@@ -1,0 +1,35 @@
+{
+  "id": "speaking-serious",
+  "title": "Speaking / calm",
+  "wave": 2,
+  "summary": "The same speech range with a neutral mouth attitude. No smile leaking into serious speech.",
+  "poses": [
+    {
+      "id": "speaking-serious__1",
+      "label": "Rest",
+      "filename": "speaking-serious-1.png",
+      "direction": "Attentive slightly lowered C lids, closed short flat mouth. Calm neutral concern, not angry or sad."
+    },
+    {
+      "id": "speaking-serious__2",
+      "label": "Soft vowel",
+      "filename": "speaking-serious-2.png",
+      "direction": "Exact same eyes and gaze. Compact open neutral vowel mouth with flat upper edge and neutral corners, dark interior. No smiling corners, no tongue or teeth."
+    },
+    {
+      "id": "speaking-serious__3",
+      "label": "Rounded vowel",
+      "filename": "speaking-serious-3.png",
+      "direction": "Exact same eyes and gaze. Small rounded O-like mouth at same centre. Eye attitude stays calm and attentive, no happy change."
+    }
+  ],
+  "cycle": "These are neutral speech shape references; final visemes preserve the selected emotional mouth family.",
+  "timing": "Audio-driven; no repeating speech loop",
+  "replaceTargets": [
+    "speaking/neutral",
+    "speaking/concerned"
+  ],
+  "targetFps": 15,
+  "minimumDrawnFrames": 12,
+  "status": "key-pose-concept"
+}

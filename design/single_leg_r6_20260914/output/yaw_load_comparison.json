@@ -1,0 +1,18 @@
+{
+  "cases": [
+    {
+      "coxa_mm": 70,
+      "moving_mass_full_solid_kg": 0.28330121515639595,
+      "yaw_axis_inertia_kg_m2": 0.0032690782835897527
+    },
+    {
+      "coxa_mm": 82,
+      "moving_mass_full_solid_kg": 0.28804793515636984,
+      "yaw_axis_inertia_kg_m2": 0.003964542125488514
+    }
+  ],
+  "yaw_inertia_ratio": 1.2127400391082337,
+  "added_vertical_force_bending_moment_Nm_per_N": 0.012,
+  "explanation": "Angular travel is not itself a torque demand. At unchanged angular acceleration, inertial yaw torque scales with Izz. A vertical toe force adds bending about a horizontal axis through the yaw support; it does not directly create torque about an ideal vertical yaw axis.",
+  "scope": "Comparison at the same relative hip/knee pose, using full-solid printed geometry and declared servo mass. Omits fasteners, flexible cables and ground-contact friction."
+}

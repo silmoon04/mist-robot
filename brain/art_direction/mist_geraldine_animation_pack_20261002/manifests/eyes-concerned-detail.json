@@ -1,0 +1,177 @@
+{
+  "id": "eyes-concerned-detail",
+  "kind": "eyes-detail",
+  "family": "concerned",
+  "columns": 3,
+  "rows": 1,
+  "frames": [
+    "closed",
+    "look-left",
+    "look-right"
+  ],
+  "promptFile": "prompts/eyes-concerned-detail.txt",
+  "generatedSource": "C:\\Users\\hssil\\.codex\\generated_images\\01a0fc8e-9e9c-7711-a056-5e00b409dba2\\exec-08b6215b-d958-4c23-ac75-96b45e68dedb.png",
+  "imageFile": "images/eyes-concerned-detail.png",
+  "sha256": "21ad58e1c8c2fee0f87db615603e5cf6eb1a6c0406b94b15d0b6ec3e96656bc1",
+  "width": 1536,
+  "height": 1024,
+  "alpha": {
+    "mode": "RGBA",
+    "transparentPixelFraction": 0.9725755055745443,
+    "extrema": [
+      0,
+      254
+    ]
+  },
+  "qa": {
+    "nativeOriginalPreserved": true,
+    "sourceHashMatchesCanonical": true,
+    "tool": "built-in image_gen",
+    "generationCalls": 1,
+    "layout": "Exactly three complete eye pairs in three columns and one row.",
+    "everyCellInspected": true,
+    "eyesOnly": true,
+    "noMouthHeadBodyBrowsPupilsTextOrGrid": true,
+    "reference": "../mist_game_faces_20260929/sheets/later-alligator-sweet-geraldine.png",
+    "primaryReferenceExpression": "bottom-middle concerned only",
+    "closedPose": "Two soft rounded arcs, no aperture, no pointed triangle, no large filled half-moon mass.",
+    "gazeTopology": "Both gaze poses retain viewer-left C/J opening LEFT and smaller lower viewer-right enclosed aperture.",
+    "gazeAmount": "Subtle aperture differences; exact 1–2 pixel requested offsets were not achieved or verified.",
+    "cellAlphaBboxesAtThreshold16": [
+      {
+        "frame": "closed",
+        "eyes": [
+          {
+            "side": "left",
+            "bbox": [
+              103,
+              477,
+              262,
+              530
+            ],
+            "center": [
+              182.5,
+              503.5
+            ],
+            "size": [
+              159,
+              53
+            ]
+          },
+          {
+            "side": "right",
+            "bbox": [
+              325,
+              514,
+              460,
+              564
+            ],
+            "center": [
+              392.5,
+              539
+            ],
+            "size": [
+              135,
+              50
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "look-left",
+        "eyes": [
+          {
+            "side": "left",
+            "bbox": [
+              88,
+              446,
+              213,
+              563
+            ],
+            "center": [
+              150.5,
+              504.5
+            ],
+            "size": [
+              125,
+              117
+            ]
+          },
+          {
+            "side": "right",
+            "bbox": [
+              301,
+              487,
+              424,
+              579
+            ],
+            "center": [
+              362.5,
+              533
+            ],
+            "size": [
+              123,
+              92
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "look-right",
+        "eyes": [
+          {
+            "side": "left",
+            "bbox": [
+              86,
+              446,
+              198,
+              562
+            ],
+            "center": [
+              142,
+              504
+            ],
+            "size": [
+              112,
+              116
+            ]
+          },
+          {
+            "side": "right",
+            "bbox": [
+              289,
+              487,
+              410,
+              578
+            ],
+            "center": [
+              349.5,
+              532.5
+            ],
+            "size": [
+              121,
+              91
+            ]
+          }
+        ]
+      }
+    ],
+    "motionVerified": false,
+    "independentReadOnlyReview": {
+      "closureDefectResolved": true,
+      "gazeTopologyDefectResolved": true,
+      "concernedIdentityConsistent": true,
+      "directionalGazeDifference": "Subtle; the two gaze poses look fairly similar.",
+      "alphaComposite": "The broad raw-preview glow is hidden RGB rather than visible background.",
+      "animationSmoothness": "Unverified; only three isolated corrective states supplied."
+    }
+  },
+  "limitations": [
+    "Closed eyelid widths are larger than the gaze eye widths; anatomy improves but exact shape width registration is not met.",
+    "Native local positions differ between the three cells. The manifest records bounds for runtime alignment; no image processing was performed.",
+    "Pair widths are about 357, 336, and 324 pixels, above the requested approximately 250 pixels. Whole-sheet margins remain transparent.",
+    "The two gaze drawings preserve topology but their outer contours vary slightly. A seamless motion transition has not been verified.",
+    "An independent in-memory alpha composite confirms the broad raw-preview glow is hidden RGB rather than a visible background. Native alpha is preserved unchanged.",
+    "Existing twelve-frame eyes-concerned.png and its manifest remain unchanged."
+  ]
+}

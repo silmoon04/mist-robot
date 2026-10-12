@@ -1,0 +1,1357 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="A version-checked, beginner-first Autodesk Fusion build guide for the MIST wheeled quadruped, including parameters, chassis, legs, joints, validation, print testing, and export.">
+  <title>MIST — Complete Autodesk Fusion Build Guide</title>
+  <link rel="stylesheet" href="fusion-guide/fusion-guide.css">
+</head>
+<body>
+  <a class="skip-link" href="#top">Skip to guide content</a>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Guide navigation">
+      <a class="brand" href="#top" aria-label="MIST Fusion guide home">
+        <span class="brand-mark" aria-hidden="true">M</span>
+        <span><strong>MIST / CAD Manual</strong><small>Beginner build · wheeled quadruped</small></span>
+      </a>
+      <div class="version-pill">Fusion v2704.1.23 · checked 12 Jul 2026</div>
+
+      <div class="search-wrap">
+        <label for="guide-search">Search this guide</label>
+        <input id="guide-search" type="search" placeholder="Try: joint, phone, 3MF…" autocomplete="off">
+        <span class="search-key" aria-hidden="true">/</span>
+      </div>
+      <div class="search-count" id="search-count" aria-live="polite"></div>
+
+      <div class="progress-block">
+        <div class="progress-meta"><span>Build gates</span><span id="progress-label">0 / 0</span></div>
+        <div class="progress-track" role="progressbar" aria-label="Completed build gates" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-fill" id="progress-fill"></div></div>
+      </div>
+
+      <nav class="chapter-nav" id="chapter-nav" aria-label="Chapters"></nav>
+      <div class="sidebar-actions">
+        <button class="utility-button" id="reset-progress" type="button">Reset checks</button>
+        <button class="utility-button" id="print-guide" type="button">Print / PDF</button>
+      </div>
+    </aside>
+
+    <main class="main" id="top">
+      <div class="topbar">
+        <button class="menu-button" id="menu-button" type="button" aria-controls="sidebar" aria-expanded="false">Chapters</button>
+        <strong>MIST Autodesk Fusion build guide</strong>
+        <a href="#release-gates">Release gates</a>
+      </div>
+
+      <div class="content">
+        <div class="no-results" id="no-results" hidden>
+          <div class="callout warning"><strong>No matching chapter.</strong> Try a component name, command, parameter, or export format.</div>
+        </div>
+
+        <header class="hero">
+          <div class="hero-copy">
+            <div class="hero-kicker">
+              <span class="eyebrow">MIST / build from evidence</span>
+              <span class="status-pill">Engineering guide — not a completed CAD claim</span>
+            </div>
+            <h1>Model the robot you can actually build.</h1>
+            <p class="hero-deck">A complete beginner route from an empty Autodesk Fusion file to a parameter-driven MIST chassis, one reusable four-axis leg, a four-leg assembly, printable test parts, and a release package. Every hard number is labelled by confidence; every unresolved interface stays visible.</p>
+            <div class="hero-cta">
+              <a class="primary-button" href="#read-first">Start with the truth model</a>
+              <a class="secondary-button" href="#parameter-explorer">Explore dimensions first</a>
+            </div>
+            <div class="hero-facts">
+              <div class="hero-fact"><strong>180 × 260</strong><span>locked body envelope · mm</span></div>
+              <div class="hero-fact"><strong>3 + wheel</strong><span>driven axes per leg</span></div>
+              <div class="hero-fact"><strong>13</strong><span>release gates before “done”</span></div>
+            </div>
+          </div>
+          <div class="hero-visual teaching-hero">
+            <img src="fusion-guide/assets/generated/mist-04-assembly-validation.svg" alt="AI-assisted teaching render of the MIST robot with four wheel-legs, service envelopes, motion ghosts, and four validation poses">
+            <div class="concept-ribbon">AI-assisted visual · not CAD evidence</div>
+            <div class="hero-caption">The polished render explains intent; it is not a Fusion screenshot or released geometry. Exact axes, dimensions, confidence labels, simulation results, and unresolved wheel/harness decisions are carried by the deterministic diagrams and HTML below.</div>
+          </div>
+        </header>
+
+        <section class="chapter" id="read-first" data-chapter="01">
+          <div class="chapter-header">
+            <span class="chapter-number">01</span>
+            <div><h2>Read this before opening Fusion</h2><p>Set the authority order, coordinate system, and completion standard before geometry starts.</p></div>
+          </div>
+          <div class="reading">
+            <p class="lede">The fastest way to lose a week in CAD is to make a clean bracket around a guessed interface. MIST therefore separates what is frozen, what must be measured, what is merely a starting value, and what Fusion calculates.</p>
+
+            <div class="callout stop">
+              <strong class="callout-title">This is a build procedure, not a certification.</strong>
+              <p>The repository contains planning, simulation, dimension, and historical mesh evidence, but no verified native MIST <code>.f3d</code>/<code>.f3z</code> assembly or released printable set. Do not mark a stage complete because its illustration looks plausible.</p>
+            </div>
+
+            <h3>The four labels used everywhere</h3>
+            <div class="cards">
+              <article class="card"><span class="kind locked">Locked</span><h3>Project contract</h3><p>Use as written unless you deliberately revise the master dimensions and all downstream checks. Examples: <code>body_dia = 180 mm</code>, link lengths, mount azimuths, and joint limits.</p></article>
+              <article class="card"><span class="kind measure">Measure</span><h3>Physical interface</h3><p>Replace from calipers before cutting mating geometry. Examples: servo ears, spline, horn bolt circle, wheel hub, connectors, and the phone with its real case.</p></article>
+              <article class="card"><span class="kind provisional">Provisional</span><h3>Testable assumption</h3><p>A safe place to begin a coupon or layout study, not a released dimension. Examples: shell wall, pocket clearance, ribs, lid seam, bearing support, cable slots.</p></article>
+            </div>
+            <p><span class="tag pose">Derived</span> values such as radii, pocket sizes, joint coordinates, and solved angles must be expressions. Never type a second independent copy of a number that already has a named source.</p>
+
+            <h3>Authority order</h3>
+            <ol>
+              <li>Physical caliper measurements and printed coupon results.</li>
+              <li>The current MIST Fusion master-dimension contract.</li>
+              <li>The simulator kinematics for axes, frames, and sign conventions.</li>
+              <li>Current inventory, material, wiring, build-phase, and print-test documents.</li>
+              <li>Older variant reports and meshes, used only to learn from failures.</li>
+              <li>The six original AI posters and their AI-assisted derivatives, used only as visual scaffolding. Exact geometry and claims live in deterministic diagrams, searchable HTML, measured records, and test outputs.</li>
+            </ol>
+            <p>If two sources disagree, stop at the higher-authority source. Record the conflict; do not average the numbers.</p>
+
+            <h3>Coordinate and naming contract</h3>
+            <div class="decision-grid">
+              <article class="decision-card"><h3>Robot frame</h3><p><code>+X</code> is forward, <code>+Y</code> is robot-left, and <code>+Z</code> is up. Put the global origin on the body centreline at the nominal cylinder bottom. Model the body upward from <code>Z = 0</code>.</p></article>
+              <article class="decision-card"><h3>Leg names and IDs</h3><p><code>FL</code> front-left, <code>FR</code> front-right, <code>RL</code> rear-left, <code>RR</code> rear-right. Analytic arrays use <code>FL, FR, RL, RR</code>; the physical ID/export blocks use <code>FL 1–4, FR 5–8, RR 9–12, RL 13–16</code>. Keep that explicit boundary in Browser notes, drawings, firmware and harness labels.</p></article>
+              <article class="decision-card"><h3>Joint chain</h3><p><code>base_link → q1 → d1 → q2 → femur → q3 → tibia → wheel</code>. The wheel is a driven revolute axis, not a decorative foot.</p></article>
+              <article class="decision-card"><h3>Angle convention</h3><p>Mount azimuth is measured from <code>+X</code> toward <code>+Y</code>. The four physical rays are <code>+25°</code>, <code>−25°</code>, <code>+109°</code>, and <code>−109°</code>.</p></article>
+            </div>
+
+            <figure class="visual-card teaching-visual">
+              <div class="teaching-visual-frame wide" data-zoom-src="fusion-guide/assets/generated/mist-01-frame-mount-map.svg" data-zoom-title="Exact MIST frame and mount map">
+                <img src="fusion-guide/assets/generated/mist-01-frame-mount-map.svg" alt="Exact top and side diagrams of the MIST coordinate frame, body envelope, q1 and q2 radii, leg offset, and four non-90-degree mount rays">
+                <span class="concept-label">Exact vector · Layout A frame contract</span><span class="zoom-button">Expand exact diagram</span>
+              </div>
+              <div class="annotation-rail four">
+                <span><code>body_dia</code><b>180 mm</b><small>locked</small></span>
+                <span><code>mount_r</code><b>100 mm</b><small>derived</small></span>
+                <span><code>d1</code><b>32 mm</b><small>locked</small></span>
+                <span><code>hip_pitch_r</code><b>132 mm</b><small>derived</small></span>
+              </div>
+              <figcaption>The vector geometry is deterministic: +X forward, +Y left, +Z up; FL +25°, FR −25°, RL +109°, RR −109°. <a href="../../mist_3d/mist_fusion_guide/c9f98018-dc76-4914-9e09-42f10d75449e.png" target="_blank" rel="noopener">Open original AI source 01</a> to see why the poster’s 220 mm body and invented UI are not measurement evidence.</figcaption>
+            </figure>
+
+            <h3>Use a reversible build loop</h3>
+            <div class="timeline-flow">
+              <div><strong>Measure</strong><span>Calipers, mass, connector and cable exit.</span></div>
+              <div><strong>Envelope</strong><span>Simple named construction bodies.</span></div>
+              <div><strong>Skeleton</strong><span>Axes, reach, mount rays, keep-outs.</span></div>
+              <div><strong>Interface</strong><span>Coupons before full brackets.</span></div>
+              <div><strong>Validate</strong><span>Motion, collisions, print, assembly.</span></div>
+              <div><strong>Release</strong><span>Native, STEP, 3MF, drawings, manifest.</span></div>
+            </div>
+
+            <div class="callout warning">
+              <strong class="callout-title">Freeze interfaces later than envelopes.</strong>
+              <p>You can place a servo-sized box and reserve its cable volume immediately. You should not cut its ear slots, spline fit, or horn bolt pattern until the received unit is measured.</p>
+            </div>
+
+            <h3>Chapter gate</h3>
+            <div class="gate-grid">
+              <label class="gate"><input type="checkbox" data-gate="01-authority"><span><strong>I accept the authority order</strong><span>Old meshes and AI posters cannot override the current contract or physical measurement.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="01-frame"><span><strong>I wrote the frame convention down</strong><span>+X forward, +Y left, +Z up; origin at body axis and nominal bottom.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="01-status"><span><strong>I will label every uncertainty</strong><span>Locked, Measure, Provisional, or Derived is visible in parameters and notes.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="01-backup"><span><strong>I created a versioned working copy</strong><span>The source file can be rolled back before risky parameter or timeline edits.</span></span></label>
+            </div>
+          </div>
+        </section>
+
+        <section class="chapter" id="fusion-ui" data-chapter="02">
+          <div class="chapter-header">
+            <span class="chapter-number">02</span>
+            <div><h2>Set up Autodesk Fusion without guessing</h2><p>The July 2026 interface, file type, Browser structure, and navigation habits used in this guide.</p></div>
+          </div>
+          <div class="reading">
+            <p class="lede">Autodesk now calls the product <strong>Autodesk Fusion</strong>. This guide was checked against <strong>v2704.1.23</strong>, released 9 July 2026. Labels can move in later builds, so follow the command name and purpose when a toolbar location differs.</p>
+
+            <div class="callout version">
+              <strong class="callout-title">Current workflow choices</strong>
+              <p>Create <strong>File → New → Hybrid Design</strong>, then use <strong>Parametric Modeling Mode</strong>. This keeps chassis, skeleton, components, relationships, and one user-parameter table in one beginner-friendly design. An advanced distributed Part + Assembly workflow is valid later, but introduces derive/update and file-version management.</p>
+            </div>
+
+            <h3>Know the areas before you model</h3>
+            <div class="table-wrap"><table>
+              <thead><tr><th>Area</th><th>What it controls</th><th>Beginner trap</th></tr></thead>
+              <tbody>
+                <tr><td>Application bar</td><td>File, save, undo/redo, document name, account and job state.</td><td>Closing before the cloud save finishes.</td></tr>
+                <tr><td>Home / My Fusion</td><td>Projects, files, recent designs, and collaboration.</td><td>Confusing a cloud project location with a component Browser.</td></tr>
+                <tr><td>Data Panel</td><td>Design files and project data.</td><td>Looking here for a body inside the active design.</td></tr>
+                <tr><td>Browser</td><td>The active design’s components, bodies, sketches, origins, joints, and analyses.</td><td>Creating all bodies under the root because the intended component was not active.</td></tr>
+                <tr><td>Workspace and tabs</td><td>Design, Manufacture, Drawing, and command families such as Solid, Surface, Mesh.</td><td>Searching the Mesh tab for a parametric solid command.</td></tr>
+                <tr><td>Toolbar</td><td>Contextual Create, Modify, Assemble, Construct, Inspect, Insert and Select commands.</td><td>Assuming every command is shown; press <kbd>S</kbd> to search.</td></tr>
+                <tr><td>Canvas / ViewCube</td><td>Selection and view orientation.</td><td>Editing from a perspective view when a sketch needs a true orthographic view.</td></tr>
+                <tr><td>Navigation bar</td><td>Orbit, pan, zoom, display settings and grid.</td><td>Moving a component when you intended to orbit.</td></tr>
+                <tr><td>Timeline</td><td>Ordered parametric features and rollback.</td><td>Dragging or deleting upstream features without checking dependants.</td></tr>
+                <tr><td>Sketch Palette / dialogs</td><td>Contextual constraints, display options, dimensions, operation and extent.</td><td>Clicking OK without naming or checking operation: New Body, Join, Cut, Intersect.</td></tr>
+              </tbody>
+            </table></div>
+
+            <figure class="visual-card">
+              <div class="image-frame"><img src="https://help.autodesk.com/cloudhelp/ENU/Fusion-GetStarted/images/diagram/ui-overview-apr-26.png" alt="Official Autodesk Fusion desktop interface overview labelled with the Data Panel, Browser, canvas, toolbar, ViewCube, Navigation Bar and Timeline" loading="lazy"></div>
+              <figcaption><a href="https://help.autodesk.com/cloudhelp/ENU/Fusion-GetStarted/files/GS-THE-FUSION-INTERFACE.htm">Official Autodesk Fusion Help: Fusion interface (desktop)</a>. © Autodesk. The hosted asset is dated April 2026 and was checked reachable on 12 July 2026; Autodesk can update hosted UI media independently of this guide.</figcaption>
+            </figure>
+
+            <h3>Task paths used in this manual</h3>
+            <div class="cards">
+              <article class="card"><h3>Parameters</h3><p class="tool-path"><span>Design</span><i>›</i><span>Solid</span><i>›</i><span>Modify</span><i>›</i><span>Change Parameters</span></p><p>Create user parameters first; model parameters are generated by features.</p></article>
+              <article class="card"><h3>Relationships</h3><p class="tool-path"><span>Design</span><i>›</i><span>Assemble</span><i>›</i><span>Joint / As-Built Joint</span></p><p>Use Joint when parts need positioning; As-Built Joint when occurrences are already correctly placed.</p></article>
+              <article class="card"><h3>Inspection</h3><p class="tool-path"><span>Design</span><i>›</i><span>Inspect</span><i>›</i><span>Interference</span></p><p>Section Analysis reveals interiors; it does not report collisions. Interference tests solid overlap in the current pose.</p></article>
+            </div>
+
+            <h3>Create the file and component tree</h3>
+            <div class="steps">
+              <article class="step-card"><div><h4>Create a Hybrid Design</h4><p>Start a new Hybrid Design, switch to Design → Solid, confirm units are millimetres under Document Settings, and save as <code>MIST_FUSION_MASTER_YYYY-MM-DD_v001</code>.</p></div></article>
+              <article class="step-card"><div><h4>Confirm Parametric Modeling Mode</h4><p>The Timeline must be present. Do not convert this workflow to Direct Modeling: dimensions, skeleton dependencies, and rollback checks rely on ordered features.</p></div></article>
+              <article class="step-card"><div><h4>Create components before bodies</h4><p>Create the root-level components below. Activate a component before making its sketches and bodies; the active component is indicated in the Browser. A component is a movable/manufacturable part with its own origin. A body is only geometry.</p></div></article>
+              <article class="step-card"><div><h4>Name features while they are obvious</h4><p>Rename sketches, construction planes, key extrudes, split features, and joint origins immediately. Use <kbd>Ctrl</kbd>+<kbd>B</kbd> to compute all after a substantial edit and resolve the first Timeline warning before continuing.</p></div></article>
+            </div>
+
+            <pre><code>MIST_FUSION_MASTER
+├─ 00_MASTER_LAYOUT       [internal skeleton; no production solids]
+├─ 10_BODY_CHASSIS        [shell segments, mounts, decks, lid]
+├─ 20_PHONE_FRAME         [measured phone envelope + retention]
+├─ 30_LEG_MASTER          [one complete q1/q2/q3/wheel chain]
+│  ├─ ROOT_MOUNT
+│  ├─ HIP_ROLL
+│  ├─ FEMUR_LINK
+│  ├─ TIBIA_LINK
+│  └─ WHEEL_LINK
+├─ 40_ELECTRONICS_REF     [non-printing envelopes and keep-outs]
+├─ 50_FASTENERS_REF       [shared hardware references]
+└─ 90_RELEASE_LAYOUTS     [print orientations / export helpers]</code></pre>
+
+            <details>
+              <summary>Why one Hybrid Design first?</summary>
+              <div class="details-body"><p>It makes expression wiring, projection, Timeline rollback, and joint inspection easier for a first full build. A distributed workflow is better when several people own stable parts or when the assembly becomes too heavy. If you migrate, derive only intentional master geometry, give every external component an owner and version, then test updates in a branch file.</p></div>
+            </details>
+
+            <details>
+              <summary>Copy, Paste New, or Duplicate With Joints?</summary>
+              <div class="details-body"><ul><li><strong>Copy + Paste</strong> normally creates another occurrence of the same component definition; an edit propagates.</li><li><strong>Paste New</strong> makes an independent definition; use only when divergence is deliberate.</li><li><strong>Duplicate With Joints</strong> is the preferred current assembly tool for repeated articulated legs because it copies the component structure and relationship pattern. Validate names and orientation afterward.</li></ul></div>
+            </details>
+
+            <h3>Small navigation habits that prevent large mistakes</h3>
+            <ul>
+              <li>Click a ViewCube face before dimensioning a 2D layout. Use Home to recover a lost view.</li>
+              <li>Use middle-mouse pan/orbit/zoom settings consistently; never drag a component as a substitute for changing the view.</li>
+              <li>Press <kbd>S</kbd> and type the command name if a toolbar group moved.</li>
+              <li>Use Select filters when faces, sketches, joint origins, and components overlap.</li>
+              <li>Turn on only the component and reference bodies needed for the current decision.</li>
+              <li>At each stage, right-click the root and choose the compute/rebuild action available in the current build; then inspect the Timeline from left to right.</li>
+            </ul>
+
+            <h3>Chapter gate</h3>
+            <div class="gate-grid">
+              <label class="gate"><input type="checkbox" data-gate="02-hybrid"><span><strong>Hybrid, millimetres, parametric</strong><span>The file type, units, and Timeline are confirmed.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="02-tree"><span><strong>Component tree exists</strong><span>No production solid was created under the root or skeleton component.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="02-save"><span><strong>File is named and saved</strong><span>The design has a dated, versioned identity before geometry work.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="02-compute"><span><strong>Clean initial compute</strong><span>No warning or missing-reference badge is being carried forward.</span></span></label>
+            </div>
+          </div>
+        </section>
+
+        <section class="chapter" id="parameters-skeleton" data-chapter="03">
+          <div class="chapter-header">
+            <span class="chapter-number">03</span>
+            <div><h2>Build the parameter contract and master skeleton</h2><p>One table drives body size, four mount rays, nominal reach, phone envelope, and every downstream component.</p></div>
+          </div>
+          <div class="reading">
+            <p class="lede">Parameters make change cheap only when their meaning is unambiguous. Create user parameters for design intent, derive secondary values with expressions, and keep measured values separate from printable allowances.</p>
+
+            <div class="visual-grid">
+              <figure class="visual-card">
+                <div class="image-frame"><img src="https://help.autodesk.com/cloudhelp/ENU/Fusion-Model/images/example/parameter-favorite-dialog.png" alt="Official Autodesk Fusion Change Parameters dialog example" loading="lazy"></div>
+                <figcaption><a href="https://help.autodesk.com/cloudhelp/ENU/Fusion-Model/files/SLD-MODIFY-PARAMETERS.htm">Official Autodesk Fusion Help: Parameters</a>. © Autodesk. This is a generic official example, not the MIST table; styling can vary by rollout.</figcaption>
+              </figure>
+              <figure class="diagram">
+                <svg viewBox="0 0 760 390" role="img" aria-labelledby="skeleton-title skeleton-desc">
+                  <title id="skeleton-title">MIST skeleton dependency map</title>
+                  <desc id="skeleton-desc">User parameters feed three master sketches which feed chassis, leg, envelope and validation geometry.</desc>
+                  <defs><marker id="sk-arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3 z" fill="#c95618"/></marker></defs>
+                  <rect x="20" y="120" width="150" height="145" rx="10" fill="#e4f3f1" stroke="#0f766e" stroke-width="2"/>
+                  <text x="37" y="148" font-family="Consolas" font-size="14" font-weight="700">USER PARAMETERS</text>
+                  <text x="37" y="176" font-family="Consolas" font-size="11">locked</text><text x="37" y="196" font-family="Consolas" font-size="11">measured</text><text x="37" y="216" font-family="Consolas" font-size="11">provisional</text><text x="37" y="236" font-family="Consolas" font-size="11">derived expressions</text>
+                  <line x1="170" y1="192" x2="225" y2="76" stroke="#c95618" stroke-width="2" marker-end="url(#sk-arrow)"/>
+                  <line x1="170" y1="192" x2="225" y2="191" stroke="#c95618" stroke-width="2" marker-end="url(#sk-arrow)"/>
+                  <line x1="170" y1="192" x2="225" y2="306" stroke="#c95618" stroke-width="2" marker-end="url(#sk-arrow)"/>
+                  <rect x="230" y="25" width="220" height="90" rx="8" fill="#fff" stroke="#1d211f"/><text x="249" y="54" font-family="Consolas" font-size="13" font-weight="700">SK00_TOP_MOUNTS</text><text x="249" y="76" font-family="Consolas" font-size="11">body / hip / stance circles</text><text x="249" y="95" font-family="Consolas" font-size="11">±25°, ±109° physical rays</text>
+                  <rect x="230" y="145" width="220" height="90" rx="8" fill="#fff" stroke="#1d211f"/><text x="249" y="174" font-family="Consolas" font-size="13" font-weight="700">SK01_SIDE_KINEMATICS</text><text x="249" y="196" font-family="Consolas" font-size="11">H0 / H1 / knee / axle / ground</text><text x="249" y="215" font-family="Consolas" font-size="11">reach and nominal pose</text>
+                  <rect x="230" y="265" width="220" height="90" rx="8" fill="#fff" stroke="#1d211f"/><text x="249" y="294" font-family="Consolas" font-size="13" font-weight="700">SK02_FRONT_ENVELOPES</text><text x="249" y="316" font-family="Consolas" font-size="11">body / phone / deck keep-outs</text><text x="249" y="335" font-family="Consolas" font-size="11">portrait centre at Z = 170</text>
+                  <line x1="450" y1="70" x2="525" y2="120" stroke="#c95618" stroke-width="2" marker-end="url(#sk-arrow)"/>
+                  <line x1="450" y1="190" x2="525" y2="190" stroke="#c95618" stroke-width="2" marker-end="url(#sk-arrow)"/>
+                  <line x1="450" y1="310" x2="525" y2="260" stroke="#c95618" stroke-width="2" marker-end="url(#sk-arrow)"/>
+                  <rect x="530" y="90" width="205" height="200" rx="10" fill="#f8f3e8" stroke="#d69b25" stroke-width="2"/>
+                  <text x="552" y="120" font-family="Consolas" font-size="14" font-weight="700">CONSUMERS</text>
+                  <text x="552" y="150" font-family="Consolas" font-size="11">10_BODY_CHASSIS</text><text x="552" y="173" font-family="Consolas" font-size="11">20_PHONE_FRAME</text><text x="552" y="196" font-family="Consolas" font-size="11">30_LEG_MASTER</text><text x="552" y="219" font-family="Consolas" font-size="11">40_ELECTRONICS_REF</text><text x="552" y="242" font-family="Consolas" font-size="11">motion / print / export checks</text><text x="552" y="270" font-family="Consolas" font-size="10" fill="#9b3e0d">project; do not redraw</text>
+                </svg>
+                <figcaption>Change the parameter once, let the skeleton move, then inspect every consumer. A skeleton is a dependency boundary—not a bin for production solids.</figcaption>
+              </figure>
+            </div>
+
+            <h3>Create the user parameters</h3>
+            <p class="tool-path"><span>Design</span><i>›</i><span>Solid</span><i>›</i><span>Modify</span><i>›</i><span>Change Parameters</span><i>›</i><span>+</span></p>
+            <p>Use lowercase snake-case names and meaningful comments. Fusion expressions carry units: type <code>body_dia / 2</code>, not a separately rounded <code>90</code>. Decimal commas and list separators vary by locale; if Fusion rejects an expression copied from this page, enter it using the separators shown in your own dialog.</p>
+
+            <h4>Locked project parameters</h4>
+            <div class="table-wrap"><table>
+              <thead><tr><th>Name</th><th>Expression</th><th>Meaning / downstream effect</th></tr></thead>
+              <tbody>
+                <tr><td><code>body_dia</code></td><td class="value">180 mm</td><td>Outer cylindrical envelope; drives radius, shell material proxy, mount radius and bed check.</td></tr>
+                <tr><td><code>body_h</code></td><td class="value">260 mm</td><td>Nominal body envelope height; drives phone and internal zoning. Do not assume one-piece printability.</td></tr>
+                <tr><td><code>leg_mount_h</code></td><td class="value">35 mm</td><td>q1/q2 axis height above body bottom in the local body frame.</td></tr>
+                <tr><td><code>mount_standoff</code></td><td class="value">10 mm</td><td>Radial distance from body skin to q1 axis.</td></tr>
+                <tr><td><code>d1</code></td><td class="value">32 mm</td><td>Radial offset between q1 and q2 axes.</td></tr>
+                <tr><td><code>femur</code></td><td class="value">110 mm</td><td>Rounded build baseline from the 111 mm Layout A optimizer result. It passes the analytic pose battery, but reach uses 85.779% against an 86% gate: only 0.221 percentage points of model headroom before measured servo/horn geometry.</td></tr>
+                <tr><td><code>tibia</code></td><td class="value">70 mm</td><td>q3-to-wheel-axis distance.</td></tr>
+                <tr><td><code>wheel_dia</code></td><td class="value">70 mm</td><td>Driven wheel outside diameter; tyre compression is a separate measured quantity.</td></tr>
+                <tr><td><code>stance_r</code></td><td class="value">176 mm</td><td>Nominal body-axis to wheel-axis radius in the stance layout.</td></tr>
+                <tr><td><code>neutral_body_clearance</code></td><td class="value">148 mm</td><td>Nominal body-bottom height in the normal stance pose.</td></tr>
+                <tr><td><code>tallest_body_clearance</code></td><td class="value">171 mm</td><td>Historical Layout A upper reference; the rounded 110/70 scan begins around 170 mm. Revalidate rather than treating it as guaranteed.</td></tr>
+                <tr><td><code>front_az</code></td><td class="value">25 deg</td><td>FL/FR mount rays are +front_az and −front_az.</td></tr>
+                <tr><td><code>rear_az</code></td><td class="value">109 deg</td><td>RL/RR mount rays are +rear_az and −rear_az.</td></tr>
+                <tr><td><code>beam_w</code></td><td class="value">20 mm</td><td>Baseline printed link width for early stiffness studies.</td></tr>
+                <tr><td><code>beam_t</code></td><td class="value">14 mm</td><td>Baseline link thickness; bending stiffness proxy scales approximately with thickness cubed.</td></tr>
+                <tr><td><code>q1_min</code> / <code>q1_max</code></td><td class="value">−60 deg / 60 deg</td><td>Hip-roll design range.</td></tr>
+                <tr><td><code>q2_min</code> / <code>q2_max</code></td><td class="value">−35 deg / 110 deg</td><td>Hip-pitch design range.</td></tr>
+                <tr><td><code>q3_min</code> / <code>q3_max</code></td><td class="value">−135 deg / 135 deg</td><td>Knee design range.</td></tr>
+              </tbody>
+            </table></div>
+
+            <h4>Measure before mating geometry</h4>
+            <div class="table-wrap"><table>
+              <thead><tr><th>Name</th><th>Starting record</th><th>Action before release</th></tr></thead>
+              <tbody>
+                <tr><td><code>servo_l/w/h</code></td><td class="value">45.2 / 24.7 / 35 mm</td><td>Measure the actual STS3215 lot, including mould draft and label/bulge. Treat the current values as nominal layout seeds, not an interference fit.</td></tr>
+                <tr><td><code>servo_axis_from_end</code></td><td class="value">11.3 mm provisional record</td><td>Measure from repeatable datums on both output and auxiliary sides.</td></tr>
+                <tr><td><code>servo_ear_*</code></td><td class="value">TBD</td><td>Measure ear span, thickness, hole diameter, centre spacing, edge distance and screw-head access.</td></tr>
+                <tr><td><code>servo_spline_dia</code></td><td class="value">5.9 mm provisional record</td><td>Confirm the 25T output and decide whether the printed part captures a supplied horn instead of the spline.</td></tr>
+                <tr><td><code>horn_dia</code> / <code>horn_t</code></td><td class="value">21 / 3.4 mm provisional record</td><td>Measure the actual supplied horn and fastener stack.</td></tr>
+                <tr><td><code>horn_bcd</code></td><td class="value">14 mm placeholder</td><td>Do not drill production holes from this placeholder.</td></tr>
+                <tr><td><code>phone_h/w/t</code></td><td class="value">147.5 / 70.5 / 7.45 mm</td><td>Measure the Xiaomi Mi 9 SE actually used, including case, buttons, camera bump, cable and removal path.</td></tr>
+                <tr><td><code>battery_l/w/h</code></td><td class="value">104 / 34.5 / 24.5 mm</td><td>Measure the actual undamaged pack, leads, strain relief, connector bend, non-compressing retention and abnormal-pack keep-out.</td></tr>
+                <tr><td><code>wheel_width</code> / <code>hub_*</code></td><td class="value">TBD</td><td>Freeze only after the wheel and bearing/support strategy is selected.</td></tr>
+              </tbody>
+            </table></div>
+
+            <h4>Provisional fabrication parameters</h4>
+            <div class="table-wrap"><table>
+              <thead><tr><th>Name</th><th>Start value</th><th>What must validate it</th></tr></thead>
+              <tbody>
+                <tr><td><code>shell_wall</code></td><td class="value">3 mm</td><td>Shell/rib coupon, fastener loads, impact handling and modal/flex check.</td></tr>
+                <tr><td><code>pocket_clearance_per_side</code></td><td class="value">0.25 mm</td><td>Per-side rectangular pocket coupon on the intended printer, material, orientation and profile.</td></tr>
+                <tr><td><code>pin_radial_clearance</code></td><td class="value">0.25 mm</td><td>Radial pin/bore coupon; this means 0.50 mm diametral difference.</td></tr>
+                <tr><td><code>hole_diameter_comp</code></td><td class="value">0.20 mm</td><td>Printed-hole ladder; document whether this value is added to CAD diameter.</td></tr>
+                <tr><td><code>motion_clearance</code></td><td class="value">2 mm</td><td>Full driven sweep with cables, fastener heads and print variation represented.</td></tr>
+                <tr><td><code>min_boss_wall</code></td><td class="value">2.4 mm</td><td>Insert/bolt coupon and torque test.</td></tr>
+                <tr><td><code>m3_clear_model_d</code></td><td class="value">3.4 mm</td><td>Hole coupon; revise for drill-after-print policy.</td></tr>
+                <tr><td><code>edge_chamfer</code></td><td class="value">0.5 mm</td><td>Print quality and assembly handling.</td></tr>
+                <tr><td><code>cable_slot_w</code></td><td class="value">8 mm</td><td>Actual plug pass-through, strain relief and minimum bend radius.</td></tr>
+                <tr><td><code>phone_clear_side</code></td><td class="value">0.5 mm</td><td>Case-on phone insertion/removal coupon.</td></tr>
+                <tr><td><code>phone_frame_wall</code></td><td class="value">3 mm</td><td>Retention and drop/handling prototype.</td></tr>
+                <tr><td><code>phone_center_z</code></td><td class="value">170 mm</td><td>Visibility, body curvature, deck conflicts, cable route and centre-of-mass study.</td></tr>
+                <tr><td><code>horn_slot_len</code></td><td class="value">12–16 mm study</td><td>Horn adjustment range, wall remaining and wrench access.</td></tr>
+              </tbody>
+            </table></div>
+
+            <h4>Derived expressions—never retype these</h4>
+            <pre><code>body_r             = body_dia / 2
+body_inner_dia     = body_dia - 2 * shell_wall
+mount_r            = body_r + mount_standoff
+hip_pitch_r        = mount_r + d1
+wheel_r            = wheel_dia / 2
+max_leg_reach      = femur + tibia
+neutral_q1_world_z = neutral_body_clearance + leg_mount_h
+nominal_axle_z     = wheel_r
+phone_pocket_w     = phone_w + 2 * phone_clear_side
+phone_pocket_h     = phone_h + 2 * phone_clear_side
+phone_pocket_t     = phone_t + 2 * phone_clear_side
+phone_frame_w      = phone_pocket_w + 2 * phone_frame_wall
+phone_frame_h      = phone_pocket_h + 2 * phone_frame_wall
+front_left_angle   = front_az
+front_right_angle  = -front_az
+rear_left_angle    = rear_az
+rear_right_angle   = -rear_az</code></pre>
+
+            <h3>Construct the internal master skeleton</h3>
+            <p>Create and activate <code>00_MASTER_LAYOUT</code>. Make all skeleton sketches easy to identify—construction geometry, distinct colours if your theme supports it, and names beginning <code>SK</code>. Do not extrude a production body here.</p>
+
+            <div class="steps">
+              <article class="step-card"><div><h4>SK00_TOP_MOUNTS on the XY plane</h4><p>Sketch concentric construction circles for <code>body_r</code>, <code>mount_r</code>, <code>hip_pitch_r</code>, and <code>stance_r</code>. Add a construction line from the origin along +X. Add rays at <code>front_az</code> and <code>rear_az</code>, then mirror about the X axis for the right side. Put a point where each ray crosses the q1, q2, and stance circle. Fully constrain the sketch.</p></div></article>
+              <article class="step-card"><div><h4>SK01_SIDE_KINEMATICS on the XZ plane</h4><p>Draw the body bottom at <code>Z = 0</code> and a ground line at <code>Z = -neutral_body_clearance</code>. Place q1 at <code>(mount_r, leg_mount_h)</code>, q2 at <code>(hip_pitch_r, leg_mount_h)</code>, and the wheel axis at <code>(stance_r, wheel_r - neutral_body_clearance)</code>. Connect q2 to a knee point with <code>femur</code>, then to the wheel axis with <code>tibia</code>. Choose and document the outboard-knee solution branch.</p></div></article>
+              <article class="step-card"><div><h4>SK02_FRONT_ENVELOPES on the YZ plane</h4><p>Draw the body as <code>body_dia × body_h</code>. Draw the portrait phone pocket as <code>phone_pocket_w × phone_pocket_h</code> centred on <code>Z = phone_center_z</code>; at baseline this is 71.5 × 148.5 mm. Draw the provisional outer frame 77.5 × 154.5 mm. Add only labelled internal-zone and deck construction lines until component measurements are confirmed.</p></div></article>
+              <article class="step-card"><div><h4>Expose stable references</h4><p>Create named axes, points, and planes from the sketch geometry. Downstream components should Project/Include these intentional skeleton elements. Avoid projecting arbitrary edges from fillets, split faces, or imported hardware.</p></div></article>
+            </div>
+
+            <h3>Baseline skeleton coordinates</h3>
+            <p>At <code>mount_r = 100 mm</code>, mount-axis coordinates are <code>x = r cos θ</code>, <code>y = r sin θ</code>. Keep expressions in Fusion; the decimals below are audit values, not replacement inputs.</p>
+            <div class="table-wrap"><table>
+              <thead><tr><th>Leg</th><th>Azimuth</th><th>q1 axis X</th><th>q1 axis Y</th><th>Reason to inspect</th></tr></thead>
+              <tbody>
+                <tr><td>FL</td><td class="value">+25°</td><td class="value">+90.631 mm</td><td class="value">+42.262 mm</td><td>Phone/frame and front cable-route adjacency.</td></tr>
+                <tr><td>FR</td><td class="value">−25°</td><td class="value">+90.631 mm</td><td class="value">−42.262 mm</td><td>Mirror/sign audit; do not create a second independent definition.</td></tr>
+                <tr><td>RL</td><td class="value">+109°</td><td class="value">−32.557 mm</td><td class="value">+94.552 mm</td><td>Rear lid, power entry and harness branch adjacency.</td></tr>
+                <tr><td>RR</td><td class="value">−109°</td><td class="value">−32.557 mm</td><td class="value">−94.552 mm</td><td>Rear-ID mapping is unresolved; geometry name and electrical label must agree later.</td></tr>
+              </tbody>
+            </table></div>
+            <p>For the baseline side-layout branch, the reference study recorded a nominal solution near <code>q2 = 40.52°</code> and <code>q3 = −63.63°</code>, with a knee audit point near <code>(203.473, −48.616) mm</code> in its stated side-sketch frame. Treat those numbers as a branch/sign regression check: your displayed angles can differ if you define zero or positive rotation differently. The physical points and link lengths must still coincide.</p>
+
+            <div class="callout warning"><strong class="callout-title">Fully constrained is necessary, not sufficient.</strong><p>A black sketch can still encode the wrong branch or sign. Drag-test before final constraint, change <code>stance_r</code> by 1 mm, compute, undo, and confirm all four mount points and the intended knee branch move predictably.</p></div>
+
+            <h3>Safe parameter-change protocol</h3>
+            <ol>
+              <li>Save a new version and note the question the change is meant to answer.</li>
+              <li>Change one user parameter or one controlled group—not a downstream feature dimension.</li>
+              <li>Compute all. Resolve the earliest Timeline error first.</li>
+              <li>Inspect SK00, SK01, and SK02 before inspecting pretty solids.</li>
+              <li>Run the invalidation checks listed in the explorer chapter: reach, joint limits, body/leg collision, cable bend, print envelope, mass/CoM and interface coupons.</li>
+              <li>Record the result, including a failed result, then keep or roll back deliberately.</li>
+            </ol>
+
+            <h3>Chapter gate</h3>
+            <div class="gate-grid">
+              <label class="gate"><input type="checkbox" data-gate="03-parameters"><span><strong>Parameter table exists</strong><span>Every value is labelled Locked, Measure, Provisional, or Derived and includes a comment.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="03-top"><span><strong>SK00 is fully constrained</strong><span>Four explicit physical rays—not a 4×90° pattern—drive the mounts.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="03-side"><span><strong>SK01 keeps the intended branch</strong><span>q2, knee, axle and ground points move continuously under a small parameter edit.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="03-front"><span><strong>SK02 uses the portrait phone envelope</strong><span>Baseline pocket is 71.5 × 148.5 mm centred at Z = 170 mm; retention is not yet claimed.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="03-dependency"><span><strong>Consumers project stable references</strong><span>No production part depends on a cosmetic edge or late fillet.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="03-perturb"><span><strong>One-parameter perturbation passes</strong><span>A save, edit, compute, inspect and undo cycle completed without silent geometry failure.</span></span></label>
+            </div>
+          </div>
+        </section>
+
+
+        <section class="chapter" id="body-envelopes" data-chapter="04">
+          <div class="chapter-header">
+            <span class="chapter-number">04</span>
+            <div><h2>Design the body around serviceable envelopes</h2><p>Build the 180 × 260 mm chassis, four mount interfaces, phone carrier, electronics keep-outs, decks, seams, and cable routes without pretending unknown details are final.</p></div>
+          </div>
+          <div class="reading">
+            <p class="lede">The body is not a hollow cosmetic can. It is the load path between four legs, the heat and wiring volume for the power system, the phone support, and the main service access. Model it from the outside envelope inward, then prove every assembly and removal path.</p>
+
+            <div class="callout stop">
+              <strong class="callout-title">The locked body envelope does not imply a one-piece print.</strong>
+              <p>The nominal cylinder is 180 mm diameter × 260 mm high. A Neptune 4 Pro is nominally 225 × 225 × 265 mm, leaving only 5 mm of Z allowance before start/end layers, bed variation, brim, travel clearance, and profile margins. Use a segmented shell unless an actual calibrated print trial proves a one-piece strategy.</p>
+            </div>
+
+            <div class="visual-grid">
+              <figure class="visual-card teaching-visual">
+                <div class="teaching-visual-frame" data-zoom-src="fusion-guide/assets/generated/mist-02-body-service-envelopes.svg" data-zoom-title="AI-assisted MIST body and service-envelope cutaway">
+                  <img src="fusion-guide/assets/generated/mist-02-body-service-envelopes.svg" alt="AI-assisted exploded cutaway of the MIST body showing a portrait phone, removable lid, shell segments, mass envelopes, cable routes, and service sweeps">
+                  <span class="concept-label">Focused cutaway · labels remain deterministic</span><span class="zoom-button">Expand cutaway</span>
+                </div>
+                <figcaption>The image communicates assembly and removal paths, not production geometry. Shell seams, ribs, lid and 3 mm wall remain provisional. Original composition sources: <a href="../../mist_3d/mist_fusion_guide/688908d9-0bdb-4bbb-b650-f1a0a5254c78.png" target="_blank" rel="noopener">AI poster 02</a> and <a href="../../mist_3d/mist_fusion_guide/23794522-88e1-4b32-8522-f36c110bb668.png" target="_blank" rel="noopener">AI poster 03</a>.</figcaption>
+              </figure>
+              <aside class="visual-card annotation-panel" aria-label="Body visual parameter key">
+                <div><span class="kind locked">Locked</span><h3>Outside envelope</h3><p><code>body_dia = 180 mm</code><br><code>body_h = 260 mm</code></p></div>
+                <div class="annotation-row measure"><strong>Physical envelopes</strong><span>Portrait Mi 9 SE: 147.5 × 70.5 × 7.45 mm. Ordered battery seed: 104 × 34.5 × 24.5 mm. Measure the actual phone case, plug and battery on arrival.</span></div>
+                <div class="annotation-row derived"><strong>Phone pocket seed</strong><span><code>phone_clearance_per_side = 0.5 mm</code> gives 148.5 × 71.5 × 8.45 mm before button, camera, cable and retention studies.</span></div>
+                <div class="annotation-row provisional"><strong>Physics mass markers ≠ solids</strong><span>Shell 900 g; battery 174 g at centre Z 40; phone package 205 g at centre Z 170; electronics 350 g at Z 15; harness 150 g at Z 60. Those positions feed CoM/torque estimates but do not size mounts.</span></div>
+                <div class="annotation-row unresolved"><strong>Keep open</strong><span>Leg-root 1→4 signal/common-ground branching, connector bends, fuse access, wheel architecture, seams and fasteners remain unresolved interfaces.</span></div>
+              </aside>
+            </div>
+
+            <h3>Separate the four kinds of body geometry</h3>
+            <div class="cards">
+              <article class="card"><span class="tag locked">Envelope</span><h3>What must fit</h3><p>Body cylinder, nominal mount axes, phone and battery records, board/connector boxes, cable bends, fastener tools and hand access. Envelope bodies are named <code>REF_*</code> and excluded from manufacturing exports.</p></article>
+              <article class="card"><span class="tag provisional">Structure</span><h3>What carries load</h3><p>Shell segments, leg-root bulkheads, decks, vertical webs, seam flanges and bosses. Start simple; add ribs where load paths and deflection show a reason.</p></article>
+              <article class="card"><span class="tag measure">Interfaces</span><h3>What must mate</h3><p>Servo ears/horns, inserts, battery straps, phone lips, lid seals, connectors and wheel supports. Their final cut geometry waits for a measurement or coupon result.</p></article>
+            </div>
+
+            <h3>Recommended Browser structure</h3>
+            <pre><code>10_BODY_CHASSIS
+├─ REF_body_envelope
+├─ REF_leg_motion_keepouts
+├─ REF_cable_keepouts
+├─ BODY_lower_segment
+├─ BODY_middle_segment
+├─ BODY_upper_segment
+├─ BODY_top_lid
+├─ BODY_deck_lower
+├─ BODY_deck_upper
+├─ BODY_leg_root_bulkheads
+└─ JO_* body-side joint origins
+
+20_PHONE_FRAME
+├─ REF_phone_bare
+├─ REF_phone_case_and_camera
+├─ REF_USB_and_removal_sweep
+├─ BODY_phone_cradle
+└─ BODY_retainer_prototype
+
+40_ELECTRONICS_REF
+├─ REF_battery
+├─ REF_PDB_and_fuses
+├─ REF_UBEC
+├─ REF_ESP32
+├─ REF_bus_adapter
+├─ REF_VL53L0X
+└─ REF_connectors_and_bend_sweeps</code></pre>
+
+            <h3>Model the canonical body envelope first</h3>
+            <div class="steps">
+              <article class="step-card"><div><h4>Activate 10_BODY_CHASSIS and project the contract</h4><p>Start a sketch on the XY plane. Project the origin and <code>body_r</code> circle from <code>SK00_TOP_MOUNTS</code>. Draw a single centre-diameter circle constrained to <code>body_dia</code>; finish the sketch.</p></div></article>
+              <article class="step-card"><div><h4>Extrude a reference cylinder</h4><p>Extrude upward by <code>body_h</code> as a New Body and name it <code>REF_body_envelope</code>. Set its opacity and make it non-printing. This solid answers “where may the body exist?”; it is not the production shell.</p></div></article>
+              <article class="step-card"><div><h4>Create the shell master</h4><p>Copy the outer profile into a new production body, extrude to <code>body_h</code>, then Shell inward by <code>shell_wall</code>. Shell before detailed holes and fillets. If Shell fails after later edits, roll back and inspect the simple wall feature rather than patching faces.</p></div></article>
+              <article class="step-card"><div><h4>Split for printing and service</h4><p>Create offset construction planes for candidate seams, then Split Body. A conservative study layout is lower ≈85 mm, middle ≈90 mm, upper ≈85 mm; these are provisional and must move around leg loads, phone opening, decks and connectors. Keep each seam plane named and parameter-driven.</p></div></article>
+            </div>
+
+            <h3>Choose a shell segmentation strategy deliberately</h3>
+            <div class="table-wrap"><table>
+              <thead><tr><th>Strategy</th><th>Advantages</th><th>Costs / risks</th><th>Use when</th></tr></thead>
+              <tbody>
+                <tr><td>Three upright rings</td><td>Comfortable Z margin; circular layers; each segment replaceable; seams can double as decks.</td><td>Two structural seams; alignment keys and radial fastener access; local hoop weakness if seams are poor.</td><td>Recommended starting study for the known 225 × 225 × 265 mm printer.</td></tr>
+                <tr><td>Two tall rings</td><td>One main seam and fewer fasteners.</td><td>Taller print, more warp risk, and a seam may cross phone/mount regions.</td><td>After slicer and physical tower tests show reliable height.</td></tr>
+                <tr><td>Vertical clamshells</td><td>Excellent interior access and side-on feature access.</td><td>Long Z prints remain; front/rear seams can weaken mount or phone regions; sealing/alignment is harder.</td><td>When frequent full-length access outweighs seam complexity.</td></tr>
+                <tr><td>One-piece barrel</td><td>No structural body seam.</td><td>Only 5 mm nominal Z headroom, long failure exposure, poor interior service, difficult support/removal.</td><td>Not the baseline; requires a successful calibrated production-height trial and service plan.</td></tr>
+              </tbody>
+            </table></div>
+
+            <h4>Build a printable seam as a testable interface</h4>
+            <p>For a ring seam, add an internal overlap flange to one segment and a receiving land to the other. Use asymmetric keys so a segment cannot be installed rotated 180°. Place fasteners where a driver can reach them with electronics installed. Keep the following as named provisional values: overlap height, radial clearance, flange thickness, boss wall, insert hole, edge distance, screw length and seam gap. Print a 30–45° arc coupon containing the whole seam before printing a ring.</p>
+
+            <div class="callout warning"><strong class="callout-title">Do not put a seam through an unbroken load path.</strong><p>A seam near the leg axes must transfer bending and torsion into a bulkhead/deck, not just through thin shell fasteners. Offset seams from the phone opening corners and reserve room for washers, inserts and a tool.</p></div>
+
+            <h3>Place the four leg-root load paths</h3>
+            <div class="steps">
+              <article class="step-card"><div><h4>Project each explicit mount ray</h4><p>Project the FL, FR, RL and RR q1-axis points and ray directions from SK00. Do not circular-pattern one mount by 90°; the rear pair is at ±109°, not ±90°.</p></div></article>
+              <article class="step-card"><div><h4>Create a radial tangent datum</h4><p>At each ray, create a construction plane tangent to the body envelope and parallel/oriented by the radial skeleton direction. Build mount pads and joint origins from these datums so azimuth changes remain coherent.</p></div></article>
+              <article class="step-card"><div><h4>Connect mount to internal structure</h4><p>Make the provisional external pad feed into two spaced shell ribs or a local bulkhead tied to a deck. Avoid a cantilevered boss attached only to 3 mm wall. Add generous root radii after the load path is stable.</p></div></article>
+              <article class="step-card"><div><h4>Keep servo geometry separate</h4><p>Insert the servo as a <code>VERIFY</code> envelope component and keep screw-head/plug access bodies visible. Final ears, horn, opposing support and cable slots remain blocked until measurement.</p></div></article>
+            </div>
+
+            <h3>Create the phone envelope and service path</h3>
+            <p>The baseline pocket expression gives 71.5 × 148.5 × 8.45 mm around the bare phone with 0.5 mm per-side clearance. The provisional outer frame is 77.5 × 154.5 mm. These do not include a case, camera bump, button relief, USB plug, retention lip or finger access.</p>
+            <div class="steps">
+              <article class="step-card"><div><h4>Make a front datum plane</h4><p>Create a plane tangent to the nominal front of <code>REF_body_envelope</code>, oriented from the global axes. Do not attach the phone sketch to a transient split-shell face or sketch directly on the cylinder.</p></div></article>
+              <article class="step-card"><div><h4>Sketch the portrait opening</h4><p>Project the Y and Z axes. Centre the pocket width on <code>Y = 0</code> and its height on <code>Z = phone_center_z</code>. At baseline, top and bottom of the provisional outer frame are approximately Z = 247.25 and 92.75 mm. Check top-lid and lower-seam zones before cutting.</p></div></article>
+              <article class="step-card"><div><h4>Use positive reference solids</h4><p>Create <code>REF_phone_bare</code>, then separate keep-outs for the case/camera, side buttons, USB connector and cable bend. Use Combine/Cut only from copied or retained tool bodies so the evidence remains inspectable.</p></div></article>
+              <article class="step-card"><div><h4>Prototype retention separately</h4><p>Start with a cradle and removable retainer or strap, not a tiny snap inherited from the poster. Prove insertion, one-handed removal, button freedom, camera visibility, cable strain relief and retention under robot acceleration.</p></div></article>
+            </div>
+
+            <h3>Electronics and power envelopes</h3>
+            <p>These are layout records. Measure the purchased boards, housings, solder joints, fuse blades, heat-shrink, plugs and wire exits. A PCB rectangle without connector volume is not a useful keep-out.</p>
+            <div class="table-wrap"><table>
+              <thead><tr><th>Item</th><th>Current reference envelope / mass</th><th>CAD treatment</th><th>Design consequence</th></tr></thead>
+              <tbody>
+                <tr><td>3S battery</td><td class="value">104 × 34.5 × 24.5 mm · 174 g</td><td>Provisional HOOVO pack box plus leads, connector bend, strap tunnel and removal sweep; replace from the actual pack.</td><td>Keep low and near centre; removal must not require leg disassembly.</td></tr>
+                <tr><td>Power distribution board</td><td class="value">≈45 × 45 × 18 mm · ≈24 g</td><td>Measured board plus terminals, cable stack and finger/tool access.</td><td>Central high-current branch point; do not trap under an inaccessible deck.</td></tr>
+                <tr><td>UBEC</td><td class="value">≈43 × 21 × 8 mm · ≈18 g</td><td>Envelope plus heat and plug/lead bends.</td><td>Keep away from unsupported shell and allow replacement.</td></tr>
+                <tr><td>ESP32 candidate</td><td class="value">≈54.8 × 28.6 × 10–13 mm · ≈10 g</td><td>Verify exact pin count, USB plug and antenna keep-out.</td><td>USB access and antenna clearance can govern deck orientation.</td></tr>
+                <tr><td>Bus Servo Adapter A</td><td class="value">≈42 × 33 mm PCB · height TBD · ≈16 g</td><td>Measure populated height, screw terminals and connectors.</td><td>Signal/GND adapter is not the main servo-current path.</td></tr>
+                <tr><td>VL53L0X board</td><td class="value">21 × 18 × 2.8 mm or 13 × 18 × 2 mm variants</td><td>Model the actual purchased board and optical field/occlusion cone.</td><td>A generic board can place the sensor aperture incorrectly.</td></tr>
+                <tr><td>XT90-S + lead</td><td class="value">connector ≈25 × 20 × 10 mm; lead often ≈300 mm</td><td>Plug/unplug hand sweep, bend radius and strain relief.</td><td>Main service connector and fuse routing need clear access.</td></tr>
+                <tr><td>Branch fuse holder</td><td class="value">≈45 × 20 × 15 mm · ≈35 g each</td><td>Four holders plus blade removal path and labels.</td><td>They consume more real volume than a wiring diagram implies.</td></tr>
+                <tr><td>Phone package</td><td class="value">147.5 × 70.5 × 7.45 mm; ≈200–210 g with frame/straps</td><td>Model as mounted package for mass and CoM, not only the bare 155 g phone.</td><td>High/front placement can dominate tip margin.</td></tr>
+              </tbody>
+            </table></div>
+
+            <div class="callout danger"><strong>LiPo retention is not a servo-pocket fit.</strong> Create separate named battery envelope and retention parameters from the actual pack, connector and manufacturer guidance. Include padding, inspection, insertion/removal and a conservative swelling/abnormal-pack keep-out; use broad straps and smooth radiused surfaces. The tray must not clamp, puncture, crease or use a sharp printed edge against the pouch. Any swelling, damage or unusual heat is a stop-use condition—not a tighter-CAD problem.</div>
+
+            <h3>Arrange decks and cable corridors</h3>
+            <ol>
+              <li>Place the battery envelope low, with strap and straight removal path.</li>
+              <li>Place PDB, main 30 A fuse and XT90-S so high-current routing is short and inspectable.</li>
+              <li>Reserve four branch paths toward the four leg roots. Each branch includes fuse holder, capacitor/root-tap volume, connector mating space, bend radius and service slack.</li>
+              <li>Separate the signal harness from sharp edges and high-current bundles where practical. Reserve slack for full q1 motion.</li>
+              <li>Put compute/sensor boards where USB, reset, programming and optical apertures remain accessible.</li>
+              <li>Create decks only after the envelope layout passes. Use ribs or standoffs to connect deck loads into bulkheads, not arbitrary shell patches.</li>
+            </ol>
+
+            <details>
+              <summary>Reference power topology the CAD must make physically possible</summary>
+              <div class="details-body"><p><code>battery → XT90-S → 30 A main fuse → PDB</code>. The PDB feeds the UBEC/logic path and four separately fused leg branches, with the intended capacitor/root-tap volume near each leg. The Bus Servo Adapter carries signal and ground; it is not the main servo-current feed. Exact physical branch topology is still unresolved, so reserve modular corridors and access rather than moulding one guessed harness into the shell.</p></div>
+            </details>
+
+            <h3>Mass properties are part of body design</h3>
+            <p>Assign physical materials or calibrated custom densities to production bodies. When a simplified reference body omits internal mass, add a named hidden proxy body with calibrated density and keep it out of manufacturing exports; Fusion has no portable typed “component mass override” to rely on. Compare against the current <strong>3.223 kg</strong> Layout A planning target and the broader <strong>3.25–3.55 kg</strong> inventory estimate, but treat neither as a measured result. Sixteen servos alone are about 880 g, the battery about 174 g, the mounted phone package about 200–210 g, and electronics/harness planning is roughly 480–600 g. Use <strong>Inspect → Center of Mass</strong> in at least neutral, forward-lean and high-body poses.</p>
+
+            <h3>Body audit before any full shell print</h3>
+            <div class="gate-grid">
+              <label class="gate"><input type="checkbox" data-gate="04-envelope"><span><strong>180 × 260 envelope is canonical</strong><span>Historical ~196 × 238 meshes and 220 mm AI labels are reference-only.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="04-segments"><span><strong>Print segmentation is explicit</strong><span>Every segment fits the real slicer envelope with process margin and has a service purpose.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="04-loadpath"><span><strong>Leg loads reach decks/bulkheads</strong><span>No root bracket relies on shell wall alone; interfaces remain measured/provisional where required.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="04-phone"><span><strong>Phone service is proven by envelope</strong><span>Case, camera, buttons, USB bend, retainer and removal sweep are represented or explicitly blocked.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="04-battery"><span><strong>Battery retention cannot crush or puncture</strong><span>Actual pack, padding, leads, removal and abnormal-pack keep-out have separate parameters; all contact edges are broad and radiused.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="04-electronics"><span><strong>Electronics include connectors</strong><span>Boards, plugs, fuses, tool space, wire bends and removal paths fit together.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="04-coupon"><span><strong>Seam and boss coupon exists</strong><span>The planned shell seam, key, insert, clearance and tool access will be tested before a ring.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="04-mass"><span><strong>Mass/CoM record is honest</strong><span>Missing component mass is flagged; no cosmetic reference body contaminates the total.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="04-service"><span><strong>Battery/fuse service path exists</strong><span>Safety-critical parts are removable without destroying wiring or removing a leg.</span></span></label>
+            </div>
+          </div>
+        </section>
+
+        <section class="chapter" id="leg-master" data-chapter="05">
+          <div class="chapter-header">
+            <span class="chapter-number">05</span>
+            <div><h2>Build one honest four-axis leg</h2><p>Model measured servo envelopes, load-bearing links, removable wheel hardware, stable joint origins, and cable space before making four copies.</p></div>
+          </div>
+          <div class="reading">
+            <p class="lede">A reusable leg is a small assembly, not one sculpted body. Each rigid link owns the servo case attached to it; the next link owns the driven horn interface. That ownership makes motion, print export, and maintenance understandable.</p>
+
+            <div class="visual-grid">
+              <figure class="visual-card teaching-visual">
+                <div class="teaching-visual-frame" data-zoom-src="fusion-guide/assets/generated/mist-03-leg-chain.svg" data-zoom-title="AI-assisted four-axis MIST wheel-leg anatomy">
+                  <img src="fusion-guide/assets/generated/mist-03-leg-chain.svg" alt="AI-assisted orthographic view of the MIST leg with separate q1 and q2 axes, femur, q3 knee, tibia, driven wheel, servo envelopes and cable bends">
+                  <span class="concept-label">Four-axis anatomy · measured interfaces translucent</span><span class="zoom-button">Expand leg visual</span>
+                </div>
+                <div class="annotation-rail four">
+                  <span><code>d1</code><b>32 mm</b><small>q1 → q2</small></span>
+                  <span><code>femur</code><b>110 mm</b><small>q2 → q3</small></span>
+                  <span><code>tibia</code><b>70 mm</b><small>q3 → axle</small></span>
+                  <span><code>wheel_dia</code><b>70 mm</b><small>driven axis</small></span>
+                </div>
+                <figcaption>Canonical chain: <code>base_link → root_mount (fixed) → hiproll → femur_link → tibia_link → wheel_link</code>. ROM: q1 ±60°, q2 −35°…+110°, q3 ±135°. Servo case/ears/horn/support/cable geometry remains <strong>MEASURE</strong>. <a href="../../mist_3d/mist_fusion_guide/2ee53a2c-b6a6-414f-bd26-0ddb6c07c57e.png" target="_blank" rel="noopener">Compare original two-link AI poster</a>.</figcaption>
+              </figure>
+              <figure class="visual-card">
+                <div class="image-frame"><img src="https://help.autodesk.com/cloudhelp/ENU/Fusion-Assemble/images/animation/joint-revolute-create.gif" alt="Official Autodesk Fusion animation showing creation of a revolute joint" loading="lazy"></div>
+                <figcaption><a href="https://help.autodesk.com/cloudhelp/ENU/Fusion-Assemble/files/ASM-CREATE-JOINT.htm">Official Autodesk Fusion Help: Create a Joint</a>. © Autodesk. The animation demonstrates the current Revolute relationship workflow; the MIST axes and limits come from this guide.</figcaption>
+              </figure>
+            </div>
+
+            <h3>Define axes before brackets</h3>
+            <div class="table-wrap"><table>
+              <thead><tr><th>Axis</th><th>Physical purpose</th><th>Nominal ownership</th><th>Fusion relationship</th><th>Design range</th></tr></thead>
+              <tbody>
+                <tr><td><code>q1</code></td><td>Hip roll / leg-plane rotation about the radial body ray.</td><td>Body root carries servo case; hip-roll link carries horn/output interface.</td><td>Revolute</td><td class="value">−60°…+60°</td></tr>
+                <tr><td><code>q2</code></td><td>Hip pitch; drives the femur in the local leg plane.</td><td>Hip-roll carrier holds case; femur owns horn interface.</td><td>Revolute</td><td class="value">−35°…+110°</td></tr>
+                <tr><td><code>q3</code></td><td>Knee pitch; drives tibia relative to femur.</td><td>Femur holds case; tibia owns horn interface.</td><td>Revolute</td><td class="value">−135°…+135°</td></tr>
+                <tr><td><code>wheel</code></td><td>Continuous driven wheel spin.</td><td>Tibia/wheel pod holds motor or output support; wheel owns hub.</td><td>Revolute</td><td>Continuous unless wiring/drive hardware imposes a limit.</td></tr>
+              </tbody>
+            </table></div>
+
+            <p>Create named joint-origin axes from skeleton lines or explicit construction axes. The positive direction must match the simulator convention. Do not infer sign from whichever manipulator arrow happens to look convenient; drive a small positive angle and record the visible motion.</p>
+
+            <h3>Measure and model the servo as evidence</h3>
+            <div class="steps">
+              <article class="step-card"><div><h4>Create SERVO_STS3215_VERIFY</h4><p>In a separate reference component, make simple bodies for the measured main case, both mounting ears, output boss/spline, auxiliary support, horn, screw-head/tool volumes and cable plug/bend. Use named measured parameters. Colour it distinctly and mark it non-printing.</p></div></article>
+              <article class="step-card"><div><h4>Choose repeatable datums</h4><p>Use the output axis plus two flat case faces, not an arbitrary mesh origin. Record where every measurement starts and whether the servo was measured with horn, grommet or case label installed.</p></div></article>
+              <article class="step-card"><div><h4>Verify both sides of the load path</h4><p>The output horn transfers torque, but a high-load printed joint should also study an opposite-side support/bearing. Reserve axial clearance and fastener access; do not let a printed wall rub the rotating horn.</p></div></article>
+              <article class="step-card"><div><h4>Keep evidence replaceable</h4><p>When the real servo is measured, edit the reference component parameters. Mating components should update through projected datums and envelope cuts, not manual face moves.</p></div></article>
+            </div>
+
+            <div class="callout stop"><strong class="callout-title">Do not print a spline from the 5.9 mm record.</strong><p>A printed spline fit is material-, process-, orientation- and wear-sensitive. Prefer capturing the supplied metal/plastic horn with measured screws, or run a dedicated spline/horn coupon and torque test. The placeholder horn bolt circle is not production data.</p></div>
+
+            <h3>Build 30_LEG_MASTER in chain order</h3>
+            <p>Place the leg master on the +X side layout first. Keep production bodies and VERIFY/REF envelopes in separate Browser folders. At each stage, create the relationship and drive it before adding cosmetic details.</p>
+            <div class="steps">
+              <article class="step-card"><div><h4>ROOT_MOUNT — body to q1</h4><p>Project the q1 axis from the skeleton. Model a provisional body-side cradle with two structural load paths, servo ear support, screw access and cable exit. Add a joint origin <code>JO_q1_parent</code> whose axis is the physical radial mount ray. Keep the body-side mate as a separate component so the interface can be coupon-tested.</p></div></article>
+              <article class="step-card"><div><h4>HIP_ROLL — q1 to q2 across d1</h4><p>Create the rotating q1 carrier around the measured horn/support geometry. Place <code>JO_q1_child</code> coincident with q1 and <code>JO_q2_parent</code> exactly <code>d1 = 32 mm</code> outward along the radial leg plane. The carrier must clear the root servo case and body through the whole q1 range.</p></div></article>
+              <article class="step-card"><div><h4>FEMUR_LINK — q2 to q3</h4><p>Create a fully constrained side profile whose joint centres are exactly <code>femur = 110 mm</code> apart. Start with the 20 × 14 mm beam study, then add local servo cradle, opposing support, webs and filleted transitions. Preserve a <code>REF_layout_B_keepouts</code> corridor if a future belt/remote-drive variant remains under study.</p></div></article>
+              <article class="step-card"><div><h4>TIBIA_LINK — q3 to wheel axis</h4><p>Repeat the axis-centre discipline with <code>tibia = 70 mm</code>. Build room for the measured q3 servo, its wire, the moving femur envelope, and a removable wheel pod. Avoid burying the wheel or q3 fasteners behind a permanently joined print.</p></div></article>
+              <article class="step-card"><div><h4>WHEEL_LINK — separate rotating component</h4><p>Create a 70 mm outside-diameter reference wheel with measured width, hub, bearing/shaft stack and tyre compression parameters. The wheel itself is a component with a Revolute relationship. Keep hub and tyre export choices separate if materials differ.</p></div></article>
+            </div>
+
+            <h3>Joint construction sequence</h3>
+            <ol>
+              <li>Place components in their intended zero geometry using the skeleton, not free Move captures.</li>
+              <li>If components are already placed, use <strong>As-Built Joint → Revolute</strong>; otherwise use <strong>Joint → Revolute</strong> and let the command position them.</li>
+              <li>Select explicit named joint origins, confirm the axis, flip only if required by the sign contract, then set Rest and limits.</li>
+              <li>Drive +5° and −5° and record which physical direction is positive.</li>
+              <li>Drive minimum, home/nominal and maximum. Inspect fastener heads, servo case, link walls and cable keep-outs at each.</li>
+              <li>Rename the relationship immediately: <code>J_FL_q1</code> at assembly level or <code>J_MASTER_q2</code> inside the leg master.</li>
+            </ol>
+
+            <h3>Keep four different zero concepts separate</h3>
+            <div class="table-wrap"><table>
+              <thead><tr><th>Term</th><th>Meaning</th><th>Where recorded</th></tr></thead>
+              <tbody>
+                <tr><td>CAD geometric zero</td><td>The orientation in which joint origins and sign convention are defined.</td><td>Fusion joint and drawing.</td></tr>
+                <tr><td>Home pose</td><td>A safe commanded robot posture used by software.</td><td>Control/simulation config and pose table.</td></tr>
+                <tr><td>Rest position</td><td>The angle Fusion returns/displays for a relationship.</td><td>Fusion relationship properties.</td></tr>
+                <tr><td>Servo centre tick</td><td>Nominal actuator encoder centre, commonly discussed around tick 2048 for this class of servo.</td><td>Measured calibration record per serial/ID; never assumed to equal geometric zero.</td></tr>
+              </tbody>
+            </table></div>
+
+            <h3>Design printed links for their load, print, and repair</h3>
+            <ul>
+              <li>Keep joint-axis distances controlled by sketch dimensions, not overall bounding-box length.</li>
+              <li>Increase section depth along the bending direction before adding decorative lattice. Closed or boxed sections usually resist torsion better than a flat plate.</li>
+              <li>Blend servo pockets and bearing bosses into the beam with large, printable radii. Avoid sudden thickness changes and tiny fillets that break the Timeline.</li>
+              <li>Orient layers so dominant bending and screw pull-out do not split weak layer planes. Print an axis boss/link-root coupon in the intended orientation.</li>
+              <li>Use captive nuts or validated inserts only with wall thickness, edge distance, heat-set access and service temperature accounted for.</li>
+              <li>Keep the wheel pod and servo covers removable. A failed wheel bearing or cable should not scrap the tibia.</li>
+            </ul>
+
+            <h3>One-leg validation battery</h3>
+            <div class="table-wrap"><table>
+              <thead><tr><th>Pose / action</th><th>What to inspect</th><th>Failure means</th></tr></thead>
+              <tbody>
+                <tr><td>All joints CAD zero</td><td>Axes coincide; no preload or hidden offset; home is not being confused with zero.</td><td>Fix origins/sign before any duplication.</td></tr>
+                <tr><td>Nominal stance</td><td>Wheel axis reaches skeleton target with intended knee branch; link ratio has motion headroom.</td><td>Revisit geometry or pose, not bracket cosmetics.</td></tr>
+                <tr><td>q1 min / max</td><td>Body, root, servo, wire loop and neighbouring-leg corridor.</td><td>Root packaging or range needs revision.</td></tr>
+                <tr><td>q2 min / max</td><td>Hip carrier, femur case, body lower edge, wire exit.</td><td>Carrier/support geometry conflicts.</td></tr>
+                <tr><td>q3 min / max</td><td>Femur/tibia pinch zones, servo horn, cable bend and wheel pod.</td><td>Knee packaging or limit needs revision.</td></tr>
+                <tr><td>Wheel continuous turn</td><td>Hub, side support, tyre, fastener, wire/drive mechanism and ground clearance.</td><td>Wheel stack is not yet manufacturable.</td></tr>
+              </tbody>
+            </table></div>
+
+            <h3>Chapter gate</h3>
+            <div class="gate-grid">
+              <label class="gate"><input type="checkbox" data-gate="05-servo"><span><strong>Servo evidence is measured</strong><span>Case, ears, both axes, horn, fasteners and cable exit have traceable dimensions or remain blocked.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="05-chain"><span><strong>Four-axis chain exists</strong><span>q1, d1, q2, femur, q3, tibia and driven wheel match the canonical architecture.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="05-origins"><span><strong>Named joint origins drive cleanly</strong><span>Each ±5° sign test and each limit check is recorded.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="05-support"><span><strong>Loads have opposing support</strong><span>Horn, bearing/shaft and printed walls form a credible load path without rubbing.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="05-cables"><span><strong>Cable keep-outs move with links</strong><span>Plug bodies, bend radii and service loops are present in every extreme pose.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="05-repair"><span><strong>Wheel and covers are serviceable</strong><span>Wear parts can be removed without destroying a structural link.</span></span></label>
+            </div>
+          </div>
+        </section>
+
+        <section class="chapter" id="four-leg-assembly" data-chapter="06">
+          <div class="chapter-header">
+            <span class="chapter-number">06</span>
+            <div><h2>Assemble four legs without hiding asymmetry</h2><p>Pin the body, place explicit mount origins, duplicate the proven chain, audit signs and names, then resolve the wheel-heading architecture before freezing interfaces.</p></div>
+          </div>
+          <div class="reading">
+            <p class="lede">Four occurrences can share one leg definition, but their body origins, signs, cable exits and wheel headings are not interchangeable. Reuse geometry; validate every occurrence.</p>
+
+            <div class="visual-grid">
+              <figure class="visual-card teaching-visual">
+                <div class="teaching-visual-frame" data-zoom-src="fusion-guide/assets/generated/mist-04-assembly-validation.svg" data-zoom-title="AI-assisted MIST assembly, keep-out, and pose study">
+                  <img src="fusion-guide/assets/generated/mist-04-assembly-validation.svg" alt="AI-assisted MIST assembly with a portrait phone, four wheel-legs, translucent root keep-outs, motion ghosts, and pose silhouettes">
+                  <span class="concept-label">Assembly study · exact origins in Chapter 01</span><span class="zoom-button">Expand assembly visual</span>
+                </div>
+                <div class="annotation-rail four">
+                  <span><code>FL</code><b>+25°</b><small>place first</small></span>
+                  <span><code>FR</code><b>−25°</b><small>map origin</small></span>
+                  <span><code>RL</code><b>+109°</b><small>audit sign</small></span>
+                  <span><code>RR</code><b>−109°</b><small>audit ID</small></span>
+                </div>
+                <figcaption>Workflow: Pin <code>base_link</code>, place FL, use <strong>Duplicate With Joints</strong>, map the other three explicit origins, then Drive Joints and Inspect → Interference. The render keeps wheel pods and root keep-outs visually provisional. <a href="../../mist_3d/mist_fusion_guide/2dc4e473-bd40-4c91-8d6c-b93aed0190e5.png" target="_blank" rel="noopener">Original AI source 05</a> incorrectly suggests equal 90° spacing.</figcaption>
+              </figure>
+              <figure class="visual-card">
+                <div class="image-frame"><img src="https://help.autodesk.com/cloudhelp/ENU/Fusion-Assemble/images/animation/duplicate-with-joints.gif" alt="Official Autodesk Fusion animation showing Duplicate With Joints" loading="lazy"></div>
+                <figcaption><a href="https://help.autodesk.com/cloudhelp/ENU/Fusion-Assemble/files/ASM-DUPLICATE-WITH-JOINTS-COMMAND.htm">Official Autodesk Fusion Help: Duplicate With Joints</a>. © Autodesk. Use the command to preserve an articulated subassembly, then independently audit destination origin and joint orientation.</figcaption>
+              </figure>
+            </div>
+
+            <h3>Root assembly sequence</h3>
+            <div class="steps">
+              <article class="step-card"><div><h4>Activate the design root and Pin the body</h4><p>Use the current <strong>Pin</strong> relationship to fix the body/base occurrence to world at the global origin. <strong>Ground To Parent</strong> is a distinct relationship for a child fixed to its parent; do not use old generic “Ground” instructions as a substitute.</p></div></article>
+              <article class="step-card"><div><h4>Create four body-side origins</h4><p>From the skeleton mount points and radial rays, create <code>JO_BODY_FL</code>, <code>JO_BODY_FR</code>, <code>JO_BODY_RL</code>, and <code>JO_BODY_RR</code>. Make axis orientation consistent: one axis along the q1 physical rotation line, with secondary axes defining the local leg plane.</p></div></article>
+              <article class="step-card"><div><h4>Place and prove FL first</h4><p>Attach the master root to <code>JO_BODY_FL</code> with the intended rigid/body-to-root relationship, then drive all internal joints. Use FL as the reference occurrence only after it passes the one-leg battery.</p></div></article>
+              <article class="step-card"><div><h4>Duplicate With Joints</h4><p>Select the complete leg subassembly, run Duplicate With Joints, and map its root to FR, RL, then RR destination origins. If the command is unavailable in your licence/build, create occurrences of the same component definition and recreate only the body-root relationship—do not Paste New four independent geometries.</p></div></article>
+              <article class="step-card"><div><h4>Rename occurrence and every joint</h4><p>Use <code>LEG_FL:1</code>, <code>LEG_FR:1</code>, <code>LEG_RL:1</code>, <code>LEG_RR:1</code> and consistent joint prefixes. Browser order is not electrical identity; maintain an explicit mapping table.</p></div></article>
+            </div>
+
+            <h3>Occurrence audit—never skip this after duplication</h3>
+            <div class="table-wrap"><table>
+              <thead><tr><th>Check</th><th>Pass condition</th><th>Common silent error</th></tr></thead>
+              <tbody>
+                <tr><td>Root position</td><td>q1 axis coincides with the named physical mount point and ray.</td><td>Duplicate snapped to a visually similar body edge or wrong joint origin.</td></tr>
+                <tr><td>Local plane</td><td>Positive q2/q3 motion bends the intended way for that leg under the shared software convention.</td><td>Mirrored occurrence reverses the apparent positive direction.</td></tr>
+                <tr><td>Component reuse</td><td>A harmless master-link edit updates all four occurrences.</td><td>Paste New created independent definitions.</td></tr>
+                <tr><td>Joint limits</td><td>q1/q2/q3 ranges and Rest values match the canonical relationship table.</td><td>Limits were lost, copied to the wrong relationship, or flipped.</td></tr>
+                <tr><td>Hardware handedness</td><td>Fasteners, covers, auxiliary support and cable exit remain accessible on both sides.</td><td>Geometrically mirrored brackets trap a screw or bend the cable against the body.</td></tr>
+                <tr><td>Names / IDs</td><td>Occurrence, joint, drawing, harness and simulation mapping refer to the same corner.</td><td>Rear-left and rear-right IDs are silently swapped.</td></tr>
+              </tbody>
+            </table></div>
+
+            <div class="callout stop">
+              <strong class="callout-title">Wheel architecture gate: fixed radial wheels cannot all roll without scrub.</strong>
+              <p>At four different mount azimuths, the wheel rolling directions are also different if every carrier remains radial. Ordinary fixed wheels require parallel rolling axes/directions for conventional no-slip translation. The current radial arrangement therefore implies scrub/skid, a special wheel, a passive/active steering degree of freedom, or another explicitly chosen compromise. This is a system architecture decision, not a fillet problem.</p>
+            </div>
+
+            <h3>Compare the wheel-heading options</h3>
+            <div class="table-wrap"><table>
+              <thead><tr><th>Option</th><th>CAD change</th><th>Control / motion trade-off</th><th>Mechanical trade-off</th></tr></thead>
+              <tbody>
+                <tr><td>Accept scrub/skid</td><td>Keep fixed radial carriers; make wheel pod and body mounts robust to lateral loads.</td><td>Simple actuation, but turning/translation wastes energy and odometry degrades.</td><td>Tyre wear, floor dependence, high lateral servo/bearing/chassis load.</td></tr>
+                <tr><td>Parallel fixed wheel headings</td><td>Add yawed/offset adapters so all wheel rolling directions align.</td><td>Conventional forward/reverse improves; leg-plane and gait interactions become asymmetric.</td><td>Adapters add moment arm, mass, collision volume and handed parts.</td></tr>
+                <tr><td>Omni wheels</td><td>Reserve roller envelope and choose hub/width.</td><td>Reduces lateral scrub, but traction and odometry depend on roller geometry and surface.</td><td>Noise, vibration, debris sensitivity, cost and larger envelope.</td></tr>
+                <tr><td>Passive caster/yaw pod</td><td>Add a vertical swivel axis, trail and stops.</td><td>Can self-align, but reversals and leg motion may cause flutter or wrong-way caster states.</td><td>More bearings, height, compliance and packaging.</td></tr>
+                <tr><td>Active steering</td><td>Add actuator, yaw bearing, cables and another joint/control channel.</td><td>Most controllable wheel heading; highest software and calibration complexity.</td><td>Mass, power, cost and failure modes rise sharply.</td></tr>
+                <tr><td>Adjustable prototype pod</td><td>Use a bolted yaw-index interface with several tested angles.</td><td>Useful for experiments before architecture freeze.</td><td>Needs a strong indexed clamp and can loosen; not a final answer by itself.</td></tr>
+              </tbody>
+            </table></div>
+
+            <p><strong>Recommended current action:</strong> keep the wheel pod removable and its yaw interface adjustable/replaceable. Create separate keep-out studies for the leading options. Do not merge the carrier into the tibia or publish four “final” wheel parts until driving tests select an architecture.</p>
+
+            <h3>Neighbour and body clearance</h3>
+            <p>Drive pairs, not only individual legs. At minimum test front pair inward/outward q1, rear pair inward/outward q1, diagonal extremes, all knees tucked, body at nominal and maximum height, wheel full diameter/width, and cable loops at the unfavourable side. The four unequal azimuths make nearest-neighbour clearance different front-to-side and rear-to-side.</p>
+
+            <h3>Keep the mapping conflict visible</h3>
+            <p>The rear servo ID conflict was resolved in source on 2026-07-13. Build documentation and the simulator hardware exporter now assign IDs 9–12 to RR and 13–16 to RL; the simulator keeps its internal analytic array order FL/FR/RL/RR and reorders only at the export boundary. Still exercise the complete signed mapping on unloaded hardware before enabling torque.</p>
+
+            <h3>Chapter gate</h3>
+            <div class="gate-grid">
+              <label class="gate"><input type="checkbox" data-gate="06-pin"><span><strong>Body is pinned at the contract origin</strong><span>No captured Move or hidden offset defines the robot frame.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="06-origins"><span><strong>Four explicit origins are correct</strong><span>+25°, −25°, +109°, −109° names, positions and axes are audited.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="06-reuse"><span><strong>All legs reuse the master definition</strong><span>A controlled master edit propagates; joints and occurrence names remain intact.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="06-signs"><span><strong>Every occurrence passes sign tests</strong><span>Positive q1/q2/q3 and wheel motion match the control convention at all corners.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="06-wheel"><span><strong>Wheel-heading architecture is selected</strong><span>Scrub, parallel, omni, caster, steering or an explicit test pod has evidence; interfaces are not frozen otherwise.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="06-mapping"><span><strong>Rear ID mapping is resolved</strong><span>CAD, harness, control and simulation agree; until then this gate must remain unchecked.</span></span></label>
+            </div>
+          </div>
+        </section>
+
+        <section class="chapter" id="motion-validation" data-chapter="07">
+          <div class="chapter-header">
+            <span class="chapter-number">07</span>
+            <div><h2>Validate motion, collisions, cables, mass, and service</h2><p>A driven pose battery and staged inspection workflow replace the unreliable “it moves on screen” test.</p></div>
+          </div>
+          <div class="reading">
+            <p class="lede">Collision checks only know about the solid geometry and pose you give them. Add fasteners, cables, connectors, tyre width, manufacturing allowance and neighbouring legs before treating a clean result as useful.</p>
+
+            <div class="visual-grid">
+              <figure class="visual-card teaching-visual">
+                <div class="teaching-visual-frame" data-zoom-src="fusion-guide/assets/generated/mist-04-assembly-validation.svg" data-zoom-title="MIST pose battery and keep-out teaching visual">
+                  <img src="fusion-guide/assets/generated/mist-04-assembly-validation.svg" alt="AI-assisted validation visual showing neutral, squat, one-leg lift and slope poses, plus motion and service keep-outs">
+                  <span class="concept-label">Pose battery · image is explanatory, not a result</span><span class="zoom-button">Expand pose visual</span>
+                </div>
+                <div class="annotation-rail four">
+                  <span><code>q1</code><b>±60°</b><small>drive limits</small></span>
+                  <span><code>q2</code><b>−35…110°</b><small>drive limits</small></span>
+                  <span><code>q3</code><b>±135°</b><small>drive limits</small></span>
+                  <span><code>motion_clearance</code><b>2 mm</b><small>provisional</small></span>
+                </div>
+                <figcaption>Use Assemble → Drive Joints or a joint context menu, inspect every named pose, and classify overlaps. Section Analysis reveals interiors; it does not detect collisions. <a href="../../mist_3d/mist_fusion_guide/d9363efa-0ea2-4767-89ec-a16e4b8b0fc9.png" target="_blank" rel="noopener">Original AI source 06</a> contains noncanonical joint limits.</figcaption>
+              </figure>
+              <figure class="visual-card">
+                <div class="image-frame"><img src="https://help.autodesk.com/cloudhelp/ENU/Fusion-Model/images/diagram/interference-1.png" alt="Official Autodesk Fusion Interference Results dialog" loading="lazy"></div>
+                <figcaption><a href="https://help.autodesk.com/cloudhelp/ENU/Fusion-Model/files/GUID-A6629113-B137-4EDE-B3B2-C9F1F3BA83D1.htm">Official Autodesk Fusion Help: Interference reference</a>. © Autodesk. Results are pose- and selection-dependent; coincident faces and intended fits must be classified, not blindly deleted.</figcaption>
+              </figure>
+            </div>
+
+            <h3>Use the right tool for the question</h3>
+            <div class="table-wrap"><table>
+              <thead><tr><th>Tool</th><th>Answers</th><th>Does not answer</th><th>MIST use</th></tr></thead>
+              <tbody>
+                <tr><td>Drive Joints</td><td>How relationships move through selected ranges.</td><td>Whether unmodelled cable, tyre deformation or control timing is safe.</td><td>Pose and sequential sweep q1/q2/q3; inspect signs and singular-looking states.</td></tr>
+                <tr><td>Interference</td><td>Which selected solids overlap in the current pose and by how much.</td><td>Clearance at every other pose; near-misses; flexible contact.</td><td>Run per pose on production + hardware + cable keep-out bodies; classify each result.</td></tr>
+                <tr><td>Section Analysis</td><td>What is hidden inside a closed assembly.</td><td>Collision or clearance automatically.</td><td>Inspect seam laps, bosses, screw access, servo supports, decks and connectors.</td></tr>
+                <tr><td>Measure</td><td>Distance, angle, radius, coordinates and minimum distance for selected geometry.</td><td>Motion history or tolerance stack by itself.</td><td>Record clearance at named worst-case pairs; compare with <code>motion_clearance</code>.</td></tr>
+                <tr><td>Contact Sets</td><td>Interactive component contact behaviour.</td><td>A complete robust collision report; large sets can slow the model.</td><td>Use sparingly for a focused mechanism check, not as the only validation.</td></tr>
+                <tr><td>Center of Mass / Properties</td><td>Mass and CoM from assigned materials/overrides.</td><td>Truth when reference bodies or missing hardware have wrong density.</td><td>Run with an inclusion/exclusion ledger in several poses.</td></tr>
+              </tbody>
+            </table></div>
+
+            <h3>Create a validation design state</h3>
+            <ol>
+              <li>Save a named version before the test.</li>
+              <li>Turn on production components, measured hardware, tyres, fastener heads, connector volumes, cable-sweep bodies and required neighbouring legs.</li>
+              <li>Turn off the global body envelope and other construction bodies unless they are the specific clearance target.</li>
+              <li>Compute all and clear the earliest Timeline/relationship error.</li>
+              <li>Run one named pose, record joint values, screenshot the view, save Interference results and classify findings.</li>
+              <li>Return to a known home pose before changing the test selection.</li>
+            </ol>
+
+            <h3>Minimum driven-pose battery</h3>
+            <div class="table-wrap"><table>
+              <thead><tr><th>Pose ID</th><th>Joint state</th><th>Primary questions</th></tr></thead>
+              <tbody>
+                <tr><td>P00 CAD zero</td><td>All q axes at geometric zero</td><td>Do origins, axes and signs match the contract without hidden offsets?</td></tr>
+                <tr><td>P01 nominal stand</td><td>Baseline solved stance; body bottom 148 mm above ground</td><td>Do wheel axes hit the skeleton, knees keep the selected branch, and CoM remain supported?</td></tr>
+                <tr><td>P02 maximum-body scan</td><td>Body bottom 170–171 mm; 171 mm is the historical 111/70 target</td><td>Find the highest rounded-geometry pose that still has reach headroom, stays away from singularity, and preserves cable/collision limits.</td></tr>
+                <tr><td>P03 low/tucked</td><td>Commanded low body with knees folded</td><td>Body underside, wheel/body, femur/tibia, servo and cable pinch.</td></tr>
+                <tr><td>P04 q1 outward</td><td>All q1 at outward limits</td><td>Body-root collision, footprint, wheel heading, wire exit and floor envelope.</td></tr>
+                <tr><td>P05 q1 inward pairs</td><td>Front pair inward; then rear pair inward</td><td>Neighbouring links/wheels/cables and shell/root conflicts.</td></tr>
+                <tr><td>P06 q2 endpoints</td><td>Each q2 min and max with q3 safe</td><td>Hip carrier, body lower edge, servo and femur clearances.</td></tr>
+                <tr><td>P07 q3 endpoints</td><td>Each q3 min and max with q2 safe</td><td>Knee self-collision, cable loop, horn/support and wheel-pod clearance.</td></tr>
+                <tr><td>P08 diagonal gait</td><td>FL+RR forward/loaded, FR+RL recovery; then swap</td><td>Pairwise collision, supported footprint and cable corridors.</td></tr>
+                <tr><td>P09 wheel service</td><td>Leg accessible; wheel removed along planned path</td><td>Can wheel, bearing, fasteners and servo covers be serviced with available tools?</td></tr>
+              </tbody>
+            </table></div>
+
+            <h3>Check the path between poses, not only endpoints</h3>
+            <p>Drive one joint slowly while the others are held, then drive coupled sequences in small increments. Interference is a current-pose calculation: a clean start and end can miss a collision in the middle. For high-risk pairs, record angle steps and minimum clearance in a test table. Use a denser step near a clearance minimum or change in linkage branch.</p>
+
+            <h3>Model cables as swept keep-outs</h3>
+            <div class="steps">
+              <article class="step-card"><div><h4>Represent rigid ends</h4><p>Model plugs, backshell/heat-shrink and the first straight cable length as solids attached to the correct parent link.</p></div></article>
+              <article class="step-card"><div><h4>Define bend and service slack</h4><p>Create a centreline path using the actual cable’s minimum bend radius plus assembly slack. Do not route through a joint axis just because the screen line is thin.</p></div></article>
+              <article class="step-card"><div><h4>Create conservative sweep bodies</h4><p>Sweep cable diameter plus clearance along representative extreme paths. Keep these as <code>REF_CABLE_SWEEP_*</code> bodies included in Interference selection but excluded from export and mass.</p></div></article>
+              <article class="step-card"><div><h4>Inspect pinch and fatigue</h4><p>Look for rubbing edges, repeated reverse bending, tension at limits, connector side-load and assembly states where the loop is installed incorrectly. Add clips/strain relief only after a viable motion corridor exists.</p></div></article>
+            </div>
+
+            <h3>Classify every Interference result</h3>
+            <div class="table-wrap"><table>
+              <thead><tr><th>Class</th><th>Example</th><th>Action</th></tr></thead>
+              <tbody>
+                <tr><td>Intended join</td><td>Insert represented inside its receiving boss, or fastener shank through a hole.</td><td>Document/exclude the exact pair; verify the manufacturing fit separately.</td></tr>
+                <tr><td>Duplicate reference geometry</td><td>REF servo overlaps the real hardware occurrence.</td><td>Fix selection/visibility; do not alter production geometry.</td></tr>
+                <tr><td>Coincident boundary</td><td>Mating faces touch with zero clearance.</td><td>Decide whether assembly needs clearance, preload or bonded contact; zero is not automatically safe.</td></tr>
+                <tr><td>True collision</td><td>Moving link enters body, fastener head, neighbour, tyre or cable sweep.</td><td>Record pose, bodies and overlap; revise geometry/range/routing and rerun the full affected battery.</td></tr>
+                <tr><td>Below required clearance</td><td>No overlap, but Measure reports less than <code>motion_clearance</code>.</td><td>Treat as failure until tolerance, flex and cable behaviour justify a smaller controlled limit.</td></tr>
+              </tbody>
+            </table></div>
+
+            <h3>Mass, CoM, and supported footprint screen</h3>
+            <p>For each primary pose, project the CoM vertically onto the ground plane and compare it with the convex polygon of the wheels expected to support the robot in that phase. Record distance to the nearest support edge, not only “inside/outside.” Dynamic gait, compliance, acceleration and wheel slip require more margin than a static CAD screen. Run forward phone-heavy and battery-removal/service configurations too.</p>
+
+            <div class="callout warning"><strong class="callout-title">CAD validation cannot certify torque, thermal, electrical, or impact behaviour.</strong><p>Use the geometry and mass model to identify candidates, then validate servo torque/current, rail sag, heat, print anisotropy, fastener retention and real wheel-floor behaviour with calculations and staged hardware tests.</p></div>
+
+            <h3>Chapter gate</h3>
+            <div class="gate-grid">
+              <label class="gate"><input type="checkbox" data-gate="07-pose"><span><strong>Named pose battery is recorded</strong><span>Angles, screenshots, selected bodies and results are reproducible.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="07-path"><span><strong>Intermediate sweeps were checked</strong><span>No clearance claim relies only on start/end poses.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="07-interference"><span><strong>Interferences are classified</strong><span>Intended joins, duplicates, contact and true collisions are not conflated.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="07-cable"><span><strong>Cable sweeps pass</strong><span>Rigid connectors, bend radii, service slack and pinch zones are represented.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="07-com"><span><strong>Mass and CoM are audited</strong><span>Included/excluded bodies and missing masses are recorded for every critical pose.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="07-service"><span><strong>Tools and removal paths fit</strong><span>Battery, fuses, phone, servos and wheels can be accessed in the planned assembly order.</span></span></label>
+            </div>
+          </div>
+        </section>
+
+        <section class="chapter" id="print-coupons" data-chapter="08">
+          <div class="chapter-header">
+            <span class="chapter-number">08</span>
+            <div><h2>Turn provisional dimensions into print evidence</h2><p>Use small coupons, explicit clearance semantics, intended orientation, and measured results before committing long shell or leg prints.</p></div>
+          </div>
+          <div class="reading">
+            <p class="lede">A CAD clearance is not a printer capability. Material, profile, nozzle, layer height, orientation, cooling, feature shape and post-processing all change the fit. The coupon must contain the same interface logic as the production part.</p>
+
+            <h3>Never mix these clearance meanings</h3>
+            <div class="table-wrap"><table>
+              <thead><tr><th>Parameter</th><th>Meaning</th><th>Example at 0.25 mm</th><th>Use</th></tr></thead>
+              <tbody>
+                <tr><td><code>pocket_clearance_per_side</code></td><td>Linear allowance on each opposing side.</td><td>A 24.7 mm rigid part gets a 25.2 mm pocket.</td><td>Servo cases and rigid rectangular inserts. <strong>Not LiPo retention</strong>; battery padding, no-compression and abnormal-pack keep-out are separate.</td></tr>
+                <tr><td><code>pin_radial_clearance</code></td><td>Radial difference between pin and bore.</td><td>0.25 mm radial means 0.50 mm diametral difference.</td><td>Printed pivots, alignment pins and round slips.</td></tr>
+                <tr><td><code>hole_diameter_comp</code></td><td>Amount added to the nominal modeled hole diameter under the documented policy.</td><td>M3 clearance baseline 3.4 mm plus a tested compensation only if the profile needs it.</td><td>Fastener pass-through holes; often replaced by drill-after-print policy.</td></tr>
+                <tr><td><code>motion_clearance</code></td><td>Minimum free space between moving or tolerance-sensitive envelopes.</td><td>2 mm target is evaluated after flex, fastener heads, cable and print variation.</td><td>Leg/body, servo/link, cable/pinch and neighbouring parts.</td></tr>
+              </tbody>
+            </table></div>
+
+            <h3>Coupon ladder</h3>
+            <div class="steps">
+              <article class="step-card"><div><h4>C01 dimensional calibration</h4><p>Print X/Y/Z bars, outside walls and holes with the intended PETG profile. Measure at several locations with calibrated calipers. Record slicer profile hash/name, material lot, orientation, ambient conditions and measurement tool.</p></div></article>
+              <article class="step-card"><div><h4>C02 servo pocket + ears</h4><p>Include the real pocket corner radii, ear slots, screw-head recess, insertion direction and cable notch. Test several per-side clearances around the provisional 0.25 mm. The winner must insert without force, locate repeatably and release for service.</p></div></article>
+              <article class="step-card"><div><h4>C03 horn / support stack</h4><p>Capture the measured horn, bolt pattern and opposing support/bearing in a small joint slice. Torque it, cycle it and inspect wobble, creep, rubbing and screw access.</p></div></article>
+              <article class="step-card"><div><h4>C04 M3 boss / insert ladder</h4><p>Vary hole, boss wall, edge distance and insert depth. Install with the real tool and temperature, then run tightening and pull/twist tests. Record whether holes are printed final or drilled.</p></div></article>
+              <article class="step-card"><div><h4>C05 shell seam arc</h4><p>Print an arc containing both shell walls, overlap flange, keys, bosses, insert/nut, screw and tool corridor in production orientation. Assemble repeatedly and load in bending/torsion.</p></div></article>
+              <article class="step-card"><div><h4>C06 link root / axis boss</h4><p>Print a shortened femur/root transition with the intended layer orientation and local fillets. Apply a documented bending load and measure permanent set, crack initiation and fastener movement.</p></div></article>
+              <article class="step-card"><div><h4>C07 phone retention slice</h4><p>Include case, button/camera relief, retention lip/strap and USB clearance. Test insertion, removal, shake and cable strain without printing the body.</p></div></article>
+            </div>
+
+            <h3>Material and process starting point</h3>
+            <div class="decision-grid">
+              <article class="decision-card"><h3>PETG structural baseline</h3><p>Useful toughness and temperature margin for early chassis/links, but stringing, hole shrink, creep and layer adhesion are profile-dependent. Dry material, use adequate perimeters, and orient load paths deliberately.</p></article>
+              <article class="decision-card"><h3>TPU tyre / compliant parts</h3><p>Useful for traction and isolation, but diameter changes under load and surface. Model the rigid wheel and tyre separately; measure loaded radius and lateral compliance before trusting stance or odometry.</p></article>
+              <article class="decision-card"><h3>Infill is not a substitute for section design</h3><p>Perimeters, closed sections, ribs and layer orientation usually govern a thin structural part more directly than a high infill percentage. Document the actual slicer preview.</p></article>
+              <article class="decision-card"><h3>Support strategy changes interfaces</h3><p>Support scars and bridging can alter mating faces. Reorient, split or add sacrificial machining stock before accepting support inside a bearing, servo or seam interface.</p></article>
+            </div>
+
+            <h3>Why link thickness is so influential</h3>
+            <p>For a simple rectangular beam, area moment of inertia about the strong axis is approximately <code>I = b t³ / 12</code>, and deflection scales roughly as <code>δ ∝ L³ / (E b t³)</code>. This is a screening model, not a complete leg simulation, but it explains why increasing thickness from 14 to 15 mm can help more than the same 1 mm added to width—and why increasing femur length is expensive for stiffness.</p>
+            <p>Real links include servo pockets, bosses, anisotropic layers and changing sections. Validate with the link-root coupon and, later, a measured loaded assembly. Keep target load, fixture geometry, dial/measurement method and acceptance limit in the test record.</p>
+
+            <h3>Controlled experiment record</h3>
+            <pre><code>experiment_id:
+question:
+source_file_version:
+parameter(s) changed:
+baseline → candidate:
+printer / nozzle / layer / material lot:
+orientation / supports / perimeters / infill:
+coupon drawing or 3MF:
+measured dimensions:
+assembly force / fastener torque / test load:
+deflection / permanent set / cycles / failure mode:
+decision: keep | reject | repeat
+downstream checks invalidated:
+operator / date / evidence links:</code></pre>
+
+            <h3>Chapter gate</h3>
+            <div class="gate-grid">
+              <label class="gate"><input type="checkbox" data-gate="08-semantics"><span><strong>Clearance semantics are explicit</strong><span>Per-side, radial and diametral values cannot be confused.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="08-profile"><span><strong>Production-like profile is recorded</strong><span>Printer, nozzle, material lot, layer, orientation, supports, walls and infill are traceable.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="08-servo"><span><strong>Servo/horn coupons pass</strong><span>Fit, torque transfer, support, fasteners and service access use measured hardware.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="08-seam"><span><strong>Shell seam arc passes</strong><span>Alignment, clearance, fasteners, tool access and structural loading are acceptable.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="08-link"><span><strong>Link-root coupon passes</strong><span>The intended orientation survives the documented load and deflection criterion.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="08-record"><span><strong>Failed trials are preserved</strong><span>Evidence, decision and invalidated downstream checks are stored, not remembered in chat.</span></span></label>
+            </div>
+          </div>
+        </section>
+
+        <section class="chapter" id="parameter-explorer" data-chapter="09">
+          <div class="chapter-header">
+            <span class="chapter-number">09</span>
+            <div><h2>Explore parameter trade-offs before editing CAD</h2><p>A live geometry screen shows reach, footprint, stiffness tendency, shell scale, print-envelope margin, mount radius, and nominal solved angles.</p></div>
+          </div>
+          <div class="reading">
+            <p class="lede">Use the explorer to form a question, not to approve a design. It deliberately omits collision, cables, servo torque, mass distribution, tyre deformation, print anisotropy and wheel scrub. Any promising edit must return through the full Fusion validation loop.</p>
+
+            <div class="explorer">
+              <div class="explorer-controls">
+                <h3>Geometry inputs</h3>
+                <p class="control-note">Presets A–E reproduce the current comparison study. Moving a slider clears the preset highlight.</p>
+                <div class="preset-row" aria-label="Parameter presets">
+                  <button class="preset-button" type="button" data-preset="A">A · canonical</button>
+                  <button class="preset-button" type="button" data-preset="B">B</button>
+                  <button class="preset-button" type="button" data-preset="C">C</button>
+                  <button class="preset-button" type="button" data-preset="D">D</button>
+                  <button class="preset-button" type="button" data-preset="E">E</button>
+                </div>
+
+                <div class="control-group"><label for="p-body-dia"><span>Body diameter</span><output data-output-for="p-body-dia">180 mm</output></label><input id="p-body-dia" type="range" min="150" max="225" step="1" value="180"><span class="control-note">Changes shell scale, bed margin and all radial mount positions.</span></div>
+                <div class="control-group"><label for="p-body-h"><span>Body height</span><output data-output-for="p-body-h">260 mm</output></label><input id="p-body-h" type="range" min="190" max="280" step="1" value="260"><span class="control-note">A one-piece print has only 5 mm nominal Z margin at baseline.</span></div>
+                <div class="control-group"><label for="p-d1"><span>q1 → q2 offset d1</span><output data-output-for="p-d1">32 mm</output></label><input id="p-d1" type="range" min="20" max="65" step="1" value="32"><span class="control-note">Moves the hip-pitch axis outward and changes root packaging/reach.</span></div>
+                <div class="control-group"><label for="p-femur"><span>Femur axis distance</span><output data-output-for="p-femur">110 mm</output></label><input id="p-femur" type="range" min="60" max="135" step="1" value="110"><span class="control-note">Longer helps reach but flex tendency rises approximately with L³.</span></div>
+                <div class="control-group"><label for="p-tibia"><span>Tibia axis distance</span><output data-output-for="p-tibia">70 mm</output></label><input id="p-tibia" type="range" min="50" max="115" step="1" value="70"><span class="control-note">Changes reach, knee pose, unsprung/remote mass and wheel clearance.</span></div>
+                <div class="control-group"><label for="p-wheel-dia"><span>Wheel diameter</span><output data-output-for="p-wheel-dia">70 mm</output></label><input id="p-wheel-dia" type="range" min="45" max="100" step="1" value="70"><span class="control-note">Changes axle height, obstacle roll-over, gearing demand and envelope.</span></div>
+                <div class="control-group"><label for="p-stance-r"><span>Wheel-axis stance radius</span><output data-output-for="p-stance-r">176 mm</output></label><input id="p-stance-r" type="range" min="135" max="210" step="1" value="176"><span class="control-note">Larger footprint can improve static support but consumes leg reach.</span></div>
+                <div class="control-group"><label for="p-body-clearance"><span>Body-bottom clearance</span><output data-output-for="p-body-clearance">148 mm</output></label><input id="p-body-clearance" type="range" min="105" max="180" step="1" value="148"><span class="control-note">Raises hip axes relative to the ground and consumes vertical reach.</span></div>
+                <div class="control-group"><label for="p-beam-t"><span>Link thickness proxy</span><output data-output-for="p-beam-t">14 mm</output></label><input id="p-beam-t" type="range" min="9" max="22" step="1" value="14"><span class="control-note">Stiffness proxy scales with thickness³; mass and collisions are not calculated.</span></div>
+                <div class="control-group"><label for="p-front-az"><span>Front mount azimuth</span><output data-output-for="p-front-az">25°</output></label><input id="p-front-az" type="range" min="10" max="50" step="1" value="25"><span class="control-note">Moves front footprint, body load path and neighbour clearance.</span></div>
+                <div class="control-group"><label for="p-rear-az"><span>Rear mount azimuth</span><output data-output-for="p-rear-az">109°</output></label><input id="p-rear-az" type="range" min="85" max="140" step="1" value="109"><span class="control-note">Moves rear footprint and harness/root corridors; it is not constrained to front+90°.</span></div>
+              </div>
+
+              <div class="explorer-stage">
+                <h3>Side solve + physical top rays</h3>
+                <svg id="parameter-svg" viewBox="0 0 720 330" role="img" aria-label="Interactive side-view leg solve and top-view mount layout"></svg>
+                <div class="metric-grid">
+                  <div class="metric" id="metric-reach"><strong>—</strong><span>Reach used</span></div>
+                  <div class="metric" id="metric-footprint"><strong>—</strong><span>Maximum footprint</span></div>
+                  <div class="metric" id="metric-stiffness"><strong>—</strong><span>Femur stiffness proxy</span></div>
+                  <div class="metric" id="metric-shell"><strong>—</strong><span>Shell area proxy</span></div>
+                  <div class="metric" id="metric-bed"><strong>—</strong><span>Smallest bed margin</span></div>
+                  <div class="metric" id="metric-hip-radius"><strong>—</strong><span>q2 axis radius</span></div>
+                  <div class="metric" id="metric-q2"><strong>—</strong><span>Nominal q2 solve</span></div>
+                  <div class="metric" id="metric-q3"><strong>—</strong><span>Nominal q3 solve</span></div>
+                </div>
+                <p class="explorer-message" id="explorer-message" role="status" aria-live="polite">Loading the baseline geometry screen…</p>
+              </div>
+            </div>
+
+            <h3>How the explorer computes its warnings</h3>
+            <ul>
+              <li>The hip-pitch axis radius is <code>body_dia/2 + 10 + d1</code>. Hip height above ground is <code>body_clearance + 35</code>.</li>
+              <li>The target wheel axis is at horizontal radius <code>stance_r</code> and height <code>wheel_dia/2</code>. A two-link cosine-law solve chooses the displayed knee branch and screens the nominal result against q2 −35°…+110° and q3 ±135°.</li>
+              <li><strong>Reach used</strong> is straight-line q2-to-wheel distance divided by <code>femur + tibia</code>. Above 86% warns because the reference study reserves roughly 14% for stride, tolerance and pose variation; above 94% fails this screen.</li>
+              <li><strong>Footprint</strong> is the largest separation between the four wheel-centre points plus wheel diameter. It is a bounding span, not support-polygon margin.</li>
+              <li><strong>Stiffness proxy</strong> is relative to the baseline and scales as <code>(beam_t/14)³ × (110/femur)³</code>. It ignores width, pockets, material, layers and tibia.</li>
+              <li><strong>Shell proxy</strong> scales cylindrical side area with diameter × height. It is not a mass estimate.</li>
+              <li><strong>Bed margin</strong> reports the smaller of 225 − body diameter and 265 − body height. It intentionally warns near an edge and cannot see brim, travel, split layout or slicer settings.</li>
+            </ul>
+
+            <div class="callout warning"><strong class="callout-title">A green explorer is not a green release gate.</strong><p>The preview draws one radial side projection and checks only one nominal q2/q3 solve. It does not validate q1, swept joint limits, body curvature, four-leg neighbour clearance, servo packaging, wheel width/heading, static margin, torque/current, print strength, cables, or service. Export the chosen values into a new Fusion version and run Chapters 07–08.</p></div>
+
+            <h3>Preset study—what changes and what does not</h3>
+            <div class="table-wrap"><table>
+              <thead><tr><th>Preset</th><th>d1 / femur / tibia</th><th>Stance / clearance</th><th>Front / rear</th><th>Interpretation</th></tr></thead>
+              <tbody>
+                <tr><td>A · canonical</td><td class="value">32 / 110 / 70 mm</td><td class="value">176 / 148 mm</td><td class="value">25° / 109°</td><td>Current locked geometry contract. It is the integration baseline, not proof that every interface is finished.</td></tr>
+                <tr><td>B</td><td class="value">31 / 82 / 91 mm</td><td class="value">169 / 140 mm</td><td class="value">25° / 119°</td><td>More balanced link lengths and lower body; changes knee packaging and rear spread.</td></tr>
+                <tr><td>C</td><td class="value">37 / 73 / 85 mm</td><td class="value">157 / 132 mm</td><td class="value">25° / 114°</td><td>Compact/lower layout with shorter femur; may improve femur stiffness while compressing packaging.</td></tr>
+                <tr><td>D</td><td class="value">42 / 70 / 101 mm</td><td class="value">168 / 132 mm</td><td class="value">25° / 111°</td><td>Longer tibia and larger hip offset; moves mass and wheel-pod clearance consequences downstream.</td></tr>
+                <tr><td>E</td><td class="value">59 / 70 / 96 mm</td><td class="value">183 / 130 mm</td><td class="value">25° / 124°</td><td>Large root offset and rear spread; likely harder on body/root moment and overall footprint.</td></tr>
+              </tbody>
+            </table></div>
+
+            <h3>Parameter impact map</h3>
+            <div class="parameter-impact">
+              <div class="impact-row"><code>body_dia</code><p>Rebuild shell, seams, phone tangent relationship, mount coordinates, decks, mass proxy, footprint and print segmentation. Re-run all body and leg-root checks.</p></div>
+              <div class="impact-row"><code>body_h</code><p>Recheck phone top/bottom margin, lid/seams, deck zones, cable runs, CoM and printer Z strategy.</p></div>
+              <div class="impact-row"><code>d1</code><p>Moves q2 outward; changes hip carrier, reach, body clearance, root moment, servo/cable packaging and all four joint origins downstream.</p></div>
+              <div class="impact-row"><code>femur</code><p>Changes reach and knee pose; flex tendency grows approximately with length³. Re-run torque, collision, print and control geometry.</p></div>
+              <div class="impact-row"><code>tibia</code><p>Changes knee solve, wheel position, q3 loads, cable route and gait mapping.</p></div>
+              <div class="impact-row"><code>wheel_dia</code><p>Changes axle height, ground/body clearance, torque-speed demand, footprint, tyre compression model and wheel-pod envelope.</p></div>
+              <div class="impact-row"><code>stance_r</code><p>Trades support polygon against reach headroom and overall size. Re-run nominal/max body poses and neighbour sweeps.</p></div>
+              <div class="impact-row"><code>neutral_body_clearance</code><p>Raises every hip above ground without lengthening the links. Recheck near-straight reach, tip margin, cable slack and service height.</p></div>
+              <div class="impact-row"><code>beam_t</code><p>Changes stiffness/mass, servo-pocket wall, fastener edge distance, collision and print time. Validate a new coupon rather than trusting the cubic proxy.</p></div>
+              <div class="impact-row"><code>front_az / rear_az</code><p>Move load paths, support polygon, wheel headings, neighbour clearance, body openings and harness corridors. Never change them as a cosmetic pattern edit.</p></div>
+            </div>
+
+            <h3>Physics-tested baseline: what actually passed</h3>
+            <div class="visual-grid simulation-evidence-grid">
+              <figure class="visual-card teaching-visual">
+                <div class="teaching-visual-frame sim-shot" data-zoom-src="fusion-guide/assets/generated/mist-sim-layout-a-neutral.svg" data-zoom-title="MIST full simulator with rounded Layout A values loaded">
+                  <img src="fusion-guide/assets/generated/mist-sim-layout-a-neutral.svg" alt="Browser screenshot of the full MIST simulator with femur 110, tibia 70, d1 32, front azimuth 25, rear azimuth 109, stance radius 176, and body-bottom clearance 148 loaded">
+                  <span class="concept-label">Real simulator screenshot · rounded Layout A neutral pose</span><span class="zoom-button">Expand simulator state</span>
+                </div>
+                <figcaption>Captured from <a href="../../sim/index.html">the local full simulator</a> with the Fusion baseline loaded. Neutral output is buildable: 3222 g, CoM Z 183 mm, 12% worst-servo utilisation, 24.9° static tip angle, 0.41 mm femur proxy, 11.71 V rail. These are model outputs, not bench measurements.</figcaption>
+              </figure>
+              <article class="sim-evidence">
+                <span class="kind locked">Full analytic pose battery · pass</span>
+                <h3>Rounded 110/70 build baseline</h3>
+                <p>The deterministic battery covers stand, 55% squat, 50 mm FL lift with centroid shift, and 10° slope. It is more demanding than the neutral screenshot.</p>
+                <div class="metric-grid evidence-metrics">
+                  <div class="metric"><strong>21.075%</strong><span>worst servo · gate ≤35%</span></div>
+                  <div class="metric"><strong>15.047°</strong><span>minimum tip · gate ≥12°</span></div>
+                  <div class="metric"><strong>0.582 mm</strong><span>maximum flex · gate ≤0.8</span></div>
+                  <div class="metric"><strong>11.681 V</strong><span>minimum rail · gate ≥9.9</span></div>
+                  <div class="metric warn"><strong>85.779%</strong><span>reach · gate ≤86%</span><span class="metric-status">0.221 pp margin</span></div>
+                  <div class="metric"><strong>1.000 A</strong><span>max leg current · gate ≤10.8</span></div>
+                  <div class="metric"><strong>0</strong><span>analytic self-collisions</span></div>
+                  <div class="metric"><strong>3222.2 g</strong><span>point/beam mass model</span></div>
+                </div>
+              </article>
+            </div>
+
+            <div class="callout stop"><strong class="callout-title">The 110 mm femur is tested, but not roomy.</strong><p>The optimizer found 111 mm; the CAD baseline rounds to 110 mm and still passes. Its reach headroom is only 0.221 percentage points. Real servo axis offsets, horn stacks, wheel support, cable bends and manufacturing tolerances can consume that margin. Re-run the full battery after those measured interfaces replace placeholders.</p></div>
+
+            <h3>One-at-a-time local sensitivity around the rounded baseline</h3>
+            <div class="table-wrap"><table>
+              <thead><tr><th>Single change</th><th>Model effect</th><th>What it teaches</th></tr></thead>
+              <tbody>
+                <tr><td><code>femur 105</code> or <code>tibia 65</code></td><td class="value">Reach 88.23% · fails 86% gate</td><td>Shorter is not automatically safer; the fixed stance/height target can consume more of the available chain.</td></tr>
+                <tr><td><code>stance_r 181</code></td><td class="value">Reach 86.61% · fails</td><td>A wider footprint trades static support against kinematic headroom.</td></tr>
+                <tr><td><code>neutral_body_clearance 153</code> or <code>leg_mount_h 40</code></td><td class="value">Reach 88.45% · fails</td><td>Raising the body or root without lengthening the chain consumes vertical reach quickly.</td></tr>
+                <tr><td><code>d1 27</code> or <code>mount_standoff 5</code></td><td class="value">Reach 86.61% · fails</td><td>Moving q2 inward changes the target distance even if the outer body still looks unchanged.</td></tr>
+                <tr><td><code>wheel_dia 65</code></td><td class="value">Reach 87.11% · fails</td><td>A smaller wheel lowers the axle; it is not an isolated tyre edit.</td></tr>
+                <tr><td><code>femur 115</code></td><td class="value">Reach 83.46%; flex 0.657 mm</td><td>Extra reach headroom costs stiffness because beam deflection trends strongly with length³.</td></tr>
+                <tr><td><code>front_az 30°</code></td><td class="value">Min tip 13.51°; worst servo 22.7%</td><td>Five degrees moves the support polygon and load split; mount azimuth is structural, not cosmetic.</td></tr>
+                <tr><td>Phone or battery centre +20 mm</td><td class="value">Min tip −0.10° / −0.08°</td><td>Small individual shifts compound; keep mass-centre parameters separate from physical package dimensions.</td></tr>
+              </tbody>
+            </table></div>
+
+            <div class="callout warning"><strong class="callout-title">Know which test validates what.</strong><p>The full simulator’s 13/13 invariant self-tests validate IK↔FK, forces, torque signs, Jacobians, slope response, power and linkage math on a frozen generic reference configuration—not the Layout A hardware. The analytic pipeline is the numeric authority. Rapier is qualitative fall/recovery evidence: wheel colliders are simplified, robot self-contact is disabled, flex is a cantilever proxy, and fixed-wheel headings at ±25°/±109° still do not prove no-slip translation or yaw. Also ignore <code>sim/leg.html</code> for this build; it is an older 82/91/31 mechanism study.</p></div>
+
+            <p><strong>Bound-limited result:</strong> the Layout A optimizer placed <code>tibia = 70 mm</code> and <code>front_az = 25°</code> exactly on their lower search bounds. That is evidence for the best candidate inside the tested box, not proof of a global optimum. The full simulator also opens with generic 35/120/140 mm and ±50°/±130° values; load the Fusion/Layout A snapshot before using a screenshot, export or verdict as CAD evidence.</p>
+
+            <h3>Explorer gate</h3>
+            <div class="gate-grid">
+              <label class="gate"><input type="checkbox" data-gate="09-question"><span><strong>The experiment has one question</strong><span>The proposed parameter edit has a stated reason and acceptance criterion.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="09-version"><span><strong>A new Fusion version protects baseline</strong><span>The experiment can be rolled back without erasing evidence.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="09-invalidations"><span><strong>Invalidated checks are listed</strong><span>Reach, limits, collision, cable, mass/CoM, torque/current, print and coupon work are assigned.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="09-evidence"><span><strong>Decision will use full evidence</strong><span>No preset or green geometry message is being treated as release approval.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="09-simconfig"><span><strong>The CAD baseline is actually loaded</strong><span>Simulator values are 110/70/32, ±25°/±109°, stance 176 and clearance 148—not the generic startup state.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="09-reachmargin"><span><strong>Narrow reach margin is revalidated</strong><span>Measured servo/horn/wheel geometry and full pose battery still stay under the 86% reach gate.</span></span></label>
+            </div>
+          </div>
+        </section>
+
+        <section class="chapter" id="export-handoff" data-chapter="10">
+          <div class="chapter-header">
+            <span class="chapter-number">10</span>
+            <div><h2>Export manufacturing and simulation handoffs</h2><p>Preserve editable intent, export closed solids in the right format, and ship a manifest that makes axes, units, versions, and unresolved mappings impossible to miss.</p></div>
+          </div>
+          <div class="reading">
+            <p class="lede">An export is a derivative, not the source of truth. Keep the native parametric design, create neutral geometry for exchange, use 3MF for slicing, and include enough metadata for someone else to reproduce exactly what was released.</p>
+
+            <h3>Run a clean preflight in Fusion</h3>
+            <ol>
+              <li>Save a release-candidate version; do not export from an unnamed working state.</li>
+              <li>Compute all. Resolve Timeline, sketch, relationship and missing-reference warnings.</li>
+              <li>Confirm units are millimetres and the root origin/frame matches +X forward, +Y left, +Z up.</li>
+              <li>Pin the base, test all named joints/limits, and return the assembly to the documented export pose.</li>
+              <li>Run the required Interference and minimum-clearance battery with hardware/cable keep-outs.</li>
+              <li>Verify production bodies are closed solids. Hide or suppress <code>REF_*</code>, <code>VERIFY_*</code>, cable sweeps, construction sketches and analysis bodies.</li>
+              <li>Check component names, occurrence names, part numbers, quantities, materials, masses and handedness.</li>
+              <li>For printed parts, create intentional export occurrences/orientations; never move the manufacturing source body without a traceable feature or layout component.</li>
+            </ol>
+
+            <h3>Choose format by consumer</h3>
+            <div class="table-wrap"><table>
+              <thead><tr><th>Format</th><th>Use it for</th><th>Preserves</th><th>Loses / caution</th></tr></thead>
+              <tbody>
+                <tr><td><code>F3D</code></td><td>Native single-design archive and editable handoff.</td><td>Parametric features, components, sketches and relationships available to compatible Fusion versions.</td><td>Version/feature compatibility and external references need checking; do not treat it as the only archival record.</td></tr>
+                <tr><td><code>F3Z</code></td><td>Native archive when an assembly contains distributed linked designs.</td><td>Packaged linked design structure.</td><td>More file/version management; not normally needed for the beginner one-file Hybrid route.</td></tr>
+                <tr><td><code>STEP</code></td><td>Neutral mechanical exchange, supplier review, other CAD and durable geometry snapshot.</td><td>Accurate solid/surface geometry and usually assembly/component structure.</td><td>No Fusion Timeline, parameter intent, joint limits or print profile; audit names after re-import.</td></tr>
+                <tr><td><code>3MF</code></td><td>Preferred slicer handoff for printable bodies.</td><td>Explicit units and richer object metadata than STL; can carry multiple objects.</td><td>Slicer interpretation and orientation still need review; it does not prove watertightness or printability.</td></tr>
+                <tr><td><code>STL</code></td><td>Legacy slicer/device compatibility only.</td><td>Triangle surface geometry.</td><td>No inherent units, component structure or design intent; record mm and tessellation explicitly.</td></tr>
+                <tr><td><code>OBJ</code></td><td>Visual mesh exchange where requested.</td><td>Mesh plus material/texture workflows in some consumers.</td><td>Not the preferred mechanical or print master.</td></tr>
+                <tr><td><code>GLB</code></td><td>Compact web/visualisation review when a downstream tool needs it.</td><td>Scene/mesh/material packaging.</td><td>Not a manufacturing solid and not currently generated by the repository.</td></tr>
+                <tr><td><code>PDF/DWG drawing</code></td><td>Critical dimensions, datums, assembly notes, joint/ID mapping and inspection.</td><td>Human-readable release intent and tolerances.</td><td>A drawing does not replace the native/neutral 3D source.</td></tr>
+              </tbody>
+            </table></div>
+
+            <h3>Current command routes</h3>
+            <div class="cards">
+              <article class="card"><h3>Native / neutral archive</h3><p class="tool-path"><span>File</span><i>›</i><span>Export</span></p><p>Select the intended F3D/F3Z or STEP type available in the current dialog. Cloud translation can require connectivity; wait for completion and inspect the downloaded file.</p></article>
+              <article class="card"><h3>Printable mesh</h3><p class="tool-path"><span>Browser</span><i>›</i><span>right-click component/body</span><i>›</i><span>Save As Mesh / 3D Print</span></p><p>Select 3MF where supported, millimetres, the intended refinement, and only the production object. Open it in the actual slicer.</p></article>
+              <article class="card"><h3>Drawing</h3><p class="tool-path"><span>Design</span><i>›</i><span>Drawing</span><i>›</i><span>From Design</span></p><p>Create inspection and assembly drawings from the release candidate; include axes and status notes, not every cosmetic dimension.</p></article>
+            </div>
+
+            <h3>Print-export procedure</h3>
+            <div class="steps">
+              <article class="step-card"><div><h4>Create one manufacturing object per real part/material</h4><p>Shell rings, lid, deck, phone frame, root adapter, links, wheel hub and tyre should not be fused merely to simplify export. Use quantities and handedness in names: <code>MIST_FEMUR_v001_QTY4_PETG</code>.</p></div></article>
+              <article class="step-card"><div><h4>Apply intended orientation in a release layout</h4><p>Use <code>90_RELEASE_LAYOUTS</code> occurrences or slicer orientation instructions. Keep the source component’s engineering axes intact. Record which surface contacts the bed and which supports are expected.</p></div></article>
+              <article class="step-card"><div><h4>Export 3MF and inspect in the real slicer</h4><p>Confirm reported size, object count, normals/repair warnings, material assignment, first-layer footprint, brim, supports, bridges, thin-wall detection, seam placement, tool path around holes, estimated mass/time and printer bounds.</p></div></article>
+              <article class="step-card"><div><h4>Round-trip a sample</h4><p>Re-import or measure the exported object in an independent viewer/Fusion. Confirm millimetres and bounding dimensions. For each release batch, slice at least one representative complex part and one shell segment before publishing.</p></div></article>
+            </div>
+
+            <h3>Simulation geometry handoff</h3>
+            <p>The simulator needs a stable rigid-link tree, mesh frames and a mapping from named CAD joints to control channels. The current workspace does not contain a verified URDF generator or released mesh bundle, so this is a gated handoff rather than an automatic export claim.</p>
+            <div class="table-wrap"><table>
+              <thead><tr><th>Record</th><th>Required content</th><th>Validation</th></tr></thead>
+              <tbody>
+                <tr><td>Frame contract</td><td>World/body +X/+Y/+Z, each link-local origin, joint axis unit vector and mesh transform.</td><td>Render axes and command +5° per joint; compare CAD and simulator motion.</td></tr>
+                <tr><td>Kinematic tree</td><td><code>base_link → q1 → d1 → q2 → femur → q3 → tibia → wheel</code> for FL/FR/RL/RR.</td><td>Link lengths and mount coordinates match the release parameter snapshot.</td></tr>
+                <tr><td>Joint record</td><td>Name, parent, child, type, origin, axis, min/max, zero offset, sign and home value.</td><td>Endpoint pose screenshots and a scripted small-motion comparison.</td></tr>
+                <tr><td>Servo mapping</td><td>Corner, q index, bus/ID, direction, centre/calibration, safe range.</td><td>Hardware dry-run with wheels unloaded; rear-ID conflict resolved first.</td></tr>
+                <tr><td>Mesh record</td><td>Filename, component, format, units, scale, export pose, SHA-256 and licence/source.</td><td>Bounding-box comparison after import; no REF bodies or duplicate geometry.</td></tr>
+                <tr><td>Inertial record</td><td>Mass, CoM and inertia source/quality per rigid link.</td><td>Compare sum with the assembly mass ledger and physical scale later.</td></tr>
+              </tbody>
+            </table></div>
+
+            <h3>Release bundle</h3>
+            <pre><code>MIST_CAD_RELEASE_vNNN/
+├─ README_RELEASE.md
+├─ manifest.csv
+├─ parameters.csv
+├─ known_issues.md
+├─ native/
+│  └─ MIST_FUSION_MASTER_vNNN.f3d   [or .f3z if truly distributed]
+├─ step/
+│  ├─ MIST_ASSEMBLY_vNNN.step
+│  └─ manufacturing_parts/*.step
+├─ print/
+│  ├─ *.3mf
+│  ├─ slicer_profile_reference.txt
+│  └─ orientation_sheet.pdf
+├─ drawings/
+│  ├─ assembly_and_joint_map.pdf
+│  └─ inspection_dimensions.pdf
+├─ simulation/
+│  ├─ frame_joint_map.csv
+│  ├─ meshes/
+│  └─ inertial_quality.md
+└─ validation/
+   ├─ gate_matrix.csv
+   ├─ interference_results/
+   ├─ coupon_results/
+   └─ mass_com_record.csv</code></pre>
+
+            <p>The manifest should include: part number/name, source file version, quantity, handedness, material, revision, status, export format, units, bounding dimensions, mass source, print orientation, slicer/profile reference, parameter snapshot, checksum, date, operator, validation evidence, and unresolved issue IDs.</p>
+
+            <h3>Known workspace blockers to preserve</h3>
+            <ul>
+              <li>No native MIST F3D/F3Z, released STEP, 3MF, GLB or OBJ package is currently present.</li>
+              <li>Several older documents cite generator scripts or <code>printable_v1</code> artifacts that are absent; stale manifests point outside the workspace.</li>
+              <li>Historical coupons and wheel values (including 65/85 mm studies and 76 mm wheel references) do not override the current master.</li>
+              <li>Mass reports include historical values that conflict with the current 3.25–3.55 kg planning envelope and require a current ledger.</li>
+              <li>Servo/horn/wheel hardware interfaces, wheel-heading architecture, leg-root power/signal tap topology and rear-ID order are unresolved.</li>
+              <li>No verified automated CAD-to-URDF/scene pipeline exists in the workspace.</li>
+            </ul>
+
+            <h3>Chapter gate</h3>
+            <div class="gate-grid">
+              <label class="gate"><input type="checkbox" data-gate="10-native"><span><strong>Native source is archived</strong><span>Editable parametric intent and exact Fusion version are preserved.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="10-step"><span><strong>STEP round-trip passes</strong><span>Names, components, units, axes and bounding dimensions survive neutral exchange.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="10-3mf"><span><strong>Every 3MF is slicer-checked</strong><span>Correct object, size, orientation, supports, walls, bounds and material/profile are recorded.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="10-map"><span><strong>Joint/frame/servo map agrees</strong><span>CAD, simulator and hardware names/signs/limits—including rear IDs—are validated.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="10-manifest"><span><strong>Manifest and checksums exist</strong><span>Each derivative points to a source version, parameter snapshot and evidence.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="10-known"><span><strong>Known issues ship with release</strong><span>No absent artifact, provisional interface or unresolved architecture is hidden.</span></span></label>
+            </div>
+          </div>
+        </section>
+
+        <section class="chapter" id="release-gates" data-chapter="11">
+          <div class="chapter-header">
+            <span class="chapter-number">11</span>
+            <div><h2>Release gates and troubleshooting</h2><p>Thirteen evidence gates define “ready”; current unresolved items stay unchecked and visible.</p></div>
+          </div>
+          <div class="reading">
+            <p class="lede">A gate passes when a named artifact and acceptance result exist, not when someone remembers doing the work. The current repository does not yet satisfy these release gates; this checklist is the route to a defensible v1.</p>
+
+            <h3>The thirteen release gates</h3>
+            <div class="gate-grid">
+              <label class="gate"><input type="checkbox" data-gate="R01-contract"><span><strong>R01 · Contract frozen</strong><span>Coordinate frame, component/joint naming, authority order and locked parameter snapshot are versioned; conflicts are resolved or logged.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="R02-measure"><span><strong>R02 · Hardware measured</strong><span>Received servos, horns, wheels, fasteners, battery, phone/case, boards and connectors have traceable envelopes and interface dimensions.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="R03-skeleton"><span><strong>R03 · Skeleton regression passes</strong><span>SK00/SK01/SK02 are fully constrained, use explicit mount rays and survive controlled parameter perturbations.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="R04-body"><span><strong>R04 · Chassis is printable and serviceable</strong><span>Segment strategy, seams, load paths, phone, decks, lid, tools, battery/fuse removal and electronics/cable volumes are proven.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="R05-leg"><span><strong>R05 · One leg is structurally credible</strong><span>q1/d1/q2/femur/q3/tibia/wheel axes, supports, fasteners, print orientation, repair and driven limits pass.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="R06-wheel"><span><strong>R06 · Wheel architecture selected</strong><span>Scrub, parallel, omni, caster or steering decision has physical drive evidence and frozen carrier/body interfaces.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="R07-motion"><span><strong>R07 · Full motion/interference battery passes</strong><span>Named endpoints and intermediate four-leg poses meet classified collision and minimum-clearance criteria.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="R08-cables"><span><strong>R08 · Harness and power routing pass</strong><span>Branch topology, fusing, root taps, connectors, bend radii, strain relief, service slack and motion sweeps are physically resolved.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="R09-mass"><span><strong>R09 · Mass, CoM and load ledger pass</strong><span>Materials and measured mass records are traceable; supported-footprint, torque/current, rail sag and thermal screens cover critical poses.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="R10-coupons"><span><strong>R10 · Coupons and representative prints pass</strong><span>Clearance, horn/support, inserts, shell seam, link root, phone retention and slicer/orientation evidence meet written criteria.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="R11-docs"><span><strong>R11 · Assembly documentation agrees</strong><span>Drawings, BOM, quantities, handedness, torque/fastener notes, pose table, service sequence and labels match CAD.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="R12-sim"><span><strong>R12 · CAD/control/simulation mapping passes</strong><span>Frames, signs, limits, zeros, link lengths, mesh scales and all servo IDs—including rear order—pass comparison tests.</span></span></label>
+              <label class="gate"><input type="checkbox" data-gate="R13-bundle"><span><strong>R13 · Release bundle independently audits</strong><span>Native, STEP, 3MF, drawings, parameters, manifest, checksums, validation evidence and known issues reproduce on another machine.</span></span></label>
+            </div>
+
+            <h3>Current blocker register</h3>
+            <div class="table-wrap"><table>
+              <thead><tr><th>Blocker</th><th>Why it matters</th><th>Next concrete evidence</th><th>Gates held</th></tr></thead>
+              <tbody>
+                <tr><td>Servo/horn/auxiliary-axis interfaces not caliper-verified</td><td>Every root, hip, knee and support fit depends on them.</td><td>Measurement sheet plus servo pocket/horn/support coupons from the received lot.</td><td>R02, R05, R10</td></tr>
+                <tr><td>Wheel/hub/width/support and heading architecture unresolved</td><td>Changes tibia, loads, footprint, control and driving feasibility.</td><td>Replaceable yaw-pod prototypes and instrumented floor tests for shortlisted strategies.</td><td>R02, R05, R06, R07, R09</td></tr>
+                <tr><td>Shell, seams, decks, lid, handle and fasteners provisional</td><td>Body load transfer, print reliability and service cannot be claimed.</td><td>Segmented-body design study, seam/boss arc coupon and service mock-up.</td><td>R04, R10</td></tr>
+                <tr><td>Four leg-root power/signal tap topology unresolved</td><td>Connector, fuse, capacitor, bend and service volumes may invalidate decks and roots.</td><td>Full-size harness-board mock-up with real connectors and one moving leg branch.</td><td>R04, R08</td></tr>
+                <tr><td>Rear servo ID mapping regresses</td><td>A geometrically correct assembly can command the wrong leg.</td><td>Keep the reconciled FL/FR/RR/RL hardware map in exporter tests and exercise the signed table on unloaded hardware.</td><td>R11, R12</td></tr>
+                <tr><td>Current mass/inertial ledger incomplete</td><td>Tip margin, torque/current and simulation loads can be misleading.</td><td>Released component mass ledger and physical subassembly weigh-ins.</td><td>R09, R12</td></tr>
+                <tr><td>Native CAD, print set and automated simulation export absent</td><td>No reproducible artifact exists to validate or hand off.</td><td>Build this guide’s staged model, then independently round-trip the release bundle.</td><td>R03–R13</td></tr>
+              </tbody>
+            </table></div>
+
+            <h3>Troubleshooting by earliest cause</h3>
+            <div class="table-wrap"><table>
+              <thead><tr><th>Symptom</th><th>Likely cause</th><th>Repair order</th></tr></thead>
+              <tbody>
+                <tr><td>Sketch turns red or flips branch after a parameter edit</td><td>Conflicting dimension, tangent ambiguity, mirrored sign or solver crossing.</td><td>Rollback to the sketch; suppress downstream features; remove a redundant constraint; anchor the branch with construction geometry; perturb and compute again.</td></tr>
+                <tr><td>Shell fails</td><td>Late holes/fillets create self-intersection or a radius smaller than the wall.</td><td>Rollback to the simple shell; inspect wall/radii; reorder details after Shell; split complex regions if required.</td></tr>
+                <tr><td>Projected geometry is missing</td><td>Consumer referenced a volatile edge/face or source visibility/version changed.</td><td>Repair the earliest projection to a named skeleton sketch, axis or plane; do not re-project a cosmetic edge.</td></tr>
+                <tr><td>Joint moves the wrong way</td><td>Origin axis flipped, mirrored occurrence or zero/sign convention mismatch.</td><td>Compare named axes; drive +5°; fix relationship axis/sign and mapping—not downstream pose values.</td></tr>
+                <tr><td>Duplicate leg does not update</td><td>Paste New created an independent component definition.</td><td>Identify definition ownership; replace with an occurrence or controlled Duplicate With Joints; re-audit relationships.</td></tr>
+                <tr><td>Interference reports everything</td><td>REF/VERIFY duplicates, inserts/fasteners, or whole-design selection contaminate the result.</td><td>Create an explicit selection set; hide duplicate references; classify intended fits; rerun per subsystem and pose.</td></tr>
+                <tr><td>No interference, but real parts rub</td><td>Cables, screw heads, tyre width, tolerances, flex or intermediate poses were omitted.</td><td>Add conservative envelopes; Measure minimum distance; sweep intermediate angles; revise clearance and coupon.</td></tr>
+                <tr><td>3MF/STL imports at wrong size</td><td>Unitless STL assumption or wrong export units.</td><td>Prefer 3MF; record mm; compare bounding box to the manifest and round-trip before slicing.</td></tr>
+                <tr><td>Slicer repairs or drops surfaces</td><td>Open/non-manifold mesh, zero-thickness feature, overlapping bodies or overly fine detail.</td><td>Return to closed Fusion solids; inspect object count; remove invalid slivers; re-export instead of accepting an unexplained repair.</td></tr>
+                <tr><td>Browser/Timeline becomes unmanageable</td><td>Root-level bodies, unnamed features, excessive imported detail or too many active analyses.</td><td>Fix ownership/names; simplify reference hardware; suppress heavy detail; split into distributed components only with a version/update plan.</td></tr>
+              </tbody>
+            </table></div>
+
+            <div class="callout stop"><strong class="callout-title">Release language rule</strong><p>Say “passes the named CAD check” or “coupon result recorded,” not “safe,” “final,” or “fully validated,” unless the relevant mechanical, electrical, thermal, control and physical tests actually exist. Unchecked gates are useful engineering information.</p></div>
+          </div>
+        </section>
+
+        <section class="chapter" id="sources-corrections" data-chapter="12">
+          <div class="chapter-header">
+            <span class="chapter-number">12</span>
+            <div><h2>Sources, version notes, and poster corrections</h2><p>Primary Autodesk documentation, MIST authority files, research limits, and a transparent correction ledger.</p></div>
+          </div>
+          <div class="reading">
+            <p class="lede">Fusion is a continuously updated product. These command names and hosted images were checked on 12 July 2026 against v2704.1.23. Re-check version-sensitive paths before a later release or commercial redistribution.</p>
+
+            <h3>Primary Autodesk sources</h3>
+            <div class="source-grid">
+              <article class="source-card"><span class="source-icon">UI</span><h3>Interface and file setup</h3><p><a href="https://www.autodesk.com/products/fusion-360/blog/july-2026-major-product-update-whats-new/">July 2026 update and v2704.1.23 hotfix</a><br><a href="https://help.autodesk.com/view/fusion360/ENU/?guid=ASM-CREATE-DESIGN">Create Part, Assembly, or Hybrid designs</a><br><a href="https://help.autodesk.com/cloudhelp/ENU/Fusion-GetStarted/files/GS-THE-FUSION-INTERFACE.htm">Fusion desktop interface</a><br><a href="https://help.autodesk.com/view/fusion360/ENU/?contextId=DESIGN_HISTORY">Modeling modes</a></p></article>
+              <article class="source-card"><span class="source-icon">PAR</span><h3>Parametric modeling</h3><p><a href="https://help.autodesk.com/cloudhelp/ENU/Fusion-Model/files/SLD-MODIFY-PARAMETERS.htm">Parameters</a><br><a href="https://help.autodesk.com/cloudhelp/ENU/Fusion-Sketch/files/SKT-FULLY-DEFINE-CONSTRAIN-SKETCH.htm">Fully constrain sketches</a><br><a href="https://help.autodesk.com/cloudhelp/ENU/Fusion-Sketch/files/GUID-850061C4-71F5-4418-AF9C-F0D232022F9C.htm">Project geometry</a><br><a href="https://help.autodesk.com/cloudhelp/ENU/Fusion-Assemble/files/ASM-COMPONENTS.htm">Components</a> · <a href="https://help.autodesk.com/cloudhelp/ENU/Fusion-Assemble/files/GUID-C1AB4941-D7AD-4D27-A035-2FA9208635B6.htm">Bodies</a></p></article>
+              <article class="source-card"><span class="source-icon">ASM</span><h3>Assembly relationships</h3><p><a href="https://help.autodesk.com/cloudhelp/ENU/Fusion-Assemble/files/ASM-JOINTS.htm">Assembly relationships</a><br><a href="https://help.autodesk.com/cloudhelp/ENU/Fusion-Assemble/files/ASM-JOINT-ORIGIN.htm">Joint origins</a><br><a href="https://help.autodesk.com/cloudhelp/ENU/Fusion-Assemble/files/GUID-543C82D9-F1E8-42B3-9C34-31BB108AFAA3.htm">Joint limits</a><br><a href="https://help.autodesk.com/cloudhelp/ENU/Fusion-Assemble/files/ASM-DUPLICATE-WITH-JOINTS.htm">Duplicate With Joints</a><br><a href="https://help.autodesk.com/cloudhelp/ENU/Fusion-Assemble/files/ASM-GROUND-TO-PARENT.htm">Ground To Parent and Pin</a></p></article>
+              <article class="source-card"><span class="source-icon">VAL</span><h3>Validate and release</h3><p><a href="https://help.autodesk.com/cloudhelp/ENU/Fusion-Assemble/files/ASM-CONTACT-SETS.htm">Contact Sets</a><br><a href="https://help.autodesk.com/cloudhelp/ENU/Fusion-Model/files/GUID-A6629113-B137-4EDE-B3B2-C9F1F3BA83D1.htm">Interference</a><br><a href="https://help.autodesk.com/cloudhelp/ENU/Fusion-Model/files/SLD-3D-PRINT.htm">3D Print / 3MF, STL, OBJ</a><br><a href="https://help.autodesk.com/cloudhelp/ENU/Fusion-Drawing/files/DWG-CREATE-FROM-DESIGN.htm">Drawing From Design</a><br><a href="https://www.autodesk.com/products/fusion-360/personal/compare">Personal Use comparison</a></p></article>
+            </div>
+
+            <p class="source-caption">Autodesk Help pages commonly state CC BY-NC-SA 3.0 in their footer. This guide links and attributes official media rather than presenting it as MIST-owned. Re-check the source-page terms before commercial redistribution. Autodesk can change images at their hosted URLs.</p>
+
+            <h3>MIST authority and research record</h3>
+            <div class="source-grid">
+              <article class="source-card"><h3>Master dimensions</h3><p><a href="MIST_FUSION_MASTER_DIMENSIONS.md">MIST_FUSION_MASTER_DIMENSIONS.md</a> — canonical body, link, mount and joint-limit contract used here.</p></article>
+              <article class="source-card"><h3>Mass and envelopes</h3><p><a href="MIST_MATERIAL_DIMENSIONS_MASS.md">MIST_MATERIAL_DIMENSIONS_MASS.md</a> — component envelopes, planning masses, gaps and historical-vs-current warnings.</p></article>
+              <article class="source-card"><h3>Kinematics</h3><p><a href="../../sim/js/kin.js">sim/js/kin.js</a> — coordinate/joint-axis convention reference. The rear-ID ordering conflict still requires an explicit decision.</p></article>
+              <article class="source-card"><h3>Verification ledger</h3><p><a href="fusion-guide/RESEARCH_AND_VERIFICATION.md">RESEARCH_AND_VERIFICATION.md</a> — checked sources, version-sensitive decisions, open engineering questions and why the AI posters are corrected.</p></article>
+            </div>
+
+            <h3>AI poster correction ledger</h3>
+            <div class="table-wrap"><table>
+              <thead><tr><th>Poster implication</th><th>Guide correction</th><th>Why</th></tr></thead>
+              <tbody>
+                <tr><td>Body diameter 220 mm</td><td><code>body_dia = 180 mm</code>; <code>body_h = 260 mm</code>.</td><td>Current MIST master contract.</td></tr>
+                <tr><td>Generic 100 × 70 screen opening</td><td>Mi 9 SE bare record 147.5 × 70.5 × 7.45 mm portrait; baseline pocket 148.5 × 71.5 mm before case/camera/USB studies.</td><td>Device envelope and service path drive the opening.</td></tr>
+                <tr><td>Two-link 90/70 or 110/130 leg ending in a foot</td><td>q1 + d1 32 + q2 + femur 110 + q3 + tibia 70 + driven 70 mm wheel.</td><td>Current kinematic architecture.</td></tr>
+                <tr><td>Four equal 90° mounts</td><td>FL +25°, FR −25°, RL +109°, RR −109°.</td><td>Physical mount origins are explicitly asymmetric.</td></tr>
+                <tr><td>Fixed radial wheel layout shown as an ordinary driving solution</td><td>Wheel-heading architecture remains gated; radial fixed wheels imply scrub or another mechanism/wheel choice.</td><td>No-slip rolling constraints cannot be ignored.</td></tr>
+                <tr><td>Hip limits around ±35° and incomplete joint set</td><td>q1 ±60°, q2 −35…110°, q3 ±135°, plus continuous driven wheel subject to hardware.</td><td>Current master limit contract.</td></tr>
+                <tr><td>Sketch directly on cylinder front</td><td>Create a tangent or origin-derived datum plane and project stable skeleton axes.</td><td>Parametric stability and correct planar sketching.</td></tr>
+                <tr><td>Generic Ground</td><td>Use current Pin for base-to-world; use Ground To Parent only for a fixed child relationship.</td><td>Current Fusion relationship vocabulary.</td></tr>
+                <tr><td>Inspect → Drive Joint; Section Analysis for collision</td><td>Use Assemble → Drive Joints or relationship context menu; use Interference for overlaps and Section Analysis for visibility.</td><td>Current command purpose and location.</td></tr>
+                <tr><td>Polished poster implies a completed build</td><td>Every source is captioned AI concept; all measured, provisional and open gates remain explicit.</td><td>Visual plausibility is not engineering evidence.</td></tr>
+              </tbody>
+            </table></div>
+
+            <h3>Version-sensitive notes</h3>
+            <ul>
+              <li>July 2026 introduced construction-geometry mirroring and additional configuration capabilities. This guide does not depend on Configurations because Personal Use cannot edit the Configuration Table.</li>
+              <li>If Hybrid Design or Parametric Modeling Mode wording changes, follow Autodesk’s current create-design and modeling-mode documentation while preserving the one-table, skeleton and component intent.</li>
+              <li>If Pin, Ground To Parent, Drive Joints, Duplicate With Joints, Interference or Save As Mesh moves, use command search and verify the current official help page before changing the engineering procedure.</li>
+              <li>Remote Autodesk images are illustrative references. The six local AI sources are intentionally cropped for orientation and always open full-size through the image dialog.</li>
+            </ul>
+
+            <div class="callout version"><strong class="callout-title">Guide status on 12 July 2026</strong><p>The documentation, parameter contract, research record and validation route are detailed enough to begin a controlled model. The physical interfaces, wheel strategy, harness topology, rear IDs, current mass/inertial ledger, native CAD, print artifacts and full release evidence are not yet complete. Keep those gates unchecked until the named evidence exists.</p></div>
+          </div>
+        </section>
+
+        <footer>
+          <p><strong>MIST Autodesk Fusion Build Guide</strong> · version-checked 12 July 2026 · AI concepts corrected against the current project contract and official Autodesk documentation.</p>
+          <p>This guide is an engineering workflow and evidence checklist, not a safety certification or claim that the CAD or robot is complete.</p>
+        </footer>
+      </div>
+    </main>
+  </div>
+
+  <dialog class="image-dialog" id="image-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-bar"><span class="dialog-title" id="dialog-title">Guide image</span><button class="dialog-close" id="dialog-close" type="button">Close</button></div>
+    <div class="dialog-image-wrap"><img id="dialog-image" src="" alt="Expanded guide image"></div>
+  </dialog>
+
+  <script src="fusion-guide/fusion-guide.js"></script>
+</body>
+</html>

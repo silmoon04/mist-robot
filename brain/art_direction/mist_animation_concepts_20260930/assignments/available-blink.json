@@ -1,0 +1,36 @@
+{
+  "id": "available-blink",
+  "title": "Available / blink",
+  "wave": 1,
+  "summary": "A relaxed smile, then a soft lid closure. The eye closes in its own shape without rotating.",
+  "poses": [
+    {
+      "id": "available-blink__1",
+      "label": "Open",
+      "filename": "available-blink-1.png",
+      "direction": "Warm open C eyes, tiny relaxed closed smile. This is the identity anchor."
+    },
+    {
+      "id": "available-blink__2",
+      "label": "Lower lids",
+      "filename": "available-blink-2.png",
+      "direction": "Both eyelids lower naturally, same eye centres and eye angle. Reduce aperture, do not squash the entire eye."
+    },
+    {
+      "id": "available-blink__3",
+      "label": "Closed",
+      "filename": "available-blink-3.png",
+      "direction": "Two short gently curved closed lids, same eye centres. Same small resting smile."
+    }
+  ],
+  "cycle": "Open \u2192 lower lids \u2192 closed \u2192 lower lids \u2192 open; hold the open pose between occasional blinks.",
+  "timing": "2.8\u20136 s idle hold; 180\u2013260 ms blink",
+  "replaceTargets": [
+    "idle",
+    "available"
+  ],
+  "targetFps": 15,
+  "minimumDrawnFrames": 4,
+  "status": "key-pose-concept",
+  "framePolicy": "Use four or more authored closing/reopening cels within the longer idle cycle; preserve a brief natural blink instead of stretching it to 12 moving cels."
+}

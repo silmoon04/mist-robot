@@ -1,0 +1,187 @@
+{
+  "warnings": [],
+  "document_name": "Hex Quad R5 inward hip straight tibia 20260914_151646",
+  "current_step": "joints_complete",
+  "imported_links": [
+    "base",
+    "output"
+  ],
+  "updated_utc": "2026-09-14T14:16:48.533498+00:00",
+  "import_details": {
+    "base": {
+      "returned_object_types": [
+        "adsk::fusion::Occurrence"
+      ],
+      "direct_body_count": 0,
+      "descendant_occurrence_count": 3,
+      "native_body_count": 2
+    },
+    "output": {
+      "returned_object_types": [
+        "adsk::fusion::Occurrence"
+      ],
+      "direct_body_count": 0,
+      "descendant_occurrence_count": 8,
+      "native_body_count": 7
+    }
+  },
+  "wrapper_grounding": {
+    "base": {
+      "is_grounded": true,
+      "is_ground_to_parent": true
+    },
+    "output": {
+      "is_grounded": false,
+      "is_ground_to_parent": false
+    }
+  },
+  "pose_checks": {
+    "base": {
+      "translation_error_mm": 0.0,
+      "rotation_matrix_error": 0.0
+    },
+    "output": {
+      "translation_error_mm": 0.0,
+      "rotation_matrix_error": 0.0
+    }
+  },
+  "grounding_adjustments": [
+    {
+      "before": {
+        "base": {
+          "is_grounded": false,
+          "is_ground_to_parent": true
+        },
+        "output": {
+          "is_grounded": false,
+          "is_ground_to_parent": false
+        }
+      },
+      "changed_wrappers": [
+        "base"
+      ]
+    }
+  ],
+  "import_complete": true,
+  "prepared_joint_geometry": [
+    "output"
+  ],
+  "history_enabled": true,
+  "joints": {
+    "output": {
+      "native_joint_name": "J_output",
+      "parent": "base",
+      "child": "output",
+      "source_type": "revolute",
+      "source_neutral_angle_rad": 0.0,
+      "native_neutral_rotation_rad": 0.0,
+      "source_limits_rad": [
+        -0.17453292519943295,
+        0.17453292519943295
+      ],
+      "native_limits_relative_to_neutral_rad": [
+        -0.17453292519943295,
+        0.17453292519943295
+      ],
+      "origin_world_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis_world": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "rotation_axis_vector_raw": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "rotation_axis_reference": "oriented_parent_sketch_circle_joint_geometry_z_axis",
+      "joint_geometry_origin_raw_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis_alignment_dot": 1.0,
+      "motion_probe": {
+        "passed": true,
+        "commanded_delta_rad": 0.017453292519943295,
+        "measured_angle_magnitude_rad": 0.017453292519941554,
+        "measured_positive_world_axis": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "expected_positive_world_axis": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "axis_alignment_dot": 1.0,
+        "expected_hinge_world_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "datum_local_mm": [
+          25,
+          0,
+          0
+        ],
+        "datum_before_world_mm": [
+          25.0,
+          0.0,
+          0.0
+        ],
+        "datum_after_world_mm": [
+          24.996192378909782,
+          0.0,
+          -0.4363101609320442
+        ],
+        "datum_expected_world_mm": [
+          24.996192378909782,
+          0.0,
+          -0.4363101609320878
+        ],
+        "datum_cross_product_derivative_mm_per_rad": [
+          0.0,
+          0.0,
+          -25.0
+        ],
+        "datum_error_mm": 4.3576253716537394e-14,
+        "child_origin_error_mm": 0.0,
+        "child_rotation_matrix_error": 1.7416623698807143e-15,
+        "parent_translation_drift_mm": 0.0,
+        "parent_rotation_matrix_drift": 0.0,
+        "all_neutral_poses_restored": true
+      },
+      "neutral_pose_restored": true
+    }
+  },
+  "native_revolute_count": 1,
+  "joints_complete": true,
+  "status": "completed",
+  "assembly_document": "ASSEMBLY DEMO - gauge removed before movement - M3x30",
+  "motion_document": "MOVE THIS - case fixed, cheeks and bridge rotate - M3x30",
+  "assembly_frames": 62,
+  "motion_frames": 61,
+  "assembly_stages": [
+    {
+      "stage": "Gauge seats for alignment only",
+      "last_frame": 17
+    },
+    {
+      "stage": "Remove gauge before motion",
+      "last_frame": 35
+    },
+    {
+      "stage": "Horn fixture assembles around fixed servo case",
+      "last_frame": 61
+    }
+  ],
+  "scope": "Actual native Fusion joint motion; not physical servo actuation or force dynamics.",
+  "gauge_removed_before_motion": true,
+  "case_stationary_in_all_motion_frames": true
+}

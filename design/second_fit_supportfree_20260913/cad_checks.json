@@ -1,0 +1,123 @@
+{
+  "status": "CAD checks pass; physical screw/nut fit pending",
+  "source_manifest_sha256": "67f0d5e3bfb633414722b17305cef4212ca7f8fa753aa922a252bc383306ad3d",
+  "source_files_sha256": {
+    "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\leg.py": "0796342a5db13ec84f653cefb58a09560e2d7687089d8ae7a4c7010a4ac2d38f",
+    "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\servo_contract.py": "eeb09be505f2a4e80cd710d193592099df1f98f849f7ce3eac0f1ba1d3f2dcaa",
+    "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\geom.py": "655e7d2b8b05226cc9e0f3782dcd1a58599dd81226b6e918c60eac91f5526626",
+    "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\second_fit_supportfree_20260913\\build_second_fit.py": "36450ffe4639d2c4da74bdd5627951444a21a3ecf49be702f7152d98c0174ad1"
+  },
+  "parts": [
+    {
+      "name": "second_fit_saddle_45deg_roofs",
+      "stl": "second_fit_saddle_45deg_roofs.stl",
+      "stl_sha256": "b8257119932b53de9cd4b51be52a16f9c267357cc14c2208f19f98f358cb94fe",
+      "print_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "dimensions_mm": [
+        61.22999999999999,
+        52.0,
+        32.99544826719043
+      ],
+      "volume_mm3": 19890.9778220204,
+      "single_valid_solid": true
+    },
+    {
+      "name": "second_fit_matching_cap",
+      "stl": "second_fit_matching_cap.stl",
+      "stl_sha256": "ba7a100b8b5196e6753f648ed50467291f1f49b6f6e39ed0bb6870916fe67a57",
+      "print_rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "dimensions_mm": [
+        61.22999999999999,
+        27.000000000000004,
+        4.0
+      ],
+      "volume_mm3": 6503.8895667735,
+      "single_valid_solid": true
+    }
+  ],
+  "bolt_roofs": [
+    {
+      "x_mm": -38.91499999999999,
+      "z_mm": -5.5,
+      "screw_circle_diameter_mm": 3.4,
+      "screw_roof_apex_z_mm": -3.0958369439657383,
+      "nut_pocket_across_flats_mm": 5.7,
+      "nut_roof_apex_z_mm": -1.0045517328095666,
+      "outer_roof_top_z_mm": 0.9954482671904334,
+      "minimum_vertical_roof_material_mm": 2.0
+    },
+    {
+      "x_mm": 13.915,
+      "z_mm": -23.0,
+      "screw_circle_diameter_mm": 3.4,
+      "screw_roof_apex_z_mm": -20.59583694396574,
+      "nut_pocket_across_flats_mm": 5.7,
+      "nut_roof_apex_z_mm": -18.504551732809563,
+      "outer_roof_top_z_mm": -2,
+      "minimum_vertical_roof_material_mm": 16.504551732809563
+    },
+    {
+      "x_mm": 13.915,
+      "z_mm": -7.0,
+      "screw_circle_diameter_mm": 3.4,
+      "screw_roof_apex_z_mm": -4.595836943965738,
+      "nut_pocket_across_flats_mm": 5.7,
+      "nut_roof_apex_z_mm": -2.5045517328095666,
+      "outer_roof_top_z_mm": -0.5045517328095666,
+      "minimum_vertical_roof_material_mm": 2.0
+    }
+  ],
+  "interface_checks": {
+    "case_added_mm3": 0.0,
+    "case_removed_mm3": 0.0,
+    "nominal_case_intersection_mm3": 0.0,
+    "supplier_case_intersection_mm3": 0.0,
+    "saddle_cap_intersection_mm3": 0.0,
+    "cap_changed_mm3": 0.0
+  },
+  "fastener_checks": [
+    {
+      "bolt": 1,
+      "screw_saddle_intersection_mm3": 0.0,
+      "screw_cap_intersection_mm3": 0.0,
+      "seated_nut_intersection_mm3": 0.0,
+      "nut_turned_10deg_intersection_mm3": 0.5604926095323637
+    },
+    {
+      "bolt": 2,
+      "screw_saddle_intersection_mm3": 0.0,
+      "screw_cap_intersection_mm3": 0.0,
+      "seated_nut_intersection_mm3": 0.0,
+      "nut_turned_10deg_intersection_mm3": 0.5604926095323651
+    },
+    {
+      "bolt": 3,
+      "screw_saddle_intersection_mm3": 0.0,
+      "screw_cap_intersection_mm3": 0.0,
+      "seated_nut_intersection_mm3": 0.0,
+      "nut_turned_10deg_intersection_mm3": 0.5604926095323789
+    }
+  ],
+  "screw_axes_unchanged": true,
+  "case_contact_geometry_unchanged": true,
+  "roof_angle_degrees_above_bed": 45,
+  "intended_saddle_orientation": "Original Z axis upright; added roofs point upward",
+  "cap_orientation": "Flat with its screw bores vertical",
+  "minimum_screw_circle_diameter_mm": 3.4,
+  "nut_pocket_across_flats_mm": 5.7,
+  "scope": "Full-size second fit trial. The released robot CAD is not modified.",
+  "limits": [
+    "Nominal screw and nut clearances do not establish as-printed fit.",
+    "The enlarged outer roof tabs require integration clearance checks before use on all robot joints.",
+    "The case fit is operator-confirmed qualitatively; no caliper measurement or screw-fit pass was reported.",
+    "Support-free intent must be checked by a fresh slice and this physical print."
+  ]
+}

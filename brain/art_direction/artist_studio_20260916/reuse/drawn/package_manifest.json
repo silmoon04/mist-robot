@@ -1,0 +1,628 @@
+{
+  "purpose": "Hybrid MIST motion viewer, source artwork, transitions and saved audio",
+  "assets": 14,
+  "animationEntries": 164,
+  "uniqueSelectedSourceCrops": 124,
+  "sourceCropIdentity": [
+    "file",
+    "x",
+    "y",
+    "w",
+    "h"
+  ],
+  "fps": 15,
+  "uniqueActiveSheets": 11,
+  "savedAudioSamples": 6,
+  "freshAlignedVoiceVerified": false,
+  "freshVoiceBlocker": "provider payment_required",
+  "previewSha256": "23a7a8c90e1d634943ece14f1e8bb6a3915a7ca00366b928e7eb9943e5fb8eea",
+  "motionChecksPassed": true,
+  "rendererChecksPassed": true,
+  "identityChecksPassed": true,
+  "mouthFamilyChecksPassed": true,
+  "currentReports": [
+    "drawn/motion_checks.json",
+    "drawn/identity_after.json",
+    "drawn/reports/drawn_face_renderer_checks.json",
+    "integration/mouth_family_checks.json"
+  ],
+  "historicalReports": [
+    "history/v4/motion_checks_v4.json",
+    "history/v4/identity_v4.json",
+    "history/v4/drawn_face_renderer_v4.js"
+  ],
+  "v5RefinementRecords": [
+    "refinement_v5/art_direction/artist_studio_20260916/reuse/drawn/blink_orientation_candidate_v5.json",
+    "refinement_v5/art_direction/artist_studio_20260916/reuse/drawn/blink_orientation_candidate_v5.md",
+    "refinement_v5/art_direction/artist_studio_20260916/reuse/drawn/blink_orientation_checks_v5.cjs",
+    "refinement_v5/art_direction/artist_studio_20260916/reuse/drawn/blink_orientation_checks_v5.json",
+    "refinement_v5/art_direction/artist_studio_20260916/reuse/drawn/blink_orientation_checks_v5.md",
+    "refinement_v5/art_direction/artist_studio_20260916/reuse/drawn/blink_orientation_prepared_v5.json",
+    "refinement_v5/art_direction/artist_studio_20260916/reuse/drawn/blink_orientation_review_v5.cjs",
+    "refinement_v5/art_direction/artist_studio_20260916/reuse/drawn/blink_orientation_review_v5.json",
+    "refinement_v5/art_direction/artist_studio_20260916/reuse/drawn/blink_orientation_review_v5.md",
+    "refinement_v5/art_direction/artist_studio_20260916/reuse/drawn/identity_candidate_v5.json",
+    "refinement_v5/art_direction/artist_studio_20260916/reuse/drawn/identity_candidate_v5.md",
+    "refinement_v5/art_direction/artist_studio_20260916/reuse/drawn/identity_checks_v5.cjs",
+    "refinement_v5/art_direction/artist_studio_20260916/reuse/drawn/identity_v5.json",
+    "refinement_v5/art_direction/artist_studio_20260916/reuse/drawn/identity_v5.md",
+    "refinement_v5/art_direction/artist_studio_20260916/reuse/drawn/motion_blinks_v5_candidate_c573.json",
+    "refinement_v5/art_direction/artist_studio_20260916/reuse/drawn/motion_checks_v5.json",
+    "refinement_v5/art_direction/artist_studio_20260916/reuse/drawn/motion_checks_v5_candidate_0d4.json",
+    "refinement_v5/art_direction/artist_studio_20260916/reuse/drawn/QUALITY_REVIEW_V5.md",
+    "refinement_v5/art_direction/artist_studio_20260916/reuse/drawn/served_blink_v5_checks.json",
+    "refinement_v5/harness/blink_orientation_baseline_v5.json",
+    "refinement_v5/harness/blink_orientation_baseline_v5.md"
+  ],
+  "sourcePngBytesPreserved": true,
+  "files": {
+    "README.txt": {
+      "bytes": 3542,
+      "sha256": "0f3d37f73d19ce9fe39c58ed1fd87e79ba79b3e73a1d58510cecee11fb1260bf"
+    },
+    "audit.js": {
+      "bytes": 72861,
+      "sha256": "e7840d6c18d0892b83fd6b9064e145113316b4e8362c5f4f7bc8ee12959c1768"
+    },
+    "documentation/duplex/ANIMATION_REFINEMENT_20260922.md": {
+      "bytes": 1942,
+      "sha256": "5acbacfb0a87695fe61dd57c737f29931cc129febfedeaf9f180ed0d438df561"
+    },
+    "documentation/duplex/BLINK_ORIENTATION_20260923.md": {
+      "bytes": 2269,
+      "sha256": "3e929207a74ac40d9ddcff0e8519e8b379972e9bb4a9c10fb0e5d24dda13634f"
+    },
+    "documentation/duplex/EMOTION_MOUTHS_20260923.md": {
+      "bytes": 1729,
+      "sha256": "4cdb12837c1fcb14a2be58a8419b1e0bd4a7de7eaf76aaf4dcb4de46e2dd60a2"
+    },
+    "documentation/duplex/FACE_CONTROL.md": {
+      "bytes": 6055,
+      "sha256": "b208c8e1abe103c9cb0768cc76094aeedfe767b9df1eff452ff6c33490d031cc"
+    },
+    "drawn/QUALITY_REVIEW.md": {
+      "bytes": 6851,
+      "sha256": "cc0045e2a051c97b5f60efc893090f1f52011bdb7d2fbad65c1488530d33f989"
+    },
+    "drawn/QUALITY_REVIEW_V3.md": {
+      "bytes": 6382,
+      "sha256": "455bb86a77e5b9df5b99da03baabfd76c25adf47d071bc0260fb117a30a36c9c"
+    },
+    "drawn/asset_notes.txt": {
+      "bytes": 1310,
+      "sha256": "1d295095a0559b0125a990fe5fa0a7ff5775b7b0829ab731d79c9cfe485b9bfe"
+    },
+    "drawn/atlas.js": {
+      "bytes": 81271,
+      "sha256": "fc60c92f6437106e1514701b62bd0ed7ea4495677b1397c794b62524c9a0a59d"
+    },
+    "drawn/atlas.json": {
+      "bytes": 174800,
+      "sha256": "229bcecdee62216684b535ee1dfae16536df4a41896c51a88c87621ceb94e4a3"
+    },
+    "drawn/audio/excited.wav": {
+      "bytes": 161612,
+      "sha256": "c6b011e377cff773da2713ae074cdc232436aefa756c9fc4cb60704d7086dc8f"
+    },
+    "drawn/audio/gentle.wav": {
+      "bytes": 92796,
+      "sha256": "916f229828c194e95b404b8346504331df1d39ec154be53408f25015b283a009"
+    },
+    "drawn/audio/long.wav": {
+      "bytes": 465300,
+      "sha256": "336aae60d2017912c23238aaea3de2e6ab4bf1239252cce90c2ccb35bbcc8959"
+    },
+    "drawn/audio/precision.wav": {
+      "bytes": 134684,
+      "sha256": "fc00dd79ac8481a61333f92ad606e0100101921dbd5c0978168ac6cafcf29c3b"
+    },
+    "drawn/audio/question.wav": {
+      "bytes": 128700,
+      "sha256": "ac0809938c677493bf88309f95395a915fa22ca2a46dbd40590681bc6e1daf39"
+    },
+    "drawn/audio/samples.json": {
+      "bytes": 1689,
+      "sha256": "91b14ab5a71e347e35bf97640962719a40a65dcd7f3c69374fa262e7aade8c2f"
+    },
+    "drawn/audio/short.wav": {
+      "bytes": 46420,
+      "sha256": "575f316300eb20af860ea19247904c49e9d7e353413898b7ce24dd590e96594b"
+    },
+    "drawn/audit_eyes_v2.py": {
+      "bytes": 4686,
+      "sha256": "1c6f25d59e1559ecf71f12d1a7186ae476dc461f16a79a348a9705bd8db33981"
+    },
+    "drawn/blink_detail_v2_provenance.json": {
+      "bytes": 5903,
+      "sha256": "99039b5b6e63e5d71963872ecf02d45d23cbdc16318cebb8d2649cc302ed08ab"
+    },
+    "drawn/check_mouth_consonants_v3.py": {
+      "bytes": 3639,
+      "sha256": "b7f173a80bf6defa1d58dda07c53f129a95d368c20a14a736387a73fc51b44ce"
+    },
+    "drawn/check_mouth_v2.py": {
+      "bytes": 3411,
+      "sha256": "dec51ca9d9e5f6b9a7e9ff67e4f54dc7a3078e182305ea8287f59404bd215c67"
+    },
+    "drawn/eye_v2_audit.json": {
+      "bytes": 16335,
+      "sha256": "43ac6568e3ca6fda392a978b344465563ff2a3c6a79c94b866f5659ae11254be"
+    },
+    "drawn/generated_blinks.json": {
+      "bytes": 9279,
+      "sha256": "a4f44bdd68973895fbddf2a17c5729f0c64690566c25e6750961b1595e54bdbb"
+    },
+    "drawn/generated_eyes_v2.json": {
+      "bytes": 11990,
+      "sha256": "4c5d984a23955780de21f636b0091395aee48b418f523ecd9466972ecce73225"
+    },
+    "drawn/generated_mouth_angry_v4.json": {
+      "bytes": 7496,
+      "sha256": "62ecf1c07224a23def051a3f0a0f01fa97ca85c57057ad7dbd9bec40889e9a94"
+    },
+    "drawn/generated_mouth_consonants_v3.json": {
+      "bytes": 5193,
+      "sha256": "0c5c369303b11f7323a2f0331aa9149ecea63a50a7846bf170bf1bb35877dcfa"
+    },
+    "drawn/generated_mouth_flat_v4.json": {
+      "bytes": 5767,
+      "sha256": "f9a00343318ef9ab49b089a1056776f25ddc3ccd81036d9c3e2585d71e271bb3"
+    },
+    "drawn/generated_mouth_sad_v4.json": {
+      "bytes": 4597,
+      "sha256": "743a2b4af1dee172ea2a141e555a17a5370714690264036c85558f271b723ff4"
+    },
+    "drawn/generated_mouth_skeptical_v4.json": {
+      "bytes": 6804,
+      "sha256": "f3b7e417d38d2536329de37e3e6cf006a6654eb3d40d2485f4927e2276053d2b"
+    },
+    "drawn/generated_mouth_worried_v4.json": {
+      "bytes": 4227,
+      "sha256": "85160eea88994cbe69e43fdc28ded022d51eda9e813eaf352f8a63bbdd675ad3"
+    },
+    "drawn/generated_mouths.json": {
+      "bytes": 6878,
+      "sha256": "5e65bc3ad325717eca9e0fd6b15e58225f5557d193829026dac5e164e75b28d6"
+    },
+    "drawn/generated_mouths_v2.json": {
+      "bytes": 14934,
+      "sha256": "cc2b828f5c3607aa5fd0ea4b2f3e39a3ec76967fb5db6ddf5313a3a0e99e3bf2"
+    },
+    "drawn/hook_prompt.txt": {
+      "bytes": 1076,
+      "sha256": "9aa91f21c012563b83b4207d69cbc525ab114dd8ef277a28af6e9533ba9f4cc0"
+    },
+    "drawn/identity_after.json": {
+      "bytes": 63166,
+      "sha256": "0a8bf574070b85a708a9b2912cc81fb7ab95494b55141a8a5deda4ccb4b4a86b"
+    },
+    "drawn/identity_after.md": {
+      "bytes": 2950,
+      "sha256": "e58a479315192c6d207117f733f8fe797d2920152be43344356f11c2da57b9f0"
+    },
+    "drawn/identity_audit.json": {
+      "bytes": 73211,
+      "sha256": "36bfd307235740aca345de8f503ad903fd4515a27743b6501b95cbd8b8cc64fe"
+    },
+    "drawn/identity_audit.md": {
+      "bytes": 8289,
+      "sha256": "e6d95a0ee2bbb45a94962a51383295c0c4533cb1d52fe3f21be3b39d03301cbd"
+    },
+    "drawn/identity_audit.py": {
+      "bytes": 13291,
+      "sha256": "b84382a983598fc32bcc98740c89ec3cfcd3042455965c964c1010048af947c9"
+    },
+    "drawn/identity_audit_initial.json": {
+      "bytes": 1593,
+      "sha256": "b38bd872c2baa533176695ca70dd35a9e65418c9fd50a7b2afd1e49064cd68f8"
+    },
+    "drawn/index.html": {
+      "bytes": 3875,
+      "sha256": "460e9d082fbda13e9a820094a52d123ddfd738d0c60cfa536a3e70505c0573ca"
+    },
+    "drawn/motion_checks.cjs": {
+      "bytes": 59263,
+      "sha256": "e3bf88d748f9c204ecb17e0334f8bf593b8ad9e8c8601f2386336d14aa884618"
+    },
+    "drawn/motion_checks.json": {
+      "bytes": 102611,
+      "sha256": "2ac9268af704e90d5c18fb0cd070453a3fe7768c1cd6a5964384dd941d5859ac"
+    },
+    "drawn/mouth_consonants_v3_plan.json": {
+      "bytes": 405,
+      "sha256": "1129f0e72db073ced8ed9946719ffc5b2c8b81fdde6bc57fbaeff602fc2495f1"
+    },
+    "drawn/mouth_consonants_v3_validation.json": {
+      "bytes": 5580,
+      "sha256": "ea2b06d16d0bd64edb96c878d1044a7d552ab5e165b76aa32c1d057203fab33c"
+    },
+    "drawn/mouth_family_map_v4.json": {
+      "bytes": 2008,
+      "sha256": "f38910c0d9c245205a6eb6b909e6a416e62243f42836da870639a9455efea9e2"
+    },
+    "drawn/mouth_sad_v4_layout.json": {
+      "bytes": 3804,
+      "sha256": "cd13ea747c2be40d2cd8576fc73b74546ea681c7ff8768db8e12ac7599e8679a"
+    },
+    "drawn/mouth_skeptical_v4.layout.json": {
+      "bytes": 1714,
+      "sha256": "2f061c3cffc7599d1857446d311afb687ed9465e5fc2dfbe9df67ab0babe2025"
+    },
+    "drawn/mouth_v2_plan.json": {
+      "bytes": 1128,
+      "sha256": "6fe18f3103a4341c760603cf46c4be70b12ab2e40c84fbf53be9bfef05717ca4"
+    },
+    "drawn/mouth_v2_validation.json": {
+      "bytes": 20059,
+      "sha256": "45863c12af837a154425e7a1519157ad2ef0c535800ae3108dff91d7993bec09"
+    },
+    "drawn/mouth_worried_v4_plan.json": {
+      "bytes": 3692,
+      "sha256": "cc39392c8133a24bd5e995901cd89dad1a9687572d144a8cc9c72c2e56e52e30"
+    },
+    "drawn/preview.css": {
+      "bytes": 5432,
+      "sha256": "aaa05038c9cfd76aecb4e767925363786ff9e5123c95bf09e1267205fee9271e"
+    },
+    "drawn/preview.js": {
+      "bytes": 24636,
+      "sha256": "23a7a8c90e1d634943ece14f1e8bb6a3915a7ca00366b928e7eb9943e5fb8eea"
+    },
+    "drawn/prompts.json": {
+      "bytes": 15107,
+      "sha256": "4bc7c01234fa21f9ed01a43c5bcd1f5d4eedc28676c208ed21329dee69f34d8a"
+    },
+    "drawn/reports/drawn_face_renderer_checks.json": {
+      "bytes": 1768,
+      "sha256": "eb82388e1ae42e47fc054a51680cb7fcdce5e47e5a7fba6d15000498b344f528"
+    },
+    "drawn/reviewed_eye_sources.json": {
+      "bytes": 846,
+      "sha256": "c50c3c4ad52cccc2dc4ef562111dd0d5ef043cc015597b49f658500f9e8a35a3"
+    },
+    "drawn/reviewed_mouth_sources_v3.json": {
+      "bytes": 489,
+      "sha256": "6e0e63cdecd4d0b176c352ab8ec670a804f5c93653482933f0bec623bfc33cfb"
+    },
+    "drawn/reviewed_mouth_sources_v4.json": {
+      "bytes": 1851,
+      "sha256": "b32a8727474f8faedab3b942af549bcdb431ccea1dff07f0ad047ccf0549845b"
+    },
+    "drawn/revised_prompts.json": {
+      "bytes": 16052,
+      "sha256": "5247561ffac0e7e9ffec94ac423a84efe5cfcff4670c50b0745b33ceb76c1cc0"
+    },
+    "drawn/sheets/bar.png": {
+      "bytes": 687593,
+      "sha256": "1173e1892a41bf96874e6ba127fc09d34c68a4587e8634bf63e1d010b87ddd73"
+    },
+    "drawn/sheets/blink_detail_v2.png": {
+      "bytes": 811501,
+      "sha256": "989d3bcc5600b44c9669670dd2e6f0f97c256069201bcaa6148575a96caee629"
+    },
+    "drawn/sheets/mouth_angry_v4.png": {
+      "bytes": 715897,
+      "sha256": "5e8371b4a38ef4fe9179e92f2cf1a2a70f282d352da7a2416523c223436906aa"
+    },
+    "drawn/sheets/mouth_combined_v2.png": {
+      "bytes": 820378,
+      "sha256": "6887b56afdfae6cb8a614d5fb7b52dc2669e229fc01647d6c773c310d757488b"
+    },
+    "drawn/sheets/mouth_consonants_v3.png": {
+      "bytes": 970156,
+      "sha256": "21b52937835c60be0e9a368c6057b8c7de257a2dfe079d1c631b867512257923"
+    },
+    "drawn/sheets/mouth_flat_v4.png": {
+      "bytes": 661976,
+      "sha256": "9447deec989f00d4d89dc937ad0a662a5c908d2fa90f21653edb11d8604fa9e4"
+    },
+    "drawn/sheets/mouth_sad_v4.png": {
+      "bytes": 990564,
+      "sha256": "e644dde6e158c5adc59f09f936e552755240956ad45bfaada7accad8817e67bb"
+    },
+    "drawn/sheets/mouth_skeptical_v4.png": {
+      "bytes": 696925,
+      "sha256": "d7b658cf46d3b4c6322dff907a7025e95e2de29fece40cc9c5ca16faf7ef9507"
+    },
+    "drawn/sheets/mouth_worried_v4.png": {
+      "bytes": 980837,
+      "sha256": "23b9d8c3e5a5d917e6cb1bc58eca2b68dda0d4f2e4d7200fac719bfd2a564539"
+    },
+    "drawn/sheets/slot.png": {
+      "bytes": 684738,
+      "sha256": "74e4376c72faf4c590abdacad64ff668c3df40378ba27f08ad325bbd7172d585"
+    },
+    "drawn/sheets/v2/eyes_round_loop_arc_v2.png": {
+      "bytes": 1110179,
+      "sha256": "853f9cf5a7b9e79fcb5f9773c4c74990c1d72deddc8a73618ef1ca04086379ba"
+    },
+    "drawn/transitions.css": {
+      "bytes": 1186,
+      "sha256": "ffb7e4ae108046ba5205a4859786f1be40ad24892d723eba93747d388ab65a2d"
+    },
+    "drawn/transitions.html": {
+      "bytes": 2126,
+      "sha256": "f82e0d224557edf00f30f37201ab69ae361027570ad24a15586f5db14e12d956"
+    },
+    "drawn/transitions.js": {
+      "bytes": 7711,
+      "sha256": "a67cfb246d0d0ef0f5b47a8284e34407939424f438e7f3d6924db380fc9abdbb"
+    },
+    "drawn/validation.json": {
+      "bytes": 35392,
+      "sha256": "530187d9e8331b92436f946d149e5c551c18a7325f1bf15203a70b0b15559296"
+    },
+    "drawn/visual_quality_checks.json": {
+      "bytes": 102479,
+      "sha256": "684b494586de7c8ffa90cf267b78575d08be815352159c2b858e63e13dc14d85"
+    },
+    "drawn/visual_quality_checks.py": {
+      "bytes": 10138,
+      "sha256": "ee168629bb05815e2929fafd8fa650018de3d5c14473554feccf3e86ceb2b251"
+    },
+    "grid.css": {
+      "bytes": 1834,
+      "sha256": "7ed8c3c1dc2f0d733a2dbd29d5dd3bc33fd5abca616f99e48b55e7bfe83a7d81"
+    },
+    "grid.html": {
+      "bytes": 1300,
+      "sha256": "5756a29169b78d86c1a25ab2c1c7b732c246de0496c339771163511ab0219187"
+    },
+    "grid.js": {
+      "bytes": 2675,
+      "sha256": "659bb2c41eca5cfa4b0a917c158fd738b92b3eb9dbf46ce62ef3a87434dacb91"
+    },
+    "history/v4/QUALITY_REVIEW_V4.md": {
+      "bytes": 5049,
+      "sha256": "6ec81b42dfd18cd8a61fd44df936eb4128c57bbc0c885e3187a9c71d6daaa0d1"
+    },
+    "history/v4/drawn_face_renderer_v4.js": {
+      "bytes": 37537,
+      "sha256": "70d73a3b12f05e91e4f0c9a403012ba71d5ee91ddbc0fb9bb5d78aad7d924d0a"
+    },
+    "history/v4/emotion_mapping_v4_review.json": {
+      "bytes": 18443,
+      "sha256": "8904f2b5065ca01541aa1580b3e69bc8820378839bc254d5d4c5e067352496aa"
+    },
+    "history/v4/emotion_mapping_v4_review.md": {
+      "bytes": 7331,
+      "sha256": "0b3554ee97da7db055cbefb42d2001a16a36dbd3e7061a4f9154e36e1837336a"
+    },
+    "history/v4/identity_v4.json": {
+      "bytes": 63166,
+      "sha256": "553f8085bb78694fc03f1a8dfbe3b1355f5a6b261fac1eabc3ba1efb12f18352"
+    },
+    "history/v4/motion_checks_v4.json": {
+      "bytes": 63103,
+      "sha256": "d4fbac9fe4abdc91ac46b505a7622de831c03b3744edda500054253f5ca6b57b"
+    },
+    "history/v4/reviewed_mouth_sources_v4.json": {
+      "bytes": 1851,
+      "sha256": "b32a8727474f8faedab3b942af549bcdb431ccea1dff07f0ad047ccf0549845b"
+    },
+    "index.html": {
+      "bytes": 164,
+      "sha256": "cf61f38c49984614d29588aa8ee0e08c006a1d5e62e08376efffc6b9da47a9ca"
+    },
+    "integration/DRAWN_TIMING_CONTRACT.txt": {
+      "bytes": 1092,
+      "sha256": "ec890917b91d5a53a0e9cef3b5d6e8d0dca2c2056630f9d5e3cd58cf3e11c3d2"
+    },
+    "integration/EXPRESSION_INTEGRATION.md": {
+      "bytes": 5140,
+      "sha256": "86404353fe29d8f7010201dd6e3b16735024bd0fdcbfcca6c0fa533f86b6e39d"
+    },
+    "integration/LIVE_SYNC_BLOCKER_20260922.json": {
+      "bytes": 1669,
+      "sha256": "bc9897d13b3be741971f6ff38b5acc2fe565b173f3b780317503678eef40205e"
+    },
+    "integration/MOUTH_FAMILY_CONTRACT.txt": {
+      "bytes": 1511,
+      "sha256": "738bb45c1c9ee9ec2bf26b9e7d5a781151ec8ea5613c40682ab5eefcfad2ccc4"
+    },
+    "integration/REVIEW.md": {
+      "bytes": 4801,
+      "sha256": "a69acec75ba0b9192166e7debe82eff30d906a48fa7958d60952fe59eb18439d"
+    },
+    "integration/VOICE_SYNC_REVIEW_20260922.md": {
+      "bytes": 2949,
+      "sha256": "deee4e44402d4d08ac1df3803001e144097fb7cf42fcf39458ddd006af660633"
+    },
+    "integration/blink_orientation_report.json": {
+      "bytes": 28853,
+      "sha256": "c1a568b97f20f431c2a3a48a2c82baffa8131ba45244266255ed813c915ee72e"
+    },
+    "integration/drawn_timing_checks.json": {
+      "bytes": 759,
+      "sha256": "32f49e42d348c7215c73dfdc43bf82be3fe55a5b9988ea9f4da35d46a7b1f727"
+    },
+    "integration/expression_hold_transition_20260922.json": {
+      "bytes": 5142,
+      "sha256": "c07063e27aac9617d63ddfa8ea8080faa82959d0c7d20a13e1de15d98b4963ff"
+    },
+    "integration/face_map.json": {
+      "bytes": 20269,
+      "sha256": "0301731929890ceb33b97f7ec520a8e30dcb34ae44c321272a413d14c4c8683b"
+    },
+    "integration/luna_probe_report.json": {
+      "bytes": 10825,
+      "sha256": "48f2cd2be9a4a202cfcd9b3d77da397e91026de8d8fce97b58447f8da87b11b2"
+    },
+    "integration/mouth_family_checks.json": {
+      "bytes": 1082,
+      "sha256": "5701f11273d65647a5d8b480c4e534b9e867125157baf1ffc4bb3c9e61aa2871"
+    },
+    "integration/review.json": {
+      "bytes": 1023,
+      "sha256": "31a5deedd7114de37f89fdac4a0604bafcb649a72fa8993396932330531c8f20"
+    },
+    "integration/static/expression_policy.js": {
+      "bytes": 6273,
+      "sha256": "71138e99e63277d7e979b7c5f959aa93eaead15ac72feacab726cdb7fe3c6d69"
+    },
+    "integration/tests/BLINK_ORIENTATION_STATUS.txt": {
+      "bytes": 1593,
+      "sha256": "9bb0453ae8dd6a2e83ea2f1d8497ce67851954564d1e212eaaa34cf2ced2035d"
+    },
+    "integration/tests/blink_orientation_pixels.py": {
+      "bytes": 1917,
+      "sha256": "d45f704340f607bfb7ce5c8fb044bf40d743e4e12b579d4e5b2c1b444c641858"
+    },
+    "integration/tests/test_blink_orientation.cjs": {
+      "bytes": 15552,
+      "sha256": "b4a540b35cdddd81a6a88c3348c817463f4f70588a933bc6b45160a34bb79f89"
+    },
+    "integration/tests/test_emotion_mouths_v4.py": {
+      "bytes": 3874,
+      "sha256": "4a143d335ed11bb2edc5296160febd687b758905739b8e9143a0b7a94f6c63f8"
+    },
+    "integration/tests/test_mouth_families.cjs": {
+      "bytes": 10506,
+      "sha256": "a85b8acb400379241b183bdb9c3234903fbfa12effba3e4d0384e90de09b9c3f"
+    },
+    "legacy/v1/sheet_index.json": {
+      "bytes": 1514,
+      "sha256": "db3c7ef3b93e1abb448b151d9359ef4b1a8f5c288410d06581c06b771f69d2ff"
+    },
+    "legacy/v1/sheets/arc.png": {
+      "bytes": 699251,
+      "sha256": "370c6051537b1bfaf55e233255c15cf89bda7fc5334122e783052478b28efa2a"
+    },
+    "legacy/v1/sheets/chevron.png": {
+      "bytes": 707965,
+      "sha256": "01e2189598839fbc3ebbb3ebef2acecc03d274e82875e4d63952ceba472e2e9b"
+    },
+    "legacy/v1/sheets/hook.png": {
+      "bytes": 786284,
+      "sha256": "d7bcb5fd4f4f97d1fd3df38477ea3edefb02f29569fff6ba847312a7e7246ea4"
+    },
+    "legacy/v1/sheets/loop.png": {
+      "bytes": 729490,
+      "sha256": "3fa9e1b028fb44b53e0f333ba667880c98a4fc77287f9b3fb170e85454af007a"
+    },
+    "legacy/v1/sheets/mouth_neutral.png": {
+      "bytes": 713312,
+      "sha256": "49f130f47eef0c57d04256b37f73e028ff7b725b1e4f43b9c34b4845e854af4b"
+    },
+    "legacy/v1/sheets/mouth_smile.png": {
+      "bytes": 709719,
+      "sha256": "f07dd3ce94ac17e7cdf9f99772e99e6baa757cfb7522ea5b5298c307f5e2fbad"
+    },
+    "legacy/v1/sheets/round.png": {
+      "bytes": 744194,
+      "sha256": "e922bd4796f770d04d0c783951d3ab0308878056977fe7a5cde8c8c8d159a10c"
+    },
+    "legacy/v1/v1_atlas.json": {
+      "bytes": 66116,
+      "sha256": "afae621d77eed8f2284c9d984422e418acb6c5bc8e8415a297e74def3ea011d6"
+    },
+    "legacy/v1/v1_validation.json": {
+      "bytes": 14193,
+      "sha256": "1b9cd570bcfb1a9ebeb21743ae17d6ebdeb923e28081f9373dbc14f8de199f53"
+    },
+    "legacy/v1/v1_visual_quality_checks.json": {
+      "bytes": 35461,
+      "sha256": "aa044e81cab7d6e4d258d50d14769d0c1b6f0435c14ba40d59aca6e0ab9de25a"
+    },
+    "refinement_v5/art_direction/artist_studio_20260916/reuse/drawn/QUALITY_REVIEW_V5.md": {
+      "bytes": 3770,
+      "sha256": "ed46dd65012c76922dc146d5d2765275a7972c13fdf314496ced1e162911ba6f"
+    },
+    "refinement_v5/art_direction/artist_studio_20260916/reuse/drawn/blink_orientation_candidate_v5.json": {
+      "bytes": 56158,
+      "sha256": "f341d1294292918420463db23e27e45c4a799c5a10254fb62bfc199b3b3b0c09"
+    },
+    "refinement_v5/art_direction/artist_studio_20260916/reuse/drawn/blink_orientation_candidate_v5.md": {
+      "bytes": 6168,
+      "sha256": "2a27332f2d73f2f36b939332102b2e941eab269a5d0f6c09960cfe76f35f6b82"
+    },
+    "refinement_v5/art_direction/artist_studio_20260916/reuse/drawn/blink_orientation_checks_v5.cjs": {
+      "bytes": 7712,
+      "sha256": "b89af61168d9118eec43255ef5103d865203a44bbac451b731b21f25f0a6f2b1"
+    },
+    "refinement_v5/art_direction/artist_studio_20260916/reuse/drawn/blink_orientation_checks_v5.json": {
+      "bytes": 56157,
+      "sha256": "47b0155a251715f5aad773390b5e264690babd0f345d455488348afe63409c8d"
+    },
+    "refinement_v5/art_direction/artist_studio_20260916/reuse/drawn/blink_orientation_checks_v5.md": {
+      "bytes": 6168,
+      "sha256": "f05155422304044c3880c63ad08c7e150640edc6d4de4ce76ff7b71713ef9c37"
+    },
+    "refinement_v5/art_direction/artist_studio_20260916/reuse/drawn/blink_orientation_prepared_v5.json": {
+      "bytes": 1132,
+      "sha256": "f52bb994d780d8164ed3ec1d39ed9207355d4a91638c661aaffddab7e43c7946"
+    },
+    "refinement_v5/art_direction/artist_studio_20260916/reuse/drawn/blink_orientation_review_v5.cjs": {
+      "bytes": 9166,
+      "sha256": "6d670f97e75e85ab50cf26ac215e7c4d22871df0af9d8b2e94c55ae03d2be5dc"
+    },
+    "refinement_v5/art_direction/artist_studio_20260916/reuse/drawn/blink_orientation_review_v5.json": {
+      "bytes": 83520,
+      "sha256": "5b9383cea99f0b39837db25302f5039fc6c28df629741b18fe15f603c5bc904b"
+    },
+    "refinement_v5/art_direction/artist_studio_20260916/reuse/drawn/blink_orientation_review_v5.md": {
+      "bytes": 8614,
+      "sha256": "f7aa46d07c0c83ff0b087f032d7c95d86861970cf611c02af16580f27880d1be"
+    },
+    "refinement_v5/art_direction/artist_studio_20260916/reuse/drawn/identity_candidate_v5.json": {
+      "bytes": 63166,
+      "sha256": "9996d086bd76b6110c8ef799da65f8428dcbf5460efec7c844008c98079f16d6"
+    },
+    "refinement_v5/art_direction/artist_studio_20260916/reuse/drawn/identity_candidate_v5.md": {
+      "bytes": 2950,
+      "sha256": "0591814b476864742aaa6e5bafb4133b4c517a80571f857db08702e331892e9f"
+    },
+    "refinement_v5/art_direction/artist_studio_20260916/reuse/drawn/identity_checks_v5.cjs": {
+      "bytes": 756,
+      "sha256": "f0848596f1f74cd38005c798c94ace2667410c915ac32696175d60dece25c5c9"
+    },
+    "refinement_v5/art_direction/artist_studio_20260916/reuse/drawn/identity_v5.json": {
+      "bytes": 63166,
+      "sha256": "0a8bf574070b85a708a9b2912cc81fb7ab95494b55141a8a5deda4ccb4b4a86b"
+    },
+    "refinement_v5/art_direction/artist_studio_20260916/reuse/drawn/identity_v5.md": {
+      "bytes": 2950,
+      "sha256": "e58a479315192c6d207117f733f8fe797d2920152be43344356f11c2da57b9f0"
+    },
+    "refinement_v5/art_direction/artist_studio_20260916/reuse/drawn/motion_blinks_v5_candidate_c573.json": {
+      "bytes": 41188,
+      "sha256": "47519f77817e7ab393b79448e92a5809955ddc62b58596009e843f177147fb64"
+    },
+    "refinement_v5/art_direction/artist_studio_20260916/reuse/drawn/motion_checks_v5.json": {
+      "bytes": 102611,
+      "sha256": "2ac9268af704e90d5c18fb0cd070453a3fe7768c1cd6a5964384dd941d5859ac"
+    },
+    "refinement_v5/art_direction/artist_studio_20260916/reuse/drawn/motion_checks_v5_candidate_0d4.json": {
+      "bytes": 102804,
+      "sha256": "1b8c236fabd845a31cd4a8a1b6ffc9ede755d14314b957887f9e66625c5c242d"
+    },
+    "refinement_v5/art_direction/artist_studio_20260916/reuse/drawn/served_blink_v5_checks.json": {
+      "bytes": 633,
+      "sha256": "c4bc710944345dd9832ed167911031ed1b6e6e8de1b569e7203a5af2b47f12a4"
+    },
+    "refinement_v5/harness/blink_orientation_baseline_v5.json": {
+      "bytes": 8741,
+      "sha256": "2e6f352ae15cbf79192a715e84af57f1abbf722fbb94d3bde4b5e1d0110b907c"
+    },
+    "refinement_v5/harness/blink_orientation_baseline_v5.md": {
+      "bytes": 2552,
+      "sha256": "ad36c302447bba1222ac81b387cfad4e868db6b868bfe5df82e7d666b622ef46"
+    },
+    "runtime/app_data.js": {
+      "bytes": 154720,
+      "sha256": "109d1dd2aa286a3090e493aa0f61294a4bb6472985f8916e9c75dfce37e5c98f"
+    },
+    "runtime/drawn_face_renderer.js": {
+      "bytes": 46153,
+      "sha256": "9ade474f61fc9a6f3eee260b6bb07ef4adc2a4e6f56cae3a4871acbc531563ff"
+    },
+    "runtime/face_runtime.js": {
+      "bytes": 17125,
+      "sha256": "af28cf1903933ade168ff87a8e930a42b5949d0f3a8cfeed44c406a4a6f5921f"
+    },
+    "runtime/playback.js": {
+      "bytes": 5406,
+      "sha256": "e745f4007458f8e105079caf7540703e2c92c2e4dde536ebc4aa9cc35392dfc4"
+    }
+  }
+}

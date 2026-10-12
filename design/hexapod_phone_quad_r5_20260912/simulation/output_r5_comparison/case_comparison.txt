@@ -1,0 +1,38 @@
+R5 RIGID-BODY DYNAMICS CASES
+Comparison of the explicitly listed rigid-body runs. No material-strength, hardware-control or physical-walking qualification is implied.
+Compare controller sensitivity only within matching manifest, posture, gait and effort settings. Full-solid and part-only extrusion masses are distinct scenarios.
+
+output_r5_printed_nominal
+  Status: bounded_simulation_pass; mass: 2.756962 kg; torque cap: 0.588 Nm
+  Advance: 24.553 mm; maximum stance error: 7.212 mm
+  Failed dynamics gates: none
+  Manifest SHA256: b655f1b4db8dc20fcc87ff4fe330507580c74c166baa56ae4e3d60a9604d712a
+  Report SHA256: 63e2a958f2ad8c25f25b48c7f961b69509029fc2d89290e481ff0dc4c8934714
+
+output_r5_printed_half_stiffness
+  Status: bounded_simulation_pass; mass: 2.756962 kg; torque cap: 0.588 Nm
+  Advance: 22.659 mm; maximum stance error: 4.429 mm
+  Failed dynamics gates: none
+  Manifest SHA256: b655f1b4db8dc20fcc87ff4fe330507580c74c166baa56ae4e3d60a9604d712a
+  Report SHA256: ceec47b356c46c12d07cf3d341be79d9a396b98f31863bc1e55dff5e9c4dbe7e
+
+output_r5_printed_feedback_05
+  Status: not_validated; mass: 2.756962 kg; torque cap: 0.588 Nm
+  Advance: 5.185 mm; maximum stance error: 37.923 mm
+  Failed dynamics gates: crawl, actual_foot_steps, stance_position
+  Manifest SHA256: b655f1b4db8dc20fcc87ff4fe330507580c74c166baa56ae4e3d60a9604d712a
+  Report SHA256: faf62fa85f42da12809cff9a969761c3efdc8c10295287f305256ed568f344b0
+
+output_r5_printed_feedback_10
+  Status: not_validated; mass: 2.756962 kg; torque cap: 0.588 Nm
+  Advance: -0.617 mm; maximum stance error: 56.629 mm
+  Failed dynamics gates: crawl, actual_foot_steps, stance_position
+  Manifest SHA256: b655f1b4db8dc20fcc87ff4fe330507580c74c166baa56ae4e3d60a9604d712a
+  Report SHA256: 43a5a930c35b905e46b54d2416421103d77017af849cbf7bacdf1415e6e8ac8e
+
+output_r5_solid_nominal
+  Status: bounded_simulation_pass; mass: 2.936135 kg; torque cap: 0.588 Nm
+  Advance: 24.641 mm; maximum stance error: 4.109 mm
+  Failed dynamics gates: none
+  Manifest SHA256: 67f0d5e3bfb633414722b17305cef4212ca7f8fa753aa922a252bc383306ad3d
+  Report SHA256: f33b40e5e865395c0ef4ae915d99b2f396013b9000c5164ea4343165e6edfb13

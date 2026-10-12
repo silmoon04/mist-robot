@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mist Face — Expression Animator</title>
+<style>
+  :root{
+    --bg:#0b0e12; --panel:#12171d; --panel2:#171d25; --line:#232c36;
+    --txt:#c8d6dd; --dim:#6b7c88; --cyan:#5eeadd; --cyan-dim:#2b6f68;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);
+       font:14px/1.45 "Segoe UI",system-ui,sans-serif;display:flex;
+       flex-direction:column;align-items:center;min-height:100vh}
+  h1{font-size:15px;font-weight:600;letter-spacing:.14em;color:var(--dim);
+     text-transform:uppercase;margin:18px 0 10px}
+  h1 b{color:var(--cyan);font-weight:600}
+  #stage{perspective:900px}
+  #screen{width:min(92vw,760px);aspect-ratio:100/64;background:#07090c;
+    border-radius:26px;border:1px solid #1d242c;position:relative;
+    box-shadow:0 0 0 10px #10151b,0 0 0 11px #202932,0 24px 60px #000c,
+      inset 0 0 46px #000;overflow:hidden;
+    transform-style:preserve-3d;transition:box-shadow .3s}
+  #screen::after{content:"";position:absolute;inset:0;pointer-events:none;
+    background:repeating-linear-gradient(0deg,transparent 0 3px,#ffffff05 3px 4px),
+      radial-gradient(120% 90% at 50% 8%, #ffffff07, transparent 46%);
+    border-radius:inherit}
+  svg{width:100%;height:100%;display:block}
+  #led{position:absolute;right:18px;bottom:12px;width:6px;height:6px;
+    border-radius:50%;background:var(--cyan);box-shadow:0 0 8px var(--cyan);
+    opacity:.7;pointer-events:none}
+  #controls{width:min(92vw,760px);margin:16px 0 40px;display:flex;
+    flex-direction:column;gap:12px}
+  .card{background:var(--panel);border:1px solid var(--line);
+    border-radius:14px;padding:12px 14px}
+  .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+  .lbl{font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--dim);min-width:74px}
+  button{background:var(--panel2);border:1px solid var(--line);
+    color:var(--txt);border-radius:9px;padding:6px 11px;cursor:pointer;
+    font:inherit;font-size:13px;transition:all .15s}
+  button:hover{border-color:var(--cyan-dim);color:#fff}
+  button.on{background:#0e2b28;border-color:var(--cyan-dim);color:var(--cyan)}
+  button.face{padding:4px 9px;font-size:12px}
+  button.face .dot{display:inline-block;width:7px;height:7px;border-radius:50%;
+    margin-right:6px;vertical-align:1px}
+  input[type=range]{accent-color:var(--cyan);flex:1;min-width:90px}
+  input[type=text]{flex:1;background:#0d1117;border:1px solid var(--line);
+    color:var(--txt);border-radius:9px;padding:8px 12px;font:inherit;min-width:180px}
+  input[type=text]:focus{outline:none;border-color:var(--cyan-dim)}
+  #status{font-size:12px;color:var(--dim);min-height:16px}
+  .grp{color:var(--dim);font-size:11px;letter-spacing:.12em;
+    text-transform:uppercase;margin:6px 0 2px}
+  .val{font-size:11px;color:var(--dim);width:44px;text-align:right}
+</style>
+</head>
+<body>
+<h1><b>MIST</b> · expression animator</h1>
+
+<div id="stage"><div id="screen">
+  <svg id="svg" viewBox="0 0 100 64">
+    <defs>
+      <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="2.6" result="b2"/>
+        <feColorMatrix in="b2" type="matrix"
+          values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 .55 0" result="bloom"/>
+        <feGaussianBlur in="SourceGraphic" stdDeviation="0.9" result="b1"/>
+        <feMerge>
+          <feMergeNode in="bloom"/><feMergeNode in="b1"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+    <g id="faceG" filter="url(#glow)">
+      <g id="eyesG">
+        <path id="p_eye_L"/><path id="p_eye_R"/>
+        <path id="p_tear0"/><path id="p_tear1"/>
+      </g>
+      <g id="mouthG"><path id="p_mouth"/></g>
+    </g>
+  </svg>
+  <div id="led"></div>
+</div></div>
+
+<div id="controls">
+  <div class="card">
+    <div id="faceButtons"></div>
+  </div>
+  <div class="card row">
+    <span class="lbl">Say</span>
+    <input id="sayText" type="text"
+      value="Hello! I am Mist. Nice to meet you." spellcheck="false">
+    <button id="btnSay">🗣 Speak</button>
+  </div>
+  <div class="card">
+    <div class="row" style="margin-bottom:8px">
+      <span class="lbl">Follow</span>
+      <button id="fOff" class="on">Off</button>
+      <button id="fMouse">Mouse</button>
+      <button id="fCam">Camera</button>
+      <span style="flex:1"></span>
+      <button id="btnBlink">Blink now</button>
+      <button id="btnAuto">▶ Auto-cycle</button>
+    </div>
+    <div class="row">
+      <span class="lbl">Morph</span>
+      <input id="spd" type="range" min="120" max="900" value="340">
+      <span class="val" id="spdV">340ms</span>
+      <span class="lbl" style="min-width:auto">Glow</span>
+      <input id="glowR" type="range" min="0" max="100" value="55">
+    </div>
+    <div id="status"></div>
+  </div>
+</div>
+
+<script src="app_data.js"></script>
+<script>
+'use strict';
+window.__errors = [];
+window.onerror = (m,s,l,c) => { window.__errors.push(`${m} @${l}:${c}`);
+  const el=document.getElementById('status'); if(el) el.textContent='ERR: '+m; };
+const D = window.MIST_DATA;
+const CYAN = '#5eeadd';
+const N_S = 48, N_F = 64;
+
+// ---------------------------------------------------------------- geometry
+const rad = d => d * Math.PI / 180;
+function placePts(points, e){                 // T + R(rot) @ (M) @ p
+  const c = Math.cos(rad(e.rot||0)), s = Math.sin(rad(e.rot||0));
+  const mx = e.mirror ? -1 : 1;
+  const out = new Array(points.length);
+  for (let i = 0; i < points.length; i++){
+    const x = points[i][0] * mx, y = points[i][1];
+    out[i] = [e.x + c*x - s*y, e.y + s*x + c*y];
+  }
+  return out;
+}
+const lerp = (a,b,t) => a + (b-a)*t;
+function lerpPts(A,B,t,out){
+  for (let i=0;i<A.length;i++){
+    out[i][0]=lerp(A[i][0],B[i][0],t); out[i][1]=lerp(A[i][1],B[i][1],t);
+  }
+}
+function sumDist(A,B,offset,dir){
+  let s=0, n=A.length;
+  for (let i=0;i<n;i+=3){
+    const j = dir>0 ? (i+offset)%n : (n-1-((i+offset)%n));
+    s += Math.hypot(A[i][0]-B[j][0], A[i][1]-B[j][1]);
+  }
+  return s;
+}
+function alignClosed(A,B){                    // reindex closed outline B to match A
+  let best=1e9,bo=0,bd=1;
+  for (let o=0;o<B.length;o+=2) for (const d of [1,-1]){
+    const s=sumDist(A,B,o,d); if (s<best){best=s;bo=o;bd=d;}
+  }
+  const n=B.length,out=new Array(n);
+  for (let i=0;i<n;i++){
+    const j = bd>0 ? (i+bo)%n : (n-1-((i+bo)%n));
+    out[i]=B[j];
+  }
+  return out;
+}
+function radialize(pts, n){
+  // resample a convex-ish closed outline by uniform angle around its
+  // centroid (start at top, clockwise) — mouth fills morph radially
+  // instead of swirling
+  let cx=0, cy=0;
+  for (const p of pts){ cx+=p[0]; cy+=p[1]; }
+  cx/=pts.length; cy/=pts.length;
+  const samples = pts.map(p=>{
+    const dx=p[0]-cx, dy=p[1]-cy;
+    return [Math.atan2(dy,dx), Math.hypot(dx,dy)];
+  }).sort((a,b)=>a[0]-b[0]);
+  if (!samples.length || samples.every(s=>s[1]<1e-6))
+    return Array.from({length:n},()=>[cx,cy]);
+  const m = samples.length;
+  const out = new Array(n);
+  for (let i=0;i<n;i++){
+    let th = -Math.PI/2 + (2*Math.PI*i)/n;
+    if (th > Math.PI) th -= 2*Math.PI;
+    let k = 0;
+    while (k<m && samples[k][0] < th) k++;
+    const a = samples[(k-1+m)%m], b = samples[k%m];
+    let da = b[0]-a[0]; if (da<=0) da += 2*Math.PI;
+    let dt = th-a[0]; if (dt<0) dt += 2*Math.PI;
+    const r = a[1] + (b[1]-a[1])*(da<1e-9?0:dt/da);
+    out[i] = [cx + r*Math.cos(th), cy + r*Math.sin(th)];
+  }
+  return out;
+}
+function alignOpen(A,B){                      // maybe reverse open path B
+  let d0=0,d1=0;
+  for (let i=0;i<A.length;i+=4){
+    d0+=Math.hypot(A[i][0]-B[i][0],A[i][1]-B[i][1]);
+    const j=A.length-1-i;
+    d1+=Math.hypot(A[i][0]-B[j][0],A[i][1]-B[j][1]);
+  }
+  return d1<d0 ? B.slice().reverse() : B;
+}
+function resampleN(pts,n,closed){
+  const P = closed ? pts.concat([pts[0]]) : pts;
+  const d=[0];
+  for(let i=1;i<P.length;i++)
+    d.push(d[i-1]+Math.hypot(P[i][0]-P[i-1][0],P[i][1]-P[i-1][1]));
+  const L=d[d.length-1]||1e-9, out=[];
+  let k=0;
+  for(let i=0;i<n;i++){
+    const t=L*i/(n-1);
+    while(k<d.length-2 && d[k+1]<t) k++;
+    const u=(t-d[k])/Math.max(d[k+1]-d[k],1e-9);
+    out.push([lerp(P[k][0],P[k+1][0],u),lerp(P[k][1],P[k+1][1],u)]);
+  }
+  return out;
+}
+function pathD(pts, closed){                  // smooth quadratic chain
+  const n = pts.length;
+  if (!n) return '';
+  let d = `M${pts[0][0].toFixed(2)} ${pts[0][1].toFixed(2)}`;
+  const last = closed ? n : n-1;
+  for (let i=1;i<last;i++){
+    const p=pts[i%n], q=pts[(i+1)%n];
+    d += ` Q${p[0].toFixed(2)} ${p[1].toFixed(2)} ${((p[0]+q[0])/2).toFixed(2)} ${((p[1]+q[1])/2).toFixed(2)}`;
+  }
+  if (closed) d += ' Z';
+  return d;
+}
+
+// ---------------------------------------------------------------- slot channels
+// A channel owns one <path>; it tweens between visual states.
+// state = {mode:'stroke'|'fill', pts:[[x,y]..], width, opacity}
+function Channel(el){
+  return {el, cur:null, from:null, to:null, t0:0, dur:0, ease:easeInOut, onDone:null};
+}
+const easeInOut = t => t<.5 ? 2*t*t : 1-Math.pow(-2*t+2,2)/2;
+const easeOut = t => 1-Math.pow(1-t,3);
+
+function degenerateState(x,y,mode){
+  const n = mode==='fill'?N_F:N_S;
+  return {mode, pts:Array.from({length:n},()=>[x,y]), width:0, opacity:0};
+}
+function cloneState(s){
+  return {mode:s.mode, pts:s.pts.map(p=>[p[0],p[1]]), width:s.width, opacity:s.opacity};
+}
+function retarget(ch, target, dur, ease, onDone){
+  const src = ch.cur ? cloneState(ch.cur) : cloneState(target);
+  let to = target;
+  // unify representations when kinds differ or point counts differ
+  if (src.pts.length !== to.pts.length || src.mode !== to.mode){
+    const asFill = st => st.mode==='fill' ? st :
+      {mode:'fill', pts:resampleN(st.pts, N_F, false)
+        .map(p=>[p[0],p[1]]), width:0, opacity:st.opacity, _wasStroke:st};
+    // stroke->fill / fill->stroke: both as fills using outlines when available
+    if (src.mode!==to.mode || src.pts.length!==to.pts.length){
+      const s2 = src._outline ? {mode:'fill',pts:src._outline,width:0,opacity:src.opacity} : asFill(src);
+      const t2 = to._outline ? {mode:'fill',pts:to._outline,width:0,opacity:to.opacity} : asFill(to);
+      if (ch.radial){
+        s2.pts = radialize(s2.pts, N_F);
+        t2.pts = radialize(t2.pts, N_F);
+      } else t2.pts = alignClosed(s2.pts, t2.pts);
+      ch.from = s2; ch.to = t2; ch.finalState = to;
+      ch.cur = cloneState(s2);
+      ch.t0 = performance.now(); ch.dur = dur; ch.ease = ease||easeInOut;
+      ch.onDone = onDone; return;
+    }
+  }
+  if (src.mode==='stroke') to = {...to, pts: alignOpen(src.pts, to.pts)};
+  else if (ch.radial){
+    const s2 = cloneState(src);
+    s2.pts = radialize(s2.pts, N_F);
+    to = {...to, pts: radialize(to.pts, N_F)};
+    ch.from = s2; ch.cur = cloneState(s2); ch.to = to; ch.finalState = null;
+    ch.t0 = performance.now(); ch.dur = Math.max(dur,1);
+    ch.ease = ease||easeInOut; ch.onDone = onDone; return;
+  }
+  else to = {...to, pts: alignClosed(src.pts, to.pts)};
+  ch.from = src; ch.to = to; ch.finalState = null;
+  ch.cur = cloneState(src);
+  ch.t0 = performance.now(); ch.dur = Math.max(dur,1); ch.ease = ease||easeInOut;
+  ch.onDone = onDone;
+}
+function tickChannel(ch, now){
+  if (!ch.to) return;
+  let t = Math.min(1, (now-ch.t0)/ch.dur);
+  const e = ch.ease(t);
+  lerpPts(ch.from.pts, ch.to.pts, e, ch.cur.pts);
+  ch.cur.width = lerp(ch.from.width, ch.to.width, e);
+  ch.cur.opacity = lerp(ch.from.opacity, ch.to.opacity, e);
+  ch.cur.mode = ch.from.mode;
+  if (t>=1){
+    if (ch.finalState){ ch.cur = cloneState(ch.finalState); }
+    ch.from = ch.to = null;
+    const cb = ch.onDone; ch.onDone = null;
+    drawChannel(ch);
+    if (cb) cb();
+    return;
+  }
+  drawChannel(ch);
+}
+function drawChannel(ch){
+  const s = ch.cur;
+  if (!s){ ch.el.setAttribute('d',''); return; }
+  const isFill = s.mode==='fill';
+  ch.el.setAttribute('d', pathD(s.pts, isFill));
+  ch.el.setAttribute('fill', isFill?CYAN:'none');
+  ch.el.setAttribute('stroke', isFill?'none':CYAN);
+  ch.el.setAttribute('stroke-width', isFill?0:s.width.toFixed(2));
+  ch.el.setAttribute('stroke-linecap','round');
+  ch.el.setAttribute('stroke-linejoin','round');
+  ch.el.setAttribute('opacity', s.opacity.toFixed(3));
+}
+
+// ---------------------------------------------------------------- face states
+function partState(pid, place, opacity=1){
+  const part = D.parts[pid];
+  const pts = placePts(part.points, place);
+  const st = {mode: part.kind==='fill'?'fill':'stroke',
+              pts, width: part.width, opacity};
+  if (part.outline) st._outline = placePts(part.outline, place);
+  return st;
+}
+const $ = id => document.getElementById(id);
+const chans = {
+  eye_L: Channel($('p_eye_L')), eye_R: Channel($('p_eye_R')),
+  mouth: Channel($('p_mouth')),
+  tear0: Channel($('p_tear0')), tear1: Channel($('p_tear1')),
+};
+chans.mouth.radial = true;   // mouth fills morph radially (no swirl)
+let currentFace = null;
+let talking = false;
+
+function mouthAnchor(face){
+  const m = face && face.slots.mouth;
+  return m ? {x:m.x, y:m.y} : {...D.mouthDefault};
+}
+
+function applyFace(face, dur){
+  const eyeDur = dur, prev = currentFace;
+  currentFace = face;
+  for (const role of ['eye_L','eye_R']){
+    const slot = face.slots[role];
+    if (slot) retarget(chans[role], partState(slot.part, slot), eyeDur);
+    else {
+      const a = prev && prev.slots[role] ? prev.slots[role] : {x:role==='eye_L'?28:72,y:29};
+      retarget(chans[role], degenerateState(a.x,a.y,'stroke'), eyeDur);
+    }
+  }
+  if (!talking){
+    const slot = face.slots.mouth;
+    if (slot) retarget(chans.mouth, partState(slot.part, slot), dur);
+    else {
+      const a = mouthAnchor(prev);
+      retarget(chans.mouth, degenerateState(a.x, a.y, 'stroke'), dur);
+    }
+  }
+  const tears = face.slots.tears || [];
+  for (let i=0;i<2;i++){
+    const ch = chans['tear'+i];
+    if (tears[i]) retarget(ch, partState(tears[i].part, tears[i]), dur);
+    else if (ch.cur && ch.cur.opacity>0){
+      const c = ch.cur.pts.reduce((a,p)=>[a[0]+p[0]/ch.cur.pts.length,a[1]+p[1]/ch.cur.pts.length],[0,0]);
+      retarget(ch, degenerateState(c[0],c[1],ch.cur.mode), dur*0.8);
+    }
+  }
+}
+
+// ---------------------------------------------------------------- blinking
+let blinkTimer = 0, blinking = false;
+function scheduleBlink(now){ blinkTimer = now + 2600 + Math.random()*3800; }
+function canBlink(){
+  if (!currentFace || blinking) return false;
+  return ['eye_L','eye_R'].some(r => {
+    const s = currentFace.slots[r];
+    return s && s.open && D.blinks[s.part];
+  });
+}
+function doBlink(then){
+  if (!canBlink()) { if (then) then(); return; }
+  blinking = true;
+  const closeDur = 80, openDur = 110, hold = 60;
+  const restore = [];
+  for (const role of ['eye_L','eye_R']){
+    const slot = currentFace.slots[role];
+    if (!slot || !slot.open || !D.blinks[slot.part]) continue;
+    restore.push([role, slot]);
+    retarget(chans[role], partState(D.blinks[slot.part], slot), closeDur, easeOut);
+  }
+  setTimeout(()=>{
+    for (const [role,slot] of restore)
+      retarget(chans[role], partState(slot.part, slot), openDur);
+    setTimeout(()=>{ blinking = false; if (then) then(); }, openDur+20);
+  }, closeDur+hold);
+}
+
+// ---------------------------------------------------------------- lip sync
+// syllable-based pacing: one short consonant pose per onset cluster, one
+// long emphasized pose per vowel nucleus, visible closures only (m/b/p/f/v)
+const VOWELS = 'aeiouy';
+const isVowelV = v => ['AA','EH','EE','OH','OO'].includes(v);
+function consViseme(cluster){
+  if (cluster.startsWith('th')||cluster.startsWith('dh')) return 'LNT';
+  if (cluster.startsWith('sh')||cluster.startsWith('ch')) return 'S';
+  for (const ch of cluster){
+    if ('mbp'.includes(ch)) return 'MBP';
+    if ('fv'.includes(ch)) return 'FV';
+    if ('lntd'.includes(ch)) return 'LNT';
+    if ('szcxjg'.includes(ch)) return 'S';
+    if ('wqr'.includes(ch)) return 'OO';
+  }
+  return null;   // h/k etc: no distinct pose
+}
+function vowelViseme(cluster){
+  if (/^(ee|ea|ie|ey)/.test(cluster)) return 'EE';
+  if (/^(oo|ou|ow|ue)/.test(cluster)) return 'OO';
+  if (/^(oi|oy)/.test(cluster)) return 'OH';
+  const c = cluster[0];
+  if (c==='a') return 'AA';
+  if (c==='e') return 'EH';
+  if (c==='i'||c==='y') return 'EE';
+  if (c==='o') return 'OH';
+  return 'OO';
+}
+function wordVisemes(w){
+  w = w.toLowerCase().replace(/[^a-z']/g,'');
+  const out = [];
+  let i = 0;
+  while (i < w.length){
+    let c0 = i;
+    while (i < w.length && !VOWELS.includes(w[i])) i++;
+    if (i > c0){
+      const v = consViseme(w.slice(c0, i));
+      if (v) out.push({v, dur:60});
+    }
+    let v0 = i;
+    while (i < w.length && VOWELS.includes(w[i])) i++;
+    if (i > v0){
+      const jitter = (w.charCodeAt(v0) * 7) % 40;
+      out.push({v: vowelViseme(w.slice(v0, i)), dur: 135 + jitter,
+                scale: 0.94 + ((w.charCodeAt(v0) * 13) % 20) / 100});
+    }
+  }
+  const last = w[w.length - 1];
+  if ('mbp'.includes(last)) out.push({v:'MBP', dur:70});
+  else if ('fv'.includes(last)) out.push({v:'FV', dur:70});
+  if (!out.length) out.push({v:'EH', dur:120});
+  return out;
+}
+let visTimeline = null;   // {events:[{t,v,dur,scale}], words:[{char,t}], total}
+function buildTimeline(text){
+  const events = [], words = [];
+  let t = 120;    // small lead-in
+  const re = /\S+/g;
+  let m;
+  while ((m = re.exec(text))){
+    words.push({char:m.index, t});
+    for (const u of wordVisemes(m[0])){
+      events.push({t, ...u});
+      t += u.dur;
+    }
+    t += 85;                                   // inter-word gap
+    if (/[.,!?;:]$/.test(m[0])){               // punctuation pause
+      events.push({t, v:'rest', dur:170});
+      t += 230;
+    }
+  }
+  events.push({t, v:'rest', dur:200});
+  return {events, words, total:t+220};
+}
+function talkAnchor(){
+  const a = mouthAnchor(currentFace);
+  // low enough to clear the eyes, high enough that tall visemes stay on screen
+  return {x: 50, y: Math.min(Math.max(a.y, 45.2), 49)};
+}
+function visemeState(name, anchor, scale=1){
+  const v = D.visemes[name];
+  const pts = scale===1 ? v.points : v.points.map(p=>[p[0]*scale, p[1]*scale]);
+  const place = {x:anchor.x, y:anchor.y + (isVowelV(name)?0.5:0), rot:0, mirror:false};
+  return {mode:'fill', pts:placePts(pts, place), width:0, opacity:1};
+}
+let talkT0 = 0, talkT0target = 0, talkIdx = -1;
+let visemeTimer = null;   // mouth-only mode: fallback stop when no audio drives us
+const TALK_NEUTRAL = '39_neutral_02_manual';
+function startTalk(text){
+  if (!('speechSynthesis' in window)){ setStatus('Speech synthesis not available in this browser'); return; }
+  // faces whose own mouth sits far from the talk position (up between the
+  // eyes etc.) morph badly into visemes -> settle on a neutral face first
+  if (currentFace && currentFace.talkSafe === false){
+    stopTalk(false);
+    selectFace(TALK_NEUTRAL);
+    setStatus('Reverting to neutral to speak…');
+    setTimeout(()=>beginSpeech(text, true), 430);
+    return;
+  }
+  beginSpeech(text, true);
+}
+// Mouth-only: animate the visemes for `text` WITHOUT speaking (the audio comes
+// from elsewhere, e.g. a Deepgram wav). Optionally scale the estimated timeline
+// to the real audio duration so the flap length matches. Call MIST.stopTalk()
+// (or let audio.onended do it) when the audio finishes.
+function startVisemes(text, opts){
+  const durationMs = opts && opts.durationMs;
+  if (currentFace && currentFace.talkSafe === false){
+    stopTalk(false);
+    selectFace(TALK_NEUTRAL);
+    setTimeout(()=>beginSpeech(text, false, durationMs), 430);
+    return;
+  }
+  beginSpeech(text, false, durationMs);
+}
+function beginSpeech(text, speak, durationMs){
+  stopTalk(false);
+  const tl = buildTimeline(text);
+  // when we know the true audio length, rescale event times so the mouth
+  // finishes with the sound instead of at the browser's rough word estimate
+  if (durationMs && tl.total > 0 && isFinite(durationMs)){
+    const k = durationMs / tl.total;
+    tl.events.forEach(e => { e.t *= k; });
+    tl.words.forEach(w => { w.t *= k; });
+    tl.total = durationMs;
+  }
+  visTimeline = tl;
+  talking = true; talkIdx = -1;
+  talkT0 = talkT0target = performance.now();
+  if (speak){
+    const u = new SpeechSynthesisUtterance(text);
+    // gentler than the old pitch 1.25 (which read as chipmunk-robot); slightly
+    // raised, near-natural rate, and prefer a real/neural voice when present
+    u.rate = 1.0; u.pitch = 1.06;
+    const voices = speechSynthesis.getVoices();
+    const v = voices.find(v=>/en/i.test(v.lang) && /natural|neural|online|google/i.test(v.name)) ||
+              voices.find(v=>/en/i.test(v.lang) && /female|zira|aria|jenny|sonia|libby/i.test(v.name)) ||
+              voices.find(v=>/en/i.test(v.lang));
+    if (v) u.voice = v;
+    u.onboundary = ev => {          // softly re-anchor timeline at word starts
+      if (ev.name!=='word' && ev.charIndex==null) return;
+      const w = tl.words.filter(w=>w.char<=ev.charIndex).pop();
+      if (w) talkT0target = performance.now() - w.t;
+    };
+    u.onend = () => stopTalk(true);
+    u.onerror = () => stopTalk(true);
+    speechSynthesis.speak(u);
+    setStatus('Speaking…');
+  } else {
+    // no speech engine to end us — arm a timer as a backstop so the mouth
+    // always settles even if the caller forgets to stopTalk()
+    clearTimeout(visemeTimer);
+    visemeTimer = setTimeout(()=>stopTalk(true), tl.total + 700);
+    setStatus('Speaking…');
+  }
+}
+function stopTalk(restoreMouth){
+  try { speechSynthesis.cancel(); } catch(e){}
+  clearTimeout(visemeTimer); visemeTimer = null;
+  const was = talking;
+  talking = false; visTimeline = null; talkIdx = -1;
+  enveloping = false; envSeq = null; envIdx = -1;
+  envLvl = 0; envIsOpen = false; envLowSince = 0;
+  if (restoreMouth && was && currentFace){
+    const slot = currentFace.slots.mouth;
+    if (slot) retarget(chans.mouth, partState(slot.part, slot), 260);
+    else {
+      const a = mouthAnchor(currentFace);
+      retarget(chans.mouth, degenerateState(a.x,a.y,'stroke'), 260);
+    }
+    setStatus('');
+  }
+}
+function tickTalk(now){
+  if (!talking || !visTimeline) return;
+  talkT0 += (talkT0target - talkT0) * 0.12;   // ease toward boundary anchor
+  const t = now - talkT0;
+  if (t > visTimeline.total + 1500){ stopTalk(true); return; }  // TTS died/quiet
+  const ev = visTimeline.events;
+  let i = talkIdx;
+  while (i+1 < ev.length && ev[i+1].t <= t) i++;
+  if (i !== talkIdx && i >= 0){
+    talkIdx = i;
+    retarget(chans.mouth, visemeState(ev[i].v, talkAnchor(), ev[i].scale||1),
+             isVowelV(ev[i].v) ? 78 : 55, easeOut);
+  }
+}
+
+// -------------------------------------------------- envelope-driven lip-sync
+// Different TTS voices speak at different rates and cadences, so a text-estimated
+// timeline (even scaled to total duration) drifts against the real audio. Here
+// the SHAPE comes from the text's viseme sequence but the TIMING and OPENNESS
+// come from the live audio amplitude, fed frame-by-frame from the parent window
+// (which owns the <audio> element and a Web Audio AnalyserNode). Result: the
+// mouth tracks whatever the actual voice is doing — pauses, drawn-out vowels,
+// fast clips, loud/quiet — automatically, for any voice.
+let enveloping = false, envSeq = null, envIdx = -1;
+let envLvl = 0;              // smoothed level (fast attack, slow release)
+let envIsOpen = false;       // current open/closed state of the mouth
+let envLowSince = 0;         // when the level last dropped low (for close-delay)
+let envShapeT = 0;           // last time we advanced to the next viseme shape
+let envDrawT = 0;            // last time we actually retargeted (rate limit)
+const MOUTH_ON = 0.15, MOUTH_OFF = 0.08;  // hysteresis on the smoothed level
+const SHAPE_MS = 130;        // syllable-ish cadence for stepping shapes while open
+const CLOSE_MS = 120;        // level must stay low this long before the mouth shuts
+const DRAW_MS  = 60;         // min interval between retargets (let morphs finish)
+// Viseme scale MUST stay near the shapes' designed size (the author-time range is
+// ~0.94–1.13; points are origin-centered so scale grows the mouth in place, and
+// values far outside that range make it vanish or swallow the face).
+const envScale = l => 0.92 + 0.22 * Math.max(0, Math.min(1, l));   // 0.92..1.14
+function startEnvelopeTalk(text){
+  if (currentFace && currentFace.talkSafe === false){
+    stopTalk(false); selectFace(TALK_NEUTRAL);
+    setTimeout(()=>beginEnvelope(text), 430);
+    return;
+  }
+  beginEnvelope(text);
+}
+function beginEnvelope(text){
+  stopTalk(false);
+  const tl = buildTimeline(text);
+  // ordered mouth shapes (drop the silent 'rest' markers); real audio energy
+  // decides WHEN we move, this sequence decides WHAT shape we show.
+  envSeq = tl.events.filter(e=>e.v && e.v!=='rest');
+  if (!envSeq.length) envSeq = [{v:'EH', scale:1}];
+  envIdx = -1; envLvl = 0; envIsOpen = false; envLowSince = 0;
+  envShapeT = 0; envDrawT = 0;
+  enveloping = true; talking = true; visTimeline = null;   // block tickTalk + applyFace mouth
+  retarget(chans.mouth, visemeState('rest', talkAnchor(), 1), 120, easeOut);  // start closed
+  setStatus('Speaking…');
+}
+// level: 0..1 normalized loudness of the audio right now (fed by the parent per frame)
+function setMouthLevel(level){
+  if (!enveloping || !envSeq) return;
+  const now = performance.now();
+  level = Math.max(0, Math.min(1, level || 0));
+  // fast attack / medium release: opens crisply on onsets, rides over the tiny
+  // intra-word dips every real voice has, but still shuts within ~230 ms of a
+  // real pause (sentence gaps are ~300 ms+, so the mouth visibly closes there)
+  envLvl = level > envLvl ? envLvl * 0.35 + level * 0.65
+                          : envLvl * 0.72 + level * 0.28;
+  if (!envIsOpen){
+    if (envLvl >= MOUTH_ON){
+      envIsOpen = true; envLowSince = 0;
+      envIdx = (envIdx + 1) % envSeq.length;
+      envShapeT = envDrawT = now;
+      const cur = envSeq[envIdx];
+      retarget(chans.mouth, visemeState(cur.v, talkAnchor(), envScale(envLvl)),
+               isVowelV(cur.v) ? 70 : 55, easeOut);
+    }
+    return;   // stay closed (rest was already drawn)
+  }
+  // open → maybe close, but only after a sustained quiet stretch
+  if (envLvl < MOUTH_OFF){
+    if (!envLowSince) envLowSince = now;
+    if (now - envLowSince >= CLOSE_MS){
+      envIsOpen = false; envLowSince = 0; envDrawT = now;
+      retarget(chans.mouth, visemeState('rest', talkAnchor(), 1), 90, easeOut);
+    }
+    return;
+  }
+  envLowSince = 0;
+  // while speech continues, step through shapes at a syllable-ish cadence
+  if (now - envShapeT >= SHAPE_MS){
+    envIdx = (envIdx + 1) % envSeq.length;
+    envShapeT = envDrawT = now;
+    const cur = envSeq[envIdx];
+    retarget(chans.mouth, visemeState(cur.v, talkAnchor(), envScale(envLvl)),
+             isVowelV(cur.v) ? 70 : 55, easeOut);
+  } else if (now - envDrawT >= DRAW_MS){
+    // same shape, gently follow loudness — rate-limited so morphs can finish
+    envDrawT = now;
+    const cur = envSeq[Math.max(0, envIdx)];
+    retarget(chans.mouth, visemeState(cur.v, talkAnchor(), envScale(envLvl)),
+             80, easeOut);
+  }
+}
+function stopEnvelopeTalk(){
+  enveloping = false; envSeq = null; envIdx = -1;
+  envLvl = 0; envIsOpen = false; envLowSince = 0;
+  stopTalk(true);   // settle the mouth back onto the current face
+}
+
+// ---------------------------------------------------------------- follow / gaze
+let followMode = 'off';            // off | mouse | cam
+let target = {x:0, y:0}, gaze = {x:0, y:0};
+let camReady = false, landmarker = null, videoEl = null;
+function setFollow(mode){
+  followMode = mode;
+  for (const [id,m] of [['fOff','off'],['fMouse','mouse'],['fCam','cam']])
+    $(id).classList.toggle('on', m===mode);
+  if (mode==='cam') initCam();
+  else stopCam();
+  if (mode==='off') target = {x:0,y:0};
+}
+window.addEventListener('pointermove', e=>{
+  if (followMode!=='mouse') return;
+  target.x = (e.clientX/innerWidth)*2 - 1;
+  target.y = (e.clientY/innerHeight)*2 - 1;
+});
+async function initCam(){
+  try{
+    setStatus('Loading face tracker…');
+    const vision = await import('https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.14/vision_bundle.mjs');
+    const files = await vision.FilesetResolver.forVisionTasks(
+      'https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.14/wasm');
+    landmarker = await vision.FaceLandmarker.createFromOptions(files, {
+      baseOptions:{modelAssetPath:'https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task'},
+      runningMode:'VIDEO', numFaces:1});
+    videoEl = document.createElement('video');
+    videoEl.muted = true; videoEl.playsInline = true;
+    const stream = await navigator.mediaDevices.getUserMedia({video:{width:320,height:240}});
+    videoEl.srcObject = stream;
+    await videoEl.play();
+    camReady = true;
+    setStatus('Following your face 👀');
+  }catch(err){
+    console.warn(err);
+    setStatus('Camera/tracker unavailable — falling back to mouse. ('+(err.message||err)+')');
+    setFollow('mouse');
+  }
+}
+function stopCam(){
+  camReady = false;
+  if (videoEl && videoEl.srcObject){
+    for (const t of videoEl.srcObject.getTracks()) t.stop();
+    videoEl = null;
+  }
+}
+let lastCamT = 0;
+function tickCam(now){
+  if (followMode!=='cam' || !camReady || !landmarker) return;
+  if (now - lastCamT < 66) return;         // ~15 fps detection
+  lastCamT = now;
+  try{
+    const res = landmarker.detectForVideo(videoEl, now);
+    const lm = res.faceLandmarks && res.faceLandmarks[0];
+    if (lm){
+      const nose = lm[1];
+      target.x = -(nose.x*2 - 1) * 1.6;    // mirrored, amplified
+      target.y = (nose.y*2 - 1) * 1.6;
+      target.x = Math.max(-1, Math.min(1, target.x));
+      target.y = Math.max(-1, Math.min(1, target.y));
+    }
+  }catch(e){ /* detection hiccup */ }
+}
+const screenEl = $('screen'), faceG = $('faceG'), eyesG = $('eyesG');
+function tickGaze(){
+  gaze.x = lerp(gaze.x, target.x, 0.085);
+  gaze.y = lerp(gaze.y, target.y, 0.085);
+  const gx = gaze.x, gy = gaze.y;
+  faceG.setAttribute('transform', `translate(${(gx*3.6).toFixed(2)} ${(gy*2.2).toFixed(2)})`);
+  eyesG.setAttribute('transform', `translate(${(gx*1.1).toFixed(2)} ${(gy*0.7).toFixed(2)})`);
+  screenEl.style.transform = `rotateY(${(gx*7).toFixed(2)}deg) rotateX(${(-gy*4.5).toFixed(2)}deg)`;
+}
+
+// ---------------------------------------------------------------- idle breath
+const svgEl = $('svg');
+function tickBreath(now){
+  const s = 1 + Math.sin(now/2100)*0.004;
+  svgEl.style.transform = `scale(${s})`;
+}
+
+// ---------------------------------------------------------------- UI
+function setStatus(msg){ $('status').textContent = msg; }
+const GROUP_COLORS = {angry:'#ff6b6b', annoyed:'#ffb86b', happy:'#7bd88f',
+                      neutral:'#8ab4f8', sad:'#7fd7f0', misc:'#c792ea'};
+function buildButtons(){
+  const wrap = $('faceButtons');
+  const groups = {};
+  for (const f of D.faces) (groups[f.group] ||= []).push(f);
+  for (const [g, faces] of Object.entries(groups)){
+    const h = document.createElement('div');
+    h.className = 'grp'; h.textContent = g;
+    wrap.appendChild(h);
+    const row = document.createElement('div');
+    row.className = 'row';
+    for (const f of faces){
+      const b = document.createElement('button');
+      b.className = 'face';
+      b.innerHTML = `<span class="dot" style="background:${GROUP_COLORS[g]||'#888'}"></span>${f.name}`;
+      b.onclick = () => { selectFace(f.id); };
+      b.dataset.fid = f.id;
+      row.appendChild(b);
+    }
+    wrap.appendChild(row);
+  }
+}
+function selectFace(id){
+  const f = D.faces.find(f=>f.id===id);
+  if (!f) return;
+  applyFace(f, +$('spd').value);
+  for (const b of document.querySelectorAll('button.face'))
+    b.classList.toggle('on', b.dataset.fid===id);
+}
+let auto = false, autoNext = 0;
+$('btnAuto').onclick = () => {
+  auto = !auto;
+  $('btnAuto').classList.toggle('on', auto);
+  $('btnAuto').textContent = auto ? '⏸ Auto-cycle' : '▶ Auto-cycle';
+  autoNext = performance.now() + 400;
+};
+$('btnBlink').onclick = () => doBlink();
+$('btnSay').onclick = () => startTalk($('sayText').value);
+$('sayText').addEventListener('keydown', e=>{ if (e.key==='Enter') startTalk($('sayText').value); });
+$('fOff').onclick = ()=>setFollow('off');
+$('fMouse').onclick = ()=>setFollow('mouse');
+$('fCam').onclick = ()=>setFollow('cam');
+$('spd').oninput = ()=>{ $('spdV').textContent = $('spd').value+'ms'; };
+$('glowR').oninput = ()=>{
+  const v = +$('glowR').value/100;
+  document.querySelector('#glow feGaussianBlur[result=b2]')
+    .setAttribute('stdDeviation', (v*4.4+0.4).toFixed(2));
+  document.querySelector('#glow feColorMatrix')
+    .setAttribute('values', `1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 ${(v*0.9).toFixed(2)} 0`);
+};
+
+// ---------------------------------------------------------------- main loop
+function frame(now){
+  tickCam(now);
+  tickGaze();
+  tickBreath(now);
+  tickTalk(now);
+  for (const k in chans) tickChannel(chans[k], now);
+  if (!blinking && now > blinkTimer){
+    doBlink(); scheduleBlink(now);
+  }
+  if (auto && now > autoNext && !talking){
+    const i = D.faces.findIndex(f=>currentFace && f.id===currentFace.id);
+    const next = D.faces[(i+1) % D.faces.length];
+    selectFace(next.id);
+    autoNext = now + (+$('spd').value) + 1500;
+  }
+  requestAnimationFrame(frame);
+}
+
+buildButtons();
+selectFace(D.faces.find(f=>f.id.startsWith('39')).id);   // neutral default
+scheduleBlink(performance.now());
+if ('speechSynthesis' in window) speechSynthesis.getVoices();   // warm up
+requestAnimationFrame(frame);
+setStatus('Ready — pick a face, make it talk, or turn on camera follow.');
+
+// deep links + deterministic test hooks:  #face=<id>&blink=1&viseme=AA
+window.MIST = {selectFace, doBlink, startTalk, startVisemes, stopTalk,
+               startEnvelopeTalk, setMouthLevel, stopEnvelopeTalk, chans, applyFace, D};
+(function(){
+  const h = new URLSearchParams(location.hash.slice(1));
+  if (h.get('face')) selectFace(h.get('face'));
+  if (h.get('blink')){
+    blinkTimer = Infinity;
+    setTimeout(()=>{                       // close lids and hold for capture
+      for (const role of ['eye_L','eye_R']){
+        const slot = currentFace.slots[role];
+        if (slot && slot.open && D.blinks[slot.part])
+          retarget(chans[role], partState(D.blinks[slot.part], slot), 60);
+      }
+    }, 600);
+  }
+  if (h.get('viseme')){
+    setTimeout(()=>{
+      talking = true;                      // hold mouth on this viseme
+      retarget(chans.mouth, visemeState(h.get('viseme'), talkAnchor()), 60);
+    }, 600);
+  }
+})();
+</script>
+</body>
+</html>

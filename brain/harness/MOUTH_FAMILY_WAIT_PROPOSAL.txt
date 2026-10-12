@@ -1,0 +1,24 @@
+Measured concern
+
+The browser energy fallback produces only AA/rest. On the six saved speech
+clips, unchanged AA runs reach 2.16 s (long.wav), 1.28 s (precision), 1.26 s
+(question), 1.18 s (excited), and 1.10 s (gentle). A sustained vowel can remain
+AA indefinitely, so the present cue-boundary latch has no hard upper bound.
+These are actual saved PCM measurements using the exact browser threshold,
+not provider-alignment timing. See mouth_family_wait_analysis.json.
+
+Proposed bounded handoff, not yet applied
+
+Keep the existing immediate handoff on rest, MBP, or an actual viseme change.
+For an unchanged cue, permit handoff at a quiet amplitude trough below 0.35
+once 150 ms of the expression change has elapsed. If neither event arrives,
+switch the same current viseme into its target emotional drawing at the first
+15 fps tick at or after 400 ms from expression selection. Keep the same anchor,
+display master width, rotation, current viseme and audio time. Only the emotional
+contour changes, with one mouth draw and no forced silence or duplicate mouth.
+
+This trades a bounded one-frame contour change during a very long vowel for
+avoiding a happy mouth persisting under angry eyes. It remains possible to see
+that contour change; no claim of smooth raster morphing is justified. The hard
+bound would be 466.7 ms including 15 fps scheduling. Retargeting starts a fresh
+pending target but never resets TTS or the displayed speech geometry.

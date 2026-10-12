@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-01",
+  "scope": "Static comparison page reused from the existing face-review board with isolated feedback storage.",
+  "catalog": {"studies": 4, "newFaces": 15, "unchangedReferenceFaces": 5},
+  "scriptSyntax": "app.js and review-state.js passed node --check.",
+  "desktop": {"viewportWidth": 1280, "documentScrollWidth": 1270, "rowClientWidth": 1220, "rowScrollWidth": 1220, "failedLoadedCrops": 0},
+  "phone": {"viewportWidth": 390, "viewportHeight": 844, "documentScrollWidth": 380, "rowClientWidth": 350, "rowScrollWidth": 966, "dialogClientWidth": 355, "dialogScrollWidth": 355, "screenshot": "phone-inspector.png"},
+  "feedback": {
+    "savedFaceSurvivesReload": true,
+    "noteSurvivesReload": true,
+    "hashReopensCorrectFace": true,
+    "actualDownloadedJsonVerified": true,
+    "exportSchema": "mist-geraldine-variations-review",
+    "exportVersion": 1,
+    "testRecord": "geraldine-dry__amused",
+    "downloadEvent": "Browser event timed out, but the actual JSON file was saved in Downloads and read successfully.",
+    "testNotesAndSavesCleared": true
+  },
+  "temporaryViewportReset": true,
+  "limits": "These checks cover page rendering and feedback, not motion or voice synchronization. Native sheets were independently reviewed separately."
+}

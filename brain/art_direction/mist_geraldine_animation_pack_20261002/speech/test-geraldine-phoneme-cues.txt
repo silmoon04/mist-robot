@@ -1,0 +1,24 @@
+test_absent_or_corrupt_dictionary_is_optional (__main__.PronunciationTests.test_absent_or_corrupt_dictionary_is_optional) ... ok
+test_dictionary_corrects_spelling_traps (__main__.PronunciationTests.test_dictionary_corrects_spelling_traps) ... ok
+test_read_has_two_readings_and_explicit_override (__main__.PronunciationTests.test_read_has_two_readings_and_explicit_override) ... ok
+test_supplemental_dictionary_supports_new_words (__main__.PronunciationTests.test_supplemental_dictionary_supports_new_words) ... ok
+test_unknown_and_incomplete_words_keep_character_fallback (__main__.PronunciationTests.test_unknown_and_incomplete_words_keep_character_fallback) ... ok
+test_unknown_whole_tokens_do_not_upgrade_english_substrings (__main__.PronunciationTests.test_unknown_whole_tokens_do_not_upgrade_english_substrings) ... ok
+test_voiced_punctuation_retains_the_final_pronounced_shape (__main__.PronunciationTests.test_voiced_punctuation_retains_the_final_pronounced_shape) ... ok
+test_word_split_across_two_chunks_returns_immediate_fallback (__main__.PronunciationTests.test_word_split_across_two_chunks_returns_immediate_fallback) ... ok
+test_clipped_pcm_does_not_refit_the_whole_word (__main__.TimingAndAudioTests.test_clipped_pcm_does_not_refit_the_whole_word) ... ok
+test_cue_slices_preserve_shape_at_packet_start (__main__.TimingAndAudioTests.test_cue_slices_preserve_shape_at_packet_start) ... ok
+test_empty_and_silent_audio_are_closed (__main__.TimingAndAudioTests.test_empty_and_silent_audio_are_closed) ... ok
+test_independent_replies_have_no_carried_word_state (__main__.TimingAndAudioTests.test_independent_replies_have_no_carried_word_state) ... ok
+test_invalid_alignment_falls_back_to_finite_energy_cues (__main__.TimingAndAudioTests.test_invalid_alignment_falls_back_to_finite_energy_cues) ... ok
+test_invalid_pcm_clock_rejected_and_valid_cues_strictly_increase (__main__.TimingAndAudioTests.test_invalid_pcm_clock_rejected_and_valid_cues_strictly_increase) ... ok
+test_short_word_retains_bilabial_closure_then_silent_rest (__main__.TimingAndAudioTests.test_short_word_retains_bilabial_closure_then_silent_rest) ... ok
+test_silence_overrides_every_dictionary_shape (__main__.TimingAndAudioTests.test_silence_overrides_every_dictionary_shape) ... ok
+test_voiced_punctuation_keeps_speech_and_silent_punctuation_closes (__main__.TimingAndAudioTests.test_voiced_punctuation_keeps_speech_and_silent_punctuation_closes) ... ok
+test_word_estimates_stay_inside_measured_word_bounds (__main__.TimingAndAudioTests.test_word_estimates_stay_inside_measured_word_bounds) ... ok
+test_zero_duration_overlap_keeps_earlier_active_character (__main__.TimingAndAudioTests.test_zero_duration_overlap_keeps_earlier_active_character) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.914s
+
+OK

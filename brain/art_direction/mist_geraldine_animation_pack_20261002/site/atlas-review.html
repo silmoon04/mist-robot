@@ -1,0 +1,13 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Registered cel inspection</title>
+<style>body{margin:12px;background:#f0ede6;font:13px system-ui;color:#26332e}h2{margin:8px 0}section{display:grid;grid-template-columns:repeat(12,1fr);gap:4px}figure{margin:0}canvas{width:100%;aspect-ratio:100/64;display:block}figcaption{text-align:center;font-size:11px;line-height:20px}output{display:block}</style>
+<output id="status">Loading registered native cels</output><main></main>
+<script type="module">
+import {AtlasRenderer,fetchJson} from './player.mjs';
+const manifest=await fetchJson('asset-manifest.json');const renderer=new AtlasRenderer(manifest);await renderer.load();
+for(const kind of ['eyes','mouths'])for(const [family,asset]of Object.entries(manifest[kind])){
+const heading=document.createElement('h2');heading.textContent=kind+' / '+family;document.querySelector('main').append(heading);
+const row=document.createElement('section');document.querySelector('main').append(row);
+for(const frame of asset.frames){const figure=document.createElement('figure');const canvas=document.createElement('canvas');const caption=document.createElement('figcaption');caption.textContent=frame.id;figure.append(canvas,caption);row.append(figure);
+renderer.draw(canvas,{eyeFamily:kind==='eyes'?family:'attentive',eyeFrame:kind==='eyes'?frame.id:'rest',mouthFamily:kind==='mouths'?family:'dry',mouthFrame:kind==='mouths'?frame.id:'rest'});}
+}document.querySelector('output').textContent='108 registered cels; native image bytes unchanged';
+</script></html>

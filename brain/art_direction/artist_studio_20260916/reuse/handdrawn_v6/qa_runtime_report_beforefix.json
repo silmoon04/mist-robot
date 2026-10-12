@@ -1,0 +1,33 @@
+{
+  "passed": false,
+  "checkedAt": "2026-09-23T22:54:38.178Z",
+  "runtimeSha256": "b42dee84004572abca2a726dcadb252fca742d678a9e4b72330806a2d9fe7f87",
+  "rendererSha256": "959b3c3ccf8ef58d4a7dd61cd37363fd07be4b49057e3228f1bf275d827e73d0",
+  "manifestSha256": "dab8af8a3182390075ee3c9a3fecdcb5e8ae1ce208af4ec331d42a73fec521a9",
+  "checks": [
+    "Hand-drawn eyes paint through the real existing renderer",
+    "All nine activities enter, use every loop cel for twelve seconds, remain active until cleared, then exit",
+    "All 81 ordered activity replacements reject stale completion tokens",
+    "Explicit event ownership prevents an old tool or brain completion from clearing a newer activity",
+    "All forty expression IDs select valid new eye assets",
+    "Existing audio clock stays unquantized, 120 Hz updates paint at 15 fps, and lip closures and stopped audio update immediately",
+    "Invalid activity names leave the running activity intact, bad manifests use fallback, and destroyed runtimes no longer update"
+  ],
+  "counts": {
+    "lifecycleSamples": 1692,
+    "replacements": 81,
+    "expressions": 40,
+    "speechSamples": 120,
+    "paintsInOneSecond": 15
+  },
+  "limits": [
+    "Canvas calls are inspected with a recording context; this does not rate artistic quality or replace browser review.",
+    "No microphone, provider, or live tool connection is used. Speech is tested against a deterministic audio clock."
+  ],
+  "failures": [
+    {
+      "name": "Blink uses drawn closure cels and two held closed frames at 15 fps",
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n... Skipped lines\n\n  [\n    'anticipation',\n    'half_closed',\n    'closed',\n    'closed',\n...\n    'open',\n+   undefined\n-   'open'\n  ]\n"
+    }
+  ]
+}

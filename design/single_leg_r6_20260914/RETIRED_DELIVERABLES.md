@@ -1,0 +1,22 @@
+The following earlier print and simulation deliverables remain on disk for historical reference but are not part of the R6 single-leg release. Their output-punctuation registrations were retired to allow registration of the current release.
+
+\design\hexapod_phone_quad_r5_20260912\simulation\output_r5_printed_nominal\printed_mass_frame_audit.json
+\design\hexapod_phone_quad_r5_20260912\simulation\output_r5_printed_nominal\printed_mass_frame_audit.txt
+\design\hexapod_phone_quad_r5_20260912\simulation\output_r5_printed_nominal\recorded_motion_notes.txt
+\design\hexapod_phone_quad_r5_20260912\simulation\output_r5_printed_nominal\recorded_motion_receipt.json
+\design\hexapod_phone_quad_r5_20260912\simulation\output_r5_printed_nominal\simulation_report.json
+\design\hexapod_phone_quad_r5_20260912\simulation\output_r5_printed_nominal\static_screen.json
+\design\hexapod_phone_quad_r5_20260912\simulation\output_r5_printed_nominal\trajectory.json
+\design\hexapod_phone_quad_r5_20260912\simulation\output_r5_printed_nominal\urdf_receipt.json
+\design\hexapod_phone_quad_r5_20260912\simulation\output_r5_solid_nominal\mass_frame_audit.json
+\design\hexapod_phone_quad_r5_20260912\simulation\output_r5_solid_nominal\simulation_report.json
+\design\hexapod_phone_quad_r5_20260912\simulation\output_r5_solid_nominal\static_screen.json
+\design\hexapod_phone_quad_r5_20260912\simulation\output_r5_solid_nominal\trajectory.json
+\design\hexapod_phone_quad_r5_20260912\simulation\output_r5_solid_nominal\urdf_receipt.json
+\design\expanded_joint_plate_20260913\expanded_plate_validation.json
+\design\expanded_joint_plate_20260913\START_PRINT.txt
+\design\expanded_joint_plate_20260913\ASSEMBLY_ADDITIONS.txt
+\design\fusion_fixture_m30_20260914\fixture_manifest.json
+\design\fusion_fixture_m30_20260914\adapter_print_check.json
+\design\fusion_fixture_m30_20260914\fusion\demo_report.json
+\design\fusion_fixture_m30_20260914\README.txt

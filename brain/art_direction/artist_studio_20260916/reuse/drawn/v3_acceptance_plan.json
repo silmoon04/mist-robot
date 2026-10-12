@@ -1,0 +1,36 @@
+{
+  "status": "prepared; final run waits for stable renderer and mixed-sheet atlas",
+  "historical_report": "motion_checks.json remains unchanged",
+  "new_report": "motion_checks_v3.json",
+  "targeted_checks": [
+    "All 1560 distinct directed expression pairs, sampled through the full quiet and speaking transition",
+    "Visible source state survives rapid retargeting; no doubled middle feature, missing eye, invalid geometry, or clipped ink",
+    "All expression endpoints retain the original component geometry",
+    "15 fps measures actual draw calls under both 60 Hz and 120 Hz requestAnimationFrame input; voice playback must not bypass the cadence",
+    "Closed blink remains sampled for every fractional phase of a 15 fps interval",
+    "Paused, suspended, stopped, and inactive speech produce a resting mouth while wall time advances",
+    "Audio cue timing follows the output clock, independently of visual frame cadence",
+    "Frame-specific PNG files are decoded and exercised; replacement cels must not silently read the old asset sheet",
+    "SourceScale is included in bounds and registration checks",
+    "The new FV, LNT, and TH frames are reachable through their declared voice cues"
+  ],
+  "early_findings": [
+    {
+      "file": "brain/ui/static/drawn_face_renderer.js",
+      "finding": "The current FV alias prioritizes S rather than FV. A replacement FV drawing would remain unused until the alias changes."
+    },
+    {
+      "file": "brain/duplex/static/playback.js",
+      "finding": "The current accepted cue set omits TH, so an incoming TH cue is discarded. Character timing also needs to emit TH if the live examples are expected to use that new pose."
+    },
+    {
+      "file": "reuse/drawn/preview.js",
+      "finding": "The existing voice.active branch bypasses the selected frame-rate gate and redraws every display frame. Changing the menu to 15 alone would not establish 15 fps voice animation."
+    }
+  ],
+  "limits": [
+    "Geometry and scheduler tests cannot certify that the animation feels natural. Root browser review remains required.",
+    "No hardware audio timing claim will be inferred from mock clocks.",
+    "Mouth outline notch and protrusion analysis is assigned to root; this check verifies integration and registration."
+  ]
+}

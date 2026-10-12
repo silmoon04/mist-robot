@@ -1,0 +1,9 @@
+{
+  "version": "1.0.1",
+  "command": "node --test preview/transport.test.mjs",
+  "passed": 14,
+  "failed": 0,
+  "scope": "Pure scheduling and cancellation checks with an injected AudioContext double; independent browser acceptance is recorded under ../qa/.",
+  "cases": ["packet gap preserves clip samples and freezes clip time", "source scheduling and pause cleanup", "resume during packet gap", "interruption and canceled resume", "pending resume canceled by reset", "replay, scene replacement and teardown cleanup", "suspended audio returns inactive rest", "pause cancels pending play", "interruption cancels pending play", "reset cancels pending play", "teardown cancels pending play", "obsolete resume rejection ignored", "resume must reach running state", "output timestamp fallback and regression cannot rewind the scene"],
+  "limitations": ["No measured acoustic latency or perceptual lip-sync score", "Audio output timestamps are used when available; otherwise AudioContext.currentTime is the clock fallback"]
+}

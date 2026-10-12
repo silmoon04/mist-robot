@@ -1,0 +1,781 @@
+{
+  "version": 3,
+  "fps": 15,
+  "rig": {
+    "leftEye": {
+      "x": 145,
+      "y": 145
+    },
+    "rightEye": {
+      "x": 367,
+      "y": 145
+    },
+    "mouth": {
+      "x": 256,
+      "y": 235
+    }
+  },
+  "signal": [
+    0,
+    0.12,
+    0.35,
+    0.62,
+    0.86,
+    1,
+    1,
+    0.86,
+    0.62,
+    0.35,
+    0.12,
+    0
+  ],
+  "mouthProgression": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    5,
+    4,
+    3,
+    2,
+    1,
+    0
+  ],
+  "examples": {
+    "aardman/listening": {
+      "eyes": [
+        "round",
+        "round"
+      ],
+      "mouth": "line",
+      "action": "A small attentive lean, then return.",
+      "left": [
+        -3,
+        5,
+        -4
+      ],
+      "right": [
+        -3,
+        -5,
+        -4
+      ],
+      "mouthMotion": [
+        -2,
+        0,
+        -4
+      ],
+      "ticks": [
+        6,
+        2,
+        2,
+        2,
+        2,
+        3,
+        6,
+        2,
+        2,
+        2,
+        2,
+        5
+      ],
+      "restMs": 800
+    },
+    "aardman/disbelief": {
+      "eyes": [
+        "hook",
+        "hook"
+      ],
+      "mouth": "line",
+      "action": "One brow-shaped eye rises for a dry question.",
+      "left": [
+        3,
+        -6,
+        -5
+      ],
+      "right": [
+        3,
+        3,
+        2
+      ],
+      "mouthMotion": [
+        2,
+        0,
+        -3
+      ],
+      "ticks": [
+        5,
+        2,
+        2,
+        2,
+        2,
+        3,
+        8,
+        2,
+        2,
+        2,
+        2,
+        5
+      ],
+      "restMs": 950
+    },
+    "aardman/realisation": {
+      "eyes": [
+        "round",
+        "round"
+      ],
+      "mouth": "smile",
+      "action": "Eyes lift as a restrained smile arrives.",
+      "left": [
+        0,
+        -5,
+        1
+      ],
+      "right": [
+        0,
+        -5,
+        -1
+      ],
+      "mouthMotion": [
+        0,
+        0,
+        0
+      ],
+      "ticks": [
+        5,
+        2,
+        2,
+        2,
+        2,
+        3,
+        6,
+        2,
+        2,
+        2,
+        2,
+        5
+      ],
+      "restMs": 900
+    },
+    "bluey/reassurance": {
+      "eyes": [
+        "round",
+        "round"
+      ],
+      "mouth": "smile",
+      "action": "A gentle inclination and a small reassuring smile.",
+      "left": [
+        2,
+        4,
+        3
+      ],
+      "right": [
+        2,
+        -4,
+        3
+      ],
+      "mouthMotion": [
+        1,
+        0,
+        2
+      ],
+      "ticks": [
+        6,
+        2,
+        2,
+        2,
+        2,
+        3,
+        8,
+        2,
+        2,
+        2,
+        2,
+        5
+      ],
+      "restMs": 1000
+    },
+    "bluey/delight": {
+      "eyes": [
+        "round",
+        "round"
+      ],
+      "mouth": "bowl",
+      "action": "A bright small lift opens into delight.",
+      "left": [
+        -2,
+        -6,
+        -2
+      ],
+      "right": [
+        2,
+        -6,
+        2
+      ],
+      "mouthMotion": [
+        0,
+        -2,
+        0
+      ],
+      "ticks": [
+        5,
+        1,
+        1,
+        2,
+        2,
+        2,
+        6,
+        2,
+        2,
+        2,
+        2,
+        5
+      ],
+      "restMs": 1000
+    },
+    "bluey/uncertainty": {
+      "eyes": [
+        "round",
+        "hook"
+      ],
+      "mouth": "concern",
+      "action": "A tentative upward side glance and slight concerned mouth.",
+      "left": [
+        -9,
+        -5,
+        -2
+      ],
+      "right": [
+        -9,
+        -3,
+        -2
+      ],
+      "mouthMotion": [
+        -3,
+        1,
+        0
+      ],
+      "ticks": [
+        5,
+        2,
+        2,
+        2,
+        2,
+        3,
+        7,
+        2,
+        2,
+        2,
+        2,
+        5
+      ],
+      "restMs": 1000
+    },
+    "pixar/recall": {
+      "eyes": [
+        "round",
+        "round"
+      ],
+      "mouth": "line",
+      "action": "Look up and to one side, hold, then return.",
+      "left": [
+        -12,
+        -7,
+        0
+      ],
+      "right": [
+        -12,
+        -7,
+        0
+      ],
+      "mouthMotion": [
+        -3,
+        0,
+        0
+      ],
+      "ticks": [
+        5,
+        2,
+        2,
+        2,
+        2,
+        3,
+        8,
+        2,
+        2,
+        2,
+        2,
+        5
+      ],
+      "restMs": 1100
+    },
+    "pixar/checking": {
+      "eyes": [
+        "hook",
+        "hook"
+      ],
+      "mouth": "line",
+      "action": "A measured downward inspection, then return.",
+      "left": [
+        10,
+        6,
+        -2
+      ],
+      "right": [
+        10,
+        6,
+        2
+      ],
+      "mouthMotion": [
+        3,
+        1,
+        0
+      ],
+      "ticks": [
+        5,
+        2,
+        2,
+        2,
+        2,
+        3,
+        7,
+        2,
+        2,
+        2,
+        2,
+        5
+      ],
+      "restMs": 1100
+    },
+    "pixar/discovery": {
+      "eyes": [
+        "round",
+        "round"
+      ],
+      "mouth": "bowl",
+      "action": "Attention lifts toward a finding, then a pleased opening.",
+      "left": [
+        6,
+        -7,
+        -3
+      ],
+      "right": [
+        6,
+        -7,
+        3
+      ],
+      "mouthMotion": [
+        1,
+        -1,
+        0
+      ],
+      "ticks": [
+        5,
+        1,
+        1,
+        1,
+        2,
+        2,
+        7,
+        2,
+        2,
+        2,
+        2,
+        5
+      ],
+      "restMs": 1100
+    },
+    "mickey/double_take": {
+      "eyes": [
+        "round",
+        "round"
+      ],
+      "mouth": "line",
+      "action": "A side glance returns, then checks the same direction once more.",
+      "path": [
+        0,
+        0.4,
+        1,
+        0.65,
+        0.15,
+        0,
+        0.45,
+        1,
+        0.8,
+        0.45,
+        0.15,
+        0
+      ],
+      "left": [
+        15,
+        -3,
+        -2
+      ],
+      "right": [
+        15,
+        -3,
+        -2
+      ],
+      "mouthMotion": [
+        4,
+        0,
+        -2
+      ],
+      "ticks": [
+        5,
+        1,
+        2,
+        1,
+        1,
+        2,
+        1,
+        4,
+        1,
+        1,
+        2,
+        5
+      ],
+      "restMs": 1300,
+      "comic": true
+    },
+    "mickey/mock_outrage": {
+      "eyes": [
+        "hook",
+        "hook"
+      ],
+      "mouth": "smile",
+      "action": "A brief theatrical inward tilt with a small playful smirk.",
+      "left": [
+        3,
+        -5,
+        6
+      ],
+      "right": [
+        -3,
+        -5,
+        -6
+      ],
+      "mouthMotion": [
+        0,
+        -1,
+        0
+      ],
+      "ticks": [
+        5,
+        1,
+        1,
+        1,
+        1,
+        2,
+        4,
+        1,
+        1,
+        2,
+        2,
+        5
+      ],
+      "restMs": 1600,
+      "comic": true,
+      "mouthMax": 3
+    },
+    "mickey/triumph": {
+      "eyes": [
+        "round",
+        "round"
+      ],
+      "mouth": "bowl",
+      "action": "One proud upward bounce, then settle.",
+      "path": [
+        0,
+        0.12,
+        0.35,
+        0.65,
+        0.9,
+        1,
+        0.9,
+        0.65,
+        0.3,
+        0.08,
+        -0.08,
+        0
+      ],
+      "left": [
+        -3,
+        -10,
+        -3
+      ],
+      "right": [
+        3,
+        -10,
+        3
+      ],
+      "mouthMotion": [
+        0,
+        -3,
+        0
+      ],
+      "ticks": [
+        5,
+        1,
+        1,
+        1,
+        1,
+        2,
+        5,
+        1,
+        1,
+        1,
+        2,
+        5
+      ],
+      "restMs": 1400,
+      "comic": true
+    },
+    "simons_cat/notice": {
+      "eyes": [
+        "round",
+        "round"
+      ],
+      "mouth": "line",
+      "action": "Both eyes turn together toward something relevant.",
+      "left": [
+        12,
+        -2,
+        0
+      ],
+      "right": [
+        12,
+        -2,
+        0
+      ],
+      "mouthMotion": [
+        3,
+        0,
+        0
+      ],
+      "ticks": [
+        6,
+        1,
+        1,
+        1,
+        2,
+        3,
+        8,
+        2,
+        2,
+        2,
+        2,
+        5
+      ],
+      "restMs": 1000
+    },
+    "simons_cat/waiting": {
+      "eyes": [
+        "round",
+        "round"
+      ],
+      "mouth": "smile",
+      "action": "A brief questioning smile settles into a quiet closed-mouth wait.",
+      "left": [
+        0,
+        3,
+        0
+      ],
+      "right": [
+        0,
+        3,
+        0
+      ],
+      "mouthMotion": [
+        0,
+        0,
+        0
+      ],
+      "ticks": [
+        4,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        5,
+        4,
+        3,
+        3,
+        6
+      ],
+      "restMs": 1400,
+      "mouthStages": [
+        0,
+        1,
+        3,
+        4,
+        3,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "simons_cat/clarify": {
+      "eyes": [
+        "round",
+        "hook"
+      ],
+      "mouth": "line",
+      "action": "A small questioning tilt, held without chatter.",
+      "left": [
+        2,
+        -6,
+        -3
+      ],
+      "right": [
+        2,
+        6,
+        -3
+      ],
+      "mouthMotion": [
+        1,
+        0,
+        -3
+      ],
+      "ticks": [
+        6,
+        2,
+        2,
+        2,
+        2,
+        3,
+        8,
+        2,
+        2,
+        2,
+        2,
+        5
+      ],
+      "restMs": 1100
+    },
+    "peanuts/company": {
+      "eyes": [
+        "round",
+        "round"
+      ],
+      "mouth": "smile",
+      "action": "A quiet acknowledgement with a barely moving smile.",
+      "left": [
+        0,
+        2,
+        0
+      ],
+      "right": [
+        0,
+        2,
+        0
+      ],
+      "mouthMotion": [
+        0,
+        0,
+        0
+      ],
+      "mouthMax": 3,
+      "ticks": [
+        7,
+        2,
+        2,
+        2,
+        2,
+        3,
+        9,
+        2,
+        2,
+        2,
+        2,
+        6
+      ],
+      "restMs": 1500
+    },
+    "peanuts/wry": {
+      "eyes": [
+        "hook",
+        "round"
+      ],
+      "mouth": "smile",
+      "action": "An affectionate sideways acknowledgement.",
+      "left": [
+        -7,
+        2,
+        -3
+      ],
+      "right": [
+        -7,
+        -3,
+        -3
+      ],
+      "mouthMotion": [
+        -2,
+        0,
+        -4
+      ],
+      "mouthMax": 3,
+      "ticks": [
+        6,
+        2,
+        2,
+        2,
+        2,
+        3,
+        7,
+        2,
+        2,
+        2,
+        2,
+        5
+      ],
+      "restMs": 1200
+    },
+    "peanuts/pride": {
+      "eyes": [
+        "round",
+        "round"
+      ],
+      "mouth": "smile",
+      "action": "A restrained lift and a modest smile.",
+      "left": [
+        0,
+        -4,
+        -1
+      ],
+      "right": [
+        0,
+        -4,
+        1
+      ],
+      "mouthMotion": [
+        0,
+        -1,
+        0
+      ],
+      "mouthMax": 4,
+      "ticks": [
+        6,
+        2,
+        2,
+        2,
+        2,
+        3,
+        8,
+        2,
+        2,
+        2,
+        2,
+        5
+      ],
+      "restMs": 1300
+    }
+  }
+}

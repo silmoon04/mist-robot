@@ -1,0 +1,42 @@
+{
+  "status": "passed",
+  "revision": "hex_quad_r5_inward_hip_straight_tibia",
+  "source_manifest_sha256": "67f0d5e3bfb633414722b17305cef4212ca7f8fa753aa922a252bc383306ad3d",
+  "input_sha256": "1035ab1685ef12f5ca3ea396218f4b1520713c2b45d4b39b0cd7c35866bcfebf",
+  "closed_native_solids": 133,
+  "links": 14,
+  "joint_probes_passed": 13,
+  "all_neutral_poses_restored": true,
+  "all_native_limits_match": true,
+  "native_yaw_limits_deg": [
+    -19,
+    19
+  ],
+  "positive_native_intersections_at_neutral": 0,
+  "archive_crc": "passed",
+  "archive_entries": 304,
+  "bounds_mm": [
+    [
+      -186.89739906512372,
+      -186.89739906512372,
+      -115.22221176035109
+    ],
+    [
+      186.89739906512372,
+      186.89739906512372,
+      195.0
+    ]
+  ],
+  "dimensions_mm": [
+    373.79479813024744,
+    373.79479813024744,
+    310.2222117603511
+  ],
+  "maximum_datum_error_mm": 2.5579538487363607e-13,
+  "export_sha256": {
+    "f3d": "68a6a3ccf90f88a4546587b21fac34bf03d9ab100765cd0174ae234c5bf59402",
+    "step": "069961fac710ef3834e29091ce0893ea0e84baa14caf2e1747a8bdd7c4bfb86d",
+    "preview": "6f291e9b2933c7d796be0b65a52c8ebad903b950d41c53211683abc3c9179bd7"
+  },
+  "scope": "Native checks cover the neutral pose, exact configured limits and a bounded one-degree drive per joint. Full-range collision checks are recorded separately."
+}

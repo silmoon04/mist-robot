@@ -1,0 +1,525 @@
+{
+  "version": 1,
+  "created": "2026-09-28",
+  "basis": "Main conversation faces, plus expressive alternatives. The current defaults and seven selected faces account for 387 of 391 recorded expression transitions across 33 saved studio traces. Those traces include fixtures and test sessions, so this is not an organic popularity ranking. Deadpan, Sleepy and Delighted add expressive range and appeared in earlier Luna conversation tests.",
+  "faces": [
+    {
+      "id": "39_neutral_02_manual",
+      "label": "Calm",
+      "basis": "Default available and speaking face",
+      "index": 0,
+      "original": "originals/39_neutral_02_manual.png"
+    },
+    {
+      "id": "25_neutral_2_03_manual",
+      "label": "Listening",
+      "basis": "Default listening face",
+      "index": 1,
+      "original": "originals/25_neutral_2_03_manual.png"
+    },
+    {
+      "id": "20_neutral_06_manual",
+      "label": "Curious",
+      "basis": "Thinking rotation; two evaluation selections",
+      "index": 2,
+      "original": "originals/20_neutral_06_manual.png"
+    },
+    {
+      "id": "40_neutral_03_manual",
+      "label": "Quiet thought",
+      "basis": "Thinking rotation",
+      "index": 3,
+      "original": "originals/40_neutral_03_manual.png"
+    },
+    {
+      "id": "09_happy_03_manual",
+      "label": "Happy",
+      "basis": "Primary happy face; three evaluation selections",
+      "index": 4,
+      "original": "originals/09_happy_03_manual.png"
+    },
+    {
+      "id": "37_misc_06_manual",
+      "label": "Playful",
+      "basis": "Primary smug face; one evaluation selection",
+      "index": 5,
+      "original": "originals/37_misc_06_manual.png"
+    },
+    {
+      "id": "35_sad_10_manual",
+      "label": "Deadpan",
+      "basis": "Primary deadpan face; one evaluation selection",
+      "index": 6,
+      "original": "originals/35_sad_10_manual.png"
+    },
+    {
+      "id": "16_misc_16_manual",
+      "label": "Sleepy",
+      "basis": "Primary sleepy face; one evaluation selection",
+      "index": 7,
+      "original": "originals/16_misc_16_manual.png"
+    },
+    {
+      "id": "12_happy_09_manual",
+      "label": "Delighted",
+      "basis": "Happy alternative; one evaluation selection",
+      "index": 8,
+      "original": "originals/12_happy_09_manual.png"
+    },
+    {
+      "id": "32_sad_07_manual",
+      "label": "Sad",
+      "basis": "Primary sad face; one evaluation selection",
+      "index": 9,
+      "original": "originals/32_sad_07_manual.png"
+    }
+  ],
+  "styles": [
+    {
+      "id": "original",
+      "label": "Current",
+      "description": "Existing MIST contours."
+    },
+    {
+      "id": "ink",
+      "label": "Hand ink",
+      "description": "Subtle pressure and hand-drawn edges."
+    },
+    {
+      "id": "soft",
+      "label": "Soft rounded",
+      "description": "Fuller strokes and softer corners."
+    },
+    {
+      "id": "fine",
+      "label": "Fine line",
+      "description": "Lighter strokes and open space."
+    }
+  ],
+  "assets": {
+    "39_neutral_02_manual": {
+      "original": {
+        "file": "originals/39_neutral_02_manual.png",
+        "sha256": "55a50fdeb90997fae459ee4b6506104841256ad7e57e143458aa6b75cd1db067"
+      },
+      "ink": {
+        "file": "variants/ink/39_neutral_02_manual.png",
+        "sha256": "47e8a1679d1df95e8b80445590a31eddf9b08f416c43907e4030ff0e65a66a0d",
+        "source": "source/ink.png",
+        "sourceRect": [
+          0,
+          0,
+          512,
+          307
+        ]
+      },
+      "soft": {
+        "file": "variants/soft/39_neutral_02_manual.png",
+        "sha256": "7a2b6cc366d07728b35de884845ec823f3afd18006669df097fd4c34cb8dd30d",
+        "source": "source/soft.png",
+        "sourceRect": [
+          0,
+          0,
+          512,
+          307
+        ]
+      },
+      "fine": {
+        "file": "variants/fine/39_neutral_02_manual.png",
+        "sha256": "ae9574a28df106371fc7dbda83d2e1561c9b65bba03b8e2da3fd3e670d0e7b7e",
+        "source": "source/fine.png",
+        "sourceRect": [
+          0,
+          0,
+          512,
+          307
+        ]
+      }
+    },
+    "25_neutral_2_03_manual": {
+      "original": {
+        "file": "originals/25_neutral_2_03_manual.png",
+        "sha256": "0f2410ae6ee393ece4155fa9780f19448d469c04eed33efaabe31ea715e4f2e0"
+      },
+      "ink": {
+        "file": "variants/ink/25_neutral_2_03_manual.png",
+        "sha256": "ede6f84075f7bc869f88b61341b340d5d1e47f9113aa2d104a5894a949bb5183",
+        "source": "source/ink.png",
+        "sourceRect": [
+          512,
+          0,
+          512,
+          307
+        ]
+      },
+      "soft": {
+        "file": "variants/soft/25_neutral_2_03_manual.png",
+        "sha256": "3d6247039bc8b18efae3342cf3698291d718274b85f9f18c650e3eb8d4ae5f15",
+        "source": "source/soft.png",
+        "sourceRect": [
+          512,
+          0,
+          512,
+          307
+        ]
+      },
+      "fine": {
+        "file": "variants/fine/25_neutral_2_03_manual.png",
+        "sha256": "253ab172af041f326a15af7b8072efd4ec7bb71bc445606744a26850a9f8257c",
+        "source": "source/fine.png",
+        "sourceRect": [
+          512,
+          0,
+          512,
+          307
+        ]
+      }
+    },
+    "20_neutral_06_manual": {
+      "original": {
+        "file": "originals/20_neutral_06_manual.png",
+        "sha256": "634c20e142c1014103a95f6f9a3e5211a0c429ede0b8a20b2faf74b68ecda583"
+      },
+      "ink": {
+        "file": "variants/ink/20_neutral_06_manual.png",
+        "sha256": "3fac85731658b49049fac71447f71ee317f4a4a9cf5e29eabad37c0cad629bce",
+        "source": "source/ink.png",
+        "sourceRect": [
+          0,
+          307,
+          512,
+          307
+        ]
+      },
+      "soft": {
+        "file": "variants/soft/20_neutral_06_manual.png",
+        "sha256": "38bcbca35341f6f7f9bc22c0200baa53114ad421831f5363b88949b5966b03d4",
+        "source": "source/soft.png",
+        "sourceRect": [
+          0,
+          307,
+          512,
+          307
+        ]
+      },
+      "fine": {
+        "file": "variants/fine/20_neutral_06_manual.png",
+        "sha256": "6c47496046f5be75fe82182b99bbd14d5623ae829ec2d1baff2792bbbb2946c6",
+        "source": "source/fine.png",
+        "sourceRect": [
+          0,
+          307,
+          512,
+          307
+        ]
+      }
+    },
+    "40_neutral_03_manual": {
+      "original": {
+        "file": "originals/40_neutral_03_manual.png",
+        "sha256": "5ef6a6be85f4e336f0f1f658731347f7d75de9b044f10bed5e22598d69b19d9e"
+      },
+      "ink": {
+        "file": "variants/ink/40_neutral_03_manual.png",
+        "sha256": "355ed184ed89f20027eec86ad35a668603b2623e7047c9c6fa334773011c082f",
+        "source": "source/ink.png",
+        "sourceRect": [
+          512,
+          307,
+          512,
+          307
+        ]
+      },
+      "soft": {
+        "file": "variants/soft/40_neutral_03_manual.png",
+        "sha256": "db0be55206b71d573fee06d937f3c524c147275410000b224c0cc6bf2def97cc",
+        "source": "source/soft.png",
+        "sourceRect": [
+          512,
+          307,
+          512,
+          307
+        ]
+      },
+      "fine": {
+        "file": "variants/fine/40_neutral_03_manual.png",
+        "sha256": "79f7ed4eea769f29ca513c3b7f79d76c41d4d33769872315b022ae704f122ac5",
+        "source": "source/fine.png",
+        "sourceRect": [
+          512,
+          307,
+          512,
+          307
+        ]
+      }
+    },
+    "09_happy_03_manual": {
+      "original": {
+        "file": "originals/09_happy_03_manual.png",
+        "sha256": "e703462f97d7d01044e97f615cd35522a3b146a6387412b3d87f2196db5d7c04"
+      },
+      "ink": {
+        "file": "variants/ink/09_happy_03_manual.png",
+        "sha256": "5bf91a92bdcce2855930bcad0adf7da61d167cba4fcfbffefbe3eec0a7e6808e",
+        "source": "source/ink.png",
+        "sourceRect": [
+          0,
+          614,
+          512,
+          308
+        ]
+      },
+      "soft": {
+        "file": "variants/soft/09_happy_03_manual.png",
+        "sha256": "af3134cbb76afa9989de7ede3a391bbb40cf95d5c62ae4f5f1a824c05cdafb01",
+        "source": "source/soft.png",
+        "sourceRect": [
+          0,
+          614,
+          512,
+          308
+        ]
+      },
+      "fine": {
+        "file": "variants/fine/09_happy_03_manual.png",
+        "sha256": "2b263d2a9d7a575718e5ed8a5452cef917f3094989621b8b6b1f49d9d8c5f2ad",
+        "source": "source/fine.png",
+        "sourceRect": [
+          0,
+          614,
+          512,
+          308
+        ]
+      }
+    },
+    "37_misc_06_manual": {
+      "original": {
+        "file": "originals/37_misc_06_manual.png",
+        "sha256": "3668d5d2f63785ee6dfe5a1288d255d02b8e0297006ba52810bc534bd4abb75c"
+      },
+      "ink": {
+        "file": "variants/ink/37_misc_06_manual.png",
+        "sha256": "8463fe62b357fda7520d8a3a64e31940ae46e1819d673b199c6e9df75850cbd9",
+        "source": "source/ink.png",
+        "sourceRect": [
+          512,
+          614,
+          512,
+          308
+        ]
+      },
+      "soft": {
+        "file": "variants/soft/37_misc_06_manual.png",
+        "sha256": "f37b2b897739f474100a51bee704503ab9e6aecb1c5681bc5f90ad3c05e8f82a",
+        "source": "source/soft.png",
+        "sourceRect": [
+          512,
+          614,
+          512,
+          308
+        ]
+      },
+      "fine": {
+        "file": "variants/fine/37_misc_06_manual.png",
+        "sha256": "10d3366d0c3233392d42b6ef2942bf42ab7f2ca6f406ab9154e0ae1cd9cfbf67",
+        "source": "source/fine.png",
+        "sourceRect": [
+          512,
+          614,
+          512,
+          308
+        ]
+      }
+    },
+    "35_sad_10_manual": {
+      "original": {
+        "file": "originals/35_sad_10_manual.png",
+        "sha256": "0914748c43c8e87a3efdc287fe204462e4dce3404394174dbd252b19e1d28355"
+      },
+      "ink": {
+        "file": "variants/ink/35_sad_10_manual.png",
+        "sha256": "07cd5aa1c60d85b99eabb5c313cfa7374035269af00345b051d361f8614b856f",
+        "source": "source/ink.png",
+        "sourceRect": [
+          0,
+          922,
+          512,
+          307
+        ]
+      },
+      "soft": {
+        "file": "variants/soft/35_sad_10_manual.png",
+        "sha256": "73626f6998d9eb81d849284988780de00636178e632982bc5201af7e5edc7de1",
+        "source": "source/soft.png",
+        "sourceRect": [
+          0,
+          922,
+          512,
+          307
+        ]
+      },
+      "fine": {
+        "file": "variants/fine/35_sad_10_manual.png",
+        "sha256": "8027e667bb0b6c4a8ca8f0551140dbfed4fb9aa9064f03cf1efd321c5e3a155a",
+        "source": "source/fine.png",
+        "sourceRect": [
+          0,
+          922,
+          512,
+          307
+        ]
+      }
+    },
+    "16_misc_16_manual": {
+      "original": {
+        "file": "originals/16_misc_16_manual.png",
+        "sha256": "e5ab66b5353402b28da792d0292363d78b8950b0432067ecaddf662b79296a79"
+      },
+      "ink": {
+        "file": "variants/ink/16_misc_16_manual.png",
+        "sha256": "03963393db3f31972b344110f730f3835f1ffd9cc3fad67221c3546bb9ccb5ef",
+        "source": "source/ink.png",
+        "sourceRect": [
+          512,
+          922,
+          512,
+          307
+        ]
+      },
+      "soft": {
+        "file": "variants/soft/16_misc_16_manual.png",
+        "sha256": "7a6e538e600de7f8fd35f7646163cfe0e9b00d7f39a6abf76a535a3e57889c45",
+        "source": "source/soft.png",
+        "sourceRect": [
+          512,
+          922,
+          512,
+          307
+        ]
+      },
+      "fine": {
+        "file": "variants/fine/16_misc_16_manual.png",
+        "sha256": "0195b5bba8ff2fa454e9260fe53b07b989ff1e37290e1da42185e15385f774b8",
+        "source": "source/fine.png",
+        "sourceRect": [
+          512,
+          922,
+          512,
+          307
+        ]
+      }
+    },
+    "12_happy_09_manual": {
+      "original": {
+        "file": "originals/12_happy_09_manual.png",
+        "sha256": "b46d5942d43414526c18e85ac00d81348257e2c4c5b4dfbf3c2ce851d2f26a9d"
+      },
+      "ink": {
+        "file": "variants/ink/12_happy_09_manual.png",
+        "sha256": "050f2e9392558aa77370909d80b6cf2341b6f40d4033ecf10e75599533b9879d",
+        "source": "source/ink.png",
+        "sourceRect": [
+          0,
+          1229,
+          512,
+          307
+        ]
+      },
+      "soft": {
+        "file": "variants/soft/12_happy_09_manual.png",
+        "sha256": "29b84d4f6b4c0e318c3c05bfa2dee6602494640acfe2b1e1e79fc9a1364e43c8",
+        "source": "source/soft.png",
+        "sourceRect": [
+          0,
+          1229,
+          512,
+          307
+        ]
+      },
+      "fine": {
+        "file": "variants/fine/12_happy_09_manual.png",
+        "sha256": "3240ba0c46c87d495b3c07d4a8d05ca7a64087b15be33d2dfa89fc6950248a46",
+        "source": "source/fine.png",
+        "sourceRect": [
+          0,
+          1229,
+          512,
+          307
+        ]
+      }
+    },
+    "32_sad_07_manual": {
+      "original": {
+        "file": "originals/32_sad_07_manual.png",
+        "sha256": "2180231b7da292404145aec39cd4c423c85cde00f9443c314ab4a77b087130f8"
+      },
+      "ink": {
+        "file": "variants/ink/32_sad_07_manual.png",
+        "sha256": "d81a4dde1f039fa73ad8faa12e1040060849fe6f181c0f6653ecf50c7ea118f7",
+        "source": "source/ink.png",
+        "sourceRect": [
+          512,
+          1229,
+          512,
+          307
+        ]
+      },
+      "soft": {
+        "file": "variants/soft/32_sad_07_manual.png",
+        "sha256": "106c2a3fa7e6fb587093a01ba891807a7c069bf29e54123e79b6d9e4c9297ff6",
+        "source": "source/soft.png",
+        "sourceRect": [
+          512,
+          1229,
+          512,
+          307
+        ]
+      },
+      "fine": {
+        "file": "variants/fine/32_sad_07_manual.png",
+        "sha256": "2eb62c24692fc6e7494f05f4f6ff3189baf49c0afa95105013c471736ed48f90",
+        "source": "source/fine.png",
+        "sourceRect": [
+          512,
+          1229,
+          512,
+          307
+        ]
+      }
+    }
+  },
+  "sources": {
+    "ink": {
+      "file": "source/ink.png",
+      "sha256": "3dedde4bc5b6d3f3495ddb9bff605d3069e02b842659ec8cc3025b263896761e",
+      "width": 1024,
+      "height": 1536,
+      "columns": 2,
+      "rows": 5,
+      "tool": "Built-in ImageGen",
+      "prompt": "prompts/ink.txt"
+    },
+    "soft": {
+      "file": "source/soft.png",
+      "sha256": "40b939fe7f415e909a21a00863a90c6af499d755cb895f58f5b27ad1078f8af3",
+      "width": 1024,
+      "height": 1536,
+      "columns": 2,
+      "rows": 5,
+      "tool": "Built-in ImageGen",
+      "prompt": "prompts/soft.txt"
+    },
+    "fine": {
+      "file": "source/fine.png",
+      "sha256": "7e28a50e92e454e0c9e09d5f51730a4fd69ff5d57452c6c3da89a1bbfd8b660f",
+      "width": 1024,
+      "height": 1536,
+      "columns": 2,
+      "rows": 5,
+      "tool": "Built-in ImageGen",
+      "prompt": "prompts/fine.txt"
+    }
+  },
+  "kind": "static style exploration",
+  "liveAssetsChanged": false
+}

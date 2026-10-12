@@ -1,0 +1,95 @@
+{
+  "id": "eyes-amused",
+  "kind": "eyes",
+  "family": "amused",
+  "imageFile": "images/eyes-amused.png",
+  "promptFile": "prompts/eyes-amused-v1.txt",
+  "generatedSource": "C:\\Users\\hssil\\.codex\\generated_images\\01a0fc8e-5245-7ce0-8ae0-ef4a15542f21\\exec-fab65032-cbf4-4f62-87e2-502ced3f3588.png",
+  "sha256": "937434942b12dbbd1130ae1ab8fc6f5c37120b1dc05e98b3a21cdd6fc8f90241",
+  "width": 1536,
+  "height": 1024,
+  "alpha": {
+    "mode": "RGBA",
+    "transparentPixelFraction": 0.9001375834147135,
+    "extrema": [
+      0,
+      254
+    ]
+  },
+  "atlas": {
+    "columns": 4,
+    "rows": 3,
+    "frames": [
+      "rest",
+      "anticipation",
+      "half",
+      "near-closed",
+      "closed",
+      "opening-low",
+      "opening",
+      "rest-after-blink",
+      "look-left",
+      "look-right",
+      "settle",
+      "rest-end"
+    ]
+  },
+  "nativeRasterPreserved": true,
+  "tool": "built-in image_gen",
+  "qa": {
+    "status": "native-candidate-motion-review",
+    "everyCellInspected": true,
+    "nativeViewInspected": true,
+    "sourceHashVerified": true,
+    "actualTransparencyVerified": true,
+    "solidComponentsPerCell": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "componentInspection": "Read-only Pillow/NumPy/SciPy analysis of alpha > 200, components >= 10 pixels.",
+    "noMouthHeadBrowPupilLabelOrGrid": true,
+    "originalComparison": "Viewer-left eye larger and slightly higher; both C apertures open right. Asymmetry retained, though strokes are heavier and rest sizes larger than the requested 95/78-pixel target.",
+    "blinkReview": [
+      "0: asymmetric right-opening C rest",
+      "1: reduced C apertures, slight anticipation",
+      "2: clearly reduced half-lid C shapes",
+      "3: closed arc instead of requested tiny near-closed aperture",
+      "4: closed unequal soft arcs",
+      "5: thick closed arcs instead of a definite opening-low aperture",
+      "6: reopened C shapes",
+      "7: rest C shapes",
+      "8: smaller C aperture look-left variation",
+      "9: C aperture look-right variation",
+      "10: rest-like settle",
+      "11: rest C shapes"
+    ],
+    "closedFrameMeasures": {
+      "threshold": "alpha > 200",
+      "frame3": { "viewerLeftWidthHeight": [115, 35], "viewerRightWidthHeight": [86, 31], "aperture": "visually closed" },
+      "frame4": { "viewerLeftWidthHeight": [124, 43], "viewerRightWidthHeight": [99, 33], "aperture": "visually closed" },
+      "frame5": { "viewerLeftWidthHeight": [109, 47], "viewerRightWidthHeight": [93, 42], "aperture": "visually closed" }
+    },
+    "repairAttempted": 1,
+    "repairPromptFile": "prompts/eyes-amused-v2-repair.txt",
+    "repairGeneratedSource": "C:\\Users\\hssil\\.codex\\generated_images\\01a0fc8e-5245-7ce0-8ae0-ef4a15542f21\\exec-eb9f2882-7161-4640-afb2-51f9ba3a437f.png",
+    "repairSelected": false,
+    "repairOutcome": "The single targeted imagegen repair did not resolve frame 3 / 5 apertures and increased low-alpha fringe pixels. Original native candidate selected for its closer shape proportions and lower fringe."
+  },
+  "limitations": [
+    "Frame 3 and frame 5 are closed arcs rather than distinct near-closed and opening-low aperture poses. They can serve as closed holds in a rapid blink; parent motion review must assess the sequence.",
+    "Eye registration does not meet the requested fixed per-cell centers. Row positions drift vertically by roughly 40-50 pixels per row; runtime layer/cell alignment is required before motion review.",
+    "Rest eyes are approximately 125 and 103 pixels high in frame 0 rather than the requested 95 and 78.",
+    "Low-alpha fringe pixels remain; view_image displays RGB data in fully transparent regions as a luminous backdrop. A visible halo has not been established from native RGBA compositing; parent motion review will assess actual alpha.",
+    "This manifest records an inspected candidate and does not claim final animation approval."
+  ]
+}

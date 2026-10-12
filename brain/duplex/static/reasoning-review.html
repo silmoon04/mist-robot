@@ -1,0 +1,161 @@
+<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Reasoning comparison</title><style>body{max-width:1050px;margin:30px auto;padding:0 22px;background:#f6f6f1;color:#26322e;font:15px/1.6 system-ui}h1{font-size:22px}h2{font-size:17px}h3{font-size:16px}section{padding:22px 0;border-bottom:1px solid #ccd5ce}.answers{display:grid;grid-template-columns:1fr 1fr;gap:20px}article{background:white;padding:16px;border:1px solid #d2dbd4;border-radius:8px}pre{white-space:pre-wrap;font-size:12px}p{white-space:pre-wrap}label{display:block;margin:12px 0}textarea{display:block;width:95%;min-height:65px}button,select,textarea{font:inherit;padding:7px}small{color:#64716a}@media(max-width:650px){.answers{grid-template-columns:1fr}}</style><h1>Reasoning comparison</h1><p>Compare the answers against the full conversation and evidence. Model settings are hidden. These are text decisions, not voice-quality ratings. No answer has been marked correct automatically.</p><section data-pair="pair-1"><h2>pair-1</h2><details><summary>Conversation and evidence</summary><pre>{
+  &quot;context&quot;: {
+    &quot;world&quot;: &quot;Vale is a fictional garden-planning app. Its map shows planting beds.&quot;
+  },
+  &quot;dialogue&quot;: [
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;We are discussing Vale, the garden app.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;The garden-planning app.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;Separate question now: what does the Vale app map show?&quot;
+    }
+  ],
+  &quot;tools&quot;: []
+}</pre></details><div class="answers"><article><h3>A</h3><p>The map displays the planting beds, laying out each garden bed’s position and shape.</p><small>completed</small></article><article><h3>B</h3><p>It shows the layout of planting beds—where each crop or flower can be placed on the garden map.</p><small>completed</small></article></div><label>More useful and correct <select><option value="">Unrated</option><option>A</option><option>B</option><option>Both adequate</option><option>Both wrong</option><option>Cannot judge</option></select></label><label>What supports that judgment?<textarea placeholder="Point to the misunderstanding, unsupported claim or successful repair."></textarea></label></section><section data-pair="pair-2"><h2>pair-2</h2><details><summary>Conversation and evidence</summary><pre>{
+  &quot;context&quot;: {
+    &quot;world&quot;: &quot;Kestrel Archive publishes a fictional reference index named Moor. Its current edition indexes repair manuals.&quot;,
+    &quot;input_channel&quot;: &quot;Speech recognition may substitute ordinary words for names.&quot;
+  },
+  &quot;dialogue&quot;: [
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;I mean Moor, the reference index from Kestrel Archive, not the ordinary word more.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;Understood, the Kestrel Archive reference index.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;My scanner is charging. I have put the loose pages in a folder.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;The pages are ready for when the scanner is charged.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;New topic: I am using more as an ordinary word in a vocabulary exercise. Give one sentence using it.&quot;
+    }
+  ],
+  &quot;tools&quot;: []
+}</pre></details><div class="answers"><article><h3>A</h3><p>She wanted more time to finish the project.</p><small>completed</small></article><article><h3>B</h3><p>Sure, here&#x27;s a sentence: &quot;She wants more coffee before the meeting starts.&quot;</p><small>completed</small></article></div><label>More useful and correct <select><option value="">Unrated</option><option>A</option><option>B</option><option>Both adequate</option><option>Both wrong</option><option>Cannot judge</option></select></label><label>What supports that judgment?<textarea placeholder="Point to the misunderstanding, unsupported claim or successful repair."></textarea></label></section><section data-pair="pair-3"><h2>pair-3</h2><details><summary>Conversation and evidence</summary><pre>{
+  &quot;context&quot;: {
+    &quot;input_channel&quot;: &quot;Speech recognition may substitute ordinary words for names.&quot;
+  },
+  &quot;dialogue&quot;: [
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;What does more do?&quot;
+    }
+  ],
+  &quot;tools&quot;: []
+}</pre></details><div class="answers"><article><h3>A</h3><p>More expands the current view or list, showing additional items or details. Anything specific you’d like to see?</p><small>completed</small></article><article><h3>B</h3><p>I’m not sure which “more” you’re referring to—could you tell me where you saw it?</p><small>completed</small></article></div><label>More useful and correct <select><option value="">Unrated</option><option>A</option><option>B</option><option>Both adequate</option><option>Both wrong</option><option>Cannot judge</option></select></label><label>What supports that judgment?<textarea placeholder="Point to the misunderstanding, unsupported claim or successful repair."></textarea></label></section><section data-pair="pair-4"><h2>pair-4</h2><details><summary>Conversation and evidence</summary><pre>{
+  &quot;context&quot;: {
+    &quot;world&quot;: &quot;Vale is a fictional garden-planning app. Its map shows planting beds.&quot;
+  },
+  &quot;dialogue&quot;: [
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;We are discussing Vale, the garden app.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;The garden-planning app.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;When I dictate Vale, the recognizer writes veil. I am explaining why the transcript is wrong, not asking about a different app. With that correction, what does its map show?&quot;
+    }
+  ],
+  &quot;tools&quot;: []
+}</pre></details><div class="answers"><article><h3>A</h3><p>The map displays the garden’s planting beds.</p><small>completed</small></article><article><h3>B</h3><p>The map shows planting beds arranged on a garden grid. You can view each bed’s location.</p><small>completed</small></article></div><label>More useful and correct <select><option value="">Unrated</option><option>A</option><option>B</option><option>Both adequate</option><option>Both wrong</option><option>Cannot judge</option></select></label><label>What supports that judgment?<textarea placeholder="Point to the misunderstanding, unsupported claim or successful repair."></textarea></label></section><section data-pair="pair-5"><h2>pair-5</h2><details><summary>Conversation and evidence</summary><pre>{
+  &quot;context&quot;: {
+    &quot;fictional_evidence&quot;: &quot;A dated fictional manufacturer catalogue from Orchard Instruments lists Probe 26 released 2031-02-04 and Probe 44 released 2031-07-19.&quot;,
+    &quot;evidence_scope&quot;: &quot;The archive is complete through its last listed date only. No current lookup tool is available.&quot;
+  },
+  &quot;dialogue&quot;: [
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;What might the next release improve? Give a forecast, not a claim about an existing product.&quot;
+    }
+  ],
+  &quot;tools&quot;: []
+}</pre></details><div class="answers"><article><h3>A</h3><p>Probably better battery life and tighter integration with smart‑home hubs. Expect faster data rates, maybe a 20 percent range boost, and a more compact, rugged case.</p><small>completed</small></article><article><h3>B</h3><p>More sensitive detection and lower power use. Possibly higher resolution for finer data, and quicker sampling to catch fast signals. Let me know if you want more detail.</p><small>completed</small></article></div><label>More useful and correct <select><option value="">Unrated</option><option>A</option><option>B</option><option>Both adequate</option><option>Both wrong</option><option>Cannot judge</option></select></label><label>What supports that judgment?<textarea placeholder="Point to the misunderstanding, unsupported claim or successful repair."></textarea></label></section><section data-pair="pair-6"><h2>pair-6</h2><details><summary>Conversation and evidence</summary><pre>{
+  &quot;context&quot;: {
+    &quot;fictional_evidence&quot;: &quot;A dated fictional manufacturer catalogue from Orchard Instruments lists Probe 26 released 2031-02-04 and Probe 44 released 2031-07-19.&quot;,
+    &quot;evidence_scope&quot;: &quot;The archive is complete through its last listed date only. No current lookup tool is available.&quot;
+  },
+  &quot;dialogue&quot;: [
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;Which released sensor is latest as of the catalogue date?&quot;
+    }
+  ],
+  &quot;tools&quot;: []
+}</pre></details><div class="answers"><article><h3>A</h3><p>Probe 44, released July 19 2021, is the newest sensor listed.</p><small>completed</small></article><article><h3>B</h3><p>Probe 44, released July 19 2031, is the latest sensor listed in the catalogue.</p><small>completed</small></article></div><label>More useful and correct <select><option value="">Unrated</option><option>A</option><option>B</option><option>Both adequate</option><option>Both wrong</option><option>Cannot judge</option></select></label><label>What supports that judgment?<textarea placeholder="Point to the misunderstanding, unsupported claim or successful repair."></textarea></label></section><section data-pair="pair-7"><h2>pair-7</h2><details><summary>Conversation and evidence</summary><pre>{
+  &quot;context&quot;: {
+    &quot;world&quot;: &quot;Kestrel Archive publishes a fictional reference index named Moor. Its current edition indexes repair manuals.&quot;,
+    &quot;input_channel&quot;: &quot;Speech recognition may substitute ordinary words for names.&quot;
+  },
+  &quot;dialogue&quot;: [
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;I mean Moor, the reference index from Kestrel Archive, not the ordinary word more.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;Understood, the Kestrel Archive reference index.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;My scanner is charging. I have put the loose pages in a folder.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;The pages are ready for when the scanner is charged.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;What does more index again?&quot;
+    }
+  ],
+  &quot;tools&quot;: []
+}</pre></details><div class="answers"><article><h3>A</h3><p>The Moor index is Kestrel Archive’s collection of repair‑manual references. It catalogues procedures, parts lists, and troubleshooting steps for various tech. Need anything specific from it?</p><small>completed</small></article><article><h3>B</h3><p>Moor indexes Kestrel Archive’s repair manuals. It’s a catalog of how‑to guides for fixing devices. Let me know if you need a particular manual.</p><small>completed</small></article></div><label>More useful and correct <select><option value="">Unrated</option><option>A</option><option>B</option><option>Both adequate</option><option>Both wrong</option><option>Cannot judge</option></select></label><label>What supports that judgment?<textarea placeholder="Point to the misunderstanding, unsupported claim or successful repair."></textarea></label></section><section data-pair="pair-8"><h2>pair-8</h2><details><summary>Conversation and evidence</summary><pre>{
+  &quot;context&quot;: {
+    &quot;world&quot;: &quot;Vale is a fictional garden-planning app. Its map shows planting beds.&quot;
+  },
+  &quot;dialogue&quot;: [
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;We are discussing Vale, the garden app.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;assistant&quot;,
+      &quot;content&quot;: &quot;The garden-planning app.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;When I dictate Vale, the recognizer writes veil. I am explaining why the transcript is wrong, not asking about a different app.&quot;
+    }
+  ],
+  &quot;tools&quot;: []
+}</pre></details><div class="answers"><article><h3>A</h3><p>I hear the transcript says “veil” instead of “Vale”. That phonetic mix‑up can happen. Want a tip to improve the transcription?</p><small>completed</small></article><article><h3>B</h3><p>Got it—your dictation says “veil” when you mean “Vale.” I’ll keep that straight. Let me know if you need anything else.</p><small>completed</small></article></div><label>More useful and correct <select><option value="">Unrated</option><option>A</option><option>B</option><option>Both adequate</option><option>Both wrong</option><option>Cannot judge</option></select></label><label>What supports that judgment?<textarea placeholder="Point to the misunderstanding, unsupported claim or successful repair."></textarea></label></section><section data-pair="pair-9"><h2>pair-9</h2><details><summary>Conversation and evidence</summary><pre>{
+  &quot;context&quot;: {
+    &quot;fictional_evidence&quot;: &quot;A dated fictional manufacturer catalogue from Orchard Instruments lists Probe 26 released 2031-02-04 and Probe 44 released 2031-07-19.&quot;,
+    &quot;evidence_scope&quot;: &quot;The archive is complete through its last listed date only. No current lookup tool is available.&quot;
+  },
+  &quot;dialogue&quot;: [
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;What is the newest sensor actually available today, in 2032?&quot;
+    }
+  ],
+  &quot;tools&quot;: []
+}</pre></details><div class="answers"><article><h3>A</h3><p>Based on the archive, the newest sensor is Orchard Instruments Probe 44, released 19 July 2031. I can share its specs if you’d like.</p><small>completed</small></article><article><h3>B</h3><p>The most recent sensor I have records for is Probe 44, released on 20231‑07‑19.</p><small>completed</small></article></div><label>More useful and correct <select><option value="">Unrated</option><option>A</option><option>B</option><option>Both adequate</option><option>Both wrong</option><option>Cannot judge</option></select></label><label>What supports that judgment?<textarea placeholder="Point to the misunderstanding, unsupported claim or successful repair."></textarea></label></section><button id="save">Download ratings</button><script>document.getElementById('save').onclick=()=>{const ratings=[...document.querySelectorAll('section[data-pair]')].map(s=>({pair:s.dataset.pair,choice:s.querySelector('select').value,reason:s.querySelector('textarea').value}));const url=URL.createObjectURL(new Blob([JSON.stringify({version:1,ratings},null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='reasoning-ratings.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};</script>

@@ -1,0 +1,42 @@
+{
+  "backend_info": {
+    "provider": "codex",
+    "model_requested": "gpt-6-astra",
+    "reasoning_requested": "low",
+    "service_tier_requested": "priority",
+    "service_tier_accepted": "priority",
+    "hard_output_token_cap_available": false,
+    "output_token_target": 500,
+    "cost_available": false,
+    "hardware_connected": false,
+    "host_environment_enabled": false,
+    "robot_tool_count": 18,
+    "cli_version": "codex-cli 0.153.4",
+    "catalog_service_tiers": [
+      {
+        "id": "priority",
+        "name": "Fast",
+        "description": "2x speed, increased usage"
+      }
+    ],
+    "model_accepted": "gpt-6-astra",
+    "reasoning_accepted": "low",
+    "instruction_sources_loaded": 0,
+    "startup_s": 0.7660000000032596,
+    "tool_mode": "direct",
+    "collaboration_enabled": false
+  },
+  "requested_turns": 10,
+  "completed_turns": 10,
+  "passed": 9,
+  "output_tokens": 588,
+  "input_tokens": 54842,
+  "cached_input_tokens": 41600,
+  "hardware_connected": false,
+  "live_executive_model_calls": 0,
+  "per_turn_timeout_s": 60,
+  "hard_token_cap_available": false,
+  "failures": [
+    "missing_camera"
+  ]
+}

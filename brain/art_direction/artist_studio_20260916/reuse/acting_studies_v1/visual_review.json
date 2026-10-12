@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "reviewedOn": "2026-09-29",
+  "reviewer": "independent styles_v2_art_direction agent",
+  "passed": true,
+  "approved": true,
+  "approvalScope": "Key-pose storyboard comparison: six acting directions, three examples per direction, three poses per example.",
+  "manifestSha256": "7a037d78c360f8bde3b63dec139843a04ce70fb2e1b7bd3ddb5bfaa95e686cb0",
+  "overviewSha256": "98b13c080f8f4baebe2a66e03b16748f52f6a0f4747809f83e4f1a5da7144407",
+  "sources": {
+    "aardman": {"file": "source/aardman.png", "sha256": "ca3955533a3036b3020c1388c4e61003bcc0b89e95bd5281c85daf2278bb8386"},
+    "bluey": {"file": "source/bluey.png", "sha256": "f2127a2af16f878527cefe42dfed076161286f9e09fae1f8754a52f43849d682"},
+    "pixar": {"file": "source/pixar.png", "sha256": "62f3237ba31fa8ceb06783698d2276eae609e06b5cd38d3fd76885284eabfb1d"},
+    "mickey": {"file": "source/mickey.png", "sha256": "020e5da0aec10f2dadcd383966194e64202932e4c5bca573ce906f94c10cb32a"},
+    "simons_cat": {"file": "source/simons_cat.png", "sha256": "dea3e74df9544c23494e805ba76daf4bb16215bc108406808cff1c0a5734c220"},
+    "peanuts": {"file": "source/peanuts.png", "sha256": "e12e5d9d9406be16523cc082db22fc9c3a88da1e3ecda9f269700fea355e2c10"}
+  },
+  "method": "Inspected all six source sheets, all 54 displayed poses and the combined overview. Compared each left-to-right sequence against the manifest labels and context notes. Source-author reviews were read as claims, not used as proof. This review did not watch the browser playback or evaluate in-between motion.",
+  "checks": {
+    "sixDirectionsAndEighteenExamplesPresent": true,
+    "allFiftyFourPosesVisuallyInspected": true,
+    "noVisibleClippingOrNeighborContamination": true,
+    "sameBasicCharacterWithinEachSequence": true,
+    "majorActingChangesUseGazeLidsAndMouth": true,
+    "contextNotesDescribeMainEmotionAmbiguities": true,
+    "blockingStoryboardDefectFound": false,
+    "completeAnimationApproved": false,
+    "speechSynchronizationTested": false
+  },
+  "groups": {
+    "aardman": {
+      "result": "Approved with notes",
+      "strengths": "Attentive listening changes through gaze and a raised brow before relaxing. Dry disbelief has a clear one-lid-to-two-lid progression. Quiet realisation uses a closed-eye beat followed by a small smile, which communicates a thought change without a large mouth.",
+      "limitations": "The relaxed listening settle can read bored if held too long, as the manifest notes. The single detached brow belongs to this drawn concept but would need explicit layering in an animation rig. Centers and eye sizes are approximately consistent, not rigidly registered."
+    },
+    "bluey": {
+      "result": "Approved with notes",
+      "strengths": "Reassurance moves from attention through concern into a modest smile. Shared delight has a clear small-surprise-to-warmth progression. Admitting uncertainty retains the unequal lids and tentative mouth rather than ending in unjustified confidence.",
+      "limitations": "The uncertainty settle is still skeptical or puzzled, rather than neutral direct eye contact. The manifest's tentative description fits. Eye shapes change noticeably between poses, so a later animation needs authored transitions rather than a generic scale effect."
+    },
+    "pixar": {
+      "result": "Approved with notes",
+      "strengths": "Recall uses an upward glance and then returns to a small smile. Careful checking shifts both eyes toward the same side under concentrated lids and returns to direct attention. Discovery opens the eyes and mouth before the satisfied upward-looking smile.",
+      "limitations": "Several neutral setup and settle poses share almost the same geometry. The difference between recall and checking relies mainly on the middle gaze direction and timing. The discovery settle looks pleased and reflective, not an exuberant celebration."
+    },
+    "mickey": {
+      "result": "Approved with notes",
+      "strengths": "The double-take has a strong stretch-and-squash accent. Mock outrage resolves its angry silhouette with a wink and smile. Triumph has a readable burst of joy followed by a proud smirk. This is the broadest acting direction in the set.",
+      "limitations": "Double-take settles into doubt rather than amusement. Mock outrage's middle pose looks angry when isolated, so its playful meaning depends on the release. Tiny triumph has a visually large mouth accent; the word tiny depends on the short beat and small event. Those constraints are consistent with the manifest notes."
+    },
+    "simons_cat": {
+      "result": "Approved with notes",
+      "strengths": "Spots something interesting moves both pupils right and holds attention. Asking, then waiting changes a small smile back into a closed mouth, leaving a clear waiting pose. Clarification uses one lowered lid and a small slanted mouth.",
+      "limitations": "Clarification's final two drawings are nearly identical, so the third pose is principally a hold. Its pupils converge inward and can read mildly cross-eyed or comically puzzled rather than a clean shared-direction gaze. That suits the light misunderstanding label but should not become ordinary listening. The bright-dot pupils also depart from the dark cutouts used by the other fuller-eye studies."
+    },
+    "peanuts": {
+      "result": "Approved with notes",
+      "strengths": "Small filled eye marks, tiny smiles and a wink create a restrained alternative. The corrected sideways eye notches in Wry acknowledgement point the same way. The faces remain readable in the full-size sheet without needing props.",
+      "limitations": "Contented company and Quiet pride share their setup and closed-eye smile construction; the ending gaze, context and timing carry most of the distinction. These are related uses of a small pose vocabulary, not three unrelated facial designs. The marks are much smaller than the other studies and need a phone-distance check."
+    }
+  },
+  "limitations": [
+    "The files are acting key poses. No missing in-between frames are treated as a defect for this storyboard scope, and no smooth animation claim is made.",
+    "Generated eye positions, face scale and background tone vary slightly between cells. These differences need registration and transition work before production playback.",
+    "The six inspiration labels describe intended acting ideas. This visual review does not establish unique authorship traits or claim the still images reproduce each work's actual motion style.",
+    "Preview durations are proposals. Emotional readability, interruption behavior, expression frequency and voice timing still need interactive testing.",
+    "No live robot face assets were evaluated in this review."
+  ]
+}

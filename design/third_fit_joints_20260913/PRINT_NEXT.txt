@@ -1,0 +1,122 @@
+NEXT PRINT: SHAFT ALIGNMENT AND JOINT INTERFACES
+
+Print Third_Print_Joint_Interfaces.3mf using
+Neptune4Pro_ThirdFit_Joints_NoSupports_020.curaprofile.
+Reuse your successful revised saddle and the earlier flat cap. No replacement
+clamp or cap is on this plate.
+
+The engine trial estimates about 2 hours 51 minutes and 27.5 g including brim,
+with ZERO support material. Your Cura/printer time can differ.
+
+WHAT IS ON THIS PLATE
+One case-to-shaft alignment gauge with sloped, support-free feet.
+Two 5 mm mounting spacers for that gauge's long bolts.
+One main horn cheek and one auxiliary horn cheek with its stand-off lands.
+One 38 mm horn-fixture bridge, laid flat with a pointed screw-hole roof.
+Four nominal 11.6 mm yaw spacers, one 11.3 mm sample and one 11.9 mm sample.
+One M3 screw-hole strip and one M3 nut-pocket depth strip.
+Total: 14 pieces. Preserve the arrangement and use plate_map.png to identify
+the small spacers before removing them from the bed.
+
+PROFILE AND IMPORT
+Select Neptune 4 Pro, a 0.4 mm nozzle and PLA in Cura. Import the new profile
+through Preferences > Configure Cura > Profiles > Import. Activate
+R5 Third Fit - Joint Interfaces - 0.20mm.
+Discard previous print-setting overrides if prompted, clear the old plate and
+import the new 3MF as geometry. Keep its millimetre scale and orientations.
+Generate Support must be OFF. Slice and inspect the gauge feet and bridge roof.
+The outside brim is intentional; there should be no support inside the holes.
+
+This batch uses 0.20 mm layers for the horn faces, spacer stack and alignment
+checks. It keeps five walls and 15% gyroid. PLA starting temperatures are
+210 C nozzle and 60 C bed, within the filament maker's range. First layer
+25 mm/s, outer walls 50, inner walls 80 and infill 90. Overhang and bridge
+slowdowns remain enabled. First-layer expansion/calibration is not changed.
+The outer brim gap is 0.15 mm to help removal; no brim is added inside holes.
+Keep speed and flow multipliers at 100% for the first trial.
+
+YOUR LATEST FEEDBACK
+You printed the revised upright saddle only and reused an earlier flat cap.
+That cap geometry had not changed between the two clamp trials. Some sanding
+was needed around the reported "2.5 nut" or height fit. Its exact cause remains
+unconfirmed; it is not recorded as a measured dimension or diagnosed as brim.
+All three nuts then fitted firmly, and the servo was reported not to move in
+the assembled clamp. This supports proceeding with the next interfaces, but
+it does not establish a quantified holding load, thermal or fatigue result.
+The new nut-depth strip helps distinguish nut thickness/seat fit from cleanup.
+All following hardware descriptions refer to M3, not M2.5 threaded hardware.
+
+HARDWARE TO HAVE READY
+For the alignment gauge:
+  Two M3x50 screws, two M3 nuts, four OD6/ID3.2 x 0.5 mm washers and the two
+  printed 5 mm gauge spacers. If you instead have M3x45 screws, omit those
+  two printed spacers. Do not use the old short-bolt instructions for this gauge.
+  Four M3x6 screws and four OD6 x 0.5 mm washers for its supplied main horn.
+For the two-sided horn fixture:
+  One M3x50 bridge screw, one plain M3 nut and two OD7 x 0.5 mm washers.
+  Four M3x6 screws with one OD6 x 0.5 mm washer each on the main horn side.
+  Four M3x8 screws with TWO OD6 x 0.5 mm washers each on the auxiliary side.
+  Supplied main-shaft retaining screw and auxiliary PA3x5 retainer, with its
+  specified OD7/ID3.2 x 0.5 mm washer against the fixed auxiliary stub.
+The four main-horn M3x6 screws can be reused between tests. Complete the
+alignment test, remove the gauge, then assemble the horn fixture.
+Use plain nuts nominally 5.5 mm across flats and about 2.4 mm thick. Check
+your actual hardware; the depth strip includes 2.6, 2.8 and 3.0 mm pockets.
+
+TEST 1: HOLES AND NUT SEATING
+Before sanding, note any brim lip or sag and take a photo if a fit is poor.
+On the screw strip, from its notched end, the bores are 3.2, 3.4 and 3.6 mm.
+On the nut strip, from its notched end, pocket depths are 2.6, 2.8 and 3.0 mm;
+all have the same 5.7 mm across-flats width. Check whether the nut seats, lies
+flush or stands proud, and whether it turns when an M3 screw engages.
+Do not enlarge all production holes from this one result. Record which
+feature needed cleanup so we can distinguish size from first-layer residue.
+
+TEST 2: CASE-TO-SHAFT ALIGNMENT
+Keep servo power disconnected. The gauge locks the output to the case;
+NEVER command the servo while this alignment gauge is attached.
+Keep the servo in your successful clamp. Seat the supplied main horn on its
+shaft and fit its proper centre retainer without bottoming or forcing it.
+Place the gauge on the horn and the two existing X9/Y+20 and X9/Y-20 clamp
+feet. Its horn face and both feet should meet without pulling a gap closed.
+These are the two mounting feet nearer the shaft end of the clamped case.
+Each M3x50 tie bolt enters from the gauge's top plate with an OD6 washer,
+passes down the straight bore and through the saddle foot, then receives
+a printed 5 mm spacer, another OD6 washer and its nut underneath. With M3x45,
+omit only that 5 mm spacer. Nominal nut-tip emergence is about 1.1 mm.
+Use the four M3x6 screws with one OD6 washer each on the main horn. Nominal
+engagement is 1.5 mm into its 2.5 mm flange. Do not pull a mismatch flat with
+the tie bolts or horn screws. Record where a gap, tilt or misalignment occurs.
+Remove the gauge completely after recording the fit.
+
+TEST 3: MAIN AND AUXILIARY HORN STACK
+This fixture uses the bare servo and the two supplied discs. The servo's
+long case body must point AWAY from the small printed bridge, while the
+two cheek arms point toward the bridge. This direction clears the case.
+First check the auxiliary disc turns freely on its fixed stub before joining
+it to the main side. Its centre washer seats against the fixed stub, not
+against the rotating disc. Nominal disc-to-washer axial gap is 0.7 mm.
+Fit the main cheek using four M3x6 screws and one OD6 washer each. Fit the
+auxiliary cheek using four M3x8 screws with TWO OD6 washers each and the
+integral 1.1 mm lands. The auxiliary centre passage is 7.8 mm.
+Join the cheeks with the roofed 38 mm bridge, one M3x50, two OD7 washers
+and a plain nut. Tighten gently in stages and watch for spreading or binding.
+Once both sides are joined, the output has the servo gearbox's resistance;
+do not force it to spin like a loose bearing. This is not a powered gait test.
+The auxiliary cheek has a cable relief based on the existing provisional
+plug envelope. Check the actual plug at this neutral fixture position.
+
+SPACERS
+The two wider, 5 mm tall pieces belong only under the gauge tie bolts.
+The six narrow yaw spacers are a different set. Start with the FOUR 11.6 mm
+nominal pieces. The single short and long pieces are comparison samples,
+not a mixed-height set. Measure their real printed heights and keep them
+labelled. Full yaw assembly will require four matching accepted spacers.
+
+AFTER THIS PLATE
+Report hole/nut seating, gauge alignment, horn seating, any screw bottoming,
+auxiliary-disc freedom before and after bridge closure, and actual spacer
+heights. These results determine whether to proceed to a complete supported
+leg. The released R5 robot CAD and proven clamp geometry remain unchanged.
+These fixture changes preserve the relevant datum faces but are not a full
+robot strength, continuous-clearance or hardware-walking qualification.

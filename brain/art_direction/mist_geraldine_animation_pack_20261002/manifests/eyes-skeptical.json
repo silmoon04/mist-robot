@@ -1,0 +1,303 @@
+{
+  "id": "eyes-skeptical",
+  "kind": "eyes",
+  "family": "skeptical",
+  "promptFile": "prompts/eyes-skeptical-repair.txt",
+  "initialPromptFile": "prompts/eyes-skeptical.txt",
+  "generatedSource": "C:\\Users\\hssil\\.codex\\generated_images\\01a0fc8e-0990-7ae2-bada-47190ed77f88\\exec-88f800b0-bd7f-4a03-becd-ea1b75239d93.png",
+  "imageFile": "images/eyes-skeptical.png",
+  "sha256": "d64babc0cc97110d9b0a016db47649001911101cb62387b381517b52a134510a",
+  "width": 1536,
+  "height": 1024,
+  "tool": "built-in image_gen",
+  "transparentBackgroundRequested": true,
+  "alpha": {
+    "mode": "RGBA",
+    "transparentPixelFraction": 0.9101785024007162,
+    "extrema": [
+      0,
+      254
+    ],
+    "opaquePixelFraction": 0,
+    "partialAlphaPixelFraction": 0.08982149759928386,
+    "maxAlphaOutsideBrightEyeBboxesPlus4": 1,
+    "distantPixelsAlphaOver16": 0,
+    "note": "Raw RGB contains turquoise haze and dark backing under alpha-zero pixels. The visible alpha is confined to the eye contours except sparse alpha-1 pixels."
+  },
+  "atlas": {
+    "columns": 4,
+    "rows": 3,
+    "frameCount": 12,
+    "frames": [
+      "rest",
+      "anticipation",
+      "half",
+      "near-closed",
+      "closed",
+      "opening-low",
+      "opening",
+      "rest-after-blink",
+      "look-left",
+      "look-right",
+      "settle",
+      "rest-end"
+    ]
+  },
+  "qa": {
+    "status": "ready-for-composited-animation-review",
+    "ready": true,
+    "inspectedFullNative": true,
+    "all12CellsInspected": true,
+    "exactly12EyePairs": true,
+    "eyesOnly": true,
+    "originalTopRightSkepticalReferenceCompared": true,
+    "coordinatedAsymmetryPreserved": true,
+    "integratedLidsPreserved": true,
+    "leftOpensLeftRightOpensRight": true,
+    "closedFrameUsesSoftArcs": true,
+    "noRotatedOpenCClosedFrame": true,
+    "noMouthHeadPupilsBrowsLabelsGrid": true,
+    "noHeavyAlphaHaloOutsideContours": true,
+    "nativeSourceCopiedWithoutImageEditing": true,
+    "generationCalls": 2,
+    "repairCalls": 1,
+    "visualNotes": [
+      "All open frames preserve the flatter left integrated lid and raised diagonal right lid.",
+      "Both central apertures shrink through anticipation and half, close fully, then reopen.",
+      "The closed frame contains two continuous rounded arcs.",
+      "Look-left and look-right adjust the eye apertures without pupils; the left central column is filled in look-left because its aperture shifts toward the open side.",
+      "The dark haze seen in raw preview is mostly hidden RGB; alpha samples and distant alpha bounds confirm no substantial backdrop."
+    ],
+    "centralApertureGapPixelsAtAlpha128": [
+      [
+        31,
+        45
+      ],
+      [
+        23,
+        36
+      ],
+      [
+        11,
+        27
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        9,
+        17
+      ],
+      [
+        26,
+        39
+      ],
+      [
+        27,
+        42
+      ],
+      [
+        0,
+        36
+      ],
+      [
+        22,
+        24
+      ],
+      [
+        27,
+        40
+      ],
+      [
+        28,
+        41
+      ]
+    ]
+  },
+  "registration": {
+    "measurementAlphaThreshold": 128,
+    "eyeBoundsCellLocal": [
+      [
+        [
+          67,
+          198,
+          187,
+          272
+        ],
+        [
+          228,
+          164,
+          329,
+          262
+        ]
+      ],
+      [
+        [
+          64,
+          202,
+          183,
+          267
+        ],
+        [
+          226,
+          168,
+          327,
+          260
+        ]
+      ],
+      [
+        [
+          58,
+          207,
+          170,
+          262
+        ],
+        [
+          219,
+          175,
+          319,
+          258
+        ]
+      ],
+      [
+        [
+          56,
+          212,
+          164,
+          243
+        ],
+        [
+          215,
+          198,
+          318,
+          238
+        ]
+      ],
+      [
+        [
+          65,
+          176,
+          173,
+          206
+        ],
+        [
+          227,
+          166,
+          329,
+          208
+        ]
+      ],
+      [
+        [
+          65,
+          172,
+          168,
+          221
+        ],
+        [
+          228,
+          148,
+          325,
+          219
+        ]
+      ],
+      [
+        [
+          59,
+          157,
+          173,
+          225
+        ],
+        [
+          221,
+          123,
+          322,
+          217
+        ]
+      ],
+      [
+        [
+          54,
+          159,
+          174,
+          230
+        ],
+        [
+          222,
+          123,
+          324,
+          220
+        ]
+      ],
+      [
+        [
+          66,
+          121,
+          181,
+          191
+        ],
+        [
+          233,
+          94,
+          334,
+          182
+        ]
+      ],
+      [
+        [
+          64,
+          118,
+          174,
+          189
+        ],
+        [
+          232,
+          104,
+          330,
+          186
+        ]
+      ],
+      [
+        [
+          56,
+          128,
+          174,
+          198
+        ],
+        [
+          222,
+          94,
+          323,
+          189
+        ]
+      ],
+      [
+        [
+          55,
+          128,
+          174,
+          199
+        ],
+        [
+          223,
+          93,
+          324,
+          188
+        ]
+      ]
+    ],
+    "note": "The native atlas has row placement drift and larger footprints than requested. Root authorizes per-eye runtime bounds registration and a fixed uniform family scale."
+  },
+  "limitations": [
+    "The near-closed cel is already fully shut at the measured center columns; it is visually close to the closed cel.",
+    "The half cel has unequal aperture fractions, about 35% of resting left central gap and 60% of resting right central gap, while preserving the intended lid asymmetry.",
+    "Rest cels 0, 7 and 11 are close drawn variants rather than byte-identical duplicates.",
+    "Native eye placement drifts between atlas rows and requires runtime registration.",
+    "Composited alpha and animation review remains with the root agent; this manifest does not claim final release approval."
+  ]
+}

@@ -1,0 +1,263 @@
+{
+  "scope": "A/B analysis only. Production geometry, mass manifests, gait and controller remain unchanged. No dynamics, clearance or printing validation of an inward candidate was run.",
+  "baseline_mass_kg": 2.7098832917435076,
+  "baseline_model": {
+    "kind": "Cura_model_deposition_high_fasteners",
+    "as_sliced": true,
+    "physical_measurement": false,
+    "printed_parts": "Line-integrated commanded model deposition at layer mid-height",
+    "fasteners": "high",
+    "wire_allowance_kg": 0.15,
+    "source_solid_manifest_sha256": "ed3b458fd8c5929c04652dcaf8b7686c31f8b987f2cead30e14f12191bfa71a2",
+    "source_production_properties_sha256": "68f0251c4cec97bf22810c9d0f7cf0f5bd940db58df3d859f95805dab1feabb6",
+    "integrator_sha256": "2d0f9092f1c9cd064418f409e03681961ff8f70870c145edd344d2b917f3e414",
+    "notes": [
+      "Printed COM and full inertia tensors are transformed, not scaled from solid CAD.",
+      "Support and bed-adhesion material are not included on the robot.",
+      "These are toolpath estimates and nominal hardware geometry, not weighed parts."
+    ]
+  },
+  "input_hashes": {
+    "cad\\output\\assembly_manifest_as_printed.json": "2f9b5b5ec8d4eb102be6f541676e70d8119385c6660e21d4ee68607e49f28750",
+    "simulation\\output_r3_printed_nominal\\trajectory.json": "8a6c53f0f2fb08ed6cbd3590989292382f93b964de4679e81994c724e7f85392",
+    "simulation\\output_r3_printed_nominal\\simulation_report.json": "5edd4a7ffe5516ca630bc9e840635f6c129fcf67376262738444d48b987c97d2",
+    "settings.json": "dc619bbc98e9b418b75981764b8dd56129bcfbc31173f508a90c5335264839f3",
+    "simulation\\kinematics.py": "ddcd4f7404b8d82655efdb2b74b0b0f38644fa02bae792127a16410a3a293c91",
+    "simulation\\statics.py": "277ba3169ec2d0ab408d470a53eb2a63efb9e1ba9ca5e691fc49275269b461d2"
+  },
+  "corrected_case_geometry": {
+    "case_ends_mm": [
+      -35.115,
+      10.115
+    ],
+    "case_center_to_shaft_mm": 12.5,
+    "case_center_reversal_mm": 25.0,
+    "source": "Corrected manufacturer drawing interpretation, confirmed by root against supplier STEP within 0.0033 mm"
+  },
+  "canonical_reference_scope": "Rebase the four knee-case assumed COMs to outward femur X102.5 mm, then inward X77.5 mm. Keep their 55g masses and registered intrinsic tensors. Other motors, clamps and structure stay at the frozen R3 values to isolate this A/B change. This is not a corrected production manifest.",
+  "superseded_datum": "The previous 20.23mm reversal and registered-envelope 19.718mm reversal used the incorrect case pocket datum. Retained only as historical calculations.",
+  "historical_invalid_registered_envelope_center_offset_mm": 9.859148988751372,
+  "formulas": {
+    "case_self_weight_moment_reduction": "m*g*d*cos(hip), for a pure inward femur-X translation and level body",
+    "loaded_stance_sign": "Required hip torque = upward foot reaction moment minus distal self-weight moment. Reducing case self-weight moment increases required positive stance torque if foot load is held fixed.",
+    "whole_com": "Sum(m_i * world_delta_i) / whole_robot_mass",
+    "polar_translation": "Delta Izz = m * (new_x^2 + new_y^2 - old_x^2 - old_y^2), plus any rotated intrinsic-tensor change"
+  },
+  "cases": [
+    {
+      "case": "canonical_case_center_half_turn_25_mm",
+      "interpretation": "Corrected case-center reference; actual internal COM unmeasured",
+      "mass_change_kg": 0.0,
+      "servo_com_reference_x_mm_before_after": [
+        102.5,
+        77.5
+      ],
+      "inward_com_shift_mm": 24.999999999999993,
+      "neutral_self_weight_moment_magnitude_reduction_nm_per_leg": 0.011681600165297347,
+      "neutral_fixed_foot_load_actuator_hip_torque_change_nm_per_leg": 0.011681600165297347,
+      "direct_knee_gravity_change_nm": 0.0,
+      "neutral_whole_com_change_mm": [
+        -5.149960319306146e-15,
+        0.0,
+        1.0148038509181154
+      ],
+      "neutral_whole_polar_inertia_before_after_kg_m2": [
+        0.04059270473890622,
+        0.038659419808702626
+      ],
+      "neutral_whole_polar_inertia_change_percent": -4.762641323455918,
+      "neutral_leg_yaw_axis_inertia_change_kg_m2_per_leg": -0.00030470349302036024,
+      "neutral_hip_axis_inertia_change_kg_m2_per_leg": -0.00024749999999999994,
+      "neutral_leg_yaw_subtree_inertia_before_after_kg_m2": [
+        0.0031304678176935813,
+        0.0028257643246732207
+      ],
+      "neutral_leg_yaw_subtree_inertia_change_percent": -9.73348108861427,
+      "neutral_hip_subtree_inertia_before_after_kg_m2": [
+        0.0016881406797041015,
+        0.0014406406797041011
+      ],
+      "neutral_hip_subtree_inertia_change_percent": -14.661100403278137,
+      "recorded_gait_direct_hip_torque_change_range_nm": [
+        0.011242202416031008,
+        0.012923496296170102
+      ],
+      "recorded_gait_whole_com_horizontal_shift_max_mm": 0.2679298930012414,
+      "recorded_gait_whole_com_vertical_shift_range_mm": [
+        0.9179229217754883,
+        1.018206504191172
+      ],
+      "fixed_pose_static_rebalanced_stance_hip_torque_change_range_nm": [
+        0.010643587126084597,
+        0.012892466773678099
+      ],
+      "fixed_pose_static_rebalanced_stance_knee_torque_change_range_nm": [
+        -0.0017170482163271078,
+        0.0010243067501185532
+      ],
+      "fixed_pose_static_peak_absolute_hip_before_after_nm": [
+        0.45611962745223483,
+        0.4671888302062841
+      ],
+      "fixed_pose_static_peak_any_joint_before_after": [
+        {
+          "joint": "knee_RR",
+          "absolute_torque_nm": 0.5420609855409229
+        },
+        {
+          "joint": "knee_RR",
+          "absolute_torque_nm": 0.5419123938622564
+        }
+      ]
+    },
+    {
+      "case": "historical_translation_20_23_mm",
+      "interpretation": "Historical invalid-datum premise; do not use as the corrected hardware reference",
+      "mass_change_kg": 0.0,
+      "servo_com_reference_x_mm_before_after": [
+        99.85914898875137,
+        79.62914898875137
+      ],
+      "inward_com_shift_mm": 20.229999999999997,
+      "neutral_self_weight_moment_magnitude_reduction_nm_per_leg": 0.009452750853758615,
+      "neutral_fixed_foot_load_actuator_hip_torque_change_nm_per_leg": 0.009452750853758615,
+      "direct_knee_gravity_change_nm": 0.0,
+      "neutral_whole_com_change_mm": [
+        -3.848917712323541e-15,
+        1.3010426069826053e-15,
+        0.8211792761629484
+      ],
+      "neutral_whole_polar_inertia_before_after_kg_m2": [
+        0.04037874125548692,
+        0.03881603512573216
+      ],
+      "neutral_whole_polar_inertia_change_percent": -3.8701209625805477,
+      "neutral_leg_yaw_axis_inertia_change_kg_m2_per_leg": -0.00024613905761057694,
+      "neutral_hip_axis_inertia_change_kg_m2_per_leg": -0.0001997076547446684,
+      "neutral_leg_yaw_subtree_inertia_before_after_kg_m2": [
+        0.0030958450603614024,
+        0.0028497060027508248
+      ],
+      "neutral_leg_yaw_subtree_inertia_change_percent": -7.9506258488867605,
+      "neutral_hip_subtree_inertia_before_after_kg_m2": [
+        0.0016587486597257712,
+        0.0014590410049811027
+      ],
+      "neutral_hip_subtree_inertia_change_percent": -12.039657338905386,
+      "recorded_gait_direct_hip_torque_change_range_nm": [
+        0.009097190195052292,
+        0.010457693202860847
+      ],
+      "recorded_gait_whole_com_horizontal_shift_max_mm": 0.21680886941660454,
+      "recorded_gait_whole_com_vertical_shift_range_mm": [
+        0.7427832283007253,
+        0.8239327031914967
+      ],
+      "fixed_pose_static_rebalanced_stance_hip_torque_change_range_nm": [
+        0.008614132126573859,
+        0.010432467384355992
+      ],
+      "fixed_pose_static_rebalanced_stance_knee_torque_change_range_nm": [
+        -0.001386413672130965,
+        0.0008278449195181503
+      ],
+      "fixed_pose_static_peak_absolute_hip_before_after_nm": [
+        0.45728328199121493,
+        0.466241443273993
+      ],
+      "fixed_pose_static_peak_any_joint_before_after": [
+        {
+          "joint": "knee_RR",
+          "absolute_torque_nm": 0.5419849530583126
+        },
+        {
+          "joint": "knee_RR",
+          "absolute_torque_nm": 0.5418649216501614
+        }
+      ]
+    },
+    {
+      "case": "historical_invalid_envelope_half_turn_y",
+      "interpretation": "Historical invalid-datum premise; do not use as the corrected hardware reference",
+      "mass_change_kg": 0.0,
+      "servo_com_reference_x_mm_before_after": [
+        99.85914898875137,
+        80.14085101124863
+      ],
+      "inward_com_shift_mm": 19.71829797750274,
+      "neutral_self_weight_moment_magnitude_reduction_nm_per_leg": 0.009213650916535136,
+      "neutral_fixed_foot_load_actuator_hip_torque_change_nm_per_leg": 0.009213650916535136,
+      "direct_knee_gravity_change_nm": 0.0,
+      "neutral_whole_com_change_mm": [
+        -5.149960319306146e-15,
+        -2.4936649967166602e-15,
+        0.800408188844838
+      ],
+      "neutral_whole_polar_inertia_before_after_kg_m2": [
+        0.04037874125548692,
+        0.038853897722320105
+      ],
+      "neutral_whole_polar_inertia_change_percent": -3.7763523224231488,
+      "neutral_leg_yaw_axis_inertia_change_kg_m2_per_leg": -0.0002403293708064556,
+      "neutral_hip_axis_inertia_change_kg_m2_per_leg": -0.00019521114997727716,
+      "neutral_leg_yaw_subtree_inertia_before_after_kg_m2": [
+        0.0030958450603614024,
+        0.002855515689554947
+      ],
+      "neutral_leg_yaw_subtree_inertia_change_percent": -7.762965074821926,
+      "neutral_hip_subtree_inertia_before_after_kg_m2": [
+        0.0016587486597257712,
+        0.0014635375097484943
+      ],
+      "neutral_hip_subtree_inertia_change_percent": -11.768579213776109,
+      "recorded_gait_direct_hip_torque_change_range_nm": [
+        0.008867083886508028,
+        0.010193174035161404
+      ],
+      "recorded_gait_whole_com_horizontal_shift_max_mm": 0.2113248586911562,
+      "recorded_gait_whole_com_vertical_shift_range_mm": [
+        0.7239951076779612,
+        0.8030919700909175
+      ],
+      "fixed_pose_static_rebalanced_stance_hip_torque_change_range_nm": [
+        0.008396244393937824,
+        0.010168586283999491
+      ],
+      "fixed_pose_static_rebalanced_stance_knee_torque_change_range_nm": [
+        -0.0013513454229936162,
+        0.0008069052299666257
+      ],
+      "fixed_pose_static_peak_absolute_hip_before_after_nm": [
+        0.45728328199121493,
+        0.466014853593011
+      ],
+      "fixed_pose_static_peak_any_joint_before_after": [
+        {
+          "joint": "knee_RR",
+          "absolute_torque_nm": 0.5419849530583126
+        },
+        {
+          "joint": "knee_RR",
+          "absolute_torque_nm": 0.5418679577507208
+        }
+      ]
+    }
+  ],
+  "clamp_mass_pending": {
+    "detachable_printed_knee_cap_mass_kg_per_leg": 0.006591634490955676,
+    "integrated_femur_main_and_saddle_mass_kg_per_leg": 0.034644297356983274,
+    "same_translation_moment_magnitude_per_additional_10g_nm": 0.0021239273027813363,
+    "cap_only_if_same_translation_moment_magnitude_nm": 0.0014000152465295913,
+    "note": "Old R3 clamp masses are a scale reference only. The integrated main part is not all movable clamp mass. Corrected clamp, cap, bridge and fastener changes require candidate geometry and new deposited properties. The cap-only figure assumes a pure 25mm translation and is not a full-candidate result."
+  },
+  "limitations": [
+    "The 55g servo mass is specified hardware mass. Its actual internal COM and inertia are unmeasured; the canonical study assumes COM at the corrected case center and retains the registered intrinsic tensor.",
+    "The old 20.23mm and 19.718mm calculations are invalid-datum historical results, not alternate corrected hardware values.",
+    "Only knee-case reference properties are rebased in memory; production geometry and the other components remain untouched.",
+    "Whole-body COM remains symmetric horizontally only at matching leg poses.",
+    "Static rebalancing holds body and feet fixed and adjusts vertical support forces. It is not a new gait or a dynamic test.",
+    "No appearance, collision, connector-clearance, assembly or strength pass is inferred from these mass calculations."
+  ],
+  "inputs_unchanged": true,
+  "study_script_sha256": "8d5b54e245f65560e64ecf9284b141e2b9a2342c45bc7277ced29c3a86a4bc61"
+}

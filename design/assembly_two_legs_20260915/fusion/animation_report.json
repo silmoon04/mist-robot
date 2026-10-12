@@ -1,0 +1,115 @@
+{
+  "status": "completed",
+  "document_name": "ASSEMBLE THE PRINTED LEG - centred DFM parts",
+  "source_manifest_sha256": "7df912d042e3b87e8f65f00d28331fe0c13c3cb197a7d3aca6c3a676792ba3cb",
+  "parts": 23,
+  "frames": 297,
+  "fps": 8,
+  "stages": [
+    {
+      "stage": 1,
+      "title": "1. Prepare the yaw servo base",
+      "note": "Not on overnight plate: saddle and yaw cap. Three M3x30 with nuts and one flat washer each.",
+      "first_frame": 0,
+      "last_frame": 32,
+      "parts": [
+        "yaw_case_saddle",
+        "servo_yaw",
+        "case_cap_yaw"
+      ]
+    },
+    {
+      "stage": 2,
+      "title": "2. Fit the yaw discs and upper coxa",
+      "note": "Matching centre retainers first. Main horn: four M3x6, one 0.5 mm washer per screw.",
+      "first_frame": 33,
+      "last_frame": 65,
+      "parts": [
+        "horn_yaw_main",
+        "horn_yaw_auxiliary",
+        "coxa_upper_and_hip_saddle"
+      ]
+    },
+    {
+      "stage": 3,
+      "title": "3. Clamp the hip servo",
+      "note": "Load two post nuts through side slots now. Hip case: three M3x30 with nuts and one washer each.",
+      "first_frame": 66,
+      "last_frame": 98,
+      "parts": [
+        "servo_hip",
+        "case_cap_hip"
+      ]
+    },
+    {
+      "stage": 4,
+      "title": "4. Fit the yaw spacers and lower arm",
+      "note": "Four 11.6 mm spacers. Disc: four M3x20 with two washers. Post: two M3x20 with one washer.",
+      "first_frame": 99,
+      "last_frame": 131,
+      "parts": [
+        "yaw_auxiliary_spacer_1",
+        "yaw_auxiliary_spacer_2",
+        "yaw_auxiliary_spacer_3",
+        "yaw_auxiliary_spacer_4",
+        "coxa_lower_auxiliary_arm"
+      ]
+    },
+    {
+      "stage": 5,
+      "title": "5. Attach the main femur bracket",
+      "note": "Fit hip discs and retainers. Main horn: four M3x6 with one washer each. Load the bridge nut.",
+      "first_frame": 132,
+      "last_frame": 164,
+      "parts": [
+        "horn_hip_main",
+        "horn_hip_auxiliary",
+        "femur_main_and_knee_saddle"
+      ]
+    },
+    {
+      "stage": 6,
+      "title": "6. Clamp the knee servo",
+      "note": "Case points back toward hip. Three M3x30 with nuts and one flat washer per screw.",
+      "first_frame": 165,
+      "last_frame": 197,
+      "parts": [
+        "servo_knee",
+        "case_cap_knee"
+      ]
+    },
+    {
+      "stage": 7,
+      "title": "7. Close the femur fork",
+      "note": "Annular stand-off faces inward. Four M3x12 with TWO washers; one M3x30 into bridge nut.",
+      "first_frame": 198,
+      "last_frame": 230,
+      "parts": [
+        "femur_auxiliary_cheek"
+      ]
+    },
+    {
+      "stage": 8,
+      "title": "8. Attach the straight tibia",
+      "note": "Fit knee discs and retainers. Main horn: four M3x6 with one washer each. Load both bridge nuts.",
+      "first_frame": 231,
+      "last_frame": 263,
+      "parts": [
+        "horn_knee_main",
+        "horn_knee_auxiliary",
+        "tibia_curved_main_and_foot"
+      ]
+    },
+    {
+      "stage": 9,
+      "title": "9. Close the tibia fork",
+      "note": "Four M3x12 with TWO washers; two M3x30 with one washer each into the two bridge nuts.",
+      "first_frame": 264,
+      "last_frame": 296,
+      "parts": [
+        "tibia_auxiliary_cheek"
+      ]
+    }
+  ],
+  "scope": "Exact CAD pieces animated in Fusion using explanatory exploded translations. Hardware quantities appear in captions; screws, nuts, washers and cables are not drawn. Exploded paths are illustrative, not a collision-tested installation path. Saved F3D files are the exploded and assembled states, not an Animation-workspace storyboard. No hardware actuation."
+}

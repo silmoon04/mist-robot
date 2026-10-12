@@ -1,0 +1,178 @@
+# MIST: artist handoff, proposed first release
+
+MIST is a small quadruped with an upright phone in landscape orientation. The screen is its face. We want something slightly hand-drawn and a little untidy, but deliberate: soft uneven contours, mild asymmetry and a few expressive accents. It should be comfortable to talk to for several minutes, not constantly performing.
+
+This pack proposes a scope. It contains existing references and blank templates, not finished new artwork. The new style, exact shapes and motion need the owner and artist's review before a full drawing pass. Nothing here replaces the running face.
+
+## Start with the default
+
+The everyday face should have relaxed open eyes and a closed, nearly straight mouth. It can look gently attentive without smiling all the time. Listening uses more alert eyes; thinking has a small focused squint and an upward sideways glance, with the mouth closed. Talking temporarily animates the mouth over the current expression. Speaking is a behavior, not another full face to redraw.
+
+For the visual direction, explore two small style sheets: one soft and rounded, one with a slightly irregular ink-like contour. Each sheet shows neutral, happy and thinking. These six rough compositions are concept work, separate from the production count. Test them at actual phone size with glow off as well as on. Choose the direction before polishing the rest.
+
+## Exact proposed workload
+
+| Item | New component drawings |
+| --- | ---: |
+| Base eye pairs, E01 to E10 | 10 |
+| Reusable mouths, M01 to M08 | 8 |
+| Half-closed and closed blink pairs for four eye families, B01 to B08 | 8 |
+| Extra accent eye pairs, A01 to A06 | 6 |
+| Two alternate redraws each of neutral, happy and focused eyes, R01 to R06 | 6 |
+| Total production component drawings | 38 |
+
+An eye-pair drawing is one design unit with two separately editable eyes. If counting individual exported shapes, this is 60 eye layers plus eight mouth layers, or 68 parts. Those numbers are not estimates of equal effort or hours. Do not quote the job as 38 full-screen animation frames.
+
+The 38 components assemble into 12 core face layouts. Supply a review sheet showing all 12 combinations; those are assembled compositions, not another 12 original drawings. The drawing_checklist.csv lists every asset ID, what to draw, its reference and a notes/status column.
+
+## Do it in three passes
+
+1. Style exploration: the six rough neutral/happy/thinking compositions described above. Choose one direction.
+2. Small production pilot: E01 neutral eyes, E04 focused eyes, M01 closed mouth, M06 open speech mouth, B01 half-closed eyes and B02 closed eyes. Six components, all included in the total of 38. Assemble neutral and thinking, one blink, a neutral-to-thinking transition and a short AA/rest speech sample. This proves the style at phone scale and during motion.
+3. After the pilot works: complete the remaining 32 component drawings, then assemble the 12 layouts and the motion review sheet. Add rarer emotional faces only after this set feels right.
+
+## Core layouts
+
+| Layout | Eyes + mouth | What it communicates |
+| --- | --- | --- |
+| F01 Available | E01 + M01 | Calm, present; the default |
+| F02 Listening | E02 + M01 | Paying attention, mouth closed |
+| F03 Thinking | E04 + M01 | Focused, gaze up and sideways |
+| F04 Happy | E03 + M02 | Warm pleasure, brief accent |
+| F05 Curious | E09 + M01 | A small uneven eye lift |
+| F06 Focused | E04 + M01 | Same art as thinking, gaze centered |
+| F07 Concerned | E05 + M03 | Gentle concern, no automatic tears |
+| F08 Sleepy | E06 + M01 | Heavy lids, slower movement |
+| F09 Deadpan | E07 + M01 | Mild annoyance or dry humor |
+| F10 Surprised | E08 + M08 | Brief wide-eyed reaction |
+| F11 Playful | E10 + M04 | A small asymmetric smile |
+| F12 Reassuring | E05 + M02 | Concerned eyes with a warm mouth |
+
+We can keep the app's 20 expression names while sharing these drawings. Proposed aliases: neutral uses F01; listening F02; thinking F03; happy and proud F04; curious F05; alert F06; sad F07; sleepy and bored F08; angry and dead_inside F09; surprised and panic F10; mischief, smug and suspicious F11; love and embarrassed F12. The rarer names would lose some distinctions in this first release. These aliases are a proposal, not current behavior. Strong panic, rage, tears and heart-shaped eyes are deferred.
+
+## What makes it hand-drawn
+
+Use a slightly uneven curve and a little unequal timing between the two eyes. Keep the silhouette readable and the shape intentional. A tiny squish before a happy reaction and a quick overshoot into surprise give more character than adding constant movement.
+
+The alternate drawings are a subtle contour variation of the SAME expression. Their centers and overall scale must stay registered. Start with a one- or two-pixel contour difference when viewed in an 800 x 512 review image. Treat this as a trial amount, not a rigid line-thickness rule. Avoid random position jitter, whole-face shaking, permanently trembling outlines or flickering glow. Let the face become still while the person talks.
+
+Glowing cyan on a dark screen is the reference palette, not a requirement to copy the old shapes. Test a clean silhouette first. We can apply glow in code; do not paint it into the linework.
+
+## What the references mean
+
+index.html works offline after extracting the whole folder. It shows the 12 proposed combinations beside current reference faces, all 40 existing variants, the complete component list and a motion demonstrator. The demonstrator uses current geometry only. It does not show the artist's future style or implement the new hand-drawn blink frames.
+
+The reference archive is derived from surviving local face assets. Original capture images are missing, and this pack does not establish ownership or license of earlier designs. Use the reference faces to discuss readability, mood and placement; develop an original visual treatment rather than copying an unknown artist's design.
+
+The earlier repository contains a 450-frame generated Aseprite study. That is an implementation reference, NOT a request for 450 new hand drawings. It was excluded from the core handoff to avoid confusing the workload.
+
+## Review before proceeding
+
+At actual phone size: can we distinguish listening, thinking and speaking without labels? Does the mouth return to the intended rest shape? Does a blink close cleanly without eyes shrinking into dots? Does a transition avoid showing two mouths or two sets of eyes? Does speech still look like the same character when happy or concerned? Can we watch an idle face for a minute without it feeling nervous?
+
+Approval milestones: selected style, six-component pilot, full 12-layout sheet, and timed motion review. The timing values in MOTION_GUIDE.md are proposed starting points. Animation quality and effort should be judged from the pilot, not from a guessed hour estimate.
+
+
+# Motion guide and drawing reuse
+
+Use a 24 fps authoring timeline for the initial review clips. The browser can render at 60 fps. These are different things: displaying 60 frames per second does not require 60 hand drawings per second. Most frames hold a drawing or move it slightly in code.
+
+Separate eye_L, eye_R and mouth, with optional accents on their own layer. Eyes carry the emotion while the speech mouth comes and goes. Do not animate every expression-to-expression pair. Twelve layouts have 132 directed pairs; three reusable transition recipes cover most of them.
+
+## Blink: six timeline frames, two extra drawings per family
+
+At 24 fps, show OPEN, HALF, CLOSED, CLOSED, HALF, OPEN, one frame each: 250 ms total. OPEN is an existing base eye pair; HALF and CLOSED are the two new blink drawings. Reuse HALF on the return initially. If the return feels mechanical in the pilot, scope a separate reopening breakdown later; it is not included in the 38 drawings.
+
+Families: E01/E02/E08/E09 start with open-family B01/B02; E03/E10 with happy-family B03/B04; E04/E07 with focused-family B05/B06; E05/E06 with downcast-family B07/B08. These groupings require the artist's visual check. If a family does not preserve a pose's silhouette, add a specific blink pair explicitly rather than silently expanding the brief.
+
+Schedule a blink after roughly 3 to 6 seconds of idle time as a starting range; do not loop it every quarter second. Sleepy can hold CLOSED longer using the same drawing. A rare double blink replays the same clip with a short open hold, adding no new drawings. Keep the mouth independent. Consider a one-authoring-frame stagger between eyes for an occasional asymmetric blink, not for every blink.
+
+## Three transition recipes
+
+T01 Same-family change: about 6 timeline frames, 250 ms. Ease the position, tilt and width from source to destination. Use vector interpolation only when path structure is compatible. For painted/raster assets, move/deform a rig or choose a deliberate drawing swap; do not assume automatic path morphing exists. No new hand drawings in the initial budget.
+
+T02 Blink bridge: eight frames, about 333 ms. Frames 0-1 show the source; frame 2 source HALF; frames 3-4 source CLOSED; frame 5 destination HALF; frames 6-7 destination. Swap the open contours while lids are shut. Family closure silhouettes need to be compatible at the cut. Cross to the destination mouth through its closed/rest shape rather than dissolving two complete mouths. Reuses blink drawings.
+
+T03 Accent then settle: eight frames, about 333 ms. Frames 0-1 use the anticipation eye pair; frames 2-3 use the overshoot; frames 4-7 hold the final expression. Neutral-to-surprise can use A01, A02, then E08. Happy, thoughtful and sleepy accents can use A03, A04 or A06 followed by their base. A05 gives a playful asymmetrical beat. Keep accents brief and triggered by meaning, not by every response.
+
+## State behavior
+
+Available: F01. One subtle gaze shift or tiny scale/breath change over several seconds. A still pose is a valid idle state. Closed M01. Do not cycle emotions just to show the app is alive.
+
+Listening: F02. Change promptly when user speech is detected; use a small gaze settle. The mouth remains closed. Avoid constant nodding or interruption-like movements during a long explanation.
+
+Thinking: F03. Hold E04 + M01; look slightly upward and to one side. After a delay, one short A04 squint is enough. Reuse the same components for a slow 2 to 4 second gaze shift if a wait is long. Do not use the round speech mouth as a waiting indicator. Thinking while MIST is still talking should not erase its current speech pose.
+
+Speaking: keep the current eye expression and switch ONLY the mouth as audio actually plays. M06 AA and M01 rest are sufficient for the present amplitude-based path. M05 lips together, M07 wide and M08 round are prepared for a later timing/viseme mapping pass. Do not promise lip-sync from eight drawings alone: phoneme timing must be generated and connected in code. M02/M03/M04 return as emotional rest mouths after speech.
+
+Interrupted: cancel queued mouth movement with the audio. Settle to the current closed mouth within about 100 to 150 ms, then listening eyes. Do not replay an old blink or reopen a cancelled talking mouth. Thinking/work completion waits for the current conversational state; it should not override a person who is still speaking.
+
+Error: use F06 or F07 plus clear status text. Do not rely on an angry face to explain an error. On disconnect, stop speaking animation and hold a calm resting face.
+
+Reduced motion: static selected face, no contour cycling or gaze/breath loop. Keep necessary speaking/rest changes, without exaggerated bounces. An explicit preview can still show the animations for review.
+
+## Subtle line variation
+
+R01/R02 redraw E01, R03/R04 redraw E03, R05/R06 redraw E04. Together with each base, that makes three contour versions for each of those poses. Try a short A-B-A-C passage at 6 to 8 drawing changes per second during an accent, then settle. Avoid a perpetual rapid three-frame loop. The timing and redraw choice need a runtime extension; this is not present production behavior.
+
+## Review clips to assemble, not draw from scratch
+
+| Clip | Timeline duration | Use |
+| --- | --- | --- |
+| idle_available | 96 frames / 4 s | Neutral, one gaze shift, one blink |
+| listening_hold | 72 frames / 3 s | Listening without talking |
+| thinking_hold | 96 frames / 4 s | Closed mouth, offset gaze, one squint |
+| blink_four_families | 4 x 6 frames / 1 s combined | Show each family separately |
+| neutral_to_thinking | 8 frames / 0.333 s | Blink bridge |
+| neutral_to_happy | 8 frames / 0.333 s | Small happy accent |
+| neutral_to_surprise | 8 frames / 0.333 s | Anticipate, overshoot, settle |
+| happy_to_concerned | 8 frames / 0.333 s | A difficult eye/mouth change |
+| speech_neutral, speech_happy, speech_concerned | 72 frames / 3 s each | Same mouth sequence over three eye poses |
+| speech_interrupt | 24 frames / 1 s | Talking ends, mouth closes, listening wins |
+
+Those review clips contain 560 timeline exposures altogether if all are supplied. That does NOT mean 560 new drawings: they reuse the 38 components, held frames and transforms. The authored timing is a starting proposal; runtime events ultimately decide when listening, speaking or interruption occurs.
+
+
+# Files and registration
+
+Supply the editable layered source in the artist's normal app: Krita, Photoshop, Clip Studio, Procreate, Aseprite or a vector editor are acceptable. Do not switch software just for this pack. Include neutral SVG exports if using vector art, or full-canvas transparent PNGs if painting. An editable source plus exported components is required; a flattened GIF alone is not enough.
+
+Master canvas: 1600 x 1024 pixels, representing logical coordinates 100 x 64. The actual phone is landscape and has a wider display; fit the face art without stretching, with surrounding empty space as needed. This canvas follows the current renderer, not the full phone screenshot dimensions. Validate at phone size before increasing detail.
+
+Anchors in logical coordinates: eye_L (28, 29.4), eye_R (72, 29.4), mouth (50, 49.5). In master pixels: (448, 470.4), (1152, 470.4), (800, 792). Left and right mean the VIEWER'S left and right. These are placement guides for the redesign, not exact bounds of every existing reference face. Keep artwork inside logical x 5.5 to 94.5 and y 5.5 to 58.5, leaving room for gaze and glow.
+
+Every component export keeps the full canvas dimensions and registration. Do not trim transparent pixels or center each cropped part independently. Use eye_L, eye_R, mouth, accents and GUIDES layer names; keep each eye independently editable. GUIDE and REFERENCE layers are hidden in exported art. Separate lighting/glow from the solid silhouette. Use sRGB. Avoid baked black backgrounds in component PNGs; backgrounds are fine on review sheets.
+
+Names: E01_available_eye_L.png, E01_available_eye_R.png, M01_rest.png. Equivalent SVG names are fine. Blink and accent pairs follow B01_eye_L / B01_eye_R and A01_eye_L / A01_eye_R. Redraws R01 to R06 keep exactly the base pose anchors. Include a source file, a contact sheet and the updated drawing_checklist.csv with notes. In a layered source, pose folders can contain both eye layers and the mouth layer, but keep a shared component library to avoid diverging duplicates.
+
+The templates folder contains 38 blank SVG scaffolds with registration guides and empty part groups. They are NOT completed art. Use them directly in a vector editor or import one as a guide into a painting app. Their GUIDES group is visible intentionally and must be hidden before export. For eye-pair items, leave mouth empty. For mouth items, leave both eyes empty.
+
+animation_clips.csv lists the 15 proposed review clips, their exact exposure counts at 24 fps, durations and reused components. Their 560 exposures reuse the component library; do not interpret the clip sheet as a request for another 560 drawings.
+
+Open index.html after extracting the complete ZIP; it reads only local bundled scripts and assets. No server, account, microphone or API key is needed. Use browser Print to PDF for a review copy. The contact sheet in references/ALL_40_CONTACT_SHEET.svg can also be printed or opened in a vector editor.
+
+## Acceptance checks
+
+- All component IDs exist once, with the matching name and description in the checklist.
+- Eye pair entries have separate left and right layers. No mandatory mirroring: slight asymmetry is welcome when intentional.
+- Transparent exports share one canvas and anchors. Moving between poses does not jump because of cropping.
+- Line weight reads at actual phone size, without relying on glow to hide broken joins.
+- Closed blinks retain a clean line and volume. The mouth never collides with either eye at gaze extremes.
+- Talking preserves the eye expression. On silence, the mouth returns to the emotional resting shape rather than always smiling.
+- Neutral, listening and thinking remain visibly distinct with the sound off.
+- A scene can remain still. Optional line variation does not look like display noise.
+
+## Integration responsibilities
+
+Artist: drawing design, component registration, style sheet, blink/gesture keys and layered review clips. Developer: import the assets, choose drawing or rig interpolation, map runtime states, align mouth timing to audio, implement alternate-contour playback, handle interruption and reduced motion, and test on the physical phone.
+
+Changing hand-painted SVG/PNG files will not automatically rewrite the current polygon renderer. Vector shapes may need conversion and point correspondence; raster cels need a drawing-swap renderer. The pilot should decide that path before the artist draws 32 more components. No exact node-count requirement is imposed on the artist for unrelated poses. Compatible contours can be rigged; incompatible contours should use a blink bridge or intentional drawn cut.
+
+
+I'm working on a little robot with a phone for its face. I'd like it to feel a bit more hand-drawn: soft uneven lines, slight asymmetry and a few expressive squishes, but still clean and nice to look at. It shouldn't be constantly bouncing around.
+
+I put together references and a proposed drawing list so this isn't a vague request to animate loads of faces. The main things to get right are its everyday face, listening, thinking with a closed mouth, and how those look while talking.
+
+Could we start with two small style directions, each showing neutral, happy and thinking? Once we pick one, the first animation test only needs six reusable components. The proposed full set is 38 component drawings, mostly eye pairs and separate mouths. That includes blink shapes and a few extra gesture drawings. It doesn't mean 38 full animations or hundreds of new frames; we can reuse the pieces and animate a lot of the movement in code.
+
+The exact timing and amount of roughness aren't locked down. I'd love your take on what feels good, and we can judge it from a small pilot before committing to the rest. The current faces are functional references, not a style you have to copy.

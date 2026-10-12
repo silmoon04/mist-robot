@@ -1,0 +1,60 @@
+{
+  "date": "2026-10-02",
+  "scope": "Working visual grouping of the current Geraldine board, not an extracted or completed animation pack.",
+  "counts": {"staticDrawings": 20, "existingCoreExpressionLabels": 5, "pairedEyeConfigurations": 14, "restingMouthFamilies": 4, "unfilteredEyePairMouthPairings": 56, "proposedFirstPackPresets": 13},
+  "countMeaning": "Small contour redraws are grouped together. Meaningful aperture, closure, lid and tall/flat differences are retained as configurations. Many eye configurations can share lower-level closure and gaze motion. The 56 arithmetic pairings are not 56 validated expressions.",
+  "eyeConfigurations": [
+    {"id": "E01", "name": "Open outward pair", "members": ["geraldine-selected__attentive", "geraldine-close__attentive"]},
+    {"id": "E02", "name": "Unequal left-facing pair", "members": ["geraldine-selected__considering", "geraldine-close__considering"]},
+    {"id": "E03", "name": "Skeptical lid mismatch", "members": ["geraldine-selected__skeptical", "geraldine-close__skeptical", "geraldine-dry__skeptical"]},
+    {"id": "E04", "name": "Unequal right-facing pair", "members": ["geraldine-selected__amused", "geraldine-close__amused"]},
+    {"id": "E05", "name": "Concern with enclosed right aperture", "members": ["geraldine-selected__concerned", "geraldine-dry__concerned"]},
+    {"id": "E06", "name": "Concern with exterior-opening right aperture", "members": ["geraldine-close__concerned"]},
+    {"id": "E07", "name": "Open left and lowered right lid", "members": ["geraldine-dry__attentive"]},
+    {"id": "E08", "name": "Lowered left lid and open right", "members": ["geraldine-dry__considering"]},
+    {"id": "E09", "name": "Closed left laugh-squint", "members": ["geraldine-dry__amused"]},
+    {"id": "E10", "name": "Tall and flat inward pair", "members": ["geraldine-warm__attentive"]},
+    {"id": "E11", "name": "Tall and flat left-facing pair", "members": ["geraldine-warm__considering"]},
+    {"id": "E12", "name": "Low lid and tall open partner", "members": ["geraldine-warm__skeptical"]},
+    {"id": "E13", "name": "Playful rotated apertures", "members": ["geraldine-warm__amused"]},
+    {"id": "E14", "name": "Concern with reversed left opening", "members": ["geraldine-warm__concerned"]}
+  ],
+  "mouthFamilies": [
+    {"id": "M1", "name": "Curved smile stroke", "members": ["geraldine-selected__attentive", "geraldine-close__attentive", "geraldine-dry__attentive", "geraldine-warm__attentive", "geraldine-dry__amused"]},
+    {"id": "M2", "name": "Short closed stroke", "variants": "Considering preserves rising slope and shallow bend; skepticism preserves descending slope and straighter contour. Rotation alone does not reproduce the two designs.", "members": ["geraldine-selected__considering", "geraldine-close__considering", "geraldine-dry__considering", "geraldine-warm__considering", "geraldine-selected__skeptical", "geraldine-close__skeptical", "geraldine-dry__skeptical", "geraldine-warm__skeptical"]},
+    {"id": "M3", "name": "Curved frown stroke", "members": ["geraldine-selected__concerned", "geraldine-close__concerned", "geraldine-dry__concerned", "geraldine-warm__concerned"]},
+    {"id": "M4", "name": "Filled open bowl", "members": ["geraldine-selected__amused", "geraldine-close__amused", "geraldine-warm__amused"]}
+  ],
+  "candidatePresets": [
+    {"id": "attentive", "eye": "E01", "mouth": "M1", "status": "Existing core reading"},
+    {"id": "considering", "eye": "E02", "mouth": "M2", "status": "Existing core reading"},
+    {"id": "skeptical", "eye": "E03", "mouth": "M2", "status": "Existing core reading"},
+    {"id": "amused", "eye": "E04", "mouth": "M4", "status": "Existing core reading"},
+    {"id": "concerned", "eye": "E05", "mouth": "M3", "status": "Existing core reading"},
+    {"id": "quiet-listening", "eye": "E01", "mouth": "M2", "status": "Proposed combination; normalize a calm mouth attitude and review"},
+    {"id": "friendly-curiosity", "eye": "E02", "mouth": "M1", "status": "Proposed combination; review"},
+    {"id": "wry-teasing", "eye": "E03", "mouth": "M1", "status": "Proposed combination; review"},
+    {"id": "reassuring", "eye": "E05", "mouth": "M1", "status": "Proposed combination; restrained mouth curvature and review"},
+    {"id": "quietly-pleased", "eye": "E04", "mouth": "M1", "status": "Proposed combination; review"},
+    {"id": "laughing", "eye": "E09", "mouth": "M4", "status": "Proposed combination; motion must establish laughter and review"},
+    {"id": "doubtful", "eye": "E02", "mouth": "M3", "status": "Proposed combination; review"},
+    {"id": "eager-delight", "eye": "E01", "mouth": "M4", "status": "Proposed combination using original receptive eyes; review"}
+  ],
+  "stylePolicy": "Use the original selected construction for the first pack. Warm's stronger distortions remain experimental. Layout registration permits expressive asymmetry; it must not regularize the eyes into identical circles.",
+  "productionRequirements": [
+    "Separately registered left-eye, right-eye and mouth layers with consistent contour and palette.",
+    "Authored shape-specific lid closure and reopening; gaze and reaction motions with explicit holds and recovery.",
+    "Friendly, dry/neutral and concerned speech-mouth banks with closed, narrow, broad and rounded sound shapes plus release and transition drawings.",
+    "Shared closed-lid transition bridges and continuous mouth motion when switching expression during speech.",
+    "Cue timing driven by audible playback, with silence, cancellation and interruption handling.",
+    "Review each chosen preset while speaking and listening, with natural sentences, pauses, laughter, long replies and interruptions at phone size."
+  ],
+  "speechAudit": {
+    "currentPlaybackClock": "getOutputTimestamp with latency-compensated context-time fallback.",
+    "currentCueInference": "Provider character timings mapped through spelling/digraph rules; no true phoneme timestamps. Missing alignment uses audio energy and rest/AA.",
+    "neededForNaturalSync": "Better sound-aware cue inference with contextual blends and deliberate closures/releases, plus the new style-specific artwork.",
+    "animationCadence": "Existing renderer uses 15 fps; visual cadence alone cannot repair incorrect sound-to-shape inference.",
+    "sources": ["brain/duplex/lipsync.py", "brain/duplex/static/playback.js", "brain/ui/static/drawn_face_renderer.js", "brain/duplex/static/expression_policy.js"]
+  },
+  "status": "Planning audit only. No raster separation, new images, completed animations, runtime changes or publication in this pass."
+}

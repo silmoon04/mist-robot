@@ -1,0 +1,294 @@
+{
+  "status": "manufacturer geometry established; hardened candidate and completed assembly require procurement/load validation",
+  "date": "2026-09-07",
+  "reference_part": "KHK SM1-20",
+  "candidate_part": "KHK SM1-20H",
+  "quantity_per_leg": 2,
+  "mating_rule": "Two same-family straight miter gears; do not mix arbitrary same-module bevel products.",
+  "manufacturer_dimensions_mm": {
+    "bore_nominal": 6,
+    "hub_diameter_B": 16,
+    "outer_pitch_diameter_C": 20,
+    "outside_tip_diameter_D": 21.41,
+    "apex_to_back_mounting_distance_E": 20,
+    "overall_axial_length_F": 13.94,
+    "crown_to_back_G": 10.71,
+    "hub_width_H": 8,
+    "bore_length_I": 12,
+    "face_width_along_cone_J": 5,
+    "holding_land_diameter_K": 9.86
+  },
+  "gear": {
+    "module_mm": 1,
+    "teeth": 20,
+    "shaft_angle_deg": 90,
+    "pitch_cone_angle_deg": 45,
+    "pressure_angle_deg": 20,
+    "ratio": 1,
+    "tooth_form": "Gleason straight miter",
+    "mass_g_each": 19,
+    "plain_material": "S45C unheat-treated",
+    "hardened_tooth_hardness_HRC": [
+      50,
+      60
+    ],
+    "bore_fit_note": "Plain SM catalogue boreH7; do not assume post-hardening bore accuracy without supplier confirmation"
+  },
+  "reference_ratings_Nm": {
+    "SM1-20_bending": 0.89,
+    "SM1-20_surface": 0.084,
+    "SM1-20H_bending": 0.89,
+    "SM1-20H_surface": 0.37,
+    "conditions": "100rpm,over10^7cycles,uniform motor/load,bidirectional bending allowance2/3,100cSt lubricant at50C; reference values, recalculate actual operation"
+  },
+  "operating_screen": {
+    "model_current_cap_A": 1,
+    "model_torque_cap_Nm": 0.172,
+    "full_motor_stall_Nm": 1.177,
+    "plain_surface_margin_vs_model_cap": 0.4883720930232559,
+    "hardened_surface_margin_vs_SF2_model_cap": 1.0755813953488373,
+    "hardened_bending_margin_vs_stall": 0.7561597281223449,
+    "motor_speed_endpoint_estimate_rpm_at_cap_12V": 298.8530161427358,
+    "speed_rating_status": "Estimated~299rpm exceeds100rpm table basis; actual speed/lubrication duty not recalculated by manufacturer",
+    "added_transmission_efficiency_assumption": [
+      0.85,
+      0.95
+    ],
+    "wheel_torque_after_assumed_losses_Nm": [
+      0.1462,
+      0.1634
+    ]
+  },
+  "input_axis_contract": {
+    "axis": "-Z,longitudinal;u=-z",
+    "axis_y_mm": 20,
+    "wheel_apex_u_mm": 140,
+    "gear_back_u_mm": 120,
+    "gear_hub_u_mm": [
+      120,
+      128
+    ],
+    "gear_outer_pitch_plane_u_mm": 130,
+    "gear_max_tip_crown_plane_u_mm": 130.71,
+    "gear_frontmost_u_mm": 133.94,
+    "bore_end_u_mm": 132,
+    "mean_pitch_load_u_mm": 131.76776695296638,
+    "mean_pitch_radius_mm": 8.232233047033631,
+    "motor_case_u_mm": [
+      20,
+      81
+    ],
+    "motor_shaft_u_mm": [
+      81,
+      93
+    ],
+    "coupling_envelope_u_mm": [
+      85,
+      105
+    ],
+    "proposed_bearing626_u_mm": [
+      [
+        105.5,
+        111.5
+      ],
+      [
+        113.5,
+        119.5
+      ]
+    ],
+    "front_inner_race_shim_u_mm": [
+      119.5,
+      120
+    ],
+    "note": "Bearing placement is a proposal; actual shim/abutment diameters, axial locating scheme and coupling are not yet selected"
+  },
+  "output_orientation_options": [
+    {
+      "hub_direction": "+Y,outboard",
+      "apex_y_mm": 20,
+      "gear_back_y_mm": 40,
+      "gear_hub_y_mm": [
+        32,
+        40
+      ],
+      "gear_frontmost_y_mm": 26.06,
+      "gear_outer_pitch_plane_y_mm": 30,
+      "gear_max_tip_crown_plane_y_mm": 29.29,
+      "mean_pitch_load_y_mm": 28.23223304703363,
+      "existing_bearing_y_mm": [
+        37,
+        43
+      ],
+      "verdict": "Existing bearing and its housing floor overlap gear/hub. Proposed bearing42..48 plus revised retainer grows outer width; verify complete casing."
+    },
+    {
+      "hub_direction": "-Y,inboard toward wheel",
+      "apex_y_mm": 20,
+      "gear_back_y_mm": 0,
+      "gear_hub_y_mm": [
+        0,
+        8
+      ],
+      "gear_frontmost_y_mm": 13.94,
+      "gear_outer_pitch_plane_y_mm": 10,
+      "gear_max_tip_crown_plane_y_mm": 10.71,
+      "mean_pitch_load_y_mm": 11.767766952966369,
+      "verdict": "Existing outer bearing can remain, but real gear intrudes into the current wheel-hub/spoke volume; wheel hub integration and full rotation sweep required."
+    }
+  ],
+  "shaft_attachment_proposal": {
+    "shaft_mm": 6,
+    "gear_hub_back_to_crosspin_mm": 4,
+    "crosspin_diameter_mm": 2,
+    "crosspin_length_mm": 16,
+    "status": "Custom machining proposal only; check hub, shaft cross-hole stress, fits and pin retention. Standard SM/SM-H is plain bore and carries no supplied pin/key/set screw.",
+    "readiness": "No factory-complete hardened6mm shaft-lock variant or rated bolt-on clamp interface verified; crosspin remains custom machining, not a hand-tool assembly release.",
+    "catalogue_J6_alternative": {
+      "part": "SM1-20J6",
+      "bore_mm": 6,
+      "bore_tolerance": "H7",
+      "keyway": null,
+      "set_screw_thread": "M4",
+      "set_screw_offset_from_back_mm": 4,
+      "Hardened_Plus_compatible": false,
+      "holding_torque_verified": false,
+      "note": "Do not assume SM1-20HJ6 or SM1-20J6H is available; current SM catalogue excludes J-Series from Hardened Plus."
+    }
+  },
+  "load_calculations": [
+    {
+      "case": "1A_model_cap",
+      "torque_Nm": 0.172,
+      "tangential_force_N": 20.893480422298996,
+      "radial_separating_force_N": 5.377267738247193,
+      "axial_thrust_N": 5.377267738247193,
+      "resultant_transverse_load_N": 21.574348946973707,
+      "input_bearing_reactions_N": [
+        -41.17401648554628,
+        62.74836543251999
+      ],
+      "input_bearing_centres_u_mm": [
+        108.5,
+        116.5
+      ],
+      "load_mean_pitch_u_mm": 131.76776695296638,
+      "shaft_moment_at_near_bearing_Nm": 0.3293921318843703,
+      "shaft6_nominal_bending_MPa": 15.533151408881492,
+      "shaft6_nominal_torsion_MPa": 4.05550373508237,
+      "crosspin2_double_shear_MPa": 9.124883403935332,
+      "ideal_ground_force_N": 4.047058823529411
+    },
+    {
+      "case": "uncapped_motor_stall",
+      "torque_Nm": 1.177,
+      "tangential_force_N": 142.9745724246856,
+      "radial_separating_force_N": 36.79676818556365,
+      "axial_thrust_N": 36.79676818556365,
+      "resultant_transverse_load_N": 147.63377157318638,
+      "input_bearing_reactions_N": [
+        -281.75475234586037,
+        429.38852391904675
+      ],
+      "input_bearing_centres_u_mm": [
+        108.5,
+        116.5
+      ],
+      "load_mean_pitch_u_mm": 131.76776695296638,
+      "shaft_moment_at_near_bearing_Nm": 2.254038018766883,
+      "shaft6_nominal_bending_MPa": 106.29371632705535,
+      "shaft6_nominal_torsion_MPa": 27.75190637320901,
+      "crosspin2_double_shear_MPa": 62.441789339720266,
+      "ideal_ground_force_N": 27.69411764705882
+    }
+  ],
+  "procurement": {
+    "plain_SM1-20_GBP_each_displayed": 14.13,
+    "plain_pair_GBP_displayed": 28.26,
+    "plain_lead": "10-14 days subject to manufacturer availability",
+    "VAT_status": "Not stated beside supplier price",
+    "hardened_SM1-20H_UK_quote": "Bounded UK follow-up found no verified live price or delivered lead; plain SM1-20 price is not a valid substitute.",
+    "plain_URL": "https://www.rargears.com/gears/miter-gears/steel-miter-gears/SM1-20",
+    "followup_report": "hardened_pair_supplier_followup.md",
+    "SM1-20H_unit_GBP": null,
+    "SM1-20H_pair_GBP": null,
+    "SM1-20H_eight_gear_GBP": null
+  },
+  "premium_same_size_option": {
+    "parts": [
+      "SMSG1-20R",
+      "SMSG1-20L"
+    ],
+    "type": "ground spiral; requires opposite hands",
+    "apex_mounting_mm": 20,
+    "overall_mm": 13.84,
+    "tip_diameter_mm": 21.3,
+    "bore_mm": 6,
+    "face_mm": 5,
+    "mass_pair_g": 38,
+    "reference_bending_Nm": 1.17,
+    "reference_surface_Nm": 0.97,
+    "rating_speed_rpm": 600,
+    "price_GBP_each_displayed": 91.48,
+    "pair_GBP_displayed": 182.96,
+    "verdict": "Reference working-load margin is better but cost is far outside budget; full motor stall has no bending margin. Spiral thrust requires separate calculation."
+  },
+  "CAD_status": {
+    "generation": "Manufacturer SM1-20_On STEP AP214, teeth enabled",
+    "download_verified_locally": true,
+    "local_STEP": "../../references/KHK_SM1_20/SM1-20_On.stp",
+    "STEP_bytes": 215015,
+    "STEP_sha256": "c4aebaa418f6955130f9bf4f4a798dc478b181fea47327865db2d7aedb386a98",
+    "download_receipt": "../../references/KHK_SM1_20/receipt.json",
+    "native_import_verified": true,
+    "native_pair_readme": "../../cad/fusion_live_20260907/vendor_pair_probe/README.md",
+    "native_pair_receipt": "../../cad/fusion_live_20260907/vendor_pair_probe/verification.json",
+    "native_F3D": "../../cad/fusion_live_20260907/vendor_pair_probe/KHK_native_pair.f3d",
+    "unphased_control_interference_mm3": 13.86561046898599,
+    "sampled_clear_input_phases_deg": [
+      0,
+      3,
+      6,
+      9,
+      12,
+      15,
+      18
+    ],
+    "output_phase_rule_deg": "9-input_phase",
+    "sample_scope": "Seven positions over one tooth pitch; not continuous mesh, contact pattern, backlash, load or whole-assembly validation",
+    "OCP_volume_mm3": 2332.532046634451,
+    "native_volume_mm3": 2339.269209512583,
+    "volume_difference_fraction": 0.002888347402494551,
+    "volume_equivalence_verified": false,
+    "model_identity": "Plain SM1-20 nominal geometry; no strength/duty approval for SM1-20H follows from import",
+    "historical_generation_receipt": "khk_sm1_20_step_generation_receipt.json",
+    "historical_download_caveat": "Superseded by verified local download receipt; original timestamped receipt retained unchanged",
+    "DXF": "Earlier DXF endpoint remained login-gated; no DXF required for verified STEP"
+  },
+  "sources": {
+    "manufacturer_catalogue": "https://khkgears.net/pdf/2025/miter-gears.pdf",
+    "hardened_part": "https://catalog.khkgears.us/item/miter-gears/steel-miter-gears-sm/sm1-20h",
+    "premium_price": "https://www.rargears.com/gears/miter-gears/ground-spiral-miter-gears/SMSG1-20R",
+    "source_pdf_local": "sources/khk_miter_gears_2025.pdf",
+    "source_render": "sources/khk_miter_page14.png"
+  },
+  "system_cost_status": {
+    "motor_target_GBP_each": 15,
+    "existing_FIT0493_budget_GBP_inc_VAT_each": 25.61,
+    "existing_motor_budget_over_target_GBP_each": 10.61,
+    "four_motor_budget_GBP": 102.44,
+    "four_motor_target_GBP": 60,
+    "hardened_pair_cost_GBP_each_leg": null,
+    "hardened_gears_quantity_four_legs": 8,
+    "complete_system_price_verified": false,
+    "excluded_unpriced_items": [
+      "eight hardened gears",
+      "hub-to-shaft machining or approved locks",
+      "4D-to6mm couplings",
+      "shafts",
+      "additional bearings and thrust retention",
+      "lubrication and seals",
+      "motor drivers",
+      "postage and applicable VAT"
+    ]
+  }
+}

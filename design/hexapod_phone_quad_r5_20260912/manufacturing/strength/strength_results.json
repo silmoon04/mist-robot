@@ -1,0 +1,375 @@
+{
+  "status": "conditional_section_screen_not_validated_FEA",
+  "loads": {
+    "mass_kg": 2.4109917935095755,
+    "gravity_m_s2": 9.81,
+    "sampled_peak_foot_N_time_s_leg": [
+      11.953340885733976,
+      54.15,
+      "RR"
+    ],
+    "sampled_peak_torque_Nm_time_s_joint": [
+      0.5291991449773549,
+      51.0,
+      "hip_FL"
+    ],
+    "two_leg_static_N_per_leg": 11.825914747164468,
+    "two_leg_2g_N_per_leg": 23.651829494328936,
+    "assumed_side_force_N_per_leg": 5.0,
+    "proof_phone_horizontal_force_N": 5.0,
+    "torque_cap_Nm": 0.588,
+    "note": "Two leg and 2g cases are structural envelopes; balance and servo feasibility are not established."
+  },
+  "allowable_assumptions": {
+    "XY_tension_MPa": 12.0,
+    "Z_tension_MPa": 4.0,
+    "shear_MPa": 3.0,
+    "bearing_MPa": 8.0
+  },
+  "effective_section_ratio": 0.5,
+  "notch_factor": 2.0,
+  "sections": [
+    {
+      "part": "FL_femur_main_and_knee_saddle",
+      "cut_axis": "x",
+      "cut_mm": 40,
+      "transverse_axes": [
+        "y",
+        "z"
+      ],
+      "area_mm2": 122.33766233766232,
+      "centroid_transverse_mm": [
+        20.999999999999993,
+        -1.435064935064931
+      ],
+      "I_transverse_mm4": [
+        9536.286807306367,
+        163.11688311690523,
+        -4.092726157978177e-12
+      ],
+      "section_modulus_transverse_mm3": [
+        623.6043177601595,
+        81.55844155845206
+      ]
+    },
+    {
+      "part": "FL_tibia_curved_main_and_foot",
+      "cut_axis": "x",
+      "cut_mm": 30,
+      "transverse_axes": [
+        "y",
+        "z"
+      ],
+      "area_mm2": 78.12865497076027,
+      "centroid_transverse_mm": [
+        21.000000000000004,
+        11.65497076023392
+      ],
+      "I_transverse_mm4": [
+        2483.8754471227967,
+        104.1715399609966,
+        -3.637978807091713e-12
+      ],
+      "section_modulus_transverse_mm3": [
+        254.33694698083542,
+        52.085769980497844
+      ]
+    },
+    {
+      "part": "FL_tibia_curved_main_and_foot",
+      "cut_axis": "x",
+      "cut_mm": 80,
+      "transverse_axes": [
+        "y",
+        "z"
+      ],
+      "area_mm2": 203.99999999999997,
+      "centroid_transverse_mm": [
+        0.0,
+        10.428571428571429
+      ],
+      "I_transverse_mm4": [
+        3609.5510204081656,
+        3332.0,
+        -7.579122514774402e-14
+      ],
+      "section_modulus_transverse_mm3": [
+        495.4285714285718,
+        476.0
+      ]
+    },
+    {
+      "part": "FL_coxa_lower_auxiliary_arm",
+      "cut_axis": "x",
+      "cut_mm": 20,
+      "transverse_axes": [
+        "y",
+        "z"
+      ],
+      "area_mm2": 92.00000000000006,
+      "centroid_transverse_mm": [
+        9.396670237407116e-16,
+        -46.0
+      ],
+      "I_transverse_mm4": [
+        122.66666666662786,
+        4055.6666666666665,
+        5.8903992794512305e-12
+      ],
+      "section_modulus_transverse_mm3": [
+        61.33333333331342,
+        352.6666666666636
+      ]
+    },
+    {
+      "part": "FL_coxa_upper_and_hip_saddle",
+      "cut_axis": "z",
+      "cut_mm": -25,
+      "transverse_axes": [
+        "x",
+        "y"
+      ],
+      "area_mm2": 144.5,
+      "centroid_transverse_mm": [
+        32.25,
+        0.0
+      ],
+      "I_transverse_mm4": [
+        3480.0416666666665,
+        870.010416666657,
+        -2.2737367544323206e-13
+      ],
+      "section_modulus_transverse_mm3": [
+        409.4166666666665,
+        204.70833333333104
+      ]
+    },
+    {
+      "part": "FL_coxa_upper_and_hip_saddle",
+      "cut_axis": "z",
+      "cut_mm": -38,
+      "transverse_axes": [
+        "x",
+        "y"
+      ],
+      "area_mm2": 69.96283146010754,
+      "centroid_transverse_mm": [
+        32.51634530575376,
+        -1.421840439135668e-15
+      ],
+      "I_transverse_mm4": [
+        1148.6003368111262,
+        666.8295196099643,
+        1.0366498837812746e-12
+      ],
+      "section_modulus_transverse_mm3": [
+        135.12945138954413,
+        147.64803717741245
+      ]
+    },
+    {
+      "part": "FL_femur_main_and_knee_saddle",
+      "cut_axis": "y",
+      "cut_mm": 0,
+      "transverse_axes": [
+        "x",
+        "z"
+      ],
+      "area_mm2": 463.5017748617686,
+      "centroid_transverse_mm": [
+        92.47148633447189,
+        -7.621407602537416
+      ],
+      "I_transverse_mm4": [
+        35966.6202115693,
+        206976.74498554086,
+        -29605.30976736633
+      ],
+      "section_modulus_transverse_mm3": [
+        1288.5614301496807,
+        3392.8395922894138
+      ]
+    },
+    {
+      "part": "FL_tibia_curved_main_and_foot",
+      "cut_axis": "y",
+      "cut_mm": 0,
+      "transverse_axes": [
+        "x",
+        "z"
+      ],
+      "area_mm2": 834.749077296792,
+      "centroid_transverse_mm": [
+        75.88669572167586,
+        11.42513655120434
+      ],
+      "I_transverse_mm4": [
+        51326.11792302385,
+        256708.63445957936,
+        -97429.24629816483
+      ],
+      "section_modulus_transverse_mm3": [
+        1413.980339470206,
+        2572.464346152338
+      ]
+    }
+  ],
+  "results": [
+    {
+      "check": "FL_femur_main_and_knee_saddle sagittal sampled envelope",
+      "solid_nominal_MPa": 0.8486136639946852,
+      "screening_demand_MPa": 3.3944546559787407,
+      "allowable_MPa": 12,
+      "margin_ratio": 3.535177581136366,
+      "detail": "Sampled global maximum joint torque on one cheek, applied conservatively also to tibia. No lateral load in this isolated check."
+    },
+    {
+      "check": "FL_femur_main_and_knee_saddle combined bending",
+      "solid_nominal_MPa": 7.073478842954304,
+      "screening_demand_MPa": 28.293915371817217,
+      "allowable_MPa": 12,
+      "margin_ratio": 0.42411945615532826,
+      "detail": "Moment about Y = 588 Nmm; assumed side load gives moment about Z = 500 Nmm; conservative absolute superposition on one cheek."
+    },
+    {
+      "check": "FL_tibia_curved_main_and_foot sagittal sampled envelope",
+      "solid_nominal_MPa": 2.080701019884581,
+      "screening_demand_MPa": 8.322804079538324,
+      "allowable_MPa": 12,
+      "margin_ratio": 1.4418217568646232,
+      "detail": "Sampled global maximum joint torque on one cheek, applied conservatively also to tibia. No lateral load in this isolated check."
+    },
+    {
+      "check": "FL_tibia_curved_main_and_foot combined bending",
+      "solid_nominal_MPa": 11.911444655600654,
+      "screening_demand_MPa": 47.64577862240262,
+      "allowable_MPa": 12,
+      "margin_ratio": 0.25185861889468014,
+      "detail": "Moment about Y = 588 Nmm; assumed side load gives moment about Z = 500 Nmm; conservative absolute superposition on one cheek."
+    },
+    {
+      "check": "Curved foot x80 combined bending",
+      "solid_nominal_MPa": 1.4561085487952268,
+      "screening_demand_MPa": 5.824434195180907,
+      "allowable_MPa": 12,
+      "margin_ratio": 2.0602859604678354,
+      "detail": "Upper bound perpendicular 2g vertical load over 25 mm and 5 N lateral over 25 mm, full foot section."
+    },
+    {
+      "check": "Yaw lower arm bending",
+      "solid_nominal_MPa": 12.34008495356693,
+      "screening_demand_MPa": 49.36033981426772,
+      "allowable_MPa": 12,
+      "margin_ratio": 0.24311015777349598,
+      "detail": "Entire 2g leg load assigned to lower plate at x32. Deliberately conservative unknown upper/lower load sharing."
+    },
+    {
+      "check": "Coxa post z-25 combined bending",
+      "solid_nominal_MPa": 2.69032980695099,
+      "screening_demand_MPa": 10.76131922780396,
+      "allowable_MPa": 12,
+      "margin_ratio": 1.115104918456063,
+      "detail": "Vertical load 18 mm eccentric from post, side load 50 mm lever. Net section cut includes actual nut slots at z=-38."
+    },
+    {
+      "check": "Coxa post z-38 combined bending",
+      "solid_nominal_MPa": 4.733508836855028,
+      "screening_demand_MPa": 18.934035347420114,
+      "allowable_MPa": 12,
+      "margin_ratio": 0.6337793174995355,
+      "detail": "Vertical load 18 mm eccentric from post, side load 50 mm lever. Net section cut includes actual nut slots at z=-38."
+    },
+    {
+      "check": "Femur cross bridge across layers",
+      "solid_nominal_MPa": 4.883682691053123,
+      "screening_demand_MPa": 19.53473076421249,
+      "allowable_MPa": 4,
+      "margin_ratio": 0.2047635080452696,
+      "detail": "Simply supported 38 mm bridge, central 2g leg force. Z tension because print build normal is assembly Y. Check also loss of auxiliary support."
+    },
+    {
+      "check": "Tibia cross bridge across layers",
+      "solid_nominal_MPa": 1.0785234249413995,
+      "screening_demand_MPa": 4.314093699765598,
+      "allowable_MPa": 4,
+      "margin_ratio": 0.9271935841860217,
+      "detail": "Simply supported 38 mm bridge, central 2g leg force. Z tension because print build normal is assembly Y. Check also loss of auxiliary support."
+    },
+    {
+      "check": "Horn M3 group projected bearing",
+      "solid_nominal_MPa": 1.9788939245281054,
+      "screening_demand_MPa": 7.915575698112422,
+      "allowable_MPa": 8,
+      "margin_ratio": 1.0106655921321945,
+      "detail": "Four bolts radius7; force=T/(4r)+F/4. Metal horn thread stripping, preload and splitting are excluded."
+    },
+    {
+      "check": "Horn cheek net section at x0",
+      "solid_nominal_MPa": 1.408624872746919,
+      "screening_demand_MPa": 5.634499490987676,
+      "allowable_MPa": 12,
+      "margin_ratio": 2.1297366375121474,
+      "detail": "Circular cheek at x0 simplified to outer28 high, central7 and two3.4 holes at z+/-7; exact circular hole widths on this plane. Moment only."
+    },
+    {
+      "check": "Nut pocket remaining face punching shear",
+      "solid_nominal_MPa": 1.8786535961522302,
+      "screening_demand_MPa": 7.514614384608921,
+      "allowable_MPa": 3,
+      "margin_ratio": 0.3992220819932502,
+      "detail": "0.8 mm face at 3.2 deep nut in4 cheek, approximate cylindrical punch perimeter. Bolt preload can dominate this service force."
+    },
+    {
+      "check": "Single cheek torsion from side eccentricity",
+      "solid_nominal_MPa": 0.65625,
+      "screening_demand_MPa": 2.625,
+      "allowable_MPa": 3,
+      "margin_ratio": 1.1428571428571428,
+      "detail": "Thin rectangular open cheek torsion tau~3T/(b*t^2), side force5N at21mm eccentricity; b30,t4. Closed yoke behavior is not credited."
+    },
+    {
+      "check": "Yaw saddle mounting foot strip bending",
+      "solid_nominal_MPa": 2.627981054925437,
+      "screening_demand_MPa": 10.511924219701749,
+      "allowable_MPa": 12,
+      "margin_ratio": 1.14156074084983,
+      "detail": "Each of four feet carries one quarter 2g load on12x3 strip over8mm. Actual deck load spread and screw contact require fixture test."
+    },
+    {
+      "check": "Case cap end bolt edge ligament",
+      "solid_nominal_MPa": 1.868955373165433,
+      "screening_demand_MPa": 7.475821492661732,
+      "allowable_MPa": 3,
+      "margin_ratio": 0.40129369099366546,
+      "detail": "Nearest endwall bolt x17 vs outside20.5 gives3.5mm center edge; two1.8mm ligaments through4mm thickness. Preload not included."
+    },
+    {
+      "check": "Phone rear spine through USB opening",
+      "solid_nominal_MPa": 20.2734375,
+      "screening_demand_MPa": 81.09375,
+      "allowable_MPa": 12,
+      "margin_ratio": 0.14797687861271677,
+      "detail": "5 N total horizontal screen push shared between two 2x8 spines at z53.25, top frame z97. Worst case remains on the upper posts."
+    },
+    {
+      "check": "Phone lower front bar center push",
+      "solid_nominal_MPa": 41.25,
+      "screening_demand_MPa": 165.0,
+      "allowable_MPa": 12,
+      "margin_ratio": 0.07272727272727272,
+      "detail": "Separate misuse screen: 5 N at midpoint of 3x3 bar, simply supported. Phone contact may reduce span but is not credited."
+    }
+  ],
+  "femur_single_cheek_euler_load_N": 29.243272299524023,
+  "source_sha256": {
+    "cad\\leg.py": "995232e684fbc8f13788d1f3238b01c7ab9ffa15016b3330eb434c4db6ceeddb",
+    "cad\\body.py": "ddd21363fe0233df90d3f0de76ff2a65b7674ec88ba8c3c785bd9130bba36d99",
+    "cad\\phone.py": "30eec345877b8fec16b5aabdaed16efdcc0213da9f45b5b830bef2a1e8dee5ac",
+    "cad\\output\\assembly_manifest.json": "d9bac35b0a898eb79191fd82129685c86f88caea7185f9766b5af6c3d78f5a67",
+    "simulation\\output\\trajectory.json": "f4242bec27987bed5e56498aa76e0bcc29b06f7ef9eebdd5baf5eecf3a9934ca",
+    "cad\\output\\parts_mesh\\FL_femur_main_and_knee_saddle.stl": "016c50dabed4c61d27acff9720843fc875495ed4a209abb06610475477a98f58",
+    "cad\\output\\parts_mesh\\FL_tibia_curved_main_and_foot.stl": "627a22a39ad6a283637b8c80c965eb2c471a35afb007d5ba377e22c4fb7f0f01",
+    "cad\\output\\parts_mesh\\FL_coxa_lower_auxiliary_arm.stl": "74f5c0589d35500bf80b7202f2fbc3273a67dcfe38c02b31c580be38373ab868",
+    "cad\\output\\parts_mesh\\FL_coxa_upper_and_hip_saddle.stl": "04da38527d3dd9f19d0e27732fdcf7c68d3de407567d4cbf759089aad57eb686"
+  }
+}

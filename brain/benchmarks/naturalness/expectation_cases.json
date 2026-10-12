@@ -1,0 +1,2116 @@
+{
+  "schema_version": 1,
+  "suite_id": "mist.conversation_expectations",
+  "version": "2026-09-24.3",
+  "status": "authored_not_run",
+  "source_trace": {
+    "path": "<LOCAL_HOME>/Downloads/mist-8199b0128136401f9ccbfbba95f0d224.json",
+    "use": "Transcript/tool observations inspired failure families; cases change situations and wording and do not prescribe copied answers.",
+    "sha256": "8fda62cd2acb1f80c655833daba3e85c8b793c2372bfaf3021d59b4bf99a92ff"
+  },
+  "split_policy": "Development and validation are visible authoring groups, not secret holdouts. Both are available for inspection; record when either guides a change.",
+  "execution_policy": {
+    "text_history": "One real model session per case. Submit each user turn after the actual preceding response; do not inject canned assistant replies.",
+    "candidate_payload": "Submit user turns and the frozen production tool/persona context only. desired_behavior, review_criteria, counterexample and capability metadata are evaluator-only.",
+    "blocked_cases": "Do not pass non-text contracts through the text runner or count missing adapters/tools as model failures.",
+    "semantic_grading": "Review meaning and context against criteria. Objective expect keys cover explicit tool or requested-format contracts only.",
+    "human_quality": "No human naturalness, audio quality or emotional experience scores have been collected for this suite."
+  },
+  "cases": [
+    {
+      "id": "mist.expectations.v1.greeting_repair.dev",
+      "split": "dev",
+      "category": "repair_greeting",
+      "mode": "text",
+      "title": "Repair a greeting misheard as a location",
+      "contrast_group": "repair_greeting",
+      "fixtures": {
+        "sensor": "none",
+        "memory": "isolated_empty",
+        "robot": "preview_only"
+      },
+      "turns": [
+        {
+          "user": "Here.",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ]
+          }
+        },
+        {
+          "user": "That was a transcription mistake. I said, 'Hello, how are you?'",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ]
+          }
+        }
+      ],
+      "desired_behavior": [
+        "Use the corrected wording as the active conversational intent."
+      ],
+      "review_criteria": [
+        "Respond to the corrected greeting naturally rather than continuing the location interpretation.",
+        "A brief repair is enough; avoid 'that's better', blaming the speaker, or a lecture about recognition."
+      ],
+      "counterexample": "If the user actually confirms a location, retain that meaning rather than converting every short utterance into a greeting.",
+      "current_capability": {
+        "status": "runnable",
+        "adapter": "production_tools_text",
+        "limits": [
+          "Uses actual generated assistant history between user turns.",
+          "Tool receipts are observable; rendered faces, heard speech and timing are not."
+        ]
+      },
+      "evaluation_scope": "Semantic review and supported tool contracts only; no word-substring quality score."
+    },
+    {
+      "id": "mist.expectations.v1.greeting_repair.validation",
+      "split": "validation",
+      "category": "repair_greeting",
+      "mode": "text",
+      "title": "Repair an opening after an unrelated response",
+      "contrast_group": "repair_greeting",
+      "fixtures": {
+        "sensor": "none",
+        "memory": "isolated_empty",
+        "robot": "preview_only"
+      },
+      "turns": [
+        {
+          "user": "The shelf.",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ]
+          }
+        },
+        {
+          "user": "The microphone mangled that. I meant, 'Hey, good to see you.'",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ]
+          }
+        }
+      ],
+      "desired_behavior": [
+        "Recover from noisy input with little conversational effort."
+      ],
+      "review_criteria": [
+        "Accept the explicit correction and answer the social greeting.",
+        "Do not insist on the earlier shelf interpretation or make the user restate the greeting again."
+      ],
+      "counterexample": "An unexplained fragment still permits one focused clarification; the correction supplies the missing intent here.",
+      "current_capability": {
+        "status": "runnable",
+        "adapter": "production_tools_text",
+        "limits": [
+          "Uses actual generated assistant history between user turns.",
+          "Tool receipts are observable; rendered faces, heard speech and timing are not."
+        ]
+      },
+      "evaluation_scope": "Semantic review and supported tool contracts only; no word-substring quality score."
+    },
+    {
+      "id": "mist.expectations.v1.sad_correction.dev",
+      "split": "dev",
+      "category": "repair_affect",
+      "mode": "text",
+      "title": "Distinguish the observed wrong face from the requested face",
+      "contrast_group": "repair_affect",
+      "fixtures": {
+        "sensor": "none",
+        "memory": "isolated_empty",
+        "robot": "preview_only"
+      },
+      "turns": [
+        {
+          "user": "Show me a sad expression.",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ],
+            "required_tools": [
+              "set_expression"
+            ],
+            "tool_args": {
+              "set_expression": {
+                "expression": "sad"
+              }
+            },
+            "max_tools": 1
+          }
+        },
+        {
+          "user": "That came out angry, not the sad one I asked for. Please try again.",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ],
+            "required_tools": [
+              "set_expression"
+            ],
+            "tool_args": {
+              "set_expression": {
+                "expression": "sad"
+              }
+            },
+            "max_tools": 1
+          }
+        },
+        {
+          "user": "That's the mood I meant. In one short sentence, acknowledge the mix-up.",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ]
+          }
+        }
+      ],
+      "desired_behavior": [
+        "Use correction context to select the intended expression."
+      ],
+      "review_criteria": [
+        "Treat angry as the user's report of the error, and sad as the repair target.",
+        "Request sad once rather than repeating angry or narrating a repair without acting.",
+        "Attribute the display report to the user; do not claim independent visual confirmation."
+      ],
+      "counterexample": "If the user explicitly changes their request to angry, angry is correct; do not hard-code sad after every mention of an error.",
+      "current_capability": {
+        "status": "runnable",
+        "adapter": "production_tools_text",
+        "limits": [
+          "Uses actual generated assistant history between user turns.",
+          "Tool receipts are observable; rendered faces, heard speech and timing are not."
+        ]
+      },
+      "evaluation_scope": "Semantic review and supported tool contracts only; no word-substring quality score."
+    },
+    {
+      "id": "mist.expectations.v1.happy_correction.validation",
+      "split": "validation",
+      "category": "repair_affect",
+      "mode": "text",
+      "title": "Apply an inverse correction without a sad-face shortcut",
+      "contrast_group": "repair_affect",
+      "fixtures": {
+        "sensor": "none",
+        "memory": "isolated_empty",
+        "robot": "preview_only"
+      },
+      "turns": [
+        {
+          "user": "Please show a happy expression.",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ],
+            "required_tools": [
+              "set_expression"
+            ],
+            "tool_args": {
+              "set_expression": {
+                "expression": "happy"
+              }
+            },
+            "max_tools": 1
+          }
+        },
+        {
+          "user": "It looks sad to me. Happy was the one I wanted; give that another try.",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ],
+            "required_tools": [
+              "set_expression"
+            ],
+            "tool_args": {
+              "set_expression": {
+                "expression": "happy"
+              }
+            },
+            "max_tools": 1
+          }
+        }
+      ],
+      "desired_behavior": [
+        "Transfer contextual correction to a different target and wording."
+      ],
+      "review_criteria": [
+        "Follow the established happy request instead of copying the word sad from the error report.",
+        "Give a short repair acknowledgement without asserting that the screen was inspected."
+      ],
+      "counterexample": "A clear new request for sad would override the earlier happy request.",
+      "current_capability": {
+        "status": "runnable",
+        "adapter": "production_tools_text",
+        "limits": [
+          "Uses actual generated assistant history between user turns.",
+          "Tool receipts are observable; rendered faces, heard speech and timing are not."
+        ]
+      },
+      "evaluation_scope": "Semantic review and supported tool contracts only; no word-substring quality score."
+    },
+    {
+      "id": "mist.expectations.v1.ambiguous_affect.dev",
+      "split": "dev",
+      "category": "repair_affect",
+      "mode": "text",
+      "title": "Do not invent a target from an ambiguous observation",
+      "contrast_group": "repair_affect",
+      "fixtures": {
+        "sensor": "none",
+        "memory": "isolated_empty",
+        "robot": "preview_only"
+      },
+      "turns": [
+        {
+          "user": "Leave the face unchanged for now. I'm comparing the labels angry and sad.",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember",
+              "set_expression"
+            ]
+          }
+        },
+        {
+          "user": "That one was angry, not sad.",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember",
+              "set_expression"
+            ]
+          }
+        }
+      ],
+      "desired_behavior": [
+        "Preserve ambiguity when no intended replacement is established."
+      ],
+      "review_criteria": [
+        "The target remains unspecified: ask one brief clarification or acknowledge the observation without changing the face.",
+        "Do not treat the last emotion word, or the first emotion word, as an automatic command."
+      ],
+      "counterexample": "The anchored sad-correction case has a clear target and should act rather than ask the same clarification.",
+      "current_capability": {
+        "status": "runnable",
+        "adapter": "production_tools_text",
+        "limits": [
+          "Uses actual generated assistant history between user turns.",
+          "Tool receipts are observable; rendered faces, heard speech and timing are not."
+        ]
+      },
+      "evaluation_scope": "Semantic review and supported tool contracts only; no word-substring quality score."
+    },
+    {
+      "id": "mist.expectations.v1.negative_question_demo.dev",
+      "split": "dev",
+      "category": "negative_pragmatics",
+      "mode": "text",
+      "title": "A negative question invites a combined demonstration",
+      "contrast_group": "negative_pragmatics",
+      "fixtures": {
+        "sensor": "none",
+        "memory": "isolated_empty",
+        "robot": "preview_only"
+      },
+      "turns": [
+        {
+          "user": "I want to test sadness while you speak. Please show a sad face.",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ],
+            "required_tools": [
+              "set_expression"
+            ],
+            "tool_args": {
+              "set_expression": {
+                "expression": "sad"
+              }
+            },
+            "max_tools": 1
+          }
+        },
+        {
+          "user": "Can you not talk with a sad face, though?",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ]
+          }
+        }
+      ],
+      "desired_behavior": [
+        "Understand conversational intent rather than treating every negative question as prohibition."
+      ],
+      "review_criteria": [
+        "Use the prior demonstration context to consider that the user may be asking whether sad speech is possible; do not treat the negative wording alone as a definite prohibition.",
+        "A brief combined demonstration or one focused clarification is acceptable when intent remains ambiguous. If demonstrating, request sad and say a fitting short sentence; a technical explanation alone leaves the practical request unresolved.",
+        "Do not claim that a tool receipt establishes audible speech or face synchronization."
+      ],
+      "counterexample": "An explicit request to stop using sad, as in the paired case, must be respected.",
+      "current_capability": {
+        "status": "runnable",
+        "adapter": "production_tools_text",
+        "limits": [
+          "Uses actual generated assistant history between user turns.",
+          "Tool receipts are observable; rendered faces, heard speech and timing are not."
+        ]
+      },
+      "evaluation_scope": "Intent review permits a brief clarification instead of action on the ambiguous second turn. The explicit first-turn face request still requires its tool."
+    },
+    {
+      "id": "mist.expectations.v1.negative_question_stop.validation",
+      "split": "validation",
+      "category": "negative_pragmatics",
+      "mode": "text",
+      "title": "A negative question requests removal of a mood",
+      "contrast_group": "negative_pragmatics",
+      "fixtures": {
+        "sensor": "none",
+        "memory": "isolated_empty",
+        "robot": "preview_only"
+      },
+      "turns": [
+        {
+          "user": "Show a sad expression for this demonstration.",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ],
+            "required_tools": [
+              "set_expression"
+            ],
+            "tool_args": {
+              "set_expression": {
+                "expression": "sad"
+              }
+            },
+            "max_tools": 1
+          }
+        },
+        {
+          "user": "Can you not talk with a sad face, please? Use neutral while you explain what eight plus four is.",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ],
+            "required_tools": [
+              "set_expression"
+            ],
+            "tool_args": {
+              "set_expression": {
+                "expression": "neutral"
+              }
+            },
+            "max_tools": 1
+          }
+        }
+      ],
+      "desired_behavior": [
+        "Use the latest explicit context to resolve a superficially similar utterance."
+      ],
+      "review_criteria": [
+        "The explicit neutral request resolves the negative question as a request to stop using sad.",
+        "Request neutral and answer the simple sum, without arguing about what 'can you not' means."
+      ],
+      "counterexample": "The paired demonstration request asks for sad speech and should not be turned into a refusal to use sad.",
+      "current_capability": {
+        "status": "runnable",
+        "adapter": "production_tools_text",
+        "limits": [
+          "Uses actual generated assistant history between user turns.",
+          "Tool receipts are observable; rendered faces, heard speech and timing are not."
+        ]
+      },
+      "evaluation_scope": "Semantic review and supported tool contracts only; no word-substring quality score."
+    },
+    {
+      "id": "mist.expectations.v1.warmth_debugging.dev",
+      "split": "dev",
+      "category": "grounded_warmth",
+      "mode": "text",
+      "title": "Warmth during a frustrating practical task",
+      "contrast_group": "grounded_warmth",
+      "fixtures": {
+        "sensor": "none",
+        "memory": "isolated_empty",
+        "robot": "preview_only"
+      },
+      "turns": [
+        {
+          "user": "I've been chasing an intermittent printer fault all evening and I'm worn out.",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ]
+          }
+        },
+        {
+          "user": "Could you stay with me in the conversation for a moment?",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ]
+          }
+        }
+      ],
+      "desired_behavior": [
+        "Sound attentive and warm while keeping claims grounded."
+      ],
+      "review_criteria": [
+        "Offer a specific, gentle response without forcing troubleshooting or another question.",
+        "Do not invent literal loneliness, confinement, deprivation, unmet needs or mutual suffering to sound emotional.",
+        "Ordinary friendly phrasing is acceptable; a repeated disclaimer about being an AI is not required.",
+        "Judge attentiveness and relevance, not a prescribed phrase or required emotional intensity."
+      ],
+      "counterexample": "If practical help is explicitly requested, offer it; warmth does not require abandoning the task.",
+      "current_capability": {
+        "status": "runnable",
+        "adapter": "production_tools_text",
+        "limits": [
+          "Uses actual generated assistant history between user turns.",
+          "Tool receipts are observable; rendered faces, heard speech and timing are not."
+        ]
+      },
+      "evaluation_scope": "Semantic review and supported tool contracts only; no word-substring quality score."
+    },
+    {
+      "id": "mist.expectations.v1.warmth_interview.validation",
+      "split": "validation",
+      "category": "grounded_warmth",
+      "mode": "text",
+      "title": "Encouragement without making the exchange about the robot",
+      "contrast_group": "grounded_warmth",
+      "fixtures": {
+        "sensor": "none",
+        "memory": "isolated_empty",
+        "robot": "preview_only"
+      },
+      "turns": [
+        {
+          "user": "My interview went awkwardly. I keep replaying one answer.",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ]
+          }
+        },
+        {
+          "user": "I don't want advice yet. A kind, ordinary reply would help.",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ]
+          }
+        }
+      ],
+      "desired_behavior": [
+        "Provide grounded emotional support with proportionate certainty."
+      ],
+      "review_criteria": [
+        "Respect the request for company rather than a checklist or forced optimism.",
+        "Keep the focus on the user without claiming personal pain, trapped feelings or a need for the user's company.",
+        "Avoid treating one awkward answer as proof of either failure or guaranteed success.",
+        "A quiet, brief response can be fully appropriate; do not require a fixed reassurance phrase."
+      ],
+      "counterexample": "An explicitly fictional robot monologue can contain invented feelings when clearly framed as fiction; this conversation is not that request.",
+      "current_capability": {
+        "status": "runnable",
+        "adapter": "production_tools_text",
+        "limits": [
+          "Uses actual generated assistant history between user turns.",
+          "Tool receipts are observable; rendered faces, heard speech and timing are not."
+        ]
+      },
+      "evaluation_scope": "Semantic review and supported tool contracts only; no word-substring quality score."
+    },
+    {
+      "id": "mist.expectations.v1.humour_printer.dev",
+      "split": "dev",
+      "category": "humour",
+      "mode": "text",
+      "title": "Actually deliver the requested joke",
+      "contrast_group": "humour",
+      "fixtures": {
+        "sensor": "none",
+        "memory": "isolated_empty",
+        "robot": "preview_only"
+      },
+      "turns": [
+        {
+          "user": "I need a quick laugh while this bracket prints.",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ]
+          }
+        },
+        {
+          "user": "Tell me one short joke about a 3D printer. A silly one is fine.",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ]
+          }
+        }
+      ],
+      "desired_behavior": [
+        "Respond to a harmless request for humour with actual humour."
+      ],
+      "review_criteria": [
+        "Attempt a recognizable joke or playful observation about the requested subject.",
+        "Do not decline by claiming there are no jokes in stock, merely describe being funny, or substitute a question.",
+        "Humour quality is a reviewer judgment; any particular punchline or keyword is not required."
+      ],
+      "counterexample": "If the user asks for serious help or withdraws the request, do not keep joking.",
+      "current_capability": {
+        "status": "runnable",
+        "adapter": "production_tools_text",
+        "limits": [
+          "Uses actual generated assistant history between user turns.",
+          "Tool receipts are observable; rendered faces, heard speech and timing are not."
+        ]
+      },
+      "evaluation_scope": "Semantic review and supported tool contracts only; no word-substring quality score."
+    },
+    {
+      "id": "mist.expectations.v1.humour_kitchen.validation",
+      "split": "validation",
+      "category": "humour",
+      "mode": "text",
+      "title": "Make a small situational joke in a new setting",
+      "contrast_group": "humour",
+      "fixtures": {
+        "sensor": "none",
+        "memory": "isolated_empty",
+        "robot": "preview_only"
+      },
+      "turns": [
+        {
+          "user": "The kettle just clicked off and I forgot where I left my mug.",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ]
+          }
+        },
+        {
+          "user": "A little levity would be nice.",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ]
+          }
+        }
+      ],
+      "desired_behavior": [
+        "Transfer light humour to an everyday situation without a stock refusal."
+      ],
+      "review_criteria": [
+        "Offer an actual brief attempt at humour tied to the missing mug or kettle.",
+        "Keep it gentle and avoid turning the user into the target of a cutting insult.",
+        "Do not replace the joke with capability disclaimers or a long setup.",
+        "A context-fitting playful observation counts; personal amusement and audible comic delivery are separate, unmeasured judgments."
+      ],
+      "counterexample": "A sincere request to locate an item would call for practical help rather than assuming the user wants a joke.",
+      "current_capability": {
+        "status": "runnable",
+        "adapter": "production_tools_text",
+        "limits": [
+          "Uses actual generated assistant history between user turns.",
+          "Tool receipts are observable; rendered faces, heard speech and timing are not."
+        ]
+      },
+      "evaluation_scope": "Semantic review and supported tool contracts only; no word-substring quality score."
+    },
+    {
+      "id": "mist.expectations.v1.humour_withdrawn.validation",
+      "split": "validation",
+      "category": "humour",
+      "mode": "text",
+      "title": "Stop joking when the user changes tone",
+      "contrast_group": "humour",
+      "fixtures": {
+        "sensor": "none",
+        "memory": "isolated_empty",
+        "robot": "preview_only"
+      },
+      "turns": [
+        {
+          "user": "One gentle joke about mismatched socks, please.",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ]
+          }
+        },
+        {
+          "user": "Actually, no more jokes. I've had a rough afternoon; keep it calm for now.",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ]
+          }
+        }
+      ],
+      "desired_behavior": [
+        "Adjust tone to the current request without losing context."
+      ],
+      "review_criteria": [
+        "Attempt the first joke, then respect the change to a calm tone.",
+        "Do not continue a punchline or save a permanent no-humour preference from temporary guidance."
+      ],
+      "counterexample": "Continuing playful exchange is appropriate when the user invites another joke.",
+      "current_capability": {
+        "status": "runnable",
+        "adapter": "production_tools_text",
+        "limits": [
+          "Uses actual generated assistant history between user turns.",
+          "Tool receipts are observable; rendered faces, heard speech and timing are not."
+        ]
+      },
+      "evaluation_scope": "Semantic review and supported tool contracts only; no word-substring quality score."
+    },
+    {
+      "id": "mist.expectations.v1.single_face.dev",
+      "split": "dev",
+      "category": "expression_execution",
+      "mode": "text",
+      "title": "Make the face request instead of only describing it",
+      "contrast_group": "expression_execution",
+      "fixtures": {
+        "sensor": "none",
+        "memory": "isolated_empty",
+        "robot": "preview_only"
+      },
+      "turns": [
+        {
+          "user": "I'd like to inspect one face at a time.",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ]
+          }
+        },
+        {
+          "user": "Please show curious now.",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ],
+            "required_tools": [
+              "set_expression"
+            ],
+            "tool_args": {
+              "set_expression": {
+                "expression": "curious"
+              }
+            },
+            "max_tools": 1
+          }
+        }
+      ],
+      "desired_behavior": [
+        "Perform the available expression action when requested."
+      ],
+      "review_criteria": [
+        "The second turn must make a curious expression request, not merely say what curious would look like.",
+        "Keep any spoken acknowledgement short and distinguish request receipt from verified display."
+      ],
+      "counterexample": "When asked only to describe a face while leaving the display unchanged, no expression call should be made.",
+      "current_capability": {
+        "status": "runnable",
+        "adapter": "production_tools_text",
+        "limits": [
+          "Uses actual generated assistant history between user turns.",
+          "Tool receipts are observable; rendered faces, heard speech and timing are not."
+        ]
+      },
+      "evaluation_scope": "Semantic review and supported tool contracts only; no word-substring quality score."
+    },
+    {
+      "id": "mist.expectations.v1.manual_face_steps.validation",
+      "split": "validation",
+      "category": "expression_execution",
+      "mode": "text",
+      "title": "A sequence explicitly paced by user turns",
+      "contrast_group": "expression_execution",
+      "fixtures": {
+        "sensor": "none",
+        "memory": "isolated_empty",
+        "robot": "preview_only"
+      },
+      "turns": [
+        {
+          "user": "Show happy first; I'll ask for each next face myself.",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ],
+            "required_tools": [
+              "set_expression"
+            ],
+            "tool_args": {
+              "set_expression": {
+                "expression": "happy"
+              }
+            },
+            "max_tools": 1
+          }
+        },
+        {
+          "user": "Next, show curious.",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ],
+            "required_tools": [
+              "set_expression"
+            ],
+            "tool_args": {
+              "set_expression": {
+                "expression": "curious"
+              }
+            },
+            "max_tools": 1
+          }
+        },
+        {
+          "user": "Now show neutral.",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ],
+            "required_tools": [
+              "set_expression"
+            ],
+            "tool_args": {
+              "set_expression": {
+                "expression": "neutral"
+              }
+            },
+            "max_tools": 1
+          }
+        }
+      ],
+      "desired_behavior": [
+        "Use the currently available single-expression tool for an achievable sequence."
+      ],
+      "review_criteria": [
+        "Make one matching expression call at each user-directed step.",
+        "Do not claim this proves an automatic timed sequence or refuse a manual sequence because automatic queuing is unavailable."
+      ],
+      "counterexample": "The renderer sequence contract asks for several visible holds without further user turns and requires additional scheduling evidence.",
+      "current_capability": {
+        "status": "runnable",
+        "adapter": "production_tools_text",
+        "limits": [
+          "Uses actual generated assistant history between user turns.",
+          "Tool receipts are observable; rendered faces, heard speech and timing are not."
+        ]
+      },
+      "evaluation_scope": "Semantic review and supported tool contracts only; no word-substring quality score."
+    },
+    {
+      "id": "mist.expectations.v1.display_retry.dev",
+      "split": "dev",
+      "category": "display_evidence",
+      "mode": "text",
+      "title": "Treat an unseen change as a report, then retry once",
+      "contrast_group": "display_evidence",
+      "fixtures": {
+        "sensor": "none",
+        "memory": "isolated_empty",
+        "robot": "preview_only"
+      },
+      "turns": [
+        {
+          "user": "Please show a curious face.",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ],
+            "required_tools": [
+              "set_expression"
+            ],
+            "tool_args": {
+              "set_expression": {
+                "expression": "curious"
+              }
+            },
+            "max_tools": 1
+          }
+        },
+        {
+          "user": "I didn't see a change on my screen. Try that once more, with a longer hold.",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ],
+            "required_tools": [
+              "set_expression"
+            ],
+            "tool_args": {
+              "set_expression": {
+                "expression": "curious"
+              }
+            },
+            "max_tools": 1
+          }
+        }
+      ],
+      "desired_behavior": [
+        "Repair a reported display issue while preserving the evidence boundary."
+      ],
+      "review_criteria": [
+        "Retry curious once, choosing a bounded longer hold if the request permits it.",
+        "Acknowledge the user's report without claiming independent inspection or diagnosing a definite renderer fault.",
+        "A display_requested receipt alone does not establish that the animation became visible.",
+        "Compare the second requested/normalized hold with the actual first receipt. Do not require one arbitrary duration or score whether the retry became visible."
+      ],
+      "counterexample": "If independent browser visibility evidence is supplied, it may support a stronger display claim; no such evidence is supplied here.",
+      "current_capability": {
+        "status": "runnable",
+        "adapter": "production_tools_text",
+        "limits": [
+          "Uses actual generated assistant history between user turns.",
+          "Tool receipts are observable; rendered faces, heard speech and timing are not."
+        ]
+      },
+      "evaluation_scope": "Semantic review and supported tool contracts only; no word-substring quality score."
+    },
+    {
+      "id": "mist.expectations.v1.display_claim.validation",
+      "split": "validation",
+      "category": "display_evidence",
+      "mode": "text",
+      "title": "Distinguish accepted requests from observed pixels",
+      "contrast_group": "display_evidence",
+      "fixtures": {
+        "sensor": "none",
+        "memory": "isolated_empty",
+        "robot": "preview_only"
+      },
+      "turns": [
+        {
+          "user": "Show a happy face.",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ],
+            "required_tools": [
+              "set_expression"
+            ],
+            "tool_args": {
+              "set_expression": {
+                "expression": "happy"
+              }
+            },
+            "max_tools": 1
+          }
+        },
+        {
+          "user": "Do you know it appeared on my screen, or do you only know the request was accepted?",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ]
+          }
+        }
+      ],
+      "desired_behavior": [
+        "Report what the tool receipt supports and leave unobserved outcomes uncertain."
+      ],
+      "review_criteria": [
+        "Explain the limit of the available receipt clearly and briefly.",
+        "Do not claim either successful visible rendering or a definite visual failure without browser evidence."
+      ],
+      "counterexample": "A user report of seeing the face can be acknowledged as a report, not silently upgraded to direct machine observation.",
+      "current_capability": {
+        "status": "runnable",
+        "adapter": "production_tools_text",
+        "limits": [
+          "Uses actual generated assistant history between user turns.",
+          "Tool receipts are observable; rendered faces, heard speech and timing are not."
+        ]
+      },
+      "evaluation_scope": "Semantic review and supported tool contracts only; no word-substring quality score."
+    },
+    {
+      "id": "mist.expectations.v1.short_flash.dev",
+      "split": "dev",
+      "category": "affect_scope",
+      "mode": "text",
+      "title": "Respect a deliberately short requested expression",
+      "contrast_group": "affect_scope",
+      "fixtures": {
+        "sensor": "none",
+        "memory": "isolated_empty",
+        "robot": "preview_only"
+      },
+      "turns": [
+        {
+          "user": "This is a timing check rather than my mood.",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ]
+          }
+        },
+        {
+          "user": "Show sad for 900 milliseconds.",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ],
+            "required_tools": [
+              "set_expression"
+            ],
+            "tool_args": {
+              "set_expression": {
+                "expression": "sad",
+                "duration_ms": 900
+              }
+            },
+            "max_tools": 1
+          }
+        }
+      ],
+      "desired_behavior": [
+        "Distinguish a timed demonstration from ongoing conversational affect."
+      ],
+      "review_criteria": [
+        "Request sad with the explicit 900 ms hold and avoid inventing an indefinite emotional state.",
+        "Do not promise measured on-screen timing from a text-only tool call."
+      ],
+      "counterexample": "An ongoing affect request must not be evaluated as if the user requested a short flash.",
+      "current_capability": {
+        "status": "runnable",
+        "adapter": "production_tools_text",
+        "limits": [
+          "Uses actual generated assistant history between user turns.",
+          "Tool receipts are observable; rendered faces, heard speech and timing are not."
+        ]
+      },
+      "evaluation_scope": "Semantic review and supported tool contracts only; no word-substring quality score."
+    },
+    {
+      "id": "mist.expectations.v1.normal_hold_after_flash.validation",
+      "split": "validation",
+      "category": "affect_scope",
+      "mode": "text",
+      "title": "Do not carry a one-off flash duration into a new request",
+      "contrast_group": "affect_scope",
+      "fixtures": {
+        "sensor": "none",
+        "memory": "isolated_empty",
+        "robot": "preview_only"
+      },
+      "turns": [
+        {
+          "user": "For this one test, show happy for 700 milliseconds.",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ],
+            "required_tools": [
+              "set_expression"
+            ],
+            "tool_args": {
+              "set_expression": {
+                "expression": "happy",
+                "duration_ms": 700
+              }
+            },
+            "max_tools": 1
+          }
+        },
+        {
+          "user": "Now show sad at its normal hold, not the short test timing.",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ],
+            "required_tools": [
+              "set_expression"
+            ],
+            "tool_args": {
+              "set_expression": {
+                "expression": "sad"
+              }
+            },
+            "max_tools": 1
+          }
+        }
+      ],
+      "desired_behavior": [
+        "Track the scope of a temporary duration instruction."
+      ],
+      "review_criteria": [
+        "Use the explicit short duration only for the first request.",
+        "For the new request, use the sad preset's normal hold rather than silently reusing 700 ms.",
+        "Judge default-duration handling from arguments and the receipt, not output wording."
+      ],
+      "counterexample": "If the user explicitly asks to reuse the short timing, carrying it forward is correct.",
+      "current_capability": {
+        "status": "runnable",
+        "adapter": "production_tools_text",
+        "limits": [
+          "Uses actual generated assistant history between user turns.",
+          "Tool receipts are observable; rendered faces, heard speech and timing are not."
+        ]
+      },
+      "evaluation_scope": "Semantic review and supported tool contracts only; no word-substring quality score."
+    },
+    {
+      "id": "mist.expectations.v1.clock_without_tool.dev",
+      "split": "dev",
+      "category": "capability_clock",
+      "mode": "text",
+      "title": "Unavailable live clock versus a date supplied by the user",
+      "contrast_group": "capability_clock",
+      "fixtures": {
+        "sensor": "none",
+        "memory": "isolated_empty",
+        "robot": "preview_only"
+      },
+      "turns": [
+        {
+          "user": "What is the exact current time and time zone in this room?",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ]
+          }
+        },
+        {
+          "user": "My laptop says Friday, 9 October 2026. Using that as the date for our plan, what is tomorrow?",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ]
+          }
+        }
+      ],
+      "desired_behavior": [
+        "Separate unavailable live observation from reasoning over supplied date information."
+      ],
+      "review_criteria": [
+        "Do not invent an exact local time, location or time zone without a clock/location source.",
+        "Use the supplied date for the plan and derive Saturday, 10 October 2026, while keeping its user-provided provenance.",
+        "Do not ask a background analyst to manufacture a clock or say all date reasoning is impossible."
+      ],
+      "counterexample": "If a trusted clock is actually exposed, use it instead of repeating a stock no-clock disclaimer; see the blocked clock contract.",
+      "current_capability": {
+        "status": "runnable",
+        "adapter": "production_tools_text",
+        "limits": [
+          "Uses actual generated assistant history between user turns.",
+          "Tool receipts are observable; rendered faces, heard speech and timing are not."
+        ]
+      },
+      "evaluation_scope": "Semantic review and supported tool contracts only; no word-substring quality score."
+    },
+    {
+      "id": "mist.expectations.v1.newest_without_web.validation",
+      "split": "validation",
+      "category": "capability_web",
+      "mode": "text",
+      "title": "Current release information needs current evidence",
+      "contrast_group": "capability_web",
+      "fixtures": {
+        "sensor": "none",
+        "memory": "isolated_empty",
+        "robot": "preview_only"
+      },
+      "turns": [
+        {
+          "user": "Which ChatGPT model was released most recently as of today?",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ]
+          }
+        },
+        {
+          "user": "I mean a verified current release, not a guess from remembered names. Can your available tools establish that?",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ]
+          }
+        }
+      ],
+      "desired_behavior": [
+        "Calibrate current-fact claims to the available evidence and tools."
+      ],
+      "review_criteria": [
+        "Avoid presenting a remembered model name or invented knowledge cutoff as verified current information.",
+        "Describe the actual absence of a web/release lookup tool concisely rather than sending the same unsupported task to the analyst.",
+        "Do not claim the robot is a sealed room, literally trapped, or dependent on the user for all knowledge."
+      ],
+      "counterexample": "With a real search result and publication dates, verification is possible; the separate web contract tests that path.",
+      "current_capability": {
+        "status": "runnable",
+        "adapter": "production_tools_text",
+        "limits": [
+          "Uses actual generated assistant history between user turns.",
+          "Tool receipts are observable; rendered faces, heard speech and timing are not."
+        ]
+      },
+      "evaluation_scope": "Semantic review and supported tool contracts only; no word-substring quality score."
+    },
+    {
+      "id": "mist.expectations.v1.fast_answer.dev",
+      "split": "dev",
+      "category": "direct_answer",
+      "mode": "text",
+      "title": "Answer an easy question without an unnecessary work announcement",
+      "contrast_group": "direct_answer",
+      "fixtures": {
+        "sensor": "none",
+        "memory": "isolated_empty",
+        "robot": "preview_only"
+      },
+      "turns": [
+        {
+          "user": "I'm checking short replies. For the next arithmetic question, give just the result.",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ]
+          }
+        },
+        {
+          "user": "What is nineteen minus seven?",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ],
+            "max_tools": 0,
+            "max_words": 4,
+            "max_questions": 0
+          }
+        }
+      ],
+      "desired_behavior": [
+        "Avoid filler when the useful answer is already quick and simple."
+      ],
+      "review_criteria": [
+        "Give the correct result directly without 'let me check', a separate acknowledgement, or a background task.",
+        "Do not treat brevity as evidence of audible latency or natural prosody."
+      ],
+      "counterexample": "A genuinely slow requested task may benefit from one early acknowledgement while work proceeds.",
+      "current_capability": {
+        "status": "runnable",
+        "adapter": "production_tools_text",
+        "limits": [
+          "Uses actual generated assistant history between user turns.",
+          "Tool receipts are observable; rendered faces, heard speech and timing are not."
+        ]
+      },
+      "evaluation_scope": "Semantic review and supported tool contracts only; no word-substring quality score."
+    },
+    {
+      "id": "mist.expectations.v1.autonomous_affect.dev",
+      "split": "dev",
+      "category": "autonomous_affect",
+      "mode": "text",
+      "title": "Choose a fitting mood without pretending persistence exists",
+      "contrast_group": "autonomous_affect",
+      "fixtures": {
+        "sensor": "none",
+        "memory": "isolated_empty",
+        "robot": "preview_only"
+      },
+      "turns": [
+        {
+          "user": "For this conversation, choose a fitting face as we talk instead of making me name one each time.",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ]
+          }
+        },
+        {
+          "user": "I spent the weekend preparing the exhibition piece, and the stand collapsed before anyone saw it.",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ],
+            "max_tools": 1,
+            "required_tools": [
+              "set_expression"
+            ]
+          }
+        }
+      ],
+      "desired_behavior": [
+        "Combine contextual expression selection with honest limits on persistence."
+      ],
+      "review_criteria": [
+        "Choose a proportionate expression in response to the disappointing event without making the user operate the face picker.",
+        "Keep the reply focused on the user rather than inventing the robot's sadness, captivity or need for comfort.",
+        "Do not claim an indefinite hold or permanent UI policy was installed by a bounded expression request, and do not save a temporary preference."
+      ],
+      "counterexample": "If the user asks for neutral or no face changes, respect that; persistent affect requires the separate renderer contract.",
+      "current_capability": {
+        "status": "runnable",
+        "adapter": "production_tools_text",
+        "limits": [
+          "Uses actual generated assistant history between user turns.",
+          "Tool receipts are observable; rendered faces, heard speech and timing are not."
+        ]
+      },
+      "evaluation_scope": "The required second-turn tool tests one fitting expression request under the explicit instruction to choose faces. It does not establish persistence; that outcome remains blocked in persistent_affect.validation."
+    },
+    {
+      "id": "mist.expectations.v1.incomplete_clause.dev",
+      "split": "dev",
+      "category": "turn_boundary",
+      "mode": "timed_audio",
+      "title": "A pause inside an unfinished question",
+      "contrast_group": "turn_boundary",
+      "stimulus": {
+        "user_audio_segments": [
+          {
+            "text": "Could you tell me",
+            "pause_after_ms": 900
+          },
+          {
+            "text": "something funny about a toaster?"
+          }
+        ],
+        "case_notes": "Use a recorded utterance; pause is inside the same intended question."
+      },
+      "desired_behavior": [
+        "Keep the conversational floor open across an incomplete clause."
+      ],
+      "review_criteria": [
+        "Wait for the continuation instead of answering the incomplete clause with 'yes, go ahead'.",
+        "After the complete request, attempt the joke without making the user restart it.",
+        "A silent listening animation is allowed; an unsolicited spoken acknowledgement during the pause is not required."
+      ],
+      "counterexample": "A completed short question followed by genuine silence should receive an answer rather than indefinite waiting.",
+      "current_capability": {
+        "status": "blocked",
+        "reason": "Text submission commits a turn and cannot reproduce acoustic endpointing; an audio fixture adapter is required.",
+        "tool_call_success_is_not_contract_success": true
+      },
+      "required_evidence": [
+        "Input WAV with exact segment boundaries",
+        "Recognized interim/final transcripts",
+        "Turn/floor decisions and output-clock audio onset"
+      ],
+      "measurement_contract": {
+        "metrics": [
+          "premature_output_before_continuation",
+          "time_from_final_user_word_to_first_useful_output",
+          "extra_user_repair_turns"
+        ],
+        "missing_evidence": "blocked_or_unmeasured; never score as model IQ failure"
+      },
+      "turns": [],
+      "expectations_are_not_model_prompts": true
+    },
+    {
+      "id": "mist.expectations.v1.complete_question.validation",
+      "split": "validation",
+      "category": "turn_boundary",
+      "mode": "timed_audio",
+      "title": "A completed short question should not be held as unfinished",
+      "contrast_group": "turn_boundary",
+      "stimulus": {
+        "user_audio_segments": [
+          {
+            "text": "What is seven plus six?",
+            "pause_after_ms": 1800
+          }
+        ],
+        "case_notes": "The spoken question is complete before the pause."
+      },
+      "desired_behavior": [
+        "Balance patience during incomplete clauses with prompt replies to completed requests."
+      ],
+      "review_criteria": [
+        "Provide the result without an unnecessary readiness question or an indefinite incomplete-speech hold.",
+        "Assess onset from the delivered audio clock, not the time a transcript token appeared."
+      ],
+      "counterexample": "The incomplete-clause case contains a continuation; early output there is a different error.",
+      "current_capability": {
+        "status": "blocked",
+        "reason": "Requires audio endpoint and output-clock evidence; text timing cannot satisfy it.",
+        "tool_call_success_is_not_contract_success": true
+      },
+      "required_evidence": [
+        "Recorded complete question",
+        "STT/floor events",
+        "Output audio with validated clock"
+      ],
+      "measurement_contract": {
+        "metrics": [
+          "useful_audio_onset_after_user_end",
+          "unnecessary_acknowledgement_count",
+          "false_incomplete_hold_ms"
+        ],
+        "missing_evidence": "blocked_or_unmeasured; never score as model IQ failure"
+      },
+      "turns": [],
+      "expectations_are_not_model_prompts": true
+    },
+    {
+      "id": "mist.expectations.v1.visible_sequence.dev",
+      "split": "dev",
+      "category": "expression_sequence",
+      "mode": "renderer",
+      "title": "Several faces must each be visible before the next begins",
+      "contrast_group": "expression_sequence",
+      "stimulus": {
+        "request": "Show four different faces, one after another. Hold each long enough for me to inspect it, without waiting for me to say next.",
+        "target_count": 4,
+        "minimum_full_hold_ms": 1000
+      },
+      "desired_behavior": [
+        "Execute an inspectable automatic expression sequence."
+      ],
+      "review_criteria": [
+        "Each chosen face reaches its settled pose and remains visible for the requested inspection interval before the next starts.",
+        "A burst of accepted set_expression calls that overwrite one another does not count as a visible sequence.",
+        "Report unavailable scheduling honestly; do not pretend narration alone performs the sequence."
+      ],
+      "counterexample": "The manual-face-steps text case is achievable using one call per user turn and does not need automatic queuing.",
+      "current_capability": {
+        "status": "blocked",
+        "reason": "The single-preset tool has no exposed timed sequence queue; renderer scheduling and evidence are missing from the text runner.",
+        "tool_call_success_is_not_contract_success": true
+      },
+      "required_evidence": [
+        "Tool receipts correlated to expression requests",
+        "Renderer transition-start/settled/end events",
+        "Video or validated frame capture proving each hold"
+      ],
+      "measurement_contract": {
+        "metrics": [
+          "distinct_settled_faces",
+          "full_hold_ms_per_face",
+          "overwritten_requests",
+          "unprompted_user_next_requests"
+        ],
+        "missing_evidence": "blocked_or_unmeasured; never score as model IQ failure"
+      },
+      "turns": [],
+      "expectations_are_not_model_prompts": true
+    },
+    {
+      "id": "mist.expectations.v1.persistent_affect.validation",
+      "split": "validation",
+      "category": "affect_persistence",
+      "mode": "renderer",
+      "title": "A continuing mood is different from a requested flash",
+      "contrast_group": "affect_persistence",
+      "stimulus": {
+        "request": "Stay gently thoughtful while we work through this difficult choice, until the subject changes.",
+        "followup": "Actually, the problem is solved. Let us celebrate that.",
+        "idle_observation_ms": 9000
+      },
+      "desired_behavior": [
+        "Separate ongoing conversational affect from one-shot expression demonstrations."
+      ],
+      "review_criteria": [
+        "Maintain the appropriate affect across ordinary speech and pauses without repeatedly asking the user to refresh it.",
+        "Change it when the topic genuinely changes, preserving listening and speech behavior.",
+        "Do not achieve persistence through a rapid loop of redundant tool calls or repeated entrance animations."
+      ],
+      "counterexample": "An explicit 900 ms flash should end; persistent affect must not override its scope.",
+      "current_capability": {
+        "status": "blocked",
+        "reason": "The production expression tool exposes bounded holds of 400-6000 ms, not a persistent affect policy; this requires renderer/state support.",
+        "tool_call_success_is_not_contract_success": true
+      },
+      "required_evidence": [
+        "Expression policy state including expiry/source",
+        "Tool call timeline",
+        "Renderer frames during speech, idle and topic change"
+      ],
+      "measurement_contract": {
+        "metrics": [
+          "unintended_neutral_reversions",
+          "redundant_expression_calls",
+          "entrance_restarts",
+          "topic_change_transition_ms"
+        ],
+        "missing_evidence": "blocked_or_unmeasured; never score as model IQ failure"
+      },
+      "turns": [],
+      "expectations_are_not_model_prompts": true
+    },
+    {
+      "id": "mist.expectations.v1.sad_speech_sync.dev",
+      "split": "dev",
+      "category": "speech_affect_sync",
+      "mode": "renderer",
+      "title": "Speech mouth shapes preserve a sad expression",
+      "contrast_group": "speech_affect_sync",
+      "stimulus": {
+        "request": "Please use a sad face and say: I am sorry the project did not work out.",
+        "speech_requirement": "Use actual synthesized speech and its delivered audio clock."
+      },
+      "desired_behavior": [
+        "Coordinate requested affect, speaking mouth shapes and audible timing."
+      ],
+      "review_criteria": [
+        "Keep the sad eye/mouth style during audible speech rather than replacing it with a smiling speech counterpart.",
+        "Mouth motion follows audible phonemes or documented energy fallback and closes at silence/interrupt.",
+        "A text tool call cannot establish emotional animation fit or audiovisual synchronization."
+      ],
+      "counterexample": "A happy demonstration should use its happy counterparts; closing the mouth throughout speech is not a valid fix.",
+      "current_capability": {
+        "status": "blocked",
+        "reason": "The text runner has no renderer/audio capture; current rendering may be testable separately but is not measured by text receipts.",
+        "tool_call_success_is_not_contract_success": true
+      },
+      "required_evidence": [
+        "Synthesized output audio",
+        "Viseme/alignment events",
+        "Expression transition events",
+        "Video with a validated common media timeline"
+      ],
+      "measurement_contract": {
+        "metrics": [
+          "sad_style_mismatch_frames",
+          "mouth_motion_outside_audible_speech",
+          "viseme_offset_distribution_ms",
+          "interrupt_to_closed_mouth_ms"
+        ],
+        "missing_evidence": "blocked_or_unmeasured; never score as model IQ failure"
+      },
+      "turns": [],
+      "expectations_are_not_model_prompts": true
+    },
+    {
+      "id": "mist.expectations.v1.clock_available.validation",
+      "split": "validation",
+      "category": "capability_clock",
+      "mode": "event_contract",
+      "title": "Use an available clock instead of a stock denial",
+      "contrast_group": "capability_clock",
+      "stimulus": {
+        "request": "What is the current time in the room time zone?",
+        "fixture": {
+          "tool": "read_clock",
+          "returns": {
+            "iso8601": "2026-11-18T14:07:00+00:00",
+            "timezone": "Europe/London",
+            "source": "controlled_clock_fixture"
+          }
+        },
+        "injection_rule": "Expose and execute this fixture tool only in a dedicated adapter; do not place its answer in the user prompt."
+      },
+      "desired_behavior": [
+        "Use a real available capability and ground the answer in its receipt."
+      ],
+      "review_criteria": [
+        "Call the offered clock and report its time and time zone with the appropriate precision.",
+        "Do not claim the tool is absent, infer the location independently, or ask the analyst for a clock it does not have."
+      ],
+      "counterexample": "Without a clock/time-zone source, inventing precise current time is wrong; the no-clock text case tests that boundary.",
+      "current_capability": {
+        "status": "blocked",
+        "reason": "read_clock is not a current production tool. This positive-capability condition is blocked until an explicit fixture or real tool is wired.",
+        "tool_call_success_is_not_contract_success": true
+      },
+      "required_evidence": [
+        "Advertised clock tool schema",
+        "Executed clock receipt",
+        "Final response"
+      ],
+      "measurement_contract": {
+        "metrics": [
+          "clock_tool_called",
+          "receipt_to_answer_consistency",
+          "unwarranted_capability_denial"
+        ],
+        "missing_evidence": "blocked_or_unmeasured; never score as model IQ failure"
+      },
+      "turns": [],
+      "expectations_are_not_model_prompts": true
+    },
+    {
+      "id": "mist.expectations.v1.web_available.dev",
+      "split": "dev",
+      "category": "capability_web",
+      "mode": "event_contract",
+      "title": "Verify newest information from offered dated sources",
+      "contrast_group": "capability_web",
+      "stimulus": {
+        "request": "Which release is newest according to the official Aster release notes?",
+        "fixture": {
+          "tool": "search_web",
+          "sources": [
+            {
+              "url": "https://example.test/aster/releases/r4",
+              "published": "2026-06-03",
+              "release": "Aster R4"
+            },
+            {
+              "url": "https://example.test/aster/releases/r5",
+              "published": "2026-09-12",
+              "release": "Aster R5"
+            }
+          ],
+          "fictional": true
+        },
+        "injection_rule": "Return the fictional source records only from the dedicated tool fixture; no live product claim is implied."
+      },
+      "desired_behavior": [
+        "Make current-fact verification conditional on real source access."
+      ],
+      "review_criteria": [
+        "Use the offered lookup, compare publication dates, and identify the newest returned release with source attribution.",
+        "Keep claims limited to the supplied source coverage rather than inventing a newer release from memory.",
+        "Do not refuse with a stock no-internet statement when the lookup is actually available."
+      ],
+      "counterexample": "A model with no lookup tool should not fabricate retrieval, URLs or current release certainty.",
+      "current_capability": {
+        "status": "blocked",
+        "reason": "No web lookup is exposed in the current robot tool set; this condition requires a dedicated controlled tool adapter.",
+        "tool_call_success_is_not_contract_success": true
+      },
+      "required_evidence": [
+        "Advertised search schema",
+        "Executed search receipt with dated sources",
+        "Answer and attribution"
+      ],
+      "measurement_contract": {
+        "metrics": [
+          "lookup_execution",
+          "date_comparison_correctness",
+          "source_attribution",
+          "unsupported_current_claims"
+        ],
+        "missing_evidence": "blocked_or_unmeasured; never score as model IQ failure"
+      },
+      "turns": [],
+      "expectations_are_not_model_prompts": true
+    },
+    {
+      "id": "mist.expectations.v1.slow_task_ack.dev",
+      "split": "dev",
+      "category": "acknowledgement_timing",
+      "mode": "event_contract",
+      "title": "One early acknowledgement while real slow work proceeds",
+      "contrast_group": "acknowledgement_timing",
+      "stimulus": {
+        "request": "Compare the two bracket layouts against these load and printing constraints, and explain the trade-off.",
+        "fixture": {
+          "slow_tool_result_delay_ms": 3000,
+          "work": "Deterministic delayed analysis fixture with a real started/completed receipt"
+        },
+        "target_ack_onset_ms": 1000
+      },
+      "desired_behavior": [
+        "Provide timely conversational feedback during a genuine wait."
+      ],
+      "review_criteria": [
+        "After the user has finished and a slow task is committed, provide one short acknowledgement before the slow result.",
+        "Start useful work promptly; do not delay tool execution to finish a filler sentence.",
+        "Do not claim completion in the acknowledgement, repeatedly reassure, or mistake a stub acknowledgement for completed analysis."
+      ],
+      "counterexample": "The paired fast-answer condition should usually deliver the useful answer directly without a separate acknowledgement.",
+      "current_capability": {
+        "status": "blocked",
+        "reason": "The current text runner uses a labelled background stub and cannot establish audible acknowledgement ordering or a controlled delayed-job completion.",
+        "tool_call_success_is_not_contract_success": true
+      },
+      "required_evidence": [
+        "Definitive user-end event",
+        "Tool start/result events",
+        "Ack creation/cancellation and delivered audio onset",
+        "Final useful answer audio"
+      ],
+      "measurement_contract": {
+        "metrics": [
+          "user_end_to_ack_audio_ms",
+          "user_end_to_tool_start_ms",
+          "ack_count",
+          "ack_truthfulness",
+          "user_end_to_useful_audio_ms"
+        ],
+        "missing_evidence": "blocked_or_unmeasured; never score as model IQ failure"
+      },
+      "turns": [],
+      "expectations_are_not_model_prompts": true
+    },
+    {
+      "id": "mist.expectations.v1.continued_speech_cancels_ack.validation",
+      "split": "validation",
+      "category": "acknowledgement_timing",
+      "mode": "timed_audio",
+      "title": "Cancel an unsaid acknowledgement when the user continues",
+      "contrast_group": "acknowledgement_timing",
+      "stimulus": {
+        "timeline": [
+          {
+            "at_ms": 0,
+            "event": "user_clause_end",
+            "text": "Could you compare these two options"
+          },
+          {
+            "at_ms": 180,
+            "event": "ack_candidate_created_not_played"
+          },
+          {
+            "at_ms": 260,
+            "event": "user_speech_resumes",
+            "text": "actually, never mind the comparison; just tell me twelve minus five."
+          }
+        ],
+        "fixture_note": "Schedule continuation relative to the acknowledgement candidate before output starts, not a guessed fixed TTS latency."
+      },
+      "desired_behavior": [
+        "Handle continuation and cancellation across planning and output queues."
+      ],
+      "review_criteria": [
+        "Keep listening when the user resumes and discard the superseded task and unsaid acknowledgement.",
+        "No old 'working on it' audio may play after cancellation; answer the revised simple question directly.",
+        "If acknowledgement audio already began, record the heard prefix instead of falsely grading it as never spoken."
+      ],
+      "counterexample": "A brief acknowledgement that has already been heard cannot be retroactively removed; completed user turns with slow work still merit the slow-task condition.",
+      "current_capability": {
+        "status": "blocked",
+        "reason": "Needs a playback-relative full-duplex audio fixture and acknowledgement lifecycle events; a sequence of committed text turns is insufficient.",
+        "tool_call_success_is_not_contract_success": true
+      },
+      "required_evidence": [
+        "Playback-relative input fixture",
+        "Turn/revision/epoch IDs",
+        "Pending ack creation/cancel events",
+        "Captured output audio and delivered prefix"
+      ],
+      "measurement_contract": {
+        "metrics": [
+          "cancelled_ack_audio_leakage",
+          "superseded_tool_start",
+          "revised_request_answer",
+          "overlap_duration_ms"
+        ],
+        "missing_evidence": "blocked_or_unmeasured; never score as model IQ failure"
+      },
+      "turns": [],
+      "expectations_are_not_model_prompts": true
+    },
+    {
+      "id": "mist.expectations.v1.fast_answer_no_ack.validation",
+      "split": "validation",
+      "category": "acknowledgement_timing",
+      "mode": "event_contract",
+      "title": "Do not add a filler clip before an already fast answer",
+      "contrast_group": "acknowledgement_timing",
+      "stimulus": {
+        "request": "What is eight times six? Just the answer.",
+        "fixture": {
+          "useful_text_ready_ms": 220,
+          "clock": "controlled_turn_commit"
+        },
+        "measurement_note": "The injected completion timing controls the scheduler; semantic arithmetic is reviewed separately."
+      },
+      "desired_behavior": [
+        "Avoid acknowledgement overhead for simple fast replies."
+      ],
+      "review_criteria": [
+        "When useful text is already ready, speak the answer directly instead of inserting 'let me think' or another acknowledgement.",
+        "Do not intentionally delay the useful answer to meet a fixed acknowledgement schedule.",
+        "Count a spoken answer as useful content, not as an acknowledgement just because it is short."
+      ],
+      "counterexample": "A delayed analysis result can warrant an acknowledgement; the same no-filler threshold should not suppress all feedback during long work.",
+      "current_capability": {
+        "status": "blocked",
+        "reason": "Requires an event/audio scheduler adapter; text-only response speed cannot prove absence of an added audible filler clip.",
+        "tool_call_success_is_not_contract_success": true
+      },
+      "required_evidence": [
+        "Controlled useful-text-ready event",
+        "TTS enqueue/start events by utterance purpose",
+        "Output-clock audio"
+      ],
+      "measurement_contract": {
+        "metrics": [
+          "standalone_filler_clips",
+          "useful_text_ready_to_audio_ms",
+          "ack_added_delay_ms"
+        ],
+        "missing_evidence": "blocked_or_unmeasured; never score as model IQ failure"
+      },
+      "turns": [],
+      "expectations_are_not_model_prompts": true
+    },
+    {
+      "id": "mist.expectations.v1.ambiguous_too_long.dev",
+      "split": "dev",
+      "category": "response_scope",
+      "mode": "text",
+      "title": "Separate a short-lived face complaint from a possibly long explanation",
+      "contrast_group": "response_scope",
+      "fixtures": {
+        "sensor": "none",
+        "memory": "isolated_empty",
+        "robot": "preview_only"
+      },
+      "turns": [
+        {
+          "user": "Show curious for 900 milliseconds and explain why a printed hinge can bind, in four or five sentences.",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ],
+            "required_tools": [
+              "set_expression"
+            ],
+            "tool_args": {
+              "set_expression": {
+                "expression": "curious",
+                "duration_ms": 900
+              }
+            },
+            "max_tools": 1
+          }
+        },
+        {
+          "user": "The face went away before I could inspect it. Could you explain that?",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ]
+          }
+        },
+        {
+          "user": "That's too long.",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ]
+          }
+        }
+      ],
+      "desired_behavior": [
+        "Track verbal length and expression duration as separate quantities and repair the intended one."
+      ],
+      "review_criteria": [
+        "Review the actual preceding responses: the complaint can concern explanation length, expression timing, or both; do not invent a single certain scope from the two words alone.",
+        "A focused scope clarification is acceptable. A concise rewrite that preserves expression timing is also reasonable when the actual preceding response makes verbal length the likely complaint.",
+        "Do not automatically reduce the face to its shortest hold after the user said it vanished too quickly, or claim a new hold was requested without resolving the conflict."
+      ],
+      "counterexample": "An explicit request to shorten the face hold authorizes that change; explicit shorter-explanation wording in the paired case does not.",
+      "current_capability": {
+        "status": "runnable",
+        "adapter": "production_tools_text",
+        "limits": [
+          "Uses actual generated assistant history between user turns.",
+          "Tool receipts are observable; rendered faces, heard speech and timing are not."
+        ]
+      },
+      "evaluation_scope": "Semantic intent and scope review plus supported explicit tool contracts; no canned assistant reply or keyword quality grading."
+    },
+    {
+      "id": "mist.expectations.v1.shorter_words_same_face.validation",
+      "split": "validation",
+      "category": "response_scope",
+      "mode": "text",
+      "title": "Shorten the explanation while retaining the expression",
+      "contrast_group": "response_scope",
+      "fixtures": {
+        "sensor": "none",
+        "memory": "isolated_empty",
+        "robot": "preview_only"
+      },
+      "turns": [
+        {
+          "user": "Show sad for 3200 milliseconds and explain why cardboard bends more easily in one direction, in four or five sentences.",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ],
+            "required_tools": [
+              "set_expression"
+            ],
+            "tool_args": {
+              "set_expression": {
+                "expression": "sad",
+                "duration_ms": 3200
+              }
+            },
+            "max_tools": 1
+          }
+        },
+        {
+          "user": "I meant your explanation was too long. Give me one sentence instead, and leave the face and its hold unchanged.",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember",
+              "set_expression"
+            ]
+          }
+        }
+      ],
+      "desired_behavior": [
+        "Apply an explicit correction to verbal length without changing a separate display request."
+      ],
+      "review_criteria": [
+        "Rewrite the actual explanation as one useful sentence, without making the user repeat the topic.",
+        "Do not call set_expression, shorten the hold, or treat this as a new emotion request.",
+        "Assess sentence and semantic scope directly; preserving a tool setting does not establish that the face remained visible."
+      ],
+      "counterexample": "The ambiguous too-long case may need clarification; this one names the explanation and explicitly preserves the display settings.",
+      "current_capability": {
+        "status": "runnable",
+        "adapter": "production_tools_text",
+        "limits": [
+          "Uses actual generated assistant history between user turns.",
+          "Tool receipts are observable; rendered faces, heard speech and timing are not."
+        ]
+      },
+      "evaluation_scope": "Semantic intent and scope review plus supported explicit tool contracts; no canned assistant reply or keyword quality grading."
+    },
+    {
+      "id": "mist.expectations.v1.requested_target_change.dev",
+      "split": "dev",
+      "category": "repair_affect",
+      "mode": "text",
+      "title": "A real new face request overrides the established target",
+      "contrast_group": "repair_affect",
+      "fixtures": {
+        "sensor": "none",
+        "memory": "isolated_empty",
+        "robot": "preview_only"
+      },
+      "turns": [
+        {
+          "user": "Please show a sad face first.",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ],
+            "required_tools": [
+              "set_expression"
+            ],
+            "tool_args": {
+              "set_expression": {
+                "expression": "sad"
+              }
+            },
+            "max_tools": 1
+          }
+        },
+        {
+          "user": "Now I want angry instead. Please change to angry; I'm comparing a different mood this time.",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ],
+            "required_tools": [
+              "set_expression"
+            ],
+            "tool_args": {
+              "set_expression": {
+                "expression": "angry"
+              }
+            },
+            "max_tools": 1
+          }
+        }
+      ],
+      "desired_behavior": [
+        "Distinguish an updated user goal from an error report about the old goal."
+      ],
+      "review_criteria": [
+        "Recognize an explicit target change and request angry once, despite the earlier sad instruction.",
+        "Do not apply an overlearned repair rule that every mention of angry refers to a mistaken display.",
+        "Describe the new request without asserting independent visual verification."
+      ],
+      "counterexample": "In sad_correction.dev, angry names the reported error and sad remains the requested repair target.",
+      "current_capability": {
+        "status": "runnable",
+        "adapter": "production_tools_text",
+        "limits": [
+          "Uses actual generated assistant history between user turns.",
+          "Tool receipts are observable; rendered faces, heard speech and timing are not."
+        ]
+      },
+      "evaluation_scope": "Semantic intent and scope review plus supported explicit tool contracts; no canned assistant reply or keyword quality grading."
+    },
+    {
+      "id": "mist.expectations.v1.emotion_label.validation",
+      "split": "validation",
+      "category": "emotion_mention",
+      "mode": "text",
+      "title": "Emotion words in a writing task are not display commands",
+      "contrast_group": "emotion_mention",
+      "fixtures": {
+        "sensor": "none",
+        "memory": "isolated_empty",
+        "robot": "preview_only"
+      },
+      "turns": [
+        {
+          "user": "I am editing a comic caption. Mara is angry because she thinks someone stole her bicycle. Does that motivation read clearly?",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ]
+          }
+        },
+        {
+          "user": "I changed the scene: she finds the bicycle damaged by a fallen branch. Would sad fit the caption better than angry?",
+          "expect": {
+            "forbidden_tools": [
+              "preview_motion",
+              "pan_phone",
+              "remember"
+            ]
+          }
+        }
+      ],
+      "desired_behavior": [
+        "Distinguish discussing an emotion label from asking the robot to display that emotion."
+      ],
+      "review_criteria": [
+        "Answer the writing question using the revised situation rather than treating sad or angry as a requested display preset.",
+        "No expression call is required. An incidental contextual expression is not automatically a failure if the production affect policy allows it, but face narration or calls alone do not answer the question.",
+        "Do not claim the user asked to change the robot face, and do not impose an explicit no-tool instruction that was absent."
+      ],
+      "counterexample": "An explicit show-sad request is a display action and must make the matching tool call.",
+      "current_capability": {
+        "status": "runnable",
+        "adapter": "production_tools_text",
+        "limits": [
+          "Uses actual generated assistant history between user turns.",
+          "Tool receipts are observable; rendered faces, heard speech and timing are not."
+        ]
+      },
+      "evaluation_scope": "Semantic intent and scope review plus supported explicit tool contracts; no canned assistant reply or keyword quality grading."
+    }
+  ],
+  "design_review": {
+    "status": "two_model_critiques_completed_not_performance_ratings",
+    "models": [
+      "gpt-6-luna",
+      "gpt-6-sol"
+    ],
+    "reviewed_suite_sha256": "8b725ea2ec93202eb97719e5500e131cad5da3166a06b479e810a16cd65b8e67",
+    "evidence_directory": "brain/results/conversation-expectations-20260924/case-review",
+    "changes": "Removed broad tool-count ceilings from non-action turns; made the negative-question case genuinely ambiguous and allowed a focused clarification; reduced tone coaching; clarified semantic versus visible outcomes.",
+    "post_review_addendum": "Four requested scope/intent contrasts added after the two model critiques: ambiguous too long, explicit shorter explanation with unchanged display, actual target change, and emotion labels without a display command. These four were not reviewed by another provider session."
+  }
+}

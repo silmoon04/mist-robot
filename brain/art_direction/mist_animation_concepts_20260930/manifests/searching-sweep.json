@@ -1,0 +1,103 @@
+{
+  "id": "searching-sweep",
+  "tool": "built-in image_gen",
+  "status": "selected-key-poses-ready",
+  "images": [
+    {
+      "id": "searching-sweep__1",
+      "file": "images/searching-sweep-1.png",
+      "prompt": "prompts/searching-sweep-1-repair2.txt",
+      "promptHistory": [
+        "prompts/searching-sweep-1.txt",
+        "prompts/searching-sweep-1-repair.txt",
+        "prompts/searching-sweep-1-repair2.txt"
+      ],
+      "generatedSource": "C:\\Users\\hssil\\.codex\\generated_images\\01a0ef9e-0362-74f0-b7a5-906d657abe52\\exec-50fbe82c-e026-446e-906d-01ff70217e85.png",
+      "sha256": "0209fe38775ef84ad23499f1bfa3bcecc20e3b2285da67b3397f5c3c9afc0778",
+      "width": 1254,
+      "height": 1254,
+      "qa": {
+        "singleFace": true,
+        "mistIdentity": true,
+        "noStrayMarks": true,
+        "magnifierBelowEyes": true,
+        "magnifierClearOfMouth": true,
+        "sourceBytesPreserved": true
+      },
+      "limitations": "The left gaze is conveyed by both C openings facing left. Small native eye-contour differences remain relative to the shared anchor.",
+      "revisions": [
+        {
+          "file": "images/revisions/searching-sweep-1-initial.png",
+          "prompt": "prompts/searching-sweep-1.txt",
+          "generatedSource": "C:\\Users\\hssil\\.codex\\generated_images\\01a0ef9e-0362-74f0-b7a5-906d657abe52\\exec-1d1a9fc3-61f6-40d7-988b-5f379297b70e.png",
+          "reasonRejected": "Magnifier placement passed, but the right eye shifted left from its anchor centre."
+        },
+        {
+          "file": "images/revisions/searching-sweep-1-repair1.png",
+          "prompt": "prompts/searching-sweep-1-repair.txt",
+          "generatedSource": "C:\\Users\\hssil\\.codex\\generated_images\\01a0ef9e-0362-74f0-b7a5-906d657abe52\\exec-25576602-e663-4e9a-a70d-fd3c06ad1994.png",
+          "reasonRejected": "The first targeted correction did not restore enough of the right eye spacing."
+        }
+      ],
+      "repairResult": "The second targeted correction translated the right eye back to the anchor spacing while retaining the low-right magnifier."
+    },
+    {
+      "id": "searching-sweep__2",
+      "file": "images/searching-sweep-2.png",
+      "prompt": "prompts/searching-sweep-2.txt",
+      "generatedSource": "C:\\Users\\hssil\\.codex\\generated_images\\01a0ef9e-0362-74f0-b7a5-906d657abe52\\exec-f6b29549-d77f-4dbf-831b-78d4605e3b62.png",
+      "sha256": "68239d29244c5036ddf155b9fdf5349a0271aed2ba2c79deecdc15a30fa6ef0a",
+      "width": 1254,
+      "height": 1254,
+      "qa": {
+        "singleFace": true,
+        "mistIdentity": true,
+        "noStrayMarks": true,
+        "magnifierBelowEyes": true,
+        "magnifierClearOfMouth": true,
+        "sourceBytesPreserved": true,
+        "shortHorizontalSweep": true
+      },
+      "limitations": "The right gaze is conveyed by both C openings facing right. The magnifier ring is slightly larger and thicker than pose 1; its handle angle and low-right placement stay consistent."
+    },
+    {
+      "id": "searching-sweep__3",
+      "file": "images/searching-sweep-3.png",
+      "prompt": "prompts/searching-sweep-3-repair.txt",
+      "promptHistory": [
+        "prompts/searching-sweep-3.txt",
+        "prompts/searching-sweep-3-repair.txt"
+      ],
+      "generatedSource": "C:\\Users\\hssil\\.codex\\generated_images\\01a0ef9e-0362-74f0-b7a5-906d657abe52\\exec-fee9e698-606c-4fd6-80ce-033f186d1925.png",
+      "sha256": "80a7d30bed7b77e92674a2353ec17dd34a24fc3d936f458adae566a1cda7a5c9",
+      "width": 1254,
+      "height": 1254,
+      "qa": {
+        "singleFace": true,
+        "mistIdentity": true,
+        "noStrayMarks": true,
+        "magnifierBelowEyes": true,
+        "magnifierClearOfMouth": true,
+        "sourceBytesPreserved": true,
+        "outwardAttentiveEyes": true
+      },
+      "limitations": "The magnifier ring is slightly larger and thicker than pose 1 and settles a few pixels beyond the visual midpoint of the short track. The closed smile sits slightly higher than the flat mouth in poses 1 and 2.",
+      "revisions": [
+        {
+          "file": "images/revisions/searching-sweep-3-initial.png",
+          "prompt": "prompts/searching-sweep-3.txt",
+          "generatedSource": "C:\\Users\\hssil\\.codex\\generated_images\\01a0ef9e-0362-74f0-b7a5-906d657abe52\\exec-c9788e28-7696-47e0-9e34-126433b158e7.png",
+          "reasonRejected": "The right C still opened left instead of returning to the anchor's outward-facing pair."
+        }
+      ],
+      "repairResult": "One targeted repair reversed only the right C opening. Reinspection confirmed the outward-facing pair and preserved face/icon clearance."
+    }
+  ],
+  "qaNotes": [
+    "Viewed the shared anchor and both supporting expression sheets before generation.",
+    "Viewed all three selected images separately with view_image, then compared the selected triple.",
+    "Independent visual QA confirmed fixed face footprint, short icon sweep, low-right magnifier clearance and the repaired outward-facing eyes in pose 3.",
+    "All selected files are native 1254 by 1254 images. SHA256 hashes match their exact ImageGen source artifacts."
+  ],
+  "limitations": "These are three static key poses, not a finished animation. Small native contour, icon stroke/size, midpoint and mouth-centre drift remains; the magnifier stays well below both eyes and clear of the mouth in every selected pose."
+}

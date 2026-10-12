@@ -1,0 +1,388 @@
+{
+  "id": "cards",
+  "version": 8,
+  "tool": "built-in image_gen.imagegen",
+  "sourceFile": "cards.png",
+  "width": 1536,
+  "height": 1024,
+  "mode": "RGBA",
+  "grid": {
+    "columns": 6,
+    "rows": 4,
+    "cellWidth": 256,
+    "cellHeight": 256,
+    "order": "row-major"
+  },
+  "frameCount": 24,
+  "phases": {
+    "enter": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "loop": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "exit": [
+      20,
+      21,
+      22,
+      23
+    ]
+  },
+  "promptFiles": [
+    "../prompts/cards.txt",
+    "../prompts/cards-alpha-refine.txt",
+    "../prompts/cards-motion-refine.txt"
+  ],
+  "source": "<LOCAL_HOME>/.codex/generated_images/01a0d42d-f8e3-73d1-a882-79d426450e52/exec-51850116-b4ef-499d-bf4b-d5eb15a79744.png",
+  "sha256": "262773a50216044f5816756119a6fb16a68a3c986669240f593e3c30c5dafd38",
+  "sourceUnmodified": true,
+  "previousCandidate": "<LOCAL_HOME>/.codex/generated_images/01a0d42d-f8e3-73d1-a882-79d426450e52/exec-cd0515f2-33b7-4712-bce1-576a521a8b75.png",
+  "motion": "Center card rises and returns over cels4-11; left card rises and returns over cels12-19. Side cards gather for exit.",
+  "registration": "Common-scale bottom-center registration may correct sheet drift but cannot create missing card poses or repair incomplete rear edges. Keep source unchanged.",
+  "review": {
+    "status": "needs_motion_correction",
+    "allCellsVisible": true,
+    "noFaceOrText": true,
+    "transparentBackground": true,
+    "strictSixteenDistinctActivePosesPassed": false,
+    "fixedOutlinePassed": false,
+    "minimumSignificantAlpha": 64,
+    "alphaExtrema": [
+      0,
+      254
+    ],
+    "alphaZeroFraction": 0.807272,
+    "notes": "Original built-in ImageGen RGBA preserved byte-for-byte. Alpha compositing was inspected on a dark diagnostic background without editing either source. Two targeted motion-refinement calls were made, one per sheet. Do not infer semantic pose variety from file count or pixel inequality.",
+    "limitations": [
+      "Active cels7 and8 have near-identical center-card peak height; do not claim sixteen distinct active poses.",
+      "Peak spacing is compressed despite explicitly requested 12px steps.",
+      "When the center card lifts, portions of the rear card lower edges remain absent, as if still occluded.",
+      "Raw per-cell registration drifts by row and column; source preserved unchanged.",
+      "The loop seam from19 to4 changes the center-card height because cel4 begins already raised."
+    ]
+  },
+  "cells": [
+    {
+      "index": 0,
+      "row": 0,
+      "column": 0,
+      "phase": "enter",
+      "boundsAlpha64": [
+        100,
+        129,
+        180,
+        233
+      ]
+    },
+    {
+      "index": 1,
+      "row": 0,
+      "column": 1,
+      "phase": "enter",
+      "boundsAlpha64": [
+        39,
+        106,
+        174,
+        214
+      ]
+    },
+    {
+      "index": 2,
+      "row": 0,
+      "column": 2,
+      "phase": "enter",
+      "boundsAlpha64": [
+        90,
+        106,
+        225,
+        214
+      ]
+    },
+    {
+      "index": 3,
+      "row": 0,
+      "column": 3,
+      "phase": "enter",
+      "boundsAlpha64": [
+        28,
+        106,
+        225,
+        214
+      ]
+    },
+    {
+      "index": 4,
+      "row": 0,
+      "column": 4,
+      "phase": "loop",
+      "boundsAlpha64": [
+        26,
+        90,
+        221,
+        214
+      ],
+      "centerCardTopEstimate": 90,
+      "centerCardTopToFanBottomEstimate": 124
+    },
+    {
+      "index": 5,
+      "row": 0,
+      "column": 5,
+      "phase": "loop",
+      "boundsAlpha64": [
+        20,
+        84,
+        216,
+        213
+      ],
+      "centerCardTopEstimate": 84,
+      "centerCardTopToFanBottomEstimate": 129
+    },
+    {
+      "index": 6,
+      "row": 1,
+      "column": 0,
+      "phase": "loop",
+      "boundsAlpha64": [
+        41,
+        57,
+        238,
+        189
+      ],
+      "centerCardTopEstimate": 57,
+      "centerCardTopToFanBottomEstimate": 132
+    },
+    {
+      "index": 7,
+      "row": 1,
+      "column": 1,
+      "phase": "loop",
+      "boundsAlpha64": [
+        38,
+        51,
+        232,
+        189
+      ],
+      "centerCardTopEstimate": 51,
+      "centerCardTopToFanBottomEstimate": 138
+    },
+    {
+      "index": 8,
+      "row": 1,
+      "column": 2,
+      "phase": "loop",
+      "boundsAlpha64": [
+        32,
+        48,
+        229,
+        189
+      ],
+      "centerCardTopEstimate": 48,
+      "centerCardTopToFanBottomEstimate": 141
+    },
+    {
+      "index": 9,
+      "row": 1,
+      "column": 3,
+      "phase": "loop",
+      "boundsAlpha64": [
+        28,
+        67,
+        225,
+        189
+      ],
+      "centerCardTopEstimate": 67,
+      "centerCardTopToFanBottomEstimate": 122
+    },
+    {
+      "index": 10,
+      "row": 1,
+      "column": 4,
+      "phase": "loop",
+      "boundsAlpha64": [
+        26,
+        76,
+        221,
+        189
+      ],
+      "centerCardTopEstimate": 76,
+      "centerCardTopToFanBottomEstimate": 113
+    },
+    {
+      "index": 11,
+      "row": 1,
+      "column": 5,
+      "phase": "loop",
+      "boundsAlpha64": [
+        21,
+        83,
+        216,
+        189
+      ],
+      "centerCardTopEstimate": 83,
+      "centerCardTopToFanBottomEstimate": 106
+    },
+    {
+      "index": 12,
+      "row": 2,
+      "column": 0,
+      "phase": "loop",
+      "boundsAlpha64": [
+        43,
+        78,
+        236,
+        180
+      ]
+    },
+    {
+      "index": 13,
+      "row": 2,
+      "column": 1,
+      "phase": "loop",
+      "boundsAlpha64": [
+        34,
+        64,
+        230,
+        180
+      ]
+    },
+    {
+      "index": 14,
+      "row": 2,
+      "column": 2,
+      "phase": "loop",
+      "boundsAlpha64": [
+        27,
+        61,
+        227,
+        180
+      ]
+    },
+    {
+      "index": 15,
+      "row": 2,
+      "column": 3,
+      "phase": "loop",
+      "boundsAlpha64": [
+        22,
+        57,
+        223,
+        180
+      ]
+    },
+    {
+      "index": 16,
+      "row": 2,
+      "column": 4,
+      "phase": "loop",
+      "boundsAlpha64": [
+        21,
+        47,
+        221,
+        180
+      ]
+    },
+    {
+      "index": 17,
+      "row": 2,
+      "column": 5,
+      "phase": "loop",
+      "boundsAlpha64": [
+        17,
+        61,
+        215,
+        181
+      ]
+    },
+    {
+      "index": 18,
+      "row": 3,
+      "column": 0,
+      "phase": "loop",
+      "boundsAlpha64": [
+        43,
+        50,
+        236,
+        155
+      ]
+    },
+    {
+      "index": 19,
+      "row": 3,
+      "column": 1,
+      "phase": "loop",
+      "boundsAlpha64": [
+        37,
+        54,
+        230,
+        155
+      ]
+    },
+    {
+      "index": 20,
+      "row": 3,
+      "column": 2,
+      "phase": "exit",
+      "boundsAlpha64": [
+        56,
+        53,
+        203,
+        155
+      ]
+    },
+    {
+      "index": 21,
+      "row": 3,
+      "column": 3,
+      "phase": "exit",
+      "boundsAlpha64": [
+        59,
+        54,
+        191,
+        155
+      ]
+    },
+    {
+      "index": 22,
+      "row": 3,
+      "column": 4,
+      "phase": "exit",
+      "boundsAlpha64": [
+        84,
+        51,
+        163,
+        154
+      ]
+    },
+    {
+      "index": 23,
+      "row": 3,
+      "column": 5,
+      "phase": "exit",
+      "boundsAlpha64": [
+        93,
+        108,
+        146,
+        117
+      ]
+    }
+  ]
+}

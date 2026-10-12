@@ -1,0 +1,66 @@
+R4 production leg interface check
+
+Passed: False
+Created UTC: 2026-09-12T18:16:00.442340+00:00
+
+solid_checks: True
+  part_count: 23
+  failures: 0
+motion: True
+  sample_count: 27
+  cross_link_pairs_considered: 4968
+  boolean_pairs_tested: 971
+  failures: 0
+connector_reserves: True
+  sample_count: 9
+  pairs_considered: 198
+  boolean_pairs_tested: 33
+  failures: 0
+clamp_access: False
+  failures: 7
+retention: True
+  failures: 0
+
+Nominal retention and pocket dimensions:
+  washer_od_mm: 7.0
+  washer_id_mm: 3.2
+  washer_thickness_mm: 0.5
+  washer_case_facing_plane_z_mm: -33.1
+  disc_case_gap_mm: 0.29999999999999716
+  disc_retainer_gap_mm: 0.7000000000000028
+  pitch_cheek_access_diameter_mm: 7.8
+  pitch_washer_to_access_radial_clearance_mm: 0.3999999999999999
+  stub_diameter_mm: 6.0
+  disc_bore_diameter_mm: 6.05
+  disc_to_stub_diametral_clearance_mm: 0.05
+  washer_overlap_beyond_disc_bore_radial_mm: 0.4750000000000001
+  reserve_to_horn_bore_radial_lower_bound_mm: 1.950000000000001
+  reserve_to_standoff_radial_lower_bound_mm: 0.6500000000000004
+  nominal_blind_pocket_floor_mm: 1.6000000000000014
+
+Limitations:
+  Discrete local leg samples do not establish continuous clearance or full robot clearance.
+  Connector proxies are provisional envelopes and do not reproduce flexible cable behavior.
+  The blind connector pocket leaves about 1.6 mm of material; fit and loaded strength require physical tests.
+  Printed tolerances, loaded deflection, retainer seating and servo thermal behavior remain physical checks.
+  Tool envelopes establish access only for their specified dimensions and approach directions.
+
+Source SHA256 before:
+  leg.py: 1a639aa397653f70e02f5a519141c79ba87daa72e799c2b948728b7bd39bcabf
+  servo_contract.py: eeb09be505f2a4e80cd710d193592099df1f98f849f7ce3eac0f1ba1d3f2dcaa
+  geom.py: 655e7d2b8b05226cc9e0f3782dcd1a58599dd81226b6e918c60eac91f5526626
+  check_leg.py: 72556a40ce65fed06b31523d72f7804dae88b2fac4a62c3c7a304424c7ca3f64
+  check_r4_leg_interfaces.py: 35251df92cee354c44b300928bd31b059041b60da4cbd4d8ee023cddea1346ff
+  check_r4_clamp_access.py: 19860e0bbbc8fbae7b984dc6d7de54f183b12ed42fa8aa92f78118d8751cb904
+  hardware/ST3215.step: 58e38e4dc49f97df738c5f229f9aa8a7dce64a0a1d01335486a52d53e6017e8a
+
+Source SHA256 after:
+  leg.py: 1a639aa397653f70e02f5a519141c79ba87daa72e799c2b948728b7bd39bcabf
+  servo_contract.py: eeb09be505f2a4e80cd710d193592099df1f98f849f7ce3eac0f1ba1d3f2dcaa
+  geom.py: 655e7d2b8b05226cc9e0f3782dcd1a58599dd81226b6e918c60eac91f5526626
+  check_leg.py: 72556a40ce65fed06b31523d72f7804dae88b2fac4a62c3c7a304424c7ca3f64
+  check_r4_leg_interfaces.py: 35251df92cee354c44b300928bd31b059041b60da4cbd4d8ee023cddea1346ff
+  check_r4_clamp_access.py: 19860e0bbbc8fbae7b984dc6d7de54f183b12ed42fa8aa92f78118d8751cb904
+  hardware/ST3215.step: 58e38e4dc49f97df738c5f229f9aa8a7dce64a0a1d01335486a52d53e6017e8a
+
+Changed sources: []

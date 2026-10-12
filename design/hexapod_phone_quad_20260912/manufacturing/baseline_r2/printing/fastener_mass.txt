@@ -1,0 +1,20 @@
+Fastener mass estimate
+
+Counts: {'screw': 200, 'washer': 180, 'nut': 100, 'supplied_main_retainer': 13, 'supplied_aux_retainer': 12}
+
+Mass totals in grams: low=259.214, nominal=318.243, high=372.112
+
+Replace the previous 50 g fastener allowance with this distributed estimate; do not add both.
+Use the high scenario for conservative mass screening until the actual hardware is weighed.
+
+All counts exclude coupon-only hardware and spares. Thirteen main center screws and twelve auxiliary center screws are separate from eighty-four peripheral M3x6 screws.
+Low and high are geometry scenarios, not measured statistical bounds. Thread-effective diameters are 2.60, 2.75 and 3.0 mm; auxiliary self-tappers use 2.30, 2.60 and 3.0 mm.
+Low screw head is a 5.6 by 2.4 mm pan envelope with 75 percent shape fill minus 4 mm3 recess. Nominal socket head is 5.5 by 3 mm minus an AF2.5 by 1.3 mm socket, then 5 percent chamfer allowance. High retains a solid 5.5 by 3 mm head.
+Plain nuts are AF5.5 by 2.4 mm with bore 3.0, 2.75 and 2.5 mm, plus low and nominal chamfer factors 0.90 and 0.95. Washers have 3.2 mm bores and 0.5 mm thickness with 10 percent mass variation.
+Peripheral horn and external bridge washers are OD6; other planned washers are OD7. OD7 bridge washers would meet at the tibia's 7 mm bolt spacing and are excluded.
+Auxiliary center retainers are allocated to the servo housing parent link; their freely rotating discs remain in the child link.
+The 55 g servo specification may or may not include supplied center hardware. If it does, subtract only the supplied-retainer category here; modeled metal horn masses are already separate in CAD and are not included here.
+Do not add this estimate on top of the old 50 g fastener allowance. Retain the separate 150 g wiring allowance only until actual wiring is weighed.
+Positions are analytical R2 attachment estimates. Nominal screw COM accounts for head and shaft mass; nut inertia approximates its hex section by a cylinder. This is not a screw-head collision model.
+
+Reference: https://www.accu.co.uk/api/product-datasheet?id=642041

@@ -1,0 +1,33 @@
+Use case: illustration-story.
+Asset type: production raster animation sprite sheet, 24 separate hand-drawn cels.
+Create a new terminal/laptop animation sheet based on the attached reference image's recognizable little rounded open laptop. The reference is STYLE AND SUBJECT ONLY. Replace its old 4 by 4 layout with EXACTLY SIX COLUMNS AND FOUR ROWS, 24 CELLS TOTAL, in row-major animation order. Target canvas 1536 by 1024 pixels; each invisible cell 256 by 256. No visible grid, no captions, no frame numbers. Native transparent RGBA background, fully transparent within and around outlines. No opaque black or white ground, no checkerboard, no matte, no glow, no shadows.
+Draw thin bright cyan/turquoise rounded hand-drawn outlines, close to #21E6DD, with a uniform approximately 3px line at 256px cel scale. Smooth restrained sketch character, clean readable strokes. Preserve the little rounded laptop with screen, hinge and small rounded keyboard keys. No solid cyan fill, no heavy double outline, no texture speckles. No hands, characters, eyes, mouth, face, labels, letters, numbers, watermark or legible code. Code is just short rounded horizontal strokes. All screen interior and keyboard gaps remain transparent.
+REGISTRATION: each cell has the SAME camera, perspective and ground anchor at cell-local (128,208). Active open laptop silhouette occupies x=40..216, y=59..210. Its body, screen outline, hinge, keyboard and scale remain exactly registered across frames 3 through 20; only the little code strokes and caret animate. Never jitter, stretch, rotate or change the number of keys. Generous transparent gutters. Every one of the 24 cells must contain an actual deliberate drawn pose, never a blank slot. Draw exactly 4 entrance cels, 16 unique active cels, 4 exit cels.
+
+CHOREOGRAPHY, left to right then down:
+Frame 0 row1 col1: laptop lid closed, hinge and base anchored at y208.
+Frame 1 row1 col2: lid raised one third, same base anchor.
+Frame 2 row1 col3: lid raised two thirds, same base.
+Frame 3 row1 col4: fully open, blank screen, no cursor yet.
+Frame 4 row1 col5 ACTIVE START: fully open; small vertical caret at the upper-left writing origin, near cell (72,94); no code yet.
+Frame 5 row1 col6: first short code dash appears immediately left of caret; caret advances a little right.
+Frame 6 row2 col1: same first dash extends slightly, caret advances.
+Frame 7 row2 col2: add a second small separated dash to the first line, caret advances right.
+Frame 8 row2 col3: second dash extends; pause caret drawn shorter, code stays intact.
+Frame 9 row2 col4: caret moves to second line origin directly below first; first line stays unchanged.
+Frame 10 row2 col5: second line gains a short dash and caret advances.
+Frame 11 row2 col6: second line gains a second dash, caret advances.
+Frame 12 row3 col1: second dash extends slightly; readable pause, caret thin.
+Frame 13 row3 col2: caret moves to third line origin; first two lines stay intact.
+Frame 14 row3 col3: third line begins with one short dash, caret advances.
+Frame 15 row3 col4: third line gets one extra small stroke and a tiny checking accent next to caret, code remains intact.
+Frame 16 row3 col5: same content and tiny checking accent completes, caret lifts into a small faint pause position. This is a brief local review beat, no large success symbol.
+Frame 17 row3 col6: all three code rows scroll upward together by one line, top line partly clips inside screen; no backward typing and no exterior movement.
+Frame 18 row4 col1: text scrolls up another line; last row is near screen top and fading, caret returns toward original writing origin.
+Frame 19 row4 col2 ACTIVE END: scroll has cleared screen; caret is at the exact frame4 origin, slightly shorter, ready to type again. This connects naturally back to frame4.
+Frame 20 row4 col3 EXIT START: fully open, blank screen and caret disappears, same body as frame3.
+Frame 21 row4 col4: lid closes one third from open, same base.
+Frame 22 row4 col5: lid nearly closed, same base.
+Frame 23 row4 col6: lid fully closed, same pose family and ground anchor as frame0.
+
+The sixteen active drawings must visibly advance the small code/caret action in ordered increments. Do not spread four poses over repeated cells. Preserve code strokes until the explicit upward scroll. Keep the base perfectly still during the typing. Result: one clean native-transparent PNG sprite sheet, exactly 6 columns by 4 rows, 24 complete drawings.

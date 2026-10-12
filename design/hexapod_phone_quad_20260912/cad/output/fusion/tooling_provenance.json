@@ -1,0 +1,62 @@
+{
+  "status": "executed_and_verified",
+  "revision": "hex_quad_r4_inward_knee",
+  "verified_utc": "2026-09-12T18:17:27.772715+00:00",
+  "document_name": "Hexapod reference quadruped phone 20260912_191051",
+  "source_manifest_sha256": "6cac852c196e29e2da100816a7d3b96f545e62dba92c3009a46417eb7d9bc449",
+  "native_input_sha256": "fa3aff6382f210b22c283b6bf73063e89d85ba6410c7f7f8d30cee8bb77a6554",
+  "source_step_sha256": {
+    "base": "8b5b66082ba25273f07ec92a83911d9de4d9d9302443aa38a273abaf8e0c842f",
+    "phone_pan": "d39cb2b4faeb9e5f9883f91c4e3f6da3af7e6a1bd599dfd59dc5b6ce882bd3e2",
+    "coxa_FL": "3bf32f49bba920fb780b0f88fd63d93e36e5d4528e08a12901db0b65e38143ff",
+    "femur_FL": "a443b91ba43c46ccf6623cef9fef1d90013fbf688ea5b36376fb4b9771891d0b",
+    "tibia_FL": "a87c1f34bd72480c3f86a8050789d381a25f8ffa340dadb02acdcb74c822f0da",
+    "coxa_FR": "989590f8725de695e803f6f561d4fca4ff6304e487261daa165d3bcb53b36eb6",
+    "femur_FR": "c81d974ff4aeea600d11c09d7e0d7c0d9141ac7462b93e9f31b01c4c74867323",
+    "tibia_FR": "68c9569035798d2fcc6afdf8b8e1fc1836b17d87e0e2945c98f5b326a21e4af4",
+    "coxa_RL": "06d62c8c376190cf5bad9df8bf06d9d322efa616b956db04f9257577055b6cae",
+    "femur_RL": "cc45e05e05ac1a41cedf544e7c79fdab18ab854ebeb3fc88720ea4d25857b35f",
+    "tibia_RL": "0beac64fc15ce41c0d58db39a036dac4ddc95a6547f2e9ddae56cd73a77d374d",
+    "coxa_RR": "fd9754031f46e5b9d4298c02edaa16d420fa341bb7c5c4b0b25bcec21522af74",
+    "femur_RR": "a122d4212acd16ae9b178735dd5dde5a6e9d24afc72068f1a905d7c8d9024488",
+    "tibia_RR": "f24a1b6111e9704ba198ca43c52536a53ec62dd97740834297011ea49ecae620"
+  },
+  "scripts": {
+    "fusion_import.py": "e324a36dc9ae44fde3d0c2dff21d59414920cd3731ab0c3fea19de1eeeddd4e0",
+    "fusion_finish.py": "0e76f34751424dfd0850ca36e4d96d900abe01fd97d91e5883783b9a9ca12bf7",
+    "fusion_export.py": "d6112d8f921b6e6562d60dfc10a9a6ec6180b29083762c90b461c222ecf6d14d",
+    "fusion_client.py": "42db0f3ac4162bfa55afd28cc2f75aca01e9d2e95d7debff1882b815bdfb6c40",
+    "fusion_present.py": "76bcd861aa554dca123ab9ca25cf1fd42d1bdb9e5ae2ad3ca171edbced11958f"
+  },
+  "export_sha256": {
+    "f3d": "0cdef5d9648bc19ca949e66ef0d6ddb86dc8a41da02c3c2f4acbb7c4b5f65bbd",
+    "step": "49a2615aac7237e9cfe935e7788947e410e177dd66fed8a1d88d63c58c6fffa9",
+    "preview": "019161601286e03f936e54da1a85aef5c4bef73f306458a97c15f52eba0b2998"
+  },
+  "native_report_sha256": "f12e6431673c6036daa310671b6b0f057b86fbfd8a8c6c4a1cb00785e79472b1",
+  "checks": {
+    "links": 14,
+    "closed_native_solids": 133,
+    "correct_one_degree_joint_motions": 13,
+    "all_neutral_poses_restored": true,
+    "positive_native_intersections": 0,
+    "archive_crc": "passed with Python 3.14 Zstandard support",
+    "archive_entry_count": 304
+  },
+  "native_step_roundtrip": {
+    "status": "passed",
+    "reader": "OCP 7.8.1.1",
+    "solid_count": 133,
+    "native_volume_mm3": 1665821.69446338,
+    "roundtrip_volume_mm3": 1665826.1797245534,
+    "relative_volume_error": 2.692521767766465e-06,
+    "maximum_bounds_error_mm": 2.992806003021542e-11
+  },
+  "baseline_r3": {
+    "path": "manufacturing/baseline_r3/cad/output/fusion",
+    "files_preserved": 12,
+    "native_report_sha256": "747c3bd206cb8a56fcb1012444e614038396149b5d698b224229d8488c07b6fd",
+    "native_archive_sha256": "f5c30cc4a770d053f4b96745f9dbf71d4306462c8041bd442f6f16aff989b3ee"
+  },
+  "notes": "R4 inward-knee geometry, all thirteen native joint motions and the final exports passed verification. Reference glyphs were hidden for the final preview; geometry and neutral poses were preserved."
+}

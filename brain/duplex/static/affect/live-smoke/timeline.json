@@ -1,0 +1,717 @@
+[
+  {
+    "id": 2,
+    "elapsed_ms": 11.157,
+    "source": "server",
+    "type": "state"
+  },
+  {
+    "id": 3,
+    "elapsed_ms": 444.688,
+    "source": "provider",
+    "type": "tts_connected",
+    "backend": null,
+    "first_byte_s": null,
+    "output_s": null
+  },
+  {
+    "id": 5,
+    "elapsed_ms": 1510.81,
+    "source": "server",
+    "type": "ready"
+  },
+  {
+    "id": 11,
+    "elapsed_ms": 1512.05,
+    "source": "server",
+    "type": "state"
+  },
+  {
+    "id": 15,
+    "elapsed_ms": 1512.332,
+    "source": "server",
+    "type": "transcript_done",
+    "role": "user",
+    "text": "Please show a curious face while you answer in one sentence: what is a hinge?"
+  },
+  {
+    "id": 16,
+    "elapsed_ms": 1512.371,
+    "source": "server",
+    "type": "state"
+  },
+  {
+    "id": 18,
+    "elapsed_ms": 1512.947,
+    "source": "server",
+    "type": "affect_decision",
+    "phase": "started",
+    "outcome": null,
+    "elapsed_affect_ms": null,
+    "trace": null,
+    "decision": null
+  },
+  {
+    "id": 19,
+    "elapsed_ms": 1513.106,
+    "source": "server",
+    "type": "debug_model",
+    "phase": "thinking_started",
+    "duration_ms": null,
+    "timings": null
+  },
+  {
+    "id": 20,
+    "elapsed_ms": 3551.804,
+    "source": "server",
+    "type": "affect_decision",
+    "phase": "finished",
+    "outcome": "applied_before_speech",
+    "elapsed_affect_ms": 2047.0,
+    "trace": {
+      "prompt_version": "affect-director-v1",
+      "prompt_sha256": "41ab31abe741a0dbc4718e7a2d857357c02995df34d84bb57a69ef9d0e22b8f7",
+      "model": "qwen-3.8-27b",
+      "reasoning_effort": "none",
+      "timeout_s": 8.0,
+      "status": "accepted",
+      "elapsed_ms": 2038.1,
+      "record_count": 1,
+      "input_tokens": 1137,
+      "output_tokens": 42,
+      "ttft_ms": 1962.2,
+      "provider_total_ms": 2025.2,
+      "http_statuses": [
+        200
+      ],
+      "raw_decision": "{\n  \"change\": false,\n  \"expression\": \"neutral\",\n  \"variant\": 0,\n  \"delivery\": \"neutral\",\n  \"evidence\": []\n}"
+    },
+    "decision": {
+      "change": false,
+      "expression": "neutral",
+      "variant": 0,
+      "delivery": "neutral",
+      "evidence": []
+    }
+  },
+  {
+    "id": 23,
+    "elapsed_ms": 3771.781,
+    "source": "server",
+    "type": "tool",
+    "name": "set_expression",
+    "result": {
+      "status": "display_requested",
+      "expression": "curious",
+      "variant": 0,
+      "face_id": "20_neutral_06_manual",
+      "duration_ms": 2600,
+      "persistent": true
+    }
+  },
+  {
+    "id": 24,
+    "elapsed_ms": 3771.873,
+    "source": "server",
+    "type": "face",
+    "source_face": "model",
+    "expression": "curious",
+    "variant": 0,
+    "persistent": true
+  },
+  {
+    "id": 25,
+    "elapsed_ms": 4858.303,
+    "source": "server",
+    "type": "debug_model",
+    "phase": "text_delta",
+    "duration_ms": null,
+    "timings": null
+  },
+  {
+    "id": 28,
+    "elapsed_ms": 4858.896,
+    "source": "server",
+    "type": "speech_style",
+    "delivery": "neutral",
+    "stability": 0.5,
+    "model": "eleven_flash_v2_5"
+  },
+  {
+    "id": 32,
+    "elapsed_ms": 4859.627,
+    "source": "server",
+    "type": "debug_model",
+    "phase": "text_delta",
+    "duration_ms": null,
+    "timings": null
+  },
+  {
+    "id": 36,
+    "elapsed_ms": 4860.175,
+    "source": "server",
+    "type": "debug_model",
+    "phase": "text_delta",
+    "duration_ms": null,
+    "timings": null
+  },
+  {
+    "id": 40,
+    "elapsed_ms": 4860.733,
+    "source": "server",
+    "type": "debug_model",
+    "phase": "text_delta",
+    "duration_ms": null,
+    "timings": null
+  },
+  {
+    "id": 44,
+    "elapsed_ms": 4870.606,
+    "source": "server",
+    "type": "debug_model",
+    "phase": "text_delta",
+    "duration_ms": null,
+    "timings": null
+  },
+  {
+    "id": 48,
+    "elapsed_ms": 4871.271,
+    "source": "server",
+    "type": "debug_model",
+    "phase": "text_delta",
+    "duration_ms": null,
+    "timings": null
+  },
+  {
+    "id": 52,
+    "elapsed_ms": 4871.89,
+    "source": "provider",
+    "type": "tts_phrase",
+    "backend": null,
+    "first_byte_s": null,
+    "output_s": null
+  },
+  {
+    "id": 53,
+    "elapsed_ms": 4872.241,
+    "source": "server",
+    "type": "debug_model",
+    "phase": "text_delta",
+    "duration_ms": null,
+    "timings": null
+  },
+  {
+    "id": 57,
+    "elapsed_ms": 4878.19,
+    "source": "server",
+    "type": "debug_model",
+    "phase": "text_delta",
+    "duration_ms": null,
+    "timings": null
+  },
+  {
+    "id": 61,
+    "elapsed_ms": 4878.77,
+    "source": "server",
+    "type": "debug_model",
+    "phase": "text_delta",
+    "duration_ms": null,
+    "timings": null
+  },
+  {
+    "id": 65,
+    "elapsed_ms": 4879.302,
+    "source": "provider",
+    "type": "tts_phrase",
+    "backend": null,
+    "first_byte_s": null,
+    "output_s": null
+  },
+  {
+    "id": 67,
+    "elapsed_ms": 4879.867,
+    "source": "server",
+    "type": "transcript_done",
+    "role": "assistant",
+    "text": "\n\n\n\nA hinge is a joint that connects two rigid parts and lets them pivot around a line, like the strip that holds a door to its frame."
+  },
+  {
+    "id": 68,
+    "elapsed_ms": 4880.021,
+    "source": "server",
+    "type": "debug_model",
+    "phase": "thinking_finished",
+    "duration_ms": 3375.0,
+    "timings": {
+      "tools": [
+        {
+          "name": "set_expression",
+          "request_s": 2.256235700000161,
+          "reply_s": 2.2584545000004255,
+          "execution_s": 0.0022188000002643093
+        }
+      ],
+      "http_requests": [
+        {
+          "round": 0,
+          "status": 200,
+          "headers_ms": 867.2941999998329,
+          "usage": {
+            "total_tokens": 3718,
+            "completion_tokens": 72,
+            "completion_tokens_details": {
+              "reasoning_tokens": 44
+            },
+            "prompt_tokens": 3646,
+            "prompt_tokens_details": {
+              "cached_tokens": 3072,
+              "image_tokens": 0
+            }
+          },
+          "total_ms": 2256.155099999887,
+          "selected_tool_calls": 1
+        },
+        {
+          "round": 1,
+          "status": 200,
+          "headers_ms": 1009.1459000000214,
+          "usage": {
+            "total_tokens": 3825,
+            "completion_tokens": 72,
+            "completion_tokens_details": {
+              "reasoning_tokens": 41
+            },
+            "prompt_tokens": 3753,
+            "prompt_tokens_details": {
+              "cached_tokens": 3072,
+              "image_tokens": 0
+            }
+          },
+          "total_ms": 1107.4286000002758,
+          "selected_tool_calls": 0
+        }
+      ],
+      "client_lock_wait_s": 0,
+      "reasoning_output_tokens": 85,
+      "streamed_visible_text": "\n\n\n\nA hinge is a joint that connects two rigid parts and lets them pivot around a line, like the strip that holds a door to its frame.",
+      "deadline_overrun_s": 0
+    }
+  },
+  {
+    "id": 132,
+    "elapsed_ms": 9263.058,
+    "source": "provider",
+    "type": "tts_complete",
+    "backend": "streaming_tts",
+    "first_byte_s": 1.7820000000001528,
+    "output_s": 6.233333333333333
+  },
+  {
+    "id": 133,
+    "elapsed_ms": 9263.113,
+    "source": "server",
+    "type": "latency",
+    "tts": {
+      "backend": "streaming_tts",
+      "sequence": 0,
+      "epoch": 0,
+      "first_byte_s": 1.7820000000001528,
+      "output_s": 6.233333333333333,
+      "characters": 132,
+      "phrases": 2
+    }
+  },
+  {
+    "id": 142,
+    "elapsed_ms": 10280.93,
+    "source": "server",
+    "type": "state"
+  },
+  {
+    "id": 146,
+    "elapsed_ms": 10281.079,
+    "source": "server",
+    "type": "transcript_done",
+    "role": "user",
+    "text": "I worked all weekend on an exhibition model, and its stand collapsed before anyone saw it. Please respond briefly."
+  },
+  {
+    "id": 147,
+    "elapsed_ms": 10281.118,
+    "source": "server",
+    "type": "state"
+  },
+  {
+    "id": 149,
+    "elapsed_ms": 10281.483,
+    "source": "server",
+    "type": "affect_decision",
+    "phase": "started",
+    "outcome": null,
+    "elapsed_affect_ms": null,
+    "trace": null,
+    "decision": null
+  },
+  {
+    "id": 150,
+    "elapsed_ms": 10281.672,
+    "source": "server",
+    "type": "debug_model",
+    "phase": "thinking_started",
+    "duration_ms": null,
+    "timings": null
+  },
+  {
+    "id": 151,
+    "elapsed_ms": 11715.785,
+    "source": "server",
+    "type": "debug_model",
+    "phase": "text_delta",
+    "duration_ms": null,
+    "timings": null
+  },
+  {
+    "id": 154,
+    "elapsed_ms": 11716.456,
+    "source": "server",
+    "type": "speech_style",
+    "delivery": "neutral",
+    "stability": 0.5,
+    "model": "eleven_flash_v2_5"
+  },
+  {
+    "id": 158,
+    "elapsed_ms": 11716.994,
+    "source": "server",
+    "type": "debug_model",
+    "phase": "text_delta",
+    "duration_ms": null,
+    "timings": null
+  },
+  {
+    "id": 162,
+    "elapsed_ms": 11717.437,
+    "source": "provider",
+    "type": "tts_phrase",
+    "backend": null,
+    "first_byte_s": null,
+    "output_s": null
+  },
+  {
+    "id": 164,
+    "elapsed_ms": 11718.13,
+    "source": "server",
+    "type": "transcript_done",
+    "role": "assistant",
+    "text": "\n\nThat's a rough way to lose a weekend of work."
+  },
+  {
+    "id": 165,
+    "elapsed_ms": 11718.286,
+    "source": "server",
+    "type": "debug_model",
+    "phase": "thinking_finished",
+    "duration_ms": 1438.0,
+    "timings": {
+      "tools": [],
+      "http_requests": [
+        {
+          "round": 0,
+          "status": 200,
+          "headers_ms": 1347.8225000003476,
+          "usage": {
+            "total_tokens": 3872,
+            "completion_tokens": 62,
+            "completion_tokens_details": {
+              "reasoning_tokens": 48
+            },
+            "prompt_tokens": 3810,
+            "prompt_tokens_details": {
+              "cached_tokens": 3072,
+              "image_tokens": 0
+            }
+          },
+          "total_ms": 1435.8139999999366,
+          "selected_tool_calls": 0
+        }
+      ],
+      "client_lock_wait_s": 0,
+      "reasoning_output_tokens": 48,
+      "streamed_visible_text": "\n\nThat's a rough way to lose a weekend of work.",
+      "deadline_overrun_s": 0
+    }
+  },
+  {
+    "id": 166,
+    "elapsed_ms": 11783.738,
+    "source": "server",
+    "type": "affect_decision",
+    "phase": "finished",
+    "outcome": "speech_already_started",
+    "elapsed_affect_ms": 1500.0,
+    "trace": {
+      "prompt_version": "affect-director-v1",
+      "prompt_sha256": "41ab31abe741a0dbc4718e7a2d857357c02995df34d84bb57a69ef9d0e22b8f7",
+      "model": "qwen-3.8-27b",
+      "reasoning_effort": "none",
+      "timeout_s": 8.0,
+      "status": "accepted",
+      "elapsed_ms": 1501.5,
+      "record_count": 2,
+      "input_tokens": 1178,
+      "output_tokens": 86,
+      "ttft_ms": 1458.9,
+      "provider_total_ms": 1492.1,
+      "http_statuses": [
+        200
+      ],
+      "raw_decision": "{\n  \"change\": true,\n  \"expression\": \"sad\",\n  \"variant\": 0,\n  \"delivery\": \"gentle\",\n  \"evidence\": [\n    {\n      \"record_id\": \"current_user\",\n      \"quote\": \"I worked all weekend on an exhibition model, and its stand collapsed before anyone saw it.\"\n    }\n  ]\n}"
+    },
+    "decision": {
+      "change": true,
+      "expression": "sad",
+      "variant": 0,
+      "delivery": "gentle",
+      "evidence": [
+        {
+          "record_id": "current_user",
+          "quote": "I worked all weekend on an exhibition model, and its stand collapsed before anyone saw it."
+        }
+      ]
+    }
+  },
+  {
+    "id": 189,
+    "elapsed_ms": 12416.219,
+    "source": "provider",
+    "type": "tts_complete",
+    "backend": "streaming_tts",
+    "first_byte_s": 0.6089999999999236,
+    "output_s": 2.1193333333333335
+  },
+  {
+    "id": 190,
+    "elapsed_ms": 12416.27,
+    "source": "server",
+    "type": "latency",
+    "tts": {
+      "backend": "streaming_tts",
+      "sequence": 1,
+      "epoch": 1,
+      "first_byte_s": 0.6089999999999236,
+      "output_s": 2.1193333333333335,
+      "characters": 45,
+      "phrases": 1
+    }
+  },
+  {
+    "id": 199,
+    "elapsed_ms": 13420.459,
+    "source": "server",
+    "type": "state"
+  },
+  {
+    "id": 203,
+    "elapsed_ms": 13420.597,
+    "source": "server",
+    "type": "transcript_done",
+    "role": "user",
+    "text": "Keep the current face unchanged. Please say one brief encouraging sentence about trying the print again."
+  },
+  {
+    "id": 204,
+    "elapsed_ms": 13420.632,
+    "source": "server",
+    "type": "state"
+  },
+  {
+    "id": 206,
+    "elapsed_ms": 13420.953,
+    "source": "server",
+    "type": "affect_decision",
+    "phase": "started",
+    "outcome": null,
+    "elapsed_affect_ms": null,
+    "trace": null,
+    "decision": null
+  },
+  {
+    "id": 207,
+    "elapsed_ms": 13421.149,
+    "source": "server",
+    "type": "debug_model",
+    "phase": "thinking_started",
+    "duration_ms": null,
+    "timings": null
+  },
+  {
+    "id": 208,
+    "elapsed_ms": 13975.064,
+    "source": "server",
+    "type": "debug_model",
+    "phase": "text_delta",
+    "duration_ms": null,
+    "timings": null
+  },
+  {
+    "id": 211,
+    "elapsed_ms": 13979.768,
+    "source": "server",
+    "type": "speech_style",
+    "delivery": "neutral",
+    "stability": 0.5,
+    "model": "eleven_flash_v2_5"
+  },
+  {
+    "id": 215,
+    "elapsed_ms": 13980.257,
+    "source": "server",
+    "type": "affect_decision",
+    "phase": "finished",
+    "outcome": "speech_already_started",
+    "elapsed_affect_ms": 562.0,
+    "trace": {
+      "prompt_version": "affect-director-v1",
+      "prompt_sha256": "41ab31abe741a0dbc4718e7a2d857357c02995df34d84bb57a69ef9d0e22b8f7",
+      "model": "qwen-3.8-27b",
+      "reasoning_effort": "none",
+      "timeout_s": 8.0,
+      "status": "accepted",
+      "elapsed_ms": 557.3,
+      "record_count": 3,
+      "input_tokens": 1214,
+      "output_tokens": 86,
+      "ttft_ms": 545.2,
+      "provider_total_ms": 546.4,
+      "http_statuses": [
+        200
+      ],
+      "raw_decision": "{\n  \"change\": false,\n  \"expression\": \"curious\",\n  \"variant\": 0,\n  \"delivery\": \"warm\",\n  \"evidence\": [\n    {\n      \"record_id\": \"current_user\",\n      \"quote\": \"Keep the current face unchanged. Please say one brief encouraging sentence about trying the print again.\"\n    }\n  ]\n}"
+    },
+    "decision": {
+      "change": false,
+      "expression": "curious",
+      "variant": 0,
+      "delivery": "warm",
+      "evidence": [
+        {
+          "record_id": "current_user",
+          "quote": "Keep the current face unchanged. Please say one brief encouraging sentence about trying the print again."
+        }
+      ]
+    }
+  },
+  {
+    "id": 216,
+    "elapsed_ms": 13994.557,
+    "source": "server",
+    "type": "debug_model",
+    "phase": "text_delta",
+    "duration_ms": null,
+    "timings": null
+  },
+  {
+    "id": 220,
+    "elapsed_ms": 13995.234,
+    "source": "server",
+    "type": "debug_model",
+    "phase": "text_delta",
+    "duration_ms": null,
+    "timings": null
+  },
+  {
+    "id": 224,
+    "elapsed_ms": 13995.767,
+    "source": "server",
+    "type": "debug_model",
+    "phase": "text_delta",
+    "duration_ms": null,
+    "timings": null
+  },
+  {
+    "id": 228,
+    "elapsed_ms": 13996.26,
+    "source": "server",
+    "type": "debug_model",
+    "phase": "text_delta",
+    "duration_ms": null,
+    "timings": null
+  },
+  {
+    "id": 232,
+    "elapsed_ms": 13996.71,
+    "source": "provider",
+    "type": "tts_phrase",
+    "backend": null,
+    "first_byte_s": null,
+    "output_s": null
+  },
+  {
+    "id": 234,
+    "elapsed_ms": 13997.305,
+    "source": "server",
+    "type": "transcript_done",
+    "role": "assistant",
+    "text": "\n\nA second attempt with the stand reinforced probably won't hurt as much as the first one did."
+  },
+  {
+    "id": 235,
+    "elapsed_ms": 13997.64,
+    "source": "server",
+    "type": "debug_model",
+    "phase": "thinking_finished",
+    "duration_ms": 578.0,
+    "timings": {
+      "tools": [],
+      "http_requests": [
+        {
+          "round": 0,
+          "status": 200,
+          "headers_ms": 551.7018000000462,
+          "usage": {
+            "total_tokens": 3905,
+            "completion_tokens": 55,
+            "completion_tokens_details": {
+              "reasoning_tokens": 34
+            },
+            "prompt_tokens": 3850,
+            "prompt_tokens_details": {
+              "cached_tokens": 3072,
+              "image_tokens": 0
+            }
+          },
+          "total_ms": 575.5905000000894,
+          "selected_tool_calls": 0
+        }
+      ],
+      "client_lock_wait_s": 0,
+      "reasoning_output_tokens": 34,
+      "streamed_visible_text": "\n\nA second attempt with the stand reinforced probably won't hurt as much as the first one did.",
+      "deadline_overrun_s": 0
+    }
+  },
+  {
+    "id": 280,
+    "elapsed_ms": 14915.826,
+    "source": "provider",
+    "type": "tts_complete",
+    "backend": "streaming_tts",
+    "first_byte_s": 0.42200000000002547,
+    "output_s": 4.301
+  },
+  {
+    "id": 281,
+    "elapsed_ms": 14915.876,
+    "source": "server",
+    "type": "latency",
+    "tts": {
+      "backend": "streaming_tts",
+      "sequence": 2,
+      "epoch": 2,
+      "first_byte_s": 0.42200000000002547,
+      "output_s": 4.301,
+      "characters": 94,
+      "phrases": 1
+    }
+  }
+]

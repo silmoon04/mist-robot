@@ -1,0 +1,496 @@
+{
+  "status": "Proposed artist scope, not approved new art or a production runtime change",
+  "date": "2026-09-16",
+  "counts": {
+    "production_component_drawings": 38,
+    "eye_pair_drawings": 30,
+    "individual_eye_layers": 60,
+    "mouth_drawings": 8,
+    "pose_compositions": 12,
+    "pilot_components_included_in_38": 6,
+    "style_exploration_composites_separate": 6
+  },
+  "rows": [
+    {
+      "id": "E01",
+      "group": "Base eye pairs",
+      "name": "Available",
+      "draw": "Relaxed open eyes; warm enough to sit with, not a permanent grin.",
+      "reference": "39_neutral_02_manual",
+      "pilot": true,
+      "unit": "eye pair"
+    },
+    {
+      "id": "E02",
+      "group": "Base eye pairs",
+      "name": "Listening",
+      "draw": "Open and attentive, a little more lifted than E01.",
+      "reference": "25_neutral_2_03_manual",
+      "pilot": false,
+      "unit": "eye pair"
+    },
+    {
+      "id": "E03",
+      "group": "Base eye pairs",
+      "name": "Happy",
+      "draw": "A clear smile in the eyes; retain some irregularity.",
+      "reference": "09_happy_03_manual",
+      "pilot": false,
+      "unit": "eye pair"
+    },
+    {
+      "id": "E04",
+      "group": "Base eye pairs",
+      "name": "Focused",
+      "draw": "A soft squint, engaged rather than angry.",
+      "reference": "40_neutral_03_manual",
+      "pilot": true,
+      "unit": "eye pair"
+    },
+    {
+      "id": "E05",
+      "group": "Base eye pairs",
+      "name": "Concerned",
+      "draw": "Gentle inner lift; empathetic, not crying by default.",
+      "reference": "32_sad_07_manual",
+      "pilot": false,
+      "unit": "eye pair"
+    },
+    {
+      "id": "E06",
+      "group": "Base eye pairs",
+      "name": "Sleepy",
+      "draw": "Heavy lids and relaxed weight.",
+      "reference": "16_misc_16_manual",
+      "pilot": false,
+      "unit": "eye pair"
+    },
+    {
+      "id": "E07",
+      "group": "Base eye pairs",
+      "name": "Annoyed",
+      "draw": "A mild flat-lidded deadpan, never the default.",
+      "reference": "07_annoyed_03_manual",
+      "pilot": false,
+      "unit": "eye pair"
+    },
+    {
+      "id": "E08",
+      "group": "Base eye pairs",
+      "name": "Surprised",
+      "draw": "A brief clear widening without enormous eyes.",
+      "reference": "38_misc_2_06_manual",
+      "pilot": false,
+      "unit": "eye pair"
+    },
+    {
+      "id": "E09",
+      "group": "Base eye pairs",
+      "name": "Curious",
+      "draw": "Small asymmetry; one eye slightly more lifted.",
+      "reference": "20_neutral_06_manual",
+      "pilot": false,
+      "unit": "eye pair"
+    },
+    {
+      "id": "E10",
+      "group": "Base eye pairs",
+      "name": "Playful",
+      "draw": "A restrained side-eye or unequal squeeze.",
+      "reference": "10_happy_04_manual",
+      "pilot": false,
+      "unit": "eye pair"
+    },
+    {
+      "id": "M01",
+      "group": "Mouths",
+      "name": "Rest",
+      "draw": "Closed relaxed line; not an O.",
+      "reference": "rest",
+      "pilot": true,
+      "unit": "mouth"
+    },
+    {
+      "id": "M02",
+      "group": "Mouths",
+      "name": "Warm smile",
+      "draw": "Small uneven smile, not a large grin.",
+      "reference": "rest",
+      "pilot": false,
+      "unit": "mouth"
+    },
+    {
+      "id": "M03",
+      "group": "Mouths",
+      "name": "Concern",
+      "draw": "Small shallow frown; keep the same anchor.",
+      "reference": "rest",
+      "pilot": false,
+      "unit": "mouth"
+    },
+    {
+      "id": "M04",
+      "group": "Mouths",
+      "name": "Playful",
+      "draw": "Small asymmetric smile.",
+      "reference": "rest",
+      "pilot": false,
+      "unit": "mouth"
+    },
+    {
+      "id": "M05",
+      "group": "Mouths",
+      "name": "Lips together",
+      "draw": "A definite closed contact for M/B/P, distinct from relaxed rest.",
+      "reference": "MBP",
+      "pilot": false,
+      "unit": "mouth"
+    },
+    {
+      "id": "M06",
+      "group": "Mouths",
+      "name": "Open speech",
+      "draw": "Medium open A; primary amplitude-driven talking pose.",
+      "reference": "AA",
+      "pilot": true,
+      "unit": "mouth"
+    },
+    {
+      "id": "M07",
+      "group": "Mouths",
+      "name": "Wide speech",
+      "draw": "Wider, shallower E; keep corners soft.",
+      "reference": "EE",
+      "pilot": false,
+      "unit": "mouth"
+    },
+    {
+      "id": "M08",
+      "group": "Mouths",
+      "name": "Round speech",
+      "draw": "Rounded O/U; also a brief surprise accent.",
+      "reference": "OO",
+      "pilot": false,
+      "unit": "mouth"
+    },
+    {
+      "id": "B01",
+      "group": "Blink eye pairs",
+      "name": "open half closed",
+      "draw": "Half closed lid drawing for the open family. Match E01 anchors and line weight.",
+      "reference": "E01",
+      "pilot": true,
+      "unit": "eye pair"
+    },
+    {
+      "id": "B02",
+      "group": "Blink eye pairs",
+      "name": "open closed",
+      "draw": "Closed lid drawing for the open family. Match E01 anchors and line weight.",
+      "reference": "E01",
+      "pilot": true,
+      "unit": "eye pair"
+    },
+    {
+      "id": "B03",
+      "group": "Blink eye pairs",
+      "name": "happy half closed",
+      "draw": "Half closed lid drawing for the happy family. Match E03 anchors and line weight.",
+      "reference": "E03",
+      "pilot": false,
+      "unit": "eye pair"
+    },
+    {
+      "id": "B04",
+      "group": "Blink eye pairs",
+      "name": "happy closed",
+      "draw": "Closed lid drawing for the happy family. Match E03 anchors and line weight.",
+      "reference": "E03",
+      "pilot": false,
+      "unit": "eye pair"
+    },
+    {
+      "id": "B05",
+      "group": "Blink eye pairs",
+      "name": "focused half closed",
+      "draw": "Half closed lid drawing for the focused family. Match E04 anchors and line weight.",
+      "reference": "E04",
+      "pilot": false,
+      "unit": "eye pair"
+    },
+    {
+      "id": "B06",
+      "group": "Blink eye pairs",
+      "name": "focused closed",
+      "draw": "Closed lid drawing for the focused family. Match E04 anchors and line weight.",
+      "reference": "E04",
+      "pilot": false,
+      "unit": "eye pair"
+    },
+    {
+      "id": "B07",
+      "group": "Blink eye pairs",
+      "name": "downcast half closed",
+      "draw": "Half closed lid drawing for the downcast family. Match E05 anchors and line weight.",
+      "reference": "E05",
+      "pilot": false,
+      "unit": "eye pair"
+    },
+    {
+      "id": "B08",
+      "group": "Blink eye pairs",
+      "name": "downcast closed",
+      "draw": "Closed lid drawing for the downcast family. Match E05 anchors and line weight.",
+      "reference": "E05",
+      "pilot": false,
+      "unit": "eye pair"
+    },
+    {
+      "id": "A01",
+      "group": "Accent eye pairs",
+      "name": "Surprise anticipation",
+      "draw": "Brief inward squash before E08 opens.",
+      "reference": "E08",
+      "pilot": false,
+      "unit": "eye pair"
+    },
+    {
+      "id": "A02",
+      "group": "Accent eye pairs",
+      "name": "Surprise overshoot",
+      "draw": "Slightly wider than E08, then settle back.",
+      "reference": "E08",
+      "pilot": false,
+      "unit": "eye pair"
+    },
+    {
+      "id": "A03",
+      "group": "Accent eye pairs",
+      "name": "Happy squeeze",
+      "draw": "Compressed happy eyes for a one-off reaction.",
+      "reference": "E03",
+      "pilot": false,
+      "unit": "eye pair"
+    },
+    {
+      "id": "A04",
+      "group": "Accent eye pairs",
+      "name": "Thinking squint",
+      "draw": "Brief extra focus, then return to E04.",
+      "reference": "E04",
+      "pilot": false,
+      "unit": "eye pair"
+    },
+    {
+      "id": "A05",
+      "group": "Accent eye pairs",
+      "name": "Playful asymmetry",
+      "draw": "A readable asymmetric accent for E10.",
+      "reference": "E10",
+      "pilot": false,
+      "unit": "eye pair"
+    },
+    {
+      "id": "A06",
+      "group": "Accent eye pairs",
+      "name": "Sleepy droop",
+      "draw": "A little heavier than E06, then recover.",
+      "reference": "E06",
+      "pilot": false,
+      "unit": "eye pair"
+    },
+    {
+      "id": "R01",
+      "group": "Alternate eye redraws",
+      "name": "E01 redraw B",
+      "draw": "A subtly different contour of the same pose. Keep position, scale, expression and average line weight unchanged.",
+      "reference": "E01",
+      "pilot": false,
+      "unit": "eye pair"
+    },
+    {
+      "id": "R02",
+      "group": "Alternate eye redraws",
+      "name": "E01 redraw C",
+      "draw": "A subtly different contour of the same pose. Keep position, scale, expression and average line weight unchanged.",
+      "reference": "E01",
+      "pilot": false,
+      "unit": "eye pair"
+    },
+    {
+      "id": "R03",
+      "group": "Alternate eye redraws",
+      "name": "E03 redraw B",
+      "draw": "A subtly different contour of the same pose. Keep position, scale, expression and average line weight unchanged.",
+      "reference": "E03",
+      "pilot": false,
+      "unit": "eye pair"
+    },
+    {
+      "id": "R04",
+      "group": "Alternate eye redraws",
+      "name": "E03 redraw C",
+      "draw": "A subtly different contour of the same pose. Keep position, scale, expression and average line weight unchanged.",
+      "reference": "E03",
+      "pilot": false,
+      "unit": "eye pair"
+    },
+    {
+      "id": "R05",
+      "group": "Alternate eye redraws",
+      "name": "E04 redraw B",
+      "draw": "A subtly different contour of the same pose. Keep position, scale, expression and average line weight unchanged.",
+      "reference": "E04",
+      "pilot": false,
+      "unit": "eye pair"
+    },
+    {
+      "id": "R06",
+      "group": "Alternate eye redraws",
+      "name": "E04 redraw C",
+      "draw": "A subtly different contour of the same pose. Keep position, scale, expression and average line weight unchanged.",
+      "reference": "E04",
+      "pilot": false,
+      "unit": "eye pair"
+    }
+  ],
+  "poses": [
+    {
+      "id": "F01",
+      "name": "Available",
+      "eyes": "E01",
+      "mouth": "M01",
+      "state": "neutral",
+      "reference": "39_neutral_02_manual",
+      "direction": "Default between interactions. Tiny gaze changes; most of the time still."
+    },
+    {
+      "id": "F02",
+      "name": "Listening",
+      "eyes": "E02",
+      "mouth": "M01",
+      "state": "listening",
+      "reference": "25_neutral_2_03_manual",
+      "direction": "Attend to the user. Closed mouth. One small settle when speech starts."
+    },
+    {
+      "id": "F03",
+      "name": "Thinking",
+      "eyes": "E04",
+      "mouth": "M01",
+      "state": "thinking",
+      "reference": "39_neutral_02_manual",
+      "direction": "Closed mouth, gaze slightly up and sideways. No repeated talking motion."
+    },
+    {
+      "id": "F04",
+      "name": "Happy",
+      "eyes": "E03",
+      "mouth": "M02",
+      "state": "happy",
+      "reference": "09_happy_03_manual",
+      "direction": "A short lift or squeeze for a real success. Then settle."
+    },
+    {
+      "id": "F05",
+      "name": "Curious",
+      "eyes": "E09",
+      "mouth": "M01",
+      "state": "curious",
+      "reference": "20_neutral_06_manual",
+      "direction": "Unequal eye lift; keep the question gentle."
+    },
+    {
+      "id": "F06",
+      "name": "Focused",
+      "eyes": "E04",
+      "mouth": "M01",
+      "state": "focused",
+      "reference": "40_neutral_03_manual",
+      "direction": "Same art as thinking, centered gaze. For checking a result."
+    },
+    {
+      "id": "F07",
+      "name": "Concerned",
+      "eyes": "E05",
+      "mouth": "M03",
+      "state": "sad",
+      "reference": "32_sad_07_manual",
+      "direction": "Empathetic and quiet. No tears in the first release."
+    },
+    {
+      "id": "F08",
+      "name": "Sleepy",
+      "eyes": "E06",
+      "mouth": "M01",
+      "state": "sleepy",
+      "reference": "16_misc_16_manual",
+      "direction": "Slow settle and occasional long blink; not the busy indicator."
+    },
+    {
+      "id": "F09",
+      "name": "Deadpan",
+      "eyes": "E07",
+      "mouth": "M01",
+      "state": "angry",
+      "reference": "07_annoyed_03_manual",
+      "direction": "Mild irritation or dry humor, only when context supports it."
+    },
+    {
+      "id": "F10",
+      "name": "Surprised",
+      "eyes": "E08",
+      "mouth": "M08",
+      "state": "surprised",
+      "reference": "38_misc_2_06_manual",
+      "direction": "Brief widened reaction. Close the O again rather than hold it indefinitely."
+    },
+    {
+      "id": "F11",
+      "name": "Playful",
+      "eyes": "E10",
+      "mouth": "M04",
+      "state": "mischief",
+      "reference": "10_happy_04_manual",
+      "direction": "One small asymmetrical accent. No repeated wink loop."
+    },
+    {
+      "id": "F12",
+      "name": "Reassuring",
+      "eyes": "E05",
+      "mouth": "M02",
+      "state": "reassuring",
+      "reference": "14_happy_16_manual",
+      "direction": "Concerned eyes plus a small smile. Calm and present."
+    }
+  ],
+  "canvas": {
+    "logical_width": 100,
+    "logical_height": 64,
+    "master_width": 1600,
+    "master_height": 1024,
+    "eye_L_anchor": [
+      28,
+      29.4
+    ],
+    "eye_R_anchor": [
+      72,
+      29.4
+    ],
+    "mouth_anchor": [
+      50,
+      49.5
+    ],
+    "safe_box": [
+      5.5,
+      5.5,
+      94.5,
+      58.5
+    ]
+  },
+  "limits": [
+    "Reference faces were derived from surviving local assets, not new artist work. Original capture sources are missing; ownership and license of earlier reference designs have not been established in this pack. Treat them as functional references, not a request to copy another designer.",
+    "A timeline exposure is not a new drawing. An eye-pair unit contains two separately editable eye layers.",
+    "Full viseme-driven speech and alternate-drawing playback require runtime integration. Current production speech mainly uses AA/rest."
+  ]
+}

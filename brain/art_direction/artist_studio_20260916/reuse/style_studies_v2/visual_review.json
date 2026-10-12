@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "reviewedOn": "2026-09-28",
+  "reviewer": "independent styles_v2_art_direction agent",
+  "passed": true,
+  "approved": true,
+  "approvalScope": "Static drawing-style comparison for user review",
+  "manifestSha256": "4dc3411615ebefc89dc0638654352c6a0c1dcd9c59b36dce6d8679f76717b762",
+  "comparisonSha256": "b868b6c74ea714bb69ce91c292cdd6c6cd74de6af0797d7e52f6dfb9c941c950",
+  "sources": {
+    "pen": {"file": "source/pen.png", "sha256": "78583a51f9b8821fe450423d79513769517602c4cb1963090c5d8ed0e787e812"},
+    "brush": {"file": "source/brush.png", "sha256": "99089fbc66ec53944009549aa1b32012c5f488b4d1a32d31bc0b143436be4bd4"},
+    "cel": {"file": "source/cel.png", "sha256": "017b5bda54c0c64128745ee5807b08d0d4c9c6f08ca9bc444c3807b047136985"}
+  },
+  "method": "Visual inspection of all three generated sheets and the final 40-tile comparison, including corrected quiet-thought drawings. Actual file hashes verified after inspection. Mechanical asset review read separately; pixel counts are not treated as proof of style quality.",
+  "checks": {
+    "threeDirectionsVisiblyDistinct": true,
+    "differencesExtendBeyondStrokeThickness": true,
+    "tenExpressionRolesRecognizable": true,
+    "correctedQuietThoughtNoAngryInwardV": true,
+    "deadpanAndDelightedRemainMouthless": true,
+    "sadKeepsFrownAndSingleTear": true,
+    "noVisibleClippingOrNeighborContamination": true,
+    "thumbnailLegibility": true
+  },
+  "directions": {
+    "pen": "Gesture ink uses tilted uneven loops, asymmetric eye size, tapered endings, hollow mouth drawings and a curled smirk. Its contours differ from the original circles and bars. The result is calligraphic rather than scribbled pencil.",
+    "brush": "Dry brush uses directional painted sweeps with bristle gaps, broken ring openings and pointed eye and mouth endings. It retains more original eye construction than the other directions, but its silhouettes and stroke gestures are visibly painted.",
+    "cel": "Cartoon cel uses broad organic eye shapes, bean-like negative spaces, solid relaxed lids, an upward-arched delighted expression and a filled teardrop. The redraw changes the shape vocabulary across the set."
+  },
+  "faceNotes": [
+    {"face": "Calm", "result": "Recognizable; cel introduces a small friendly smile instead of the original straight mouth."},
+    {"face": "Listening", "result": "Open attentive eyes and round mouth retained; pen and cel make the eyes taller."},
+    {"face": "Curious", "result": "Asymmetric eye size and angle strengthen the questioning gesture."},
+    {"face": "Quiet thought", "result": "Corrected pen and cel lids are level and relaxed enough to avoid the earlier angry inward slope. All variants retain a small mouth."},
+    {"face": "Happy", "result": "Clear open smile in all three directions; pen changes it into a hollow drawn mouth."},
+    {"face": "Playful", "result": "Half-lidded eyes and off-center smile retain the sly expression."},
+    {"face": "Deadpan", "result": "Closed eye curves remain mouthless; shares the original ambiguity between restful and deadpan."},
+    {"face": "Sleepy", "result": "Closed eyes and tall yawning mouth remain clear."},
+    {"face": "Delighted", "result": "Mouthless squeezed eyes remain readable; cel uses upward arches rather than sideways chevrons."},
+    {"face": "Sad", "result": "Downcast eyes, frown and single tear remain clear; pen outlines the tear and cel fills it."}
+  ],
+  "limitations": [
+    "These are static proposals. Blinks, transitions, phoneme mouths and speech synchronization were not generated or tested for these new styles.",
+    "Emotional readings are a visual review judgment, not a user study. Half-closed quiet-thought eyes can still read as tired without motion or context.",
+    "Cartoon cel Calm is warmer than the original neutral expression. Dry brush retains more of the original eye construction than Gesture ink or Cartoon cel.",
+    "Brush edge detail needs a later small-screen motion test before adopting it for animated phone use."
+  ]
+}

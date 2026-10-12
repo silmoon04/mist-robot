@@ -1,0 +1,1076 @@
+{
+  "schema_version": 1,
+  "status": "native_motion_rig_created",
+  "native_execution": true,
+  "native_joint_creation_complete": true,
+  "transmission_mates_created": false,
+  "full_motion_verified": false,
+  "full_ROM_checked": false,
+  "plan_sha256": "a9fd5af86c01b9ac586f7b8d97e9ac7ff2b15efa1af8a450e33dead32de5b972",
+  "joint_records": [
+    {
+      "name": "FL_yaw",
+      "parent_group": "body",
+      "child_group": "FL/yaw",
+      "centre_world_mm": [
+        72.8319984622144,
+        72.8319984622144,
+        0.0
+      ],
+      "axis_world": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "built_physical_deg": -45.0,
+      "physical_limits_deg": [
+        -100,
+        100
+      ],
+      "continuous": false,
+      "status": "created_and_direction_checked",
+      "native_name": "MIST_fixture_motion_FL_yaw",
+      "datum_definition": {
+        "definition": "parent_sketch_normal_standard_joint_Z",
+        "requested_axis_local": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "sketch_normal_local": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "normal_dot_requested_axis": 1.0
+      },
+      "probe": {
+        "sign": 1,
+        "measured_relative_angle_rad": 0.0017453292519978123,
+        "commanded_delta_rad": 0.0017453292519943296,
+        "rotation_matrix_error": 0.0,
+        "centre_error_cm": 9.367506770274758e-17,
+        "initial_fusion_value_rad": 0.0,
+        "assembled_pose_restored": true,
+        "drive_pose_is_transient": true,
+        "compute_all_after_restoration_only": true
+      },
+      "native_rotation_limits_rad": [
+        -0.9599310885968813,
+        2.530727415391778
+      ],
+      "native_axis_vector": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "native_axis_vector_context_not_assumed": true,
+      "native_is_valid": true,
+      "native_is_suppressed": false
+    },
+    {
+      "name": "FL_hip",
+      "parent_group": "FL/yaw",
+      "child_group": "FL/femur",
+      "centre_world_mm": [
+        107.8319984622144,
+        102.8319984622144,
+        0.0
+      ],
+      "axis_world": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "built_physical_deg": 58.04300403950684,
+      "physical_limits_deg": [
+        -40,
+        125
+      ],
+      "continuous": false,
+      "status": "created_and_direction_checked",
+      "native_name": "MIST_fixture_motion_FL_hip",
+      "datum_definition": {
+        "definition": "parent_sketch_normal_standard_joint_Z",
+        "requested_axis_local": [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        "sketch_normal_local": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "normal_dot_requested_axis": -1.0
+      },
+      "probe": {
+        "sign": -1,
+        "measured_relative_angle_rad": -0.00174532925199782,
+        "commanded_delta_rad": 0.0017453292519943296,
+        "rotation_matrix_error": 1.1102230246251565e-16,
+        "centre_error_cm": 2.886579864025407e-15,
+        "initial_fusion_value_rad": 0.0,
+        "assembled_pose_restored": true,
+        "drive_pose_is_transient": true,
+        "compute_all_after_restoration_only": true
+      },
+      "native_rotation_limits_rad": [
+        -1.1686200367551487,
+        1.711173229035495
+      ],
+      "native_axis_vector": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "native_axis_vector_context_not_assumed": true,
+      "native_is_valid": true,
+      "native_is_suppressed": false
+    },
+    {
+      "name": "FL_knee",
+      "parent_group": "FL/femur",
+      "child_group": "FL/tibia",
+      "centre_world_mm": [
+        226.19015890245288,
+        102.8319984622144,
+        -73.83492301887205
+      ],
+      "axis_world": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "built_physical_deg": -84.71670736904682,
+      "physical_limits_deg": [
+        -150,
+        -15
+      ],
+      "continuous": false,
+      "status": "created_and_direction_checked",
+      "native_name": "MIST_fixture_motion_FL_knee",
+      "datum_definition": {
+        "definition": "parent_sketch_normal_standard_joint_Z",
+        "requested_axis_local": [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        "sketch_normal_local": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "normal_dot_requested_axis": -1.0
+      },
+      "probe": {
+        "sign": -1,
+        "measured_relative_angle_rad": -0.0017453292521252604,
+        "commanded_delta_rad": 0.0017453292519943296,
+        "rotation_matrix_error": 1.1102230246251565e-16,
+        "centre_error_cm": 3.615163723935666e-15,
+        "initial_fusion_value_rad": 0.0,
+        "assembled_pose_restored": true,
+        "drive_pose_is_transient": true,
+        "compute_all_after_restoration_only": true
+      },
+      "native_rotation_limits_rad": [
+        -1.2167860872392604,
+        1.1394084029530844
+      ],
+      "native_axis_vector": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "native_axis_vector_context_not_assumed": true,
+      "native_is_valid": true,
+      "native_is_suppressed": false
+    },
+    {
+      "name": "FL_wheel",
+      "parent_group": "FL/tibia",
+      "child_group": "FL/wheel",
+      "centre_world_mm": [
+        167.83199846221436,
+        102.8319984622144,
+        -190.0
+      ],
+      "axis_world": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "built_physical_deg": 0.0,
+      "physical_limits_deg": null,
+      "continuous": true,
+      "status": "created_and_direction_checked",
+      "native_name": "MIST_fixture_motion_FL_wheel",
+      "datum_definition": {
+        "definition": "parent_sketch_normal_standard_joint_Z",
+        "requested_axis_local": [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        "sketch_normal_local": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "normal_dot_requested_axis": -1.0
+      },
+      "probe": {
+        "sign": -1,
+        "measured_relative_angle_rad": -0.00174532925199782,
+        "commanded_delta_rad": 0.0017453292519943296,
+        "rotation_matrix_error": 0.0,
+        "centre_error_cm": 1.24310284288498e-14,
+        "initial_fusion_value_rad": 0.0,
+        "assembled_pose_restored": true,
+        "drive_pose_is_transient": true,
+        "compute_all_after_restoration_only": true
+      },
+      "native_rotation_limits_rad": null,
+      "native_axis_vector": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "native_axis_vector_context_not_assumed": true,
+      "native_is_valid": true,
+      "native_is_suppressed": false
+    },
+    {
+      "name": "FR_yaw",
+      "parent_group": "body",
+      "child_group": "FR/yaw",
+      "centre_world_mm": [
+        72.8319984622144,
+        -72.8319984622144,
+        0.0
+      ],
+      "axis_world": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "built_physical_deg": 45.0,
+      "physical_limits_deg": [
+        -100,
+        100
+      ],
+      "continuous": false,
+      "status": "created_and_direction_checked",
+      "native_name": "MIST_fixture_motion_FR_yaw",
+      "datum_definition": {
+        "definition": "parent_sketch_normal_standard_joint_Z",
+        "requested_axis_local": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "sketch_normal_local": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "normal_dot_requested_axis": 1.0
+      },
+      "probe": {
+        "sign": 1,
+        "measured_relative_angle_rad": 0.0017453292519978123,
+        "commanded_delta_rad": 0.0017453292519943296,
+        "rotation_matrix_error": 0.0,
+        "centre_error_cm": 9.367506770274758e-17,
+        "initial_fusion_value_rad": 0.0,
+        "assembled_pose_restored": true,
+        "drive_pose_is_transient": true,
+        "compute_all_after_restoration_only": true
+      },
+      "native_rotation_limits_rad": [
+        -2.530727415391778,
+        0.9599310885968813
+      ],
+      "native_axis_vector": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "native_axis_vector_context_not_assumed": true,
+      "native_is_valid": true,
+      "native_is_suppressed": false
+    },
+    {
+      "name": "FR_hip",
+      "parent_group": "FR/yaw",
+      "child_group": "FR/femur",
+      "centre_world_mm": [
+        107.8319984622144,
+        -102.8319984622144,
+        0.0
+      ],
+      "axis_world": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "built_physical_deg": 58.04300403950684,
+      "physical_limits_deg": [
+        -40,
+        125
+      ],
+      "continuous": false,
+      "status": "created_and_direction_checked",
+      "native_name": "MIST_fixture_motion_FR_hip",
+      "datum_definition": {
+        "definition": "parent_sketch_normal_standard_joint_Z",
+        "requested_axis_local": [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        "sketch_normal_local": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "normal_dot_requested_axis": -1.0
+      },
+      "probe": {
+        "sign": -1,
+        "measured_relative_angle_rad": -0.00174532925199782,
+        "commanded_delta_rad": 0.0017453292519943296,
+        "rotation_matrix_error": 1.1102230246251565e-16,
+        "centre_error_cm": 2.886579864025407e-15,
+        "initial_fusion_value_rad": 0.0,
+        "assembled_pose_restored": true,
+        "drive_pose_is_transient": true,
+        "compute_all_after_restoration_only": true
+      },
+      "native_rotation_limits_rad": [
+        -1.1686200367551487,
+        1.711173229035495
+      ],
+      "native_axis_vector": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "native_axis_vector_context_not_assumed": true,
+      "native_is_valid": true,
+      "native_is_suppressed": false
+    },
+    {
+      "name": "FR_knee",
+      "parent_group": "FR/femur",
+      "child_group": "FR/tibia",
+      "centre_world_mm": [
+        226.19015890245288,
+        -102.8319984622144,
+        -73.83492301887205
+      ],
+      "axis_world": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "built_physical_deg": -84.71670736904682,
+      "physical_limits_deg": [
+        -150,
+        -15
+      ],
+      "continuous": false,
+      "status": "created_and_direction_checked",
+      "native_name": "MIST_fixture_motion_FR_knee",
+      "datum_definition": {
+        "definition": "parent_sketch_normal_standard_joint_Z",
+        "requested_axis_local": [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        "sketch_normal_local": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "normal_dot_requested_axis": -1.0
+      },
+      "probe": {
+        "sign": -1,
+        "measured_relative_angle_rad": -0.0017453292521252604,
+        "commanded_delta_rad": 0.0017453292519943296,
+        "rotation_matrix_error": 1.1102230246251565e-16,
+        "centre_error_cm": 3.615163723935666e-15,
+        "initial_fusion_value_rad": 0.0,
+        "assembled_pose_restored": true,
+        "drive_pose_is_transient": true,
+        "compute_all_after_restoration_only": true
+      },
+      "native_rotation_limits_rad": [
+        -1.2167860872392604,
+        1.1394084029530844
+      ],
+      "native_axis_vector": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "native_axis_vector_context_not_assumed": true,
+      "native_is_valid": true,
+      "native_is_suppressed": false
+    },
+    {
+      "name": "FR_wheel",
+      "parent_group": "FR/tibia",
+      "child_group": "FR/wheel",
+      "centre_world_mm": [
+        167.83199846221436,
+        -102.8319984622144,
+        -190.0
+      ],
+      "axis_world": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "built_physical_deg": 0.0,
+      "physical_limits_deg": null,
+      "continuous": true,
+      "status": "created_and_direction_checked",
+      "native_name": "MIST_fixture_motion_FR_wheel",
+      "datum_definition": {
+        "definition": "parent_sketch_normal_standard_joint_Z",
+        "requested_axis_local": [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        "sketch_normal_local": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "normal_dot_requested_axis": -1.0
+      },
+      "probe": {
+        "sign": -1,
+        "measured_relative_angle_rad": -0.00174532925199782,
+        "commanded_delta_rad": 0.0017453292519943296,
+        "rotation_matrix_error": 0.0,
+        "centre_error_cm": 1.24310284288498e-14,
+        "initial_fusion_value_rad": 0.0,
+        "assembled_pose_restored": true,
+        "drive_pose_is_transient": true,
+        "compute_all_after_restoration_only": true
+      },
+      "native_rotation_limits_rad": null,
+      "native_axis_vector": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "native_axis_vector_context_not_assumed": true,
+      "native_is_valid": true,
+      "native_is_suppressed": false
+    },
+    {
+      "name": "RL_yaw",
+      "parent_group": "body",
+      "child_group": "RL/yaw",
+      "centre_world_mm": [
+        -72.83199846221439,
+        72.8319984622144,
+        0.0
+      ],
+      "axis_world": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "built_physical_deg": 45.0,
+      "physical_limits_deg": [
+        -100,
+        100
+      ],
+      "continuous": false,
+      "status": "created_and_direction_checked",
+      "native_name": "MIST_fixture_motion_RL_yaw",
+      "datum_definition": {
+        "definition": "parent_sketch_normal_standard_joint_Z",
+        "requested_axis_local": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "sketch_normal_local": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "normal_dot_requested_axis": 1.0
+      },
+      "probe": {
+        "sign": 1,
+        "measured_relative_angle_rad": 0.0017453292519978123,
+        "commanded_delta_rad": 0.0017453292519943296,
+        "rotation_matrix_error": 0.0,
+        "centre_error_cm": 8.847089727481716e-17,
+        "initial_fusion_value_rad": 0.0,
+        "assembled_pose_restored": true,
+        "drive_pose_is_transient": true,
+        "compute_all_after_restoration_only": true
+      },
+      "native_rotation_limits_rad": [
+        -2.530727415391778,
+        0.9599310885968813
+      ],
+      "native_axis_vector": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "native_axis_vector_context_not_assumed": true,
+      "native_is_valid": true,
+      "native_is_suppressed": false
+    },
+    {
+      "name": "RL_hip",
+      "parent_group": "RL/yaw",
+      "child_group": "RL/femur",
+      "centre_world_mm": [
+        -107.83199846221439,
+        102.8319984622144,
+        0.0
+      ],
+      "axis_world": [
+        1.2246467991473532e-16,
+        1.0,
+        0.0
+      ],
+      "built_physical_deg": 58.04300403950684,
+      "physical_limits_deg": [
+        -40,
+        125
+      ],
+      "continuous": false,
+      "status": "created_and_direction_checked",
+      "native_name": "MIST_fixture_motion_RL_hip",
+      "datum_definition": {
+        "definition": "parent_sketch_normal_standard_joint_Z",
+        "requested_axis_local": [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        "sketch_normal_local": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "normal_dot_requested_axis": -1.0
+      },
+      "probe": {
+        "sign": -1,
+        "measured_relative_angle_rad": -0.00174532925199782,
+        "commanded_delta_rad": 0.0017453292519943296,
+        "rotation_matrix_error": 1.1102230246251565e-16,
+        "centre_error_cm": 3.4416913763379853e-15,
+        "initial_fusion_value_rad": 0.0,
+        "assembled_pose_restored": true,
+        "drive_pose_is_transient": true,
+        "compute_all_after_restoration_only": true
+      },
+      "native_rotation_limits_rad": [
+        -1.1686200367551487,
+        1.711173229035495
+      ],
+      "native_axis_vector": [
+        -1.2246467991473532e-16,
+        -1.0,
+        0.0
+      ],
+      "native_axis_vector_context_not_assumed": true,
+      "native_is_valid": true,
+      "native_is_suppressed": false
+    },
+    {
+      "name": "RL_knee",
+      "parent_group": "RL/femur",
+      "child_group": "RL/tibia",
+      "centre_world_mm": [
+        -226.19015890245288,
+        102.83199846221441,
+        -73.83492301887205
+      ],
+      "axis_world": [
+        1.2246467991473532e-16,
+        1.0,
+        0.0
+      ],
+      "built_physical_deg": -84.71670736904682,
+      "physical_limits_deg": [
+        -150,
+        -15
+      ],
+      "continuous": false,
+      "status": "created_and_direction_checked",
+      "native_name": "MIST_fixture_motion_RL_knee",
+      "datum_definition": {
+        "definition": "parent_sketch_normal_standard_joint_Z",
+        "requested_axis_local": [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        "sketch_normal_local": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "normal_dot_requested_axis": -1.0
+      },
+      "probe": {
+        "sign": -1,
+        "measured_relative_angle_rad": -0.0017453292521252604,
+        "commanded_delta_rad": 0.0017453292519943296,
+        "rotation_matrix_error": 1.1102230246251565e-16,
+        "centre_error_cm": 3.649858193455202e-15,
+        "initial_fusion_value_rad": 0.0,
+        "assembled_pose_restored": true,
+        "drive_pose_is_transient": true,
+        "compute_all_after_restoration_only": true
+      },
+      "native_rotation_limits_rad": [
+        -1.2167860872392604,
+        1.1394084029530844
+      ],
+      "native_axis_vector": [
+        -1.2246467991473532e-16,
+        -1.0,
+        2.0915798742199885e-32
+      ],
+      "native_axis_vector_context_not_assumed": true,
+      "native_is_valid": true,
+      "native_is_suppressed": false
+    },
+    {
+      "name": "RL_wheel",
+      "parent_group": "RL/tibia",
+      "child_group": "RL/wheel",
+      "centre_world_mm": [
+        -167.83199846221436,
+        102.8319984622144,
+        -190.0
+      ],
+      "axis_world": [
+        1.2246467991473532e-16,
+        1.0,
+        0.0
+      ],
+      "built_physical_deg": 0.0,
+      "physical_limits_deg": null,
+      "continuous": true,
+      "status": "created_and_direction_checked",
+      "native_name": "MIST_fixture_motion_RL_wheel",
+      "datum_definition": {
+        "definition": "parent_sketch_normal_standard_joint_Z",
+        "requested_axis_local": [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        "sketch_normal_local": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "normal_dot_requested_axis": -1.0
+      },
+      "probe": {
+        "sign": -1,
+        "measured_relative_angle_rad": -0.00174532925199782,
+        "commanded_delta_rad": 0.0017453292519943296,
+        "rotation_matrix_error": 6.162975822039155e-33,
+        "centre_error_cm": 1.4210854715202004e-14,
+        "initial_fusion_value_rad": 0.0,
+        "assembled_pose_restored": true,
+        "drive_pose_is_transient": true,
+        "compute_all_after_restoration_only": true
+      },
+      "native_rotation_limits_rad": null,
+      "native_axis_vector": [
+        -1.2246467991473532e-16,
+        -1.0,
+        0.0
+      ],
+      "native_axis_vector_context_not_assumed": true,
+      "native_is_valid": true,
+      "native_is_suppressed": false
+    },
+    {
+      "name": "RR_yaw",
+      "parent_group": "body",
+      "child_group": "RR/yaw",
+      "centre_world_mm": [
+        -72.83199846221439,
+        -72.8319984622144,
+        0.0
+      ],
+      "axis_world": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "built_physical_deg": -45.0,
+      "physical_limits_deg": [
+        -100,
+        100
+      ],
+      "continuous": false,
+      "status": "created_and_direction_checked",
+      "native_name": "MIST_fixture_motion_RR_yaw",
+      "datum_definition": {
+        "definition": "parent_sketch_normal_standard_joint_Z",
+        "requested_axis_local": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "sketch_normal_local": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "normal_dot_requested_axis": 1.0
+      },
+      "probe": {
+        "sign": 1,
+        "measured_relative_angle_rad": 0.0017453292519978123,
+        "commanded_delta_rad": 0.0017453292519943296,
+        "rotation_matrix_error": 0.0,
+        "centre_error_cm": 9.540979117872439e-17,
+        "initial_fusion_value_rad": 0.0,
+        "assembled_pose_restored": true,
+        "drive_pose_is_transient": true,
+        "compute_all_after_restoration_only": true
+      },
+      "native_rotation_limits_rad": [
+        -0.9599310885968813,
+        2.530727415391778
+      ],
+      "native_axis_vector": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "native_axis_vector_context_not_assumed": true,
+      "native_is_valid": true,
+      "native_is_suppressed": false
+    },
+    {
+      "name": "RR_hip",
+      "parent_group": "RR/yaw",
+      "child_group": "RR/femur",
+      "centre_world_mm": [
+        -107.83199846221439,
+        -102.8319984622144,
+        0.0
+      ],
+      "axis_world": [
+        -1.2246467991473532e-16,
+        1.0,
+        0.0
+      ],
+      "built_physical_deg": 58.04300403950684,
+      "physical_limits_deg": [
+        -40,
+        125
+      ],
+      "continuous": false,
+      "status": "created_and_direction_checked",
+      "native_name": "MIST_fixture_motion_RR_hip",
+      "datum_definition": {
+        "definition": "parent_sketch_normal_standard_joint_Z",
+        "requested_axis_local": [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        "sketch_normal_local": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "normal_dot_requested_axis": -1.0
+      },
+      "probe": {
+        "sign": -1,
+        "measured_relative_angle_rad": -0.00174532925199782,
+        "commanded_delta_rad": 0.0017453292519943296,
+        "rotation_matrix_error": 1.1102230246251565e-16,
+        "centre_error_cm": 3.4416913763379853e-15,
+        "initial_fusion_value_rad": 0.0,
+        "assembled_pose_restored": true,
+        "drive_pose_is_transient": true,
+        "compute_all_after_restoration_only": true
+      },
+      "native_rotation_limits_rad": [
+        -1.1686200367551487,
+        1.711173229035495
+      ],
+      "native_axis_vector": [
+        1.2246467991473532e-16,
+        -1.0,
+        0.0
+      ],
+      "native_axis_vector_context_not_assumed": true,
+      "native_is_valid": true,
+      "native_is_suppressed": false
+    },
+    {
+      "name": "RR_knee",
+      "parent_group": "RR/femur",
+      "child_group": "RR/tibia",
+      "centre_world_mm": [
+        -226.19015890245288,
+        -102.83199846221441,
+        -73.83492301887205
+      ],
+      "axis_world": [
+        -1.2246467991473532e-16,
+        1.0,
+        0.0
+      ],
+      "built_physical_deg": -84.71670736904682,
+      "physical_limits_deg": [
+        -150,
+        -15
+      ],
+      "continuous": false,
+      "status": "created_and_direction_checked",
+      "native_name": "MIST_fixture_motion_RR_knee",
+      "datum_definition": {
+        "definition": "parent_sketch_normal_standard_joint_Z",
+        "requested_axis_local": [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        "sketch_normal_local": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "normal_dot_requested_axis": -1.0
+      },
+      "probe": {
+        "sign": -1,
+        "measured_relative_angle_rad": -0.0017453292521252604,
+        "commanded_delta_rad": 0.0017453292519943296,
+        "rotation_matrix_error": 1.1102230246251565e-16,
+        "centre_error_cm": 3.649858193455202e-15,
+        "initial_fusion_value_rad": 0.0,
+        "assembled_pose_restored": true,
+        "drive_pose_is_transient": true,
+        "compute_all_after_restoration_only": true
+      },
+      "native_rotation_limits_rad": [
+        -1.2167860872392604,
+        1.1394084029530844
+      ],
+      "native_axis_vector": [
+        1.2246467991473532e-16,
+        -1.0,
+        -2.0915798742199885e-32
+      ],
+      "native_axis_vector_context_not_assumed": true,
+      "native_is_valid": true,
+      "native_is_suppressed": false
+    },
+    {
+      "name": "RR_wheel",
+      "parent_group": "RR/tibia",
+      "child_group": "RR/wheel",
+      "centre_world_mm": [
+        -167.83199846221436,
+        -102.8319984622144,
+        -190.0
+      ],
+      "axis_world": [
+        -1.2246467991473532e-16,
+        1.0,
+        0.0
+      ],
+      "built_physical_deg": 0.0,
+      "physical_limits_deg": null,
+      "continuous": true,
+      "status": "created_and_direction_checked",
+      "native_name": "MIST_fixture_motion_RR_wheel",
+      "datum_definition": {
+        "definition": "parent_sketch_normal_standard_joint_Z",
+        "requested_axis_local": [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        "sketch_normal_local": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "normal_dot_requested_axis": -1.0
+      },
+      "probe": {
+        "sign": -1,
+        "measured_relative_angle_rad": -0.00174532925199782,
+        "commanded_delta_rad": 0.0017453292519943296,
+        "rotation_matrix_error": 6.162975822039155e-33,
+        "centre_error_cm": 1.4210854715202004e-14,
+        "initial_fusion_value_rad": 0.0,
+        "assembled_pose_restored": true,
+        "drive_pose_is_transient": true,
+        "compute_all_after_restoration_only": true
+      },
+      "native_rotation_limits_rad": null,
+      "native_axis_vector": [
+        1.2246467991473532e-16,
+        -1.0,
+        0.0
+      ],
+      "native_axis_vector_context_not_assumed": true,
+      "native_is_valid": true,
+      "native_is_suppressed": false
+    }
+  ],
+  "rigid_groups": [
+    {
+      "group": "body",
+      "part_count": 1,
+      "include_children": false,
+      "representative": "body/TEST_chassis",
+      "native_group_created": false
+    },
+    {
+      "group": "FL/yaw",
+      "part_count": 1,
+      "include_children": false,
+      "representative": "FL/yaw",
+      "native_group_created": false
+    },
+    {
+      "group": "FL/femur",
+      "part_count": 1,
+      "include_children": false,
+      "representative": "FL/femur",
+      "native_group_created": false
+    },
+    {
+      "group": "FL/tibia",
+      "part_count": 1,
+      "include_children": false,
+      "representative": "FL/tibia",
+      "native_group_created": false
+    },
+    {
+      "group": "FL/wheel",
+      "part_count": 1,
+      "include_children": false,
+      "representative": "FL/wheel",
+      "native_group_created": false
+    },
+    {
+      "group": "FR/yaw",
+      "part_count": 1,
+      "include_children": false,
+      "representative": "FR/yaw",
+      "native_group_created": false
+    },
+    {
+      "group": "FR/femur",
+      "part_count": 1,
+      "include_children": false,
+      "representative": "FR/femur",
+      "native_group_created": false
+    },
+    {
+      "group": "FR/tibia",
+      "part_count": 1,
+      "include_children": false,
+      "representative": "FR/tibia",
+      "native_group_created": false
+    },
+    {
+      "group": "FR/wheel",
+      "part_count": 1,
+      "include_children": false,
+      "representative": "FR/wheel",
+      "native_group_created": false
+    },
+    {
+      "group": "RL/yaw",
+      "part_count": 1,
+      "include_children": false,
+      "representative": "RL/yaw",
+      "native_group_created": false
+    },
+    {
+      "group": "RL/femur",
+      "part_count": 1,
+      "include_children": false,
+      "representative": "RL/femur",
+      "native_group_created": false
+    },
+    {
+      "group": "RL/tibia",
+      "part_count": 1,
+      "include_children": false,
+      "representative": "RL/tibia",
+      "native_group_created": false
+    },
+    {
+      "group": "RL/wheel",
+      "part_count": 1,
+      "include_children": false,
+      "representative": "RL/wheel",
+      "native_group_created": false
+    },
+    {
+      "group": "RR/yaw",
+      "part_count": 1,
+      "include_children": false,
+      "representative": "RR/yaw",
+      "native_group_created": false
+    },
+    {
+      "group": "RR/femur",
+      "part_count": 1,
+      "include_children": false,
+      "representative": "RR/femur",
+      "native_group_created": false
+    },
+    {
+      "group": "RR/tibia",
+      "part_count": 1,
+      "include_children": false,
+      "representative": "RR/tibia",
+      "native_group_created": false
+    },
+    {
+      "group": "RR/wheel",
+      "part_count": 1,
+      "include_children": false,
+      "representative": "RR/wheel",
+      "native_group_created": false
+    }
+  ],
+  "fixed_phase_rotor_attachments": [],
+  "grounding_changes": [],
+  "errors": [],
+  "started_utc": "2026-09-07T11:08:56.154351+00:00",
+  "grounded_body_representative": "TEST_chassis:1",
+  "created_revolute_count": 16,
+  "native_validation_scope": "Creation, 0.1 degree transient direction/centre probes and pose restoration only; not full ROM or collision validation."
+}

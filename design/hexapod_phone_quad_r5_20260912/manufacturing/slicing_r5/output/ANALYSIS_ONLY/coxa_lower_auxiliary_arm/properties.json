@@ -1,0 +1,660 @@
+{
+  "sku": "coxa_lower_auxiliary_arm",
+  "quantity": 4,
+  "source_stl_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\print_stl\\coxa_lower_auxiliary_arm.stl",
+  "source_stl_hash": "4a2774ba90cd3cd3f0fdca26ae39872e8b87dfebd063e86bbd4f10f99ea42686",
+  "source_print_rotation_deg": [
+    0,
+    0,
+    0
+  ],
+  "mass_kg": 0.008336364343901038,
+  "com_mm": [
+    23.91874210558558,
+    14.132365841423704,
+    4.576560580616768
+  ],
+  "inertia_kg_m2": [
+    [
+      5.211850497644943e-07,
+      -2.2606344761138484e-08,
+      5.400929442896042e-09
+    ],
+    [
+      -2.26063447611385e-08,
+      1.5957356487151226e-06,
+      1.0786947274876771e-10
+    ],
+    [
+      5.400929442896049e-09,
+      1.0786947274876771e-10,
+      1.9894912320420617e-06
+    ]
+  ],
+  "support_mass_g": 0.12065191276080968,
+  "adhesion_mass_g": 0.015370777758140362,
+  "total_deposited_mass_g": 8.472387034419988,
+  "estimated_print_time_s": 3154.602821,
+  "peak_nominal_deposition_flow_mm3_s": 6.799845072155474,
+  "solid_scenario": {
+    "mass_kg": 0.010671876711565016,
+    "mass_g": 10.671876711565016,
+    "com_mm": [
+      24.37877180197206,
+      14.121532541998866,
+      4.594202313218652
+    ],
+    "inertia_kg_m2": [
+      [
+        6.195138538671902e-07,
+        -2.6167789333341695e-08,
+        1.0433939975201147e-08
+      ],
+      [
+        -2.6167789333341695e-08,
+        1.865226134694345e-06,
+        1.2217859588414896e-10
+      ],
+      [
+        1.0433939975201147e-08,
+        1.2217859588414896e-10,
+        2.342199479671626e-06
+      ]
+    ],
+    "volume_mm3": 8606.35218674598,
+    "assumption": "Uniform full-solid PLA at 1.24 g/cm3"
+  },
+  "deposited_to_full_solid_mass_ratio": 0.7811526097248666,
+  "rectangular_bead_inertia_correction_fraction": 6.135282028082486e-05,
+  "extrusion_accounting_relative_difference": 8.345858436430918e-05,
+  "extrusion_accounting_tolerance": 0.001,
+  "deposition": {
+    "coordinate_frame": "Exact supplied print STL coordinates in millimetres",
+    "density_g_cm3": 1.24,
+    "filament_diameter_mm": 1.75,
+    "layer_height_mm": 0.2,
+    "gcode_to_source_transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        -88.98690990874171
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        -98.50035931754205
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "properties": {
+      "model": {
+        "mass_kg": 0.008336364343901038,
+        "mass_g": 8.336364343901039,
+        "deposited_volume_mm3": 6722.874470887933,
+        "segment_count": 83323,
+        "com_mm": [
+          23.91874210558558,
+          14.132365841423704,
+          4.576560580616768
+        ],
+        "inertia_line_about_com_kg_m2": [
+          [
+            5.211850497644943e-07,
+            -2.2606344761138484e-08,
+            5.400929442896042e-09
+          ],
+          [
+            -2.26063447611385e-08,
+            1.5957356487151226e-06,
+            1.0786947274876771e-10
+          ],
+          [
+            5.400929442896049e-09,
+            1.0786947274876771e-10,
+            1.9894912320420617e-06
+          ]
+        ],
+        "inertia_rectangular_bead_about_com_kg_m2": [
+          [
+            5.212819562350352e-07,
+            -2.2605389480056933e-08,
+            5.400929442896042e-09
+          ],
+          [
+            -2.260538948005695e-08,
+            1.5958163801238258e-06,
+            1.0786947274876771e-10
+          ],
+          [
+            5.400929442896049e-09,
+            1.0786947274876771e-10,
+            1.989613294159013e-06
+          ]
+        ],
+        "rectangular_section_correction_kg_m2": [
+          [
+            9.690647054094406e-11,
+            9.552810815516153e-13,
+            0.0
+          ],
+          [
+            9.552810815516153e-13,
+            8.073140870330963e-11,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.220621169515801e-10
+          ]
+        ],
+        "rectangular_section_spectral_fraction": 6.135282028082486e-05,
+        "line_inertia_eigenvalues_kg_m2": [
+          5.2068980120286e-07,
+          1.5962110295376524e-06,
+          1.989511099781166e-06
+        ],
+        "inferred_rectangular_bead_width_mm": {
+          "min": 0.19990234801840542,
+          "median": 0.42000003837598954,
+          "p99": 0.47110367218077637,
+          "max": 0.6180312393488769
+        },
+        "deposited_centreline_bounds_mm": [
+          [
+            0.23509009125828584,
+            0.21064068245794942,
+            0.1
+          ],
+          [
+            46.78709009125829,
+            27.784640682457947,
+            8.9
+          ]
+        ],
+        "deposited_path_time_without_acceleration_s": 1703.5980148108763,
+        "peak_nominal_deposition_flow_mm3_s": 6.799845072155474
+      },
+      "support": {
+        "mass_kg": 0.00012065191276080968,
+        "mass_g": 0.12065191276080968,
+        "deposited_volume_mm3": 97.29992964581427,
+        "segment_count": 1406,
+        "com_mm": [
+          13.994298803749347,
+          13.862309767098015,
+          1.810059350929393
+        ],
+        "inertia_line_about_com_kg_m2": [
+          [
+            3.3074229073976952e-09,
+            -1.3063910542400184e-10,
+            -5.557839899214671e-13
+          ],
+          [
+            -1.3063910542400184e-10,
+            3.3244543070859465e-09,
+            -6.877457161214762e-12
+          ],
+          [
+            -5.557839899214639e-13,
+            -6.87745716121476e-12,
+            6.41692537197378e-09
+          ]
+        ],
+        "inertia_rectangular_bead_about_com_kg_m2": [
+          [
+            3.3084703234891235e-09,
+            -1.307422744075928e-10,
+            -5.557839899214671e-13
+          ],
+          [
+            -1.307422744075928e-10,
+            3.325984817427316e-09,
+            -6.877457161214762e-12
+          ],
+          [
+            -5.557839899214639e-13,
+            -6.87745716121476e-12,
+            6.418698952321506e-09
+          ]
+        ],
+        "rectangular_section_correction_kg_m2": [
+          [
+            1.0474160914283926e-12,
+            -1.0316898359094752e-13,
+            0.0
+          ],
+          [
+            -1.031689835909475e-13,
+            1.5305103413697067e-12,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.7735803477260347e-12
+          ]
+        ],
+        "rectangular_section_spectral_fraction": 0.0002763903288998253,
+        "line_inertia_eigenvalues_kg_m2": [
+          3.185014175535759e-09,
+          3.446847721333171e-09,
+          6.416940689588489e-09
+        ],
+        "inferred_rectangular_bead_width_mm": {
+          "min": 0.41841033813534523,
+          "median": 0.41999673793531794,
+          "p99": 0.42059919454535694,
+          "max": 0.4208465161523958
+        },
+        "deposited_centreline_bounds_mm": [
+          [
+            4.4190900912582975,
+            4.406640682457947,
+            0.1
+          ],
+          [
+            23.594090091258295,
+            23.586640682457954,
+            3.1
+          ]
+        ],
+        "deposited_path_time_without_acceleration_s": 28.478132497653277,
+        "peak_nominal_deposition_flow_mm3_s": 4.208465161523958
+      },
+      "adhesion": {
+        "mass_kg": 1.5370777758140362e-05,
+        "mass_g": 0.015370777758140362,
+        "deposited_volume_mm3": 12.395788514629325,
+        "segment_count": 324,
+        "com_mm": [
+          14.001254623805634,
+          14.000575100734991,
+          0.09999999999999996
+        ],
+        "inertia_line_about_com_kg_m2": [
+          [
+            4.0858723830870086e-10,
+            -7.100277294763329e-16,
+            1.6324677797044518e-42
+          ],
+          [
+            -7.100277294733702e-16,
+            4.0860972708126026e-10,
+            5.282377739007655e-43
+          ],
+          [
+            1.442919315634358e-42,
+            6.2962416165918776e-43,
+            8.171969653899611e-10
+          ]
+        ],
+        "inertia_rectangular_bead_about_com_kg_m2": [
+          [
+            4.0875148813631636e-10,
+            -7.075286924402545e-16,
+            1.6324677797044518e-42
+          ],
+          [
+            -7.075286924372914e-16,
+            4.087738999134936e-10,
+            5.282377739007655e-43
+          ],
+          [
+            1.442919315634358e-42,
+            6.2962416165918776e-43,
+            8.17422916198089e-10
+          ]
+        ],
+        "rectangular_section_correction_kg_m2": [
+          [
+            1.6424982761549035e-13,
+            2.4990370360783848e-18,
+            0.0
+          ],
+          [
+            2.49903703607885e-18,
+            1.641728322333255e-13,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            2.2595080812788013e-13
+          ]
+        ],
+        "rectangular_section_spectral_fraction": 0.0002764949182356029,
+        "line_inertia_eigenvalues_kg_m2": [
+          4.085872159136219e-10,
+          4.086097494763392e-10,
+          8.171969653899611e-10
+        ],
+        "inferred_rectangular_bead_width_mm": {
+          "min": 0.41910351667385765,
+          "median": 0.4199894136824694,
+          "p99": 0.42035457194748493,
+          "max": 0.42098125217052546
+        },
+        "deposited_centreline_bounds_mm": [
+          [
+            4.620090091258291,
+            4.616640682457955,
+            0.1
+          ],
+          [
+            23.387090091258287,
+            23.375640682457956,
+            0.1
+          ]
+        ],
+        "deposited_path_time_without_acceleration_s": 7.378440335128483,
+        "peak_nominal_deposition_flow_mm3_s": 1.6839250086821018
+      },
+      "unclassified": {
+        "mass_kg": 0.0,
+        "mass_g": 0.0,
+        "deposited_volume_mm3": 0.0,
+        "segment_count": 0,
+        "com_mm": null,
+        "inertia_line_about_com_kg_m2": null,
+        "inertia_rectangular_bead_about_com_kg_m2": null,
+        "deposited_path_time_without_acceleration_s": 0.0
+      }
+    },
+    "features": {
+      "SKIRT": {
+        "category": "adhesion",
+        "deposited_volume_mm3": 12.395788514629324,
+        "mass_g": 0.015370777758140362,
+        "segment_count": 324
+      },
+      "SUPPORT": {
+        "category": "support",
+        "deposited_volume_mm3": 74.42723839111594,
+        "mass_g": 0.09228977560498376,
+        "segment_count": 1266
+      },
+      "WALL-INNER": {
+        "category": "model",
+        "deposited_volume_mm3": 3571.467807788565,
+        "mass_g": 4.4286200816578205,
+        "segment_count": 39875
+      },
+      "WALL-OUTER": {
+        "category": "model",
+        "deposited_volume_mm3": 902.732546285371,
+        "mass_g": 1.11938835739386,
+        "segment_count": 10272
+      },
+      "SKIN": {
+        "category": "model",
+        "deposited_volume_mm3": 1101.7165128512997,
+        "mass_g": 1.3661284759356118,
+        "segment_count": 3985
+      },
+      "FILL": {
+        "category": "model",
+        "deposited_volume_mm3": 1146.957603962698,
+        "mass_g": 1.4222274289137453,
+        "segment_count": 29191
+      },
+      "SUPPORT-INTERFACE": {
+        "category": "support",
+        "deposited_volume_mm3": 22.872691254698335,
+        "mass_g": 0.028362137155825935,
+        "segment_count": 140
+      }
+    },
+    "total_deposited_volume_mm3": 6832.570189048377,
+    "total_deposited_mass_g": 8.472387034419988,
+    "estimated_total_print_time_s": 3154.602821,
+    "layer_count": 45,
+    "extrusion_accounting": {
+      "fresh_deposited_filament_mm": 2840.65259,
+      "retracted_filament_mm": 126.0,
+      "repaid_retraction_filament_mm": 125.5,
+      "outstanding_retraction_filament_mm": 0.5,
+      "nonmoving_fresh_prime_filament_mm": 0.0
+    },
+    "unclassified_deposition_is_zero": true,
+    "limitations": [
+      "Filament E is commanded material; actual extrusion, density and shrinkage need a scale and coupons.",
+      "The primary inertia integrates uniform deposited line segments at the middle of each layer.",
+      "The optional rectangular section correction estimates sensitivity to finite bead width; it does not reconstruct pressure, corner overlap or real cross-sections.",
+      "Retraction recovery is excluded. A moving recovery deposits fresh material only along the remaining tail under a simple no-pressure-storage model.",
+      "Per-category path times omit acceleration, travel, cooling and other delays. Only Cura total time estimates the complete slice.",
+      "Support and adhesion mass are excluded from robot-part mass, COM and inertia.",
+      "These deposition properties do not establish strength or replace the full-solid comparison scenario."
+    ]
+  },
+  "engine": {
+    "sku": "coxa_lower_auxiliary_arm",
+    "source_stl_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\cad\\output\\print_stl\\coxa_lower_auxiliary_arm.stl",
+    "source_sha256": "4a2774ba90cd3cd3f0fdca26ae39872e8b87dfebd063e86bbd4f10f99ea42686",
+    "original_snapshot_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\manufacturing\\slicing_r5\\output\\ANALYSIS_ONLY\\coxa_lower_auxiliary_arm\\coxa_lower_auxiliary_arm.source.stl",
+    "original_snapshot_sha256": "4a2774ba90cd3cd3f0fdca26ae39872e8b87dfebd063e86bbd4f10f99ea42686",
+    "normalized_snapshot_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\manufacturing\\slicing_r5\\output\\ANALYSIS_ONLY\\coxa_lower_auxiliary_arm\\coxa_lower_auxiliary_arm.normalized.stl",
+    "normalized_snapshot_sha256": "a2aa15c041a55b109402654c3144bc78c3abefa4157d9b4c8bb4d59d2ea8bcdc",
+    "source_bounds_mm": [
+      [
+        0.02709009125828743,
+        0.001640682457946241,
+        0.0
+      ],
+      [
+        47.0,
+        27.99835968017578,
+        9.0
+      ]
+    ],
+    "normalized_snapshot_bounds_mm": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        46.97290802001953,
+        27.996719360351562,
+        9.0
+      ]
+    ],
+    "source_to_normalized_snapshot_transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        -0.02709009125828743
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        -0.001640682457946241
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        -0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "normalized_snapshot_to_gcode_transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        89.014
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        98.502
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "source_to_gcode_transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        88.98690990874171
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        98.50035931754205
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "gcode_to_source_transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        -88.98690990874171
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        -98.50035931754205
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "transform_convention": "Row-major 4x4 matrices multiply homogeneous column vectors; translations are millimetres.",
+    "model_bounds_in_gcode_mm": [
+      [
+        89.014,
+        98.502,
+        0.0
+      ],
+      [
+        135.987,
+        126.499,
+        9.0
+      ]
+    ],
+    "build_envelope_mm": [
+      225.0,
+      225.0,
+      265.0
+    ],
+    "engine_coordinate_quantization_mm": 0.001,
+    "maximum_float32_export_error_mm": 1.8887221813201904e-06,
+    "maximum_engine_vertex_rounding_error_mm": 0.0004986190795897016,
+    "coordinate_limitation": "The matrix exactly records commanded frame translations. Float32 export and 0.001 mm engine vertex quantization alter geometry separately.",
+    "coordinate_source_url": "https://github.com/Ultimaker/CuraEngine/blob/5.13.0/src/MeshGroup.cpp#L97-L121",
+    "rounding_source_url": "https://github.com/Ultimaker/CuraEngine/blob/5.13.0/include/utils/Coord_t.h#L23-L25",
+    "profile_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\manufacturing\\slicing_r5\\output\\ANALYSIS_ONLY\\coxa_lower_auxiliary_arm\\coxa_lower_auxiliary_arm.resolved.def.json",
+    "profile_sha256": "5985d4b48cca0c7c6c8e0ba1c630ac5906adb6e5fe4e6d2f89ef5f0cbf731933",
+    "resolved_settings_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\manufacturing\\slicing_r5\\output\\ANALYSIS_ONLY\\coxa_lower_auxiliary_arm\\coxa_lower_auxiliary_arm.resolved_settings.json",
+    "resolved_settings_sha256": "2ffc670367f01d0a9b0c19d4fca8320578602e04d0dbcc059ac0fa0f584be75a",
+    "base_profile_sha256": "ddf583bf158bc99bb7cbda228cc8ee3e0552ece2764176a89afb9c83048ada1b",
+    "settings_overrides": {},
+    "log_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\manufacturing\\slicing_r5\\output\\ANALYSIS_ONLY\\coxa_lower_auxiliary_arm\\coxa_lower_auxiliary_arm.engine.log.txt",
+    "log_sha256": "a9aeb03e09363f2ead56105a3d01b9615760ac66a8319a39e64115fdfd0a8fe8",
+    "raw_temporary_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\manufacturing\\slicing_r5\\output\\ANALYSIS_ONLY\\coxa_lower_auxiliary_arm\\coxa_lower_auxiliary_arm.temporary.gcode",
+    "raw_temporary_sha256": "1a48a4432813e13ab00c58481db6d6102fc7565f28f8b48cc369e8ad9ea16c58",
+    "raw_file_disposition": "Removed after parsing; only disabled compressed evidence remains.",
+    "engine_path": "C:\\Program Files\\UltiMaker Cura 5.13.0\\CuraEngine.exe",
+    "engine_version": "5.13.0",
+    "engine_sha256": "36e36d4618cd09a0cd8802a565c2cdbe54804eb750ac84303a0c6d6f784afde2",
+    "return_code": 0,
+    "command": [
+      "C:\\Program Files\\UltiMaker Cura 5.13.0\\CuraEngine.exe",
+      "slice",
+      "-m4",
+      "-v",
+      "-j",
+      "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\manufacturing\\slicing_r5\\output\\ANALYSIS_ONLY\\coxa_lower_auxiliary_arm\\coxa_lower_auxiliary_arm.resolved.def.json",
+      "-e0",
+      "-o",
+      "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\manufacturing\\slicing_r5\\output\\ANALYSIS_ONLY\\coxa_lower_auxiliary_arm\\coxa_lower_auxiliary_arm.temporary.gcode",
+      "-l",
+      "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\manufacturing\\slicing_r5\\output\\ANALYSIS_ONLY\\coxa_lower_auxiliary_arm\\coxa_lower_auxiliary_arm.normalized.stl"
+    ],
+    "elapsed_seconds": 0.9369999999762513,
+    "total_wrapper_seconds": 1.75,
+    "engine_filament_volume_mm3": 6832.0,
+    "motion_bounds_mm": [
+      [
+        89.222,
+        98.711,
+        0.2
+      ],
+      [
+        135.774,
+        126.285,
+        9.0
+      ]
+    ],
+    "motion_count": 94715,
+    "motion_inside_build_envelope": true,
+    "estimated_time_seconds": 3154.602821
+  },
+  "status": "pass",
+  "gcode_evidence": {
+    "path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_r5_20260912\\manufacturing\\slicing_r5\\output\\ANALYSIS_ONLY\\coxa_lower_auxiliary_arm\\coxa_lower_auxiliary_arm.disabled.gcode.gz",
+    "sha256": "c216d5d7ec8e708b41df7913453ffe1c6a4f0f069b5505fe3f525a93dd9e32da",
+    "raw_text_sha256": "1faff73577dc3c046fa39f813797b453253e6cbc2fa0b1b28fa2cb3ff2a5c087",
+    "all_commands_disabled": true,
+    "raw_temporary_removed": true
+  },
+  "elapsed_analysis_seconds": 3.827999999979511
+}

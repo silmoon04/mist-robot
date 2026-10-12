@@ -1,0 +1,602 @@
+{
+  "version": 4,
+  "status": "independent visual mapping recommendation",
+  "reviewDate": "2026-09-23",
+  "reviewedImages": [
+    "brain/art_direction/artist_studio_20260916/reuse/faces_sheet.png",
+    "brain/face_assets/reports/canonical_gallery_3.png"
+  ],
+  "reviewedData": [
+    "brain/face_assets/faces_canonical.json",
+    "brain/art_direction/artist_studio_20260916/reuse/face_instances.csv",
+    "brain/duplex/face_map.json"
+  ],
+  "mouthFamilies": {
+    "01_angry_01_manual": "mouth_angry",
+    "02_angry_02_manual": "mouth_angry",
+    "03_angry_07_manual": "mouth_angry",
+    "04_angry_08_manual": "mouth_angry",
+    "05_annoyed_01_manual": "mouth_skeptical",
+    "06_annoyed_02_manual": "mouth_skeptical",
+    "07_annoyed_03_manual": "mouth_flat",
+    "08_annoyed_04_manual": "mouth_skeptical",
+    "09_happy_03_manual": "mouth_smile",
+    "10_happy_04_manual": "mouth_smile",
+    "11_happy_05_manual": "mouth_smile",
+    "12_happy_09_manual": "mouth_smile",
+    "13_happy_14_manual": "mouth_smile",
+    "14_happy_16_manual": "mouth_smile",
+    "15_misc_15_manual": "mouth_flat",
+    "16_misc_16_manual": "mouth_flat",
+    "17_misc_2_01_manual": "mouth_flat",
+    "18_misc_2_02_manual": "mouth_worried",
+    "19_misc_2_03_manual": "mouth_flat",
+    "20_neutral_06_manual": "mouth_flat",
+    "21_neutral_11_manual": "mouth_flat",
+    "22_neutral_12_manual": "mouth_flat",
+    "23_neutral_13_manual": "mouth_flat",
+    "24_neutral_2_01_manual": "mouth_flat",
+    "25_neutral_2_03_manual": "mouth_flat",
+    "26_sad_01_manual": "mouth_flat",
+    "27_sad_02_manual": "mouth_sad",
+    "28_sad_03_manual": "mouth_worried",
+    "29_sad_04_manual": "mouth_skeptical",
+    "30_sad_05_manual": "mouth_worried",
+    "31_sad_06_manual": "mouth_sad",
+    "32_sad_07_manual": "mouth_sad",
+    "33_sad_08_manual": "mouth_worried",
+    "34_sad_09_manual": "mouth_worried",
+    "35_sad_10_manual": "mouth_flat",
+    "36_misc_03_manual": "mouth_skeptical",
+    "37_misc_06_manual": "mouth_smile",
+    "38_misc_2_06_manual": "mouth_flat",
+    "39_neutral_02_manual": "mouth_flat",
+    "40_neutral_03_manual": "mouth_flat"
+  },
+  "mouthFamilyLabels": {
+    "mouth_smile": "Happy / warm",
+    "mouth_angry": "Angry / tense",
+    "mouth_sad": "Sad / low energy",
+    "mouth_flat": "Neutral / indifferent",
+    "mouth_worried": "Worried / distressed",
+    "mouth_skeptical": "Skeptical / restrained"
+  },
+  "counts": {
+    "mouth_angry": 4,
+    "mouth_skeptical": 5,
+    "mouth_flat": 16,
+    "mouth_smile": 7,
+    "mouth_worried": 5,
+    "mouth_sad": 3
+  },
+  "faces": [
+    {
+      "face": "01_angry_01_manual",
+      "family": "mouth_angry",
+      "reason": "Inward slanted lids and a tense straight mouth.",
+      "aliases": [
+        {
+          "expression": "angry",
+          "variant": 1
+        }
+      ],
+      "canonicalMouthPresent": true
+    },
+    {
+      "face": "02_angry_02_manual",
+      "family": "mouth_angry",
+      "reason": "Steep inward lids and a tall shouting opening.",
+      "aliases": [
+        {
+          "expression": "angry",
+          "variant": 2
+        }
+      ],
+      "canonicalMouthPresent": true
+    },
+    {
+      "face": "03_angry_07_manual",
+      "family": "mouth_angry",
+      "reason": "Compressed slot eyes and a pronounced crooked frown.",
+      "aliases": [
+        {
+          "expression": "angry",
+          "variant": 3
+        }
+      ],
+      "canonicalMouthPresent": true
+    },
+    {
+      "face": "04_angry_08_manual",
+      "family": "mouth_angry",
+      "reason": "Glaring lids and a centered frown.",
+      "aliases": [
+        {
+          "expression": "angry",
+          "variant": 0
+        }
+      ],
+      "canonicalMouthPresent": true
+    },
+    {
+      "face": "05_annoyed_01_manual",
+      "family": "mouth_skeptical",
+      "reason": "Unequal drooping lids and a pinched inverted-V mouth.",
+      "aliases": [
+        {
+          "expression": "suspicious",
+          "variant": 1
+        }
+      ],
+      "canonicalMouthPresent": true
+    },
+    {
+      "face": "06_annoyed_02_manual",
+      "family": "mouth_skeptical",
+      "reason": "Closed, uneven lids with a small crooked frown; restrained asymmetry fits both error and mischief aliases.",
+      "aliases": [
+        {
+          "expression": "error",
+          "variant": 1
+        },
+        {
+          "expression": "mischief",
+          "variant": 1
+        }
+      ],
+      "canonicalMouthPresent": true
+    },
+    {
+      "face": "07_annoyed_03_manual",
+      "family": "mouth_flat",
+      "reason": "One attentive round eye and one lowered lid; the flat-topped opening should stay neutral for its alert and listening aliases.",
+      "aliases": [
+        {
+          "expression": "alert",
+          "variant": 1
+        },
+        {
+          "expression": "listening",
+          "variant": 1
+        }
+      ],
+      "canonicalMouthPresent": true
+    },
+    {
+      "face": "08_annoyed_04_manual",
+      "family": "mouth_skeptical",
+      "reason": "Squeezed chevron eyes and a narrow tense opening; avoid rounded smiling vowel corners.",
+      "aliases": [
+        {
+          "expression": "suspicious",
+          "variant": 0
+        }
+      ],
+      "canonicalMouthPresent": true
+    },
+    {
+      "face": "09_happy_03_manual",
+      "family": "mouth_smile",
+      "reason": "Open round eyes and a broad smiling opening.",
+      "aliases": [
+        {
+          "expression": "happy",
+          "variant": 0
+        }
+      ],
+      "canonicalMouthPresent": true
+    },
+    {
+      "face": "10_happy_04_manual",
+      "family": "mouth_smile",
+      "reason": "Raised happy arcs and a playful curved mouth.",
+      "aliases": [
+        {
+          "expression": "mischief",
+          "variant": 0
+        }
+      ],
+      "canonicalMouthPresent": true
+    },
+    {
+      "face": "11_happy_05_manual",
+      "family": "mouth_smile",
+      "reason": "Open eyes and an explicit upward-cornered smile.",
+      "aliases": [
+        {
+          "expression": "proud",
+          "variant": 0
+        }
+      ],
+      "canonicalMouthPresent": true
+    },
+    {
+      "face": "12_happy_09_manual",
+      "family": "mouth_smile",
+      "reason": "Happy chevron-eye identity with no canonical mouth; smiling fallback only while audio is active.",
+      "aliases": [
+        {
+          "expression": "happy",
+          "variant": 1
+        }
+      ],
+      "canonicalMouthPresent": false
+    },
+    {
+      "face": "13_happy_14_manual",
+      "family": "mouth_smile",
+      "reason": "Raised happy arcs and an explicit smile, shared by happy, love and proud.",
+      "aliases": [
+        {
+          "expression": "happy",
+          "variant": 2
+        },
+        {
+          "expression": "love",
+          "variant": 1
+        },
+        {
+          "expression": "proud",
+          "variant": 1
+        }
+      ],
+      "canonicalMouthPresent": true
+    },
+    {
+      "face": "14_happy_16_manual",
+      "family": "mouth_smile",
+      "reason": "Raised happy arcs carry affection despite a small straight rest mouth.",
+      "aliases": [
+        {
+          "expression": "love",
+          "variant": 0
+        }
+      ],
+      "canonicalMouthPresent": true
+    },
+    {
+      "face": "15_misc_15_manual",
+      "family": "mouth_flat",
+      "reason": "Level closed bars and an uninflected small oval; keep the deadpan read.",
+      "aliases": [
+        {
+          "expression": "dead_inside",
+          "variant": 1
+        }
+      ],
+      "canonicalMouthPresent": true
+    },
+    {
+      "face": "16_misc_16_manual",
+      "family": "mouth_flat",
+      "reason": "Lowered closed lids and a yawn-like oval; smiling vowels would contradict sleepiness.",
+      "aliases": [
+        {
+          "expression": "sleepy",
+          "variant": 0
+        }
+      ],
+      "canonicalMouthPresent": true
+    },
+    {
+      "face": "17_misc_2_01_manual",
+      "family": "mouth_flat",
+      "reason": "Three horizontal bars, a fully flat reaction.",
+      "aliases": [
+        {
+          "expression": "dead_inside",
+          "variant": 2
+        }
+      ],
+      "canonicalMouthPresent": true
+    },
+    {
+      "face": "18_misc_2_02_manual",
+      "family": "mouth_worried",
+      "reason": "Heavy uneven eyes and an uncertain opening; a mild downward tension suits uncertainty.",
+      "aliases": [
+        {
+          "expression": "uncertain",
+          "variant": 0
+        }
+      ],
+      "canonicalMouthPresent": true
+    },
+    {
+      "face": "19_misc_2_03_manual",
+      "family": "mouth_flat",
+      "reason": "Squeezed eyes and a straight rest mouth; keep embarrassment restrained rather than adding a smile or a strong frown.",
+      "aliases": [
+        {
+          "expression": "embarrassed",
+          "variant": 0
+        }
+      ],
+      "canonicalMouthPresent": true
+    },
+    {
+      "face": "20_neutral_06_manual",
+      "family": "mouth_flat",
+      "reason": "Round attentive eyes and a dot mouth; curiosity does not imply happiness.",
+      "aliases": [
+        {
+          "expression": "curious",
+          "variant": 0
+        }
+      ],
+      "canonicalMouthPresent": true
+    },
+    {
+      "face": "21_neutral_11_manual",
+      "family": "mouth_flat",
+      "reason": "Closed lids and a plain dome opening; supports both neutral and sleepy aliases.",
+      "aliases": [
+        {
+          "expression": "neutral",
+          "variant": 2
+        },
+        {
+          "expression": "sleepy",
+          "variant": 1
+        }
+      ],
+      "canonicalMouthPresent": true
+    },
+    {
+      "face": "22_neutral_12_manual",
+      "family": "mouth_flat",
+      "reason": "Closed low lids with a straight mouth, used for boredom.",
+      "aliases": [
+        {
+          "expression": "bored",
+          "variant": 0
+        }
+      ],
+      "canonicalMouthPresent": true
+    },
+    {
+      "face": "23_neutral_13_manual",
+      "family": "mouth_flat",
+      "reason": "Closed low lids and a tiny vertical oval, used for boredom.",
+      "aliases": [
+        {
+          "expression": "bored",
+          "variant": 1
+        }
+      ],
+      "canonicalMouthPresent": true
+    },
+    {
+      "face": "24_neutral_2_01_manual",
+      "family": "mouth_flat",
+      "reason": "Level slot eyes with a straight mouth; alertness should not gain a smile.",
+      "aliases": [
+        {
+          "expression": "alert",
+          "variant": 0
+        }
+      ],
+      "canonicalMouthPresent": true
+    },
+    {
+      "face": "25_neutral_2_03_manual",
+      "family": "mouth_flat",
+      "reason": "Round attentive eyes and a small round opening, shared by curious and listening.",
+      "aliases": [
+        {
+          "expression": "curious",
+          "variant": 1
+        },
+        {
+          "expression": "listening",
+          "variant": 0
+        }
+      ],
+      "canonicalMouthPresent": true
+    },
+    {
+      "face": "26_sad_01_manual",
+      "family": "mouth_flat",
+      "reason": "Lowered closed lids and a straight mouth; used as bored despite the sad filename.",
+      "aliases": [
+        {
+          "expression": "bored",
+          "variant": 2
+        }
+      ],
+      "canonicalMouthPresent": true
+    },
+    {
+      "face": "27_sad_02_manual",
+      "family": "mouth_sad",
+      "reason": "Heavy tilted eyes and a low-energy opening; its runtime alias is sad.",
+      "aliases": [
+        {
+          "expression": "sad",
+          "variant": 1
+        }
+      ],
+      "canonicalMouthPresent": true
+    },
+    {
+      "face": "28_sad_03_manual",
+      "family": "mouth_worried",
+      "reason": "Uneven heavy eyes, a wavering mouth and a tear; anxious surprise rather than cheerful surprise.",
+      "aliases": [
+        {
+          "expression": "surprised",
+          "variant": 1
+        }
+      ],
+      "canonicalMouthPresent": true
+    },
+    {
+      "face": "29_sad_04_manual",
+      "family": "mouth_skeptical",
+      "reason": "Closed lowered lids and a pinched W-shaped mouth; a restrained asymmetric family is safer across smug and embarrassed aliases than a broad happy mouth.",
+      "aliases": [
+        {
+          "expression": "smug",
+          "variant": 1
+        },
+        {
+          "expression": "embarrassed",
+          "variant": 1
+        }
+      ],
+      "canonicalMouthPresent": true
+    },
+    {
+      "face": "30_sad_05_manual",
+      "family": "mouth_worried",
+      "reason": "Tightly squeezed eyes and a sharp downward-cornered mouth, used for panic.",
+      "aliases": [
+        {
+          "expression": "panic",
+          "variant": 1
+        }
+      ],
+      "canonicalMouthPresent": true
+    },
+    {
+      "face": "31_sad_06_manual",
+      "family": "mouth_sad",
+      "reason": "Drooping inward lids and a tall lamenting opening.",
+      "aliases": [
+        {
+          "expression": "sad",
+          "variant": 2
+        }
+      ],
+      "canonicalMouthPresent": true
+    },
+    {
+      "face": "32_sad_07_manual",
+      "family": "mouth_sad",
+      "reason": "Large eyes, a clear downward-cornered frown and a tear.",
+      "aliases": [
+        {
+          "expression": "sad",
+          "variant": 0
+        }
+      ],
+      "canonicalMouthPresent": true
+    },
+    {
+      "face": "33_sad_08_manual",
+      "family": "mouth_worried",
+      "reason": "Uneven raised/low lids and a wavering mouth, used for panic.",
+      "aliases": [
+        {
+          "expression": "panic",
+          "variant": 0
+        }
+      ],
+      "canonicalMouthPresent": true
+    },
+    {
+      "face": "34_sad_09_manual",
+      "family": "mouth_worried",
+      "reason": "Heavy eyes and a deep frown, used for panic; worried vowels retain distress.",
+      "aliases": [
+        {
+          "expression": "panic",
+          "variant": 2
+        }
+      ],
+      "canonicalMouthPresent": true
+    },
+    {
+      "face": "35_sad_10_manual",
+      "family": "mouth_flat",
+      "reason": "Lowered closed lids with no canonical mouth; flat fallback only while audio is active.",
+      "aliases": [
+        {
+          "expression": "dead_inside",
+          "variant": 0
+        }
+      ],
+      "canonicalMouthPresent": false
+    },
+    {
+      "face": "36_misc_03_manual",
+      "family": "mouth_skeptical",
+      "reason": "Uneven alert/squint eyes and a diagonal mouth; preserve its crooked doubtful read.",
+      "aliases": [
+        {
+          "expression": "error",
+          "variant": 0
+        }
+      ],
+      "canonicalMouthPresent": true
+    },
+    {
+      "face": "37_misc_06_manual",
+      "family": "mouth_smile",
+      "reason": "Narrow level eyes and an actual upward-cornered smirk; its smug alias has visible positive curvature.",
+      "aliases": [
+        {
+          "expression": "smug",
+          "variant": 0
+        }
+      ],
+      "canonicalMouthPresent": true
+    },
+    {
+      "face": "38_misc_2_06_manual",
+      "family": "mouth_flat",
+      "reason": "Heavy lifted lids and a tall oval read as surprise; keep a neutral round opening without adding distress.",
+      "aliases": [
+        {
+          "expression": "surprised",
+          "variant": 0
+        }
+      ],
+      "canonicalMouthPresent": true
+    },
+    {
+      "face": "39_neutral_02_manual",
+      "family": "mouth_flat",
+      "reason": "Round neutral eyes and a straight mouth; shared neutral/thinking identity.",
+      "aliases": [
+        {
+          "expression": "neutral",
+          "variant": 0
+        },
+        {
+          "expression": "thinking",
+          "variant": 0
+        }
+      ],
+      "canonicalMouthPresent": true
+    },
+    {
+      "face": "40_neutral_03_manual",
+      "family": "mouth_flat",
+      "reason": "Slot eyes and a dot mouth; retain a quiet neutral read.",
+      "aliases": [
+        {
+          "expression": "neutral",
+          "variant": 1
+        }
+      ],
+      "canonicalMouthPresent": true
+    }
+  ],
+  "notes": [
+    "Assign by canonical face ID, not filename prefix or current preset. A face may be shared by several presets.",
+    "Preserve the original canonical mouth at rest and immediately on silence or interruption. Family rest is a speech-transition drawing, not a replacement for the original face.",
+    "The source assets have 40 canonical face IDs, 21 public presets and aliases; counts of presets do not describe counts of mouths.",
+    "12_happy_09_manual and 35_sad_10_manual have no canonical mouth. Preserve that at rest and use the assigned fallback only during audible speech.",
+    "29_sad_04_manual is an ambiguous closed-eye W-mouth face shared by smug and embarrassed. The sad filename is insufficient evidence. Prefer restrained skeptical speech over either broad happiness or heavy sadness.",
+    "37_misc_06_manual has a clear smirk, so its smug alias can use smile. The two smug variants need not have identical speaking families.",
+    "38_misc_2_06_manual and 28_sad_03_manual both expose surprised, but 28 has a wavering mouth and tear whereas 38 has a plain O; worried and flat respectively preserve that distinction.",
+    "06_annoyed_02_manual is shared by error and mischief. Its crooked frown is best served by restrained asymmetric speech, without changing its resting identity.",
+    "Do not give all faces in a public preset the same family: neutral includes a sleepy alternate, surprised includes a tearful alternate, and smug includes a pinched W-mouth alternate.",
+    "Labels describe the speech drawing set, not an instruction to a model to change emotion. Agents should continue choosing existing expression and variant; the renderer resolves the mouth family."
+  ],
+  "limitations": [
+    "This is a mapping review of the existing canonical artwork. New generated family sheets were not available for visual review at the time of this recommendation.",
+    "Family choice for ambiguous faces is an art-direction judgment, not a model or pixel-test result."
+  ]
+}

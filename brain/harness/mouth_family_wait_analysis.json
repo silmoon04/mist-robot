@@ -1,0 +1,106 @@
+{
+  "method": "Exact browser fallback rule: 20 ms RMS windows, rest below 0.006 and AA otherwise.",
+  "scope": "Saved six speech fixtures, analyzed without provider character alignment. This measures the audio-energy fallback, not aligned cue timing.",
+  "clips": [
+    {
+      "file": "excited.wav",
+      "duration_s": 3.366,
+      "fallback_AA_runs": 6,
+      "longest_unchanged_AA_s": 1.18,
+      "runs_over_600ms": [
+        {
+          "start_s": 1.78,
+          "duration_s": 1.18
+        }
+      ]
+    },
+    {
+      "file": "gentle.wav",
+      "duration_s": 1.932,
+      "fallback_AA_runs": 2,
+      "longest_unchanged_AA_s": 1.1,
+      "runs_over_600ms": [
+        {
+          "start_s": 0.02,
+          "duration_s": 1.1
+        },
+        {
+          "start_s": 1.16,
+          "duration_s": 0.62
+        }
+      ]
+    },
+    {
+      "file": "long.wav",
+      "duration_s": 9.693,
+      "fallback_AA_runs": 7,
+      "longest_unchanged_AA_s": 2.16,
+      "runs_over_600ms": [
+        {
+          "start_s": 0.06,
+          "duration_s": 0.84
+        },
+        {
+          "start_s": 0.92,
+          "duration_s": 1.08
+        },
+        {
+          "start_s": 2.16,
+          "duration_s": 2.16
+        },
+        {
+          "start_s": 4.92,
+          "duration_s": 1.14
+        },
+        {
+          "start_s": 6.54,
+          "duration_s": 1.66
+        },
+        {
+          "start_s": 8.24,
+          "duration_s": 1.28
+        }
+      ]
+    },
+    {
+      "file": "precision.wav",
+      "duration_s": 2.805,
+      "fallback_AA_runs": 3,
+      "longest_unchanged_AA_s": 1.28,
+      "runs_over_600ms": [
+        {
+          "start_s": 0.06,
+          "duration_s": 0.82
+        },
+        {
+          "start_s": 1.3,
+          "duration_s": 1.28
+        }
+      ]
+    },
+    {
+      "file": "question.wav",
+      "duration_s": 2.68,
+      "fallback_AA_runs": 3,
+      "longest_unchanged_AA_s": 1.26,
+      "runs_over_600ms": [
+        {
+          "start_s": 0.06,
+          "duration_s": 1.26
+        },
+        {
+          "start_s": 1.5,
+          "duration_s": 0.62
+        }
+      ]
+    },
+    {
+      "file": "short.wav",
+      "duration_s": 0.966,
+      "fallback_AA_runs": 4,
+      "longest_unchanged_AA_s": 0.28,
+      "runs_over_600ms": []
+    }
+  ],
+  "worst_case": "An indefinitely sustained voiced sound has no cue boundary; the current family latch can therefore wait indefinitely."
+}

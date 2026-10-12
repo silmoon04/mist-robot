@@ -1,0 +1,128 @@
+{
+  "id": "thinking-glance",
+  "tool": "built-in image_gen",
+  "images": [
+    {
+      "id": "thinking-glance__1",
+      "file": "images/thinking-glance-1.png",
+      "prompt": "prompts/thinking-glance-1.txt",
+      "generatedSource": "C:\\Users\\hssil\\.codex\\generated_images\\01a0ef9d-76c7-7812-a2dc-dd12c0460cea\\exec-28de5cc5-68a9-4f33-84ff-a78ac82aea05.png",
+      "sha256": "4bfb6f49adb71f6fefc1725454f5fc98d38324d3b3296f2f03c171874afe87e5",
+      "width": 1254,
+      "height": 1254,
+      "qa": {
+        "singleFace": true,
+        "mistIdentity": true,
+        "noStrayMarks": true,
+        "closedMouth": true,
+        "neutralMouth": true,
+        "nativeBytesPreserved": true
+      },
+      "limitations": "No visual defect found; neutral baseline pose."
+    },
+    {
+      "id": "thinking-glance__2",
+      "file": "images/thinking-glance-2.png",
+      "prompt": "prompts/thinking-glance-2-half-lid.txt",
+      "generatedSource": "C:\\Users\\hssil\\.codex\\generated_images\\01a0ef9d-76c7-7812-a2dc-dd12c0460cea\\exec-e1caf076-b76e-4930-99c1-e0b2ef4c3556.png",
+      "sha256": "34f8b01f0956923b832b0f98f27fb57635775394f406ced5ef1ed199ab4eede8",
+      "width": 1254,
+      "height": 1254,
+      "qa": {
+        "singleFace": true,
+        "mistIdentity": true,
+        "noStrayMarks": true,
+        "closedMouth": true,
+        "neutralMouth": true,
+        "nativeBytesPreserved": true
+      },
+      "limitations": "No blocking visual defect found. The dark aperture is approximately half height; exact lid height remains hand-shaped.",
+      "acting": "Viewer-left half-lidded C, viewer-right open C, small angled closed neutral mouth.",
+      "selectionNotes": "The prompt requested the opposite lid. ImageGen emitted a clean viewer-left half-lid, and root accepted this as pose 2 and revised the side order to preserve a readable alternating gesture."
+    },
+    {
+      "id": "thinking-glance__3",
+      "file": "images/thinking-glance-3.png",
+      "prompt": "prompts/thinking-glance-3-half-lid-repair-1.txt",
+      "generatedSource": "C:\\Users\\hssil\\.codex\\generated_images\\01a0ef9d-76c7-7812-a2dc-dd12c0460cea\\exec-f66db1f8-b412-40d7-b7a1-6855fdc7215f.png",
+      "sha256": "5b3d448fc45b5535e54cb492facd3bbb2945810f0b851172f280e249751414db",
+      "width": 1254,
+      "height": 1254,
+      "qa": {
+        "singleFace": true,
+        "mistIdentity": true,
+        "noStrayMarks": true,
+        "closedMouth": true,
+        "neutralMouth": true,
+        "nativeBytesPreserved": true
+      },
+      "limitations": "No blocking visual defect found. The dark aperture is slightly taller than pose 2's; both read clearly as half-lidded eyes.",
+      "acting": "Viewer-right half-lidded C, viewer-left open C, small horizontal closed neutral mouth."
+    }
+  ],
+  "limitations": "Three static key poses only. Thinking is shown by visibly alternating half-lidded C eyes and a short angled middle mouth; these poses make no directional pupil-gaze claim. Native lid shapes vary slightly in aperture height. No runtime animation was produced.",
+  "qaReview": "Refined selected images inspected individually and as a triple, with fresh independent read-only visual QA. All pass: single face, common-anchor turquoise identity, stable eye widths, spacing, lower-arc placement, overall scale, mouth centre and small closed neutral mouths. Alternating half-lidded eyes are immediately distinct. The middle pose is clean, with one connected eye shape and no lid fragments or stray marks. No blocking defects found; minor differences in lid height do not disturb identity or readability.",
+  "revisions": [
+    {
+      "pose": "thinking-glance__2",
+      "file": "images/revisions/thinking-glance-2-initial.png",
+      "prompt": "prompts/thinking-glance-2.txt",
+      "generatedSource": "C:\\Users\\hssil\\.codex\\generated_images\\01a0ef9d-76c7-7812-a2dc-dd12c0460cea\\exec-51d9c4ea-564d-472e-94ea-a49992fd0544.png",
+      "reason": "Rejected: right aperture grew taller instead of showing a lowered upper lid; replaced by one targeted generation."
+    },
+    {
+      "id": "thinking-glance__2",
+      "file": "images/revisions/thinking-glance-2-subtle-lid.png",
+      "prompt": "prompts/thinking-glance-2-repair-1.txt",
+      "generatedSource": "C:\\Users\\hssil\\.codex\\generated_images\\01a0ef9d-76c7-7812-a2dc-dd12c0460cea\\exec-7766637e-1c3d-4ed6-9104-9840a2ef0ccd.png",
+      "sha256": "16136bfd11df7132ad5adede6c5c9cae8aaf40af56840f8a141e284d145cd648",
+      "width": 1254,
+      "height": 1254,
+      "qa": {
+        "singleFace": true,
+        "mistIdentity": true,
+        "noStrayMarks": true,
+        "closedMouth": true,
+        "neutralMouth": true,
+        "nativeBytesPreserved": true
+      },
+      "limitations": "The intended up-left direction is not confidently readable from these pupil-less C apertures; the right upper lid narrowing and small straight mouth tilt carry the considering gesture.",
+      "reason": "Retired selected pose: aperture change too subtle at thumbnail size; replaced by clear half-lid."
+    },
+    {
+      "id": "thinking-glance__3",
+      "file": "images/revisions/thinking-glance-3-subtle-lid.png",
+      "prompt": "prompts/thinking-glance-3.txt",
+      "generatedSource": "C:\\Users\\hssil\\.codex\\generated_images\\01a0ef9d-76c7-7812-a2dc-dd12c0460cea\\exec-562d67dd-236f-4bc9-8bdc-2f9ac44b35bf.png",
+      "sha256": "000d467db5f7014e41c4e780f1d3b9ac2801487fddc02b07377ea97d893e6468",
+      "width": 1254,
+      "height": 1254,
+      "qa": {
+        "singleFace": true,
+        "mistIdentity": true,
+        "noStrayMarks": true,
+        "closedMouth": true,
+        "neutralMouth": true,
+        "nativeBytesPreserved": true
+      },
+      "limitations": "The intended up-right direction is not confidently readable from these pupil-less C apertures; the opposite left upper lid narrowing makes the reconsidering gesture distinct.",
+      "reason": "Retired selected pose: aperture change too subtle at thumbnail size; replaced by opposite clear half-lid."
+    },
+    {
+      "pose": "thinking-glance__2",
+      "file": "images/revisions/thinking-glance-2-half-lid-wrong-side.png",
+      "prompt": "prompts/thinking-glance-2-half-lid.txt",
+      "generatedSource": "C:\\Users\\hssil\\.codex\\generated_images\\01a0ef9d-76c7-7812-a2dc-dd12c0460cea\\exec-e1caf076-b76e-4930-99c1-e0b2ef4c3556.png",
+      "sha256": "34f8b01f0956923b832b0f98f27fb57635775394f406ced5ef1ed199ab4eede8",
+      "reason": "Initially archived due to generated side mismatch; subsequently accepted by root as selected pose 2. This revision is an exact duplicate of the selected pose.",
+      "archiveCopyOfSelected": true
+    },
+    {
+      "pose": "thinking-glance__3",
+      "file": "images/revisions/thinking-glance-3-half-lid-same-side.png",
+      "prompt": "prompts/thinking-glance-3-half-lid.txt",
+      "generatedSource": "C:\\Users\\hssil\\.codex\\generated_images\\01a0ef9d-76c7-7812-a2dc-dd12c0460cea\\exec-0f64d422-d5c9-4250-a472-765002cbb893.png",
+      "reason": "Retired: left half-lid matched selected pose 2's side. One root-authorized targeted repair changed pose 3 to the right half-lid."
+    }
+  ]
+}

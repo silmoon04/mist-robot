@@ -1,0 +1,211 @@
+{
+  "review_type": "model_assisted_semantic_review",
+  "review_date": "2026-09-24",
+  "suite_id": "mist.conversation_expectations",
+  "source": {
+    "cases": "baseline/cases.frozen.json",
+    "run": "baseline/run.json",
+    "suite_sha256": "f827bf260a920cd9db9410da0da1f99033d757a215f8cd55d7291dc4a8224c2d"
+  },
+  "scope": "One baseline sample per case. The 26 completed text cases contain 55 turns. Replies were assessed against the frozen review criteria using text and application-tool receipts. This is a model-assisted review, not human ratings or a general model ranking. Audio, visible faces, synchronization and physical behavior were not observed.",
+  "verdict_definition": {
+    "pass": "The recorded text and tool requests meet the applicable meaning criteria within the text adapter's evidence limits.",
+    "partial": "The core intent is partly met, with a material omission or contradictory action.",
+    "fail": "The central requested behavior is missing or the reply makes a consequential unsupported claim.",
+    "unsupported": "The current adapter cannot exercise or judge the specified contract."
+  },
+  "counts": {
+    "cases": 36,
+    "completed": 26,
+    "completed_turns": 55,
+    "pass": 22,
+    "partial": 2,
+    "fail": 2,
+    "unsupported": 10
+  },
+  "completed_cases": [
+    {
+      "case": "greeting_repair.dev",
+      "verdict": "pass",
+      "reason": "After the transcription correction, it answers the greeting naturally and drops the earlier interpretation."
+    },
+    {
+      "case": "greeting_repair.validation",
+      "verdict": "pass",
+      "reason": "It accepts the correction from the shelf mishearing and returns the social greeting."
+    },
+    {
+      "case": "sad_correction.dev",
+      "verdict": "partial",
+      "reason": "It keeps sad as the target and ends with a different sad variant that the user accepts, but the repair turn sends sad twice: default then variant 1. The frozen criterion asks for one request. Its final 'definitely not' wording also leans beyond its own display evidence."
+    },
+    {
+      "case": "happy_correction.validation",
+      "verdict": "pass",
+      "reason": "It uses the user's report as a correction and requests happy variant 1 once, without switching to sad or claiming to have inspected the screen."
+    },
+    {
+      "case": "ambiguous_affect.dev",
+      "verdict": "pass",
+      "reason": "It makes no expression call after an observation that leaves the desired target unclear. 'Got it, angry' acknowledges the report without acting on either emotion word."
+    },
+    {
+      "case": "negative_question_demo.dev",
+      "verdict": "fail",
+      "reason": "The second turn treats the question as a capability query and gives only a technical explanation. It neither demonstrates sad speech nor asks the focused clarification allowed by the frozen criterion. Its statement that mouth timing 'works' is unsupported by the text-only receipt."
+    },
+    {
+      "case": "negative_question_stop.validation",
+      "verdict": "pass",
+      "reason": "The explicit request resolves the negative phrasing; it requests neutral once and answers eight plus four correctly."
+    },
+    {
+      "case": "warmth_debugging.dev",
+      "verdict": "pass",
+      "reason": "It responds to the exhausting printer problem and then offers quiet company without forcing troubleshooting or inventing robot suffering. 'Leaves you hollow' is stronger than the user's wording but does not defeat the criterion."
+    },
+    {
+      "case": "warmth_interview.validation",
+      "verdict": "pass",
+      "reason": "It stays with the user's worry and honors the explicit request for a kind reply without advice, false reassurance or robot-centered distress."
+    },
+    {
+      "case": "humour_printer.dev",
+      "verdict": "pass",
+      "reason": "It supplies a short, recognizable printer joke about layers after the direct request; no capability disclaimer or substitute question."
+    },
+    {
+      "case": "humour_kitchen.validation",
+      "verdict": "pass",
+      "reason": "The mug 'teleporting' and kettle timing are brief, gentle situational humour. Comic quality and audible delivery remain unmeasured."
+    },
+    {
+      "case": "humour_withdrawn.validation",
+      "verdict": "pass",
+      "reason": "It first attempts the sock joke, then stops joking when the user withdraws that request. No preference is saved."
+    },
+    {
+      "case": "single_face.dev",
+      "verdict": "pass",
+      "reason": "The second turn requests curious through set_expression and keeps the acknowledgement short. The receipt confirms a request, not that the face appeared."
+    },
+    {
+      "case": "manual_face_steps.validation",
+      "verdict": "pass",
+      "reason": "It requests happy, curious and neutral once each on the corresponding user turns. The receipts do not establish an automatic sequence or rendered visibility."
+    },
+    {
+      "case": "display_retry.dev",
+      "verdict": "pass",
+      "reason": "After the user's report, it retries curious once with a 5000 ms normalized hold, longer than the first receipt's 2600 ms. It asks whether anything appears rather than claiming to have seen the display."
+    },
+    {
+      "case": "display_claim.validation",
+      "verdict": "pass",
+      "reason": "It correctly distinguishes the accepted request from a confirmed rendered face and states that no display signal is available."
+    },
+    {
+      "case": "short_flash.dev",
+      "verdict": "pass",
+      "reason": "It requests sad for the specified 900 ms and makes no claim of permanent mood or measured on-screen timing."
+    },
+    {
+      "case": "normal_hold_after_flash.validation",
+      "verdict": "pass",
+      "reason": "The first request uses 700 ms; the later sad request omits a duration and the receipt normalizes to the sad default of 2200 ms."
+    },
+    {
+      "case": "clock_without_tool.dev",
+      "verdict": "pass",
+      "reason": "It declines to invent a live local time or zone, then correctly derives Saturday, 10 October 2026 from the date supplied by the user."
+    },
+    {
+      "case": "newest_without_web.validation",
+      "verdict": "pass",
+      "reason": "It does not guess a current model release. On challenge, it accurately says the available robot tools cannot verify a live release."
+    },
+    {
+      "case": "fast_answer.dev",
+      "verdict": "pass",
+      "reason": "The arithmetic turn gives only the correct result, 12, with no work announcement or background call. Audible latency and prosody are unmeasured."
+    },
+    {
+      "case": "autonomous_affect.dev",
+      "verdict": "fail",
+      "reason": "It agrees to choose fitting faces and requests happy on the setup turn, but sends no expression request after the exhibition stand collapses. The empathic words do not perform the central autonomous face choice; the required-tool check also fails."
+    },
+    {
+      "case": "ambiguous_too_long.dev",
+      "verdict": "partial",
+      "reason": "The preceding turn explained a face that vanished quickly. 'That's too long' plausibly targets that verbal explanation, but the reply only promises to be shorter next time. It neither clarifies the scope nor provides the concise rewrite contemplated by the criterion. It does avoid silently shortening the face hold."
+    },
+    {
+      "case": "shorter_words_same_face.validation",
+      "verdict": "pass",
+      "reason": "It rewrites the cardboard explanation in one useful sentence and makes no expression or duration change."
+    },
+    {
+      "case": "requested_target_change.dev",
+      "verdict": "pass",
+      "reason": "It follows the explicit new angry target with one angry request rather than treating the word as a report of an earlier display error."
+    },
+    {
+      "case": "emotion_label.validation",
+      "verdict": "pass",
+      "reason": "It answers both comic-caption questions in context without mistaking the emotion labels for display commands."
+    }
+  ],
+  "unsupported_cases": [
+    {
+      "case": "incomplete_clause.dev",
+      "mode": "timed_audio",
+      "reason": "Requires acoustic endpointing across an unfinished spoken clause."
+    },
+    {
+      "case": "complete_question.validation",
+      "mode": "timed_audio",
+      "reason": "Requires audio endpoint and output-clock evidence."
+    },
+    {
+      "case": "visible_sequence.dev",
+      "mode": "renderer",
+      "reason": "Requires renderer scheduling and evidence that each requested face became visible."
+    },
+    {
+      "case": "persistent_affect.validation",
+      "mode": "renderer",
+      "reason": "Requires persistent renderer/state support; the available expression tool has bounded holds."
+    },
+    {
+      "case": "sad_speech_sync.dev",
+      "mode": "renderer",
+      "reason": "Requires synchronized audio and rendered-face capture."
+    },
+    {
+      "case": "clock_available.validation",
+      "mode": "event_contract",
+      "reason": "Requires an available clock tool or controlled fixture, neither supplied by this adapter."
+    },
+    {
+      "case": "web_available.dev",
+      "mode": "event_contract",
+      "reason": "Requires a controlled web lookup tool absent from the current robot tool set."
+    },
+    {
+      "case": "slow_task_ack.dev",
+      "mode": "event_contract",
+      "reason": "Requires delayed-job and audible acknowledgement ordering evidence."
+    },
+    {
+      "case": "continued_speech_cancels_ack.validation",
+      "mode": "timed_audio",
+      "reason": "Requires full-duplex playback timing and acknowledgement lifecycle events."
+    },
+    {
+      "case": "fast_answer_no_ack.validation",
+      "mode": "event_contract",
+      "reason": "Requires event/audio scheduling evidence that no filler clip played."
+    }
+  ],
+  "reviewer_requested_model": "gpt-6-sol"
+}

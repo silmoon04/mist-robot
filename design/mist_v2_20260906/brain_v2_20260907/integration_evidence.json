@@ -1,0 +1,180 @@
+{
+  "recorded_at": "2026-09-07T00:33:00.831852+00:00",
+  "browser": "Codex in-app browser",
+  "target": "http://127.0.0.1:8776/",
+  "backend": {
+    "model": "gpt-6-astra",
+    "reasoning": "low",
+    "requested_service_tier": "fast",
+    "accepted_service_tier": "priority",
+    "advertised_fast_description": "2x speed, increased usage",
+    "measured_2x_speedup": false
+  },
+  "live_chat_turns": [
+    {
+      "at": 1788740311.3213658,
+      "backend": "codex",
+      "model": "gpt-6-astra",
+      "thinking": "low",
+      "ttft_s": 2.344000000040978,
+      "ttf_any_s": 2.344000000040978,
+      "total_s": 2.375,
+      "input_tokens": 2671,
+      "output_tokens": 14,
+      "errors": [],
+      "cost_usd": null
+    },
+    {
+      "at": 1788740354.2949069,
+      "backend": "codex",
+      "model": "gpt-6-astra",
+      "thinking": "low",
+      "ttft_s": 1.8910000000032596,
+      "ttf_any_s": 1.8910000000032596,
+      "total_s": 1.9060000000172295,
+      "input_tokens": 2704,
+      "output_tokens": 13,
+      "errors": [],
+      "cost_usd": null
+    },
+    {
+      "at": 1788740453.88249,
+      "backend": "codex",
+      "model": "gpt-6-astra",
+      "thinking": "low",
+      "ttft_s": 8.53100000001723,
+      "ttf_any_s": 3.719000000040978,
+      "total_s": 8.547000000020489,
+      "input_tokens": 5530,
+      "output_tokens": 124,
+      "errors": [],
+      "cost_usd": null
+    }
+  ],
+  "background_research": {
+    "id": "J7a868f8d91c0",
+    "task": "Research the Python documentation for queue.Queue: explain why it is useful between threads, in two sentences with sources.",
+    "created_wall": "2026-09-07T00:19:12.077000+00:00",
+    "status": "completed",
+    "started_at": "2026-09-07T00:19:12.292204+00:00",
+    "result": "According to Pythonâ€™s official queue documentation, queue.Queue lets multiple producer and consumer threads exchange information safely because it provides the required locking internally. That documentation, corroborated by the supplied Python 3.6 documentation excerpt, describes FIFO retrieval and a positive maxsize that blocks insertion when full until items are consumed, helping coordinate producers and consumers. Sources: docs.python.org, getdocs.org, realpython.com.",
+    "kind": "research",
+    "grounding": "fetched_sources",
+    "sources": [
+      {
+        "title": "queue â€” A synchronized queue class â€” Python 3.14.7 documentation",
+        "url": "https://docs.python.org/3/library/queue.html",
+        "retrieved_at": "2026-09-07T00:19:13.491739+00:00"
+      },
+      {
+        "title": "queue | Python Standard Library - Real Python",
+        "url": "https://realpython.com/ref/stdlib/queue/",
+        "retrieved_at": "2026-09-07T00:19:14.195451+00:00"
+      },
+      {
+        "title": "17.7. queue â€” A synchronized queue class â€” Python documentation",
+        "url": "https://getdocs.org/Python/docs/3.6/library/queue",
+        "retrieved_at": "2026-09-07T00:19:14.601519+00:00"
+      }
+    ],
+    "coverage": {
+      "found": 3,
+      "fetched": 3,
+      "failed": 0
+    },
+    "limitations": [
+      "Fetched excerpts have not been independently verified; retrieval time is not publication time."
+    ],
+    "model": "gpt-6-astra",
+    "usage": {
+      "input_tokens": 2793,
+      "output_tokens": 71,
+      "total_s": 4.671999999962281,
+      "backend": {
+        "provider": "codex",
+        "model_requested": "gpt-6-astra",
+        "reasoning_requested": "low",
+        "service_tier_requested": "fast",
+        "service_tier_accepted": "priority",
+        "hard_output_token_cap_available": false,
+        "output_token_target": 500,
+        "cost_available": false,
+        "hardware_connected": false,
+        "host_environment_enabled": false,
+        "robot_tool_count": 0,
+        "cli_version": "codex-cli 0.153.4",
+        "catalog_service_tiers": [
+          {
+            "id": "priority",
+            "name": "Fast",
+            "description": "2x speed, increased usage"
+          }
+        ],
+        "model_accepted": "gpt-6-astra",
+        "reasoning_accepted": "low",
+        "instruction_sources_loaded": 0,
+        "startup_s": 0.45300000003771856,
+        "tool_mode": "direct",
+        "collaboration_enabled": false
+      },
+      "cost_usd": null,
+      "cost_note": "The subscription backend does not report per-turn cost."
+    },
+    "completed_at": "2026-09-07T00:19:19.756831+00:00",
+    "elapsed_s": 7.469,
+    "untrusted": true
+  },
+  "cancelled_job": {
+    "id": "J4e4947b149f7",
+    "task": "Research the official Python documentation for SimpleQueue.",
+    "created_wall": "2026-09-07T00:19:51.633040+00:00",
+    "status": "cancelled",
+    "started_at": "2026-09-07T00:19:51.869270+00:00",
+    "completed_at": "2026-09-07T00:19:51.917362+00:00",
+    "result": "Task cancelled.",
+    "kind": "cancelled",
+    "grounding": "unavailable",
+    "sources": [],
+    "untrusted": true
+  },
+  "browser_observations": [
+    "Live model greeting rendered and ElevenLabs speech reached playing state with character-timestamp alignment.",
+    "Independent arithmetic chat returned 391 while the executive research job was running.",
+    "Completed research result appeared in a persistent job card with three actual URLs.",
+    "A second research request was cancelled in the UI; its card remained cancelled.",
+    "The real face tool selected happy; speech state reached playing; no console errors were observed.",
+    "Final renderer reloaded in the face studio: a sustained silent mouth preview stayed data-speaking=true after selecting happy 14, then Stop reset it to false.",
+    "Main page Stop reply left audio paused, speech quiet and face data-speaking=false.",
+    "The browser viewport override requested 390x844 but the measured DOM viewport stayed 1280x720; phone-layout validation remains unverified."
+  ],
+  "voice_totals": {
+    "generated_clips": 4,
+    "input_characters": 257,
+    "audio_seconds": 13.7926,
+    "provider_billed_characters": 128,
+    "tts_api_latency_s_total": 5.6837,
+    "deepgram_audio_seconds": 6.7802,
+    "deepgram_word_fidelity": [
+      0.9,
+      1.0
+    ],
+    "cost_usd": null
+  },
+  "validation": {
+    "offline_runner": "passed",
+    "robot_tools": 15,
+    "codex_client": 9,
+    "face_states": 31050,
+    "face_expression_pairs": 1600,
+    "speech_player": "passed",
+    "http_job_lifecycle": "passed",
+    "speech_provider_selfcheck": "passed"
+  },
+  "limits": [
+    "Simulation only; no motors or live camera connected.",
+    "Character-aligned mouth shapes are spelling approximations, not phonetic or perceptual lip-sync measurements.",
+    "Background cancellations suppress delivery immediately; an already running HTTP fetch can finish before the worker observes cancellation.",
+    "No dollar estimate is reported because APIs do not expose account billing prices.",
+    "Browser voice mode lacks a dependable media clock and keeps its expression still."
+  ]
+}

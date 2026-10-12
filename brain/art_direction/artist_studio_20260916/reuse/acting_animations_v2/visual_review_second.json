@@ -1,0 +1,134 @@
+{
+  "reviewer": "animation_qa_second",
+  "scope": [
+    "mickey",
+    "simons_cat",
+    "peanuts"
+  ],
+  "method": "Independent inspection of actual-alpha dark composites and all twelve registered contact-sheet drawings, compared with original acting reference sheets. Static review only: smooth playback is not claimed.",
+  "status": "complete_pass_with_art_direction_caveats",
+  "examples": [
+    {
+      "key": "mickey/double_take",
+      "sourceSha256": "2e12b89e8da5923d1d7c69222a4209c7a31c0b541884748242dd4162b29ddd47",
+      "evidence": "contact/mickey/double_take.png",
+      "status": "pass_with_caveat",
+      "visualFindings": "All twelve drawings present; no clipped features; distinct vertical/oval double-take peak at frame 6 preserves original reference character. Fully closed curved lids at frame 3. Rest and final drawing have the same eye and mouth identity. Registered twelve-frame contact sheet also inspected: source row/column drift corrected; visible feature gaps preserved; final pose returns to start with small drawn contour variation.",
+      "caveats": [
+        "Frame 2 already looks almost closed; only a small contour change remains before full closure at frame 3."
+      ],
+      "blockingDefects": [],
+      "manifestSourceHashMatches": true,
+      "independentLayerCompositeMaxChannelError": 0
+    },
+    {
+      "key": "mickey/mock_outrage",
+      "sourceSha256": "671a6623577a65ace7a7a9a78e4ee8bbe12dbed3eaa9908c664be2514bdde1e3",
+      "evidence": "contact/mickey/mock_outrage.png",
+      "status": "pass",
+      "visualFindings": "All twelve drawings present; fully closed lids at frame 3; sharp mock-outrage peak at frame 7 resolves through a playful wink. Triangular open shout and warm smile match original intent. No visible source clipping. All twelve registered drawings and all 36 isolated layer tiles inspected. Component masks isolate complete eye and mouth drawings despite overlapping bounds; no mouth fragments appear in eye layers or eye fragments in mouth layers. Mouth corners are intact. Registered final pose returns to starting identity.",
+      "caveats": [],
+      "blockingDefects": [],
+      "manifestSourceHashMatches": true,
+      "independentLayerCompositeMaxChannelError": 0,
+      "isolatedLayerEvidence": "mock_outrage_isolated_qa.jpg"
+    },
+    {
+      "key": "mickey/triumph",
+      "sourceSha256": "f919e3ec469e6e2a558376a1c3249d3bd4ce321ef58cfc9dcc7560c3048a175d",
+      "evidence": "contact/mickey/triumph.png",
+      "status": "pass_with_caveat",
+      "visualFindings": "All twelve drawings present; fully closed lids at frame 3; cheerful mouth opening at frame 7; return through asymmetric satisfied smile and then neutral rest. No source clipping or wrong eye family. All twelve registered drawings and all 36 isolated layer tiles inspected. Component masks isolate complete eye and mouth drawings despite overlapping bounds; no mouth fragments appear in eye layers or eye fragments in mouth layers. Mouth corners are intact. Registered final pose returns to starting identity.",
+      "caveats": [
+        "Frame 3 uses an up-arc happy closure rather than continuing the lower bowl curve from frame 2; this is a conspicuous cartoon choice, not a subtle anatomical blink."
+      ],
+      "blockingDefects": [],
+      "manifestSourceHashMatches": true,
+      "independentLayerCompositeMaxChannelError": 0,
+      "isolatedLayerEvidence": "triumph_isolated_qa.jpg"
+    },
+    {
+      "key": "simons_cat/notice",
+      "sourceSha256": "1dc931eb52ddeed051b979cc56a1cd1e8e494ea176ac1927eed08f073284a571",
+      "evidence": "contact/simons_cat/notice.png",
+      "status": "pass",
+      "visualFindings": "All twelve final registered drawings examined, SHA-bound to the repaired transparent source. Round outlined eyes retain identity, half-blinks redraw the silhouette, frame 3 fully closes both eyes. Mouth stays neutral. Gaze moves right at the peak and returns inward in stages; earlier right-to-left jump has been removed. Eye and mouth regions are clear and separate. Frame 11 returns to frame-0 pose with small drawn contour variation.",
+      "caveats": [],
+      "blockingDefects": [],
+      "manifestSourceHashMatches": true,
+      "independentLayerCompositeMaxChannelError": 0
+    },
+    {
+      "key": "simons_cat/waiting",
+      "sourceSha256": "8d21818d2ee23f0e16de0150a1ed6fea94a9be9c6f32a0a3c5c0aa4d23509b46",
+      "evidence": "contact/simons_cat/waiting.png",
+      "status": "pass_with_caveat",
+      "visualFindings": "All twelve final registered drawings examined, SHA-bound to the repaired transparent source. Outlined eyes close through newly shaped lids at frames 1/2, full closure at frame 3. Gaze lifts at the peak, then returns toward center; earlier rapid opposite downward glance is removed. A briefly flattened mouth reads as waiting. No clipped artwork, wrong eye model or eye/mouth overlap. Final pose returns to the starting smile and centered gaze.",
+      "caveats": [
+        "Starting and final smile are warmer than the original neutral Setup."
+      ],
+      "blockingDefects": [],
+      "manifestSourceHashMatches": true,
+      "independentLayerCompositeMaxChannelError": 0
+    },
+    {
+      "key": "simons_cat/clarify",
+      "sourceSha256": "489b13f3154ecc16106d451b9798e638f49b373e7871e01a24f203d468fee786",
+      "evidence": "contact/simons_cat/clarify.png",
+      "status": "pass",
+      "visualFindings": "All twelve registered drawings examined. Blink closes at frame 3 and reopens; asymmetrically lowered left lid and diagonal mouth at frames 6 to 9 preserve the clarification reference. Mouth flattens as the left eye reopens. No clipped features or layer collision. Frame 11 returns to frame-0 eye and mouth identity with slight hand-drawn variation.",
+      "caveats": [],
+      "blockingDefects": [],
+      "manifestSourceHashMatches": true,
+      "independentLayerCompositeMaxChannelError": 0
+    },
+    {
+      "key": "peanuts/company",
+      "sourceSha256": "e928b947e663b21429b75cda3fcaa1537d5ac69b8ec16e0dd26a4928dcbaa83e",
+      "evidence": "contact/peanuts/company.png",
+      "status": "pass_with_caveat",
+      "visualFindings": "All twelve registered drawings examined. Dot-eye identity preserved, partial closure changes the dot silhouette, full closed arcs at frame 3. Gentle sideways glance at frames 6 to 9. Registration removes visible source row drift. Mouth stays small and closed; no clipping or separation collision. Final pose matches the starting identity.",
+      "caveats": [
+        "The original neutral Setup mouth is now smiling throughout, reducing the original neutral-to-warm change beat."
+      ],
+      "blockingDefects": [],
+      "manifestSourceHashMatches": true,
+      "independentLayerCompositeMaxChannelError": 0
+    },
+    {
+      "key": "peanuts/wry",
+      "sourceSha256": "204817d9279bf7cac60b6476ca63a230b946c3b14c52aba6cf00c4d71798543b",
+      "evidence": "contact/peanuts/wry.png",
+      "status": "pass",
+      "visualFindings": "All twelve registered drawings examined. Dot eyes, complete frame-3 blink, rightward glance, then one-eye wink and asymmetric smile form a distinct beat matching the original reference. Return restores the flat mouth and two dot eyes. Clear separation, no clipping, no wrong eye family. Contour variation at the loop boundary is small.",
+      "caveats": [],
+      "blockingDefects": [],
+      "manifestSourceHashMatches": true,
+      "independentLayerCompositeMaxChannelError": 0
+    },
+    {
+      "key": "peanuts/pride",
+      "sourceSha256": "d81b9f4d4bf1986146530891ae8f73280325dc240e4f14d1493b689b67861f1d",
+      "evidence": "contact/peanuts/pride.png",
+      "status": "pass_with_caveat",
+      "visualFindings": "All twelve registered drawings examined. Dot eyes close through a visibly partial dome at frame 2 into full closed arcs at frame 3. Small contented smile preserved, with modest lid changes at the later beat. Registration is stable, artwork separated and not clipped. Starting and final poses match by eye/mouth family.",
+      "caveats": [
+        "Compared with the original flat-mouth Setup, the constant smile makes the pride beat subtle and similar to a friendly blink; a future acting refinement could build the smile during the peak."
+      ],
+      "blockingDefects": [],
+      "manifestSourceHashMatches": true,
+      "independentLayerCompositeMaxChannelError": 0
+    }
+  ],
+  "reviewedExamples": 9,
+  "reviewedDrawings": 108,
+  "reviewedExtractedLayers": 324,
+  "blockingDefects": [],
+  "manifestSha256": "ff6233c5cb11224c8ddb82e477b5bb18533782ad8b7d896494d70868734982c1",
+  "independentReconstruction": {
+    "method": "Pillow alpha-composite of supplied layer PNGs at manifest positions over #101c20, compared with each registered full frame",
+    "frames": 108,
+    "maximumChannelError": 0,
+    "evidence": "layer_reconstruction_second.json"
+  }
+}

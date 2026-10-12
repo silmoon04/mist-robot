@@ -1,0 +1,511 @@
+{
+  "scope": "Installed primary declaration/signature check only; no Autodesk native DLL imported or Fusion API executed.",
+  "native_execution": false,
+  "source": "C:\\Users\\hssil\\AppData\\Local\\Autodesk\\webdeploy\\production\\61bf25b220a2d0307c84c301e65a59ac225d9a1e\\API\\Python\\packages\\adsk\\defs\\adsk\\fusion.py",
+  "source_sha256": "6ecdd9cf378b985eed720957c395c967576699477ecfb078a4dc0d740646f205",
+  "passed": true,
+  "checked_members": 51,
+  "checks": [
+    {
+      "api": "Component.allOccurrencesByComponent",
+      "passed": true,
+      "expected_args": [
+        "self",
+        "component"
+      ],
+      "actual_args": [
+        "self",
+        "component"
+      ]
+    },
+    {
+      "api": "Component.asBuiltJoints",
+      "passed": true,
+      "expected_args": null,
+      "actual_args": [
+        "self"
+      ]
+    },
+    {
+      "api": "Component.rigidGroups",
+      "passed": true,
+      "expected_args": null,
+      "actual_args": [
+        "self"
+      ]
+    },
+    {
+      "api": "Component.constructionPlanes",
+      "passed": true,
+      "expected_args": null,
+      "actual_args": [
+        "self"
+      ]
+    },
+    {
+      "api": "Component.sketches",
+      "passed": true,
+      "expected_args": null,
+      "actual_args": [
+        "self"
+      ]
+    },
+    {
+      "api": "Component.xYConstructionPlane",
+      "passed": true,
+      "expected_args": null,
+      "actual_args": [
+        "self"
+      ]
+    },
+    {
+      "api": "Component.xZConstructionPlane",
+      "passed": true,
+      "expected_args": null,
+      "actual_args": [
+        "self"
+      ]
+    },
+    {
+      "api": "Component.yZConstructionPlane",
+      "passed": true,
+      "expected_args": null,
+      "actual_args": [
+        "self"
+      ]
+    },
+    {
+      "api": "RigidGroups.add",
+      "passed": true,
+      "expected_args": [
+        "self",
+        "occurrences",
+        "includeChildren"
+      ],
+      "actual_args": [
+        "self",
+        "occurrences",
+        "includeChildren"
+      ]
+    },
+    {
+      "api": "AsBuiltJoints.createInput",
+      "passed": true,
+      "expected_args": [
+        "self",
+        "occurrenceOne",
+        "occurrenceTwo",
+        "geometry"
+      ],
+      "actual_args": [
+        "self",
+        "occurrenceOne",
+        "occurrenceTwo",
+        "geometry"
+      ]
+    },
+    {
+      "api": "AsBuiltJoints.add",
+      "passed": true,
+      "expected_args": [
+        "self",
+        "input"
+      ],
+      "actual_args": [
+        "self",
+        "input"
+      ]
+    },
+    {
+      "api": "AsBuiltJointInput.setAsRevoluteJointMotion",
+      "passed": true,
+      "expected_args": [
+        "self",
+        "rotationAxis",
+        "customRotationAxisEntity"
+      ],
+      "actual_args": [
+        "self",
+        "rotationAxis",
+        "customRotationAxisEntity"
+      ]
+    },
+    {
+      "api": "AsBuiltJointInput.setAsRigidJointMotion",
+      "passed": true,
+      "expected_args": [
+        "self"
+      ],
+      "actual_args": [
+        "self"
+      ]
+    },
+    {
+      "api": "AsBuiltJoint.jointMotion",
+      "passed": true,
+      "expected_args": null,
+      "actual_args": [
+        "self"
+      ]
+    },
+    {
+      "api": "AsBuiltJoint.name",
+      "passed": true,
+      "expected_args": null,
+      "actual_args": [
+        "self",
+        "value"
+      ]
+    },
+    {
+      "api": "AsBuiltJoint.isSuppressed",
+      "passed": true,
+      "expected_args": null,
+      "actual_args": [
+        "self",
+        "value"
+      ]
+    },
+    {
+      "api": "JointGeometry.createByPoint",
+      "passed": true,
+      "expected_args": [
+        "point"
+      ],
+      "actual_args": [
+        "point"
+      ]
+    },
+    {
+      "api": "RevoluteJointMotion.cast",
+      "passed": true,
+      "expected_args": [
+        "arg"
+      ],
+      "actual_args": [
+        "arg"
+      ]
+    },
+    {
+      "api": "RevoluteJointMotion.rotationValue",
+      "passed": true,
+      "expected_args": null,
+      "actual_args": [
+        "self",
+        "value"
+      ]
+    },
+    {
+      "api": "RevoluteJointMotion.rotationLimits",
+      "passed": true,
+      "expected_args": null,
+      "actual_args": [
+        "self"
+      ]
+    },
+    {
+      "api": "RevoluteJointMotion.rotationAxisVector",
+      "passed": true,
+      "expected_args": null,
+      "actual_args": [
+        "self"
+      ]
+    },
+    {
+      "api": "JointLimits.minimumValue",
+      "passed": true,
+      "expected_args": null,
+      "actual_args": [
+        "self",
+        "value"
+      ]
+    },
+    {
+      "api": "JointLimits.maximumValue",
+      "passed": true,
+      "expected_args": null,
+      "actual_args": [
+        "self",
+        "value"
+      ]
+    },
+    {
+      "api": "JointLimits.isMinimumValueEnabled",
+      "passed": true,
+      "expected_args": null,
+      "actual_args": [
+        "self",
+        "value"
+      ]
+    },
+    {
+      "api": "JointLimits.isMaximumValueEnabled",
+      "passed": true,
+      "expected_args": null,
+      "actual_args": [
+        "self",
+        "value"
+      ]
+    },
+    {
+      "api": "JointLimits.isRestValueEnabled",
+      "passed": true,
+      "expected_args": null,
+      "actual_args": [
+        "self",
+        "value"
+      ]
+    },
+    {
+      "api": "Occurrence.transform2",
+      "passed": true,
+      "expected_args": null,
+      "actual_args": [
+        "self",
+        "value"
+      ]
+    },
+    {
+      "api": "Occurrence.assemblyContext",
+      "passed": true,
+      "expected_args": null,
+      "actual_args": [
+        "self"
+      ]
+    },
+    {
+      "api": "Occurrence.sourceComponent",
+      "passed": true,
+      "expected_args": null,
+      "actual_args": [
+        "self"
+      ]
+    },
+    {
+      "api": "Occurrence.isGrounded",
+      "passed": true,
+      "expected_args": null,
+      "actual_args": [
+        "self",
+        "value"
+      ]
+    },
+    {
+      "api": "Occurrence.isGroundToParent",
+      "passed": true,
+      "expected_args": null,
+      "actual_args": [
+        "self",
+        "value"
+      ]
+    },
+    {
+      "api": "ConstructionPlanes.createInput",
+      "passed": true,
+      "expected_args": [
+        "self",
+        "occurrenceForCreation"
+      ],
+      "actual_args": [
+        "self",
+        "occurrenceForCreation"
+      ]
+    },
+    {
+      "api": "ConstructionPlanes.add",
+      "passed": true,
+      "expected_args": [
+        "self",
+        "input"
+      ],
+      "actual_args": [
+        "self",
+        "input"
+      ]
+    },
+    {
+      "api": "ConstructionPlaneInput.setByOffset",
+      "passed": true,
+      "expected_args": [
+        "self",
+        "planarEntity",
+        "offset"
+      ],
+      "actual_args": [
+        "self",
+        "planarEntity",
+        "offset"
+      ]
+    },
+    {
+      "api": "ConstructionPlane.geometry",
+      "passed": true,
+      "expected_args": null,
+      "actual_args": [
+        "self"
+      ]
+    },
+    {
+      "api": "ConstructionPlane.isLightBulbOn",
+      "passed": true,
+      "expected_args": null,
+      "actual_args": [
+        "self",
+        "value"
+      ]
+    },
+    {
+      "api": "Sketches.add",
+      "passed": true,
+      "expected_args": [
+        "self",
+        "planarEntity",
+        "occurrenceForCreation"
+      ],
+      "actual_args": [
+        "self",
+        "planarEntity",
+        "occurrenceForCreation"
+      ]
+    },
+    {
+      "api": "Sketch.modelToSketchSpace",
+      "passed": true,
+      "expected_args": [
+        "self",
+        "modelCoordinate"
+      ],
+      "actual_args": [
+        "self",
+        "modelCoordinate"
+      ]
+    },
+    {
+      "api": "Sketch.geometricConstraints",
+      "passed": true,
+      "expected_args": null,
+      "actual_args": [
+        "self"
+      ]
+    },
+    {
+      "api": "Sketch.sketchCurves",
+      "passed": true,
+      "expected_args": null,
+      "actual_args": [
+        "self"
+      ]
+    },
+    {
+      "api": "Sketch.sketchPoints",
+      "passed": true,
+      "expected_args": null,
+      "actual_args": [
+        "self"
+      ]
+    },
+    {
+      "api": "Sketch.isLightBulbOn",
+      "passed": true,
+      "expected_args": null,
+      "actual_args": [
+        "self",
+        "value"
+      ]
+    },
+    {
+      "api": "SketchPoints.add",
+      "passed": true,
+      "expected_args": [
+        "self",
+        "point"
+      ],
+      "actual_args": [
+        "self",
+        "point"
+      ]
+    },
+    {
+      "api": "SketchLines.addByTwoPoints",
+      "passed": true,
+      "expected_args": [
+        "self",
+        "startPoint",
+        "endPoint"
+      ],
+      "actual_args": [
+        "self",
+        "startPoint",
+        "endPoint"
+      ]
+    },
+    {
+      "api": "SketchLine.createForAssemblyContext",
+      "passed": true,
+      "expected_args": [
+        "self",
+        "occurrence"
+      ],
+      "actual_args": [
+        "self",
+        "occurrence"
+      ]
+    },
+    {
+      "api": "SketchLine.startSketchPoint",
+      "passed": true,
+      "expected_args": null,
+      "actual_args": [
+        "self"
+      ]
+    },
+    {
+      "api": "SketchPoint.createForAssemblyContext",
+      "passed": true,
+      "expected_args": [
+        "self",
+        "occurrence"
+      ],
+      "actual_args": [
+        "self",
+        "occurrence"
+      ]
+    },
+    {
+      "api": "SketchEntity.isFixed",
+      "passed": true,
+      "expected_args": null,
+      "actual_args": [
+        "self",
+        "value"
+      ]
+    },
+    {
+      "api": "Design.computeAll",
+      "passed": true,
+      "expected_args": [
+        "self"
+      ],
+      "actual_args": [
+        "self"
+      ]
+    },
+    {
+      "api": "Design.rootComponent",
+      "passed": true,
+      "expected_args": null,
+      "actual_args": [
+        "self"
+      ]
+    },
+    {
+      "api": "Design.designType",
+      "passed": true,
+      "expected_args": null,
+      "actual_args": [
+        "self",
+        "value"
+      ]
+    }
+  ]
+}

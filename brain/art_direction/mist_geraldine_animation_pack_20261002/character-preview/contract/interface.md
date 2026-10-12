@@ -1,0 +1,19 @@
+# Geraldine adapter 1.0.0
+
+Import `createGeraldineAdapter` from `adapter/geraldine-adapter.mjs`. Pass a canvas and await `face.ready`; false means asset loading failed and `snapshot().error` explains why. Call `update(performance.now())` from the host frame loop. It renders at 15 fps and owns no audio source or animation loop.
+
+The JSON contract fixes method signatures and snapshot fields. `snapshot().pose` contains `presetId`, `eyeFamily`, `eyeFrame`, `mouthFamily`, `mouthFrame`, `phase`, and `speaking`. `speech` preserves the sampled active flag, viseme, amount, source, time (seconds), epoch, sequence, and turn_id. Top-level `viseme` is the rendered mouth cel. Missing provenance is null. `intent` persists through gaps, stop and reset; `expression` is the current visual preset, including a finite reaction. A repeated persistent intent does not restart transitions. Reaction expiry returns to the latest persistent intent.
+
+`startSpeech({events,duration,clock,sample})` matches the inspected live playback call. Clock and event times are seconds. The synchronous sample callback takes precedence; without it, events are selected by clock. Empty/missing cues and inactive/rest samples close the registered mouth rest cel, including presets whose expressive idle rest would otherwise be open. Rest samples may omit epoch. Stop invalidates the sampler generation without advancing the external epoch. Reset advances epoch unless explicitly supplied. Tagged lower epochs are rejected. Untagged calls are trusted current-caller input: they cannot convey cancellation identity, so the adapter cannot promise stale-event rejection for them.
+
+A finite duration also bounds callback rendering. A supplied clock is the boundary authority; without a clock function, the adapter uses the callback's sampled time. A nonfinite, negative or missing boundary time, a clock exception, or time at or beyond duration closes the rendered mouth and clears articulation for native transitions. The callback's normalized `speech` fields remain intact, including its active flag, amount and original sampled time; use `pose.speaking` and top-level `viseme` for the rendered result. Infinite-duration callbacks rely on the sample and do not read the clock. Boundary times must be finite numbers. Finite negative durations normalize to zero, so they cannot articulate.
+
+Optional gaze, activity and listening-signal hooks return `{supported:false, reason, token:null}` and produce no visual change. `handleEvent` only supports state, expression and reset events. State is display metadata, separate from emotional intent. Finite expression reactions are bounded to 10 seconds and never choose live intent. The host owns transport, audio cleanup, disconnection and turn arbitration.
+
+Amount is normalized to 0..1. A nonpositive or explicitly invalid amount closes the rendered mouth while retaining the sample's viseme and provenance in `speech`. Omitted amount defaults to one for a non-rest viseme and zero for rest, so timed-cue input without amplitude remains usable.
+
+Start, stop and reset invalidate the rendered-frame cache. Their next host update therefore renders even if the host has frozen its scene clock. A host pausing the scene clock should call `stopSpeech()` and reattach its sampler on resume; audio-clock suspension alone also closes through inactive samples when the rendering clock continues.
+
+`reducedMotion` suppresses the native idle blink and gaze schedule. Explicit speech cels and the native 400 ms preset transitions remain available, as specified by the character direction's reduced-motion policy.
+
+Tests may inject `now:()=>milliseconds`, a manifest and `renderer:{load:async()=>{},draw:(canvas,pose)=>{}}`. The default renderer uses exact snapshot copies of the current site modules, with URLs resolved against the original site manifest location. Shared runtime and the live default remain unchanged.

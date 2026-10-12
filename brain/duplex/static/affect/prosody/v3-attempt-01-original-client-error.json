@@ -1,0 +1,18 @@
+{
+  "model": "eleven_v3_conversational",
+  "status": "client_error_before_context_or_text_send",
+  "probe_elapsed_s": 3.265,
+  "captured_error": {
+    "stage": "v3_client",
+    "kind": "TypeError"
+  },
+  "exception_message_captured": false,
+  "local_diagnosis": {
+    "aiohttp_version": "3.10.5",
+    "api_fact": "aiohttp.ClientWebSocketResponse has no __aenter__ method",
+    "failure_point": "async with socket, immediately after ws_connect returned",
+    "context_or_text_frame_sent": false,
+    "provider_synthesis_request_sent": false,
+    "basis": "The saved probe source awaited ws_connect and next entered async with on its returned ClientWebSocketResponse. Local aiohttp introspection confirmed the missing async-context-manager method. The original handler saved only the exception class, not its message or traceback."
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "id": 2,
+  "jsonrpc": "2.0",
+  "result": {
+    "content": [
+      {
+        "text": "{\n    \"error\": \"{\\\"status\\\": \\\"failed\\\", \\\"source_sha256\\\": \\\"c4aebaa418f6955130f9bf4f4a798dc478b181fea47327865db2d7aedb386a98\\\", \\\"native_execution\\\": true, \\\"returned_types\\\": [\\\"adsk::fusion::Occurrence\\\"], \\\"root_bodies\\\": 0, \\\"occurrences\\\": [{\\\"path\\\": \\\"KHK_SM1-20_manufacturer_geometry:1+SM1-20_On:1+SM1-201_On:1\\\", \\\"bodies\\\": [{\\\"name\\\": \\\"Body1\\\", \\\"solid\\\": true, \\\"volume_mm3\\\": 2339.269209512583, \\\"face_count\\\": 109, \\\"bounds_mm\\\": [[-10.705, -20.0, -10.705], [10.705, -6.0600000000000005, 10.705]]}], \\\"children\\\": 0}, {\\\"path\\\": \\\"KHK_SM1-20_manufacturer_geometry:1+SM1-20_On:1\\\", \\\"bodies\\\": [], \\\"children\\\": 1}, {\\\"path\\\": \\\"KHK_SM1-20_manufacturer_geometry:1\\\", \\\"bodies\\\": [], \\\"children\\\": 1}], \\\"error\\\": \\\"STEP volume disagrees with independent import\\\", \\\"previous_document_reactivated\\\": true}\\nTraceback (most recent call last):\\n  File \\\"<string>\\\", line 44, in <module>\\n  File \\\"<string>\\\", line 38, in run\\n  File \\\"C:\\\\Users\\\\hssil\\\\Downloads\\\\03_Programming_Projects\\\\spider-robot\\\\design\\\\mist_v2_20260906\\\\cad\\\\fusion_live_20260907\\\\vendor_import_probe.py\\\", line 54, in run\\n    raise RuntimeError('STEP volume disagrees with independent import')\\nRuntimeError: STEP volume disagrees with independent import\\n\",\n    \"success\": false\n}",
+        "type": "text"
+      }
+    ]
+  }
+}

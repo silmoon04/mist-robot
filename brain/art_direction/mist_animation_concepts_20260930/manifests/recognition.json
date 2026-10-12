@@ -1,0 +1,61 @@
+{
+  "id": "recognition",
+  "tool": "built-in image_gen",
+  "images": [
+    {
+      "id": "recognition__1",
+      "file": "images/recognition-1.png",
+      "prompt": "prompts/recognition-1.txt",
+      "generatedSource": "C:\\Users\\hssil\\.codex\\generated_images\\01a0ef9e-70eb-7963-957b-5f73ea9c8485\\exec-cf47d63b-96f4-4120-b521-b82d223cd2e3.png",
+      "sha256": "54abc956abd0a5fd1aae46867598ee599ba4b67061a1176cc517301680cbc532",
+      "width": 1254,
+      "height": 1254,
+      "qa": {
+        "singleFace": true,
+        "mistIdentity": true,
+        "noStrayMarks": true,
+        "compactClosedMouth": true,
+        "stableFaceLayout": true,
+        "exactNativeCopy": true
+      },
+      "limitations": "Generated contours and tonal texture differ slightly from the anchor; visual inspection confirms stable layout rather than pixel-identical registration."
+    },
+    {
+      "id": "recognition__2",
+      "file": "images/recognition-2.png",
+      "prompt": "prompts/recognition-2.txt",
+      "generatedSource": "C:\\Users\\hssil\\.codex\\generated_images\\01a0ef9e-70eb-7963-957b-5f73ea9c8485\\exec-c5e4282c-4075-4c5d-95f7-31feb51c7012.png",
+      "sha256": "fb0b9b1fb0cda08c8a3a77b4c35dcd1d665440cde73666e2527ada46eacfb49b",
+      "width": 1254,
+      "height": 1254,
+      "qa": {
+        "singleFace": true,
+        "mistIdentity": true,
+        "noStrayMarks": true,
+        "compactClosedMouth": true,
+        "stableFaceLayout": true,
+        "exactNativeCopy": true
+      },
+      "limitations": "The upper-lid opening is deliberately subtle; the shallow closed smile carries most of the recognition beat."
+    },
+    {
+      "id": "recognition__3",
+      "file": "images/recognition-3.png",
+      "prompt": "prompts/recognition-3.txt",
+      "generatedSource": "C:\\Users\\hssil\\.codex\\generated_images\\01a0ef9e-70eb-7963-957b-5f73ea9c8485\\exec-f4e6fda7-2a2c-4bef-83ad-1a3533d89c68.png",
+      "sha256": "c1f7ec940a75face8e27c1a3091d0c65439763276cdaf20e5f96a384a778d010",
+      "width": 1254,
+      "height": 1254,
+      "qa": {
+        "singleFace": true,
+        "mistIdentity": true,
+        "noStrayMarks": true,
+        "compactClosedMouth": true,
+        "stableFaceLayout": true,
+        "exactNativeCopy": true
+      },
+      "limitations": "The settled mouth is shallow and nearly flat, with softly lowered upper inner eye contours; native contour differences remain slight."
+    }
+  ],
+  "limitations": "Three static native key poses only. Receive to recognise to settle is designed as one small acknowledgement beat; drawn in-betweens and playback timing are outside this pass. Eye and mouth centres remain visually stable, with minor generated contour variation rather than pixel-identical registration."
+}

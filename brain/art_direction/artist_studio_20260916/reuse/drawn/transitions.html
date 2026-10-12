@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MIST - Transitions</title><link rel="stylesheet" href="preview.css?v=4"><link rel="stylesheet" href="transitions.css?v=1"></head><body>
+<header><a href="./">MIST</a><span class="divider">/</span><span>Transitions</span><span id="status" role="status">Loading renderer...</span><a class="quiet" href="./">40-face grid</a></header>
+<main>
+<div class="toolbar"><label>From <select id="from"></select></label><label>To <select id="to"></select></label><label>Duration <select id="duration"><option value="400">400 ms</option><option value="600" selected>600 ms</option><option value="800">800 ms</option><option value="1200">1200 ms</option><option value="1600">1600 ms</option></select></label><button id="transition" disabled>Transition</button><button id="next" disabled>Next</button><label><input id="tour" type="checkbox"> All 40</label><button id="pause">Pause</button><button id="step" title="Advance one frame at 15 fps">Step</button><button id="blink">Blink</button></div>
+<div class="voicebar"><label>Voice <select id="sample"><option>Loading samples...</option></select></label><button id="voice" disabled>Play voice</button><button id="stop" disabled>Stop voice</button><span id="voice-status">Saved recording / audio timing</span></div>
+<div id="error" role="alert" hidden></div>
+<section class="transition-stage"><div id="stage" aria-label="Live production face renderer"></div><div class="readout"><span id="pair">-</span><span id="cue">Rest</span></div><progress id="progress" max="1" value="1" aria-label="Transition progress"></progress></section>
+<div class="note"><span>Production renderer. Click a face to transition.</span><span id="count">0 / 40</span></div>
+<nav id="face-list" aria-label="All expressions"></nav>
+</main><script src="../runtime/app_data.js"></script><script src="../runtime/face_runtime.js"></script><script src="../runtime/drawn_face_renderer.js?v=blink5"></script><script type="module" src="transitions.js?v=emotion4"></script></body></html>

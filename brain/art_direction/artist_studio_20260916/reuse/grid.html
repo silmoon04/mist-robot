@@ -1,0 +1,6 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MIST / All 40</title><link rel="stylesheet" href="grid.css"></head>
+<body><header><a href="./">MIST <span>/ All 40</span></a><div class="controls"><button id="play">Pause</button><button id="step" title="Pause and advance one frame">Step</button><button id="blink">Blink</button><label><input type="checkbox" id="talk" checked> Talking</label><label><input type="checkbox" id="gaze" checked> Gaze</label><select id="fps" aria-label="Frame rate"><option value="8" selected>8 fps</option><option value="24">24 fps</option><option value="60">60 fps</option></select><select id="speed" aria-label="Playback speed"><option value=".25">0.25x</option><option value=".5">0.5x</option><option value="1" selected>1x</option></select></div><a href="./">Reuse map</a></header>
+<div class="status"><span>Existing artwork / silent speech preview</span><a href="drawn/">New ImageGen motion</a><span id="phase" aria-live="off">Speaking</span><span id="frame">Frame 0</span></div>
+<main id="grid" aria-label="40 animated MIST expressions"></main>
+<script src="runtime/app_data.js"></script><script src="runtime/face_runtime.js"></script><script src="grid.js"></script></body></html>

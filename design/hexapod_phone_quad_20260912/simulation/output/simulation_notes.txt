@@ -1,0 +1,35 @@
+QUADRUPED SIMULATION RESULT
+
+Status: bounded_simulation_pass
+Calculated assembly mass: 2.410992 kg
+Duration: 64.0 simulated seconds
+Motion: free-base standing, one full phone turn, one slow crawl cycle
+Phone orientation: landscape, with the screen plane vertical
+Body advance: 30.309 mm
+Maximum sampled roll or pitch: 0.235 degrees
+Minimum sampled mid-swing COM support margin: 13.359 mm
+Maximum sampled stance-foot position error: 6.911 mm
+Peak quasi-static joint load: 0.537595 Nm
+Peak sampled commanded joint torque: 0.529199 Nm
+Applied torque cap: 0.588 Nm
+Phone travel: 360.000 degrees
+Maximum sampled phone tracking error: 0.0092 degrees
+
+The solver and torque cap run at 240 Hz. Reported trajectory and contact metrics
+are sampled at 20 Hz. There is no fixed base or external base constraint.
+
+This is a bounded simulation result. The finite PD and gravity-compensation
+actuation model is not bench calibrated against STS3215 internal firmware.
+Mapping its torques and positions to real servo commands remains unvalidated.
+No controller has been deployed. Physical fit and hardware walking are untested.
+
+The modeled foot is a 14 mm wide, 5 mm radius rocker cylinder. It approximates
+the actual small neutral flat within 0.2 mm. Friction and controller gains are
+assumed, and the run does not qualify printed strength, cable behavior or heat.
+
+The phone uses WiFi and its internal battery while panning. Disconnect USB
+before rotation. Charge only while parked.
+
+Manifest SHA256: d9bac35b0a898eb79191fd82129685c86f88caea7185f9766b5af6c3d78f5a67
+URDF SHA256: 98f1fa7cde15ae0e727df42df98fa2393bb217c0f10cd8a88d2d91c77e35f9d1
+Inputs unchanged during the run: True

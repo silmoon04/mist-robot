@@ -1,0 +1,13 @@
+# Independent v8 checks
+
+The brief requires eight studies with 24 drawings each, 15 fps playback, original face art, faster work phrases, deliberate face variation, and a search prop clear of the eyes.
+
+The asset check will verify eight distinct manifest assets and 192 existing transparent 256px playback frames, source and export hashes, 6 by 4 source grids, declared source-cell or component provenance, nonempty art, and a safe crop margin. Different hashes establish different pixels, not distinct semantic poses. Manual review must identify meaningful ordered action across the sixteen active frames, coherent page perspective and text continuity, a continuous scanner path, persistent prop bodies, and a coherent loop seam. Revisiting a position during a return movement is legitimate; long groups of near-identical poses used to fill the sheet are not. Runtime holds may repeat a drawing without requiring duplicate source poses. Registration may correct source-grid drift using a stable body anchor while retaining one common scale. Component assembly must declare the generated component files, their hashes, and each playback frame's placements; exported frame count must not be presented as the count of independently drawn source poses.
+
+The runtime check will sample the actual 15 fps display times. It will require all four entrance, sixteen active, and four exit cels to be reachable. Coding, writing, and sorting phrases must last 2.2 to 2.8 seconds. Reading can be slower. Speech must quiet activity while retaining the original unquantized audio clock. Replacement activity tokens must reject stale completions.
+
+Face checks will compare original recorded drawing paths and source-cel draw calls against the previously verified original renderer for all forty expressions and blinks. Automatic variation must visit at least three original faces across activity starts and long phrases, remain stable between boundaries, stop changing during speech, and respect explicit face choices. The face selector must contain auto mode and all forty original expressions.
+
+The search clearance check will transform the exported search cel's visible bounds into the same coordinate system as the actual original eye placements. It will evaluate every displayed search frame, every original face, and entrance/exit placement, reporting the smallest separation and any overlap. This is a conservative rectangle test, not a subjective legibility score.
+
+Implementation files are outside this QA agent's ownership. Failures will be reported in `qa_*_report.json` and `qa_findings.md` for the implementation owner to address. Missing runtime or generated assets are pending inputs, not an animation pass.

@@ -1,0 +1,52 @@
+Load /drawn-face-runtime.js after /face-runtime.js and /face-data.js.
+Serve brain/ui/static/drawn_face_renderer.js at /drawn-face-runtime.js.
+Serve brain/art_direction/artist_studio_20260916/reuse/drawn as /drawn/.
+Create the live face with MistDrawnFaceRuntime.create(container, {data: window.MIST_DATA}).
+Its API matches MistFaceRuntime: startSpeech, stopSpeech, setExpression, setGaze,
+clearGaze, blink, update, snapshot, destroy, expressions, expression and speaking.
+ready is a Promise<boolean>. loaded is false until all sheets decode. On failure,
+the original renderer stays visible. drawnError in snapshot explains the failure.
+snapshot also contains drawnPlacements, drawnRig and drawnBlinkAge for diagnostics.
+Speech accepts both existing timed events and the streaming audio sampler:
+startSpeech({clock: () => seconds, sample: () => ({viseme, amount, time, active,
+source}), duration: Infinity, events: []}). sample is queried on each rendered
+frame and snapshot. active=false shows the expression's original rest mouth,
+including pre-roll, audio gaps and completed playback. stopSpeech clears sample.
+There is no loop of demo mouth poses. Snapshot reports the sampler's speechTime,
+viseme and syncSource for comparison with scheduled audio.
+Mouth placement derives from that expression's original mouth bounds and rotation.
+Every cel in one mouth sequence uses one scale. Eye cels use one family scale and
+the original slot rotation/mirror, with lower-lid registration from the atlas.
+The exact original vector eyes are preserved at rest. Generated cels appear
+during blinks and expression changes, with a brief fade at entry and exit.
+Source PNG bytes are kept intact; runtime compositing removes white and applies
+canonical MIST cyan while retaining the measured ink coverage as alpha.
+Frame poses are looked up by name. Eye assets can use either the original six
+poses or eight poses with near_closed and opening_low. Mouth assets can have
+12 or 16 poses; TH, release, wide_close and round_close are supported.
+Low-amplitude vowels use the release, wide_close and round_close cels. They
+follow the sampler's energy estimate; this is not phoneme recognition. FV uses
+the narrower S drawing because the generated FV drawing opens too widely.
+rest, MBP and active=false are applied immediately without a delayed fade.
+Expression changes use separate eye, mouth and tear groups. Eyes close before
+their position changes. One shared closed-lid cel moves between the positions,
+then the target eye reopens. Silent mouths close to one lip line, move, and open
+to the target contour. Speaking uses one viseme mouth with a continuous position
+and size. Tears fade and move independently. A new expression captures the
+currently displayed groups, so another change in mid-transition does not reset
+to a previous complete face. Speech poses continue following the audio sampler.
+drawnLayers contains the original vector contours currently drawn. drawnVisuals
+and drawnIdentity expose source part IDs and opacities. drawnTransition exposes
+target, progress, active and phase. This is a combined vector and raster renderer.
+The studio can use the same renderer without a DOM host:
+const face = MistDrawnFaceRuntime.create(null, {data, atlas, images,
+  autoStart: false, now: () => previewTime});
+face.renderTo(canvas, previewTime, {blinkFrame: {eye_L: 4, eye_R: 4}, mouthFrame: 8});
+images is the shared dictionary of keyed canvases, so no sheet is loaded again.
+blinkFrame can also be one integer for both eyes. Omit overrides for normal
+animation. Overrides affect only this render and never change the audio clock.
+Rest and settled eye poses keep the original eyes. rasterEyes: true can be used
+to inspect an unaltered generated rest cel. gaze: {x, y} overrides gaze per render.
+Eye scale is fitted to measured rest-cel ink support after rigid rotation, not
+to the rotated crop rectangle. Headless tests without pixels use the family's
+source contour as the fitting support. drawnPlacements reports inkFit and offset.

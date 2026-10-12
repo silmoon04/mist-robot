@@ -1,0 +1,7 @@
+from pathlib import Path
+root=Path(__file__).resolve().parents[1]/'duplex/static'
+p=root/'debug.js';s=p.read_text(encoding='utf-8');s=s.replace("const metrics=new Map();", "const metrics=new Map(),turnStarts=new Map();let lastUserDone=null;")
+s=s.replace("function ingest(r){const e=r.event,k=kind(r);", "function ingest(r){const e=r.event,k=kind(r);if(k==='transcript_done'&&e.role==='user')lastUserDone=r.elapsed_ms;if(k==='playback_started'&&lastUserDone!==null)metric('Transcript done → playback',`${Math.max(0,Math.round(r.elapsed_ms-lastUserDone))} ms`);if(k==='tts_connected')metric('TTS connection',`${e.elapsed_ms} ms`);if(k==='debug_model'){if(e.phase==='thinking_started')turnStarts.set(e.turn_id,r.elapsed_ms);else if(turnStarts.has(e.turn_id)){metric('Latest model turn',`${Math.round(r.elapsed_ms-turnStarts.get(e.turn_id))} ms`);turnStarts.delete(e.turn_id);}}")
+p.write_text(s,encoding='utf-8')
+p=root/'expressions.js';s=p.read_text(encoding='utf-8');s=s.replace("$('save-svg').onclick=()=>save(new XMLSerializer().serializeToString(focus.svg),'image/svg+xml',`mist-${selected}-${Math.round(time)}ms.svg`);", "$('save-svg').onclick=()=>{const svg=focus.svg.cloneNode(true);if(!$('glow').checked)for(const g of svg.querySelectorAll('[filter]'))g.removeAttribute('filter');save(new XMLSerializer().serializeToString(svg),'image/svg+xml',`mist-${selected}-${Math.round(time)}ms.svg`);};")
+p.write_text(s,encoding='utf-8')

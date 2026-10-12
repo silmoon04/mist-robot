@@ -1,0 +1,911 @@
+{
+  "schema_version": 1,
+  "status": "hypothetical_3to1_hip_knee_with_original_shaft_span_not_fitted_CAD",
+  "units": "SI except explicitly named _deg and _rpm",
+  "coordinate_system": "+X forward, +Y left, +Z up; q1 yaw about +Z, q2/q3 about local -Y; zero links down",
+  "geometry": {
+    "body_diameter_m": 0.18,
+    "body_height_m": 0.22,
+    "overall_body_lid_handle_height_m": 0.26,
+    "hip_mount_height_above_body_bottom_m": 0.035,
+    "hip_mount_radius_m": 0.103,
+    "mount_azimuths_deg": [
+      45,
+      -45,
+      135,
+      -135
+    ],
+    "leg_names": [
+      "FL",
+      "FR",
+      "RL",
+      "RR"
+    ],
+    "hip_radial_offset_m": 0.035,
+    "hip_transverse_offset_m": 0.03,
+    "femur_m": 0.1395,
+    "tibia_m": 0.14,
+    "link_width_m": 0.024,
+    "link_thickness_m": 0.018,
+    "wheel_diameter_m": 0.085,
+    "wheel_width_m": 0.024,
+    "joint_limits_deg": [
+      [
+        -100,
+        100
+      ],
+      [
+        -40,
+        125
+      ],
+      [
+        -150,
+        -15
+      ]
+    ],
+    "drive_heading_deg": [
+      0,
+      0,
+      180,
+      -180
+    ],
+    "hip_to_wheel_axle_height_m": 0.19,
+    "drive_radial_reach_from_pitch_m": 0.06,
+    "joint_limits_by_leg_deg": {
+      "FL": [
+        [
+          -100.0,
+          57.911539185943845
+        ],
+        [
+          22.875342597103646,
+          125.0
+        ],
+        [
+          -150.0,
+          -37.61781066056384
+        ]
+      ],
+      "FR": [
+        [
+          -43.94653570173466,
+          100.0
+        ],
+        [
+          20.681020931552005,
+          125.0
+        ],
+        [
+          -150.0,
+          -39.05986487681614
+        ]
+      ],
+      "RL": [
+        [
+          -58.12803337490604,
+          100.0
+        ],
+        [
+          19.545421296492343,
+          125.0
+        ],
+        [
+          -128.42539571020012,
+          -15.0
+        ]
+      ],
+      "RR": [
+        [
+          -100.0,
+          51.68806304508063
+        ],
+        [
+          -1.5013302499665926,
+          115.16533641670009
+        ],
+        [
+          -121.45491571359153,
+          -15.0
+        ]
+      ]
+    }
+  },
+  "mass": {
+    "coordinate_origin": "Body hip yaw mount plane. Body bottom is z=-0.035m. All following COM positions use that frame.",
+    "shell_kg": 0.706207559,
+    "shell_com_m": [
+      -0.00569602673,
+      5.17915e-06,
+      0.0823198734
+    ],
+    "battery_kg": 0.174,
+    "battery_com_m": [
+      -0.025,
+      0,
+      -0.0145
+    ],
+    "brain_phone_kg": 0.155,
+    "brain_phone_com_m": [
+      0,
+      0,
+      0.034
+    ],
+    "face_phone_with_frame_kg": 0.21855538655,
+    "face_phone_com_m": [
+      0.07628017926,
+      0,
+      0.10420817614
+    ],
+    "electronics_kg": 0.25,
+    "harness_kg": 0.15,
+    "proximal_servo_kg": 0.055,
+    "yaw_carriage_without_servos_kg": 0.075,
+    "femur_with_pulleys_kg": 0.08,
+    "tibia_with_carrier_kg": 0.06,
+    "wheel_motor_with_mount_kg": 0.14,
+    "wheel_hub_and_tire_kg": 0.055,
+    "provenance": "PROVISIONAL: latest OEM FL moving-link solids mirrored into four proper local leg frames; previous unchanged base allocation. Not a full collision-safe CAD export.",
+    "knee_servo_com_m": [
+      0.0,
+      0.069125,
+      -0.047615000000000005
+    ]
+  },
+  "servo": {
+    "model": "Feetech STS3215 C018 12V assumed correct ordered variant",
+    "nominal_voltage_v": 12.0,
+    "simulation_voltage_v": 9.9,
+    "stall_torque_nm": 2.941995,
+    "no_load_speed_rpm": 45,
+    "stall_current_a": 2.7,
+    "idle_current_a": 0.18,
+    "rated_torque_nm": 0.980665,
+    "continuous_fraction_of_stall": 0.3,
+    "peak_fraction_of_stall": 0.55,
+    "command_delay_s": 0.025,
+    "command_period_s": 0.01,
+    "response_time_constant_s": 0.025,
+    "deadband_deg": 0.35,
+    "gearbox_backlash_full_width_deg": 1.0,
+    "provenance": "Electrical endpoints from C018 datasheet research; linear voltage/torque-speed scaling, current approximation, delay, bandwidth, deadband, backlash, continuous/peak derating are unmeasured assumptions."
+  },
+  "transmission": {
+    "topology": "proximal_femur_relative_knee",
+    "motor_coordinate_equation": "s=[2*yaw,3*hip,3*knee]; hypothetical gearing only",
+    "ratios": [
+      2.0,
+      3.0,
+      3.0
+    ],
+    "efficiency": [
+      0.85,
+      0.85,
+      0.85
+    ],
+    "output_backlash_full_width_deg": [
+      0.5,
+      0.6,
+      0.6
+    ],
+    "output_stiffness_nm_per_rad": [
+      150,
+      120,
+      100
+    ],
+    "output_viscous_friction_nm_s_per_rad": [
+      0.008,
+      0.01,
+      0.01
+    ],
+    "motor_travel_limits_deg": [
+      [
+        -175,
+        175
+      ],
+      [
+        -175,
+        175
+      ],
+      [
+        -175,
+        175
+      ]
+    ],
+    "provenance": "Design assumptions pending packaging and loaded reversal/deflection/efficiency measurement; motor travel is usable span around calibrated neutral, not absolute zero.",
+    "remote_belt": {
+      "pitch_mm": 3,
+      "pulley_teeth": 32,
+      "width_mm": 9,
+      "pitch_length_mm": 375
+    },
+    "knee_motor_mount": "femur",
+    "motor_travel_reference_joint_deg": [
+      [
+        -29.588460814056155,
+        81.20867593043698,
+        -95.95114399389718
+      ],
+      [
+        43.55346429826534,
+        79.01435426488534,
+        -97.39319821014949
+      ],
+      [
+        29.371966625093958,
+        77.87875462982568,
+        -70.09206237686678
+      ],
+      [
+        -35.81193695491937,
+        56.83200308336674,
+        -63.121582380258204
+      ]
+    ]
+  },
+  "wheel_motor": {
+    "model": "DFRobot FIT0493 25D 12V encoder conditional candidate",
+    "nominal_voltage_v": 12,
+    "no_load_speed_rpm": 350.0,
+    "stall_torque_nm": 1.0591182000000001,
+    "stall_current_a": 5.5,
+    "no_load_current_a": 0.23,
+    "current_limit_a": 1.0,
+    "provenance": "Manufacturer reference, not selected purchase: GBP25.61 motor plus driver exceeds requested circa GBP15. Current cap is an unvalidated engineering assumption, not a published continuous rating. Simulation fields converted to wheel-axis torque/speed through the declared transmission; original motor fields preserved in wheel_axis_envelope_derivation."
+  },
+  "environment": {
+    "gravity_m_s2": 9.81,
+    "tire_friction_coefficient": 0.75,
+    "rolling_friction_coefficient": 0.002,
+    "contact_restitution": 0,
+    "step_rise_m": 0.18,
+    "step_tread_m": 0.27,
+    "toe_clearance_m": 0.015,
+    "provenance": "All assumed; stair geometry, floor grip, tire behavior and stair noses need measurement. No human or hardware measurements made."
+  },
+  "simulation": {
+    "physics_hz": 1000,
+    "solver_iterations": 100,
+    "duration_s": 8,
+    "record_hz": 50,
+    "motor_kp_nm_per_rad": 8,
+    "motor_kd_nm_s_per_rad": 0.15,
+    "fall_tilt_deg": 35,
+    "joint_tracking_rms_limit_deg": 8,
+    "step_tracking_rms_limit_m": 0.015,
+    "provenance": "Explicit controller and numerical assumptions, not identified STS firmware."
+  },
+  "sources": [
+    "../../../docs/mist/MIST_ACTUAL_INVENTORY.md",
+    "../../../docs/mist/MIST_FUSION_MASTER_DIMENSIONS.md",
+    "../../../bench/leg_calibration.json",
+    "https://www.pololu.com/product/4843",
+    "https://raw.githubusercontent.com/bulletphysics/bullet3/master/docs/pybullet_quickstartguide.pdf",
+    "../package/belt_selection_20260907/remote_belt_spec.json"
+  ],
+  "revision": "20260907_belt139p5_root4M4_knee8",
+  "wheel_transmission": {
+    "topology": "longitudinal_upper_tibia_shaft_miter_1to1",
+    "ratio": 1,
+    "efficiency_assumption": 0.9,
+    "load_rating_verified": false
+  },
+  "link_mass_properties": {
+    "base_link": {
+      "mass_kg": 2.4492070836026665,
+      "com_m": [
+        0.0033883892410672906,
+        1.493361693415405e-06,
+        0.030413841119065938
+      ],
+      "inertia_kg_m2": [
+        [
+          0.02125669905013628,
+          -3.087767463132525e-07,
+          -0.0013028481915023627
+        ],
+        [
+          -3.087767463132525e-07,
+          0.019450610970687173,
+          2.742202012158825e-08
+        ],
+        [
+          -0.0013028481915023627,
+          2.742202012158825e-08,
+          0.017499715407569134
+        ]
+      ]
+    },
+    "FL_yaw": {
+      "mass_kg": 0.18856835128024615,
+      "com_m": [
+        0.050377793713231964,
+        -0.029094657819972433,
+        0.0030477980407393056
+      ],
+      "inertia_kg_m2": [
+        [
+          0.00017023544498280188,
+          0.00012541178122409732,
+          2.3160330010817645e-05
+        ],
+        [
+          0.00012541178122409732,
+          0.0002291867997440033,
+          -2.5777155508407435e-05
+        ],
+        [
+          2.3160330010817645e-05,
+          -2.5777155508407435e-05,
+          0.00032701715050603735
+        ]
+      ]
+    },
+    "FL_femur": {
+      "mass_kg": 0.569793358910382,
+      "com_m": [
+        3.469446951953614e-17,
+        0.027557425712339254,
+        -0.04168769317966853
+      ],
+      "inertia_kg_m2": [
+        [
+          0.0017104277044611873,
+          1.3534319031886612e-20,
+          2.309500200591432e-19
+        ],
+        [
+          1.3534319031886612e-20,
+          0.001202420624449608,
+          -1.3585098421913724e-05
+        ],
+        [
+          2.309500200591432e-19,
+          -1.3585098421913724e-05,
+          0.0007070387454594916
+        ]
+      ]
+    },
+    "FL_tibia": {
+      "mass_kg": 0.4960406883090802,
+      "com_m": [
+        5.118717880114865e-10,
+        0.01826851161454858,
+        -0.06290189864491509
+      ],
+      "inertia_kg_m2": [
+        [
+          0.0012527973451017522,
+          -1.961471203965535e-12,
+          -4.709087884667719e-12
+        ],
+        [
+          -1.961471203965535e-12,
+          0.001093121767756599,
+          -5.045115996889297e-06
+        ],
+        [
+          -4.709087884667719e-12,
+          -5.045115996889297e-06,
+          0.0002716584378050016
+        ]
+      ]
+    },
+    "FL_wheel": {
+      "mass_kg": 0.10731689053973788,
+      "com_m": [
+        -3.752263715098834e-10,
+        0.008234554552520382,
+        2.4713075741707567e-09
+      ],
+      "inertia_kg_m2": [
+        [
+          7.586045237460331e-05,
+          1.0194783467604003e-12,
+          1.0128357823010377e-12
+        ],
+        [
+          1.0194783467604003e-12,
+          9.10728819164123e-05,
+          -6.710322416391488e-12
+        ],
+        [
+          1.0128357823010377e-12,
+          -6.710322416391488e-12,
+          7.586044613961116e-05
+        ]
+      ]
+    },
+    "FR_yaw": {
+      "mass_kg": 0.18856835128024615,
+      "com_m": [
+        0.050377793713231964,
+        0.029094657819972433,
+        0.0030477980407393056
+      ],
+      "inertia_kg_m2": [
+        [
+          0.00017023544498280188,
+          -0.00012541178122409732,
+          2.3160330010817645e-05
+        ],
+        [
+          -0.00012541178122409732,
+          0.0002291867997440033,
+          2.5777155508407435e-05
+        ],
+        [
+          2.3160330010817645e-05,
+          2.5777155508407435e-05,
+          0.00032701715050603735
+        ]
+      ]
+    },
+    "FR_femur": {
+      "mass_kg": 0.569793358910382,
+      "com_m": [
+        3.469446951953614e-17,
+        -0.027557425712339254,
+        -0.04168769317966853
+      ],
+      "inertia_kg_m2": [
+        [
+          0.0017104277044611873,
+          -1.3534319031886612e-20,
+          2.309500200591432e-19
+        ],
+        [
+          -1.3534319031886612e-20,
+          0.001202420624449608,
+          1.3585098421913724e-05
+        ],
+        [
+          2.309500200591432e-19,
+          1.3585098421913724e-05,
+          0.0007070387454594916
+        ]
+      ]
+    },
+    "FR_tibia": {
+      "mass_kg": 0.4960406883090802,
+      "com_m": [
+        5.118717880114865e-10,
+        -0.01826851161454858,
+        -0.06290189864491509
+      ],
+      "inertia_kg_m2": [
+        [
+          0.0012527973451017522,
+          1.961471203965535e-12,
+          -4.709087884667719e-12
+        ],
+        [
+          1.961471203965535e-12,
+          0.001093121767756599,
+          5.045115996889297e-06
+        ],
+        [
+          -4.709087884667719e-12,
+          5.045115996889297e-06,
+          0.0002716584378050016
+        ]
+      ]
+    },
+    "FR_wheel": {
+      "mass_kg": 0.10731689053973788,
+      "com_m": [
+        -3.752263715098834e-10,
+        -0.008234554552520382,
+        2.4713075741707567e-09
+      ],
+      "inertia_kg_m2": [
+        [
+          7.586045237460331e-05,
+          -1.0194783467604003e-12,
+          1.0128357823010377e-12
+        ],
+        [
+          -1.0194783467604003e-12,
+          9.10728819164123e-05,
+          6.710322416391488e-12
+        ],
+        [
+          1.0128357823010377e-12,
+          6.710322416391488e-12,
+          7.586044613961116e-05
+        ]
+      ]
+    },
+    "RL_yaw": {
+      "mass_kg": 0.18856835128024615,
+      "com_m": [
+        0.050377793713231964,
+        0.029094657819972433,
+        0.0030477980407393056
+      ],
+      "inertia_kg_m2": [
+        [
+          0.00017023544498280188,
+          -0.00012541178122409732,
+          2.3160330010817645e-05
+        ],
+        [
+          -0.00012541178122409732,
+          0.0002291867997440033,
+          2.5777155508407435e-05
+        ],
+        [
+          2.3160330010817645e-05,
+          2.5777155508407435e-05,
+          0.00032701715050603735
+        ]
+      ]
+    },
+    "RL_femur": {
+      "mass_kg": 0.569793358910382,
+      "com_m": [
+        3.469446951953614e-17,
+        -0.027557425712339254,
+        -0.04168769317966853
+      ],
+      "inertia_kg_m2": [
+        [
+          0.0017104277044611873,
+          -1.3534319031886612e-20,
+          2.309500200591432e-19
+        ],
+        [
+          -1.3534319031886612e-20,
+          0.001202420624449608,
+          1.3585098421913724e-05
+        ],
+        [
+          2.309500200591432e-19,
+          1.3585098421913724e-05,
+          0.0007070387454594916
+        ]
+      ]
+    },
+    "RL_tibia": {
+      "mass_kg": 0.4960406883090802,
+      "com_m": [
+        5.118717880114865e-10,
+        -0.01826851161454858,
+        -0.06290189864491509
+      ],
+      "inertia_kg_m2": [
+        [
+          0.0012527973451017522,
+          1.961471203965535e-12,
+          -4.709087884667719e-12
+        ],
+        [
+          1.961471203965535e-12,
+          0.001093121767756599,
+          5.045115996889297e-06
+        ],
+        [
+          -4.709087884667719e-12,
+          5.045115996889297e-06,
+          0.0002716584378050016
+        ]
+      ]
+    },
+    "RL_wheel": {
+      "mass_kg": 0.10731689053973788,
+      "com_m": [
+        -3.752263715098834e-10,
+        -0.008234554552520382,
+        2.4713075741707567e-09
+      ],
+      "inertia_kg_m2": [
+        [
+          7.586045237460331e-05,
+          -1.0194783467604003e-12,
+          1.0128357823010377e-12
+        ],
+        [
+          -1.0194783467604003e-12,
+          9.10728819164123e-05,
+          6.710322416391488e-12
+        ],
+        [
+          1.0128357823010377e-12,
+          6.710322416391488e-12,
+          7.586044613961116e-05
+        ]
+      ]
+    },
+    "RR_yaw": {
+      "mass_kg": 0.18856835128024615,
+      "com_m": [
+        0.050377793713231964,
+        -0.029094657819972433,
+        0.0030477980407393056
+      ],
+      "inertia_kg_m2": [
+        [
+          0.00017023544498280188,
+          0.00012541178122409732,
+          2.3160330010817645e-05
+        ],
+        [
+          0.00012541178122409732,
+          0.0002291867997440033,
+          -2.5777155508407435e-05
+        ],
+        [
+          2.3160330010817645e-05,
+          -2.5777155508407435e-05,
+          0.00032701715050603735
+        ]
+      ]
+    },
+    "RR_femur": {
+      "mass_kg": 0.569793358910382,
+      "com_m": [
+        3.469446951953614e-17,
+        0.027557425712339254,
+        -0.04168769317966853
+      ],
+      "inertia_kg_m2": [
+        [
+          0.0017104277044611873,
+          1.3534319031886612e-20,
+          2.309500200591432e-19
+        ],
+        [
+          1.3534319031886612e-20,
+          0.001202420624449608,
+          -1.3585098421913724e-05
+        ],
+        [
+          2.309500200591432e-19,
+          -1.3585098421913724e-05,
+          0.0007070387454594916
+        ]
+      ]
+    },
+    "RR_tibia": {
+      "mass_kg": 0.4960406883090802,
+      "com_m": [
+        5.118717880114865e-10,
+        0.01826851161454858,
+        -0.06290189864491509
+      ],
+      "inertia_kg_m2": [
+        [
+          0.0012527973451017522,
+          -1.961471203965535e-12,
+          -4.709087884667719e-12
+        ],
+        [
+          -1.961471203965535e-12,
+          0.001093121767756599,
+          -5.045115996889297e-06
+        ],
+        [
+          -4.709087884667719e-12,
+          -5.045115996889297e-06,
+          0.0002716584378050016
+        ]
+      ]
+    },
+    "RR_wheel": {
+      "mass_kg": 0.10731689053973788,
+      "com_m": [
+        -3.752263715098834e-10,
+        0.008234554552520382,
+        2.4713075741707567e-09
+      ],
+      "inertia_kg_m2": [
+        [
+          7.586045237460331e-05,
+          1.0194783467604003e-12,
+          1.0128357823010377e-12
+        ],
+        [
+          1.0194783467604003e-12,
+          9.10728819164123e-05,
+          -6.710322416391488e-12
+        ],
+        [
+          1.0128357823010377e-12,
+          -6.710322416391488e-12,
+          7.586044613961116e-05
+        ]
+      ]
+    }
+  },
+  "provisional_load_only": {
+    "sources": {
+      "leg_geometry_report.json": {
+        "source": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\mist_v2_20260906\\cad\\concealed_wheel_drive_20260907\\output_oem_checkpoint\\leg_geometry_report.json",
+        "sha256": "676360badb1427c509544576d50ba5be773c31f2e159f17666cbae79d82dbc92"
+      },
+      "leg_recipes.json": {
+        "source": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\mist_v2_20260906\\cad\\concealed_wheel_drive_20260907\\output_oem_checkpoint\\leg_recipes.json",
+        "sha256": "8366f36df305e1d30f974551e8de0528d4a3f11194904935e51503a1475f72d8"
+      },
+      "parameters_used.json": {
+        "source": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\mist_v2_20260906\\cad\\concealed_wheel_drive_20260907\\output_oem_checkpoint\\parameters_used.json",
+        "sha256": "024f752d1181490c0399303e62fa77a8aa7245d41062e4a730084a13727aef5e"
+      },
+      "old_full_report.json": {
+        "source": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\mist_v2_20260906\\cad\\leg_proximal_20260907\\output_candidate\\leg_geometry_report.json",
+        "sha256": "6eb16f526239fcb64b52d29b171c6e0a213683a6cd7da0355804a2b4689871c0"
+      },
+      "cad_runtime/export_leg.py": {
+        "source": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\mist_v2_20260906\\cad\\export_leg.py",
+        "sha256": "1185ed86a12762ba3a3e39e156761c9f0f643156e5aa7b96254b55b9aa4fe877"
+      },
+      "cad_runtime/export_body.py": {
+        "source": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\mist_v2_20260906\\cad\\export_body.py",
+        "sha256": "7663a4a56af6d818ec49af3f33b19b361720a5805de784857e0083a9d5f41c64"
+      },
+      "cad_runtime/body_native.py": {
+        "source": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\mist_v2_20260906\\cad\\body_native.py",
+        "sha256": "d7b08bf7ceee702f582af357505a9435d3cd9553aab0f372827ca2e2a3390b4a"
+      },
+      "cad_runtime/reference_shapes.py": {
+        "source": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\mist_v2_20260906\\cad\\concealed_wheel_drive_20260907\\reference_shapes.py",
+        "sha256": "aee7e128a2bd0543c4421d7d1149bbdb75362e919651aae5682fa1191c9d2e4b"
+      },
+      "cad_runtime/inertia_report.py": {
+        "source": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\mist_v2_20260906\\cad\\leg_proximal_20260907\\inertia_report.py",
+        "sha256": "c7fb1ebf0044c46f02d5e2f105f5ec50130f34c2030ceb22cfc9f141343d8bcc"
+      }
+    },
+    "FL_part_count": 168,
+    "base_fixed_FL_parts_identical": 30,
+    "mirror": "Local Y reflection for FR/RL; COM M*c and full tensor M*I*M^T. Proper world leg frames are supplied by URDF kinematics.",
+    "old_base_mass_kg": 2.4492070836026665,
+    "base_assumption": "Body and base-fixed leg inventory unchanged from previous full export.",
+    "FL_collision_count": 10,
+    "new_mount_mass_included": false,
+    "estimated_mount_mass_delta_not_applied_kg": 0.12,
+    "all_four_legs_exported": false,
+    "collision_safe_model": false,
+    "physical_release": false,
+    "max_reconstructed_volume_error_cm3": 0.0
+  },
+  "wheel_axis_envelope_derivation": {
+    "original_motor_parameters": {
+      "model": "DFRobot FIT0493 25D 12V encoder conditional candidate",
+      "nominal_voltage_v": 12,
+      "no_load_speed_rpm": 350,
+      "stall_torque_nm": 1.176798,
+      "stall_current_a": 5.5,
+      "no_load_current_a": 0.23,
+      "current_limit_a": 1.0,
+      "provenance": "Manufacturer reference, not selected purchase: GBP25.61 motor plus driver exceeds requested circa GBP15. Current cap is an unvalidated engineering assumption, not a published continuous rating."
+    },
+    "ratio": 1,
+    "efficiency_assumption": 0.9,
+    "mapping": "wheel torque=eta*ratio*motor torque; wheel speed=motor speed/ratio; electrical current fields unchanged",
+    "limitations": "Assumed efficiency and four-quadrant loss approximation. Shaft/input-gear spin inertia and gyroscopic coupling omitted; housing/link pose inertia retained."
+  },
+  "hypothetical_gearing": {
+    "actual_CAD_ratios": [
+      2.0,
+      2.0,
+      2.0
+    ],
+    "hypothetical_ratios": [
+      2.0,
+      3.0,
+      3.0
+    ],
+    "motor_travel_limits_deg_unchanged": [
+      [
+        -175.0,
+        175.0
+      ],
+      [
+        -175.0,
+        175.0
+      ],
+      [
+        -175.0,
+        175.0
+      ]
+    ],
+    "original_geometry_limits_deg": [
+      [
+        -100.0,
+        100.0
+      ],
+      [
+        -40.0,
+        125.0
+      ],
+      [
+        -150.0,
+        -15.0
+      ]
+    ],
+    "restricted_output_limits_by_leg_deg": [
+      [
+        [
+          -100.0,
+          57.911539185943845
+        ],
+        [
+          22.875342597103646,
+          125.0
+        ],
+        [
+          -150.0,
+          -37.61781066056384
+        ]
+      ],
+      [
+        [
+          -43.94653570173466,
+          100.0
+        ],
+        [
+          20.681020931552005,
+          125.0
+        ],
+        [
+          -150.0,
+          -39.05986487681614
+        ]
+      ],
+      [
+        [
+          -58.12803337490604,
+          100.0
+        ],
+        [
+          19.545421296492343,
+          125.0
+        ],
+        [
+          -128.42539571020012,
+          -15.0
+        ]
+      ],
+      [
+        [
+          -100.0,
+          51.68806304508063
+        ],
+        [
+          -1.5013302499665926,
+          115.16533641670009
+        ],
+        [
+          -121.45491571359153,
+          -15.0
+        ]
+      ]
+    ],
+    "commissioning_reference_joint_deg": [
+      [
+        -29.588460814056155,
+        81.20867593043698,
+        -95.95114399389718
+      ],
+      [
+        43.55346429826534,
+        79.01435426488534,
+        -97.39319821014949
+      ],
+      [
+        29.371966625093958,
+        77.87875462982568,
+        -70.09206237686678
+      ],
+      [
+        -35.81193695491937,
+        56.83200308336674,
+        -63.121582380258204
+      ]
+    ],
+    "commissioning_choice": "One proposed static center per physical joint across oldworld targets reprojected to current geometry, currentfixture, neutral and flat reference. Old exact-angle assessment is preserved separately.",
+    "commissioning_validated": false,
+    "mass_and_tensor_assumption": "Existing2:1 CAD inertials retained; new3:1 gear mass and clearance have not been designed.",
+    "efficiency_assumption": "Existing efficiency/stiffness/backlash retained solely for sensitivity; extra stages or larger gears are not validated."
+  }
+}

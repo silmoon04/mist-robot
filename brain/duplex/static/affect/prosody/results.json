@@ -1,0 +1,123 @@
+{
+  "date": "2026-09-24",
+  "voice_id": "24AMj4dc02cYAwoUnqzN",
+  "utterance": "I found a small blue light near the doorway, and I wanted to tell you before it disappears.",
+  "method": "Same one-sentence plain text; Flash order neutral, gentle, bright, bright, gentle, neutral. Two Flash samples completed. A third timed out at the 9-second probe deadline. The first v3 attempt failed locally before sending context/text; one corrected v3 synthesis request completed. No generation request was repeated.",
+  "flash": [
+    {
+      "model": "eleven_flash_v2_5",
+      "delivery": "neutral",
+      "repeat": 1,
+      "stability": 0.5,
+      "similarity_boost": 0.8,
+      "use_speaker_boost": false,
+      "first_provider_byte_s": 1.3910000000000764,
+      "output_duration_s": 4.332166666666667,
+      "alignment_coverage": 1.0,
+      "audio_file": "flash-neutral-1.wav",
+      "alignment_source_packets": {
+        "elevenlabs_characters_audio_gated": 45
+      },
+      "status": "ok",
+      "probe_elapsed_s": 4.953
+    },
+    {
+      "model": "eleven_flash_v2_5",
+      "delivery": "gentle",
+      "repeat": 1,
+      "stability": 0.65,
+      "similarity_boost": 0.8,
+      "use_speaker_boost": false,
+      "first_provider_byte_s": 3.2029999999999745,
+      "output_duration_s": 4.3945,
+      "alignment_coverage": 1.0,
+      "audio_file": "flash-gentle-1.wav",
+      "alignment_source_packets": {
+        "elevenlabs_characters_audio_gated": 45
+      },
+      "status": "ok",
+      "probe_elapsed_s": 4.609
+    }
+  ],
+  "v3_conversational": {
+    "model": "eleven_v3_conversational",
+    "status": "ok",
+    "first_provider_byte_s": 2.0160000000000764,
+    "output_duration_s": 4.96,
+    "alignment_coverage": 0.9946572580645161,
+    "alignment_packets": 6,
+    "audio_file": "v3-conversational-once.wav",
+    "probe_elapsed_s": 3.906
+  },
+  "flash_probe_error": {
+    "stage": "flash_generation",
+    "kind": "no_final_audio_event_within_probe_deadline",
+    "wait_deadline_s": 9.0,
+    "text_input_and_close_messages_sent": true,
+    "frame_trace_saved": false,
+    "received_audio_packet_count": "unavailable",
+    "warning_code": "unavailable",
+    "diagnosis": "Cannot distinguish delayed/incomplete provider output from provider silence using the saved artifacts. The standalone probe retained no per-frame event summary; local duplex logs predate this run."
+  },
+  "v3_probe_error": null,
+  "v3_attempts": [
+    {
+      "kind": "original_request",
+      "status": "client_error_before_context_or_text_send",
+      "client_error": "TypeError",
+      "local_cause": "aiohttp ClientWebSocketResponse is not an async context manager",
+      "provider_synthesis_request_sent": false
+    },
+    {
+      "kind": "corrected_request",
+      "status": "ok",
+      "error": null,
+      "provider_synthesis_request_sent": true
+    },
+    {
+      "kind": "tagged_request",
+      "tag": "curious",
+      "status": "ok",
+      "error": null,
+      "provider_synthesis_request_sent": true
+    },
+    {
+      "kind": "tagged_request",
+      "tag": "excited",
+      "status": "ok",
+      "error": null,
+      "provider_synthesis_request_sent": true
+    }
+  ],
+  "v3_tag_samples": [
+    {
+      "model": "eleven_v3_conversational",
+      "status": "ok",
+      "tag": "curious",
+      "input_text": "[curious] I found a small blue light near the doorway, and I wanted to tell you before it disappears.",
+      "first_provider_byte_s": 0.5160000000000764,
+      "output_duration_s": 5.2,
+      "alignment_coverage": 0.9974038461538461,
+      "alignment_packets": 6,
+      "audio_file": "v3-curious.wav",
+      "probe_elapsed_s": 1.984
+    },
+    {
+      "model": "eleven_v3_conversational",
+      "status": "ok",
+      "tag": "excited",
+      "input_text": "[excited] I found a small blue light near the doorway, and I wanted to tell you before it disappears.",
+      "first_provider_byte_s": 0.34400000000005093,
+      "output_duration_s": 4.96,
+      "alignment_coverage": 0.9946572580645161,
+      "alignment_packets": 6,
+      "audio_file": "v3-excited.wav",
+      "probe_elapsed_s": 1.984
+    }
+  ],
+  "v3_probe_scope": "The baseline v3 sample uses plain text and checks model/voice/output-format compatibility. Separate tagged samples use documented [curious] and [excited] audio tags. Audio tags are tested as provider controls, not as proof of human-perceived quality.",
+  "probe_error": null,
+  "quality_claim": "Audio was not machine-scored. No human listening judgment is recorded by this probe.",
+  "timing_note": "Flash first_provider_byte_s is the existing implementation metric (first non-whitespace text to first provider audio byte); it is not browser playback onset. V3 timing is measured from sending the text input to first provider audio byte.",
+  "alignment_note": "Coverage is the share of returned PCM bytes in chunks carrying usable provider character timing; it is not phoneme accuracy or mouth-shape quality."
+}

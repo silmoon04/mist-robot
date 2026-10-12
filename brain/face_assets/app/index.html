@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MIST face studio</title>
+<style>
+:root{color-scheme:dark;font:14px/1.5 system-ui,sans-serif;color:#d4dfdf;background:#101416}*{box-sizing:border-box}
+body{padding:24px;max-width:1100px;margin:0 auto}header{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:22px}
+h1{font-size:20px;font-weight:600;margin:0}header p{margin:0;color:#849494}main{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:28px}
+#screen{width:100%;aspect-ratio:100/64;background:#07090c;border:1px solid #273331;border-radius:22px;overflow:hidden}#name{margin:14px 0 5px;font-size:16px}#status{margin:0;color:#90a5a1;min-height:23px}
+fieldset{border:0;padding:0;margin:0 0 22px}legend{padding:0;margin-bottom:8px;color:#a4b8b3;font-weight:600}.row{display:flex;gap:8px;flex-wrap:wrap}
+button,select,input{font:inherit}button,select{background:#18211f;border:1px solid #35443f;color:#d4dfdf;border-radius:7px;padding:8px 11px}button{cursor:pointer}button:hover{border-color:#5eeadd}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #5eeadd;outline-offset:3px}button[aria-pressed=true]{color:#5eeadd;border-color:#5eeadd}
+input[type=text]{width:100%;background:#080d0c;color:#d4dfdf;border:1px solid #35443f;border-radius:7px;padding:9px;margin-bottom:9px}select{width:100%}label{display:flex;gap:8px;align-items:center;margin-top:10px;color:#a4b8b3}
+small{display:block;margin-top:8px;color:#849494}.gallery{margin-top:26px;display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:8px}.face-choice{padding:9px 4px;font-size:11px;overflow:hidden}.face-choice span{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.thumb{display:block;width:100%;aspect-ratio:100/64;margin-bottom:6px}
+@media(max-width:760px){body{padding:16px}header{display:block}main{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(4,minmax(0,1fr))}}
+</style>
+<header><h1>MIST face studio</h1><p>40 original expressions, with blinking and speech motion.</p></header>
+<main><section><div id="screen"></div><p id="name"></p><p id="status" role="status">Loading face assets...</p></section><aside>
+<fieldset><legend>Expression</legend><select id="expression" aria-label="Expression"></select><label><input id="cycle" type="checkbox">Cycle through the expressions</label></fieldset>
+<fieldset><legend>Movement</legend><div class="row"><button id="blink">Blink</button><button id="gaze" aria-pressed="false">Follow pointer</button></div><small>Gentle gaze and breathing run while MIST is idle. System reduced-motion settings are respected.</small></fieldset>
+<fieldset><legend>Speech preview</legend><input id="text" type="text" aria-label="Speech preview text" value="Hello. I am MIST. What shall we make today?"><div class="row"><button id="speak">Speak</button><button id="mouth">Mouth only</button><button id="stop">Stop</button></div><small>The voice preview uses your browser's speech voice.</small></fieldset>
+<button id="save">Save current SVG</button></aside></main>
+<div id="gallery" class="gallery" aria-label="All MIST expressions"></div>
+<script src="app_data.js"></script><script>
+'use strict';
+const source=document.createElement('script');
+source.src=location.pathname.startsWith('/face/')?'/static/face_runtime.js':'../../ui/static/face_runtime.js';
+source.onload=boot;source.onerror=()=>{document.getElementById('status').textContent='Could not load the shared renderer. Serve the brain folder or open the studio through the MIST console.';};document.head.appendChild(source);
+function boot(){
+ const $=id=>document.getElementById(id),D=window.MIST_DATA,face=MistFaceRuntime.create($('screen'),{data:D});
+ let following=false,timer=null,speechTimer=null,utterance=null;
+ function choose(id){if(!face.setExpression(id))return;$('expression').value=id;$('name').textContent=D.faces.find(f=>f.id===id).name.replaceAll('_',' ');document.querySelectorAll('.face-choice').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.id===id)));}
+ for(const f of D.faces){
+  const o=document.createElement('option');o.value=f.id;o.textContent=f.id.slice(0,2)+' / '+f.name.replaceAll('_',' ');$('expression').appendChild(o);
+  const b=document.createElement('button');b.className='face-choice';b.dataset.id=f.id;b.setAttribute('aria-label',o.textContent);
+  const t=document.createElement('span');t.className='thumb';b.appendChild(t);const l=document.createElement('span');l.textContent=o.textContent;b.appendChild(l);
+  MistFaceRuntime.create(t,{data:D,expression:f.id,reducedMotion:true,autoStart:false});b.onclick=()=>choose(f.id);$('gallery').appendChild(b);
+ }
+ function timeline(text,duration){
+  const events=[];let time=.08;
+  for(const word of text.toLowerCase().match(/[a-z']+|[.,!?;:]/g)||[]){
+   if(/^[.,!?;:]$/.test(word)){events.push({time,viseme:'rest'});time+=.24;continue;}
+   for(const group of word.match(/[aeiouy]+|[^aeiouy]+/g)||[]){
+    const vowel=/^[aeiouy]/.test(group);const viseme=vowel?(/^(ee|ea|ie|i|y)/.test(group)?'EE':/^(oo|ou|u)/.test(group)?'OO':group[0]==='o'?'OH':group[0]==='a'?'AA':'EH'):(/[mbp]/.test(group)?'MBP':/[fv]/.test(group)?'FV':/[lntd]/.test(group)?'LNT':'S');
+    events.push({time,viseme});time+=vowel?.15:.065;
+   }time+=.075;
+  }events.push({time,viseme:'rest'});time+=.18;
+  if(Number.isFinite(duration)&&duration>0){const k=duration/time;events.forEach(e=>e.time*=k);time=duration;}return {events,duration:time};
+ }
+ function stop(){clearTimeout(speechTimer);speechTimer=null;utterance=null;window.speechSynthesis?.cancel();face.stopSpeech();$('status').textContent='Ready';}
+ function mouthOnly(text,opts={}){stop();const plan=timeline(text,opts.durationMs?opts.durationMs/1000:undefined),at=performance.now();face.startSpeech({...plan,clock:()=>Math.max(0,(performance.now()-at)/1000)});speechTimer=setTimeout(stop,plan.duration*1000+100);$('status').textContent='Previewing mouth movement';}
+ function speak(text){if(!('speechSynthesis'in window)){mouthOnly(text);return;}stop();const u=new SpeechSynthesisUtterance(text);utterance=u;u.rate=1;u.pitch=1.06;u.onstart=()=>{if(utterance!==u)return;const plan=timeline(text),at=performance.now();face.startSpeech({...plan,clock:()=>Math.max(0,(performance.now()-at)/1000)});$('status').textContent='Speaking';};u.onend=u.onerror=()=>{if(utterance===u)stop();};speechSynthesis.speak(u);}
+ $('expression').onchange=e=>choose(e.target.value);$('blink').onclick=()=>face.blink();
+ $('gaze').onclick=()=>{following=!following;$('gaze').setAttribute('aria-pressed',String(following));if(!following)face.clearGaze();};
+ $('screen').addEventListener('pointermove',e=>{if(!following)return;const b=$('screen').getBoundingClientRect();face.setGaze((e.clientX-b.left)/b.width*2-1,(e.clientY-b.top)/b.height*2-1);});$('screen').addEventListener('pointerleave',()=>face.clearGaze());
+ $('cycle').onchange=()=>{clearInterval(timer);if($('cycle').checked)timer=setInterval(()=>{const i=D.faces.findIndex(f=>f.id===face.expression);choose(D.faces[(i+1)%D.faces.length].id);},2300);};
+ $('speak').onclick=()=>speak($('text').value);$('mouth').onclick=()=>mouthOnly($('text').value);$('stop').onclick=stop;
+ $('save').onclick=()=>{const svg=face.svg.cloneNode(true);svg.setAttribute('xmlns','http://www.w3.org/2000/svg');svg.setAttribute('width','800');svg.setAttribute('height','512');const url=URL.createObjectURL(new Blob([svg.outerHTML],{type:'image/svg+xml'}));const a=document.createElement('a');a.href=url;a.download=face.expression+'.svg';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
+ window.MIST={selectFace:choose,doBlink:()=>face.blink(),startTalk:speak,startVisemes:mouthOnly,stopTalk:stop,startSpeech:opts=>face.startSpeech(opts),stopSpeech:()=>face.stopSpeech(),renderer:face,D};
+ choose(new URLSearchParams(location.hash.slice(1)).get('face')||face.expression);$('status').textContent='Ready';
+}
+</script></html>

@@ -1,0 +1,177 @@
+{
+  "reviewed_utc": "2026-09-12T15:17:20.679584+00:00",
+  "result": "pass_for_frozen_numeric_Cura_profile",
+  "review_scope": "Linear CuraEngine 5.13.0 output, single extruder, millimetres, fixed 0.2 mm layers including the initial layer, 1.75 mm filament and PLA density 1.24 g/cm3.",
+  "reviewed_parser_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\manufacturing\\slicing_r3\\deposition_properties.py",
+  "reviewed_parser_sha256": "088708dbe6e07cfcaad101760756602177b51223c222fe5746c2d987590c93a0",
+  "reviewed_tests_sha256": "3901c8cdf085d32cd9f590e5f7b0f66fa6e75a4818d9ff09eb8ce0b24a6e4b5b",
+  "existing_test_suite": {
+    "result": "pass",
+    "test_count": 8,
+    "tests": [
+      "10 mm straight rod mass, COM and analytic inertia",
+      "STL-to-machine translation is removed from COM and inertia",
+      "Rotated frame transforms segment inertia correctly",
+      "M82/M83, G90/G91, G92 XYZ/E and stationary retraction recovery",
+      "Support, interface and skirt are excluded from model properties",
+      "Moving recovery deposits only its fresh-material tail",
+      "Unsupported units, volumetric E, arcs and extruding Z moves fail explicitly",
+      "Malformed homogeneous transforms fail explicitly"
+    ],
+    "references": [
+      "https://marlinfw.org/docs/gcode/M082.html",
+      "https://marlinfw.org/docs/gcode/G092.html"
+    ]
+  },
+  "existing_test_receipt_left_unchanged": true,
+  "independent_math_checks": {
+    "eight_segments_with_3d_rotation_and_translation": "pass",
+    "quadrature_method": "Endpoint and midpoint weights 1/6, 4/6 and 1/6 integrate line first and second moments exactly.",
+    "maximum_com_difference_mm": 1.4210854715202004e-14,
+    "maximum_inertia_difference_kg_m2": 2.481541837659083e-24,
+    "rectangular_bead_matches_single_cuboid_inertia": "pass",
+    "maximum_rectangular_inertia_difference_kg_m2": 1.0097419586828951e-28,
+    "mass_formula": "mass_kg = fresh_E_mm * pi * (filament_diameter_mm/2)^2 * density_g_cm3 * 1e-6",
+    "line_second_moment_formula": "Q = sum_i mass_i * (outer(midpoint_i - COM, midpoint_i - COM) + outer(delta_i, delta_i)/12)",
+    "inertia_formula": "I_kg_m2 = (trace(Q) * identity - Q) * 1e-6 when coordinates in Q are millimetres",
+    "layer_height_correction": "Subtract half the fixed layer height from machine Z before converting into the original STL frame."
+  },
+  "archived_r2_comparison": {
+    "part": "femur_main_and_knee_saddle",
+    "archive_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\manufacturing\\orientation\\slicer\\ANALYSIS_ONLY\\femur_main_and_knee_saddle__current.disabled.gcode.gz",
+    "archive_sha256": "3b1cd720d238365c20a927bbe3cf84b378b5a8923eea816eff04316cbd1a9b8d",
+    "archive_bytes_unchanged": true,
+    "parsed_volume_mm3": 24860.305481408006,
+    "engine_reported_rounded_volume_mm3": 24860.0,
+    "volume_difference_percent": 0.0012288069509480692,
+    "mass_g_by_category": {
+      "model": 27.1906852051364,
+      "support": 3.577744245563409,
+      "adhesion": 0.05834934624611669,
+      "unclassified": 0.0
+    },
+    "model_mass_excludes_skirt_and_support": true,
+    "features": {
+      "SKIRT": {
+        "category": "adhesion",
+        "deposited_volume_mm3": 47.055924392029596,
+        "mass_g": 0.05834934624611669,
+        "segment_count": 260
+      },
+      "SUPPORT": {
+        "category": "support",
+        "deposited_volume_mm3": 2532.247661747448,
+        "mass_g": 3.1399871005668354,
+        "segment_count": 7957
+      },
+      "WALL-INNER": {
+        "category": "model",
+        "deposited_volume_mm3": 11345.034200146982,
+        "mass_g": 14.067842408182258,
+        "segment_count": 39486
+      },
+      "WALL-OUTER": {
+        "category": "model",
+        "deposited_volume_mm3": 3600.3623627465277,
+        "mass_g": 4.464449329805694,
+        "segment_count": 11853
+      },
+      "SKIN": {
+        "category": "model",
+        "deposited_volume_mm3": 5405.633878231936,
+        "mass_g": 6.702986009007601,
+        "segment_count": 7777
+      },
+      "FILL": {
+        "category": "model",
+        "deposited_volume_mm3": 1576.9414985006824,
+        "mass_g": 1.9554074581408463,
+        "segment_count": 35645
+      },
+      "SUPPORT-INTERFACE": {
+        "category": "support",
+        "deposited_volume_mm3": 353.0299556423984,
+        "mass_g": 0.43775714499657403,
+        "segment_count": 966
+      }
+    },
+    "extrusion_accounting": {
+      "fresh_deposited_filament_mm": 10335.713969999804,
+      "retracted_filament_mm": 681.0,
+      "repaid_retraction_filament_mm": 680.5,
+      "outstanding_retraction_filament_mm": 0.5,
+      "nonmoving_fresh_prime_filament_mm": 0.0
+    },
+    "rectangular_section_spectral_fraction": 8.833093950264077e-06
+  },
+  "frame_schema_check": {
+    "result": "pass",
+    "runner_key": "gcode_to_source_transform",
+    "parser_parameter": "gcode_to_source",
+    "call": "parse_gcode(text, gcode_to_source=slice_result[\"gcode_to_source_transform\"])",
+    "units": "Matrix translations and returned COM are millimetres; inertia is kg m2.",
+    "model_com_in_original_shifted_stl_mm": [
+      22.516813772857383,
+      11.5029036384063,
+      4.492423593201158
+    ],
+    "model_centreline_bounds_in_original_stl_mm": [
+      [
+        0.2274000002443728,
+        0.21430000014602513,
+        0.10669999979436398
+      ],
+      [
+        44.80740000024437,
+        22.794300000146038,
+        5.906699999794364
+      ]
+    ],
+    "original_nonzero_stl_minimum_mm": [
+      0.017400000244379044,
+      0.00430000014603138,
+      0.0066999997943639755
+    ],
+    "inverse_composition_passed": true,
+    "source_minimum_z_preserved": true
+  },
+  "resolved_findings": [
+    {
+      "title": "Travel curves must not leave the current position stale",
+      "status": "resolved_by_parent_and_verified",
+      "previous_effect": "Travel G2 to X10 followed by a deposited line to X20 gave COM X10 instead of X15.",
+      "verification": "G2, G3 and G5 now fail even when E is absent."
+    },
+    {
+      "title": "Validate the complete rigid homogeneous transform",
+      "status": "resolved_by_parent_and_verified",
+      "previous_effect": "A malformed bottom row was accepted because only the 3x3 rotation was checked.",
+      "verification": "Malformed bottom rows and reflections now fail; the supplied suite also rejects non-finite translation."
+    }
+  ],
+  "negative_cases_rejected": [
+    "G2",
+    "G3",
+    "G5",
+    "bad_homogeneous_row",
+    "reflection"
+  ],
+  "open_findings_within_frozen_profile": [],
+  "limitations": [
+    "This review does not establish correctness for arbitrary printer G-code, startup homing or externally changed firmware state.",
+    "Deposited E is commanded filament. Actual filament diameter, density, extrusion calibration, pressure and shrinkage require measurement.",
+    "The mass model distributes fresh material uniformly along each deposited segment and treats moving retraction recovery as a non-depositing prefix.",
+    "The line model and optional rectangular bead correction approximate mass distribution; neither reconstructs bead overlap or proves printed strength.",
+    "A variable or different initial layer height would require a corresponding per-layer centre correction. The frozen profile uses 0.2 mm for both."
+  ],
+  "references": [
+    {
+      "title": "Marlin M82 absolute extrusion and G90/G91 interaction",
+      "url": "https://marlinfw.org/docs/gcode/M082.html"
+    },
+    {
+      "title": "Marlin G92 coordinate reset",
+      "url": "https://marlinfw.org/docs/gcode/G092.html"
+    }
+  ]
+}

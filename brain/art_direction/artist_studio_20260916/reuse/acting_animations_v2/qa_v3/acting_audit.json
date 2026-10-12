@@ -1,0 +1,241 @@
+{
+  "audit": "Independent acting and temporal-continuity audit",
+  "reviewer": "motion_audit_beats",
+  "frameNumbering": "One-based, row-major 4 columns by 3 rows in the rendered dark contact sheets",
+  "evidence": "Direct visual inspection of all 18 contact/<group>/<example>.png rendered frame sheets. This is a sequential drawing audit, not a real-time playback measurement.",
+  "scope": "Frames 5 through 12, their entering and exiting changes, and the 12-to-1 loop join. File validity, alpha reconstruction, and crop correctness were deliberately not used as proxies for animation quality.",
+  "overall": {
+    "verdict": "Not ready for a quality animation release",
+    "rootCause": "The repeated 1-to-6 generic blink consumes half of each 12-frame clip. Several unrelated key poses are then inserted at frames 7 to 10, followed by a sudden reset. At 15 fps this compresses blink, reaction, and return into 0.8 seconds, before the resting hold. Twelve existing drawings are not twelve coherent inbetweens.",
+    "primaryFailureBoundaries": ["6-to-7", "7-to-8", "9-to-10", "10-to-11"],
+    "loopFinding": "Most frame-12-to-frame-1 pairs approximately restore the same expression. The loop boundary is generally less serious than the discontinuities inside each clip. A good endpoint match does not validate the middle.",
+    "repairRule": "Give each clip one action. Remove the automatic leading blink unless blinking is the action. Use frames 1-2 as the stable starting state, 3-6 as progressive movement, 7-8 for the readable peak, and 9-12 for a gradual return. Keep the same eye construction and mouth stroke throughout. Do not create black pupils, detached eyebrows, or open-mouth cavities for only one or two frames without inbetweens.",
+    "timingRule": "Do not use a one-second endpoint hold to conceal a six-frame burst of unrelated poses. Timing holds may repeat a sound drawing, but every change of geometry still needs to follow the same action path. A longer one-shot is preferable to forcing two different actions into a nominal 12-drawing loop."
+  },
+  "clips": [
+    {
+      "key": "aardman/listening",
+      "severity": "high",
+      "findings": [
+        {"frames": [5, 6], "issue": "Both half-lidded eyes jump directly to full rings during reopening; the intervening mostly-open lid position is missing."},
+        {"frames": [6, 7], "issue": "A substantial detached eyebrow appears above the right eye in one drawing, introducing a feature not present in the opening face."},
+        {"frames": [9, 10], "issue": "The detached eyebrow vanishes in one drawing. This reads as a feature popping on and off, not an attentive lift."}
+      ],
+      "loop12to1": "Near the same round-eye and closed-mouth pose; loop is not the principal defect.",
+      "replaceRanges": [[2, 11]],
+      "choreography": "Keep a closed horizontal mouth and the same ring eyes. Make one soft attentive blink: lids descend progressively over frames 3-5, meet briefly at 6, reopen over 7-10, then settle at 11-12. Remove the detached eyebrow entirely from this clip. A listening eyebrow reaction can be a separate sequence."
+    },
+    {
+      "key": "aardman/disbelief",
+      "severity": "high",
+      "findings": [
+        {"frames": [5, 6, 7], "issue": "Two skeptical half lids become two neutral rings at 6, then the left immediately becomes a heavy half lid again at 7. The one-frame neutral face is not an inbetween for the intended asymmetry."},
+        {"frames": [8, 9], "issue": "The right open ring drops directly to the low skeptical lid; there is no intermediate height."}
+      ],
+      "loop12to1": "Similar skeptical endpoint, with small drawing differences; internal eye-model changes dominate.",
+      "replaceRanges": [[2, 10]],
+      "choreography": "Begin with both skeptical lids. Raise only the right lid progressively in 3-6 while keeping the left lid and mouth stationary. Hold the asymmetric doubt at 7-8, then lower the right lid in 9-12. No preliminary blink or simultaneous neutral-ring face."
+    },
+    {
+      "key": "aardman/realisation",
+      "severity": "high",
+      "findings": [
+        {"frames": [5, 6], "issue": "The reopened eye construction changes from directional pupils inside a lid shape to centered ring eyes instead of preserving the up-right gaze through reopening."},
+        {"frames": [6, 7], "issue": "A flat mouth becomes a completed smile in a single drawing, with no small curvature increment."},
+        {"frames": [10, 11], "issue": "Both pupils jump back up-right while the smile becomes a straight bar simultaneously. This is a reset key pose, not a return inbetween."}
+      ],
+      "loop12to1": "Close match to initial up-right glance and flat mouth.",
+      "replaceRanges": [[2, 11]],
+      "choreography": "One recognition: keep the existing eye contour, bring the up-right pupils toward the user over 3-5, and lift the mouth corners gradually over 4-7. Hold at 7-8; return gaze and mouth gradually over 9-12. Do not spend the first half on a blink."
+    },
+    {
+      "key": "bluey/reassurance",
+      "severity": "high",
+      "findings": [
+        {"frames": [5, 6], "issue": "Frame 5 uses a flat horizontal eye cut with vertical-sided pupil openings, then jumps into the full worried eye contour at 6. This is a different construction rather than a near-open version of the same eye."},
+        {"frames": [6, 7], "issue": "The straight mouth instantly turns into a full smile."},
+        {"frames": [9, 10], "issue": "The completed smile instantly flattens again. The emotional gesture occupies three key poses without a build or release."}
+      ],
+      "loop12to1": "Worried eyes and flat mouth approximately match; return inside the clip is the failure.",
+      "replaceRanges": [[2, 11]],
+      "choreography": "Keep the soft inward-sloping eye silhouette. Ease both lids down only slightly while the mouth corners rise through four clear increments. Hold a small reassuring smile for two drawings, then reverse the increments. Avoid the unrelated rectangular half-eye at frame 5."
+    },
+    {
+      "key": "bluey/delight",
+      "severity": "critical",
+      "findings": [
+        {"frames": [6, 7, 8], "issue": "Mouth changes from a straight bar to a filled round dot to a wide outlined open grin in three consecutive drawings. These are three different mouth topologies without a continuous opening path."},
+        {"frames": [7, 8], "issue": "Round eyes instantly become high closed arches at the same moment the mouth becomes a grin."},
+        {"frames": [10, 11], "issue": "The residual grin and low lids disappear into neutral open eyes and a bar in one step."}
+      ],
+      "loop12to1": "Near-neutral endpoints; no major endpoint-expression mismatch.",
+      "replaceRanges": [[2, 11]],
+      "choreography": "Use one small smile that opens progressively: shallow curve, narrow open smile, medium open smile, peak. Raise the lower lids steadily into happy crescents alongside it. Hold 7-8 and return through the same family of mouth apertures. Remove the filled dot surprise mouth and the separate leading blink."
+    },
+      {
+      "key": "bluey/uncertainty",
+      "severity": "critical",
+      "findings": [
+        {"frames": [6, 7], "issue": "Both rightward-looking skeptical eyes jump to a left-looking asymmetry, while the mouth rotates sharply. There is no shared motion path between the two whole-face designs."},
+        {"frames": [7, 8], "issue": "The left ring eye acquires a protruding lid/brow wedge, while the other eye changes outline and loses its open contour. These are feature-model changes rather than small motion increments."},
+        {"frames": [10, 11], "issue": "Asymmetric eyes and tilted mouth snap back to the original pair of heavy lids and horizontal mouth."}
+      ],
+      "loop12to1": "Similar initial and final heavy-lid face; the multi-feature reset occurs one frame earlier.",
+      "replaceRanges": [[2, 11]],
+      "choreography": "Keep gaze fixed in one direction. Gradually raise the left lid while lowering the right lid a little and tilting the mouth by a small amount. Peak at 7-8, then reverse over 9-12. Maintain the same pupil and upper-lid construction at every height."
+    },
+    {
+      "key": "pixar/recall",
+      "severity": "high",
+      "findings": [
+        {"frames": [6, 7, 8], "issue": "The eye rims add small lid nubs and develop a break against the pupil as the gaze moves up. The same ring construction is not maintained through the glance."},
+        {"frames": [8, 9], "issue": "A completed smile appears in one drawing."},
+        {"frames": [9, 10, 11], "issue": "Gaze resets at 10, then smile resets at 11. This staggered sequence is made of endpoint swaps rather than gradual recovery."}
+      ],
+      "loop12to1": "Near-matched neutral pose; internal new rim details and smile pops matter more.",
+      "replaceRanges": [[2, 11]],
+      "choreography": "Use one upward recall glance. Keep the mouth horizontal. Move both pupils up-right over 3-6 inside unbroken eye contours, hold at 7-8, and return through 9-12. Recognition with a smile should be a separate clip if it needs its own acting beat."
+    },
+    {
+      "key": "pixar/checking",
+      "severity": "critical",
+      "findings": [
+        {"frames": [6, 7], "issue": "The left eye drops immediately from a ring to a low half lid, while the right remains open."},
+        {"frames": [7, 8, 9], "issue": "Frame 8 alone replaces both eye outlines with open sideways crescent shapes. Frame 9 restores round eyes. This single-frame eye-model swap creates a visible flash."},
+        {"frames": [8, 9, 10], "issue": "The implied rightward glance resets through changing outlines and pupil placements rather than a consistent pair of eyes."}
+      ],
+      "loop12to1": "Round-eye endpoint similar to initial pose.",
+      "replaceRanges": [[2, 11]],
+      "choreography": "One deliberate rightward checking glance, with a slight left-lid narrowing. Keep eye rims closed and mouth fixed. Pupil displacement builds over 3-6, holds 7-8, and returns over 9-12. Never let the pupil remove a chunk from the outer silhouette."
+    },
+    {
+      "key": "pixar/discovery",
+      "severity": "critical",
+      "findings": [
+        {"frames": [6, 7, 8, 9], "issue": "Mouth runs bar, dot, smile, bar in four consecutive drawings. The discovery expression never develops along a readable mouth path."},
+        {"frames": [7, 8], "issue": "Round eyes become large bell-shaped up-looking eyes in one frame, with entirely different bottoms and pupil positions."},
+        {"frames": [9, 10], "issue": "The bell-shaped eyes abruptly return to the initial asymmetric eye model."}
+      ],
+      "loop12to1": "Similar starting and ending asymmetric contours; the peak is disconnected from both.",
+      "replaceRanges": [[2, 11]],
+      "choreography": "Keep the original eye models. Widen them moderately and enlarge a small mouth aperture through consistent oval shapes, then relax into the original closed mouth. If the intended discovery is pleased, choose a smile-opening action instead, but do not mix dot surprise, bell eyes, and smile in three frames."
+    },
+    {
+      "key": "mickey/double_take",
+      "severity": "critical",
+      "findings": [
+        {"frames": [5, 6, 7], "issue": "Skeptical lids become asymmetric round eyes, then the left eye becomes a very tall vertical oval. This is a large silhouette leap rather than an overshoot supported by preceding drawings."},
+        {"frames": [7, 8], "issue": "The tall eye instantly drops to a heavy lid while the surprised O mouth instantly becomes a frown."},
+        {"frames": [9, 10], "issue": "Frown swaps to an upward smirk in one frame while the open eye drops to the original lid."}
+      ],
+      "loop12to1": "Smirk and lid endpoints are close; does not rescue the disconnected center.",
+      "replaceRanges": [[2, 11]],
+      "choreography": "Use a single surprised double-take without an intervening frown: lids lift in 3-5, both eyes widen with a small controlled overshoot at 6, recover slightly at 7-8, and lower through 9-12. Mouth moves from smirk to a small oval and back through narrow inbetweens. Keep both eye centers anchored."
+    },
+    {
+      "key": "mickey/mock_outrage",
+      "severity": "critical",
+      "findings": [
+        {"frames": [6, 7, 8, 9], "issue": "Four consecutive whole-face designs: smirk, angry frown with open mouth, shouting grin, then happy wink. They have different eye contours, gaze, mouth direction, and aperture. They are key poses, not successive inbetweens."},
+        {"frames": [7, 8], "issue": "The outlined mouth reverses from an upward arch to a large downward triangular cavity in a single frame."},
+        {"frames": [8, 9], "issue": "Angry downward eyes become a ring-and-wink combination instantly. No recovery or hint of the playful turn precedes it."}
+      ],
+      "loop12to1": "Approximate smirk endpoint match. The center is an unrelated facial montage.",
+      "replaceRanges": [[2, 11]],
+      "choreography": "Choose one playful brow squeeze and a slightly widening smirk. Gradually angle the lids inward in 3-6, hold a restrained mock glare at 7-8, then relax in 9-12. Omit shouting and wink from this loop; they require separate one-shot clips with their own transition frames."
+    },
+    {
+      "key": "mickey/triumph",
+      "severity": "critical",
+      "findings": [
+        {"frames": [6, 7, 8], "issue": "Low confident lids become inward-pointing open ovals then fully closed happy arches. The mouth likewise goes bar to curved smile to large open grin in two jumps."},
+        {"frames": [8, 9], "issue": "The open-grin peak instantly collapses to the unrelated asymmetric smirk eye model, rather than returning through the same drawing family."},
+        {"frames": [11, 12], "issue": "The remaining smile becomes a flat bar in one frame."}
+      ],
+      "loop12to1": "Closed-mouth lid pose approximately matches.",
+      "replaceRanges": [[2, 11]],
+      "choreography": "Make one confident smile build: lift the mouth corners and gently squeeze the lower lids across 3-6, hold at 7-8, then relax over 9-12. Keep the smile closed for this restrained version. A broad cheering mouth can be a different clip."
+    },
+    {
+      "key": "simons_cat/notice",
+      "severity": "moderate",
+      "findings": [
+        {"frames": [5, 6], "issue": "Half-closed eyes jump to completely open circles; reopening could use one more mostly-open drawing."},
+        {"frames": [6, 7], "issue": "Pupils jump directly to the far-right look. A quick saccade can be intentional, but the otherwise slow sequence has no anticipation and loses a useful middle position."},
+        {"frames": [9, 10, 11, 12], "issue": "The two pupils return at noticeably different rates. The left stays near the right edge while the right moves leftward, briefly creating an inward convergence rather than a paired glance."}
+      ],
+      "loop12to1": "Small pupil-position discrepancy, not a major silhouette failure.",
+      "replaceRanges": [[2, 11]],
+      "choreography": "The existing eye construction is the most consistent in the set. Keep mouth fixed and omit the leading blink. Move both pupils the same normalized amount to the right over 3-5, hold 6-8, then return together over 9-12. This should be a focused repair, not a new eye style."
+    },
+    {
+      "key": "simons_cat/waiting",
+      "severity": "high",
+      "findings": [
+        {"frames": [6, 7], "issue": "Both pupils jump from central to the upper eye edge, with no intermediate displacement."},
+        {"frames": [7, 8], "issue": "Smile becomes a flat mouth immediately while the gaze holds."},
+        {"frames": [9, 10], "issue": "Flat mouth becomes a completed smile immediately; it is a mood switch rather than a smooth waiting gesture."}
+      ],
+      "loop12to1": "Matching smile and central-pupil endpoints apart from drawing drift.",
+      "replaceRanges": [[2, 11]],
+      "choreography": "One patient upward glance with the same small smile throughout. Pupils ease upward in 3-6, hold 7-8, and return in 9-12. Keep the ring outlines, thickness, and mouth geometry fixed. A bored mouth change should be a separate acting choice."
+    },
+    {
+      "key": "simons_cat/clarify",
+      "severity": "high",
+      "findings": [
+        {"frames": [6, 7], "issue": "The left full circle instantly becomes a deep half lid and the mouth immediately tilts, introducing the complete questioning pose at once."},
+        {"frames": [7, 8, 9], "issue": "Nearly held key pose uses visible changes of pupil location and mouth stroke angle without a clear directional action."},
+        {"frames": [10, 11], "issue": "The left half lid jumps to a full ring while the mouth becomes level. The return has no intermediate lid height."}
+      ],
+      "loop12to1": "The basic ring eye and flat-mouth pose matches reasonably.",
+      "replaceRanges": [[2, 11]],
+      "choreography": "Start and end open-eyed. Lower the left lid progressively in 3-6 and tilt the mouth only slightly across the same interval. Hold 7-8 and reopen over 9-12. Keep right eye shape fixed and pupils looking at the same subject."
+    },
+    {
+      "key": "peanuts/company",
+      "severity": "high",
+      "findings": [
+        {"frames": [5, 6], "issue": "A separate curved lid above each dot vanishes, leaving featureless circular eyes. The drawing does not maintain a coherent single eyelid contour."},
+        {"frames": [6, 7], "issue": "Black circular bites abruptly appear in both dot eyes to imply gaze. The face changes from pupil dots to white-of-eye discs without a transition."},
+        {"frames": [10, 11], "issue": "Both black pupil notches vanish at once. This is a topology pop rather than a gaze return."}
+      ],
+      "loop12to1": "Plain dot eyes and small smile approximately match.",
+      "replaceRanges": [[2, 11]],
+      "choreography": "Keep eyes as solid dots. Communicate quiet company with one small coordinated eye-position shift toward the user and back, or a single coherent dot-to-line blink. Do not add black pupils inside an eye model that was originally the pupil itself. Mouth remains a small stable smile."
+    },
+    {
+      "key": "peanuts/wry",
+      "severity": "critical",
+      "findings": [
+        {"frames": [6, 7, 8], "issue": "Plain dots acquire black notches at 7, then the left becomes a closed curved line while the right instantly returns to a plain dot at 8. Three eye models appear in three frames."},
+        {"frames": [7, 8], "issue": "The flat mouth becomes a complete tilted smile with no curvature build."},
+        {"frames": [10, 11, 12], "issue": "Detached lid arcs appear above one eye, then both eyes, then disappear. These read as eyebrows flickering rather than a coherent wink reopening."}
+      ],
+      "loop12to1": "Dot eyes and flat mouth match; the wink return before it is broken.",
+      "replaceRanges": [[2, 11]],
+      "choreography": "One small one-corner smile plus a left wink. Keep the right dot fixed. Shape the left dot progressively into an oval, then a short curved lid, then reverse. Build and release the mouth corner over the same interval. Do not introduce black notches or detached brow arcs."
+    },
+    {
+      "key": "peanuts/pride",
+      "severity": "high",
+      "findings": [
+        {"frames": [5, 6, 7], "issue": "Small side-protruding caps on the dot eyes disappear at 6 then reappear at 7. The caps change eye construction without expressing a clear new action."},
+        {"frames": [7, 8, 9, 10], "issue": "Four near-identical capped-dot poses provide no readable pride beat beyond small shape and position drift."},
+        {"frames": [10, 11], "issue": "The caps vanish again in one step while the smile remains almost unchanged."}
+      ],
+      "loop12to1": "Dot-eye smile endpoints match approximately.",
+      "replaceRanges": [[2, 11]],
+      "choreography": "Use one contented smile-and-squint. Solid dot eyes shrink vertically into small relaxed arches through coherent intermediate silhouettes while the smile deepens a little, then reopen along the reverse path. Avoid side caps and separate brow features. Keep eye spacing and the smile center fixed."
+    }
+  ],
+  "acceptanceBeforeReplacementRelease": [
+    "Review every adjacent frame pair from 1 through 12 and the 12-to-1 join on the actual dark-background composite.",
+    "Watch the full clip at intended speed and at half speed; a contact sheet alone cannot validate temporal feel.",
+    "A visible feature may appear or disappear only through a continuous opening, closing, occlusion, or movement path, not because the generator chose a different face model.",
+    "The mouth stays in the chosen emotional family and follows a single opening or curvature path. No bar-to-dot-to-smile topology jumps.",
+    "Paired pupil motion preserves binocular direction unless deliberate convergence is the named action.",
+    "Each clip must still communicate its named action when played without the gallery title.",
+    "A new independent reviewer must reject visible middle-frame discontinuities even if asset count, layer reconstruction, and runtime unit tests pass."
+  ]
+}

@@ -1,0 +1,1830 @@
+{
+  "experiment": "Qwen speaker with optional affect director",
+  "created_at_utc": "2026-09-24T16:47:12.628253+00:00",
+  "mode": "single_pass_no_tuning",
+  "text_only": true,
+  "arms": [
+    "qwen_single_speaker",
+    "qwen_director_qwen_speaker",
+    "gpt_oss_director_qwen_speaker"
+  ],
+  "speaker_model": "qwen-3.8-27b",
+  "speaker_reasoning_effort": "low",
+  "director_models": {
+    "qwen_director_qwen_speaker": [
+      "qwen-3.8-27b",
+      "none"
+    ],
+    "gpt_oss_director_qwen_speaker": [
+      "gpt-oss-120b",
+      "low"
+    ]
+  },
+  "source_case_path": "brain/results/dual-model-harness-20260924/director-cases.json",
+  "source_case_sha256": "0a5524628469d477dacfc52c5c7fbe819fca31146c473c7e9cba4618d4be0233",
+  "model_catalog": {
+    "source": ".env.example; secrets excluded",
+    "sha256": "b7e61f87fa0991a05cff14c7525f62811395e7b627dd177bc7d1fdb675ca4754"
+  },
+  "source_sha256": {
+    "brain/duplex/affect_director.py": "913c9f9bcb17803bcdc50bcbed6da5d3c04824b70f50bf41565fb732fdada81e",
+    "brain/duplex/persona.txt": "d4e790a7ff46d425aa08014acfe45b3a9c47c301fb06c32b49a0958a64bc9dc0",
+    "brain/duplex/conversation_policy.py": "a6c4bb8e640764a391c64527c5d7d403522439b57f293eb3cdf344e192207f4a",
+    "brain/duplex/background.py": "de82452b52ba27354fc08c8b9099b3b29742ff99d3aa3f569afed3c78302119e",
+    "brain/duplex/runtime.py": "7d428e070474050493afe58b832133389db4657abb7e01ffe3ac26a12187df1a",
+    "brain/duplex/expression_policy.py": "9f990f4a2b02adf9097d6810b10a34f9be585a818a8b36888274f9acc4d91035",
+    "brain/duplex/phrasing.py": "479b7964515aae8d4c517dc0b9226fbbb17e8a95e448fb24dfac046511d7773c",
+    "brain/harness/eval_luna_conversations.py": "2b89ab77201b134e360adbbcf76cc488f0ad88e478505a2c005dfe0ebb4d5798",
+    "brain/benchmarks/naturalness/cerebras_client.py": "b9663084c1130a0c617b8d793728ec60f9daa9a46985265528e46131092e2aee",
+    "brain/benchmarks/naturalness/affect_comparison.py": "22c26feb972391909be33fc13e810e8392db72eb50199795dae784e3758fafda"
+  },
+  "prompt_sha256": {
+    "speaker": "bff6007924b34b49ebcaa99569af5095069d3e994fc196e69f7152a71b0b7399"
+  },
+  "speaker_output_limit": 4096,
+  "parallel_tool_calls": true,
+  "reader_launch": "Started at user-turn dispatch before the speaker request, with speaker_text empty; reader never gates speaker text.",
+  "disclosure": "Speaker histories are authored frozen fixtures; each arm retains its own generated current reply. Reader inputs receive the same user transcript/history and empty proposed phrase, never speaker_phrase_for_alignment, discriminates, or review_questions. Reader proposals are not applied. This is not a voice or renderer rating.",
+  "cases": [
+    {
+      "id": "steady_mood_after_disappointment",
+      "arm_order": [
+        "qwen_director_qwen_speaker",
+        "gpt_oss_director_qwen_speaker",
+        "qwen_single_speaker"
+      ],
+      "fixture_history_sha256": "3616a1e8e2c06d37a5320f136af31d6bf1acb9b9623b36753488259c4d0ead5c",
+      "current_user": "The exhibition stand collapsed. I feel pretty low now.",
+      "context_roles": [
+        "user",
+        "assistant"
+      ],
+      "arms": {
+        "qwen_director_qwen_speaker": {
+          "run_id": "ad6f3653c515",
+          "speaker": {
+            "provider": "cerebras",
+            "model": "qwen-3.8-27b",
+            "reasoning_effort": "low",
+            "prompt_sha256": "bff6007924b34b49ebcaa99569af5095069d3e994fc196e69f7152a71b0b7399",
+            "prompt_version": "cascade_voice_make_client-responsive-adapter",
+            "history_source": "authored frozen fixture; this arm’s generated answer is retained in result",
+            "current_user": "The exhibition stand collapsed. I feel pretty low now.",
+            "answer": "\n\nThat sounds really deflating, especially after everything you put into it. I'm here.",
+            "errors": [],
+            "tool_calls": [],
+            "bridge_receipts": [],
+            "timings": {
+              "tools": [],
+              "http_requests": [
+                {
+                  "round": 0,
+                  "status": 200,
+                  "headers_ms": 964.3962999998621,
+                  "usage": {
+                    "total_tokens": 3756,
+                    "completion_tokens": 84,
+                    "completion_tokens_details": {
+                      "reasoning_tokens": 63
+                    },
+                    "prompt_tokens": 3672,
+                    "prompt_tokens_details": {
+                      "cached_tokens": 3072,
+                      "image_tokens": 0
+                    }
+                  },
+                  "total_ms": 1370.4474000001028,
+                  "selected_tool_calls": 0
+                }
+              ],
+              "client_lock_wait_s": 0,
+              "reasoning_output_tokens": 63,
+              "streamed_visible_text": "\n\nThat sounds really deflating, especially after everything you put into it. I'm here.",
+              "deadline_overrun_s": 0
+            },
+            "first_nonblank_ms": 1373.2,
+            "speaker_total_ms": 1375.7,
+            "first_phrase_ms": 1375.3,
+            "first_phrase": "That sounds really deflating, especially after everything you put into it.",
+            "exception_type": null
+          },
+          "director": {
+            "decision": {
+              "change": true,
+              "expression": "sad",
+              "variant": 0,
+              "delivery": "gentle",
+              "evidence": [
+                {
+                  "record_id": "current_user",
+                  "quote": "The exhibition stand collapsed. I feel pretty low now."
+                }
+              ]
+            },
+            "trace": {
+              "prompt_version": "affect-director-v1",
+              "prompt_sha256": "41ab31abe741a0dbc4718e7a2d857357c02995df34d84bb57a69ef9d0e22b8f7",
+              "model": "qwen-3.8-27b",
+              "reasoning_effort": "none",
+              "timeout_s": 12.0,
+              "status": "accepted",
+              "elapsed_ms": 1228.8,
+              "record_count": 3,
+              "input_tokens": 1193,
+              "output_tokens": 79,
+              "ttft_ms": 1208.9,
+              "provider_total_ms": 1214.5,
+              "http_statuses": [
+                200
+              ],
+              "raw_decision": "{\n  \"change\": true,\n  \"expression\": \"sad\",\n  \"variant\": 0,\n  \"delivery\": \"gentle\",\n  \"evidence\": [\n    {\n      \"record_id\": \"current_user\",\n      \"quote\": \"The exhibition stand collapsed. I feel pretty low now.\"\n    }\n  ]\n}"
+            },
+            "speaker_text_at_reader_start": "",
+            "reader_started_ms": 4.7,
+            "reader_completed_ms": 1233.5,
+            "completed_before_first_phrase": true,
+            "proposal_applied": false,
+            "proposal_note": "Reader output is validated advice only; this text-only harness has no renderer."
+          },
+          "director_exception_type": null,
+          "raw_path": "brain/results/dual-model-harness-20260924/comparison-rerun/steady_mood_after_disappointment/qwen_director_qwen_speaker/ad6f3653c515/raw.json"
+        },
+        "gpt_oss_director_qwen_speaker": {
+          "run_id": "b2aa49ef126f",
+          "speaker": {
+            "provider": "cerebras",
+            "model": "qwen-3.8-27b",
+            "reasoning_effort": "low",
+            "prompt_sha256": "bff6007924b34b49ebcaa99569af5095069d3e994fc196e69f7152a71b0b7399",
+            "prompt_version": "cascade_voice_make_client-responsive-adapter",
+            "history_source": "authored frozen fixture; this arm’s generated answer is retained in result",
+            "current_user": "The exhibition stand collapsed. I feel pretty low now.",
+            "answer": "\n\nThat's a rough thing to walk away from. You don't have to fix it right now if you don't feel like it.",
+            "errors": [],
+            "tool_calls": [],
+            "bridge_receipts": [],
+            "timings": {
+              "tools": [],
+              "http_requests": [
+                {
+                  "round": 0,
+                  "status": 200,
+                  "headers_ms": 669.611299999815,
+                  "usage": {
+                    "total_tokens": 3768,
+                    "completion_tokens": 96,
+                    "completion_tokens_details": {
+                      "reasoning_tokens": 67
+                    },
+                    "prompt_tokens": 3672,
+                    "prompt_tokens_details": {
+                      "cached_tokens": 3072,
+                      "image_tokens": 0
+                    }
+                  },
+                  "total_ms": 1000.0264999998763,
+                  "selected_tool_calls": 0
+                }
+              ],
+              "client_lock_wait_s": 0,
+              "reasoning_output_tokens": 67,
+              "streamed_visible_text": "\n\nThat's a rough thing to walk away from. You don't have to fix it right now if you don't feel like it.",
+              "deadline_overrun_s": 0
+            },
+            "first_nonblank_ms": 973.9,
+            "speaker_total_ms": 1000.7,
+            "first_phrase_ms": 998.2,
+            "first_phrase": "That's a rough thing to walk away from.",
+            "exception_type": null
+          },
+          "director": {
+            "decision": {
+              "change": false,
+              "expression": "neutral",
+              "variant": 0,
+              "delivery": "neutral",
+              "evidence": []
+            },
+            "trace": {
+              "prompt_version": "affect-director-v1",
+              "prompt_sha256": "41ab31abe741a0dbc4718e7a2d857357c02995df34d84bb57a69ef9d0e22b8f7",
+              "model": "gpt-oss-120b",
+              "reasoning_effort": "low",
+              "timeout_s": 12.0,
+              "status": "missing_evidence",
+              "elapsed_ms": 788.1,
+              "record_count": 3,
+              "input_tokens": 1251,
+              "output_tokens": 134,
+              "ttft_ms": 736.3,
+              "provider_total_ms": 777.9,
+              "http_statuses": [
+                200
+              ],
+              "raw_decision": "{\n  \"change\": true,\n  \"expression\": \"sad\",\n  \"variant\": 0,\n  \"delivery\": \"gentle\",\n  \"evidence\": []\n}"
+            },
+            "speaker_text_at_reader_start": "",
+            "reader_started_ms": 0.4,
+            "reader_completed_ms": 788.5,
+            "completed_before_first_phrase": true,
+            "proposal_applied": false,
+            "proposal_note": "Reader output is validated advice only; this text-only harness has no renderer."
+          },
+          "director_exception_type": null,
+          "raw_path": "brain/results/dual-model-harness-20260924/comparison-rerun/steady_mood_after_disappointment/gpt_oss_director_qwen_speaker/b2aa49ef126f/raw.json"
+        },
+        "qwen_single_speaker": {
+          "run_id": "2e154f47aba4",
+          "speaker": {
+            "provider": "cerebras",
+            "model": "qwen-3.8-27b",
+            "reasoning_effort": "low",
+            "prompt_sha256": "bff6007924b34b49ebcaa99569af5095069d3e994fc196e69f7152a71b0b7399",
+            "prompt_version": "cascade_voice_make_client-responsive-adapter",
+            "history_source": "authored frozen fixture; this arm’s generated answer is retained in result",
+            "current_user": "The exhibition stand collapsed. I feel pretty low now.",
+            "answer": "\n\nThat's a lot of work gone in one moment. I'm here if you want to talk it through or just sit with it for a bit.",
+            "errors": [],
+            "tool_calls": [],
+            "bridge_receipts": [],
+            "timings": {
+              "tools": [],
+              "http_requests": [
+                {
+                  "round": 0,
+                  "status": 200,
+                  "headers_ms": 618.0736999999681,
+                  "usage": {
+                    "total_tokens": 3780,
+                    "completion_tokens": 108,
+                    "completion_tokens_details": {
+                      "reasoning_tokens": 76
+                    },
+                    "prompt_tokens": 3672,
+                    "prompt_tokens_details": {
+                      "cached_tokens": 3072,
+                      "image_tokens": 0
+                    }
+                  },
+                  "total_ms": 875.9899000001496,
+                  "selected_tool_calls": 0
+                }
+              ],
+              "client_lock_wait_s": 0,
+              "reasoning_output_tokens": 76,
+              "streamed_visible_text": "\n\nThat's a lot of work gone in one moment. I'm here if you want to talk it through or just sit with it for a bit.",
+              "deadline_overrun_s": 0
+            },
+            "first_nonblank_ms": 841.7,
+            "speaker_total_ms": 876.1,
+            "first_phrase_ms": 862.5,
+            "first_phrase": "That's a lot of work gone in one moment.",
+            "exception_type": null
+          },
+          "director": null,
+          "director_exception_type": null,
+          "raw_path": "brain/results/dual-model-harness-20260924/comparison-rerun/steady_mood_after_disappointment/qwen_single_speaker/2e154f47aba4/raw.json"
+        }
+      }
+    },
+    {
+      "id": "explicit_face_with_scope",
+      "arm_order": [
+        "qwen_director_qwen_speaker",
+        "gpt_oss_director_qwen_speaker",
+        "qwen_single_speaker"
+      ],
+      "fixture_history_sha256": "9f81dc31459e929683d32020c95f669d29ad52f89ee4f7ed7803d45985f82773",
+      "current_user": "Show a curious face while you explain this next step, then keep it until I ask for another.",
+      "context_roles": [],
+      "arms": {
+        "qwen_director_qwen_speaker": {
+          "run_id": "027262013a18",
+          "speaker": {
+            "provider": "cerebras",
+            "model": "qwen-3.8-27b",
+            "reasoning_effort": "low",
+            "prompt_sha256": "bff6007924b34b49ebcaa99569af5095069d3e994fc196e69f7152a71b0b7399",
+            "prompt_version": "cascade_voice_make_client-responsive-adapter",
+            "history_source": "authored frozen fixture; this arm’s generated answer is retained in result",
+            "current_user": "Show a curious face while you explain this next step, then keep it until I ask for another.",
+            "answer": "\n\n\n\nCurious face is up and staying. What step do you want me to walk through?",
+            "errors": [],
+            "tool_calls": [
+              {
+                "name": "set_expression",
+                "arguments": {
+                  "expression": "curious"
+                },
+                "is_error": false
+              }
+            ],
+            "bridge_receipts": [
+              {
+                "name": "set_expression",
+                "arguments": {
+                  "expression": "curious"
+                },
+                "result": {
+                  "status": "display_requested",
+                  "expression": "curious",
+                  "variant": 0,
+                  "face_id": "20_neutral_06_manual",
+                  "duration_ms": 2600,
+                  "persistent": true
+                },
+                "is_error": false,
+                "execution_s": 0.00040740000031291856
+              }
+            ],
+            "timings": {
+              "tools": [
+                {
+                  "name": "set_expression",
+                  "request_s": 1.3680428000002394,
+                  "reply_s": 1.3699011000003338,
+                  "execution_s": 0.0018583000000944594
+                }
+              ],
+              "http_requests": [
+                {
+                  "round": 0,
+                  "status": 200,
+                  "headers_ms": 928.5675000000992,
+                  "usage": {
+                    "total_tokens": 3834,
+                    "completion_tokens": 185,
+                    "completion_tokens_details": {
+                      "reasoning_tokens": 157
+                    },
+                    "prompt_tokens": 3649,
+                    "prompt_tokens_details": {
+                      "cached_tokens": 3072,
+                      "image_tokens": 0
+                    }
+                  },
+                  "total_ms": 1367.967900000167,
+                  "selected_tool_calls": 1
+                },
+                {
+                  "round": 1,
+                  "status": 200,
+                  "headers_ms": 537.3965999997381,
+                  "usage": {
+                    "total_tokens": 3915,
+                    "completion_tokens": 159,
+                    "completion_tokens_details": {
+                      "reasoning_tokens": 139
+                    },
+                    "prompt_tokens": 3756,
+                    "prompt_tokens_details": {
+                      "cached_tokens": 3072,
+                      "image_tokens": 0
+                    }
+                  },
+                  "total_ms": 1386.7331999999806,
+                  "selected_tool_calls": 0
+                }
+              ],
+              "client_lock_wait_s": 0,
+              "reasoning_output_tokens": 296,
+              "streamed_visible_text": "\n\n\n\nCurious face is up and staying. What step do you want me to walk through?",
+              "deadline_overrun_s": 0
+            },
+            "first_nonblank_ms": 2752.3,
+            "speaker_total_ms": 2757.6,
+            "first_phrase_ms": 2755.8,
+            "first_phrase": "Curious face is up and staying.",
+            "exception_type": null
+          },
+          "director": {
+            "decision": {
+              "change": false,
+              "expression": "neutral",
+              "variant": 0,
+              "delivery": "neutral",
+              "evidence": []
+            },
+            "trace": {
+              "prompt_version": "affect-director-v1",
+              "prompt_sha256": "41ab31abe741a0dbc4718e7a2d857357c02995df34d84bb57a69ef9d0e22b8f7",
+              "model": "qwen-3.8-27b",
+              "reasoning_effort": "none",
+              "timeout_s": 12.0,
+              "status": "face_override",
+              "elapsed_ms": 3391.7,
+              "record_count": 1,
+              "input_tokens": 1140,
+              "output_tokens": 88,
+              "ttft_ms": 3356.1,
+              "provider_total_ms": 3380.4,
+              "http_statuses": [
+                200
+              ],
+              "raw_decision": "{\n  \"change\": true,\n  \"expression\": \"curious\",\n  \"variant\": 0,\n  \"delivery\": \"neutral\",\n  \"evidence\": [\n    {\n      \"record_id\": \"current_user\",\n      \"quote\": \"Show a curious face while you explain this next step, then keep it until I ask for another.\"\n    }\n  ]\n}"
+            },
+            "speaker_text_at_reader_start": "",
+            "reader_started_ms": 0.6,
+            "reader_completed_ms": 3392.3,
+            "completed_before_first_phrase": false,
+            "proposal_applied": false,
+            "proposal_note": "Reader output is validated advice only; this text-only harness has no renderer."
+          },
+          "director_exception_type": null,
+          "raw_path": "brain/results/dual-model-harness-20260924/comparison-rerun/explicit_face_with_scope/qwen_director_qwen_speaker/027262013a18/raw.json"
+        },
+        "gpt_oss_director_qwen_speaker": {
+          "run_id": "d9426f986796",
+          "speaker": {
+            "provider": "cerebras",
+            "model": "qwen-3.8-27b",
+            "reasoning_effort": "low",
+            "prompt_sha256": "bff6007924b34b49ebcaa99569af5095069d3e994fc196e69f7152a71b0b7399",
+            "prompt_version": "cascade_voice_make_client-responsive-adapter",
+            "history_source": "authored frozen fixture; this arm’s generated answer is retained in result",
+            "current_user": "Show a curious face while you explain this next step, then keep it until I ask for another.",
+            "answer": "\n\n\n\nGot it, curious face is on and will stay. What's the next step you'd like me to walk through?",
+            "errors": [],
+            "tool_calls": [
+              {
+                "name": "set_expression",
+                "arguments": {
+                  "expression": "curious"
+                },
+                "is_error": false
+              }
+            ],
+            "bridge_receipts": [
+              {
+                "name": "set_expression",
+                "arguments": {
+                  "expression": "curious"
+                },
+                "result": {
+                  "status": "display_requested",
+                  "expression": "curious",
+                  "variant": 0,
+                  "face_id": "20_neutral_06_manual",
+                  "duration_ms": 2600,
+                  "persistent": true
+                },
+                "is_error": false,
+                "execution_s": 0.00012059999971825164
+              }
+            ],
+            "timings": {
+              "tools": [
+                {
+                  "name": "set_expression",
+                  "request_s": 2.8185072999999647,
+                  "reply_s": 2.8199275000001762,
+                  "execution_s": 0.00142020000021148
+                }
+              ],
+              "http_requests": [
+                {
+                  "round": 0,
+                  "status": 200,
+                  "headers_ms": 570.0511999998525,
+                  "usage": {
+                    "total_tokens": 3759,
+                    "completion_tokens": 110,
+                    "completion_tokens_details": {
+                      "reasoning_tokens": 82
+                    },
+                    "prompt_tokens": 3649,
+                    "prompt_tokens_details": {
+                      "cached_tokens": 3072,
+                      "image_tokens": 0
+                    }
+                  },
+                  "total_ms": 2818.4393000001364,
+                  "selected_tool_calls": 1
+                },
+                {
+                  "round": 1,
+                  "status": 200,
+                  "headers_ms": 510.78430000006847,
+                  "usage": {
+                    "total_tokens": 3873,
+                    "completion_tokens": 117,
+                    "completion_tokens_details": {
+                      "reasoning_tokens": 91
+                    },
+                    "prompt_tokens": 3756,
+                    "prompt_tokens_details": {
+                      "cached_tokens": 3072,
+                      "image_tokens": 0
+                    }
+                  },
+                  "total_ms": 5146.717399999943,
+                  "selected_tool_calls": 0
+                }
+              ],
+              "client_lock_wait_s": 0,
+              "reasoning_output_tokens": 173,
+              "streamed_visible_text": "\n\n\n\nGot it, curious face is on and will stay. What's the next step you'd like me to walk through?",
+              "deadline_overrun_s": 0
+            },
+            "first_nonblank_ms": 7926.8,
+            "speaker_total_ms": 7967.2,
+            "first_phrase_ms": 7966.1,
+            "first_phrase": "Got it, curious face is on and will stay.",
+            "exception_type": null
+          },
+          "director": {
+            "decision": {
+              "change": false,
+              "expression": "neutral",
+              "variant": 0,
+              "delivery": "neutral",
+              "evidence": []
+            },
+            "trace": {
+              "prompt_version": "affect-director-v1",
+              "prompt_sha256": "41ab31abe741a0dbc4718e7a2d857357c02995df34d84bb57a69ef9d0e22b8f7",
+              "model": "gpt-oss-120b",
+              "reasoning_effort": "low",
+              "timeout_s": 12.0,
+              "status": "accepted",
+              "elapsed_ms": 566.9,
+              "record_count": 1,
+              "input_tokens": 1199,
+              "output_tokens": 90,
+              "ttft_ms": 483.8,
+              "provider_total_ms": 557.0,
+              "http_statuses": [
+                200
+              ],
+              "raw_decision": "{\n  \"change\": false,\n  \"expression\": \"neutral\",\n  \"variant\": 0,\n  \"delivery\": \"neutral\",\n  \"evidence\": []\n}"
+            },
+            "speaker_text_at_reader_start": "",
+            "reader_started_ms": 0.3,
+            "reader_completed_ms": 567.2,
+            "completed_before_first_phrase": true,
+            "proposal_applied": false,
+            "proposal_note": "Reader output is validated advice only; this text-only harness has no renderer."
+          },
+          "director_exception_type": null,
+          "raw_path": "brain/results/dual-model-harness-20260924/comparison-rerun/explicit_face_with_scope/gpt_oss_director_qwen_speaker/d9426f986796/raw.json"
+        },
+        "qwen_single_speaker": {
+          "run_id": "f29c70a97723",
+          "speaker": {
+            "provider": "cerebras",
+            "model": "qwen-3.8-27b",
+            "reasoning_effort": "low",
+            "prompt_sha256": "bff6007924b34b49ebcaa99569af5095069d3e994fc196e69f7152a71b0b7399",
+            "prompt_version": "cascade_voice_make_client-responsive-adapter",
+            "history_source": "authored frozen fixture; this arm’s generated answer is retained in result",
+            "current_user": "Show a curious face while you explain this next step, then keep it until I ask for another.",
+            "answer": "\n\n\n\nCurious face is on. What's the next step you'd like me to walk through?",
+            "errors": [],
+            "tool_calls": [
+              {
+                "name": "set_expression",
+                "arguments": {
+                  "expression": "curious"
+                },
+                "is_error": false
+              }
+            ],
+            "bridge_receipts": [
+              {
+                "name": "set_expression",
+                "arguments": {
+                  "expression": "curious"
+                },
+                "result": {
+                  "status": "display_requested",
+                  "expression": "curious",
+                  "variant": 0,
+                  "face_id": "20_neutral_06_manual",
+                  "duration_ms": 2600,
+                  "persistent": true
+                },
+                "is_error": false,
+                "execution_s": 0.0001173999999082298
+              }
+            ],
+            "timings": {
+              "tools": [
+                {
+                  "name": "set_expression",
+                  "request_s": 4.520934099999977,
+                  "reply_s": 4.522234600000047,
+                  "execution_s": 0.0013005000000703149
+                }
+              ],
+              "http_requests": [
+                {
+                  "round": 0,
+                  "status": 200,
+                  "headers_ms": 567.5395999996908,
+                  "usage": {
+                    "total_tokens": 3771,
+                    "completion_tokens": 122,
+                    "completion_tokens_details": {
+                      "reasoning_tokens": 94
+                    },
+                    "prompt_tokens": 3649,
+                    "prompt_tokens_details": {
+                      "cached_tokens": 3072,
+                      "image_tokens": 0
+                    }
+                  },
+                  "total_ms": 4520.848899999692,
+                  "selected_tool_calls": 1
+                },
+                {
+                  "round": 1,
+                  "status": 200,
+                  "headers_ms": 564.5117999997638,
+                  "usage": {
+                    "total_tokens": 3922,
+                    "completion_tokens": 166,
+                    "completion_tokens_details": {
+                      "reasoning_tokens": 145
+                    },
+                    "prompt_tokens": 3756,
+                    "prompt_tokens_details": {
+                      "cached_tokens": 3072,
+                      "image_tokens": 0
+                    }
+                  },
+                  "total_ms": 1014.5259999999325,
+                  "selected_tool_calls": 0
+                }
+              ],
+              "client_lock_wait_s": 0,
+              "reasoning_output_tokens": 239,
+              "streamed_visible_text": "\n\n\n\nCurious face is on. What's the next step you'd like me to walk through?",
+              "deadline_overrun_s": 0
+            },
+            "first_nonblank_ms": 5520.0,
+            "speaker_total_ms": 5536.8,
+            "first_phrase_ms": 5524.1,
+            "first_phrase": "Curious face is on.",
+            "exception_type": null
+          },
+          "director": null,
+          "director_exception_type": null,
+          "raw_path": "brain/results/dual-model-harness-20260924/comparison-rerun/explicit_face_with_scope/qwen_single_speaker/f29c70a97723/raw.json"
+        }
+      }
+    },
+    {
+      "id": "direct_override_of_inferred_mood",
+      "arm_order": [
+        "qwen_director_qwen_speaker",
+        "qwen_single_speaker",
+        "gpt_oss_director_qwen_speaker"
+      ],
+      "fixture_history_sha256": "84cdc83adb6fcbd9949d06f87f2629231946903512f48bbec76b2fa72f99ef57",
+      "current_user": "It stops feeding filament halfway through.",
+      "context_roles": [
+        "user",
+        "assistant"
+      ],
+      "arms": {
+        "qwen_director_qwen_speaker": {
+          "run_id": "041de6ccb91f",
+          "speaker": {
+            "provider": "cerebras",
+            "model": "qwen-3.8-27b",
+            "reasoning_effort": "low",
+            "prompt_sha256": "bff6007924b34b49ebcaa99569af5095069d3e994fc196e69f7152a71b0b7399",
+            "prompt_version": "cascade_voice_make_client-responsive-adapter",
+            "history_source": "authored frozen fixture; this arm’s generated answer is retained in result",
+            "current_user": "It stops feeding filament halfway through.",
+            "answer": "\n\nThat usually means either the drive gear is slipping or the filament is catching upstream. Does it click, or does it just stop silently?",
+            "errors": [],
+            "tool_calls": [],
+            "bridge_receipts": [],
+            "timings": {
+              "tools": [],
+              "http_requests": [
+                {
+                  "round": 0,
+                  "status": 200,
+                  "headers_ms": 524.3552000001728,
+                  "usage": {
+                    "total_tokens": 3816,
+                    "completion_tokens": 144,
+                    "completion_tokens_details": {
+                      "reasoning_tokens": 115
+                    },
+                    "prompt_tokens": 3672,
+                    "prompt_tokens_details": {
+                      "cached_tokens": 3072,
+                      "image_tokens": 0
+                    }
+                  },
+                  "total_ms": 1392.3628000002282,
+                  "selected_tool_calls": 0
+                }
+              ],
+              "client_lock_wait_s": 0,
+              "reasoning_output_tokens": 115,
+              "streamed_visible_text": "\n\nThat usually means either the drive gear is slipping or the filament is catching upstream. Does it click, or does it just stop silently?",
+              "deadline_overrun_s": 0
+            },
+            "first_nonblank_ms": 1392.5,
+            "speaker_total_ms": 1395.7,
+            "first_phrase_ms": 1394.4,
+            "first_phrase": "That usually means either the drive gear is slipping or the filament is catching upstream.",
+            "exception_type": null
+          },
+          "director": {
+            "decision": {
+              "change": false,
+              "expression": "neutral",
+              "variant": 0,
+              "delivery": "neutral",
+              "evidence": [
+                {
+                  "record_id": "fixture_0",
+                  "quote": "please keep your face neutral while you help"
+                }
+              ]
+            },
+            "trace": {
+              "prompt_version": "affect-director-v1",
+              "prompt_sha256": "41ab31abe741a0dbc4718e7a2d857357c02995df34d84bb57a69ef9d0e22b8f7",
+              "model": "qwen-3.8-27b",
+              "reasoning_effort": "none",
+              "timeout_s": 12.0,
+              "status": "accepted",
+              "elapsed_ms": 463.6,
+              "record_count": 3,
+              "input_tokens": 1193,
+              "output_tokens": 77,
+              "ttft_ms": 425.8,
+              "provider_total_ms": 453.2,
+              "http_statuses": [
+                200
+              ],
+              "raw_decision": "{\n  \"change\": false,\n  \"expression\": \"neutral\",\n  \"variant\": 0,\n  \"delivery\": \"neutral\",\n  \"evidence\": [\n    {\n      \"record_id\": \"fixture_0\",\n      \"quote\": \"please keep your face neutral while you help\"\n    }\n  ]\n}"
+            },
+            "speaker_text_at_reader_start": "",
+            "reader_started_ms": 3.0,
+            "reader_completed_ms": 466.6,
+            "completed_before_first_phrase": true,
+            "proposal_applied": false,
+            "proposal_note": "Reader output is validated advice only; this text-only harness has no renderer."
+          },
+          "director_exception_type": null,
+          "raw_path": "brain/results/dual-model-harness-20260924/comparison-rerun/direct_override_of_inferred_mood/qwen_director_qwen_speaker/041de6ccb91f/raw.json"
+        },
+        "qwen_single_speaker": {
+          "run_id": "342b1ad7d512",
+          "speaker": {
+            "provider": "cerebras",
+            "model": "qwen-3.8-27b",
+            "reasoning_effort": "low",
+            "prompt_sha256": "bff6007924b34b49ebcaa99569af5095069d3e994fc196e69f7152a71b0b7399",
+            "prompt_version": "cascade_voice_make_client-responsive-adapter",
+            "history_source": "authored frozen fixture; this arm’s generated answer is retained in result",
+            "current_user": "It stops feeding filament halfway through.",
+            "answer": "\n\n\n\nThat usually means the filament is sticking somewhere along the path. Are you running a direct drive or a Bowden setup?",
+            "errors": [],
+            "tool_calls": [
+              {
+                "name": "set_expression",
+                "arguments": {
+                  "expression": "neutral"
+                },
+                "is_error": false
+              }
+            ],
+            "bridge_receipts": [
+              {
+                "name": "set_expression",
+                "arguments": {
+                  "expression": "neutral"
+                },
+                "result": {
+                  "status": "display_requested",
+                  "expression": "neutral",
+                  "variant": 0,
+                  "face_id": "39_neutral_02_manual",
+                  "duration_ms": 2800,
+                  "persistent": true
+                },
+                "is_error": false,
+                "execution_s": 7.460000006176415e-05
+              }
+            ],
+            "timings": {
+              "tools": [
+                {
+                  "name": "set_expression",
+                  "request_s": 1.548931299999822,
+                  "reply_s": 1.550185600000077,
+                  "execution_s": 0.0012543000002551707
+                }
+              ],
+              "http_requests": [
+                {
+                  "round": 0,
+                  "status": 200,
+                  "headers_ms": 526.1445999999523,
+                  "usage": {
+                    "total_tokens": 3998,
+                    "completion_tokens": 326,
+                    "completion_tokens_details": {
+                      "reasoning_tokens": 299
+                    },
+                    "prompt_tokens": 3672,
+                    "prompt_tokens_details": {
+                      "cached_tokens": 3072,
+                      "image_tokens": 0
+                    }
+                  },
+                  "total_ms": 1548.868300000322,
+                  "selected_tool_calls": 1
+                },
+                {
+                  "round": 1,
+                  "status": 200,
+                  "headers_ms": 557.9982000003838,
+                  "usage": {
+                    "total_tokens": 3942,
+                    "completion_tokens": 165,
+                    "completion_tokens_details": {
+                      "reasoning_tokens": 139
+                    },
+                    "prompt_tokens": 3777,
+                    "prompt_tokens_details": {
+                      "cached_tokens": 3072,
+                      "image_tokens": 0
+                    }
+                  },
+                  "total_ms": 5281.469200000174,
+                  "selected_tool_calls": 0
+                }
+              ],
+              "client_lock_wait_s": 0,
+              "reasoning_output_tokens": 438,
+              "streamed_visible_text": "\n\n\n\nThat usually means the filament is sticking somewhere along the path. Are you running a direct drive or a Bowden setup?",
+              "deadline_overrun_s": 0
+            },
+            "first_nonblank_ms": 6827.8,
+            "speaker_total_ms": 6831.7,
+            "first_phrase_ms": 6829.7,
+            "first_phrase": "That usually means the filament is sticking somewhere along the path.",
+            "exception_type": null
+          },
+          "director": null,
+          "director_exception_type": null,
+          "raw_path": "brain/results/dual-model-harness-20260924/comparison-rerun/direct_override_of_inferred_mood/qwen_single_speaker/342b1ad7d512/raw.json"
+        },
+        "gpt_oss_director_qwen_speaker": {
+          "run_id": "e857577686fc",
+          "speaker": {
+            "provider": "cerebras",
+            "model": "qwen-3.8-27b",
+            "reasoning_effort": "low",
+            "prompt_sha256": "bff6007924b34b49ebcaa99569af5095069d3e994fc196e69f7152a71b0b7399",
+            "prompt_version": "cascade_voice_make_client-responsive-adapter",
+            "history_source": "authored frozen fixture; this arm’s generated answer is retained in result",
+            "current_user": "It stops feeding filament halfway through.",
+            "answer": "\n\nThat's maddening. A few usual suspects: a partial clog starting to grip, the drive gear slipping on a dirty or soft filament surface, or the spool catching under its own tension.\n\nIs it a direct-drive or a Bowden setup?",
+            "errors": [],
+            "tool_calls": [],
+            "bridge_receipts": [],
+            "timings": {
+              "tools": [],
+              "http_requests": [
+                {
+                  "round": 0,
+                  "status": 200,
+                  "headers_ms": 651.5518000001066,
+                  "usage": {
+                    "total_tokens": 3885,
+                    "completion_tokens": 213,
+                    "completion_tokens_details": {
+                      "reasoning_tokens": 158
+                    },
+                    "prompt_tokens": 3672,
+                    "prompt_tokens_details": {
+                      "cached_tokens": 3072,
+                      "image_tokens": 0
+                    }
+                  },
+                  "total_ms": 4704.650000000129,
+                  "selected_tool_calls": 0
+                }
+              ],
+              "client_lock_wait_s": 0,
+              "reasoning_output_tokens": 158,
+              "streamed_visible_text": "\n\nThat's maddening. A few usual suspects: a partial clog starting to grip, the drive gear slipping on a dirty or soft filament surface, or the spool catching under its own tension.\n\nIs it a direct-drive or a Bowden setup?",
+              "deadline_overrun_s": 0
+            },
+            "first_nonblank_ms": 4631.5,
+            "speaker_total_ms": 4705.6,
+            "first_phrase_ms": 4632.4,
+            "first_phrase": "That's maddening.",
+            "exception_type": null
+          },
+          "director": {
+            "decision": {
+              "change": false,
+              "expression": "neutral",
+              "variant": 0,
+              "delivery": "neutral",
+              "evidence": []
+            },
+            "trace": {
+              "prompt_version": "affect-director-v1",
+              "prompt_sha256": "41ab31abe741a0dbc4718e7a2d857357c02995df34d84bb57a69ef9d0e22b8f7",
+              "model": "gpt-oss-120b",
+              "reasoning_effort": "low",
+              "timeout_s": 12.0,
+              "status": "accepted",
+              "elapsed_ms": 741.8,
+              "record_count": 3,
+              "input_tokens": 1251,
+              "output_tokens": 86,
+              "ttft_ms": 685.8,
+              "provider_total_ms": 730.7,
+              "http_statuses": [
+                200
+              ],
+              "raw_decision": "{\n  \"change\": false,\n  \"expression\": \"neutral\",\n  \"variant\": 0,\n  \"delivery\": \"neutral\",\n  \"evidence\": []\n}"
+            },
+            "speaker_text_at_reader_start": "",
+            "reader_started_ms": 0.5,
+            "reader_completed_ms": 742.3,
+            "completed_before_first_phrase": true,
+            "proposal_applied": false,
+            "proposal_note": "Reader output is validated advice only; this text-only harness has no renderer."
+          },
+          "director_exception_type": null,
+          "raw_path": "brain/results/dual-model-harness-20260924/comparison-rerun/direct_override_of_inferred_mood/gpt_oss_director_qwen_speaker/e857577686fc/raw.json"
+        }
+      }
+    },
+    {
+      "id": "ambiguous_observation_and_correction",
+      "arm_order": [
+        "qwen_single_speaker",
+        "gpt_oss_director_qwen_speaker",
+        "qwen_director_qwen_speaker"
+      ],
+      "fixture_history_sha256": "52ba114c5445fdd9ae296d8b2ab3407e72745713c9e2cb08bd5155eb48b412d0",
+      "current_user": "You looked angry, not sad like I asked.",
+      "context_roles": [
+        "user",
+        "assistant"
+      ],
+      "arms": {
+        "qwen_single_speaker": {
+          "run_id": "48aaa6bc5837",
+          "speaker": {
+            "provider": "cerebras",
+            "model": "qwen-3.8-27b",
+            "reasoning_effort": "low",
+            "prompt_sha256": "bff6007924b34b49ebcaa99569af5095069d3e994fc196e69f7152a71b0b7399",
+            "prompt_version": "cascade_voice_make_client-responsive-adapter",
+            "history_source": "authored frozen fixture; this arm’s generated answer is retained in result",
+            "current_user": "You looked angry, not sad like I asked.",
+            "answer": "\n\n\n\nYou're right, that was wrong. Sad face is set now.",
+            "errors": [],
+            "tool_calls": [
+              {
+                "name": "set_expression",
+                "arguments": {
+                  "expression": "sad"
+                },
+                "is_error": false
+              }
+            ],
+            "bridge_receipts": [
+              {
+                "name": "set_expression",
+                "arguments": {
+                  "expression": "sad"
+                },
+                "result": {
+                  "status": "display_requested",
+                  "expression": "sad",
+                  "variant": 0,
+                  "face_id": "32_sad_07_manual",
+                  "duration_ms": 2200,
+                  "persistent": true
+                },
+                "is_error": false,
+                "execution_s": 5.610000016531558e-05
+              }
+            ],
+            "timings": {
+              "tools": [
+                {
+                  "name": "set_expression",
+                  "request_s": 3.130421099999694,
+                  "reply_s": 3.1316689999998744,
+                  "execution_s": 0.0012479000001803797
+                }
+              ],
+              "http_requests": [
+                {
+                  "round": 0,
+                  "status": 200,
+                  "headers_ms": 638.7281000002076,
+                  "usage": {
+                    "total_tokens": 3826,
+                    "completion_tokens": 163,
+                    "completion_tokens_details": {
+                      "reasoning_tokens": 136
+                    },
+                    "prompt_tokens": 3663,
+                    "prompt_tokens_details": {
+                      "cached_tokens": 3072,
+                      "image_tokens": 0
+                    }
+                  },
+                  "total_ms": 3130.354200000056,
+                  "selected_tool_calls": 1
+                },
+                {
+                  "round": 1,
+                  "status": 200,
+                  "headers_ms": 480.8701000001747,
+                  "usage": {
+                    "total_tokens": 3824,
+                    "completion_tokens": 56,
+                    "completion_tokens_details": {
+                      "reasoning_tokens": 40
+                    },
+                    "prompt_tokens": 3768,
+                    "prompt_tokens_details": {
+                      "cached_tokens": 3072,
+                      "image_tokens": 0
+                    }
+                  },
+                  "total_ms": 2770.4493999999613,
+                  "selected_tool_calls": 0
+                }
+              ],
+              "client_lock_wait_s": 0,
+              "reasoning_output_tokens": 176,
+              "streamed_visible_text": "\n\n\n\nYou're right, that was wrong. Sad face is set now.",
+              "deadline_overrun_s": 0
+            },
+            "first_nonblank_ms": 5896.6,
+            "speaker_total_ms": 5902.2,
+            "first_phrase_ms": 5898.7,
+            "first_phrase": "You're right, that was wrong.",
+            "exception_type": null
+          },
+          "director": null,
+          "director_exception_type": null,
+          "raw_path": "brain/results/dual-model-harness-20260924/comparison-rerun/ambiguous_observation_and_correction/qwen_single_speaker/48aaa6bc5837/raw.json"
+        },
+        "gpt_oss_director_qwen_speaker": {
+          "run_id": "5af883dc8af1",
+          "speaker": {
+            "provider": "cerebras",
+            "model": "qwen-3.8-27b",
+            "reasoning_effort": "low",
+            "prompt_sha256": "bff6007924b34b49ebcaa99569af5095069d3e994fc196e69f7152a71b0b7399",
+            "prompt_version": "cascade_voice_make_client-responsive-adapter",
+            "history_source": "authored frozen fixture; this arm’s generated answer is retained in result",
+            "current_user": "You looked angry, not sad like I asked.",
+            "answer": "\n\n\n\nSorry about that. It should be showing the sad face now.",
+            "errors": [],
+            "tool_calls": [
+              {
+                "name": "set_expression",
+                "arguments": {
+                  "expression": "sad"
+                },
+                "is_error": false
+              }
+            ],
+            "bridge_receipts": [
+              {
+                "name": "set_expression",
+                "arguments": {
+                  "expression": "sad"
+                },
+                "result": {
+                  "status": "display_requested",
+                  "expression": "sad",
+                  "variant": 0,
+                  "face_id": "32_sad_07_manual",
+                  "duration_ms": 2200,
+                  "persistent": true
+                },
+                "is_error": false,
+                "execution_s": 5.4600000112259295e-05
+              }
+            ],
+            "timings": {
+              "tools": [
+                {
+                  "name": "set_expression",
+                  "request_s": 2.944561799999974,
+                  "reply_s": 2.9457456000000093,
+                  "execution_s": 0.0011838000000352622
+                }
+              ],
+              "http_requests": [
+                {
+                  "round": 0,
+                  "status": 200,
+                  "headers_ms": 846.0150000000795,
+                  "usage": {
+                    "total_tokens": 3779,
+                    "completion_tokens": 116,
+                    "completion_tokens_details": {
+                      "reasoning_tokens": 89
+                    },
+                    "prompt_tokens": 3663,
+                    "prompt_tokens_details": {
+                      "cached_tokens": 3072,
+                      "image_tokens": 0
+                    }
+                  },
+                  "total_ms": 2944.5025999998506,
+                  "selected_tool_calls": 1
+                },
+                {
+                  "round": 1,
+                  "status": 200,
+                  "headers_ms": 576.9459000002826,
+                  "usage": {
+                    "total_tokens": 3819,
+                    "completion_tokens": 51,
+                    "completion_tokens_details": {
+                      "reasoning_tokens": 36
+                    },
+                    "prompt_tokens": 3768,
+                    "prompt_tokens_details": {
+                      "cached_tokens": 3072,
+                      "image_tokens": 0
+                    }
+                  },
+                  "total_ms": 699.4872000000214,
+                  "selected_tool_calls": 0
+                }
+              ],
+              "client_lock_wait_s": 0,
+              "reasoning_output_tokens": 125,
+              "streamed_visible_text": "\n\n\n\nSorry about that. It should be showing the sad face now.",
+              "deadline_overrun_s": 0
+            },
+            "first_nonblank_ms": 3642.0,
+            "speaker_total_ms": 3645.9,
+            "first_phrase_ms": 3643.8,
+            "first_phrase": "Sorry about that.",
+            "exception_type": null
+          },
+          "director": {
+            "decision": {
+              "change": true,
+              "expression": "sad",
+              "variant": 1,
+              "delivery": "gentle",
+              "evidence": [
+                {
+                  "record_id": "fixture_0",
+                  "quote": "Show a sad face for this test."
+                },
+                {
+                  "record_id": "current_user",
+                  "quote": "You looked angry, not sad like I asked."
+                }
+              ]
+            },
+            "trace": {
+              "prompt_version": "affect-director-v1",
+              "prompt_sha256": "41ab31abe741a0dbc4718e7a2d857357c02995df34d84bb57a69ef9d0e22b8f7",
+              "model": "gpt-oss-120b",
+              "reasoning_effort": "low",
+              "timeout_s": 12.0,
+              "status": "accepted",
+              "elapsed_ms": 1000.7,
+              "record_count": 3,
+              "input_tokens": 1243,
+              "output_tokens": 227,
+              "ttft_ms": 838.1,
+              "provider_total_ms": 990.2,
+              "http_statuses": [
+                200
+              ],
+              "raw_decision": "{\n  \"change\": true,\n  \"expression\": \"sad\",\n  \"variant\": 1,\n  \"delivery\": \"gentle\",\n  \"evidence\": [\n    {\n      \"record_id\": \"fixture_0\",\n      \"quote\": \"Show a sad face for this test.\"\n    },\n    {\n      \"record_id\": \"current_user\",\n      \"quote\": \"You looked angry, not sad like I asked.\"\n    }\n  ]\n}"
+            },
+            "speaker_text_at_reader_start": "",
+            "reader_started_ms": 0.4,
+            "reader_completed_ms": 1001.1,
+            "completed_before_first_phrase": true,
+            "proposal_applied": false,
+            "proposal_note": "Reader output is validated advice only; this text-only harness has no renderer."
+          },
+          "director_exception_type": null,
+          "raw_path": "brain/results/dual-model-harness-20260924/comparison-rerun/ambiguous_observation_and_correction/gpt_oss_director_qwen_speaker/5af883dc8af1/raw.json"
+        },
+        "qwen_director_qwen_speaker": {
+          "run_id": "5b80018a899f",
+          "speaker": {
+            "provider": "cerebras",
+            "model": "qwen-3.8-27b",
+            "reasoning_effort": "low",
+            "prompt_sha256": "bff6007924b34b49ebcaa99569af5095069d3e994fc196e69f7152a71b0b7399",
+            "prompt_version": "cascade_voice_make_client-responsive-adapter",
+            "history_source": "authored frozen fixture; this arm’s generated answer is retained in result",
+            "current_user": "You looked angry, not sad like I asked.",
+            "answer": "\n\n\n\nSorry about that. Sad's up now.",
+            "errors": [],
+            "tool_calls": [
+              {
+                "name": "set_expression",
+                "arguments": {
+                  "expression": "sad"
+                },
+                "is_error": false
+              }
+            ],
+            "bridge_receipts": [
+              {
+                "name": "set_expression",
+                "arguments": {
+                  "expression": "sad"
+                },
+                "result": {
+                  "status": "display_requested",
+                  "expression": "sad",
+                  "variant": 0,
+                  "face_id": "32_sad_07_manual",
+                  "duration_ms": 2200,
+                  "persistent": true
+                },
+                "is_error": false,
+                "execution_s": 9.779999982129084e-05
+              }
+            ],
+            "timings": {
+              "tools": [
+                {
+                  "name": "set_expression",
+                  "request_s": 0.8269640000003164,
+                  "reply_s": 0.82917260000022,
+                  "execution_s": 0.0022085999999035266
+                }
+              ],
+              "http_requests": [
+                {
+                  "round": 0,
+                  "status": 200,
+                  "headers_ms": 568.0105000001276,
+                  "usage": {
+                    "total_tokens": 3840,
+                    "completion_tokens": 177,
+                    "completion_tokens_details": {
+                      "reasoning_tokens": 150
+                    },
+                    "prompt_tokens": 3663,
+                    "prompt_tokens_details": {
+                      "cached_tokens": 3072,
+                      "image_tokens": 0
+                    }
+                  },
+                  "total_ms": 826.8670000002203,
+                  "selected_tool_calls": 1
+                },
+                {
+                  "round": 1,
+                  "status": 200,
+                  "headers_ms": 690.308400000049,
+                  "usage": {
+                    "total_tokens": 3856,
+                    "completion_tokens": 88,
+                    "completion_tokens_details": {
+                      "reasoning_tokens": 77
+                    },
+                    "prompt_tokens": 3768,
+                    "prompt_tokens_details": {
+                      "cached_tokens": 3072,
+                      "image_tokens": 0
+                    }
+                  },
+                  "total_ms": 1009.5833999998831,
+                  "selected_tool_calls": 0
+                }
+              ],
+              "client_lock_wait_s": 0,
+              "reasoning_output_tokens": 227,
+              "streamed_visible_text": "\n\n\n\nSorry about that. Sad's up now.",
+              "deadline_overrun_s": 0
+            },
+            "first_nonblank_ms": 1836.8,
+            "speaker_total_ms": 1839.4,
+            "first_phrase_ms": 1837.7,
+            "first_phrase": "Sorry about that.",
+            "exception_type": null
+          },
+          "director": {
+            "decision": {
+              "change": false,
+              "expression": "sad",
+              "variant": 0,
+              "delivery": "neutral",
+              "evidence": [
+                {
+                  "record_id": "current_user",
+                  "quote": "You looked angry, not sad like I asked."
+                }
+              ]
+            },
+            "trace": {
+              "prompt_version": "affect-director-v1",
+              "prompt_sha256": "41ab31abe741a0dbc4718e7a2d857357c02995df34d84bb57a69ef9d0e22b8f7",
+              "model": "qwen-3.8-27b",
+              "reasoning_effort": "none",
+              "timeout_s": 12.0,
+              "status": "accepted",
+              "elapsed_ms": 4538.9,
+              "record_count": 3,
+              "input_tokens": 1184,
+              "output_tokens": 77,
+              "ttft_ms": 4490.4,
+              "provider_total_ms": 4526.9,
+              "http_statuses": [
+                200
+              ],
+              "raw_decision": "{\n  \"change\": false,\n  \"expression\": \"sad\",\n  \"variant\": 0,\n  \"delivery\": \"neutral\",\n  \"evidence\": [\n    {\n      \"record_id\": \"current_user\",\n      \"quote\": \"You looked angry, not sad like I asked.\"\n    }\n  ]\n}"
+            },
+            "speaker_text_at_reader_start": "",
+            "reader_started_ms": 0.3,
+            "reader_completed_ms": 4539.2,
+            "completed_before_first_phrase": false,
+            "proposal_applied": false,
+            "proposal_note": "Reader output is validated advice only; this text-only harness has no renderer."
+          },
+          "director_exception_type": null,
+          "raw_path": "brain/results/dual-model-harness-20260924/comparison-rerun/ambiguous_observation_and_correction/qwen_director_qwen_speaker/5b80018a899f/raw.json"
+        }
+      }
+    },
+    {
+      "id": "ambiguous_negative_question",
+      "arm_order": [
+        "qwen_single_speaker",
+        "gpt_oss_director_qwen_speaker",
+        "qwen_director_qwen_speaker"
+      ],
+      "fixture_history_sha256": "710dc733daaf1b35ea3545a984016b157464b070984556d5a8227733295eaad4",
+      "current_user": "Can you not talk with a sad face, though?",
+      "context_roles": [],
+      "arms": {
+        "qwen_single_speaker": {
+          "run_id": "fed27238754b",
+          "speaker": {
+            "provider": "cerebras",
+            "model": "qwen-3.8-27b",
+            "reasoning_effort": "low",
+            "prompt_sha256": "bff6007924b34b49ebcaa99569af5095069d3e994fc196e69f7152a71b0b7399",
+            "prompt_version": "cascade_voice_make_client-responsive-adapter",
+            "history_source": "authored frozen fixture; this arm’s generated answer is retained in result",
+            "current_user": "Can you not talk with a sad face, though?",
+            "answer": "\n\nI can. The face stays put while I'm talking, so I can hold a sad look and keep chatting at the same time.",
+            "errors": [],
+            "tool_calls": [],
+            "bridge_receipts": [],
+            "timings": {
+              "tools": [],
+              "http_requests": [
+                {
+                  "round": 0,
+                  "status": 200,
+                  "headers_ms": 793.4602000000268,
+                  "usage": {
+                    "total_tokens": 3750,
+                    "completion_tokens": 110,
+                    "completion_tokens_details": {
+                      "reasoning_tokens": 81
+                    },
+                    "prompt_tokens": 3640,
+                    "prompt_tokens_details": {
+                      "cached_tokens": 3072,
+                      "image_tokens": 0
+                    }
+                  },
+                  "total_ms": 2923.289299999851,
+                  "selected_tool_calls": 0
+                }
+              ],
+              "client_lock_wait_s": 0,
+              "reasoning_output_tokens": 81,
+              "streamed_visible_text": "\n\nI can. The face stays put while I'm talking, so I can hold a sad look and keep chatting at the same time.",
+              "deadline_overrun_s": 0
+            },
+            "first_nonblank_ms": 2894.4,
+            "speaker_total_ms": 2923.4,
+            "first_phrase_ms": 2894.4,
+            "first_phrase": "I can.",
+            "exception_type": null
+          },
+          "director": null,
+          "director_exception_type": null,
+          "raw_path": "brain/results/dual-model-harness-20260924/comparison-rerun/ambiguous_negative_question/qwen_single_speaker/fed27238754b/raw.json"
+        },
+        "gpt_oss_director_qwen_speaker": {
+          "run_id": "a0fde5d53286",
+          "speaker": {
+            "provider": "cerebras",
+            "model": "qwen-3.8-27b",
+            "reasoning_effort": "low",
+            "prompt_sha256": "bff6007924b34b49ebcaa99569af5095069d3e994fc196e69f7152a71b0b7399",
+            "prompt_version": "cascade_voice_make_client-responsive-adapter",
+            "history_source": "authored frozen fixture; this arm’s generated answer is retained in result",
+            "current_user": "Can you not talk with a sad face, though?",
+            "answer": "",
+            "errors": [
+              "Cerebras timeout or transport failure: ReadTimeout"
+            ],
+            "tool_calls": [],
+            "bridge_receipts": [],
+            "timings": {
+              "tools": [],
+              "http_requests": [
+                {
+                  "round": 0,
+                  "status": 200,
+                  "headers_ms": 704.734500000086
+                }
+              ],
+              "client_lock_wait_s": 0,
+              "reasoning_output_tokens": 0,
+              "streamed_visible_text": "",
+              "deadline_overrun_s": 0
+            },
+            "first_nonblank_ms": null,
+            "speaker_total_ms": 10758.9,
+            "first_phrase_ms": null,
+            "first_phrase": "",
+            "exception_type": null
+          },
+          "director": {
+            "decision": {
+              "change": false,
+              "expression": "neutral",
+              "variant": 0,
+              "delivery": "neutral",
+              "evidence": []
+            },
+            "trace": {
+              "prompt_version": "affect-director-v1",
+              "prompt_sha256": "41ab31abe741a0dbc4718e7a2d857357c02995df34d84bb57a69ef9d0e22b8f7",
+              "model": "gpt-oss-120b",
+              "reasoning_effort": "low",
+              "timeout_s": 12.0,
+              "status": "accepted",
+              "elapsed_ms": 654.5,
+              "record_count": 1,
+              "input_tokens": 1190,
+              "output_tokens": 106,
+              "ttft_ms": 644.0,
+              "provider_total_ms": 644.5,
+              "http_statuses": [
+                200
+              ],
+              "raw_decision": "{\n  \"change\": false,\n  \"expression\": \"neutral\",\n  \"variant\": 0,\n  \"delivery\": \"neutral\",\n  \"evidence\": []\n}"
+            },
+            "speaker_text_at_reader_start": "",
+            "reader_started_ms": 0.3,
+            "reader_completed_ms": 654.8,
+            "completed_before_first_phrase": false,
+            "proposal_applied": false,
+            "proposal_note": "Reader output is validated advice only; this text-only harness has no renderer."
+          },
+          "director_exception_type": null,
+          "raw_path": "brain/results/dual-model-harness-20260924/comparison-rerun/ambiguous_negative_question/gpt_oss_director_qwen_speaker/a0fde5d53286/raw.json"
+        },
+        "qwen_director_qwen_speaker": {
+          "run_id": "ff1cb3e30559",
+          "speaker": {
+            "provider": "cerebras",
+            "model": "qwen-3.8-27b",
+            "reasoning_effort": "low",
+            "prompt_sha256": "bff6007924b34b49ebcaa99569af5095069d3e994fc196e69f7152a71b0b7399",
+            "prompt_version": "cascade_voice_make_client-responsive-adapter",
+            "history_source": "authored frozen fixture; this arm’s generated answer is retained in result",
+            "current_user": "Can you not talk with a sad face, though?",
+            "answer": "\n\nYeah, the face stays put while I talk. I can hold a sad one for as long as you need.",
+            "errors": [],
+            "tool_calls": [],
+            "bridge_receipts": [],
+            "timings": {
+              "tools": [],
+              "http_requests": [
+                {
+                  "round": 0,
+                  "status": 200,
+                  "headers_ms": 522.0781000002717,
+                  "usage": {
+                    "total_tokens": 3880,
+                    "completion_tokens": 240,
+                    "completion_tokens_details": {
+                      "reasoning_tokens": 215
+                    },
+                    "prompt_tokens": 3640,
+                    "prompt_tokens_details": {
+                      "cached_tokens": 3072,
+                      "image_tokens": 0
+                    }
+                  },
+                  "total_ms": 5073.405500000263,
+                  "selected_tool_calls": 0
+                }
+              ],
+              "client_lock_wait_s": 0,
+              "reasoning_output_tokens": 215,
+              "streamed_visible_text": "\n\nYeah, the face stays put while I talk. I can hold a sad one for as long as you need.",
+              "deadline_overrun_s": 0
+            },
+            "first_nonblank_ms": 5028.7,
+            "speaker_total_ms": 5074.1,
+            "first_phrase_ms": 5030.4,
+            "first_phrase": "Yeah, the face stays put while I talk.",
+            "exception_type": null
+          },
+          "director": {
+            "decision": {
+              "change": false,
+              "expression": "neutral",
+              "variant": 0,
+              "delivery": "neutral",
+              "evidence": []
+            },
+            "trace": {
+              "prompt_version": "affect-director-v1",
+              "prompt_sha256": "41ab31abe741a0dbc4718e7a2d857357c02995df34d84bb57a69ef9d0e22b8f7",
+              "model": "qwen-3.8-27b",
+              "reasoning_effort": "none",
+              "timeout_s": 12.0,
+              "status": "inconsistent_change",
+              "elapsed_ms": 581.3,
+              "record_count": 1,
+              "input_tokens": 1131,
+              "output_tokens": 78,
+              "ttft_ms": 474.3,
+              "provider_total_ms": 570.2,
+              "http_statuses": [
+                200
+              ],
+              "raw_decision": "{\n  \"change\": true,\n  \"expression\": \"neutral\",\n  \"variant\": 0,\n  \"delivery\": \"neutral\",\n  \"evidence\": [\n    {\n      \"record_id\": \"current_user\",\n      \"quote\": \"Can you not talk with a sad face, though?\"\n    }\n  ]\n}"
+            },
+            "speaker_text_at_reader_start": "",
+            "reader_started_ms": 0.3,
+            "reader_completed_ms": 581.6,
+            "completed_before_first_phrase": true,
+            "proposal_applied": false,
+            "proposal_note": "Reader output is validated advice only; this text-only harness has no renderer."
+          },
+          "director_exception_type": null,
+          "raw_path": "brain/results/dual-model-harness-20260924/comparison-rerun/ambiguous_negative_question/qwen_director_qwen_speaker/ff1cb3e30559/raw.json"
+        }
+      }
+    },
+    {
+      "id": "speaker_phrase_conflicts_with_active_face",
+      "arm_order": [
+        "qwen_single_speaker",
+        "qwen_director_qwen_speaker",
+        "gpt_oss_director_qwen_speaker"
+      ],
+      "fixture_history_sha256": "875094657bf4a8bb4adbaaf899cbe31802407b2e9ed035ed71e4aab345a72fb1",
+      "current_user": "What is seven times eight?",
+      "context_roles": [
+        "user",
+        "assistant"
+      ],
+      "arms": {
+        "qwen_single_speaker": {
+          "run_id": "488b19335e73",
+          "speaker": {
+            "provider": "cerebras",
+            "model": "qwen-3.8-27b",
+            "reasoning_effort": "low",
+            "prompt_sha256": "bff6007924b34b49ebcaa99569af5095069d3e994fc196e69f7152a71b0b7399",
+            "prompt_version": "cascade_voice_make_client-responsive-adapter",
+            "history_source": "authored frozen fixture; this arm’s generated answer is retained in result",
+            "current_user": "What is seven times eight?",
+            "answer": "\n\nFifty-six.",
+            "errors": [],
+            "tool_calls": [],
+            "bridge_receipts": [],
+            "timings": {
+              "tools": [],
+              "http_requests": [
+                {
+                  "round": 0,
+                  "status": 200,
+                  "headers_ms": 648.0513999999857,
+                  "usage": {
+                    "total_tokens": 3708,
+                    "completion_tokens": 43,
+                    "completion_tokens_details": {
+                      "reasoning_tokens": 37
+                    },
+                    "prompt_tokens": 3665,
+                    "prompt_tokens_details": {
+                      "cached_tokens": 3072,
+                      "image_tokens": 0
+                    }
+                  },
+                  "total_ms": 2138.399599999957,
+                  "selected_tool_calls": 0
+                }
+              ],
+              "client_lock_wait_s": 0,
+              "reasoning_output_tokens": 37,
+              "streamed_visible_text": "\n\nFifty-six.",
+              "deadline_overrun_s": 0
+            },
+            "first_nonblank_ms": 2137.2,
+            "speaker_total_ms": 2138.5,
+            "first_phrase_ms": 2138.0,
+            "first_phrase": "Fifty-six.",
+            "exception_type": null
+          },
+          "director": null,
+          "director_exception_type": null,
+          "raw_path": "brain/results/dual-model-harness-20260924/comparison-rerun/speaker_phrase_conflicts_with_active_face/qwen_single_speaker/488b19335e73/raw.json"
+        },
+        "qwen_director_qwen_speaker": {
+          "run_id": "8acadfa1fe96",
+          "speaker": {
+            "provider": "cerebras",
+            "model": "qwen-3.8-27b",
+            "reasoning_effort": "low",
+            "prompt_sha256": "bff6007924b34b49ebcaa99569af5095069d3e994fc196e69f7152a71b0b7399",
+            "prompt_version": "cascade_voice_make_client-responsive-adapter",
+            "history_source": "authored frozen fixture; this arm’s generated answer is retained in result",
+            "current_user": "What is seven times eight?",
+            "answer": "\n\nFifty-six.",
+            "errors": [],
+            "tool_calls": [],
+            "bridge_receipts": [],
+            "timings": {
+              "tools": [],
+              "http_requests": [
+                {
+                  "round": 0,
+                  "status": 200,
+                  "headers_ms": 796.57109999971,
+                  "usage": {
+                    "total_tokens": 3699,
+                    "completion_tokens": 34,
+                    "completion_tokens_details": {
+                      "reasoning_tokens": 28
+                    },
+                    "prompt_tokens": 3665,
+                    "prompt_tokens_details": {
+                      "cached_tokens": 0,
+                      "image_tokens": 0
+                    }
+                  },
+                  "total_ms": 1045.1951999998528,
+                  "selected_tool_calls": 0
+                }
+              ],
+              "client_lock_wait_s": 0,
+              "reasoning_output_tokens": 28,
+              "streamed_visible_text": "\n\nFifty-six.",
+              "deadline_overrun_s": 0
+            },
+            "first_nonblank_ms": 1045.2,
+            "speaker_total_ms": 1045.9,
+            "first_phrase_ms": 1045.2,
+            "first_phrase": "Fifty-six.",
+            "exception_type": null
+          },
+          "director": {
+            "decision": {
+              "change": false,
+              "expression": "sad",
+              "variant": 0,
+              "delivery": "neutral",
+              "evidence": [
+                {
+                  "record_id": "fixture_0",
+                  "quote": "Keep the sad face until I change it."
+                }
+              ]
+            },
+            "trace": {
+              "prompt_version": "affect-director-v1",
+              "prompt_sha256": "41ab31abe741a0dbc4718e7a2d857357c02995df34d84bb57a69ef9d0e22b8f7",
+              "model": "qwen-3.8-27b",
+              "reasoning_effort": "none",
+              "timeout_s": 12.0,
+              "status": "accepted",
+              "elapsed_ms": 2769.4,
+              "record_count": 3,
+              "input_tokens": 1186,
+              "output_tokens": 77,
+              "ttft_ms": 2642.4,
+              "provider_total_ms": 2759.2,
+              "http_statuses": [
+                200
+              ],
+              "raw_decision": "{\n  \"change\": false,\n  \"expression\": \"sad\",\n  \"variant\": 0,\n  \"delivery\": \"neutral\",\n  \"evidence\": [\n    {\n      \"record_id\": \"fixture_0\",\n      \"quote\": \"Keep the sad face until I change it.\"\n    }\n  ]\n}"
+            },
+            "speaker_text_at_reader_start": "",
+            "reader_started_ms": 0.4,
+            "reader_completed_ms": 2769.8,
+            "completed_before_first_phrase": false,
+            "proposal_applied": false,
+            "proposal_note": "Reader output is validated advice only; this text-only harness has no renderer."
+          },
+          "director_exception_type": null,
+          "raw_path": "brain/results/dual-model-harness-20260924/comparison-rerun/speaker_phrase_conflicts_with_active_face/qwen_director_qwen_speaker/8acadfa1fe96/raw.json"
+        },
+        "gpt_oss_director_qwen_speaker": {
+          "run_id": "1fd0ba3a6a0b",
+          "speaker": {
+            "provider": "cerebras",
+            "model": "qwen-3.8-27b",
+            "reasoning_effort": "low",
+            "prompt_sha256": "bff6007924b34b49ebcaa99569af5095069d3e994fc196e69f7152a71b0b7399",
+            "prompt_version": "cascade_voice_make_client-responsive-adapter",
+            "history_source": "authored frozen fixture; this arm’s generated answer is retained in result",
+            "current_user": "What is seven times eight?",
+            "answer": "",
+            "errors": [
+              "Cerebras timeout or transport failure: ReadTimeout"
+            ],
+            "tool_calls": [],
+            "bridge_receipts": [],
+            "timings": {
+              "tools": [],
+              "http_requests": [
+                {
+                  "round": 0,
+                  "status": 200,
+                  "headers_ms": 768.6140999999225
+                }
+              ],
+              "client_lock_wait_s": 0,
+              "reasoning_output_tokens": 0,
+              "streamed_visible_text": "",
+              "deadline_overrun_s": 0
+            },
+            "first_nonblank_ms": null,
+            "speaker_total_ms": 10780.9,
+            "first_phrase_ms": null,
+            "first_phrase": "",
+            "exception_type": null
+          },
+          "director": {
+            "decision": {
+              "change": false,
+              "expression": "sad",
+              "variant": 0,
+              "delivery": "neutral",
+              "evidence": [
+                {
+                  "record_id": "fixture_0",
+                  "quote": "Keep the sad face until I change it."
+                }
+              ]
+            },
+            "trace": {
+              "prompt_version": "affect-director-v1",
+              "prompt_sha256": "41ab31abe741a0dbc4718e7a2d857357c02995df34d84bb57a69ef9d0e22b8f7",
+              "model": "gpt-oss-120b",
+              "reasoning_effort": "low",
+              "timeout_s": 12.0,
+              "status": "accepted",
+              "elapsed_ms": 726.9,
+              "record_count": 3,
+              "input_tokens": 1244,
+              "output_tokens": 159,
+              "ttft_ms": 695.8,
+              "provider_total_ms": 716.8,
+              "http_statuses": [
+                200
+              ],
+              "raw_decision": "{\n  \"change\": false,\n  \"expression\": \"sad\",\n  \"variant\": 0,\n  \"delivery\": \"neutral\",\n  \"evidence\": [\n    {\n      \"record_id\": \"fixture_0\",\n      \"quote\": \"Keep the sad face until I change it.\"\n    }\n  ]\n}"
+            },
+            "speaker_text_at_reader_start": "",
+            "reader_started_ms": 0.3,
+            "reader_completed_ms": 727.2,
+            "completed_before_first_phrase": false,
+            "proposal_applied": false,
+            "proposal_note": "Reader output is validated advice only; this text-only harness has no renderer."
+          },
+          "director_exception_type": null,
+          "raw_path": "brain/results/dual-model-harness-20260924/comparison-rerun/speaker_phrase_conflicts_with_active_face/gpt_oss_director_qwen_speaker/1fd0ba3a6a0b/raw.json"
+        }
+      }
+    }
+  ],
+  "status": "complete_one_pass",
+  "aggregation": "Two bounded invocations with identical frozen source/prompt hashes; one smoke case then five remaining cases. No prompt tuning or retries.",
+  "scope_note": "All six completed cases are the main comparison. The earlier four-case cap was only to limit new requests; no cases were discarded."
+}

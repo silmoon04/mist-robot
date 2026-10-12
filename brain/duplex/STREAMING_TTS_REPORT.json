@@ -1,0 +1,212 @@
+{
+  "revision": "Streaming TTS WebSocket, 2026-09-14",
+  "default_speech_backend": "streaming-tts",
+  "voice_id": "24AMj4dc02cYAwoUnqzN",
+  "tts_model": "eleven_flash_v2_5",
+  "backing_model": "gpt-5.3-codex-spark, low reasoning, unchanged",
+  "tests": [
+    {
+      "name": "33 application contracts",
+      "passed": true
+    },
+    {
+      "name": "11 streaming TTS contracts",
+      "passed": true
+    },
+    {
+      "name": "6 legacy converter recovery contracts",
+      "passed": true
+    },
+    {
+      "name": "Browser playback scheduling and cancellation",
+      "passed": true
+    },
+    {
+      "name": "40 faces and 31,050 renderer states",
+      "passed": true
+    }
+  ],
+  "social_latency_seconds": [
+    1.8429999999934807,
+    1.75,
+    1.812999999965541
+  ],
+  "tool_latency_seconds": [
+    7.405999999959022,
+    8.438000000023749
+  ],
+  "browser_startup_buffer_seconds": 0.2,
+  "social_audio_first_and_last_words_verified": {
+    "greeting_first_words": true,
+    "greeting_last_words": true,
+    "correction_first_words": true,
+    "correction_last_words": true,
+    "tired_first_words": true,
+    "tired_last_words": true
+  },
+  "interruption_tests": [
+    {
+      "mode": "native_interrupt",
+      "passed": true,
+      "stale_packets": 0,
+      "new_audio_packets": 10,
+      "spoken_correction_verified": true
+    },
+    {
+      "mode": "manual_interrupt",
+      "passed": true,
+      "stale_packets": 0,
+      "new_audio_packets": 16,
+      "spoken_correction_verified": true
+    }
+  ],
+  "voice_samples": [
+    {
+      "case": "short",
+      "input": "Blue teacup.",
+      "recognized": "blue tea cup",
+      "first_audio_from_first_text_s": 0.15600000001722947,
+      "warnings": [],
+      "metrics": {
+        "duration_s": 0.9661666666666666,
+        "peak": 0.3997802734375,
+        "clipped_samples": 0,
+        "estimated_voiced_pitch_hz_p10_p50_p90": [
+          211.4,
+          240.0,
+          279.1
+        ]
+      }
+    },
+    {
+      "case": "gentle",
+      "input": "No rush. I'm listening. Take your time.",
+      "recognized": "no rush i'm listening take your time",
+      "first_audio_from_first_text_s": 0.25,
+      "warnings": [],
+      "metrics": {
+        "duration_s": 1.9323333333333332,
+        "peak": 0.500885009765625,
+        "clipped_samples": 0,
+        "estimated_voiced_pitch_hz_p10_p50_p90": [
+          212.6,
+          242.4,
+          282.0
+        ]
+      }
+    },
+    {
+      "case": "excited",
+      "input": "Wait, really? That worked! The tiny robot has a voice!",
+      "recognized": "wait really that worked the tiny robot has a voice",
+      "first_audio_from_first_text_s": 0.14000000001396984,
+      "warnings": [],
+      "metrics": {
+        "duration_s": 3.366,
+        "peak": 0.632293701171875,
+        "clipped_samples": 0,
+        "estimated_voiced_pitch_hz_p10_p50_p90": [
+          242.4,
+          282.4,
+          470.6
+        ]
+      }
+    },
+    {
+      "case": "question",
+      "input": "Was that your idea, or mine? I have a slight suspicion.",
+      "recognized": "was that your idea or mine i have a slight suspicion",
+      "first_audio_from_first_text_s": 0.25,
+      "warnings": [],
+      "metrics": {
+        "duration_s": 2.6803333333333335,
+        "peak": 0.675628662109375,
+        "clipped_samples": 0,
+        "estimated_voiced_pitch_hz_p10_p50_p90": [
+          170.5,
+          237.6,
+          300.0
+        ]
+      }
+    },
+    {
+      "case": "precision",
+      "input": "Thirty degrees left. Then return to the center and wait.",
+      "recognized": "thirty degrees left then return to the center and wait",
+      "first_audio_from_first_text_s": 0.17199999996228144,
+      "warnings": [],
+      "metrics": {
+        "duration_s": 2.805,
+        "peak": 0.565185546875,
+        "clipped_samples": 0,
+        "estimated_voiced_pitch_hz_p10_p50_p90": [
+          211.3,
+          247.4,
+          282.4
+        ]
+      }
+    },
+    {
+      "case": "long",
+      "input": "The little robot waited beside the window. Outside, the rain tapped on the glass. It could not walk yet, but it had become exceptionally good at supervising the weather.",
+      "recognized": "the little robot waited beside the window outside the rain tapped on the glass it could not walk yet but it had become exceptionally good at supervising the weather",
+      "first_audio_from_first_text_s": 0.26500000001396984,
+      "warnings": [],
+      "metrics": {
+        "duration_s": 9.692833333333333,
+        "peak": 0.655517578125,
+        "clipped_samples": 0,
+        "estimated_voiced_pitch_hz_p10_p50_p90": [
+          189.6,
+          224.3,
+          272.7
+        ]
+      }
+    }
+  ],
+  "browser_check": {
+    "passed": true,
+    "observation": "Synthetic Blue teacup reply appeared at playback start; screen returned to Listening; no browser console errors; microphone was not opened."
+  },
+  "findings": [
+    "Native predictive transcript fragments arrive before the assistant-turn boundary. Preparing TTS from them fixes missing first words; audio remains gated until that boundary.",
+    "One persistent provider WebSocket manages a synthesis context per reply. Interrupted contexts are closed, and late audio and errors from them are ignored.",
+    "Word fragments are assembled before provider transmission; sentence and final flushing preserve short replies.",
+    "Native data-channel callbacks are serialized to preserve event order.",
+    "The native microphone uplink continues throughout TTS generation and playback."
+  ],
+  "limits": [
+    "The initial TTS implementation lost predictive prefixes. The prefix_fixed recordings and regression tests verify the correction; earlier live and order_probe results are retained as failed-development evidence.",
+    "Social timings are three synthetic trials, not a percentile benchmark. The native end-of-turn wait remains; total audible response is approximately two seconds in these trials.",
+    "Tool delegation remains much slower, about 7.4 and 8.4 seconds in the two recorded cases. Both tools were invoked twice by the native/backing path.",
+    "ASR and clipping checks verify intelligibility and signal bounds, not human-perceived naturalness. Pitch values are basic autocorrelation estimates and may contain octave errors.",
+    "No real microphone, room echo, phone speaker or Mi 9 SE acceptance test was performed.",
+    "This is a duplex application with separate native input/turn detection and TTS output, not one end-to-end speech model."
+  ],
+  "sources": [
+    "https://elevenlabs.io/docs/api-reference/text-to-speech/v-1-text-to-speech-voice-id-multi-stream-input",
+    "https://elevenlabs.io/docs/eleven-api/guides/how-to/websockets/multi-context-web-socket"
+  ],
+  "implementation_sha256": {
+    "duplex/__init__.py": "5d72754d88de174c794e9c99541783681f2e5b26eb251c42d084bbf5dd88659a",
+    "duplex/build_evaluation.py": "e66a7ae0b775eaa4464f5737f2fc44c5cb6b001d174c501e3090ea66972c15d7",
+    "duplex/build_fix_report.py": "de31b9df575695e118c88ec9cc12e6031b3709302bba204f979f06e7f157516a",
+    "duplex/build_quality_report.py": "99daa53945c9b0ee2e23118c19df19d88a9c8d193be98cd95e7c889666a0333c",
+    "duplex/build_tts_report.py": "bddba08083b9a85aba875491fbd8d5173c0b21f83f28c60b18672fc4ab120767",
+    "duplex/conversion.py": "70bcc6af031e80719b04da587125233221487df1496fa5c2ead02fc1b58871ab",
+    "duplex/face_map.json": "7a49c10b77d90a38e9c39903316976a990de6f3a4ed473de88f54feb7824dd62",
+    "duplex/native.py": "2d50c798a4b482847a74b4ff7934fcfba7de8871adbe6e31ae0b93f6f3a45bd1",
+    "duplex/package.py": "bc217c49b70bcff1331f1df0311c3b27eb26643dc5b8a7b37989ba3fac1b3f2e",
+    "duplex/persona.txt": "d498e522d085f866d98e35570d72e44a3777fd9edbf07f7a3caa1ed4b74a38c7",
+    "duplex/runtime.py": "265b31fb380177778b443744831a6c0e4548b3ab0f3ed3b5fbaf30923e5710e6",
+    "duplex/sensors.py": "af152877bb82b8c5de94b6f84b6b468bbec8e37f7e2496226f61b4b507629d2e",
+    "duplex/server.py": "a3f61932c806f439f61413ba0baa3ce9a42a84e074eef276f7a14f9aa4a63390",
+    "duplex/static/app.js": "62f3f0929ccad3c69330df0bf958f1c3518b782d6441f432afe81776c36c952f",
+    "duplex/static/capture-worklet.js": "ad51a795254e79de00b7951e5ce31bfd32ca57361cda705be8fed0908a862259",
+    "duplex/static/index.html": "b6866fad80ba932aa9f7127c4e04648aebd495a1e98c8679c82e2b9cb771b194",
+    "duplex/static/playback.js": "707aabecea80b8e468f0f08f490a6711a05d9bb83aea48570e72039e2ef64021",
+    "duplex/static/sample.wav": "916f229828c194e95b404b8346504331df1d39ec154be53408f25015b283a009",
+    "duplex/static/style.css": "8f2483ddc664d88b71c7380a3346bf65b714ff39afc48cfca07ac015eb4d180a",
+    "duplex/tts.py": "2a09a5c69c95bb613bc5123b9c4aca0e691800bcf5721a753fd88d9dac5ab3b7"
+  }
+}

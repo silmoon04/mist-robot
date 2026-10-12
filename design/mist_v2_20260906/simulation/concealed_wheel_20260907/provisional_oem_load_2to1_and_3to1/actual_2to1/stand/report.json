@@ -1,0 +1,63 @@
+{
+  "case": "stand",
+  "status": "PASS_IN_MODEL",
+  "criteria": {
+    "did_not_fall": true,
+    "joint_tracking_rms": true,
+    "continuous_motor_rms": true,
+    "reachable_targets": true,
+    "motor_travel_limits": true,
+    "no_nonwheel_ground_support": true,
+    "coarse_self_collision": true
+  },
+  "mass_kg": 7.896084239760452,
+  "duration_s": 8,
+  "dt_s": 0.001,
+  "base_displacement_m": [
+    4.630085043109272e-05,
+    8.006380610326816e-06,
+    -0.005128036024480892
+  ],
+  "max_tilt_deg": 0.0392420570194063,
+  "joint_tracking_rms_deg": 1.919410317891131,
+  "max_servo_rms_nm": 0.5348222868090637,
+  "servo_continuous_limit_nm": 0.7281437625000001,
+  "servo_peak_limit_nm": 1.3349302312500002,
+  "motor_saturation_fraction": 0.00325,
+  "unreachable_target_fraction": 0.0,
+  "motor_travel_violation_fraction": 0.0,
+  "min_sampled_support_margin_m": 0.09678210393142962,
+  "max_wheel_normal_force_n": 31.617311060262022,
+  "wheel_lateral_velocity_rms_m_s": 1.829658028393036e-05,
+  "self_collision_samples": 0,
+  "self_collision_examples": [],
+  "base_contact_samples": 0,
+  "fixed_base": false,
+  "limitations": [
+    "Unmeasured backlash, compliance, friction, servo dynamics, thermal duty and mass estimates.",
+    "Command play hysteresis and reduced series stiffness do not model true load-side gap engagement under force reversal. Rotor/reflected gearbox inertia omitted.",
+    "Simple boxes/cylinders, selected adjacent self collisions excluded; no printed-part stress or wire model.",
+    "Step test is a scripted challenge; a failure may concern controller and geometry, not a proof no controller exists.",
+    "No sensor perception, obstacle avoidance planner, stair-nose or tire deformation model."
+  ],
+  "max_actual_wheel_clearance_m": [
+    0.000990189999999981,
+    0.000990189999999981,
+    0.000990189999999981,
+    0.000990189999999981
+  ],
+  "foot_tracking_rms_m": [
+    0.005222614869139113,
+    0.005279998173323393,
+    0.005182123180289216,
+    0.005125353238490632
+  ],
+  "obstacle_contact_samples": 0,
+  "minimum_obstacle_gap_m": null,
+  "source_sha256": {
+    "run_sim.py": "bc227b5b68825900b704baef1a31b2f65b789cc95d3ec17b52992dff88013ba3",
+    "model.py": "1884758417c3d6fa66fd90f87dd50da56cd44ccd3580dd9fe5a562c3c268a3fa"
+  },
+  "parameters_sha256": "d6ff84804090521cb366675931f0eb07985cc46cb4a3775ea6857461d062535d",
+  "scope": "PROVISIONAL LOAD ONLY: mirrored OEM FL shape inertials; known CAD clashes; no collision-safe acceptance or physical release"
+}

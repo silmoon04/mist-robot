@@ -1,0 +1,401 @@
+{
+  "version": 3,
+  "created": "2026-09-29",
+  "basis": "Main conversation faces, plus expressive alternatives. The current defaults and seven selected faces account for 387 of 391 recorded expression transitions across 33 saved studio traces. Those traces include fixtures and test sessions, so this is not an organic popularity ranking. Deadpan, Sleepy and Delighted add expressive range and appeared in earlier Luna conversation tests.",
+  "faces": [
+    {
+      "id": "39_neutral_02_manual",
+      "label": "Calm",
+      "basis": "Default available and speaking face",
+      "index": 0,
+      "original": "originals/39_neutral_02_manual.png"
+    },
+    {
+      "id": "25_neutral_2_03_manual",
+      "label": "Listening",
+      "basis": "Default listening face",
+      "index": 1,
+      "original": "originals/25_neutral_2_03_manual.png"
+    },
+    {
+      "id": "20_neutral_06_manual",
+      "label": "Curious",
+      "basis": "Thinking rotation; two evaluation selections",
+      "index": 2,
+      "original": "originals/20_neutral_06_manual.png"
+    },
+    {
+      "id": "40_neutral_03_manual",
+      "label": "Quiet thought",
+      "basis": "Thinking rotation",
+      "index": 3,
+      "original": "originals/40_neutral_03_manual.png"
+    },
+    {
+      "id": "09_happy_03_manual",
+      "label": "Happy",
+      "basis": "Primary happy face; three evaluation selections",
+      "index": 4,
+      "original": "originals/09_happy_03_manual.png"
+    },
+    {
+      "id": "37_misc_06_manual",
+      "label": "Playful",
+      "basis": "Primary smug face; one evaluation selection",
+      "index": 5,
+      "original": "originals/37_misc_06_manual.png"
+    },
+    {
+      "id": "35_sad_10_manual",
+      "label": "Deadpan",
+      "basis": "Primary deadpan face; one evaluation selection",
+      "index": 6,
+      "original": "originals/35_sad_10_manual.png"
+    },
+    {
+      "id": "16_misc_16_manual",
+      "label": "Sleepy",
+      "basis": "Primary sleepy face; one evaluation selection",
+      "index": 7,
+      "original": "originals/16_misc_16_manual.png"
+    },
+    {
+      "id": "12_happy_09_manual",
+      "label": "Delighted",
+      "basis": "Happy alternative; one evaluation selection",
+      "index": 8,
+      "original": "originals/12_happy_09_manual.png"
+    },
+    {
+      "id": "32_sad_07_manual",
+      "label": "Sad",
+      "basis": "Primary sad face; one evaluation selection",
+      "index": 9,
+      "original": "originals/32_sad_07_manual.png"
+    }
+  ],
+  "styles": [
+    {
+      "id": "original",
+      "label": "Current",
+      "description": "Existing MIST faces."
+    },
+    {
+      "id": "reference_glow",
+      "label": "Reference style",
+      "description": "Drawn lids, expressive gaze and soft light."
+    },
+    {
+      "id": "character",
+      "label": "More expressive",
+      "description": "Stronger asymmetry, squashed shapes and playful poses."
+    }
+  ],
+  "assets": {
+    "39_neutral_02_manual": {
+      "original": {
+        "file": "originals/39_neutral_02_manual.png",
+        "sha256": "55a50fdeb90997fae459ee4b6506104841256ad7e57e143458aa6b75cd1db067"
+      },
+      "reference_glow": {
+        "file": "variants/reference_glow/39_neutral_02_manual.png",
+        "sha256": "8eee1a4fafb45c65de13ed49b24ddb6905e573ffebeac6baa87efda4f076bfc9",
+        "source": "source/reference_glow.png",
+        "sourceRect": [
+          0,
+          0,
+          512,
+          307
+        ]
+      },
+      "character": {
+        "file": "variants/character/39_neutral_02_manual.png",
+        "sha256": "de176a307a31c6214baeb272acfcb9d8c59fac4f0b4451c0ac02e9e4e9161ccf",
+        "source": "source/character.png",
+        "sourceRect": [
+          0,
+          0,
+          512,
+          307
+        ]
+      }
+    },
+    "25_neutral_2_03_manual": {
+      "original": {
+        "file": "originals/25_neutral_2_03_manual.png",
+        "sha256": "0f2410ae6ee393ece4155fa9780f19448d469c04eed33efaabe31ea715e4f2e0"
+      },
+      "reference_glow": {
+        "file": "variants/reference_glow/25_neutral_2_03_manual.png",
+        "sha256": "002bf882aff046f6db0f3cb8a9f9fb1960a388f998ca199912a159a241ae38bb",
+        "source": "source/reference_glow.png",
+        "sourceRect": [
+          512,
+          0,
+          512,
+          307
+        ]
+      },
+      "character": {
+        "file": "variants/character/25_neutral_2_03_manual.png",
+        "sha256": "9f39d0ab71a6f7a0ba7e6f9055b7a35ac276a3985b0aa0b4043a26f8c5ab397a",
+        "source": "source/character.png",
+        "sourceRect": [
+          512,
+          0,
+          512,
+          307
+        ]
+      }
+    },
+    "20_neutral_06_manual": {
+      "original": {
+        "file": "originals/20_neutral_06_manual.png",
+        "sha256": "634c20e142c1014103a95f6f9a3e5211a0c429ede0b8a20b2faf74b68ecda583"
+      },
+      "reference_glow": {
+        "file": "variants/reference_glow/20_neutral_06_manual.png",
+        "sha256": "470091a41651fb19e75c571aee7d8a82e9b9eae313e87178803c0c78a4197e9f",
+        "source": "source/reference_glow.png",
+        "sourceRect": [
+          0,
+          307,
+          512,
+          307
+        ]
+      },
+      "character": {
+        "file": "variants/character/20_neutral_06_manual.png",
+        "sha256": "17d71bf86ddbbeec20597ade06feb165ba0526ac2d8939d198060f0d0c978961",
+        "source": "source/character.png",
+        "sourceRect": [
+          0,
+          307,
+          512,
+          307
+        ]
+      }
+    },
+    "40_neutral_03_manual": {
+      "original": {
+        "file": "originals/40_neutral_03_manual.png",
+        "sha256": "5ef6a6be85f4e336f0f1f658731347f7d75de9b044f10bed5e22598d69b19d9e"
+      },
+      "reference_glow": {
+        "file": "variants/reference_glow/40_neutral_03_manual.png",
+        "sha256": "71d0f4860406ccdf07cab2d125344448e2baf6261018818a641efea5dd2464ac",
+        "source": "source/reference_glow.png",
+        "sourceRect": [
+          512,
+          307,
+          512,
+          307
+        ]
+      },
+      "character": {
+        "file": "variants/character/40_neutral_03_manual.png",
+        "sha256": "9f1126d615b2f868ca6fcfeecf566ae144bbde7e530e64a5f0760a4aa32e085b",
+        "source": "source/character.png",
+        "sourceRect": [
+          512,
+          307,
+          512,
+          307
+        ]
+      }
+    },
+    "09_happy_03_manual": {
+      "original": {
+        "file": "originals/09_happy_03_manual.png",
+        "sha256": "e703462f97d7d01044e97f615cd35522a3b146a6387412b3d87f2196db5d7c04"
+      },
+      "reference_glow": {
+        "file": "variants/reference_glow/09_happy_03_manual.png",
+        "sha256": "a8e7b731e6045c72a639bf4895b5537bae09a1ffcb6e444953f6ccabeb377d78",
+        "source": "source/reference_glow.png",
+        "sourceRect": [
+          0,
+          614,
+          512,
+          308
+        ]
+      },
+      "character": {
+        "file": "variants/character/09_happy_03_manual.png",
+        "sha256": "00d794f9817129acc2c063853312162b4010c3476ce1123b7f82d52c5db869ff",
+        "source": "source/character.png",
+        "sourceRect": [
+          0,
+          614,
+          512,
+          308
+        ]
+      }
+    },
+    "37_misc_06_manual": {
+      "original": {
+        "file": "originals/37_misc_06_manual.png",
+        "sha256": "3668d5d2f63785ee6dfe5a1288d255d02b8e0297006ba52810bc534bd4abb75c"
+      },
+      "reference_glow": {
+        "file": "variants/reference_glow/37_misc_06_manual.png",
+        "sha256": "b6ef8bc5a409b744f5d8be0bc359f2e19a3e48fce59e470185bb4a8ea3600799",
+        "source": "source/reference_glow.png",
+        "sourceRect": [
+          512,
+          614,
+          512,
+          308
+        ]
+      },
+      "character": {
+        "file": "variants/character/37_misc_06_manual.png",
+        "sha256": "bbdd0b911806a2ee52bac164fd0de2cf2991c57835eeb0de0db61a0b1dc0450a",
+        "source": "source/character.png",
+        "sourceRect": [
+          512,
+          614,
+          512,
+          308
+        ]
+      }
+    },
+    "35_sad_10_manual": {
+      "original": {
+        "file": "originals/35_sad_10_manual.png",
+        "sha256": "0914748c43c8e87a3efdc287fe204462e4dce3404394174dbd252b19e1d28355"
+      },
+      "reference_glow": {
+        "file": "variants/reference_glow/35_sad_10_manual.png",
+        "sha256": "bc359af40b89939d5d34d62d3f3d754f386e8f4ff857e5e1fe36442c1301fb4e",
+        "source": "source/reference_glow.png",
+        "sourceRect": [
+          0,
+          922,
+          512,
+          307
+        ]
+      },
+      "character": {
+        "file": "variants/character/35_sad_10_manual.png",
+        "sha256": "c9f89158f1d25a83668d6b05272af9a073b637c3280fb3c8e3b89643fe5d4ca9",
+        "source": "source/character.png",
+        "sourceRect": [
+          0,
+          922,
+          512,
+          307
+        ]
+      }
+    },
+    "16_misc_16_manual": {
+      "original": {
+        "file": "originals/16_misc_16_manual.png",
+        "sha256": "e5ab66b5353402b28da792d0292363d78b8950b0432067ecaddf662b79296a79"
+      },
+      "reference_glow": {
+        "file": "variants/reference_glow/16_misc_16_manual.png",
+        "sha256": "91d16d12d1aca6bf5dd6157396cfa88933dffdce9e16c5e6859d1ffe929104df",
+        "source": "source/reference_glow.png",
+        "sourceRect": [
+          512,
+          922,
+          512,
+          307
+        ]
+      },
+      "character": {
+        "file": "variants/character/16_misc_16_manual.png",
+        "sha256": "c981a19d5c9fc55652b5b17892efac45e9ada94e595a5af0c9a2783e6deb4206",
+        "source": "source/character.png",
+        "sourceRect": [
+          512,
+          922,
+          512,
+          307
+        ]
+      }
+    },
+    "12_happy_09_manual": {
+      "original": {
+        "file": "originals/12_happy_09_manual.png",
+        "sha256": "b46d5942d43414526c18e85ac00d81348257e2c4c5b4dfbf3c2ce851d2f26a9d"
+      },
+      "reference_glow": {
+        "file": "variants/reference_glow/12_happy_09_manual.png",
+        "sha256": "eefca30407ed29c29d24080c268491f896b924cf7fe52a9bce978d5bdebc96a7",
+        "source": "source/reference_glow.png",
+        "sourceRect": [
+          0,
+          1229,
+          512,
+          307
+        ]
+      },
+      "character": {
+        "file": "variants/character/12_happy_09_manual.png",
+        "sha256": "e64a825d9c7ccbad9e6e2eca4ca2dff6f1048d3520a55adc4b75815423ff85c8",
+        "source": "source/character.png",
+        "sourceRect": [
+          0,
+          1229,
+          512,
+          307
+        ]
+      }
+    },
+    "32_sad_07_manual": {
+      "original": {
+        "file": "originals/32_sad_07_manual.png",
+        "sha256": "2180231b7da292404145aec39cd4c423c85cde00f9443c314ab4a77b087130f8"
+      },
+      "reference_glow": {
+        "file": "variants/reference_glow/32_sad_07_manual.png",
+        "sha256": "938f408831a502ff089b13b86cdbf81dc5d9b983e68fe3ec8d6b10ef38784afb",
+        "source": "source/reference_glow.png",
+        "sourceRect": [
+          512,
+          1229,
+          512,
+          307
+        ]
+      },
+      "character": {
+        "file": "variants/character/32_sad_07_manual.png",
+        "sha256": "d9f78e3c251ec85b4747bfc8c76fa83eda125c07ee82e0047b7518b6de242cb0",
+        "source": "source/character.png",
+        "sourceRect": [
+          512,
+          1229,
+          512,
+          307
+        ]
+      }
+    }
+  },
+  "sources": {
+    "reference_glow": {
+      "file": "source/reference_glow.png",
+      "sha256": "756ec42e0f47a61077532d3b2963375bd1ba4ae1c62c73d240426ffd945f5914",
+      "width": 1024,
+      "height": 1536,
+      "columns": 2,
+      "rows": 5,
+      "tool": "Built-in ImageGen",
+      "prompt": "prompts/reference_glow.txt"
+    },
+    "character": {
+      "file": "source/character.png",
+      "sha256": "45828424bf484d959c2cb92fe7d576ae2a3717a23a991aec0cab4660e6e3c5be",
+      "width": 1024,
+      "height": 1536,
+      "columns": 2,
+      "rows": 5,
+      "tool": "Built-in ImageGen",
+      "prompt": "prompts/character.txt"
+    }
+  },
+  "kind": "static character-style exploration",
+  "styleReference": "user_reference.png",
+  "liveAssetsChanged": false
+}

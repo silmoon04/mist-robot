@@ -1,0 +1,48 @@
+{
+  "id": "soft",
+  "label": "Soft rounded",
+  "method": "Built-in image_gen image edit",
+  "createdAt": "2026-09-28",
+  "image": "soft.png",
+  "sha256": "40b939fe7f415e909a21a00863a90c6af499d755cb895f58f5b27ad1078f8af3",
+  "width": 1024,
+  "height": 1536,
+  "columns": 2,
+  "rows": 5,
+  "background": "opaque",
+  "reference": "../reference.png",
+  "referenceSha256": "1f2a86c392e01df3b732c5cb8dbd648f4f9edcce667bccae5ce6499485959f13",
+  "prompt": "../prompts/soft.txt",
+  "promptSha256": "347fee08707e6a67483b99ffc16bbcfe3cf453857813ef335785428237397e6d",
+  "originalGeneratedPath": "<LOCAL_HOME>/.codex/generated_images/01a0e9b8-76ad-7600-8d05-8f3d9570cf50/exec-405c38cf-fa15-41b2-961b-64eca16285fd.png",
+  "copiedWithoutModification": true,
+  "attempts": 1,
+  "visualReview": {
+    "count": 10,
+    "order": [
+      "available",
+      "listening",
+      "curious",
+      "quiet thought",
+      "happy",
+      "playful",
+      "deadpan",
+      "sleepy",
+      "delighted",
+      "sad"
+    ],
+    "preservedEyeDirections": true,
+    "preservedMouthAbsence": [
+      "deadpan",
+      "delighted"
+    ],
+    "preservedMouthTypes": true,
+    "notes": "Inspected all ten cells. Original expressions and face layout retained, with thicker rounded strokes and small organic variation."
+  },
+  "limitations": [
+    "Stroke thickening is visually larger than the requested approximate 12% in some faces.",
+    "Dot mouths are slightly larger than the original tiny dots.",
+    "Generated colors have slight raster variation; the hexadecimal palette is a prompt target, not a pixel-exact guarantee.",
+    "Static style concepts only; not production animation frames."
+  ]
+}

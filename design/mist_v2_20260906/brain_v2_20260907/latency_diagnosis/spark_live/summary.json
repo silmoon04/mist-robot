@@ -1,0 +1,151 @@
+{
+  "completed": 2,
+  "passed": 0,
+  "output_tokens": 203,
+  "input_tokens": 8828,
+  "cached_input_tokens": 5376,
+  "voice_calls": 0,
+  "model": "gpt-5.3-codex-spark",
+  "effort": "low",
+  "service_tier": "default",
+  "failures": [
+    {
+      "scenario": "greeting",
+      "process_state": "cold_first_turn",
+      "backend_info": {
+        "provider": "codex",
+        "model_requested": "gpt-5.3-codex-spark",
+        "reasoning_requested": "low",
+        "service_tier_requested": "default",
+        "service_tier_accepted": "default",
+        "hard_output_token_cap_available": false,
+        "output_token_target": 50,
+        "cost_available": false,
+        "hardware_connected": false,
+        "host_environment_enabled": false,
+        "robot_tool_count": 18,
+        "cli_version": "codex-cli 0.153.4",
+        "catalog_service_tiers": [],
+        "instruction_chars": 6595,
+        "model_accepted": "gpt-5.3-codex-spark",
+        "reasoning_accepted": "low",
+        "instruction_sources_loaded": 0,
+        "startup_s": 0.7573864999576472,
+        "tool_mode": "direct",
+        "collaboration_enabled": false
+      },
+      "expressions": [
+        "happy"
+      ],
+      "checks": {
+        "no_runtime_errors": true,
+        "spoken_text_has_no_marker": true,
+        "within_output_target": false,
+        "no_tool_round_trip": true,
+        "expression_delivered": true
+      },
+      "passed": false,
+      "prompt": "Give Moon a warm, one-sentence hello, with a happy display cue alongside your words.",
+      "text": "Hi, I\u2019m Moon\u2014ready whenever you are, and glad to have you here.",
+      "tool_calls": [],
+      "ttft_s": 2.4561313000158407,
+      "ttf_tool_s": null,
+      "ttf_any_s": 2.4561313000158407,
+      "total_s": 2.5098811999778263,
+      "input_tokens": 2729,
+      "output_tokens": 74,
+      "cache_read_tokens": 0,
+      "cost_usd": 0.0,
+      "turns": 1,
+      "errors": [],
+      "events_raw": [],
+      "timings": {
+        "client_lock_wait_s": 1.3999990187585354e-05,
+        "tools": [],
+        "instruction_chars": 6595,
+        "capability_snapshot_s": 0.002597699989564717,
+        "turn_start_ack_s": 0.004611200012732297,
+        "first_text_s": 2.4561313000158407,
+        "first_tool_s": null,
+        "total_s": 2.5098811999778263,
+        "tool_calls": 0
+      }
+    },
+    {
+      "scenario": "fresh_observation",
+      "process_state": "warm",
+      "backend_info": {
+        "provider": "codex",
+        "model_requested": "gpt-5.3-codex-spark",
+        "reasoning_requested": "low",
+        "service_tier_requested": "default",
+        "service_tier_accepted": "default",
+        "hard_output_token_cap_available": false,
+        "output_token_target": 50,
+        "cost_available": false,
+        "hardware_connected": false,
+        "host_environment_enabled": false,
+        "robot_tool_count": 18,
+        "cli_version": "codex-cli 0.153.4",
+        "catalog_service_tiers": [],
+        "instruction_chars": 6595,
+        "model_accepted": "gpt-5.3-codex-spark",
+        "reasoning_accepted": "low",
+        "instruction_sources_loaded": 0,
+        "startup_s": 0.7573864999576472,
+        "tool_mode": "direct",
+        "collaboration_enabled": false
+      },
+      "expressions": [],
+      "checks": {
+        "no_runtime_errors": true,
+        "spoken_text_has_no_marker": true,
+        "within_output_target": false,
+        "fresh_observe_retained": true,
+        "no_motion": true,
+        "admits_missing": true
+      },
+      "passed": false,
+      "prompt": "What objects can you see directly in front of you right now?",
+      "text": "I can\u2019t see anything right now\u2014there\u2019s no connected observation producer in this run, so I have no direct visual view.",
+      "tool_calls": [
+        {
+          "name": "observe",
+          "args": {},
+          "t_offset_s": 1.164234599971678,
+          "is_error": false
+        }
+      ],
+      "ttft_s": 2.9312699000001885,
+      "ttf_tool_s": 1.164234599971678,
+      "ttf_any_s": 1.164234599971678,
+      "total_s": 2.9819827000028454,
+      "input_tokens": 6099,
+      "output_tokens": 129,
+      "cache_read_tokens": 5376,
+      "cost_usd": 0.0,
+      "turns": 1,
+      "errors": [],
+      "events_raw": [],
+      "timings": {
+        "client_lock_wait_s": 1.190003240481019e-05,
+        "tools": [
+          {
+            "name": "observe",
+            "request_s": 1.164234599971678,
+            "reply_s": 1.1683591000037268,
+            "execution_s": 0.0041245000320486724
+          }
+        ],
+        "instruction_chars": 6595,
+        "capability_snapshot_s": 0.0009304999839514494,
+        "turn_start_ack_s": 0.0026277999859303236,
+        "last_tool_reply_to_first_text_s": 1.7629107999964617,
+        "first_text_s": 2.9312699000001885,
+        "first_tool_s": 1.164234599971678,
+        "total_s": 2.9819827000028454,
+        "tool_calls": 1
+      }
+    }
+  ]
+}

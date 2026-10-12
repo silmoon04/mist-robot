@@ -1,0 +1,126 @@
+{
+  "id": "mickey",
+  "title": "MIST — graphic comic acting study",
+  "tool": "image_gen.imagegen",
+  "mode": "built-in",
+  "use_case": "stylized-concept",
+  "saved_source": "/brain/art_direction/artist_studio_20260916/reuse/acting_studies_v1/source/mickey.png",
+  "tool_original_path": "<LOCAL_HOME>/.codex/generated_images/01a0ea8d-f070-7e13-8eb5-ab7439ba0545/exec-5672f132-41b0-4ae8-b65d-f29cb17cdcf2.png",
+  "dimensions": {
+    "width": 1536,
+    "height": 1024
+  },
+  "sha256": "020E5DA0AEC10F2DADCD383966194E64202932E4C5BCA573CE906F94C10CB32A",
+  "source_untouched": true,
+  "source_preservation": "Byte-for-byte copy of selected built-in ImageGen output; no raster cleanup, color replacement, resizing, cropping or re-encoding.",
+  "reference_image": "/brain/art_direction/artist_studio_20260916/reuse/style_studies_v3/user_reference.png",
+  "prompt": "Use case: stylized-concept.\nAsset type: MIST facial acting study, one landscape 1536 x 1024 PNG image, opaque uniform dark background.\nPrimary request: Create one exact equal 3-column by 3-row contact sheet of nine MIST robot-face expressions. The three columns are successive animation beats: LEFT setup, MIDDLE strong accent, RIGHT settle. Each row is its own short acting idea. This is an occasional reaction study with bold expressive construction.\nReference role: The attached image is an identity and palette reference ONLY: cyan hand-drawn graphic eyes and simple cyan mouth on dark blue-black. IGNORE the reference's panels, labels, lettering, icons, borders, layout, gradients and screen devices. Keep MIST recognisable through the two-eye-and-mouth-only luminous graphic vocabulary.\nStyle: Take inspiration from Paul Rudish's Mickey Mouse shorts' rubbery graphic exaggeration, highly varied expression silhouettes and mischievous visual comedy. Draw MIST, never Mickey. Use bold squashed crescents, unequal tall eyes, sharply angled but round-ended integrated eye lids, jaunty asymmetric mouth curves. Confident hand-drawn solid cyan marks with softly imperfect edges and very restrained glow. The expressions must differ in eye and mouth construction, not merely in small variations of the same face.\nScene/background: Every pixel behind the faces is the same flat opaque #101c20. No gradients, panels, frames, cell outlines, vignettes, texture or borders. No lettering or other marks.\nComposition: Exactly nine isolated faces, arranged on invisible equal cells in three columns and three rows. Cell center x coordinates near 256, 768, 1280 and y coordinates near 171, 512, 853 on the requested 1536 x 1024 canvas. Maintain face center and nominal scale within each sequence. Each face fits comfortably inside its cell, with generous clear dark space between faces. Only facial shapes deform. No head silhouette or containers. All nine faces use exactly two eyes and one mouth each. Eyelids are integrated eye shapes, never separate eyebrows.\nROW 1 / top / comic double-take:\nLEFT: Casual half-lidded eyes, a short relaxed slightly crooked mouth. Easygoing baseline.\nMIDDLE: Wildly unequal WIDE eyes, one very tall open oval and the other much shorter broader oval, a small startled open oval mouth. Big stretched comic surprise, with strong asymmetry.\nRIGHT: One lid drops into an amused skeptical look, the other eye is rounder and more alert; a short crooked mouth implies 'oh, really?'.\nROW 2 / middle / playful mock outrage:\nLEFT: Relaxed asymmetrical eye shapes with a sly short smirk.\nMIDDLE: Sharply squashed inward-tilting integrated eyelids and a wide exaggerated angular open mouth, round-edged cyan outline with dark interior. A theatrical overreaction that remains silly, not genuinely hostile or threatening. No fangs, teeth or tongue.\nRIGHT: Release into a cheeky wink: one open rounded eye, the other a compressed playful crescent, with a forgiving broad upward grin.\nROW 3 / bottom / tiny triumph:\nLEFT: Concentrated low flattened eyes, short straight focused mouth.\nMIDDLE: Both eyes compactly squeezed into joyous upward arcs or crescents, and a big bowl-shaped open grin drawn as a simple cyan outline with dark interior.\nRIGHT: Relaxed proud half-lids at different angles and a small asymmetric smirk. Quiet satisfied landing after the burst.\nConstraints: Cyan face marks only, no actual Mickey character, mouse ears, nose, head, body, limbs, hands, props, icons, badges, sweat, tears, sparkles, motion marks, separate eyebrows, text, captions, numbers, signatures, watermarks or cell borders. Exactly three facial elements in every pose. Keep the background uniform #101c20 and preserve generous gutters.",
+  "targeted_correction": {
+    "reason": "First output had slight background RGB variation instead of exact uniform #101c20.",
+    "prompt": "Edit this MIST acting-study sheet. Make only one change: replace the background with a perfectly uniform, opaque solid #101c20 (RGB 16,28,32). This exact flat background is important for later asset extraction. Remove all background texture, noise, gradients and uneven lighting; distant dark areas must be the exact same #101c20. Preserve all nine faces and every eye and mouth shape, position, scale and cyan color exactly as in the image. Keep only a very narrow restrained glow immediately around the cyan strokes, with no glow spreading into the empty cell gutters. Preserve the 1536 x 1024 landscape canvas and equal 3 columns by 3 rows. No text, no borders, no new marks.",
+    "initial_tool_original_path": "<LOCAL_HOME>/.codex/generated_images/01a0ea8d-f070-7e13-8eb5-ab7439ba0545/exec-ba7afe94-b086-4420-bbff-6c4a452d4984.png",
+    "initial_sha256": "5AEA910A5F2A48133A6426DEA457BCDB74B74C331F73F5E0AE2F577129C9307D",
+    "result": "All nine pose constructions preserved. Background still has slight generated RGB variation; exact requested flat color was not achieved. No further generation or pixel editing."
+  },
+  "grid": {
+    "columns": 3,
+    "rows": 3,
+    "column_meanings": [
+      "setup",
+      "accent",
+      "settle"
+    ],
+    "cell_width": 512,
+    "cell_height": 341.3333333333333
+  },
+  "visual_review": {
+    "inspected_all_nine": true,
+    "global": "Nine distinct cyan face-only poses in an equal 3x3 layout; no text, borders, props, character ears, nose or body. Each face contains two eye constructions and one mouth. Cyan shapes vary boldly while centers and nominal scale remain consistent across each sequence.",
+    "rows": [
+      {
+        "row": 1,
+        "name": "Comic double-take",
+        "poses": [
+          {
+            "column": 1,
+            "beat": "setup",
+            "review": "Relaxed half-lidded eyes, asymmetric casual curved mouth."
+          },
+          {
+            "column": 2,
+            "beat": "accent",
+            "review": "Very tall narrow left eye contrasts with short wide right eye; small startled oval mouth. Strong rubbery comic double-take."
+          },
+          {
+            "column": 3,
+            "beat": "settle",
+            "review": "One half-lid and one alert open eye with short crooked descending mouth; clearly skeptical."
+          }
+        ],
+        "limits": [
+          "Settle mouth leans dubious rather than overtly amused. The accent intentionally changes vertical eye extent while face center stays stable."
+        ]
+      },
+      {
+        "row": 2,
+        "name": "Playful mock outrage",
+        "poses": [
+          {
+            "column": 1,
+            "beat": "setup",
+            "review": "One rounded eye and one half-lid with a loose smirk."
+          },
+          {
+            "column": 2,
+            "beat": "accent",
+            "review": "Inward sharp integrated eyelids above an oversized open rounded triangular mouth. Bold theatrical outrage without teeth or threats."
+          },
+          {
+            "column": 3,
+            "beat": "settle",
+            "review": "Open eye, playful squeezed wink and broad forgiving upward grin."
+          }
+        ],
+        "limits": [
+          "The accent has a strong angry silhouette; use briefly as theatrical reaction, with the grin release, not as an idle pose."
+        ]
+      },
+      {
+        "row": 3,
+        "name": "Tiny triumph",
+        "poses": [
+          {
+            "column": 1,
+            "beat": "setup",
+            "review": "Low concentrated eye shapes and a short level mouth."
+          },
+          {
+            "column": 2,
+            "beat": "accent",
+            "review": "Paired squeezed happy arcs with a large bowl-shaped open grin."
+          },
+          {
+            "column": 3,
+            "beat": "settle",
+            "review": "Asymmetric proud half-lids and a small satisfied curved smirk."
+          }
+        ],
+        "limits": [
+          "The accent is broad joy, so tiny triumph depends on short timing and the restrained setup and settle."
+        ]
+      }
+    ],
+    "limits": [
+      "This is a generated reference sheet, not rigged or temporally validated animation.",
+      "Requested exact uniform #101c20 background was not achieved even after one targeted correction; source remains untouched as required.",
+      "The generated cyan shapes have subtle texture and narrow glow."
+    ],
+    "background_samples_hex_rgb": {
+      "0,0": "#102123",
+      "1535,0": "#0f2022",
+      "0,1023": "#101e22",
+      "1535,1023": "#102023",
+      "512,341": "#0e1e20"
+    }
+  }
+}

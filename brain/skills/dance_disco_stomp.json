@@ -1,0 +1,21 @@
+{
+  "name": "disco_stomp",
+  "kind": "dance",
+  "description": "High-energy diagonal-pair stomp with body bounce and strobing happy/alert faces. Strenuous: not allowed on low battery or hot servos.",
+  "bpm": 120,
+  "loop": true,
+  "duration_s": 30,
+  "energy": "high",
+  "tracks": {
+    "body": [
+      { "t": 0.0, "pose": [0, 0, -8, 0, 0, 0] },
+      { "t": 0.25, "pose": [0, 0, -16, 0, 0, 5] },
+      { "t": 0.5, "pose": [0, 0, -8, 0, 0, -5] }
+    ],
+    "face": [
+      { "t": 0.0, "expr": "happy" },
+      { "t": 0.5, "expr": "alert" }
+    ],
+    "gaze": [{ "t": 0.0, "mode": "scan_room" }]
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "source": "saved synthetic WAV, no microphone capture",
+  "source_sha256": "57e4040d70f68a51bafc1ed0ae48448c4d78c088890ebf487e2682e2e0057c3c",
+  "sample_rate": 48000,
+  "source_audio_seconds": 3.68,
+  "audio_seconds_submitted": 3.68,
+  "audio_submissions": 1,
+  "provider_sessions": 1,
+  "provider": "deepgram",
+  "model": "nova-3",
+  "transport": "websocket",
+  "model_calls": 0,
+  "tts_calls": 0,
+  "cost_usd": null,
+  "start_to_audio_ready_s": 0.3592066999990493,
+  "audio_start_to_first_partial_s": 1.1178681000019424,
+  "partial_arrived_before_audio_end": true,
+  "audio_end_to_final_s": 0.37338659999659285,
+  "total_wall_s": 4.413055700017139,
+  "final": {
+    "type": "final",
+    "utterance_id": "e00b0a8c-329f-473f-a4b6-7be89765e166",
+    "transcript": "Hello. I'm MIST. My wheels are ready, and I'm listening.",
+    "confidence": 0.9995117,
+    "audio_seconds": 3.68,
+    "provider_processed_audio_seconds": 3.68000016,
+    "api_latency_s": 4.407990500039887,
+    "timings": {
+      "connection_reused": false,
+      "connect_s": 0.3541626000078395,
+      "first_partial_s": 1.472165799990762,
+      "first_final_s": 4.1723992000333965,
+      "finalize_to_final_s": 0.37245460000121966,
+      "recognition_total_s": 4.407990500039887
+    },
+    "final": true,
+    "transport": "deepgram_websocket",
+    "model": "nova-3"
+  },
+  "error": null,
+  "diagnostic": null
+}

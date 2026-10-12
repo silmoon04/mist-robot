@@ -1,0 +1,26 @@
+R4 printed assembly mass and frame audit
+
+Status: audit_pass. 873 checks passed; 0 failed checks; 0 errors.
+Assembly: 135 parts, 76 printed instances, 34 print SKUs, 14 links.
+Assembled mass: 2.748543714212647 kg.
+Model deposition mass: 1.04763823162915 kg.
+High fasteners: 581 pieces totaling 0.3909911866282129 kg.
+Wiring allowance: 0.150 kg. The old 50 g fastener allowance is excluded.
+Servos: 13 at 0.055 kg each.
+
+Printed COM receives R c + t and its COM tensor receives R I R^T once. Link tensors are independently summed at the link origin and then translated to the combined COM.
+Deposited PLA is checked against model-only production properties. No solid-density formula, box-inertia approximation, repeated GCode inverse transform or repeated layer correction is applied.
+CAD assembly frames follow the manifest neutral pose. A separate read-only Bullet frame probe verifies yaw 0 degrees, hip 30 degrees and knee 81 degrees on all 14 links. Yaw operating limits are plus or minus 22 degrees.
+URDF masses, COMs, complete inertia tensors, CAD visual frames and landscape phone collision dimensions pass. No dynamics steps were run by this audit.
+
+Checks frozen deposition properties through print-STL to link transforms, assembled tensors, distributed high fastener mass, URDF values, CAD visual frames, landscape phone collision and Bullet kinematic probes without stepping. GCode integration is covered by a separate source audit. Physical mass, fit and walking are not measured here.
+
+Bound source files: 133. CAD visual link comparisons: 14.
+Audit JSON SHA256: f51e6565dc7745f462978307b78cd2c8443e0772f6c3b570546ca907ee35227c
+printed_manifest SHA256: f49bd511d9fcca86a22895f55cecda31ac4c9ecfdb60b3232cda7692131d2b17
+solid_manifest SHA256: 6cac852c196e29e2da100816a7d3b96f545e62dba92c3009a46417eb7d9bc449
+production_properties SHA256: 3b69ffb7bfd212296b85fb1846181dd86a7fffb2451e6f961c821fc1e8f24209
+urdf SHA256: 878a905f1c212af0cd1a96c75e40af523b8c3354c14f3507422bb9bac13bf68f
+fastener_properties SHA256: 953e87dc07da8d64fa3155704073a250f18ca350d4f6a10a571c6a2e450980fd
+audit_source SHA256: 253235d823bb20f59abac63033f97c173834211bac4b9a9294b17853c9304539
+reused_frame_probe_source SHA256: 361dac4e13c920a8ee1303832098e579415b4d9daea540a73b23bb430d0ffc9e

@@ -1,0 +1,30 @@
+INTERFACE REVIEW IN PROGRESS: read INTERFACE_REVIEW_HOLD.txt before using the R3 fit files. The shaft datum and connector access are being corrected.
+
+R3 FIRST PRINT: FIT AND CONTROLLED LOAD-TEST CANDIDATE
+
+1. Open coupon_plate_01.3mf in your Neptune 4 Pro slicer.
+   These are the 17 essential pieces. Keep millimetres, orientation and plate positions.
+   The 3MF files contain geometry only. They do not contain a machine profile or G-code.
+2. Use 0.4 mm nozzle, 0.20 mm layers, 0.42 mm lines, five walls, six top/bottom layers
+   and 35% gyroid. Start PLA at 210/60 C within the filament maker's range.
+   Cap flow at 8 mm3/s. Check supports under raised sections and the phone tray rear plate.
+   Read PRINT_AND_ASSEMBLE.md for support settings and inspect every first unsupported layer.
+3. Print the nominal 0.3 mm case fit and reuse its single cap for alternative end gaps.
+   Use the nominal 0.5 mm landscape phone tray with TWO SHORT CLIPS, not the old long bar.
+4. Assemble horn/auxiliary fits and the three R3 section coupons. Use real metal discs.
+   Have M3x35 clamp screws, M3x50 external bridge bolts, plain M3 nuts and OD7 washers.
+   The yaw production stack uses M3x20 and two OD6 x 0.5 mm washers per horn screw.
+   Print one production coxa_lower_auxiliary_arm.stl after the initial fit to test the post stack.
+5. Record results in coupon_feedback.csv. Stop on binding, roof lift, cracking or permanent set.
+   Use captured fixtures and a dummy phone; follow the incremental force/deflection loop
+   in PRINT_AND_ASSEMBLE.md before any full robot run. No full strength certificate exists.
+6. Only if a nominal fit needs adjustment, print individual alternatives from coupon_bom.csv
+   or the complete optional set: coupon_plate_02.3mf.
+   The ten optional pieces include two duplicate caps that can normally be omitted.
+
+All 27 coupons remain available. manufacturing_bom.csv lists 34 production SKUs / 76 pieces.
+Full production analysis estimates 1.017 kg model PLA plus about 62 g removable support.
+The 102.5-hour sum is for separately sliced production pieces, not the first-print plate.
+Use the slicer's time for the actual coupon plate. Infill percentage is not a mass fraction.
+The phone stays landscape and upright. Park pan before charging through a short-side USB opening.
+Source CAD manifest SHA-256: ed3b458fd8c5929c04652dcaf8b7686c31f8b987f2cead30e14f12191bfa71a2

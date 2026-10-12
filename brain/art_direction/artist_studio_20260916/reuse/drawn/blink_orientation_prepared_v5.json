@@ -1,0 +1,15 @@
+{
+  "status": "Prepared; final execution waits for the renderer owner stable hash",
+  "identityCommand": "node brain/art_direction/artist_studio_20260916/reuse/drawn/identity_checks_v5.cjs",
+  "pixelMeasurementCommand": "python brain/art_direction/artist_studio_20260916/reuse/drawn/identity_after_extract.py",
+  "orientationCommand": "node brain/art_direction/artist_studio_20260916/reuse/drawn/blink_orientation_checks_v5.cjs",
+  "preservation": "The v5 identity wrapper writes current and v5 reports. It does not overwrite any v4 report.",
+  "scope": [
+    "40 exact canonical resting faces, 80 eyes, 120 actual canvas paths and 1560 directed endpoints",
+    "Physical PNG ink centerlines projected through captured canvas draw transforms",
+    "Original closed-arc concavity and endpoint attitude for faces 16, 21, 22, 23, 26, 29 and 35",
+    "Mirrored intentional angry-lid tilt for faces 02 and 04",
+    "Near-level circular-eye closure for faces 09 and 20"
+  ],
+  "judgment": "The angle bands are visual acceptance choices. They are not claims about anatomical correctness. Closing and reopening still need visual review."
+}

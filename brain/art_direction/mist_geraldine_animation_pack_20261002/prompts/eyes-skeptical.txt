@@ -1,0 +1,28 @@
+Use case: illustration-story
+Asset type: native transparent PNG animation sprite atlas for the MIST robot's Geraldine face.
+Primary request: Generate ONE PNG sprite atlas containing EXACTLY TWELVE EYE PAIRS, laid out in exactly 4 columns and 3 rows, row-major animation order, and no other artwork. Prefer native 1536 x 1024 pixels. Background must be genuinely transparent alpha, with transparent pixels through the eye apertures and all the empty space.
+
+Input image 1 is the PRIMARY shape and character reference: later-alligator-sweet-geraldine.png. Study ONLY the TOP RIGHT skeptical expression's TWO EYES. Ignore every mouth, ignore all the other expressions, ignore the dark background. Preserve that skeptical eye pair's deliberate coordinated asymmetry: viewer LEFT eye has a flattened, nearly horizontal integrated upper lid across a curved lower C body, open at the LEFT side; viewer RIGHT eye has a raised DIAGONAL integrated upper edge and a curved C body open at the RIGHT side. The right lid rises to the right. These are single continuous integrated eye forms, NOT ordinary round hoops with separate eyebrows. No detached brows. Do not reverse either aperture opening direction. The slight asymmetry remains consistent in all open frames.
+
+Style: precise, smooth, chunky drawn contours, rounded ends, simple solid PALE TURQUOISE fill matching the reference family, crisp antialiased raster edges. Flat color, no light emission, no shading, no texture. Only eye shapes; no pupils, eyeballs, sclera, head, face outline, mouth, nose, brows, labels, numbers, grid, checker pattern, watermarks, stray fragments or background.
+
+Layout and registration: 4 equal columns and 3 equal rows on the 1536 x 1024 native canvas; each invisible cell is approximately 384 x 341 pixels. In EVERY cell the eye pair stays at fixed anchors: viewer left eye around cell-local (120,170), viewer right eye around (265,170). Left eye's fully open footprint roughly 95 pixels wide x 60 high, right eye roughly 90 wide x 80 high. Maintain the same stroke thickness, width, pair spacing and visual center throughout. The blink naturally changes the visible vertical height by lowering lids, without scaling or rotating the original C shapes. Plenty of clear transparent space between every pair. Do not draw guides or cell boundaries. Do not shift the eyes around to simulate a blink.
+
+Exact twelve cels in row-major order:
+ROW ONE (left to right):
+0 REST: reproduce the top-right skeptical reference's open asymmetric eye pair.
+1 ANTICIPATION: both integrated upper lids lower just a little. Viewer left remains flatter; viewer right retains its distinctive diagonal lid.
+2 HALF: both lids lower further to halfway closed together, with coherent original asymmetric lid shapes and original opposite-facing aperture directions.
+3 NEAR-CLOSED: both eyes almost shut, smoothly compressing toward soft narrow lid arcs.
+ROW TWO:
+4 CLOSED: TWO gentle soft almost horizontal arcs, a natural completely closed blink. The left and right arcs have stable widths, rounded ends and original eye-center anchors. These MUST be freshly drawn closed lids, NOT the original open C eyes rotated or turned sideways.
+5 OPENING LOW: both eyes just starting to reopen from closed arcs, small apertures, still carrying the left flat / right diagonal lid difference.
+6 OPENING THREE-QUARTERS: both eyes reopen smoothly to 75 percent, retaining skeptical coordinated asymmetry.
+7 REST AFTER BLINK: the same open skeptical pair as cel 0, at identical anchors.
+ROW THREE:
+8 LOOK LEFT: subtle gaze to viewer left through a small adjustment of the APERTURE SHAPES only; no pupils, no repositioning, no rotation, no opening-direction reversal.
+9 LOOK RIGHT: subtle gaze to viewer right through a small adjustment of the APERTURE SHAPES only; no pupils, no repositioning, no rotation, no opening-direction reversal.
+10 SETTLE: return almost to the canonical open skeptical eye shapes, same anchors and stable width.
+11 REST END: the same open skeptical pair as cel 0, at identical anchors.
+
+Quality priorities: EXACT 12 pairs = 24 eye forms; original top-right skeptical identity; clean deliberate asymmetry; single coherent blink; no feature popping; no random eye angles; stable positions and family size; true alpha transparency.

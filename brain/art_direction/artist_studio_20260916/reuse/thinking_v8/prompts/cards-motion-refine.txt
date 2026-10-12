@@ -1,0 +1,27 @@
+Use case: precise-object-edit
+Remake this sprite sheet's MOTION. Keep the existing clean cyan rounded line-art card style and real transparent background. The existing card animation repeats poses; replace it with the exact distinct positions below. This is an animation production sheet, not a repeated icon pattern.
+Canvas 1536 by 1024 pixels, exactly SIX columns by FOUR rows, 24 cels, each cell 256 square. Row-major order. No painted grid, no numbering.
+Fixed fully formed subject: THREE rounded cards, about 54 by 76 pixels each, two short line rules on each, no text. In every active cel the right card is fixed, center x170 y157 and slight right tilt. Left card baseline center x86 y158 and slight left tilt. Center front card upright baseline center x128 y152. Fixed lower fan edge about y198. All nonmoving cards must stay pixel aligned. Use opaque flat cyan #29DCE6 strokes about 5px thick; actual alpha transparency inside and around cards; no fill, matte, shadow, glow or gradient. All 24 props have identical scale.
+Four entrance cels: row1 col1 single card slightly below baseline; col2 left card half fans out; col3 right card half fans out; col4 full baseline fan.
+SIXTEEN ACTIVE CELLS, every consecutive cel must visibly move:
+row1 col5 = center card baseline top114.
+row1 col6 = center card top102, moved up12.
+row2 col1 = center card top90, moved up24.
+row2 col2 = center card top78, moved up36.
+row2 col3 = center card top72, moved up42, turning point.
+row2 col4 = center card top84, returning to baseline.
+row2 col5 = center card top96, returning.
+row2 col6 = center card top108, almost baseline.
+Throughout those eight cels, BOTH side cards stay exactly fixed.
+row3 col1 = all cards baseline.
+row3 col2 = left card lifted12px from baseline; center and right fixed.
+row3 col3 = left card lifted24px.
+row3 col4 = left card lifted36px.
+row3 col5 = left card lifted42px, turning point.
+row3 col6 = left card lifted30px.
+row4 col1 = left card lifted18px.
+row4 col2 = left card lifted6px, approaching baseline for a smooth loop seam to row1 col5.
+Throughout those last eight active cels, CENTER and right cards stay exactly fixed.
+Four exit cels row4 col3,col4,col5,col6: side cards retract toward center through three incremental positions, ending in a small centered line.
+The raised card always keeps the same size, rounded shape, two line rules and tilt angle. Do not shift whole fans. No duplicate hold drawings during the sixteen active cels. Show the heights clearly; avoid compressing distinct heights into repeated icons. Every cel fits within local x20..236, y30..228, with fixed registration and equal cell spacing.
+No faces, eyes, mouth, hands, success ticks, symbols, text, labels, borders, glow, fills, checkerboard. Native transparent RGBA sprite sheet.

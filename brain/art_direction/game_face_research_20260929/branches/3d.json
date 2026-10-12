@@ -1,0 +1,268 @@
+[
+  {
+    "id": "slime-rancher-face-shader",
+    "title": "Slime Rancher: six faces and a separate mouth mask",
+    "studio": "Monomi Park",
+    "category": "process",
+    "people": [
+      {
+        "name": "Ian McConville",
+        "role": "Principal Artist; author of the Slime Rancher 1.4.0 face-shader rebuild (the post spells the title 'Principle Artist')",
+        "sourceUrl": "https://store.steampowered.com/news/posts/?appids=433340&enddate=1576525914&feed=steam_community_announcements"
+      }
+    ],
+    "tags": [
+      "graphic face",
+      "mouth masks",
+      "expression vocabulary",
+      "small eyes",
+      "shader"
+    ],
+    "summary": "A developer-supplied six-face GIF shows how much expression can fit on the same nearly featureless round body.",
+    "observations": [
+      {
+        "text": "In the inspected GIF frame, the happy bottom-centre face uses dot eyes and a broad open mouth; the worried bottom-right face retains tiny eyes but replaces that mouth with a small downturned shape. The body design stays consistent.",
+        "basis": "visual observation",
+        "sourceUrl": "https://store.steampowered.com/news/posts/?appids=433340&enddate=1576525914&feed=steam_community_announcements"
+      },
+      {
+        "text": "The startled bottom-left face enlarges the eye marks and uses a small open mouth. This is an expression-shape comparison, not a verified timing analysis.",
+        "basis": "visual observation",
+        "sourceUrl": "https://store.steampowered.com/news/posts/?appids=433340&enddate=1576525914&feed=steam_community_announcements"
+      },
+      {
+        "text": "McConville describes separate eye and mouth channels in an RGBA distance-field mask, mouth-size changes through smoothstep, and UV noise for face wobble. He says swapping the source texture produces different faces.",
+        "basis": "creator statement",
+        "sourceUrl": "https://store.steampowered.com/news/posts/?appids=433340&enddate=1576525914&feed=steam_community_announcements"
+      }
+    ],
+    "mistIdeas": [
+      "Our inference: keep MIST's familiar eyes and body, and author a small set of clearly different mouth silhouettes before adding more continuous movement.",
+      "Our inference: separate gaze, eye aperture, and mouth state so a listening response can move the eyes first and change the mouth only after recognition. The delayed timing is our proposal, not a measured property of this GIF.",
+      "Our inference: use wobble as a small secondary effect; it should not replace authored reactions or make every state equally active."
+    ],
+    "media": [
+      {
+        "kind": "gif",
+        "url": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/11544764/dbcc1e5c037a11b9f2583407bb057fc247464ac2.gif",
+        "sourceUrl": "https://store.steampowered.com/news/posts/?appids=433340&enddate=1576525914&feed=steam_community_announcements",
+        "credit": "Ian McConville / Monomi Park",
+        "alt": "Six pink slimes compare angry, distressed, altered-eye, startled, happy and worried face shapes.",
+        "verified": true,
+        "motionVerified": false
+      }
+    ],
+    "sources": [
+      {
+        "title": "Slime Faces: Behind The Scenes, 25 June 2019",
+        "url": "https://store.steampowered.com/news/posts/?appids=433340&enddate=1576525914&feed=steam_community_announcements",
+        "kind": "developer",
+        "supports": "Named artist, face shader design, exact official GIF and its context."
+      }
+    ],
+    "confidence": "high",
+    "researchNotes": "GIF URL extracted from the rendered developer post and loaded successfully. A displayed frame was inspected; continuous motion was not perceived or measured. McConville is not relabelled as a credited character animator."
+  },
+  {
+    "id": "lil-gator-head-followthrough",
+    "title": "Lil Gator Game: a heavy head with a simple face",
+    "studio": "MegaWobble",
+    "category": "3d",
+    "people": [
+      {
+        "name": "Scott Slucher",
+        "role": "Developer explaining his character design and animation implementation",
+        "sourceUrl": "https://www.gamedeveloper.com/design/the-exaggerated-animations-and-tottering-wobble-bones-of-lil-gator-game"
+      }
+    ],
+    "tags": [
+      "head follow-through",
+      "appeal",
+      "large eyes",
+      "body acting",
+      "secondary motion"
+    ],
+    "summary": "Slucher's own explanation separates authored movement, speed-dependent blending, head lag and secondary physics.",
+    "observations": [
+      {
+        "text": "The inspected sword-swing image puts the large pale eye and black pupil against the green head; the open jaw and broad head silhouette remain readable amid the flying cardboard. This is a still-image observation.",
+        "basis": "visual observation",
+        "sourceUrl": "https://www.gamedeveloper.com/design/the-exaggerated-animations-and-tottering-wobble-bones-of-lil-gator-game"
+      },
+      {
+        "text": "Slucher says the oversized head and arms make small movements read strongly; he accounts for the head's weight when animating.",
+        "basis": "creator statement",
+        "sourceUrl": "https://www.gamedeveloper.com/design/the-exaggerated-animations-and-tottering-wobble-bones-of-lil-gator-game"
+      },
+      {
+        "text": "Slucher describes blend trees driven by speed and surface angle, then procedural head lag and body leaning in turns. He explicitly says the blended animations are subtler, so large movements are not constant.",
+        "basis": "creator statement",
+        "sourceUrl": "https://www.gamedeveloper.com/design/the-exaggerated-animations-and-tottering-wobble-bones-of-lil-gator-game"
+      }
+    ],
+    "mistIdeas": [
+      "Our inference: give MIST's eye/head orientation a small follow-through relative to a body turn, then let it settle cleanly.",
+      "Our inference: distinguish a quiet attention shift from a full-body enthusiastic response; do not reuse the same large bounce for both.",
+      "Our inference: test the expression in a frozen silhouette first. The face should remain readable before adding spring motion."
+    ],
+    "media": [
+      {
+        "kind": "image",
+        "url": "https://eu-images.contentstack.com/v3/assets/blt740a130ae3c5d529/blt99c954c98b135471/650effa9c6abf427f547e08d/Gator_3.jpg/?width=1400&auto=webp&quality=80&disable=upscale",
+        "sourceUrl": "https://www.gamedeveloper.com/design/the-exaggerated-animations-and-tottering-wobble-bones-of-lil-gator-game",
+        "credit": "MegaWobble, supplied in Scott Slucher developer interview / Game Developer",
+        "alt": "Lil Gator swinging a sword, with a large clear eye, open jaw, and broad head silhouette.",
+        "verified": true,
+        "motionVerified": false
+      }
+    ],
+    "sources": [
+      {
+        "title": "The exaggerated animations and tottering wobble bones of Lil Gator Game",
+        "url": "https://www.gamedeveloper.com/design/the-exaggerated-animations-and-tottering-wobble-bones-of-lil-gator-game",
+        "kind": "developer",
+        "supports": "First-person interview with Scott Slucher on his animation choices; supplied reference still."
+      },
+      {
+        "title": "Lil Gator Game creator page",
+        "url": "https://www.patreon.com/lilgatorgame/about",
+        "kind": "developer",
+        "supports": "Scott Slucher, Robin Burgess and Connor Quinn are the game team."
+      }
+    ],
+    "confidence": "high",
+    "researchNotes": "Face still inspected directly. The interview's historical Gfycat embed is https://gfycat.com/ifr/ZigzagAshamedBarnowl; not included as working motion media because playback was not verified. No blendshape or facial-texture implementation claim is established by this source."
+  },
+  {
+    "id": "psychonauts2-richardson-mailroom",
+    "title": "Psychonauts 2: Richardson's mailroom robot acting",
+    "studio": "Double Fine Productions",
+    "category": "3d",
+    "people": [
+      {
+        "name": "Miyuki Richardson",
+        "role": "Animator in official credits; reel author showing in-game animations, layouts and cutscenes",
+        "sourceUrl": "https://www.doublefine.com/games/psychonauts-2/credits"
+      }
+    ],
+    "tags": [
+      "robot",
+      "attention",
+      "body acting",
+      "layout",
+      "eye direction"
+    ],
+    "summary": "A credited animator's reel offers a useful robot comparison and clearly labels her animation work separately from layout-only contributions.",
+    "observations": [
+      {
+        "text": "In the inspected mailroom sequence around 4:08 to 4:20, the robot's luminous circular eye, head angle, and oversized mechanical hand make the letter exchange readable. At 4:14 the frame places the eye beside the envelope, bringing face and task into one composition.",
+        "basis": "visual observation",
+        "sourceUrl": "https://vimeo.com/619494977"
+      },
+      {
+        "text": "At approximately 4:20 the reel visibly labels the shot 'Layout and Animation'. Earlier examples, including the inspected 1:36 frame, say 'Layout Only' and credit final animation to Squeeze Animation Studios.",
+        "basis": "visual observation",
+        "sourceUrl": "https://vimeo.com/619494977"
+      },
+      {
+        "text": "Double Fine's official credits name Richardson among the animators and separately acknowledge FaceFX-generated facial animations; this does not establish which mechanism any individual shot uses.",
+        "basis": "creator statement",
+        "sourceUrl": "https://www.doublefine.com/games/psychonauts-2/credits"
+      }
+    ],
+    "mistIdeas": [
+      "Our inference: tie a MIST attention change to an actual event or object, then align the face, head, and one body gesture around that target.",
+      "Our inference: a mechanical face can retain its identity while the head and body carry emphasis. Avoid forcing a human mouth performance into every response.",
+      "Our inference: review future MIST animation in labelled stages: anticipation, attention shift, reaction hold, and return. The reel does not supply measured timing values for these stages."
+    ],
+    "media": [
+      {
+        "kind": "video",
+        "url": "https://player.vimeo.com/video/619494977?h=831ae4368a",
+        "sourceUrl": "https://vimeo.com/619494977",
+        "credit": "Miyuki Richardson / Double Fine Productions; additional shot-specific credits appear within the reel",
+        "alt": "Psychonauts 2 animation reel, including a mailroom robot sequence around 4:08 to 4:20. Contains story spoilers.",
+        "verified": true,
+        "motionVerified": false
+      }
+    ],
+    "sources": [
+      {
+        "title": "Miyuki Richardson - Psychonauts 2 Animation Reel",
+        "url": "https://vimeo.com/619494977",
+        "kind": "artist",
+        "supports": "Artist attribution, exact embed supplied by the player's Embed dialog, per-shot contribution labels, inspected robot frames."
+      },
+      {
+        "title": "Psychonauts 2 Cast & Credits",
+        "url": "https://www.doublefine.com/games/psychonauts-2/credits",
+        "kind": "developer",
+        "supports": "Richardson's animator credit; Squeeze studio team and FaceFX acknowledgement."
+      },
+      {
+        "title": "Miyuki Richardson Resume",
+        "url": "https://maruyamamiyuki.wixsite.com/portfolio/resume",
+        "kind": "artist",
+        "supports": "Senior animator role at Double Fine and in-game/cinematic animation experience."
+      }
+    ],
+    "confidence": "high",
+    "researchNotes": "Video played and timestamps were verified against the player, but analysis is based on sampled frames, not continuous motion perception. Do not infer blink timing, delayed-mouth timing or frame counts. Major story spoilers. This is the larger-production comparison, not a small indie production."
+  },
+  {
+    "id": "bugsnax-eggabell-rosenthal",
+    "title": "Bugsnax: Eggabell animation set (inspection pending)",
+    "studio": "Young Horses",
+    "category": "3d",
+    "people": [
+      {
+        "name": "Jeff Rosenthal",
+        "role": "Character animation work for Bugsnax, self-attributed on Eggabell portfolio page",
+        "sourceUrl": "https://jeffrosenthal.artstation.com/projects/18PRbL"
+      }
+    ],
+    "tags": [
+      "character animation",
+      "interactive model",
+      "inspection pending"
+    ],
+    "summary": "A character-specific animator portfolio is a useful follow-up source, but its model did not render in this session.",
+    "observations": [
+      {
+        "text": "Rosenthal identifies this as his character animation work for Bugsnax and tells viewers to change animations using the dropdown below the time slider. No visible face-performance observation is claimed.",
+        "basis": "creator statement",
+        "sourceUrl": "https://jeffrosenthal.artstation.com/projects/18PRbL"
+      }
+    ],
+    "mistIdeas": [
+      "Our inference, pending playback: use the artist's selectable animation set to compare idle, speaking and reaction poses before choosing any Eggabell-specific technique. No adoption recommendation follows from the blocked viewer alone."
+    ],
+    "media": [
+      {
+        "kind": "page",
+        "url": "https://sketchfab.com/models/4e24d8c42d7645baa98bb9ad2bc53241/embed",
+        "sourceUrl": "https://jeffrosenthal.artstation.com/projects/18PRbL",
+        "credit": "Jeff Rosenthal / Young Horses",
+        "alt": "Artist-embedded Eggabell animation model with selectable animations; rendering failed in the research browser.",
+        "verified": true,
+        "motionVerified": false
+      }
+    ],
+    "sources": [
+      {
+        "title": "Bugsnax Character Animations - Eggabell",
+        "url": "https://jeffrosenthal.artstation.com/projects/18PRbL",
+        "kind": "artist",
+        "supports": "Exact character animation attribution and embedded model URL."
+      },
+      {
+        "title": "Jeff Rosenthal Resume",
+        "url": "https://jeffrosenthal.artstation.com/resume",
+        "kind": "artist",
+        "supports": "Contract work on Bugsnax and character-animation/rigging skills."
+      }
+    ],
+    "confidence": "medium",
+    "researchNotes": "Source and embed URLs verified in page DOM. Sketchfab showed 'Model is too heavy for your device and can not be rendered properly'. This is an explicitly incomplete follow-up card, not a visually verified moodboard image. Do not promote it alongside inspected faces without that qualification."
+  }
+]

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>MIST - Drawn motion</title><link rel="stylesheet" href="preview.css?v=emotion4"></head>
+<body>
+<header><a href="../">MIST</a><span class="divider">/</span><span>Drawn motion</span><span id="status" role="status">Loading drawings...</span><a class="quiet" href="transitions.html">Transitions</a><a class="quiet" href="MIST_drawn_animation_pack.zip" download>Download drawings</a><a class="quiet" href="../grid.html">Previous preview</a></header>
+<main>
+<div class="toolbar" aria-label="Playback controls">
+ <button id="play">Pause</button><button id="step" title="Pause and advance one frame">Step</button><button id="blink">Blink all</button><button id="compare-mouths" disabled>Mouth families</button>
+ <label><input type="checkbox" id="talk" checked> Talking</label><label><input type="checkbox" id="gaze"> Gaze</label><label><input type="checkbox" id="sync"> Together</label>
+ <label class="select-label" title="15 animation frames per second; voice timing follows the audio clock">Animation <select id="fps"><option value="15" selected>15 fps</option></select></label>
+ <label class="select-label">Speed <select id="speed"><option value=".5">0.5x</option><option value="1" selected>1x</option><option value="1.5">1.5x</option></select></label>
+ <label class="select-label">Artwork <select id="mode"><option value="generated">Custom motion</option><option value="original">Original</option></select></label>
+</div>
+<div class="voicebar"><label>Voice <select id="voice-sample"><option value="">Loading samples...</option></select></label><button id="voice-play" disabled>Play voice</button><button id="voice-stop" disabled>Stop</button><span id="voice-status" role="status">Saved recording</span></div>
+<div class="note"><span id="study-mode">ImageGen cels. Silent speech study.</span><span>Click a face to inspect.</span></div>
+<div id="error" role="alert" hidden></div>
+<section id="grid" aria-label="All 40 expressions"></section>
+</main>
+<dialog id="inspect">
+ <div class="dialog-head"><span id="focus-name"></span><button id="close" aria-label="Close inspector">Close</button></div>
+ <canvas id="focus" width="1000" height="640" aria-label="Selected expression"></canvas>
+ <div class="inspector-controls"><button id="focus-blink">Blink</button><button id="focus-play">Pause</button><button id="focus-step">Step</button><span id="phase"></span></div>
+ <div class="strip-heading"><label>Eye <select id="eye-side"><option value="eye_L">Left</option><option value="eye_R">Right</option></select></label><span id="family-label"></span><button id="resume-cels">Follow animation</button></div>
+ <div id="eye-strip" class="cel-strip" aria-label="Blink drawings"></div>
+ <div class="strip-heading"><span>Mouth</span><span id="mouth-label"></span></div>
+ <div id="mouth-strip" class="cel-strip mouths" aria-label="Speech drawings"></div>
+ <p class="note">Click a cel to hold it. Speaking uses shared mouth drawings; resting retains each expression's mouth.</p>
+</dialog>
+<dialog id="mouth-comparison"><div class="dialog-head"><span>Mouth families</span><button id="comparison-close">Close</button></div><div class="toolbar"><label>Pose <select id="comparison-pose"></select></label><button id="comparison-play">Animate</button><button id="comparison-step" title="Advance one frame at 15 fps">Step</button><span class="comparison-rate">15 fps</span></div><div id="comparison-grid"></div><p class="note">Same pose, six styles. Drawings only.</p></dialog>
+<script src="../runtime/app_data.js"></script><script src="../runtime/face_runtime.js"></script><script src="../runtime/drawn_face_renderer.js?v=blink5"></script><script src="../audit.js"></script><script src="preview.js?v=emotion4"></script>
+</body></html>

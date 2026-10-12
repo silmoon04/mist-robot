@@ -1,0 +1,216 @@
+{
+  "version": 4,
+  "family": "mouth_sad",
+  "image": "sheets/mouth_sad_v4.png",
+  "width": 1536,
+  "height": 1024,
+  "columns": 4,
+  "rows": 2,
+  "order": [
+    "rest",
+    "release",
+    "small_AA",
+    "AA",
+    "EH",
+    "EE",
+    "LNT",
+    "wide_close"
+  ],
+  "logicalCellSize": 221.75,
+  "sourceScale": 0.5774739583333334,
+  "registration": "Extract the measured bounds with normal antialias padding. Align each measured horizontal centre and upper ink bound to the mouth anchor. Use one common sourceScale for the family, preserving relative widths and opening heights; do not normalize every pose independently.",
+  "cells": [
+    {
+      "pose": "rest",
+      "cell": [
+        0,
+        0,
+        384,
+        512
+      ],
+      "bbox": [
+        86,
+        272,
+        341,
+        345
+      ],
+      "anchor": [
+        213,
+        272
+      ],
+      "inkWidth": 255,
+      "inkHeight": 73,
+      "significantComponents": 1,
+      "holesOver10Pixels": 0,
+      "cornersLowerThanMiddlePixels": 32
+    },
+    {
+      "pose": "release",
+      "cell": [
+        384,
+        0,
+        768,
+        512
+      ],
+      "bbox": [
+        462,
+        263,
+        700,
+        345
+      ],
+      "anchor": [
+        580.5,
+        263
+      ],
+      "inkWidth": 238,
+      "inkHeight": 82,
+      "significantComponents": 1,
+      "holesOver10Pixels": 0,
+      "cornersLowerThanMiddlePixels": 28.25
+    },
+    {
+      "pose": "small_AA",
+      "cell": [
+        768,
+        0,
+        1152,
+        512
+      ],
+      "bbox": [
+        824,
+        243,
+        1074,
+        352
+      ],
+      "anchor": [
+        948.5,
+        243
+      ],
+      "inkWidth": 250,
+      "inkHeight": 109,
+      "significantComponents": 1,
+      "holesOver10Pixels": 0,
+      "cornersLowerThanMiddlePixels": 35.75
+    },
+    {
+      "pose": "AA",
+      "cell": [
+        1152,
+        0,
+        1536,
+        512
+      ],
+      "bbox": [
+        1191,
+        220,
+        1456,
+        361
+      ],
+      "anchor": [
+        1323,
+        220
+      ],
+      "inkWidth": 265,
+      "inkHeight": 141,
+      "significantComponents": 1,
+      "holesOver10Pixels": 0,
+      "cornersLowerThanMiddlePixels": 43.5
+    },
+    {
+      "pose": "EH",
+      "cell": [
+        0,
+        512,
+        384,
+        1024
+      ],
+      "bbox": [
+        89,
+        658,
+        337,
+        761
+      ],
+      "anchor": [
+        212.5,
+        658
+      ],
+      "inkWidth": 248,
+      "inkHeight": 103,
+      "significantComponents": 1,
+      "holesOver10Pixels": 0,
+      "cornersLowerThanMiddlePixels": 32.75
+    },
+    {
+      "pose": "EE",
+      "cell": [
+        384,
+        512,
+        768,
+        1024
+      ],
+      "bbox": [
+        445,
+        682,
+        720,
+        759
+      ],
+      "anchor": [
+        582,
+        682
+      ],
+      "inkWidth": 275,
+      "inkHeight": 77,
+      "significantComponents": 1,
+      "holesOver10Pixels": 0,
+      "cornersLowerThanMiddlePixels": 26.25
+    },
+    {
+      "pose": "LNT",
+      "cell": [
+        768,
+        512,
+        1152,
+        1024
+      ],
+      "bbox": [
+        850,
+        685,
+        1052,
+        757
+      ],
+      "anchor": [
+        950.5,
+        685
+      ],
+      "inkWidth": 202,
+      "inkHeight": 72,
+      "significantComponents": 1,
+      "holesOver10Pixels": 0,
+      "cornersLowerThanMiddlePixels": 23.75
+    },
+    {
+      "pose": "wide_close",
+      "cell": [
+        1152,
+        512,
+        1536,
+        1024
+      ],
+      "bbox": [
+        1187,
+        692,
+        1465,
+        759
+      ],
+      "anchor": [
+        1325.5,
+        692
+      ],
+      "inkWidth": 278,
+      "inkHeight": 67,
+      "significantComponents": 1,
+      "holesOver10Pixels": 0,
+      "cornersLowerThanMiddlePixels": 21.25
+    }
+  ]
+}

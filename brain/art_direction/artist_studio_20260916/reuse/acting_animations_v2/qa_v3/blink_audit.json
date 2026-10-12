@@ -1,0 +1,192 @@
+{
+  "audit": "Independent temporal blink and eye-contour audit after user rejection",
+  "frameNumbering": "One-based: frame 1 is manifest index 0. Read four-column contact sheets left to right, then down.",
+  "scope": {
+    "examplesReviewed": 18,
+    "fullContactSheetsReviewed": 18,
+    "isolatedEyeFramesReviewed": 108,
+    "method": "Viewed every existing dark-background contact sheet, then composited the actual extracted leftEye/rightEye layers for frames 1-6 over a dark background in temporary audit sheets. No art assets were modified. Judgments concern sequential contour continuity and acting, not file validity.",
+    "limitations": "This is a contact-sheet and adjacent-pose audit. It is not a claim that all loops were watched at production speed or that mouth/voice synchronization was assessed."
+  },
+  "summary": {
+    "result": "Repair before calling the set polished animation. Several middle frames are visibly different eye constructions, rather than coherent in-betweens.",
+    "highPriorityExamples": ["aardman/disbelief", "bluey/reassurance", "bluey/delight", "pixar/recall", "pixar/checking", "pixar/discovery", "mickey/mock_outrage", "mickey/triumph", "peanuts/company", "peanuts/wry", "peanuts/pride"],
+    "mostReusableBlinkFamily": "simons_cat: notice, waiting, clarify. Their upper outline descends through a consistent bowl silhouette, pupil dots remain inside that opening, and reopening broadly follows closure. Preserve this family unless a playback check finds a separate issue.",
+    "rootCause": "The generated sheets conflate a closed eye, an upper eyelid drawn over an otherwise full eye, a pupil shrinking in a full disk, and a separate smiling eye symbol. Sequential assembly treats these incompatible drawings as in-betweens.",
+    "genericBlinkBudget": "Most examples spend the first six of twelve frames on nearly the same blink. That leaves little room to develop the particular acting beat. A reusable expression-specific blink clip should be separate from the 12-frame acting clip, instead of being forced into its opening half."
+  },
+  "globalRepairRules": [
+    "Choose the actual open eye and intended closed contour for each eye family before asking for in-betweens. Keep the closed contour's curvature direction consistent with the approaching lid edges.",
+    "For an outlined eye, the visible eye opening must collapse. Do not merely shrink or crop the internal pupil while leaving a large round external disk.",
+    "For a solid dot eye, draw the dot flattening into a small lid stroke. Do not introduce detached eyebrows or mushroom-cap overhangs only during the blink.",
+    "Keep eye corners, eye spacing, and the lower contour stable unless the acting plan explicitly calls for a squash. Prevent automatic recentering of each changing bounding box.",
+    "The reopening half should retrace compatible intermediate shapes. It may take a different number of exposures, but must not substitute straight lids for slanted lids or a round eye for the established half-lidded base.",
+    "Asymmetrical expression is allowed, but a symmetric blink must not change gaze direction or independently inflate one eye without an acting reason.",
+    "Review actual-size 15 fps playback, then slow playback and adjacent frames. Alpha reconstruction and correct frame counts cannot approve motion quality.",
+    "Generate small, constrained strips for one eye family at a time. Do not accept an attractive sheet as proof that its middle drawings interpolate."
+  ],
+  "examples": [
+    {
+      "key": "aardman/listening",
+      "severity": "medium",
+      "blinkVerdict": "Recognizable blink, but closure has an abrupt mass and spacing change.",
+      "badFrames": [2, 3, 4, 5],
+      "badPairs": [[1, 2], [3, 4], [5, 6]],
+      "findings": ["Frame 2 removes most of the upper opening at once and turns the ring into a heavy lower bowl. Frame 3 is already very shallow, but frame 4 grows back into a deeper, thick crescent instead of continuing toward a thin closed line.", "Frame 5 jumps straight back to the relatively tall frame-2 construction; frame 6 then jumps to a full circle. The reopening lacks a near-closed intermediate."],
+      "repair": "Preserve the circular open drawing and common lower eye anchor. Redraw the near-closed and closed poses with continuous lower-edge curvature and no increase in apparent opening height at the final closure. Reuse those same contours for reopening, with slower exposure on opening if desired."
+    },
+    {
+      "key": "aardman/disbelief",
+      "severity": "high",
+      "blinkVerdict": "Closure is mostly coherent; return pose is wrong.",
+      "badFrames": [6, 7],
+      "badPairs": [[5, 6], [6, 7]],
+      "findings": ["The base at frame 1 is half-lidded with a rightward gaze. Frame 6 abruptly opens both eyes to centered full circles. Frame 7 then abruptly restores only the left half-lid while the right remains round.", "This reads as an extra surprise flash inserted between the blink and skeptical asymmetry, not a restrained disbelief beat."],
+      "repair": "Finish the blink back in the frame-1 half-lidded expression. Then raise only the intended eye through a planned intermediate. Keep both pupils' gaze consistent through the blink."
+    },
+    {
+      "key": "aardman/realisation",
+      "severity": "medium",
+      "blinkVerdict": "Two heavy closed shapes replace a near-closed stage.",
+      "badFrames": [3, 4, 6],
+      "badPairs": [[2, 3], [3, 4], [5, 6]],
+      "findings": ["Frames 3 and 4 are both fully filled crescents with no opening. They differ in thickness/width rather than advancing a lid through a coherent near-closed stage.", "The gaze changes from high/right at frame 1 to centered at frame 6 without a visible gaze-transition stage; it may serve realisation, but should be deliberately placed after the blink rather than emerge from a replacement eye design."],
+      "repair": "Use a true near-closed sliver at frame 3 and a thinner closed contour at frame 4. Preserve the original pupil location until reopening, then animate gaze toward the listener in the acting portion."
+    },
+    {
+      "key": "bluey/reassurance",
+      "severity": "high",
+      "blinkVerdict": "The reopening eye is from a different construction.",
+      "badFrames": [5],
+      "badPairs": [[3, 4], [4, 5], [5, 6]],
+      "findings": ["Closure frame 3 retains inward-sloping expressive upper lids. Frame 5 discards those lids and uses a horizontal cut through large pupil openings. Frame 6 suddenly restores the original sloping lid tips.", "The paired eye shapes therefore change from concerned to flat and back within the blink."],
+      "repair": "Redraw frame 5 from the same sloped-lid contour family used in frames 2 and 3. Preserve the inward corners and lid angle all the way down and back up. Avoid the straight rectangular clipping edge."
+    },
+    {
+      "key": "bluey/delight",
+      "severity": "high",
+      "blinkVerdict": "Closed eye flips curvature and vertical location.",
+      "badFrames": [3, 4, 5],
+      "badPairs": [[3, 4], [4, 5]],
+      "findings": ["Frame 3 is a lower bowl. Frame 4 is an upward arch with its center above its corners. Frame 5 returns to a lower bowl. The eye's entire contour inverts during the middle of a blink.", "The happy arched eye used again in frames 8 and 9 is a valid expression pose, but not a compatible continuation of the preceding upper-lid-down blink."],
+      "repair": "Use an ordinary downward-closing blink with a matching closed curve in frames 1-6. Separately animate the happy cheek/lower-lid lift into the upward smiling arcs during the delight beat; do not insert that symbol as the universal closed blink."
+    },
+    {
+      "key": "bluey/uncertainty",
+      "severity": "medium",
+      "blinkVerdict": "Overall direction is coherent, but the near-closed intermediate is already a solid blob.",
+      "badFrames": [3],
+      "badPairs": [[2, 3], [3, 4]],
+      "findings": ["The pupils vanish completely at frame 3 while the outer crescent remains thick. Frame 4 changes only that mass into a thinner line. This is a noticeably different closure progression from a lid naturally covering the existing pupil.", "Frames 6 and 1 broadly match. Preserve that return rather than substituting the generic round-open frame used elsewhere."],
+      "repair": "Make frame 3 a narrow but still readable opening with the remaining pupil portion naturally occluded by the sloped lid. Keep frame 4 a stable thin closed contour."
+    },
+    {
+      "key": "pixar/recall",
+      "severity": "high",
+      "blinkVerdict": "Helmet/cap construction and pupil-only closure.",
+      "badFrames": [2, 3, 5],
+      "badPairs": [[1, 2], [3, 4], [4, 5]],
+      "findings": ["Frames 2 and 3 retain a large domed cyan upper mass, including lateral overhangs. Only the internal dark opening shrinks toward the bottom. The eye reads as a helmet over a pupil rather than an eyelid closing.", "Frame 4 abruptly removes this dome and substitutes a lower crescent. Frame 5 restores the dome in one step."],
+      "repair": "Redraw the outer eye silhouette to descend with the upper lid. Remove the cap overhangs entirely. Keep the lower edge and corners stable and reduce the actual eye opening, then reopen through the same contour family."
+    },
+    {
+      "key": "pixar/checking",
+      "severity": "high",
+      "blinkVerdict": "The eye shrinks as an oval disk while its pupil closes; later gaze destroys the ring.",
+      "badFrames": [2, 3, 5, 8],
+      "badPairs": [[2, 3], [3, 4], [7, 8], [8, 9]],
+      "findings": ["Frames 2, 3 and 5 preserve a substantial convex dome above the dark pupil aperture. Frame 3 looks like a flattened filled disk, and frame 4 replaces it with a concave lower crescent.", "At frame 8 the rightward pupils break through the outer eye rims, producing two C-shaped swooshes with different lid slopes. Frame 9 returns to full rings. This is a contour discontinuity during a gaze shift."],
+      "repair": "Use a lid-down eye-opening silhouette for the blink. Keep gaze pupils inside a consistent eye rim, or explicitly design a stable open-ring family and interpolate it; do not let the outer contour alternate between full rings and asymmetric swooshes."
+    },
+    {
+      "key": "pixar/discovery",
+      "severity": "high",
+      "blinkVerdict": "Asymmetric base is replaced by unrelated neutral eyes on reopening.",
+      "badFrames": [2, 5, 6, 8],
+      "badPairs": [[1, 2], [5, 6], [7, 8], [9, 10]],
+      "findings": ["Frames 2 and 5 flatten the eye bodies but retain large circular pupil cutouts. At frame 6 both eyes become standard round rings, losing the intentionally different contours of frame 1.", "Frames 8 and 9 change both eyes into bell-like domes with concave bottom edges and pupils breaking through the tops. That is a major eye-model swap, followed by another swap back at frame 10."],
+      "repair": "Keep the original two eye shapes as the return target. Animate discovery through gaze and controlled widening of those same contours. Remove the bell-shaped intermediate unless it is explicitly chosen as a separate new expression and given proper transitions."
+    },
+    {
+      "key": "mickey/double_take",
+      "severity": "medium",
+      "blinkVerdict": "Blink is broadly legible; the subsequent stretch is an unsupported single-frame distortion.",
+      "badFrames": [3, 4, 7],
+      "badPairs": [[3, 4], [6, 7], [7, 8]],
+      "findings": ["Frames 3 and 4 are both closed and change crescent depth without another closure stage. This can be a held blink, but the redraw makes the hold wobble.", "Frame 7 stretches only the left eye into a very tall narrow oval. Frame 8 immediately compresses it back to a half-lidded bowl, while the right eye is nearly unchanged. No anticipation or recovery shape supports that one-frame stretch."],
+      "repair": "Reuse an identical held closed drawing rather than a new wobbling one. Keep a milder left-eye stretch for the double take and add a readable anticipation/recovery in the acting section, or remove the extreme isolated frame."
+    },
+    {
+      "key": "mickey/mock_outrage",
+      "severity": "high",
+      "blinkVerdict": "Left eye closes its internal hole before its outer contour responds.",
+      "badFrames": [2, 3, 5],
+      "badPairs": [[1, 2], [2, 3], [4, 5], [5, 6]],
+      "findings": ["The large open left C-shaped eye becomes a nearly full oval cyan disk at frame 2 while only a small dark lower pupil aperture remains. Frame 3 suddenly replaces it with a sloping half-lidded eye.", "Frame 5 uses a small half-lidded left eye, then frame 6 suddenly restores the tall open C. Closing and reopening therefore follow incompatible scale changes."],
+      "repair": "Animate the left outer opening down from the tall C eye, retaining its fixed corners and horizontal width. Use the same half-open contour in both directions. The right eye can retain its different resting lid angle, but should share the same blink phase."
+    },
+    {
+      "key": "mickey/triumph",
+      "severity": "high",
+      "blinkVerdict": "Pupil-only closure followed by inverted closed symbol.",
+      "badFrames": [3, 4, 5],
+      "badPairs": [[2, 3], [3, 4], [4, 5]],
+      "findings": ["Frames 2 and 3 keep almost the same sloping outer eye while shrinking the dark openings. Frame 4 replaces both downward bowls with upward smiling arches. Frame 5 returns to downward bowls.", "The arch is usable as the triumphant pose at frame 8, but it makes a bad blink bridge from the resting half-lidded pose."],
+      "repair": "Give the half-lidded base a matching downward closed contour. Move the upward happy arches into the separate triumphant acting beat with lower-lid/cheek-lift intermediates."
+    },
+    {
+      "key": "simons_cat/notice",
+      "severity": "low",
+      "blinkVerdict": "Most coherent family; retain the construction.",
+      "badFrames": [],
+      "badPairs": [],
+      "findings": ["The upper outline descends, the lower outline remains a compatible bowl, pupil dots remain inside the opening, and frames 2 and 5 broadly match. No helmet, detached lid or curvature inversion is present.", "The last frame's pupil positions do not exactly equal the first frame's inward-looking positions, so loop return still deserves actual-speed review."],
+      "repair": "Keep these drawn blink poses. Match the final pupil locations to the first frame or supply a deliberate short gaze reset before the loop. Assess timing rather than regenerating this family wholesale."
+    },
+    {
+      "key": "simons_cat/waiting",
+      "severity": "low",
+      "blinkVerdict": "Coherent closing and reopening shapes.",
+      "badFrames": [],
+      "badPairs": [],
+      "findings": ["The six blink drawings form a sensible open, half, near-closed, closed, half, open sequence. Pupils are occluded by the descending outline rather than being shrunk inside a full disk.", "The closed arc is a little deeper than the near-closed opening; this is minor compared with the topology failures in other families and needs playback judgment rather than automatic rejection."],
+      "repair": "Preserve the eye construction. If the blink feels floaty, align the closed arc to the actual meeting lid edges and tighten its exposure; keep the existing pupil and corner registration."
+    },
+    {
+      "key": "simons_cat/clarify",
+      "severity": "low",
+      "blinkVerdict": "Coherent blink, with a separate abrupt expression entry later.",
+      "badFrames": [7],
+      "badPairs": [[6, 7]],
+      "findings": ["Frames 1-6 are a usable matching blink family with consistent line weight and eye-opening logic.", "Frame 7 instantly halves the left eye after both were open at frame 6. This is plausible skeptical acting, but the full-to-half jump is not a smoothly introduced expression."],
+      "repair": "Keep the blink drawings. Use one intermediate left-lid descent for entering the questioning pose, or time the abrupt change as a deliberate reaction rather than describing it as smooth motion."
+    },
+    {
+      "key": "peanuts/company",
+      "severity": "high",
+      "blinkVerdict": "Separate brows appear, then the eyes disappear.",
+      "badFrames": [2, 3, 4, 5],
+      "badPairs": [[1, 2], [3, 4], [4, 5], [5, 6]],
+      "findings": ["Frame 1 consists of solid eye dots. Frame 2 adds detached eyebrow-like arcs while retaining the dots. Frame 3 slightly shortens the dots, and frame 4 deletes them, leaving the much wider arcs as the eyes.", "The shape count and visual eye width both change during the blink; this reads as eyebrows appearing above disappearing eyes."],
+      "repair": "Design a dot-eye blink: the original dots flatten into small ovals and then a compact curved stroke of comparable width. Do not add a separate arc above the dot unless brows are a persistent component in all poses."
+    },
+    {
+      "key": "peanuts/wry",
+      "severity": "high",
+      "blinkVerdict": "Detached-lid construction plus curvature reversal.",
+      "badFrames": [2, 3, 4, 5],
+      "badPairs": [[1, 2], [3, 4], [4, 5]],
+      "findings": ["Frames 2 and 3 introduce arched brows above the dot eyes. Frame 4 removes the dots and flips each remaining arc from an upward dome to a downward bowl. Frame 5 brings back both upward domes and dots.", "The middle closed drawing therefore belongs to a different eye construction and bends the opposite way to its supposed preceding lid."],
+      "repair": "Use one compact dot-to-lid shape path and a fixed curvature direction. Keep the later wry wink as a separate asymmetric eye pose with its own matching opening and closing drawings."
+    },
+    {
+      "key": "peanuts/pride",
+      "severity": "high",
+      "blinkVerdict": "Mushroom-cap growth replaces a blink.",
+      "badFrames": [2, 3, 4, 5, 7, 8, 9, 10],
+      "badPairs": [[1, 2], [2, 3], [3, 4], [4, 5], [6, 7]],
+      "findings": ["Frame 2 grows a cyan cap with side protrusions around the original dot. Frame 3 becomes a filled upper semicircle, and frame 4 jumps to a wider hollow arc. The eye is growing a lid-shaped object instead of its existing shape closing.", "The cap returns in frames 7-10 as a persistent pride pose, so repairing only the initial blink would leave the same unwanted intermediate eye model in the acting section."],
+      "repair": "Remove the cap family entirely. Derive pride from a slight upward tilt or small happy arc with width consistent with the dot eye. Create dot-to-oval-to-stroke closure and its reverse without protruding lateral edges."
+    }
+  ]
+}

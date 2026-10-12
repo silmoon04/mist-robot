@@ -1,0 +1,160 @@
+{
+  "revision": "Independent background reasoning and phrase streaming, 2026-09-14",
+  "tests": [
+    {
+      "name": "33 application contracts",
+      "passed": true
+    },
+    {
+      "name": "12 streaming TTS contracts",
+      "passed": true
+    },
+    {
+      "name": "7 phrase boundary contracts",
+      "passed": true
+    },
+    {
+      "name": "3 background lifecycle contracts",
+      "passed": true
+    },
+    {
+      "name": "6 legacy recovery contracts",
+      "passed": true
+    },
+    {
+      "name": "Playback scheduling",
+      "passed": true
+    },
+    {
+      "name": "Expression wording cues",
+      "passed": true
+    },
+    {
+      "name": "31,050 face renderer states",
+      "passed": true
+    }
+  ],
+  "layers": [
+    {
+      "role": "Conversation",
+      "implementation": "Native Codex V3 voice, with its existing Spark application-tool bridge"
+    },
+    {
+      "role": "Background analysis",
+      "implementation": "Separate ephemeral Spark model session with read-only sensor and preference tools"
+    },
+    {
+      "role": "Speech",
+      "implementation": "ElevenLabs Flash v2.5, one context per reply, MIST voice unchanged"
+    },
+    {
+      "role": "Coordination",
+      "implementation": "Bounded job mailbox, cancellation, revision checks, and playback/user-speech idle checks"
+    }
+  ],
+  "background_submission_ack_ms": 0.6478999857790768,
+  "background_analysis_s": 5.536466600024141,
+  "speech_packets_during_analysis": 39,
+  "standalone_worker": {
+    "submit_ack_ms": 0.05330005660653114,
+    "event_loop_ticks": 175,
+    "max_tick_ms": 35.69789999164641,
+    "elapsed_s": 5.438419600017369,
+    "passed": true
+  },
+  "private_handoff": {
+    "background_started": true,
+    "second_user_turn_dispatched_while_running": true,
+    "smalltalk_answered": true,
+    "background_completed": true,
+    "result_retrieved_privately": true,
+    "background_elapsed_s": 4.688000000023749,
+    "errors": [],
+    "warnings": [],
+    "audio_packets_while_background_running": 0,
+    "passed": true
+  },
+  "phrase_comparison": [
+    {
+      "case": "clause",
+      "version": "previous",
+      "first_audio_s": 0.7660000000032596,
+      "audio_s": 5.267166666666666,
+      "warnings": []
+    },
+    {
+      "case": "clause",
+      "version": "phrases",
+      "first_audio_s": 0.5939999999827705,
+      "audio_s": 5.547666666666666,
+      "warnings": []
+    },
+    {
+      "case": "sentences",
+      "version": "previous",
+      "first_audio_s": 0.7650000000139698,
+      "audio_s": 3.708833333333333,
+      "warnings": []
+    },
+    {
+      "case": "sentences",
+      "version": "phrases",
+      "first_audio_s": 0.20400000002700835,
+      "audio_s": 4.425666666666666,
+      "warnings": []
+    }
+  ],
+  "phrase_audio_recognition": [
+    {
+      "case": "clause",
+      "recognized": "i can keep the beginning quite short and explain the rest while you listen this should stay one connected thought",
+      "passed": true
+    },
+    {
+      "case": "sentences",
+      "recognized": "that worked we can try the next step no rush though i am still listening",
+      "passed": true
+    }
+  ],
+  "ordinary_reply_first_packet_s": [
+    1.797000000020489,
+    1.797000000020489
+  ],
+  "browser_playback_reserve_s": 0.2,
+  "limits": [
+    "Sub-millisecond submission acknowledgement starts after the request reaches the application. Native model routing before that point can still take seconds.",
+    "Phrase comparisons use two controlled text examples and a fixed input cadence, not a population latency benchmark. Same-context synthesis reduces but cannot guarantee elimination of prosody seams.",
+    "The first conversational background probe merged the extra spoken input into the existing native user turn. A separate live probe then verified speech packets continuing during a real background model job.",
+    "Background completions are auto-delivered only when the original user turn is still current and speech/tool activity is idle. Other results remain in the mailbox for explicit retrieval.",
+    "The background worker cannot actuate hardware or change preferences. Existing movement commands remain bounded previews.",
+    "Speech recognition and waveform checks do not establish subjective naturalness or real phone echo handling."
+  ],
+  "baseline_tts_sha256": "2a09a5c69c95bb613bc5123b9c4aca0e691800bcf5721a753fd88d9dac5ab3b7",
+  "implementation_sha256": {
+    "duplex/__init__.py": "5d72754d88de174c794e9c99541783681f2e5b26eb251c42d084bbf5dd88659a",
+    "duplex/background.py": "981784e76b374b1283bc3c4ddcbcc1267101e4624d6a3215d9d72b36c8ca07ca",
+    "duplex/build_evaluation.py": "e66a7ae0b775eaa4464f5737f2fc44c5cb6b001d174c501e3090ea66972c15d7",
+    "duplex/build_fix_report.py": "de31b9df575695e118c88ec9cc12e6031b3709302bba204f979f06e7f157516a",
+    "duplex/build_layered_report.py": "3b4b99ee129e9e6252f263ca0ae0f13bfcc585980ee4299ebe3eec13131c5955",
+    "duplex/build_quality_report.py": "99daa53945c9b0ee2e23118c19df19d88a9c8d193be98cd95e7c889666a0333c",
+    "duplex/build_tts_report.py": "bddba08083b9a85aba875491fbd8d5173c0b21f83f28c60b18672fc4ab120767",
+    "duplex/conversion.py": "70bcc6af031e80719b04da587125233221487df1496fa5c2ead02fc1b58871ab",
+    "duplex/face_map.json": "7a49c10b77d90a38e9c39903316976a990de6f3a4ed473de88f54feb7824dd62",
+    "duplex/native.py": "382629ce192349e99eece8d3a40a280903e6db6d303ff6e5741d12d1da209c43",
+    "duplex/package.py": "dd18345c53722d5e7d382a996bb7992ea50a7a620850283019a69239d5a38756",
+    "duplex/persona.txt": "0cef9de6fbd7648510dcee1c6e1d938d59d6a9ea3b3f71fadba1e7847b92658b",
+    "duplex/phrasing.py": "479b7964515aae8d4c517dc0b9226fbbb17e8a95e448fb24dfac046511d7773c",
+    "duplex/README.md": "b9d457adad97e8aa0b595417cc7434455521df09a1daab1882c9d5a259f31e53",
+    "duplex/runtime.py": "265b31fb380177778b443744831a6c0e4548b3ab0f3ed3b5fbaf30923e5710e6",
+    "duplex/sensors.py": "af152877bb82b8c5de94b6f84b6b468bbec8e37f7e2496226f61b4b507629d2e",
+    "duplex/server.py": "09254de990929afc58164398a0c156470e06abe039b5258c1ed3f6af3d0e2d7b",
+    "duplex/static/app.js": "f764ec2aba3f8a735faa06d75e06aa51cc1eefc15e64d35abd00bea1280ec82e",
+    "duplex/static/capture-worklet.js": "ad51a795254e79de00b7951e5ce31bfd32ca57361cda705be8fed0908a862259",
+    "duplex/static/delivery.js": "2d03363d078ae189dc43b144dbe75b62231fa515143c931dd2018057e52eb3bd",
+    "duplex/static/index.html": "eb7da25b356677d140e9d8481ec6d706f10ac5dc365ab6251a2ab47b04728e2f",
+    "duplex/static/playback.js": "707aabecea80b8e468f0f08f490a6711a05d9bb83aea48570e72039e2ef64021",
+    "duplex/static/sample.wav": "916f229828c194e95b404b8346504331df1d39ec154be53408f25015b283a009",
+    "duplex/static/style.css": "8f2483ddc664d88b71c7380a3346bf65b714ff39afc48cfca07ac015eb4d180a",
+    "duplex/tts.py": "45f2c06fbb691f7e8167162e902279af0f6aff5ae62c851ffdf5fb715d33dbe3"
+  }
+}

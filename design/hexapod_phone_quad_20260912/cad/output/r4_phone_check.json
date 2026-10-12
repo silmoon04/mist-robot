@@ -1,0 +1,173 @@
+{
+  "status": "pass",
+  "revision": "hex_quad_r4_inward_knee",
+  "manifest_sha256": "6cac852c196e29e2da100816a7d3b96f545e62dba92c3009a46417eb7d9bc449",
+  "tests_run": 16,
+  "inputs_unchanged": true,
+  "input_hashes": {
+    "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\cad\\geom.py": "655e7d2b8b05226cc9e0f3782dcd1a58599dd81226b6e918c60eac91f5526626",
+    "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\cad\\body.py": "fff64ceda3bc477633112f3e4783d1a00f489f9388cde5141c36c42d37f11d15",
+    "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\cad\\leg.py": "1a639aa397653f70e02f5a519141c79ba87daa72e799c2b948728b7bd39bcabf",
+    "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\cad\\phone.py": "1e09f9f762efc584cce0778e31f8440f5f803aef8bc16ec3a52d0c795d61bdd2",
+    "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\cad\\fit_coupons.py": "d68e1d1ca4beb80aeecd7145bd570b3b9bc2e93add2e2eb12bfa50ac1b9d1000",
+    "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\cad\\servo_contract.py": "eeb09be505f2a4e80cd710d193592099df1f98f849f7ce3eac0f1ba1d3f2dcaa",
+    "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\cad\\hardware\\ST3215.step": "58e38e4dc49f97df738c5f229f9aa8a7dce64a0a1d01335486a52d53e6017e8a",
+    "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\cad\\build.py": "90a3e24e304116fabdcd3b543ddf391d2d5e13b3357f3a4856daf716887a689f",
+    "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\cad\\..\\printing\\fastener_mass.py": "979728f6fc498664ab5ac14eefae71dcfc4aafbf7976e2439b15e214ba732832",
+    "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\settings.json": "2e2d1174f0c325df3246f5f0aa2338bffdcc86b2f54d778288f40afe6fcaef9a",
+    "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\cad\\output\\assembly_manifest.json": "6cac852c196e29e2da100816a7d3b96f545e62dba92c3009a46417eb7d9bc449",
+    "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\cad\\check_r4_phone.py": "9d8915c657390c6f6651b4bddad7fd9f97e12d2f9a39c6cf02f98553c50d78ce",
+    "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\cad\\test_phone_geometry.py": "d28d2ecbcf716a1b1224f826d570a8c21eac6ccf21fbe67b5cb600a12562489f",
+    "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\cad\\check_phone_pan_samples.py": "45bcd8ba21f43532482a07063efc8598d178d9ae6b4e12697922645efbdf6244"
+  },
+  "measurements": {
+    "actual_cover_route": {
+      "bounds_mm": [
+        [
+          -19.35,
+          -12.7,
+          50.0
+        ],
+        [
+          -9.65,
+          12.7,
+          69.1
+        ]
+      ],
+      "base_parts_checked": 30,
+      "pdb_world_bounds_mm": [
+        [
+          -31.81980515339464,
+          -31.81980515339464,
+          8.0
+        ],
+        [
+          31.81980515339464,
+          31.81980515339464,
+          26.0
+        ]
+      ],
+      "pdb_rotation_deg": 45
+    },
+    "driver_access": {
+      "diameter_mm": 6,
+      "checked_paths": [
+        "Body fixing before hub at -39.0,-20.0",
+        "Body fixing before hub at -39.0,20.0",
+        "Body fixing before hub at 19.0,-20.0",
+        "Body fixing before hub at 19.0,20.0",
+        "Pan cap before hub at -25,-19",
+        "Pan cap before hub at -25,19",
+        "Pan cap before hub at 5,-19",
+        "Pan cap before hub at 5,19",
+        "Main horn at 7,0",
+        "Main horn at -7,0",
+        "Main horn at 0,7",
+        "Main horn at 0,-7",
+        "Cradle foot at -16.0,-24.0",
+        "Cradle foot at 12.0,-24.0",
+        "Cradle foot at -16.0,24.0",
+        "Cradle foot at 12.0,24.0",
+        "Rear frame at -24,24",
+        "Rear frame at -24,34",
+        "Rear frame at 24,24",
+        "Rear frame at 24,34",
+        "Phone corner at -78.25,25.5",
+        "Phone corner at -78.25,92.5",
+        "Phone corner at 78.25,25.5",
+        "Phone corner at 78.25,92.5"
+      ],
+      "assembly_order": "Tighten body and case-cap screws before installing the horn and hub, then attach the cradle, insert the phone and close its clips"
+    },
+    "phone_local_bounds_mm": [
+      [
+        0.0,
+        -73.75,
+        18.0
+      ],
+      [
+        7.45,
+        73.75,
+        88.5
+      ]
+    ],
+    "servo_world_bounds_mm": [
+      [
+        -35.111704007722,
+        -12.361704007723114,
+        64.89999990000001
+      ],
+      [
+        10.111704007722123,
+        12.361704007723104,
+        101.4
+      ]
+    ],
+    "provisional_plug_clearance_low_z_mm": 62.1,
+    "full_assembly_pan": {
+      "status": "pass",
+      "angles_deg": [
+        0,
+        15,
+        30,
+        45,
+        60,
+        75,
+        90,
+        105,
+        120,
+        135,
+        150,
+        165,
+        180,
+        195,
+        210,
+        225,
+        240,
+        255,
+        270,
+        285,
+        300,
+        315,
+        330,
+        345
+      ],
+      "sample_count": 24,
+      "moving_part_count": 9,
+      "stationary_part_count": 111,
+      "candidate_boolean_pair_count": 48,
+      "failures": [],
+      "thresholds": {
+        "aabb_tolerance_mm": 1e-05,
+        "intersection_volume_mm3": 0.01,
+        "intersection_failure_comparison": "strictly greater than"
+      }
+    },
+    "full_nominal_static": {
+      "boolean_pairs": 392,
+      "positive_intersections": []
+    },
+    "shoulder_support": {
+      "lower_z_mm": 69,
+      "upper_lip_z_mm": [
+        98,
+        100.5
+      ],
+      "sample_material_coverage": [
+        0.9499999999999775,
+        0.9499999999999997,
+        0.9499999999999775,
+        0.9500000000000001
+      ],
+      "upward_0p3mm_contact_volume_mm3": 8.709286821816288,
+      "downward_0p3mm_contact_volume_mm3": 9.030329486552239
+    }
+  },
+  "failures": [],
+  "mesh_report": "r4_phone_mesh_check.json",
+  "limitations": [
+    "The 24 pan samples do not prove clearance at every intermediate angle.",
+    "Plug projection and flexible-wire clearance still use the explicitly provisional measured-profile mapping.",
+    "Geometry contact and tool-access checks do not establish physical fit, clamp strength or loaded walking."
+  ]
+}

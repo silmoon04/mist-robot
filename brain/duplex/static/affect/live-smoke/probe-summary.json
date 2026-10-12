@@ -1,0 +1,152 @@
+{
+  "architecture": "qwen-affect",
+  "input_mode": "typed_websocket",
+  "port": 9054,
+  "prompts": [
+    "Please show a curious face while you answer in one sentence: what is a hinge?",
+    "I worked all weekend on an exhibition model, and its stand collapsed before anyone saw it. Please respond briefly.",
+    "Keep the current face unchanged. Please say one brief encouraging sentence about trying the print again."
+  ],
+  "limitations": [
+    "Real TrialConversation, speaker provider, affect reader, and ElevenLabs WebSocket are used.",
+    "Typed input bypasses microphone and acoustic endpointing.",
+    "Captured PCM is a server packet receipt; browser playback and human hearing were not tested.",
+    "Synthetic playback_state=false is sent after each captured reply to clear server playback bookkeeping."
+  ],
+  "turns": [
+    {
+      "number": 1,
+      "prompt": "Please show a curious face while you answer in one sentence: what is a hinge?",
+      "user_done": true,
+      "assistant_done": true,
+      "affect_terminal": true,
+      "tts_complete": true,
+      "audio_chunks": 63,
+      "audio_bytes": 299200,
+      "faces": [
+        {
+          "source": "model",
+          "expression": "curious",
+          "variant": 0,
+          "persistent": true,
+          "at_ms_since_send": 2265.0
+        }
+      ],
+      "tools": [
+        {
+          "name": "set_expression",
+          "status": "display_requested"
+        }
+      ],
+      "errors": [],
+      "sent_monotonic": 3631.453,
+      "user_done_ms": 0.0,
+      "affect_outcome": "applied_before_speech",
+      "affect_status": "accepted",
+      "affect_elapsed_ms": 2047.0,
+      "affect_finished_ms": 2047.0,
+      "assistant_done_ms": 3375.0,
+      "assistant_text": "\n\n\n\nA hinge is a joint that connects two rigid parts and lets them pivot around a line, like the strip that holds a door to its frame.",
+      "tts": {
+        "backend": "streaming_tts",
+        "sequence": 0,
+        "epoch": 0,
+        "first_byte_s": 1.7820000000001528,
+        "output_s": 6.233333333333333,
+        "characters": 132,
+        "phrases": 2
+      },
+      "deadline_reached": false,
+      "audio_seconds": 6.233,
+      "audio_sha256": "2ffa4c30cf31eeea9f5090b1f69369d4fe7a230d391684d8dcce7a01b622cf96"
+    },
+    {
+      "number": 2,
+      "prompt": "I worked all weekend on an exhibition model, and its stand collapsed before anyone saw it. Please respond briefly.",
+      "user_done": true,
+      "assistant_done": true,
+      "affect_terminal": true,
+      "tts_complete": true,
+      "audio_chunks": 22,
+      "audio_bytes": 101728,
+      "faces": [],
+      "tools": [],
+      "errors": [],
+      "sent_monotonic": 3640.218,
+      "user_done_ms": 0.0,
+      "assistant_done_ms": 1438.0,
+      "assistant_text": "\n\nThat's a rough way to lose a weekend of work.",
+      "affect_outcome": "speech_already_started",
+      "affect_status": "accepted",
+      "affect_elapsed_ms": 1500.0,
+      "affect_finished_ms": 1500.0,
+      "tts": {
+        "backend": "streaming_tts",
+        "sequence": 1,
+        "epoch": 1,
+        "first_byte_s": 0.6089999999999236,
+        "output_s": 2.1193333333333335,
+        "characters": 45,
+        "phrases": 1
+      },
+      "deadline_reached": false,
+      "audio_seconds": 2.119,
+      "audio_sha256": "a104e1bd42862c9219f5e95e20675d332929d9b7107a112263e56876667734db"
+    },
+    {
+      "number": 3,
+      "prompt": "Keep the current face unchanged. Please say one brief encouraging sentence about trying the print again.",
+      "user_done": true,
+      "assistant_done": true,
+      "affect_terminal": true,
+      "tts_complete": true,
+      "audio_chunks": 44,
+      "audio_bytes": 206448,
+      "faces": [],
+      "tools": [],
+      "errors": [],
+      "sent_monotonic": 3643.359,
+      "user_done_ms": 0.0,
+      "affect_outcome": "speech_already_started",
+      "affect_status": "accepted",
+      "affect_elapsed_ms": 562.0,
+      "affect_finished_ms": 562.0,
+      "assistant_done_ms": 578.0,
+      "assistant_text": "\n\nA second attempt with the stand reinforced probably won't hurt as much as the first one did.",
+      "tts": {
+        "backend": "streaming_tts",
+        "sequence": 2,
+        "epoch": 2,
+        "first_byte_s": 0.42200000000002547,
+        "output_s": 4.301,
+        "characters": 94,
+        "phrases": 1
+      },
+      "deadline_reached": false,
+      "audio_seconds": 4.301,
+      "audio_sha256": "d9e590d86c8a0b0ac9c36ea4ed24b4671f39d81dd3076281efb1448fe6fc9993"
+    }
+  ],
+  "status": "completed",
+  "availability": {
+    "listed": true,
+    "available": true
+  },
+  "trace_id": "b9bd639e3b3545c79b64143a0fc0f1d3",
+  "ready": {
+    "typed_input_supported": true,
+    "provider": "Benchmark cascade: Deepgram nova-3 + cerebras",
+    "speech_backend": "streaming-tts",
+    "startup": {
+      "media_ready_ms": 1063
+    }
+  },
+  "session_status": "ended",
+  "session_reason": "disconnected",
+  "trace_events": 282,
+  "audio": {
+    "pcm_bytes": 607376,
+    "duration_s": 12.654,
+    "pcm_sha256": "8cebe693f4af0251115a2509e6c9d74ba81e37f3713f3bc79d08c053af3a6957"
+  }
+}

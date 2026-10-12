@@ -1,0 +1,35 @@
+{
+  "id": "reading-scan",
+  "title": "Reading",
+  "wave": 3,
+  "summary": "A stable open book, eyes scan across it. No page flip or blank page appearing.",
+  "poses": [
+    {
+      "id": "reading-scan__1",
+      "label": "Start line",
+      "filename": "reading-scan-1.png",
+      "direction": "Open C eyes glance down-left. Short calm closed mouth. A small open cyan outline book below and right of the face, with exactly three stable short cyan text strokes on each page."
+    },
+    {
+      "id": "reading-scan__2",
+      "label": "Across line",
+      "filename": "reading-scan-2.png",
+      "direction": "Same geometry, eyes glance down-right. The exact same rigid book remains in the same position, all three text strokes stay on both pages."
+    },
+    {
+      "id": "reading-scan__3",
+      "label": "Next line",
+      "filename": "reading-scan-3.png",
+      "direction": "Eyes glance slightly down-left, a little lower than first. Same closed mouth, same book, same six visible text strokes; nothing flips, disappears or changes sides."
+    }
+  ],
+  "cycle": "Start line \u2192 across line \u2192 next line \u2192 across line; stable book throughout.",
+  "timing": "1.3\u20131.8 s scan loop",
+  "replaceTargets": [
+    "thinking/reading",
+    "thinking/reading_files"
+  ],
+  "targetFps": 15,
+  "minimumDrawnFrames": 12,
+  "status": "key-pose-concept"
+}

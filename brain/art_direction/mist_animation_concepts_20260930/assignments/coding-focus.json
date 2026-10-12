@@ -1,0 +1,34 @@
+{
+  "id": "coding-focus",
+  "title": "Coding",
+  "wave": 3,
+  "summary": "Focused eyelids and a small terminal cursor, kept well away from the eyes.",
+  "poses": [
+    {
+      "id": "coding-focus__1",
+      "label": "Read code",
+      "filename": "coding-focus-1.png",
+      "direction": "Two mildly lowered upper lids with C-eye lower arcs, short flat closed mouth. Small thin cyan terminal outline at lower-right containing two tiny chevrons and a short cursor."
+    },
+    {
+      "id": "coding-focus__2",
+      "label": "Work",
+      "filename": "coding-focus-2.png",
+      "direction": "Same eyes glance briefly down-right toward terminal. Terminal remains rigid and exactly positioned; cursor shifts down one small row. No new lines appear randomly."
+    },
+    {
+      "id": "coding-focus__3",
+      "label": "Resolve",
+      "filename": "coding-focus-3.png",
+      "direction": "Eyes lift slightly but stay focused, mouth is a tiny restrained smile. Terminal stays identical; cursor at the end of its row."
+    }
+  ],
+  "cycle": "Read \u2192 work \u2192 resolve; loop the cursor and gaze while work is running, settle when done.",
+  "timing": "0.9\u20131.3 s working loop",
+  "replaceTargets": [
+    "thinking/coding"
+  ],
+  "targetFps": 15,
+  "minimumDrawnFrames": 12,
+  "status": "key-pose-concept"
+}

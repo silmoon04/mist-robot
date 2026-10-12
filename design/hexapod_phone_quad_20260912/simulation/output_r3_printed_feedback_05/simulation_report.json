@@ -1,0 +1,208 @@
+{
+  "created_utc": "2026-09-12T15:47:46.575947+00:00",
+  "status": "bounded_simulation_pass",
+  "failure": null,
+  "static_failure": null,
+  "gates": {
+    "standing": true,
+    "phone_full_pan": true,
+    "crawl": true,
+    "actual_foot_steps": true,
+    "mid_swing_support_margin": true,
+    "stance_position": true,
+    "quasi_static_torque": true,
+    "sustained_torque_screen": true,
+    "physical_fit": false,
+    "hardware_walking": false,
+    "printed_material_strength": false
+  },
+  "inputs": {
+    "manifest_sha256": "2f9b5b5ec8d4eb102be6f541676e70d8119385c6660e21d4ee68607e49f28750",
+    "urdf_sha256": "9a3ae2a79e54880cf48081079e0b132d26acdf3540d6f340e4f4e6829607b5e4",
+    "settings_sha256": "dc619bbc98e9b418b75981764b8dd56129bcfbc31173f508a90c5335264839f3",
+    "source_sha256": {
+      "run_simulation_r3.py": "462bcf019053ffd7a2f49cea4ecd9ff85d089502c48ef93e36f511150af72042",
+      "kinematics.py": "ddcd4f7404b8d82655efdb2b74b0b0f38644fa02bae792127a16410a3a293c91",
+      "statics.py": "277ba3169ec2d0ab408d470a53eb2a63efb9e1ba9ca5e691fc49275269b461d2",
+      "export_urdf.py": "905d2f629c59bb3c08a1ca52c0f9459b97e2266fbd0c05400322592c95a611ab",
+      "control_uncertainty.py": "cd0f197e27fc0a18621978faefa157a9b52cfb37b8162c490d52a5ab446cfeab"
+    },
+    "unchanged_during_run": true
+  },
+  "mass_kg": 2.7098832917435076,
+  "mass_model": {
+    "kind": "Cura_model_deposition_high_fasteners",
+    "as_sliced": true,
+    "physical_measurement": false,
+    "printed_parts": "Line-integrated commanded model deposition at layer mid-height",
+    "fasteners": "high",
+    "wire_allowance_kg": 0.15,
+    "source_solid_manifest_sha256": "ed3b458fd8c5929c04652dcaf8b7686c31f8b987f2cead30e14f12191bfa71a2",
+    "source_production_properties_sha256": "68f0251c4cec97bf22810c9d0f7cf0f5bd940db58df3d859f95805dab1feabb6",
+    "integrator_sha256": "2d0f9092f1c9cd064418f409e03681961ff8f70870c145edd344d2b917f3e414",
+    "notes": [
+      "Printed COM and full inertia tensors are transformed, not scaled from solid CAD.",
+      "Support and bed-adhesion material are not included on the robot.",
+      "These are toolpath estimates and nominal hardware geometry, not weighed parts."
+    ]
+  },
+  "uncertainty_case": {
+    "position_stiffness_scale": 0.5,
+    "derivative_damping_scale": 0.1,
+    "feedback_deadband_half_width_deg": 0.5,
+    "feedback_deadband_full_width_deg": 1.0,
+    "scope": "Finite actuator and fixture response sensitivity represented by joint control gains and a position-feedback dead zone. Links remain rigid.",
+    "material_properties_measured": false,
+    "structural_flexibility_simulated": false,
+    "mechanical_backlash_simulated": false,
+    "note": "The dead zone is a feedback uncertainty proxy. It does not simulate separate motor and output shafts, contact between backlash flanks, anisotropic printed material, creep, fracture or joint separation. Gravity feedforward remains active."
+  },
+  "sampled_ground_loads": {
+    "sampling_hz": 20,
+    "maximum_horizontal_force_per_foot_n": 0.46160098230037167,
+    "maximum_resultant_force_per_foot_n": 13.435812565478122,
+    "scope": "Sampled level-floor contact forces for this motion only. Not an impact, structural-strength or fatigue qualification."
+  },
+  "stepping_evidence": {
+    "FL": {
+      "samples": 56,
+      "peak_clearance_mm": 15.484780553059355,
+      "airborne_fraction": 1.0,
+      "three_support_fraction": 1.0
+    },
+    "FR": {
+      "samples": 56,
+      "peak_clearance_mm": 15.712406053027099,
+      "airborne_fraction": 1.0,
+      "three_support_fraction": 1.0
+    },
+    "RL": {
+      "samples": 56,
+      "peak_clearance_mm": 15.519388034392016,
+      "airborne_fraction": 1.0,
+      "three_support_fraction": 1.0
+    },
+    "RR": {
+      "samples": 56,
+      "peak_clearance_mm": 15.583948985955058,
+      "airborne_fraction": 1.0,
+      "three_support_fraction": 1.0
+    }
+  },
+  "controller_tracking": {
+    "maximum_joint_speed_rad_s": 0.3927718040011876,
+    "maximum_phone_error_deg": 0.5756790084788272,
+    "phone_travel_deg": 359.56512776702573
+  },
+  "parameters": {
+    "gravity_m_s2": 9.81,
+    "timestep_s": 0.004166666666666667,
+    "solver_iterations": 150,
+    "friction": 0.7,
+    "effort_cap_nm": 0.588,
+    "command_speed_cap_rad_s": 1.0,
+    "actual_velocity_hard_limited": false,
+    "controller": "torque",
+    "finite_kp_nm_rad": {
+      "yaw": 1.5,
+      "hip": 4.0,
+      "knee": 3.0,
+      "phone": 0.4
+    },
+    "finite_kd_nm_s_rad": {
+      "yaw": 0.025,
+      "hip": 0.04000000000000001,
+      "knee": 0.015,
+      "phone": 0.003
+    },
+    "position_gain": 0.3,
+    "velocity_gain": 1.0,
+    "initial_joint_deg": [
+      0,
+      30.0,
+      81.0
+    ],
+    "stride_mm": 22.0,
+    "com_shift_mm": 10.0,
+    "lower_mm": 0,
+    "lift_mm": 15.0,
+    "free_base": true,
+    "base_constraints": false
+  },
+  "observed": {
+    "simulated_seconds": 64.0,
+    "advance_x_mm": 20.376408356241882,
+    "final_base_mm": [
+      20.138651132583618,
+      -0.23696018615737557,
+      112.93694376945496
+    ],
+    "final_rpy_deg": [
+      0.012485241999500112,
+      0.031289403196578955,
+      0.1170156377094947
+    ],
+    "final_com_mm": [
+      19.52686286500763,
+      0.8033799942727868,
+      136.0316276139074
+    ],
+    "max_roll_pitch_deg": 0.20695431972122136,
+    "minimum_stand_margin_mm": 117.89627486204286,
+    "minimum_mid_swing_margin_mm": 12.470520140376184,
+    "maximum_stance_error_mm": 6.003175663853051,
+    "dynamic_peak_joint_torque_nm": {
+      "yaw_FL": 0.03128343230438828,
+      "hip_FL": 0.4580024337077482,
+      "knee_FL": 0.4116072183325312,
+      "yaw_FR": 0.03226061544277129,
+      "hip_FR": 0.41585554177624484,
+      "knee_FR": 0.4732687940639576,
+      "yaw_RL": 0.03304601117070016,
+      "hip_RL": 0.4288043679893857,
+      "knee_RL": 0.48085429694601767,
+      "yaw_RR": 0.046502801404295344,
+      "hip_RR": 0.3493294199832625,
+      "knee_RR": 0.5848493512965334,
+      "phone_pan": 0.0011828175884806202
+    },
+    "torque_saturation_fraction": {
+      "yaw_FL": 0.0,
+      "hip_FL": 0.0,
+      "knee_FL": 0.0,
+      "yaw_FR": 0.0,
+      "hip_FR": 0.0,
+      "knee_FR": 0.0,
+      "yaw_RL": 0.0,
+      "hip_RL": 0.0,
+      "knee_RL": 0.0,
+      "yaw_RR": 0.0,
+      "hip_RR": 0.0,
+      "knee_RR": 0.03203125,
+      "phone_pan": 0.0
+    },
+    "static_peak_joint_torque_nm": {
+      "yaw_FL": 0.0,
+      "hip_FL": 0.45728328199121493,
+      "knee_FL": 0.42900592119117287,
+      "yaw_FR": 0.0,
+      "hip_FR": 0.40420433864432076,
+      "knee_FR": 0.4864614451712129,
+      "yaw_RL": 0.0,
+      "hip_RL": 0.4273382244890409,
+      "knee_RL": 0.46688134843069473,
+      "yaw_RR": 0.0,
+      "hip_RR": 0.36994337788563403,
+      "knee_RR": 0.5419849530583126
+    }
+  },
+  "limitations": [
+    "Masses and inertias come from the explicit manifest model. Part-only extrusion estimates exclude support and skirt material; actual finished parts, hardware and wiring still require weighing.",
+    "This is a rigid-body dynamics calculation. Reduced gains and a position-feedback dead zone are uncertainty proxies, not a simulation or qualification of anisotropic printed stiffness, mechanical backlash, creep, stress, fatigue, fracture or fastener retention.",
+    "The 14 mm wide, 5 mm radius rocker contact cylinder omits the printed toe's small neutral flat. Contact depth differs by at most 0.2 mm. Friction is assumed; floor slip is not physically calibrated.",
+    "Simplified collision boxes do not validate self collision, fastener clearance, cable sweep or strength. Separate CAD checks are required.",
+    "Servo stiffness, damping and gravity compensation are assumed control behavior. The controller has capped torque and commanded speed. Hardware gains, backlash, bus delay, temperature and electrical supply have not been measured.",
+    "This run contains one slow crawl cycle on a level floor. It does not establish robust walking, recovery from disturbance or safety on stairs.",
+    "Continuous phone pan requires wireless communication and the phone internal battery; USB must be unplugged during rotation."
+  ]
+}

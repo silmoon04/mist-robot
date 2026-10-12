@@ -1,0 +1,111 @@
+{
+  "passed": false,
+  "checkedAt": "2026-09-24T09:42:32.633Z",
+  "checks": [],
+  "warnings": [],
+  "assets": {
+    "book": {
+      "frames": 16,
+      "minMargin": 22,
+      "loopFrameHashes": 8,
+      "loopDifferences": [
+        0.014945,
+        0.015804,
+        0.012108,
+        0.192247,
+        0.107262,
+        0.158999,
+        0.12003,
+        0.206531
+      ],
+      "sourceSha256": "2ed826869c5acf0efef7129a85222dd2d2a40a38af87b3efc5ad957bcbb6a9fd"
+    },
+    "terminal": {
+      "frames": 16,
+      "minMargin": 22,
+      "loopFrameHashes": 8,
+      "loopDifferences": [
+        0.090021,
+        0.105818,
+        0.094861,
+        0.195727,
+        0.111332,
+        0.106186,
+        0.09963,
+        0.188163
+      ],
+      "sourceSha256": "6de5089ce990231aa1e6519418df07166022b3d988e7532cf625e7c6d7d00fa2"
+    },
+    "note": {
+      "frames": 16,
+      "minMargin": 21,
+      "loopFrameHashes": 8,
+      "loopDifferences": [
+        0.033379,
+        0.023585,
+        0.04064,
+        0.04598,
+        0.041761,
+        0.067127,
+        0.056825,
+        0.033686
+      ],
+      "sourceSha256": "1b71acfb6739c90b169058ca2f8293fa5ff04b204e848cbc76ec8b7bc5f537ab"
+    },
+    "cards": {
+      "frames": 16,
+      "minMargin": 22,
+      "loopFrameHashes": 8,
+      "loopDifferences": [
+        0.115526,
+        0.106128,
+        0.111118,
+        0.16341,
+        0.084629,
+        0.112984,
+        0.014265,
+        0.132914
+      ],
+      "sourceSha256": "a412f6be61e4ee8326dd138b4d2261cc465a384c2eb802e8e8cd553e53ea2d65"
+    },
+    "searching": {
+      "frames": 12,
+      "minMargin": 29,
+      "loopFrameHashes": 4,
+      "loopDifferences": [
+        0.105762,
+        0.087253,
+        0.068663,
+        0.094616
+      ],
+      "sourceSha256": "a98b48a45accfec6c4be36674edfd7ccf8ea2fd0aef0248fe81b6e14f4df724a"
+    },
+    "planning": {
+      "frames": 12,
+      "minMargin": 29,
+      "loopFrameHashes": 4,
+      "loopDifferences": [
+        0.024008,
+        0.017301,
+        0.009037,
+        0.009931
+      ],
+      "sourceSha256": "e550dd0c2c075e49af89d834b6b375270e051edfc3039e53fa3d48d9567040a5"
+    }
+  },
+  "counts": {
+    "assets": 6,
+    "frames": 88
+  },
+  "manifestSha256": "5506f3df35c90060c840496f31bfb295c283889494f72bc0898f948c03219efc",
+  "assetValidationPassed": true,
+  "protectedFileDifferences": [
+    {
+      "file": "brain/ui/static/drawn_face_renderer.js",
+      "expected": "3a600d7b08f15bf96c5a74ee353bc01403c09b7bf744e12f9c7c62485ee60f5a",
+      "actual": "22084e744e8d11ed0484b273b8f82ee3af8c9e9e11070c6290a3e535f6d48ce3"
+    }
+  ],
+  "protectedFilesUnchanged": false,
+  "failure": "AssertionError [ERR_ASSERTION]: Separate preview must not change brain/ui/static/drawn_face_renderer.js\n+ actual - expected\n\n+ '22084e744e8d11ed0484b273b8f82ee3af8c9e9e11070c6290a3e535f6d48ce3'\n- '3a600d7b08f15bf96c5a74ee353bc01403c09b7bf744e12f9c7c62485ee60f5a'\n\n    at C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\brain\\art_direction\\artist_studio_20260916\\reuse\\thinking_v7\\qa_assets.cjs:39:59"
+}

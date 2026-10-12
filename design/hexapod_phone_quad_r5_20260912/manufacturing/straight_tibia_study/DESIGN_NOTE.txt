@@ -1,0 +1,63 @@
+R5 straight lower leg
+
+The knee-to-toe beam is now straight, with the toe centre still 105 mm from
+the knee axis. The shank has a symmetric taper in side view and is 14 mm
+wide across the robot. It is 23 mm deep at the fork and tapers to 10 mm at
+the rounded toe. A small relief beside the knee clears the femur at deep
+bend; it does not offset the central shank.
+
+The previous curved fork and foot were already one printed main body. Its
+curved outline came from the reference styling and the earlier raised
+cross-bridge arrangement. A curved outline is not necessary for the joint
+kinematics: those use joint axes and the toe position. Straightening the
+member makes the geometric load path easier to inspect, but it does not
+remove the need to check holes, layer direction, fork stiffness and loads.
+
+The new shank and main horn cheek also form one continuous printed body.
+A separate short auxiliary cheek supports the servo's opposite shaft. Both
+printed pieces belong to one rigid tibia link, with no extra joint between
+them. Keeping this cheek separate lets it print flat and makes the horn
+hardware accessible during assembly and service. A fully fused fork may
+be assemblable, but in the chosen broad-face print orientation its second
+cheek would need extensive support across the 38 mm shaft-support gap.
+
+The cross-bridge spans x=32 to 48 mm and z=-7 to +7 mm in tibia coordinates.
+Its two M3 bolts remain parallel to the knee shaft, at (x,z)=(36,0) and
+(44,0) mm. The bolt centres are 8 mm apart. The assembled fork remains
+46 mm wide, including two 4 mm cheeks. Existing bolt lengths, washers,
+nuts, 1.1 mm auxiliary lands and the 7.8 mm auxiliary centre access remain.
+
+The local CAD check found no solid collisions in 304 interpart and cable
+checks covering integer knee angles from 70 to 91 degrees. Six additional
+cross-bolt shaft and washer access probes also cleared the printed parts.
+Each printed part is one valid solid. These sampled results do not prove
+every configuration.
+
+Mesh-derived solid PLA estimates at 1.24 g/cm3 change from 36.359 g to
+42.657 g per leg for the main body and auxiliary cheek together. The
+increase is about 6.30 g per leg. Actual sliced mass is measured separately
+from the production toolpath and will differ from this solid estimate.
+
+The isolated main-cheek root sweep over x=11 to 31.5 mm improves its
+minimum area from 80.144 to 84.778 mm2. Minimum section modulus about Y
+changes from 267.629 to 299.470 mm3; about Z it changes from 37.204 to
+56.519 mm3. The improvement is not uniform: at x=11 mm both section
+moduli are slightly smaller, and the foot-strap opening at x=100 mm has a
+smaller section than before. The bending moment near the toe is smaller
+than at the knee, so section dimensions alone do not determine adequacy.
+
+The actual bridge section at y=8 mm has net area 201.39 mm2 and section
+modulus about X of 493.56 mm3, including the two M3 holes and corner
+chamfers. The independent strength review uses that measured section with
+the final robot's simulated loads. Neither this geometry study nor the
+mesh section comparison establishes the strength of a printed PLA part.
+
+Use the supplied main-body orientation of -90 degrees about X and the
+auxiliary-cheek orientation of +90 degrees about X. These put the broad
+cheek faces on the bed. The central shank needs local support in this
+orientation because it sits above the main cheek's bed plane. Its support
+amount and accessibility are checked by the production slicing audit.
+
+The unresolved physical checks include actual horn/case fit, layer
+adhesion, bolt preload, creep and lateral force sharing through the
+opposite shaft. Those remain assembly and load-test measurements.

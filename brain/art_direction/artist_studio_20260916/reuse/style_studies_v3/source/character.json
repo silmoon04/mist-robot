@@ -1,0 +1,84 @@
+{
+  "style": "character",
+  "label": "Character acting",
+  "created": "2026-09-29",
+  "tool": "builtin image_gen.imagegen",
+  "useCase": "stylized-concept",
+  "output": "character.png",
+  "source": "<LOCAL_HOME>/.codex/generated_images/01a0ea59-33a7-7600-96b8-6970a474371d/exec-1020bd76-b6a5-42fc-a1c7-1cc8c9f3779b.png",
+  "sourceSha256": "45828424bf484d959c2cb92fe7d576ae2a3717a23a991aec0cab4660e6e3c5be",
+  "width": 1024,
+  "height": 1536,
+  "layout": {
+    "columns": 2,
+    "rows": 5,
+    "order": [
+      "Calm",
+      "Listening",
+      "Curious",
+      "Quiet thought",
+      "Happy",
+      "Playful",
+      "Deadpan",
+      "Sleepy",
+      "Delighted",
+      "Sad"
+    ]
+  },
+  "reference": "<LOCAL_HOME>/AppData/Local/Temp/codex-clipboard-b4b1c888-89f4-4c82-ac40-70743f345eaf.png",
+  "prompt": "../prompts/character.txt",
+  "generationCalls": 1,
+  "correctionCalls": 0,
+  "postprocessing": "None. Source PNG copied unchanged.",
+  "review": {
+    "passed": true,
+    "faces": [
+      {
+        "name": "Calm",
+        "observation": "Uneven half-lid and open crescent mass, compact closed smile; relaxed playful warmth."
+      },
+      {
+        "name": "Listening",
+        "observation": "Large open C eye plus tall negative-space oval eye, small closed bar mouth."
+      },
+      {
+        "name": "Curious",
+        "observation": "Tall oval versus tilted half-lid and questioning small curved mouth."
+      },
+      {
+        "name": "Quiet thought",
+        "observation": "Both negative-space gaze cutouts look up and right; unequal relaxed eye masses, neutral closed mouth; no angry V."
+      },
+      {
+        "name": "Happy",
+        "observation": "Two unequal thick joyful eye arches and small warm grin."
+      },
+      {
+        "name": "Playful",
+        "observation": "Low half-lid plus taller open crescent eye with high offset smirk."
+      },
+      {
+        "name": "Deadpan",
+        "observation": "Unequal low horizontal half-lids; correctly mouthless."
+      },
+      {
+        "name": "Sleepy",
+        "observation": "Drooping closed crescent lids and small oval yawn."
+      },
+      {
+        "name": "Delighted",
+        "observation": "Pinched laughing chevrons; correctly mouthless."
+      },
+      {
+        "name": "Sad",
+        "observation": "Drooping irregular eye masses, frown and exactly one viewer-right tear."
+      }
+    ],
+    "distinction": "Eye construction changes from outlined rings into solid asymmetric cyan masses with dark gaze notches, broad squashed lids, tall ovals and pinched laughter. Expressions use varied proportions and offsets rather than material or stroke thickness changes.",
+    "limitations": [
+      "Calm and Playful deliberately share a half-lid/open-eye family, though their placement and mouth gesture differ.",
+      "Static concept sheet only; no animation or viseme readiness implied.",
+      "Broad bright fill is stronger than the reference's primarily outlined eyes; this is the more exaggerated option."
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+Use case: stylized-concept.
+Asset type: production hand-drawn robot eye animation sprite sheet, 4 columns by 2 rows, exactly eight equal cells.
+Input image is STYLE AND SHAPE REFERENCE ONLY: look specifically at the Planning panel, middle row right. Recreate just ONE of its turquoise filled eyes looking upward, without the face, mouth or planning diagram.
+Canvas: transparent PNG, 2048 wide by 1024 high, with equal 512-pixel square cells. Actual alpha transparency, NOT a painted checkerboard. Every drawing has the same center anchor and width about 260 pixels with generous transparent padding. No grid, labels, numerals, panels, outline boxes, words or extra symbols.
+Style: soft chunky turquoise hand-drawn fill, slightly irregular crafted contours and rounded edges. Solid bright aqua; no glow, shadow, gradients or ambient lighting. Maintain identical eye scale and stroke weight across frames. Pupil is a clean negative-space circular notch opening through the top of the turquoise eye, actual transparency rather than black pigment, as the upward gaze in Planning.
+Reading order left to right then next row:
+1 OPEN: the approved filled domed eye with nearly horizontal gently irregular lower lid, pupil looking up as transparent circular notch in upper dome.
+2 ANTICIPATION: same eye but upper lid gently settling, subtly narrower vertically.
+3 HALF_CLOSED: upper lid descending naturally over the pupil; a low rounded filled eye with only a small negative-space pupil notch remaining. Lower contour is steady.
+4 CLOSED: a newly drawn single clean rounded shallow horizontal eyelid stroke, gently curved, same width and height around 18 pixels; no pupil, no residual eye bowl, not a squashed ring.
+5 OPENING_LOW: a naturally drawn low crescent of the filled eye beginning to open, slight transparent pupil notch.
+6 OPENING: between half closed and fully open, pupil reappearing naturally from beneath upper lid.
+7 GAZE_LEFT: same OPEN eye size and outline, negative-space pupil shifts slightly left while still looking upward.
+8 GAZE_RIGHT: same OPEN eye size and outline, negative-space pupil shifts slightly right while still looking upward.
+The reference eye character is essential; keep the filled upward-looking appearance, do not convert it into a hollow ring. All frames depict ONE isolated eye. Closed lid horizontal, no rotation. No actual black background or black pupil; all empty areas transparent.

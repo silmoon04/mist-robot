@@ -1,0 +1,210 @@
+[
+  {
+    "id": "night-in-the-woods-graphic-gaze",
+    "sheet": "sheets/night-in-the-woods-graphic-gaze.png",
+    "prompt": "prompts/night-in-the-woods-graphic-gaze-fresh1.txt",
+    "poses": [
+      "Attentive",
+      "Considering",
+      "Skeptical",
+      "Amused",
+      "Concerned"
+    ],
+    "approach": "Large graphic eye apertures, deliberate held gaze, strong upper-lid silhouettes and tiny restrained mouths.",
+    "tool": "built-in image_gen",
+    "sourceStudyUrl": "https://playism.com/wp-content/uploads/2021/05/nitw_en_03-800x450.jpeg",
+    "qa": {
+      "fiveFaces": true,
+      "blankSixthCell": true,
+      "mistIdentity": true,
+      "emotionContrast": true,
+      "visualInspection": true,
+      "strayMarkFree": true,
+      "independentReview": true,
+      "notes": "Selected fresh1 after root and independent full-sheet visual review. Five faces occupy the requested cells and the lower-right cell is empty. Filled apertures, directional pupil cutouts, integrated clipped lids and tiny restrained mouths carry the five requested attitudes. The original isolated pose 3 left-eye fleck is absent. The thin taper beside pose 3's right pupil is an intentional lid/pupil contour termination matching the construction of its other eye. A raw threshold splits that taper, which is retained as audit evidence rather than treated as an accidental fragment."
+    },
+    "limitations": "Static gaze and eyelid experiment. Display-size readability has not been tested on the physical robot screen. Slight tonal/material variation remains in the background; no pixel-uniformness claim is made. The selected right-eye taper is visually accepted as intentional despite threshold component separation.",
+    "generation": {
+      "originalReturnedPath": "C:\\Users\\hssil\\.codex\\generated_images\\01a0ef26-ff67-7ac2-a85b-eff0f68820e5\\exec-ee778390-36cd-4a6e-9555-b5f96de6a594.png",
+      "initialCalls": 1,
+      "repairCalls": 2,
+      "freshCalls": 1,
+      "selectedVersion": "fresh1",
+      "sourceArtifact": "C:\\Users\\hssil\\.codex\\generated_images\\01a0ef26-ff67-7ac2-a85b-eff0f68820e5\\exec-62c36d0c-85d4-4188-a9ba-ada9cfa052e1.png",
+      "selectedSha256": "6a456087f6bfd327b857d0eb3d9f40b2bf8e55054e47def90d4e568043d7cabb",
+      "initialPrompt": "prompts/night-in-the-woods-graphic-gaze.txt",
+      "freshAttempts": [
+        {
+          "version": "fresh1",
+          "sheet": "sheets/night-in-the-woods-graphic-gaze-fresh1.png",
+          "prompt": "prompts/night-in-the-woods-graphic-gaze-fresh1.txt",
+          "returnedPath": "C:\\Users\\hssil\\.codex\\generated_images\\01a0ef26-ff67-7ac2-a85b-eff0f68820e5\\exec-62c36d0c-85d4-4188-a9ba-ada9cfa052e1.png",
+          "selected": true,
+          "result": "Generated from the two original MIST references, with no fleck-bearing Night image supplied. Five poses, margins, emotion contrast and blank sixth cell pass full-sheet visual review. The old pose 3 left-eye fleck is absent. Root and the independent auditor agree that the thin tip beside the right pupil at x1458-1465,y219-234 is an intentional contour taper, matching both eyes, rather than an unrelated fragment. Selected as the canonical Night sheet after independent review.",
+          "pixelCheck": "Threshold G/B above 80 produces 16 components, including a 66-pixel tip inside pose 3's right-eye bounding box. The intervening one-pixel edge band contains G35-72, so threshold disconnection alone does not establish a free-floating speck."
+        }
+      ],
+      "originalRevision": "sheets/night-in-the-woods-graphic-gaze-original.png",
+      "repairAttempts": [
+        {
+          "version": "repair1",
+          "sheet": "sheets/night-in-the-woods-graphic-gaze-repair1.png",
+          "prompt": "prompts/night-in-the-woods-graphic-gaze-repair1.txt",
+          "returnedPath": "C:\\Users\\hssil\\.codex\\generated_images\\01a0ef26-ff67-7ac2-a85b-eff0f68820e5\\exec-b1275a15-8d7b-438c-aba1-ad8af45ba221.png",
+          "selected": false,
+          "result": "The requested fleck remains after the edit. The original is retained. All five facial poses, intended upper-lid bar, proportions and cell layout look intact.",
+          "pixelCheck": "Bright fleck pixels remain near x1232-1234,y235-237. Original peak G216/B216; repair peak G183/B194."
+        },
+        {
+          "version": "repair2",
+          "sheet": "sheets/night-in-the-woods-graphic-gaze-repair2.png",
+          "prompt": "prompts/night-in-the-woods-graphic-gaze-repair2.txt",
+          "returnedPath": "C:\\Users\\hssil\\.codex\\generated_images\\01a0ef26-ff67-7ac2-a85b-eff0f68820e5\\exec-fb36791f-16dd-4015-b1a8-3a8f8e6e8a86.png",
+          "selected": false,
+          "result": "The broader eye-contour redraw request also retained the tiny floating speck. All five poses and the full sheet appear intact, but the local cleanup did not succeed. The original remains selected and further repairs were stopped.",
+          "pixelCheck": "Six bright fleck pixels remain near x1232-1234,y235-237, with peak G230/B238."
+        }
+      ],
+      "dimensions": [
+        1536,
+        1024
+      ]
+    }
+  },
+  {
+    "id": "antonblast-anton-reaction",
+    "sheet": "sheets/antonblast-anton-reaction.png",
+    "prompt": "prompts/antonblast-anton-reaction.txt",
+    "poses": [
+      "Attentive",
+      "Considering",
+      "Skeptical",
+      "Amused",
+      "Concerned"
+    ],
+    "approach": "Stronger eye compression and original contrasting digital mouth silhouettes, adapted from the open-mouth versus clenched reaction contrast.",
+    "tool": "built-in image_gen",
+    "sourceStudyUrl": "https://www.fangamer.com/collections/popular/products/antonblast-game-nintendo-switch",
+    "qa": {
+      "fiveFaces": true,
+      "blankSixthCell": true,
+      "mistIdentity": true,
+      "emotionContrast": true,
+      "visualInspection": true,
+      "notes": "Five faces with clean features and no teeth. Welcome has a closed smile stroke, doubt has a short diagonal mouth, compressed anger eyes pair with a broad downturned mouth ribbon, amusement has a bowl aperture, and concern has an inverted arc."
+    },
+    "limitations": "Original MIST mouth-shape contrast. These are independent held poses, with no claim about ANTONBLAST timing or transition order.",
+    "generation": {
+      "originalReturnedPath": "C:\\Users\\hssil\\.codex\\generated_images\\01a0ef26-ff67-7ac2-a85b-eff0f68820e5\\exec-1578ec18-03af-47c5-a2c5-f26a3a4f846a.png",
+      "initialCalls": 1,
+      "repairCalls": 0,
+      "selectedVersion": "initial",
+      "dimensions": [
+        1536,
+        1024
+      ]
+    }
+  },
+  {
+    "id": "moss-quill-lico-process",
+    "sheet": "sheets/moss-quill-lico-process.png",
+    "prompt": "prompts/moss-quill-lico-process.txt",
+    "poses": [
+      "Attentive",
+      "Considering",
+      "Skeptical",
+      "Amused",
+      "Concerned"
+    ],
+    "approach": "An original relationship-focused pose experiment: direct listening eye contact, a searching doubt pose, restrained displeasure, acknowledgement and empathy.",
+    "tool": "built-in image_gen",
+    "sourceStudyUrl": "https://blog.playstation.com/2018/04/09/the-magic-of-animation-in-moss-how-polyarc-brought-quill-to-life/",
+    "qa": {
+      "fiveFaces": true,
+      "blankSixthCell": true,
+      "mistIdentity": true,
+      "emotionContrast": true,
+      "visualInspection": true,
+      "notes": "Five relationship-focused poses. Direct C-eyes welcome, directional asymmetric apertures consider, low lids and a frown show skepticism, uneven happy eye arches acknowledge, and inward raised lids pair with a small downturned concern mouth."
+    },
+    "limitations": "Original MIST experiment informed by relational animation process. It does not reproduce or claim a verified Moss facial style, timing or interaction behaviour.",
+    "generation": {
+      "originalReturnedPath": "C:\\Users\\hssil\\.codex\\generated_images\\01a0ef26-ff67-7ac2-a85b-eff0f68820e5\\exec-c3392ae7-07e9-4413-8e0b-85333c05cf00.png",
+      "initialCalls": 1,
+      "repairCalls": 0,
+      "selectedVersion": "initial",
+      "dimensions": [
+        1536,
+        1024
+      ]
+    }
+  },
+  {
+    "id": "cuphead-pip-dot-pencil",
+    "sheet": "sheets/cuphead-pip-dot-pencil.png",
+    "prompt": "prompts/cuphead-pip-dot-pencil.txt",
+    "poses": [
+      "Attentive",
+      "Considering",
+      "Skeptical",
+      "Amused",
+      "Concerned"
+    ],
+    "approach": "Controlled organic contours with conflicting asymmetric lids and side glances, retaining fixed eye spacing and a stable MIST identity.",
+    "tool": "built-in image_gen",
+    "sourceStudyUrl": "https://tinanawrocki.blogspot.com/2017/10/cuphead-pip-and-dot-domino.html",
+    "qa": {
+      "fiveFaces": true,
+      "blankSixthCell": true,
+      "mistIdentity": true,
+      "emotionContrast": true,
+      "visualInspection": true,
+      "notes": "Five original asymmetric poses. Fixed eye spacing supports clear left-right lid contrast. The skeptical mouth is flat with one low corner; amused recognition pairs an arch with a C-eye; concern uses inward raised eye contours and a small frown."
+    },
+    "limitations": "Original MIST asymmetric attitudes based on inspected production poses. No source animation timing or small-screen device test is claimed.",
+    "generation": {
+      "originalReturnedPath": "C:\\Users\\hssil\\.codex\\generated_images\\01a0ef26-ff67-7ac2-a85b-eff0f68820e5\\exec-bb741f08-3c7b-4395-a6c6-fbb8e078622d.png",
+      "initialCalls": 1,
+      "repairCalls": 0,
+      "selectedVersion": "initial",
+      "dimensions": [
+        1536,
+        1024
+      ]
+    }
+  },
+  {
+    "id": "wandersong-singing-face",
+    "sheet": "sheets/wandersong-singing-face.png",
+    "prompt": "prompts/wandersong-singing-face.txt",
+    "poses": [
+      "Attentive",
+      "Considering",
+      "Skeptical",
+      "Amused",
+      "Concerned"
+    ],
+    "approach": "Simple cutout-like apertures whose mouth and eye combinations each serve one event: listening, weighing a thought, doubt, delight and concern.",
+    "tool": "built-in image_gen",
+    "sourceStudyUrl": "https://wanderso.ng/",
+    "qa": {
+      "fiveFaces": true,
+      "blankSixthCell": true,
+      "mistIdentity": true,
+      "emotionContrast": true,
+      "visualInspection": true,
+      "notes": "Five action-led poses. Listening is open-eyed with a closed mouth; doubt uses directional clipped apertures and a diagonal mouth; dry skepticism uses slit eyes and a crooked downturn; delight uses two arches and a bowl; concern uses worried lid contours and a closed frown."
+    },
+    "limitations": "Independent MIST event poses informed by the action/face agreement. No singing sequence, interpolation or source motion timing is claimed.",
+    "generation": {
+      "originalReturnedPath": "C:\\Users\\hssil\\.codex\\generated_images\\01a0ef26-ff67-7ac2-a85b-eff0f68820e5\\exec-4ff57770-cf2c-4476-8744-61b358b0a04b.png",
+      "initialCalls": 1,
+      "repairCalls": 0,
+      "selectedVersion": "initial",
+      "dimensions": [
+        1536,
+        1024
+      ]
+    }
+  }
+]

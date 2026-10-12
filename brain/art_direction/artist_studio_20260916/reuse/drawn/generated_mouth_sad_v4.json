@@ -1,0 +1,38 @@
+{
+  "version": 4,
+  "status": "ready_for_atlas_integration",
+  "method": "built-in ImageGen",
+  "source": "<LOCAL_HOME>/.codex/generated_images/01a0cd67-768a-7c80-b5e1-644d2cc2f660/exec-9f392239-0063-4cc1-98df-4aedff4732b5.png",
+  "destination": "sheets/mouth_sad_v4.png",
+  "sha256": "e644dde6e158c5adc59f09f936e552755240956ad45bfaada7accad8817e67bb",
+  "columns": 4,
+  "rows": 2,
+  "order": [
+    "rest",
+    "release",
+    "small_AA",
+    "AA",
+    "EH",
+    "EE",
+    "LNT",
+    "wide_close"
+  ],
+  "prompt": "Use case: stylized-concept.\nAsset type: production raster animation cel sheet for the MIST robot face, SAD speaking mouth variants.\nInput images: both attached sheets are STYLE REFERENCES ONLY: match the simple flat cyan silhouette character and edge quality. Do not copy their smiling emotional shape. Create a NEW sheet.\n\nComposition: EXACTLY 8 separate mouth silhouettes, uniformly arranged in a precise 4-column by 2-row grid on an opaque pure white #FFFFFF landscape canvas 1536x1024. Equal 384x512 cells, one mouth centered horizontally inside each cell. Mouths take roughly 56% of cell width. Every cell has generous blank margin. No eyes, face, labels, letters, captions, grid lines, borders or extra shapes.\n\nEmotion is the main requirement: Every mouth belongs to ONE visibly sad, gently downcast speaking character. Corners hang DOWN, lower on the image than the centre of the mouth. The top contour rises in the middle like an arch, not a smiling bowl. The rest silhouette is a thick downward frown arc: centre HIGH and tips LOW. Open sad mouths have an arched upper boundary and a much flatter lower boundary, with downturned corners. Do not make a happy U-shaped aperture or raised corners. Do not just rotate a stock happy mouth; draw cohesive sad speech cels with believable articulation.\n\nExact reading order, left-to-right top row then bottom row:\n1 rest: thin soft downward frown arc with rounded low corner tips.\n2 release: small gently arched opening, understated downturned corner tips, beginning to part from the sad rest.\n3 small_AA: modest vertical opening, broad domed upper contour, gently flattened lower boundary and low corners, sad small 'ah'.\n4 AA: clearly more open and taller than small_AA, domed upper contour, broad softly flattened base and low corners, sad big 'ah'. No U-shaped smiling bowl.\n5 EH: medium-width medium-height sad open aperture, gently domed top and almost level bottom, low rounded corners, less tall than AA.\n6 EE: wider and shallow sad aperture with downturned corners, centre of top high, bottom nearly flat, never a grin.\n7 LNT: restrained narrow sad aperture in the same family, curved downcast contour with smoothly low ends. No tongue or teeth.\n8 wide_close: a broad closing sad aperture, much shallower than EH, with distinct but gentle downward frown contour and rounded low corners.\n\nAll shapes solid flat cyan #55DED8 (match the references' character style), clean smooth hand-crafted curves, every mouth exactly ONE continuous silhouette. No interior holes, black lines, teeth, tongue, notches, bulges, small tabs, outlines, islands, glow, gradient, texture, shadows or 3D. Keep the character scale consistent. Keep the central top of each mouth around the same relative vertical anchor in its cell, allowing openings to develop mostly downwards. The sad emotion must remain legible while articulating.",
+  "generationAttempts": 1,
+  "sourcePreservedByteForByte": true,
+  "visualAudit": {
+    "accepted": true,
+    "findings": [
+      "All eight mouths have downturned corners. Each reads as a sad aperture instead of the smiling U-shaped source.",
+      "Rest is a narrow frown arc; the speaking poses increase or reduce opening while retaining the frown.",
+      "AA height is 141 pixels versus small_AA 109; EH 103; LNT 72; wide_close 67.",
+      "Each cel has one significant cyan component with no holes, tongue, teeth, tabs, interior strokes or notches."
+    ],
+    "limitations": [
+      "The generated near-white background is not mathematically pure white: sampled corner RGB values range from 253 to 255. Preserve the original pixels; use existing extraction thresholds.",
+      "Cyan contains small generated color variation; existing display tinting may remain enabled.",
+      "The generator did not maintain a fixed upper anchor across all cells. Register each crop by measured horizontal centre and upper ink bound from the layout metadata.",
+      "These are stylized speech cels. They do not independently establish audio synchronization or human phonetic accuracy."
+    ]
+  }
+}

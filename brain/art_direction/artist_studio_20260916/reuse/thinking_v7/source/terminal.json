@@ -1,0 +1,54 @@
+{
+  "id": "terminal",
+  "version": 7,
+  "tool": "built-in image_gen.imagegen",
+  "sourceFile": "terminal.png",
+  "width": 1254,
+  "height": 1254,
+  "mode": "RGBA",
+  "grid": {
+    "columns": 4,
+    "rows": 4
+  },
+  "frameCount": 16,
+  "phases": {
+    "enter": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "loop": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "exit": [
+      12,
+      13,
+      14,
+      15
+    ]
+  },
+  "promptFiles": [
+    "../prompts/terminal.txt",
+    "../prompts/terminal_refine.txt"
+  ],
+  "source": "<LOCAL_HOME>/.codex/generated_images/01a0d2ad-f9c4-7ac1-88ee-7e4e79439130/exec-e9ab3b83-6156-47f6-be59-6b9d21f38455.png",
+  "sha256": "6de5089ce990231aa1e6519418df07166022b3d988e7532cf625e7c6d7d00fa2",
+  "motion": "Laptop opens; short code strokes type, pause, move to a new line; laptop closes.",
+  "registration": "Register full silhouette by its bottom-center, not center of mass. The generated rows have small grid drift. Keep a shared scale across all frames; the changing lid height is intentional.",
+  "reference": "<LOCAL_HOME>/.codex/generated_images/01a0d2ad-f9c4-7ac1-88ee-7e4e79439130/exec-cddaf0d6-08f2-4458-b729-b8e7fb6a9cd6.png",
+  "review": {
+    "allCellsVisible": true,
+    "noFaceOrText": true,
+    "transparentBackground": true,
+    "minimumSignificantAlpha": 32,
+    "notes": "Original ImageGen RGBA saved without pixel modification. Alpha contains faint low-opacity matte residue that can appear brighter in raw black-backed previews; use actual alpha compositing. Root owns mechanical crop, registration and final playback check."
+  }
+}

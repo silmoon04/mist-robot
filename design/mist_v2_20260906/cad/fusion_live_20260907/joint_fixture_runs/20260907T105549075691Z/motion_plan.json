@@ -1,0 +1,535 @@
+{
+  "schema_version": 1,
+  "units": {
+    "position": "mm",
+    "physical_angle": "deg",
+    "native_length": "cm",
+    "native_angle": "rad"
+  },
+  "groups": {
+    "body": [
+      "body/TEST_chassis"
+    ],
+    "FL/yaw": [
+      "FL/yaw"
+    ],
+    "FL/femur": [
+      "FL/femur"
+    ],
+    "FL/tibia": [
+      "FL/tibia"
+    ],
+    "FL/wheel": [
+      "FL/wheel"
+    ],
+    "FR/yaw": [
+      "FR/yaw"
+    ],
+    "FR/femur": [
+      "FR/femur"
+    ],
+    "FR/tibia": [
+      "FR/tibia"
+    ],
+    "FR/wheel": [
+      "FR/wheel"
+    ],
+    "RL/yaw": [
+      "RL/yaw"
+    ],
+    "RL/femur": [
+      "RL/femur"
+    ],
+    "RL/tibia": [
+      "RL/tibia"
+    ],
+    "RL/wheel": [
+      "RL/wheel"
+    ],
+    "RR/yaw": [
+      "RR/yaw"
+    ],
+    "RR/femur": [
+      "RR/femur"
+    ],
+    "RR/tibia": [
+      "RR/tibia"
+    ],
+    "RR/wheel": [
+      "RR/wheel"
+    ]
+  },
+  "parts": {
+    "body/TEST_chassis": {
+      "group": "body",
+      "role": "body",
+      "part_name": "TEST_chassis"
+    },
+    "FL/yaw": {
+      "group": "FL/yaw",
+      "role": "yaw",
+      "part_name": "yaw"
+    },
+    "FL/femur": {
+      "group": "FL/femur",
+      "role": "femur",
+      "part_name": "femur"
+    },
+    "FL/tibia": {
+      "group": "FL/tibia",
+      "role": "tibia",
+      "part_name": "tibia"
+    },
+    "FL/wheel": {
+      "group": "FL/wheel",
+      "role": "wheel",
+      "part_name": "wheel"
+    },
+    "FR/yaw": {
+      "group": "FR/yaw",
+      "role": "yaw",
+      "part_name": "yaw"
+    },
+    "FR/femur": {
+      "group": "FR/femur",
+      "role": "femur",
+      "part_name": "femur"
+    },
+    "FR/tibia": {
+      "group": "FR/tibia",
+      "role": "tibia",
+      "part_name": "tibia"
+    },
+    "FR/wheel": {
+      "group": "FR/wheel",
+      "role": "wheel",
+      "part_name": "wheel"
+    },
+    "RL/yaw": {
+      "group": "RL/yaw",
+      "role": "yaw",
+      "part_name": "yaw"
+    },
+    "RL/femur": {
+      "group": "RL/femur",
+      "role": "femur",
+      "part_name": "femur"
+    },
+    "RL/tibia": {
+      "group": "RL/tibia",
+      "role": "tibia",
+      "part_name": "tibia"
+    },
+    "RL/wheel": {
+      "group": "RL/wheel",
+      "role": "wheel",
+      "part_name": "wheel"
+    },
+    "RR/yaw": {
+      "group": "RR/yaw",
+      "role": "yaw",
+      "part_name": "yaw"
+    },
+    "RR/femur": {
+      "group": "RR/femur",
+      "role": "femur",
+      "part_name": "femur"
+    },
+    "RR/tibia": {
+      "group": "RR/tibia",
+      "role": "tibia",
+      "part_name": "tibia"
+    },
+    "RR/wheel": {
+      "group": "RR/wheel",
+      "role": "wheel",
+      "part_name": "wheel"
+    }
+  },
+  "joints": [
+    {
+      "name": "FL_yaw",
+      "parent_group": "body",
+      "child_group": "FL/yaw",
+      "centre_world_mm": [
+        72.8319984622144,
+        72.8319984622144,
+        0.0
+      ],
+      "axis_world": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "built_physical_deg": -45.0,
+      "physical_limits_deg": [
+        -100,
+        100
+      ],
+      "continuous": false
+    },
+    {
+      "name": "FL_hip",
+      "parent_group": "FL/yaw",
+      "child_group": "FL/femur",
+      "centre_world_mm": [
+        107.8319984622144,
+        102.8319984622144,
+        0.0
+      ],
+      "axis_world": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "built_physical_deg": 58.04300403950684,
+      "physical_limits_deg": [
+        -40,
+        125
+      ],
+      "continuous": false
+    },
+    {
+      "name": "FL_knee",
+      "parent_group": "FL/femur",
+      "child_group": "FL/tibia",
+      "centre_world_mm": [
+        226.19015890245288,
+        102.8319984622144,
+        -73.83492301887205
+      ],
+      "axis_world": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "built_physical_deg": -84.71670736904682,
+      "physical_limits_deg": [
+        -150,
+        -15
+      ],
+      "continuous": false
+    },
+    {
+      "name": "FL_wheel",
+      "parent_group": "FL/tibia",
+      "child_group": "FL/wheel",
+      "centre_world_mm": [
+        167.83199846221436,
+        102.8319984622144,
+        -190.0
+      ],
+      "axis_world": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "built_physical_deg": 0.0,
+      "physical_limits_deg": null,
+      "continuous": true
+    },
+    {
+      "name": "FR_yaw",
+      "parent_group": "body",
+      "child_group": "FR/yaw",
+      "centre_world_mm": [
+        72.8319984622144,
+        -72.8319984622144,
+        0.0
+      ],
+      "axis_world": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "built_physical_deg": 45.0,
+      "physical_limits_deg": [
+        -100,
+        100
+      ],
+      "continuous": false
+    },
+    {
+      "name": "FR_hip",
+      "parent_group": "FR/yaw",
+      "child_group": "FR/femur",
+      "centre_world_mm": [
+        107.8319984622144,
+        -102.8319984622144,
+        0.0
+      ],
+      "axis_world": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "built_physical_deg": 58.04300403950684,
+      "physical_limits_deg": [
+        -40,
+        125
+      ],
+      "continuous": false
+    },
+    {
+      "name": "FR_knee",
+      "parent_group": "FR/femur",
+      "child_group": "FR/tibia",
+      "centre_world_mm": [
+        226.19015890245288,
+        -102.8319984622144,
+        -73.83492301887205
+      ],
+      "axis_world": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "built_physical_deg": -84.71670736904682,
+      "physical_limits_deg": [
+        -150,
+        -15
+      ],
+      "continuous": false
+    },
+    {
+      "name": "FR_wheel",
+      "parent_group": "FR/tibia",
+      "child_group": "FR/wheel",
+      "centre_world_mm": [
+        167.83199846221436,
+        -102.8319984622144,
+        -190.0
+      ],
+      "axis_world": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "built_physical_deg": 0.0,
+      "physical_limits_deg": null,
+      "continuous": true
+    },
+    {
+      "name": "RL_yaw",
+      "parent_group": "body",
+      "child_group": "RL/yaw",
+      "centre_world_mm": [
+        -72.83199846221439,
+        72.8319984622144,
+        0.0
+      ],
+      "axis_world": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "built_physical_deg": 45.0,
+      "physical_limits_deg": [
+        -100,
+        100
+      ],
+      "continuous": false
+    },
+    {
+      "name": "RL_hip",
+      "parent_group": "RL/yaw",
+      "child_group": "RL/femur",
+      "centre_world_mm": [
+        -107.83199846221439,
+        102.8319984622144,
+        0.0
+      ],
+      "axis_world": [
+        1.2246467991473532e-16,
+        1.0,
+        0.0
+      ],
+      "built_physical_deg": 58.04300403950684,
+      "physical_limits_deg": [
+        -40,
+        125
+      ],
+      "continuous": false
+    },
+    {
+      "name": "RL_knee",
+      "parent_group": "RL/femur",
+      "child_group": "RL/tibia",
+      "centre_world_mm": [
+        -226.19015890245288,
+        102.83199846221441,
+        -73.83492301887205
+      ],
+      "axis_world": [
+        1.2246467991473532e-16,
+        1.0,
+        0.0
+      ],
+      "built_physical_deg": -84.71670736904682,
+      "physical_limits_deg": [
+        -150,
+        -15
+      ],
+      "continuous": false
+    },
+    {
+      "name": "RL_wheel",
+      "parent_group": "RL/tibia",
+      "child_group": "RL/wheel",
+      "centre_world_mm": [
+        -167.83199846221436,
+        102.8319984622144,
+        -190.0
+      ],
+      "axis_world": [
+        1.2246467991473532e-16,
+        1.0,
+        0.0
+      ],
+      "built_physical_deg": 0.0,
+      "physical_limits_deg": null,
+      "continuous": true
+    },
+    {
+      "name": "RR_yaw",
+      "parent_group": "body",
+      "child_group": "RR/yaw",
+      "centre_world_mm": [
+        -72.83199846221439,
+        -72.8319984622144,
+        0.0
+      ],
+      "axis_world": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "built_physical_deg": -45.0,
+      "physical_limits_deg": [
+        -100,
+        100
+      ],
+      "continuous": false
+    },
+    {
+      "name": "RR_hip",
+      "parent_group": "RR/yaw",
+      "child_group": "RR/femur",
+      "centre_world_mm": [
+        -107.83199846221439,
+        -102.8319984622144,
+        0.0
+      ],
+      "axis_world": [
+        -1.2246467991473532e-16,
+        1.0,
+        0.0
+      ],
+      "built_physical_deg": 58.04300403950684,
+      "physical_limits_deg": [
+        -40,
+        125
+      ],
+      "continuous": false
+    },
+    {
+      "name": "RR_knee",
+      "parent_group": "RR/femur",
+      "child_group": "RR/tibia",
+      "centre_world_mm": [
+        -226.19015890245288,
+        -102.83199846221441,
+        -73.83492301887205
+      ],
+      "axis_world": [
+        -1.2246467991473532e-16,
+        1.0,
+        0.0
+      ],
+      "built_physical_deg": -84.71670736904682,
+      "physical_limits_deg": [
+        -150,
+        -15
+      ],
+      "continuous": false
+    },
+    {
+      "name": "RR_wheel",
+      "parent_group": "RR/tibia",
+      "child_group": "RR/wheel",
+      "centre_world_mm": [
+        -167.83199846221436,
+        -102.8319984622144,
+        -190.0
+      ],
+      "axis_world": [
+        -1.2246467991473532e-16,
+        1.0,
+        0.0
+      ],
+      "built_physical_deg": 0.0,
+      "physical_limits_deg": null,
+      "continuous": true
+    }
+  ],
+  "fixed_phase_rotor_attachments": {},
+  "transmission_metadata": {
+    "topology": "proximal_reduction_absolute_tibia",
+    "motor_coordinate_equation": "s=[ry*q1,rh*q2,rk*(q2+q3)]; proximal reductions entirely on yaw carriage; remote femur belt 1:1",
+    "ratios": [
+      2.0,
+      2.0,
+      2.0
+    ],
+    "efficiency": [
+      0.85,
+      0.85,
+      0.85
+    ],
+    "output_backlash_full_width_deg": [
+      0.5,
+      0.6,
+      0.6
+    ],
+    "output_stiffness_nm_per_rad": [
+      150,
+      120,
+      100
+    ],
+    "output_viscous_friction_nm_s_per_rad": [
+      0.008,
+      0.01,
+      0.01
+    ],
+    "motor_travel_limits_deg": [
+      [
+        -175,
+        175
+      ],
+      [
+        -175,
+        175
+      ],
+      [
+        -175,
+        175
+      ]
+    ],
+    "provenance": "Design assumptions pending packaging and loaded reversal/deflection/efficiency measurement; motor travel is usable span around calibrated neutral, not absolute zero.",
+    "remote_belt": {
+      "pitch_mm": 3,
+      "pulley_teeth": 32,
+      "width_mm": 9,
+      "pitch_length_mm": 375
+    }
+  },
+  "native_execution": false,
+  "transmission_mates_created": false,
+  "full_motion_verified": false,
+  "limitations": [
+    "Bearing races stay with their declared envelope group.",
+    "Internal rotors keep their assembled phase relative to their housing; no gear or belt mates.",
+    "Rigid groups do not model print compliance, backlash, cable flex or structural strength."
+  ],
+  "plan_sha256": "a9fd5af86c01b9ac586f7b8d97e9ac7ff2b15efa1af8a450e33dead32de5b972"
+}

@@ -1,0 +1,85 @@
+{
+  "version": 2,
+  "tool": "built-in ImageGen",
+  "date": "2026-09-22",
+  "accepted": {
+    "file": "sheets/v2/eyes_round_loop_arc_v2.png",
+    "source": "<LOCAL_HOME>/.codex/generated_images/01a0ca9b-b015-7d00-9159-3200088125f4/exec-f6c8a887-131c-4277-b390-fd2c358e3272.png",
+    "prompt": "Create a clean flat graphic animation sprite sheet on SOLID PURE WHITE paper. A tall white page, 4 columns by 6 rows of isolated opaque turquoise eye symbols. Twenty-four symbols total. White occupies every empty area, including the holes inside the symbols. Match the flat ink appearance of these three white reference sheets. Render all ink as uniform solid #54E2D8 with crisp rounded edges. No visual effects or lighting. The references are original eye symbols; improve their blink articulation and make eight distinct cels per eye type. Output portrait 1536x2304 with even square cells of 384px. Each glyph roughly210px wide, 24px uniform stroke. Every glyph horizontal center at cell x192. Lower-lid bottom fixed at cell y280. Read cells left to right in each two-row block. TOP TWO ROWS: round open ring with small gap on the left, from reference1. Pose order: open ring,85% open,50% open,15% open,closed shallow U lid,25% open,70% open,open ring. Keep width consistent; upper eyelid drops into lower lid while the base stays still; the intermediate eyes are connected on the right. MIDDLE TWO ROWS: e-shaped loop/crossbar eye from reference2. Same opening percentages. The upper tiny loop compresses and its crossbar merges into the lower lid, always ONE CONNECTED stroke shape, including reopening. 15% and25% open should show only a small white opening with two close strokes, unlike a full open loop. Closed is a single shallow U lid. BOTTOM TWO ROWS: upward arch eye from reference3. Subtle squeeze keeping the same upward arch direction throughout and same210px width. Heights75,67,49,30,22,37,60,75px respectively, redraw curves with steady24px ink thickness; no inversion into a downward U. Rest and final poses match in each block. Prioritize physical continuity, consistent eye width and line weight, one connected shape per cel. No labels, letters, numbers, grid, panel borders, face, pupils, eyebrows or extra marks. This is opaque mint ink on pure white, like a simple printed sticker sheet.",
+    "references": [
+      "sheets/round.png",
+      "sheets/loop.png",
+      "sheets/arc.png"
+    ],
+    "grid": {
+      "columns": 4,
+      "rows": 6,
+      "rowBoundaries": [
+        0,
+        314,
+        552,
+        792,
+        1040,
+        1228,
+        1536
+      ]
+    },
+    "assets": {
+      "round": {
+        "frameOffset": 0,
+        "frameCount": 8
+      },
+      "loop": {
+        "frameOffset": 8,
+        "frameCount": 8
+      },
+      "arc": {
+        "frameOffset": 16,
+        "frameCount": 8
+      }
+    },
+    "poses": [
+      "rest",
+      "anticipation",
+      "closing",
+      "near_closed",
+      "closed",
+      "opening_low",
+      "opening",
+      "settled"
+    ],
+    "review": "White-background sheet accepted after visual comparison and connected component measurements. Arc retains polarity; loop keeps one connected stroke throughout closure and reopening; round adds two meaningful intermediates. Color has minor raster variation, background is near white. Use measured row boundaries and lower-lid registration, never per-frame scale. End every loop on frame 0, not frame 7.",
+    "limits": [
+      "Not a complete redraw of all seven families.",
+      "These are cel assets; voice synchronization is outside this artwork audit.",
+      "Motion naturalness still requires inspection in renderer.",
+      "Pose 7 is an alternate open drawing, not a pixel-identical rest."
+    ]
+  },
+  "rejected": [
+    {
+      "family": "round",
+      "prompt": "Use case: precise-object-edit. Production sprite sheet for MIST eye blink animation, replacing an imperfect earlier sheet. Image 1 is the canonical eye identity; image 2 is the prior sheet ONLY to identify flaws. Render EIGHT newly drawn poses in exact 4 columns by 2 rows, row-major reading order. Entire image 1536x1024, equal 384x512 cells, no cell lines or text. Each eye centered horizontally at cell x=192, with its lower-lid bottom at cell y=360 in BOTH rows. Draw every pose at the same scale and fixed lower-lid baseline. Open eye width 210px, rounded uniform 24px stroke, clean solid mint turquoise #54E2D8, pure white #FFFFFF background. No texture, gradients, glow, shadow, bevel, speckles, pupils, eyebrows, skin, face, labels, numerals or panel borders. The only artwork is eight isolated eye symbols. Pose order 0 rest,1 anticipation,2 closing,3 near_closed,4 closed,5 opening_low,6 opening,7 settled. Open eye is the circular loop with a gap on the LEFT in source image 1. The lower arc stays stable; a properly drawn upper eyelid descends and relaxes with changing contour. Do NOT merely squash the whole symbol. Maintain approximately the same 210 px width through closure: 100%,100%,98%,97%,96%,97%,99%,100%. Open, 85% open, 50% open, 15% open, closed shallow U-curve, 25% open, 70% open, open. The 15% open pose must still have the upper and lower lines connected on the right; the next closed pose joins those into one tidy rounded line. No duplicate closed poses. Do not contract the reopening to a tiny oval as in image 2. Favor natural hand-animated eyelid articulation with carefully drawn new curves and steady visual weight. Keep identical color and crisp edges across all eight poses. Cell registration and family identity are mandatory.",
+      "source": "exec-269ee93d-211c-4ed4-8eec-db28b45b99d7.png",
+      "reason": "Dark background and heavy glow despite white-flat artwork instructions; not accepted for production."
+    },
+    {
+      "family": "loop",
+      "prompt": "Use case: precise-object-edit. Production sprite sheet for MIST eye blink animation, replacing an imperfect earlier sheet. Image 1 is the canonical eye identity; image 2 is the prior sheet ONLY to identify flaws. Render EIGHT newly drawn poses in exact 4 columns by 2 rows, row-major reading order. Entire image 1536x1024, equal 384x512 cells, no cell lines or text. Each eye centered horizontally at cell x=192, with its lower-lid bottom at cell y=360 in BOTH rows. Draw every pose at the same scale and fixed lower-lid baseline. Open eye width 210px, rounded uniform 24px stroke, clean solid mint turquoise #54E2D8, pure white #FFFFFF background. No texture, gradients, glow, shadow, bevel, speckles, pupils, eyebrows, skin, face, labels, numerals or panel borders. The only artwork is eight isolated eye symbols. Pose order 0 rest,1 anticipation,2 closing,3 near_closed,4 closed,5 opening_low,6 opening,7 settled. Open eye is source image 1: ONE connected e-like ribbon with a small upper loop/crossbar and a large lower bowl open on its left. As the lid shuts, the upper little loop compresses gradually while retaining connection on the right, then the inner crossbar folds down toward the lower bowl. Do NOT teleport or delete the crossbar in a single big jump; include the intermediate compressed loop and almost-merged ribbon. Never separate the eye into two floating arcs. Maintain 210 px width within 5%. Open, 85% open, 50% open, 15% open, closed shallow U-curve, 25% open connected loop, 70% open connected loop, open. The existing sheet image 2 has a broken disconnected opening frame; repair that topology throughout. Favor natural hand-animated eyelid articulation with carefully drawn new curves and steady visual weight. Keep identical color and crisp edges across all eight poses. Cell registration and family identity are mandatory.",
+      "source": "exec-9353f52f-dff1-45c8-8f2d-56a1389d17f2.png",
+      "reason": "Dark background and heavy glow despite white-flat artwork instructions; not accepted for production."
+    },
+    {
+      "family": "arc",
+      "prompt": "Use case: precise-object-edit. Production sprite sheet for MIST eye blink animation, replacing an imperfect earlier sheet. Image 1 is the canonical eye identity; image 2 is the prior sheet ONLY to identify flaws. Render EIGHT newly drawn poses in exact 4 columns by 2 rows, row-major reading order. Entire image 1536x1024, equal 384x512 cells, no cell lines or text. Each eye centered horizontally at cell x=192, with its lower-lid bottom at cell y=360 in BOTH rows. Draw every pose at the same scale and fixed lower-lid baseline. Open eye width 210px, rounded uniform 24px stroke, clean solid mint turquoise #54E2D8, pure white #FFFFFF background. No texture, gradients, glow, shadow, bevel, speckles, pupils, eyebrows, skin, face, labels, numerals or panel borders. The only artwork is eight isolated eye symbols. Pose order 0 rest,1 anticipation,2 closing,3 near_closed,4 closed,5 opening_low,6 opening,7 settled. The open eye is source image 1, an arch shaped like an upside-down U, a friendly closed smiling eye with BOTH tips below the crown. For this family make a subtle hand-drawn blink/squeeze rather than inventing an open pupil. Keep arch polarity throughout; NEVER invert into a smile U as image 2 does. Width stays 210 px within 5% and tips stay on the same baseline. The arch starts 75 px tall, relaxes to 67, lowers to 49, becomes 30, reaches 22 px tall gentle arch for fully squeezed, opens to 37, then 60, then original 75 px tall. Maintain clean 24px rounded stroke thickness, redrawing curves and tip tangents rather than vertically compressing ink. Closed is visibly shallower but not straight. Rest and settled exactly match. Favor natural hand-animated eyelid articulation with carefully drawn new curves and steady visual weight. Keep identical color and crisp edges across all eight poses. Cell registration and family identity are mandatory.",
+      "source": "exec-34d45482-6834-4c56-8033-1d80f0f399d6.png",
+      "reason": "Dark background and heavy glow despite white-flat artwork instructions; not accepted for production."
+    },
+    {
+      "family": "consolidated",
+      "prompt": "Use case: precise-object-edit. Fix these sprite drawings into ONE production asset sheet. Reference 1 has the CORRECT rendering style: flat mint ink on plain pure white. References 2, 3, 4 have the desired eight eye poses but WRONG black backgrounds and glow. Replace those backgrounds and remove ALL glow/shading: pure white #FFFFFF canvas and solid clean mint turquoise #54E2D8 strokes only, exactly like reference 1. NO black pixels, no gray panels, no glow, shadow, gradient, bloom, outline, texture, text, grid lines or labels. Arrange a total of TWENTY-FOUR sprites as 4 columns x 6 rows, exactly even cells, portrait 1536x2304. Top TWO rows reproduce the 8 round gap eye poses from reference 2; middle TWO rows reproduce the 8 loop/crossbar eye poses from reference 3; bottom TWO rows reproduce the 8 arch eye poses from reference 4. Within each 4x2 block reading left-to-right: rest, anticipation, closing, near_closed, closed, opening_low, opening, settled. Each cell 384x384, each eye centered at x192 with lower lid baseline y286; steady 210px width and 24px rounded ink thickness, identical color. The near_closed poses of round and loop must be much closer to closed than shown in the bad references: 15 percent opening only, upper stroke almost merged into lower stroke, 1-3px white gap. Opening_low should be about 25 percent opening. For LOOP never detach its strokes, keep right connection during closure, the upper little loop can merge naturally into the main stroke. For ARC retain the upward arch throughout all poses, no downward U. Rest and settled should match exactly within each family. Smooth contour articulation, not stretched ink. Preserve the original three symbol identities; do not invent extra eyes, eyelashes, faces, mouth, arrows or decorations. Deliver the single 4x6 clean white sprite sheet.",
+      "source": "exec-8676c5f4-e0ab-4237-a44d-521677f47dc9.png",
+      "reason": "Cleanup still retained glow/dark background; rejected."
+    }
+  ]
+}

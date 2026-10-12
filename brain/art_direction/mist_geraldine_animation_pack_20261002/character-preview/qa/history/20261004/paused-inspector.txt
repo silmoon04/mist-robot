@@ -1,0 +1,56 @@
+- link "Skip to playback":
+  - /url: "#controls"
+- banner:
+  - generic: MIST
+  - heading "Geraldine in conversation" [level=1]
+  - button "Review a moment" [expanded]
+- main:
+  - text: Scene
+  - combobox "Scene":
+    - option "A straightforward question" [selected]
+    - option "A dry reply, interrupted"
+    - option "Waiting together"
+  - group "Timing · provisional":
+    - generic: Timing · provisional
+    - button "Restrained" [pressed]
+    - button "Expressive"
+  - region "Conversation preview":
+    - img "Geraldine’s animated face"
+    - heading "A straightforward question" [level=2]
+    - paragraph: "Synthetic scene: a user asks what a hinge does. The answer is the unchanged bundled recording."
+    - text: Simulated user
+    - paragraph: What is a hinge?
+    - text: Recording transcript
+    - paragraph: A hinge is a joint that connects two rigid parts and lets them pivot around a line, like the strip that holds a door to its frame.
+    - status: Paused
+  - button "Resume" [active]
+  - button "Interrupt" [disabled]
+  - button "Replay"
+  - progressbar "Scene progress"
+  - status: 0:02 / 0:09
+  - paragraph: Synthetic conversation · original recordings and artwork. Same audio in both timing profiles.
+  - region "Review this moment":
+    - heading "Review this moment" [level=2]
+    - generic: Choose Keep / Revise or write a note to capture this moment.
+    - button "Keep"
+    - button "Revise"
+    - button "New moment"
+    - button "Export notes"
+    - generic: What would you keep or change?
+    - textbox "What would you keep or change?":
+      - /placeholder: Eyes, mouth, or conversational timing…
+    - status: Notes stay in this browser.
+    - generic "Timing inspector"
+    - paragraph: Pronunciation timing is estimated. This view reports scheduling and rendered frames; it is not an acoustic measurement.
+    - generic: "{ \"sceneMs\": 2969, \"audibleSeconds\": 0.969, \"target\": \"rest\", \"renderedCel\": { \"presetId\": \"attentive\", \"eyeFamily\": \"attentive\", \"eyeFrame\": \"rest\", \"mouthFamily\": \"friendly\", \"mouthFrame\": \"rest\", \"phase\": \"hold\", \"speaking\": false }, \"silence\": true, \"reason\": \"suspended-clock\", \"source\": \"silence\", \"alignmentSource\": \"recovered_provider_caption_word_bounds_estimated_phonemes_audio_gated\", \"timingKind\": \"estimated\", \"intent\": \"attentive\", \"expression\": \"attentive\", \"epoch\": 2, \"activeSources\": 0 }"
+    - list "Scene events":
+      - listitem: 0.000s · replay
+      - listitem: 0.000s · context · What is a hinge?
+      - listitem: 0.000s · state · listening
+      - listitem: 0.000s · intent · attentive
+      - listitem: 0.000s · play
+      - listitem: 0.889s · state · thinking
+      - listitem: 0.889s · intent · friendly-curiosity
+      - listitem: 1.609s · intent · attentive
+      - listitem: 2.070s · state · speaking
+      - listitem: 2.969s · pause

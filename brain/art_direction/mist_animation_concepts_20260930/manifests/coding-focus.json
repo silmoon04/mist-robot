@@ -1,0 +1,80 @@
+{
+  "id": "coding-focus",
+  "tool": "built-in image_gen",
+  "images": [
+    {
+      "id": "coding-focus__1",
+      "file": "images/coding-focus-1.png",
+      "prompt": "prompts/coding-focus-1-repair.txt",
+      "generatedSource": "<LOCAL_HOME>/.codex/generated_images/01a0ef9d-9d18-7143-bf67-0eb5b5ba0e15/exec-7d02d5d4-b210-42a9-8f57-075fe1313051.png",
+      "sha256": "263b4853f0c00412bba5ca886c1de58d075c18e9ec8e63261b317eea410a5349",
+      "width": 1254,
+      "height": 1254,
+      "qa": {
+        "singleFace": true,
+        "mistIdentity": true,
+        "noStrayMarks": true,
+        "closedMouth": true,
+        "terminalSeparatedFromFace": true,
+        "exactNativeCopy": true,
+        "viewedSelectedImage": true
+      },
+      "limitations": "Upper lids are visibly focused rather than fully open; the initial doubled lower arcs were corrected in one targeted edit."
+    },
+    {
+      "id": "coding-focus__2",
+      "file": "images/coding-focus-2.png",
+      "prompt": "prompts/coding-focus-2.txt",
+      "generatedSource": "<LOCAL_HOME>/.codex/generated_images/01a0ef9d-9d18-7143-bf67-0eb5b5ba0e15/exec-2f65a0a9-4ebe-4be7-bf70-5b55edb63732.png",
+      "sha256": "b74e4aa90662cae54abbba10d52349482a15a24e0a06094279f5c27436e1dd4b",
+      "width": 1254,
+      "height": 1254,
+      "qa": {
+        "singleFace": true,
+        "mistIdentity": true,
+        "noStrayMarks": true,
+        "closedMouth": true,
+        "terminalSeparatedFromFace": true,
+        "exactNativeCopy": true,
+        "viewedSelectedImage": true
+      },
+      "limitations": "The down-right gaze change is very subtle; the cursor moving down one row is the strongest working cue."
+    },
+    {
+      "id": "coding-focus__3",
+      "file": "images/coding-focus-3.png",
+      "prompt": "prompts/coding-focus-3.txt",
+      "generatedSource": "<LOCAL_HOME>/.codex/generated_images/01a0ef9d-9d18-7143-bf67-0eb5b5ba0e15/exec-fcadda06-b503-4776-bbae-d368b3f6787d.png",
+      "sha256": "d0213c7657075360edf68566c940d35a02d1348723f5719fdaf64dbb253c10b6",
+      "width": 1254,
+      "height": 1254,
+      "qa": {
+        "singleFace": true,
+        "mistIdentity": true,
+        "noStrayMarks": true,
+        "closedMouth": true,
+        "terminalSeparatedFromFace": true,
+        "exactNativeCopy": true,
+        "viewedSelectedImage": true
+      },
+      "limitations": "The upper lid lift is small; the closed smile and cursor at the lower-row end provide the resolution beat."
+    }
+  ],
+  "tripleQa": {
+    "viewedTogether": true,
+    "sameNativeDimensions": true,
+    "faceScaleAndPlacementConsistent": true,
+    "terminalFrameAndChevronsVisuallyStable": true,
+    "cursorPersistsInAllThree": true,
+    "noDuplicateEyeArcsInSelectedImages": true
+  },
+  "revisions": [
+    {
+      "file": "images/revisions/coding-focus-1-initial.png",
+      "prompt": "prompts/coding-focus-1.txt",
+      "generatedSource": "<LOCAL_HOME>/.codex/generated_images/01a0ef9d-9d18-7143-bf67-0eb5b5ba0e15/exec-b91950ac-bf4b-4849-97fd-7ffaefe53cf9.png",
+      "rejectionReason": "Extra lower eye arcs and slash-like notches."
+    }
+  ],
+  "limitations": "Three static concept poses only. Gaze shifts are subtle. The terminal frame and two chevrons are visually rigid across the sequence; image generation does not guarantee identical antialiasing or texture pixels. No runtime or live animation pack was changed."
+}

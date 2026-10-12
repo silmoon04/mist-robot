@@ -1,0 +1,201 @@
+{
+  "schema_version": 1,
+  "status": "heavier_CAD_mass_only_sensitivity_not_selected_design",
+  "units": "SI except explicitly named _deg and _rpm",
+  "coordinate_system": "+X forward, +Y left, +Z up; q1 yaw about +Z, q2/q3 about local -Y; zero links down",
+  "geometry": {
+    "body_diameter_m": 0.18,
+    "body_height_m": 0.22,
+    "overall_body_lid_handle_height_m": 0.26,
+    "hip_mount_height_above_body_bottom_m": 0.035,
+    "hip_mount_radius_m": 0.103,
+    "mount_azimuths_deg": [
+      45,
+      -45,
+      135,
+      -135
+    ],
+    "leg_names": [
+      "FL",
+      "FR",
+      "RL",
+      "RR"
+    ],
+    "hip_radial_offset_m": 0.035,
+    "hip_transverse_offset_m": 0.03,
+    "femur_m": 0.1395,
+    "tibia_m": 0.13,
+    "link_width_m": 0.024,
+    "link_thickness_m": 0.018,
+    "wheel_diameter_m": 0.085,
+    "wheel_width_m": 0.024,
+    "joint_limits_deg": [
+      [
+        -100,
+        100
+      ],
+      [
+        -40,
+        125
+      ],
+      [
+        -150,
+        -15
+      ]
+    ],
+    "drive_heading_deg": [
+      0,
+      0,
+      180,
+      -180
+    ],
+    "hip_to_wheel_axle_height_m": 0.19,
+    "drive_radial_reach_from_pitch_m": 0.06
+  },
+  "mass": {
+    "coordinate_origin": "Body hip yaw mount plane. Body bottom is z=-0.035m. All following COM positions use that frame.",
+    "shell_kg": 1.3295892292003746,
+    "shell_com_m": [
+      -0.003025428489889493,
+      2.7508887388352022e-06,
+      0.039226052874322535
+    ],
+    "battery_kg": 0.174,
+    "battery_com_m": [
+      -0.025,
+      0,
+      -0.0145
+    ],
+    "brain_phone_kg": 0.155,
+    "brain_phone_com_m": [
+      0,
+      0,
+      0.034
+    ],
+    "face_phone_with_frame_kg": 0.2185553865500433,
+    "face_phone_com_m": [
+      0.07628017926376195,
+      -6.764759315888748e-19,
+      0.10420817613565349
+    ],
+    "electronics_kg": 0.25,
+    "harness_kg": 0.15,
+    "proximal_servo_kg": 0.055,
+    "yaw_carriage_without_servos_kg": 0.32185924208629096,
+    "femur_with_pulleys_kg": 0.1715272545917623,
+    "tibia_with_carrier_kg": 0.11280122025535941,
+    "wheel_motor_with_mount_kg": 0.16024791273614084,
+    "wheel_hub_and_tire_kg": 0.08454368068314383,
+    "provenance": "Mass-only reconciliation to actual candidate CAD, solid-print/bearing-envelope assumptions plus stated allowances. Link COM/inertias and collision shapes remain coarse."
+  },
+  "servo": {
+    "model": "Feetech STS3215 C018 12V assumed correct ordered variant",
+    "nominal_voltage_v": 12.0,
+    "simulation_voltage_v": 9.9,
+    "stall_torque_nm": 2.941995,
+    "no_load_speed_rpm": 45,
+    "stall_current_a": 2.7,
+    "idle_current_a": 0.18,
+    "rated_torque_nm": 0.980665,
+    "continuous_fraction_of_stall": 0.3,
+    "peak_fraction_of_stall": 0.55,
+    "command_delay_s": 0.025,
+    "command_period_s": 0.01,
+    "response_time_constant_s": 0.025,
+    "deadband_deg": 0.35,
+    "gearbox_backlash_full_width_deg": 1.0,
+    "provenance": "Electrical endpoints from C018 datasheet research; linear voltage/torque-speed scaling, current approximation, delay, bandwidth, deadband, backlash, continuous/peak derating are unmeasured assumptions."
+  },
+  "transmission": {
+    "topology": "proximal_reduction_absolute_tibia",
+    "motor_coordinate_equation": "s=[ry*q1,rh*q2,rk*(q2+q3)]; proximal reductions entirely on yaw carriage; remote femur belt 1:1",
+    "ratios": [
+      2.0,
+      2.0,
+      2.0
+    ],
+    "efficiency": [
+      0.85,
+      0.85,
+      0.85
+    ],
+    "output_backlash_full_width_deg": [
+      0.5,
+      0.6,
+      0.6
+    ],
+    "output_stiffness_nm_per_rad": [
+      150,
+      120,
+      100
+    ],
+    "output_viscous_friction_nm_s_per_rad": [
+      0.008,
+      0.01,
+      0.01
+    ],
+    "motor_travel_limits_deg": [
+      [
+        -175,
+        175
+      ],
+      [
+        -175,
+        175
+      ],
+      [
+        -175,
+        175
+      ]
+    ],
+    "provenance": "Design assumptions pending packaging and loaded reversal/deflection/efficiency measurement; motor travel is usable span around calibrated neutral, not absolute zero.",
+    "remote_belt": {
+      "pitch_mm": 3,
+      "pulley_teeth": 32,
+      "width_mm": 9,
+      "pitch_length_mm": 375
+    }
+  },
+  "wheel_motor": {
+    "model": "DFRobot FIT0493 25D 12V encoder conditional candidate",
+    "nominal_voltage_v": 12,
+    "no_load_speed_rpm": 350,
+    "stall_torque_nm": 1.176798,
+    "stall_current_a": 5.5,
+    "no_load_current_a": 0.23,
+    "current_limit_a": 1.0,
+    "provenance": "Manufacturer reference, not selected purchase: GBP25.61 motor plus driver exceeds requested circa GBP15. Current cap is an unvalidated engineering assumption, not a published continuous rating."
+  },
+  "environment": {
+    "gravity_m_s2": 9.81,
+    "tire_friction_coefficient": 0.75,
+    "rolling_friction_coefficient": 0.002,
+    "contact_restitution": 0,
+    "step_rise_m": 0.18,
+    "step_tread_m": 0.27,
+    "toe_clearance_m": 0.015,
+    "provenance": "All assumed; stair geometry, floor grip, tire behavior and stair noses need measurement. No human or hardware measurements made."
+  },
+  "simulation": {
+    "physics_hz": 1000,
+    "solver_iterations": 100,
+    "duration_s": 8,
+    "record_hz": 50,
+    "motor_kp_nm_per_rad": 8,
+    "motor_kd_nm_s_per_rad": 0.15,
+    "fall_tilt_deg": 35,
+    "joint_tracking_rms_limit_deg": 8,
+    "step_tracking_rms_limit_m": 0.015,
+    "provenance": "Explicit controller and numerical assumptions, not identified STS firmware."
+  },
+  "sources": [
+    "../../../docs/mist/MIST_ACTUAL_INVENTORY.md",
+    "../../../docs/mist/MIST_FUSION_MASTER_DIMENSIONS.md",
+    "../../../bench/leg_calibration.json",
+    "https://www.pololu.com/product/4843",
+    "https://raw.githubusercontent.com/bulletphysics/bullet3/master/docs/pybullet_quickstartguide.pdf",
+    "../package/belt_selection_20260907/remote_belt_spec.json"
+  ],
+  "revision": "20260907_belt139p5_root4M4_knee8",
+  "cad_mass_report_sha256": "aeae9cb3ff334459e7fb26295cead0adc99cbc6ba64fb30788a709edcb953320"
+}

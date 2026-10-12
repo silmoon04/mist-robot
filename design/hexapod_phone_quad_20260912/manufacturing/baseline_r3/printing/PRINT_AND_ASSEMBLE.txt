@@ -1,0 +1,79 @@
+# R3 print and assembly guide
+
+Start with PRINT_FIRST.txt. R3 is a controlled fit and load-test candidate. The rigid-body ordinary-walk simulation passes its own checks, but the printed structure has not been qualified. The Mi9SE remains landscape, 147.5 mm across and 70.5 mm high, screen upright. USB is accessible beside either short edge while pan is parked.
+
+## Print the essential set first
+
+The plate manifest labels each plate first_print or optional. The 17 first-print pieces are one 0.3 mm end-clearance case saddle and one shared cap; main and auxiliary horn cheeks and the 38 mm bridge; the M3 hole gauge; all three yaw spacers; two R3 femur bridge sections and the staggered coxa-post section; the 0.5 mm landscape phone tray and its two short clips; the USB-spine section; and the complete phone pan hub.
+
+The ten optional pieces cover 0.2 and 0.4 mm case end clearances, their duplicate caps, and 0.3 and 0.7 mm phone fits with two clips each. One cap fits all case end-clearance trials, so its two duplicates need not be printed. All alternatives remain available individually through coupon_bom.csv. Optional plates include the duplicates for an explicit print-everything route. A passing hub coupon can replace the identical production hub. Cropped sections and shortened trays cannot replace complete production parts.
+
+These are geometry-only 3MF files in millimetres, with named objects and matching combined STL files. Preserve the supplied orientations and positions. They contain no machine profile or executable G-code. The packer uses at most 215 × 215 mm of geometry on the 225 mm bed and leaves at least 8 mm between object bounding boxes. Confirm support, brim and skirt also fit. Print the deck and cover individually; their approximate 206 and 208 mm spans become 214 and 216 mm with a 4 mm brim on each side.
+
+## Slicer setup and evidence
+
+Use the actual Neptune 4 Pro configuration. R3 production analysis used a 0.4 mm nozzle, 0.20 mm layers, 0.42 mm line width, five walls, six top and bottom layers, 35% gyroid, 210/60 °C PLA and an 8 mm³/s flow ceiling. Starting speeds remain 20 mm/s first layer, 35 outer walls, 60 inner walls and 80 infill, subject to the flow ceiling. Use full cooling after layer three. Adjust temperature to the filament maker's range.
+
+The recorded support is normal zigzag at 15%, with a 60% roof, 0.6 mm roof thickness, 0.2 mm Z separation and 0.5 mm XY clearance. These are an analysis profile and starting settings, not measured printer calibration.
+
+[Production slicing results](../manufacturing/slicing_r3/output/PRODUCTION_SLICING.md) cover all 34 SKUs and 76 pieces. Estimated deposited model PLA is 1.016902 kg, removable support about 62 g and adhesion about 1.2 g. Printing every piece separately totals 102.5 predicted hours; packed jobs and coupons have different overhead. Thirty-five percent infill does not mean 35% of solid mass. Many reinforced parts are largely walls and skins. Retained analysis toolpaths are disabled and compressed; slice the geometry for the actual machine.
+
+Preserve the R3 print STLs. The coxa now uses +90° about X, superseding the old opposite orientation. Leg cheeks keep their broad outer faces on the bed and ribs above. Inspect support beneath offset bridges, clamp features and the curved foot. The cover is inverted, with structural ribs and local nut features; its actual support estimate is 6.2 g. The battery tray has sloping ribs beneath its raised tabs; preserve the exported orientation and inspect tab starts and the floor in the layer preview. Its support estimate is also 6.2 g. Do not delete ribs to reduce support.
+
+The phone frame prints on its column backs at X=-8.5, with removable build-plate support beneath the central rear plate at X=-4.5. Its top cap prints inverted. Phone-fit coupons use the same reinforced-back orientation. Bridge the pan saddle's short roofed nut pockets without trapping internal support. Inspect continuous toolpaths around holes, roof corners and rib starts. Keep removal scars off horn seats and washer lands. Material or orientation changes require new coupons; PLA settings and strength assumptions do not transfer unchanged to PETG.
+
+## Fasteners
+
+Attachment-level quantities are in fastener_mass.csv. Production totals are 97 M3×6, 20 M3×10, 16 M3×12, eight M3×16, 24 M3×20, 36 M3×35 and twelve M3×50 screws; twelve supplied PA3×5 auxiliary retainers; 100 plain M3 nuts; 116 OD6 and 96 OD7 washers, all 0.5 mm thick. The M3×6 count includes thirteen supplied main centre retainers. Plain nuts are nominally 5.5 mm across flats and 2.4 mm thick. Counts exclude spares and extra sacrificial fixtures. Inventory does not prove every size is present.
+
+Use matching metric drivers, a slim socket or small spanner, caliper and deburring tools. Check nuts and washers before loading pockets. Do not force taller nylocs into plain-nut pockets.
+
+| Attachment | R3 stack |
+|---|---|
+| Twelve case clamps | 36 M3×35, one OD7 head washer each and recessed plain nuts; nominal tip extends 1.77 mm beyond the 32.73 mm rail span |
+| Yaw saddles to deck | 16 M3×12 with OD7 washers and nuts |
+| Leg main horns and hip/knee auxiliary discs | 80 M3×6 with one OD6 washer each; 4 mm cheek leaves 1.5 mm nominal engagement |
+| Yaw auxiliary discs | 16 M3×20, two OD6 × 0.5 mm washers each inside 2.5 mm counterbores; nominal flange engagement 2 mm |
+| Lower yaw arms to coxa posts | Eight M3×20 with OD7 head washers; nuts enter opposite, vertically staggered slots |
+| Femur and tibia transverse closures | Twelve M3×50, two OD7 washers and one external 2.4 mm plain nut each; 49.4 mm stack and 0.6 mm tip emergence |
+| Phone hub to horn | Four M3×6, one OD6 washer each in counterbores; nominal engagement 2 mm |
+| Pan saddle through cover spacers | Four M3×16, OD7 washers and captured nuts; includes 4 mm feet and 4 mm spacers |
+| Pan saddle cap | Four M3×10 into side-loaded nuts beneath retained roofs |
+| Cradle feet to hub and rear frame | Eight M3×10 and nuts, four downward and four from behind |
+| Two phone clips and top cap | Four M3×16 and nuts |
+| Cover and battery tray to deck | Eight M3×10 with OD7 washers and nuts |
+| Shaft centre retention | Thirteen supplied M3×6 main retainers and twelve supplied PA3.0×5 auxiliary retainers |
+
+Tibia transverse bolts are 8 mm apart; OD7 washers leave a nominal 1 mm gap. Check tool access and screw tips throughout the sweep. The main metal flange is 2.5 mm thick and the auxiliary flange 2.1 mm. Measure actual engagement and bottoming. The yaw counterbore stack requires both 0.5 mm washers. Reuse the supplied metal spline horn and free-slip auxiliary disc; never interchange their centre retainers or clamp the auxiliary disc until it binds.
+
+## Assembly and fixture loop
+
+1. Print the first-print set and record material, layers, dimensions and verdict in coupon_feedback.csv. Case labels vary end clearance only. Assemble the nominal saddle and cap with the real servo, nuts and M3×35 screws. Tighten evenly only until the cap contacts and locates the case, with closure travel remaining. There is no established tightening torque. Reject case lift, distortion or a cap that bottoms before contact.
+
+2. Fit the real metal discs to the cheek coupons and 38 mm bridge. The main spline boss faces the servo. Verify centre-tool access and free auxiliary rotation with retention installed. Compare all three yaw spacers by measurement; production remains provisionally 10.5 mm.
+
+3. Assemble the R3 femur bridge sections with an M3×50, external nut and two OD7 washers. Check full cheek thickness beneath the washers, indentation, cracking and separation during gentle seating. The old thin captured-nut floors are superseded. Load the post's two nuts through opposite staggered windows. Print one complete production lower yaw arm for the post fixture: the cropped post does not include its counterbores or the full disc stack.
+
+4. Build one complete leg with torque disabled. Fit the yaw clamp, upper coxa, hip servo and cap. Load both coxa nuts before fitting the lower arm. Install measured spacers, four M3×20 auxiliary screws with paired OD6 washers, and both M3×20 post screws. Check free rotation after each small tightening increment.
+
+5. Fit the femur main cheek, knee servo and cap, then the separate auxiliary cheek. Close its bridge using the external nut stack. Fit the curved tibia and its auxiliary cheek, then both transverse bolts. Inspect screw heads, tips and wires throughout the intended restricted sweep. Do not spring a closed yoke over a servo or hammer a fit.
+
+6. Put the leg in a captured fixture. Establish a low-force baseline, then apply incremental vertical and lateral forces, recording lever arm, tip displacement, twist and residual set after unloading. Test both lateral directions because reversing loads can open a bridge and change load sharing. Start below the conservative 43 Nmm main-cheek side-moment bound, approximately 0.43 N at 100 mm, while retaining the actual sagittal-load context. This is a fixture-planning bound, not a walking rating. Stop at cracking, whitening, slip, progressive deflection or permanent set. Do not begin with a 5 N side push plus maximum vertical load.
+
+7. Increase vertical loading toward the measured standing reaction only after repeatable low-load behavior. The 12 N and 24 N screening targets belong on sacrificial, captured specimens with incremental loading. Review each result before increasing force. Update the interface or operating limits and repeat the coupon and one-leg loop after any material, geometry or print-process change.
+
+8. Fit the deck, ribbed battery tray and measured electronics, routing straps and wiring before closing the cover. Follow WIRING.md. Slide the pan saddle's cap nuts inward through outward-facing slots at Z80.9 to 83.6, beneath 2.9 mm roofs. Insert all four before fitting the cap. Tighten evenly until the lips contact the case with the intended 0.3 mm ear travel remaining. Observe each roof for lift, cracks and nut rotation. An open-top well cannot retain cap preload.
+
+9. Fit the pan saddle using its cover spacers and M3×16 screws, then the horn, centre retainer, hub and feet. Load frame post nuts through the 7.4 mm rear access wells at the unchanged M3×16 stack plane. Load feet nuts from the phone side before insertion. Fit both short lower clips and a dimensionally representative dummy phone, then the top cap. Check the USB-spine coupon, parked plug, camera openings and button relief.
+
+10. With the dummy secured in a captured fixture, apply small measured pushes and record column deflection and residual set. The 5 N phone push is an analytical case, not permission to apply it immediately. Never use the frame as a handle. Insert the real Mi9SE only after these checks, without pressure on glass or buttons. Use Wi-Fi and its battery during pan; park and disable pan before side USB charging.
+
+11. Record clamp movement and deflection after an hour and a day. Repeat relevant checks at the measured servo-adjacent operating temperature before prolonged standing. Only after reviewing these results should a supported, low-speed, level-floor full-robot test begin, with immediate servo-power removal available.
+
+## Limits of the evidence
+
+Deposited-material assembly mass is estimated at 2.709883 kg, using the high fastener scenario of about 0.383 kg. The old 50 g fastener allowance is superseded. Fasteners range from 0.268 to 0.383 kg, nominally 0.328 kg. Full-solid CAD comparison mass is 2.857856 kg. Weigh actual hardware and printed parts; deposited mass and infill percentage do not prove strength.
+
+The [R3 strength assessment](../manufacturing/strength/r3_strength_assessment.md) gives ordinary-walk sagittal section margins of 3.19 for femur and 1.42 for tibia under stated assumptions. Conservative 5 N lateral cases still fail the single-cheek screen. Sliced-mass 2g post and horn-bearing results are borderline; the phone USB spine has about 1.09 conditional margin in its separate load case. These are conditional calculations, not a full strength certificate or measured warm, fatigue or creep ratings. The fixture loop must resolve load sharing and material behavior before a full run.
+
+Regenerate with python printing/pack_prints.py after a frozen CAD export. The script validates every coupon and production mesh, records source hashes, preserves measurements and labels essential versus optional sets. The resulting plates still need machine-specific slicing and physical inspection.

@@ -1,0 +1,353 @@
+{
+  "status": "unconfirmed_geometry_probe_passed_not_final",
+  "print_exports_written": false,
+  "dimensions_confirmed": false,
+  "provisional_contract": {
+    "status": "unconfirmed_probe_only",
+    "carrier_boss": {
+      "outer_diameter_mm": 34,
+      "height_mm": 8.4,
+      "through_diameter_mm": 20,
+      "floor_mm": 1.2,
+      "seat_depth_mm": 7.2,
+      "candidate_seats_mm": [
+        22.25,
+        22.4,
+        22.7
+      ],
+      "lead_in_height_mm": 0.6,
+      "lead_in_diametral_mm": 1.2,
+      "bolt_centers_local_mm": [
+        [
+          -14,
+          0
+        ],
+        [
+          14,
+          0
+        ]
+      ],
+      "bolt_diameter_mm": 3.4
+    },
+    "carrier_keeper": {
+      "outer_diameter_mm": 34,
+      "inner_diameter_mm": 20,
+      "thickness_mm": 2.4,
+      "bolt_centers_local_mm": [
+        [
+          -14,
+          0
+        ],
+        [
+          14,
+          0
+        ]
+      ],
+      "bolt_diameter_mm": 3.4
+    },
+    "face_carrier": {
+      "thickness_mm": 8,
+      "center_bore_mm": 7.3,
+      "sleeve_seat_mm": 6.6
+    },
+    "jack_bridge": {
+      "nut_pocket_af_mm": 7.2,
+      "plate_side_opening": true
+    }
+  },
+  "checks": [
+    {
+      "part": "01_bearing_boss_carrier",
+      "brep_valid": true,
+      "solid_count": 1,
+      "volume_mm3": 42957.45394333319,
+      "watertight": true,
+      "mesh_shell_checks": {
+        "positive_material_shells": 1,
+        "surface_shells": 1,
+        "enclosed_void_shells": 0,
+        "void_shell_checks": []
+      }
+    },
+    {
+      "part": "02_hardware_interface_board",
+      "brep_valid": true,
+      "solid_count": 1,
+      "volume_mm3": 19797.040325413116,
+      "watertight": true,
+      "mesh_shell_checks": {
+        "positive_material_shells": 1,
+        "surface_shells": 2,
+        "enclosed_void_shells": 1,
+        "void_shell_checks": [
+          {
+            "signed_volume_mm3": -0.5400000000000205,
+            "bounds_mm": [
+              [
+                145.45,
+                75.5,
+                1.6
+              ],
+              [
+                146.54999999999998,
+                77.5,
+                2.1
+              ]
+            ],
+            "containment_sample_count": 32,
+            "absolute_winding_min": 0.9999999999999994,
+            "absolute_winding_max": 1.0000000000000004,
+            "containment": "All vertices and triangle centroids lie inside the positive shell"
+          }
+        ]
+      }
+    },
+    {
+      "part": "03_servo_width_gauge",
+      "brep_valid": true,
+      "solid_count": 1,
+      "volume_mm3": 4382.907200000003,
+      "watertight": true,
+      "mesh_shell_checks": {
+        "positive_material_shells": 1,
+        "surface_shells": 1,
+        "enclosed_void_shells": 0,
+        "void_shell_checks": []
+      }
+    },
+    {
+      "part": "04_split_clamp_lower",
+      "brep_valid": true,
+      "solid_count": 1,
+      "volume_mm3": 1985.1480364611264,
+      "watertight": true,
+      "mesh_shell_checks": {
+        "positive_material_shells": 1,
+        "surface_shells": 1,
+        "enclosed_void_shells": 0,
+        "void_shell_checks": []
+      }
+    },
+    {
+      "part": "05_split_clamp_upper",
+      "brep_valid": true,
+      "solid_count": 1,
+      "volume_mm3": 3439.6664364611433,
+      "watertight": true,
+      "mesh_shell_checks": {
+        "positive_material_shells": 1,
+        "surface_shells": 1,
+        "enclosed_void_shells": 0,
+        "void_shell_checks": []
+      }
+    },
+    {
+      "part": "06_624_retainer_boss",
+      "brep_valid": true,
+      "solid_count": 1,
+      "volume_mm3": 40564.56204649425,
+      "watertight": true,
+      "mesh_shell_checks": {
+        "positive_material_shells": 1,
+        "surface_shells": 1,
+        "enclosed_void_shells": 0,
+        "void_shell_checks": []
+      }
+    },
+    {
+      "part": "07_624_retainer_cap",
+      "brep_valid": true,
+      "solid_count": 1,
+      "volume_mm3": 857.8515118456484,
+      "watertight": true,
+      "mesh_shell_checks": {
+        "positive_material_shells": 1,
+        "surface_shells": 1,
+        "enclosed_void_shells": 0,
+        "void_shell_checks": []
+      }
+    }
+  ],
+  "pairwise_checks": [
+    {
+      "parts": [
+        1,
+        2
+      ],
+      "overlap_mm3": 0.0,
+      "gap_mm": 20.0
+    },
+    {
+      "parts": [
+        1,
+        3
+      ],
+      "overlap_mm3": 0.0,
+      "gap_mm": 8.0
+    },
+    {
+      "parts": [
+        2,
+        3
+      ],
+      "overlap_mm3": 0.0,
+      "gap_mm": 6.0
+    },
+    {
+      "parts": [
+        1,
+        4
+      ],
+      "overlap_mm3": 0.0,
+      "gap_mm": 8.0
+    },
+    {
+      "parts": [
+        2,
+        4
+      ],
+      "overlap_mm3": 0.0,
+      "gap_mm": 35.0
+    },
+    {
+      "parts": [
+        3,
+        4
+      ],
+      "overlap_mm3": 0.0,
+      "gap_mm": 5.0
+    },
+    {
+      "parts": [
+        1,
+        5
+      ],
+      "overlap_mm3": 0.0,
+      "gap_mm": 9.351591323771851
+    },
+    {
+      "parts": [
+        2,
+        5
+      ],
+      "overlap_mm3": 0.0,
+      "gap_mm": 34.0
+    },
+    {
+      "parts": [
+        3,
+        5
+      ],
+      "overlap_mm3": 0.0,
+      "gap_mm": 4.0
+    },
+    {
+      "parts": [
+        4,
+        5
+      ],
+      "overlap_mm3": 0.0,
+      "gap_mm": 4.0
+    },
+    {
+      "parts": [
+        1,
+        6
+      ],
+      "overlap_mm3": 0.0,
+      "gap_mm": 2.014702703389887
+    },
+    {
+      "parts": [
+        2,
+        6
+      ],
+      "overlap_mm3": 0.0,
+      "gap_mm": 2.0
+    },
+    {
+      "parts": [
+        3,
+        6
+      ],
+      "overlap_mm3": 0.0,
+      "gap_mm": 2.0
+    },
+    {
+      "parts": [
+        4,
+        6
+      ],
+      "overlap_mm3": 0.0,
+      "gap_mm": 2.0
+    },
+    {
+      "parts": [
+        5,
+        6
+      ],
+      "overlap_mm3": 0.0,
+      "gap_mm": 2.0
+    },
+    {
+      "parts": [
+        1,
+        7
+      ],
+      "overlap_mm3": 0.0,
+      "gap_mm": 49.88451279003334
+    },
+    {
+      "parts": [
+        2,
+        7
+      ],
+      "overlap_mm3": 0.0,
+      "gap_mm": 67.5
+    },
+    {
+      "parts": [
+        3,
+        7
+      ],
+      "overlap_mm3": 0.0,
+      "gap_mm": 38.842120951576455
+    },
+    {
+      "parts": [
+        4,
+        7
+      ],
+      "overlap_mm3": 0.0,
+      "gap_mm": 26.853045391239508
+    },
+    {
+      "parts": [
+        5,
+        7
+      ],
+      "overlap_mm3": 0.0,
+      "gap_mm": 7.5
+    },
+    {
+      "parts": [
+        6,
+        7
+      ],
+      "overlap_mm3": 0.0,
+      "gap_mm": 4.0
+    }
+  ],
+  "extent_mm": [
+    216.0,
+    216.0,
+    22.0
+  ],
+  "occ_bounding_extent_mm": [
+    216.00000020000036,
+    216.00209290153555,
+    22.003561074256087
+  ],
+  "original06_removed_mm3": 0.0,
+  "original_files_unchanged": true
+}

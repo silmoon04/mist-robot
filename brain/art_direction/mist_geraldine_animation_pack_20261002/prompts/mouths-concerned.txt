@@ -1,0 +1,21 @@
+Use case: stylized-concept
+Asset type: native transparent PNG atlas for layered MIST Geraldine robot mouth animation.
+Primary request: draw exactly twelve tiny MOUTH-ONLY graphic marks on a genuinely transparent canvas, in exactly four equal columns and three equal rows. Preferred native canvas 1536 x 1024 pixels. Do not enlarge the marks to fill their cells. Each mouth is a separate contiguous turquoise graphic silhouette.
+Input image 1: style and emotion reference only. Use the original bottom-middle TINY CLOSED FROWN in later-alligator-sweet-geraldine.png as the PRIMARY mouth reference. Copy its simple smooth rounded turquoise graphic character and small concerned arch. Do not copy any face, eye, smile, background, grain or lighting from the sheet.
+Composition: invisible 4-column by 3-row cell layout, row-major order. Cell width 384; cell height approximately 341.33. Exact mouth centers on the native 1536x1024 canvas: (192,170), (576,170), (960,170), (1344,170); (192,512), (576,512), (960,512), (1344,512); (192,853), (576,853), (960,853), (1344,853). Center each mouth independently on its stated point. Leave extensive empty transparent space around all twelve tiny mouths. Consistent registration and one shared scale.
+Emotion: concerned, sad, modest and serious in EVERY frame. Closed mouths have an arch with middle HIGHER than the corners: the reference's small inverted-U frown. Open horizontal mouths have a gently arched upper edge, middle HIGHER and corners LOWER, with a flattened or shallow lower edge and softly downturned corners. Never a happy U, smile, cheerful bowl or upturned corner. OH and OO remain modest serious upright oval articulations.
+Twelve cells in row-major order, with these approximate overall bounding-box sizes in pixels:
+0 rest: small closed downturned arch, 80 wide by 23 high; a single smooth rounded stroke.
+1 MBP: pressed shorter downturned stroke, 80 x 14; clear closed mouth.
+2 release: thin flat open slit, 75 x 14; low corners, barely open.
+3 small-AA: compact rounded open concerned silhouette, 70 x 30; slightly arched upper edge and low corners.
+4 AA: taller open concerned silhouette, 80 x 55; same downturned attitude.
+5 EH: wider low concerned open shape, 90 x 32.
+6 EE: broad narrow concerned shape, 80 x 20; lowered corners.
+7 OH: upright oval, 50 x 65; modest serious articulation.
+8 OO: small round upright oval, 38 x 45.
+9 FV: short almost flat slit with slight downturn and one subtle inward upper-edge notch; NO protruding or separate pieces.
+10 LNT: short rounded open shape, 65 x 23; no appendage or human anatomy.
+11 S: narrow flat oval, 80 x 15.
+Palette and finish: one uniform solid pale luminous-looking turquoise color close to the original MIST graphic marks, approximately #62F5F6. Flat graphic fill with softly rounded smooth edges and clean antialiasing. No actual glow, shading, gradients, grain, shine, texture or dark pixels. One contiguous filled shape per cell; a transparent negative aperture is allowed only when it fits the original simple MIST graphic style. No realistic lips.
+Hard constraints: exactly twelve single mouth marks; maximum mouth width 95 pixels and maximum height 65 pixels on the preferred native canvas. Do not render letters, numbers, cell names, labels, grid lines, background, faces, eyes, brows, heads or bodies. No teeth, tongue, gums, lipstick, protruding wedges, detached flecks, extra cutouts, double outlines or appendages. The entire empty canvas must have real alpha transparency, never a checkerboard imitation. Preserve the native transparent PNG output.

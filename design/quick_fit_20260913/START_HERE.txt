@@ -1,0 +1,91 @@
+QUICK FIRST-FIT PRINTS FOR THE R5 QUADRUPED
+
+Start with 01_servo_case_fit.3mf and Neptune4Pro_R5_QuickFit_PLA_020.curaprofile.
+The first job is estimated at 2 hours 23 minutes. It contains the unchanged
+nominal servo saddle and cap, so you can check the actual case fit first.
+
+This replaces the order and grouping of the original first coupon plate.
+It does not replace the R5 robot model, full production plate 02, or structural
+qualification. All 15 original first-plate specimens remain available here.
+
+ESTIMATED TIMES WITH THE SUPPLIED QUICK-FIT PROFILE
+01_servo_case_fit.3mf       2 h 23 min   2 pieces
+02_alignment_and_horns.3mf 2 h 40 min   7 pieces
+03_phone_fit.3mf            2 h 23 min   4 pieces
+04_pan_hub_and_bridge.3mf   1 h 48 min   2 pieces
+
+These are CuraEngine estimates, not promised printer times. Your Cura result
+can differ. All four jobs together still take about 9 h 14 min, before extra
+heating and handling. The first useful result arrives much sooner, and you
+can stop before printing more if the clamp fit needs changing.
+
+HOW TO IMPORT
+1. Select ELEGOO NEPTUNE 4 Pro, a 0.4 mm nozzle and PLA in Cura.
+2. Preferences > Configure Cura > Profiles > Import.
+3. Import Neptune4Pro_R5_QuickFit_PLA_020.curaprofile and activate
+   HexQuad R5 - Quick Fit PLA - 0.20mm.
+4. Choose Discard Changes if Cura asks about carrying existing print-setting
+   overrides into the new profile. Save an old custom setup first if needed.
+5. Clear the old nine-hour coupon plate, then load ONLY 01_servo_case_fit.3mf.
+   Import geometry rather than applying unrelated project settings.
+6. Keep the supplied scale and orientation. Slice with supports enabled and
+   inspect the first layers, support and brim before printing.
+7. Leave the printer's speed and flow multipliers at 100% during the test.
+
+WHAT EACH JOB CHECKS
+01: The nominal C018 case saddle and cap. Test with the actual servo, M3 nuts,
+    washers and clamp screws. Look for hand assembly, positive case contact,
+    cap travel and accessible leads. Do not force or overtighten a poor fit.
+02: Reuse the saddle/cap from job 01 with the case-to-shaft registration gauge.
+    This checks the critical case/shaft datum together. It also includes the
+    M3 hole strip, main/auxiliary horn fixtures, their bridge, nominal yaw
+    spacer and small auxiliary bridge specimen. Check actual supplied horns,
+    washers and retainers for seating and free auxiliary rotation.
+    A passing job 01 alone does NOT establish shaft alignment or joint fit.
+03: Nominal landscape phone tray, both short clips and USB-spine specimen.
+    Check the bare Mi 9 SE, retention, buttons and parked USB access.
+04: Pan horn hub and main femur bridge specimen. Use with the corresponding
+    hardware and auxiliary specimen from job 02 before controlled load tests.
+
+WHAT WAS PRESERVED
+No coupon mesh was resized, hollowed, cropped or simplified. Only bed placement
+and rotation about the bed's vertical axis changed. The original print-face
+orientation, 0.20 mm layers, 0.42 mm lines, five walls, six top/bottom layers,
+35% gyroid and support settings remain. These are the same fifteen specimens,
+with no duplicates or omissions.
+
+WHAT CHANGED IN THE PROFILE
+Outer walls 50 mm/s; inner walls 80; infill 90; top/bottom 45.
+First layer 25 mm/s; support 60; support interface 35.
+Outer-wall acceleration 1200 mm/s2; inner walls 2000; infill 2500.
+PLA starting temperatures remain 210 C nozzle and 60 C bed, within the
+filament's stated range. Fan, retraction and approximate 4 mm brim remain.
+Normal zigzag supports are enabled, including their top interface.
+Keep support beneath raised surfaces and the later alignment-gauge feet.
+Inspect small nut pockets so support does not become trapped inside them.
+
+Peak calculated deposition flow across the four jobs is 7.76 mm3/s, below
+the chosen 8 mm3/s analysis target. Cura's maximum-flow setting is hidden in
+this build, so the explicit speeds and line widths matter. Do not increase
+layer height or line width and assume flow will remain the same.
+
+QUALITY AND SCOPE
+The earlier full-plate experiment still took about 6 h 51 min at 0.30 mm.
+That experiment used a preliminary tuning profile, not this final profile.
+The chosen solution keeps 0.20 mm layers and the real fitting interfaces.
+Preserving geometry and layer height does not guarantee identical physical
+quality: the moderately faster walls and acceleration need a first print.
+If edges ring or small holes look poor, return outer walls to 35 mm/s and
+outer-wall acceleration to 800 mm/s2; the estimate will increase.
+
+Profile format, setting types and installed Cura quality metadata were checked.
+Each 3MF reloads with the expected object count, and the exact source meshes
+are recorded in quick_fit_validation.json. The engine trials generated
+supports and stayed within a 225 x 225 x 265 mm analysis envelope.
+No live Cura frontend import or physical print was performed. Machine settings,
+start/end G-code, Z offset and firmware calibration are inherited and unchanged.
+No heat-set inserts are used in the current robot design.
+
+After all relevant fits pass, continue with the R5 revision specimens and the
+supported full-coxa/leg tests. These short jobs do not qualify printed strength,
+warm creep, servo calibration or hardware walking.

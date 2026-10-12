@@ -1,0 +1,15 @@
+Use case: stylized-concept
+Asset type: transparent 24-frame animation sprite sheet for a small UI activity prop.
+Create one finished PNG sprite sheet of a "connecting, still polling" animation. EXACT layout: six columns and four rows, 24 separate drawings in row-major order, 1536 by 1024 pixels, each invisible cell 256 by 256 pixels. There must be SIX drawings in every row and FOUR rows, never four columns. No grid marks, dividers, labels, numbers, or words. Background is true alpha transparency, including inside outlined shapes.
+
+Visual style: clear cyan #26e6e5 outline, medium rounded strokes, a restrained lightly hand-drawn contour. Crisp readable Lordicon-like motion design. Flat line drawing with no glow, shadow, matte, halo, noise, or texture outside the strokes. Only cyan pixels and alpha. Same stroke width and object proportions throughout.
+
+Subject in each frame: TWO SMALL hollow rounded-square endpoints, only about 24 by 24 pixels each within a cell. The left endpoint sits near x=58 and the right near x=198, both at y=144. Between them is a thin incomplete segmented horizontal path. Keep visible gaps so it NEVER becomes a completed solid connection. One short brighter cyan packet dash travels across the middle, left to right and back while polling. Endpoints are square hardware nodes, without pupils, highlights, eyes, faces, mouths, circles, or third-eye symbols. There are no success ticks, stars, approval badges, checkmarks, or completed connection state.
+
+Registration: all full-size drawings share the same geometry: bottom-center at local (128,160), bounding box approximately x=44..212 y=125..164. Keep the endpoints completely stationary through the sixteen active drawings. Changes during the loop are only the moving packet dash. Draw each packet position distinctly. Maintain generous empty margins and completely separate cells.
+
+Timeline, row-major zero-based frame order:
+0-3 entrance: 0 two tiny square endpoint stubs; 1 two half-size endpoints; 2 almost-full endpoints and two faint path segments; 3 full endpoints, incomplete segmented path, packet at left.
+4-19 active loop: the same endpoints and the same incomplete path in all sixteen drawings. One bright packet dash moves across the path at local x positions 88, 99, 110, 121, 132, 143, 154, 165, 165, 154, 143, 132, 121, 110, 99, 88. This creates a smooth back-and-forth polling loop. Do not grow the connection and do not add a success state.
+20-23 exit: 20 full endpoints with path retracting; 21 half path with slightly smaller endpoints; 22 only two half-size endpoints; 23 two tiny square stubs.
+Render all 24 drawings. Show a clearly incomplete connection in every active frame. Preserve a coherent frame 19 to frame 4 seam.

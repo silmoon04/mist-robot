@@ -1,0 +1,34 @@
+Voice synchronization contract, 2026-09-22
+Owner: voice_sync_audit
+
+Current finding: each 100 ms packet calls face.startSpeech and resets attack; provider timestamps are discarded.
+Planned: Playback starts one speech timeline per continuous audio burst.
+
+Renderer seam:
+face.startSpeech({
+  clock: () => seconds,
+  sample: () => ({viseme, amount, time, active, source}),
+  duration: Infinity,
+  events: []
+})
+
+Sample returns rest, amount 0, active false before audible start, in underrun gaps, and after end. It samples scheduled output audio time (getOutputTimestamp where valid; currentTime minus outputLatency fallback).
+Renderer must query sample every animation frame. No per-packet restart. stopSpeech ends the timeline on reset/drain.
+Generated renderer should use sample if supplied, and preserve event-array compatibility for offline/media-player tests.
+
+Voice agent owns playback.js, app.js, server.py, tts.py, new lipsync.py, and bounded regression tests. Root owns generated renderer and art assets.
+
+Status: playback.js and lipsync.py / tts.py are implemented; tests in progress.
+Provider handling includes sync_alignment=true and both camelCase/snake_case timing arrays.
+The timing source is the official ElevenLabs Python SDK Alignment schema, which explicitly makes times relative to the provider chunk.
+No separate backend agent needed; changes already made there.
+Agent communication tool is absent in this subagent's available tool schema; this file and commentary are the coordination channel until final handoff.
+
+Integration now present: app.js selects MistDrawnFaceRuntime; index loads /drawn-face-runtime.js; server exposes /drawn/ and that renderer module.
+Base face_runtime.js now supports the live sample callback and exposes amount, audioActive, alignmentSource in snapshot. Generated renderer delegates startSpeech to base already, so this is directly compatible.
+
+Complete. Checks: playback JavaScript, live base-renderer JavaScript, 4 lipsync tests, 13 streaming TTS tests, and 33 existing duplex tests passed. Details and limitations are in VOICE_SYNC_REVIEW_20260922.md. No paid/live API call was made. Server restart is owned by root.
+
+LIVE INVESTIGATION UPDATE: The empty final is NOT caused by close_context. Direct raw WebSocket probes return isFinal=true, audio=null, alignment=null immediately even when no close_context is sent. Three bounded tests: normal initialize-space then phrase+flush; full phrase+flush in initial context message; same without sync_alignment. All returned empty final with matching contextId in 0.09-0.25 seconds. No close was sent in any before the empty final. Current tts.py therefore remains unchanged pending evidence, rather than adding an unsupported delay. Checking provider access/alternate same-voice streaming path next. Probe: brain/harness/probe_tts_finish_protocol.py.
+
+CONFIRMED LIVE BLOCKER: Voice access HTTP 200; subscription status past_due. Minimal same-voice/same-model HTTP synthesis of Hello. returns HTTP 401 with payment_required / payment_issue: Your subscription has a failed or incomplete payment. Complete the latest invoice to continue usage. No fresh aligned samples can be generated until billing is resolved. No lifecycle timing change was justified. Added one bounded subscription read on empty final so app shows specific payment warning, with regression test. Evidence: LIVE_SYNC_BLOCKER_20260922.json.

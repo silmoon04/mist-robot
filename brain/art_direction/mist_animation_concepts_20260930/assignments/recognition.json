@@ -1,0 +1,35 @@
+{
+  "id": "recognition",
+  "title": "Got it",
+  "wave": 3,
+  "summary": "A small recognition beat, then settle. No permanent grin or bouncing after every reply.",
+  "poses": [
+    {
+      "id": "recognition__1",
+      "label": "Receive",
+      "filename": "recognition-1.png",
+      "direction": "Open C eyes, short calm closed mouth."
+    },
+    {
+      "id": "recognition__2",
+      "label": "Recognise",
+      "filename": "recognition-2.png",
+      "direction": "Both upper lids lift a little, apertures brighten through wider openings. Small warm closed smile, no open mouth."
+    },
+    {
+      "id": "recognition__3",
+      "label": "Settle",
+      "filename": "recognition-3.png",
+      "direction": "Eyes soften slightly, relaxed closed smile. Same centres and scale, no face jumping."
+    }
+  ],
+  "cycle": "Receive \u2192 recognise \u2192 settle; play once only when acknowledgement is useful.",
+  "timing": "350\u2013600 ms one-shot",
+  "replaceTargets": [
+    "acknowledgement",
+    "success"
+  ],
+  "targetFps": 15,
+  "minimumDrawnFrames": 12,
+  "status": "key-pose-concept"
+}

@@ -1,0 +1,137 @@
+{
+  "parts": [
+    {
+      "name": "servo_case_FIXED",
+      "step": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\fusion_fixture_m30_20260914\\assets\\servo_case_FIXED.step",
+      "explode_mm": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "main_horn_MOVES",
+      "step": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\fusion_fixture_m30_20260914\\assets\\main_horn_MOVES.step",
+      "explode_mm": [
+        0,
+        13,
+        0
+      ]
+    },
+    {
+      "name": "aux_disc_MOVES",
+      "step": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\fusion_fixture_m30_20260914\\assets\\aux_disc_MOVES.step",
+      "explode_mm": [
+        0,
+        -13,
+        0
+      ]
+    },
+    {
+      "name": "main_cheek_MOVES",
+      "step": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\fusion_fixture_m30_20260914\\assets\\main_cheek_MOVES.step",
+      "explode_mm": [
+        0,
+        35,
+        0
+      ]
+    },
+    {
+      "name": "aux_cheek_MOVES",
+      "step": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\fusion_fixture_m30_20260914\\assets\\aux_cheek_MOVES.step",
+      "explode_mm": [
+        0,
+        -35,
+        0
+      ]
+    },
+    {
+      "name": "bridge_M3x30_MOVES",
+      "step": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\fusion_fixture_m30_20260914\\assets\\bridge_M3x30_MOVES.step",
+      "explode_mm": [
+        25,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "spacer_main_MOVES",
+      "step": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\fusion_fixture_m30_20260914\\assets\\spacer_main_MOVES.step",
+      "explode_mm": [
+        0,
+        45,
+        0
+      ]
+    },
+    {
+      "name": "spacer_aux_MOVES",
+      "step": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\fusion_fixture_m30_20260914\\assets\\spacer_aux_MOVES.step",
+      "explode_mm": [
+        0,
+        -45,
+        0
+      ]
+    }
+  ],
+  "bridge_screw_checks": [
+    {
+      "side": -1,
+      "under_head_y_mm": -31.5,
+      "tip_y_mm": -1.5,
+      "nut_seat_y_mm": [
+        -6.5,
+        -4.1
+      ],
+      "nominal_screw_tip_separation_mm": 3.0
+    },
+    {
+      "side": 1,
+      "under_head_y_mm": 31.5,
+      "tip_y_mm": 1.5,
+      "nut_seat_y_mm": [
+        4.1,
+        6.5
+      ],
+      "nominal_screw_tip_separation_mm": 3.0
+    }
+  ],
+  "sampled_motion": [
+    {
+      "angle_deg": -10,
+      "intersections": []
+    },
+    {
+      "angle_deg": -5,
+      "intersections": []
+    },
+    {
+      "angle_deg": 0,
+      "intersections": []
+    },
+    {
+      "angle_deg": 5,
+      "intersections": []
+    },
+    {
+      "angle_deg": 10,
+      "intersections": []
+    }
+  ],
+  "motion_axis": [
+    0,
+    1,
+    0
+  ],
+  "motion_origin_mm": [
+    0,
+    0,
+    0
+  ],
+  "scope": "Unpowered fit fixture and kinematic illustration, not a force or motor-control simulation.",
+  "print_quantities": {
+    "bridge_M3x30.stl": 1,
+    "bridge_spacer_8mm.stl": 2
+  },
+  "gauge_workaround": "Use the existing gauge as a hand-seated datum check. Do not force feet down or power the servo while gauge is attached.",
+  "hardware": "Two M3x30 bridge screws, two plain M3 nuts and two OD7 x0.5 mm head washers, plus two printed 8 mm spacers. Existing short horn screws remain required."
+}

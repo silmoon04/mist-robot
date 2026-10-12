@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>MIST · Luna tests</title>
+  <link rel="stylesheet" href="luna-tests.css">
+  <script src="luna-tests.js" defer></script>
+</head>
+<body>
+  <header><a href="/">MIST</a><h1>Luna tests</h1><a href="luna-tests.json" download>Download evidence</a></header>
+  <main>
+    <p id="load-state" role="status">Loading recorded tests…</p>
+    <div id="content" hidden>
+      <div class="overview"><p id="totals"></p><span id="built"></span></div>
+      <details class="notes"><summary>What these tests measure</summary><div id="notes"></div></details>
+      <nav aria-label="Review sections"><button data-panel="transcripts" aria-pressed="true">Transcripts</button><button data-panel="timings" aria-pressed="false">Timings</button><button data-panel="reviews" aria-pressed="false">Reviews</button><button data-panel="sources" aria-pressed="false">Sources</button></nav>
+      <section id="transcripts" class="panel">
+        <form id="filters" autocomplete="off">
+          <label>Suite<select id="suite"><option value="">All suites</option></select></label>
+          <label>Run<select id="run"><option value="">All runs</option></select></label>
+          <label>Style<select id="style"><option value="">All styles</option></select></label>
+          <label>Result<select id="result"><option value="">All results</option><option value="fail">Automatic failures</option><option value="pass">Automatic passes</option><option value="ungraded">Not graded</option><option value="guarded">Guarded state</option></select></label>
+          <label class="search">Search<input id="search" type="search" placeholder="Words, face IDs, tools…"></label>
+          <button type="reset">Reset</button>
+        </form>
+        <p id="match-count" aria-live="polite"></p><div id="sessions"></div>
+        <div class="pager"><button id="previous">Previous</button><span id="page"></span><button id="next">Next</button></div>
+      </section>
+      <section id="timings" class="panel" hidden><p>Seconds to text or a tool event. These measurements stop before audible playback.</p><label>Metric<select id="metric"></select></label><div class="table-wrap"><table><thead><tr><th>Run</th><th>Samples</th><th>Median</th><th>P90</th></tr></thead><tbody id="timing-rows"></tbody></table></div><p id="metric-note"></p></section>
+      <section id="reviews" class="panel" hidden><p>Independent judgements and trace reviews. Earlier reviews describe earlier code and runs.</p><div id="review-list"></div><h2>Deterministic checks</h2><p>These controlled checks did not call a model or synthesize speech.</p><div id="deterministic-list"></div></section>
+      <section id="sources" class="panel" hidden><p>The viewer reads a curated snapshot. Source reports remain unchanged in the workspace.</p><div id="source-list"></div></section>
+    </div>
+  </main>
+</body>
+</html>

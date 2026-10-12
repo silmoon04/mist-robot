@@ -1,0 +1,8 @@
+CuraEngine runner smoke test passed using one translated R2 UBEC tray.
+This is not an R3 production slice.
+
+The source STL was translated by 0.0174, 0.0043 and 0.0067 mm to test preservation of its original frame. The returned transform includes these minima. Engine execution took 0.172 seconds; complete wrapper execution took 0.282 seconds. All spatial moves stayed within the recorded 225 x 225 x 265 mm envelope.
+
+The raw smoke-test G-code was consumed, all commands were disabled, and the result was stored in gzip form. No raw machine-ready G-code remains in this test folder.
+
+The supplied function returns raw_temporary_path for the parent parser. The parent must disable, compress and remove that temporary file after parsing.

@@ -1,0 +1,35 @@
+{
+  "id": "drafting-stroke",
+  "title": "Writing / drafting",
+  "wave": 3,
+  "summary": "A pen follows one short stroke. The ink remains visible through the action.",
+  "poses": [
+    {
+      "id": "drafting-stroke__1",
+      "label": "Prepare",
+      "filename": "drafting-stroke-1.png",
+      "direction": "Focused half-lidded C eyes, short closed mouth. Small simple cyan pen and tiny outlined note at lower-right, one tiny initial ink stroke."
+    },
+    {
+      "id": "drafting-stroke__2",
+      "label": "Draw",
+      "filename": "drafting-stroke-2.png",
+      "direction": "Exact same face and rigid note. Pen tip advances along a short gently curving ink line; keep all initial ink and extend it. No letters or words."
+    },
+    {
+      "id": "drafting-stroke__3",
+      "label": "Finish",
+      "filename": "drafting-stroke-3.png",
+      "direction": "Eyes relax slightly, short restrained closed smile. Same note, pen rests at the end of the completed curved line; ink stays visible."
+    }
+  ],
+  "cycle": "Prepare \u2192 draw \u2192 finish; hold finished ink, then exit before a new sheet appears.",
+  "timing": "0.8\u20131.2 s stroke plus 0.5 s hold",
+  "replaceTargets": [
+    "thinking/writing",
+    "thinking/drafting"
+  ],
+  "targetFps": 15,
+  "minimumDrawnFrames": 12,
+  "status": "key-pose-concept"
+}

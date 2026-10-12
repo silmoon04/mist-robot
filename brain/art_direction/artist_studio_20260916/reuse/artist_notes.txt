@@ -1,0 +1,65 @@
+MIST component handoff
+
+Keep the existing face identity. Work on one eye, one mouth or one accent per layer.
+The canonical part ID is the reuse key. A rotation, mirrored copy or different placement does not need another drawing.
+
+What exists
+40 faces contain 120 placed components: 30 eye shapes, 22 mouth shapes and one tear shape.
+There are 14 explicit blink variants and 11 speech shapes. Similarity candidates are not exact duplicates.
+The saved geometry study contains 450 frames in 41 tagged clips. The older studio has 828 active reference frames and 504 retired concept frames. Retired drawings are not used in the new part map.
+
+Files
+parts: isolated canonical parts and existing closed-lid variants.
+instances: each of the 40 faces split into transparent left eye, right eye, mouth and any tear layers, retaining face placement.
+speech: the 11 shapes as the current runtime actually renders them.
+archive: all 450 saved composite frames. Original timings are in audit.json.
+archive_layers: every layer of every saved geometry frame; eye sides are inferred from their centroid because the archive calls both eyes "eyes".
+clips: 18 reference clips, 152 frames at 8 fps. These are existing geometry rendered to PNG, not newly painted artwork.
+face_instances.csv: exact source positions, rotation, mirror flag and blink annotation.
+similarity_review.csv: candidate comparisons after rigid alignment. No scaling. Distances use a 100 x 64 logical canvas. Multiply by 8 for pixels at 800 x 512.
+
+Canvas
+Transparent RGBA, 800 x 512. Keep the canvas size and registration when editing a frame.
+Full face coordinates are 100 x 64 logical units. The isolated parts are centred at (50,32); speech poses retain the runtime mouth anchor near (50,49.5).
+Keep paint layers separate from guides and glow. Add glow at composition time, rather than painting it into every cel.
+Mirroring a painted contour also mirrors its texture. Use a separate redraw only when that repetition is visibly distracting.
+
+Counted drawing brief
+53 base drawings if repainting all current parts.
+11 shared speech drawings.
+28 blink drawings: half-closed and closed for each of 14 source open-eye parts.
+That makes 92 component drawings for the core painted set. It does not cover every expression transition.
+Add 32 drawings for the other 16 eye shapes, two entry/exit poses each.
+Add 22 compressed mouth breakdowns, one per base mouth, leading into the shared speech-rest hub.
+Full proposed scope: 146 component drawings, including the 53 base poses. If those 53 stay as existing assets, there are 93 additional poses in this conservative painted plan.
+These counts are a brief, not a verified minimum or a guarantee that every pair will look good. Some similar shapes can share art after review. Exceptional silhouettes may need another breakdown. A deliberate asymmetric settle also adds drawings.
+
+Transitions
+Start with source, source breakdown, closed, destination breakdown, destination. At 8 fps that spans 500 ms between the first and last pose. Adjust holds rather than forcing every motion onto equal timing.
+Reuse closure and reopening in reverse where it looks natural. Eyes and mouth have independent tracks.
+Two closed lids with different widths or corner directions still need a short registration/scale move or a family-specific breakdown. A common closed state avoids drawing 40 x 39 directed face transitions, but it needs visual review.
+For blinking, do not blink continuously. Hold the open eye between occasional short closures. The four-frame clips are studies, not the final idle cadence.
+
+Speaking
+Keep most expression in the eyes. Start with one shared speech set for neutral, happy, curious and concerned faces.
+Use actual audio playback timestamps. A fixed 8 fps cel rate does not mean waiting 125 ms to start a response. Preserve brief closed-mouth consonants when choosing which cel to show.
+The exported speech cycle has no audio and cannot establish lip-sync quality. Do not treat its sequence as the speech scheduler.
+Short reactions can stay silent and return to a speaking pose. The production renderer can currently speak on all 40 expressions; this is a smaller artist review scope.
+
+Thinking
+The three 8 fps studies reuse existing shapes: look up and hold, scan gently, and a focused gaze shift.
+Keep the mouth resting. Try pauses, uneven gaze timing or a single small squint before commissioning a new thinking face.
+Avoid a constant busy loop: allow a held thinking pose, then a small change when work completes.
+
+ImageGen
+Use a raster pilot after choosing a canonical component. Reference that component directly, with fixed anchors, line weight and silhouette constraints. Generate a small key-pose strip, not all 40 faces independently.
+Inspect the result for changing scale, line weight, unwanted extra features and drifting anchors. Generated frames are candidates for cleanup, not verified production animation.
+Useful pilot: one round eye in open, half-closed, closed and reopening poses. A returning half-closed cel can reuse the closing drawing until an animator adds an intentional difference.
+The working frame folders contain deterministic renders of existing assets. The separate imagegen_pilot folder holds one unapproved generated strip and its prompt. Its half-closed poses differ in contour and registration, so it was not adopted.
+
+Known source issue
+The runtime overrides the closed/open annotation for e_shape_12, e_shape_13, open_C_44 and open_C_48 in some faces. Decide whether those poses should blink before painting their motion.
+The original capture screenshots are missing. Exact reuse here means exact reuse of the surviving canonical source, not proof of identity with the original screenshots.
+
+Suggested first commission: 14 component drawings. One round open eye, half-closed and closed versions, and 11 speech mouth poses. Prove the look on that small set before repainting everything.
+Seven eye motion groups share timing recipes while retaining their exact source outlines: Round gap, Hooked lid, Arc, Loop with crossbar, Narrow slot, Chevron, Flat bar.

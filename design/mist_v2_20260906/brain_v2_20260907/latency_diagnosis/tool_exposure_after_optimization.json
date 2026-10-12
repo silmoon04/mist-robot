@@ -1,0 +1,75 @@
+{
+  "passed": true,
+  "checks": {
+    "two_completed_turns": true,
+    "real_dynamic_callback": true,
+    "requests_captured": true,
+    "legacy_notify_disabled": true,
+    "robot_tools_only": true,
+    "executive_no_tools": true,
+    "requested_settings": true
+  },
+  "captures": [
+    {
+      "case": "robot",
+      "tools": [
+        "ask_executive",
+        "check_inbox",
+        "dance",
+        "drive",
+        "face",
+        "get_capabilities",
+        "get_status",
+        "list_skills",
+        "load_skill",
+        "look_at",
+        "move",
+        "note",
+        "observe",
+        "pose",
+        "recall_memory",
+        "stop",
+        "turn",
+        "walk"
+      ],
+      "model": "gpt-6-astra",
+      "effort": "low",
+      "service_tier": "priority"
+    },
+    {
+      "case": "robot",
+      "tools": [
+        "ask_executive",
+        "check_inbox",
+        "dance",
+        "drive",
+        "face",
+        "get_capabilities",
+        "get_status",
+        "list_skills",
+        "load_skill",
+        "look_at",
+        "move",
+        "note",
+        "observe",
+        "pose",
+        "recall_memory",
+        "stop",
+        "turn",
+        "walk"
+      ],
+      "model": "gpt-6-astra",
+      "effort": "low",
+      "service_tier": "priority"
+    },
+    {
+      "case": "executive",
+      "tools": [],
+      "model": "gpt-6-astra",
+      "effort": "low",
+      "service_tier": "priority"
+    }
+  ],
+  "live_model_calls": 0,
+  "credentials_used": false
+}

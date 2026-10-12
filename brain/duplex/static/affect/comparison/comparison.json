@@ -1,0 +1,797 @@
+{
+  "experiment": "Qwen speaker with optional affect director",
+  "created_at_utc": "2026-09-24T16:31:45.088224+00:00",
+  "mode": "single_pass_no_tuning",
+  "text_only": true,
+  "arms": [
+    "qwen_single_speaker",
+    "qwen_director_qwen_speaker",
+    "gpt_oss_director_qwen_speaker"
+  ],
+  "speaker_model": "qwen-3.8-27b",
+  "speaker_reasoning_effort": "low",
+  "director_models": {
+    "qwen_director_qwen_speaker": [
+      "qwen-3.8-27b",
+      "none"
+    ],
+    "gpt_oss_director_qwen_speaker": [
+      "gpt-oss-120b",
+      "low"
+    ]
+  },
+  "source_case_path": "brain/results/dual-model-harness-20260924/director-cases.json",
+  "source_case_sha256": "0a5524628469d477dacfc52c5c7fbe819fca31146c473c7e9cba4618d4be0233",
+  "model_catalog": {
+    "source": ".env.example; secrets excluded",
+    "sha256": "b7e61f87fa0991a05cff14c7525f62811395e7b627dd177bc7d1fdb675ca4754"
+  },
+  "source_sha256": {
+    "brain/duplex/affect_director.py": "913c9f9bcb17803bcdc50bcbed6da5d3c04824b70f50bf41565fb732fdada81e",
+    "brain/duplex/persona.txt": "d4e790a7ff46d425aa08014acfe45b3a9c47c301fb06c32b49a0958a64bc9dc0",
+    "brain/duplex/conversation_policy.py": "a6c4bb8e640764a391c64527c5d7d403522439b57f293eb3cdf344e192207f4a",
+    "brain/duplex/runtime.py": "7d428e070474050493afe58b832133389db4657abb7e01ffe3ac26a12187df1a",
+    "brain/duplex/expression_policy.py": "9f990f4a2b02adf9097d6810b10a34f9be585a818a8b36888274f9acc4d91035",
+    "brain/benchmarks/naturalness/cerebras_client.py": "b9663084c1130a0c617b8d793728ec60f9daa9a46985265528e46131092e2aee",
+    "brain/benchmarks/naturalness/affect_comparison.py": "428b77c74f047a9a34f5b921da2a52103e0fefffb7f12a4abe28ecbd5e52e19e"
+  },
+  "prompt_sha256": {
+    "speaker": "bff6007924b34b49ebcaa99569af5095069d3e994fc196e69f7152a71b0b7399"
+  },
+  "disclosure": "Speaker histories are authored frozen fixtures; each arm retains its own generated current reply. Reader cases receive only actual generated speaker text, never speaker_phrase_for_alignment, discriminates, or review_questions. Reader proposals are not applied. This is not a voice, renderer, or naturalness rating.",
+  "cases": [
+    {
+      "id": "steady_mood_after_disappointment",
+      "arm_order": [
+        "qwen_director_qwen_speaker",
+        "gpt_oss_director_qwen_speaker",
+        "qwen_single_speaker"
+      ],
+      "fixture_history_sha256": "3616a1e8e2c06d37a5320f136af31d6bf1acb9b9623b36753488259c4d0ead5c",
+      "current_user": "The exhibition stand collapsed. I feel pretty low now.",
+      "context_roles": [
+        "user",
+        "assistant"
+      ],
+      "arms": {
+        "qwen_director_qwen_speaker": {
+          "speaker": {
+            "answer": "",
+            "errors": [],
+            "exception_type": "UnboundLocalError",
+            "exception_message": "cannot access local variable 'director_error' where it is not associated with a value"
+          },
+          "director": null
+        },
+        "gpt_oss_director_qwen_speaker": {
+          "speaker": {
+            "answer": "",
+            "errors": [],
+            "exception_type": "UnboundLocalError",
+            "exception_message": "cannot access local variable 'director_error' where it is not associated with a value"
+          },
+          "director": null
+        },
+        "qwen_single_speaker": {
+          "run_id": "8d18e97b5937",
+          "speaker": {
+            "provider": "cerebras",
+            "model": "qwen-3.8-27b",
+            "reasoning_effort": "low",
+            "prompt_sha256": "bff6007924b34b49ebcaa99569af5095069d3e994fc196e69f7152a71b0b7399",
+            "prompt_version": "cascade_voice_make_client-responsive-adapter",
+            "history_source": "authored frozen fixture; this arm’s generated answer is retained in result",
+            "current_user": "The exhibition stand collapsed. I feel pretty low now.",
+            "answer": "\n\nThat's a real letdown. A lot of work can just go flat in one second. I'm here if you want to vent or just sit with it.",
+            "errors": [],
+            "tool_calls": [],
+            "timings": {
+              "tools": [],
+              "http_requests": [
+                {
+                  "round": 0,
+                  "status": 200,
+                  "headers_ms": 802.015300000221,
+                  "usage": {
+                    "total_tokens": 3737,
+                    "completion_tokens": 65,
+                    "completion_tokens_details": {
+                      "reasoning_tokens": 30
+                    },
+                    "prompt_tokens": 3672,
+                    "prompt_tokens_details": {
+                      "cached_tokens": 3072,
+                      "image_tokens": 0
+                    }
+                  },
+                  "total_ms": 925.310300000092,
+                  "selected_tool_calls": 0
+                }
+              ],
+              "client_lock_wait_s": 0,
+              "reasoning_output_tokens": 30,
+              "streamed_visible_text": "\n\nThat's a real letdown. A lot of work can just go flat in one second. I'm here if you want to vent or just sit with it.",
+              "deadline_overrun_s": 0
+            },
+            "first_nonblank_ms": 872.1,
+            "speaker_total_ms": 925.4,
+            "exception_type": null
+          },
+          "director": null,
+          "director_exception_type": null
+        }
+      }
+    },
+    {
+      "id": "explicit_face_with_scope",
+      "arm_order": [
+        "qwen_director_qwen_speaker",
+        "qwen_single_speaker",
+        "gpt_oss_director_qwen_speaker"
+      ],
+      "fixture_history_sha256": "9f81dc31459e929683d32020c95f669d29ad52f89ee4f7ed7803d45985f82773",
+      "current_user": "Show a curious face while you explain this next step, then keep it until I ask for another.",
+      "context_roles": [],
+      "arms": {
+        "qwen_director_qwen_speaker": {
+          "speaker": {
+            "answer": "",
+            "errors": [],
+            "exception_type": "UnboundLocalError",
+            "exception_message": "cannot access local variable 'director_error' where it is not associated with a value"
+          },
+          "director": null
+        },
+        "qwen_single_speaker": {
+          "run_id": "29875047087c",
+          "speaker": {
+            "provider": "cerebras",
+            "model": "qwen-3.8-27b",
+            "reasoning_effort": "low",
+            "prompt_sha256": "bff6007924b34b49ebcaa99569af5095069d3e994fc196e69f7152a71b0b7399",
+            "prompt_version": "cascade_voice_make_client-responsive-adapter",
+            "history_source": "authored frozen fixture; this arm’s generated answer is retained in result",
+            "current_user": "Show a curious face while you explain this next step, then keep it until I ask for another.",
+            "answer": "\n\n\n\nCurious face is up and it's sticking. Which step are you thinking of?",
+            "errors": [],
+            "tool_calls": [
+              {
+                "name": "set_expression",
+                "arguments": {
+                  "expression": "curious"
+                },
+                "is_error": false
+              }
+            ],
+            "timings": {
+              "tools": [
+                {
+                  "name": "set_expression",
+                  "request_s": 1.0674614999998084,
+                  "reply_s": 1.068757099999857,
+                  "execution_s": 0.0012956000000485801
+                }
+              ],
+              "http_requests": [
+                {
+                  "round": 0,
+                  "status": 200,
+                  "headers_ms": 670.743599999696,
+                  "usage": {
+                    "total_tokens": 3880,
+                    "completion_tokens": 231,
+                    "completion_tokens_details": {
+                      "reasoning_tokens": 203
+                    },
+                    "prompt_tokens": 3649,
+                    "prompt_tokens_details": {
+                      "cached_tokens": 3072,
+                      "image_tokens": 0
+                    }
+                  },
+                  "total_ms": 1067.390400000022,
+                  "selected_tool_calls": 1
+                },
+                {
+                  "round": 1,
+                  "status": 200,
+                  "headers_ms": 627.5405000001228,
+                  "usage": {
+                    "total_tokens": 3922,
+                    "completion_tokens": 166,
+                    "completion_tokens_details": {
+                      "reasoning_tokens": 147
+                    },
+                    "prompt_tokens": 3756,
+                    "prompt_tokens_details": {
+                      "cached_tokens": 3072,
+                      "image_tokens": 0
+                    }
+                  },
+                  "total_ms": 2374.512500000037,
+                  "selected_tool_calls": 0
+                }
+              ],
+              "client_lock_wait_s": 0,
+              "reasoning_output_tokens": 350,
+              "streamed_visible_text": "\n\n\n\nCurious face is up and it's sticking. Which step are you thinking of?",
+              "deadline_overrun_s": 0
+            },
+            "first_nonblank_ms": 3393.7,
+            "speaker_total_ms": 3443.4,
+            "exception_type": null
+          },
+          "director": null,
+          "director_exception_type": null
+        },
+        "gpt_oss_director_qwen_speaker": {
+          "speaker": {
+            "answer": "",
+            "errors": [],
+            "exception_type": "UnboundLocalError",
+            "exception_message": "cannot access local variable 'director_error' where it is not associated with a value"
+          },
+          "director": null
+        }
+      }
+    },
+    {
+      "id": "direct_override_of_inferred_mood",
+      "arm_order": [
+        "qwen_single_speaker",
+        "gpt_oss_director_qwen_speaker",
+        "qwen_director_qwen_speaker"
+      ],
+      "fixture_history_sha256": "84cdc83adb6fcbd9949d06f87f2629231946903512f48bbec76b2fa72f99ef57",
+      "current_user": "It stops feeding filament halfway through.",
+      "context_roles": [
+        "user",
+        "assistant"
+      ],
+      "arms": {
+        "qwen_single_speaker": {
+          "run_id": "9059a1b2beaf",
+          "speaker": {
+            "provider": "cerebras",
+            "model": "qwen-3.8-27b",
+            "reasoning_effort": "low",
+            "prompt_sha256": "bff6007924b34b49ebcaa99569af5095069d3e994fc196e69f7152a71b0b7399",
+            "prompt_version": "cascade_voice_make_client-responsive-adapter",
+            "history_source": "authored frozen fixture; this arm’s generated answer is retained in result",
+            "current_user": "It stops feeding filament halfway through.",
+            "answer": "\n\nThat usually points to a partial clog at the hotend or the filament pinching at the spool. Does it happen at the same spot every time, or randomly?",
+            "errors": [],
+            "tool_calls": [],
+            "timings": {
+              "tools": [],
+              "http_requests": [
+                {
+                  "round": 0,
+                  "status": 200,
+                  "headers_ms": 489.932299999964,
+                  "usage": {
+                    "total_tokens": 3938,
+                    "completion_tokens": 266,
+                    "completion_tokens_details": {
+                      "reasoning_tokens": 229
+                    },
+                    "prompt_tokens": 3672,
+                    "prompt_tokens_details": {
+                      "cached_tokens": 3072,
+                      "image_tokens": 0
+                    }
+                  },
+                  "total_ms": 2150.7228999998915,
+                  "selected_tool_calls": 0
+                }
+              ],
+              "client_lock_wait_s": 0,
+              "reasoning_output_tokens": 229,
+              "streamed_visible_text": "\n\nThat usually points to a partial clog at the hotend or the filament pinching at the spool. Does it happen at the same spot every time, or randomly?",
+              "deadline_overrun_s": 0
+            },
+            "first_nonblank_ms": 2104.8,
+            "speaker_total_ms": 2150.8,
+            "exception_type": null
+          },
+          "director": null,
+          "director_exception_type": null
+        },
+        "gpt_oss_director_qwen_speaker": {
+          "speaker": {
+            "answer": "",
+            "errors": [],
+            "exception_type": "UnboundLocalError",
+            "exception_message": "cannot access local variable 'director_error' where it is not associated with a value"
+          },
+          "director": null
+        },
+        "qwen_director_qwen_speaker": {
+          "speaker": {
+            "answer": "",
+            "errors": [],
+            "exception_type": "UnboundLocalError",
+            "exception_message": "cannot access local variable 'director_error' where it is not associated with a value"
+          },
+          "director": null
+        }
+      }
+    },
+    {
+      "id": "emotion_word_not_face_request",
+      "arm_order": [
+        "qwen_single_speaker",
+        "gpt_oss_director_qwen_speaker",
+        "qwen_director_qwen_speaker"
+      ],
+      "fixture_history_sha256": "7f52828a769d7c4b2218814f3cae5ff04160fa2a42f5d900cde4c0933d87feff",
+      "current_user": "Actually, she finds it damaged by a fallen branch. Would sad fit the caption better?",
+      "context_roles": [
+        "user",
+        "assistant"
+      ],
+      "arms": {
+        "qwen_single_speaker": {
+          "run_id": "fd7a7cf64a64",
+          "speaker": {
+            "provider": "cerebras",
+            "model": "qwen-3.8-27b",
+            "reasoning_effort": "low",
+            "prompt_sha256": "bff6007924b34b49ebcaa99569af5095069d3e994fc196e69f7152a71b0b7399",
+            "prompt_version": "cascade_voice_make_client-responsive-adapter",
+            "history_source": "authored frozen fixture; this arm’s generated answer is retained in result",
+            "current_user": "Actually, she finds it damaged by a fallen branch. Would sad fit the caption better?",
+            "answer": "\n\nSad works, but it softens the scene a lot. If she's the kind of person who'd mutter \"not the wheel, not the wheel,\" a frustrated disappointed tone might land in between. Depends on whether you want the reader to feel sympathy or commiserate with her.",
+            "errors": [],
+            "tool_calls": [],
+            "timings": {
+              "tools": [],
+              "http_requests": [
+                {
+                  "round": 0,
+                  "status": 200,
+                  "headers_ms": 689.6808999999848,
+                  "usage": {
+                    "total_tokens": 3909,
+                    "completion_tokens": 222,
+                    "completion_tokens_details": {
+                      "reasoning_tokens": 162
+                    },
+                    "prompt_tokens": 3687,
+                    "prompt_tokens_details": {
+                      "cached_tokens": 3072,
+                      "image_tokens": 0
+                    }
+                  },
+                  "total_ms": 960.2829000000384,
+                  "selected_tool_calls": 0
+                }
+              ],
+              "client_lock_wait_s": 0,
+              "reasoning_output_tokens": 162,
+              "streamed_visible_text": "\n\nSad works, but it softens the scene a lot. If she's the kind of person who'd mutter \"not the wheel, not the wheel,\" a frustrated disappointed tone might land in between. Depends on whether you want the reader to feel sympathy or commiserate with her.",
+              "deadline_overrun_s": 0
+            },
+            "first_nonblank_ms": 959.6,
+            "speaker_total_ms": 960.4,
+            "exception_type": null
+          },
+          "director": null,
+          "director_exception_type": null
+        },
+        "gpt_oss_director_qwen_speaker": {
+          "speaker": {
+            "answer": "",
+            "errors": [],
+            "exception_type": "UnboundLocalError",
+            "exception_message": "cannot access local variable 'director_error' where it is not associated with a value"
+          },
+          "director": null
+        },
+        "qwen_director_qwen_speaker": {
+          "speaker": {
+            "answer": "",
+            "errors": [],
+            "exception_type": "UnboundLocalError",
+            "exception_message": "cannot access local variable 'director_error' where it is not associated with a value"
+          },
+          "director": null
+        }
+      }
+    },
+    {
+      "id": "ambiguous_observation_and_correction",
+      "arm_order": [
+        "qwen_single_speaker",
+        "qwen_director_qwen_speaker",
+        "gpt_oss_director_qwen_speaker"
+      ],
+      "fixture_history_sha256": "52ba114c5445fdd9ae296d8b2ab3407e72745713c9e2cb08bd5155eb48b412d0",
+      "current_user": "You looked angry, not sad like I asked.",
+      "context_roles": [
+        "user",
+        "assistant"
+      ],
+      "arms": {
+        "qwen_single_speaker": {
+          "run_id": "9747590e7c25",
+          "speaker": {
+            "provider": "cerebras",
+            "model": "qwen-3.8-27b",
+            "reasoning_effort": "low",
+            "prompt_sha256": "bff6007924b34b49ebcaa99569af5095069d3e994fc196e69f7152a71b0b7399",
+            "prompt_version": "cascade_voice_make_client-responsive-adapter",
+            "history_source": "authored frozen fixture; this arm’s generated answer is retained in result",
+            "current_user": "You looked angry, not sad like I asked.",
+            "answer": "\n\n\n\nYou're right, that was off. Sad is up now.",
+            "errors": [],
+            "tool_calls": [
+              {
+                "name": "set_expression",
+                "arguments": {
+                  "expression": "sad"
+                },
+                "is_error": false
+              }
+            ],
+            "timings": {
+              "tools": [
+                {
+                  "name": "set_expression",
+                  "request_s": 1.2576633999997284,
+                  "reply_s": 1.2588489999998274,
+                  "execution_s": 0.0011856000000989297
+                }
+              ],
+              "http_requests": [
+                {
+                  "round": 0,
+                  "status": 200,
+                  "headers_ms": 713.9769000000342,
+                  "usage": {
+                    "total_tokens": 3847,
+                    "completion_tokens": 184,
+                    "completion_tokens_details": {
+                      "reasoning_tokens": 157
+                    },
+                    "prompt_tokens": 3663,
+                    "prompt_tokens_details": {
+                      "cached_tokens": 3072,
+                      "image_tokens": 0
+                    }
+                  },
+                  "total_ms": 1257.6036000000386,
+                  "selected_tool_calls": 1
+                },
+                {
+                  "round": 1,
+                  "status": 200,
+                  "headers_ms": 512.7181000002565,
+                  "usage": {
+                    "total_tokens": 3819,
+                    "completion_tokens": 51,
+                    "completion_tokens_details": {
+                      "reasoning_tokens": 36
+                    },
+                    "prompt_tokens": 3768,
+                    "prompt_tokens_details": {
+                      "cached_tokens": 3072,
+                      "image_tokens": 0
+                    }
+                  },
+                  "total_ms": 830.3654000001188,
+                  "selected_tool_calls": 0
+                }
+              ],
+              "client_lock_wait_s": 0,
+              "reasoning_output_tokens": 193,
+              "streamed_visible_text": "\n\n\n\nYou're right, that was off. Sad is up now.",
+              "deadline_overrun_s": 0
+            },
+            "first_nonblank_ms": 2079.7,
+            "speaker_total_ms": 2089.3,
+            "exception_type": null
+          },
+          "director": null,
+          "director_exception_type": null
+        },
+        "qwen_director_qwen_speaker": {
+          "speaker": {
+            "answer": "",
+            "errors": [],
+            "exception_type": "UnboundLocalError",
+            "exception_message": "cannot access local variable 'director_error' where it is not associated with a value"
+          },
+          "director": null
+        },
+        "gpt_oss_director_qwen_speaker": {
+          "speaker": {
+            "answer": "",
+            "errors": [],
+            "exception_type": "UnboundLocalError",
+            "exception_message": "cannot access local variable 'director_error' where it is not associated with a value"
+          },
+          "director": null
+        }
+      }
+    },
+    {
+      "id": "ambiguous_negative_question",
+      "arm_order": [
+        "qwen_single_speaker",
+        "gpt_oss_director_qwen_speaker",
+        "qwen_director_qwen_speaker"
+      ],
+      "fixture_history_sha256": "710dc733daaf1b35ea3545a984016b157464b070984556d5a8227733295eaad4",
+      "current_user": "Can you not talk with a sad face, though?",
+      "context_roles": [],
+      "arms": {
+        "qwen_single_speaker": {
+          "run_id": "28579da8b888",
+          "speaker": {
+            "provider": "cerebras",
+            "model": "qwen-3.8-27b",
+            "reasoning_effort": "low",
+            "prompt_sha256": "bff6007924b34b49ebcaa99569af5095069d3e994fc196e69f7152a71b0b7399",
+            "prompt_version": "cascade_voice_make_client-responsive-adapter",
+            "history_source": "authored frozen fixture; this arm’s generated answer is retained in result",
+            "current_user": "Can you not talk with a sad face, though?",
+            "answer": "\n\nYeah, I can. The face just stays there while I talk. Want me to try one?",
+            "errors": [],
+            "tool_calls": [],
+            "timings": {
+              "tools": [],
+              "http_requests": [
+                {
+                  "round": 0,
+                  "status": 200,
+                  "headers_ms": 569.251400000212,
+                  "usage": {
+                    "total_tokens": 3764,
+                    "completion_tokens": 124,
+                    "completion_tokens_details": {
+                      "reasoning_tokens": 102
+                    },
+                    "prompt_tokens": 3640,
+                    "prompt_tokens_details": {
+                      "cached_tokens": 3072,
+                      "image_tokens": 0
+                    }
+                  },
+                  "total_ms": 900.1146000000517,
+                  "selected_tool_calls": 0
+                }
+              ],
+              "client_lock_wait_s": 0,
+              "reasoning_output_tokens": 102,
+              "streamed_visible_text": "\n\nYeah, I can. The face just stays there while I talk. Want me to try one?",
+              "deadline_overrun_s": 0
+            },
+            "first_nonblank_ms": 876.1,
+            "speaker_total_ms": 900.2,
+            "exception_type": null
+          },
+          "director": null,
+          "director_exception_type": null
+        },
+        "gpt_oss_director_qwen_speaker": {
+          "speaker": {
+            "answer": "",
+            "errors": [],
+            "exception_type": "UnboundLocalError",
+            "exception_message": "cannot access local variable 'director_error' where it is not associated with a value"
+          },
+          "director": null
+        },
+        "qwen_director_qwen_speaker": {
+          "speaker": {
+            "answer": "",
+            "errors": [],
+            "exception_type": "UnboundLocalError",
+            "exception_message": "cannot access local variable 'director_error' where it is not associated with a value"
+          },
+          "director": null
+        }
+      }
+    },
+    {
+      "id": "speaker_phrase_conflicts_with_active_face",
+      "arm_order": [
+        "qwen_director_qwen_speaker",
+        "qwen_single_speaker",
+        "gpt_oss_director_qwen_speaker"
+      ],
+      "fixture_history_sha256": "875094657bf4a8bb4adbaaf899cbe31802407b2e9ed035ed71e4aab345a72fb1",
+      "current_user": "What is seven times eight?",
+      "context_roles": [
+        "user",
+        "assistant"
+      ],
+      "arms": {
+        "qwen_director_qwen_speaker": {
+          "speaker": {
+            "answer": "",
+            "errors": [],
+            "exception_type": "UnboundLocalError",
+            "exception_message": "cannot access local variable 'director_error' where it is not associated with a value"
+          },
+          "director": null
+        },
+        "qwen_single_speaker": {
+          "run_id": "5837a95fbcec",
+          "speaker": {
+            "provider": "cerebras",
+            "model": "qwen-3.8-27b",
+            "reasoning_effort": "low",
+            "prompt_sha256": "bff6007924b34b49ebcaa99569af5095069d3e994fc196e69f7152a71b0b7399",
+            "prompt_version": "cascade_voice_make_client-responsive-adapter",
+            "history_source": "authored frozen fixture; this arm’s generated answer is retained in result",
+            "current_user": "What is seven times eight?",
+            "answer": "\n\nFifty-six.",
+            "errors": [],
+            "tool_calls": [],
+            "timings": {
+              "tools": [],
+              "http_requests": [
+                {
+                  "round": 0,
+                  "status": 200,
+                  "headers_ms": 597.5035000001299,
+                  "usage": {
+                    "total_tokens": 3701,
+                    "completion_tokens": 36,
+                    "completion_tokens_details": {
+                      "reasoning_tokens": 30
+                    },
+                    "prompt_tokens": 3665,
+                    "prompt_tokens_details": {
+                      "cached_tokens": 3072,
+                      "image_tokens": 0
+                    }
+                  },
+                  "total_ms": 659.9009000001388,
+                  "selected_tool_calls": 0
+                }
+              ],
+              "client_lock_wait_s": 0,
+              "reasoning_output_tokens": 30,
+              "streamed_visible_text": "\n\nFifty-six.",
+              "deadline_overrun_s": 0
+            },
+            "first_nonblank_ms": 659.5,
+            "speaker_total_ms": 660.0,
+            "exception_type": null
+          },
+          "director": null,
+          "director_exception_type": null
+        },
+        "gpt_oss_director_qwen_speaker": {
+          "speaker": {
+            "answer": "",
+            "errors": [],
+            "exception_type": "UnboundLocalError",
+            "exception_message": "cannot access local variable 'director_error' where it is not associated with a value"
+          },
+          "director": null
+        }
+      }
+    },
+    {
+      "id": "late_director_and_new_turn",
+      "arm_order": [
+        "qwen_director_qwen_speaker",
+        "qwen_single_speaker",
+        "gpt_oss_director_qwen_speaker"
+      ],
+      "fixture_history_sha256": "3d284e340556bf8861e8f89a91bb6b1856010c55bac2b4b5c811b2f200f2128f",
+      "current_user": "Actually, forget that. Just tell me whether the device is connected.",
+      "context_roles": [
+        "user",
+        "assistant"
+      ],
+      "arms": {
+        "qwen_director_qwen_speaker": {
+          "speaker": {
+            "answer": "",
+            "errors": [],
+            "exception_type": "UnboundLocalError",
+            "exception_message": "cannot access local variable 'director_error' where it is not associated with a value"
+          },
+          "director": null
+        },
+        "qwen_single_speaker": {
+          "run_id": "443369986267",
+          "speaker": {
+            "provider": "cerebras",
+            "model": "qwen-3.8-27b",
+            "reasoning_effort": "low",
+            "prompt_sha256": "bff6007924b34b49ebcaa99569af5095069d3e994fc196e69f7152a71b0b7399",
+            "prompt_version": "cascade_voice_make_client-responsive-adapter",
+            "history_source": "authored frozen fixture; this arm’s generated answer is retained in result",
+            "current_user": "Actually, forget that. Just tell me whether the device is connected.",
+            "answer": "\n\n\n\nNo, the hardware isn't connected right now, and the camera isn't either.",
+            "errors": [],
+            "tool_calls": [
+              {
+                "name": "get_sensor_snapshot",
+                "arguments": {},
+                "is_error": false
+              }
+            ],
+            "timings": {
+              "tools": [
+                {
+                  "name": "get_sensor_snapshot",
+                  "request_s": 0.7521298999999999,
+                  "reply_s": 0.7526874999998654,
+                  "execution_s": 0.0005575999998654879
+                }
+              ],
+              "http_requests": [
+                {
+                  "round": 0,
+                  "status": 200,
+                  "headers_ms": 708.7618000000475,
+                  "usage": {
+                    "total_tokens": 3722,
+                    "completion_tokens": 44,
+                    "completion_tokens_details": {
+                      "reasoning_tokens": 28
+                    },
+                    "prompt_tokens": 3678,
+                    "prompt_tokens_details": {
+                      "cached_tokens": 3072,
+                      "image_tokens": 0
+                    }
+                  },
+                  "total_ms": 752.0708000001832,
+                  "selected_tool_calls": 1
+                },
+                {
+                  "round": 1,
+                  "status": 200,
+                  "headers_ms": 612.5796999999693,
+                  "usage": {
+                    "total_tokens": 3935,
+                    "completion_tokens": 66,
+                    "completion_tokens_details": {
+                      "reasoning_tokens": 47
+                    },
+                    "prompt_tokens": 3869,
+                    "prompt_tokens_details": {
+                      "cached_tokens": 3072,
+                      "image_tokens": 0
+                    }
+                  },
+                  "total_ms": 720.5649000002268,
+                  "selected_tool_calls": 0
+                }
+              ],
+              "client_lock_wait_s": 0,
+              "reasoning_output_tokens": 75,
+              "streamed_visible_text": "\n\n\n\nNo, the hardware isn't connected right now, and the camera isn't either.",
+              "deadline_overrun_s": 0
+            },
+            "first_nonblank_ms": 1472.8,
+            "speaker_total_ms": 1473.3,
+            "exception_type": null
+          },
+          "director": null,
+          "director_exception_type": null
+        },
+        "gpt_oss_director_qwen_speaker": {
+          "speaker": {
+            "answer": "",
+            "errors": [],
+            "exception_type": "UnboundLocalError",
+            "exception_message": "cannot access local variable 'director_error' where it is not associated with a value"
+          },
+          "director": null
+        }
+      }
+    }
+  ],
+  "status": "incomplete_invalid_harness",
+  "valid_conclusion": "Only the qwen_single_speaker arm is retained as valid output. Both paired arms reached model completion but failed in the harness after calls, before results were returned and saved; reader decisions and paired speaker replies are unrecoverable from this run folder.",
+  "calls": "24 speaker runs and 16 reader runs were attempted in this one pass; no retries were made."
+}

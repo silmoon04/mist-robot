@@ -1,0 +1,36 @@
+{
+  "id": "empathy",
+  "title": "Concern / empathy",
+  "wave": 3,
+  "summary": "A quiet change in the lids and mouth, followed by an attentive listening hold.",
+  "poses": [
+    {
+      "id": "empathy__1",
+      "label": "Notice",
+      "filename": "empathy-1.png",
+      "direction": "Open C eyes, small neutral horizontal closed mouth."
+    },
+    {
+      "id": "empathy__2",
+      "label": "Concern",
+      "filename": "empathy-2.png",
+      "direction": "Upper lids angle subtly inward to create gentle concern, not angry sharp brows. Small shallow downturned closed mouth. Keep C apertures readable and original eye centres."
+    },
+    {
+      "id": "empathy__3",
+      "label": "Stay with you",
+      "filename": "empathy-3.png",
+      "direction": "Lids relax a little but keep concerned attitude, one eye slightly more open. Small almost-flat closed mouth, no grin. Attentive quiet gaze."
+    }
+  ],
+  "cycle": "Notice \u2192 concern \u2192 attentive hold; do not loop a sad reaction during the conversation.",
+  "timing": "400\u2013700 ms change, then hold",
+  "replaceTargets": [
+    "concerned",
+    "sad",
+    "empathy"
+  ],
+  "targetFps": 15,
+  "minimumDrawnFrames": 12,
+  "status": "key-pose-concept"
+}

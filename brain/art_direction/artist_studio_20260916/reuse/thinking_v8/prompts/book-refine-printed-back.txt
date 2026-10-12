@@ -1,0 +1,18 @@
+Use case: precise-object-edit
+Edit target: attached 24-frame book animation sprite sheet, exactly SIX columns by FOUR rows, 1536 by 1024 pixels, transparent RGBA.
+Make one tightly targeted continuity correction to the page-turn drawings. Preserve every existing book position, size, outline, cover, spine, camera angle, row-major ordering and thin rounded cyan line style. Keep all 24 drawings. Keep background and page interiors genuinely alpha-transparent.
+
+CORRECTION: The paper of the turning leaf is PRINTED ON BOTH SIDES. Its left-facing reverse side must have the same three cyan horizontal text bars as the final left page. Currently the reverse side is blank through the third row and text abruptly appears at the end. Remove that pop by drawing the three bars physically ATTACHED TO THE MOVING REVERSE PAGE SURFACE as it opens toward the left. Text bars must foreshorten with the page, stay within its boundary, and become the landed left-page text. Do not leave the reverse face blank. There must be no moment when a landed left page is blank and then gains text.
+
+Exact frame locations to correct:
+- Row 2 column 6, index 11: near edge-on leaf above the center spine. Add three extremely narrow foreshortened cyan text marks on its visible reverse surface, keeping them inside the narrow leaf. They may reduce almost to points/short strokes due to edge-on perspective; no floating text.
+- Row 3 column 1, index 12: leaf just left of vertical. Add three short strongly foreshortened bars aligned with its visible page plane, all INSIDE the moving leaf.
+- Row 3 column 2, index 13: reverse page opens further left. Its three bars widen with that page surface and share its perspective, replacing the blank reverse face.
+- Row 3 column 3, index 14: leaf is broad and lowering onto left stack. Show the same three bars, wider and closer to their final near-horizontal orientation, fixed to the turning paper.
+- Row 3 column 4, index 15: page nearly flat on the left. The three bars are almost exactly in their final left-page positions, with only the slight page curvature affecting them.
+- Row 3 column 5, index 16: page flat on left with small trailing corner curl. All THREE LEFT-PAGE BARS ARE ALREADY PRESENT and match row 3 column 6 / index 17. Text on the settled left page must not pop in at 17.
+- Row 3 column 6, index 17, plus row 4 columns 1 and 2, indices 18 and 19: preserve these existing final open spreads, with three bars per page. The bars on frame 16 must lead continuously into these.
+
+Preserve the existing right-page text throughout and the left-page text visible behind the lifted leaf until occluded. Maintain coherent occlusion: text belonging to the underlying left page must be hidden wherever the turning leaf covers it; draw only the moving leaf's three bars on top. Before the vertical crossing, keep the original three bars on the moving top/front face. There are three bars on BOTH printed sides of one thin paper leaf, never a new independent page or doubled floating text.
+
+Do not regenerate the choreography or change other cels. Do not add words, faces, hands, grid lines, numbering, page fill, shadow, glow or background. The requested output is this same 6x4 sprite sheet with this one page-text continuity error repaired. Genuine alpha transparency.

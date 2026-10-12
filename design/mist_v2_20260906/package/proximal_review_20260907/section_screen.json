@@ -1,0 +1,72 @@
+{
+  "status": "ideal_section_and_volume_comparison_not_final_geometry",
+  "femur_section": {
+    "original_area_mm2": 156,
+    "revised_area_mm2": 98.4,
+    "area_fraction": 0.6307692307692309,
+    "original_I_mm4": 8788.0,
+    "revised_I_mm4": 7559.200000000001,
+    "I_fraction": 0.8601729631315431
+  },
+  "tibia_section": {
+    "original_area_mm2": 168,
+    "revised_area_mm2": 103.2,
+    "area_fraction": 0.6142857142857143,
+    "original_I_mm4": 10976.0,
+    "revised_I_mm4": 9226.4,
+    "I_fraction": 0.840597667638484
+  },
+  "cheek_saving_g_if_70mm_femur_and_60mm_tibia_are_modified": 20.116799999999998,
+  "servo_base_saving_g_53p23x39_from_6_to_3mm": 7.9094457,
+  "servo_cap_saving_g_full_53p23x39x4_to_two_8x39x4_bars": 7.376007599999999,
+  "motor_max_added_gravity_moment_Nm_at_40mm": 0.021582000000000004,
+  "motor_added_hip_axis_inertia_kgm2_at_40mm": 8.800000000000001e-05,
+  "steel_8mm_shaft_saving_g_per_mm": 0.394584037290878,
+  "steel_7mm_shaft_saving_g_per_mm": 0.30210340355082843,
+  "selected_contract": {
+    "belt_length_mm": 375,
+    "belt_center_mm": 139.5,
+    "belt_input_station_down_femur_mm": 0,
+    "knee_motor_axis_down_femur_mm": 30,
+    "knee_motor_COM_down_femur_mm": 40.115,
+    "reducer_teeth": [
+      20,
+      40
+    ],
+    "remote_pulley_teeth": [
+      32,
+      32
+    ],
+    "completed_CAD_reviewed": false
+  },
+  "initial_nonoverlapping_saving_targets_g_per_leg": {
+    "replace_K_subsystem_143p52g_with_105_to_130g": [
+      13.52,
+      38.52
+    ],
+    "remaining_H_servo_mount": [
+      10,
+      14
+    ],
+    "cheek_windows_and_rails": [
+      16,
+      20
+    ],
+    "wheel_cradle": [
+      12,
+      16
+    ],
+    "hub": [
+      5,
+      8
+    ],
+    "root_and_coxa_shorter_load_path": [
+      8,
+      12
+    ]
+  },
+  "total_target_saving_g_per_leg": [
+    64.52,
+    108.52000000000001
+  ]
+}

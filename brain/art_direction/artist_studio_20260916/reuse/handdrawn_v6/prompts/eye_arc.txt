@@ -1,0 +1,15 @@
+Use case: stylized-concept.
+Asset type: production hand-drawn robot eye animation sprite sheet, 4 columns by 2 rows, exactly eight equal cells.
+Input image is STYLE AND SHAPE REFERENCE ONLY: look specifically at the Checking email panel, middle row left. Recreate just ONE happy upward arch eye (its left eye), without the other eye, face, mouth, envelope or dots.
+Canvas: transparent PNG, 2048 wide by 1024 high, with equal 512-pixel square cells. Actual alpha transparency, NOT a painted checkerboard. Every drawing has the same center anchor and width about 260 pixels with generous transparent padding. No grid, labels, numerals, panels, outline boxes, words or extra symbols.
+Style: soft chunky turquoise hand-drawn stroke with warm organic slight asymmetry and rounded caps, matching the reference. Solid bright aqua, no glow, shadow, gradients or ambient lighting. Maintain same character, size and stroke weight across frames. ONE isolated inverted-U cheerful arc per cell, never a full ring or two eyes.
+Reading order left to right then next row:
+1 OPEN: approved happy inverted-U arch, round capped ends lower and center rising, like the reference happy eye.
+2 ANTICIPATION: arch settles gently, ends pull slightly inward, almost same curve.
+3 HALF_CLOSED: arch gently lowers to a shallower cheerful inverted-U, newly drawn contour; no rotation.
+4 CLOSED: soft newly drawn shallow happy inverted-U eyelid, rounded ends, close to horizontal but still lifted in its center. Preserve happy curve polarity: center is higher than ends. Do not flatten into sad U, do not reverse curvature.
+5 OPENING_LOW: happy arc just deeper than closed, naturally beginning to reopen.
+6 OPENING: happy inverted-U between half and full height.
+7 GAZE_LEFT: open happy arch leans subtly left through asymmetric hand-drawn shape, not mechanically rotating.
+8 GAZE_RIGHT: open happy arch leans subtly right through asymmetric hand-drawn shape, not mechanically rotating.
+Blink is a gentle expressive squeeze, never squashing or stretching the same bitmap. Draw each frame consistently and smoothly, no duplicate detached fragments. All open/background spaces truly transparent.

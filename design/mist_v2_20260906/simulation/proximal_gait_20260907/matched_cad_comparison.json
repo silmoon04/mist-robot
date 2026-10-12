@@ -1,0 +1,74 @@
+[
+  {
+    "run": "stride80_force_feedback_3s_3cycles",
+    "mass_kg": 6.341061857161208,
+    "status": "PASS_IN_MODEL",
+    "failed_criteria": [],
+    "duration_s": 39.501,
+    "forward_mm": 237.35267194048316,
+    "lateral_mm": -1.342841375898607,
+    "mean_forward_mm_s": 6.008776282637988,
+    "tilt_deg": 1.7529157378423714,
+    "shaft_rms_nm": 0.6633512551146393,
+    "saturation_pct": 5.083415609731399,
+    "min_swing_peak_mm": 26.647267307930814,
+    "contact_loss_pct": 0.0,
+    "min_sampled_support_margin_mm": 18.231076991199703,
+    "source_sha256": {
+      "supported_crawl.py": "a3f538b1c49ad33fed91f23fcc4784e40e521500dd605833cc003951ec563e36",
+      "model.py": "d7fc5c843553da04feebf93f0bf59be60033e4f52c858117bfea95e23de59619",
+      "run_sim.py": "c17536e9ee478ffccf0c62f982ef824c954b9efce8afd11151d041160c9dc525",
+      "geometry_study.py": "92c4c7c177d735dc9cbc880a73a59aafa0298cc7a4b97ca7a09cf8213e4516b7"
+    },
+    "parameters_sha256": "2da1658c9b8f9d5b1532526b13f16ae52a952feb70c9a75aa5ad7432b32de306"
+  },
+  {
+    "run": "matched_cad_80mm_3s_3cycles",
+    "mass_kg": 7.1081600633875714,
+    "status": "FAIL_IN_MODEL",
+    "failed_criteria": [
+      "final_lateral_drift_below_10mm",
+      "all_feet_clear_15mm"
+    ],
+    "duration_s": 39.501,
+    "forward_mm": 239.48602974185727,
+    "lateral_mm": 11.851403537213653,
+    "mean_forward_mm_s": 6.062783973617308,
+    "tilt_deg": 6.755251754718138,
+    "shaft_rms_nm": 0.7075603098892802,
+    "saturation_pct": 24.042429305587202,
+    "min_swing_peak_mm": 7.868453395182454,
+    "contact_loss_pct": 0.8416622830089426,
+    "min_sampled_support_margin_mm": -29.855072948183235,
+    "source_sha256": {
+      "supported_crawl.py": "a3f538b1c49ad33fed91f23fcc4784e40e521500dd605833cc003951ec563e36",
+      "model.py": "d7fc5c843553da04feebf93f0bf59be60033e4f52c858117bfea95e23de59619",
+      "run_sim.py": "4e0d61802a5d74074deb67e4abbfccb0d8fda5b1ce1787f2bc2ec3a7b74a9d24",
+      "geometry_study.py": "ba46b6d1dac204da9b3360f37b0ea30accd14d2456c19b9cf4ad5ac673766cdb"
+    },
+    "parameters_sha256": "5151bd4e9a7b522723679c0173374f89c710de35dbe0d748a2213c0601c935b6"
+  },
+  {
+    "run": "matched_cad_60mm_4s_3cycles",
+    "mass_kg": 7.1081600633875714,
+    "status": "PASS_IN_MODEL",
+    "failed_criteria": [],
+    "duration_s": 51.581,
+    "forward_mm": 168.6330220601246,
+    "lateral_mm": -0.7222989666715403,
+    "mean_forward_mm_s": 3.269285629594707,
+    "tilt_deg": 4.105210132346237,
+    "shaft_rms_nm": 0.6802763923663577,
+    "saturation_pct": 12.650006785444253,
+    "min_swing_peak_mm": 22.776752737731535,
+    "contact_loss_pct": 1.2774451097804391,
+    "min_sampled_support_margin_mm": -122.9308964700998,
+    "source_sha256": {
+      "supported_crawl.py": "a3f538b1c49ad33fed91f23fcc4784e40e521500dd605833cc003951ec563e36",
+      "model.py": "d7fc5c843553da04feebf93f0bf59be60033e4f52c858117bfea95e23de59619",
+      "run_sim.py": "4e0d61802a5d74074deb67e4abbfccb0d8fda5b1ce1787f2bc2ec3a7b74a9d24",
+      "geometry_study.py": "ba46b6d1dac204da9b3360f37b0ea30accd14d2456c19b9cf4ad5ac673766cdb"
+    },
+    "parameters_sha256": "5151bd4e9a7b522723679c0173374f89c710de35dbe0d748a2213c0601c935b6"
+  }
+]

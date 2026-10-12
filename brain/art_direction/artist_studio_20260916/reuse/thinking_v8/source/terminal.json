@@ -1,0 +1,240 @@
+{
+  "name": "terminal",
+  "generator": "built-in image_gen",
+  "source_original_unchanged": true,
+  "generated_source_path": "C:\\Users\\hssil\\.codex\\generated_images\\01a0d42d-4d7a-7c10-a08f-43b3d035ab48\\exec-b3785447-bee1-4c45-8e56-3bb8d38ff791.png",
+  "width": 1536,
+  "height": 1024,
+  "mode": "RGBA",
+  "grid": {
+    "columns": 6,
+    "rows": 4,
+    "cell_width": 256,
+    "cell_height": 256,
+    "order": "row-major"
+  },
+  "frame_count": 24,
+  "phases": {
+    "enter": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "loop": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "exit": [
+      20,
+      21,
+      22,
+      23
+    ]
+  },
+  "sha256": "c6af2c342987fe85db93c55010530bf86fd98c2f54f30c1dcf7129f26b70bf7f",
+  "exact_prompt_path": "../prompts/terminal-retry.txt",
+  "exact_prompt": "Use case: precise-object-edit.\nEdit the attached 1536 by 1024 transparent RGBA sprite sheet. Preserve its EXACT 6 columns by 4 rows, all 24 drawings, same cel coordinates, native transparency, cyan outline palette, laptop shape, camera and all phase poses. This is a narrowly targeted correction.\nRemove EVERY checkmark/tick shape anywhere in the sheet and replace each with a plain short rounded HORIZONTAL code stroke. In particular zero-index frames 15,16,17,18, which are row3 column4, row3 column5, row3 column6 and row4 column1. Their little checkmarks currently look like a success indicator. Replace each tick with a simple horizontal dash, the same height and style as the existing code strokes beside it. Keep the vertical caret. No success symbols, no checkmarks, no ticks anywhere.\nKeep all other content unchanged: four opening cels, sixteen typing/scroll cels, four closing cels. Keep the laptop body registered with the same common baseline and active shape in every active cel. Preserve ordered typing strokes and upward scroll. No added text, captions, eyes, mouths, grid borders, shadows, glow or scenery. Output one PNG with native transparent alpha. Do not flatten transparency.",
+  "prompt_history": [
+    "../prompts/terminal.txt",
+    "../prompts/terminal-retry.txt"
+  ],
+  "reference_path": "C:\\Users\\hssil\\.codex\\generated_images\\01a0d42d-4d7a-7c10-a08f-43b3d035ab48\\exec-9ed94649-ef8b-4a1d-a737-0cfa60863e24.png",
+  "alpha": {
+    "minimum": 0,
+    "maximum": 254,
+    "zero_pixels": 1111669,
+    "total_pixels": 1572864
+  },
+  "pixel_unique_cells": 24,
+  "pixel_unique_active_cells": 16,
+  "cell_alpha_bounds_at_128": [
+    [
+      27,
+      183,
+      229,
+      237
+    ],
+    [
+      27,
+      141,
+      229,
+      237
+    ],
+    [
+      27,
+      107,
+      229,
+      237
+    ],
+    [
+      27,
+      84,
+      230,
+      237
+    ],
+    [
+      27,
+      84,
+      229,
+      237
+    ],
+    [
+      27,
+      84,
+      230,
+      237
+    ],
+    [
+      27,
+      84,
+      230,
+      236
+    ],
+    [
+      27,
+      84,
+      230,
+      236
+    ],
+    [
+      27,
+      84,
+      229,
+      236
+    ],
+    [
+      26,
+      84,
+      229,
+      236
+    ],
+    [
+      27,
+      84,
+      229,
+      236
+    ],
+    [
+      27,
+      84,
+      230,
+      236
+    ],
+    [
+      27,
+      84,
+      230,
+      237
+    ],
+    [
+      27,
+      84,
+      229,
+      236
+    ],
+    [
+      27,
+      84,
+      229,
+      237
+    ],
+    [
+      27,
+      84,
+      229,
+      236
+    ],
+    [
+      27,
+      84,
+      229,
+      236
+    ],
+    [
+      27,
+      84,
+      230,
+      236
+    ],
+    [
+      27,
+      55,
+      229,
+      207
+    ],
+    [
+      27,
+      55,
+      229,
+      207
+    ],
+    [
+      27,
+      55,
+      229,
+      208
+    ],
+    [
+      27,
+      111,
+      229,
+      207
+    ],
+    [
+      27,
+      134,
+      229,
+      207
+    ],
+    [
+      27,
+      153,
+      230,
+      207
+    ]
+  ],
+  "inspection": {
+    "summary": "No remaining success ticks. Twenty-four visible drawings with progressive code strokes, cursor blinks, upward scroll, opening and closing. Semantic seam and registration limitations remain.",
+    "semantic_active_pose_audit": [
+      "4: empty screen, vertical cursor at first-line start.",
+      "5: first dash appears; cursor moves right.",
+      "6: first dash extends slightly and cursor advances slightly.",
+      "7: second first-line dash appears; cursor advances.",
+      "8: first line unchanged; cursor drawn short for blink.",
+      "9: cursor moves to second-line start.",
+      "10: first second-line dash appears.",
+      "11: second second-line dash appears; cursor advances.",
+      "12: cursor changes to a small horizontal blink shape after second line.",
+      "13: cursor moves to third-line start.",
+      "14: first third-line dash appears.",
+      "15: second third-line dash appears; cursor advances.",
+      "16: third third-line dash appears; cursor shortens.",
+      "17: content scrolls upward one line; caret follows.",
+      "18: content scrolls upward another line, leaving one row.",
+      "19: screen clears to empty cursor state. This repeats the semantic state of frame4 at the loop boundary."
+    ],
+    "limitations": [
+      "The active screen typing/scrolling sequence has 16 pixel-distinct drawings, but frames4 and19 share the same semantic empty-screen cursor pose. Frames8 and12 are deliberate cursor blink drawings rather than added code.",
+      "Last source row has a 29px higher laptop baseline than rows1-3 (alpha128 bounds bottom207 versus236). A direct uniform 256px slicing will introduce a visible vertical hop between frames17/18 and19/4. Registration needs review in extraction; do not claim the unadjusted source has a smooth seam.",
+      "Cyan strokes are heavier than the requested 3px and include a fine darker contour in raw RGB.",
+      "Transparent pixels retain teal RGB values; rendering must honor alpha."
+    ],
+    "meets_all_motion_requirements": false,
+    "pending_generation_calls": 0
+  }
+}

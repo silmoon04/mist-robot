@@ -1,0 +1,405 @@
+"""Audit R3 deposition assembly, distributed hardware, and URDF inertial frames."""
+from __future__ import annotations
+
+import argparse
+from collections import Counter
+import datetime as dt
+import hashlib
+import json
+import math
+from pathlib import Path
+import struct
+import xml.etree.ElementTree as ET
+
+import numpy as np
+from scipy.spatial import cKDTree
+
+import audit_mass_frames as baseline
+
+
+ROOT = Path(__file__).resolve().parents[1]
+EXPECTED_HASHES = {
+    "printed_manifest": "2f9b5b5ec8d4eb102be6f541676e70d8119385c6660e21d4ee68607e49f28750",
+    "solid_manifest": "ed3b458fd8c5929c04652dcaf8b7686c31f8b987f2cead30e14f12191bfa71a2",
+    "production_properties": "68f0251c4cec97bf22810c9d0f7cf0f5bd940db58df3d859f95805dab1feabb6",
+}
+TOLERANCES = {
+    "mass_kg": 1e-10,
+    "com_mm": 1e-8,
+    "inertia_kg_m2": 1e-12,
+    "rigid_transform": 1e-10,
+    "stl_vertex_position_mm": 2e-5,
+    "urdf_origin_m": 1e-10,
+    "joint_angle_rad": 1e-10,
+}
+PROPERTY_KEYS = ("mass_kg", "com_mm", "inertia_kg_m2")
+check = baseline.check
+
+
+def sha256(path):
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+def bind(report, label, path):
+    path = Path(path).resolve()
+    value = sha256(path)
+    report["inputs"]["bound_files"][label] = {"path": str(path), "sha256": value}
+    return value
+
+
+def matrix(record):
+    value = record["inertia_kg_m2"]
+    return np.asarray(value, dtype=float) if isinstance(value, list) else baseline.tensor(record)
+
+
+def properties(mass, center, inertia):
+    return {"mass_kg": float(mass), "com_mm": np.asarray(center).tolist(),
+            "inertia_kg_m2": np.asarray(inertia).tolist()}
+
+
+def physical(report, label, record):
+    mass, center, inertia = record["mass_kg"], np.asarray(record["com_mm"]), matrix(record)
+    valid = (math.isfinite(mass) and mass > 0 and center.shape == (3,)
+             and np.all(np.isfinite(center)) and inertia.shape == (3, 3)
+             and np.all(np.isfinite(inertia)))
+    if not valid:
+        raise ValueError(f"Invalid mass properties: {label}")
+    symmetry = float(np.max(np.abs(inertia-inertia.T)))
+    eigenvalues = np.linalg.eigvalsh((inertia+inertia.T)/2)
+    triangle_margin = float(eigenvalues.sum()-2*eigenvalues.max())
+    check(report, f"physical_tensor:{label}", symmetry <= 1e-12
+          and eigenvalues.min() > 0 and triangle_margin >= -1e-12,
+          symmetry_error_kg_m2=symmetry, principal_moments_kg_m2=eigenvalues.tolist(),
+          triangle_margin_kg_m2=triangle_margin)
+
+
+def compare(report, label, actual, expected):
+    errors = {
+        "mass_error_kg": abs(actual["mass_kg"]-expected["mass_kg"]),
+        "com_error_mm": float(np.max(np.abs(np.asarray(actual["com_mm"])-expected["com_mm"]))),
+        "inertia_error_kg_m2": float(np.max(np.abs(matrix(actual)-matrix(expected)))),
+    }
+    limits = [TOLERANCES[k] for k in ("mass_kg", "com_mm", "inertia_kg_m2")]
+    check(report, label, all(error <= limit for error, limit in zip(errors.values(), limits)), **errors)
+
+
+def aggregate(records):
+    """Sum tensors at the link origin, then translate once to the aggregate COM."""
+    mass = math.fsum(record["mass_kg"] for record in records)
+    centers_m = np.asarray([record["com_mm"] for record in records], float)*.001
+    masses = np.asarray([record["mass_kg"] for record in records], float)
+    center_m = np.array([math.fsum(masses*centers_m[:, axis])/mass for axis in range(3)])
+    tensor_origin = np.zeros((3, 3))
+    for record, center in zip(records, centers_m):
+        tensor_origin += matrix(record) + record["mass_kg"]*(center@center*np.eye(3)-np.outer(center, center))
+    inertia = tensor_origin - mass*(center_m@center_m*np.eye(3)-np.outer(center_m, center_m))
+    return properties(mass, center_m*1000, inertia)
+
+
+def vertices(path):
+    raw = Path(path).read_bytes()
+    count = struct.unpack_from("<I", raw, 80)[0]
+    if len(raw) != 84+50*count:
+        raise ValueError(f"Expected a binary STL with its recorded triangle count: {path}")
+    dtype = np.dtype([("normal", "<f4", (3,)), ("vertices", "<f4", (3, 3)), ("attribute", "<u2")])
+    return np.frombuffer(raw, dtype=dtype, count=count, offset=84)["vertices"].reshape(-1, 3).astype(float)
+
+
+def point_to_surface_distances(points, triangle_vertices):
+    """Measure distance to triangle interiors and edges, including degenerate faces."""
+    triangles = triangle_vertices.reshape(-1, 3, 3)
+    a, b, c = triangles[:, 0], triangles[:, 1], triangles[:, 2]
+    ab, ac = b-a, c-a
+    normal = np.cross(ab, ac)
+    normal_squared = np.einsum("ij,ij->i", normal, normal)
+    ab_squared = np.einsum("ij,ij->i", ab, ab)
+    ac_squared = np.einsum("ij,ij->i", ac, ac)
+    ab_ac = np.einsum("ij,ij->i", ab, ac)
+    denominator = ab_squared*ac_squared-ab_ac**2
+    result = []
+    for start in range(0, len(points), 64):
+        offset = points[start:start+64, None, :]-a
+        ab_offset = np.einsum("bij,ij->bi", offset, ab)
+        ac_offset = np.einsum("bij,ij->bi", offset, ac)
+        safe_denominator = np.where(denominator > 0, denominator, 1)
+        u = (ac_squared*ab_offset-ab_ac*ac_offset)/safe_denominator
+        v = (ab_squared*ac_offset-ab_ac*ab_offset)/safe_denominator
+        inside = (denominator > 0) & (u >= 0) & (v >= 0) & (u+v <= 1)
+        signed = np.einsum("bij,ij->bi", offset, normal)
+        distance_squared = np.where(inside, signed**2/np.where(normal_squared > 0, normal_squared, 1), np.inf)
+        for origin, edge in ((a, ab), (a, ac), (b, c-b)):
+            offset = points[start:start+64, None, :]-origin
+            edge_squared = np.einsum("ij,ij->i", edge, edge)
+            t = np.clip(np.einsum("bij,ij->bi", offset, edge)/np.where(edge_squared > 0, edge_squared, 1), 0, 1)
+            remaining = offset-t[:, :, None]*edge
+            distance_squared = np.minimum(distance_squared, np.einsum("bij,bij->bi", remaining, remaining))
+        result.extend(np.sqrt(distance_squared.min(axis=1)))
+    return np.asarray(result)
+
+
+def mesh_surface_check(report, name, expected_vertices, actual_vertices):
+    forward = cKDTree(actual_vertices).query(expected_vertices, k=1)[0]
+    backward = cKDTree(expected_vertices).query(actual_vertices, k=1)[0]
+    vertex_error = float(max(forward.max(), backward.max()))
+    tolerance = TOLERANCES["stl_vertex_position_mm"]
+    alternate_vertices = int(np.sum(forward > tolerance)+np.sum(backward > tolerance))
+    surface_error = vertex_error
+    if alternate_vertices:
+        # Rigidly transformed CAD exports can retessellate a planar face.
+        # Verify those vertices against triangle surfaces instead of vertex IDs.
+        forward[forward > tolerance] = point_to_surface_distances(expected_vertices[forward > tolerance], actual_vertices)
+        backward[backward > tolerance] = point_to_surface_distances(actual_vertices[backward > tolerance], expected_vertices)
+        surface_error = float(max(forward.max(), backward.max()))
+    check(report, f"print_to_instance_mesh_frame:{name}", len(actual_vertices) == len(expected_vertices)
+          and surface_error <= tolerance, maximum_bidirectional_surface_distance_bound_mm=surface_error,
+          maximum_bidirectional_nearest_vertex_error_mm=vertex_error,
+          vertices_requiring_triangle_surface_distance=alternate_vertices,
+          source_vertex_count=len(expected_vertices), instance_vertex_count=len(actual_vertices))
+
+
+def printed_checks(report, data, solid, production, manifest):
+    parts, original = data["parts"], {part["name"]: part for part in solid["parts"]}
+    printed = [part for part in parts if part["printable"]]
+    rows = {row["sku"]: row for row in production["parts"]}
+    print_files = {row["sku"]: row for row in solid["print_parts"]}
+    quantities = Counter(part["sku"] for part in printed)
+    check(report, "source_rows_and_instance_coverage", len(rows) == len(production["parts"]) == 34
+          and len(printed) == 76 and set(rows) == set(print_files) == set(quantities),
+          source_sku_count=len(rows), printed_instance_count=len(printed))
+    check(report, "part_identity_and_ownership", len({part["name"] for part in parts}) == len(parts)
+          and {part["name"] for part in parts} == set(original)
+          and all(part["link"] in data["links"] for part in parts),
+          all_part_count=len(parts), link_count=len(data["links"]))
+    for key in ("units", "parameters", "source_hashes", "print_parts", "assembly_bounds_mm", "coupons"):
+        check(report, f"solid_metadata_retained:{key}", data[key] == solid[key])
+    properties_hash = report["inputs"]["bound_files"]["production_properties"]["sha256"]
+    source_vertices = {}
+    for sku, row in rows.items():
+        source_path = manifest.parent/print_files[sku]["stl"]
+        source_hash = bind(report, f"print_stl:{sku}", source_path)
+        source_vertices[sku] = vertices(source_path)
+        check(report, f"sku_source_and_quantity:{sku}", row["quantity"] == quantities[sku]
+              and row["quantity"] == print_files[sku]["quantity"]
+              and source_hash == row["source_stl_hash"]
+              and source_path.resolve() == Path(row["source_stl_path"]).resolve()
+              and row["source_print_rotation_deg"] == print_files[sku]["print_rotation"]
+              and row["status"] == "pass", quantity=quantities[sku], source_stl_sha256=source_hash)
+        physical(report, f"source:{sku}", row)
+        model = row["deposition"]["properties"]["model"]
+        compare(report, f"source_model_only:{sku}", row, {
+            "mass_kg": model["mass_kg"], "com_mm": model["com_mm"],
+            "inertia_kg_m2": model["inertia_line_about_com_kg_m2"]})
+    reconstructed = []
+    for part in parts:
+        name = part["name"]
+        physical(report, f"assembled_part:{name}", part)
+        if not part["printable"]:
+            check(report, f"nonprinted_part_retained:{name}", part == original[name])
+            reconstructed.append(part)
+            continue
+        row = rows[part["sku"]]
+        transform = np.asarray(part["print_to_link_transform"], float)
+        if transform.shape != (4, 4) or not np.all(np.isfinite(transform)):
+            raise ValueError(f"Invalid print transform for {name}")
+        rotation, offset = transform[:3, :3], transform[:3, 3]
+        orthogonality_error = float(np.max(np.abs(rotation.T@rotation-np.eye(3))))
+        check(report, f"print_transform_rigid:{name}", orthogonality_error <= TOLERANCES["rigid_transform"]
+              and abs(np.linalg.det(rotation)-1) <= TOLERANCES["rigid_transform"]
+              and np.array_equal(transform[3], [0, 0, 0, 1]),
+              orthogonality_error=orthogonality_error, determinant=float(np.linalg.det(rotation)))
+        retained = {key: value for key, value in part.items()
+                    if key not in (*PROPERTY_KEYS, "mass_source", "solid_CAD_properties", "deposition_source")}
+        expected_retained = {key: value for key, value in original[name].items()
+                             if key not in (*PROPERTY_KEYS, "mass_source")}
+        check(report, f"printed_source_geometry_retained:{name}", retained == expected_retained
+              and part["solid_CAD_properties"] == {key: original[name][key] for key in PROPERTY_KEYS})
+        expected = properties(row["mass_kg"], rotation@np.asarray(row["com_mm"])+offset,
+                              rotation@matrix(row)@rotation.T)
+        compare(report, f"print_mass_com_tensor_transform:{name}", part, expected)
+        reconstructed.append({**expected, "name": name, "link": part["link"]})
+        source = part["deposition_source"]
+        check(report, f"deposition_binding:{name}", source["sku"] == part["sku"]
+              and source["source_stl_sha256"] == row["source_stl_hash"]
+              and source["properties_json_sha256"] == properties_hash
+              and abs(source["support_mass_excluded_g"]-row["support_mass_g"]) <= 1e-10)
+        mesh_path = manifest.parent/part["stl"]
+        bind(report, f"part_mesh:{name}", mesh_path)
+        actual_vertices = vertices(mesh_path)
+        expected_vertices = source_vertices[part["sku"]]@rotation.T+offset
+        mesh_surface_check(report, name, expected_vertices, actual_vertices)
+    for link_name, link in data["links"].items():
+        records = [part for part in reconstructed if part["link"] == link_name]
+        rebuilt = aggregate(records)
+        compare(report, f"independent_link_aggregation:{link_name}", link, rebuilt)
+        physical(report, f"link:{link_name}", link)
+        check(report, f"solid_link_geometry_retained:{link_name}",
+              {k: v for k, v in link.items() if k not in PROPERTY_KEYS}
+              == {k: v for k, v in solid["links"][link_name].items() if k not in PROPERTY_KEYS})
+    model_mass = math.fsum(row["mass_kg"]*row["quantity"] for row in rows.values())
+    parts_mass = math.fsum(part["mass_kg"] for part in parts)
+    links_mass = math.fsum(link["mass_kg"] for link in data["links"].values())
+    support_mass = math.fsum(row["support_mass_g"]*row["quantity"]/1000 for row in rows.values())
+    adhesion_mass = math.fsum(row["adhesion_mass_g"]*row["quantity"]/1000 for row in rows.values())
+    check(report, "mass_totals_and_model_only_selection",
+          abs(parts_mass-data["total_mass_kg"]) <= TOLERANCES["mass_kg"]
+          and abs(links_mass-parts_mass) <= TOLERANCES["mass_kg"]
+          and abs(model_mass-data["printable_mass_deposited_kg"]) <= TOLERANCES["mass_kg"]
+          and abs(model_mass-production["quantity_weighted_totals"]["model_mass_g"]/1000) <= TOLERANCES["mass_kg"]
+          and abs(parts_mass-2.7098832917435076) <= TOLERANCES["mass_kg"],
+          assembled_mass_kg=parts_mass, links_mass_kg=links_mass, model_deposition_mass_kg=model_mass,
+          excluded_support_mass_kg=support_mass, excluded_adhesion_mass_kg=adhesion_mass)
+    report["summary"] = {"part_count": len(parts), "printed_instance_count": len(printed),
+                         "source_sku_count": len(rows), "link_count": len(data["links"]),
+                         "assembled_mass_kg": parts_mass, "model_deposition_mass_kg": model_mass}
+
+
+def hardware_checks(report, data, fasteners, fastener_path):
+    expected_counts = {"screw": 200, "washer": 212, "nut": 100,
+                       "supplied_main_retainer": 13, "supplied_aux_retainer": 12}
+    counts = Counter(piece["category"] for piece in fasteners["pieces"])
+    check(report, "fastener_piece_counts", counts == fasteners["counts"] == expected_counts,
+          piece_count=len(fasteners["pieces"]), counts=dict(counts))
+    for path, expected_hash in fasteners["source_hashes"].items():
+        actual_hash = bind(report, f"fastener_source:{path}", fastener_path.parent.parent/path)
+        check(report, f"fastener_source_current:{path}", actual_hash == expected_hash)
+    lumps = [part for part in data["parts"] if part["material"] == "analytical_fasteners"]
+    check(report, "distributed_fastener_coverage", len(lumps) == 14
+          and {part["link"] for part in lumps} == set(data["links"])
+          and all(part["allowance_only"] and part["stl"] is None for part in lumps))
+    for part in lumps:
+        owned = [piece["estimates"]["high"] for piece in fasteners["pieces"] if piece["link"] == part["link"]]
+        compare(report, f"high_fastener_piece_aggregation:{part['link']}", part, aggregate(owned))
+        compare(report, f"high_fastener_export_match:{part['link']}", part, fasteners["links"][part["link"]]["high"])
+    mass = math.fsum(part["mass_kg"] for part in lumps)
+    wire = [part for part in data["parts"] if part["material"] == "allowance"]
+    check(report, "high_fastener_mass_and_single_wiring_allowance",
+          abs(mass-.3830674952523701) <= TOLERANCES["mass_kg"]
+          and abs(mass-fasteners["totals_g"]["high"]/1000) <= TOLERANCES["mass_kg"]
+          and len(wire) == 1 and wire[0]["name"] == "wiring_allowance"
+          and wire[0]["link"] == "base" and abs(wire[0]["mass_kg"]-.150) <= TOLERANCES["mass_kg"]
+          and {part["name"] for part in data["parts"] if part["allowance_only"]}
+              == {"wiring_allowance", *(part["name"] for part in lumps)},
+          fastener_mass_kg=mass, wiring_mass_kg=math.fsum(part["mass_kg"] for part in wire),
+          old_fastener_allowance_present=any(part["name"] == "fastener_allowance" for part in data["parts"]))
+    servos = [part for part in data["parts"] if part["material"] == "servo"]
+    check(report, "servo_count_mass_and_ownership", len(servos) == 13
+          and all(abs(part["mass_kg"]-.055) <= TOLERANCES["mass_kg"] for part in servos)
+          and Counter(part["link"] for part in servos)
+              == Counter({"base": 5, **{f"{kind}_{leg}": 1 for kind in ("coxa", "femur")
+                                        for leg in data["parameters"]["leg_azimuth_deg"]}}),
+          servo_count=len(servos), servo_mass_kg=math.fsum(part["mass_kg"] for part in servos))
+    report["summary"].update(fastener_piece_count=len(fasteners["pieces"]), fastener_mass_kg=mass,
+                             wiring_mass_kg=.150, servo_count=len(servos))
+
+
+def urdf_checks(report, data, urdf):
+    xml = ET.parse(urdf).getroot()
+    nodes = {node.attrib["name"]: node for node in xml.findall("link")}
+    check(report, "urdf_unique_links", len(nodes) == len(xml.findall("link")) == 14)
+    for name, record in data["links"].items():
+        inertial = nodes[name].find("inertial")
+        origin = inertial.find("origin")
+        center = np.fromstring(origin.attrib.get("xyz", "0 0 0"), sep=" ")
+        rotation = baseline.rpy_matrix(np.fromstring(origin.attrib.get("rpy", "0 0 0"), sep=" "))
+        tensor = baseline.tensor({"inertia_kg_m2": {key: float(value)
+                                                  for key, value in inertial.find("inertia").attrib.items()}})
+        compare(report, f"urdf_xml_inertial:{name}", record,
+                properties(float(inertial.find("mass").attrib["value"]), center*1000, rotation@tensor@rotation.T))
+    joints = {joint.attrib["name"]: joint for joint in xml.findall("joint")}
+    parameters = data["parameters"]
+    expected_names = {"phone_pan", *(f"{kind}_{leg}" for kind in ("yaw", "hip", "knee")
+                                     for leg in parameters["leg_azimuth_deg"])}
+    check(report, "urdf_joint_names", set(joints) == expected_names and len(joints) == len(xml.findall("joint")) == 13)
+    check(report, "current_yaw_operating_limit", parameters["yaw_operating_limit_deg"] == 22)
+    for name, joint in joints.items():
+        limit = joint.find("limit").attrib
+        if name == "phone_pan":
+            expected_type, parent, child, axis, limits = "continuous", "base", "phone_pan", [0, 0, 1], None
+        else:
+            kind, leg = name.split("_")
+            parent, child = {"yaw": ("base", f"coxa_{leg}"), "hip": (f"coxa_{leg}", f"femur_{leg}"),
+                             "knee": (f"femur_{leg}", f"tibia_{leg}")}[kind]
+            expected_type, axis = "revolute", [0, 0, 1] if kind == "yaw" else [0, 1, 0]
+            limits = np.radians({"yaw": [-22, 22], "hip": [3, 35], "knee": [30, 100]}[kind])
+        valid = (joint.attrib["type"] == expected_type and joint.find("parent").attrib["link"] == parent
+                 and joint.find("child").attrib["link"] == child
+                 and np.array_equal(np.fromstring(joint.find("axis").attrib["xyz"], sep=" "), axis)
+                 and abs(float(limit["effort"])-.588) <= 1e-12 and abs(float(limit["velocity"])-1) <= 1e-12)
+        measured_limits = None if limits is None else [float(limit["lower"]), float(limit["upper"])]
+        if limits is not None:
+            valid = valid and np.max(np.abs(limits-measured_limits)) <= TOLERANCES["joint_angle_rad"]
+        check(report, f"urdf_joint_contract:{name}", valid, limit_rad=measured_limits,
+              joint_type=joint.attrib["type"], effort_nm=float(limit["effort"]), velocity_rad_s=float(limit["velocity"]))
+
+
+def audit(manifest, urdf, solid_path, production_path, fastener_path):
+    report = {"created_utc": dt.datetime.now(dt.timezone.utc).isoformat(), "status": "audit_fail",
+              "inputs": {"bound_files": {}, "meshes": {}}, "tolerances": TOLERANCES,
+              "reused_frame_probe_tolerances": baseline.TOLERANCES, "checks": [], "errors": [],
+              "scope": "Checks frozen deposition properties through print-STL to link transforms, assembled tensors, distributed high fastener mass, URDF values, CAD visual frames, landscape phone collision and Bullet kinematic probes without stepping. GCode integration is covered by a separate source audit. Physical mass, fit and walking are not measured here.",
+              "method": "Source COM tensors receive only R I R^T and COM receives R c + t. Link tensors are summed at the origin and translated to the combined COM. No deposition density, uniform box inertia, GCode inverse transform or additional layer-height correction is applied."}
+    try:
+        paths = {"printed_manifest": manifest, "urdf": urdf, "solid_manifest": solid_path,
+                 "production_properties": production_path, "fastener_properties": fastener_path,
+                 "audit_source": Path(__file__), "reused_frame_probe_source": Path(baseline.__file__)}
+        for label, path in paths.items():
+            digest = bind(report, label, path)
+            if label in EXPECTED_HASHES:
+                check(report, f"frozen_input:{label}", digest == EXPECTED_HASHES[label], actual_sha256=digest)
+        load = lambda path: json.loads(path.read_text(encoding="utf-8-sig"))
+        data, solid, production, fasteners = map(load, (manifest, solid_path, production_path, fastener_path))
+        model = data["mass_model"]
+        check(report, "printed_mass_model_and_source_bindings", data["units"] == "mm"
+              and model["kind"] == "Cura_model_deposition_high_fasteners"
+              and model["as_sliced"] is True and model["physical_measurement"] is False
+              and model["fasteners"] == "high" and abs(model["wire_allowance_kg"]-.150) <= 1e-12
+              and model["source_solid_manifest_sha256"] == sha256(solid_path)
+              and model["source_production_properties_sha256"] == sha256(production_path)
+              and production["source_manifest_hash"] == sha256(solid_path)
+              and production["status"] == "pass")
+        integrator_hash = bind(report, "printed_manifest_integrator", ROOT/"printing/build_printed_mass.py")
+        check(report, "printed_manifest_integrator_binding", integrator_hash == model["integrator_sha256"])
+        printed_checks(report, data, solid, production, manifest)
+        hardware_checks(report, data, fasteners, fastener_path)
+        urdf_checks(report, data, urdf)
+        baseline.mesh_checks(report, data, manifest, urdf)
+        baseline.bullet_checks(report, data, urdf)
+        unchanged = all(sha256(entry["path"]) == entry["sha256"] for entry in report["inputs"]["bound_files"].values())
+        unchanged = unchanged and all(sha256(entry[f"{kind}_mesh_path"]) == entry[f"{kind}_mesh_sha256"]
+                                    for entry in report["inputs"]["meshes"].values() for kind in ("manifest", "urdf"))
+        check(report, "inputs_unchanged_during_audit", unchanged,
+              bound_file_count=len(report["inputs"]["bound_files"]), cad_visual_link_count=len(report["inputs"]["meshes"]))
+    except Exception as error:
+        report["errors"].append(f"{type(error).__name__}: {error}")
+    report["failed_checks"] = [item["name"] for item in report["checks"] if not item["passed"]]
+    report["passed"] = bool(report["checks"]) and not report["failed_checks"] and not report["errors"]
+    report["status"] = "audit_pass" if report["passed"] else "audit_fail"
+    report["check_count"] = len(report["checks"])
+    return report
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--manifest", type=Path, default=ROOT/"cad/output/assembly_manifest_as_printed.json")
+    parser.add_argument("--solid-manifest", type=Path, default=ROOT/"cad/output/assembly_manifest.json")
+    parser.add_argument("--production-properties", type=Path, default=ROOT/"manufacturing/slicing_r3/output/production_mass_properties.json")
+    parser.add_argument("--fastener-properties", type=Path, default=ROOT/"printing/fastener_mass.json")
+    parser.add_argument("--urdf", type=Path, default=ROOT/"simulation/output_r3_printed_nominal/quadruped.urdf")
+    parser.add_argument("--output", type=Path, default=ROOT/"simulation/output_r3_printed_nominal/printed_mass_frame_audit.json")
+    args = parser.parse_args()
+    inputs = [path.resolve() for path in (args.manifest, args.urdf, args.solid_manifest,
+                                         args.production_properties, args.fastener_properties)]
+    output = args.output.resolve()
+    if output in {*inputs, Path(__file__).resolve(), Path(baseline.__file__).resolve()}:
+        parser.error("The audit output must not overwrite its source or inputs")
+    report = audit(*inputs)
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(json.dumps(report, indent=2, allow_nan=False)+"\n", encoding="utf-8")
+    print(json.dumps({"status": report["status"], "checks": report["check_count"],
+                      "failed_checks": report["failed_checks"], "errors": report["errors"],
+                      "summary": report.get("summary", {}), "output_path": str(output)}))
+    return 0 if report["passed"] else 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "clipSource": "../../site/speech-clips.json",
+  "selectionStatus": "provisional",
+  "scenes": [
+    {
+      "id": "hinge",
+      "title": "A straightforward question",
+      "context": "Synthetic scene: a user asks what a hinge does. The answer is the unchanged bundled recording.",
+      "durationMs": 9500,
+      "audio": {"clipId": "mist-hinge", "startMs": 2000, "textRef": "clips[id=mist-hinge].text", "packetGaps": []},
+      "events": [
+        {"atMs": 0, "type": "context", "payload": {"speaker": "user", "text": "What is a hinge?", "synthetic": true}},
+        {"atMs": 0, "type": "state", "payload": {"state": "listening"}},
+        {"atMs": 0, "type": "intent", "payload": {"faceId": "attentive"}},
+        {"atMs": 850, "type": "state", "payload": {"state": "thinking"}},
+        {"atMs": 850, "type": "intent", "payload": {"faceId": "friendly-curiosity"}},
+        {"atMs": 1600, "type": "intent", "payload": {"faceId": "attentive"}},
+        {"atMs": 2000, "type": "state", "payload": {"state": "speaking"}},
+        {"atMs": 8234, "type": "state", "payload": {"state": "listening"}},
+        {"atMs": 8500, "type": "context", "payload": {"speaker": "user", "text": "Right, like the one on a door.", "synthetic": true}},
+        {"atMs": 8500, "type": "reaction", "payload": {"faceId": "quietly-pleased", "durationKey": "acknowledgementMs", "returnToIntent": true}}
+      ]
+    },
+    {
+      "id": "second-attempt",
+      "title": "A dry reply, interrupted",
+      "context": "Synthetic scene: a model stand has fallen over. The user proposes trying again, then cuts in. The recording stops mid-answer.",
+      "durationMs": 7000,
+      "audio": {"clipId": "mist-second-attempt", "startMs": 2000, "textRef": "clips[id=mist-second-attempt].text", "packetGaps": []},
+      "events": [
+        {"atMs": 0, "type": "context", "payload": {"speaker": "user", "text": "The model fell off its stand. I've reinforced it. Try again?", "synthetic": true}},
+        {"atMs": 0, "type": "state", "payload": {"state": "listening"}},
+        {"atMs": 0, "type": "intent", "payload": {"faceId": "quiet-listening"}},
+        {"atMs": 600, "type": "state", "payload": {"state": "thinking"}},
+        {"atMs": 900, "type": "reaction", "payload": {"faceId": "wry-teasing", "durationKey": "dryReactionMs", "returnToIntent": true}},
+        {"atMs": 2000, "type": "intent", "payload": {"faceId": "reassuring"}},
+        {"atMs": 2000, "type": "state", "payload": {"state": "speaking"}},
+        {"atMs": 5000, "type": "context", "payload": {"speaker": "user", "text": "Wait, let me move the stand first.", "synthetic": true}},
+        {"atMs": 5000, "type": "interrupt", "payload": {"reason": "Authored user interruption", "synthetic": true}},
+        {"atMs": 5000, "type": "state", "payload": {"state": "listening"}},
+        {"atMs": 5000, "type": "intent", "payload": {"faceId": "quiet-listening"}},
+        {"atMs": 5900, "type": "context", "payload": {"speaker": "context", "text": "Synthetic pause: the user adjusts the stand. MIST keeps listening.", "synthetic": true}}
+      ]
+    },
+    {
+      "id": "patience",
+      "title": "Waiting together",
+      "context": "Synthetic scene: an upload has stalled. MIST waits, then reassures the user. A simulated delivery gap briefly pauses the unchanged recording.",
+      "durationMs": 9000,
+      "audio": {"clipId": "mist-patience", "startMs": 4000, "textRef": "clips[id=mist-patience].text", "packetGaps": [{"atClipMs": 1100, "durationMs": 900}]},
+      "events": [
+        {"atMs": 0, "type": "context", "payload": {"speaker": "user", "text": "The upload is stuck. Can you stay while I try again?", "synthetic": true}},
+        {"atMs": 0, "type": "state", "payload": {"state": "listening"}},
+        {"atMs": 0, "type": "intent", "payload": {"faceId": "concerned"}},
+        {"atMs": 1100, "type": "state", "payload": {"state": "thinking"}},
+        {"atMs": 1100, "type": "context", "payload": {"speaker": "context", "text": "Synthetic wait: the upload is still running.", "synthetic": true}},
+        {"atMs": 3300, "type": "context", "payload": {"speaker": "user", "text": "There it goes. Thanks for staying.", "synthetic": true}},
+        {"atMs": 3500, "type": "intent", "payload": {"faceId": "reassuring"}},
+        {"atMs": 4000, "type": "state", "payload": {"state": "speaking"}},
+        {"atMs": 5100, "type": "state", "payload": {"state": "thinking"}},
+        {"atMs": 5100, "type": "context", "payload": {"speaker": "context", "text": "Simulated delivery gap: the recording pauses for 0.9 seconds.", "synthetic": true}},
+        {"atMs": 6000, "type": "state", "payload": {"state": "speaking"}},
+        {"atMs": 6000, "type": "context", "payload": {"speaker": "context", "text": "Delivery resumes from the same point in the recording.", "synthetic": true}},
+        {"atMs": 7518, "type": "state", "payload": {"state": "listening"}},
+        {"atMs": 7800, "type": "reaction", "payload": {"faceId": "quietly-pleased", "durationKey": "acknowledgementMs", "returnToIntent": true}}
+      ]
+    }
+  ]
+}

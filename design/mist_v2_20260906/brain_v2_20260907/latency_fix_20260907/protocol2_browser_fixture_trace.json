@@ -1,0 +1,90 @@
+{
+  "speech": "quiet",
+  "traces": [
+    {
+      "events": [
+        {
+          "elapsed_ms": 0,
+          "stage": "client_send"
+        },
+        {
+          "elapsed_ms": 9,
+          "server": {
+            "phase": "model_start",
+            "queue_wait_s": 0,
+            "request_id": "ui-mtqlbxr1-3n0jjx",
+            "server_epoch_ms": 1788746247331.3394,
+            "type": "timing"
+          },
+          "stage": "model_start"
+        },
+        {
+          "elapsed_ms": 9,
+          "stage": "first_text_delta"
+        },
+        {
+          "backend_timings": {
+            "fixture": true
+          },
+          "elapsed_ms": 10,
+          "server_timing": {
+            "accepted_epoch_ms": 1788746247329.3308,
+            "model_started_epoch_ms": 1788746247329.3308,
+            "queue_wait_s": 0,
+            "request_id": "ui-mtqlbxr1-3n0jjx",
+            "turn_end_epoch_ms": 1788746247332.3386
+          },
+          "stage": "model_end"
+        },
+        {
+          "characters": 56,
+          "elapsed_ms": 11,
+          "epoch_ms": 1788746247336,
+          "model": null,
+          "provider": "elevenlabs",
+          "purpose": "reply",
+          "stage": "tts_request"
+        },
+        {
+          "elapsed_ms": 14,
+          "stage": "server_accept_response",
+          "status": 202
+        },
+        {
+          "elapsed_ms": 20,
+          "epoch_ms": 1788746247345,
+          "stage": "tts_response_headers"
+        },
+        {
+          "elapsed_ms": 20,
+          "epoch_ms": 1788746247345,
+          "server_timing": {
+            "handler_total_s": 0,
+            "received_epoch_ms": 1788746247338.3423
+          },
+          "stage": "tts_response_body",
+          "usage": {
+            "api_latency_s": 0,
+            "audio_seconds": 3.1579,
+            "characters": 0,
+            "fixture": true
+          }
+        },
+        {
+          "elapsed_ms": 28,
+          "epoch_ms": 1788746247353,
+          "stage": "audio_play_attempt"
+        },
+        {
+          "audio_time_s": 0.005607,
+          "duration_s": 3.1579,
+          "elapsed_ms": 60,
+          "epoch_ms": 1788746247385,
+          "stage": "audio_playing"
+        }
+      ],
+      "id": "ui-mtqlbxr1-3n0jjx",
+      "started_epoch_ms": 1788746247325
+    }
+  ]
+}

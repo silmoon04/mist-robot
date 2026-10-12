@@ -1,0 +1,25 @@
+R5 PRINT FIRST: 70 MM INWARD HIP AND STRAIGHT TIBIA
+
+Final yaw operating limit is +/-19 degrees. This update does not change any print pieces.
+1. Read FIRST_FIT_CHECKS.txt and PRINT_AND_ASSEMBLE.md. Keep units in millimetres.
+2. Common fit plate(s): coupon_plate_01.3mf
+   Use the case-to-shaft gauge with the actual clamped servo and metal horn. Preload nuts
+   in bare carriers, then check alignment before tightening. Keep auxiliary discs free.
+3. Dedicated revision plate(s): coupon_plate_02.3mf
+   These five full production pieces are the upper coxa/hip carrier, lower yaw arm,
+   dedicated hip cap, straight tibia main/foot and short auxiliary cheek.
+   Passing parts can be reused. Count them toward the production BOM to avoid duplicates.
+4. Optional fit plate(s): coupon_plate_03.3mf
+   Use alternative case/phone clearances and yaw spacers only if nominal fits need adjustment.
+5. Start PLA with a 0.4 mm nozzle, 0.20 mm layers, 0.42 mm lines, five walls, six top/bottom
+   layers, 35% gyroid and an 8 mm3/s flow ceiling. Starting temperatures are 210/60 C
+   within the filament maker's range. Inspect support beneath every raised feature.
+   Plates contain geometry only; slice for the actual Neptune 4 Pro before printing.
+6. Hip auxiliary screws remain M3x8 with TWO OD6 x 0.5 mm washers. Yaw uses M3x20,
+   paired OD6 washers and nominal 11.6 mm spacers. Read R5_FASTENER_STACKS.md.
+   The hip uses its dedicated rear-bolt position. The full coxa must be load-tested.
+   Load the three hip nuts from above into the bare carrier; assemble legs before body mounting.
+7. Use fresh R5 coupon_feedback.csv records. The old R4 records remain in the R4 folder.
+   Check fixtures and one supported leg before full-robot movement. This is not physical qualification.
+   Phone remains landscape and upright; park pan before side USB charging.
+Source CAD manifest SHA-256: 67f0d5e3bfb633414722b17305cef4212ca7f8fa753aa922a252bc383306ad3d

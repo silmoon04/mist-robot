@@ -1,0 +1,34 @@
+{
+  "passed": true,
+  "scenarios": [
+    "Every source face is reachable through a named preset and a valid variant",
+    "All 1560 directed face changes preserve the chosen face and reject no valid call",
+    "A compliment holds its expression through thinking, speech and listening",
+    "Quiet listening uses the calm resting face without displacing persistent affect",
+    "Question and uncertainty use restrained cues; apology and distress stay neutral",
+    "Tool waiting never replaces an explicit face or starts a speaking mouth",
+    "Mouthless faces 12 and 35 use a related speaking variant and restore when quiet",
+    "Barge-in retains the persistent face, cancels queued reactions and refuses late old-turn cues",
+    "A hundred identical calls do not restart a transition or extend its hold",
+    "Rapid conflicting calls coalesce to the latest choice at the cooldown boundary",
+    "Changing back to the current face cancels an older queued change",
+    "Automatic wording cues cannot replace a deliberate model or manual expression",
+    "Hidden-tab delays discard obsolete queued changes",
+    "A hold starts after application and entrance; cooldown waiting does not consume it",
+    "Entrance allowance does not extend duplicate calls and interruption still clears immediately",
+    "Durations are finite, invalid payloads are refused, and the face remains unchanged",
+    "10,000 deterministic mixed events keep valid faces, finite holds and interruption boundaries"
+  ],
+  "limits": [
+    "These checks validate expression selection, state precedence and timing policy. They do not judge rendered animation quality.",
+    "Conversation cases are deterministic text and tool traces. No live smaller model, microphone or paid voice provider was used.",
+    "State speaking must be supplied from actual audible playback; model text arrival must not start it."
+  ],
+  "checkedAt": "2026-09-29T15:31:14.405Z",
+  "assertions": 38367,
+  "sourceSha256": "644b8d6473d298779695f7041bade510f5fc5518df412ba44dadb40991c286c4",
+  "faceCount": 40,
+  "presetCount": 21,
+  "directedFaceChanges": 1560,
+  "fuzzEvents": 10000
+}

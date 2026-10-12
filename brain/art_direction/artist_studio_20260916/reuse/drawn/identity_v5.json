@@ -1,0 +1,2356 @@
+{
+  "version": 5,
+  "checkedAt": "2026-09-23T14:54:15.101Z",
+  "passed": true,
+  "baseRuntimeSha256": "af28cf1903933ade168ff87a8e930a42b5949d0f3a8cfeed44c406a4a6f5921f",
+  "faceDataSha256": "109d1dd2aa286a3090e493aa0f61294a4bb6472985f8916e9c75dfce37e5c98f",
+  "atlasSha256": "229bcecdee62216684b535ee1dfae16536df4a41896c51a88c87621ceb94e4a3",
+  "scope": {
+    "fps": 15,
+    "requestedTransitionMs": 600,
+    "faces": 40,
+    "eyes": 80,
+    "parts": 30,
+    "actualCanonicalCanvasPaths": 120,
+    "directedTransitionEndpoints": 1560,
+    "restRasterDraws": 0,
+    "atlasAssets": 14,
+    "selectedFrameEntries": 164
+  },
+  "sourcePreservation": {
+    "canonicalDataMatchesV2": true,
+    "productionMatchesPublished": true
+  },
+  "hashes": {
+    "renderer": "9ade474f61fc9a6f3eee260b6bb07ef4adc2a4e6f56cae3a4871acbc531563ff",
+    "publishedRenderer": "9ade474f61fc9a6f3eee260b6bb07ef4adc2a4e6f56cae3a4871acbc531563ff",
+    "base": "af28cf1903933ade168ff87a8e930a42b5949d0f3a8cfeed44c406a4a6f5921f",
+    "data": "109d1dd2aa286a3090e493aa0f61294a4bb6472985f8916e9c75dfce37e5c98f",
+    "atlas": "229bcecdee62216684b535ee1dfae16536df4a41896c51a88c87621ceb94e4a3"
+  },
+  "method": [
+    "Executed actual production renderer and canonical runtime in a VM with a command-recording canvas.",
+    "Compared every resting layer point, identity, opacity, width and draw mode, then compared actual canvas path commands and transforms.",
+    "Read pixel opacity from the accepted PNG source sheets without modifying them. Passed pixel-backed canvas objects to the renderer so measured-raster fitting runs.",
+    "Forced raster rest only for fitting measurements, captured actual drawImage transforms, and independently projected source ink support through those transforms.",
+    "Checked all 1,560 directed expression pairs end on the exact canonical target paths at the 15 fps cadence and 600 ms requested transition duration.",
+    "Verified canonical source bytes against the v2 baseline, all extracted image hashes against current files, and production renderer bytes against the published preview renderer."
+  ],
+  "faces": [
+    {
+      "face": "01_angry_01_manual",
+      "exactRest": true,
+      "canvasPathCount": 3,
+      "restRasterDraws": 0,
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "open_C_47"
+        },
+        {
+          "role": "eye_R",
+          "part": "open_C_42"
+        }
+      ]
+    },
+    {
+      "face": "02_angry_02_manual",
+      "exactRest": true,
+      "canvasPathCount": 3,
+      "restRasterDraws": 0,
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "angry_hook_00"
+        },
+        {
+          "role": "eye_R",
+          "part": "angry_hook_00"
+        }
+      ]
+    },
+    {
+      "face": "03_angry_07_manual",
+      "exactRest": true,
+      "canvasPathCount": 3,
+      "restRasterDraws": 0,
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "open_C_48"
+        },
+        {
+          "role": "eye_R",
+          "part": "open_C_48"
+        }
+      ]
+    },
+    {
+      "face": "04_angry_08_manual",
+      "exactRest": true,
+      "canvasPathCount": 3,
+      "restRasterDraws": 0,
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "angry_hook_00"
+        },
+        {
+          "role": "eye_R",
+          "part": "angry_hook_00"
+        }
+      ]
+    },
+    {
+      "face": "05_annoyed_01_manual",
+      "exactRest": true,
+      "canvasPathCount": 3,
+      "restRasterDraws": 0,
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "droop_hook_08"
+        },
+        {
+          "role": "eye_R",
+          "part": "droop_hook_10"
+        }
+      ]
+    },
+    {
+      "face": "06_annoyed_02_manual",
+      "exactRest": true,
+      "canvasPathCount": 3,
+      "restRasterDraws": 0,
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "happy_arc_17"
+        },
+        {
+          "role": "eye_R",
+          "part": "happy_arc_17"
+        }
+      ]
+    },
+    {
+      "face": "07_annoyed_03_manual",
+      "exactRest": true,
+      "canvasPathCount": 3,
+      "restRasterDraws": 0,
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "circle_gap_04"
+        },
+        {
+          "role": "eye_R",
+          "part": "open_C_43"
+        }
+      ]
+    },
+    {
+      "face": "08_annoyed_04_manual",
+      "exactRest": true,
+      "canvasPathCount": 3,
+      "restRasterDraws": 0,
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "chevron_01"
+        },
+        {
+          "role": "eye_R",
+          "part": "chevron_01"
+        }
+      ]
+    },
+    {
+      "face": "09_happy_03_manual",
+      "exactRest": true,
+      "canvasPathCount": 3,
+      "restRasterDraws": 0,
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "circle_gap_02"
+        },
+        {
+          "role": "eye_R",
+          "part": "circle_gap_02"
+        }
+      ]
+    },
+    {
+      "face": "10_happy_04_manual",
+      "exactRest": true,
+      "canvasPathCount": 3,
+      "restRasterDraws": 0,
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "happy_arc_16"
+        },
+        {
+          "role": "eye_R",
+          "part": "happy_arc_16"
+        }
+      ]
+    },
+    {
+      "face": "11_happy_05_manual",
+      "exactRest": true,
+      "canvasPathCount": 3,
+      "restRasterDraws": 0,
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "circle_gap_02"
+        },
+        {
+          "role": "eye_R",
+          "part": "circle_gap_03"
+        }
+      ]
+    },
+    {
+      "face": "12_happy_09_manual",
+      "exactRest": true,
+      "canvasPathCount": 2,
+      "restRasterDraws": 0,
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "chevron_01"
+        },
+        {
+          "role": "eye_R",
+          "part": "chevron_01"
+        }
+      ]
+    },
+    {
+      "face": "13_happy_14_manual",
+      "exactRest": true,
+      "canvasPathCount": 3,
+      "restRasterDraws": 0,
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "happy_arc_19"
+        },
+        {
+          "role": "eye_R",
+          "part": "happy_arc_19"
+        }
+      ]
+    },
+    {
+      "face": "14_happy_16_manual",
+      "exactRest": true,
+      "canvasPathCount": 3,
+      "restRasterDraws": 0,
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "happy_arc_16"
+        },
+        {
+          "role": "eye_R",
+          "part": "happy_arc_16"
+        }
+      ]
+    },
+    {
+      "face": "15_misc_15_manual",
+      "exactRest": true,
+      "canvasPathCount": 3,
+      "restRasterDraws": 0,
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "flat_bar_14"
+        },
+        {
+          "role": "eye_R",
+          "part": "flat_bar_14"
+        }
+      ]
+    },
+    {
+      "face": "16_misc_16_manual",
+      "exactRest": true,
+      "canvasPathCount": 3,
+      "restRasterDraws": 0,
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "closed_lid_arc_05"
+        },
+        {
+          "role": "eye_R",
+          "part": "closed_lid_arc_05"
+        }
+      ]
+    },
+    {
+      "face": "17_misc_2_01_manual",
+      "exactRest": true,
+      "canvasPathCount": 3,
+      "restRasterDraws": 0,
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "flat_bar_14"
+        },
+        {
+          "role": "eye_R",
+          "part": "flat_bar_14"
+        }
+      ]
+    },
+    {
+      "face": "18_misc_2_02_manual",
+      "exactRest": true,
+      "canvasPathCount": 3,
+      "restRasterDraws": 0,
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "e_shape_12"
+        },
+        {
+          "role": "eye_R",
+          "part": "e_shape_11"
+        }
+      ]
+    },
+    {
+      "face": "19_misc_2_03_manual",
+      "exactRest": true,
+      "canvasPathCount": 3,
+      "restRasterDraws": 0,
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "chevron_01"
+        },
+        {
+          "role": "eye_R",
+          "part": "chevron_01"
+        }
+      ]
+    },
+    {
+      "face": "20_neutral_06_manual",
+      "exactRest": true,
+      "canvasPathCount": 3,
+      "restRasterDraws": 0,
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "circle_gap_02"
+        },
+        {
+          "role": "eye_R",
+          "part": "circle_gap_02"
+        }
+      ]
+    },
+    {
+      "face": "21_neutral_11_manual",
+      "exactRest": true,
+      "canvasPathCount": 3,
+      "restRasterDraws": 0,
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "closed_lid_arc_06"
+        },
+        {
+          "role": "eye_R",
+          "part": "closed_lid_arc_05"
+        }
+      ]
+    },
+    {
+      "face": "22_neutral_12_manual",
+      "exactRest": true,
+      "canvasPathCount": 3,
+      "restRasterDraws": 0,
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "closed_lid_arc_05"
+        },
+        {
+          "role": "eye_R",
+          "part": "closed_lid_arc_05"
+        }
+      ]
+    },
+    {
+      "face": "23_neutral_13_manual",
+      "exactRest": true,
+      "canvasPathCount": 3,
+      "restRasterDraws": 0,
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "closed_lid_arc_06"
+        },
+        {
+          "role": "eye_R",
+          "part": "closed_lid_arc_05"
+        }
+      ]
+    },
+    {
+      "face": "24_neutral_2_01_manual",
+      "exactRest": true,
+      "canvasPathCount": 3,
+      "restRasterDraws": 0,
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "open_C_51"
+        },
+        {
+          "role": "eye_R",
+          "part": "open_C_45"
+        }
+      ]
+    },
+    {
+      "face": "25_neutral_2_03_manual",
+      "exactRest": true,
+      "canvasPathCount": 3,
+      "restRasterDraws": 0,
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "circle_gap_03"
+        },
+        {
+          "role": "eye_R",
+          "part": "circle_gap_03"
+        }
+      ]
+    },
+    {
+      "face": "26_sad_01_manual",
+      "exactRest": true,
+      "canvasPathCount": 3,
+      "restRasterDraws": 0,
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "closed_lid_arc_07"
+        },
+        {
+          "role": "eye_R",
+          "part": "closed_lid_arc_07"
+        }
+      ]
+    },
+    {
+      "face": "27_sad_02_manual",
+      "exactRest": true,
+      "canvasPathCount": 3,
+      "restRasterDraws": 0,
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "e_shape_13"
+        },
+        {
+          "role": "eye_R",
+          "part": "e_shape_12"
+        }
+      ]
+    },
+    {
+      "face": "28_sad_03_manual",
+      "exactRest": true,
+      "canvasPathCount": 4,
+      "restRasterDraws": 0,
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "e_shape_11"
+        },
+        {
+          "role": "eye_R",
+          "part": "e_shape_12"
+        }
+      ]
+    },
+    {
+      "face": "29_sad_04_manual",
+      "exactRest": true,
+      "canvasPathCount": 3,
+      "restRasterDraws": 0,
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "happy_arc_15"
+        },
+        {
+          "role": "eye_R",
+          "part": "happy_arc_15"
+        }
+      ]
+    },
+    {
+      "face": "30_sad_05_manual",
+      "exactRest": true,
+      "canvasPathCount": 3,
+      "restRasterDraws": 0,
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "chevron_01"
+        },
+        {
+          "role": "eye_R",
+          "part": "chevron_01"
+        }
+      ]
+    },
+    {
+      "face": "31_sad_06_manual",
+      "exactRest": true,
+      "canvasPathCount": 3,
+      "restRasterDraws": 0,
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "droop_hook_09"
+        },
+        {
+          "role": "eye_R",
+          "part": "droop_hook_09"
+        }
+      ]
+    },
+    {
+      "face": "32_sad_07_manual",
+      "exactRest": true,
+      "canvasPathCount": 4,
+      "restRasterDraws": 0,
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "circle_gap_03"
+        },
+        {
+          "role": "eye_R",
+          "part": "circle_gap_02"
+        }
+      ]
+    },
+    {
+      "face": "33_sad_08_manual",
+      "exactRest": true,
+      "canvasPathCount": 3,
+      "restRasterDraws": 0,
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "open_C_46"
+        },
+        {
+          "role": "eye_R",
+          "part": "open_C_50"
+        }
+      ]
+    },
+    {
+      "face": "34_sad_09_manual",
+      "exactRest": true,
+      "canvasPathCount": 3,
+      "restRasterDraws": 0,
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "e_shape_12"
+        },
+        {
+          "role": "eye_R",
+          "part": "e_shape_12"
+        }
+      ]
+    },
+    {
+      "face": "35_sad_10_manual",
+      "exactRest": true,
+      "canvasPathCount": 2,
+      "restRasterDraws": 0,
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "happy_arc_18"
+        },
+        {
+          "role": "eye_R",
+          "part": "happy_arc_18"
+        }
+      ]
+    },
+    {
+      "face": "36_misc_03_manual",
+      "exactRest": true,
+      "canvasPathCount": 3,
+      "restRasterDraws": 0,
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "open_C_49"
+        },
+        {
+          "role": "eye_R",
+          "part": "open_C_43"
+        }
+      ]
+    },
+    {
+      "face": "37_misc_06_manual",
+      "exactRest": true,
+      "canvasPathCount": 3,
+      "restRasterDraws": 0,
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "open_C_44"
+        },
+        {
+          "role": "eye_R",
+          "part": "open_C_44"
+        }
+      ]
+    },
+    {
+      "face": "38_misc_2_06_manual",
+      "exactRest": true,
+      "canvasPathCount": 3,
+      "restRasterDraws": 0,
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "e_shape_12"
+        },
+        {
+          "role": "eye_R",
+          "part": "e_shape_11"
+        }
+      ]
+    },
+    {
+      "face": "39_neutral_02_manual",
+      "exactRest": true,
+      "canvasPathCount": 3,
+      "restRasterDraws": 0,
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "circle_gap_03"
+        },
+        {
+          "role": "eye_R",
+          "part": "circle_gap_03"
+        }
+      ]
+    },
+    {
+      "face": "40_neutral_03_manual",
+      "exactRest": true,
+      "canvasPathCount": 3,
+      "restRasterDraws": 0,
+      "eyes": [
+        {
+          "role": "eye_L",
+          "part": "open_C_44"
+        },
+        {
+          "role": "eye_R",
+          "part": "open_C_44"
+        }
+      ]
+    }
+  ],
+  "pixelFittingByPart": {
+    "open_C_47": [
+      {
+        "face": "01_angry_01_manual",
+        "role": "eye_L",
+        "method": "measured-raster",
+        "original": {
+          "x": 16.968,
+          "y": 21.5,
+          "w": 20.043999999999997,
+          "h": 15.803000000000003
+        },
+        "generated": {
+          "x": 17.02429646163195,
+          "y": 21.916682020627313,
+          "w": 19.95415104257569,
+          "h": 15.059484916169694
+        },
+        "widthRatio": 0.9955174138183841,
+        "heightRatio": 0.9529510166531476,
+        "centerDifference": 0.04634145857746919
+      }
+    ],
+    "open_C_42": [
+      {
+        "face": "01_angry_01_manual",
+        "role": "eye_R",
+        "method": "measured-raster",
+        "original": {
+          "x": 63.03099999999999,
+          "y": 19.519000000000002,
+          "w": 19.094,
+          "h": 17.434999999999995
+        },
+        "generated": {
+          "x": 63.113389491542854,
+          "y": 19.567504099197286,
+          "w": 18.928313641985007,
+          "h": 17.43409262507074
+        },
+        "widthRatio": 0.9913225956837229,
+        "heightRatio": 0.9999479567003582,
+        "centerDifference": 0.04805255352209083
+      }
+    ],
+    "angry_hook_00": [
+      {
+        "face": "02_angry_02_manual",
+        "role": "eye_L",
+        "method": "measured-raster",
+        "original": {
+          "x": 17.64725393772346,
+          "y": 18.467920467292846,
+          "w": 19.28587579412792,
+          "h": 17.85961423029418
+        },
+        "generated": {
+          "x": 17.162605189400796,
+          "y": 18.72265782374348,
+          "w": 19.73128592416108,
+          "h": 17.522287068817132
+        },
+        "widthRatio": 1.023095146665249,
+        "heightRatio": 0.9811122929573215,
+        "centerDifference": 0.27572302785457764
+      },
+      {
+        "face": "02_angry_02_manual",
+        "role": "eye_R",
+        "method": "measured-raster",
+        "original": {
+          "x": 63.11219078614536,
+          "y": 18.042421927788478,
+          "w": 19.340063883653944,
+          "h": 18.273780805734607
+        },
+        "generated": {
+          "x": 63.158167760842716,
+          "y": 18.277712608167743,
+          "w": 19.205572818411653,
+          "h": 17.901652677083245
+        },
+        "widthRatio": 0.993045986504938,
+        "heightRatio": 0.9796359531392331,
+        "centerDifference": 0.05362472642582707
+      },
+      {
+        "face": "04_angry_08_manual",
+        "role": "eye_L",
+        "method": "measured-raster",
+        "original": {
+          "x": 17.831568748732348,
+          "y": 18.858987385775748,
+          "w": 19.322452177781425,
+          "h": 18.12233381487485
+        },
+        "generated": {
+          "x": 17.70811373376165,
+          "y": 19.10339205427895,
+          "w": 19.401880944109642,
+          "h": 17.75833206825581
+        },
+        "widthRatio": 1.0041106980417087,
+        "heightRatio": 0.9799141903941607,
+        "centerDifference": 0.10443527694194991
+      },
+      {
+        "face": "04_angry_08_manual",
+        "role": "eye_R",
+        "method": "measured-raster",
+        "original": {
+          "x": 62.8469828151989,
+          "y": 18.851103704219557,
+          "w": 19.323240515838226,
+          "h": 18.130120006391675
+        },
+        "generated": {
+          "x": 62.89118496639598,
+          "y": 19.09523125474022,
+          "w": 19.391725781894934,
+          "h": 17.765007170711158
+        },
+        "widthRatio": 1.0035441915656214,
+        "heightRatio": 0.9798615323256659,
+        "centerDifference": 0.0997225578879895
+      }
+    ],
+    "open_C_48": [
+      {
+        "face": "03_angry_07_manual",
+        "role": "eye_L",
+        "method": "measured-raster",
+        "original": {
+          "x": 16.79631827755789,
+          "y": 23.991499406213645,
+          "w": 20.94635423093995,
+          "h": 10.553692876818435
+        },
+        "generated": {
+          "x": 16.916981437716323,
+          "y": 24.396781195926085,
+          "w": 20.810741589640266,
+          "h": 10.086170803772145
+        },
+        "widthRatio": 0.9935257162270573,
+        "heightRatio": 0.9557006179255776,
+        "centerDifference": 0.17948040076136276
+      },
+      {
+        "face": "03_angry_07_manual",
+        "role": "eye_R",
+        "method": "measured-raster",
+        "original": {
+          "x": 62.237,
+          "y": 24.209,
+          "w": 20.853999999999996,
+          "h": 10.590999999999998
+        },
+        "generated": {
+          "x": 62.27280135576059,
+          "y": 24.5917824129747,
+          "w": 20.78152366263565,
+          "h": 9.897911511414957
+        },
+        "widthRatio": 0.996524583419759,
+        "heightRatio": 0.9345587301874194,
+        "centerDifference": 0.03624080124619705
+      }
+    ],
+    "droop_hook_08": [
+      {
+        "face": "05_annoyed_01_manual",
+        "role": "eye_L",
+        "method": "measured-raster",
+        "original": {
+          "x": 15.910999999999998,
+          "y": 22.905,
+          "w": 20.502000000000002,
+          "h": 14.371999999999998
+        },
+        "generated": {
+          "x": 15.971796828931584,
+          "y": 23.474574886603214,
+          "w": 20.419297608592164,
+          "h": 13.315552618201558
+        },
+        "widthRatio": 0.9959661305527344,
+        "heightRatio": 0.9264926675620345,
+        "centerDifference": 0.045695229923646885
+      }
+    ],
+    "droop_hook_10": [
+      {
+        "face": "05_annoyed_01_manual",
+        "role": "eye_R",
+        "method": "measured-raster",
+        "original": {
+          "x": 62.477999999999994,
+          "y": 22.932,
+          "w": 23.148999999999994,
+          "h": 14.684
+        },
+        "generated": {
+          "x": 62.72134300203495,
+          "y": 22.999957470547592,
+          "w": 22.615566405791746,
+          "h": 14.637252409861198
+        },
+        "widthRatio": 0.976956516730388,
+        "heightRatio": 0.9968164267135112,
+        "centerDifference": 0.0503392333580924
+      }
+    ],
+    "happy_arc_17": [
+      {
+        "face": "06_annoyed_02_manual",
+        "role": "eye_L",
+        "method": "measured-raster",
+        "original": {
+          "x": 18.512050164345816,
+          "y": 24.415718742168036,
+          "w": 19.47574565841956,
+          "h": 8.55496322904048
+        },
+        "generated": {
+          "x": 19.70130151027531,
+          "y": 24.339450495518125,
+          "w": 17.122793901029038,
+          "h": 8.576015761365323
+        },
+        "widthRatio": 0.8791855367872236,
+        "heightRatio": 1.002460855968776,
+        "centerDifference": 0.06697178929572156
+      },
+      {
+        "face": "06_annoyed_02_manual",
+        "role": "eye_R",
+        "method": "measured-raster",
+        "original": {
+          "x": 61.9374364108147,
+          "y": 24.09737315557552,
+          "w": 19.402273332384134,
+          "h": 8.911042486620458
+        },
+        "generated": {
+          "x": 63.12289380681385,
+          "y": 24.058752474723242,
+          "w": 17.00998030302081,
+          "h": 8.88936375353019
+        },
+        "widthRatio": 0.8767003748282233,
+        "heightRatio": 0.9975672057312243,
+        "centerDifference": 0.050601912481281534
+      }
+    ],
+    "circle_gap_04": [
+      {
+        "face": "07_annoyed_03_manual",
+        "role": "eye_L",
+        "method": "measured-raster",
+        "original": {
+          "x": 16.385334913027126,
+          "y": 22.533045917204856,
+          "w": 21.845506825465876,
+          "h": 16.97078041367775
+        },
+        "generated": {
+          "x": 16.444916129137635,
+          "y": 23.77393343229112,
+          "w": 21.755729601826264,
+          "h": 14.399855526607961
+        },
+        "widthRatio": 0.9958903574837203,
+        "heightRatio": 0.8485087412363352,
+        "centerDifference": 0.046933962831237096
+      }
+    ],
+    "open_C_43": [
+      {
+        "face": "07_annoyed_03_manual",
+        "role": "eye_R",
+        "method": "measured-raster",
+        "original": {
+          "x": 61.844,
+          "y": 16.544999999999998,
+          "w": 22.206999999999994,
+          "h": 23.014000000000003
+        },
+        "generated": {
+          "x": 61.90991467589306,
+          "y": 17.0136806255904,
+          "w": 22.065142859661606,
+          "h": 22.21849588915759
+        },
+        "widthRatio": 0.9936120529410372,
+        "heightRatio": 0.9654339049777347,
+        "centerDifference": 0.07110556379115794
+      },
+      {
+        "face": "36_misc_03_manual",
+        "role": "eye_R",
+        "method": "measured-raster",
+        "original": {
+          "x": 61.97286272348291,
+          "y": 16.63042579928515,
+          "w": 22.07646632455807,
+          "h": 23.03994793349813
+        },
+        "generated": {
+          "x": 62.02211227559489,
+          "y": 17.12721493508472,
+          "w": 22.070557549909395,
+          "h": 22.160091604228693
+        },
+        "widthRatio": 0.9997323496178326,
+        "heightRatio": 0.9618117049652617,
+        "centerDifference": 0.07332402283375943
+      }
+    ],
+    "chevron_01": [
+      {
+        "face": "08_annoyed_04_manual",
+        "role": "eye_L",
+        "method": "measured-raster",
+        "original": {
+          "x": 18.32669843190739,
+          "y": 21.35429618184694,
+          "w": 16.555450089209,
+          "h": 15.72478816738096
+        },
+        "generated": {
+          "x": 18.37151827520906,
+          "y": 21.835830659759036,
+          "w": 16.46590320128274,
+          "h": 14.851538697947422
+        },
+        "widthRatio": 0.9945910931177505,
+        "heightRatio": 0.9444666942321689,
+        "centerDifference": 0.044909767164492506
+      },
+      {
+        "face": "08_annoyed_04_manual",
+        "role": "eye_R",
+        "method": "measured-raster",
+        "original": {
+          "x": 65.12525008630963,
+          "y": 21.526823370400702,
+          "w": 16.403169132113767,
+          "h": 15.728516504026913
+        },
+        "generated": {
+          "x": 65.16182606162099,
+          "y": 22.006215158291553,
+          "w": 16.61285238089988,
+          "h": 14.85987937584148
+        },
+        "widthRatio": 1.012783093748366,
+        "heightRatio": 0.9447731050819039,
+        "centerDifference": 0.14842686080933176
+      },
+      {
+        "face": "12_happy_09_manual",
+        "role": "eye_L",
+        "method": "measured-raster",
+        "original": {
+          "x": 18.490333152194044,
+          "y": 21.249731332366164,
+          "w": 16.64414413450625,
+          "h": 15.71916853801433
+        },
+        "generated": {
+          "x": 18.537077698182408,
+          "y": 21.729062826003165,
+          "w": 16.552626942244522,
+          "h": 14.857496465696919
+        },
+        "widthRatio": 0.9945015381072076,
+        "heightRatio": 0.9451833555805708,
+        "centerDifference": 0.04850547900135335
+      },
+      {
+        "face": "12_happy_09_manual",
+        "role": "eye_R",
+        "method": "measured-raster",
+        "original": {
+          "x": 64.86592840503884,
+          "y": 21.270632062557045,
+          "w": 16.624668695289422,
+          "h": 15.720636380523182
+        },
+        "generated": {
+          "x": 64.91066543695068,
+          "y": 21.750435149179754,
+          "w": 16.533640288923124,
+          "h": 14.856429096219
+        },
+        "widthRatio": 0.9945244980194949,
+        "heightRatio": 0.9450272073352656,
+        "centerDifference": 0.04770577531065163
+      },
+      {
+        "face": "19_misc_2_03_manual",
+        "role": "eye_L",
+        "method": "measured-raster",
+        "original": {
+          "x": 18.93299440973955,
+          "y": 21.742686971490535,
+          "w": 16.604653594142146,
+          "h": 15.720245634649775
+        },
+        "generated": {
+          "x": 18.69999919049684,
+          "y": 22.219951249737438,
+          "w": 16.811145963567895,
+          "h": 14.85674067079265
+        },
+        "widthRatio": 1.0124358131444908,
+        "heightRatio": 0.9450705170946038,
+        "centerDifference": 0.13749958387408548
+      },
+      {
+        "face": "19_misc_2_03_manual",
+        "role": "eye_R",
+        "method": "measured-raster",
+        "original": {
+          "x": 64.44021779411575,
+          "y": 21.390438020690738,
+          "w": 16.49255039029618,
+          "h": 15.727191181723658
+        },
+        "generated": {
+          "x": 64.48183791327389,
+          "y": 21.87118108295514,
+          "w": 16.518505364372004,
+          "h": 14.855427614459934
+        },
+        "widthRatio": 1.0015737392617636,
+        "heightRatio": 0.9445696591851196,
+        "centerDifference": 0.07066422661350978
+      },
+      {
+        "face": "30_sad_05_manual",
+        "role": "eye_L",
+        "method": "measured-raster",
+        "original": {
+          "x": 18.54486374984409,
+          "y": 21.525995201203735,
+          "w": 16.400465963053268,
+          "h": 15.728521625541678
+        },
+        "generated": {
+          "x": 18.30476642733304,
+          "y": 22.005512228460553,
+          "w": 16.603493475909,
+          "h": 14.859592140191786
+        },
+        "widthRatio": 1.0123793746661292,
+        "heightRatio": 0.9447545353570402,
+        "centerDifference": 0.1457227268972788
+      },
+      {
+        "face": "30_sad_05_manual",
+        "role": "eye_R",
+        "method": "measured-raster",
+        "original": {
+          "x": 65.04938977963279,
+          "y": 21.409110544576624,
+          "w": 16.512908588196673,
+          "h": 15.726550948599815
+        },
+        "generated": {
+          "x": 65.09207347049094,
+          "y": 21.89015739553872,
+          "w": 16.49893863724303,
+          "h": 14.854091437984703
+        },
+        "widthRatio": 0.9991539981657968,
+        "heightRatio": 0.9445231498332576,
+        "centerDifference": 0.057297210602129736
+      }
+    ],
+    "circle_gap_02": [
+      {
+        "face": "09_happy_03_manual",
+        "role": "eye_L",
+        "method": "measured-raster",
+        "original": {
+          "x": 16.429702292825766,
+          "y": 17.861326593683152,
+          "w": 21.912021984624538,
+          "h": 21.924086336635376
+        },
+        "generated": {
+          "x": 16.47397461959934,
+          "y": 18.16400879800946,
+          "w": 21.771112584919926,
+          "h": 21.464222467280553
+        },
+        "widthRatio": 0.9935693109561734,
+        "heightRatio": 0.9790247191014576,
+        "centerDifference": 0.07731829275159309
+      },
+      {
+        "face": "09_happy_03_manual",
+        "role": "eye_R",
+        "method": "measured-raster",
+        "original": {
+          "x": 61.67989233313525,
+          "y": 17.880832975281642,
+          "w": 21.90275971524651,
+          "h": 21.927492104812238
+        },
+        "generated": {
+          "x": 61.76565390348228,
+          "y": 18.178123260654196,
+          "w": 21.79169128135188,
+          "h": 21.461587523913288
+        },
+        "widthRatio": 0.9949290210302898,
+        "heightRatio": 0.9787524912255378,
+        "centerDifference": 0.07108495258684007
+      },
+      {
+        "face": "11_happy_05_manual",
+        "role": "eye_L",
+        "method": "measured-raster",
+        "original": {
+          "x": 16.64729041887642,
+          "y": 18.047957298150394,
+          "w": 21.267390108368215,
+          "h": 21.9179495999999
+        },
+        "generated": {
+          "x": 16.638206744634807,
+          "y": 18.476348331066028,
+          "w": 21.31471601514722,
+          "h": 21.161704432346973
+        },
+        "widthRatio": 1.0022252804193583,
+        "heightRatio": 0.9654965367904245,
+        "centerDifference": 0.05233996899409289
+      },
+      {
+        "face": "20_neutral_06_manual",
+        "role": "eye_L",
+        "method": "measured-raster",
+        "original": {
+          "x": 16.20234917538069,
+          "y": 18.011638209692965,
+          "w": 21.919557234622943,
+          "h": 21.92152073284691
+        },
+        "generated": {
+          "x": 16.21832123423639,
+          "y": 18.34100822299518,
+          "w": 21.854987758037012,
+          "h": 21.388641990363467
+        },
+        "widthRatio": 0.9970542526979541,
+        "heightRatio": 0.975691524827245,
+        "centerDifference": 0.06501053161272116
+      },
+      {
+        "face": "20_neutral_06_manual",
+        "role": "eye_R",
+        "method": "measured-raster",
+        "original": {
+          "x": 61.87926240022281,
+          "y": 18.01875295226217,
+          "w": 21.922351165783333,
+          "h": 21.918613417036518
+        },
+        "generated": {
+          "x": 61.926486003774585,
+          "y": 18.348900587651883,
+          "w": 21.857784518612533,
+          "h": 21.38610405672724
+        },
+        "widthRatio": 0.9970547571890201,
+        "heightRatio": 0.9757051529593849,
+        "centerDifference": 0.06561647425871941
+      },
+      {
+        "face": "32_sad_07_manual",
+        "role": "eye_R",
+        "method": "measured-raster",
+        "original": {
+          "x": 62.137711656429715,
+          "y": 14.919362830129405,
+          "w": 21.575628812692173,
+          "h": 21.923556033515542
+        },
+        "generated": {
+          "x": 62.09603334733988,
+          "y": 15.251786819855795,
+          "w": 21.383512147260788,
+          "h": 21.348824029616125
+        },
+        "widthRatio": 0.9910956632087418,
+        "heightRatio": 0.9737847271208742,
+        "centerDifference": 0.14491930429844405
+      }
+    ],
+    "happy_arc_16": [
+      {
+        "face": "10_happy_04_manual",
+        "role": "eye_L",
+        "method": "measured-raster",
+        "original": {
+          "x": 17.71776842269843,
+          "y": 25.644553033243,
+          "w": 20.48979452734043,
+          "h": 9.407584736819297
+        },
+        "generated": {
+          "x": 17.776297110603785,
+          "y": 26.149346622933603,
+          "w": 20.37178926435393,
+          "h": 8.501890663463694
+        },
+        "widthRatio": 0.9942407786066844,
+        "heightRatio": 0.9037272478863881,
+        "centerDifference": 0.051948715021992144
+      },
+      {
+        "face": "10_happy_04_manual",
+        "role": "eye_R",
+        "method": "measured-raster",
+        "original": {
+          "x": 61.41346036026038,
+          "y": 25.667842348334776,
+          "w": 20.540832666077804,
+          "h": 8.924463130582422
+        },
+        "generated": {
+          "x": 61.473163026365135,
+          "y": 26.043112338152508,
+          "w": 20.330442440239814,
+          "h": 9.553410135616563
+        },
+        "widthRatio": 0.9897574636209642,
+        "heightRatio": 1.0704744919477407,
+        "centerDifference": 0.6912421051522808
+      },
+      {
+        "face": "14_happy_16_manual",
+        "role": "eye_L",
+        "method": "measured-raster",
+        "original": {
+          "x": 17.749821294420432,
+          "y": 25.621520077003517,
+          "w": 20.54635908884199,
+          "h": 8.75771188894428
+        },
+        "generated": {
+          "x": 17.882735593539355,
+          "y": 26.00974859390758,
+          "w": 20.35519421832257,
+          "h": 9.373159999396144
+        },
+        "widthRatio": 0.9906959247770942,
+        "heightRatio": 1.0702749894328911,
+        "centerDifference": 0.6969531194517752
+      },
+      {
+        "face": "14_happy_16_manual",
+        "role": "eye_R",
+        "method": "measured-raster",
+        "original": {
+          "x": 61.57191368602446,
+          "y": 25.61186906621185,
+          "w": 20.524796235324963,
+          "h": 9.134243449838399
+        },
+        "generated": {
+          "x": 61.63437913071183,
+          "y": 25.973878827499306,
+          "w": 20.28834465222247,
+          "h": 9.77563143689352
+        },
+        "widthRatio": 0.988479711058201,
+        "heightRatio": 1.070217965021117,
+        "centerDifference": 0.6849771040851673
+      }
+    ],
+    "circle_gap_03": [
+      {
+        "face": "11_happy_05_manual",
+        "role": "eye_R",
+        "method": "measured-raster",
+        "original": {
+          "x": 61.91048529118777,
+          "y": 17.888730639584253,
+          "w": 21.563107924014666,
+          "h": 22.27799477831246
+        },
+        "generated": {
+          "x": 61.975446422566435,
+          "y": 18.439831315153878,
+          "w": 21.431760563908497,
+          "h": 21.31303779379596
+        },
+        "widthRatio": 0.9939086999625,
+        "heightRatio": 0.9566856445511028,
+        "centerDifference": 0.0686258826393769
+      },
+      {
+        "face": "25_neutral_2_03_manual",
+        "role": "eye_L",
+        "method": "measured-raster",
+        "original": {
+          "x": 16.437474928102333,
+          "y": 18.342494711890645,
+          "w": 21.51598286035739,
+          "h": 22.279639694794405
+        },
+        "generated": {
+          "x": 16.50825549178416,
+          "y": 18.871793067360606,
+          "w": 21.394765713435792,
+          "h": 21.357446840097758
+        },
+        "widthRatio": 0.994366181284475,
+        "heightRatio": 0.9586082689249182,
+        "centerDifference": 0.06895630779389096
+      },
+      {
+        "face": "25_neutral_2_03_manual",
+        "role": "eye_R",
+        "method": "measured-raster",
+        "original": {
+          "x": 62.03943206169068,
+          "y": 18.361358281080065,
+          "w": 21.577287173807633,
+          "h": 22.27697850212884
+        },
+        "generated": {
+          "x": 62.09085931819784,
+          "y": 18.869365648692884,
+          "w": 21.35334799024551,
+          "h": 21.39650586386758
+        },
+        "widthRatio": 0.9896215320416202,
+        "heightRatio": 0.9604761194083336,
+        "centerDifference": 0.0908751306617641
+      },
+      {
+        "face": "32_sad_07_manual",
+        "role": "eye_L",
+        "method": "measured-raster",
+        "original": {
+          "x": 15.842511050577492,
+          "y": 14.969077787261767,
+          "w": 22.25016839858563,
+          "h": 22.278192691371828
+        },
+        "generated": {
+          "x": 16.12270586593188,
+          "y": 15.370917897835673,
+          "w": 21.860665903424096,
+          "h": 21.61988592138723
+        },
+        "widthRatio": 0.9824944023710718,
+        "heightRatio": 0.9704506205191611,
+        "centerDifference": 0.11217826594158632
+      },
+      {
+        "face": "39_neutral_02_manual",
+        "role": "eye_L",
+        "method": "measured-raster",
+        "original": {
+          "x": 16.681430487335714,
+          "y": 18.28205472151924,
+          "w": 21.579351692038063,
+          "h": 22.276808736362955
+        },
+        "generated": {
+          "x": 16.857497446501206,
+          "y": 18.789324118559783,
+          "w": 21.35181629375645,
+          "h": 21.39778142553738
+        },
+        "widthRatio": 0.9894558742297358,
+        "heightRatio": 0.9605406985700462,
+        "centerDifference": 0.09204367617142667
+      },
+      {
+        "face": "39_neutral_02_manual",
+        "role": "eye_R",
+        "method": "measured-raster",
+        "original": {
+          "x": 61.742588342257406,
+          "y": 18.272099682114845,
+          "w": 21.548571785982027,
+          "h": 22.278778844741534
+        },
+        "generated": {
+          "x": 61.79349752181396,
+          "y": 18.790224764034207,
+          "w": 21.373694285495347,
+          "h": 21.378485437465848
+        },
+        "widthRatio": 0.9918844969298409,
+        "heightRatio": 0.9595896429714691,
+        "centerDifference": 0.07717168812683489
+      }
+    ],
+    "happy_arc_19": [
+      {
+        "face": "13_happy_14_manual",
+        "role": "eye_L",
+        "method": "measured-raster",
+        "original": {
+          "x": 17.42279286977969,
+          "y": 19.309354989032624,
+          "w": 20.497374167295884,
+          "h": 8.115203677497329
+        },
+        "generated": {
+          "x": 18.85800835103822,
+          "y": 19.386948178749215,
+          "w": 17.654621947087794,
+          "h": 8.133546999800028
+        },
+        "widthRatio": 0.8613113954496777,
+        "heightRatio": 1.0022603649928792,
+        "centerDifference": 0.08786163861485809
+      },
+      {
+        "face": "13_happy_14_manual",
+        "role": "eye_R",
+        "method": "measured-raster",
+        "original": {
+          "x": 61.93803332718311,
+          "y": 19.29163127256782,
+          "w": 20.463576936237175,
+          "h": 8.600316876078514
+        },
+        "generated": {
+          "x": 63.37687439141466,
+          "y": 19.349931747611087,
+          "w": 17.57365048409737,
+          "h": 8.578235138949765
+        },
+        "widthRatio": 0.8587770622338129,
+        "heightRatio": 0.9974324507518824,
+        "centerDifference": 0.047654498949362384
+      }
+    ],
+    "flat_bar_14": [
+      {
+        "face": "15_misc_15_manual",
+        "role": "eye_L",
+        "method": "measured-raster",
+        "original": {
+          "x": 17.965372000024328,
+          "y": 27.75957026644945,
+          "w": 20.429255999951344,
+          "h": 3.2008594671010977
+        },
+        "generated": {
+          "x": 17.994390655150273,
+          "y": 27.878243581919328,
+          "w": 20.37011676660339,
+          "h": 3.025276816286407
+        },
+        "widthRatio": 0.9971051695006371,
+        "heightRatio": 0.9451451547250498,
+        "centerDifference": 0.03088690448798205
+      },
+      {
+        "face": "15_misc_15_manual",
+        "role": "eye_R",
+        "method": "measured-raster",
+        "original": {
+          "x": 61.6059123110095,
+          "y": 27.714046611224816,
+          "w": 20.428175377980985,
+          "h": 3.291906777550367
+        },
+        "generated": {
+          "x": 61.635418606925235,
+          "y": 27.831865335263,
+          "w": 20.3717512122575,
+          "h": 3.1184141882645626
+        },
+        "widthRatio": 0.9972379243530334,
+        "heightRatio": 0.9472972350040523,
+        "centerDifference": 0.031099370668130687
+      },
+      {
+        "face": "17_misc_2_01_manual",
+        "role": "eye_L",
+        "method": "measured-raster",
+        "original": {
+          "x": 17.67501907026198,
+          "y": 27.82178924789825,
+          "w": 20.429961859476045,
+          "h": 3.076421504203503
+        },
+        "generated": {
+          "x": 17.704616558235827,
+          "y": 27.941692630756172,
+          "w": 20.370517388130907,
+          "h": 2.896676280862735
+        },
+        "widthRatio": 0.9970903288144141,
+        "heightRatio": 0.9415732782080833,
+        "centerDifference": 0.030031030287133366
+      },
+      {
+        "face": "17_misc_2_01_manual",
+        "role": "eye_R",
+        "method": "measured-raster",
+        "original": {
+          "x": 61.89510382681319,
+          "y": 27.797508383162256,
+          "w": 20.42979234637361,
+          "h": 3.1249832336754872
+        },
+        "generated": {
+          "x": 61.924757424081974,
+          "y": 27.916923206328118,
+          "w": 20.371358382889724,
+          "h": 2.946588789376431
+        },
+        "widthRatio": 0.997139767135506,
+        "heightRatio": 0.9429134715422983,
+        "centerDifference": 0.030220755190770665
+      }
+    ],
+    "closed_lid_arc_05": [
+      {
+        "face": "16_misc_16_manual",
+        "role": "eye_L",
+        "method": "measured-raster",
+        "original": {
+          "x": 17.921237000663385,
+          "y": 24.4614049935286,
+          "w": 20.604808228038998,
+          "h": 8.468266907578277
+        },
+        "generated": {
+          "x": 19.28745977113373,
+          "y": 24.419863666174898,
+          "w": 17.864173919798507,
+          "h": 8.453733925137684
+        },
+        "widthRatio": 0.8669905452208461,
+        "heightRatio": 0.9982838303753052,
+        "centerDifference": 0.04897925205048514
+      },
+      {
+        "face": "16_misc_16_manual",
+        "role": "eye_R",
+        "method": "measured-raster",
+        "original": {
+          "x": 61.385453905538796,
+          "y": 24.688013047111337,
+          "w": 20.614042360081633,
+          "h": 8.236753781537262
+        },
+        "generated": {
+          "x": 62.76015318547864,
+          "y": 24.614310281731555,
+          "w": 17.895171048839686,
+          "h": 8.240335133265098
+        },
+        "widthRatio": 0.8681058637724085,
+        "heightRatio": 1.0004348013577709,
+        "centerDifference": 0.0735141268456956
+      },
+      {
+        "face": "21_neutral_11_manual",
+        "role": "eye_R",
+        "method": "measured-raster",
+        "original": {
+          "x": 62.425468952068506,
+          "y": 25.36780723966549,
+          "w": 20.610210168861485,
+          "h": 8.369922932654267
+        },
+        "generated": {
+          "x": 63.79998561626691,
+          "y": 25.312406052691912,
+          "w": 17.878898270269545,
+          "h": 8.36338399885301
+        },
+        "widthRatio": 0.8674777269996748,
+        "heightRatio": 0.9992187581828565,
+        "centerDifference": 0.05933597470851102
+      },
+      {
+        "face": "22_neutral_12_manual",
+        "role": "eye_L",
+        "method": "measured-raster",
+        "original": {
+          "x": 18.093691556481847,
+          "y": 24.02603037949632,
+          "w": 20.56855697212884,
+          "h": 8.822070122918054
+        },
+        "generated": {
+          "x": 19.49326682026956,
+          "y": 24.034814268361433,
+          "w": 17.7947311364697,
+          "h": 8.762924178945074
+        },
+        "widthRatio": 0.8651424191100145,
+        "heightRatio": 0.9932956842159607,
+        "centerDifference": 0.024341753884861154
+      },
+      {
+        "face": "22_neutral_12_manual",
+        "role": "eye_R",
+        "method": "measured-raster",
+        "original": {
+          "x": 61.09015524273697,
+          "y": 24.629044814817625,
+          "w": 20.61443490770487,
+          "h": 8.194707995272308
+        },
+        "generated": {
+          "x": 62.46492163011995,
+          "y": 24.549673090315398,
+          "w": 17.899448530559802,
+          "h": 8.201319277485577
+        },
+        "widthRatio": 0.8682968323264437,
+        "heightRatio": 1.000806774593687,
+        "centerDifference": 0.07800264380321338
+      },
+      {
+        "face": "23_neutral_13_manual",
+        "role": "eye_R",
+        "method": "measured-raster",
+        "original": {
+          "x": 61.692483492612766,
+          "y": 24.697865550681005,
+          "w": 20.613707168746608,
+          "h": 8.257520266842915
+        },
+        "generated": {
+          "x": 63.067439572876026,
+          "y": 24.769214376673254,
+          "w": 17.90846010779879,
+          "h": 8.102252137525362
+        },
+        "widthRatio": 0.8687646506859587,
+        "heightRatio": 0.9811967607344527,
+        "centerDifference": 0.023200150973410327
+      }
+    ],
+    "e_shape_12": [
+      {
+        "face": "18_misc_2_02_manual",
+        "role": "eye_L",
+        "method": "measured-raster",
+        "original": {
+          "x": 17.174,
+          "y": 19.37,
+          "w": 21.043,
+          "h": 21.468
+        },
+        "generated": {
+          "x": 17.239759375,
+          "y": 20.371612500000005,
+          "w": 20.91148125,
+          "h": 19.59629375
+        },
+        "widthRatio": 0.9937500000000001,
+        "heightRatio": 0.9128141303335197,
+        "centerDifference": 0.06575937500000428
+      },
+      {
+        "face": "27_sad_02_manual",
+        "role": "eye_R",
+        "method": "measured-raster",
+        "original": {
+          "x": 61.5511125574723,
+          "y": 19.249617687197485,
+          "w": 20.843644015302146,
+          "h": 21.391431495558322
+        },
+        "generated": {
+          "x": 61.75166343398219,
+          "y": 19.862409000212768,
+          "w": 20.71808029591672,
+          "h": 20.263867216357536
+        },
+        "widthRatio": 0.9939759228619888,
+        "heightRatio": 0.9472889750536372,
+        "centerDifference": 0.14622654025033632
+      },
+      {
+        "face": "28_sad_03_manual",
+        "role": "eye_R",
+        "method": "measured-raster",
+        "original": {
+          "x": 61.39389347943275,
+          "y": 16.149592996347536,
+          "w": 20.862768342287772,
+          "h": 21.38953018785029
+        },
+        "generated": {
+          "x": 61.59861975788475,
+          "y": 16.759240073739505,
+          "w": 20.723848890876965,
+          "h": 20.272858437349917
+        },
+        "widthRatio": 0.9933412743154884,
+        "heightRatio": 0.947793535402911,
+        "centerDifference": 0.14467162733992023
+      },
+      {
+        "face": "34_sad_09_manual",
+        "role": "eye_L",
+        "method": "measured-raster",
+        "original": {
+          "x": 17.6783518661801,
+          "y": 19.64177198564762,
+          "w": 20.85472179714524,
+          "h": 21.390380452409293
+        },
+        "generated": {
+          "x": 17.608656931445847,
+          "y": 20.252746906858764,
+          "w": 20.721460405679448,
+          "h": 20.269105396221075
+        },
+        "widthRatio": 0.9936100134654382,
+        "heightRatio": 0.9475804061230747,
+        "centerDifference": 0.14532216165501144
+      },
+      {
+        "face": "34_sad_09_manual",
+        "role": "eye_R",
+        "method": "measured-raster",
+        "original": {
+          "x": 61.474503475805534,
+          "y": 19.63793451759112,
+          "w": 20.83469442222374,
+          "h": 21.39218226324165
+        },
+        "generated": {
+          "x": 61.673136749730794,
+          "y": 20.252183668281624,
+          "w": 20.715273967392,
+          "h": 20.25957667259201
+        },
+        "widthRatio": 0.9942681926400438,
+        "heightRatio": 0.9470551635774063,
+        "centerDifference": 0.14696416517064195
+      },
+      {
+        "face": "38_misc_2_06_manual",
+        "role": "eye_L",
+        "method": "measured-raster",
+        "original": {
+          "x": 17.087108190867703,
+          "y": 16.491256191897705,
+          "w": 20.925125011621674,
+          "h": 21.447772809528324
+        },
+        "generated": {
+          "x": 17.12751420032835,
+          "y": 17.412697203662667,
+          "w": 20.82178663754759,
+          "h": 19.7216781439948
+        },
+        "widthRatio": 0.9950615170032824,
+        "heightRatio": 0.919521029952038,
+        "centerDifference": 0.059470000135045435
+      }
+    ],
+    "e_shape_11": [
+      {
+        "face": "18_misc_2_02_manual",
+        "role": "eye_R",
+        "method": "measured-raster",
+        "original": {
+          "x": 61.98394514391488,
+          "y": 19.642147257336347,
+          "w": 20.725371761165135,
+          "h": 20.934085946723403
+        },
+        "generated": {
+          "x": 62.051751049787654,
+          "y": 20.576765374611284,
+          "w": 20.59768291573556,
+          "h": 19.192579155820553
+        },
+        "widthRatio": 0.9938390082020707,
+        "heightRatio": 0.9168099913540563,
+        "centerDifference": 0.06398746785430375
+      },
+      {
+        "face": "28_sad_03_manual",
+        "role": "eye_L",
+        "method": "measured-raster",
+        "original": {
+          "x": 18.21624626021315,
+          "y": 16.40370183500821,
+          "w": 20.172151236175658,
+          "h": 21.012788305493537
+        },
+        "generated": {
+          "x": 18.106280232920234,
+          "y": 17.067780472779834,
+          "w": 20.123267248955436,
+          "h": 19.654194271639096
+        },
+        "widthRatio": 0.9975766596904867,
+        "heightRatio": 0.9353444191174165,
+        "centerDifference": 0.13526682944163437
+      },
+      {
+        "face": "38_misc_2_06_manual",
+        "role": "eye_R",
+        "method": "measured-raster",
+        "original": {
+          "x": 62.18569944933074,
+          "y": 16.803710486743846,
+          "w": 20.451483180774858,
+          "h": 20.918386163261044
+        },
+        "generated": {
+          "x": 62.261980574134064,
+          "y": 17.760229053015493,
+          "w": 20.3186594663863,
+          "h": 19.12192042143397
+        },
+        "widthRatio": 0.9935054238749091,
+        "heightRatio": 0.9141202515430084,
+        "centerDifference": 0.05911535102253432
+      }
+    ],
+    "closed_lid_arc_06": [
+      {
+        "face": "21_neutral_11_manual",
+        "role": "eye_L",
+        "method": "measured-raster",
+        "original": {
+          "x": 17.406,
+          "y": 22.935,
+          "w": 19.372999999999998,
+          "h": 8.376
+        },
+        "generated": {
+          "x": 18.721399705781806,
+          "y": 22.894428822049683,
+          "w": 16.72554522072265,
+          "h": 8.35934463228627
+        },
+        "widthRatio": 0.8633430661602567,
+        "heightRatio": 0.9980115368059062,
+        "centerDifference": 0.04960291326583373
+      },
+      {
+        "face": "23_neutral_13_manual",
+        "role": "eye_L",
+        "method": "measured-raster",
+        "original": {
+          "x": 18.267356024943435,
+          "y": 25.079225997665123,
+          "w": 19.434794301994387,
+          "h": 7.691780976674343
+        },
+        "generated": {
+          "x": 19.52558567792895,
+          "y": 25.023363368927388,
+          "w": 16.861615761314432,
+          "h": 7.662229888235853
+        },
+        "widthRatio": 0.867599394122947,
+        "heightRatio": 0.9961580954361409,
+        "centerDifference": 0.07611845620604715
+      }
+    ],
+    "open_C_51": [
+      {
+        "face": "24_neutral_2_01_manual",
+        "role": "eye_L",
+        "method": "measured-raster",
+        "original": {
+          "x": 15.438643651436653,
+          "y": 24.23566437317145,
+          "w": 23.227367669338378,
+          "h": 10.591520931962522
+        },
+        "generated": {
+          "x": 16.936275199590575,
+          "y": 24.208484999589064,
+          "w": 20.22721945374434,
+          "h": 10.580663026806665
+        },
+        "widthRatio": 0.8708356341405649,
+        "heightRatio": 0.998974849294487,
+        "centerDifference": 0.032699679395788606
+      }
+    ],
+    "open_C_45": [
+      {
+        "face": "24_neutral_2_01_manual",
+        "role": "eye_R",
+        "method": "measured-raster",
+        "original": {
+          "x": 62.104001340394184,
+          "y": 23.978630494897896,
+          "w": 21.885476197148435,
+          "h": 10.21423636494717
+        },
+        "generated": {
+          "x": 63.813453252647506,
+          "y": 24.013959465208778,
+          "w": 18.474318549951704,
+          "h": 10.20627373863482
+        },
+        "widthRatio": 0.8441360098145277,
+        "heightRatio": 0.9992204384128337,
+        "centerDifference": 0.03158601628597999
+      }
+    ],
+    "closed_lid_arc_07": [
+      {
+        "face": "26_sad_01_manual",
+        "role": "eye_L",
+        "method": "measured-raster",
+        "original": {
+          "x": 16.412757835604758,
+          "y": 21.77761308891472,
+          "w": 21.294556753538856,
+          "h": 11.795900689896543
+        },
+        "generated": {
+          "x": 16.46335521056719,
+          "y": 22.18960687168099,
+          "w": 21.169689090342953,
+          "h": 10.848450323312573
+        },
+        "widthRatio": 0.9941361698841112,
+        "heightRatio": 0.9196796928448641,
+        "centerDifference": 0.06285592666209776
+      },
+      {
+        "face": "26_sad_01_manual",
+        "role": "eye_R",
+        "method": "measured-raster",
+        "original": {
+          "x": 62.5914651941901,
+          "y": 21.40697726705147,
+          "w": 21.035778058706683,
+          "h": 12.280821545473168
+        },
+        "generated": {
+          "x": 62.64443888355065,
+          "y": 21.812771609254707,
+          "w": 20.988810357842695,
+          "h": 11.31563604938118
+        },
+        "widthRatio": 0.9977672467957729,
+        "heightRatio": 0.9214070905176726,
+        "centerDifference": 0.08226570208794025
+      }
+    ],
+    "e_shape_13": [
+      {
+        "face": "27_sad_02_manual",
+        "role": "eye_L",
+        "method": "measured-raster",
+        "original": {
+          "x": 18.038999999999998,
+          "y": 20.433,
+          "w": 20.259999999999998,
+          "h": 20.589000000000002
+        },
+        "generated": {
+          "x": 18.12939599877175,
+          "y": 20.534645121290357,
+          "w": 20.160281994472847,
+          "h": 20.485427762946447
+        },
+        "widthRatio": 0.9950780846235364,
+        "heightRatio": 0.9949695353318007,
+        "centerDifference": 0.0642586041082871
+      }
+    ],
+    "happy_arc_15": [
+      {
+        "face": "29_sad_04_manual",
+        "role": "eye_L",
+        "method": "measured-raster",
+        "original": {
+          "x": 16.388156355574868,
+          "y": 22.235383261170227,
+          "w": 21.172849007897454,
+          "h": 11.498256817685606
+        },
+        "generated": {
+          "x": 17.538408598518476,
+          "y": 22.200494354911108,
+          "w": 18.83244961522512,
+          "h": 11.45844623227039
+        },
+        "widthRatio": 0.88946223572466,
+        "heightRatio": 0.9965376851425006,
+        "centerDifference": 0.058312135420113036
+      },
+      {
+        "face": "29_sad_04_manual",
+        "role": "eye_R",
+        "method": "measured-raster",
+        "original": {
+          "x": 62.4793971713577,
+          "y": 22.18019011240191,
+          "w": 21.138468822053788,
+          "h": 11.569026511316958
+        },
+        "generated": {
+          "x": 63.67199869406718,
+          "y": 22.1520266182299,
+          "w": 18.79185074303964,
+          "h": 11.525836870433164
+        },
+        "widthRatio": 0.8889882659539692,
+        "heightRatio": 0.9962667869382489,
+        "centerDifference": 0.05336749742429037
+      }
+    ],
+    "droop_hook_09": [
+      {
+        "face": "31_sad_06_manual",
+        "role": "eye_L",
+        "method": "measured-raster",
+        "original": {
+          "x": 14.265,
+          "y": 20.656890456519847,
+          "w": 22.540999999999997,
+          "h": 16.241
+        },
+        "generated": {
+          "x": 14.334826051762144,
+          "y": 20.87423188822769,
+          "w": 22.465711075012386,
+          "h": 15.881606061571887
+        },
+        "widthRatio": 0.9966599119387956,
+        "heightRatio": 0.9778711939887869,
+        "centerDifference": 0.04952534951196542
+      },
+      {
+        "face": "31_sad_06_manual",
+        "role": "eye_R",
+        "method": "measured-raster",
+        "original": {
+          "x": 63.074452642084175,
+          "y": 20.89102516619554,
+          "w": 22.56843627028701,
+          "h": 15.883586355510326
+        },
+        "generated": {
+          "x": 63.13954702446116,
+          "y": 21.072267930388435,
+          "w": 22.473928500322053,
+          "h": 15.581913459165229
+        },
+        "widthRatio": 0.9958123917477888,
+        "heightRatio": 0.9810072555660302,
+        "centerDifference": 0.03525375726376754
+      }
+    ],
+    "open_C_46": [
+      {
+        "face": "33_sad_08_manual",
+        "role": "eye_L",
+        "method": "measured-raster",
+        "original": {
+          "x": 14.018999999999997,
+          "y": 22.003,
+          "w": 23.827,
+          "h": 17.478
+        },
+        "generated": {
+          "x": 14.088924446537174,
+          "y": 22.802112660388733,
+          "w": 23.72835308659997,
+          "h": 15.978421592622578
+        },
+        "widthRatio": 0.9958598684937243,
+        "heightRatio": 0.9142019448805685,
+        "centerDifference": 0.05345282184421689
+      }
+    ],
+    "open_C_50": [
+      {
+        "face": "33_sad_08_manual",
+        "role": "eye_R",
+        "method": "measured-raster",
+        "original": {
+          "x": 62.314,
+          "y": 18.127,
+          "w": 21.875999999999998,
+          "h": 20.962000000000003
+        },
+        "generated": {
+          "x": 62.720869239267174,
+          "y": 18.194996847972313,
+          "w": 21.061368217103677,
+          "h": 20.96110669563803
+        },
+        "widthRatio": 0.9627613922610934,
+        "heightRatio": 0.999957384583438,
+        "centerDifference": 0.06755167244130512
+      }
+    ],
+    "happy_arc_18": [
+      {
+        "face": "35_sad_10_manual",
+        "role": "eye_L",
+        "method": "measured-raster",
+        "original": {
+          "x": 15.972780369523539,
+          "y": 20.70533565824302,
+          "w": 21.523773261022516,
+          "h": 13.332544167868072
+        },
+        "generated": {
+          "x": 16.67132036413081,
+          "y": 20.67362628211722,
+          "w": 20.07482562717966,
+          "h": 13.280615370549178
+        },
+        "widthRatio": 0.9326815230642315,
+        "heightRatio": 0.9961051096726127,
+        "centerDifference": 0.06323628260580884
+      },
+      {
+        "face": "35_sad_10_manual",
+        "role": "eye_R",
+        "method": "measured-raster",
+        "original": {
+          "x": 62.50344636945395,
+          "y": 20.70533565824302,
+          "w": 21.523773261022516,
+          "h": 13.332544167868072
+        },
+        "generated": {
+          "x": 63.25385400868923,
+          "y": 20.67362628211722,
+          "w": 20.074825627179663,
+          "h": 13.280615370549178
+        },
+        "widthRatio": 0.9326815230642316,
+        "heightRatio": 0.9961051096726127,
+        "centerDifference": 0.0632362826056828
+      }
+    ],
+    "open_C_49": [
+      {
+        "face": "36_misc_03_manual",
+        "role": "eye_L",
+        "method": "measured-raster",
+        "original": {
+          "x": 15.862000000000002,
+          "y": 23.114,
+          "w": 22.372999999999998,
+          "h": 16.560999999999996
+        },
+        "generated": {
+          "x": 16.927963673586767,
+          "y": 23.169142163059313,
+          "w": 20.255542708262517,
+          "h": 16.54652994456395
+        },
+        "widthRatio": 0.9053565774935198,
+        "heightRatio": 0.9991262571441311,
+        "centerDifference": 0.048450379180034774
+      }
+    ],
+    "open_C_44": [
+      {
+        "face": "37_misc_06_manual",
+        "role": "eye_L",
+        "method": "measured-raster",
+        "original": {
+          "x": 16.290159775785312,
+          "y": 24.151513841414705,
+          "w": 21.386050889080924,
+          "h": 10.202693730629898
+        },
+        "generated": {
+          "x": 16.327171466946222,
+          "y": 24.254407983551534,
+          "w": 21.31238774388719,
+          "h": 10.072115611445074
+        },
+        "widthRatio": 0.9965555517670939,
+        "heightRatio": 0.9872016035536958,
+        "centerDifference": 0.037605513902481257
+      },
+      {
+        "face": "37_misc_06_manual",
+        "role": "eye_R",
+        "method": "measured-raster",
+        "original": {
+          "x": 62.32008879623261,
+          "y": 24.40041894622973,
+          "w": 21.30370474063125,
+          "h": 10.06747972868998
+        },
+        "generated": {
+          "x": 62.34138279300275,
+          "y": 24.19339724556112,
+          "w": 21.41387558654293,
+          "h": 10.371175542351697
+        },
+        "widthRatio": 1.005171440707285,
+        "heightRatio": 1.0301660218690338,
+        "centerDifference": 0.09422294457364457
+      },
+      {
+        "face": "40_neutral_03_manual",
+        "role": "eye_L",
+        "method": "measured-raster",
+        "original": {
+          "x": 16.11192901572543,
+          "y": 24.40337199314349,
+          "w": 21.29259385332548,
+          "h": 10.196547094685
+        },
+        "generated": {
+          "x": 15.924337953615728,
+          "y": 24.131938093455027,
+          "w": 21.462034382355633,
+          "h": 10.5639241921304
+        },
+        "widthRatio": 1.0079577213653417,
+        "heightRatio": 1.0360295592256812,
+        "centerDifference": 0.1352096431984763
+      },
+      {
+        "face": "40_neutral_03_manual",
+        "role": "eye_R",
+        "method": "measured-raster",
+        "original": {
+          "x": 62.60145915520772,
+          "y": 24.379610317126534,
+          "w": 21.313290343793557,
+          "h": 10.067267393419167
+        },
+        "generated": {
+          "x": 62.62358850405419,
+          "y": 24.221640393640655,
+          "w": 21.40114352194474,
+          "h": 10.322055459826146
+        },
+        "widthRatio": 1.0041219903982008,
+        "heightRatio": 1.0253085625373903,
+        "centerDifference": 0.07278922998166908
+      }
+    ]
+  },
+  "missingSpeechMouths": [
+    "12_happy_09_manual",
+    "35_sad_10_manual"
+  ],
+  "failures": [],
+  "warnings": [
+    "Canonical-mouthless faces have no speech mouth: 12_happy_09_manual, 35_sad_10_manual"
+  ],
+  "limits": [
+    "Canvas command equality establishes identical paths at rest, not GPU antialiasing or perceived animation quality.",
+    "Forced generated-rest dimensions diagnose blink retargeting only; production rest renders canonical source paths.",
+    "Blink intermediary silhouettes intentionally differ from the source contour. This test does not claim identical contours while blinking."
+  ]
+}

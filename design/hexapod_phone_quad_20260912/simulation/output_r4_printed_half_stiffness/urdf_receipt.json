@@ -1,0 +1,285 @@
+{
+  "manifest_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\cad\\output\\assembly_manifest_as_printed.json",
+  "manifest_sha256": "f49bd511d9fcca86a22895f55cecda31ac4c9ecfdb60b3232cda7692131d2b17",
+  "urdf_path": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\hexapod_phone_quad_20260912\\simulation\\output_r4_printed_half_stiffness\\quadruped.urdf",
+  "urdf_sha256": "878a905f1c212af0cd1a96c75e40af523b8c3354c14f3507422bb9bac13bf68f",
+  "total_mass_kg": 2.748543714212646,
+  "links": {
+    "base": {
+      "mass_kg": 1.2176247972599934,
+      "com_mm": [
+        -1.502651725029974,
+        1.1344159950526091,
+        20.084204847353714
+      ],
+      "inertia_kg_m2": {
+        "ixx": 0.0028278737585710383,
+        "iyy": 0.003077658312883553,
+        "izz": 0.003972475245021541,
+        "ixy": -2.175609040774484e-06,
+        "ixz": 7.359667663767175e-05,
+        "iyz": 9.352589187321496e-06
+      },
+      "mesh_sha256": "9136767df79e7891d52a44fdf1b9acaf35d8b336ca33320309a6905bcdfbe3ad"
+    },
+    "phone_pan": {
+      "mass_kg": 0.24730402676965435,
+      "com_mm": [
+        1.684985300029584,
+        -0.006499001897805004,
+        47.51334686379663
+      ],
+      "inertia_kg_m2": {
+        "ixx": 0.0006728581054450044,
+        "iyy": 0.00019125583643012746,
+        "izz": 0.0004985971148956213,
+        "ixy": -5.752536193758733e-09,
+        "ixz": -3.222465858921813e-06,
+        "iyz": 9.747629647955705e-10
+      },
+      "mesh_sha256": "b4d81a39d76dcdc639993f371055ea1363d6a68feb8bb45771ee15752b2bad1d"
+    },
+    "coxa_FL": {
+      "mass_kg": 0.13101304261648536,
+      "com_mm": [
+        46.00897314885928,
+        -0.17107160776522243,
+        -8.660814846920692
+      ],
+      "inertia_kg_m2": {
+        "ixx": 6.105939911097994e-05,
+        "iyy": 0.0001593984292237943,
+        "izz": 0.00011573866981843381,
+        "ixy": -9.924179176628326e-07,
+        "ixz": -3.525923628144483e-05,
+        "iyz": -8.008432047751824e-08
+      },
+      "mesh_sha256": "9174d96fb98e2e9ef9326bcfa252cb816974c8b51211db451a75c9ad99e6c5eb"
+    },
+    "femur_FL": {
+      "mass_kg": 0.1392008627182705,
+      "com_mm": [
+        62.808136111007556,
+        -0.03508214753424418,
+        1.9491946458765244
+      ],
+      "inertia_kg_m2": {
+        "ixx": 4.280193605539944e-05,
+        "iyy": 0.00014918790794980947,
+        "izz": 0.00015959950167259812,
+        "ixy": 2.4230710378280226e-06,
+        "ixz": -7.023495887484669e-07,
+        "iyz": 1.8427184945356984e-07
+      },
+      "mesh_sha256": "e0dadac4d094b00ca76f0dfc970962ef08e9cdcb54bc49a8c041008462f40153"
+    },
+    "tibia_FL": {
+      "mass_kg": 0.05068981721099377,
+      "com_mm": [
+        35.969834012393626,
+        0.1978269692416437,
+        9.990276595669265
+      ],
+      "inertia_kg_m2": {
+        "ixx": 2.080614878923451e-05,
+        "iyy": 5.4855836841620965e-05,
+        "izz": 6.566506096898475e-05,
+        "ixy": 3.2085112607480034e-07,
+        "ixz": -8.04611535381104e-06,
+        "iyz": 1.0972460669590702e-07
+      },
+      "mesh_sha256": "d7baeceaa14beae6ec258f048249c711f33a1780832f0234012735ffa02098fa"
+    },
+    "coxa_FR": {
+      "mass_kg": 0.13101304261648536,
+      "com_mm": [
+        46.00897314885928,
+        -0.17107160776522243,
+        -8.660814846920692
+      ],
+      "inertia_kg_m2": {
+        "ixx": 6.105939911097994e-05,
+        "iyy": 0.0001593984292237943,
+        "izz": 0.00011573866981843381,
+        "ixy": -9.924179176628326e-07,
+        "ixz": -3.525923628144483e-05,
+        "iyz": -8.008432047751824e-08
+      },
+      "mesh_sha256": "9174d96fb98e2e9ef9326bcfa252cb816974c8b51211db451a75c9ad99e6c5eb"
+    },
+    "femur_FR": {
+      "mass_kg": 0.1392008627182705,
+      "com_mm": [
+        62.808136111007556,
+        -0.03508214753424418,
+        1.9491946458765244
+      ],
+      "inertia_kg_m2": {
+        "ixx": 4.280193605539944e-05,
+        "iyy": 0.00014918790794980947,
+        "izz": 0.00015959950167259812,
+        "ixy": 2.4230710378280226e-06,
+        "ixz": -7.023495887484669e-07,
+        "iyz": 1.8427184945356984e-07
+      },
+      "mesh_sha256": "e0dadac4d094b00ca76f0dfc970962ef08e9cdcb54bc49a8c041008462f40153"
+    },
+    "tibia_FR": {
+      "mass_kg": 0.05068981721099377,
+      "com_mm": [
+        35.969834012393626,
+        0.1978269692416437,
+        9.990276595669265
+      ],
+      "inertia_kg_m2": {
+        "ixx": 2.080614878923451e-05,
+        "iyy": 5.4855836841620965e-05,
+        "izz": 6.566506096898475e-05,
+        "ixy": 3.2085112607480034e-07,
+        "ixz": -8.04611535381104e-06,
+        "iyz": 1.0972460669590702e-07
+      },
+      "mesh_sha256": "d7baeceaa14beae6ec258f048249c711f33a1780832f0234012735ffa02098fa"
+    },
+    "coxa_RL": {
+      "mass_kg": 0.13101304261648536,
+      "com_mm": [
+        46.00897314885928,
+        -0.17107160776522243,
+        -8.660814846920692
+      ],
+      "inertia_kg_m2": {
+        "ixx": 6.105939911097994e-05,
+        "iyy": 0.0001593984292237943,
+        "izz": 0.00011573866981843381,
+        "ixy": -9.924179176628326e-07,
+        "ixz": -3.525923628144483e-05,
+        "iyz": -8.008432047751824e-08
+      },
+      "mesh_sha256": "9174d96fb98e2e9ef9326bcfa252cb816974c8b51211db451a75c9ad99e6c5eb"
+    },
+    "femur_RL": {
+      "mass_kg": 0.1392008627182705,
+      "com_mm": [
+        62.808136111007556,
+        -0.03508214753424418,
+        1.9491946458765244
+      ],
+      "inertia_kg_m2": {
+        "ixx": 4.280193605539944e-05,
+        "iyy": 0.00014918790794980947,
+        "izz": 0.00015959950167259812,
+        "ixy": 2.4230710378280226e-06,
+        "ixz": -7.023495887484669e-07,
+        "iyz": 1.8427184945356984e-07
+      },
+      "mesh_sha256": "e0dadac4d094b00ca76f0dfc970962ef08e9cdcb54bc49a8c041008462f40153"
+    },
+    "tibia_RL": {
+      "mass_kg": 0.05068981721099377,
+      "com_mm": [
+        35.969834012393626,
+        0.1978269692416437,
+        9.990276595669265
+      ],
+      "inertia_kg_m2": {
+        "ixx": 2.080614878923451e-05,
+        "iyy": 5.4855836841620965e-05,
+        "izz": 6.566506096898475e-05,
+        "ixy": 3.2085112607480034e-07,
+        "ixz": -8.04611535381104e-06,
+        "iyz": 1.0972460669590702e-07
+      },
+      "mesh_sha256": "d7baeceaa14beae6ec258f048249c711f33a1780832f0234012735ffa02098fa"
+    },
+    "coxa_RR": {
+      "mass_kg": 0.13101304261648536,
+      "com_mm": [
+        46.00897314885928,
+        -0.17107160776522243,
+        -8.660814846920692
+      ],
+      "inertia_kg_m2": {
+        "ixx": 6.105939911097994e-05,
+        "iyy": 0.0001593984292237943,
+        "izz": 0.00011573866981843381,
+        "ixy": -9.924179176628326e-07,
+        "ixz": -3.525923628144483e-05,
+        "iyz": -8.008432047751824e-08
+      },
+      "mesh_sha256": "9174d96fb98e2e9ef9326bcfa252cb816974c8b51211db451a75c9ad99e6c5eb"
+    },
+    "femur_RR": {
+      "mass_kg": 0.1392008627182705,
+      "com_mm": [
+        62.808136111007556,
+        -0.03508214753424418,
+        1.9491946458765244
+      ],
+      "inertia_kg_m2": {
+        "ixx": 4.280193605539944e-05,
+        "iyy": 0.00014918790794980947,
+        "izz": 0.00015959950167259812,
+        "ixy": 2.4230710378280226e-06,
+        "ixz": -7.023495887484669e-07,
+        "iyz": 1.8427184945356984e-07
+      },
+      "mesh_sha256": "e0dadac4d094b00ca76f0dfc970962ef08e9cdcb54bc49a8c041008462f40153"
+    },
+    "tibia_RR": {
+      "mass_kg": 0.05068981721099377,
+      "com_mm": [
+        35.969834012393626,
+        0.1978269692416437,
+        9.990276595669265
+      ],
+      "inertia_kg_m2": {
+        "ixx": 2.080614878923451e-05,
+        "iyy": 5.4855836841620965e-05,
+        "izz": 6.566506096898475e-05,
+        "ixy": 3.2085112607480034e-07,
+        "ixz": -8.04611535381104e-06,
+        "iyz": 1.0972460669590702e-07
+      },
+      "mesh_sha256": "d7baeceaa14beae6ec258f048249c711f33a1780832f0234012735ffa02098fa"
+    }
+  },
+  "joint_names": [
+    "yaw_FL",
+    "hip_FL",
+    "knee_FL",
+    "yaw_FR",
+    "hip_FR",
+    "knee_FR",
+    "yaw_RL",
+    "hip_RL",
+    "knee_RL",
+    "yaw_RR",
+    "hip_RR",
+    "knee_RR",
+    "phone_pan"
+  ],
+  "phone_pan_origin_m": [
+    0,
+    0,
+    0.098
+  ],
+  "inertial_source": "Masses, centers of mass and inertia tensors from the selected explicit manifest. No fallback mass and no independently added fastener allowance.",
+  "collision_model": "Simplified floor contact boxes and 14 mm wide, 5 mm radius rocker cylinders. The CAD toe has a 4.8 mm deep neutral flat, so the round proxy differs by at most 0.2 mm. CAD visuals and mass properties are retained. Self collision and cable contact are outside this dynamics check.",
+  "mass_model": {
+    "kind": "Cura_model_deposition_high_fasteners",
+    "as_sliced": true,
+    "physical_measurement": false,
+    "printed_parts": "Line-integrated commanded model deposition at layer mid-height",
+    "fasteners": "high",
+    "wire_allowance_kg": 0.15,
+    "source_solid_manifest_sha256": "6cac852c196e29e2da100816a7d3b96f545e62dba92c3009a46417eb7d9bc449",
+    "source_production_properties_sha256": "3b69ffb7bfd212296b85fb1846181dd86a7fffb2451e6f961c821fc1e8f24209",
+    "integrator_sha256": "f4ed47806e78ff14549ac69507ca776b2b69b9db138c099f722a6b0b275c0741",
+    "notes": [
+      "Printed COM and full inertia tensors are transformed, not scaled from solid CAD.",
+      "Support and bed-adhesion material are not included on the robot.",
+      "These are toolpath estimates and nominal hardware geometry, not weighed parts."
+    ]
+  }
+}

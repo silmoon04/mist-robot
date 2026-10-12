@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "status": "fixed_coupon_contract_pending_leg_adoption",
+  "root_authorized_export": true,
+  "units": "mm",
+  "production_release": false,
+  "physical_fit_validated": false,
+  "leg_solid_profile_match_confirmed": false,
+  "provenance": "Fixed by the parent task on 2026-09-07 to complete BED1 while the new leg CAD is built. These are unmeasured coupon design dimensions. The leg must adopt the same profile or record a transfer mismatch.",
+  "carrier_boss": {
+    "bearing_codes": ["627", "608"],
+    "outer_diameter_mm": 34.0,
+    "height_mm": 8.4,
+    "through_diameter_mm": 20.0,
+    "floor_mm": 1.2,
+    "seat_depth_mm": 7.2,
+    "candidate_seats_mm": [22.25, 22.4, 22.7],
+    "nominal_candidate_seat_mm": 22.4,
+    "lead_in_height_mm": 0.0,
+    "lead_in_diametral_mm": 0.0,
+    "bolt_centers_local_mm": [[-14.0, 0.0], [14.0, 0.0]],
+    "bolt_diameter_mm": 3.4,
+    "print_axis": "Bearing axis printer Z; floor on bed",
+    "transfer_note": "Full 7.2 mm straight seat. This intentionally differs from the original OD30 boss with a 0.6 mm lead-in. Copy this section before transferring its fit."
+  },
+  "carrier_keeper": {
+    "outer_diameter_mm": 34.0,
+    "inner_diameter_mm": 20.0,
+    "thickness_mm": 2.4,
+    "bolt_centers_local_mm": [[-14.0, 0.0], [14.0, 0.0]],
+    "bolt_diameter_mm": 3.4,
+    "print_axis": "Ring axis printer Z; flat on bed",
+    "nominal_bearing_axial_gap_mm": 0.2,
+    "transfer_note": "Flat outer-race keeper; actual race, spacer, bolt and washer clearances require assembly fit."
+  },
+  "face_carrier": {
+    "target": "Printed tibia face adapter; not a machined metal gear fit",
+    "thickness_mm": 8.0,
+    "center_bore_mm": 8.2,
+    "pitch_circle_diameter_mm": 16.0,
+    "hole_count": 4,
+    "sleeve_seat_mm": 6.6,
+    "sleeve_outer_mm": 6.5,
+    "sleeve_inner_mm": 4.3,
+    "sleeve_length_mm": 8.0,
+    "screw_nominal_mm": 4.0,
+    "screw_head_diameter_mm": 7.0,
+    "screw_head_height_mm": 4.0,
+    "minimum_center_to_sleeve_ligament_mm": 0.6,
+    "transfer_note": "The 0.6 mm inner ligament is reproduced for a fit trial, not approved for torque. No gear teeth or torque capacity are represented."
+  },
+  "jack_bridge": {
+    "nut_pocket_af_mm": 7.2,
+    "nut_pocket_length_mm": 14.1,
+    "nominal_nut_af_mm": 7.0,
+    "nominal_nut_length_mm": 12.0,
+    "plate_side_opening": true,
+    "nominal_plate_size_mm": [18.0, 18.0, 2.0],
+    "plate_pocket_size_mm": [18.2, 18.2, 2.1],
+    "print_axis": "Nut axis printer Y, horizontal; bearing axis printer Z",
+    "detach_before_insertion": true
+  },
+  "slider": {
+    "slot_width_mm": 4.4,
+    "slot_total_length_mm": 8.4,
+    "plate_thickness_mm": 4.0
+  },
+  "long_datums": {
+    "center_distance_mm": 139.5,
+    "pad_size_mm": 5.0,
+    "outer_face_span_mm": 144.5,
+    "inner_face_span_mm": 134.5,
+    "pad_centers_xy_mm": [[73.5, 213.0], [213.0, 213.0], [213.0, 73.5]],
+    "measurement_formula": "center_distance = (outside_span + inside_span) / 2"
+  },
+  "limits": [
+    "All measurements and fit results remain blank and unvalidated.",
+    "This contract freezes coupon geometry, not a structural or hardware release.",
+    "New leg CAD must confirm matching floor, wall, lead-in, seat and print direction before fit transfer.",
+    "Rotor endfloat, shaft-to-bearing fit, metal sleeve tolerances and machining cannot be approved from this printed coupon.",
+    "The 16 mm PCD printed carrier and original 20T gear stages retain separate strength gates."
+  ]
+}

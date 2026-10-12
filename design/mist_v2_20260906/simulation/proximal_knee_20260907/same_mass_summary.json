@@ -1,0 +1,388 @@
+{
+  "status": "sensitivity_not_selected_mechanism",
+  "source": "C:\\Users\\hssil\\Downloads\\03_Programming_Projects\\spider-robot\\design\\mist_v2_20260906\\simulation\\cad_mass_20260907\\parameters_mass_only.json",
+  "source_sha256": "d2670f84119ce4da5e3f391d776deb6c98a44a2b49fa3ecd6dc93ddbb2cfc534",
+  "source_hashes": {
+    "model.py": "89fb759b6e49c04ae7ed2389acfc31e197d21102078ec5adb0201d5b20a2ec3b",
+    "run_sim.py": "c17536e9ee478ffccf0c62f982ef824c954b9efce8afd11151d041160c9dc525",
+    "load_test.py": "69a107302449a0fb328096b483cfd8a18f251f08429263579f79dd1648b19eff",
+    "run_proximal_sensitivity.py": "1538c92899809ef85d07bc8a1e8a70f8b479a3a658bb2a13ea9787b078124374"
+  },
+  "mass_kg": 6.341061857161208,
+  "reports": [
+    {
+      "case": "stand",
+      "status": "PASS_IN_MODEL",
+      "criteria": {
+        "did_not_fall": true,
+        "joint_tracking_rms": true,
+        "continuous_motor_rms": true,
+        "reachable_targets": true,
+        "motor_travel_limits": true,
+        "no_nonwheel_ground_support": true,
+        "coarse_self_collision": true
+      },
+      "mass_kg": 6.341061857161208,
+      "duration_s": 8,
+      "dt_s": 0.001,
+      "base_displacement_m": [
+        2.4360345868329383e-05,
+        -6.463677816712119e-05,
+        -0.004352775798260683
+      ],
+      "max_tilt_deg": 0.03646997082645935,
+      "joint_tracking_rms_deg": 1.6602229787686462,
+      "max_servo_rms_nm": 0.4588334781208476,
+      "servo_continuous_limit_nm": 0.7281437625000001,
+      "servo_peak_limit_nm": 1.3349302312500002,
+      "motor_saturation_fraction": 0.0025,
+      "unreachable_target_fraction": 0.0,
+      "motor_travel_violation_fraction": 0.0,
+      "min_sampled_support_margin_m": 0.10246894710564755,
+      "max_wheel_normal_force_n": 27.165445070169618,
+      "wheel_lateral_velocity_rms_m_s": 1.2950650751405373e-05,
+      "self_collision_samples": 0,
+      "self_collision_examples": [],
+      "base_contact_samples": 0,
+      "fixed_base": false,
+      "limitations": [
+        "Unmeasured backlash, compliance, friction, servo dynamics, thermal duty and mass estimates.",
+        "Command play hysteresis and reduced series stiffness do not model true load-side gap engagement under force reversal. Rotor/reflected gearbox inertia omitted.",
+        "Simple boxes/cylinders, selected adjacent self collisions excluded; no printed-part stress or wire model.",
+        "Step test is a scripted challenge; a failure may concern controller and geometry, not a proof no controller exists.",
+        "No sensor perception, obstacle avoidance planner, stair-nose or tire deformation model."
+      ],
+      "max_actual_wheel_clearance_m": [
+        0.0009901900000000088,
+        0.0009901900000000088,
+        0.0009901900000000088,
+        0.0009901900000000088
+      ],
+      "foot_tracking_rms_m": [
+        0.004409104581211808,
+        0.0044331519462934565,
+        0.004336250376105167,
+        0.004311690415015996
+      ],
+      "obstacle_contact_samples": 0,
+      "minimum_obstacle_gap_m": null,
+      "source_sha256": {
+        "run_sim.py": "c17536e9ee478ffccf0c62f982ef824c954b9efce8afd11151d041160c9dc525",
+        "model.py": "89fb759b6e49c04ae7ed2389acfc31e197d21102078ec5adb0201d5b20a2ec3b"
+      },
+      "parameters_sha256": "2da1658c9b8f9d5b1532526b13f16ae52a952feb70c9a75aa5ad7432b32de306"
+    },
+    {
+      "case": "drive",
+      "status": "PASS_IN_MODEL",
+      "criteria": {
+        "did_not_fall": true,
+        "joint_tracking_rms": true,
+        "continuous_motor_rms": true,
+        "reachable_targets": true,
+        "motor_travel_limits": true,
+        "no_nonwheel_ground_support": true,
+        "coarse_self_collision": true,
+        "forward_distance_2m": true
+      },
+      "mass_kg": 6.341061857161208,
+      "duration_s": 8,
+      "dt_s": 0.001,
+      "base_displacement_m": [
+        5.106665518152813,
+        -0.02752145166742097,
+        -0.004226267651395971
+      ],
+      "max_tilt_deg": 0.20819166323224156,
+      "joint_tracking_rms_deg": 1.7633619821463464,
+      "max_servo_rms_nm": 0.5179010015456641,
+      "servo_continuous_limit_nm": 0.7281437625000001,
+      "servo_peak_limit_nm": 1.3349302312500002,
+      "motor_saturation_fraction": 0.0025,
+      "unreachable_target_fraction": 0.0,
+      "motor_travel_violation_fraction": 0.0,
+      "min_sampled_support_margin_m": 0.09081694844884179,
+      "max_wheel_normal_force_n": 79.39573209355183,
+      "wheel_lateral_velocity_rms_m_s": 0.015284496863752954,
+      "self_collision_samples": 0,
+      "self_collision_examples": [],
+      "base_contact_samples": 0,
+      "fixed_base": false,
+      "limitations": [
+        "Unmeasured backlash, compliance, friction, servo dynamics, thermal duty and mass estimates.",
+        "Command play hysteresis and reduced series stiffness do not model true load-side gap engagement under force reversal. Rotor/reflected gearbox inertia omitted.",
+        "Simple boxes/cylinders, selected adjacent self collisions excluded; no printed-part stress or wire model.",
+        "Step test is a scripted challenge; a failure may concern controller and geometry, not a proof no controller exists.",
+        "No sensor perception, obstacle avoidance planner, stair-nose or tire deformation model."
+      ],
+      "max_actual_wheel_clearance_m": [
+        0.0009987419702597866,
+        0.000998200878867539,
+        0.0009980156946279017,
+        0.0009980697089071386
+      ],
+      "foot_tracking_rms_m": [
+        0.004985767512905325,
+        0.005000246757619025,
+        0.004386642882978786,
+        0.0043825550256649855
+      ],
+      "obstacle_contact_samples": 0,
+      "minimum_obstacle_gap_m": null,
+      "source_sha256": {
+        "run_sim.py": "c17536e9ee478ffccf0c62f982ef824c954b9efce8afd11151d041160c9dc525",
+        "model.py": "89fb759b6e49c04ae7ed2389acfc31e197d21102078ec5adb0201d5b20a2ec3b"
+      },
+      "parameters_sha256": "2da1658c9b8f9d5b1532526b13f16ae52a952feb70c9a75aa5ad7432b32de306"
+    },
+    {
+      "case": "crawl",
+      "status": "PASS_IN_MODEL",
+      "criteria": {
+        "did_not_fall": true,
+        "joint_tracking_rms": true,
+        "continuous_motor_rms": true,
+        "reachable_targets": true,
+        "motor_travel_limits": true,
+        "no_nonwheel_ground_support": true,
+        "coarse_self_collision": true,
+        "tilt_below_10deg": true,
+        "full_four_leg_cycle": true,
+        "forward_distance_25mm": true,
+        "all_feet_clear_15mm": true,
+        "foot_tracking_rms": true
+      },
+      "mass_kg": 6.341061857161208,
+      "duration_s": 26,
+      "dt_s": 0.001,
+      "base_displacement_m": [
+        0.02581632810718393,
+        -0.018136977388268145,
+        -0.004166561877184727
+      ],
+      "max_tilt_deg": 2.6767879430529873,
+      "joint_tracking_rms_deg": 2.1408697519374185,
+      "max_servo_rms_nm": 0.6035965594477798,
+      "servo_continuous_limit_nm": 0.7281437625000001,
+      "servo_peak_limit_nm": 1.3349302312500002,
+      "motor_saturation_fraction": 0.0007692307692307692,
+      "unreachable_target_fraction": 0.0,
+      "motor_travel_violation_fraction": 0.0,
+      "min_sampled_support_margin_m": 0.020623434294993817,
+      "max_wheel_normal_force_n": 29.831691005516692,
+      "wheel_lateral_velocity_rms_m_s": 0.0030541176243648613,
+      "self_collision_samples": 0,
+      "self_collision_examples": [],
+      "base_contact_samples": 0,
+      "fixed_base": false,
+      "limitations": [
+        "Unmeasured backlash, compliance, friction, servo dynamics, thermal duty and mass estimates.",
+        "Command play hysteresis and reduced series stiffness do not model true load-side gap engagement under force reversal. Rotor/reflected gearbox inertia omitted.",
+        "Simple boxes/cylinders, selected adjacent self collisions excluded; no printed-part stress or wire model.",
+        "Step test is a scripted challenge; a failure may concern controller and geometry, not a proof no controller exists.",
+        "No sensor perception, obstacle avoidance planner, stair-nose or tire deformation model."
+      ],
+      "max_actual_wheel_clearance_m": [
+        0.026751681913970378,
+        0.02697328817504828,
+        0.02834034183991481,
+        0.02642508967271997
+      ],
+      "foot_tracking_rms_m": [
+        0.00795657367148437,
+        0.007122886520681408,
+        0.00740324009029766,
+        0.007901817855141451
+      ],
+      "obstacle_contact_samples": 0,
+      "minimum_obstacle_gap_m": null,
+      "source_sha256": {
+        "run_sim.py": "c17536e9ee478ffccf0c62f982ef824c954b9efce8afd11151d041160c9dc525",
+        "model.py": "89fb759b6e49c04ae7ed2389acfc31e197d21102078ec5adb0201d5b20a2ec3b"
+      },
+      "parameters_sha256": "2da1658c9b8f9d5b1532526b13f16ae52a952feb70c9a75aa5ad7432b32de306"
+    },
+    {
+      "case": "step_ascent",
+      "status": "FAIL_IN_MODEL",
+      "criteria": {
+        "did_not_fall": false,
+        "joint_tracking_rms": true,
+        "continuous_motor_rms": false,
+        "reachable_targets": true,
+        "motor_travel_limits": true,
+        "no_nonwheel_ground_support": false,
+        "coarse_self_collision": true,
+        "all_wheels_changed_level": false,
+        "body_traversed_edge": false
+      },
+      "mass_kg": 6.341061857161208,
+      "duration_s": 8,
+      "dt_s": 0.001,
+      "base_displacement_m": [
+        -0.06870425472086412,
+        0.34392239648969225,
+        -0.11564056289854045
+      ],
+      "max_tilt_deg": 99.46689101554296,
+      "joint_tracking_rms_deg": 3.1455595283930724,
+      "max_servo_rms_nm": 0.7654560772516832,
+      "servo_continuous_limit_nm": 0.7281437625000001,
+      "servo_peak_limit_nm": 1.3349302312500002,
+      "motor_saturation_fraction": 0.124875,
+      "unreachable_target_fraction": 0.0,
+      "motor_travel_violation_fraction": 0.0,
+      "min_sampled_support_margin_m": -0.09404199092488104,
+      "max_wheel_normal_force_n": 55.20134222580488,
+      "wheel_lateral_velocity_rms_m_s": 0.10599413977438298,
+      "self_collision_samples": 0,
+      "self_collision_examples": [],
+      "base_contact_samples": 678,
+      "fixed_base": false,
+      "limitations": [
+        "Unmeasured backlash, compliance, friction, servo dynamics, thermal duty and mass estimates.",
+        "Command play hysteresis and reduced series stiffness do not model true load-side gap engagement under force reversal. Rotor/reflected gearbox inertia omitted.",
+        "Simple boxes/cylinders, selected adjacent self collisions excluded; no printed-part stress or wire model.",
+        "Step test is a scripted challenge; a failure may concern controller and geometry, not a proof no controller exists.",
+        "No sensor perception, obstacle avoidance planner, stair-nose or tire deformation model."
+      ],
+      "max_actual_wheel_clearance_m": [
+        0.030362485740082823,
+        0.24371280950560223,
+        0.039033406848742194,
+        0.24076714092535195
+      ],
+      "foot_tracking_rms_m": [
+        0.025356326583911324,
+        0.011076353254133333,
+        0.01383640496236497,
+        0.00720684872874332
+      ],
+      "obstacle_contact_samples": 0,
+      "minimum_obstacle_gap_m": null,
+      "source_sha256": {
+        "run_sim.py": "c17536e9ee478ffccf0c62f982ef824c954b9efce8afd11151d041160c9dc525",
+        "model.py": "89fb759b6e49c04ae7ed2389acfc31e197d21102078ec5adb0201d5b20a2ec3b"
+      },
+      "parameters_sha256": "2da1658c9b8f9d5b1532526b13f16ae52a952feb70c9a75aa5ad7432b32de306"
+    },
+    {
+      "case": "step_descent",
+      "status": "FAIL_IN_MODEL",
+      "criteria": {
+        "did_not_fall": true,
+        "joint_tracking_rms": false,
+        "continuous_motor_rms": false,
+        "reachable_targets": false,
+        "motor_travel_limits": true,
+        "no_nonwheel_ground_support": false,
+        "coarse_self_collision": true,
+        "all_wheels_changed_level": false,
+        "body_traversed_edge": false
+      },
+      "mass_kg": 6.341061857161208,
+      "duration_s": 8,
+      "dt_s": 0.001,
+      "base_displacement_m": [
+        0.11582936551148704,
+        0.012213766899632935,
+        -0.12838105613295803
+      ],
+      "max_tilt_deg": 13.99615292085527,
+      "joint_tracking_rms_deg": 22.843654952516502,
+      "max_servo_rms_nm": 1.0217111525994391,
+      "servo_continuous_limit_nm": 0.7281437625000001,
+      "servo_peak_limit_nm": 1.3349302312500002,
+      "motor_saturation_fraction": 0.640125,
+      "unreachable_target_fraction": 0.524,
+      "motor_travel_violation_fraction": 0.0,
+      "min_sampled_support_margin_m": -0.026514996250477152,
+      "max_wheel_normal_force_n": 62.739371592041586,
+      "wheel_lateral_velocity_rms_m_s": 0.02313841088921058,
+      "self_collision_samples": 0,
+      "self_collision_examples": [],
+      "base_contact_samples": 98,
+      "fixed_base": false,
+      "limitations": [
+        "Unmeasured backlash, compliance, friction, servo dynamics, thermal duty and mass estimates.",
+        "Command play hysteresis and reduced series stiffness do not model true load-side gap engagement under force reversal. Rotor/reflected gearbox inertia omitted.",
+        "Simple boxes/cylinders, selected adjacent self collisions excluded; no printed-part stress or wire model.",
+        "Step test is a scripted challenge; a failure may concern controller and geometry, not a proof no controller exists.",
+        "No sensor perception, obstacle avoidance planner, stair-nose or tire deformation model."
+      ],
+      "max_actual_wheel_clearance_m": [
+        0.18099018999999997,
+        0.195398502374097,
+        0.18099018999999997,
+        0.21348504622587905
+      ],
+      "foot_tracking_rms_m": [
+        0.02085380249926129,
+        0.12706128620384488,
+        0.006515390532836182,
+        0.006931564288949578
+      ],
+      "obstacle_contact_samples": 0,
+      "minimum_obstacle_gap_m": null,
+      "source_sha256": {
+        "run_sim.py": "c17536e9ee478ffccf0c62f982ef824c954b9efce8afd11151d041160c9dc525",
+        "model.py": "89fb759b6e49c04ae7ed2389acfc31e197d21102078ec5adb0201d5b20a2ec3b"
+      },
+      "parameters_sha256": "2da1658c9b8f9d5b1532526b13f16ae52a952feb70c9a75aa5ad7432b32de306"
+    }
+  ],
+  "load_tests": [
+    {
+      "hip_ratio": 2,
+      "contacts_equivalent": 3,
+      "load_multiplier": 1,
+      "force_n": 20.73527227291715,
+      "fixed_base": true,
+      "status": "PASS_IN_MODEL",
+      "criteria": {
+        "foot_error_below_15mm": true,
+        "motor_rms_below_continuous": true
+      },
+      "hold_max_foot_error_m": 0.006509054386008671,
+      "hold_servo_rms_nm": [
+        0.0014108873969265916,
+        0.5335597005307554,
+        0.6273943054376871
+      ],
+      "motor_saturation_fraction": 0.0,
+      "parameters_sha256": "70ede793c02131f58464de8b3a093a58c8e5ca018815378244cb0ddaa5ab4d22",
+      "source_sha256": {
+        "model.py": "89fb759b6e49c04ae7ed2389acfc31e197d21102078ec5adb0201d5b20a2ec3b",
+        "run_sim.py": "c17536e9ee478ffccf0c62f982ef824c954b9efce8afd11151d041160c9dc525",
+        "load_test.py": "69a107302449a0fb328096b483cfd8a18f251f08429263579f79dd1648b19eff"
+      },
+      "limitations": "Ideal external vertical force on one suspended wheel, body fixed. This is a loading fixture surrogate, not a gait or measured servo test. Uses the same command-play and compliance approximations as run_sim.py."
+    },
+    {
+      "hip_ratio": 2,
+      "contacts_equivalent": 2,
+      "load_multiplier": 1.5,
+      "force_n": 46.65436261406359,
+      "fixed_base": true,
+      "status": "FAIL_IN_MODEL",
+      "criteria": {
+        "foot_error_below_15mm": false,
+        "motor_rms_below_continuous": false
+      },
+      "hold_max_foot_error_m": 0.36657943022831463,
+      "hold_servo_rms_nm": [
+        0.08884578841248778,
+        1.3349302312499993,
+        1.3349302312499993
+      ],
+      "motor_saturation_fraction": 0.5388333333333334,
+      "parameters_sha256": "70ede793c02131f58464de8b3a093a58c8e5ca018815378244cb0ddaa5ab4d22",
+      "source_sha256": {
+        "model.py": "89fb759b6e49c04ae7ed2389acfc31e197d21102078ec5adb0201d5b20a2ec3b",
+        "run_sim.py": "c17536e9ee478ffccf0c62f982ef824c954b9efce8afd11151d041160c9dc525",
+        "load_test.py": "69a107302449a0fb328096b483cfd8a18f251f08429263579f79dd1648b19eff"
+      },
+      "limitations": "Ideal external vertical force on one suspended wheel, body fixed. This is a loading fixture surrogate, not a gait or measured servo test. Uses the same command-play and compliance approximations as run_sim.py."
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "ominous_sway",
+  "kind": "dance",
+  "description": "Slow menacing body sway with alternating alert/bored face, gaze tracks nearest person.",
+  "bpm": 84,
+  "loop": true,
+  "duration_s": 20,
+  "energy": "low",
+  "tracks": {
+    "body": [
+      { "t": 0.0, "pose": [0, 0, -12, 0, 4, 0] },
+      { "t": 0.5, "pose": [0, 0, -12, 0, -4, 0] }
+    ],
+    "face": [
+      { "t": 0.0, "expr": "alert" },
+      { "t": 0.9, "expr": "bored" }
+    ],
+    "gaze": [{ "t": 0.0, "mode": "track_nearest_person" }]
+  }
+}

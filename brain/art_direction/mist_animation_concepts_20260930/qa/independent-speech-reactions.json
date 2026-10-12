@@ -1,0 +1,126 @@
+[
+  {
+    "id": "speaking-warm",
+    "passed": true,
+    "blockers": [],
+    "observations": [
+      "Reviewed images/available-blink-1.png and all three files listed below with view_image at original detail. The triple keeps one MIST face, outward-open C eyes, the anchor's face scale and eye placement, and a compact centred mouth.",
+      "Pose 1 has a relaxed closed smile. Pose 2 has a modest open soft-vowel shape with a dark interior and friendly lifted corners. Pose 3 is a narrower rounded O. The three mouth silhouettes are visibly different while the eyes and gaze stay consistent.",
+      "The middle pose contains one mouth and two eyes, with no duplicate outlines, ghosts, teeth, tongue, detached brows, or stray marks. Its warm mouth attitude differs clearly from the level-cornered serious soft vowel.",
+      "The turquoise strokes, blue-black background and faint anchor-like texture remain visually coherent across the trio. No whole-face jump or visible scale change was found.",
+      "All three canonical files are RGB PNGs at 1254 by 1254 pixels. Their current SHA256 values match their manifests and the available generatedSource files byte for byte. Manifest pose sets, assignment filenames and prompts also match."
+    ],
+    "images": [
+      {
+        "file": "images/speaking-warm-1.png",
+        "sha256": "1bc8462946718453275a78245ca76ff07d060f9bbf0bbe110fd3234cdaa01188"
+      },
+      {
+        "file": "images/speaking-warm-2.png",
+        "sha256": "3246482135dc1161570beeaf83028be54594de2f7ff65b84e534cbd070b06903"
+      },
+      {
+        "file": "images/speaking-warm-3.png",
+        "sha256": "76d8f8976a3e6c14c9ce4192b158bff0646a005544f7cb52fc41ca9108ee2d26"
+      }
+    ],
+    "limitations": [
+      "This pass approves three static concept poses only. A complete viseme set, drawn in-betweens, playback-clock selection and audio synchronisation have not been reviewed.",
+      "Face registration and palette coherence were judged visually. Exact pixel identity and exact colour equality with the anchor are not claimed; minor generated contour and tonal texture variation remains.",
+      "The manifest reports mouth bounding-box centres up to 5.5 pixels higher than pose 1 and eye-centre variation up to 0.5 pixels. Those figures were not independently remeasured in this pass; the visual review found no distracting drift."
+    ]
+  },
+  {
+    "id": "speaking-serious",
+    "passed": true,
+    "blockers": [],
+    "observations": [
+      "Reviewed images/available-blink-1.png and all three files listed below with view_image at original detail. The selected repaired rest pose and both vowel poses retain one MIST face, matching overall eye placement, scale and mouth centre.",
+      "The same lowered horizontal upper lids remain across the trio. They read as calm attention without sharp inward brows or an angry frown.",
+      "Pose 1 has a short flat closed mouth. Pose 2 has a compact horizontal opening with a flat upper edge, level corners and dark interior. Pose 3 is a distinctly narrower near-circular O. All three shapes are visibly different.",
+      "The neutral corners of the middle pose avoid the friendly grin of speaking-warm-2.png. All serious poses preserve the calm eye attitude. No teeth, tongue, duplicate outlines, ghosts, detached marks or protrusions were visible.",
+      "All three canonical files are RGB PNGs at 1254 by 1254 pixels. Their current SHA256 values match their manifests and the available generatedSource files byte for byte. Manifest pose sets, assignment filenames and prompts also match."
+    ],
+    "images": [
+      {
+        "file": "images/speaking-serious-1.png",
+        "sha256": "9408deb4c4eb05946fb6a2eb3e7d2f69b2a17f045c2563023026519e74006693"
+      },
+      {
+        "file": "images/speaking-serious-2.png",
+        "sha256": "ad4ba8b6ab3c5f33059667bd40463222b98322463b140d8cf90db56a69cf2fff"
+      },
+      {
+        "file": "images/speaking-serious-3.png",
+        "sha256": "942d5bb70a1328dd94192e2ee86faef9730733dbd64073db2c99823672d4df3b"
+      }
+    ],
+    "limitations": [
+      "This pass approves three static concept poses only. Viseme coverage, drawn in-betweens, timing and playback synchronisation remain untested.",
+      "The serious trio appears slightly brighter and more saturated in cyan than the shared anchor. Its colour family remains coherent, but exact palette equality is not established.",
+      "Scale and facial placement were compared visually, without an independent pixel-registration measurement. Faint background texture and minor generated contour differences remain."
+    ]
+  },
+  {
+    "id": "recognition",
+    "passed": true,
+    "blockers": [],
+    "observations": [
+      "Reviewed images/available-blink-1.png and all three files listed below with view_image at original detail. Each image has one MIST face at the same apparent scale, with stable eye and mouth placement.",
+      "Pose 1 receives with a short nearly level closed mouth. Pose 2 raises the upper eye contour slightly and changes to a small closed smile. Pose 3 softens the upper contours and relaxes the smile toward a shallower closed stroke. These are visible receive, recognise and settle changes.",
+      "The middle pose keeps readable outward C apertures and one compact closed mouth. No open speech mouth, duplicate face elements, ghosting, detached brows or extra marks were visible.",
+      "The recognition beat stays restrained, and the settled pose avoids an exaggerated permanent grin. Turquoise facial strokes and the blue-black background remain visually coherent with the shared identity.",
+      "All three canonical files are RGB PNGs at 1254 by 1254 pixels. Their current SHA256 values match their manifests and the available generatedSource files byte for byte. Manifest pose sets, assignment filenames and prompts also match."
+    ],
+    "images": [
+      {
+        "file": "images/recognition-1.png",
+        "sha256": "54abc956abd0a5fd1aae46867598ee599ba4b67061a1176cc517301680cbc532"
+      },
+      {
+        "file": "images/recognition-2.png",
+        "sha256": "fb0b9b1fb0cda08c8a3a77b4c35dcd1d665440cde73666e2527ada46eacfb49b"
+      },
+      {
+        "file": "images/recognition-3.png",
+        "sha256": "c1f7ec940a75face8e27c1a3091d0c65439763276cdaf20e5f96a384a778d010"
+      }
+    ],
+    "limitations": [
+      "This pass approves the three static acknowledgement concept poses only. It cannot establish one-shot behaviour, face stability during interpolation, final timing or drawn frame coverage.",
+      "The upper-lid lift in pose 2 is deliberately small; the closed smile carries most of the recognition beat. Its strength at a final device display size has not been tested.",
+      "Registration and palette were assessed visually. Exact pixel centres and exact colour equality with the anchor are not claimed, and minor generated contour and texture changes remain."
+    ]
+  },
+  {
+    "id": "empathy",
+    "passed": true,
+    "blockers": [],
+    "observations": [
+      "Reviewed images/available-blink-1.png and all three files listed below with view_image at original detail. The trio preserves one MIST face, the anchor's apparent eye size and face scale, and stable eye and mouth placement.",
+      "Pose 1 has open C eyes and a short level closed mouth. Pose 2 lifts the inner upper contours into a mild concerned angle and changes the mouth to a shallow downturned stroke. Pose 3 relaxes the right eye while retaining the left concerned contour and returns the mouth to a level closed stroke. All three poses visibly differ.",
+      "Pose 2 reads as gentle worry, with readable C apertures and raised inner contours. It contains no sharp angry V, detached eyebrows, grin, tears or exaggerated sad features.",
+      "The middle image contains only the two eyes and one mouth. The final attentive hold keeps a quiet neutral mouth without smile leakage. No ghosts, duplicate outlines, stray cyan marks or whole-face jumps were visible.",
+      "The turquoise strokes and dark background remain coherent with the shared MIST identity. All three canonical files are RGB PNGs at 1254 by 1254 pixels. Their current SHA256 values match their manifests and the available generatedSource files byte for byte. Manifest pose sets, assignment filenames and prompts also match."
+    ],
+    "images": [
+      {
+        "file": "images/empathy-1.png",
+        "sha256": "0e579458015eca82c5ec9d02d7b9800c245c892a0ac214fcf0dd4a4453c5fcef"
+      },
+      {
+        "file": "images/empathy-2.png",
+        "sha256": "9f67743f7f8b09e89056f03f3925d27b7c8e98b18cbef83b384ff873af52c068"
+      },
+      {
+        "file": "images/empathy-3.png",
+        "sha256": "68b9340f830ef8ff9c92e796219572d7c94e43edfe1feded934a7483873f1446"
+      }
+    ],
+    "limitations": [
+      "This pass approves three static empathy concept poses only. Drawn in-betweens, the transition duration and the sustained attentive hold have not been validated as motion.",
+      "Concern is mild and depends on the upper contour angles and shallow downturned mouth. Its readability at a final device display size has not been tested.",
+      "Face registration and approximate palette coherence were judged visually. Exact pixel invariance and exact colour matching are not established; minor generated contour and faint tonal texture variation remains."
+    ]
+  }
+]

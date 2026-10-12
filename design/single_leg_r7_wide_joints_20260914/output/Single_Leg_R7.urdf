@@ -1,0 +1,367 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="single_leg_r6">
+  <link name="base_mount">
+    <visual name="yaw_case_saddle">
+      <geometry>
+        <mesh filename="assembly_mesh/yaw_case_saddle.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="yaw_case_saddle_colour">
+        <color rgba="0.22 0.58 0.60 1" />
+      </material>
+    </visual>
+    <collision name="yaw_case_saddle">
+      <geometry>
+        <mesh filename="assembly_mesh/yaw_case_saddle.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+    <visual name="case_cap_yaw">
+      <geometry>
+        <mesh filename="assembly_mesh/case_cap_yaw.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="case_cap_yaw_colour">
+        <color rgba="0.22 0.58 0.60 1" />
+      </material>
+    </visual>
+    <collision name="case_cap_yaw">
+      <geometry>
+        <mesh filename="assembly_mesh/case_cap_yaw.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+    <visual name="servo_yaw">
+      <geometry>
+        <mesh filename="assembly_mesh/servo_yaw.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="servo_yaw_colour">
+        <color rgba="0.18 0.23 0.25 1" />
+      </material>
+    </visual>
+    <collision name="servo_yaw">
+      <geometry>
+        <mesh filename="assembly_mesh/servo_yaw.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+    <visual name="bench_mounting_plate">
+      <geometry>
+        <mesh filename="assembly_mesh/bench_mounting_plate.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="bench_mounting_plate_colour">
+        <color rgba="0.22 0.58 0.60 1" />
+      </material>
+    </visual>
+    <collision name="bench_mounting_plate">
+      <geometry>
+        <mesh filename="assembly_mesh/bench_mounting_plate.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="-0.03181038563164084 -4.9075545814887306e-05 -0.023931630508960546" />
+      <mass value="0.15654936271041547" />
+      <inertia ixx="8.672821644569633e-05" ixy="7.806166264533957e-08" ixz="-2.9782332326370206e-05" iyy="0.00020871868933529337" iyz="-3.694922418017422e-08" izz="0.0002518412264048065" />
+    </inertial>
+  </link>
+  <link name="coxa">
+    <visual name="coxa_upper_and_hip_saddle">
+      <geometry>
+        <mesh filename="assembly_mesh/coxa_upper_and_hip_saddle.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="coxa_upper_and_hip_saddle_colour">
+        <color rgba="0.22 0.58 0.60 1" />
+      </material>
+    </visual>
+    <collision name="coxa_upper_and_hip_saddle">
+      <geometry>
+        <mesh filename="assembly_mesh/coxa_upper_and_hip_saddle.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+    <visual name="coxa_lower_auxiliary_arm">
+      <geometry>
+        <mesh filename="assembly_mesh/coxa_lower_auxiliary_arm.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="coxa_lower_auxiliary_arm_colour">
+        <color rgba="0.22 0.58 0.60 1" />
+      </material>
+    </visual>
+    <collision name="coxa_lower_auxiliary_arm">
+      <geometry>
+        <mesh filename="assembly_mesh/coxa_lower_auxiliary_arm.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+    <visual name="case_cap_hip">
+      <geometry>
+        <mesh filename="assembly_mesh/case_cap_hip.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="case_cap_hip_colour">
+        <color rgba="0.22 0.58 0.60 1" />
+      </material>
+    </visual>
+    <collision name="case_cap_hip">
+      <geometry>
+        <mesh filename="assembly_mesh/case_cap_hip.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+    <visual name="servo_hip">
+      <geometry>
+        <mesh filename="assembly_mesh/servo_hip.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="servo_hip_colour">
+        <color rgba="0.18 0.23 0.25 1" />
+      </material>
+    </visual>
+    <collision name="servo_hip">
+      <geometry>
+        <mesh filename="assembly_mesh/servo_hip.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+    <visual name="horn_yaw_main">
+      <geometry>
+        <mesh filename="assembly_mesh/horn_yaw_main.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="horn_yaw_main_colour">
+        <color rgba="0.22 0.58 0.60 1" />
+      </material>
+    </visual>
+    <collision name="horn_yaw_main">
+      <geometry>
+        <mesh filename="assembly_mesh/horn_yaw_main.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+    <visual name="horn_yaw_auxiliary">
+      <geometry>
+        <mesh filename="assembly_mesh/horn_yaw_auxiliary.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="horn_yaw_auxiliary_colour">
+        <color rgba="0.22 0.58 0.60 1" />
+      </material>
+    </visual>
+    <collision name="horn_yaw_auxiliary">
+      <geometry>
+        <mesh filename="assembly_mesh/horn_yaw_auxiliary.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+    <visual name="yaw_auxiliary_spacer_1">
+      <geometry>
+        <mesh filename="assembly_mesh/yaw_auxiliary_spacer_1.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="yaw_auxiliary_spacer_1_colour">
+        <color rgba="0.22 0.58 0.60 1" />
+      </material>
+    </visual>
+    <collision name="yaw_auxiliary_spacer_1">
+      <geometry>
+        <mesh filename="assembly_mesh/yaw_auxiliary_spacer_1.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+    <visual name="yaw_auxiliary_spacer_2">
+      <geometry>
+        <mesh filename="assembly_mesh/yaw_auxiliary_spacer_2.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="yaw_auxiliary_spacer_2_colour">
+        <color rgba="0.22 0.58 0.60 1" />
+      </material>
+    </visual>
+    <collision name="yaw_auxiliary_spacer_2">
+      <geometry>
+        <mesh filename="assembly_mesh/yaw_auxiliary_spacer_2.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+    <visual name="yaw_auxiliary_spacer_3">
+      <geometry>
+        <mesh filename="assembly_mesh/yaw_auxiliary_spacer_3.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="yaw_auxiliary_spacer_3_colour">
+        <color rgba="0.22 0.58 0.60 1" />
+      </material>
+    </visual>
+    <collision name="yaw_auxiliary_spacer_3">
+      <geometry>
+        <mesh filename="assembly_mesh/yaw_auxiliary_spacer_3.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+    <visual name="yaw_auxiliary_spacer_4">
+      <geometry>
+        <mesh filename="assembly_mesh/yaw_auxiliary_spacer_4.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="yaw_auxiliary_spacer_4_colour">
+        <color rgba="0.22 0.58 0.60 1" />
+      </material>
+    </visual>
+    <collision name="yaw_auxiliary_spacer_4">
+      <geometry>
+        <mesh filename="assembly_mesh/yaw_auxiliary_spacer_4.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.055452587774020255 -0.00032622706613614225 -0.007411181974307129" />
+      <mass value="0.11618827437852595" />
+      <inertia ixx="4.884448832271316e-05" ixy="7.745356217217634e-07" ixz="-3.0773868545057644e-05" iyy="0.0001315815648874679" iyz="5.456770085067065e-07" izz="9.845169734911079e-05" />
+    </inertial>
+  </link>
+  <link name="femur">
+    <visual name="femur_main_and_knee_saddle">
+      <geometry>
+        <mesh filename="assembly_mesh/femur_main_and_knee_saddle.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="femur_main_and_knee_saddle_colour">
+        <color rgba="0.22 0.58 0.60 1" />
+      </material>
+    </visual>
+    <collision name="femur_main_and_knee_saddle">
+      <geometry>
+        <mesh filename="assembly_mesh/femur_main_and_knee_saddle.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+    <visual name="femur_auxiliary_cheek">
+      <geometry>
+        <mesh filename="assembly_mesh/femur_auxiliary_cheek.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="femur_auxiliary_cheek_colour">
+        <color rgba="0.22 0.58 0.60 1" />
+      </material>
+    </visual>
+    <collision name="femur_auxiliary_cheek">
+      <geometry>
+        <mesh filename="assembly_mesh/femur_auxiliary_cheek.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+    <visual name="case_cap_knee">
+      <geometry>
+        <mesh filename="assembly_mesh/case_cap_knee.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="case_cap_knee_colour">
+        <color rgba="0.22 0.58 0.60 1" />
+      </material>
+    </visual>
+    <collision name="case_cap_knee">
+      <geometry>
+        <mesh filename="assembly_mesh/case_cap_knee.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+    <visual name="servo_knee">
+      <geometry>
+        <mesh filename="assembly_mesh/servo_knee.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="servo_knee_colour">
+        <color rgba="0.18 0.23 0.25 1" />
+      </material>
+    </visual>
+    <collision name="servo_knee">
+      <geometry>
+        <mesh filename="assembly_mesh/servo_knee.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+    <visual name="horn_hip_main">
+      <geometry>
+        <mesh filename="assembly_mesh/horn_hip_main.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="horn_hip_main_colour">
+        <color rgba="0.22 0.58 0.60 1" />
+      </material>
+    </visual>
+    <collision name="horn_hip_main">
+      <geometry>
+        <mesh filename="assembly_mesh/horn_hip_main.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+    <visual name="horn_hip_auxiliary">
+      <geometry>
+        <mesh filename="assembly_mesh/horn_hip_auxiliary.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="horn_hip_auxiliary_colour">
+        <color rgba="0.22 0.58 0.60 1" />
+      </material>
+    </visual>
+    <collision name="horn_hip_auxiliary">
+      <geometry>
+        <mesh filename="assembly_mesh/horn_hip_auxiliary.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.0633651760426129 -0.001298314040615189 0.001934967497040738" />
+      <mass value="0.12491601583063594" />
+      <inertia ixx="3.8022032231092195e-05" ixy="-3.321671674319615e-06" ixz="-3.950552346680719e-07" iyy="0.00011345261288137595" iyz="3.8489769422451107e-07" izz="0.00012329667234778685" />
+    </inertial>
+  </link>
+  <link name="tibia">
+    <visual name="tibia_curved_main_and_foot">
+      <geometry>
+        <mesh filename="assembly_mesh/tibia_curved_main_and_foot.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="tibia_curved_main_and_foot_colour">
+        <color rgba="0.22 0.58 0.60 1" />
+      </material>
+    </visual>
+    <collision name="tibia_curved_main_and_foot">
+      <geometry>
+        <mesh filename="assembly_mesh/tibia_curved_main_and_foot.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+    <visual name="tibia_auxiliary_cheek">
+      <geometry>
+        <mesh filename="assembly_mesh/tibia_auxiliary_cheek.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="tibia_auxiliary_cheek_colour">
+        <color rgba="0.22 0.58 0.60 1" />
+      </material>
+    </visual>
+    <collision name="tibia_auxiliary_cheek">
+      <geometry>
+        <mesh filename="assembly_mesh/tibia_auxiliary_cheek.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+    <visual name="horn_knee_main">
+      <geometry>
+        <mesh filename="assembly_mesh/horn_knee_main.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="horn_knee_main_colour">
+        <color rgba="0.22 0.58 0.60 1" />
+      </material>
+    </visual>
+    <collision name="horn_knee_main">
+      <geometry>
+        <mesh filename="assembly_mesh/horn_knee_main.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+    <visual name="horn_knee_auxiliary">
+      <geometry>
+        <mesh filename="assembly_mesh/horn_knee_auxiliary.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="horn_knee_auxiliary_colour">
+        <color rgba="0.22 0.58 0.60 1" />
+      </material>
+    </visual>
+    <collision name="horn_knee_auxiliary">
+      <geometry>
+        <mesh filename="assembly_mesh/horn_knee_auxiliary.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.0414753995760796 -0.001694745710956234 0.0002991704986421671" />
+      <mass value="0.049304916675112435" />
+      <inertia ixx="1.341332884585064e-05" ixy="-1.987778173156809e-06" ixz="3.6852256179443966e-07" iyy="4.556212902457954e-05" iyz="3.336425043941025e-08" izz="5.547369214215767e-05" />
+    </inertial>
+  </link>
+  <joint name="yaw" type="revolute">
+    <parent link="base_mount" />
+    <child link="coxa" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit lower="-0.9599310885968813" upper="0.9599310885968813" effort="0.8" velocity="0.5" />
+    <dynamics damping="0.03" friction="0.0" />
+  </joint>
+  <joint name="hip" type="revolute">
+    <parent link="coxa" />
+    <child link="femur" />
+    <origin xyz=".082 0 0" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-0.5235987755982988" upper="1.1344640137963142" effort="0.8" velocity="0.5" />
+    <dynamics damping="0.03" friction="0.0" />
+  </joint>
+  <joint name="knee" type="revolute">
+    <parent link="femur" />
+    <child link="tibia" />
+    <origin xyz=".090 0 0" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="0.08726646259971647" upper="2.007128639793479" effort="0.8" velocity="0.5" />
+    <dynamics damping="0.03" friction="0.0" />
+  </joint>
+</robot>

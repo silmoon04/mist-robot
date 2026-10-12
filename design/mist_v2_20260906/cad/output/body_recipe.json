@@ -1,0 +1,2407 @@
+{
+  "schema_version": 1,
+  "units": "mm",
+  "local_origin": "body bottom",
+  "assembly_z_offset": -35.0,
+  "envelope": {
+    "body_diameter": 180,
+    "main_barrel_height": 220,
+    "overall_height": 260,
+    "bezel_front_x": 99,
+    "bezel_width": 94,
+    "face_visible_width": 64,
+    "face_visible_height": 68
+  },
+  "com_bodybottom_mm": {
+    "battery": [
+      -25,
+      0,
+      20.5
+    ],
+    "brain_phone": [
+      0,
+      0,
+      69
+    ],
+    "face_phone": [
+      73.775,
+      0,
+      140
+    ]
+  },
+  "assumptions": {
+    "shell_wall": 2.4,
+    "radial_lid_clearance": 0.35,
+    "phone_pocket_clearance_per_side": 0.4,
+    "petg_density_g_cm3": 1.27,
+    "brain_phone_envelope": [
+      155,
+      75,
+      10
+    ]
+  },
+  "parts": [
+    {
+      "name": "B01_structural_lower_deck",
+      "color": "structure",
+      "category": "print",
+      "note": "PETG flat on bed; outer root attachments are provisional until hip-pod integration",
+      "ops": [
+        {
+          "kind": "cylinder",
+          "start": [
+            0,
+            0,
+            0
+          ],
+          "end": [
+            0,
+            0,
+            5
+          ],
+          "radius": 84,
+          "inner": 0,
+          "mode": "add"
+        },
+        {
+          "kind": "box",
+          "center": [
+            0,
+            -51,
+            2.5
+          ],
+          "size": [
+            70,
+            21,
+            9
+          ],
+          "mode": "cut"
+        },
+        {
+          "kind": "box",
+          "center": [
+            0,
+            51,
+            2.5
+          ],
+          "size": [
+            70,
+            21,
+            9
+          ],
+          "mode": "cut"
+        },
+        {
+          "kind": "radial_box",
+          "az": 45,
+          "radius": 88.5,
+          "z": 2.5,
+          "radial": 35,
+          "tangential": 30,
+          "height": 5,
+          "mode": "add"
+        },
+        {
+          "kind": "cylinder",
+          "start": [
+            55.15432893255071,
+            55.15432893255071,
+            -1
+          ],
+          "end": [
+            55.15432893255071,
+            55.15432893255071,
+            6
+          ],
+          "radius": 2.2,
+          "inner": 0,
+          "mode": "cut"
+        },
+        {
+          "kind": "cylinder",
+          "start": [
+            69.29646455628166,
+            69.29646455628166,
+            -1
+          ],
+          "end": [
+            69.29646455628166,
+            69.29646455628166,
+            6
+          ],
+          "radius": 2.2,
+          "inner": 0,
+          "mode": "cut"
+        },
+        {
+          "kind": "radial_box",
+          "az": -45,
+          "radius": 88.5,
+          "z": 2.5,
+          "radial": 35,
+          "tangential": 30,
+          "height": 5,
+          "mode": "add"
+        },
+        {
+          "kind": "cylinder",
+          "start": [
+            55.15432893255071,
+            -55.15432893255071,
+            -1
+          ],
+          "end": [
+            55.15432893255071,
+            -55.15432893255071,
+            6
+          ],
+          "radius": 2.2,
+          "inner": 0,
+          "mode": "cut"
+        },
+        {
+          "kind": "cylinder",
+          "start": [
+            69.29646455628166,
+            -69.29646455628166,
+            -1
+          ],
+          "end": [
+            69.29646455628166,
+            -69.29646455628166,
+            6
+          ],
+          "radius": 2.2,
+          "inner": 0,
+          "mode": "cut"
+        },
+        {
+          "kind": "radial_box",
+          "az": 135,
+          "radius": 88.5,
+          "z": 2.5,
+          "radial": 35,
+          "tangential": 30,
+          "height": 5,
+          "mode": "add"
+        },
+        {
+          "kind": "cylinder",
+          "start": [
+            -55.154328932550705,
+            55.15432893255071,
+            -1
+          ],
+          "end": [
+            -55.154328932550705,
+            55.15432893255071,
+            6
+          ],
+          "radius": 2.2,
+          "inner": 0,
+          "mode": "cut"
+        },
+        {
+          "kind": "cylinder",
+          "start": [
+            -69.29646455628165,
+            69.29646455628166,
+            -1
+          ],
+          "end": [
+            -69.29646455628165,
+            69.29646455628166,
+            6
+          ],
+          "radius": 2.2,
+          "inner": 0,
+          "mode": "cut"
+        },
+        {
+          "kind": "radial_box",
+          "az": -135,
+          "radius": 88.5,
+          "z": 2.5,
+          "radial": 35,
+          "tangential": 30,
+          "height": 5,
+          "mode": "add"
+        },
+        {
+          "kind": "cylinder",
+          "start": [
+            -55.154328932550705,
+            -55.15432893255071,
+            -1
+          ],
+          "end": [
+            -55.154328932550705,
+            -55.15432893255071,
+            6
+          ],
+          "radius": 2.2,
+          "inner": 0,
+          "mode": "cut"
+        },
+        {
+          "kind": "cylinder",
+          "start": [
+            -69.29646455628165,
+            -69.29646455628166,
+            -1
+          ],
+          "end": [
+            -69.29646455628165,
+            -69.29646455628166,
+            6
+          ],
+          "radius": 2.2,
+          "inner": 0,
+          "mode": "cut"
+        },
+        {
+          "kind": "cylinder",
+          "start": [
+            -48,
+            -60,
+            -1
+          ],
+          "end": [
+            -48,
+            -60,
+            6
+          ],
+          "radius": 1.7,
+          "inner": 0,
+          "mode": "cut"
+        },
+        {
+          "kind": "cylinder",
+          "start": [
+            -48,
+            60,
+            -1
+          ],
+          "end": [
+            -48,
+            60,
+            6
+          ],
+          "radius": 1.7,
+          "inner": 0,
+          "mode": "cut"
+        },
+        {
+          "kind": "cylinder",
+          "start": [
+            48,
+            -60,
+            -1
+          ],
+          "end": [
+            48,
+            -60,
+            6
+          ],
+          "radius": 1.7,
+          "inner": 0,
+          "mode": "cut"
+        },
+        {
+          "kind": "cylinder",
+          "start": [
+            48,
+            60,
+            -1
+          ],
+          "end": [
+            48,
+            60,
+            6
+          ],
+          "radius": 1.7,
+          "inner": 0,
+          "mode": "cut"
+        }
+      ]
+    },
+    {
+      "name": "B02_battery_rail_R",
+      "color": "structure",
+      "category": "print",
+      "note": "Pads and strap dimensions need actual pack, tie roll and coupon measurements",
+      "ops": [
+        {
+          "kind": "box",
+          "center": [
+            -25,
+            -22,
+            6.625
+          ],
+          "size": [
+            112,
+            10,
+            3.25
+          ],
+          "mode": "add"
+        },
+        {
+          "kind": "box",
+          "center": [
+            -25,
+            -25.5,
+            11
+          ],
+          "size": [
+            112,
+            3,
+            12
+          ],
+          "mode": "add"
+        },
+        {
+          "kind": "box",
+          "center": [
+            -58,
+            -22,
+            6.5
+          ],
+          "size": [
+            15.5,
+            3,
+            8
+          ],
+          "mode": "cut"
+        },
+        {
+          "kind": "box",
+          "center": [
+            8,
+            -22,
+            6.5
+          ],
+          "size": [
+            15.5,
+            3,
+            8
+          ],
+          "mode": "cut"
+        },
+        {
+          "kind": "cylinder",
+          "start": [
+            -72,
+            -21,
+            3
+          ],
+          "end": [
+            -72,
+            -21,
+            10
+          ],
+          "radius": 1.7,
+          "inner": 0,
+          "mode": "cut"
+        },
+        {
+          "kind": "cylinder",
+          "start": [
+            22,
+            -21,
+            3
+          ],
+          "end": [
+            22,
+            -21,
+            10
+          ],
+          "radius": 1.7,
+          "inner": 0,
+          "mode": "cut"
+        }
+      ]
+    },
+    {
+      "name": "B02_battery_rail_L",
+      "color": "structure",
+      "category": "print",
+      "note": "Pads and strap dimensions need actual pack, tie roll and coupon measurements",
+      "ops": [
+        {
+          "kind": "box",
+          "center": [
+            -25,
+            22,
+            6.625
+          ],
+          "size": [
+            112,
+            10,
+            3.25
+          ],
+          "mode": "add"
+        },
+        {
+          "kind": "box",
+          "center": [
+            -25,
+            25.5,
+            11
+          ],
+          "size": [
+            112,
+            3,
+            12
+          ],
+          "mode": "add"
+        },
+        {
+          "kind": "box",
+          "center": [
+            -58,
+            22,
+            6.5
+          ],
+          "size": [
+            15.5,
+            3,
+            8
+          ],
+          "mode": "cut"
+        },
+        {
+          "kind": "box",
+          "center": [
+            8,
+            22,
+            6.5
+          ],
+          "size": [
+            15.5,
+            3,
+            8
+          ],
+          "mode": "cut"
+        },
+        {
+          "kind": "cylinder",
+          "start": [
+            -72,
+            21,
+            3
+          ],
+          "end": [
+            -72,
+            21,
+            10
+          ],
+          "radius": 1.7,
+          "inner": 0,
+          "mode": "cut"
+        },
+        {
+          "kind": "cylinder",
+          "start": [
+            22,
+            21,
+            3
+          ],
+          "end": [
+            22,
+            21,
+            10
+          ],
+          "radius": 1.7,
+          "inner": 0,
+          "mode": "cut"
+        }
+      ]
+    },
+    {
+      "name": "H01_battery_HOOVO_3S_REFERENCE",
+      "color": "battery",
+      "category": "hardware_reference",
+      "note": "104x34.5x24.5mm,174g repository placeholder; measure the real pack including wires",
+      "ops": [
+        {
+          "kind": "box",
+          "center": [
+            -25,
+            0,
+            20.5
+          ],
+          "size": [
+            104,
+            34.5,
+            24.5
+          ],
+          "mode": "add"
+        }
+      ]
+    },
+    {
+      "name": "B03_core_post_RR_lower",
+      "color": "structure",
+      "category": "print",
+      "note": "10mmOD compression spacer; continuous M3 tie rod clamps both decks; rod/nut stock not yet confirmed",
+      "ops": [
+        {
+          "kind": "annulus",
+          "start": [
+            -48,
+            -60,
+            5
+          ],
+          "end": [
+            -48,
+            -60,
+            61
+          ],
+          "radius": 5,
+          "inner": 1.7,
+          "mode": "add"
+        }
+      ]
+    },
+    {
+      "name": "B03_core_post_RR_upper",
+      "color": "structure",
+      "category": "print",
+      "note": "10mmOD compression spacer; continuous M3 tie rod clamps both decks; rod/nut stock not yet confirmed",
+      "ops": [
+        {
+          "kind": "annulus",
+          "start": [
+            -48,
+            -60,
+            64
+          ],
+          "end": [
+            -48,
+            -60,
+            104
+          ],
+          "radius": 5,
+          "inner": 1.7,
+          "mode": "add"
+        }
+      ]
+    },
+    {
+      "name": "B03_core_post_RL_lower",
+      "color": "structure",
+      "category": "print",
+      "note": "10mmOD compression spacer; continuous M3 tie rod clamps both decks; rod/nut stock not yet confirmed",
+      "ops": [
+        {
+          "kind": "annulus",
+          "start": [
+            -48,
+            60,
+            5
+          ],
+          "end": [
+            -48,
+            60,
+            61
+          ],
+          "radius": 5,
+          "inner": 1.7,
+          "mode": "add"
+        }
+      ]
+    },
+    {
+      "name": "B03_core_post_RL_upper",
+      "color": "structure",
+      "category": "print",
+      "note": "10mmOD compression spacer; continuous M3 tie rod clamps both decks; rod/nut stock not yet confirmed",
+      "ops": [
+        {
+          "kind": "annulus",
+          "start": [
+            -48,
+            60,
+            64
+          ],
+          "end": [
+            -48,
+            60,
+            104
+          ],
+          "radius": 5,
+          "inner": 1.7,
+          "mode": "add"
+        }
+      ]
+    },
+    {
+      "name": "B03_core_post_FR_lower",
+      "color": "structure",
+      "category": "print",
+      "note": "10mmOD compression spacer; continuous M3 tie rod clamps both decks; rod/nut stock not yet confirmed",
+      "ops": [
+        {
+          "kind": "annulus",
+          "start": [
+            48,
+            -60,
+            5
+          ],
+          "end": [
+            48,
+            -60,
+            61
+          ],
+          "radius": 5,
+          "inner": 1.7,
+          "mode": "add"
+        }
+      ]
+    },
+    {
+      "name": "B03_core_post_FR_upper",
+      "color": "structure",
+      "category": "print",
+      "note": "10mmOD compression spacer; continuous M3 tie rod clamps both decks; rod/nut stock not yet confirmed",
+      "ops": [
+        {
+          "kind": "annulus",
+          "start": [
+            48,
+            -60,
+            64
+          ],
+          "end": [
+            48,
+            -60,
+            104
+          ],
+          "radius": 5,
+          "inner": 1.7,
+          "mode": "add"
+        }
+      ]
+    },
+    {
+      "name": "B03_core_post_FL_lower",
+      "color": "structure",
+      "category": "print",
+      "note": "10mmOD compression spacer; continuous M3 tie rod clamps both decks; rod/nut stock not yet confirmed",
+      "ops": [
+        {
+          "kind": "annulus",
+          "start": [
+            48,
+            60,
+            5
+          ],
+          "end": [
+            48,
+            60,
+            61
+          ],
+          "radius": 5,
+          "inner": 1.7,
+          "mode": "add"
+        }
+      ]
+    },
+    {
+      "name": "B03_core_post_FL_upper",
+      "color": "structure",
+      "category": "print",
+      "note": "10mmOD compression spacer; continuous M3 tie rod clamps both decks; rod/nut stock not yet confirmed",
+      "ops": [
+        {
+          "kind": "annulus",
+          "start": [
+            48,
+            60,
+            64
+          ],
+          "end": [
+            48,
+            60,
+            104
+          ],
+          "radius": 5,
+          "inner": 1.7,
+          "mode": "add"
+        }
+      ]
+    },
+    {
+      "name": "B04_phone_and_electronics_deck",
+      "color": "structure",
+      "category": "print",
+      "note": "Horizontal PETG deck; remove before reaching battery from above",
+      "ops": [
+        {
+          "kind": "cylinder",
+          "start": [
+            0,
+            0,
+            61
+          ],
+          "end": [
+            0,
+            0,
+            64
+          ],
+          "radius": 83,
+          "inner": 0,
+          "mode": "add"
+        },
+        {
+          "kind": "box",
+          "center": [
+            0,
+            -52,
+            62
+          ],
+          "size": [
+            70,
+            14,
+            8
+          ],
+          "mode": "cut"
+        },
+        {
+          "kind": "box",
+          "center": [
+            0,
+            52,
+            62
+          ],
+          "size": [
+            70,
+            14,
+            8
+          ],
+          "mode": "cut"
+        },
+        {
+          "kind": "cylinder",
+          "start": [
+            -48,
+            -60,
+            59
+          ],
+          "end": [
+            -48,
+            -60,
+            65
+          ],
+          "radius": 1.7,
+          "inner": 0,
+          "mode": "cut"
+        },
+        {
+          "kind": "cylinder",
+          "start": [
+            -48,
+            60,
+            59
+          ],
+          "end": [
+            -48,
+            60,
+            65
+          ],
+          "radius": 1.7,
+          "inner": 0,
+          "mode": "cut"
+        },
+        {
+          "kind": "cylinder",
+          "start": [
+            48,
+            -60,
+            59
+          ],
+          "end": [
+            48,
+            -60,
+            65
+          ],
+          "radius": 1.7,
+          "inner": 0,
+          "mode": "cut"
+        },
+        {
+          "kind": "cylinder",
+          "start": [
+            48,
+            60,
+            59
+          ],
+          "end": [
+            48,
+            60,
+            65
+          ],
+          "radius": 1.7,
+          "inner": 0,
+          "mode": "cut"
+        },
+        {
+          "kind": "box",
+          "center": [
+            -39,
+            0,
+            66
+          ],
+          "size": [
+            2.4,
+            138,
+            4
+          ],
+          "mode": "add"
+        },
+        {
+          "kind": "box",
+          "center": [
+            39,
+            0,
+            66
+          ],
+          "size": [
+            2.4,
+            138,
+            4
+          ],
+          "mode": "add"
+        },
+        {
+          "kind": "box",
+          "center": [
+            -33,
+            -64,
+            62
+          ],
+          "size": [
+            3,
+            12,
+            8
+          ],
+          "mode": "cut"
+        },
+        {
+          "kind": "box",
+          "center": [
+            33,
+            -64,
+            62
+          ],
+          "size": [
+            3,
+            12,
+            8
+          ],
+          "mode": "cut"
+        },
+        {
+          "kind": "box",
+          "center": [
+            -33,
+            64,
+            62
+          ],
+          "size": [
+            3,
+            12,
+            8
+          ],
+          "mode": "cut"
+        },
+        {
+          "kind": "box",
+          "center": [
+            33,
+            64,
+            62
+          ],
+          "size": [
+            3,
+            12,
+            8
+          ],
+          "mode": "cut"
+        },
+        {
+          "kind": "box",
+          "center": [
+            76,
+            0,
+            62
+          ],
+          "size": [
+            24,
+            79,
+            8
+          ],
+          "mode": "cut"
+        }
+      ]
+    },
+    {
+      "name": "H02_brain_phone_ENVELOPE",
+      "color": "reference",
+      "category": "hardware_reference",
+      "note": "155x75x10mm provisional envelope; device model and actual mass remain unknown",
+      "ops": [
+        {
+          "kind": "box",
+          "center": [
+            0,
+            0,
+            69
+          ],
+          "size": [
+            75,
+            155,
+            10
+          ],
+          "mode": "add"
+        }
+      ]
+    },
+    {
+      "name": "B05_upper_core_ring",
+      "color": "structure",
+      "category": "print",
+      "note": "",
+      "ops": [
+        {
+          "kind": "annulus",
+          "start": [
+            0,
+            0,
+            104
+          ],
+          "end": [
+            0,
+            0,
+            108
+          ],
+          "radius": 86.6,
+          "inner": 74,
+          "mode": "add"
+        },
+        {
+          "kind": "box",
+          "center": [
+            79,
+            0,
+            106
+          ],
+          "size": [
+            32,
+            79,
+            10
+          ],
+          "mode": "cut"
+        },
+        {
+          "kind": "cylinder",
+          "start": [
+            -48,
+            -60,
+            102
+          ],
+          "end": [
+            -48,
+            -60,
+            110
+          ],
+          "radius": 1.7,
+          "inner": 0,
+          "mode": "cut"
+        },
+        {
+          "kind": "cylinder",
+          "start": [
+            -48,
+            60,
+            102
+          ],
+          "end": [
+            -48,
+            60,
+            110
+          ],
+          "radius": 1.7,
+          "inner": 0,
+          "mode": "cut"
+        },
+        {
+          "kind": "cylinder",
+          "start": [
+            48,
+            -60,
+            102
+          ],
+          "end": [
+            48,
+            -60,
+            110
+          ],
+          "radius": 1.7,
+          "inner": 0,
+          "mode": "cut"
+        },
+        {
+          "kind": "cylinder",
+          "start": [
+            48,
+            60,
+            102
+          ],
+          "end": [
+            48,
+            60,
+            110
+          ],
+          "radius": 1.7,
+          "inner": 0,
+          "mode": "cut"
+        },
+        {
+          "kind": "radial_box",
+          "az": 90,
+          "radius": 82,
+          "z": 114,
+          "radial": 7,
+          "tangential": 13,
+          "height": 16,
+          "mode": "add"
+        },
+        {
+          "kind": "cylinder",
+          "start": [
+            4.592425496802574e-15,
+            75.0,
+            114
+          ],
+          "end": [
+            5.633375276077825e-15,
+            92.0,
+            114
+          ],
+          "radius": 1.7,
+          "inner": 0,
+          "mode": "cut"
+        },
+        {
+          "kind": "radial_box",
+          "az": 180,
+          "radius": 82,
+          "z": 114,
+          "radial": 7,
+          "tangential": 13,
+          "height": 16,
+          "mode": "add"
+        },
+        {
+          "kind": "cylinder",
+          "start": [
+            -75.0,
+            9.184850993605149e-15,
+            114
+          ],
+          "end": [
+            -92.0,
+            1.126675055215565e-14,
+            114
+          ],
+          "radius": 1.7,
+          "inner": 0,
+          "mode": "cut"
+        },
+        {
+          "kind": "radial_box",
+          "az": 270,
+          "radius": 82,
+          "z": 114,
+          "radial": 7,
+          "tangential": 13,
+          "height": 16,
+          "mode": "add"
+        },
+        {
+          "kind": "cylinder",
+          "start": [
+            -1.3777276490407723e-14,
+            -75.0,
+            114
+          ],
+          "end": [
+            -1.6900125828233473e-14,
+            -92.0,
+            114
+          ],
+          "radius": 1.7,
+          "inner": 0,
+          "mode": "cut"
+        }
+      ]
+    },
+    {
+      "name": "B06_lower_shell_front",
+      "color": "grey",
+      "category": "print",
+      "note": "2.4mm cosmetic wall; hip-window size awaits moving pod interference audit",
+      "ops": [
+        {
+          "kind": "annulus",
+          "start": [
+            0,
+            0,
+            82
+          ],
+          "end": [
+            0,
+            0,
+            106
+          ],
+          "radius": 90,
+          "inner": 87.6,
+          "mode": "add"
+        },
+        {
+          "kind": "box",
+          "center": [
+            -101,
+            0,
+            56
+          ],
+          "size": [
+            202,
+            210,
+            110
+          ],
+          "mode": "cut"
+        },
+        {
+          "kind": "box",
+          "center": [
+            87,
+            0,
+            78
+          ],
+          "size": [
+            30,
+            60,
+            30
+          ],
+          "mode": "cut"
+        },
+        {
+          "kind": "box",
+          "center": [
+            88,
+            0,
+            139
+          ],
+          "size": [
+            36,
+            95,
+            86
+          ],
+          "mode": "cut"
+        }
+      ]
+    },
+    {
+      "name": "B06_lower_shell_rear",
+      "color": "grey",
+      "category": "print",
+      "note": "2.4mm cosmetic wall; hip-window size awaits moving pod interference audit",
+      "ops": [
+        {
+          "kind": "annulus",
+          "start": [
+            0,
+            0,
+            6
+          ],
+          "end": [
+            0,
+            0,
+            106
+          ],
+          "radius": 90,
+          "inner": 87.6,
+          "mode": "add"
+        },
+        {
+          "kind": "box",
+          "center": [
+            101,
+            0,
+            56
+          ],
+          "size": [
+            202,
+            210,
+            110
+          ],
+          "mode": "cut"
+        },
+        {
+          "kind": "radial_box",
+          "az": 135,
+          "radius": 99,
+          "z": 44,
+          "radial": 54,
+          "tangential": 88,
+          "height": 76,
+          "mode": "cut"
+        },
+        {
+          "kind": "radial_box",
+          "az": -135,
+          "radius": 99,
+          "z": 44,
+          "radial": 54,
+          "tangential": 88,
+          "height": 76,
+          "mode": "cut"
+        },
+        {
+          "kind": "box",
+          "center": [
+            -87,
+            0,
+            33
+          ],
+          "size": [
+            30,
+            44,
+            32
+          ],
+          "mode": "cut"
+        }
+      ]
+    },
+    {
+      "name": "B07_upper_shell_front",
+      "color": "white",
+      "category": "print",
+      "note": "112mm tall cosmetic clamshell; rim and core carry alignment, seam attachment awaits coupon",
+      "ops": [
+        {
+          "kind": "annulus",
+          "start": [
+            0,
+            0,
+            108
+          ],
+          "end": [
+            0,
+            0,
+            220
+          ],
+          "radius": 90,
+          "inner": 87.6,
+          "mode": "add"
+        },
+        {
+          "kind": "box",
+          "center": [
+            -101,
+            0,
+            164
+          ],
+          "size": [
+            202,
+            210,
+            120
+          ],
+          "mode": "cut"
+        },
+        {
+          "kind": "box",
+          "center": [
+            88,
+            0,
+            139
+          ],
+          "size": [
+            36,
+            95,
+            86
+          ],
+          "mode": "cut"
+        },
+        {
+          "kind": "cylinder",
+          "start": [
+            4.592425496802574e-15,
+            75.0,
+            114
+          ],
+          "end": [
+            5.75583995599256e-15,
+            94.0,
+            114
+          ],
+          "radius": 1.7,
+          "inner": 0,
+          "mode": "cut"
+        },
+        {
+          "kind": "cylinder",
+          "start": [
+            -1.3777276490407723e-14,
+            -75.0,
+            114
+          ],
+          "end": [
+            -1.7267519867977678e-14,
+            -94.0,
+            114
+          ],
+          "radius": 1.7,
+          "inner": 0,
+          "mode": "cut"
+        }
+      ]
+    },
+    {
+      "name": "B07_upper_shell_rear",
+      "color": "white",
+      "category": "print",
+      "note": "112mm tall cosmetic clamshell; rim and core carry alignment, seam attachment awaits coupon",
+      "ops": [
+        {
+          "kind": "annulus",
+          "start": [
+            0,
+            0,
+            108
+          ],
+          "end": [
+            0,
+            0,
+            220
+          ],
+          "radius": 90,
+          "inner": 87.6,
+          "mode": "add"
+        },
+        {
+          "kind": "box",
+          "center": [
+            101,
+            0,
+            164
+          ],
+          "size": [
+            202,
+            210,
+            120
+          ],
+          "mode": "cut"
+        },
+        {
+          "kind": "cylinder",
+          "start": [
+            4.592425496802574e-15,
+            75.0,
+            114
+          ],
+          "end": [
+            5.75583995599256e-15,
+            94.0,
+            114
+          ],
+          "radius": 1.7,
+          "inner": 0,
+          "mode": "cut"
+        },
+        {
+          "kind": "cylinder",
+          "start": [
+            -75.0,
+            9.184850993605149e-15,
+            114
+          ],
+          "end": [
+            -94.0,
+            1.151167991198512e-14,
+            114
+          ],
+          "radius": 1.7,
+          "inner": 0,
+          "mode": "cut"
+        },
+        {
+          "kind": "cylinder",
+          "start": [
+            -1.3777276490407723e-14,
+            -75.0,
+            114
+          ],
+          "end": [
+            -1.7267519867977678e-14,
+            -94.0,
+            114
+          ],
+          "radius": 1.7,
+          "inner": 0,
+          "mode": "cut"
+        }
+      ]
+    },
+    {
+      "name": "B08_lower_white_trim",
+      "color": "white",
+      "category": "print",
+      "note": "",
+      "ops": [
+        {
+          "kind": "annulus",
+          "start": [
+            0,
+            0,
+            101
+          ],
+          "end": [
+            0,
+            0,
+            107.5
+          ],
+          "radius": 92,
+          "inner": 90.25,
+          "mode": "add"
+        },
+        {
+          "kind": "box",
+          "center": [
+            89,
+            0,
+            104
+          ],
+          "size": [
+            34,
+            95,
+            12
+          ],
+          "mode": "cut"
+        }
+      ]
+    },
+    {
+      "name": "B09_dark_waist_band",
+      "color": "black",
+      "category": "print",
+      "note": "",
+      "ops": [
+        {
+          "kind": "annulus",
+          "start": [
+            0,
+            0,
+            96
+          ],
+          "end": [
+            0,
+            0,
+            101
+          ],
+          "radius": 92,
+          "inner": 90.25,
+          "mode": "add"
+        },
+        {
+          "kind": "box",
+          "center": [
+            89,
+            0,
+            99
+          ],
+          "size": [
+            34,
+            95,
+            12
+          ],
+          "mode": "cut"
+        }
+      ]
+    },
+    {
+      "name": "B10_lid_twin_rim",
+      "color": "white",
+      "category": "print",
+      "note": "Print flat; two raised circumferential bands preserve the reference silhouette",
+      "ops": [
+        {
+          "kind": "annulus",
+          "start": [
+            0,
+            0,
+            216
+          ],
+          "end": [
+            0,
+            0,
+            224
+          ],
+          "radius": 87.25,
+          "inner": 84.8,
+          "mode": "add"
+        },
+        {
+          "kind": "annulus",
+          "start": [
+            0,
+            0,
+            220
+          ],
+          "end": [
+            0,
+            0,
+            222.6
+          ],
+          "radius": 92,
+          "inner": 84.8,
+          "mode": "add"
+        },
+        {
+          "kind": "annulus",
+          "start": [
+            0,
+            0,
+            222.6
+          ],
+          "end": [
+            0,
+            0,
+            229.2
+          ],
+          "radius": 90.1,
+          "inner": 87.1,
+          "mode": "add"
+        },
+        {
+          "kind": "annulus",
+          "start": [
+            0,
+            0,
+            229.2
+          ],
+          "end": [
+            0,
+            0,
+            232
+          ],
+          "radius": 92,
+          "inner": 87.1,
+          "mode": "add"
+        }
+      ]
+    },
+    {
+      "name": "B11_shallow_lid",
+      "color": "white",
+      "category": "print",
+      "note": "Native revolved section; print rim down; bridge handle removes lid only",
+      "ops": [
+        {
+          "kind": "revolve",
+          "mode": "add",
+          "points": [
+            [
+              90.1,
+              232
+            ],
+            [
+              84,
+              234.8
+            ],
+            [
+              68,
+              239.2
+            ],
+            [
+              0,
+              242
+            ],
+            [
+              0,
+              239.5
+            ],
+            [
+              67.6,
+              236.7
+            ],
+            [
+              82.6,
+              232.4
+            ],
+            [
+              84.5,
+              230.5
+            ],
+            [
+              87,
+              230.5
+            ],
+            [
+              87,
+              232
+            ]
+          ]
+        },
+        {
+          "kind": "cylinder",
+          "start": [
+            -6,
+            -42,
+            235
+          ],
+          "end": [
+            -6,
+            -42,
+            245
+          ],
+          "radius": 1.7,
+          "inner": 0,
+          "mode": "cut"
+        },
+        {
+          "kind": "cylinder",
+          "start": [
+            -6,
+            42,
+            235
+          ],
+          "end": [
+            -6,
+            42,
+            245
+          ],
+          "radius": 1.7,
+          "inner": 0,
+          "mode": "cut"
+        },
+        {
+          "kind": "cylinder",
+          "start": [
+            6,
+            -42,
+            235
+          ],
+          "end": [
+            6,
+            -42,
+            245
+          ],
+          "radius": 1.7,
+          "inner": 0,
+          "mode": "cut"
+        },
+        {
+          "kind": "cylinder",
+          "start": [
+            6,
+            42,
+            235
+          ],
+          "end": [
+            6,
+            42,
+            245
+          ],
+          "radius": 1.7,
+          "inner": 0,
+          "mode": "cut"
+        }
+      ]
+    },
+    {
+      "name": "B12_lid_bridge_handle",
+      "color": "white",
+      "category": "print",
+      "note": "Print broad side on bed; four screw feet; do not lift the robot by this cosmetic lid handle",
+      "ops": [
+        {
+          "kind": "polygon",
+          "points": [
+            [
+              -50,
+              237
+            ],
+            [
+              -48,
+              248
+            ],
+            [
+              -35,
+              257
+            ],
+            [
+              -18,
+              260
+            ],
+            [
+              18,
+              260
+            ],
+            [
+              35,
+              257
+            ],
+            [
+              48,
+              248
+            ],
+            [
+              50,
+              237
+            ],
+            [
+              36,
+              237
+            ],
+            [
+              34,
+              244
+            ],
+            [
+              24,
+              248
+            ],
+            [
+              0,
+              251
+            ],
+            [
+              -24,
+              248
+            ],
+            [
+              -34,
+              244
+            ],
+            [
+              -36,
+              237
+            ]
+          ],
+          "thickness": 24,
+          "origin": [
+            -12,
+            0,
+            0
+          ],
+          "normal": [
+            1,
+            0,
+            0
+          ],
+          "x_axis": [
+            0,
+            1,
+            0
+          ],
+          "mode": "add"
+        },
+        {
+          "kind": "revolve",
+          "mode": "cut",
+          "points": [
+            [
+              0,
+              200
+            ],
+            [
+              90.1,
+              200
+            ],
+            [
+              90.1,
+              232
+            ],
+            [
+              84,
+              234.8
+            ],
+            [
+              68,
+              239.2
+            ],
+            [
+              0,
+              242
+            ]
+          ]
+        },
+        {
+          "kind": "cylinder",
+          "start": [
+            -6,
+            -42,
+            235
+          ],
+          "end": [
+            -6,
+            -42,
+            256
+          ],
+          "radius": 1.7,
+          "inner": 0,
+          "mode": "cut"
+        },
+        {
+          "kind": "cylinder",
+          "start": [
+            -6,
+            42,
+            235
+          ],
+          "end": [
+            -6,
+            42,
+            256
+          ],
+          "radius": 1.7,
+          "inner": 0,
+          "mode": "cut"
+        },
+        {
+          "kind": "cylinder",
+          "start": [
+            6,
+            -42,
+            235
+          ],
+          "end": [
+            6,
+            -42,
+            256
+          ],
+          "radius": 1.7,
+          "inner": 0,
+          "mode": "cut"
+        },
+        {
+          "kind": "cylinder",
+          "start": [
+            6,
+            42,
+            235
+          ],
+          "end": [
+            6,
+            42,
+            256
+          ],
+          "radius": 1.7,
+          "inner": 0,
+          "mode": "cut"
+        }
+      ]
+    },
+    {
+      "name": "B13_face_phone_cassette",
+      "color": "black",
+      "category": "print",
+      "note": "Portrait Mi9SE,0.4mm pocket clearance per side; removable from open lid after unplugging",
+      "ops": [
+        {
+          "kind": "box",
+          "center": [
+            72.575,
+            0,
+            140
+          ],
+          "size": [
+            11.35,
+            76.1,
+            151
+          ],
+          "mode": "add"
+        },
+        {
+          "kind": "box",
+          "center": [
+            73.775,
+            0,
+            140.3
+          ],
+          "size": [
+            9.75,
+            71.3,
+            148.3
+          ],
+          "mode": "cut"
+        },
+        {
+          "kind": "box",
+          "center": [
+            80.2,
+            0,
+            140
+          ],
+          "size": [
+            15,
+            65,
+            149
+          ],
+          "mode": "cut"
+        },
+        {
+          "kind": "box",
+          "center": [
+            74.2,
+            0,
+            217
+          ],
+          "size": [
+            16,
+            71.3,
+            8
+          ],
+          "mode": "cut"
+        },
+        {
+          "kind": "box",
+          "center": [
+            74.2,
+            0,
+            63.5
+          ],
+          "size": [
+            18,
+            17,
+            10
+          ],
+          "mode": "cut"
+        },
+        {
+          "kind": "box",
+          "center": [
+            67.5,
+            0,
+            111
+          ],
+          "size": [
+            8,
+            60,
+            42
+          ],
+          "mode": "cut"
+        },
+        {
+          "kind": "box",
+          "center": [
+            67.5,
+            0,
+            177
+          ],
+          "size": [
+            8,
+            60,
+            42
+          ],
+          "mode": "cut"
+        },
+        {
+          "kind": "cylinder",
+          "start": [
+            66,
+            -34.5,
+            100
+          ],
+          "end": [
+            84,
+            -34.5,
+            100
+          ],
+          "radius": 1.7,
+          "inner": 0,
+          "mode": "cut"
+        },
+        {
+          "kind": "cylinder",
+          "start": [
+            66,
+            34.5,
+            100
+          ],
+          "end": [
+            84,
+            34.5,
+            100
+          ],
+          "radius": 1.7,
+          "inner": 0,
+          "mode": "cut"
+        },
+        {
+          "kind": "cylinder",
+          "start": [
+            66,
+            -34.5,
+            170
+          ],
+          "end": [
+            84,
+            -34.5,
+            170
+          ],
+          "radius": 1.7,
+          "inner": 0,
+          "mode": "cut"
+        },
+        {
+          "kind": "cylinder",
+          "start": [
+            66,
+            34.5,
+            170
+          ],
+          "end": [
+            84,
+            34.5,
+            170
+          ],
+          "radius": 1.7,
+          "inner": 0,
+          "mode": "cut"
+        }
+      ]
+    },
+    {
+      "name": "H03_face_phone_Mi9SE_REFERENCE",
+      "color": "reference",
+      "category": "hardware_reference",
+      "note": "147.5x70.5x7.45mm repository placeholder; screen active area/buttons/case/USB need measurement",
+      "ops": [
+        {
+          "kind": "box",
+          "center": [
+            73.775,
+            0,
+            140
+          ],
+          "size": [
+            7.45,
+            70.5,
+            147.5
+          ],
+          "mode": "add"
+        }
+      ]
+    },
+    {
+      "name": "B14_square_face_bezel",
+      "color": "black",
+      "category": "print",
+      "note": "94x86mm outline masks a64x68mm phone view; 17mm recess constrains off-axis viewing",
+      "ops": [
+        {
+          "kind": "box",
+          "center": [
+            91.5,
+            0,
+            139
+          ],
+          "size": [
+            15,
+            94,
+            86
+          ],
+          "mode": "add"
+        },
+        {
+          "kind": "box",
+          "center": [
+            92,
+            0,
+            139
+          ],
+          "size": [
+            20,
+            66,
+            70
+          ],
+          "mode": "cut"
+        },
+        {
+          "kind": "box",
+          "center": [
+            94,
+            0,
+            139
+          ],
+          "size": [
+            14,
+            83,
+            77
+          ],
+          "mode": "cut"
+        },
+        {
+          "kind": "cylinder",
+          "start": [
+            81,
+            -35.5,
+            100
+          ],
+          "end": [
+            102,
+            -35.5,
+            100
+          ],
+          "radius": 1.7,
+          "inner": 0,
+          "mode": "cut"
+        },
+        {
+          "kind": "cylinder",
+          "start": [
+            81,
+            -35.5,
+            178
+          ],
+          "end": [
+            102,
+            -35.5,
+            178
+          ],
+          "radius": 1.7,
+          "inner": 0,
+          "mode": "cut"
+        },
+        {
+          "kind": "cylinder",
+          "start": [
+            81,
+            35.5,
+            100
+          ],
+          "end": [
+            102,
+            35.5,
+            100
+          ],
+          "radius": 1.7,
+          "inner": 0,
+          "mode": "cut"
+        },
+        {
+          "kind": "cylinder",
+          "start": [
+            81,
+            35.5,
+            178
+          ],
+          "end": [
+            102,
+            35.5,
+            178
+          ],
+          "radius": 1.7,
+          "inner": 0,
+          "mode": "cut"
+        }
+      ]
+    },
+    {
+      "name": "H04_face_display_ACTIVE_AREA_GUIDE",
+      "color": "black",
+      "category": "visual_reference",
+      "note": "Display guide only; the app must render eyes on a black background in the measured window",
+      "ops": [
+        {
+          "kind": "box",
+          "center": [
+            77.55,
+            0,
+            139
+          ],
+          "size": [
+            0.1,
+            64,
+            68
+          ],
+          "mode": "add"
+        }
+      ]
+    },
+    {
+      "name": "H05_eye_R",
+      "color": "cyan",
+      "category": "visual_reference",
+      "note": "",
+      "ops": [
+        {
+          "kind": "annulus",
+          "start": [
+            77.7,
+            -16,
+            145
+          ],
+          "end": [
+            77.8,
+            -16,
+            145
+          ],
+          "radius": 7,
+          "inner": 5.5,
+          "mode": "add"
+        }
+      ]
+    },
+    {
+      "name": "H05_eye_L",
+      "color": "cyan",
+      "category": "visual_reference",
+      "note": "",
+      "ops": [
+        {
+          "kind": "annulus",
+          "start": [
+            77.7,
+            16,
+            145
+          ],
+          "end": [
+            77.8,
+            16,
+            145
+          ],
+          "radius": 7,
+          "inner": 5.5,
+          "mode": "add"
+        }
+      ]
+    },
+    {
+      "name": "H06_mouth",
+      "color": "cyan",
+      "category": "visual_reference",
+      "note": "",
+      "ops": [
+        {
+          "kind": "box",
+          "center": [
+            77.75,
+            0,
+            127
+          ],
+          "size": [
+            0.1,
+            10,
+            2
+          ],
+          "mode": "add"
+        }
+      ]
+    },
+    {
+      "name": "B15_secondary_dark_panel",
+      "color": "black",
+      "category": "print",
+      "note": "Reference-like lower fascia; frontToF opening and cable relief need hardware confirmation",
+      "ops": [
+        {
+          "kind": "box",
+          "center": [
+            92,
+            0,
+            78
+          ],
+          "size": [
+            10,
+            58,
+            29
+          ],
+          "mode": "add"
+        },
+        {
+          "kind": "box",
+          "center": [
+            88,
+            0,
+            78
+          ],
+          "size": [
+            8,
+            52,
+            23
+          ],
+          "mode": "cut"
+        },
+        {
+          "kind": "box",
+          "center": [
+            96,
+            17,
+            78
+          ],
+          "size": [
+            8,
+            10,
+            8
+          ],
+          "mode": "cut"
+        },
+        {
+          "kind": "box",
+          "center": [
+            92,
+            -28,
+            72
+          ],
+          "size": [
+            12,
+            8,
+            9
+          ],
+          "mode": "cut"
+        }
+      ]
+    },
+    {
+      "name": "B16_rear_connector_guard",
+      "color": "grey",
+      "category": "print",
+      "note": "Open rear power-disconnect reach; connector mounting hole pattern remains measured-part work",
+      "ops": [
+        {
+          "kind": "box",
+          "center": [
+            -94,
+            0,
+            32
+          ],
+          "size": [
+            8,
+            49,
+            36
+          ],
+          "mode": "add"
+        },
+        {
+          "kind": "box",
+          "center": [
+            -94,
+            0,
+            32
+          ],
+          "size": [
+            14,
+            39,
+            27
+          ],
+          "mode": "cut"
+        }
+      ]
+    }
+  ]
+}

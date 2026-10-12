@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Quadruped assembly | Phone pan</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <header class="masthead">
+    <div class="identity"><span class="symbol" aria-hidden="true">Q<span>4</span></span><div><p class="eyebrow">HEXAPOD REFERENCE / FOUR LEG ADAPTATION</p><h1>Quadruped assembly</h1></div></div>
+    <div class="status"><span aria-hidden="true"></span>R4 inward knee</div>
+  </header>
+  <main>
+    <section class="viewport" aria-label="Interactive 3D assembly">
+      <div id="canvas-host"></div>
+      <div class="scene-heading"><strong>Four legs. One rotating phone.</strong><p>STS3215 servos · Landscape Xiaomi Mi 9 SE</p></div>
+      <div class="scene-key"><span class="dot teal"></span>Printed parts<span class="dot graphite"></span>Hardware</div>
+      <div id="loading" class="loading" role="status"><span class="spinner"></span><strong>Loading actual CAD meshes</strong><small id="load-count">Reading assembly manifest</small></div>
+      <div class="view-bar" aria-label="Camera views"><button class="view active" data-view="perspective">Orbit view</button><button class="view" data-view="front">Front</button><button class="view" data-view="side">Side</button><button class="view" data-view="top">Top</button></div>
+      <div class="scene-footer"><span>Drag to orbit · Scroll to zoom · Right drag to pan</span><span>Grid: 50 mm</span></div>
+      <div id="part-tooltip" class="part-tooltip" hidden><strong></strong><span></span></div>
+    </section>
+    <aside class="controls" aria-label="Assembly controls">
+      <div class="panel-header"><div><p class="eyebrow">INSPECT THE DESIGN</p><h2>Assembly controls</h2></div><button id="reset" class="icon-button" title="Reset view and controls" aria-label="Reset view and controls">↺</button></div>
+      <section class="control-section">
+        <div class="label-line"><label for="pan">Phone rotation</label><output id="pan-value" for="pan">0°</output></div>
+        <input id="pan" type="range" min="0" max="360" value="0" step="1">
+        <div class="range-labels"><span>0°</span><span>360°</span></div>
+        <p class="hint">The phone uses Wi-Fi and its battery while turning. Connect USB only when parked.</p>
+        <div class="label-line stance"><label for="stance">Leg stance</label><output id="stance-value" for="stance">Nominal</output></div>
+        <input id="stance" type="range" min="-100" max="100" value="0" step="1">
+        <div class="range-labels"><span>Lower</span><span>Higher</span></div>
+        <p class="hint">Visual joint motion only. This control does not simulate balance or contact forces.</p>
+      </section>
+      <section class="control-section switches">
+        <label class="switch-row"><span>Show body cover</span><input id="shell" type="checkbox" checked><span class="switch" aria-hidden="true"></span></label>
+        <label class="switch-row"><span>Show hardware</span><input id="hardware" type="checkbox" checked><span class="switch" aria-hidden="true"></span></label>
+        <label class="switch-row"><span>Separate assemblies</span><input id="explode" type="checkbox"><span class="switch" aria-hidden="true"></span></label>
+      </section>
+      <section class="control-section specification">
+        <p class="eyebrow">NOMINAL ASSEMBLY</p>
+        <dl><div><dt>Estimated assembled mass</dt><dd id="mass">Loading</dd></div><div class="solid-reference"><dt>Full-solid CAD reference</dt><dd id="solid-mass">Loading</dd></div><div><dt>Span X × Y</dt><dd id="span">Loading</dd></div><div><dt>Overall height</dt><dd id="height">Loading</dd></div><div><dt>Servo count</dt><dd id="servo-count">13</dd></div><div><dt>Printable part types</dt><dd id="part-count">Loading</dd></div><div><dt>Printed pieces</dt><dd id="piece-count">Loading</dd></div></dl>
+        <p class="hint" id="mass-note">Checking the sliced mass estimate against the current CAD revision.</p>
+      </section>
+      <div class="next-step"><span class="step-number">01</span><div><strong>Start with the fit coupons</strong><p>Check the real servo, horn and bare phone, then complete the controlled load tests.</p><a href="../printing/PRINT_FIRST.txt">Open the print-first guide <span aria-hidden="true">↗</span></a></div></div>
+      <nav class="document-links" aria-label="Manufacturing and test reports"><p class="eyebrow">BUILD AND TEST</p><a href="../manufacturing/strength/r4_strength_assessment.md">Strength assessment <span aria-hidden="true">↗</span></a><a href="../manufacturing/slicing_r4/output/PRODUCTION_SLICING.md">Production slicing <span aria-hidden="true">↗</span></a><a href="../simulation/output_r4_comparison/case_comparison.txt">Simulation comparison <span aria-hidden="true">↗</span></a></nav>
+      <div class="file-links"><a href="../cad/output/Hex_Quad_Phone_assembly.step">Assembly STEP</a><a href="../cad/output/print_bom.csv">Print BOM</a><a href="hero.png">Static preview</a></div>
+      <p class="revision" id="revision">Local CAD viewer</p>
+    </aside>
+  </main>
+  <script type="module" src="viewer.js"></script>
+</body>
+</html>

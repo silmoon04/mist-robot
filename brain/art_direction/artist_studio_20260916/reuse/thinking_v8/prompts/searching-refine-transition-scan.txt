@@ -1,0 +1,17 @@
+Use case: precise-object-edit
+Edit target: the attached transparent 1536x1024 search-document sprite sheet with EXACTLY six columns and four rows, 24 cels.
+Preserve ALL SIXTEEN active frames 4-19 exactly, including their already-correct continuous visible scanner sweep to the right and back left. Do not change any scanner positions in active cels. Do not alter active document scale, position, row text or opacity.
+
+Only repair scanner continuity in the entrance and exit:
+The vertical capped scanner must belong to the document and scale with it from entrance through exit. Add the scanner just inside the LEFT edge in each of these eight cels:
+- row1 col1 frame0: small entering document, leftmost scanner visible at 35% opacity and the SAME scale as this small document.
+- row1 col2 frame1: scanner at left, 55% opacity, scaled with document.
+- row1 col3 frame2: scanner at left, 75% opacity, scaled with document.
+- row1 col4 frame3: scanner at left, full opacity, matching nearby frame4 so it does not suddenly appear at the active transition.
+- row4 col3 frame20: scanner remains leftmost, shrinks with document, 85% opacity.
+- row4 col4 frame21: scanner remains leftmost, shrinks with document, 65% opacity.
+- row4 col5 frame22: scanner remains leftmost, shrinks with document, 45% opacity.
+- row4 col6 frame23: scanner remains leftmost, shrinks with document, 25% opacity.
+The whole document and scanner retract together. Do not erase the scanner suddenly in frame20. Keep all current progressive entrance and exit document sizes exactly as drawn. The scanner is one narrow vertical cyan line with small flat caps, not a lens or circle.
+
+Keep all 24 cels, their exact positions, sizes, cyan ink style, abstract four rows, true transparent background and transparent interiors. No new icons, success symbols, words, labels, face parts, shadows, glow or matte.

@@ -1,0 +1,401 @@
+{
+  "id": "connecting",
+  "version": 8,
+  "tool": "built-in image_gen.imagegen",
+  "sourceFile": "connecting.png",
+  "width": 1536,
+  "height": 1024,
+  "mode": "RGBA",
+  "grid": {
+    "columns": 6,
+    "rows": 4,
+    "cellWidth": 256,
+    "cellHeight": 256
+  },
+  "frameCount": 24,
+  "phases": {
+    "enter": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "loop": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "exit": [
+      20,
+      21,
+      22,
+      23
+    ]
+  },
+  "promptFiles": [
+    "../prompts/connecting.txt",
+    "../prompts/connecting_refine.txt"
+  ],
+  "source": "<LOCAL_HOME>/.codex/generated_images/01a0d42e-4332-7e03-9dd5-5ca960884e58/exec-54192062-90b3-4ab6-b59a-74c344c9c1bf.png",
+  "sha256": "766e5cab5df698e5373001dcef0f8479679a263f9e8b572a7827b1a405d2f570",
+  "motion": "Two small square endpoints stay fixed while a packet dash travels on an incomplete segmented path and returns to poll.",
+  "registration": "Rows drift vertically within the nominal grid by approximately 34px from first to last row. Register each full-size cell by the midpoint between its two endpoints; use one shared scale. The active path always retains visible gaps.",
+  "review": {
+    "allCellsVisible": true,
+    "noFaceOrText": true,
+    "noSuccessMarks": true,
+    "transparentBackground": true,
+    "minimumSignificantAlpha": 32,
+    "alphaRange": [
+      0,
+      254
+    ],
+    "fullyTransparentPixelFraction": 0.9390430450439453,
+    "lowAlphaPixelFraction1To31": 0.034055074055989586,
+    "cellBoundsAtAlpha32": [
+      [
+        62,
+        130,
+        200,
+        152
+      ],
+      [
+        52,
+        124,
+        208,
+        157
+      ],
+      [
+        43,
+        124,
+        216,
+        157
+      ],
+      [
+        43,
+        124,
+        215,
+        157
+      ],
+      [
+        42,
+        124,
+        215,
+        157
+      ],
+      [
+        42,
+        124,
+        214,
+        157
+      ],
+      [
+        44,
+        113,
+        216,
+        146
+      ],
+      [
+        43,
+        113,
+        216,
+        146
+      ],
+      [
+        43,
+        113,
+        216,
+        146
+      ],
+      [
+        42,
+        113,
+        215,
+        147
+      ],
+      [
+        42,
+        113,
+        215,
+        146
+      ],
+      [
+        42,
+        113,
+        214,
+        147
+      ],
+      [
+        44,
+        101,
+        216,
+        135
+      ],
+      [
+        43,
+        101,
+        216,
+        134
+      ],
+      [
+        43,
+        101,
+        216,
+        134
+      ],
+      [
+        43,
+        101,
+        215,
+        134
+      ],
+      [
+        42,
+        101,
+        215,
+        134
+      ],
+      [
+        42,
+        102,
+        214,
+        134
+      ],
+      [
+        43,
+        90,
+        216,
+        123
+      ],
+      [
+        43,
+        90,
+        216,
+        123
+      ],
+      [
+        43,
+        90,
+        216,
+        123
+      ],
+      [
+        56,
+        91,
+        202,
+        123
+      ],
+      [
+        62,
+        92,
+        197,
+        122
+      ],
+      [
+        62,
+        97,
+        196,
+        118
+      ]
+    ],
+    "notes": "Untouched original built-in PNG copied byte for byte. Inspected after normal alpha compositing on a dark surface. Hidden RGB contains teal haze in alpha-zero areas, but the composited drawing has clean transparent surrounding space. Outline antialiasing includes low-alpha pixels. Numeric inbetween positions in the prompt are approximate in the result; brief held positions remain. Root owns export, registration, and playback review."
+  },
+  "reference": "<LOCAL_HOME>/.codex/generated_images/01a0d42e-4332-7e03-9dd5-5ca960884e58/exec-7d837047-937f-4fff-9f35-1481bdbdd3e3.png",
+  "motionAudit": {
+    "status": "rejected_pending_motion_correction",
+    "measurementMethod": "Connected components of alpha>=128; inspect packet centers relative to static node centers, or separate scan bracket center relative to document top. Missing bracket entries in the last styled edit can reflect newly joined alpha halo components; they are not proof of absence. Full alpha composite inspection also performed. No hash-based uniqueness claim.",
+    "finding": "Original rejected: packet moves only slightly in frames7-12, jumps approximately49px left between12and13, and repeats its leftward endpoint in16-18. Replacement attempts still contain an early reversal and a large return step; the percentage-position edit additionally erased intended entrance and exit progression. No replacement is accepted.",
+    "sourceUnchangedAfterRejection": true,
+    "replacementAttempts": [
+      {
+        "source": "<LOCAL_HOME>/.codex/generated_images/01a0d42e-4332-7e03-9dd5-5ca960884e58/exec-f461b5fd-ae0e-422c-94ec-675490aa758f.png",
+        "promptFile": "../prompts/connecting_motion_v2.txt",
+        "sha256": "ad10294bda0333025d9b7bdabb518dd97776a58e85a81749f3bd9e5f90535049",
+        "measurements": [
+          {
+            "frame": 4,
+            "packetCenterX": 87.5,
+            "fractionBetweenNodeCenters": 0.2697
+          },
+          {
+            "frame": 5,
+            "packetCenterX": 124.0,
+            "fractionBetweenNodeCenters": 0.5076
+          },
+          {
+            "frame": 6,
+            "packetCenterX": 113.0,
+            "fractionBetweenNodeCenters": 0.3493
+          },
+          {
+            "frame": 7,
+            "packetCenterX": 136.5,
+            "fractionBetweenNodeCenters": 0.5
+          },
+          {
+            "frame": 8,
+            "packetCenterX": 138.5,
+            "fractionBetweenNodeCenters": 0.5361
+          },
+          {
+            "frame": 9,
+            "packetCenterX": 149.5,
+            "fractionBetweenNodeCenters": 0.6303
+          },
+          {
+            "frame": 10,
+            "packetCenterX": 159.5,
+            "fractionBetweenNodeCenters": 0.7048
+          },
+          {
+            "frame": 11,
+            "packetCenterX": 169.5,
+            "fractionBetweenNodeCenters": 0.789
+          },
+          {
+            "frame": 12,
+            "packetCenterX": 184.5,
+            "fractionBetweenNodeCenters": 0.7754
+          },
+          {
+            "frame": 13,
+            "packetCenterX": 148.0,
+            "fractionBetweenNodeCenters": 0.5689
+          },
+          {
+            "frame": 14,
+            "packetCenterX": 133.0,
+            "fractionBetweenNodeCenters": 0.503
+          },
+          {
+            "frame": 15,
+            "packetCenterX": 124.5,
+            "fractionBetweenNodeCenters": 0.4773
+          },
+          {
+            "frame": 16,
+            "packetCenterX": 114.5,
+            "fractionBetweenNodeCenters": 0.435
+          },
+          {
+            "frame": 17,
+            "packetCenterX": 97.5,
+            "fractionBetweenNodeCenters": 0.3576
+          },
+          {
+            "frame": 18,
+            "packetCenterX": 113.0,
+            "fractionBetweenNodeCenters": 0.3443
+          },
+          {
+            "frame": 19,
+            "packetCenterX": 98.5,
+            "fractionBetweenNodeCenters": 0.2643
+          }
+        ],
+        "accepted": false
+      },
+      {
+        "source": "<LOCAL_HOME>/.codex/generated_images/01a0d42e-4332-7e03-9dd5-5ca960884e58/exec-fb32a859-ce82-4e48-bf42-49b1f2341747.png",
+        "promptFile": "../prompts/connecting_motion_fix.txt",
+        "sha256": "b162421fd05104fb772324442842d14c01ca8bad864c49a8c1e1e5aa43b71679",
+        "measurements": [
+          {
+            "frame": 4,
+            "packetCenterX": null,
+            "fractionBetweenNodeCenters": null
+          },
+          {
+            "frame": 5,
+            "packetCenterX": null,
+            "fractionBetweenNodeCenters": null
+          },
+          {
+            "frame": 6,
+            "packetCenterX": null,
+            "fractionBetweenNodeCenters": null
+          },
+          {
+            "frame": 7,
+            "packetCenterX": null,
+            "fractionBetweenNodeCenters": null
+          },
+          {
+            "frame": 8,
+            "packetCenterX": 132.5,
+            "fractionBetweenNodeCenters": 0.5
+          },
+          {
+            "frame": 9,
+            "packetCenterX": 128.5,
+            "fractionBetweenNodeCenters": 0.507
+          },
+          {
+            "frame": 10,
+            "packetCenterX": null,
+            "fractionBetweenNodeCenters": null
+          },
+          {
+            "frame": 11,
+            "packetCenterX": null,
+            "fractionBetweenNodeCenters": null
+          },
+          {
+            "frame": 12,
+            "packetCenterX": null,
+            "fractionBetweenNodeCenters": null
+          },
+          {
+            "frame": 13,
+            "packetCenterX": null,
+            "fractionBetweenNodeCenters": null
+          },
+          {
+            "frame": 14,
+            "packetCenterX": null,
+            "fractionBetweenNodeCenters": null
+          },
+          {
+            "frame": 15,
+            "packetCenterX": null,
+            "fractionBetweenNodeCenters": null
+          },
+          {
+            "frame": 16,
+            "packetCenterX": null,
+            "fractionBetweenNodeCenters": null
+          },
+          {
+            "frame": 17,
+            "packetCenterX": null,
+            "fractionBetweenNodeCenters": null
+          },
+          {
+            "frame": 18,
+            "packetCenterX": null,
+            "fractionBetweenNodeCenters": null
+          },
+          {
+            "frame": 19,
+            "packetCenterX": null,
+            "fractionBetweenNodeCenters": null
+          }
+        ],
+        "accepted": false
+      }
+    ]
+  }
+}

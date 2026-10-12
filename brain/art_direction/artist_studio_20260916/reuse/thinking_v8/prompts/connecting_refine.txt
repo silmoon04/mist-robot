@@ -1,0 +1,6 @@
+Use case: background-extraction
+Edit this exact sprite sheet. Keep all 24 drawings in precisely their current positions and keep the six-column four-row grid and cyan rounded-square nodes and moving packet dashes. Correct the background and stroke treatment only.
+
+Remove the entire dark teal background AND every blurred glow, haze, vignette, bloom, halo, shadow, or other color outside the actual line strokes. Output a PNG with genuine alpha transparency everywhere except the crisp cyan line strokes and moving packet dashes. Hollow node interiors must also be truly transparent. There must be no opaque matte and no colored wash. This is a small flat UI sprite sheet, so glow cannot be present anywhere.
+
+Make the outline lightly hand-drawn but keep the shape geometry steady. Use a narrow solid cyan outline with softly antialiased edges. The nodes are square endpoints with round corners, never eyes. Keep the segmented paths incomplete and never add a connected or success symbol. Preserve every cell and all 24 individual drawings; do not reorder, crop, resize, remove, or add cells. Six columns by four rows on a 1536 by 1024 canvas. No labels, text, faces, ticks, or background.

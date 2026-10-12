@@ -1,0 +1,383 @@
+{
+  "version": 1,
+  "checks": 51,
+  "passed": true,
+  "sourceManifestSha256": "8091609c5bb7030c0cc153eb74d609e251b7c75fb8094bb33254ed5da1914757",
+  "sources": [
+    {
+      "clipId": "mist-hinge",
+      "audio": "audio/mist-hinge-native.wav",
+      "sha256": "68ce5afaf170e57dc12be9a8ef497741375578c98ebd4fc8d65effdca56cfb1a",
+      "bytes": 299244,
+      "duration": 6.233333333333333,
+      "alignmentSource": "recovered_provider_caption_word_bounds_estimated_phonemes_audio_gated"
+    },
+    {
+      "clipId": "mist-second-attempt",
+      "audio": "audio/mist-second-attempt-native.wav",
+      "sha256": "0c5d41b79210e1927eb3df7a10e3e304f4efb87c349fede9f0a5ed3ed477c139",
+      "bytes": 206492,
+      "duration": 4.301,
+      "alignmentSource": "recovered_provider_caption_word_bounds_estimated_phonemes_audio_gated"
+    },
+    {
+      "clipId": "mist-patience",
+      "audio": "audio/mist-patience-native.wav",
+      "sha256": "5a008613c417e9d64bc880df00fbdba4b038a172271160fa5395cf50b775d400",
+      "bytes": 125708,
+      "duration": 2.618,
+      "alignmentSource": "audio_energy"
+    }
+  ],
+  "fixtures": [
+    {
+      "id": "native-rest",
+      "at": 0.89,
+      "sample": {
+        "epoch": 4,
+        "sequence": 2,
+        "turn_id": "fixture",
+        "turnId": "fixture",
+        "time": 0.89,
+        "audiblePosition": 0.89,
+        "alignmentSource": "recovered_provider_caption_word_bounds_estimated_phonemes_audio_gated",
+        "timingKind": "estimated",
+        "originalProvenance": {
+          "clipId": "mist-hinge",
+          "source": "recovered_provider_caption_word_bounds_estimated_phonemes_audio_gated",
+          "timingKind": "estimated",
+          "nativeSha256": "68ce5afaf170e57dc12be9a8ef497741375578c98ebd4fc8d65effdca56cfb1a",
+          "limitations": [
+            "Provider caption growth supplies word bounds; original character durations were not retained.",
+            "Positions inside words are pronunciation-based animation estimates, not measured phoneme timestamps.",
+            "Redacted base64 padding leaves bounded packet-offset uncertainty; interval bounds are recorded in speech/recovered-caption-onsets.json.",
+            "Clipped word boundaries and unknown dictionary words keep the character fallback. Audio energy closes the mouth in silence.",
+            "No human hearing or perceptual lip-sync rating is inferred."
+          ]
+        },
+        "active": false,
+        "viseme": "rest",
+        "amount": 0,
+        "source": "silence",
+        "silence": true,
+        "reason": "cue-rest",
+        "cueTime": 0.881958,
+        "cueIndex": 71
+      }
+    },
+    {
+      "id": "packet-gap",
+      "at": 0.5,
+      "sample": {
+        "epoch": 4,
+        "sequence": 2,
+        "turn_id": "fixture",
+        "turnId": "fixture",
+        "time": 0.5,
+        "audiblePosition": 0.5,
+        "alignmentSource": "audio_energy",
+        "timingKind": "energy",
+        "originalProvenance": {
+          "clipId": "mist-patience",
+          "source": "audio_energy",
+          "timingKind": "energy",
+          "nativeSha256": "5a008613c417e9d64bc880df00fbdba4b038a172271160fa5395cf50b775d400",
+          "limitations": [
+            "This benchmark saved alignment coverage counts but discarded exact character and caption timing.",
+            "Cues follow measured PCM energy only. AA is a generic open shape; no word or phoneme timing is inferred.",
+            "No human hearing or perceptual lip-sync rating is inferred."
+          ]
+        },
+        "active": false,
+        "viseme": "rest",
+        "amount": 0,
+        "source": "silence",
+        "silence": true,
+        "reason": "packet-gap",
+        "cueTime": null
+      }
+    },
+    {
+      "id": "suspended-clock",
+      "at": 0.5,
+      "sample": {
+        "epoch": 4,
+        "sequence": 2,
+        "turn_id": "fixture",
+        "turnId": "fixture",
+        "time": 0.5,
+        "audiblePosition": 0.5,
+        "alignmentSource": "recovered_provider_caption_word_bounds_estimated_phonemes_audio_gated",
+        "timingKind": "estimated",
+        "originalProvenance": {
+          "clipId": "mist-hinge",
+          "source": "recovered_provider_caption_word_bounds_estimated_phonemes_audio_gated",
+          "timingKind": "estimated",
+          "nativeSha256": "68ce5afaf170e57dc12be9a8ef497741375578c98ebd4fc8d65effdca56cfb1a",
+          "limitations": [
+            "Provider caption growth supplies word bounds; original character durations were not retained.",
+            "Positions inside words are pronunciation-based animation estimates, not measured phoneme timestamps.",
+            "Redacted base64 padding leaves bounded packet-offset uncertainty; interval bounds are recorded in speech/recovered-caption-onsets.json.",
+            "Clipped word boundaries and unknown dictionary words keep the character fallback. Audio energy closes the mouth in silence.",
+            "No human hearing or perceptual lip-sync rating is inferred."
+          ]
+        },
+        "active": false,
+        "viseme": "rest",
+        "amount": 0,
+        "source": "silence",
+        "silence": true,
+        "reason": "suspended-clock",
+        "cueTime": null
+      }
+    },
+    {
+      "id": "resume",
+      "at": 0.5,
+      "sample": {
+        "epoch": 4,
+        "sequence": 2,
+        "turn_id": "fixture",
+        "turnId": "fixture",
+        "time": 0.5,
+        "audiblePosition": 0.5,
+        "alignmentSource": "recovered_provider_caption_word_bounds_estimated_phonemes_audio_gated",
+        "timingKind": "estimated",
+        "originalProvenance": {
+          "clipId": "mist-hinge",
+          "source": "recovered_provider_caption_word_bounds_estimated_phonemes_audio_gated",
+          "timingKind": "estimated",
+          "nativeSha256": "68ce5afaf170e57dc12be9a8ef497741375578c98ebd4fc8d65effdca56cfb1a",
+          "limitations": [
+            "Provider caption growth supplies word bounds; original character durations were not retained.",
+            "Positions inside words are pronunciation-based animation estimates, not measured phoneme timestamps.",
+            "Redacted base64 padding leaves bounded packet-offset uncertainty; interval bounds are recorded in speech/recovered-caption-onsets.json.",
+            "Clipped word boundaries and unknown dictionary words keep the character fallback. Audio energy closes the mouth in silence.",
+            "No human hearing or perceptual lip-sync rating is inferred."
+          ]
+        },
+        "active": true,
+        "viseme": "S",
+        "amount": 0.8502,
+        "source": "recovered_provider_caption_word_bounds_estimated_phonemes_audio_gated",
+        "silence": false,
+        "reason": "cue",
+        "cueTime": 0.5,
+        "cueIndex": 39,
+        "cueProvenance": null
+      }
+    },
+    {
+      "id": "interrupt",
+      "at": 0.5,
+      "sample": {
+        "epoch": 4,
+        "sequence": 2,
+        "turn_id": "fixture",
+        "turnId": "fixture",
+        "time": 0.5,
+        "audiblePosition": 0.5,
+        "alignmentSource": "recovered_provider_caption_word_bounds_estimated_phonemes_audio_gated",
+        "timingKind": "estimated",
+        "originalProvenance": {
+          "clipId": "mist-second-attempt",
+          "source": "recovered_provider_caption_word_bounds_estimated_phonemes_audio_gated",
+          "timingKind": "estimated",
+          "nativeSha256": "0c5d41b79210e1927eb3df7a10e3e304f4efb87c349fede9f0a5ed3ed477c139",
+          "limitations": [
+            "Provider caption growth supplies word bounds; original character durations were not retained.",
+            "Positions inside words are pronunciation-based animation estimates, not measured phoneme timestamps.",
+            "Redacted base64 padding leaves bounded packet-offset uncertainty; interval bounds are recorded in speech/recovered-caption-onsets.json.",
+            "Clipped word boundaries and unknown dictionary words keep the character fallback. Audio energy closes the mouth in silence.",
+            "No human hearing or perceptual lip-sync rating is inferred."
+          ]
+        },
+        "active": false,
+        "viseme": "rest",
+        "amount": 0,
+        "source": "silence",
+        "silence": true,
+        "reason": "interrupt",
+        "cueTime": null
+      }
+    },
+    {
+      "id": "reset",
+      "at": 0.5,
+      "sample": {
+        "epoch": 4,
+        "sequence": 2,
+        "turn_id": "fixture",
+        "turnId": "fixture",
+        "time": 0.5,
+        "audiblePosition": 0.5,
+        "alignmentSource": "recovered_provider_caption_word_bounds_estimated_phonemes_audio_gated",
+        "timingKind": "estimated",
+        "originalProvenance": {
+          "clipId": "mist-hinge",
+          "source": "recovered_provider_caption_word_bounds_estimated_phonemes_audio_gated",
+          "timingKind": "estimated",
+          "nativeSha256": "68ce5afaf170e57dc12be9a8ef497741375578c98ebd4fc8d65effdca56cfb1a",
+          "limitations": [
+            "Provider caption growth supplies word bounds; original character durations were not retained.",
+            "Positions inside words are pronunciation-based animation estimates, not measured phoneme timestamps.",
+            "Redacted base64 padding leaves bounded packet-offset uncertainty; interval bounds are recorded in speech/recovered-caption-onsets.json.",
+            "Clipped word boundaries and unknown dictionary words keep the character fallback. Audio energy closes the mouth in silence.",
+            "No human hearing or perceptual lip-sync rating is inferred."
+          ]
+        },
+        "active": false,
+        "viseme": "rest",
+        "amount": 0,
+        "source": "silence",
+        "silence": true,
+        "reason": "reset",
+        "cueTime": null
+      }
+    },
+    {
+      "id": "disconnect",
+      "at": 0.5,
+      "sample": {
+        "epoch": 4,
+        "sequence": 2,
+        "turn_id": "fixture",
+        "turnId": "fixture",
+        "time": 0.5,
+        "audiblePosition": 0.5,
+        "alignmentSource": "recovered_provider_caption_word_bounds_estimated_phonemes_audio_gated",
+        "timingKind": "estimated",
+        "originalProvenance": {
+          "clipId": "mist-hinge",
+          "source": "recovered_provider_caption_word_bounds_estimated_phonemes_audio_gated",
+          "timingKind": "estimated",
+          "nativeSha256": "68ce5afaf170e57dc12be9a8ef497741375578c98ebd4fc8d65effdca56cfb1a",
+          "limitations": [
+            "Provider caption growth supplies word bounds; original character durations were not retained.",
+            "Positions inside words are pronunciation-based animation estimates, not measured phoneme timestamps.",
+            "Redacted base64 padding leaves bounded packet-offset uncertainty; interval bounds are recorded in speech/recovered-caption-onsets.json.",
+            "Clipped word boundaries and unknown dictionary words keep the character fallback. Audio energy closes the mouth in silence.",
+            "No human hearing or perceptual lip-sync rating is inferred."
+          ]
+        },
+        "active": false,
+        "viseme": "rest",
+        "amount": 0,
+        "source": "silence",
+        "silence": true,
+        "reason": "disconnect",
+        "cueTime": null
+      }
+    },
+    {
+      "id": "teardown",
+      "at": 0.5,
+      "sample": {
+        "epoch": 4,
+        "sequence": 2,
+        "turn_id": "fixture",
+        "turnId": "fixture",
+        "time": 0.5,
+        "audiblePosition": 0.5,
+        "alignmentSource": "recovered_provider_caption_word_bounds_estimated_phonemes_audio_gated",
+        "timingKind": "estimated",
+        "originalProvenance": {
+          "clipId": "mist-hinge",
+          "source": "recovered_provider_caption_word_bounds_estimated_phonemes_audio_gated",
+          "timingKind": "estimated",
+          "nativeSha256": "68ce5afaf170e57dc12be9a8ef497741375578c98ebd4fc8d65effdca56cfb1a",
+          "limitations": [
+            "Provider caption growth supplies word bounds; original character durations were not retained.",
+            "Positions inside words are pronunciation-based animation estimates, not measured phoneme timestamps.",
+            "Redacted base64 padding leaves bounded packet-offset uncertainty; interval bounds are recorded in speech/recovered-caption-onsets.json.",
+            "Clipped word boundaries and unknown dictionary words keep the character fallback. Audio energy closes the mouth in silence.",
+            "No human hearing or perceptual lip-sync rating is inferred."
+          ]
+        },
+        "active": false,
+        "viseme": "rest",
+        "amount": 0,
+        "source": "silence",
+        "silence": true,
+        "reason": "teardown",
+        "cueTime": null
+      }
+    },
+    {
+      "id": "end",
+      "at": 2.618,
+      "sample": {
+        "epoch": 4,
+        "sequence": 2,
+        "turn_id": "fixture",
+        "turnId": "fixture",
+        "time": 2.618,
+        "audiblePosition": 2.618,
+        "alignmentSource": "audio_energy",
+        "timingKind": "energy",
+        "originalProvenance": {
+          "clipId": "mist-patience",
+          "source": "audio_energy",
+          "timingKind": "energy",
+          "nativeSha256": "5a008613c417e9d64bc880df00fbdba4b038a172271160fa5395cf50b775d400",
+          "limitations": [
+            "This benchmark saved alignment coverage counts but discarded exact character and caption timing.",
+            "Cues follow measured PCM energy only. AA is a generic open shape; no word or phoneme timing is inferred.",
+            "No human hearing or perceptual lip-sync rating is inferred."
+          ]
+        },
+        "active": false,
+        "viseme": "rest",
+        "amount": 0,
+        "source": "silence",
+        "silence": true,
+        "reason": "ended",
+        "cueTime": null
+      }
+    },
+    {
+      "id": "missing-cues",
+      "at": 0.5,
+      "sample": {
+        "epoch": 4,
+        "sequence": 2,
+        "turn_id": "fixture",
+        "turnId": "fixture",
+        "time": 0.5,
+        "audiblePosition": 0.5,
+        "alignmentSource": "recovered_provider_caption_word_bounds_estimated_phonemes_audio_gated",
+        "timingKind": "estimated",
+        "originalProvenance": {
+          "clipId": "mist-hinge",
+          "source": "recovered_provider_caption_word_bounds_estimated_phonemes_audio_gated",
+          "timingKind": "estimated",
+          "nativeSha256": "68ce5afaf170e57dc12be9a8ef497741375578c98ebd4fc8d65effdca56cfb1a",
+          "limitations": [
+            "Provider caption growth supplies word bounds; original character durations were not retained.",
+            "Positions inside words are pronunciation-based animation estimates, not measured phoneme timestamps.",
+            "Redacted base64 padding leaves bounded packet-offset uncertainty; interval bounds are recorded in speech/recovered-caption-onsets.json.",
+            "Clipped word boundaries and unknown dictionary words keep the character fallback. Audio energy closes the mouth in silence.",
+            "No human hearing or perceptual lip-sync rating is inferred."
+          ]
+        },
+        "active": false,
+        "viseme": "rest",
+        "amount": 0,
+        "source": "silence",
+        "silence": true,
+        "reason": "missing-cue",
+        "cueTime": null
+      }
+    }
+  ],
+  "localSamplingMeasurement": {
+    "unit": "milliseconds per call",
+    "calls": 200000,
+    "medianRound": 0.00043281000000000065,
+    "minRound": 0.00029230000000000017,
+    "maxRound": 0.0009471900000000005,
+    "runtime": "v24.18.0",
+    "method": "20 rounds of 10000 synchronous calls; performance.now; no audio device or renderer",
+    "limitations": "CPU sampling cost only. Does not measure acoustic latency or perceptual lip sync."
+  }
+}

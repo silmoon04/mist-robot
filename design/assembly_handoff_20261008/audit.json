@@ -1,0 +1,75 @@
+{
+  "checked_on": "2026-10-08",
+  "status": "package bytes and saved references consistent",
+  "archive_sha256": "2ac18cd59c920b1cd9c398a8c0e99c1674d802459e699a87d86788c8cb953e81",
+  "files": [
+    {
+      "file": "01_Main_Parts_With_Supports.3mf",
+      "sha256": "12a82ded917456d4f81bf17653a5afe330b40fb61d32bde98e60dc33727f548a",
+      "status": "matches saved checksum"
+    },
+    {
+      "file": "01_Main_Parts_With_Supports.stl",
+      "sha256": "242d47fe90e51010cf4448966a2440f084faefa36310ea22b8339e606bbb0e1f",
+      "status": "matches saved checksum"
+    },
+    {
+      "file": "02_Brackets_And_Caps.3mf",
+      "sha256": "44f77233d91d9078fc30bcf293e05fbc3985579493f1e3f98c9e3c1fd8ea0361",
+      "status": "matches saved checksum"
+    },
+    {
+      "file": "02_Brackets_And_Caps.stl",
+      "sha256": "e24a73e2e75ebf2d4b489f269e06cd972fec6d9461ffc44d750ac7f5c4be9a1a",
+      "status": "matches saved checksum"
+    },
+    {
+      "file": "Femur_Upper_Lip_Support.png",
+      "sha256": "7252729414d95845bb9be88787111f66802112d7a0287a0b55350cd62187c763",
+      "status": "matches saved checksum"
+    },
+    {
+      "file": "Fourth_Leg_Check.json",
+      "sha256": "8f65228bccd48c0c33f989d859fa47e5c2ea2a35102743a6119e2d3986f84dad",
+      "status": "matches saved checksum"
+    },
+    {
+      "file": "Neptune4Pro_Recovery_Balanced_028.curaprofile",
+      "sha256": "83817be5c646f64971adb65868f3343df85363e7e7440202e51b484c81c23e03",
+      "status": "matches saved checksum"
+    },
+    {
+      "file": "Plate_2_Map.png",
+      "sha256": "b26ac83e9cb946a118c0e320ae147b07339150d0df445324efb54768d4b22ab8",
+      "status": "matches saved checksum"
+    },
+    {
+      "file": "START_HERE.txt",
+      "sha256": "18e2136e71c911c4ad0c62ed40968582b585ab206c8e6d2c4366bb816b68f339",
+      "status": "matches saved checksum"
+    },
+    {
+      "file": "Support_Map.png",
+      "sha256": "dc67393f6655bdbd37e5135fe9bb8e803be2c51c92268e83d3d06939bdec4511",
+      "status": "matches saved checksum"
+    }
+  ],
+  "zip_matches_folder": true,
+  "plate_2_source_hashes_match": true,
+  "physical_result": "Recovery and fourth-leg print/fit results unreported. No new print, device operation or geometry change performed.",
+  "finding": {
+    "id": "MECH-ASM-REV-01",
+    "evidence": "September 15 assembly guide specifies 11.6 mm spacers and M3x30 captive-nut bridges; September 17 package specifies reused 13 mm spacers and M3x10 insert bridges.",
+    "change": "New inspection checklist explicitly supersedes old bridge instructions for the current revision and labels the yaw stack unresolved. Existing archives preserved.",
+    "validation": "Part IDs and hardware compared against saved fourth-leg instructions and third-leg insert geometry. Links and assets checked by the handoff validator.",
+    "limit": "User-reported spacer fit does not establish numeric screw engagement. No physical assembly outcome inferred."
+  },
+  "browser_check": {
+    "images_loaded": 3,
+    "horizontal_overflow": false,
+    "inspection_checkboxes": 11,
+    "console_note": "Only missing favicon request; no functional resource failures.",
+    "screenshot_path": "output/playwright/mechanical-checklist.png"
+  },
+  "checklist_sha256": "4014fc37b83623a58e534a0a8c2e8e20bcdb1a97bbceef580fa97f2211b59940"
+}

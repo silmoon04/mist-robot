@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "scope": "Independent boundary tests against the sampled-runtime contract; no acoustic measurement",
+  "total": 5,
+  "passed": 5,
+  "failed": 0,
+  "results": [
+    {
+      "id": "sampled-finite-duration-authoritative-clock",
+      "pass": true,
+      "evidence": {
+        "before": {
+          "active": true,
+          "viseme": "AA",
+          "amount": 0.8,
+          "source": "boundary-fixture",
+          "time": 0.25,
+          "epoch": 30,
+          "sequence": 1,
+          "turn_id": "qa-boundary"
+        },
+        "boundary": {
+          "active": true,
+          "viseme": "AA",
+          "amount": 0.8,
+          "source": "boundary-fixture",
+          "time": 0.25,
+          "epoch": 30,
+          "sequence": 1,
+          "turn_id": "qa-boundary"
+        },
+        "after": {
+          "active": true,
+          "viseme": "AA",
+          "amount": 0.8,
+          "source": "boundary-fixture",
+          "time": 0.25,
+          "epoch": 30,
+          "sequence": 1,
+          "turn_id": "qa-boundary"
+        }
+      }
+    },
+    {
+      "id": "sampled-duration-zero",
+      "pass": true,
+      "evidence": {
+        "active": true,
+        "viseme": "AA",
+        "amount": 0.8,
+        "source": "boundary-fixture",
+        "time": 0,
+        "epoch": 30,
+        "sequence": 1,
+        "turn_id": "qa-boundary"
+      }
+    },
+    {
+      "id": "cancel-during-sampler-callback",
+      "pass": true,
+      "evidence": {
+        "calls": 1
+      }
+    },
+    {
+      "id": "destroy-during-sampler-callback",
+      "pass": true,
+      "evidence": {
+        "drawsAfterDestroy": 0
+      }
+    },
+    {
+      "id": "finite-reaction-new-intent-survives-rest",
+      "pass": true,
+      "evidence": {
+        "intent": "reassuring",
+        "expression": "reassuring"
+      }
+    }
+  ]
+}

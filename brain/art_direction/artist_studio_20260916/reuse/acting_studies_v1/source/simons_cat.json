@@ -1,0 +1,75 @@
+{
+  "id": "simons_cat",
+  "asset_type": "MIST face acting sheet",
+  "inspiration": "Simon's Cat: observant comic intention, rounded staring eyes, tiny mouth marks and anticipation",
+  "original_path": "<LOCAL_HOME>/.codex/generated_images/01a0ea96-6844-7961-b100-a77c3ff065a8/exec-a07e8a05-b8fb-4d4e-a3a9-567b326af0e5.png",
+  "saved_path": "/brain/art_direction/artist_studio_20260916/reuse/acting_studies_v1/source/simons_cat.png",
+  "width": 1536,
+  "height": 1024,
+  "bytes": 1338670,
+  "sha256": "dea3e74df9544c23494e805ba76daf4bb16215bc108406808cff1c0a5734c220",
+  "original_sha256": "dea3e74df9544c23494e805ba76daf4bb16215bc108406808cff1c0a5734c220",
+  "untouched_original": true,
+  "tool": "image_gen.imagegen (builtin)",
+  "tool_arguments": {
+    "referenced_image_paths": [
+      "/brain/art_direction/artist_studio_20260916/reuse/style_studies_v3/user_reference.png"
+    ],
+    "transparent_background": false
+  },
+  "prompt_file": "/brain/art_direction/artist_studio_20260916/reuse/acting_studies_v1/prompts/simons_cat.txt",
+  "prompt": "Use case: illustration-story\nAsset type: MIST robot face acting study, nine frames on one landscape contact sheet.\nPrimary request: Create one original 1536 x 1024 pixel image with EXACTLY three equal-width columns and three equal-height rows, nine independent face poses, each row a clear three-pose setup/change/settle sequence read left to right. The grid is only implicit through exact spacing; there must be NO visible grid, cell boundaries, frames, borders, labels or text.\nInput image 1 is a reference ONLY for MIST's cyan light on almost-black background identity. Do not reproduce the reference's panels, typography, props, symbols or activity icons. Redraw the eyes completely.\nVisual direction: inspired by Simon's Cat's observant comic intention, rounded staring eyes, tiny closed mouth marks, anticipation and small timing changes. Translate that restrained expressive language into a face-only robot. Original MIST face, NEVER a cat. No ears, nose, whiskers, head outline, fur, body or limbs. The only marks are two eyes and a very small mouth per pose.\nEye construction: rounded, hand-drawn cyan outlines, slight natural imperfection in the simple curves, with readable black/cyan negative-space pupils that clearly direct the gaze. The pupils are distinct from the rounded eye outlines. Quiet, minimal linework. Restrained subtle cyan edge glow, crisp cyan marks; not broad neon bloom. No eyebrows unless an eyelid is drawn as part of an eye; no floating accent marks. Mouths are tiny single closed line marks, never open or talking.\nBackdrop: continuous completely uniform near-black charcoal background across all nine cells. No panels, gradients, textures, objects or scenery.\nComposition: equal 3-column by 3-row layout over the entire 1536 x 1024 canvas. Each virtual cell is 512 x 341.333 pixels. Place face centers at x=256,768,1280, and y=170.67,512,853.33. Each face group is about 215 pixels wide and 120 pixels tall, with generous empty space. Keep the same face position, baseline, eye spacing, and face scale in all three frames within every row. Mild eye/lid reshaping and pupil movement carry the acting; do not move the face around or change size. Clean evenly spaced nine-frame sheet.\nTop row, spots something interesting:\nTop left: quiet forward-looking two round eyes, pupils centered, tiny neutral closed mouth.\nTop middle: both eyes and pupils turn toward viewer's right; one eye widens a little in fresh interest, tiny closed mouth.\nTop right: focused attentive gaze held toward viewer's right, curious stillness after spotting something; tiny neutral closed mouth.\nMiddle row, asking then waiting:\nMiddle left: relaxed open rounded eyes, centered pupils, tiny relaxed closed mouth.\nMiddle middle: eyes widen and lift, pupils look slightly upward as if inviting a response, a very small hopeful smile made of one closed curved line.\nMiddle right: patient upward gaze held quietly, eyes soften slightly, tiny closed neutral mouth. An invitation followed by waiting, never speech.\nBottom row, did you mean that:\nBottom left: open attentive eyes, pupils forward, tiny closed neutral mouth.\nBottom middle: quick mildly uneven eyes, one upper eyelid lowers just a little, tiny off-center closed mouth line; light comic hesitation.\nBottom right: softly puzzled eye asymmetry settles, one eye a little narrower, closed tiny slightly off-center mouth. Friendly comic confusion, never angry or stern. No V-shaped angry lids.\nConstraints: exactly nine faces, exactly two eyes and one tiny closed mouth each, no extra marks, no text, no numerals, no watermark, no icons, no props, no borders, no physical screen or bezel, no cat anatomy, no open mouths, no angry V eyebrows. Preserve the carefully specified row narratives and equal cell layout.",
+  "generation_calls": 1,
+  "correction_calls": 0,
+  "grid": {
+    "columns": 3,
+    "rows": 3,
+    "equal_cell_width": 512,
+    "equal_cell_height": 341.3333333333333,
+    "order": "Each row reads left to right: setup, change, settle.",
+    "visible_borders": false
+  },
+  "review": {
+    "method": "Visual inspection of the complete original 1536 x 1024 image; all nine poses inspected.",
+    "decision": "Accepted original generation; no defect warranted the allowed targeted correction.",
+    "all_nine_present": true,
+    "two_eyes_and_one_closed_mouth_each": true,
+    "cyan_on_dark_identity": true,
+    "no_cat_anatomy": true,
+    "no_props_text_borders": true,
+    "no_angry_v": true,
+    "rows": [
+      {
+        "row": 1,
+        "narrative": "Spots something interesting",
+        "setup": "Round open eyes with near-centered cyan pupils; tiny neutral closed mouth.",
+        "change": "Pupils shift toward viewer's right; the right eye enlarges slightly.",
+        "settle": "The sideward gaze holds; the left eye relaxes a little while the mouth remains closed.",
+        "assessment": "Readable discovery and attentive hold. Face baseline and scale are visually consistent."
+      },
+      {
+        "row": 2,
+        "narrative": "Asking then waiting",
+        "setup": "Relaxed rounded open eyes, central pupils and a tiny neutral closed mouth.",
+        "change": "Pupils lift upward; rounded eyes open and a small curved smile conveys an invitation.",
+        "settle": "Upward gaze stays held; eyes soften and the mouth returns to a short closed mark.",
+        "assessment": "Invitation then quiet patience reads clearly, with no speaking mouth."
+      },
+      {
+        "row": 3,
+        "narrative": "Did you mean that?",
+        "setup": "Attentive round eyes with forward gaze and a short closed mouth.",
+        "change": "Left eye narrows under a slightly tilted lid while the right eye stays round; tiny slanted mouth moves off-center.",
+        "settle": "Puzzled asymmetry holds with a slightly softer narrow eye and the same closed off-center mouth.",
+        "assessment": "Mild comic uncertainty reads without angry V shapes. Change-to-settle movement is intentionally small."
+      }
+    ],
+    "limitations": [
+      "Equal thirds are implicit through spacing; the generated face centers and baselines are visually regular, not mathematically registered animation anchors.",
+      "Rendered eye-and-mouth groups are somewhat wider than the approximate 215-pixel prompt target, while remaining evenly spaced and fully inside their cells.",
+      "Pupils are luminous cyan dots within dark eye interiors; the interpretation favors cyan pupils rather than black pupil cutouts.",
+      "The background has subtle generated tonal variation around the restrained glow.",
+      "The bottom-row change and settle poses are similar, expressing a held puzzled response rather than a large final shape change."
+    ]
+  }
+}
