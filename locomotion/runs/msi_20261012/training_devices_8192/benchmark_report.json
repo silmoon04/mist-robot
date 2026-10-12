@@ -1,0 +1,1444 @@
+{
+  "schema": 1,
+  "status": "completed",
+  "started_utc": "2026-10-12T20:27:42.821967+00:00",
+  "requested_transitions_per_job": 8192,
+  "execution": "sequential",
+  "source_sha256": {
+    "design/hexapod_phone_quad_r5_20260912/cad/phone.py": "4d4832a1b2b5c8595492604a8860c00fbf0dc1d9db898edea3fceba11887960e",
+    "design/main_hub_20260915/output/Hub_Check.json": "a21f983ac6203435cafcd8ad2a68776918159745a91d9388d3da69f70dd3b291",
+    "design/main_hub_20260915/output/Main_Hub_4Leg.stl": "4fc9eb811ccb80b4bc59540ee7b2dd50e20a358c763ed6b26c11e60148ccbc95",
+    "design/single_leg_r7_wide_joints_20260914/output/Single_Leg_R7.urdf": "1ce3ee65a598bcd7e5421ce744238739672ec68c9274d7665e320cc990ae9741",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/bench_mounting_plate.stl": "bc338c44b5afef74c1fdfa80c149e9714a0d35753090a1fb97dd23d9f514007f",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/case_cap_hip.stl": "ed8d6e99e78c81ae20997bf58e9c71cb7a92354fb0fd5078bf58a9d9f013756b",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/case_cap_knee.stl": "71cca48e4e5861fb0f6843d825272f75e45695f4cdc4ebac19945351d368a833",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/case_cap_yaw.stl": "f71b362e25c392f9a408bcf9ed16037f89acc69918d8b35ad1004b2cd0fd81ea",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/coxa_lower_auxiliary_arm.stl": "a29e5f9255e8c614d24b00167ee78dcfd2dd3c3660c4ae98eb98ef8a6d07d400",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/coxa_upper_and_hip_saddle.stl": "0723deb4796018fb0baf54c604d466919796aba66980d802d7aefd0d9922c772",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/femur_auxiliary_cheek.stl": "7ae155f2577f2b07167f9dc67678a7fb3708889da59464080377161c9aeb7abe",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/femur_main_and_knee_saddle.stl": "d82a517ed306f58f86d34a43ca3f8e178958aac4e3ea0b0b3e2af9d7bd9fe53c",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/horn_hip_auxiliary.stl": "5632d3f2d48f2fd1064253d69806850a878d250db33883990adeb9e691d19c6b",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/horn_hip_main.stl": "7dccbbe4867e2704c0c908d72440e037b3ea5660937d4603f6ff43fd15c0b877",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/horn_knee_auxiliary.stl": "4ee21f15b64db7e9e2a94ce5b7c3be692ddc6111a45f05d3b533417028f9efb1",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/horn_knee_main.stl": "a0e74c5442a42bcabe99aa095af238542416c8b10a994381de65b6b737da1c87",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/horn_yaw_auxiliary.stl": "cf1f8974b1d5474a58d6e44e796c70074dbf65fbc4035544a5e1445baa6fa1a0",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/horn_yaw_main.stl": "de5620ae4dc00941fff84d24af6f3dbec8e1b75d7e949a2622f45d5aae3e037a",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/servo_hip.stl": "a68811ee35c63aa983272be304ce6b6fefe1145c6e27ada675e4be1c399d0cb9",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/servo_knee.stl": "e3f48e23437876a4092f3e7c7ed405684431a36beb2947e83ea32ea5ae27e69c",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/servo_yaw.stl": "28d7a36bf579fe4c0c8fe77ac4ec9488df39343c2570a31a68fa483ea7932a41",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/tibia_auxiliary_cheek.stl": "c8217050117a3961c13b1caeda2ec5852e81a008665e8b5cccfeef0350bf8c33",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/tibia_curved_main_and_foot.stl": "85efadbc8334a1d6d3a85d3f89fbdf2de7afa9dd0e8cc784ee2332166618fda1",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/yaw_auxiliary_spacer_1.stl": "eb965e76846d0ff836c5f8f9f38cfaa852214f0eb57126a74bf64c44bc953259",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/yaw_auxiliary_spacer_2.stl": "b2b94471a874f1bdff7271c01ca7c99f44d3834f028423210104300aedccf15f",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/yaw_auxiliary_spacer_3.stl": "9fb8a6dd63050db95489619c0c91073daba18a48a0a5f80c1c50c6cb2569d06b",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/yaw_auxiliary_spacer_4.stl": "eafb832021c715a40cf0a142441a31ad9600378d9e1518d45a804c5b773b7d07",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/yaw_case_saddle.stl": "9e991cfbfa70700a8d7e64855a403a1f0d6ac972d300bdc9dc88c200122451cb",
+    "design/single_leg_r7_wide_joints_20260914/output/manifest.json": "e3fff543f2d2772b04354bfcd5ac6bee7a74c3d0dfb167cdc2e043ddab16e15c",
+    "docs/mist/MIST_AVAILABLE_PARTS.md": "5e5ea0afda8ed3e3d402c3b8b0b4822a328450df931af7f24ca3a2b8bae79816",
+    "docs/mist/MIST_MATERIAL_DIMENSIONS_MASS.md": "e7db5636495ca0f072f07496067ff870dbfbca8bef36b53805559534059cc8a3",
+    "locomotion/acceptance.py": "f3dc6bd47c7c6353c0c2ae6fafb4785d950f71221ba6c60b298adbcf93112705",
+    "locomotion/config.json": "c57df57f4befdba83cd479d35a9fcd7c067b8c2df5ca6d785c77ba054015677b",
+    "locomotion/design_profile.py": "fa14b75a7f08d7f692f22bb05ca1d3bde922af76ef9a6854a7a68e314caa5548",
+    "locomotion/evaluate.py": "3336c9cd81e6fb08535d1f027746441debf702d2a755fe09977bc16991f63508",
+    "locomotion/gait.py": "0486b9f5b19ef3b72af264362b8f3f3cbf67079208acc4ebe7d85d218ed3d267",
+    "locomotion/hardware/__init__.py": "d0147b1c4400b914e926026c8218b369f34b35e2dbecee4e02f9c28f1ab1ee54",
+    "locomotion/hardware/sensors.py": "0a869ff5e358c7ad94fb7d45e8237863373c3eb35e10518213a791e3d4bb567b",
+    "locomotion/kinematics.py": "5e181587ccc4be52e16d2eae6a968411b71b7ba2733e81ecc5a2058f5b9c1ae6",
+    "locomotion/machine_profiles.json": "1555805d0c38c9f9c8e9d96842d6332b686f4c8f22c88e576b3e64d1ddb28de1",
+    "locomotion/mist_env.py": "b36dc57892c362e37ad2419aa2604116b1f6cf29d528b61b25475194965f2ca1",
+    "locomotion/model.py": "9012295162e325a0f647bd963fdf23271549a5be430688674e870b656e7900bd",
+    "locomotion/profiles/r7_direct.json": "73be695ac7bf9d045ae87585d1d93a5faf669f1e30aa00074ba981f81a1bbe66",
+    "locomotion/provenance.py": "f971c6ea21397aee8b366f38d53b225a92d06299eaa594372d6a8dc1a6985dbb",
+    "locomotion/requirements.lock.txt": "e4379bbccd76bf07764e41b392787eec104eec4d57d0b54be34ce4b6f0865692",
+    "locomotion/scripts/benchmark.py": "2a30bfad9e3e51b67e98bb47e8c24e3991d7527f5fe28e33ae9f017c0b5a6e8d",
+    "locomotion/scripts/run_job.py": "63de81b36adf5f6bb99c3ddb2d198a71f42301b6674097f8c6995e304b8f96f4",
+    "locomotion/scripts/setup_cpu.sh": "aee103801154f732b1cdd1539ffdf18693ecd6a447564775f350ae519e9c556e",
+    "locomotion/sensitivity.py": "3a685edcfc3a2c2a8fba6591339f137d95bdf4e11835876229b6a3e1aff8b6cc",
+    "locomotion/sensor_sim.py": "e25be7706952042f20717b45f059cbb6374882208190ffea722b3fc33c0c837e",
+    "locomotion/servo.py": "29984b9e239620fe63c0faf4769d0cefe11073282ba6d28e2a7326988176b833",
+    "locomotion/sim_remote.py": "4605cd9b94b965741f5d9828a7d6f6c4d087065dab2a244ef7969748275323c9",
+    "locomotion/train.py": "4f65ce2b7ea4b9690761de430b3be55aef9061becc0579712a18771094d86ba4",
+    "locomotion/training_queue.json": "ed9574bf60169eff4ed20ab2d684a308014327d90759ff7add0fed718137d9b6",
+    "locomotion/validation_cases.json": "b473c3149711b0ea6dd018e7731ab2495a69e8f3aeb9753f69cc13455e8fee8e"
+  },
+  "source_identity": "8793d43d546c95c6fd695860305f96a0627e49be9ec81779e313b63d1b92e8c1",
+  "helper_sha256": "8a0c5b63272c9e98dff375eae1b70ea89d7312a6089da0c85a4284f384704dcc",
+  "jobs": [
+    {
+      "name": "ppo-cpu-2envs-seed630042",
+      "algorithm": "ppo",
+      "device": "cpu",
+      "n_envs": 2,
+      "seed": 630042,
+      "output": "/home/hssil/mist-locomotion-msi/repo/locomotion/runs/msi_20261012/training_devices_8192/ppo-cpu-2envs-seed630042",
+      "command": [
+        "/home/hssil/mist-locomotion-msi/venv-cuda/bin/python",
+        "/home/hssil/mist-locomotion-msi/repo/locomotion/train.py",
+        "--algo",
+        "ppo",
+        "--device",
+        "cpu",
+        "--n-envs",
+        "2",
+        "--seed",
+        "630042",
+        "--timesteps",
+        "8192",
+        "--threads",
+        "1",
+        "--terrain",
+        "mixed",
+        "--randomize",
+        "--max-steps",
+        "1000",
+        "--sensor-mode",
+        "mpu6050",
+        "--checkpoint-freq",
+        "25000",
+        "--eval-freq",
+        "25000",
+        "--eval-seed",
+        "1000000",
+        "--eval-episodes",
+        "1",
+        "--eval-speed",
+        "0.01",
+        "--eval-max-steps",
+        "960",
+        "--eval-terrains",
+        "flat",
+        "--eval-payloads",
+        "[0,0.155]",
+        "--eval-randomize",
+        "--batch-size",
+        "64",
+        "--learning-rate",
+        "0.0003",
+        "--ppo-n-steps",
+        "512",
+        "--ppo-n-epochs",
+        "5",
+        "--sac-buffer-size",
+        "100000",
+        "--sac-learning-starts",
+        "512",
+        "--sac-gradient-steps",
+        "1",
+        "--save-replay-buffer",
+        "--smoke",
+        "--output",
+        "/home/hssil/mist-locomotion-msi/repo/locomotion/runs/msi_20261012/training_devices_8192/ppo-cpu-2envs-seed630042"
+      ],
+      "status": "completed",
+      "started_utc": "2026-10-12T20:27:46.715035+00:00",
+      "returncode": 0,
+      "completed_utc": "2026-10-12T20:30:44.126793+00:00",
+      "wall_seconds": 177.41126028000008,
+      "metrics": {
+        "wall_seconds_including_startup_and_initial_final_evaluation": 177.41126028000008,
+        "wall_transitions_per_second": 46.175197600597286,
+        "trainer_seconds_including_initial_final_evaluation": 169.14337890600018,
+        "evaluation_seconds_from_receipts": 145.159028606,
+        "trainer_seconds_excluding_evaluation_estimate": 23.984350300000187,
+        "non_evaluation_transitions_per_second_estimate": 341.5560520728358,
+        "non_evaluation_timing_scope": "Rollout and optimization plus model construction/checkpoint I/O overhead; no optimizer-only measurement.",
+        "actual_transitions": 8192,
+        "optimizer_updates": 40,
+        "update_count_scope": "SB3 _n_updates: PPO completed training epochs; SAC gradient steps. Counts are not comparable across algorithms.",
+        "device": {
+          "requested": "cpu",
+          "torch_version": "2.8.0+cu126",
+          "torch_cuda_build": "12.6",
+          "cuda_available": true,
+          "physics_device": "cpu",
+          "selected": "cpu"
+        },
+        "versions": {
+          "stable-baselines3": "2.7.1",
+          "gymnasium": "1.2.3",
+          "pybullet": "3.2.7",
+          "torch": "2.8.0+cu126",
+          "numpy": "2.2.6"
+        },
+        "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+        "envelope_sha256": "7fc43e2e75103e861116a838058c08961a9a2a3fb41f11e564c69da3ae6335e4",
+        "envelope": {
+          "schema": 1,
+          "sources": {
+            "design/hexapod_phone_quad_r5_20260912/cad/phone.py": "4d4832a1b2b5c8595492604a8860c00fbf0dc1d9db898edea3fceba11887960e",
+            "design/main_hub_20260915/output/Hub_Check.json": "a21f983ac6203435cafcd8ad2a68776918159745a91d9388d3da69f70dd3b291",
+            "design/main_hub_20260915/output/Main_Hub_4Leg.stl": "4fc9eb811ccb80b4bc59540ee7b2dd50e20a358c763ed6b26c11e60148ccbc95",
+            "design/single_leg_r7_wide_joints_20260914/output/Single_Leg_R7.urdf": "1ce3ee65a598bcd7e5421ce744238739672ec68c9274d7665e320cc990ae9741",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/bench_mounting_plate.stl": "bc338c44b5afef74c1fdfa80c149e9714a0d35753090a1fb97dd23d9f514007f",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/case_cap_hip.stl": "ed8d6e99e78c81ae20997bf58e9c71cb7a92354fb0fd5078bf58a9d9f013756b",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/case_cap_knee.stl": "71cca48e4e5861fb0f6843d825272f75e45695f4cdc4ebac19945351d368a833",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/case_cap_yaw.stl": "f71b362e25c392f9a408bcf9ed16037f89acc69918d8b35ad1004b2cd0fd81ea",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/coxa_lower_auxiliary_arm.stl": "a29e5f9255e8c614d24b00167ee78dcfd2dd3c3660c4ae98eb98ef8a6d07d400",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/coxa_upper_and_hip_saddle.stl": "0723deb4796018fb0baf54c604d466919796aba66980d802d7aefd0d9922c772",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/femur_auxiliary_cheek.stl": "7ae155f2577f2b07167f9dc67678a7fb3708889da59464080377161c9aeb7abe",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/femur_main_and_knee_saddle.stl": "d82a517ed306f58f86d34a43ca3f8e178958aac4e3ea0b0b3e2af9d7bd9fe53c",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/horn_hip_auxiliary.stl": "5632d3f2d48f2fd1064253d69806850a878d250db33883990adeb9e691d19c6b",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/horn_hip_main.stl": "7dccbbe4867e2704c0c908d72440e037b3ea5660937d4603f6ff43fd15c0b877",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/horn_knee_auxiliary.stl": "4ee21f15b64db7e9e2a94ce5b7c3be692ddc6111a45f05d3b533417028f9efb1",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/horn_knee_main.stl": "a0e74c5442a42bcabe99aa095af238542416c8b10a994381de65b6b737da1c87",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/horn_yaw_auxiliary.stl": "cf1f8974b1d5474a58d6e44e796c70074dbf65fbc4035544a5e1445baa6fa1a0",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/horn_yaw_main.stl": "de5620ae4dc00941fff84d24af6f3dbec8e1b75d7e949a2622f45d5aae3e037a",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/servo_hip.stl": "a68811ee35c63aa983272be304ce6b6fefe1145c6e27ada675e4be1c399d0cb9",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/servo_knee.stl": "e3f48e23437876a4092f3e7c7ed405684431a36beb2947e83ea32ea5ae27e69c",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/servo_yaw.stl": "28d7a36bf579fe4c0c8fe77ac4ec9488df39343c2570a31a68fa483ea7932a41",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/tibia_auxiliary_cheek.stl": "c8217050117a3961c13b1caeda2ec5852e81a008665e8b5cccfeef0350bf8c33",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/tibia_curved_main_and_foot.stl": "85efadbc8334a1d6d3a85d3f89fbdf2de7afa9dd0e8cc784ee2332166618fda1",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/yaw_auxiliary_spacer_1.stl": "eb965e76846d0ff836c5f8f9f38cfaa852214f0eb57126a74bf64c44bc953259",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/yaw_auxiliary_spacer_2.stl": "b2b94471a874f1bdff7271c01ca7c99f44d3834f028423210104300aedccf15f",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/yaw_auxiliary_spacer_3.stl": "9fb8a6dd63050db95489619c0c91073daba18a48a0a5f80c1c50c6cb2569d06b",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/yaw_auxiliary_spacer_4.stl": "eafb832021c715a40cf0a142441a31ad9600378d9e1518d45a804c5b773b7d07",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/yaw_case_saddle.stl": "9e991cfbfa70700a8d7e64855a403a1f0d6ac972d300bdc9dc88c200122451cb",
+            "design/single_leg_r7_wide_joints_20260914/output/manifest.json": "e3fff543f2d2772b04354bfcd5ac6bee7a74c3d0dfb167cdc2e043ddab16e15c",
+            "docs/mist/MIST_AVAILABLE_PARTS.md": "5e5ea0afda8ed3e3d402c3b8b0b4822a328450df931af7f24ca3a2b8bae79816",
+            "docs/mist/MIST_MATERIAL_DIMENSIONS_MASS.md": "e7db5636495ca0f072f07496067ff870dbfbca8bef36b53805559534059cc8a3",
+            "locomotion/acceptance.py": "f3dc6bd47c7c6353c0c2ae6fafb4785d950f71221ba6c60b298adbcf93112705",
+            "locomotion/config.json": "c57df57f4befdba83cd479d35a9fcd7c067b8c2df5ca6d785c77ba054015677b",
+            "locomotion/design_profile.py": "fa14b75a7f08d7f692f22bb05ca1d3bde922af76ef9a6854a7a68e314caa5548",
+            "locomotion/evaluate.py": "3336c9cd81e6fb08535d1f027746441debf702d2a755fe09977bc16991f63508",
+            "locomotion/gait.py": "0486b9f5b19ef3b72af264362b8f3f3cbf67079208acc4ebe7d85d218ed3d267",
+            "locomotion/hardware/__init__.py": "d0147b1c4400b914e926026c8218b369f34b35e2dbecee4e02f9c28f1ab1ee54",
+            "locomotion/hardware/sensors.py": "0a869ff5e358c7ad94fb7d45e8237863373c3eb35e10518213a791e3d4bb567b",
+            "locomotion/kinematics.py": "5e181587ccc4be52e16d2eae6a968411b71b7ba2733e81ecc5a2058f5b9c1ae6",
+            "locomotion/machine_profiles.json": "1555805d0c38c9f9c8e9d96842d6332b686f4c8f22c88e576b3e64d1ddb28de1",
+            "locomotion/mist_env.py": "b36dc57892c362e37ad2419aa2604116b1f6cf29d528b61b25475194965f2ca1",
+            "locomotion/model.py": "9012295162e325a0f647bd963fdf23271549a5be430688674e870b656e7900bd",
+            "locomotion/profiles/r7_direct.json": "73be695ac7bf9d045ae87585d1d93a5faf669f1e30aa00074ba981f81a1bbe66",
+            "locomotion/provenance.py": "f971c6ea21397aee8b366f38d53b225a92d06299eaa594372d6a8dc1a6985dbb",
+            "locomotion/requirements.lock.txt": "e4379bbccd76bf07764e41b392787eec104eec4d57d0b54be34ce4b6f0865692",
+            "locomotion/scripts/benchmark.py": "2a30bfad9e3e51b67e98bb47e8c24e3991d7527f5fe28e33ae9f017c0b5a6e8d",
+            "locomotion/scripts/run_job.py": "63de81b36adf5f6bb99c3ddb2d198a71f42301b6674097f8c6995e304b8f96f4",
+            "locomotion/scripts/setup_cpu.sh": "aee103801154f732b1cdd1539ffdf18693ecd6a447564775f350ae519e9c556e",
+            "locomotion/sensitivity.py": "3a685edcfc3a2c2a8fba6591339f137d95bdf4e11835876229b6a3e1aff8b6cc",
+            "locomotion/sensor_sim.py": "e25be7706952042f20717b45f059cbb6374882208190ffea722b3fc33c0c837e",
+            "locomotion/servo.py": "29984b9e239620fe63c0faf4769d0cefe11073282ba6d28e2a7326988176b833",
+            "locomotion/sim_remote.py": "4605cd9b94b965741f5d9828a7d6f6c4d087065dab2a244ef7969748275323c9",
+            "locomotion/train.py": "4f65ce2b7ea4b9690761de430b3be55aef9061becc0579712a18771094d86ba4",
+            "locomotion/training_queue.json": "ed9574bf60169eff4ed20ab2d684a308014327d90759ff7add0fed718137d9b6",
+            "locomotion/validation_cases.json": "b473c3149711b0ea6dd018e7731ab2495a69e8f3aeb9753f69cc13455e8fee8e"
+          },
+          "contract": {
+            "version": 2,
+            "observation": "47: body-down gravity3, body gyro3 rad/s, joint offsets12 rad, joint velocity12 rad/s, command3, previous residual12, phase sin/cos2",
+            "action": "12 clipped residuals in [-1,1], scaled .10 rad; R7 joint order",
+            "sensor": "measurement age; bounded hold then latched episode stop; none explicit open-loop; reset required"
+          },
+          "experiment": {
+            "algo": "ppo",
+            "n_envs": 2,
+            "terrain": "mixed",
+            "payload": null,
+            "randomize": true,
+            "max_steps": 1000,
+            "sensor_mode": "mpu6050",
+            "sensor_profile": {
+              "sample_rate_hz": 50.0,
+              "transport_delay_s": 0.005,
+              "gravity_noise_std": 0.004,
+              "gyro_noise_std_rad_s": 0.012,
+              "dropout_probability": 0.0,
+              "gyro_bias_rad_s": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "max_age_s": 0.1,
+              "R_body_from_sensor_at_pan_zero": [
+                [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "pan_locked": true
+            },
+            "save_replay_buffer": true,
+            "checkpoint_freq": 25000,
+            "eval_freq": 25000,
+            "eval_seed": 1000000,
+            "eval_episodes": 1,
+            "eval_speed": 0.01,
+            "eval_max_steps": 960,
+            "eval_terrains": [
+              "flat"
+            ],
+            "eval_payloads": [
+              0,
+              0.155
+            ],
+            "eval_randomize": true,
+            "batch_size": 64,
+            "learning_rate": 0.0003,
+            "ppo_n_steps": 512,
+            "ppo_n_epochs": 5,
+            "sac_buffer_size": 100000,
+            "sac_learning_starts": 512,
+            "sac_gradient_steps": 1,
+            "smoke": true,
+            "sensor": {
+              "mode": "mpu6050",
+              "profile": {
+                "sample_rate_hz": 50.0,
+                "transport_delay_s": 0.005,
+                "gravity_noise_std": 0.004,
+                "gyro_noise_std_rad_s": 0.012,
+                "dropout_probability": 0.0,
+                "gyro_bias_rad_s": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max_age_s": 0.1,
+                "R_body_from_sensor_at_pan_zero": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "pan_locked": true
+              }
+            },
+            "validation_commands": {
+              "stop": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "forward": [
+                0.01,
+                0.0,
+                0.0
+              ],
+              "backward": [
+                -0.01,
+                0.0,
+                0.0
+              ],
+              "left": [
+                0.0,
+                0.01,
+                0.0
+              ],
+              "right": [
+                0.0,
+                -0.01,
+                0.0
+              ],
+              "clockwise": [
+                0.0,
+                0.0,
+                -0.04
+              ],
+              "counterclockwise": [
+                0.0,
+                0.0,
+                0.04
+              ],
+              "combined": [
+                0.007,
+                0.007,
+                0.02
+              ],
+              "transient": [
+                0.01,
+                0.0,
+                0.0
+              ]
+            }
+          }
+        },
+        "checkpoint_sha256": "57d6a463a8ce6848a34df18f8b94ec158a005f78c4ff53b5a649f0e27eb8761f",
+        "replay_sha256": null,
+        "effective_model_parameters": {
+          "n_envs": 2,
+          "n_steps": 512,
+          "n_epochs": 5,
+          "batch_size": 64,
+          "learning_rate": 0.0003,
+          "buffer_size": null,
+          "learning_starts": null,
+          "gradient_steps": null,
+          "train_freq": null,
+          "policy_kwargs": {
+            "net_arch": [
+              64,
+              64
+            ]
+          },
+          "seed": 630042,
+          "device": "cpu"
+        }
+      }
+    },
+    {
+      "name": "ppo-cuda-2envs-seed630042",
+      "algorithm": "ppo",
+      "device": "cuda",
+      "n_envs": 2,
+      "seed": 630042,
+      "output": "/home/hssil/mist-locomotion-msi/repo/locomotion/runs/msi_20261012/training_devices_8192/ppo-cuda-2envs-seed630042",
+      "command": [
+        "/home/hssil/mist-locomotion-msi/venv-cuda/bin/python",
+        "/home/hssil/mist-locomotion-msi/repo/locomotion/train.py",
+        "--algo",
+        "ppo",
+        "--device",
+        "cuda",
+        "--n-envs",
+        "2",
+        "--seed",
+        "630042",
+        "--timesteps",
+        "8192",
+        "--threads",
+        "1",
+        "--terrain",
+        "mixed",
+        "--randomize",
+        "--max-steps",
+        "1000",
+        "--sensor-mode",
+        "mpu6050",
+        "--checkpoint-freq",
+        "25000",
+        "--eval-freq",
+        "25000",
+        "--eval-seed",
+        "1000000",
+        "--eval-episodes",
+        "1",
+        "--eval-speed",
+        "0.01",
+        "--eval-max-steps",
+        "960",
+        "--eval-terrains",
+        "flat",
+        "--eval-payloads",
+        "[0,0.155]",
+        "--eval-randomize",
+        "--batch-size",
+        "64",
+        "--learning-rate",
+        "0.0003",
+        "--ppo-n-steps",
+        "512",
+        "--ppo-n-epochs",
+        "5",
+        "--sac-buffer-size",
+        "100000",
+        "--sac-learning-starts",
+        "512",
+        "--sac-gradient-steps",
+        "1",
+        "--save-replay-buffer",
+        "--smoke",
+        "--output",
+        "/home/hssil/mist-locomotion-msi/repo/locomotion/runs/msi_20261012/training_devices_8192/ppo-cuda-2envs-seed630042"
+      ],
+      "status": "completed",
+      "started_utc": "2026-10-12T20:30:44.150960+00:00",
+      "returncode": 0,
+      "completed_utc": "2026-10-12T20:35:13.901362+00:00",
+      "wall_seconds": 269.7497772730003,
+      "metrics": {
+        "wall_seconds_including_startup_and_initial_final_evaluation": 269.7497772730003,
+        "wall_transitions_per_second": 30.368885130567822,
+        "trainer_seconds_including_initial_final_evaluation": 264.0333801030001,
+        "evaluation_seconds_from_receipts": 221.90726732099938,
+        "trainer_seconds_excluding_evaluation_estimate": 42.126112782000746,
+        "non_evaluation_transitions_per_second_estimate": 194.46370573978527,
+        "non_evaluation_timing_scope": "Rollout and optimization plus model construction/checkpoint I/O overhead; no optimizer-only measurement.",
+        "actual_transitions": 8192,
+        "optimizer_updates": 40,
+        "update_count_scope": "SB3 _n_updates: PPO completed training epochs; SAC gradient steps. Counts are not comparable across algorithms.",
+        "device": {
+          "requested": "cuda",
+          "torch_version": "2.8.0+cu126",
+          "torch_cuda_build": "12.6",
+          "cuda_available": true,
+          "physics_device": "cpu",
+          "gpu": "NVIDIA GeForce RTX 4080 Laptop GPU",
+          "gpu_memory_bytes": 12878086144,
+          "selected": "cuda"
+        },
+        "versions": {
+          "stable-baselines3": "2.7.1",
+          "gymnasium": "1.2.3",
+          "pybullet": "3.2.7",
+          "torch": "2.8.0+cu126",
+          "numpy": "2.2.6"
+        },
+        "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+        "envelope_sha256": "7fc43e2e75103e861116a838058c08961a9a2a3fb41f11e564c69da3ae6335e4",
+        "envelope": {
+          "schema": 1,
+          "sources": {
+            "design/hexapod_phone_quad_r5_20260912/cad/phone.py": "4d4832a1b2b5c8595492604a8860c00fbf0dc1d9db898edea3fceba11887960e",
+            "design/main_hub_20260915/output/Hub_Check.json": "a21f983ac6203435cafcd8ad2a68776918159745a91d9388d3da69f70dd3b291",
+            "design/main_hub_20260915/output/Main_Hub_4Leg.stl": "4fc9eb811ccb80b4bc59540ee7b2dd50e20a358c763ed6b26c11e60148ccbc95",
+            "design/single_leg_r7_wide_joints_20260914/output/Single_Leg_R7.urdf": "1ce3ee65a598bcd7e5421ce744238739672ec68c9274d7665e320cc990ae9741",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/bench_mounting_plate.stl": "bc338c44b5afef74c1fdfa80c149e9714a0d35753090a1fb97dd23d9f514007f",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/case_cap_hip.stl": "ed8d6e99e78c81ae20997bf58e9c71cb7a92354fb0fd5078bf58a9d9f013756b",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/case_cap_knee.stl": "71cca48e4e5861fb0f6843d825272f75e45695f4cdc4ebac19945351d368a833",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/case_cap_yaw.stl": "f71b362e25c392f9a408bcf9ed16037f89acc69918d8b35ad1004b2cd0fd81ea",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/coxa_lower_auxiliary_arm.stl": "a29e5f9255e8c614d24b00167ee78dcfd2dd3c3660c4ae98eb98ef8a6d07d400",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/coxa_upper_and_hip_saddle.stl": "0723deb4796018fb0baf54c604d466919796aba66980d802d7aefd0d9922c772",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/femur_auxiliary_cheek.stl": "7ae155f2577f2b07167f9dc67678a7fb3708889da59464080377161c9aeb7abe",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/femur_main_and_knee_saddle.stl": "d82a517ed306f58f86d34a43ca3f8e178958aac4e3ea0b0b3e2af9d7bd9fe53c",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/horn_hip_auxiliary.stl": "5632d3f2d48f2fd1064253d69806850a878d250db33883990adeb9e691d19c6b",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/horn_hip_main.stl": "7dccbbe4867e2704c0c908d72440e037b3ea5660937d4603f6ff43fd15c0b877",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/horn_knee_auxiliary.stl": "4ee21f15b64db7e9e2a94ce5b7c3be692ddc6111a45f05d3b533417028f9efb1",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/horn_knee_main.stl": "a0e74c5442a42bcabe99aa095af238542416c8b10a994381de65b6b737da1c87",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/horn_yaw_auxiliary.stl": "cf1f8974b1d5474a58d6e44e796c70074dbf65fbc4035544a5e1445baa6fa1a0",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/horn_yaw_main.stl": "de5620ae4dc00941fff84d24af6f3dbec8e1b75d7e949a2622f45d5aae3e037a",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/servo_hip.stl": "a68811ee35c63aa983272be304ce6b6fefe1145c6e27ada675e4be1c399d0cb9",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/servo_knee.stl": "e3f48e23437876a4092f3e7c7ed405684431a36beb2947e83ea32ea5ae27e69c",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/servo_yaw.stl": "28d7a36bf579fe4c0c8fe77ac4ec9488df39343c2570a31a68fa483ea7932a41",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/tibia_auxiliary_cheek.stl": "c8217050117a3961c13b1caeda2ec5852e81a008665e8b5cccfeef0350bf8c33",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/tibia_curved_main_and_foot.stl": "85efadbc8334a1d6d3a85d3f89fbdf2de7afa9dd0e8cc784ee2332166618fda1",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/yaw_auxiliary_spacer_1.stl": "eb965e76846d0ff836c5f8f9f38cfaa852214f0eb57126a74bf64c44bc953259",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/yaw_auxiliary_spacer_2.stl": "b2b94471a874f1bdff7271c01ca7c99f44d3834f028423210104300aedccf15f",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/yaw_auxiliary_spacer_3.stl": "9fb8a6dd63050db95489619c0c91073daba18a48a0a5f80c1c50c6cb2569d06b",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/yaw_auxiliary_spacer_4.stl": "eafb832021c715a40cf0a142441a31ad9600378d9e1518d45a804c5b773b7d07",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/yaw_case_saddle.stl": "9e991cfbfa70700a8d7e64855a403a1f0d6ac972d300bdc9dc88c200122451cb",
+            "design/single_leg_r7_wide_joints_20260914/output/manifest.json": "e3fff543f2d2772b04354bfcd5ac6bee7a74c3d0dfb167cdc2e043ddab16e15c",
+            "docs/mist/MIST_AVAILABLE_PARTS.md": "5e5ea0afda8ed3e3d402c3b8b0b4822a328450df931af7f24ca3a2b8bae79816",
+            "docs/mist/MIST_MATERIAL_DIMENSIONS_MASS.md": "e7db5636495ca0f072f07496067ff870dbfbca8bef36b53805559534059cc8a3",
+            "locomotion/acceptance.py": "f3dc6bd47c7c6353c0c2ae6fafb4785d950f71221ba6c60b298adbcf93112705",
+            "locomotion/config.json": "c57df57f4befdba83cd479d35a9fcd7c067b8c2df5ca6d785c77ba054015677b",
+            "locomotion/design_profile.py": "fa14b75a7f08d7f692f22bb05ca1d3bde922af76ef9a6854a7a68e314caa5548",
+            "locomotion/evaluate.py": "3336c9cd81e6fb08535d1f027746441debf702d2a755fe09977bc16991f63508",
+            "locomotion/gait.py": "0486b9f5b19ef3b72af264362b8f3f3cbf67079208acc4ebe7d85d218ed3d267",
+            "locomotion/hardware/__init__.py": "d0147b1c4400b914e926026c8218b369f34b35e2dbecee4e02f9c28f1ab1ee54",
+            "locomotion/hardware/sensors.py": "0a869ff5e358c7ad94fb7d45e8237863373c3eb35e10518213a791e3d4bb567b",
+            "locomotion/kinematics.py": "5e181587ccc4be52e16d2eae6a968411b71b7ba2733e81ecc5a2058f5b9c1ae6",
+            "locomotion/machine_profiles.json": "1555805d0c38c9f9c8e9d96842d6332b686f4c8f22c88e576b3e64d1ddb28de1",
+            "locomotion/mist_env.py": "b36dc57892c362e37ad2419aa2604116b1f6cf29d528b61b25475194965f2ca1",
+            "locomotion/model.py": "9012295162e325a0f647bd963fdf23271549a5be430688674e870b656e7900bd",
+            "locomotion/profiles/r7_direct.json": "73be695ac7bf9d045ae87585d1d93a5faf669f1e30aa00074ba981f81a1bbe66",
+            "locomotion/provenance.py": "f971c6ea21397aee8b366f38d53b225a92d06299eaa594372d6a8dc1a6985dbb",
+            "locomotion/requirements.lock.txt": "e4379bbccd76bf07764e41b392787eec104eec4d57d0b54be34ce4b6f0865692",
+            "locomotion/scripts/benchmark.py": "2a30bfad9e3e51b67e98bb47e8c24e3991d7527f5fe28e33ae9f017c0b5a6e8d",
+            "locomotion/scripts/run_job.py": "63de81b36adf5f6bb99c3ddb2d198a71f42301b6674097f8c6995e304b8f96f4",
+            "locomotion/scripts/setup_cpu.sh": "aee103801154f732b1cdd1539ffdf18693ecd6a447564775f350ae519e9c556e",
+            "locomotion/sensitivity.py": "3a685edcfc3a2c2a8fba6591339f137d95bdf4e11835876229b6a3e1aff8b6cc",
+            "locomotion/sensor_sim.py": "e25be7706952042f20717b45f059cbb6374882208190ffea722b3fc33c0c837e",
+            "locomotion/servo.py": "29984b9e239620fe63c0faf4769d0cefe11073282ba6d28e2a7326988176b833",
+            "locomotion/sim_remote.py": "4605cd9b94b965741f5d9828a7d6f6c4d087065dab2a244ef7969748275323c9",
+            "locomotion/train.py": "4f65ce2b7ea4b9690761de430b3be55aef9061becc0579712a18771094d86ba4",
+            "locomotion/training_queue.json": "ed9574bf60169eff4ed20ab2d684a308014327d90759ff7add0fed718137d9b6",
+            "locomotion/validation_cases.json": "b473c3149711b0ea6dd018e7731ab2495a69e8f3aeb9753f69cc13455e8fee8e"
+          },
+          "contract": {
+            "version": 2,
+            "observation": "47: body-down gravity3, body gyro3 rad/s, joint offsets12 rad, joint velocity12 rad/s, command3, previous residual12, phase sin/cos2",
+            "action": "12 clipped residuals in [-1,1], scaled .10 rad; R7 joint order",
+            "sensor": "measurement age; bounded hold then latched episode stop; none explicit open-loop; reset required"
+          },
+          "experiment": {
+            "algo": "ppo",
+            "n_envs": 2,
+            "terrain": "mixed",
+            "payload": null,
+            "randomize": true,
+            "max_steps": 1000,
+            "sensor_mode": "mpu6050",
+            "sensor_profile": {
+              "sample_rate_hz": 50.0,
+              "transport_delay_s": 0.005,
+              "gravity_noise_std": 0.004,
+              "gyro_noise_std_rad_s": 0.012,
+              "dropout_probability": 0.0,
+              "gyro_bias_rad_s": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "max_age_s": 0.1,
+              "R_body_from_sensor_at_pan_zero": [
+                [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "pan_locked": true
+            },
+            "save_replay_buffer": true,
+            "checkpoint_freq": 25000,
+            "eval_freq": 25000,
+            "eval_seed": 1000000,
+            "eval_episodes": 1,
+            "eval_speed": 0.01,
+            "eval_max_steps": 960,
+            "eval_terrains": [
+              "flat"
+            ],
+            "eval_payloads": [
+              0,
+              0.155
+            ],
+            "eval_randomize": true,
+            "batch_size": 64,
+            "learning_rate": 0.0003,
+            "ppo_n_steps": 512,
+            "ppo_n_epochs": 5,
+            "sac_buffer_size": 100000,
+            "sac_learning_starts": 512,
+            "sac_gradient_steps": 1,
+            "smoke": true,
+            "sensor": {
+              "mode": "mpu6050",
+              "profile": {
+                "sample_rate_hz": 50.0,
+                "transport_delay_s": 0.005,
+                "gravity_noise_std": 0.004,
+                "gyro_noise_std_rad_s": 0.012,
+                "dropout_probability": 0.0,
+                "gyro_bias_rad_s": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max_age_s": 0.1,
+                "R_body_from_sensor_at_pan_zero": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "pan_locked": true
+              }
+            },
+            "validation_commands": {
+              "stop": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "forward": [
+                0.01,
+                0.0,
+                0.0
+              ],
+              "backward": [
+                -0.01,
+                0.0,
+                0.0
+              ],
+              "left": [
+                0.0,
+                0.01,
+                0.0
+              ],
+              "right": [
+                0.0,
+                -0.01,
+                0.0
+              ],
+              "clockwise": [
+                0.0,
+                0.0,
+                -0.04
+              ],
+              "counterclockwise": [
+                0.0,
+                0.0,
+                0.04
+              ],
+              "combined": [
+                0.007,
+                0.007,
+                0.02
+              ],
+              "transient": [
+                0.01,
+                0.0,
+                0.0
+              ]
+            }
+          }
+        },
+        "checkpoint_sha256": "6af827291b675d71d087c08a9477544d7b5c2871401799094903e6fc645fc341",
+        "replay_sha256": null,
+        "effective_model_parameters": {
+          "n_envs": 2,
+          "n_steps": 512,
+          "n_epochs": 5,
+          "batch_size": 64,
+          "learning_rate": 0.0003,
+          "buffer_size": null,
+          "learning_starts": null,
+          "gradient_steps": null,
+          "train_freq": null,
+          "policy_kwargs": {
+            "net_arch": [
+              64,
+              64
+            ]
+          },
+          "seed": 630042,
+          "device": "cuda"
+        }
+      }
+    },
+    {
+      "name": "sac-cpu-2envs-seed630042",
+      "algorithm": "sac",
+      "device": "cpu",
+      "n_envs": 2,
+      "seed": 630042,
+      "output": "/home/hssil/mist-locomotion-msi/repo/locomotion/runs/msi_20261012/training_devices_8192/sac-cpu-2envs-seed630042",
+      "command": [
+        "/home/hssil/mist-locomotion-msi/venv-cuda/bin/python",
+        "/home/hssil/mist-locomotion-msi/repo/locomotion/train.py",
+        "--algo",
+        "sac",
+        "--device",
+        "cpu",
+        "--n-envs",
+        "2",
+        "--seed",
+        "630042",
+        "--timesteps",
+        "8192",
+        "--threads",
+        "1",
+        "--terrain",
+        "mixed",
+        "--randomize",
+        "--max-steps",
+        "1000",
+        "--sensor-mode",
+        "mpu6050",
+        "--checkpoint-freq",
+        "25000",
+        "--eval-freq",
+        "25000",
+        "--eval-seed",
+        "1000000",
+        "--eval-episodes",
+        "1",
+        "--eval-speed",
+        "0.01",
+        "--eval-max-steps",
+        "960",
+        "--eval-terrains",
+        "flat",
+        "--eval-payloads",
+        "[0,0.155]",
+        "--eval-randomize",
+        "--batch-size",
+        "64",
+        "--learning-rate",
+        "0.0003",
+        "--ppo-n-steps",
+        "512",
+        "--ppo-n-epochs",
+        "5",
+        "--sac-buffer-size",
+        "100000",
+        "--sac-learning-starts",
+        "512",
+        "--sac-gradient-steps",
+        "1",
+        "--save-replay-buffer",
+        "--smoke",
+        "--output",
+        "/home/hssil/mist-locomotion-msi/repo/locomotion/runs/msi_20261012/training_devices_8192/sac-cpu-2envs-seed630042"
+      ],
+      "status": "completed",
+      "started_utc": "2026-10-12T20:35:13.925496+00:00",
+      "returncode": 0,
+      "completed_utc": "2026-10-12T20:38:26.422170+00:00",
+      "wall_seconds": 192.4959571559998,
+      "metrics": {
+        "wall_seconds_including_startup_and_initial_final_evaluation": 192.4959571559998,
+        "wall_transitions_per_second": 42.55673792339003,
+        "trainer_seconds_including_initial_final_evaluation": 185.13758908599993,
+        "evaluation_seconds_from_receipts": 146.21232525999994,
+        "trainer_seconds_excluding_evaluation_estimate": 38.92526382599999,
+        "non_evaluation_transitions_per_second_estimate": 210.45457871831258,
+        "non_evaluation_timing_scope": "Rollout and optimization plus model construction/checkpoint I/O overhead; no optimizer-only measurement.",
+        "actual_transitions": 8192,
+        "optimizer_updates": 3840,
+        "update_count_scope": "SB3 _n_updates: PPO completed training epochs; SAC gradient steps. Counts are not comparable across algorithms.",
+        "device": {
+          "requested": "cpu",
+          "torch_version": "2.8.0+cu126",
+          "torch_cuda_build": "12.6",
+          "cuda_available": true,
+          "physics_device": "cpu",
+          "selected": "cpu"
+        },
+        "versions": {
+          "stable-baselines3": "2.7.1",
+          "gymnasium": "1.2.3",
+          "pybullet": "3.2.7",
+          "torch": "2.8.0+cu126",
+          "numpy": "2.2.6"
+        },
+        "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+        "envelope_sha256": "bfe0d4f4509e44149c663bde5b7f4cb0b497714dfd7e13bc09ad4aed1a938108",
+        "envelope": {
+          "schema": 1,
+          "sources": {
+            "design/hexapod_phone_quad_r5_20260912/cad/phone.py": "4d4832a1b2b5c8595492604a8860c00fbf0dc1d9db898edea3fceba11887960e",
+            "design/main_hub_20260915/output/Hub_Check.json": "a21f983ac6203435cafcd8ad2a68776918159745a91d9388d3da69f70dd3b291",
+            "design/main_hub_20260915/output/Main_Hub_4Leg.stl": "4fc9eb811ccb80b4bc59540ee7b2dd50e20a358c763ed6b26c11e60148ccbc95",
+            "design/single_leg_r7_wide_joints_20260914/output/Single_Leg_R7.urdf": "1ce3ee65a598bcd7e5421ce744238739672ec68c9274d7665e320cc990ae9741",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/bench_mounting_plate.stl": "bc338c44b5afef74c1fdfa80c149e9714a0d35753090a1fb97dd23d9f514007f",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/case_cap_hip.stl": "ed8d6e99e78c81ae20997bf58e9c71cb7a92354fb0fd5078bf58a9d9f013756b",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/case_cap_knee.stl": "71cca48e4e5861fb0f6843d825272f75e45695f4cdc4ebac19945351d368a833",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/case_cap_yaw.stl": "f71b362e25c392f9a408bcf9ed16037f89acc69918d8b35ad1004b2cd0fd81ea",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/coxa_lower_auxiliary_arm.stl": "a29e5f9255e8c614d24b00167ee78dcfd2dd3c3660c4ae98eb98ef8a6d07d400",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/coxa_upper_and_hip_saddle.stl": "0723deb4796018fb0baf54c604d466919796aba66980d802d7aefd0d9922c772",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/femur_auxiliary_cheek.stl": "7ae155f2577f2b07167f9dc67678a7fb3708889da59464080377161c9aeb7abe",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/femur_main_and_knee_saddle.stl": "d82a517ed306f58f86d34a43ca3f8e178958aac4e3ea0b0b3e2af9d7bd9fe53c",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/horn_hip_auxiliary.stl": "5632d3f2d48f2fd1064253d69806850a878d250db33883990adeb9e691d19c6b",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/horn_hip_main.stl": "7dccbbe4867e2704c0c908d72440e037b3ea5660937d4603f6ff43fd15c0b877",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/horn_knee_auxiliary.stl": "4ee21f15b64db7e9e2a94ce5b7c3be692ddc6111a45f05d3b533417028f9efb1",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/horn_knee_main.stl": "a0e74c5442a42bcabe99aa095af238542416c8b10a994381de65b6b737da1c87",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/horn_yaw_auxiliary.stl": "cf1f8974b1d5474a58d6e44e796c70074dbf65fbc4035544a5e1445baa6fa1a0",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/horn_yaw_main.stl": "de5620ae4dc00941fff84d24af6f3dbec8e1b75d7e949a2622f45d5aae3e037a",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/servo_hip.stl": "a68811ee35c63aa983272be304ce6b6fefe1145c6e27ada675e4be1c399d0cb9",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/servo_knee.stl": "e3f48e23437876a4092f3e7c7ed405684431a36beb2947e83ea32ea5ae27e69c",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/servo_yaw.stl": "28d7a36bf579fe4c0c8fe77ac4ec9488df39343c2570a31a68fa483ea7932a41",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/tibia_auxiliary_cheek.stl": "c8217050117a3961c13b1caeda2ec5852e81a008665e8b5cccfeef0350bf8c33",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/tibia_curved_main_and_foot.stl": "85efadbc8334a1d6d3a85d3f89fbdf2de7afa9dd0e8cc784ee2332166618fda1",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/yaw_auxiliary_spacer_1.stl": "eb965e76846d0ff836c5f8f9f38cfaa852214f0eb57126a74bf64c44bc953259",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/yaw_auxiliary_spacer_2.stl": "b2b94471a874f1bdff7271c01ca7c99f44d3834f028423210104300aedccf15f",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/yaw_auxiliary_spacer_3.stl": "9fb8a6dd63050db95489619c0c91073daba18a48a0a5f80c1c50c6cb2569d06b",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/yaw_auxiliary_spacer_4.stl": "eafb832021c715a40cf0a142441a31ad9600378d9e1518d45a804c5b773b7d07",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/yaw_case_saddle.stl": "9e991cfbfa70700a8d7e64855a403a1f0d6ac972d300bdc9dc88c200122451cb",
+            "design/single_leg_r7_wide_joints_20260914/output/manifest.json": "e3fff543f2d2772b04354bfcd5ac6bee7a74c3d0dfb167cdc2e043ddab16e15c",
+            "docs/mist/MIST_AVAILABLE_PARTS.md": "5e5ea0afda8ed3e3d402c3b8b0b4822a328450df931af7f24ca3a2b8bae79816",
+            "docs/mist/MIST_MATERIAL_DIMENSIONS_MASS.md": "e7db5636495ca0f072f07496067ff870dbfbca8bef36b53805559534059cc8a3",
+            "locomotion/acceptance.py": "f3dc6bd47c7c6353c0c2ae6fafb4785d950f71221ba6c60b298adbcf93112705",
+            "locomotion/config.json": "c57df57f4befdba83cd479d35a9fcd7c067b8c2df5ca6d785c77ba054015677b",
+            "locomotion/design_profile.py": "fa14b75a7f08d7f692f22bb05ca1d3bde922af76ef9a6854a7a68e314caa5548",
+            "locomotion/evaluate.py": "3336c9cd81e6fb08535d1f027746441debf702d2a755fe09977bc16991f63508",
+            "locomotion/gait.py": "0486b9f5b19ef3b72af264362b8f3f3cbf67079208acc4ebe7d85d218ed3d267",
+            "locomotion/hardware/__init__.py": "d0147b1c4400b914e926026c8218b369f34b35e2dbecee4e02f9c28f1ab1ee54",
+            "locomotion/hardware/sensors.py": "0a869ff5e358c7ad94fb7d45e8237863373c3eb35e10518213a791e3d4bb567b",
+            "locomotion/kinematics.py": "5e181587ccc4be52e16d2eae6a968411b71b7ba2733e81ecc5a2058f5b9c1ae6",
+            "locomotion/machine_profiles.json": "1555805d0c38c9f9c8e9d96842d6332b686f4c8f22c88e576b3e64d1ddb28de1",
+            "locomotion/mist_env.py": "b36dc57892c362e37ad2419aa2604116b1f6cf29d528b61b25475194965f2ca1",
+            "locomotion/model.py": "9012295162e325a0f647bd963fdf23271549a5be430688674e870b656e7900bd",
+            "locomotion/profiles/r7_direct.json": "73be695ac7bf9d045ae87585d1d93a5faf669f1e30aa00074ba981f81a1bbe66",
+            "locomotion/provenance.py": "f971c6ea21397aee8b366f38d53b225a92d06299eaa594372d6a8dc1a6985dbb",
+            "locomotion/requirements.lock.txt": "e4379bbccd76bf07764e41b392787eec104eec4d57d0b54be34ce4b6f0865692",
+            "locomotion/scripts/benchmark.py": "2a30bfad9e3e51b67e98bb47e8c24e3991d7527f5fe28e33ae9f017c0b5a6e8d",
+            "locomotion/scripts/run_job.py": "63de81b36adf5f6bb99c3ddb2d198a71f42301b6674097f8c6995e304b8f96f4",
+            "locomotion/scripts/setup_cpu.sh": "aee103801154f732b1cdd1539ffdf18693ecd6a447564775f350ae519e9c556e",
+            "locomotion/sensitivity.py": "3a685edcfc3a2c2a8fba6591339f137d95bdf4e11835876229b6a3e1aff8b6cc",
+            "locomotion/sensor_sim.py": "e25be7706952042f20717b45f059cbb6374882208190ffea722b3fc33c0c837e",
+            "locomotion/servo.py": "29984b9e239620fe63c0faf4769d0cefe11073282ba6d28e2a7326988176b833",
+            "locomotion/sim_remote.py": "4605cd9b94b965741f5d9828a7d6f6c4d087065dab2a244ef7969748275323c9",
+            "locomotion/train.py": "4f65ce2b7ea4b9690761de430b3be55aef9061becc0579712a18771094d86ba4",
+            "locomotion/training_queue.json": "ed9574bf60169eff4ed20ab2d684a308014327d90759ff7add0fed718137d9b6",
+            "locomotion/validation_cases.json": "b473c3149711b0ea6dd018e7731ab2495a69e8f3aeb9753f69cc13455e8fee8e"
+          },
+          "contract": {
+            "version": 2,
+            "observation": "47: body-down gravity3, body gyro3 rad/s, joint offsets12 rad, joint velocity12 rad/s, command3, previous residual12, phase sin/cos2",
+            "action": "12 clipped residuals in [-1,1], scaled .10 rad; R7 joint order",
+            "sensor": "measurement age; bounded hold then latched episode stop; none explicit open-loop; reset required"
+          },
+          "experiment": {
+            "algo": "sac",
+            "n_envs": 2,
+            "terrain": "mixed",
+            "payload": null,
+            "randomize": true,
+            "max_steps": 1000,
+            "sensor_mode": "mpu6050",
+            "sensor_profile": {
+              "sample_rate_hz": 50.0,
+              "transport_delay_s": 0.005,
+              "gravity_noise_std": 0.004,
+              "gyro_noise_std_rad_s": 0.012,
+              "dropout_probability": 0.0,
+              "gyro_bias_rad_s": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "max_age_s": 0.1,
+              "R_body_from_sensor_at_pan_zero": [
+                [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "pan_locked": true
+            },
+            "save_replay_buffer": true,
+            "checkpoint_freq": 25000,
+            "eval_freq": 25000,
+            "eval_seed": 1000000,
+            "eval_episodes": 1,
+            "eval_speed": 0.01,
+            "eval_max_steps": 960,
+            "eval_terrains": [
+              "flat"
+            ],
+            "eval_payloads": [
+              0,
+              0.155
+            ],
+            "eval_randomize": true,
+            "batch_size": 64,
+            "learning_rate": 0.0003,
+            "ppo_n_steps": 512,
+            "ppo_n_epochs": 5,
+            "sac_buffer_size": 100000,
+            "sac_learning_starts": 512,
+            "sac_gradient_steps": 1,
+            "smoke": true,
+            "sensor": {
+              "mode": "mpu6050",
+              "profile": {
+                "sample_rate_hz": 50.0,
+                "transport_delay_s": 0.005,
+                "gravity_noise_std": 0.004,
+                "gyro_noise_std_rad_s": 0.012,
+                "dropout_probability": 0.0,
+                "gyro_bias_rad_s": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max_age_s": 0.1,
+                "R_body_from_sensor_at_pan_zero": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "pan_locked": true
+              }
+            },
+            "validation_commands": {
+              "stop": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "forward": [
+                0.01,
+                0.0,
+                0.0
+              ],
+              "backward": [
+                -0.01,
+                0.0,
+                0.0
+              ],
+              "left": [
+                0.0,
+                0.01,
+                0.0
+              ],
+              "right": [
+                0.0,
+                -0.01,
+                0.0
+              ],
+              "clockwise": [
+                0.0,
+                0.0,
+                -0.04
+              ],
+              "counterclockwise": [
+                0.0,
+                0.0,
+                0.04
+              ],
+              "combined": [
+                0.007,
+                0.007,
+                0.02
+              ],
+              "transient": [
+                0.01,
+                0.0,
+                0.0
+              ]
+            }
+          }
+        },
+        "checkpoint_sha256": "acd02e34dadf596e253d04656a6e54934e9693bb0fa89ae7a889f63b19cbd494",
+        "replay_sha256": "6f617aaf69f90fd61c7175f1b94abb7178e8b1763c126f8ad0d74f8b9ef9ac10",
+        "effective_model_parameters": {
+          "n_envs": 2,
+          "n_steps": 1,
+          "n_epochs": null,
+          "batch_size": 64,
+          "learning_rate": 0.0003,
+          "buffer_size": 100000,
+          "learning_starts": 512,
+          "gradient_steps": 1,
+          "train_freq": [
+            1,
+            "TrainFrequencyUnit.STEP"
+          ],
+          "policy_kwargs": {
+            "net_arch": [
+              64,
+              64
+            ],
+            "use_sde": false
+          },
+          "seed": 630042,
+          "device": "cpu"
+        }
+      }
+    },
+    {
+      "name": "sac-cuda-2envs-seed630042",
+      "algorithm": "sac",
+      "device": "cuda",
+      "n_envs": 2,
+      "seed": 630042,
+      "output": "/home/hssil/mist-locomotion-msi/repo/locomotion/runs/msi_20261012/training_devices_8192/sac-cuda-2envs-seed630042",
+      "command": [
+        "/home/hssil/mist-locomotion-msi/venv-cuda/bin/python",
+        "/home/hssil/mist-locomotion-msi/repo/locomotion/train.py",
+        "--algo",
+        "sac",
+        "--device",
+        "cuda",
+        "--n-envs",
+        "2",
+        "--seed",
+        "630042",
+        "--timesteps",
+        "8192",
+        "--threads",
+        "1",
+        "--terrain",
+        "mixed",
+        "--randomize",
+        "--max-steps",
+        "1000",
+        "--sensor-mode",
+        "mpu6050",
+        "--checkpoint-freq",
+        "25000",
+        "--eval-freq",
+        "25000",
+        "--eval-seed",
+        "1000000",
+        "--eval-episodes",
+        "1",
+        "--eval-speed",
+        "0.01",
+        "--eval-max-steps",
+        "960",
+        "--eval-terrains",
+        "flat",
+        "--eval-payloads",
+        "[0,0.155]",
+        "--eval-randomize",
+        "--batch-size",
+        "64",
+        "--learning-rate",
+        "0.0003",
+        "--ppo-n-steps",
+        "512",
+        "--ppo-n-epochs",
+        "5",
+        "--sac-buffer-size",
+        "100000",
+        "--sac-learning-starts",
+        "512",
+        "--sac-gradient-steps",
+        "1",
+        "--save-replay-buffer",
+        "--smoke",
+        "--output",
+        "/home/hssil/mist-locomotion-msi/repo/locomotion/runs/msi_20261012/training_devices_8192/sac-cuda-2envs-seed630042"
+      ],
+      "status": "completed",
+      "started_utc": "2026-10-12T20:38:26.496503+00:00",
+      "returncode": 0,
+      "completed_utc": "2026-10-12T20:43:10.655581+00:00",
+      "wall_seconds": 284.15753029300004,
+      "metrics": {
+        "wall_seconds_including_startup_and_initial_final_evaluation": 284.15753029300004,
+        "wall_transitions_per_second": 28.829079389707108,
+        "trainer_seconds_including_initial_final_evaluation": 278.33839029399996,
+        "evaluation_seconds_from_receipts": 208.6833549009998,
+        "trainer_seconds_excluding_evaluation_estimate": 69.65503539300016,
+        "non_evaluation_transitions_per_second_estimate": 117.60815214262655,
+        "non_evaluation_timing_scope": "Rollout and optimization plus model construction/checkpoint I/O overhead; no optimizer-only measurement.",
+        "actual_transitions": 8192,
+        "optimizer_updates": 3840,
+        "update_count_scope": "SB3 _n_updates: PPO completed training epochs; SAC gradient steps. Counts are not comparable across algorithms.",
+        "device": {
+          "requested": "cuda",
+          "torch_version": "2.8.0+cu126",
+          "torch_cuda_build": "12.6",
+          "cuda_available": true,
+          "physics_device": "cpu",
+          "gpu": "NVIDIA GeForce RTX 4080 Laptop GPU",
+          "gpu_memory_bytes": 12878086144,
+          "selected": "cuda"
+        },
+        "versions": {
+          "stable-baselines3": "2.7.1",
+          "gymnasium": "1.2.3",
+          "pybullet": "3.2.7",
+          "torch": "2.8.0+cu126",
+          "numpy": "2.2.6"
+        },
+        "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+        "envelope_sha256": "bfe0d4f4509e44149c663bde5b7f4cb0b497714dfd7e13bc09ad4aed1a938108",
+        "envelope": {
+          "schema": 1,
+          "sources": {
+            "design/hexapod_phone_quad_r5_20260912/cad/phone.py": "4d4832a1b2b5c8595492604a8860c00fbf0dc1d9db898edea3fceba11887960e",
+            "design/main_hub_20260915/output/Hub_Check.json": "a21f983ac6203435cafcd8ad2a68776918159745a91d9388d3da69f70dd3b291",
+            "design/main_hub_20260915/output/Main_Hub_4Leg.stl": "4fc9eb811ccb80b4bc59540ee7b2dd50e20a358c763ed6b26c11e60148ccbc95",
+            "design/single_leg_r7_wide_joints_20260914/output/Single_Leg_R7.urdf": "1ce3ee65a598bcd7e5421ce744238739672ec68c9274d7665e320cc990ae9741",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/bench_mounting_plate.stl": "bc338c44b5afef74c1fdfa80c149e9714a0d35753090a1fb97dd23d9f514007f",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/case_cap_hip.stl": "ed8d6e99e78c81ae20997bf58e9c71cb7a92354fb0fd5078bf58a9d9f013756b",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/case_cap_knee.stl": "71cca48e4e5861fb0f6843d825272f75e45695f4cdc4ebac19945351d368a833",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/case_cap_yaw.stl": "f71b362e25c392f9a408bcf9ed16037f89acc69918d8b35ad1004b2cd0fd81ea",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/coxa_lower_auxiliary_arm.stl": "a29e5f9255e8c614d24b00167ee78dcfd2dd3c3660c4ae98eb98ef8a6d07d400",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/coxa_upper_and_hip_saddle.stl": "0723deb4796018fb0baf54c604d466919796aba66980d802d7aefd0d9922c772",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/femur_auxiliary_cheek.stl": "7ae155f2577f2b07167f9dc67678a7fb3708889da59464080377161c9aeb7abe",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/femur_main_and_knee_saddle.stl": "d82a517ed306f58f86d34a43ca3f8e178958aac4e3ea0b0b3e2af9d7bd9fe53c",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/horn_hip_auxiliary.stl": "5632d3f2d48f2fd1064253d69806850a878d250db33883990adeb9e691d19c6b",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/horn_hip_main.stl": "7dccbbe4867e2704c0c908d72440e037b3ea5660937d4603f6ff43fd15c0b877",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/horn_knee_auxiliary.stl": "4ee21f15b64db7e9e2a94ce5b7c3be692ddc6111a45f05d3b533417028f9efb1",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/horn_knee_main.stl": "a0e74c5442a42bcabe99aa095af238542416c8b10a994381de65b6b737da1c87",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/horn_yaw_auxiliary.stl": "cf1f8974b1d5474a58d6e44e796c70074dbf65fbc4035544a5e1445baa6fa1a0",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/horn_yaw_main.stl": "de5620ae4dc00941fff84d24af6f3dbec8e1b75d7e949a2622f45d5aae3e037a",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/servo_hip.stl": "a68811ee35c63aa983272be304ce6b6fefe1145c6e27ada675e4be1c399d0cb9",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/servo_knee.stl": "e3f48e23437876a4092f3e7c7ed405684431a36beb2947e83ea32ea5ae27e69c",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/servo_yaw.stl": "28d7a36bf579fe4c0c8fe77ac4ec9488df39343c2570a31a68fa483ea7932a41",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/tibia_auxiliary_cheek.stl": "c8217050117a3961c13b1caeda2ec5852e81a008665e8b5cccfeef0350bf8c33",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/tibia_curved_main_and_foot.stl": "85efadbc8334a1d6d3a85d3f89fbdf2de7afa9dd0e8cc784ee2332166618fda1",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/yaw_auxiliary_spacer_1.stl": "eb965e76846d0ff836c5f8f9f38cfaa852214f0eb57126a74bf64c44bc953259",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/yaw_auxiliary_spacer_2.stl": "b2b94471a874f1bdff7271c01ca7c99f44d3834f028423210104300aedccf15f",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/yaw_auxiliary_spacer_3.stl": "9fb8a6dd63050db95489619c0c91073daba18a48a0a5f80c1c50c6cb2569d06b",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/yaw_auxiliary_spacer_4.stl": "eafb832021c715a40cf0a142441a31ad9600378d9e1518d45a804c5b773b7d07",
+            "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/yaw_case_saddle.stl": "9e991cfbfa70700a8d7e64855a403a1f0d6ac972d300bdc9dc88c200122451cb",
+            "design/single_leg_r7_wide_joints_20260914/output/manifest.json": "e3fff543f2d2772b04354bfcd5ac6bee7a74c3d0dfb167cdc2e043ddab16e15c",
+            "docs/mist/MIST_AVAILABLE_PARTS.md": "5e5ea0afda8ed3e3d402c3b8b0b4822a328450df931af7f24ca3a2b8bae79816",
+            "docs/mist/MIST_MATERIAL_DIMENSIONS_MASS.md": "e7db5636495ca0f072f07496067ff870dbfbca8bef36b53805559534059cc8a3",
+            "locomotion/acceptance.py": "f3dc6bd47c7c6353c0c2ae6fafb4785d950f71221ba6c60b298adbcf93112705",
+            "locomotion/config.json": "c57df57f4befdba83cd479d35a9fcd7c067b8c2df5ca6d785c77ba054015677b",
+            "locomotion/design_profile.py": "fa14b75a7f08d7f692f22bb05ca1d3bde922af76ef9a6854a7a68e314caa5548",
+            "locomotion/evaluate.py": "3336c9cd81e6fb08535d1f027746441debf702d2a755fe09977bc16991f63508",
+            "locomotion/gait.py": "0486b9f5b19ef3b72af264362b8f3f3cbf67079208acc4ebe7d85d218ed3d267",
+            "locomotion/hardware/__init__.py": "d0147b1c4400b914e926026c8218b369f34b35e2dbecee4e02f9c28f1ab1ee54",
+            "locomotion/hardware/sensors.py": "0a869ff5e358c7ad94fb7d45e8237863373c3eb35e10518213a791e3d4bb567b",
+            "locomotion/kinematics.py": "5e181587ccc4be52e16d2eae6a968411b71b7ba2733e81ecc5a2058f5b9c1ae6",
+            "locomotion/machine_profiles.json": "1555805d0c38c9f9c8e9d96842d6332b686f4c8f22c88e576b3e64d1ddb28de1",
+            "locomotion/mist_env.py": "b36dc57892c362e37ad2419aa2604116b1f6cf29d528b61b25475194965f2ca1",
+            "locomotion/model.py": "9012295162e325a0f647bd963fdf23271549a5be430688674e870b656e7900bd",
+            "locomotion/profiles/r7_direct.json": "73be695ac7bf9d045ae87585d1d93a5faf669f1e30aa00074ba981f81a1bbe66",
+            "locomotion/provenance.py": "f971c6ea21397aee8b366f38d53b225a92d06299eaa594372d6a8dc1a6985dbb",
+            "locomotion/requirements.lock.txt": "e4379bbccd76bf07764e41b392787eec104eec4d57d0b54be34ce4b6f0865692",
+            "locomotion/scripts/benchmark.py": "2a30bfad9e3e51b67e98bb47e8c24e3991d7527f5fe28e33ae9f017c0b5a6e8d",
+            "locomotion/scripts/run_job.py": "63de81b36adf5f6bb99c3ddb2d198a71f42301b6674097f8c6995e304b8f96f4",
+            "locomotion/scripts/setup_cpu.sh": "aee103801154f732b1cdd1539ffdf18693ecd6a447564775f350ae519e9c556e",
+            "locomotion/sensitivity.py": "3a685edcfc3a2c2a8fba6591339f137d95bdf4e11835876229b6a3e1aff8b6cc",
+            "locomotion/sensor_sim.py": "e25be7706952042f20717b45f059cbb6374882208190ffea722b3fc33c0c837e",
+            "locomotion/servo.py": "29984b9e239620fe63c0faf4769d0cefe11073282ba6d28e2a7326988176b833",
+            "locomotion/sim_remote.py": "4605cd9b94b965741f5d9828a7d6f6c4d087065dab2a244ef7969748275323c9",
+            "locomotion/train.py": "4f65ce2b7ea4b9690761de430b3be55aef9061becc0579712a18771094d86ba4",
+            "locomotion/training_queue.json": "ed9574bf60169eff4ed20ab2d684a308014327d90759ff7add0fed718137d9b6",
+            "locomotion/validation_cases.json": "b473c3149711b0ea6dd018e7731ab2495a69e8f3aeb9753f69cc13455e8fee8e"
+          },
+          "contract": {
+            "version": 2,
+            "observation": "47: body-down gravity3, body gyro3 rad/s, joint offsets12 rad, joint velocity12 rad/s, command3, previous residual12, phase sin/cos2",
+            "action": "12 clipped residuals in [-1,1], scaled .10 rad; R7 joint order",
+            "sensor": "measurement age; bounded hold then latched episode stop; none explicit open-loop; reset required"
+          },
+          "experiment": {
+            "algo": "sac",
+            "n_envs": 2,
+            "terrain": "mixed",
+            "payload": null,
+            "randomize": true,
+            "max_steps": 1000,
+            "sensor_mode": "mpu6050",
+            "sensor_profile": {
+              "sample_rate_hz": 50.0,
+              "transport_delay_s": 0.005,
+              "gravity_noise_std": 0.004,
+              "gyro_noise_std_rad_s": 0.012,
+              "dropout_probability": 0.0,
+              "gyro_bias_rad_s": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "max_age_s": 0.1,
+              "R_body_from_sensor_at_pan_zero": [
+                [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "pan_locked": true
+            },
+            "save_replay_buffer": true,
+            "checkpoint_freq": 25000,
+            "eval_freq": 25000,
+            "eval_seed": 1000000,
+            "eval_episodes": 1,
+            "eval_speed": 0.01,
+            "eval_max_steps": 960,
+            "eval_terrains": [
+              "flat"
+            ],
+            "eval_payloads": [
+              0,
+              0.155
+            ],
+            "eval_randomize": true,
+            "batch_size": 64,
+            "learning_rate": 0.0003,
+            "ppo_n_steps": 512,
+            "ppo_n_epochs": 5,
+            "sac_buffer_size": 100000,
+            "sac_learning_starts": 512,
+            "sac_gradient_steps": 1,
+            "smoke": true,
+            "sensor": {
+              "mode": "mpu6050",
+              "profile": {
+                "sample_rate_hz": 50.0,
+                "transport_delay_s": 0.005,
+                "gravity_noise_std": 0.004,
+                "gyro_noise_std_rad_s": 0.012,
+                "dropout_probability": 0.0,
+                "gyro_bias_rad_s": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max_age_s": 0.1,
+                "R_body_from_sensor_at_pan_zero": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "pan_locked": true
+              }
+            },
+            "validation_commands": {
+              "stop": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "forward": [
+                0.01,
+                0.0,
+                0.0
+              ],
+              "backward": [
+                -0.01,
+                0.0,
+                0.0
+              ],
+              "left": [
+                0.0,
+                0.01,
+                0.0
+              ],
+              "right": [
+                0.0,
+                -0.01,
+                0.0
+              ],
+              "clockwise": [
+                0.0,
+                0.0,
+                -0.04
+              ],
+              "counterclockwise": [
+                0.0,
+                0.0,
+                0.04
+              ],
+              "combined": [
+                0.007,
+                0.007,
+                0.02
+              ],
+              "transient": [
+                0.01,
+                0.0,
+                0.0
+              ]
+            }
+          }
+        },
+        "checkpoint_sha256": "59994adbbd6b2e7aa8ab57619f59ead06a69ba99e9e8ed5d06d2511bf56a1304",
+        "replay_sha256": "2c243b9974a3a1eb01672b41517dd69cbbde370382a39919127bdff710afa8c7",
+        "effective_model_parameters": {
+          "n_envs": 2,
+          "n_steps": 1,
+          "n_epochs": null,
+          "batch_size": 64,
+          "learning_rate": 0.0003,
+          "buffer_size": 100000,
+          "learning_starts": 512,
+          "gradient_steps": 1,
+          "train_freq": [
+            1,
+            "TrainFrequencyUnit.STEP"
+          ],
+          "policy_kwargs": {
+            "net_arch": [
+              64,
+              64
+            ],
+            "use_sde": false
+          },
+          "seed": 630042,
+          "device": "cuda"
+        }
+      }
+    }
+  ],
+  "limitation": "Endpoint throughput screen only; this does not measure 15-minute thermal capacity. PyBullet physics runs on CPU. Validation scores must not select a policy or checkpoint. These are fresh smoke jobs, not qualified walking policies. CPU/CUDA numerical results may differ.",
+  "runtime": {
+    "python": "3.11.16 (main, Aug 14 2026, 15:35:36) [Clang 22.1.3 ]",
+    "executable": "/home/hssil/mist-locomotion-msi/venv-cuda/bin/python",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+    "devices": [
+      {
+        "requested": "cpu",
+        "torch_version": "2.8.0+cu126",
+        "torch_cuda_build": "12.6",
+        "cuda_available": true,
+        "physics_device": "cpu",
+        "selected": "cpu"
+      },
+      {
+        "requested": "cuda",
+        "torch_version": "2.8.0+cu126",
+        "torch_cuda_build": "12.6",
+        "cuda_available": true,
+        "physics_device": "cpu",
+        "gpu": "NVIDIA GeForce RTX 4080 Laptop GPU",
+        "gpu_memory_bytes": 12878086144,
+        "selected": "cuda"
+      }
+    ],
+    "versions": {
+      "stable-baselines3": "2.7.1",
+      "gymnasium": "1.2.3",
+      "pybullet": "3.2.7",
+      "torch": "2.8.0+cu126",
+      "numpy": "2.2.6"
+    },
+    "nvidia_smi": {
+      "returncode": 0,
+      "stdout": "NVIDIA GeForce RTX 4080 Laptop GPU, 591.74, 12282 MiB, [N/A]",
+      "stderr": ""
+    }
+  },
+  "sources_verified_after": true,
+  "completed_utc": "2026-10-12T20:43:10.720504+00:00"
+}

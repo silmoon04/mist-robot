@@ -1,5 +1,7 @@
 # Continue MIST on the MSI RTX 4080 laptop
 
+**MSI continuation, 12 October 2026:** Work resumed at the user's request on the MSI. Read [the current continuation](handoff/MSI_CONTINUATION.md) and [machine state](handoff/MSI_STATE.json) first. The sections below preserve the earlier pause and its frozen experiment contract; their pending setup and final-test statements describe that earlier state.
+
 Work paused at the user's request on **12 October 2026**. Training, simulation experiments and the active CUDA-setup research agent were stopped. Nothing should restart automatically. This file is the handoff for the next human or coding agent.
 
 ## Read first

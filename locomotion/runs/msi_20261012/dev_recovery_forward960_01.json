@@ -1,0 +1,2634 @@
+{
+  "schema": 1,
+  "suite_role": "experimental_development_recovery_not_policy_selection",
+  "experiment_hashes": {
+    "locomotion/scripts/dev_recovery_probe.py": "39556a2584c7912354aba2e2693ecacca5adead101ef2b5c1bb2664510566907",
+    "locomotion/scripts/experimental_recovery.py": "de08ca7bb29aff0fb12d33d4c23b74f9d28f97726065415a6092d19a4b63b89c",
+    "locomotion/scripts/dev_tracking_probe.py": "54915f674b74392cf24102b16c21562dbecff041167845a39644b171dbfbbc0e"
+  },
+  "source_hashes": {
+    "design/hexapod_phone_quad_r5_20260912/cad/phone.py": "4d4832a1b2b5c8595492604a8860c00fbf0dc1d9db898edea3fceba11887960e",
+    "design/main_hub_20260915/output/Hub_Check.json": "a21f983ac6203435cafcd8ad2a68776918159745a91d9388d3da69f70dd3b291",
+    "design/main_hub_20260915/output/Main_Hub_4Leg.stl": "4fc9eb811ccb80b4bc59540ee7b2dd50e20a358c763ed6b26c11e60148ccbc95",
+    "design/single_leg_r7_wide_joints_20260914/output/Single_Leg_R7.urdf": "1ce3ee65a598bcd7e5421ce744238739672ec68c9274d7665e320cc990ae9741",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/bench_mounting_plate.stl": "bc338c44b5afef74c1fdfa80c149e9714a0d35753090a1fb97dd23d9f514007f",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/case_cap_hip.stl": "ed8d6e99e78c81ae20997bf58e9c71cb7a92354fb0fd5078bf58a9d9f013756b",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/case_cap_knee.stl": "71cca48e4e5861fb0f6843d825272f75e45695f4cdc4ebac19945351d368a833",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/case_cap_yaw.stl": "f71b362e25c392f9a408bcf9ed16037f89acc69918d8b35ad1004b2cd0fd81ea",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/coxa_lower_auxiliary_arm.stl": "a29e5f9255e8c614d24b00167ee78dcfd2dd3c3660c4ae98eb98ef8a6d07d400",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/coxa_upper_and_hip_saddle.stl": "0723deb4796018fb0baf54c604d466919796aba66980d802d7aefd0d9922c772",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/femur_auxiliary_cheek.stl": "7ae155f2577f2b07167f9dc67678a7fb3708889da59464080377161c9aeb7abe",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/femur_main_and_knee_saddle.stl": "d82a517ed306f58f86d34a43ca3f8e178958aac4e3ea0b0b3e2af9d7bd9fe53c",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/horn_hip_auxiliary.stl": "5632d3f2d48f2fd1064253d69806850a878d250db33883990adeb9e691d19c6b",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/horn_hip_main.stl": "7dccbbe4867e2704c0c908d72440e037b3ea5660937d4603f6ff43fd15c0b877",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/horn_knee_auxiliary.stl": "4ee21f15b64db7e9e2a94ce5b7c3be692ddc6111a45f05d3b533417028f9efb1",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/horn_knee_main.stl": "a0e74c5442a42bcabe99aa095af238542416c8b10a994381de65b6b737da1c87",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/horn_yaw_auxiliary.stl": "cf1f8974b1d5474a58d6e44e796c70074dbf65fbc4035544a5e1445baa6fa1a0",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/horn_yaw_main.stl": "de5620ae4dc00941fff84d24af6f3dbec8e1b75d7e949a2622f45d5aae3e037a",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/servo_hip.stl": "a68811ee35c63aa983272be304ce6b6fefe1145c6e27ada675e4be1c399d0cb9",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/servo_knee.stl": "e3f48e23437876a4092f3e7c7ed405684431a36beb2947e83ea32ea5ae27e69c",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/servo_yaw.stl": "28d7a36bf579fe4c0c8fe77ac4ec9488df39343c2570a31a68fa483ea7932a41",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/tibia_auxiliary_cheek.stl": "c8217050117a3961c13b1caeda2ec5852e81a008665e8b5cccfeef0350bf8c33",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/tibia_curved_main_and_foot.stl": "85efadbc8334a1d6d3a85d3f89fbdf2de7afa9dd0e8cc784ee2332166618fda1",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/yaw_auxiliary_spacer_1.stl": "eb965e76846d0ff836c5f8f9f38cfaa852214f0eb57126a74bf64c44bc953259",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/yaw_auxiliary_spacer_2.stl": "b2b94471a874f1bdff7271c01ca7c99f44d3834f028423210104300aedccf15f",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/yaw_auxiliary_spacer_3.stl": "9fb8a6dd63050db95489619c0c91073daba18a48a0a5f80c1c50c6cb2569d06b",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/yaw_auxiliary_spacer_4.stl": "eafb832021c715a40cf0a142441a31ad9600378d9e1518d45a804c5b773b7d07",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/yaw_case_saddle.stl": "9e991cfbfa70700a8d7e64855a403a1f0d6ac972d300bdc9dc88c200122451cb",
+    "design/single_leg_r7_wide_joints_20260914/output/manifest.json": "e3fff543f2d2772b04354bfcd5ac6bee7a74c3d0dfb167cdc2e043ddab16e15c",
+    "docs/mist/MIST_AVAILABLE_PARTS.md": "5e5ea0afda8ed3e3d402c3b8b0b4822a328450df931af7f24ca3a2b8bae79816",
+    "docs/mist/MIST_MATERIAL_DIMENSIONS_MASS.md": "e7db5636495ca0f072f07496067ff870dbfbca8bef36b53805559534059cc8a3",
+    "locomotion/acceptance.py": "f3dc6bd47c7c6353c0c2ae6fafb4785d950f71221ba6c60b298adbcf93112705",
+    "locomotion/config.json": "c57df57f4befdba83cd479d35a9fcd7c067b8c2df5ca6d785c77ba054015677b",
+    "locomotion/design_profile.py": "fa14b75a7f08d7f692f22bb05ca1d3bde922af76ef9a6854a7a68e314caa5548",
+    "locomotion/evaluate.py": "3336c9cd81e6fb08535d1f027746441debf702d2a755fe09977bc16991f63508",
+    "locomotion/gait.py": "0486b9f5b19ef3b72af264362b8f3f3cbf67079208acc4ebe7d85d218ed3d267",
+    "locomotion/hardware/__init__.py": "d0147b1c4400b914e926026c8218b369f34b35e2dbecee4e02f9c28f1ab1ee54",
+    "locomotion/hardware/sensors.py": "0a869ff5e358c7ad94fb7d45e8237863373c3eb35e10518213a791e3d4bb567b",
+    "locomotion/kinematics.py": "5e181587ccc4be52e16d2eae6a968411b71b7ba2733e81ecc5a2058f5b9c1ae6",
+    "locomotion/machine_profiles.json": "1555805d0c38c9f9c8e9d96842d6332b686f4c8f22c88e576b3e64d1ddb28de1",
+    "locomotion/mist_env.py": "b36dc57892c362e37ad2419aa2604116b1f6cf29d528b61b25475194965f2ca1",
+    "locomotion/model.py": "9012295162e325a0f647bd963fdf23271549a5be430688674e870b656e7900bd",
+    "locomotion/profiles/r7_direct.json": "73be695ac7bf9d045ae87585d1d93a5faf669f1e30aa00074ba981f81a1bbe66",
+    "locomotion/provenance.py": "f971c6ea21397aee8b366f38d53b225a92d06299eaa594372d6a8dc1a6985dbb",
+    "locomotion/requirements.lock.txt": "e4379bbccd76bf07764e41b392787eec104eec4d57d0b54be34ce4b6f0865692",
+    "locomotion/scripts/benchmark.py": "2a30bfad9e3e51b67e98bb47e8c24e3991d7527f5fe28e33ae9f017c0b5a6e8d",
+    "locomotion/scripts/run_job.py": "63de81b36adf5f6bb99c3ddb2d198a71f42301b6674097f8c6995e304b8f96f4",
+    "locomotion/scripts/setup_cpu.sh": "aee103801154f732b1cdd1539ffdf18693ecd6a447564775f350ae519e9c556e",
+    "locomotion/sensitivity.py": "3a685edcfc3a2c2a8fba6591339f137d95bdf4e11835876229b6a3e1aff8b6cc",
+    "locomotion/sensor_sim.py": "e25be7706952042f20717b45f059cbb6374882208190ffea722b3fc33c0c837e",
+    "locomotion/servo.py": "29984b9e239620fe63c0faf4769d0cefe11073282ba6d28e2a7326988176b833",
+    "locomotion/sim_remote.py": "4605cd9b94b965741f5d9828a7d6f6c4d087065dab2a244ef7969748275323c9",
+    "locomotion/train.py": "4f65ce2b7ea4b9690761de430b3be55aef9061becc0579712a18771094d86ba4",
+    "locomotion/training_queue.json": "ed9574bf60169eff4ed20ab2d684a308014327d90759ff7add0fed718137d9b6",
+    "locomotion/validation_cases.json": "b473c3149711b0ea6dd018e7731ab2495a69e8f3aeb9753f69cc13455e8fee8e"
+  },
+  "ordered_cases": [
+    {
+      "terrain": "flat",
+      "payload": 0.155,
+      "command_name": "forward",
+      "repeat": 0,
+      "randomize": false,
+      "variant": "shift005",
+      "seed": 1209936639728344,
+      "steps": 960,
+      "contact_stride": 5,
+      "save_trace": false
+    },
+    {
+      "terrain": "flat",
+      "payload": 0.155,
+      "command_name": "forward",
+      "repeat": 0,
+      "randomize": false,
+      "variant": "shift005_matched",
+      "seed": 1209936639728344,
+      "steps": 960,
+      "contact_stride": 5,
+      "save_trace": false
+    }
+  ],
+  "variants": {
+    "shift005": {
+      "shift_m": 0.005
+    },
+    "shift005_matched": {
+      "shift_m": 0.005
+    }
+  },
+  "changed_variable": "horizontal swing interpolation only; endpoint velocity matches stance",
+  "status": "complete",
+  "results": [
+    {
+      "case": {
+        "terrain": "flat",
+        "payload": 0.155,
+        "command_name": "forward",
+        "repeat": 0,
+        "randomize": false,
+        "variant": "shift005",
+        "seed": 1209936639728344,
+        "steps": 960,
+        "contact_stride": 5,
+        "save_trace": false
+      },
+      "acceptance": {
+        "passed": false,
+        "checks": {
+          "duration": true,
+          "complete": true,
+          "finite": true,
+          "no_falls": true,
+          "no_sensor_fault": true,
+          "no_body_ground_contact": true,
+          "no_nonfoot_ground_contact": true,
+          "progress": true,
+          "path": false,
+          "velocity": true,
+          "yaw_rate": true,
+          "yaw": true,
+          "tilt": true,
+          "tracking": true,
+          "saturation": true
+        },
+        "metrics": {
+          "duration_s": 19.2,
+          "progress_m": 0.1309982326087336,
+          "command_distance_m": 0.192,
+          "body_velocity_rmse_m_s": 0.01374465809318182,
+          "yaw_rate_rmse_rad_s": 0.016375956248619858,
+          "peak_path_error_m": 0.06357828711125865,
+          "peak_yaw_error_rad": 0.018679387143744588,
+          "peak_tilt_rad": 0.01227574565914755,
+          "peak_tracking_error_rad": 0.04396306333760124,
+          "saturation_fraction": 0.0
+        },
+        "criteria": {
+          "min_duration_s": 19.2,
+          "min_progress_fraction": 0.5,
+          "max_sideways_m": 0.03,
+          "max_yaw_error_rad": 0.2,
+          "max_tilt_rad": 0.35,
+          "max_stop_displacement_m": 0.02,
+          "max_velocity_rmse_m_s": 0.015,
+          "max_yaw_rate_rmse_rad_s": 0.06,
+          "max_tracking_error_rad": 0.25,
+          "max_saturation_fraction": 0.25,
+          "contact_force_threshold_n": 0.1
+        },
+        "acceptance_version": "simulation-walking-v2"
+      },
+      "tracking_screen_passed": false,
+      "screen_note": "The screen excludes only duration; full qualification still requires all original checks.",
+      "steady": {
+        "sample_count": 640,
+        "start_time_s": 6.4,
+        "end_time_s": 19.200000000000003,
+        "whole_cycles": 4,
+        "mean_velocity_bias_m_s": [
+          -0.0026665120794017757,
+          7.753970348362811e-05
+        ],
+        "velocity_error_ripple_rms_m_s": 0.013541892783648429,
+        "body_velocity_rmse_m_s": 0.013802143284252678,
+        "mean_yaw_rate_bias_rad_s": -8.533345271244372e-05,
+        "yaw_rate_error_ripple_rms_rad_s": 0.015742802679041056
+      },
+      "telemetry_all": {
+        "sample_count": 3840,
+        "start_time_s": 0.0,
+        "end_time_s": null,
+        "contact_sampling_hz": 200.0,
+        "phase_note": "Phase bins use the held command phase; contact sample times use actual physics time since reset settling.",
+        "saturation_by_joint_all_physics": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_joint_error_rad": [
+          0.014682238898546637,
+          0.03804944148702531,
+          0.045836099595091315,
+          0.015304274913293713,
+          0.038346905459116475,
+          0.04590211407822811,
+          0.018937911781351856,
+          0.03579972062281055,
+          0.052353035140219356,
+          0.018860191896301042,
+          0.035368015081113854,
+          0.05156998573091767
+        ],
+        "p95_joint_error_rad": [
+          0.03743610975557291,
+          0.06670157411002627,
+          0.08316184130371328,
+          0.03713116438321103,
+          0.06696909707791297,
+          0.08356330532818394,
+          0.038368292683764654,
+          0.05957404936003562,
+          0.09249554669788847,
+          0.038287211563584854,
+          0.059787418430760644,
+          0.0927937812561605
+        ],
+        "p95_servo_target_lag_rad": [
+          0.0075647113725037934,
+          0.01954921131487261,
+          0.022619655645557346,
+          0.007312178753083886,
+          0.020127885505756338,
+          0.023539233123151204,
+          0.0074062752329166585,
+          0.020222565187086344,
+          0.024180968700601345,
+          0.007659069589810225,
+          0.019477511324364594,
+          0.02417658917941279
+        ],
+        "p95_joint_speed_rad_s": [
+          0.3028961450086453,
+          0.5538236074539372,
+          0.8486165717984351,
+          0.30189609168644926,
+          0.5551096137517577,
+          0.7650682513273319,
+          0.30511632353422535,
+          0.5833296854590986,
+          0.8284084328730067,
+          0.29353863712863265,
+          0.5283013007974888,
+          0.831457854425743
+        ],
+        "per_leg": {
+          "FL": {
+            "phase_bins": [
+              {
+                "phase": [
+                  0.0,
+                  0.73
+                ],
+                "sample_count": 2804,
+                "loaded_fraction": 0.963623395149786,
+                "mean_normal_force_n": 7.895142837418952,
+                "mean_contact_slip_m_s": 0.00042493677451367444,
+                "mean_slip_along_command_m_s": 0.00022595330148446533,
+                "mean_body_contact_tangent_m_s": [
+                  0.00022595330148446563,
+                  -0.00020538602458746707,
+                  1.753013448654963e-08
+                ]
+              },
+              {
+                "phase": [
+                  0.73,
+                  0.76
+                ],
+                "sample_count": 120,
+                "loaded_fraction": 1.0,
+                "mean_normal_force_n": 9.081258915205636,
+                "mean_contact_slip_m_s": 0.0003239660740590725,
+                "mean_slip_along_command_m_s": 3.29616192493352e-05,
+                "mean_body_contact_tangent_m_s": [
+                  3.296161924933523e-05,
+                  -4.528797778711233e-05,
+                  -1.624786292801055e-07
+                ]
+              },
+              {
+                "phase": [
+                  0.76,
+                  0.8
+                ],
+                "sample_count": 164,
+                "loaded_fraction": 1.0,
+                "mean_normal_force_n": 5.918593696335956,
+                "mean_contact_slip_m_s": 0.00021826344590988089,
+                "mean_slip_along_command_m_s": -0.00015006320944881623,
+                "mean_body_contact_tangent_m_s": [
+                  -0.00015006320944881615,
+                  0.00015190850861533238,
+                  8.148550100008832e-07
+                ]
+              },
+              {
+                "phase": [
+                  0.8,
+                  0.82
+                ],
+                "sample_count": 76,
+                "loaded_fraction": 1.0,
+                "mean_normal_force_n": 3.3364529419791293,
+                "mean_contact_slip_m_s": 0.00018464285075866328,
+                "mean_slip_along_command_m_s": -0.0001271548682978833,
+                "mean_body_contact_tangent_m_s": [
+                  -0.00012715486829788336,
+                  0.0001280897413422461,
+                  2.609306846350051e-07
+                ]
+              },
+              {
+                "phase": [
+                  0.82,
+                  0.97
+                ],
+                "sample_count": 576,
+                "loaded_fraction": 0.027777777777777776,
+                "mean_normal_force_n": 0.033120704637258386,
+                "mean_contact_slip_m_s": 0.00023817511605865382,
+                "mean_slip_along_command_m_s": -8.263539954137645e-05,
+                "mean_body_contact_tangent_m_s": [
+                  -8.263539954137646e-05,
+                  8.78920229122085e-05,
+                  2.0308989073599074e-07
+                ]
+              },
+              {
+                "phase": [
+                  0.97,
+                  1.0
+                ],
+                "sample_count": 100,
+                "loaded_fraction": 0.33,
+                "mean_normal_force_n": 2.348180063094203,
+                "mean_contact_slip_m_s": 0.00037835867595056833,
+                "mean_slip_along_command_m_s": 0.00021727143115939966,
+                "mean_body_contact_tangent_m_s": [
+                  0.00021727143115939963,
+                  -0.00030469994475249945,
+                  -1.9046614097726607e-07
+                ]
+              }
+            ],
+            "loaded_fraction": 0.81015625,
+            "mean_contact_slip_m_s": 0.0004028221772977252,
+            "p95_contact_slip_m_s": 0.0015316566971789987
+          },
+          "FR": {
+            "phase_bins": [
+              {
+                "phase": [
+                  0.0,
+                  0.73
+                ],
+                "sample_count": 2804,
+                "loaded_fraction": 0.9835948644793152,
+                "mean_normal_force_n": 7.913036196893311,
+                "mean_contact_slip_m_s": 0.00029789882840147025,
+                "mean_slip_along_command_m_s": 0.00019426823913306504,
+                "mean_body_contact_tangent_m_s": [
+                  0.00019426823913306536,
+                  0.00018000534414492822,
+                  2.4552992634700974e-08
+                ]
+              },
+              {
+                "phase": [
+                  0.73,
+                  0.76
+                ],
+                "sample_count": 120,
+                "loaded_fraction": 1.0,
+                "mean_normal_force_n": 9.011865921424391,
+                "mean_contact_slip_m_s": 0.00018306482302982472,
+                "mean_slip_along_command_m_s": -5.224668898464086e-05,
+                "mean_body_contact_tangent_m_s": [
+                  -5.224668898464088e-05,
+                  -4.521940899552187e-05,
+                  7.45182478464803e-07
+                ]
+              },
+              {
+                "phase": [
+                  0.76,
+                  0.8
+                ],
+                "sample_count": 160,
+                "loaded_fraction": 1.0,
+                "mean_normal_force_n": 5.909029101755588,
+                "mean_contact_slip_m_s": 0.00017704143256674448,
+                "mean_slip_along_command_m_s": -0.00011644570063240756,
+                "mean_body_contact_tangent_m_s": [
+                  -0.00011644570063240759,
+                  -0.00012532468707127797,
+                  8.852706697788417e-07
+                ]
+              },
+              {
+                "phase": [
+                  0.8,
+                  0.82
+                ],
+                "sample_count": 80,
+                "loaded_fraction": 1.0,
+                "mean_normal_force_n": 3.494747201896498,
+                "mean_contact_slip_m_s": 0.00017488738754191483,
+                "mean_slip_along_command_m_s": -0.0001120082987341101,
+                "mean_body_contact_tangent_m_s": [
+                  -0.00011200829873411011,
+                  -0.00011897850430687227,
+                  5.236538057991357e-07
+                ]
+              },
+              {
+                "phase": [
+                  0.82,
+                  0.97
+                ],
+                "sample_count": 576,
+                "loaded_fraction": 0.026041666666666668,
+                "mean_normal_force_n": 0.031247971612535858,
+                "mean_contact_slip_m_s": 0.0036258223677017314,
+                "mean_slip_along_command_m_s": -0.0035409447829000016,
+                "mean_body_contact_tangent_m_s": [
+                  -0.003540944782900003,
+                  0.0003315863521823883,
+                  8.562720093632037e-06
+                ]
+              },
+              {
+                "phase": [
+                  0.97,
+                  1.0
+                ],
+                "sample_count": 100,
+                "loaded_fraction": 0.34,
+                "mean_normal_force_n": 2.4007572994936774,
+                "mean_contact_slip_m_s": 0.00018659753707747832,
+                "mean_slip_along_command_m_s": 0.00012863407317889646,
+                "mean_body_contact_tangent_m_s": [
+                  0.00012863407317889648,
+                  0.00013511839623375958,
+                  7.503258421885631e-08
+                ]
+              }
+            ],
+            "loaded_fraction": 0.8247395833333333,
+            "mean_contact_slip_m_s": 0.0002989018059630649,
+            "p95_contact_slip_m_s": 0.00020299285981414746
+          },
+          "RL": {
+            "phase_bins": [
+              {
+                "phase": [
+                  0.0,
+                  0.73
+                ],
+                "sample_count": 2804,
+                "loaded_fraction": 0.9728958630527818,
+                "mean_normal_force_n": 8.235098205228327,
+                "mean_contact_slip_m_s": 0.00034070147922427626,
+                "mean_slip_along_command_m_s": -0.0002072426165922819,
+                "mean_body_contact_tangent_m_s": [
+                  -0.00020724261659228158,
+                  1.427676155860486e-05,
+                  -5.648135529019803e-07
+                ]
+              },
+              {
+                "phase": [
+                  0.73,
+                  0.76
+                ],
+                "sample_count": 120,
+                "loaded_fraction": 1.0,
+                "mean_normal_force_n": 4.322814339833746,
+                "mean_contact_slip_m_s": 0.00011146739871468194,
+                "mean_slip_along_command_m_s": -5.341079342597555e-05,
+                "mean_body_contact_tangent_m_s": [
+                  -5.3410793425975554e-05,
+                  -5.809902280812139e-05,
+                  2.208599335919813e-08
+                ]
+              },
+              {
+                "phase": [
+                  0.76,
+                  0.8
+                ],
+                "sample_count": 168,
+                "loaded_fraction": 1.0,
+                "mean_normal_force_n": 6.077621316437059,
+                "mean_contact_slip_m_s": 0.00012624775522094124,
+                "mean_slip_along_command_m_s": -8.867793593853569e-05,
+                "mean_body_contact_tangent_m_s": [
+                  -8.867793593853568e-05,
+                  -8.977540710230094e-05,
+                  1.6053761732087968e-08
+                ]
+              },
+              {
+                "phase": [
+                  0.8,
+                  0.82
+                ],
+                "sample_count": 72,
+                "loaded_fraction": 1.0,
+                "mean_normal_force_n": 3.6363862198294217,
+                "mean_contact_slip_m_s": 0.00011242673660304752,
+                "mean_slip_along_command_m_s": -7.975646046261671e-05,
+                "mean_body_contact_tangent_m_s": [
+                  -7.975646046261669e-05,
+                  -7.923052630161789e-05,
+                  7.509459478963383e-09
+                ]
+              },
+              {
+                "phase": [
+                  0.82,
+                  0.97
+                ],
+                "sample_count": 576,
+                "loaded_fraction": 0.034722222222222224,
+                "mean_normal_force_n": 0.018397740386606205,
+                "mean_contact_slip_m_s": 0.00043143131147016034,
+                "mean_slip_along_command_m_s": -0.00024118765065293886,
+                "mean_body_contact_tangent_m_s": [
+                  -0.0002411876506529389,
+                  -0.00014966813163969257,
+                  6.509393039817957e-08
+                ]
+              },
+              {
+                "phase": [
+                  0.97,
+                  1.0
+                ],
+                "sample_count": 100,
+                "loaded_fraction": 0.34,
+                "mean_normal_force_n": 2.4640019111667217,
+                "mean_contact_slip_m_s": 0.0017819334790836615,
+                "mean_slip_along_command_m_s": 0.0016759576052428574,
+                "mean_body_contact_tangent_m_s": [
+                  0.0016759576052428568,
+                  0.0005350644134444295,
+                  -5.181175024908869e-06
+                ]
+              }
+            ],
+            "loaded_fraction": 0.8182291666666667,
+            "mean_contact_slip_m_s": 0.00033142216282634393,
+            "p95_contact_slip_m_s": 0.0001976007672824218
+          },
+          "RR": {
+            "phase_bins": [
+              {
+                "phase": [
+                  0.0,
+                  0.73
+                ],
+                "sample_count": 2808,
+                "loaded_fraction": 0.9811253561253561,
+                "mean_normal_force_n": 8.239466222029948,
+                "mean_contact_slip_m_s": 0.00035600351878554737,
+                "mean_slip_along_command_m_s": -0.00013873048293132714,
+                "mean_body_contact_tangent_m_s": [
+                  -0.000138730482931327,
+                  3.972079623362238e-05,
+                  -2.723287416766654e-07
+                ]
+              },
+              {
+                "phase": [
+                  0.73,
+                  0.76
+                ],
+                "sample_count": 120,
+                "loaded_fraction": 1.0,
+                "mean_normal_force_n": 4.327940768798497,
+                "mean_contact_slip_m_s": 8.683647839053097e-05,
+                "mean_slip_along_command_m_s": -4.9982516008597305e-05,
+                "mean_body_contact_tangent_m_s": [
+                  -4.9982516008597305e-05,
+                  4.658844553450096e-05,
+                  -7.001867405157592e-08
+                ]
+              },
+              {
+                "phase": [
+                  0.76,
+                  0.8
+                ],
+                "sample_count": 164,
+                "loaded_fraction": 1.0,
+                "mean_normal_force_n": 6.065249058474432,
+                "mean_contact_slip_m_s": 0.00012571459647916025,
+                "mean_slip_along_command_m_s": -8.817347464280989e-05,
+                "mean_body_contact_tangent_m_s": [
+                  -8.817347464280992e-05,
+                  8.143247390439887e-05,
+                  -8.582589322603883e-08
+                ]
+              },
+              {
+                "phase": [
+                  0.8,
+                  0.82
+                ],
+                "sample_count": 76,
+                "loaded_fraction": 1.0,
+                "mean_normal_force_n": 3.7805657397356573,
+                "mean_contact_slip_m_s": 0.00010929818091547873,
+                "mean_slip_along_command_m_s": -6.94905528207239e-05,
+                "mean_body_contact_tangent_m_s": [
+                  -6.949055282072395e-05,
+                  6.29301868661994e-05,
+                  -8.705004978951685e-09
+                ]
+              },
+              {
+                "phase": [
+                  0.82,
+                  0.97
+                ],
+                "sample_count": 576,
+                "loaded_fraction": 0.06076388888888889,
+                "mean_normal_force_n": 0.03362196954977481,
+                "mean_contact_slip_m_s": 0.001018137697618304,
+                "mean_slip_along_command_m_s": 9.549025966844802e-05,
+                "mean_body_contact_tangent_m_s": [
+                  9.5490259668448e-05,
+                  -0.0004405050763157417,
+                  5.714830775173283e-07
+                ]
+              },
+              {
+                "phase": [
+                  0.97,
+                  1.0
+                ],
+                "sample_count": 96,
+                "loaded_fraction": 0.4270833333333333,
+                "mean_normal_force_n": 2.484187292781609,
+                "mean_contact_slip_m_s": 0.0007723294185791636,
+                "mean_slip_along_command_m_s": 0.0006709250109817275,
+                "mean_body_contact_tangent_m_s": [
+                  0.0006709250109817275,
+                  -0.00028906845537445333,
+                  -2.5961862840858553e-06
+                ]
+              }
+            ],
+            "loaded_fraction": 0.8309895833333333,
+            "mean_contact_slip_m_s": 0.0003407816524010002,
+            "p95_contact_slip_m_s": 0.0009642946163658716
+          }
+        }
+      },
+      "telemetry_steady": {
+        "sample_count": 2560,
+        "start_time_s": 6.4,
+        "end_time_s": 19.200000000000003,
+        "contact_sampling_hz": 200.0,
+        "phase_note": "Phase bins use the held command phase; contact sample times use actual physics time since reset settling.",
+        "saturation_by_joint_all_physics": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_joint_error_rad": [
+          0.01518126655466832,
+          0.03808554730271986,
+          0.045646668250810554,
+          0.015195468609062271,
+          0.038688999747086325,
+          0.045900424098093105,
+          0.019259702973785563,
+          0.03552214170548826,
+          0.052211076531754295,
+          0.019456419066276664,
+          0.03554148430133153,
+          0.052251668118324476
+        ],
+        "p95_joint_error_rad": [
+          0.03738039186987675,
+          0.06643028932157559,
+          0.0828870037881536,
+          0.03797582098682885,
+          0.06722921787766896,
+          0.08336416710994296,
+          0.03834415534798254,
+          0.058870856989346035,
+          0.09250352820936605,
+          0.038422571143307126,
+          0.05925698443520321,
+          0.09257583051960222
+        ],
+        "p95_servo_target_lag_rad": [
+          0.00771285367745738,
+          0.01953504007111212,
+          0.02261652941644421,
+          0.00731713391093294,
+          0.020287871441020677,
+          0.023712308663948408,
+          0.0074062752329166585,
+          0.020329811045701862,
+          0.023627285068672274,
+          0.007931644633112226,
+          0.019859744835472252,
+          0.024532311139992848
+        ],
+        "p95_joint_speed_rad_s": [
+          0.3023719393224164,
+          0.5538236074539372,
+          0.7381034418718628,
+          0.3085194834238317,
+          0.5764795000892668,
+          0.771797893058283,
+          0.30643691561175795,
+          0.5896244818462479,
+          0.8368780063816624,
+          0.29870622828938903,
+          0.572951495960886,
+          0.8145778565382068
+        ],
+        "per_leg": {
+          "FL": {
+            "phase_bins": [
+              {
+                "phase": [
+                  0.0,
+                  0.73
+                ],
+                "sample_count": 1868,
+                "loaded_fraction": 0.9919700214132763,
+                "mean_normal_force_n": 7.905244031747266,
+                "mean_contact_slip_m_s": 0.00046907712723328595,
+                "mean_slip_along_command_m_s": 0.00024250746544972367,
+                "mean_body_contact_tangent_m_s": [
+                  0.00024250746544972394,
+                  -0.00022473100368796116,
+                  3.422267700457142e-08
+                ]
+              },
+              {
+                "phase": [
+                  0.73,
+                  0.76
+                ],
+                "sample_count": 80,
+                "loaded_fraction": 1.0,
+                "mean_normal_force_n": 9.096755320162845,
+                "mean_contact_slip_m_s": 0.00033815007408778393,
+                "mean_slip_along_command_m_s": 4.9281576732398016e-05,
+                "mean_body_contact_tangent_m_s": [
+                  4.9281576732398036e-05,
+                  -6.128926733311378e-05,
+                  -2.971081788157406e-07
+                ]
+              },
+              {
+                "phase": [
+                  0.76,
+                  0.8
+                ],
+                "sample_count": 108,
+                "loaded_fraction": 1.0,
+                "mean_normal_force_n": 5.923788011902902,
+                "mean_contact_slip_m_s": 0.0002489969932566631,
+                "mean_slip_along_command_m_s": -0.0001704198521752879,
+                "mean_body_contact_tangent_m_s": [
+                  -0.0001704198521752879,
+                  0.0001729121484160612,
+                  9.539466468837602e-07
+                ]
+              },
+              {
+                "phase": [
+                  0.8,
+                  0.82
+                ],
+                "sample_count": 52,
+                "loaded_fraction": 1.0,
+                "mean_normal_force_n": 3.368255150786581,
+                "mean_contact_slip_m_s": 0.0002108059214541537,
+                "mean_slip_along_command_m_s": -0.0001440516550104414,
+                "mean_body_contact_tangent_m_s": [
+                  -0.0001440516550104414,
+                  0.00014548474074427707,
+                  3.3654984264259243e-07
+                ]
+              },
+              {
+                "phase": [
+                  0.82,
+                  0.97
+                ],
+                "sample_count": 384,
+                "loaded_fraction": 0.026041666666666668,
+                "mean_normal_force_n": 0.03246826603465423,
+                "mean_contact_slip_m_s": 0.00021877704989839712,
+                "mean_slip_along_command_m_s": -0.00011193049376883033,
+                "mean_body_contact_tangent_m_s": [
+                  -0.00011193049376883033,
+                  0.00012240027238849093,
+                  1.3067699132866556e-07
+                ]
+              },
+              {
+                "phase": [
+                  0.97,
+                  1.0
+                ],
+                "sample_count": 68,
+                "loaded_fraction": 0.35294117647058826,
+                "mean_normal_force_n": 2.4369189332238723,
+                "mean_contact_slip_m_s": 0.00041461342364498035,
+                "mean_slip_along_command_m_s": 0.00022249395546719968,
+                "mean_body_contact_tangent_m_s": [
+                  0.00022249395546719968,
+                  -0.000345964534370455,
+                  -3.2699065678642577e-07
+                ]
+              }
+            ],
+            "loaded_fraction": 0.830859375,
+            "mean_contact_slip_m_s": 0.00044487258981857106,
+            "p95_contact_slip_m_s": 0.001931382343828151
+          },
+          "FR": {
+            "phase_bins": [
+              {
+                "phase": [
+                  0.0,
+                  0.73
+                ],
+                "sample_count": 1872,
+                "loaded_fraction": 0.9807692307692307,
+                "mean_normal_force_n": 7.903586591873569,
+                "mean_contact_slip_m_s": 0.0003243193989721687,
+                "mean_slip_along_command_m_s": 0.00022229937902443637,
+                "mean_body_contact_tangent_m_s": [
+                  0.00022229937902443637,
+                  0.0001971709643857395,
+                  9.067394707134572e-08
+                ]
+              },
+              {
+                "phase": [
+                  0.73,
+                  0.76
+                ],
+                "sample_count": 80,
+                "loaded_fraction": 1.0,
+                "mean_normal_force_n": 9.130829208191944,
+                "mean_contact_slip_m_s": 0.00018235892815201144,
+                "mean_slip_along_command_m_s": -3.6425005304795914e-05,
+                "mean_body_contact_tangent_m_s": [
+                  -3.642500530479592e-05,
+                  -2.8452474926613256e-05,
+                  4.3426221619491013e-07
+                ]
+              },
+              {
+                "phase": [
+                  0.76,
+                  0.8
+                ],
+                "sample_count": 112,
+                "loaded_fraction": 1.0,
+                "mean_normal_force_n": 5.858700627150483,
+                "mean_contact_slip_m_s": 0.00017672095949371742,
+                "mean_slip_along_command_m_s": -0.0001139679263722586,
+                "mean_body_contact_tangent_m_s": [
+                  -0.00011396792637225858,
+                  -0.00012392514653874798,
+                  7.965598147117275e-07
+                ]
+              },
+              {
+                "phase": [
+                  0.8,
+                  0.82
+                ],
+                "sample_count": 48,
+                "loaded_fraction": 1.0,
+                "mean_normal_force_n": 3.3264093436310307,
+                "mean_contact_slip_m_s": 0.00016991528347545947,
+                "mean_slip_along_command_m_s": -0.0001054143268432953,
+                "mean_body_contact_tangent_m_s": [
+                  -0.00010541432684329533,
+                  -0.00011524766984554873,
+                  4.383658060978342e-07
+                ]
+              },
+              {
+                "phase": [
+                  0.82,
+                  0.97
+                ],
+                "sample_count": 384,
+                "loaded_fraction": 0.0234375,
+                "mean_normal_force_n": 0.031708223624270254,
+                "mean_contact_slip_m_s": 0.0007778393154329095,
+                "mean_slip_along_command_m_s": -0.0006786492308588918,
+                "mean_body_contact_tangent_m_s": [
+                  -0.0006786492308588918,
+                  0.00011931274980691244,
+                  1.5339651315624319e-06
+                ]
+              },
+              {
+                "phase": [
+                  0.97,
+                  1.0
+                ],
+                "sample_count": 64,
+                "loaded_fraction": 0.3125,
+                "mean_normal_force_n": 2.30670674441547,
+                "mean_contact_slip_m_s": 0.00018511476262948208,
+                "mean_slip_along_command_m_s": 0.00012737721793251453,
+                "mean_body_contact_tangent_m_s": [
+                  0.00012737721793251453,
+                  0.00013428000773658331,
+                  5.3577327789510244e-08
+                ]
+              }
+            ],
+            "loaded_fraction": 0.822265625,
+            "mean_contact_slip_m_s": 0.00030816658476326214,
+            "p95_contact_slip_m_s": 0.00020285767479801957
+          },
+          "RL": {
+            "phase_bins": [
+              {
+                "phase": [
+                  0.0,
+                  0.73
+                ],
+                "sample_count": 1872,
+                "loaded_fraction": 0.9748931623931624,
+                "mean_normal_force_n": 8.232141852213427,
+                "mean_contact_slip_m_s": 0.00021424017524575986,
+                "mean_slip_along_command_m_s": -0.00011133894897036238,
+                "mean_body_contact_tangent_m_s": [
+                  -0.00011133894897036237,
+                  -5.720887064319641e-05,
+                  -1.5774859914091965e-07
+                ]
+              },
+              {
+                "phase": [
+                  0.73,
+                  0.76
+                ],
+                "sample_count": 80,
+                "loaded_fraction": 1.0,
+                "mean_normal_force_n": 4.276960253834147,
+                "mean_contact_slip_m_s": 0.00010431212465597693,
+                "mean_slip_along_command_m_s": -4.55889909174931e-05,
+                "mean_body_contact_tangent_m_s": [
+                  -4.5588990917493105e-05,
+                  -5.022669756822751e-05,
+                  -1.0585248856614018e-09
+                ]
+              },
+              {
+                "phase": [
+                  0.76,
+                  0.8
+                ],
+                "sample_count": 112,
+                "loaded_fraction": 1.0,
+                "mean_normal_force_n": 6.078408468279337,
+                "mean_contact_slip_m_s": 0.00011874896686087295,
+                "mean_slip_along_command_m_s": -8.323439884631902e-05,
+                "mean_body_contact_tangent_m_s": [
+                  -8.323439884631906e-05,
+                  -8.458784207834607e-05,
+                  -3.16469840215466e-08
+                ]
+              },
+              {
+                "phase": [
+                  0.8,
+                  0.82
+                ],
+                "sample_count": 48,
+                "loaded_fraction": 1.0,
+                "mean_normal_force_n": 3.6202408372973847,
+                "mean_contact_slip_m_s": 0.0001139267849988028,
+                "mean_slip_along_command_m_s": -8.090608983062459e-05,
+                "mean_body_contact_tangent_m_s": [
+                  -8.090608983062459e-05,
+                  -8.02032153051209e-05,
+                  -2.2671918269216978e-08
+                ]
+              },
+              {
+                "phase": [
+                  0.82,
+                  0.97
+                ],
+                "sample_count": 384,
+                "loaded_fraction": 0.036458333333333336,
+                "mean_normal_force_n": 0.01861979034250183,
+                "mean_contact_slip_m_s": 0.00045985748229633187,
+                "mean_slip_along_command_m_s": -0.00021767118263535867,
+                "mean_body_contact_tangent_m_s": [
+                  -0.00021767118263535867,
+                  -0.00012340217113163344,
+                  -1.1805911830379419e-07
+                ]
+              },
+              {
+                "phase": [
+                  0.97,
+                  1.0
+                ],
+                "sample_count": 64,
+                "loaded_fraction": 0.3125,
+                "mean_normal_force_n": 2.2212579305763684,
+                "mean_contact_slip_m_s": 0.0028976069570300013,
+                "mean_slip_along_command_m_s": 0.002756180636749068,
+                "mean_body_contact_tangent_m_s": [
+                  0.0027561806367490667,
+                  0.0008163798777165013,
+                  -8.60465197681072e-06
+                ]
+              }
+            ],
+            "loaded_fraction": 0.819921875,
+            "mean_contact_slip_m_s": 0.00022986746243787464,
+            "p95_contact_slip_m_s": 0.0001971904222033628
+          },
+          "RR": {
+            "phase_bins": [
+              {
+                "phase": [
+                  0.0,
+                  0.73
+                ],
+                "sample_count": 1872,
+                "loaded_fraction": 0.9829059829059829,
+                "mean_normal_force_n": 8.2417685011532,
+                "mean_contact_slip_m_s": 0.000397164665031445,
+                "mean_slip_along_command_m_s": -0.00016462102642009516,
+                "mean_body_contact_tangent_m_s": [
+                  -0.0001646210264200952,
+                  4.6857362510481515e-05,
+                  -3.081021042171682e-07
+                ]
+              },
+              {
+                "phase": [
+                  0.73,
+                  0.76
+                ],
+                "sample_count": 80,
+                "loaded_fraction": 1.0,
+                "mean_normal_force_n": 4.259121469655781,
+                "mean_contact_slip_m_s": 7.645783359069096e-05,
+                "mean_slip_along_command_m_s": -5.33319147925289e-05,
+                "mean_body_contact_tangent_m_s": [
+                  -5.3331914792528886e-05,
+                  5.012079406583213e-05,
+                  -8.801440057498296e-08
+                ]
+              },
+              {
+                "phase": [
+                  0.76,
+                  0.8
+                ],
+                "sample_count": 112,
+                "loaded_fraction": 1.0,
+                "mean_normal_force_n": 6.091608685414475,
+                "mean_contact_slip_m_s": 0.00012856846633315215,
+                "mean_slip_along_command_m_s": -9.455054238553138e-05,
+                "mean_body_contact_tangent_m_s": [
+                  -9.455054238553137e-05,
+                  8.546778694552335e-05,
+                  -1.3390790272064973e-07
+                ]
+              },
+              {
+                "phase": [
+                  0.8,
+                  0.82
+                ],
+                "sample_count": 48,
+                "loaded_fraction": 1.0,
+                "mean_normal_force_n": 3.69859376043789,
+                "mean_contact_slip_m_s": 0.00010608273644422074,
+                "mean_slip_along_command_m_s": -7.886197647293353e-05,
+                "mean_body_contact_tangent_m_s": [
+                  -7.886197647293356e-05,
+                  7.067270645422394e-05,
+                  -6.692555273059464e-08
+                ]
+              },
+              {
+                "phase": [
+                  0.82,
+                  0.97
+                ],
+                "sample_count": 384,
+                "loaded_fraction": 0.03125,
+                "mean_normal_force_n": 0.017610198477599415,
+                "mean_contact_slip_m_s": 3.3041840661314016e-05,
+                "mean_slip_along_command_m_s": -2.149848221814159e-05,
+                "mean_body_contact_tangent_m_s": [
+                  -2.1498482218141597e-05,
+                  2.1826353191399522e-05,
+                  -8.332145974658888e-09
+                ]
+              },
+              {
+                "phase": [
+                  0.97,
+                  1.0
+                ],
+                "sample_count": 64,
+                "loaded_fraction": 0.3125,
+                "mean_normal_force_n": 2.2958875499602396,
+                "mean_contact_slip_m_s": 0.0010664396575278186,
+                "mean_slip_along_command_m_s": 0.0009805137659534447,
+                "mean_body_contact_tangent_m_s": [
+                  0.000980513765953445,
+                  -0.0003401088581299309,
+                  -3.650964587526561e-06
+                ]
+              }
+            ],
+            "loaded_fraction": 0.825,
+            "mean_contact_slip_m_s": 0.00036842639448969784,
+            "p95_contact_slip_m_s": 0.0011918716922706028
+          }
+        }
+      },
+      "gait": {
+        "cycle_s": 3.2,
+        "shift_m": 0.005,
+        "lift_m": 0.012,
+        "stride_cap_speed_ratio_at_last_command": {
+          "FL": 1.0,
+          "FR": 1.0,
+          "RL": 1.0,
+          "RR": 1.0
+        }
+      },
+      "initial_info": {
+        "fell": false,
+        "sensor_fault": false,
+        "position": [
+          -1.3868557289242744e-06,
+          -5.807742127217352e-07,
+          0.10724659264087677
+        ],
+        "velocity": [
+          -6.173974600516406e-05,
+          -1.5152040908386043e-05,
+          0.0003804967376955464
+        ],
+        "rpy": [
+          4.918236556425382e-06,
+          -5.355478051624111e-05,
+          2.911415501349994e-06
+        ],
+        "body_velocity": [
+          -6.171941261100086e-05,
+          -1.5149989768860802e-05,
+          0.0003805001181266327
+        ],
+        "body_angular_velocity": [
+          5.9596535636640636e-05,
+          -0.00047537273057812144,
+          -3.2185045798848754e-06
+        ],
+        "com_velocity": [
+          -7.768340607012435e-05,
+          -1.714750044626939e-05,
+          0.0003799916957337253
+        ],
+        "nonfoot_ground_contact": false,
+        "body_ground_contact": false,
+        "time_s": 0.0,
+        "torque_saturation_fraction": 0.0,
+        "tracking_error_rad": 0.02361190341560661,
+        "phone_mass_kg": 0.155,
+        "command": [
+          0.01,
+          0.0,
+          0.0
+        ],
+        "terrain": "flat",
+        "sensor": {
+          "mode": "mpu6050",
+          "open_loop": false,
+          "frame": "body",
+          "units": "unit down vector; rad/s",
+          "measurement_time_s": 0.10000000000000007,
+          "arrival_time_s": 0.10500000000000008,
+          "valid": true,
+          "ready": true,
+          "stale": false,
+          "sample_age_s": 0.020000000000000018,
+          "received_age_s": 0.015000000000000013,
+          "generated_samples": 7,
+          "dropped_samples": 0,
+          "profile": {
+            "sample_rate_hz": 50.0,
+            "transport_delay_s": 0.005,
+            "gravity_noise_std": 0.004,
+            "gyro_noise_std_rad_s": 0.012,
+            "dropout_probability": 0.0,
+            "gyro_bias_rad_s": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "max_age_s": 0.1,
+            "R_body_from_sensor_at_pan_zero": [
+              [
+                1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "pan_locked": true
+          }
+        },
+        "ik_rejections": 0,
+        "temperature_c_proxy": [
+          25.00000013115249,
+          25.026411342171077,
+          25.02284699634301,
+          25.000000103003657,
+          25.026415930569005,
+          25.02285772997859,
+          25.000000138763227,
+          25.02651454435386,
+          25.022977795485406,
+          25.000000096650176,
+          25.026519221046073,
+          25.02301218169674
+        ],
+        "randomization": {
+          "mass_scales": {
+            "-1": 1.0,
+            "0": 1.0,
+            "1": 1.0,
+            "2": 1.0,
+            "3": 1.0,
+            "4": 1.0,
+            "5": 1.0,
+            "6": 1.0,
+            "7": 1.0,
+            "8": 1.0,
+            "9": 1.0,
+            "10": 1.0,
+            "11": 1.0,
+            "12": 1.0,
+            "13": 1.0,
+            "14": 1.0,
+            "15": 1.0,
+            "16": 1.0,
+            "17": 1.0,
+            "18": 1.0,
+            "19": 1.0,
+            "20": 1.0
+          },
+          "body_com_shift_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "phone_shift_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "friction": 0.8,
+          "scenario": {},
+          "torque_cap_nm": 0.588,
+          "motor_strength": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "voltage_v": 12.0,
+          "delay_s": 0.02,
+          "kp": [
+            3.0,
+            8.0,
+            6.0,
+            3.0,
+            8.0,
+            6.0,
+            3.0,
+            8.0,
+            6.0,
+            3.0,
+            8.0,
+            6.0
+          ],
+          "backlash_deadband_rad": [
+            0.004363323129985824,
+            0.004363323129985824,
+            0.004363323129985824,
+            0.004363323129985824,
+            0.004363323129985824,
+            0.004363323129985824,
+            0.004363323129985824,
+            0.004363323129985824,
+            0.004363323129985824,
+            0.004363323129985824,
+            0.004363323129985824,
+            0.004363323129985824
+          ],
+          "thermal_model": "estimated first-order proxy, not a identified winding model"
+        }
+      },
+      "ik_rejections": 0,
+      "trace": null,
+      "wall_s": 6.3056433180004205,
+      "experimental_recovery": "legacy_smoothstep",
+      "status": "completed"
+    },
+    {
+      "case": {
+        "terrain": "flat",
+        "payload": 0.155,
+        "command_name": "forward",
+        "repeat": 0,
+        "randomize": false,
+        "variant": "shift005_matched",
+        "seed": 1209936639728344,
+        "steps": 960,
+        "contact_stride": 5,
+        "save_trace": false
+      },
+      "acceptance": {
+        "passed": false,
+        "checks": {
+          "duration": true,
+          "complete": true,
+          "finite": true,
+          "no_falls": true,
+          "no_sensor_fault": true,
+          "no_body_ground_contact": true,
+          "no_nonfoot_ground_contact": true,
+          "progress": true,
+          "path": false,
+          "velocity": true,
+          "yaw_rate": true,
+          "yaw": true,
+          "tilt": true,
+          "tracking": true,
+          "saturation": true
+        },
+        "metrics": {
+          "duration_s": 19.2,
+          "progress_m": 0.1361914377046747,
+          "command_distance_m": 0.192,
+          "body_velocity_rmse_m_s": 0.01362223048217549,
+          "yaw_rate_rmse_rad_s": 0.01534981693390123,
+          "peak_path_error_m": 0.058474858656820256,
+          "peak_yaw_error_rad": 0.018466124199143827,
+          "peak_tilt_rad": 0.012302185352171754,
+          "peak_tracking_error_rad": 0.04396306333760124,
+          "saturation_fraction": 0.0
+        },
+        "criteria": {
+          "min_duration_s": 19.2,
+          "min_progress_fraction": 0.5,
+          "max_sideways_m": 0.03,
+          "max_yaw_error_rad": 0.2,
+          "max_tilt_rad": 0.35,
+          "max_stop_displacement_m": 0.02,
+          "max_velocity_rmse_m_s": 0.015,
+          "max_yaw_rate_rmse_rad_s": 0.06,
+          "max_tracking_error_rad": 0.25,
+          "max_saturation_fraction": 0.25,
+          "contact_force_threshold_n": 0.1
+        },
+        "acceptance_version": "simulation-walking-v2"
+      },
+      "tracking_screen_passed": false,
+      "screen_note": "The screen excludes only duration; full qualification still requires all original checks.",
+      "steady": {
+        "sample_count": 640,
+        "start_time_s": 6.4,
+        "end_time_s": 19.200000000000003,
+        "whole_cycles": 4,
+        "mean_velocity_bias_m_s": [
+          -0.0023799533732107,
+          0.00011210739584257773
+        ],
+        "velocity_error_ripple_rms_m_s": 0.013479560510958302,
+        "body_velocity_rmse_m_s": 0.013688509695925484,
+        "mean_yaw_rate_bias_rad_s": -0.00014419045580652077,
+        "yaw_rate_error_ripple_rms_rad_s": 0.014624861197220031
+      },
+      "telemetry_all": {
+        "sample_count": 3840,
+        "start_time_s": 0.0,
+        "end_time_s": null,
+        "contact_sampling_hz": 200.0,
+        "phase_note": "Phase bins use the held command phase; contact sample times use actual physics time since reset settling.",
+        "saturation_by_joint_all_physics": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_joint_error_rad": [
+          0.014577617237226052,
+          0.03785725038335032,
+          0.04588187157413807,
+          0.015106271283987314,
+          0.03812972546616073,
+          0.04606077942942477,
+          0.018286434585808295,
+          0.03539334294121346,
+          0.05269026413545308,
+          0.01832186539580132,
+          0.035002009421755687,
+          0.05188113518995335
+        ],
+        "p95_joint_error_rad": [
+          0.03943803785540477,
+          0.06640570721175541,
+          0.08373235219089845,
+          0.03892877215379892,
+          0.0665332424350403,
+          0.08423102218855072,
+          0.0403007226922014,
+          0.05897618152513398,
+          0.09323850170112473,
+          0.0398873820943156,
+          0.059413060089628565,
+          0.09356335280098922
+        ],
+        "p95_servo_target_lag_rad": [
+          0.007850277873719197,
+          0.01943007589016904,
+          0.022562172121706636,
+          0.007556329649165446,
+          0.02019527063783344,
+          0.023524479548719248,
+          0.0075456860277046504,
+          0.02027712894002992,
+          0.024318260578393074,
+          0.007707679622664426,
+          0.019627881179937422,
+          0.023991635632300223
+        ],
+        "p95_joint_speed_rad_s": [
+          0.3232127892750855,
+          0.5599166079211979,
+          0.8417588719036766,
+          0.3201275665529469,
+          0.5556228801150622,
+          0.7600901531636629,
+          0.32445147272530034,
+          0.5920817941004946,
+          0.8486002337815646,
+          0.3053133254855471,
+          0.5336720251435908,
+          0.8302002536202905
+        ],
+        "per_leg": {
+          "FL": {
+            "phase_bins": [
+              {
+                "phase": [
+                  0.0,
+                  0.73
+                ],
+                "sample_count": 2804,
+                "loaded_fraction": 0.9639800285306704,
+                "mean_normal_force_n": 7.893555197730114,
+                "mean_contact_slip_m_s": 0.000382452389455128,
+                "mean_slip_along_command_m_s": 0.0001759462376948817,
+                "mean_body_contact_tangent_m_s": [
+                  0.00017594623769488156,
+                  -0.00017965740418488451,
+                  7.648622806734975e-08
+                ]
+              },
+              {
+                "phase": [
+                  0.73,
+                  0.76
+                ],
+                "sample_count": 120,
+                "loaded_fraction": 1.0,
+                "mean_normal_force_n": 9.08042105358686,
+                "mean_contact_slip_m_s": 0.0003497735758209448,
+                "mean_slip_along_command_m_s": 4.5889667215797234e-05,
+                "mean_body_contact_tangent_m_s": [
+                  4.588966721579724e-05,
+                  -5.902660637775425e-05,
+                  -2.1630326937539851e-07
+                ]
+              },
+              {
+                "phase": [
+                  0.76,
+                  0.8
+                ],
+                "sample_count": 164,
+                "loaded_fraction": 1.0,
+                "mean_normal_force_n": 5.926477564217786,
+                "mean_contact_slip_m_s": 0.00021728009450192805,
+                "mean_slip_along_command_m_s": -0.00014568778478571927,
+                "mean_body_contact_tangent_m_s": [
+                  -0.0001456877847857193,
+                  0.00014765720206922988,
+                  7.694298078950894e-07
+                ]
+              },
+              {
+                "phase": [
+                  0.8,
+                  0.82
+                ],
+                "sample_count": 76,
+                "loaded_fraction": 1.0,
+                "mean_normal_force_n": 3.3420575519176126,
+                "mean_contact_slip_m_s": 0.0002075357096701014,
+                "mean_slip_along_command_m_s": -0.00013880332002145135,
+                "mean_body_contact_tangent_m_s": [
+                  -0.00013880332002145135,
+                  0.0001417021346966543,
+                  2.7747633288381043e-07
+                ]
+              },
+              {
+                "phase": [
+                  0.82,
+                  0.97
+                ],
+                "sample_count": 576,
+                "loaded_fraction": 0.019097222222222224,
+                "mean_normal_force_n": 0.02336848578859719,
+                "mean_contact_slip_m_s": 0.0001801028443758142,
+                "mean_slip_along_command_m_s": -4.365403150081513e-05,
+                "mean_body_contact_tangent_m_s": [
+                  -4.3654031500815146e-05,
+                  4.817460448460588e-05,
+                  1.5140273867390362e-07
+                ]
+              },
+              {
+                "phase": [
+                  0.97,
+                  1.0
+                ],
+                "sample_count": 100,
+                "loaded_fraction": 0.33,
+                "mean_normal_force_n": 2.3157473870604868,
+                "mean_contact_slip_m_s": 0.00043405688924413817,
+                "mean_slip_along_command_m_s": 0.00025502783874252217,
+                "mean_body_contact_tangent_m_s": [
+                  0.00025502783874252217,
+                  -0.000346960366545717,
+                  -1.5985726900372466e-07
+                ]
+              }
+            ],
+            "loaded_fraction": 0.8091145833333333,
+            "mean_contact_slip_m_s": 0.0003680248779730154,
+            "p95_contact_slip_m_s": 0.0013321204945838478
+          },
+          "FR": {
+            "phase_bins": [
+              {
+                "phase": [
+                  0.0,
+                  0.73
+                ],
+                "sample_count": 2804,
+                "loaded_fraction": 0.9828815977175464,
+                "mean_normal_force_n": 7.911412646067339,
+                "mean_contact_slip_m_s": 0.0002508435649453219,
+                "mean_slip_along_command_m_s": 0.0001585763602700313,
+                "mean_body_contact_tangent_m_s": [
+                  0.00015857636027003102,
+                  0.00014913168564248663,
+                  3.023398551484481e-08
+                ]
+              },
+              {
+                "phase": [
+                  0.73,
+                  0.76
+                ],
+                "sample_count": 120,
+                "loaded_fraction": 1.0,
+                "mean_normal_force_n": 9.018026183083204,
+                "mean_contact_slip_m_s": 0.00018305243208158433,
+                "mean_slip_along_command_m_s": -5.192817464365805e-05,
+                "mean_body_contact_tangent_m_s": [
+                  -5.192817464365804e-05,
+                  -4.537321544512716e-05,
+                  7.438711830659958e-07
+                ]
+              },
+              {
+                "phase": [
+                  0.76,
+                  0.8
+                ],
+                "sample_count": 160,
+                "loaded_fraction": 1.0,
+                "mean_normal_force_n": 5.924034410608327,
+                "mean_contact_slip_m_s": 0.00017613214781453154,
+                "mean_slip_along_command_m_s": -0.0001109071413225136,
+                "mean_body_contact_tangent_m_s": [
+                  -0.00011090714132251366,
+                  -0.00011937320986815471,
+                  8.394663892636127e-07
+                ]
+              },
+              {
+                "phase": [
+                  0.8,
+                  0.82
+                ],
+                "sample_count": 80,
+                "loaded_fraction": 1.0,
+                "mean_normal_force_n": 3.4972656265556283,
+                "mean_contact_slip_m_s": 0.00016963182566178303,
+                "mean_slip_along_command_m_s": -0.00010780002300687748,
+                "mean_body_contact_tangent_m_s": [
+                  -0.0001078000230068775,
+                  -0.00011693874939478995,
+                  5.126562751385818e-07
+                ]
+              },
+              {
+                "phase": [
+                  0.82,
+                  0.97
+                ],
+                "sample_count": 576,
+                "loaded_fraction": 0.027777777777777776,
+                "mean_normal_force_n": 0.029851726303186863,
+                "mean_contact_slip_m_s": 0.003073276649167371,
+                "mean_slip_along_command_m_s": -0.0030028080686815522,
+                "mean_body_contact_tangent_m_s": [
+                  -0.0030028080686815527,
+                  0.00021920916310260862,
+                  7.28880978650145e-06
+                ]
+              },
+              {
+                "phase": [
+                  0.97,
+                  1.0
+                ],
+                "sample_count": 100,
+                "loaded_fraction": 0.34,
+                "mean_normal_force_n": 2.3755340211575757,
+                "mean_contact_slip_m_s": 0.00018651482641330827,
+                "mean_slip_along_command_m_s": 0.00012901469754063687,
+                "mean_body_contact_tangent_m_s": [
+                  0.00012901469754063687,
+                  0.0001346391012257821,
+                  7.139918733619032e-08
+                ]
+              }
+            ],
+            "loaded_fraction": 0.8244791666666667,
+            "mean_contact_slip_m_s": 0.00025601919678682736,
+            "p95_contact_slip_m_s": 0.0002010395774136336
+          },
+          "RL": {
+            "phase_bins": [
+              {
+                "phase": [
+                  0.0,
+                  0.73
+                ],
+                "sample_count": 2804,
+                "loaded_fraction": 0.9728958630527818,
+                "mean_normal_force_n": 8.238499241889963,
+                "mean_contact_slip_m_s": 0.00027400381174550825,
+                "mean_slip_along_command_m_s": -0.00015352929033971135,
+                "mean_body_contact_tangent_m_s": [
+                  -0.00015352929033971154,
+                  -7.91364133444428e-06,
+                  -4.054712172686303e-07
+                ]
+              },
+              {
+                "phase": [
+                  0.73,
+                  0.76
+                ],
+                "sample_count": 120,
+                "loaded_fraction": 1.0,
+                "mean_normal_force_n": 4.320003574455362,
+                "mean_contact_slip_m_s": 0.00010333626843905316,
+                "mean_slip_along_command_m_s": -4.5420992050147104e-05,
+                "mean_body_contact_tangent_m_s": [
+                  -4.542099205014707e-05,
+                  -4.984906377045942e-05,
+                  3.060121054311038e-08
+                ]
+              },
+              {
+                "phase": [
+                  0.76,
+                  0.8
+                ],
+                "sample_count": 168,
+                "loaded_fraction": 1.0,
+                "mean_normal_force_n": 6.06677104632138,
+                "mean_contact_slip_m_s": 0.00012117326191616185,
+                "mean_slip_along_command_m_s": -8.474374881547272e-05,
+                "mean_body_contact_tangent_m_s": [
+                  -8.474374881547272e-05,
+                  -8.535288854657641e-05,
+                  2.0060969485080556e-08
+                ]
+              },
+              {
+                "phase": [
+                  0.8,
+                  0.82
+                ],
+                "sample_count": 72,
+                "loaded_fraction": 1.0,
+                "mean_normal_force_n": 3.6447493331795977,
+                "mean_contact_slip_m_s": 0.00010829250740335654,
+                "mean_slip_along_command_m_s": -7.697223588352664e-05,
+                "mean_body_contact_tangent_m_s": [
+                  -7.69722358835266e-05,
+                  -7.599590741601817e-05,
+                  6.625970617629504e-09
+                ]
+              },
+              {
+                "phase": [
+                  0.82,
+                  0.97
+                ],
+                "sample_count": 576,
+                "loaded_fraction": 0.029513888888888888,
+                "mean_normal_force_n": 0.016603135465206986,
+                "mean_contact_slip_m_s": 0.0008939101850533876,
+                "mean_slip_along_command_m_s": -0.0006386613462685063,
+                "mean_body_contact_tangent_m_s": [
+                  -0.0006386613462685063,
+                  0.0002140207940577718,
+                  -8.759680601695658e-07
+                ]
+              },
+              {
+                "phase": [
+                  0.97,
+                  1.0
+                ],
+                "sample_count": 100,
+                "loaded_fraction": 0.33,
+                "mean_normal_force_n": 2.3956446643748244,
+                "mean_contact_slip_m_s": 0.00018498996484397787,
+                "mean_slip_along_command_m_s": 0.00012864833478351534,
+                "mean_body_contact_tangent_m_s": [
+                  0.00012864833478351537,
+                  0.00013284397452748912,
+                  -1.0666411632544436e-07
+                ]
+              }
+            ],
+            "loaded_fraction": 0.8171875,
+            "mean_contact_slip_m_s": 0.00025791525212719835,
+            "p95_contact_slip_m_s": 0.00019745850460091663
+          },
+          "RR": {
+            "phase_bins": [
+              {
+                "phase": [
+                  0.0,
+                  0.73
+                ],
+                "sample_count": 2808,
+                "loaded_fraction": 0.9843304843304843,
+                "mean_normal_force_n": 8.243508908504008,
+                "mean_contact_slip_m_s": 0.00036790294549904215,
+                "mean_slip_along_command_m_s": -0.00013005162921175858,
+                "mean_body_contact_tangent_m_s": [
+                  -0.00013005162921175852,
+                  3.599511215052084e-05,
+                  -2.7011349844117495e-07
+                ]
+              },
+              {
+                "phase": [
+                  0.73,
+                  0.76
+                ],
+                "sample_count": 120,
+                "loaded_fraction": 1.0,
+                "mean_normal_force_n": 4.341774330544519,
+                "mean_contact_slip_m_s": 8.901362937282854e-05,
+                "mean_slip_along_command_m_s": -4.8834736291252333e-05,
+                "mean_body_contact_tangent_m_s": [
+                  -4.883473629125232e-05,
+                  4.545650559658961e-05,
+                  -6.54815126438605e-08
+                ]
+              },
+              {
+                "phase": [
+                  0.76,
+                  0.8
+                ],
+                "sample_count": 164,
+                "loaded_fraction": 1.0,
+                "mean_normal_force_n": 6.044672206730007,
+                "mean_contact_slip_m_s": 0.0001189074516217463,
+                "mean_slip_along_command_m_s": -8.217174078450622e-05,
+                "mean_body_contact_tangent_m_s": [
+                  -8.217174078450622e-05,
+                  7.589675817322836e-05,
+                  -7.497982611639488e-08
+                ]
+              },
+              {
+                "phase": [
+                  0.8,
+                  0.82
+                ],
+                "sample_count": 76,
+                "loaded_fraction": 1.0,
+                "mean_normal_force_n": 3.7852279666744475,
+                "mean_contact_slip_m_s": 0.00010536429643898693,
+                "mean_slip_along_command_m_s": -6.625201193692615e-05,
+                "mean_body_contact_tangent_m_s": [
+                  -6.625201193692614e-05,
+                  5.993376782597519e-05,
+                  -6.564876464384729e-09
+                ]
+              },
+              {
+                "phase": [
+                  0.82,
+                  0.97
+                ],
+                "sample_count": 576,
+                "loaded_fraction": 0.06076388888888889,
+                "mean_normal_force_n": 0.03345223374056822,
+                "mean_contact_slip_m_s": 0.0011924028670902036,
+                "mean_slip_along_command_m_s": 5.550944004285915e-06,
+                "mean_body_contact_tangent_m_s": [
+                  5.550944004285928e-06,
+                  -0.0005995442263477624,
+                  3.48028814570422e-06
+                ]
+              },
+              {
+                "phase": [
+                  0.97,
+                  1.0
+                ],
+                "sample_count": 96,
+                "loaded_fraction": 0.4270833333333333,
+                "mean_normal_force_n": 2.509487592712594,
+                "mean_contact_slip_m_s": 0.0005540647711098094,
+                "mean_slip_along_command_m_s": 0.0004507582501912629,
+                "mean_body_contact_tangent_m_s": [
+                  0.0004507582501912629,
+                  -0.0002672520329090725,
+                  -1.1576836879954206e-06
+                ]
+              }
+            ],
+            "loaded_fraction": 0.8333333333333334,
+            "mean_contact_slip_m_s": 0.00034985145045096275,
+            "p95_contact_slip_m_s": 0.0010868431511027675
+          }
+        }
+      },
+      "telemetry_steady": {
+        "sample_count": 2560,
+        "start_time_s": 6.4,
+        "end_time_s": 19.200000000000003,
+        "contact_sampling_hz": 200.0,
+        "phase_note": "Phase bins use the held command phase; contact sample times use actual physics time since reset settling.",
+        "saturation_by_joint_all_physics": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_joint_error_rad": [
+          0.015013388653594922,
+          0.03792592796979387,
+          0.04559984672522062,
+          0.014975774456628867,
+          0.038354409778910345,
+          0.0462192444505172,
+          0.018478257971339205,
+          0.035078448252426085,
+          0.052624454241354444,
+          0.01893799304930558,
+          0.035185699599827466,
+          0.05254312924820091
+        ],
+        "p95_joint_error_rad": [
+          0.03943803785540477,
+          0.06623770764314768,
+          0.08313469365927473,
+          0.03995665041924933,
+          0.0666601143519567,
+          0.08413871736241862,
+          0.040263443157910424,
+          0.05832130016992819,
+          0.09340829038836813,
+          0.04022307189804791,
+          0.05870829832640261,
+          0.09334939515230148
+        ],
+        "p95_servo_target_lag_rad": [
+          0.008014792400963418,
+          0.01919177234717956,
+          0.022562172121706636,
+          0.007626188583076083,
+          0.020330046831868842,
+          0.02367016206254524,
+          0.007179209717097786,
+          0.02027712894002992,
+          0.023837058724406453,
+          0.008156432228506053,
+          0.019955441180217914,
+          0.024360448571844207
+        ],
+        "p95_joint_speed_rad_s": [
+          0.3222012325427512,
+          0.5588507282262214,
+          0.7515640212982297,
+          0.3272636025449069,
+          0.5785644107580985,
+          0.765159703269961,
+          0.3263665099142274,
+          0.6055530010062622,
+          0.871498502597001,
+          0.31451181387806465,
+          0.5820197035780855,
+          0.8183080619223527
+        ],
+        "per_leg": {
+          "FL": {
+            "phase_bins": [
+              {
+                "phase": [
+                  0.0,
+                  0.73
+                ],
+                "sample_count": 1868,
+                "loaded_fraction": 0.9925053533190579,
+                "mean_normal_force_n": 7.902160208469824,
+                "mean_contact_slip_m_s": 0.0004214378012252338,
+                "mean_slip_along_command_m_s": 0.0001848927167306919,
+                "mean_body_contact_tangent_m_s": [
+                  0.00018489271673069173,
+                  -0.00019729237579139833,
+                  1.2779078168954084e-07
+                ]
+              },
+              {
+                "phase": [
+                  0.73,
+                  0.76
+                ],
+                "sample_count": 80,
+                "loaded_fraction": 1.0,
+                "mean_normal_force_n": 9.10202883031656,
+                "mean_contact_slip_m_s": 0.0003539043809718455,
+                "mean_slip_along_command_m_s": 5.428744971241518e-05,
+                "mean_body_contact_tangent_m_s": [
+                  5.428744971241519e-05,
+                  -6.6761030118929e-05,
+                  -2.7899739620073064e-07
+                ]
+              },
+              {
+                "phase": [
+                  0.76,
+                  0.8
+                ],
+                "sample_count": 108,
+                "loaded_fraction": 1.0,
+                "mean_normal_force_n": 5.931691003019956,
+                "mean_contact_slip_m_s": 0.0002523660544187656,
+                "mean_slip_along_command_m_s": -0.00016797567815326995,
+                "mean_body_contact_tangent_m_s": [
+                  -0.00016797567815327,
+                  0.00017064182290055317,
+                  9.09616310647028e-07
+                ]
+              },
+              {
+                "phase": [
+                  0.8,
+                  0.82
+                ],
+                "sample_count": 52,
+                "loaded_fraction": 1.0,
+                "mean_normal_force_n": 3.3614646274443833,
+                "mean_contact_slip_m_s": 0.00024110319248089767,
+                "mean_slip_along_command_m_s": -0.00015903137484785386,
+                "mean_body_contact_tangent_m_s": [
+                  -0.00015903137484785386,
+                  0.00016299442156473464,
+                  3.7668030922265396e-07
+                ]
+              },
+              {
+                "phase": [
+                  0.82,
+                  0.97
+                ],
+                "sample_count": 384,
+                "loaded_fraction": 0.015625,
+                "mean_normal_force_n": 0.021309732405357593,
+                "mean_contact_slip_m_s": 0.00013343106405337016,
+                "mean_slip_along_command_m_s": -3.930819795232678e-05,
+                "mean_body_contact_tangent_m_s": [
+                  -3.930819795232678e-05,
+                  4.957333931390643e-05,
+                  2.5476690358827668e-08
+                ]
+              },
+              {
+                "phase": [
+                  0.97,
+                  1.0
+                ],
+                "sample_count": 68,
+                "loaded_fraction": 0.35294117647058826,
+                "mean_normal_force_n": 2.442673636039371,
+                "mean_contact_slip_m_s": 0.0004919954044881946,
+                "mean_slip_along_command_m_s": 0.000273995258947007,
+                "mean_body_contact_tangent_m_s": [
+                  0.000273995258947007,
+                  -0.000405701458427588,
+                  -2.9315246510703097e-07
+                ]
+              }
+            ],
+            "loaded_fraction": 0.8296875,
+            "mean_contact_slip_m_s": 0.0004058660122069686,
+            "p95_contact_slip_m_s": 0.0017726221270696156
+          },
+          "FR": {
+            "phase_bins": [
+              {
+                "phase": [
+                  0.0,
+                  0.73
+                ],
+                "sample_count": 1872,
+                "loaded_fraction": 0.9780982905982906,
+                "mean_normal_force_n": 7.902393911402774,
+                "mean_contact_slip_m_s": 0.00027220420549922214,
+                "mean_slip_along_command_m_s": 0.0001857085698394097,
+                "mean_body_contact_tangent_m_s": [
+                  0.00018570856983940966,
+                  0.00016217183549048804,
+                  7.167330985292637e-08
+                ]
+              },
+              {
+                "phase": [
+                  0.73,
+                  0.76
+                ],
+                "sample_count": 80,
+                "loaded_fraction": 1.0,
+                "mean_normal_force_n": 9.133527459151347,
+                "mean_contact_slip_m_s": 0.0001814995509538064,
+                "mean_slip_along_command_m_s": -3.517549314496341e-05,
+                "mean_body_contact_tangent_m_s": [
+                  -3.517549314496341e-05,
+                  -2.7801742335331196e-05,
+                  4.1894455740491667e-07
+                ]
+              },
+              {
+                "phase": [
+                  0.76,
+                  0.8
+                ],
+                "sample_count": 112,
+                "loaded_fraction": 1.0,
+                "mean_normal_force_n": 5.878318027333016,
+                "mean_contact_slip_m_s": 0.00017412350278141377,
+                "mean_slip_along_command_m_s": -0.00010782120478991502,
+                "mean_body_contact_tangent_m_s": [
+                  -0.00010782120478991499,
+                  -0.00011740665714427452,
+                  7.458269322312583e-07
+                ]
+              },
+              {
+                "phase": [
+                  0.8,
+                  0.82
+                ],
+                "sample_count": 48,
+                "loaded_fraction": 1.0,
+                "mean_normal_force_n": 3.3336750210064756,
+                "mean_contact_slip_m_s": 0.00016717812565986636,
+                "mean_slip_along_command_m_s": -0.0001056749321521505,
+                "mean_body_contact_tangent_m_s": [
+                  -0.0001056749321521505,
+                  -0.00011514315477286257,
+                  4.3583556230384735e-07
+                ]
+              },
+              {
+                "phase": [
+                  0.82,
+                  0.97
+                ],
+                "sample_count": 384,
+                "loaded_fraction": 0.0234375,
+                "mean_normal_force_n": 0.029053992909717746,
+                "mean_contact_slip_m_s": 0.0003080953907918834,
+                "mean_slip_along_command_m_s": -0.0002290776316854549,
+                "mean_body_contact_tangent_m_s": [
+                  -0.0002290776316854549,
+                  6.4383636666432954e-06,
+                  4.844102730080324e-07
+                ]
+              },
+              {
+                "phase": [
+                  0.97,
+                  1.0
+                ],
+                "sample_count": 64,
+                "loaded_fraction": 0.3125,
+                "mean_normal_force_n": 2.280956584886811,
+                "mean_contact_slip_m_s": 0.00018636847749971857,
+                "mean_slip_along_command_m_s": 0.000128748827134413,
+                "mean_body_contact_tangent_m_s": [
+                  0.00012874882713441297,
+                  0.00013470291095510093,
+                  4.700780095417794e-08
+                ]
+              }
+            ],
+            "loaded_fraction": 0.8203125,
+            "mean_contact_slip_m_s": 0.0002604535594074731,
+            "p95_contact_slip_m_s": 0.00020123130766639926
+          },
+          "RL": {
+            "phase_bins": [
+              {
+                "phase": [
+                  0.0,
+                  0.73
+                ],
+                "sample_count": 1872,
+                "loaded_fraction": 0.9775641025641025,
+                "mean_normal_force_n": 8.237336813522651,
+                "mean_contact_slip_m_s": 0.00019830476532875678,
+                "mean_slip_along_command_m_s": -9.692225588764487e-05,
+                "mean_body_contact_tangent_m_s": [
+                  -9.692225588764482e-05,
+                  -5.021819931941287e-05,
+                  -1.5691330521438295e-07
+                ]
+              },
+              {
+                "phase": [
+                  0.73,
+                  0.76
+                ],
+                "sample_count": 80,
+                "loaded_fraction": 1.0,
+                "mean_normal_force_n": 4.2696313403176065,
+                "mean_contact_slip_m_s": 9.566003000873073e-05,
+                "mean_slip_along_command_m_s": -3.607649197145417e-05,
+                "mean_body_contact_tangent_m_s": [
+                  -3.607649197145418e-05,
+                  -4.0380775870504863e-05,
+                  6.569296079909417e-09
+                ]
+              },
+              {
+                "phase": [
+                  0.76,
+                  0.8
+                ],
+                "sample_count": 112,
+                "loaded_fraction": 1.0,
+                "mean_normal_force_n": 6.071112599744187,
+                "mean_contact_slip_m_s": 0.00011201935169753035,
+                "mean_slip_along_command_m_s": -7.789701284666312e-05,
+                "mean_body_contact_tangent_m_s": [
+                  -7.78970128466631e-05,
+                  -7.8795951972146e-05,
+                  -2.468174175600981e-08
+                ]
+              },
+              {
+                "phase": [
+                  0.8,
+                  0.82
+                ],
+                "sample_count": 48,
+                "loaded_fraction": 1.0,
+                "mean_normal_force_n": 3.637952375957408,
+                "mean_contact_slip_m_s": 0.00010939893624507281,
+                "mean_slip_along_command_m_s": -7.781292399317713e-05,
+                "mean_body_contact_tangent_m_s": [
+                  -7.781292399317716e-05,
+                  -7.66360954547154e-05,
+                  -2.1032323114146467e-08
+                ]
+              },
+              {
+                "phase": [
+                  0.82,
+                  0.97
+                ],
+                "sample_count": 384,
+                "loaded_fraction": 0.028645833333333332,
+                "mean_normal_force_n": 0.015824010962206158,
+                "mean_contact_slip_m_s": 0.0003726692836585374,
+                "mean_slip_along_command_m_s": -4.35720370079322e-05,
+                "mean_body_contact_tangent_m_s": [
+                  -4.357203700793222e-05,
+                  0.00012245637242630332,
+                  7.235756647251741e-08
+                ]
+              },
+              {
+                "phase": [
+                  0.97,
+                  1.0
+                ],
+                "sample_count": 64,
+                "loaded_fraction": 0.296875,
+                "mean_normal_force_n": 2.1522318137153977,
+                "mean_contact_slip_m_s": 0.00018650233772772893,
+                "mean_slip_along_command_m_s": 0.00012891497907162298,
+                "mean_body_contact_tangent_m_s": [
+                  0.00012891497907162295,
+                  0.00013468214379773992,
+                  2.051738102311101e-09
+                ]
+              }
+            ],
+            "loaded_fraction": 0.8203125,
+            "mean_contact_slip_m_s": 0.0001885670218187052,
+            "p95_contact_slip_m_s": 0.00019721637662808438
+          },
+          "RR": {
+            "phase_bins": [
+              {
+                "phase": [
+                  0.0,
+                  0.73
+                ],
+                "sample_count": 1872,
+                "loaded_fraction": 0.9855769230769231,
+                "mean_normal_force_n": 8.244639498092221,
+                "mean_contact_slip_m_s": 0.0004099283360258131,
+                "mean_slip_along_command_m_s": -0.0001438516898512517,
+                "mean_body_contact_tangent_m_s": [
+                  -0.00014385168985125182,
+                  5.087232743711009e-05,
+                  -2.502598660198476e-07
+                ]
+              },
+              {
+                "phase": [
+                  0.73,
+                  0.76
+                ],
+                "sample_count": 80,
+                "loaded_fraction": 1.0,
+                "mean_normal_force_n": 4.2769996760297575,
+                "mean_contact_slip_m_s": 7.94391041450514e-05,
+                "mean_slip_along_command_m_s": -5.2591404480852985e-05,
+                "mean_body_contact_tangent_m_s": [
+                  -5.2591404480853e-05,
+                  4.934409245007773e-05,
+                  -8.834653971849378e-08
+                ]
+              },
+              {
+                "phase": [
+                  0.76,
+                  0.8
+                ],
+                "sample_count": 112,
+                "loaded_fraction": 1.0,
+                "mean_normal_force_n": 6.066533280240593,
+                "mean_contact_slip_m_s": 0.00012134384815049978,
+                "mean_slip_along_command_m_s": -8.777140430427781e-05,
+                "mean_body_contact_tangent_m_s": [
+                  -8.777140430427781e-05,
+                  7.923024919762552e-05,
+                  -1.181470195443345e-07
+                ]
+              },
+              {
+                "phase": [
+                  0.8,
+                  0.82
+                ],
+                "sample_count": 48,
+                "loaded_fraction": 1.0,
+                "mean_normal_force_n": 3.7045389466086753,
+                "mean_contact_slip_m_s": 0.00010309057360197717,
+                "mean_slip_along_command_m_s": -7.61334300277631e-05,
+                "mean_body_contact_tangent_m_s": [
+                  -7.613343002776311e-05,
+                  6.812675294465077e-05,
+                  -6.09506535576047e-08
+                ]
+              },
+              {
+                "phase": [
+                  0.82,
+                  0.97
+                ],
+                "sample_count": 384,
+                "loaded_fraction": 0.03125,
+                "mean_normal_force_n": 0.01828915912431827,
+                "mean_contact_slip_m_s": 0.00015520867931198592,
+                "mean_slip_along_command_m_s": -0.00011218829741710237,
+                "mean_body_contact_tangent_m_s": [
+                  -0.00011218829741710237,
+                  9.463254512633358e-05,
+                  -1.2166451579645808e-07
+                ]
+              },
+              {
+                "phase": [
+                  0.97,
+                  1.0
+                ],
+                "sample_count": 64,
+                "loaded_fraction": 0.3125,
+                "mean_normal_force_n": 2.339991434776968,
+                "mean_contact_slip_m_s": 0.0007282645797679831,
+                "mean_slip_along_command_m_s": 0.000641175506555753,
+                "mean_body_contact_tangent_m_s": [
+                  0.0006411755065557531,
+                  -0.0002879738179614319,
+                  -2.0788849687827413e-06
+                ]
+              }
+            ],
+            "loaded_fraction": 0.826953125,
+            "mean_contact_slip_m_s": 0.0003767782534587075,
+            "p95_contact_slip_m_s": 0.0014576391727020275
+          }
+        }
+      },
+      "gait": {
+        "cycle_s": 3.2,
+        "shift_m": 0.005,
+        "lift_m": 0.012,
+        "stride_cap_speed_ratio_at_last_command": {
+          "FL": 1.0,
+          "FR": 1.0,
+          "RL": 1.0,
+          "RR": 1.0
+        }
+      },
+      "initial_info": {
+        "fell": false,
+        "sensor_fault": false,
+        "position": [
+          -1.3868557289242744e-06,
+          -5.807742127217352e-07,
+          0.10724659264087677
+        ],
+        "velocity": [
+          -6.173974600516406e-05,
+          -1.5152040908386043e-05,
+          0.0003804967376955464
+        ],
+        "rpy": [
+          4.918236556425382e-06,
+          -5.355478051624111e-05,
+          2.911415501349994e-06
+        ],
+        "body_velocity": [
+          -6.171941261100086e-05,
+          -1.5149989768860802e-05,
+          0.0003805001181266327
+        ],
+        "body_angular_velocity": [
+          5.9596535636640636e-05,
+          -0.00047537273057812144,
+          -3.2185045798848754e-06
+        ],
+        "com_velocity": [
+          -7.768340607012435e-05,
+          -1.714750044626939e-05,
+          0.0003799916957337253
+        ],
+        "nonfoot_ground_contact": false,
+        "body_ground_contact": false,
+        "time_s": 0.0,
+        "torque_saturation_fraction": 0.0,
+        "tracking_error_rad": 0.02361190341560661,
+        "phone_mass_kg": 0.155,
+        "command": [
+          0.01,
+          0.0,
+          0.0
+        ],
+        "terrain": "flat",
+        "sensor": {
+          "mode": "mpu6050",
+          "open_loop": false,
+          "frame": "body",
+          "units": "unit down vector; rad/s",
+          "measurement_time_s": 0.10000000000000007,
+          "arrival_time_s": 0.10500000000000008,
+          "valid": true,
+          "ready": true,
+          "stale": false,
+          "sample_age_s": 0.020000000000000018,
+          "received_age_s": 0.015000000000000013,
+          "generated_samples": 7,
+          "dropped_samples": 0,
+          "profile": {
+            "sample_rate_hz": 50.0,
+            "transport_delay_s": 0.005,
+            "gravity_noise_std": 0.004,
+            "gyro_noise_std_rad_s": 0.012,
+            "dropout_probability": 0.0,
+            "gyro_bias_rad_s": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "max_age_s": 0.1,
+            "R_body_from_sensor_at_pan_zero": [
+              [
+                1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "pan_locked": true
+          }
+        },
+        "ik_rejections": 0,
+        "temperature_c_proxy": [
+          25.00000013115249,
+          25.026411342171077,
+          25.02284699634301,
+          25.000000103003657,
+          25.026415930569005,
+          25.02285772997859,
+          25.000000138763227,
+          25.02651454435386,
+          25.022977795485406,
+          25.000000096650176,
+          25.026519221046073,
+          25.02301218169674
+        ],
+        "randomization": {
+          "mass_scales": {
+            "-1": 1.0,
+            "0": 1.0,
+            "1": 1.0,
+            "2": 1.0,
+            "3": 1.0,
+            "4": 1.0,
+            "5": 1.0,
+            "6": 1.0,
+            "7": 1.0,
+            "8": 1.0,
+            "9": 1.0,
+            "10": 1.0,
+            "11": 1.0,
+            "12": 1.0,
+            "13": 1.0,
+            "14": 1.0,
+            "15": 1.0,
+            "16": 1.0,
+            "17": 1.0,
+            "18": 1.0,
+            "19": 1.0,
+            "20": 1.0
+          },
+          "body_com_shift_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "phone_shift_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "friction": 0.8,
+          "scenario": {},
+          "torque_cap_nm": 0.588,
+          "motor_strength": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "voltage_v": 12.0,
+          "delay_s": 0.02,
+          "kp": [
+            3.0,
+            8.0,
+            6.0,
+            3.0,
+            8.0,
+            6.0,
+            3.0,
+            8.0,
+            6.0,
+            3.0,
+            8.0,
+            6.0
+          ],
+          "backlash_deadband_rad": [
+            0.004363323129985824,
+            0.004363323129985824,
+            0.004363323129985824,
+            0.004363323129985824,
+            0.004363323129985824,
+            0.004363323129985824,
+            0.004363323129985824,
+            0.004363323129985824,
+            0.004363323129985824,
+            0.004363323129985824,
+            0.004363323129985824,
+            0.004363323129985824
+          ],
+          "thermal_model": "estimated first-order proxy, not a identified winding model"
+        }
+      },
+      "ik_rejections": 0,
+      "trace": null,
+      "wall_s": 6.421764282999902,
+      "experimental_recovery": "hermite_endpoint_velocity",
+      "status": "completed"
+    }
+  ]
+}

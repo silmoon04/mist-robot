@@ -1,0 +1,62 @@
+# MSI batch: independent Astra critique
+
+Reviewed 12 October 2026. This is a bounded review of the new MSI helpers, not a qualification of a walking policy. No frozen source, CAD, checkpoint, replay or final-test receipt was edited. No new final-test result was read for controller selection.
+
+## Actionable finding
+
+**P2: preserve each development case outcome when another case fails.** In `scripts/dev_tracking_probe.py:279-295`, `ProcessPoolExecutor.map` yields in submission order and raises at the first failed future. Leaving the executor context waits for submitted work; later successful results are then discarded. The saved receipt contains only the earlier prefix and a generic exception string. A failure in the first nominal case can therefore erase the measured outcomes of the remaining variants even though they consumed runtime. This defeats the requirement to preserve failed and interrupted evidence and makes paired diagnosis harder.
+
+Use explicit future-to-case identities, persist each success or case-specific execution error, and retain declared ordering in the final receipt. On interruption, cancel queued work where possible and mark uncollected cases explicitly. Add a small executor test with one failing case and a later successful case; it should prove that the latter's result and the failed case identity survive. This is a helper-only repair and does not require changing fingerprinted source or acceptance.
+
+**P2: make the MSI setup command select its installed interpreter.** `handoff/MSI_SETUP.md:24` exports `MIST_CUDA_PYTHON=python3.11`, which is absent from this Ubuntu PATH. The installed executable is `/home/hssil/.local/share/uv/python/cpython-3.11-linux-x86_64-gnu/bin/python3.11` and reports Python 3.11.16. The later note about alternate paths does not make the copyable MSI command work. Update the command to the verified path, or resolve 3.11 through uv before invoking it. This confirms the earlier CUDA paired-review finding; it is not a new script defect.
+
+## Review coverage and conclusions
+
+- `scripts/setup_cuda.sh` and `handoff/MSI_SETUP.md`: the CUDA environment is separate, Python 3.11 is enforced, only the CPU Torch pin is removed from a derived lock, installation is constrained to Torch 2.8.0+cu126, all other pins are verified, and successful CUDA allocation/matmul/synchronization is required. Rerun markers and fresh evidence directories preserve installation records. These checks establish a runtime, not robot qualification. No additional must-fix defect found.
+- `scripts/dev_tracking_probe.py`: variant settings affect individual environment instances; the probe does not load learned policies or read final receipts. Development seeds start at 2**50 and variants share a case seed. Original acceptance remains in each result, while the shorter tracking screen explicitly excludes duration. Contact velocity uses link COM velocity plus angular velocity at the contact point; contact observations are diagnostic only. The saturation field inside both telemetry summaries is explicitly named as covering all physics ticks, so it must not be described as a steady-window saturation measure.
+- `scripts/report_results.py` and `scripts/test_report_results.py`: paused reporting requires fresh output, verifies frozen source and saved checkpoint/replay/sidecar bytes, preserves the distinction between periodic validation and exact checkpoint tests, and rejects explicit final receipts with changed source, checkpoint, wrapper, horizon, ordering or case declarations. All-error final receipts remain failures with unknown metric flags. The existing complete-report mode still refuses the unfinished paused artifacts.
+- `scripts/benchmark_training_devices.py` and its test: jobs run sequentially using one selected interpreter. Each CPU/CUDA pair has identical arguments except device and output, with exactly 8192 fresh transitions, separate training and validation seeds, and no resume. Completion checks include source/envelope identity, requested device, transition counts, positive optimizer updates, final checkpoint/replay verification, and exactly initial/final validation records. Failed or timed-out jobs leave an incomplete report. The estimates correctly retain construction/checkpoint overhead and distinguish PPO epoch counts from SAC gradient updates. A single sequential pair supports a short throughput screen; it does not establish sustained thermal performance or a stable device ranking.
+
+## Checks performed and remaining evidence
+
+`python locomotion/scripts/test_report_results.py -q`: 16 tests passed. `python -m unittest locomotion.scripts.test_benchmark_training_devices -q`: 1 test passed. The initial combined unittest module invocation could not import `report_results` because that test expects its script directory on `sys.path`; rerunning the test by its supported script entry point passed. This was a test invocation issue, not a paused-report failure.
+
+The WSL CPU environment lacked NumPy when checked during installation. This pass therefore did not execute PyBullet development cases, train a smoke job, or verify CUDA hardware. Parent runtime work must still establish a paired development rollout, actual CPU/CUDA training completion, and successful CUDA setup evidence. In particular, the benchmark plan test is not coverage of the completed-metrics or timeout paths.
+
+The previously identified hardware gaps remain limits: simulated actuator speed differs from conservative commissioning, joint telemetry timing differs from the policy observation cadence, and phone freshness limits differ between hardware and simulation. Nothing in this batch establishes measured motor dynamics, masses, sensor timing, whole-robot contact equivalence, or physical walking.
+
+## Bounded recovery-experiment review
+
+Reviewed the new `scripts/experimental_recovery.py` and `scripts/dev_recovery_probe.py` before runtime execution. The experiment compares the same shift005 controller with a different horizontal swing interpolation, using paired development seeds and the original scorer. It neither reads policies nor uses contact truth for control.
+
+The Hermite polynomial has positions -0.5 and +0.5 at its endpoints and derivative -0.25 with respect to swing coordinate u at both ends. Dividing by the 0.2 swing phase gives -1.25, which matches the stance derivative -1/0.8. Lift, shift, attitude transform and scheduled support definitions are inherited. Support-force and position-bias outputs can change as a consequence of the changed foot positions; that is an expected downstream effect of the intervention.
+
+A lightweight FK check covered 64 phase boundaries across forward, clockwise, combined and stop commands, with no attitude correction and with roll/pitch 0.12/-0.08 rad. With a 0.00001-second difference interval, the largest one-sided velocity discrepancy was 0.0000043473 m/s. Stance joint targets were byte-for-byte equal on the sampled grid. These checks establish the geometric endpoint claim; they do not establish actual toe clearance, loaded servo response, or a tracking improvement.
+
+The process-local environment replacement occurs before the original runner constructs its environment, and it is restored in `finally`. The replacement controller is installed before shift settings and reset; the frozen reset method does not replace it. Constructing the extra controller consumes no environment random draws. Initial settling, paired seeds, command schedule and scoring therefore remain matched.
+
+The earlier collector finding recurs in the new wrapper's `ProcessPoolExecutor.map` loop. **P2 remains open for this wrapper:** reuse `original_probe.collect_cases(..., runner=run_case)` and preserve per-case error outcomes before running the experiment. The original tracking probe is already repaired and its hash remains `54915f674b74392cf24102b16c21562dbecff041167845a39644b171dbfbbc0e`; do not edit it to fix the wrapper.
+
+Bounded retrospective: this is the same evidence-loss mechanism as the first finding, caused by duplicating orchestration instead of using its repaired owner. The scoped improvement is to reuse `collect_cases` in experimental wrappers and exercise the failed-first/later-success regression through the wrapper route. Repair was requested from the reviser; this note records review, not implementation or validation of that repair.
+
+Collector closure: independently reviewed the repaired recovery wrapper at SHA-256 `39556a2584c7912354aba2e2693ecacca5adead101ef2b5c1bb2664510566907`. It delegates to the shared collector, persists ordered success/error rows and exits 1 for failed collection. The real wrapper-main failed-first/later-success regression and the two original collector tests all passed (3 tests). The original probe hash remains unchanged. The repeated P2 is closed for this revision.
+
+## Bounded clearance-window review
+
+Reviewed `scripts/experimental_clearance_recovery.py` and `scripts/dev_clearance_probe.py` before execution. No actionable finding. The new wrapper uses the repaired collector, verifies all three prior helper hashes, preserves original scoring and zero residuals, and gives the default forward pair the same development seed, `1209936639728344`. Controller replacement, per-instance shift settings and reset ordering preserve the intended comparison.
+
+The central cubic joins the continued stance lines at phase .84 with position -.55 and slope -1.25, and at phase .96 with position +.55 and slope -1.25. The .80 and 1.00 boundaries also retain position and velocity continuity. Independent FK checks covered 128 boundaries across four commands, two attitude settings and four legs. The maximum one-sided finite-difference velocity discrepancy was 0.00000091453 m/s using a 0.000001-second interval. Sampled stance targets were exactly unchanged, and the unrotated vertical trajectory differed by at most 2.78e-17 m.
+
+Narrowing the recovery window necessarily increases horizontal excursion and recovery speed; these are consequences of the window intervention, not independently held quantities. The receipt already predicts possible increased servo lag. Geometric continuity does not establish loaded clearance or improved tracking. This review clears the authorized 480-step forward development comparison; original full-duration acceptance still determines qualification.
+
+## Bounded translation-gain factorial review
+
+Reviewed `scripts/experimental_stride_gain.py` and `scripts/dev_stride_factorial_probe.py` before the 48-case run. No actionable finding for the current frozen tree. Independently verified all 55 frozen source/CAD byte hashes and the five pinned prior helper hashes.
+
+The gain acts once on a copied geometric command. The environment command, observation command and acceptance command retain their requested values. `position_targets` obtains the changed geometric q once and passes it directly to the inherited support-force calculation, so its bias follows the changed geometry without applying gain again. The support schedule depends on phase and whether motion is requested; scaling nonzero vx/vy does not change that schedule.
+
+Independent checks covered 600 configurations: two shift values, six commands, 25 times, and two attitude settings. Gain 1 reproduced the clearance controller exactly. Gain 1.15 reproduced both geometric targets and final position targets from the clearance controller given a single scaled vx/vy command. The input array remained unchanged. Pure-yaw position targets were exactly equal across gains at each shift and at both payloads. The selected cardinal translation stride remains below the existing cap at gain 1.15; combined translation/yaw commands are deliberately excluded from this wrapper.
+
+The default plan has 48 cases in 12 command/payload groups, each sharing its seed across all four factor combinations. The wrapper uses the repaired collector and retains failed outcomes. It pins prior helper hashes and checks its current source map before/after execution. It does not independently compare that map with `frozen_sources.json`; this review verified the current 55 files separately, and the parent must retain that frozen-byte check when relocating or rerunning the experiment.
+
+This clears the authorized 960-step development factorial with aggregate telemetry. It does not establish a successful controller, stop/restart behavior, randomized robustness, or physical transfer. No policy-final outcome was read for this review.
