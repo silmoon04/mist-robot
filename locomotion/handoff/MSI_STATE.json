@@ -1,6 +1,6 @@
 {
-  "recorded_utc": "2026-10-12T22:32:05.211150+00:00",
-  "status": "MSI runtime and simulation/dry-run remotes verified; hardware under construction; walking unqualified",
+  "recorded_utc": "2026-10-12T23:32:23.823059+00:00",
+  "status": "Faster interactive simulation and dry-run remotes verified; hardware under construction; walking unqualified",
   "windows_host": {
     "model": "MSI Stealth 16 AI Studio A1VHG",
     "cpu": "Intel Core Ultra 9 185H",
@@ -1290,7 +1290,7 @@
   "remote_interface": {
     "simulation_url": "http://127.0.0.1:8131/",
     "joint_preview_url": "http://127.0.0.1:8130/",
-    "launcher": "locomotion/Start MIST Remote.cmd",
+    "launcher": "locomotion/Start MIST Remote (Fast).cmd",
     "guide": "locomotion/REMOTE_GUIDE.md",
     "verification_receipt": "locomotion/runs/msi_20261012/remote_ui/verification.json",
     "verification_sha256": "6b5762ac3fe79fb0d3b49d8f922d099971c60fddc9241f34e464a12f1ef8f4ed",
@@ -1321,5 +1321,54 @@
       "dev_support_backward480_02_mechanism.json": "c1ca4c10a64fdaab9a202da731d572341fc4e762c906de9f617312c480672962"
     },
     "next_action": "Diagnose saved front-contact loss, torque headroom and whole-body COM assumption before another intervention"
+  },
+  "remote_speed_20261013": {
+    "status": "unqualified_simulation_preview",
+    "profile": {
+      "version": 1,
+      "profile": "Faster crawl preview",
+      "max_translation_m_s": 0.025,
+      "default_translation_m_s": 0.025,
+      "motor_target_rate_rad_s": 1.8,
+      "cycle_s": 1.2,
+      "real_time_factor": 0.9984294433291764,
+      "effective_config_sha256": "83d7b405d6b3b28f3db972eb7a7322d398258a9bfe771d9d1df1bee7e764497c",
+      "profile_sha256": "5ae2d0d13a8f142bd650eacd1bed7ade32ab14f2853d1e54f70a76913355bcaf",
+      "status": "Experimental simulation settings; loaded motor response is unmeasured"
+    },
+    "selected_controller": "WideRecoveryFastCrawl",
+    "shift_m": 0.001875,
+    "recovery_start": 0.82,
+    "requested_translation_m_s": 0.025,
+    "average_forward_m_s": [
+      0.01702,
+      0.01699
+    ],
+    "slow_reference_forward_m_s": [
+      0.00875,
+      0.00898
+    ],
+    "qdot_p95_rad_s": [
+      3.166,
+      2.224
+    ],
+    "old_qdot_p95_rad_s": [
+      1.196,
+      0.967
+    ],
+    "clock_receipts": [
+      "locomotion/runs/msi_20261013/remote_speed/baseline.json",
+      "locomotion/runs/msi_20261013/remote_speed/interactive_mesh_final.json"
+    ],
+    "live_state": "locomotion/runs/msi_20261013/remote_speed/live_final_state.json",
+    "review": "locomotion/reviews/msi_remote_speed/REVIEW.md",
+    "test_counts": {
+      "backend": 6,
+      "ui": 19,
+      "gait_static": 8
+    },
+    "hardware_actuation": false,
+    "training": false,
+    "strict_tracking_pass": false
   }
 }

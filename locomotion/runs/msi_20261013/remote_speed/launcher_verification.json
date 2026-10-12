@@ -1,0 +1,67 @@
+{
+  "repeated_windows_launch_reused_identity": true,
+  "session": {
+    "pid": 72422,
+    "start_ticks": "879266",
+    "owned_services": [
+      "simulation",
+      "joints"
+    ]
+  },
+  "simulation": {
+    "controller": "fast",
+    "interactive": {
+      "version": 1,
+      "profile": "Faster crawl preview",
+      "max_translation_m_s": 0.025,
+      "default_translation_m_s": 0.025,
+      "motor_target_rate_rad_s": 1.8,
+      "cycle_s": 1.2,
+      "real_time_factor": 0.9874860382600781,
+      "effective_config_sha256": "83d7b405d6b3b28f3db972eb7a7322d398258a9bfe771d9d1df1bee7e764497c",
+      "profile_sha256": "5ae2d0d13a8f142bd650eacd1bed7ade32ab14f2853d1e54f70a76913355bcaf",
+      "status": "Experimental simulation settings; loaded motor response is unmeasured"
+    },
+    "setup": {
+      "terrain": "flat",
+      "payload": 0.0,
+      "sensor_mode": "mpu6050",
+      "seed": 42,
+      "randomize": false,
+      "sensor_profile": {
+        "sample_rate_hz": 50.0,
+        "transport_delay_s": 0.005,
+        "gravity_noise_std": 0.004,
+        "gyro_noise_std_rad_s": 0.012,
+        "dropout_probability": 0.0,
+        "gyro_bias_rad_s": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "max_age_s": 0.1,
+        "R_body_from_sensor_at_pan_zero": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "pan_locked": true
+      },
+      "checkpoint": ""
+    }
+  },
+  "joints_mode": "dry-run",
+  "serial_port_supplied": false
+}

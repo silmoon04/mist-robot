@@ -14,12 +14,12 @@ The exact CPU environment is `.venv-locomotion/bin/python` under the WSL checkou
 cd /home/hssil/mist-locomotion-msi/repo
 export MIST_PYTHON="$PWD/.venv-locomotion/bin/python"
 "$MIST_PYTHON" -c 'from locomotion.provenance import source_hashes,identity; print(identity(source_hashes()))'
-"$MIST_PYTHON" locomotion/sim_remote.py --port 8131
+"$MIST_PYTHON" locomotion/sim_remote_interactive.py --port 8131
 ```
 
 The simulation remote is at `http://127.0.0.1:8131`. It displays the R7 assembly and simulated sensors. The shipped physical calibration remains unconfigured.
 
-The user is building the R7 now. Hardware measurements wait until assembly. For the Windows launcher and simulation/dry-run interface controls, see [REMOTE_GUIDE.md](../REMOTE_GUIDE.md). UI changes preserve the frozen simulation backend and experiment sources.
+The user is building the R7 now. Hardware measurements wait until assembly. For the Windows launcher and simulation/dry-run interface controls, see [REMOTE_GUIDE.md](../REMOTE_GUIDE.md). The interactive server and faster gait are separate additions; frozen simulation sources and earlier experiment helpers remain exact.
 
 ## Verified frozen evidence
 
@@ -91,6 +91,12 @@ Both remotes now have readable state and telemetry, held direction controls, vis
 The local launcher starts no serial connection and supplies no measured calibration. Hardware remains under construction. The control regressions and live-browser evidence are recorded in [the remote UI review](../reviews/msi_remote_ui/REVIEW.md); operating instructions are in [REMOTE_GUIDE.md](../REMOTE_GUIDE.md).
 
 ## Next action
+
+The 13 October speed request is implemented as a separate **Faster crawl preview**. Its requested translation is 0.025 m/s, cycle is 1.2 s, body shift is 1.875 mm, geometric gain is 1.15, and horizontal recovery runs over phases .82–.96. It retains the frozen actuator configuration, including 1.8 rad/s target slew and 0.588 N m torque cap. A 3 rad/s target-slew trial did not increase progress and was rejected.
+
+Paired 480-step forward tests measured 0.01702/0.01699 m/s average progress for bare/0.155 kg payload, versus 0.00875/0.00898 m/s for the slower clearance/gain reference. Maximum-joint qdot P95 increased from 1.196/0.967 to 3.166/2.224 rad/s. Physical joint velocity differs from target slew because of contact and inertia; these are simulated measurements. The phone-payload cardinal screen completed without falls, IK rejection, sensor faults or body/nonfoot floor contact. Original path and velocity criteria still fail. No 960-step qualification or training was run for this preview. The development yaw tests used ±0.106667 rad/s, above the remote's 0.06 cap, and do not validate that cap.
+
+The original remote accepted only 0.012 m/s and ran at 0.473 times real time in the recorded loop. The interactive worker keeps fixed physics steps, schedules catch-up against wall time and renders by wall cadence. Live measurements and UI verification are in [the speed review](../reviews/msi_remote_speed/REVIEW.md); the independent boundary review is [msi_remote_speed_review.md](../reviews/msi_remote_speed_review.md). Experiment receipts remain in `../runs/msi_20261012/dev_fast_*` because the versioned probes bind those paths. They were executed on 13 October; the existing path is preserved for replay. The consolidated analysis is `dev_fast_selected_preview_analysis.json`. New live-remote receipts are under `../runs/msi_20261013/remote_speed/`.
 
 Read [MSI_NEXT_CONTRACT.md](MSI_NEXT_CONTRACT.md) before new training or hardware integration. It identifies command-filter, joint telemetry, observation ordering and sensor-estimator timing differences that a new source/config contract must represent.
 
