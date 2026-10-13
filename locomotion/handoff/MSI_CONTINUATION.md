@@ -14,7 +14,7 @@ The exact CPU environment is `.venv-locomotion/bin/python` under the WSL checkou
 cd /home/hssil/mist-locomotion-msi/repo
 export MIST_PYTHON="$PWD/.venv-locomotion/bin/python"
 "$MIST_PYTHON" -c 'from locomotion.provenance import source_hashes,identity; print(identity(source_hashes()))'
-"$MIST_PYTHON" locomotion/sim_remote_interactive.py --port 8131
+"$MIST_PYTHON" locomotion/sim_remote_interactive_v2.py --port 8131
 ```
 
 The simulation remote is at `http://127.0.0.1:8131`. It displays the R7 assembly and simulated sensors. The shipped physical calibration remains unconfigured.
@@ -91,6 +91,10 @@ Both remotes now have readable state and telemetry, held direction controls, vis
 The local launcher starts no serial connection and supplies no measured calibration. Hardware remains under construction. The control regressions and live-browser evidence are recorded in [the remote UI review](../reviews/msi_remote_ui/REVIEW.md); operating instructions are in [REMOTE_GUIDE.md](../REMOTE_GUIDE.md).
 
 ## Next action
+
+The later choppy-view report is addressed by the pose-streamed v2 remote and the **Start MIST Remote (Smooth).cmd** launcher. The old v1 server updated JPEGs near 2 Hz and held the simulation lock during rendering. The browser now renders actual CAD visuals from measured link poses, with an 80 ms interpolation buffer and a bounded frame timer when the embedded browser throttles display callbacks. Main-service measurements recorded state P95 8.36 ms, command P95 3.16 ms and 40 observed pose updates/s at the probe's polling limit. The app displayed 23–25 fps; no 60 fps claim is made. Physics pace and visible frame rate are separate measurements. See [the smooth remote review](../reviews/msi_remote_smooth/REVIEW.md).
+
+An eight-case, 480-step forward screen found an optional **Higher speed preview** at a 1.0-second cycle and 0.040 m/s command cap. Average progress was 0.02430/0.02382 m/s for bare/0.155 kg payload, versus 0.01702/0.01699 for the default 1.2-second preview. The 0.8-second cycle and larger requests did not improve this. All eight cases avoided falls, sensor faults, IK rejection and body/nonfoot floor contact, but strict path/velocity criteria remain failures. This screen supports the optional forward preview only; Faster crawl remains the default. Results, actuator diagnostics and unchanged acceptance checks are in `../runs/msi_20261013/speed_ceiling/analysis_01.json`.
 
 The 13 October speed request is implemented as a separate **Faster crawl preview**. Its requested translation is 0.025 m/s, cycle is 1.2 s, body shift is 1.875 mm, geometric gain is 1.15, and horizontal recovery runs over phases .82–.96. It retains the frozen actuator configuration, including 1.8 rad/s target slew and 0.588 N m torque cap. A 3 rad/s target-slew trial did not increase progress and was rejected.
 

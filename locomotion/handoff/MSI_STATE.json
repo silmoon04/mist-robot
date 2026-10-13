@@ -1,6 +1,6 @@
 {
   "recorded_utc": "2026-10-12T23:32:23.823059+00:00",
-  "status": "Faster interactive simulation and dry-run remotes verified; hardware under construction; walking unqualified",
+  "status": "Smooth pose-streamed simulation and dry-run remotes verified; optional higher-speed forward preview; hardware under construction; walking unqualified",
   "windows_host": {
     "model": "MSI Stealth 16 AI Studio A1VHG",
     "cpu": "Intel Core Ultra 9 185H",
@@ -1370,5 +1370,36 @@
     "hardware_actuation": false,
     "training": false,
     "strict_tracking_pass": false
+  },
+  "remote_smooth_20261013": {
+    "server": "locomotion/sim_remote_interactive_v2.py",
+    "launcher": "locomotion/Start MIST Remote (Smooth).cmd",
+    "profile_default": "fast",
+    "profile_optional": "fast_plus",
+    "live_payload_kg": 0.0,
+    "latency_receipt": "locomotion/runs/msi_20261013/remote_smooth/green_final_01.json",
+    "browser_receipt": "locomotion/runs/msi_20261013/remote_smooth/browser_final_01.json",
+    "verification_receipt": "locomotion/runs/msi_20261013/remote_smooth/verification_01.json",
+    "speed_analysis": "locomotion/runs/msi_20261013/speed_ceiling/analysis_01.json",
+    "review": "locomotion/reviews/msi_remote_smooth/REVIEW.md",
+    "command_p95_ms": 3.1581470011587953,
+    "state_p95_ms": 8.36154300122871,
+    "measured_app_fps_range": [
+      23,
+      25
+    ],
+    "test_counts": {
+      "backend": 10,
+      "frontend": 30,
+      "gait_v4": 3
+    },
+    "highest_tested_forward_request_m_s": 0.04,
+    "average_higher_progress_m_s": {
+      "bare": 0.0243,
+      "phone155g": 0.02382
+    },
+    "strict_tracking_pass": false,
+    "hardware_actuation": false,
+    "training": false
   }
 }

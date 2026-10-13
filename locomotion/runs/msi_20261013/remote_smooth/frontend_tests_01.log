@@ -1,0 +1,190 @@
+TAP version 13
+# Subtest: a throttled display callback still draws on the bounded timer
+ok 1 - a throttled display callback still draws on the bounded timer
+  ---
+  duration_ms: 2.448877
+  type: 'test'
+  ...
+# Subtest: normal display cadence wins without a duplicate timer draw
+ok 2 - normal display cadence wins without a duplicate timer draw
+  ---
+  duration_ms: 0.159657
+  type: 'test'
+  ...
+# Subtest: canceling a frame disposes both scheduled callbacks
+ok 3 - canceling a frame disposes both scheduled callbacks
+  ---
+  duration_ms: 0.144001
+  type: 'test'
+  ...
+# Subtest: fast state initializes speed and metadata from the applied profile
+ok 4 - fast state initializes speed and metadata from the applied profile
+  ---
+  duration_ms: 8.330269
+  type: 'test'
+  ...
+# Subtest: legacy state retains its applied cap while faster settings are pending
+ok 5 - legacy state retains its applied cap while faster settings are pending
+  ---
+  duration_ms: 2.200098
+  type: 'test'
+  ...
+# Subtest: pending legacy selector does not reduce an applied fast controller speed
+ok 6 - pending legacy selector does not reduce an applied fast controller speed
+  ---
+  duration_ms: 2.789527
+  type: 'test'
+  ...
+# Subtest: initial state preserves settings edited while the first reply is pending
+ok 7 - initial state preserves settings edited while the first reply is pending
+  ---
+  duration_ms: 1.613036
+  type: 'test'
+  ...
+# Subtest: first setup reply preserves randomized and custom sensor settings on Apply
+ok 8 - first setup reply preserves randomized and custom sensor settings on Apply
+  ---
+  duration_ms: 1.77774
+  type: 'test'
+  ...
+# Subtest: new applied legacy state clamps speed without erasing a pending controller choice
+ok 9 - new applied legacy state clamps speed without erasing a pending controller choice
+  ---
+  duration_ms: 1.512208
+  type: 'test'
+  ...
+# Subtest: an in-flight movement receives a trailing stop after blur
+ok 10 - an in-flight movement receives a trailing stop after blur
+  ---
+  duration_ms: 14.192588
+  type: 'test'
+  ...
+# Subtest: an in-flight movement receives a trailing stop after pagehide
+ok 11 - an in-flight movement receives a trailing stop after pagehide
+  ---
+  duration_ms: 3.587944
+  type: 'test'
+  ...
+# Subtest: an in-flight movement receives a trailing stop after hidden
+ok 12 - an in-flight movement receives a trailing stop after hidden
+  ---
+  duration_ms: 3.984194
+  type: 'test'
+  ...
+# Subtest: Stop ("button") cannot be undone by a held key's autorepeat
+ok 13 - Stop ("button") cannot be undone by a held key's autorepeat
+  ---
+  duration_ms: 2.846193
+  type: 'test'
+  ...
+# Subtest: Stop (" ") cannot be undone by a held key's autorepeat
+ok 14 - Stop (" ") cannot be undone by a held key's autorepeat
+  ---
+  duration_ms: 1.853691
+  type: 'test'
+  ...
+# Subtest: Stop ("Escape") cannot be undone by a held key's autorepeat
+ok 15 - Stop ("Escape") cannot be undone by a held key's autorepeat
+  ---
+  duration_ms: 2.321923
+  type: 'test'
+  ...
+# Subtest: typing movement keys in editable fields does not send motion
+ok 16 - typing movement keys in editable fields does not send motion
+  ---
+  duration_ms: 1.363826
+  type: 'test'
+  ...
+# Subtest: pointer cancellation sends a stop after a held movement
+ok 17 - pointer cancellation sends a stop after a held movement
+  ---
+  duration_ms: 2.675026
+  type: 'test'
+  ...
+# Subtest: explicit reset refusal and transport timeout have different outcome messages
+ok 18 - explicit reset refusal and transport timeout have different outcome messages
+  ---
+  duration_ms: 5.533313
+  type: 'test'
+  ...
+# Subtest: joint slider intent is applied after a delayed older gait request
+ok 19 - joint slider intent is applied after a delayed older gait request
+  ---
+  duration_ms: 6.13734
+  type: 'test'
+  ...
+# Subtest: new joint gait intent waits for an outstanding older slider target
+ok 20 - new joint gait intent waits for an outstanding older slider target
+  ---
+  duration_ms: 2.150912
+  type: 'test'
+  ...
+# Subtest: joint gait release queues standing after the pending movement completes
+ok 21 - joint gait release queues standing after the pending movement completes
+  ---
+  duration_ms: 2.246765
+  type: 'test'
+  ...
+# Subtest: late arm response cannot re-enable joints after a newer confirmed stop
+ok 22 - late arm response cannot re-enable joints after a newer confirmed stop
+  ---
+  duration_ms: 2.04726
+  type: 'test'
+  ...
+# Subtest: the live CAD view has its own animation canvas instead of a state-poll image stream
+ok 23 - the live CAD view has its own animation canvas instead of a state-poll image stream
+  ---
+  duration_ms: 2.188483
+  type: 'test'
+  ...
+# Subtest: 20 Hz poses produce distinct positions at each 60 Hz display frame
+ok 24 - 20 Hz poses produce distinct positions at each 60 Hz display frame
+  ---
+  duration_ms: 1.536926
+  type: 'test'
+  ...
+# Subtest: a delayed snapshot does not extrapolate the CAD past measured physics
+ok 25 - a delayed snapshot does not extrapolate the CAD past measured physics
+  ---
+  duration_ms: 0.438555
+  type: 'test'
+  ...
+# Subtest: episode changes discard poses from the previous robot model
+ok 26 - episode changes discard poses from the previous robot model
+  ---
+  duration_ms: 0.387508
+  type: 'test'
+  ...
+# Subtest: rotation interpolation takes the short path across quaternion sign changes
+ok 27 - rotation interpolation takes the short path across quaternion sign changes
+  ---
+  duration_ms: 0.298025
+  type: 'test'
+  ...
+# Subtest: out-of-order and malformed poses leave the last valid model pose intact
+ok 28 - out-of-order and malformed poses leave the last valid model pose intact
+  ---
+  duration_ms: 0.340788
+  type: 'test'
+  ...
+# Subtest: duplicate physics snapshots do not rewind the displayed robot or hide stalled physics
+ok 29 - duplicate physics snapshots do not rewind the displayed robot or hide stalled physics
+  ---
+  duration_ms: 2.595673
+  type: 'test'
+  ...
+# Subtest: a delayed new physics sample never rewinds a pose already displayed
+ok 30 - a delayed new physics sample never rewinds a pose already displayed
+  ---
+  duration_ms: 0.417268
+  type: 'test'
+  ...
+1..30
+# tests 30
+# suites 0
+# pass 30
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 206.634796
