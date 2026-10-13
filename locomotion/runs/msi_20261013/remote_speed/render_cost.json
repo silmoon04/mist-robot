@@ -1,0 +1,30 @@
+{
+  "measured_at_utc": "2026-10-12T23:29:25.294540+00:00",
+  "scope": "One isolated reset frame; background worker disabled; no server or control steps",
+  "limitations": "Single cold frame at reset pose, not sustained throughput or a paired pose comparison",
+  "profile": {
+    "schema": 1,
+    "name": "Faster crawl preview",
+    "cycle_s": 1.2,
+    "shift_m": 0.001875,
+    "recovery_start": 0.82,
+    "translational_stride_gain": 1.15,
+    "command_speed_rad_s": 1.8,
+    "max_translation_m_s": 0.025,
+    "default_translation_m_s": 0.025,
+    "max_yaw_rad_s": 0.06,
+    "status": "Experimental simulation settings; loaded motor response is unmeasured"
+  },
+  "total_rendered_frames": 1,
+  "control_steps": 0,
+  "landmark_visual_bodies": 1,
+  "landmarks_mass_zero_and_collision_free": true,
+  "render_ms": 271.28500799881294,
+  "jpeg_encode_ms": 5.648276001011254,
+  "render_through_jpeg_ms": 280.006222999873,
+  "source_sha256": {
+    "locomotion/scripts/probe_remote_render_cost.py": "4d25200b41b0c022228a4631a02d198266cce093ea59c55913c80e6f6b896bf1",
+    "locomotion/sim_remote_interactive.py": "87340b78196b7cdaeb852a6e65aa8e4ec9d95c7c6ecde1d49de76dd71594dd2c",
+    "locomotion/profiles/interactive_fast.json": "5ae2d0d13a8f142bd650eacd1bed7ade32ab14f2853d1e54f70a76913355bcaf"
+  }
+}

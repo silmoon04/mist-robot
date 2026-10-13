@@ -9,11 +9,12 @@ import math
 from pathlib import Path
 import statistics
 import sys
+import zipfile
 
 HERE = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(HERE.parent))
 from locomotion.acceptance import CRITERIA, VERSION
-from locomotion.provenance import source_hashes, identity
+from locomotion.provenance import source_hashes, identity, CONTRACT
 
 RECEIPTS = {'baseline': 'final_baseline_all.json', 'PPO': 'final_ppo_mpu.json', 'SAC': 'final_sac_mpu.json'}
 FLAGS = {'falls': 'no_falls', 'body_contact': 'no_body_ground_contact',
@@ -37,6 +38,8 @@ def validate_cases(receipt):
         raise ValueError('Expected final_matrix schema 1 receipt')
     cases = receipt['results']
     resolved = receipt['ordered_resolved_cases']
+    if any(type(receipt[key]) is not int for key in ('steps', 'total_cases', 'passed_cases')):
+        raise ValueError('Final receipt horizons and counts must be integers')
     if receipt.get('criteria') != CRITERIA:
         raise ValueError('Receipt acceptance criteria differ from fixed thresholds')
     expected_suite = identity({'criteria': receipt['criteria'], 'cases': resolved, 'steps': receipt['steps']})
@@ -89,15 +92,15 @@ def summarize(cases):
         raise ValueError('No comparable cases')
     measured = [c for c in cases if 'execution_error' not in c]
     values = [c['metrics']['body_velocity_rmse_m_s'] for c in measured]
-    if not values or not all(isinstance(v, (float, int)) and math.isfinite(v) for v in values):
-        raise ValueError('No finite velocity metrics')
+    if not all(type(v) in (float, int) and math.isfinite(v) for v in values):
+        raise ValueError('Nonfinite or invalid velocity metrics')
     return {'strict_passes': sum(c['passed'] for c in cases), 'total': len(cases),
             'execution_errors': len(cases) - len(measured),
             'failed_flags': {name: sum(c['checks'][key] is False for c in measured) for name, key in FLAGS.items()},
             'unknown_flags': len(cases) - len(measured),
             'velocity_metric_cases': len(values),
-            'velocity_rmse_median_m_s': statistics.median(values),
-            'velocity_rmse_max_m_s': max(values)}
+            'velocity_rmse_median_m_s': statistics.median(values) if values else None,
+            'velocity_rmse_max_m_s': max(values) if values else None}
 
 
 def normalize_environment(case):
@@ -133,8 +136,11 @@ def plot(summary, output):
     axes[0].set_ylim(0, max(totals)); axes[0].set_ylabel('Cases passing every fixed check')
     for i, (p, n) in enumerate(zip(passed, totals)):
         axes[0].text(i, p + max(totals)*.025, f'{p}/{n}', ha='center')
-    data = [summary[k]['velocity_rmse_median_m_s'] for k in labels]
+    data = [summary[k]['velocity_rmse_median_m_s'] if summary[k]['velocity_rmse_median_m_s'] is not None else float('nan') for k in labels]
     axes[1].bar(labels, data, color=['#607d8b', '#3b79b7', '#cc8744'])
+    for i, key in enumerate(labels):
+        if summary[key]['velocity_rmse_median_m_s'] is None:
+            axes[1].text(i, 0, 'No metrics', ha='center', va='bottom', fontsize=8)
     axes[1].axhline(CRITERIA['max_velocity_rmse_m_s'], color='#aa2222', linestyle='--',
                    label=f'Per-case threshold {CRITERIA["max_velocity_rmse_m_s"]} m/s')
     axes[1].set_ylabel('Median velocity RMSE (m/s)'); axes[1].legend(fontsize=8)
@@ -142,7 +148,241 @@ def plot(summary, output):
     fig.savefig(output, dpi=180); plt.close(fig)
 
 
-def generate(root=HERE):
+def evidence_path(repo, value):
+    """Resolve portable inventory paths without accepting paths outside the repo."""
+    path = (repo / value).resolve()
+    if not path.is_relative_to(repo.resolve()):
+        raise ValueError('Evidence path escapes repository')
+    return path
+
+
+def validate_sources(hashes, repo):
+    if not hashes:
+        raise ValueError('Missing source inventory')
+    for name, expected in hashes.items():
+        if digest(evidence_path(repo, name)) != expected:
+            raise ValueError(f'Source content hash mismatch: {name}')
+
+
+def validate_periodic(receipt):
+    """Training evaluator receipts have nested acceptance, not final_matrix rows."""
+    if receipt.get('label') != 'periodic' or receipt.get('status') != 'simulation_evaluation_only_hardware_unvalidated':
+        raise ValueError('Expected completed periodic training validation')
+    episodes = receipt['episodes']
+    if type(receipt['training_timesteps']) is not int or receipt['training_timesteps'] < 0:
+        raise ValueError('Periodic training timesteps must be a nonnegative integer')
+    if not episodes:
+        raise ValueError('Empty periodic validation')
+    declarations = [{k: row[k] for k in ('direction', 'command', 'terrain', 'payload', 'seed')}
+                    for row in episodes]
+    if identity(declarations) != receipt['suite_sha256']:
+        raise ValueError('Periodic validation suite identity mismatch')
+    if len({identity(row) for row in declarations}) != len(declarations):
+        raise ValueError('Duplicate periodic validation cases')
+    measured = []
+    for row in episodes:
+        acceptance = row['acceptance']
+        if acceptance.get('criteria') != CRITERIA or acceptance.get('acceptance_version') != VERSION:
+            raise ValueError('Periodic acceptance mismatch')
+        checks = acceptance['checks']
+        if set(FLAGS.values()) - set(checks) or any(type(v) is not bool for v in checks.values()):
+            raise ValueError('Periodic checks must contain boolean acceptance flags')
+        if type(acceptance['passed']) is not bool or acceptance['passed'] != all(checks.values()):
+            raise ValueError('Periodic pass verdict disagrees with checks')
+        if any(type(row[k]) is not bool for k in ('fell', 'terminated', 'truncated')):
+            raise ValueError('Periodic episode state must be boolean')
+        if checks['no_falls'] != (not row['fell']):
+            raise ValueError('Periodic fall verdict disagrees with episode')
+        measured.append(acceptance)
+    eligible = all(row['passed'] for row in measured)
+    falls = sum(row['fell'] for row in episodes) / len(episodes)
+    if type(receipt['eligible']) is not bool or receipt['eligible'] != eligible:
+        raise ValueError('Periodic eligibility disagrees with acceptance')
+    if receipt['fall_fraction'] != falls:
+        raise ValueError('Periodic fall fraction disagrees with episodes')
+    result = summarize(measured)
+    result.update(eligible=eligible, fall_fraction=falls, suite_sha256=receipt['suite_sha256'],
+                  training_timesteps=receipt['training_timesteps'],
+                  checkpoint_binding='not recorded by training evaluator; periodic validation is not an exact checkpoint test')
+    return result
+
+
+def validate_candidate(checkpoint, expected, algorithm, sources, repo):
+    record = read(checkpoint.with_suffix('.provenance.json'))
+    if digest(checkpoint) != expected['sha256'] or record['checkpoint_sha256'] != expected['sha256']:
+        raise ValueError('Paused checkpoint content hash mismatch')
+    if record['algorithm'] != algorithm or record['hardware_qualified'] is not False:
+        raise ValueError('Paused checkpoint algorithm or hardware status mismatch')
+    if identity(record['envelope']) != record['envelope_sha256']:
+        raise ValueError('Paused checkpoint envelope identity mismatch')
+    if record['envelope']['sources'] != sources or record['envelope']['contract'] != CONTRACT:
+        raise ValueError('Paused checkpoint source or observation/action contract mismatch')
+    validate_sources(record['envelope']['sources'], repo)
+    if record['continuation_seed'] != expected['continuation_seed']:
+        raise ValueError('Paused continuation seed mismatch')
+    if record['replay_sha256'] != expected['replay_sha256']:
+        raise ValueError('Paused replay identity mismatch')
+    with zipfile.ZipFile(checkpoint) as archive:
+        saved = json.loads(archive.read('data'))
+    if saved['num_timesteps'] != expected['recorded_timesteps'] or saved['_n_updates'] != expected['optimizer_updates']:
+        raise ValueError('Paused saved timestep or optimizer count mismatch')
+    return record
+
+
+def generate_paused(root=HERE, output_dir=None, final_receipts=None):
+    """Report explicitly paused artifacts; optional final tests never select policies."""
+    root = Path(root).resolve()
+    repo = root.parent
+    if output_dir is None:
+        raise ValueError('Paused reports require a separate output directory')
+    output_dir = Path(output_dir).resolve()
+    if output_dir == root or output_dir.is_relative_to(root / 'runs') or output_dir.is_relative_to(root / 'handoff'):
+        raise ValueError('Paused output must be outside protected runs and handoff evidence')
+    if output_dir.exists():
+        raise FileExistsError('Paused output already exists; choose a fresh directory')
+    final_receipts = final_receipts or {}
+    if set(final_receipts) - {'ppo', 'sac'}:
+        raise ValueError('Only explicit PPO/SAC final receipts are supported')
+    paths = {}
+    def consume(path, expected=None):
+        path = Path(path).resolve()
+        actual = digest(path)
+        if expected is not None and actual != expected:
+            raise ValueError(f'Evidence content hash mismatch: {path}')
+        paths[path] = actual
+        return read(path)
+    state = consume(root / 'handoff/PAUSED_STATE.json')
+    if state.get('schema') != 1 or state.get('status') != 'paused_at_user_request':
+        raise ValueError('Expected explicit paused handoff state')
+    sources = consume(root / 'handoff/frozen_sources.json')
+    if identity(sources) != state['source_fingerprint']:
+        raise ValueError('Frozen source fingerprint mismatch')
+    validate_sources(sources, repo)
+    for name in sources:
+        path = evidence_path(repo, name)
+        paths[path] = sources[name]
+    baseline_path = evidence_path(repo, state['baseline']['receipt'])
+    baseline = consume(baseline_path)
+    indexed_baseline = validate_cases(baseline)
+    if baseline['source_hashes'] != sources or len(indexed_baseline) != state['baseline']['cases']:
+        raise ValueError('Paused baseline source or case count mismatch')
+    baseline_summary = summarize(list(indexed_baseline.values()))
+    if baseline_summary['strict_passes'] != state['baseline']['passes'] or baseline_summary['failed_flags']['falls'] != state['baseline']['falls']:
+        raise ValueError('Paused baseline summary disagrees with evidence')
+    policies = {}
+    final_tests = {}
+    for algorithm in ('ppo', 'sac'):
+        entry = state['checkpoints'][algorithm]
+        if entry['final_checkpoint_written'] is not False or entry['final_summary_written'] is not False or entry['hardware_qualified'] is not False:
+            raise ValueError('Handoff does not describe an unfinished paused candidate')
+        checkpoint = evidence_path(repo, entry['path'])
+        paths[checkpoint] = digest(checkpoint)
+        sidecar = evidence_path(repo, entry['sidecar'])
+        if sidecar != checkpoint.with_suffix('.provenance.json'):
+            raise ValueError('Paused sidecar path mismatch')
+        consume(sidecar, entry['sidecar_sha256'])
+        record = validate_candidate(checkpoint, entry, algorithm, sources, repo)
+        if entry['replay']:
+            replay = evidence_path(repo, entry['replay'])
+            paths[replay] = digest(replay)
+            if paths[replay] != entry['replay_sha256']:
+                raise ValueError('Paused replay content hash mismatch')
+        periodic = [r for r in entry['validation'] if r['label'] == 'periodic']
+        if len(periodic) != 1:
+            raise ValueError('Expected one explicit completed periodic receipt')
+        validation = periodic[0]
+        measured = validate_periodic(consume(evidence_path(repo, validation['path']), validation['sha256']))
+        for field, key in (('total', 'episodes'), ('strict_passes', 'strict_passes'), ('eligible', 'eligible'), ('fall_fraction', 'fall_fraction')):
+            if measured[field] != validation[key]:
+                raise ValueError('Paused periodic summary disagrees with evidence')
+        if measured['training_timesteps'] != entry['recorded_timesteps']:
+            raise ValueError('Paused periodic timestep mismatch')
+        missing = []
+        for filename in ('final.zip', 'training_summary.json'):
+            path = checkpoint.parent / filename
+            if path.exists():
+                raise ValueError(f'Paused artifact is now present; use a completed run report: {path}')
+            missing.append(path.relative_to(repo).as_posix())
+        policies[algorithm.upper()] = {'status': 'training_paused_during_' + entry['interrupted_during'].replace(' ', '_'),
+            'recorded_timesteps': entry['recorded_timesteps'], 'optimizer_updates': entry['optimizer_updates'],
+            'missing_final_artifacts': missing, 'checkpoint': str(checkpoint), 'checkpoint_record': record,
+            'periodic_validation': measured, 'final_test_status': 'not_supplied', 'hardware_qualified': False}
+        if algorithm in final_receipts:
+            receipt = consume(final_receipts[algorithm])
+            indexed = validate_cases(receipt)
+            if len(indexed) != 131 or any(row['env_kwargs']['sensor_mode'] != 'mpu6050' for row in indexed.values()):
+                raise ValueError('Explicit final test requires all 131 MPU cases')
+            expected_cases = [{k: v for k, v in case.items() if k != 'sensor_distribution_shift'}
+                for case in baseline['ordered_resolved_cases'] if case['env_kwargs']['sensor_mode'] == 'mpu6050']
+            actual_cases = [{k: v for k, v in case.items() if k != 'sensor_distribution_shift'}
+                for case in receipt['ordered_resolved_cases']]
+            if receipt['steps'] != 960 or actual_cases != expected_cases:
+                raise ValueError('Final test horizon or ordered declarations differ from the frozen suite')
+            if receipt['controller'] != algorithm or receipt['checkpoint_sha256'] != record['checkpoint_sha256'] or receipt['checkpoint_envelope_sha256'] != record['envelope_sha256'] or receipt['source_hashes'] != sources:
+                raise ValueError('Final test source or exact paused checkpoint mismatch')
+            if receipt['wrapper_sha256'] != digest(root / 'final_matrix.py'):
+                raise ValueError('Final test wrapper content hash mismatch')
+            paths[root / 'final_matrix.py'] = receipt['wrapper_sha256']
+            declared = record['envelope']['experiment']['sensor']
+            for case in receipt['ordered_resolved_cases']:
+                shift = declared['mode'] != case['env_kwargs']['sensor_mode'] or declared['profile'] != case['resolved_sensor_profile']
+                if case['sensor_distribution_shift'] != shift:
+                    raise ValueError('Final test distribution-shift metadata mismatch')
+            common = set(indexed) & set(indexed_baseline)
+            if len(common) != 131 or any(normalize_environment(indexed[i]) != normalize_environment(indexed_baseline[i]) or indexed[i]['seed'] != indexed_baseline[i]['seed'] for i in common):
+                raise ValueError('Final test cases differ from the untouched baseline suite')
+            final_tests[algorithm.upper()] = {'summary': summarize(list(indexed.values())),
+                'lineage': lineage(receipt, sources), 'receipt_checkpoint_path': receipt['checkpoint'],
+                'verified_checkpoint_path': str(checkpoint), 'checkpoint_selection': False}
+            policies[algorithm.upper()]['final_test_status'] = 'completed_explicit_receipt'
+    summary = {'mode': 'paused', 'generated_utc': datetime.now(timezone.utc).isoformat(),
+        'paused_at_utc': state['paused_at_utc'], 'hardware_qualified': False, 'acceptance_version': VERSION,
+        'criteria': CRITERIA, 'source_fingerprint': state['source_fingerprint'], 'baseline': baseline_summary,
+        'policies': policies, 'untouched_final_tests': final_tests, 'checkpoint_selection': False,
+        'input_sha256': {str(p): value for p, value in paths.items()},
+        'limitations': ['Periodic validation is completed; final training validation and summaries are unfinished.',
+            'Periodic receipts record training timesteps but do not bind exact checkpoint bytes or source hashes.',
+            'Untouched tests appear only when explicitly supplied and never qualify hardware or select checkpoints.',
+            'One training seed per algorithm; simulation uses unmeasured actuator, mass and sensor approximations.']}
+    lines = ['# Paused simulation results', '',
+        'Training was paused during final validation. Completed periodic validations are reported below. '
+        'The final training checkpoints and summaries are absent. Hardware walking remains unqualified.', '',
+        f'Frozen source fingerprint: `{state["source_fingerprint"]}`. All inventory, checkpoint, sidecar and replay bytes were verified.', '',
+        f'Baseline: {baseline_summary["strict_passes"]}/{baseline_summary["total"]} strict passes; {baseline_summary["failed_flags"]["falls"]} falls.', '',
+        '| Candidate | Recorded transitions | Saved optimizer updates | Periodic passes / cases | Falls | Eligible | Untouched final test |',
+        '| --- | ---: | ---: | ---: | ---: | --- | --- |']
+    for name, policy in policies.items():
+        measured = policy['periodic_validation']
+        final = final_tests.get(name)
+        test = f'{final["summary"]["strict_passes"]}/{final["summary"]["total"]} strict passes' if final else 'Not supplied'
+        lines.append(f'| {name} | {policy["recorded_timesteps"]} | {policy["optimizer_updates"]} | {measured["strict_passes"]}/{measured["total"]} | {measured["failed_flags"]["falls"]} | {measured["eligible"]} | {test} |')
+    lines += ['', 'Periodic validation uses development validation cases. Its producer does not record checkpoint or source hashes, '
+        'so these receipts cannot establish the performance of exact saved checkpoint bytes. '
+        'The handoff hashes verify the preserved receipts and candidate artifacts separately.', '',
+        'Untouched final results, when explicitly supplied, are verified against the exact handoff checkpoint, '
+        'frozen sources, final-test wrapper and all 131 MPU baseline cases. They are reported separately and do not select a checkpoint.', '',
+        'Missing final training artifacts:', '']
+    lines += [f'- `{path}`' for policy in policies.values() for path in policy['missing_final_artifacts']]
+    lines += ['', 'The saved PPO checkpoint precedes the final rollout optimizer update. '
+        'Recorded transitions and saved optimizer updates do not represent completed training. '
+        'Resume reseeds environments; it does not restore uninterrupted live rollout or RNG state.', '',
+        'Neither these periodic validations nor an untouched simulation test establishes calibrated actuators, sensors, '
+        'whole-robot contact equivalence or physical walking. See `result_summary.json` for input hashes and receipt lineage.']
+    if any(digest(path) != expected for path, expected in paths.items()):
+        raise RuntimeError('Reporting inputs changed while reading')
+    if any((evidence_path(repo, entry['path']).parent / name).exists() for entry in state['checkpoints'].values() for name in ('final.zip', 'training_summary.json')):
+        raise RuntimeError('Paused final artifacts changed while reading')
+    output_dir.mkdir(parents=True, exist_ok=False)
+    (output_dir / 'result_summary.json').write_text(json.dumps(summary, indent=2, allow_nan=False) + '\n')
+    (output_dir / 'RESULTS.md').write_text('\n'.join(lines) + '\n')
+    return summary
+
+
+def generate(root=HERE, *, mode='complete', output_dir=None, final_receipts=None):
+    if mode == 'paused':
+        return generate_paused(root, output_dir, final_receipts)
+    if mode != 'complete' or output_dir is not None or final_receipts:
+        raise ValueError('Paused report options require mode=paused')
     runs = root / 'runs'
     paths = [runs / n for n in RECEIPTS.values()]
     paths += [runs / f'{algo}_51200' / 'training_summary.json' for algo in ('ppo', 'sac')]
@@ -217,7 +457,9 @@ def generate(root=HERE):
               '| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |']
     for name, data in aggregates.items():
         f = data['failed_flags']
-        lines.append(f'| {name} | {data["strict_passes"]}/{data["total"]} | {f["falls"]} | {f["nonfoot_contact"]} | {f["sensor_fault"]} | {f["velocity"]} | {f["path"]} | {data["velocity_rmse_median_m_s"]:.6f} |')
+        median = data['velocity_rmse_median_m_s']
+        metric = f'{median:.6f}' if median is not None else 'Unavailable'
+        lines.append(f'| {name} | {data["strict_passes"]}/{data["total"]} | {f["falls"]} | {f["nonfoot_contact"]} | {f["sensor_fault"]} | {f["velocity"]} | {f["path"]} | {metric} |')
     lines += ['', 'Failure columns overlap: one case can fail several checks. Execution errors have unknown metric flags, recorded separately in the JSON summary. Strict passes require every check, including complete 19.2-second duration, finite metrics, progress, yaw, tilt, tracking and saturation. Counts do not turn a failed controller into a qualified one.', '',
               '![Common MPU comparison](runs/result_comparison.png)', '',
               'The left panel counts strict case passes. The right panel shows median velocity RMSE; its dashed line is the fixed per-case 0.015 m/s threshold. A median below that line would not establish that every case passes.', '',
@@ -245,8 +487,35 @@ def generate(root=HERE):
 
 
 def main():
-    argparse.ArgumentParser(description=__doc__).parse_args()
-    print(json.dumps(generate(), indent=2))
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--mode', choices=['complete', 'paused'], default='complete')
+    parser.add_argument('--output-dir', type=Path, help='Fresh directory for a paused report')
+    parser.add_argument('--ppo-final', type=Path, help='Explicit completed 131-case PPO final_matrix receipt')
+    parser.add_argument('--sac-final', type=Path, help='Explicit completed 131-case SAC final_matrix receipt')
+    args = parser.parse_args()
+    finals = {algo: path for algo, path in (('ppo', args.ppo_final), ('sac', args.sac_final)) if path}
+    if args.mode == 'paused' and args.output_dir is None:
+        parser.error('--mode paused requires --output-dir')
+    if args.mode == 'complete' and (args.output_dir or finals):
+        parser.error('--output-dir and explicit final receipts require --mode paused')
+    result = generate(mode=args.mode, output_dir=args.output_dir, final_receipts=finals)
+    if args.mode == 'paused':
+        def counts(measured):
+            return {key: measured[key] for key in ('strict_passes', 'total', 'execution_errors')}
+        policies = {}
+        for name, policy in result['policies'].items():
+            policies[name] = {'status': policy['status'],
+                              'periodic_validation': counts(policy['periodic_validation']),
+                              'final_test_status': policy['final_test_status']}
+            if name in result['untouched_final_tests']:
+                policies[name]['untouched_final_test'] = counts(result['untouched_final_tests'][name]['summary'])
+        output = args.output_dir.resolve()
+        result = {'mode': 'paused', 'status': 'report_written',
+                  'output_files': {name: str(output / name) for name in ('result_summary.json', 'RESULTS.md')},
+                  'hardware_qualified': result['hardware_qualified'],
+                  'checkpoint_selection': result['checkpoint_selection'],
+                  'baseline': counts(result['baseline']), 'policies': policies}
+    print(json.dumps(result, indent=2))
 
 
 if __name__ == '__main__':

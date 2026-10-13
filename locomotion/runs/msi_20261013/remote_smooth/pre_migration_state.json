@@ -1,0 +1,295 @@
+{
+  "info": {
+    "fell": false,
+    "sensor_fault": false,
+    "position": [
+      0.21607211232185364,
+      -0.010227592661976814,
+      0.10969820618629456
+    ],
+    "velocity": [
+      0.00011438553585525262,
+      0.00014503578011155693,
+      -3.454177656764161e-05
+    ],
+    "rpy": [
+      -0.00021590205851444014,
+      -0.00015970288355325563,
+      0.2526037932768138
+    ],
+    "body_velocity": [
+      0.00014699819412660205,
+      0.00011185260688770986,
+      -3.4541104641445825e-05
+    ],
+    "body_angular_velocity": [
+      0.002672039644100837,
+      -0.0028162471521024344,
+      -0.002540137547615755
+    ],
+    "com_velocity": [
+      4.451491115124975e-05,
+      3.720879585060841e-05,
+      -3.766068295503878e-05
+    ],
+    "nonfoot_ground_contact": false,
+    "body_ground_contact": false,
+    "time_s": 3043.98,
+    "torque_saturation_fraction": 4.3254773903463506e-05,
+    "tracking_error_rad": 0.03807304657914875,
+    "phone_mass_kg": 0.0,
+    "command": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "terrain": "flat",
+    "sensor": {
+      "mode": "mpu6050",
+      "open_loop": false,
+      "frame": "body",
+      "units": "unit down vector; rad/s",
+      "measurement_time_s": 3044.080000161411,
+      "arrival_time_s": 3044.0850001614112,
+      "valid": true,
+      "ready": true,
+      "stale": false,
+      "sample_age_s": 0.020000000004074536,
+      "received_age_s": 0.015000000003965397,
+      "generated_samples": 152206,
+      "dropped_samples": 0,
+      "profile": {
+        "sample_rate_hz": 50.0,
+        "transport_delay_s": 0.005,
+        "gravity_noise_std": 0.004,
+        "gyro_noise_std_rad_s": 0.012,
+        "dropout_probability": 0.0,
+        "gyro_bias_rad_s": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "max_age_s": 0.1,
+        "R_body_from_sensor_at_pan_zero": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "pan_locked": true
+      }
+    },
+    "ik_rejections": 0,
+    "temperature_c_proxy": [
+      25.438938381606395,
+      25.329726972350702,
+      32.814968883690895,
+      25.402782617398827,
+      33.20194012701066,
+      25.016314895429733,
+      25.47939096283465,
+      33.27252471958105,
+      25.015038538687747,
+      25.436054343834407,
+      25.234181842364954,
+      32.5528822040015
+    ],
+    "randomization": {
+      "mass_scales": {
+        "-1": 1.0,
+        "0": 1.0,
+        "1": 1.0,
+        "2": 1.0,
+        "3": 1.0,
+        "4": 1.0,
+        "5": 1.0,
+        "6": 1.0,
+        "7": 1.0,
+        "8": 1.0,
+        "9": 1.0,
+        "10": 1.0,
+        "11": 1.0,
+        "12": 1.0,
+        "13": 1.0,
+        "14": 1.0,
+        "15": 1.0,
+        "16": 1.0,
+        "17": 1.0,
+        "18": 1.0,
+        "19": 1.0
+      },
+      "body_com_shift_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "phone_shift_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "friction": 0.8,
+      "scenario": {},
+      "torque_cap_nm": 0.588,
+      "motor_strength": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "voltage_v": 12.0,
+      "delay_s": 0.02,
+      "kp": [
+        3.0,
+        8.0,
+        6.0,
+        3.0,
+        8.0,
+        6.0,
+        3.0,
+        8.0,
+        6.0,
+        3.0,
+        8.0,
+        6.0
+      ],
+      "backlash_deadband_rad": [
+        0.004363323129985824,
+        0.004363323129985824,
+        0.004363323129985824,
+        0.004363323129985824,
+        0.004363323129985824,
+        0.004363323129985824,
+        0.004363323129985824,
+        0.004363323129985824,
+        0.004363323129985824,
+        0.004363323129985824,
+        0.004363323129985824,
+        0.004363323129985824
+      ],
+      "thermal_model": "estimated first-order proxy, not a identified winding model"
+    }
+  },
+  "fell": false,
+  "controller": "fast",
+  "error": null,
+  "seed": 42,
+  "policy_status": "preview_unqualified",
+  "sensor": {
+    "mode": "mpu6050",
+    "open_loop": false,
+    "frame": "body",
+    "units": "unit down vector; rad/s",
+    "measurement_time_s": 3044.080000161411,
+    "arrival_time_s": 3044.0850001614112,
+    "valid": true,
+    "ready": true,
+    "stale": false,
+    "sample_age_s": 0.020000000004074536,
+    "received_age_s": 0.015000000003965397,
+    "generated_samples": 152206,
+    "dropped_samples": 0,
+    "profile": {
+      "sample_rate_hz": 50.0,
+      "transport_delay_s": 0.005,
+      "gravity_noise_std": 0.004,
+      "gyro_noise_std_rad_s": 0.012,
+      "dropout_probability": 0.0,
+      "gyro_bias_rad_s": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "max_age_s": 0.1,
+      "R_body_from_sensor_at_pan_zero": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "pan_locked": true
+    }
+  },
+  "status": "simulation only; walking and real transfer are unqualified",
+  "interactive": {
+    "version": 1,
+    "profile": "Faster crawl preview",
+    "max_translation_m_s": 0.025,
+    "default_translation_m_s": 0.025,
+    "motor_target_rate_rad_s": 1.8,
+    "cycle_s": 1.2,
+    "real_time_factor": 0.9888588877070821,
+    "effective_config_sha256": "83d7b405d6b3b28f3db972eb7a7322d398258a9bfe771d9d1df1bee7e764497c",
+    "profile_sha256": "5ae2d0d13a8f142bd650eacd1bed7ade32ab14f2853d1e54f70a76913355bcaf",
+    "status": "Experimental simulation settings; loaded motor response is unmeasured"
+  },
+  "setup": {
+    "terrain": "flat",
+    "payload": 0.0,
+    "sensor_mode": "mpu6050",
+    "seed": 42,
+    "randomize": false,
+    "sensor_profile": {
+      "sample_rate_hz": 50.0,
+      "transport_delay_s": 0.005,
+      "gravity_noise_std": 0.004,
+      "gyro_noise_std_rad_s": 0.012,
+      "dropout_probability": 0.0,
+      "gyro_bias_rad_s": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "max_age_s": 0.1,
+      "R_body_from_sensor_at_pan_zero": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "pan_locked": true
+    },
+    "checkpoint": ""
+  }
+}

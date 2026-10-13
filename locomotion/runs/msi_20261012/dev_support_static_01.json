@@ -1,0 +1,3473 @@
+{
+  "schema": 1,
+  "suite_role": "static_support_transfer_audit_no_physics",
+  "experiment_hashes": {
+    "locomotion/scripts/dev_support_transfer_probe.py": "33be584d7c748d4abc4f0a5ccf6b193b3c58c33eda479c9008c729cdcdc08b03",
+    "locomotion/scripts/experimental_support_transfer.py": "07ddb9a22d81ddf2901625f9b7d78a5ca4383029d54591321235db94e3c7c09b",
+    "locomotion/scripts/audit_support_transfer.py": "ecd51a70df5a4e70c16b84d4e39b30505713c07807f0d4aafaef8a06060569c2",
+    "locomotion/scripts/test_support_transfer.py": "55aa22aa93b4907a988822618cd00fc2f02e131d93b6910e85146b02a2ab1cc6",
+    "locomotion/scripts/dev_tracking_probe.py": "54915f674b74392cf24102b16c21562dbecff041167845a39644b171dbfbbc0e",
+    "locomotion/scripts/experimental_recovery.py": "de08ca7bb29aff0fb12d33d4c23b74f9d28f97726065415a6092d19a4b63b89c",
+    "locomotion/scripts/dev_recovery_probe.py": "39556a2584c7912354aba2e2693ecacca5adead101ef2b5c1bb2664510566907",
+    "locomotion/scripts/experimental_clearance_recovery.py": "c659fad8ce96064adfa3a6b79d1068a9a582d51646054f645bcac0ec6d79ad34",
+    "locomotion/scripts/dev_clearance_probe.py": "8b3053abcf8de175b4a1b5d95188820441e1c3977a7538a5fe21316347053a1f",
+    "locomotion/scripts/experimental_stride_gain.py": "afff4bfd2ccaac61ad08542955d4d142102dab8ab8014c9b022e18a9b1f1a744",
+    "locomotion/scripts/dev_stride_factorial_probe.py": "aebf71749d5cbf02da6706da396fc7e071daaa585c7d5a1b3193cc1faf5de4a3"
+  },
+  "source_hashes": {
+    "design/hexapod_phone_quad_r5_20260912/cad/phone.py": "4d4832a1b2b5c8595492604a8860c00fbf0dc1d9db898edea3fceba11887960e",
+    "design/main_hub_20260915/output/Hub_Check.json": "a21f983ac6203435cafcd8ad2a68776918159745a91d9388d3da69f70dd3b291",
+    "design/main_hub_20260915/output/Main_Hub_4Leg.stl": "4fc9eb811ccb80b4bc59540ee7b2dd50e20a358c763ed6b26c11e60148ccbc95",
+    "design/single_leg_r7_wide_joints_20260914/output/Single_Leg_R7.urdf": "1ce3ee65a598bcd7e5421ce744238739672ec68c9274d7665e320cc990ae9741",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/bench_mounting_plate.stl": "bc338c44b5afef74c1fdfa80c149e9714a0d35753090a1fb97dd23d9f514007f",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/case_cap_hip.stl": "ed8d6e99e78c81ae20997bf58e9c71cb7a92354fb0fd5078bf58a9d9f013756b",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/case_cap_knee.stl": "71cca48e4e5861fb0f6843d825272f75e45695f4cdc4ebac19945351d368a833",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/case_cap_yaw.stl": "f71b362e25c392f9a408bcf9ed16037f89acc69918d8b35ad1004b2cd0fd81ea",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/coxa_lower_auxiliary_arm.stl": "a29e5f9255e8c614d24b00167ee78dcfd2dd3c3660c4ae98eb98ef8a6d07d400",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/coxa_upper_and_hip_saddle.stl": "0723deb4796018fb0baf54c604d466919796aba66980d802d7aefd0d9922c772",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/femur_auxiliary_cheek.stl": "7ae155f2577f2b07167f9dc67678a7fb3708889da59464080377161c9aeb7abe",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/femur_main_and_knee_saddle.stl": "d82a517ed306f58f86d34a43ca3f8e178958aac4e3ea0b0b3e2af9d7bd9fe53c",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/horn_hip_auxiliary.stl": "5632d3f2d48f2fd1064253d69806850a878d250db33883990adeb9e691d19c6b",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/horn_hip_main.stl": "7dccbbe4867e2704c0c908d72440e037b3ea5660937d4603f6ff43fd15c0b877",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/horn_knee_auxiliary.stl": "4ee21f15b64db7e9e2a94ce5b7c3be692ddc6111a45f05d3b533417028f9efb1",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/horn_knee_main.stl": "a0e74c5442a42bcabe99aa095af238542416c8b10a994381de65b6b737da1c87",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/horn_yaw_auxiliary.stl": "cf1f8974b1d5474a58d6e44e796c70074dbf65fbc4035544a5e1445baa6fa1a0",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/horn_yaw_main.stl": "de5620ae4dc00941fff84d24af6f3dbec8e1b75d7e949a2622f45d5aae3e037a",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/servo_hip.stl": "a68811ee35c63aa983272be304ce6b6fefe1145c6e27ada675e4be1c399d0cb9",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/servo_knee.stl": "e3f48e23437876a4092f3e7c7ed405684431a36beb2947e83ea32ea5ae27e69c",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/servo_yaw.stl": "28d7a36bf579fe4c0c8fe77ac4ec9488df39343c2570a31a68fa483ea7932a41",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/tibia_auxiliary_cheek.stl": "c8217050117a3961c13b1caeda2ec5852e81a008665e8b5cccfeef0350bf8c33",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/tibia_curved_main_and_foot.stl": "85efadbc8334a1d6d3a85d3f89fbdf2de7afa9dd0e8cc784ee2332166618fda1",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/yaw_auxiliary_spacer_1.stl": "eb965e76846d0ff836c5f8f9f38cfaa852214f0eb57126a74bf64c44bc953259",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/yaw_auxiliary_spacer_2.stl": "b2b94471a874f1bdff7271c01ca7c99f44d3834f028423210104300aedccf15f",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/yaw_auxiliary_spacer_3.stl": "9fb8a6dd63050db95489619c0c91073daba18a48a0a5f80c1c50c6cb2569d06b",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/yaw_auxiliary_spacer_4.stl": "eafb832021c715a40cf0a142441a31ad9600378d9e1518d45a804c5b773b7d07",
+    "design/single_leg_r7_wide_joints_20260914/output/assembly_mesh/yaw_case_saddle.stl": "9e991cfbfa70700a8d7e64855a403a1f0d6ac972d300bdc9dc88c200122451cb",
+    "design/single_leg_r7_wide_joints_20260914/output/manifest.json": "e3fff543f2d2772b04354bfcd5ac6bee7a74c3d0dfb167cdc2e043ddab16e15c",
+    "docs/mist/MIST_AVAILABLE_PARTS.md": "5e5ea0afda8ed3e3d402c3b8b0b4822a328450df931af7f24ca3a2b8bae79816",
+    "docs/mist/MIST_MATERIAL_DIMENSIONS_MASS.md": "e7db5636495ca0f072f07496067ff870dbfbca8bef36b53805559534059cc8a3",
+    "locomotion/acceptance.py": "f3dc6bd47c7c6353c0c2ae6fafb4785d950f71221ba6c60b298adbcf93112705",
+    "locomotion/config.json": "c57df57f4befdba83cd479d35a9fcd7c067b8c2df5ca6d785c77ba054015677b",
+    "locomotion/design_profile.py": "fa14b75a7f08d7f692f22bb05ca1d3bde922af76ef9a6854a7a68e314caa5548",
+    "locomotion/evaluate.py": "3336c9cd81e6fb08535d1f027746441debf702d2a755fe09977bc16991f63508",
+    "locomotion/gait.py": "0486b9f5b19ef3b72af264362b8f3f3cbf67079208acc4ebe7d85d218ed3d267",
+    "locomotion/hardware/__init__.py": "d0147b1c4400b914e926026c8218b369f34b35e2dbecee4e02f9c28f1ab1ee54",
+    "locomotion/hardware/sensors.py": "0a869ff5e358c7ad94fb7d45e8237863373c3eb35e10518213a791e3d4bb567b",
+    "locomotion/kinematics.py": "5e181587ccc4be52e16d2eae6a968411b71b7ba2733e81ecc5a2058f5b9c1ae6",
+    "locomotion/machine_profiles.json": "1555805d0c38c9f9c8e9d96842d6332b686f4c8f22c88e576b3e64d1ddb28de1",
+    "locomotion/mist_env.py": "b36dc57892c362e37ad2419aa2604116b1f6cf29d528b61b25475194965f2ca1",
+    "locomotion/model.py": "9012295162e325a0f647bd963fdf23271549a5be430688674e870b656e7900bd",
+    "locomotion/profiles/r7_direct.json": "73be695ac7bf9d045ae87585d1d93a5faf669f1e30aa00074ba981f81a1bbe66",
+    "locomotion/provenance.py": "f971c6ea21397aee8b366f38d53b225a92d06299eaa594372d6a8dc1a6985dbb",
+    "locomotion/requirements.lock.txt": "e4379bbccd76bf07764e41b392787eec104eec4d57d0b54be34ce4b6f0865692",
+    "locomotion/scripts/benchmark.py": "2a30bfad9e3e51b67e98bb47e8c24e3991d7527f5fe28e33ae9f017c0b5a6e8d",
+    "locomotion/scripts/run_job.py": "63de81b36adf5f6bb99c3ddb2d198a71f42301b6674097f8c6995e304b8f96f4",
+    "locomotion/scripts/setup_cpu.sh": "aee103801154f732b1cdd1539ffdf18693ecd6a447564775f350ae519e9c556e",
+    "locomotion/sensitivity.py": "3a685edcfc3a2c2a8fba6591339f137d95bdf4e11835876229b6a3e1aff8b6cc",
+    "locomotion/sensor_sim.py": "e25be7706952042f20717b45f059cbb6374882208190ffea722b3fc33c0c837e",
+    "locomotion/servo.py": "29984b9e239620fe63c0faf4769d0cefe11073282ba6d28e2a7326988176b833",
+    "locomotion/sim_remote.py": "4605cd9b94b965741f5d9828a7d6f6c4d087065dab2a244ef7969748275323c9",
+    "locomotion/train.py": "4f65ce2b7ea4b9690761de430b3be55aef9061becc0579712a18771094d86ba4",
+    "locomotion/training_queue.json": "ed9574bf60169eff4ed20ab2d684a308014327d90759ff7add0fed718137d9b6",
+    "locomotion/validation_cases.json": "b473c3149711b0ea6dd018e7731ab2495a69e8f3aeb9753f69cc13455e8fee8e"
+  },
+  "status": "complete",
+  "results": [
+    {
+      "command": "forward",
+      "payload_kg": 0.0,
+      "nominal_gate_passed": true,
+      "gates": {
+        "independent_triangle_margin": true,
+        "independent_raw_load_nonnegative": true,
+        "raw_moment_balance": true,
+        "clipped_moment_balance": true,
+        "IK_inside_original_limits": true,
+        "periodic_reference_C2": true
+      },
+      "independent_phase_samples": 2048,
+      "solver": {
+        "iterations": 4,
+        "active_constraints": 4,
+        "primal_violation_fraction": 1.8344700758454735e-16,
+        "stationarity": 5.934142066621462e-14,
+        "complementarity": 3.30975628442893e-14,
+        "objective": 0.32397502235591347,
+        "refinements": 0,
+        "dense_validation_phases": 4096,
+        "dense_primal_violation_fraction": 0.0,
+        "constraint_count": 1028,
+        "load_margin_n": 0.1,
+        "coefficient_bound_mm": 15.0,
+        "objective_definition": "mean phase-derivative squared plus .1 mean position squared, divided by cycle_s squared; coefficients in mm",
+        "frame": "nominal zero-attitude body frame; centred COM"
+      },
+      "coefficients_mm": [
+        [
+          -0.17711159225430662,
+          0.07901287019839331,
+          0.17790781863858207,
+          0.1124373878128122,
+          0.1117007590890508,
+          0.08337331353825106,
+          0.06691424949475094,
+          0.04538624853013151,
+          0.025976457722570068,
+          0.005825339066787425,
+          -0.014391106774708173,
+          -0.03368367885237489,
+          -0.05546098454878462,
+          -0.07133700765049517,
+          -0.10101131717408707,
+          -0.098368387988782,
+          -0.17711159225439632,
+          0.07901287019840886,
+          0.17790781863861016,
+          0.11243738781284451,
+          0.11170075908910387,
+          0.08337331353830812,
+          0.06691424949480548,
+          0.04538624853017012,
+          0.02597645772261438,
+          0.0058253390667957206,
+          -0.014391106774679543,
+          -0.033683678852331006,
+          -0.055460984548698467,
+          -0.07133700765043116,
+          -0.10101131717402245,
+          -0.0983683879887256
+        ],
+        [
+          -0.19616347994553962,
+          0.07080544774474617,
+          0.18572828315231504,
+          0.1417040474719755,
+          0.16028824679102627,
+          0.1521829002195716,
+          0.15559311043669766,
+          0.15403719866185384,
+          0.15471040482529475,
+          0.15428458058126182,
+          0.15472700543061535,
+          0.15394984462908212,
+          0.15573370816193233,
+          0.15175781782166098,
+          0.16116046996616262,
+          0.1393059762333877,
+          0.19616347994553962,
+          -0.07080544774480302,
+          -0.1857282831524003,
+          -0.14170404747203236,
+          -0.16028824679111153,
+          -0.15218290021964265,
+          -0.1555931104367687,
+          -0.15403719866191068,
+          -0.1547104048253658,
+          -0.15428458058129024,
+          -0.15472700543065798,
+          -0.15394984462911054,
+          -0.15573370816200338,
+          -0.1517578178217036,
+          -0.16116046996619104,
+          -0.13930597623343033
+        ]
+      ],
+      "minimum_three_stance_load_n": 0.10138298963126324,
+      "minimum_raw_scheduled_force_n": 0.0,
+      "maximum_raw_moment_nm": 1.3322676295501878e-15,
+      "maximum_clipped_moment_nm": 1.5543122344752192e-15,
+      "minimum_geometric_joint_limit_margin_rad": 0.410912104935663,
+      "maximum_C2_two_sided_difference": [
+        1.2220537421087953e-12,
+        2.1431532438477563e-11,
+        1.5975458803052511e-10
+      ],
+      "peak_shift_m": 0.00022244455063070187,
+      "rms_shift_velocity_m_s": 0.0008047761544883462,
+      "peak_shift_velocity_m_s": 0.002955968930556165,
+      "peak_shift_acceleration_m_s2": 0.046397986454494416,
+      "attitude_sensitivity_not_a_gate": [
+        {
+          "attitude_rad": [
+            0.0,
+            0.0
+          ],
+          "minimum_raw_force_n": {
+            "planned": 0.0,
+            "reference": 0.0
+          }
+        },
+        {
+          "attitude_rad": [
+            0.05,
+            0.0
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.03312893469197853,
+            "reference": 0.0
+          }
+        },
+        {
+          "attitude_rad": [
+            -0.05,
+            0.0
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.0331289346919883,
+            "reference": 0.0
+          }
+        },
+        {
+          "attitude_rad": [
+            0.0,
+            0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.04047588314340622,
+            "reference": 0.0
+          }
+        },
+        {
+          "attitude_rad": [
+            0.0,
+            -0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.016258740089686974,
+            "reference": 0.0
+          }
+        },
+        {
+          "attitude_rad": [
+            0.05,
+            0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.2560353429555864,
+            "reference": 0.0
+          }
+        },
+        {
+          "attitude_rad": [
+            0.05,
+            -0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.23181819990187247,
+            "reference": -0.16465325352787286
+          }
+        },
+        {
+          "attitude_rad": [
+            -0.05,
+            0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.2560353429555944,
+            "reference": 0.0
+          }
+        },
+        {
+          "attitude_rad": [
+            -0.05,
+            -0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.23181819990186892,
+            "reference": -0.16465325352787286
+          }
+        }
+      ],
+      "ramp_sensitivity_not_a_gate": [
+        {
+          "ramp": 0.0,
+          "minimum_three_stance_load_n": 0.0
+        },
+        {
+          "ramp": 0.25,
+          "minimum_three_stance_load_n": 0.027255387818899024
+        },
+        {
+          "ramp": 0.5,
+          "minimum_three_stance_load_n": 0.054019879541794324
+        },
+        {
+          "ramp": 0.75,
+          "minimum_three_stance_load_n": 0.08030532080033836
+        },
+        {
+          "ramp": 1.0,
+          "minimum_three_stance_load_n": 0.10612317914392655
+        }
+      ],
+      "50hz_demand": {
+        "planned": {
+          "control_hz": 50,
+          "window_s": [
+            0.0,
+            9.6
+          ],
+          "max_geometric_increment_rad": 0.0216366241344208,
+          "max_biased_increment_rad": 0.0339461656693294,
+          "max_geometric_rate_rad_s": 1.08183120672104,
+          "max_biased_rate_rad_s": 1.69730828346647,
+          "biased_increment_above_nominal_slew_fraction": 0.0,
+          "nominal_command_slew_rad_s": 1.8,
+          "max_geometric_rate_by_joint_rad_s": [
+            0.7785689318504412,
+            0.7938867735832911,
+            1.08183120672104
+          ],
+          "max_biased_rate_by_joint_rad_s": [
+            0.7785689318504412,
+            1.3934234997050015,
+            1.69730828346647
+          ]
+        },
+        "reference": {
+          "control_hz": 50,
+          "window_s": [
+            0.0,
+            9.6
+          ],
+          "max_geometric_increment_rad": 0.02226202709993541,
+          "max_biased_increment_rad": 0.033111138372860616,
+          "max_geometric_rate_rad_s": 1.1131013549967705,
+          "max_biased_rate_rad_s": 1.6555569186430308,
+          "biased_increment_above_nominal_slew_fraction": 0.0,
+          "nominal_command_slew_rad_s": 1.8,
+          "max_geometric_rate_by_joint_rad_s": [
+            0.7565259655280924,
+            0.877589899046044,
+            1.1131013549967705
+          ],
+          "max_biased_rate_by_joint_rad_s": [
+            0.7565259655280924,
+            1.4310393251966618,
+            1.6555569186430308
+          ]
+        }
+      },
+      "limitations": [
+        "Nominal centred COM, no measured load/velocity input.",
+        "Existing attitude compensation can invalidate nominal support feasibility.",
+        "Inherited linear startup ramp has a derivative corner at 1.5 s; C2 applies to the periodic reference.",
+        "Foot recovery remains inherited C1; the full joint path is not claimed C2.",
+        "Servo saturation and actual contact require the paired physics receipt."
+      ]
+    },
+    {
+      "command": "backward",
+      "payload_kg": 0.0,
+      "nominal_gate_passed": true,
+      "gates": {
+        "independent_triangle_margin": true,
+        "independent_raw_load_nonnegative": true,
+        "raw_moment_balance": true,
+        "clipped_moment_balance": true,
+        "IK_inside_original_limits": true,
+        "periodic_reference_C2": true
+      },
+      "independent_phase_samples": 2048,
+      "solver": {
+        "iterations": 8,
+        "active_constraints": 8,
+        "primal_violation_fraction": 8.968520370800093e-16,
+        "stationarity": 3.932132397466148e-13,
+        "complementarity": 5.70087711316624e-13,
+        "objective": 71.75719977371995,
+        "refinements": 0,
+        "dense_validation_phases": 4096,
+        "dense_primal_violation_fraction": 0.0,
+        "constraint_count": 1028,
+        "load_margin_n": 0.1,
+        "coefficient_bound_mm": 15.0,
+        "objective_definition": "mean phase-derivative squared plus .1 mean position squared, divided by cycle_s squared; coefficients in mm",
+        "frame": "nominal zero-attitude body frame; centred COM"
+      },
+      "coefficients_mm": [
+        [
+          -0.791273957446208,
+          0.2695146698092117,
+          0.7435256693258907,
+          0.5922964632853223,
+          0.6985813961707095,
+          0.6695026359531653,
+          0.7581802730334175,
+          0.6568599008367073,
+          0.9936963720480776,
+          -0.43965482532269107,
+          -1.0378859373275304,
+          -0.7528169269746741,
+          -0.8235531758230081,
+          -0.7246821251669076,
+          -0.7405255771934662,
+          -0.6093937172517485,
+          -0.7912739574458101,
+          0.2695146698096096,
+          0.7435256693262886,
+          0.5922964632856065,
+          0.6985813961709937,
+          0.6695026359535632,
+          0.7581802730334744,
+          0.656859900836821,
+          0.9936963720480207,
+          -0.43965482532269107,
+          -1.0378859373277578,
+          -0.7528169269750151,
+          -0.8235531758232355,
+          -0.7246821251673623,
+          -0.7405255771936936,
+          -0.6093937172522033
+        ],
+        [
+          -1.6077514856044852,
+          0.5502635823462844,
+          2.100138028674543,
+          3.0076779762541426,
+          4.174168088967496,
+          5.2178435275512385,
+          6.344982079813904,
+          7.366036738459137,
+          8.63232892890094,
+          8.550795144638045,
+          8.29049458205425,
+          6.853866199089008,
+          5.898038002415304,
+          4.719028540020258,
+          3.6798105771246803,
+          2.479967851907273,
+          1.6077514856046804,
+          -0.55026358234605,
+          -2.1001380286742006,
+          -3.007677976253851,
+          -4.1741680889672,
+          -5.217843527550989,
+          -6.3449820798135725,
+          -7.366036738458865,
+          -8.632328928900915,
+          -8.550795144637966,
+          -8.290494582054063,
+          -6.853866199088687,
+          -5.898038002414896,
+          -4.719028540020098,
+          -3.6798105771243916,
+          -2.4799678519070616
+        ]
+      ],
+      "minimum_three_stance_load_n": 0.10088142741162542,
+      "minimum_raw_scheduled_force_n": 0.0,
+      "maximum_raw_moment_nm": 1.3322676295501878e-15,
+      "maximum_clipped_moment_nm": 1.5543122344752192e-15,
+      "minimum_geometric_joint_limit_margin_rad": 0.42561360424535666,
+      "maximum_C2_two_sided_difference": [
+        1.1865247445588117e-11,
+        1.1329202073001587e-10,
+        8.491161801460478e-10
+      ],
+      "peak_shift_m": 0.008564431263980222,
+      "rms_shift_velocity_m_s": 0.011967115321571404,
+      "peak_shift_velocity_m_s": 0.021332488231613555,
+      "peak_shift_acceleration_m_s2": 0.22173785757610315,
+      "attitude_sensitivity_not_a_gate": [
+        {
+          "attitude_rad": [
+            0.0,
+            0.0
+          ],
+          "minimum_raw_force_n": {
+            "planned": 0.0,
+            "reference": -0.5382819086756108
+          }
+        },
+        {
+          "attitude_rad": [
+            0.05,
+            0.0
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.1368906805468013,
+            "reference": -0.7841637455613704
+          }
+        },
+        {
+          "attitude_rad": [
+            -0.05,
+            0.0
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.13689068054681108,
+            "reference": -0.7841637455613704
+          }
+        },
+        {
+          "attitude_rad": [
+            0.0,
+            0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.1261925115036524,
+            "reference": -0.7763158260646046
+          }
+        },
+        {
+          "attitude_rad": [
+            0.0,
+            -0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.1290427610500462,
+            "reference": -0.3835519041251896
+          }
+        },
+        {
+          "attitude_rad": [
+            0.05,
+            0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.3721512064784447,
+            "reference": -1.0222745210394004
+          }
+        },
+        {
+          "attitude_rad": [
+            0.05,
+            -0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.3750014560248216,
+            "reference": -0.6295105990999819
+          }
+        },
+        {
+          "attitude_rad": [
+            -0.05,
+            0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.3721512064784225,
+            "reference": -1.0222745210393978
+          }
+        },
+        {
+          "attitude_rad": [
+            -0.05,
+            -0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.3750014560248367,
+            "reference": -0.6295105990999801
+          }
+        }
+      ],
+      "ramp_sensitivity_not_a_gate": [
+        {
+          "ramp": 0.0,
+          "minimum_three_stance_load_n": 0.0
+        },
+        {
+          "ramp": 0.25,
+          "minimum_three_stance_load_n": 0.021204421610319775
+        },
+        {
+          "ramp": 0.5,
+          "minimum_three_stance_load_n": 0.04582157111964352
+        },
+        {
+          "ramp": 0.75,
+          "minimum_three_stance_load_n": 0.07393797571014621
+        },
+        {
+          "ramp": 1.0,
+          "minimum_three_stance_load_n": 0.10375878022572316
+        }
+      ],
+      "50hz_demand": {
+        "planned": {
+          "control_hz": 50,
+          "window_s": [
+            0.0,
+            9.6
+          ],
+          "max_geometric_increment_rad": 0.02286305113571596,
+          "max_biased_increment_rad": 0.03381325537113833,
+          "max_geometric_rate_rad_s": 1.143152556785798,
+          "max_biased_rate_rad_s": 1.6906627685569164,
+          "biased_increment_above_nominal_slew_fraction": 0.0,
+          "nominal_command_slew_rad_s": 1.8,
+          "max_geometric_rate_by_joint_rad_s": [
+            0.7110198617680561,
+            0.8240992045647988,
+            1.143152556785798
+          ],
+          "max_biased_rate_by_joint_rad_s": [
+            0.7110198617680561,
+            1.47732598039223,
+            1.6906627685569164
+          ]
+        },
+        "reference": {
+          "control_hz": 50,
+          "window_s": [
+            0.0,
+            9.6
+          ],
+          "max_geometric_increment_rad": 0.022262027099935855,
+          "max_biased_increment_rad": 0.034614332075902254,
+          "max_geometric_rate_rad_s": 1.1131013549967927,
+          "max_biased_rate_rad_s": 1.7307166037951127,
+          "biased_increment_above_nominal_slew_fraction": 0.0,
+          "nominal_command_slew_rad_s": 1.8,
+          "max_geometric_rate_by_joint_rad_s": [
+            0.7565259655280787,
+            0.8775898990460385,
+            1.1131013549967927
+          ],
+          "max_biased_rate_by_joint_rad_s": [
+            0.7565259655280787,
+            1.4963858853659222,
+            1.7307166037951127
+          ]
+        }
+      },
+      "limitations": [
+        "Nominal centred COM, no measured load/velocity input.",
+        "Existing attitude compensation can invalidate nominal support feasibility.",
+        "Inherited linear startup ramp has a derivative corner at 1.5 s; C2 applies to the periodic reference.",
+        "Foot recovery remains inherited C1; the full joint path is not claimed C2.",
+        "Servo saturation and actual contact require the paired physics receipt."
+      ]
+    },
+    {
+      "command": "left",
+      "payload_kg": 0.0,
+      "nominal_gate_passed": true,
+      "gates": {
+        "independent_triangle_margin": true,
+        "independent_raw_load_nonnegative": true,
+        "raw_moment_balance": true,
+        "clipped_moment_balance": true,
+        "IK_inside_original_limits": true,
+        "periodic_reference_C2": true
+      },
+      "independent_phase_samples": 2048,
+      "solver": {
+        "iterations": 6,
+        "active_constraints": 6,
+        "primal_violation_fraction": 1.0651202142497596e-15,
+        "stationarity": 4.062306047103448e-13,
+        "complementarity": 8.838421335481412e-13,
+        "objective": 39.03497146014142,
+        "refinements": 0,
+        "dense_validation_phases": 4096,
+        "dense_primal_violation_fraction": 0.0,
+        "constraint_count": 1028,
+        "load_margin_n": 0.1,
+        "coefficient_bound_mm": 15.0,
+        "objective_definition": "mean phase-derivative squared plus .1 mean position squared, divided by cycle_s squared; coefficients in mm",
+        "frame": "nominal zero-attitude body frame; centred COM"
+      },
+      "coefficients_mm": [
+        [
+          0.1956626656551208,
+          -0.054026634132156914,
+          -0.4762019418479895,
+          -1.0815835782781136,
+          -1.6118931155107106,
+          -2.1813974535735383,
+          -2.7181652827062948,
+          -3.3068975197302564,
+          -3.786640179266712,
+          -4.514420381673162,
+          -4.706634611841622,
+          -3.826284390354161,
+          -3.381022210267375,
+          -2.732573542441017,
+          -2.2134436706172522,
+          -1.541638054398618,
+          -1.184521222007632,
+          0.4115178213607322,
+          1.4219680476490026,
+          1.810761581573061,
+          2.453432885430132,
+          2.9679118089707544,
+          3.584852067419007,
+          4.047707088674102,
+          4.868533435913619,
+          4.057482311052013,
+          3.597244298159225,
+          3.0026336794651485,
+          2.4633766228695038,
+          1.9060117791558895,
+          1.344337831143676,
+          0.8138097458327849
+        ],
+        [
+          -0.6217968284601199,
+          0.2243879553872148,
+          0.9015168081625262,
+          1.4049068892161642,
+          1.9737148073226507,
+          2.522078139459225,
+          3.0628578422787456,
+          3.6460995881592027,
+          4.121522926869943,
+          4.85136571255056,
+          5.028302863527713,
+          4.095735128197788,
+          3.6132700345922046,
+          2.920630489638171,
+          2.361758939389347,
+          1.6450002096999725,
+          1.2536696855181901,
+          -0.4188217709397861,
+          -1.4857589669850881,
+          -1.9098439001680703,
+          -2.5964723911212673,
+          -3.150528315077395,
+          -3.8105827951821283,
+          -4.311225182395319,
+          -5.182249972241365,
+          -4.365323728373312,
+          -3.9122352655371344,
+          -3.3177788050323898,
+          -2.786234232294362,
+          -2.2228641249957235,
+          -1.6855675245054584,
+          -1.1090627335764225
+        ]
+      ],
+      "minimum_three_stance_load_n": 0.10088215224301916,
+      "minimum_raw_scheduled_force_n": 0.0,
+      "maximum_raw_moment_nm": 1.5543122344752192e-15,
+      "maximum_clipped_moment_nm": 1.3322676295501878e-15,
+      "minimum_geometric_joint_limit_margin_rad": 0.41094114789777314,
+      "maximum_C2_two_sided_difference": [
+        8.766172466742606e-12,
+        1.0802886677655638e-10,
+        6.156842605187229e-10
+      ],
+      "peak_shift_m": 0.006720186949768652,
+      "rms_shift_velocity_m_s": 0.008826460767648885,
+      "peak_shift_velocity_m_s": 0.02025805808697031,
+      "peak_shift_acceleration_m_s2": 0.2340086309594784,
+      "attitude_sensitivity_not_a_gate": [
+        {
+          "attitude_rad": [
+            0.0,
+            0.0
+          ],
+          "minimum_raw_force_n": {
+            "planned": 0.0,
+            "reference": -0.560573132539508
+          }
+        },
+        {
+          "attitude_rad": [
+            0.05,
+            0.0
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.1341542892096239,
+            "reference": -0.8070089891493941
+          }
+        },
+        {
+          "attitude_rad": [
+            -0.05,
+            0.0
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.13719938215262228,
+            "reference": -0.41458906350307156
+          }
+        },
+        {
+          "attitude_rad": [
+            0.0,
+            0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.12602935985079622,
+            "reference": -0.7988840597905629
+          }
+        },
+        {
+          "attitude_rad": [
+            0.0,
+            -0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.12907445279379104,
+            "reference": -0.40646413414424654
+          }
+        },
+        {
+          "attitude_rad": [
+            0.05,
+            0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.3725422477259732,
+            "reference": -1.0453969476657434
+          }
+        },
+        {
+          "attitude_rad": [
+            0.05,
+            -0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.23572122803338935,
+            "reference": -0.5687750931636284
+          }
+        },
+        {
+          "attitude_rad": [
+            -0.05,
+            0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.2586500447992197,
+            "reference": -0.5523711719153876
+          }
+        },
+        {
+          "attitude_rad": [
+            -0.05,
+            -0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.37558734066896804,
+            "reference": -0.6529770220194218
+          }
+        }
+      ],
+      "ramp_sensitivity_not_a_gate": [
+        {
+          "ramp": 0.0,
+          "minimum_three_stance_load_n": 0.0
+        },
+        {
+          "ramp": 0.25,
+          "minimum_three_stance_load_n": 0.02520900182580054
+        },
+        {
+          "ramp": 0.5,
+          "minimum_three_stance_load_n": 0.05088907083916609
+        },
+        {
+          "ramp": 0.75,
+          "minimum_three_stance_load_n": 0.07706471555283567
+        },
+        {
+          "ramp": 1.0,
+          "minimum_three_stance_load_n": 0.10376217464506016
+        }
+      ],
+      "50hz_demand": {
+        "planned": {
+          "control_hz": 50,
+          "window_s": [
+            0.0,
+            9.6
+          ],
+          "max_geometric_increment_rad": 0.023203468113083714,
+          "max_biased_increment_rad": 0.03411068716421961,
+          "max_geometric_rate_rad_s": 1.1601734056541857,
+          "max_biased_rate_rad_s": 1.7055343582109805,
+          "biased_increment_above_nominal_slew_fraction": 0.0,
+          "nominal_command_slew_rad_s": 1.8,
+          "max_geometric_rate_by_joint_rad_s": [
+            0.7557295414385634,
+            0.8290123713258657,
+            1.1601734056541857
+          ],
+          "max_biased_rate_by_joint_rad_s": [
+            0.7557295414385634,
+            1.484908056520559,
+            1.7055343582109805
+          ]
+        },
+        "reference": {
+          "control_hz": 50,
+          "window_s": [
+            0.0,
+            9.6
+          ],
+          "max_geometric_increment_rad": 0.02226202709993541,
+          "max_biased_increment_rad": 0.03462430569675812,
+          "max_geometric_rate_rad_s": 1.1131013549967705,
+          "max_biased_rate_rad_s": 1.7312152848379059,
+          "biased_increment_above_nominal_slew_fraction": 0.0,
+          "nominal_command_slew_rad_s": 1.8,
+          "max_geometric_rate_by_joint_rad_s": [
+            0.7565259655280789,
+            0.877589899046044,
+            1.1131013549967705
+          ],
+          "max_biased_rate_by_joint_rad_s": [
+            0.7565259655280789,
+            1.4982708445628516,
+            1.7312152848379059
+          ]
+        }
+      },
+      "limitations": [
+        "Nominal centred COM, no measured load/velocity input.",
+        "Existing attitude compensation can invalidate nominal support feasibility.",
+        "Inherited linear startup ramp has a derivative corner at 1.5 s; C2 applies to the periodic reference.",
+        "Foot recovery remains inherited C1; the full joint path is not claimed C2.",
+        "Servo saturation and actual contact require the paired physics receipt."
+      ]
+    },
+    {
+      "command": "right",
+      "payload_kg": 0.0,
+      "nominal_gate_passed": true,
+      "gates": {
+        "independent_triangle_margin": true,
+        "independent_raw_load_nonnegative": true,
+        "raw_moment_balance": true,
+        "clipped_moment_balance": true,
+        "IK_inside_original_limits": true,
+        "periodic_reference_C2": true
+      },
+      "independent_phase_samples": 2048,
+      "solver": {
+        "iterations": 6,
+        "active_constraints": 6,
+        "primal_violation_fraction": 5.880712583561376e-16,
+        "stationarity": 2.4558133304708463e-13,
+        "complementarity": 4.2478685917144774e-13,
+        "objective": 39.03497146014174,
+        "refinements": 0,
+        "dense_validation_phases": 4096,
+        "dense_primal_violation_fraction": 0.0,
+        "constraint_count": 1028,
+        "load_margin_n": 0.1,
+        "coefficient_bound_mm": 15.0,
+        "objective_definition": "mean phase-derivative squared plus .1 mean position squared, divided by cycle_s squared; coefficients in mm",
+        "frame": "nominal zero-attitude body frame; centred COM"
+      },
+      "coefficients_mm": [
+        [
+          -1.1845212220075325,
+          0.411517821360718,
+          1.4219680476490453,
+          1.8107615815730327,
+          2.453432885430203,
+          2.9679118089708965,
+          3.584852067419064,
+          4.047707088674102,
+          4.868533435913719,
+          4.0574823110518,
+          3.597244298159083,
+          3.0026336794648785,
+          2.4633766228694753,
+          1.9060117791558326,
+          1.3443378311436476,
+          0.8138097458327138,
+          0.19566266565513502,
+          -0.05402663413225639,
+          -0.47620194184796105,
+          -1.0815835782781846,
+          -1.6118931155106395,
+          -2.1813974535734673,
+          -2.7181652827061384,
+          -3.306897519730157,
+          -3.7866401792665982,
+          -4.514420381673105,
+          -4.70663461184165,
+          -3.8262843903542745,
+          -3.3810222102675738,
+          -2.7325735424411164,
+          -2.2134436706173233,
+          -1.5416380543988168
+        ],
+        [
+          -1.2536696855178775,
+          0.41882177093995665,
+          1.485758966985344,
+          1.9098439001684682,
+          2.5964723911216367,
+          3.1505283150776933,
+          3.8105827951824125,
+          4.311225182395646,
+          5.182249972241536,
+          4.365323728373497,
+          3.912235265537319,
+          3.317778805032674,
+          2.7862342322945324,
+          2.2228641249957946,
+          1.6855675245054869,
+          1.1090627335764083,
+          0.621796828459992,
+          -0.22438795538705847,
+          -0.9015168081625689,
+          -1.4049068892161074,
+          -1.9737148073227075,
+          -2.5220781394592535,
+          -3.0628578422786745,
+          -3.646099588159217,
+          -4.121522926869815,
+          -4.851365712550475,
+          -5.028302863527628,
+          -4.095735128197759,
+          -3.613270034592162,
+          -2.920630489637972,
+          -2.3617589393891336,
+          -1.6450002096998446
+        ]
+      ],
+      "minimum_three_stance_load_n": 0.10088215224303987,
+      "minimum_raw_scheduled_force_n": 0.0,
+      "maximum_raw_moment_nm": 1.5543122344752192e-15,
+      "maximum_clipped_moment_nm": 1.5543122344752192e-15,
+      "minimum_geometric_joint_limit_margin_rad": 0.4109411478977736,
+      "maximum_C2_two_sided_difference": [
+        8.766171545170759e-12,
+        1.0802886677655638e-10,
+        6.156842050075717e-10
+      ],
+      "peak_shift_m": 0.00672018694976859,
+      "rms_shift_velocity_m_s": 0.008826460767648925,
+      "peak_shift_velocity_m_s": 0.020258058086969413,
+      "peak_shift_acceleration_m_s2": 0.23400863095949856,
+      "attitude_sensitivity_not_a_gate": [
+        {
+          "attitude_rad": [
+            0.0,
+            0.0
+          ],
+          "minimum_raw_force_n": {
+            "planned": 0.0,
+            "reference": -0.5605731325395098
+          }
+        },
+        {
+          "attitude_rad": [
+            0.05,
+            0.0
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.13719938215262317,
+            "reference": -0.41458906350307156
+          }
+        },
+        {
+          "attitude_rad": [
+            -0.05,
+            0.0
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.13415428920959283,
+            "reference": -0.8070089891493959
+          }
+        },
+        {
+          "attitude_rad": [
+            0.0,
+            0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.12602935985076513,
+            "reference": -0.7988840597905611
+          }
+        },
+        {
+          "attitude_rad": [
+            0.0,
+            -0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.12907445279379282,
+            "reference": -0.406464134144243
+          }
+        },
+        {
+          "attitude_rad": [
+            0.05,
+            0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.25865004479921616,
+            "reference": -0.5523711719153876
+          }
+        },
+        {
+          "attitude_rad": [
+            0.05,
+            -0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.3755873406689698,
+            "reference": -0.6529770220194226
+          }
+        },
+        {
+          "attitude_rad": [
+            -0.05,
+            0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.37254224772594213,
+            "reference": -1.0453969476657434
+          }
+        },
+        {
+          "attitude_rad": [
+            -0.05,
+            -0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.23572122803338136,
+            "reference": -0.5687750931636284
+          }
+        }
+      ],
+      "ramp_sensitivity_not_a_gate": [
+        {
+          "ramp": 0.0,
+          "minimum_three_stance_load_n": 0.0
+        },
+        {
+          "ramp": 0.25,
+          "minimum_three_stance_load_n": 0.025209001825805544
+        },
+        {
+          "ramp": 0.5,
+          "minimum_three_stance_load_n": 0.05088907083917604
+        },
+        {
+          "ramp": 0.75,
+          "minimum_three_stance_load_n": 0.07706471555285077
+        },
+        {
+          "ramp": 1.0,
+          "minimum_three_stance_load_n": 0.10376217464509097
+        }
+      ],
+      "50hz_demand": {
+        "planned": {
+          "control_hz": 50,
+          "window_s": [
+            0.0,
+            9.6
+          ],
+          "max_geometric_increment_rad": 0.023203468113083936,
+          "max_biased_increment_rad": 0.03411068716421961,
+          "max_geometric_rate_rad_s": 1.1601734056541968,
+          "max_biased_rate_rad_s": 1.7055343582109805,
+          "biased_increment_above_nominal_slew_fraction": 0.0,
+          "nominal_command_slew_rad_s": 1.8,
+          "max_geometric_rate_by_joint_rad_s": [
+            0.7557295414385662,
+            0.8290123713258657,
+            1.1601734056541968
+          ],
+          "max_biased_rate_by_joint_rad_s": [
+            0.7557295414385662,
+            1.4849080565205675,
+            1.7055343582109805
+          ]
+        },
+        "reference": {
+          "control_hz": 50,
+          "window_s": [
+            0.0,
+            9.6
+          ],
+          "max_geometric_increment_rad": 0.022262027099936077,
+          "max_biased_increment_rad": 0.03462430569675923,
+          "max_geometric_rate_rad_s": 1.1131013549968038,
+          "max_biased_rate_rad_s": 1.7312152848379614,
+          "biased_increment_above_nominal_slew_fraction": 0.0,
+          "nominal_command_slew_rad_s": 1.8,
+          "max_geometric_rate_by_joint_rad_s": [
+            0.7565259655280987,
+            0.877589899046044,
+            1.1131013549968038
+          ],
+          "max_biased_rate_by_joint_rad_s": [
+            0.7565259655280987,
+            1.4982708445628516,
+            1.7312152848379614
+          ]
+        }
+      },
+      "limitations": [
+        "Nominal centred COM, no measured load/velocity input.",
+        "Existing attitude compensation can invalidate nominal support feasibility.",
+        "Inherited linear startup ramp has a derivative corner at 1.5 s; C2 applies to the periodic reference.",
+        "Foot recovery remains inherited C1; the full joint path is not claimed C2.",
+        "Servo saturation and actual contact require the paired physics receipt."
+      ]
+    },
+    {
+      "command": "clockwise",
+      "payload_kg": 0.0,
+      "nominal_gate_passed": true,
+      "gates": {
+        "independent_triangle_margin": true,
+        "independent_raw_load_nonnegative": true,
+        "raw_moment_balance": true,
+        "clipped_moment_balance": true,
+        "IK_inside_original_limits": true,
+        "periodic_reference_C2": true
+      },
+      "independent_phase_samples": 2048,
+      "solver": {
+        "iterations": 9,
+        "active_constraints": 8,
+        "primal_violation_fraction": 7.598088824778415e-16,
+        "stationarity": 4.134609321582161e-13,
+        "complementarity": 1.554802778847111e-13,
+        "objective": 6.093399996042058,
+        "refinements": 0,
+        "dense_validation_phases": 4096,
+        "dense_primal_violation_fraction": 0.0,
+        "constraint_count": 1028,
+        "load_margin_n": 0.1,
+        "coefficient_bound_mm": 15.0,
+        "objective_definition": "mean phase-derivative squared plus .1 mean position squared, divided by cycle_s squared; coefficients in mm",
+        "frame": "nominal zero-attitude body frame; centred COM"
+      },
+      "coefficients_mm": [
+        [
+          -0.7472857815038232,
+          0.301198912610646,
+          0.7076622192832192,
+          0.4395484748122733,
+          0.43748127379281776,
+          0.32122425686025124,
+          0.25591971240000433,
+          0.16453944995491732,
+          0.09506607838987158,
+          -0.030640584716604913,
+          -0.12903867736761754,
+          -0.19174312615448752,
+          -0.27716943230632296,
+          -0.333204319394655,
+          -0.4477179936937006,
+          -0.4297047207485232,
+          -0.7433224167344354,
+          0.30488853929990967,
+          0.7113240555571103,
+          0.443705928112065,
+          0.44201445543351525,
+          0.32598303788017624,
+          0.26143807577102685,
+          0.16948873517651553,
+          0.10282914845837077,
+          -0.0339992620499423,
+          -0.13695165979896018,
+          -0.19731365230763664,
+          -0.28311417216939283,
+          -0.3383653643424438,
+          -0.4525939906330816,
+          -0.434082450005568
+        ],
+        [
+          3.613748228056868,
+          4.777531104653742,
+          5.298792929284229,
+          5.14043887090146,
+          5.250615555795151,
+          5.2466074032376655,
+          5.2933042757285556,
+          5.316884517010329,
+          5.35687237606707,
+          5.353777911253217,
+          5.346046563163818,
+          5.2918691192268374,
+          5.265681324220493,
+          5.2084775128177725,
+          5.211283350279339,
+          5.081228009564762,
+          5.284565551670416,
+          4.1199686001412195,
+          3.5968164403759975,
+          3.742444423739986,
+          3.625077158683024,
+          3.620822009041131,
+          3.5674331867881417,
+          3.538028116376302,
+          3.4922369325016955,
+          3.4957967410673785,
+          3.5052401659181864,
+          3.565819317900784,
+          3.597791887986614,
+          3.6621560234244193,
+          3.667444386008267,
+          3.8057512401334934
+        ]
+      ],
+      "minimum_three_stance_load_n": 0.10008250446872566,
+      "minimum_raw_scheduled_force_n": 0.0,
+      "maximum_raw_moment_nm": 1.3322676295501878e-15,
+      "maximum_clipped_moment_nm": 1.5543122344752192e-15,
+      "minimum_geometric_joint_limit_margin_rad": 0.40918975143120395,
+      "maximum_C2_two_sided_difference": [
+        5.4007978644854404e-12,
+        8.754781535141865e-11,
+        6.517487938229038e-10
+      ],
+      "peak_shift_m": 0.005354449831582872,
+      "rms_shift_velocity_m_s": 0.00346228052185775,
+      "peak_shift_velocity_m_s": 0.012587152321153438,
+      "peak_shift_acceleration_m_s2": 0.19225593531527774,
+      "attitude_sensitivity_not_a_gate": [
+        {
+          "attitude_rad": [
+            0.0,
+            0.0
+          ],
+          "minimum_raw_force_n": {
+            "planned": 0.0,
+            "reference": -0.30310798492562263
+          }
+        },
+        {
+          "attitude_rad": [
+            0.05,
+            0.0
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.12006762494378709,
+            "reference": -0.06724905282555227
+          }
+        },
+        {
+          "attitude_rad": [
+            -0.05,
+            0.0
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.13811412374377774,
+            "reference": -0.542889244596056
+          }
+        },
+        {
+          "attitude_rad": [
+            0.0,
+            0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.12880616919063925,
+            "reference": -0.5314583897023777
+          }
+        },
+        {
+          "attitude_rad": [
+            0.0,
+            -0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.12993738013208045,
+            "reference": -0.5352525229339982
+          }
+        },
+        {
+          "attitude_rad": [
+            0.05,
+            0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.3500294854125645,
+            "reference": -0.29160217886988526
+          }
+        },
+        {
+          "attitude_rad": [
+            0.05,
+            -0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.3508962561623603,
+            "reference": -0.2994028955080701
+          }
+        },
+        {
+          "attitude_rad": [
+            -0.05,
+            0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.3654032307087549,
+            "reference": -0.7713146005348701
+          }
+        },
+        {
+          "attitude_rad": [
+            -0.05,
+            -0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.36626658806388956,
+            "reference": -0.7711021503599316
+          }
+        }
+      ],
+      "ramp_sensitivity_not_a_gate": [
+        {
+          "ramp": 0.0,
+          "minimum_three_stance_load_n": 0.0
+        },
+        {
+          "ramp": 0.25,
+          "minimum_three_stance_load_n": 0.022277203097945442
+        },
+        {
+          "ramp": 0.5,
+          "minimum_three_stance_load_n": 0.046397344900667374
+        },
+        {
+          "ramp": 0.75,
+          "minimum_three_stance_load_n": 0.0723884815079337
+        },
+        {
+          "ramp": 1.0,
+          "minimum_three_stance_load_n": 0.10027993322680658
+        }
+      ],
+      "50hz_demand": {
+        "planned": {
+          "control_hz": 50,
+          "window_s": [
+            0.0,
+            9.6
+          ],
+          "max_geometric_increment_rad": 0.01733825974187564,
+          "max_biased_increment_rad": 0.031595475064993606,
+          "max_geometric_rate_rad_s": 0.866912987093782,
+          "max_biased_rate_rad_s": 1.5797737532496803,
+          "biased_increment_above_nominal_slew_fraction": 0.0,
+          "nominal_command_slew_rad_s": 1.8,
+          "max_geometric_rate_by_joint_rad_s": [
+            0.7604001354384257,
+            0.6109971475466436,
+            0.866912987093782
+          ],
+          "max_biased_rate_by_joint_rad_s": [
+            0.7604001354384257,
+            1.2414793662837986,
+            1.5797737532496803
+          ]
+        },
+        "reference": {
+          "control_hz": 50,
+          "window_s": [
+            0.0,
+            9.6
+          ],
+          "max_geometric_increment_rad": 0.016725237371858714,
+          "max_biased_increment_rad": 0.030232301014980312,
+          "max_geometric_rate_rad_s": 0.8362618685929357,
+          "max_biased_rate_rad_s": 1.5116150507490156,
+          "biased_increment_above_nominal_slew_fraction": 0.0,
+          "nominal_command_slew_rad_s": 1.8,
+          "max_geometric_rate_by_joint_rad_s": [
+            0.7160632944268165,
+            0.6679441963625576,
+            0.8362618685929357
+          ],
+          "max_biased_rate_by_joint_rad_s": [
+            0.7160632944268165,
+            1.2464202733293184,
+            1.5116150507490156
+          ]
+        }
+      },
+      "limitations": [
+        "Nominal centred COM, no measured load/velocity input.",
+        "Existing attitude compensation can invalidate nominal support feasibility.",
+        "Inherited linear startup ramp has a derivative corner at 1.5 s; C2 applies to the periodic reference.",
+        "Foot recovery remains inherited C1; the full joint path is not claimed C2.",
+        "Servo saturation and actual contact require the paired physics receipt."
+      ]
+    },
+    {
+      "command": "counterclockwise",
+      "payload_kg": 0.0,
+      "nominal_gate_passed": true,
+      "gates": {
+        "independent_triangle_margin": true,
+        "independent_raw_load_nonnegative": true,
+        "raw_moment_balance": true,
+        "clipped_moment_balance": true,
+        "IK_inside_original_limits": true,
+        "periodic_reference_C2": true
+      },
+      "independent_phase_samples": 2048,
+      "solver": {
+        "iterations": 9,
+        "active_constraints": 8,
+        "primal_violation_fraction": 2.42861286636753e-16,
+        "stationarity": 3.843592117946426e-13,
+        "complementarity": 2.638391835224937e-13,
+        "objective": 6.0933999960422245,
+        "refinements": 0,
+        "dense_validation_phases": 4096,
+        "dense_primal_violation_fraction": 0.0,
+        "constraint_count": 1028,
+        "load_margin_n": 0.1,
+        "coefficient_bound_mm": 15.0,
+        "objective_definition": "mean phase-derivative squared plus .1 mean position squared, divided by cycle_s squared; coefficients in mm",
+        "frame": "nominal zero-attitude body frame; centred COM"
+      },
+      "coefficients_mm": [
+        [
+          -0.7433224167344044,
+          0.3048885393000287,
+          0.711324055557208,
+          0.4437059281122586,
+          0.4420144554335774,
+          0.32598303788021177,
+          0.2614380757709389,
+          0.16948873517630236,
+          0.10282914845837432,
+          -0.033999262049950296,
+          -0.1369516597987399,
+          -0.19731365230762954,
+          -0.2831141721694719,
+          -0.33836536434250863,
+          -0.4525939906331269,
+          -0.4340824500057021,
+          -0.7472857815038161,
+          0.30119891261056164,
+          0.7076622192832778,
+          0.4395484748123657,
+          0.43748127379294743,
+          0.3212242568604182,
+          0.25591971240009936,
+          0.16453944995505054,
+          0.09506607839005987,
+          -0.03064058471657205,
+          -0.1290386773676122,
+          -0.1917431261544138,
+          -0.2771694323063896,
+          -0.33320431939442496,
+          -0.44771799369372456,
+          -0.4297047207484672
+        ],
+        [
+          -5.284565551670488,
+          -4.119968600141297,
+          -3.5968164403760476,
+          -3.742444423740004,
+          -3.625077158683081,
+          -3.6208220090410075,
+          -3.5674331867881914,
+          -3.538028116376322,
+          -3.4922369325016267,
+          -3.4957967410673043,
+          -3.5052401659180945,
+          -3.5658193179006537,
+          -3.597791887986392,
+          -3.6621560234243256,
+          -3.6674443860081727,
+          -3.8057512401334397,
+          -3.613748228056875,
+          -4.777531104653692,
+          -5.29879292928419,
+          -5.140438870901541,
+          -5.250615555795193,
+          -5.246607403237776,
+          -5.29330427572874,
+          -5.316884517010431,
+          -5.356872376067193,
+          -5.35377791125331,
+          -5.346046563163782,
+          -5.29186911922678,
+          -5.265681324220433,
+          -5.208477512817759,
+          -5.211283350279405,
+          -5.08122800956473
+        ]
+      ],
+      "minimum_three_stance_load_n": 0.10008250446872526,
+      "minimum_raw_scheduled_force_n": 0.0,
+      "maximum_raw_moment_nm": 1.5543122344752192e-15,
+      "maximum_clipped_moment_nm": 1.5543122344752192e-15,
+      "minimum_geometric_joint_limit_margin_rad": 0.4091897514312046,
+      "maximum_C2_two_sided_difference": [
+        5.4007969971237024e-12,
+        8.754780927988648e-11,
+        6.517487938229038e-10
+      ],
+      "peak_shift_m": 0.005354449831582974,
+      "rms_shift_velocity_m_s": 0.003462280521857801,
+      "peak_shift_velocity_m_s": 0.012587152321153792,
+      "peak_shift_acceleration_m_s2": 0.19225593531529261,
+      "attitude_sensitivity_not_a_gate": [
+        {
+          "attitude_rad": [
+            0.0,
+            0.0
+          ],
+          "minimum_raw_force_n": {
+            "planned": 0.0,
+            "reference": -0.30310798492562263
+          }
+        },
+        {
+          "attitude_rad": [
+            0.05,
+            0.0
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.13811412374378573,
+            "reference": -0.542889244596056
+          }
+        },
+        {
+          "attitude_rad": [
+            -0.05,
+            0.0
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.12006762494377643,
+            "reference": -0.06724905282555316
+          }
+        },
+        {
+          "attitude_rad": [
+            0.0,
+            0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.1288061691906588,
+            "reference": -0.5314583897023777
+          }
+        },
+        {
+          "attitude_rad": [
+            0.0,
+            -0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.1299373801320769,
+            "reference": -0.5352525229339999
+          }
+        },
+        {
+          "attitude_rad": [
+            0.05,
+            0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.36540323070872915,
+            "reference": -0.7713146005348701
+          }
+        },
+        {
+          "attitude_rad": [
+            0.05,
+            -0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.36626658806388956,
+            "reference": -0.7711021503599325
+          }
+        },
+        {
+          "attitude_rad": [
+            -0.05,
+            0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.3500294854125823,
+            "reference": -0.29160217886988526
+          }
+        },
+        {
+          "attitude_rad": [
+            -0.05,
+            -0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.35089625616235587,
+            "reference": -0.2994028955080701
+          }
+        }
+      ],
+      "ramp_sensitivity_not_a_gate": [
+        {
+          "ramp": 0.0,
+          "minimum_three_stance_load_n": 0.0
+        },
+        {
+          "ramp": 0.25,
+          "minimum_three_stance_load_n": 0.02227720309794317
+        },
+        {
+          "ramp": 0.5,
+          "minimum_three_stance_load_n": 0.04639734490066703
+        },
+        {
+          "ramp": 0.75,
+          "minimum_three_stance_load_n": 0.07238848150793763
+        },
+        {
+          "ramp": 1.0,
+          "minimum_three_stance_load_n": 0.10027993322680515
+        }
+      ],
+      "50hz_demand": {
+        "planned": {
+          "control_hz": 50,
+          "window_s": [
+            0.0,
+            9.6
+          ],
+          "max_geometric_increment_rad": 0.01733825974187675,
+          "max_biased_increment_rad": 0.03159547506499405,
+          "max_geometric_rate_rad_s": 0.8669129870938375,
+          "max_biased_rate_rad_s": 1.5797737532497025,
+          "biased_increment_above_nominal_slew_fraction": 0.0,
+          "nominal_command_slew_rad_s": 1.8,
+          "max_geometric_rate_by_joint_rad_s": [
+            0.7604001354384693,
+            0.6109971475466491,
+            0.8669129870938375
+          ],
+          "max_biased_rate_by_joint_rad_s": [
+            0.7604001354384693,
+            1.2414793662838235,
+            1.5797737532497025
+          ]
+        },
+        "reference": {
+          "control_hz": 50,
+          "window_s": [
+            0.0,
+            9.6
+          ],
+          "max_geometric_increment_rad": 0.016725237371858714,
+          "max_biased_increment_rad": 0.030232301014980312,
+          "max_geometric_rate_rad_s": 0.8362618685929357,
+          "max_biased_rate_rad_s": 1.5116150507490156,
+          "biased_increment_above_nominal_slew_fraction": 0.0,
+          "nominal_command_slew_rad_s": 1.8,
+          "max_geometric_rate_by_joint_rad_s": [
+            0.7160632944268205,
+            0.6679441963625632,
+            0.8362618685929357
+          ],
+          "max_biased_rate_by_joint_rad_s": [
+            0.7160632944268205,
+            1.2464202733293184,
+            1.5116150507490156
+          ]
+        }
+      },
+      "limitations": [
+        "Nominal centred COM, no measured load/velocity input.",
+        "Existing attitude compensation can invalidate nominal support feasibility.",
+        "Inherited linear startup ramp has a derivative corner at 1.5 s; C2 applies to the periodic reference.",
+        "Foot recovery remains inherited C1; the full joint path is not claimed C2.",
+        "Servo saturation and actual contact require the paired physics receipt."
+      ]
+    },
+    {
+      "command": "forward",
+      "payload_kg": 0.155,
+      "nominal_gate_passed": true,
+      "gates": {
+        "independent_triangle_margin": true,
+        "independent_raw_load_nonnegative": true,
+        "raw_moment_balance": true,
+        "clipped_moment_balance": true,
+        "IK_inside_original_limits": true,
+        "periodic_reference_C2": true
+      },
+      "independent_phase_samples": 2048,
+      "solver": {
+        "iterations": 4,
+        "active_constraints": 4,
+        "primal_violation_fraction": 1.5308934675495323e-16,
+        "stationarity": 5.917488721252084e-14,
+        "complementarity": 2.025875040500179e-14,
+        "objective": 0.17429146844885143,
+        "refinements": 0,
+        "dense_validation_phases": 4096,
+        "dense_primal_violation_fraction": 0.0,
+        "constraint_count": 1028,
+        "load_margin_n": 0.1,
+        "coefficient_bound_mm": 15.0,
+        "objective_definition": "mean phase-derivative squared plus .1 mean position squared, divided by cycle_s squared; coefficients in mm",
+        "frame": "nominal zero-attitude body frame; centred COM"
+      },
+      "coefficients_mm": [
+        [
+          -0.12990597431081585,
+          0.05795361135380939,
+          0.13049007998847328,
+          0.0824694891347203,
+          0.08192919411281757,
+          0.06115186523512181,
+          0.04907963704618257,
+          0.033289496168323496,
+          0.019052998702800354,
+          0.004272759573831903,
+          -0.010555395075054319,
+          -0.02470591611565634,
+          -0.04067891448763408,
+          -0.05232349965921185,
+          -0.07408871268406053,
+          -0.07215020363521107,
+          -0.12990597431088446,
+          0.057953611353824375,
+          0.13049007998851375,
+          0.08246948913474161,
+          0.08192919411286409,
+          0.06115186523516969,
+          0.04907963704623533,
+          0.033289496168361035,
+          0.01905299870284035,
+          0.004272759573852427,
+          -0.010555395075034016,
+          -0.024705916115622617,
+          -0.04067891448757932,
+          -0.05232349965916122,
+          -0.07408871268399797,
+          -0.07215020363516605
+        ],
+        [
+          -0.14388000913376686,
+          0.051933665442220445,
+          0.13622610683805192,
+          0.10393565473781052,
+          0.1175666056529252,
+          0.11162157781781445,
+          0.11412286435295016,
+          0.11298164985100811,
+          0.11347542627657958,
+          0.11316309697114946,
+          0.11348760224758792,
+          0.11291757815008907,
+          0.1142259883328336,
+          0.11130979237816518,
+          0.11820635473503671,
+          0.10217674121351195,
+          0.14388000913378107,
+          -0.051933665442248866,
+          -0.13622610683813718,
+          -0.10393565473786737,
+          -0.11756660565299626,
+          -0.11162157781785709,
+          -0.114122864353007,
+          -0.11298164985103654,
+          -0.11347542627662222,
+          -0.11316309697114946,
+          -0.11348760224760213,
+          -0.11291757815008907,
+          -0.11422598833289044,
+          -0.1113097923781936,
+          -0.11820635473503671,
+          -0.10217674121352616
+        ]
+      ],
+      "minimum_three_stance_load_n": 0.10141811544274759,
+      "minimum_raw_scheduled_force_n": 0.0,
+      "maximum_raw_moment_nm": 1.5543122344752192e-15,
+      "maximum_clipped_moment_nm": 1.5543122344752192e-15,
+      "minimum_geometric_joint_limit_margin_rad": 0.4107524821838868,
+      "maximum_C2_two_sided_difference": [
+        8.963396431332926e-13,
+        1.5719384127699243e-11,
+        1.1717517928166998e-10
+      ],
+      "peak_shift_m": 0.00016315641716192961,
+      "rms_shift_velocity_m_s": 0.0005902790912244115,
+      "peak_shift_velocity_m_s": 0.0021681142567149593,
+      "peak_shift_acceleration_m_s2": 0.03403152680599198,
+      "attitude_sensitivity_not_a_gate": [
+        {
+          "attitude_rad": [
+            0.0,
+            0.0
+          ],
+          "minimum_raw_force_n": {
+            "planned": 0.0,
+            "reference": 0.0
+          }
+        },
+        {
+          "attitude_rad": [
+            0.05,
+            0.0
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.042491043191058786,
+            "reference": 0.0
+          }
+        },
+        {
+          "attitude_rad": [
+            -0.05,
+            0.0
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.04249104319106589,
+            "reference": 0.0
+          }
+        },
+        {
+          "attitude_rad": [
+            0.0,
+            0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.05029474711674897,
+            "reference": 0.0
+          }
+        },
+        {
+          "attitude_rad": [
+            0.0,
+            -0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.02338952148924367,
+            "reference": 0.0
+          }
+        },
+        {
+          "attitude_rad": [
+            0.05,
+            0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.27925541206159554,
+            "reference": 0.0
+          }
+        },
+        {
+          "attitude_rad": [
+            0.05,
+            -0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.2523501864341071,
+            "reference": -0.174889649686091
+          }
+        },
+        {
+          "attitude_rad": [
+            -0.05,
+            0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.2792554120616044,
+            "reference": 0.0
+          }
+        },
+        {
+          "attitude_rad": [
+            -0.05,
+            -0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.2523501864341,
+            "reference": -0.17488964968609455
+          }
+        }
+      ],
+      "ramp_sensitivity_not_a_gate": [
+        {
+          "ramp": 0.0,
+          "minimum_three_stance_load_n": 0.0
+        },
+        {
+          "ramp": 0.25,
+          "minimum_three_stance_load_n": 0.027280017563425574
+        },
+        {
+          "ramp": 0.5,
+          "minimum_three_stance_load_n": 0.05407953890104267
+        },
+        {
+          "ramp": 0.75,
+          "minimum_three_stance_load_n": 0.08041015868909795
+        },
+        {
+          "ramp": 1.0,
+          "minimum_three_stance_load_n": 0.10628310153142984
+        }
+      ],
+      "50hz_demand": {
+        "planned": {
+          "control_hz": 50,
+          "window_s": [
+            0.0,
+            9.6
+          ],
+          "max_geometric_increment_rad": 0.02162985641642967,
+          "max_biased_increment_rad": 0.03520479476049143,
+          "max_geometric_rate_rad_s": 1.0814928208214836,
+          "max_biased_rate_rad_s": 1.7602397380245716,
+          "biased_increment_above_nominal_slew_fraction": 0.0,
+          "nominal_command_slew_rad_s": 1.8,
+          "max_geometric_rate_by_joint_rad_s": [
+            0.7784186789338201,
+            0.7938496339262024,
+            1.0814928208214836
+          ],
+          "max_biased_rate_by_joint_rad_s": [
+            0.7784186789338201,
+            1.4474600017665122,
+            1.7602397380245716
+          ]
+        },
+        "reference": {
+          "control_hz": 50,
+          "window_s": [
+            0.0,
+            9.6
+          ],
+          "max_geometric_increment_rad": 0.02226202709993541,
+          "max_biased_increment_rad": 0.03433836507307331,
+          "max_geometric_rate_rad_s": 1.1131013549967705,
+          "max_biased_rate_rad_s": 1.7169182536536653,
+          "biased_increment_above_nominal_slew_fraction": 0.0,
+          "nominal_command_slew_rad_s": 1.8,
+          "max_geometric_rate_by_joint_rad_s": [
+            0.7565259655280924,
+            0.877589899046044,
+            1.1131013549967705
+          ],
+          "max_biased_rate_by_joint_rad_s": [
+            0.7565259655280924,
+            1.4852787125976485,
+            1.7169182536536653
+          ]
+        }
+      },
+      "limitations": [
+        "Nominal centred COM, no measured load/velocity input.",
+        "Existing attitude compensation can invalidate nominal support feasibility.",
+        "Inherited linear startup ramp has a derivative corner at 1.5 s; C2 applies to the periodic reference.",
+        "Foot recovery remains inherited C1; the full joint path is not claimed C2.",
+        "Servo saturation and actual contact require the paired physics receipt."
+      ]
+    },
+    {
+      "command": "backward",
+      "payload_kg": 0.155,
+      "nominal_gate_passed": true,
+      "gates": {
+        "independent_triangle_margin": true,
+        "independent_raw_load_nonnegative": true,
+        "raw_moment_balance": true,
+        "clipped_moment_balance": true,
+        "IK_inside_original_limits": true,
+        "periodic_reference_C2": true
+      },
+      "independent_phase_samples": 2048,
+      "solver": {
+        "iterations": 8,
+        "active_constraints": 8,
+        "primal_violation_fraction": 8.482797797526587e-16,
+        "stationarity": 4.3787196091216174e-13,
+        "complementarity": 6.43098618763066e-13,
+        "objective": 70.31619933126257,
+        "refinements": 0,
+        "dense_validation_phases": 4096,
+        "dense_primal_violation_fraction": 0.0,
+        "constraint_count": 1028,
+        "load_margin_n": 0.1,
+        "coefficient_bound_mm": 15.0,
+        "objective_definition": "mean phase-derivative squared plus .1 mean position squared, divided by cycle_s squared; coefficients in mm",
+        "frame": "nominal zero-attitude body frame; centred COM"
+      },
+      "coefficients_mm": [
+        [
+          -0.7503918253901816,
+          0.2529341222352173,
+          0.7046243391007465,
+          0.567996975237179,
+          0.6743121325716288,
+          0.6515400587527438,
+          0.7436725144698926,
+          0.6473823646104506,
+          0.98767663654138,
+          -0.4376037516740894,
+          -1.029982386334666,
+          -0.7417745430452669,
+          -0.807828858831499,
+          -0.7060124247559543,
+          -0.7156542196647706,
+          -0.5855992881627117,
+          -0.7503918253898405,
+          0.25293412223555833,
+          0.7046243391012013,
+          0.5679969752376337,
+          0.674312132571913,
+          0.6515400587529712,
+          0.7436725144699494,
+          0.6473823646106212,
+          0.9876766365413232,
+          -0.43760375167403254,
+          -1.0299823863349502,
+          -0.7417745430453806,
+          -0.8078288588317264,
+          -0.7060124247562953,
+          -0.7156542196650548,
+          -0.5855992881632801
+        ],
+        [
+          -1.559949737445144,
+          0.5315069457137215,
+          2.051128824003859,
+          2.9665463767208387,
+          4.125879585408393,
+          5.168835593611652,
+          6.292406932172111,
+          7.311283434369422,
+          8.574313264678123,
+          8.493021473107206,
+          8.233378841454781,
+          6.8009389833669545,
+          5.8473891102823945,
+          4.672582735632526,
+          3.6341436485065906,
+          2.4426215749349103,
+          1.559949737445229,
+          -0.5315069457136241,
+          -2.0511288240035888,
+          -2.966546376720685,
+          -4.125879585408219,
+          -5.168835593611524,
+          -6.29240693217195,
+          -7.311283434369344,
+          -8.57431326467813,
+          -8.493021473107106,
+          -8.233378841454746,
+          -6.800938983366709,
+          -5.847389110282113,
+          -4.672582735632473,
+          -3.6341436485063943,
+          -2.442621574934797
+        ]
+      ],
+      "minimum_three_stance_load_n": 0.10088365928596765,
+      "minimum_raw_scheduled_force_n": 0.0,
+      "maximum_raw_moment_nm": 1.5543122344752192e-15,
+      "maximum_clipped_moment_nm": 1.3322676295501878e-15,
+      "minimum_geometric_joint_limit_margin_rad": 0.4254103177118491,
+      "maximum_C2_two_sided_difference": [
+        1.1555452395731886e-11,
+        1.1299678814163938e-10,
+        8.4677163891822e-10
+      ],
+      "peak_shift_m": 0.008506592402532005,
+      "rms_shift_velocity_m_s": 0.011846306893569573,
+      "peak_shift_velocity_m_s": 0.020653587165476755,
+      "peak_shift_acceleration_m_s2": 0.2211605226957526,
+      "attitude_sensitivity_not_a_gate": [
+        {
+          "attitude_rad": [
+            0.0,
+            0.0
+          ],
+          "minimum_raw_force_n": {
+            "planned": 0.0,
+            "reference": -0.5717465790902345
+          }
+        },
+        {
+          "attitude_rad": [
+            0.05,
+            0.0
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.1519405341211728,
+            "reference": -0.8329147454990675
+          }
+        },
+        {
+          "attitude_rad": [
+            -0.05,
+            0.0
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.151940534121203,
+            "reference": -0.8329147454990675
+          }
+        },
+        {
+          "attitude_rad": [
+            0.0,
+            0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.14049792523531313,
+            "reference": -0.8245789254521121
+          }
+        },
+        {
+          "attitude_rad": [
+            0.0,
+            -0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.1436047140742467,
+            "reference": -0.40739710094785764
+          }
+        },
+        {
+          "attitude_rad": [
+            0.05,
+            0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.40174772795547664,
+            "reference": -1.08582872817228
+          }
+        },
+        {
+          "attitude_rad": [
+            0.05,
+            -0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.40485451679437645,
+            "reference": -0.6686469036680185
+          }
+        },
+        {
+          "attitude_rad": [
+            -0.05,
+            0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.40174772795547486,
+            "reference": -1.0858287281722765
+          }
+        },
+        {
+          "attitude_rad": [
+            -0.05,
+            -0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.4048545167944102,
+            "reference": -0.6686469036680167
+          }
+        }
+      ],
+      "ramp_sensitivity_not_a_gate": [
+        {
+          "ramp": 0.0,
+          "minimum_three_stance_load_n": 0.0
+        },
+        {
+          "ramp": 0.25,
+          "minimum_three_stance_load_n": 0.02103513205406605
+        },
+        {
+          "ramp": 0.5,
+          "minimum_three_stance_load_n": 0.04564792131696504
+        },
+        {
+          "ramp": 0.75,
+          "minimum_three_stance_load_n": 0.0739290766310789
+        },
+        {
+          "ramp": 1.0,
+          "minimum_three_stance_load_n": 0.10376363540243005
+        }
+      ],
+      "50hz_demand": {
+        "planned": {
+          "control_hz": 50,
+          "window_s": [
+            0.0,
+            9.6
+          ],
+          "max_geometric_increment_rad": 0.022857949354282647,
+          "max_biased_increment_rad": 0.03509508228373348,
+          "max_geometric_rate_rad_s": 1.1428974677141324,
+          "max_biased_rate_rad_s": 1.754754114186674,
+          "biased_increment_above_nominal_slew_fraction": 0.0,
+          "nominal_command_slew_rad_s": 1.8,
+          "max_geometric_rate_by_joint_rad_s": [
+            0.7116130170806756,
+            0.8241758030840707,
+            1.1428974677141324
+          ],
+          "max_biased_rate_by_joint_rad_s": [
+            0.7116130170806756,
+            1.5374052132857001,
+            1.754754114186674
+          ]
+        },
+        "reference": {
+          "control_hz": 50,
+          "window_s": [
+            0.0,
+            9.6
+          ],
+          "max_geometric_increment_rad": 0.022262027099935855,
+          "max_biased_increment_rad": 0.035935011446603715,
+          "max_geometric_rate_rad_s": 1.1131013549967927,
+          "max_biased_rate_rad_s": 1.7967505723301858,
+          "biased_increment_above_nominal_slew_fraction": 0.0,
+          "nominal_command_slew_rad_s": 1.8,
+          "max_geometric_rate_by_joint_rad_s": [
+            0.7565259655280787,
+            0.8775898990460385,
+            1.1131013549967927
+          ],
+          "max_biased_rate_by_joint_rad_s": [
+            0.7565259655280787,
+            1.5546878300692262,
+            1.7967505723301858
+          ]
+        }
+      },
+      "limitations": [
+        "Nominal centred COM, no measured load/velocity input.",
+        "Existing attitude compensation can invalidate nominal support feasibility.",
+        "Inherited linear startup ramp has a derivative corner at 1.5 s; C2 applies to the periodic reference.",
+        "Foot recovery remains inherited C1; the full joint path is not claimed C2.",
+        "Servo saturation and actual contact require the paired physics receipt."
+      ]
+    },
+    {
+      "command": "left",
+      "payload_kg": 0.155,
+      "nominal_gate_passed": true,
+      "gates": {
+        "independent_triangle_margin": true,
+        "independent_raw_load_nonnegative": true,
+        "raw_moment_balance": true,
+        "clipped_moment_balance": true,
+        "IK_inside_original_limits": true,
+        "periodic_reference_C2": true
+      },
+      "independent_phase_samples": 2048,
+      "solver": {
+        "iterations": 6,
+        "active_constraints": 6,
+        "primal_violation_fraction": 1.177877240188252e-15,
+        "stationarity": 4.758415883543421e-13,
+        "complementarity": 7.77136200122752e-13,
+        "objective": 38.20639180200586,
+        "refinements": 0,
+        "dense_validation_phases": 4096,
+        "dense_primal_violation_fraction": 0.0,
+        "constraint_count": 1028,
+        "load_margin_n": 0.1,
+        "coefficient_bound_mm": 15.0,
+        "objective_definition": "mean phase-derivative squared plus .1 mean position squared, divided by cycle_s squared; coefficients in mm",
+        "frame": "nominal zero-attitude body frame; centred COM"
+      },
+      "coefficients_mm": [
+        [
+          0.24328335721793337,
+          -0.07346672239199137,
+          -0.5209711245902184,
+          -1.108048132952618,
+          -1.6372461164107577,
+          -2.19829035364252,
+          -2.729804678831897,
+          -3.311805468605421,
+          -3.7856842628560585,
+          -4.50669685308641,
+          -4.693660449678468,
+          -3.8112705918214402,
+          -3.3622197800224214,
+          -2.7118043399172294,
+          -2.187420280371576,
+          -1.5176384005851347,
+          -1.144416371143386,
+          0.3933511076874865,
+          1.3805913060729225,
+          1.783006797312865,
+          2.42477031462046,
+          2.944584412506906,
+          3.5640565915460556,
+          4.030916379594032,
+          4.854399468032106,
+          4.0502481461144555,
+          3.596067162831453,
+          3.0075999162277256,
+          2.475004032399383,
+          1.9227944620982456,
+          1.3699118999364401,
+          0.8396083498778992
+        ],
+        [
+          -0.5701624608388087,
+          0.20395193023085767,
+          0.8494156160840305,
+          1.3633714511054222,
+          1.926119105015708,
+          2.4754885397467206,
+          3.0142722283525387,
+          3.5967011796743407,
+          4.0710334865598625,
+          4.799349659446051,
+          4.976107664753208,
+          4.046770874780385,
+          3.565684618648433,
+          2.8763224495881374,
+          2.3173191033190648,
+          1.60795610902521,
+          1.2052717809686158,
+          -0.4016611392775147,
+          -1.4392968347523123,
+          -1.8721682177077525,
+          -2.552555605592403,
+          -3.106828547997331,
+          -3.7641906558329694,
+          -4.263681410799009,
+          -5.132110926092523,
+          -4.317082147155595,
+          -3.8647637107448674,
+          -3.271747190342552,
+          -2.7408140363522477,
+          -2.1796489212871677,
+          -1.640974644470262,
+          -1.0714097185894076
+        ]
+      ],
+      "minimum_three_stance_load_n": 0.10088442673400932,
+      "minimum_raw_scheduled_force_n": 0.0,
+      "maximum_raw_moment_nm": 1.7763568394002505e-15,
+      "maximum_clipped_moment_nm": 1.5543122344752192e-15,
+      "minimum_geometric_joint_limit_margin_rad": 0.41078300607491536,
+      "maximum_C2_two_sided_difference": [
+        8.462620252995545e-12,
+        1.0774133825776702e-10,
+        5.788841697662583e-10
+      ],
+      "peak_shift_m": 0.00667483138769297,
+      "rms_shift_velocity_m_s": 0.008732239466361062,
+      "peak_shift_velocity_m_s": 0.019552883685182522,
+      "peak_shift_acceleration_m_s2": 0.23339275678906046,
+      "attitude_sensitivity_not_a_gate": [
+        {
+          "attitude_rad": [
+            0.0,
+            0.0
+          ],
+          "minimum_raw_force_n": {
+            "planned": 0.0,
+            "reference": -0.5954236352619242
+          }
+        },
+        {
+          "attitude_rad": [
+            0.05,
+            0.0
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.1489561813078275,
+            "reference": -0.8571802644760549
+          }
+        },
+        {
+          "attitude_rad": [
+            -0.05,
+            0.0
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.1522692434353612,
+            "reference": -0.4403638223125874
+          }
+        },
+        {
+          "attitude_rad": [
+            0.0,
+            0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.1403261298582228,
+            "reference": -0.8485502130264502
+          }
+        },
+        {
+          "attitude_rad": [
+            0.0,
+            -0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.14363919198575736,
+            "reference": -0.43173377086298537
+          }
+        },
+        {
+          "attitude_rad": [
+            0.05,
+            0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.40216457932620653,
+            "reference": -1.1103886624944312
+          }
+        },
+        {
+          "attitude_rad": [
+            0.05,
+            -0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.2565134442668251,
+            "reference": -0.6041355069653864
+          }
+        },
+        {
+          "attitude_rad": [
+            -0.05,
+            0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.2820432027837807,
+            "reference": -0.5867117635584709
+          }
+        },
+        {
+          "attitude_rad": [
+            -0.05,
+            -0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.4054776414537429,
+            "reference": -0.6935722203309647
+          }
+        }
+      ],
+      "ramp_sensitivity_not_a_gate": [
+        {
+          "ramp": 0.0,
+          "minimum_three_stance_load_n": 0.0
+        },
+        {
+          "ramp": 0.25,
+          "minimum_three_stance_load_n": 0.025227443322944375
+        },
+        {
+          "ramp": 0.5,
+          "minimum_three_stance_load_n": 0.05091489239802931
+        },
+        {
+          "ramp": 0.75,
+          "minimum_three_stance_load_n": 0.07708628023766077
+        },
+        {
+          "ramp": 1.0,
+          "minimum_three_stance_load_n": 0.10376722939258616
+        }
+      ],
+      "50hz_demand": {
+        "planned": {
+          "control_hz": 50,
+          "window_s": [
+            0.0,
+            9.6
+          ],
+          "max_geometric_increment_rad": 0.023195337695823603,
+          "max_biased_increment_rad": 0.03537834689593988,
+          "max_geometric_rate_rad_s": 1.1597668847911802,
+          "max_biased_rate_rad_s": 1.7689173447969941,
+          "biased_increment_above_nominal_slew_fraction": 0.0,
+          "nominal_command_slew_rad_s": 1.8,
+          "max_geometric_rate_by_joint_rad_s": [
+            0.7558323495237119,
+            0.8290595546206148,
+            1.1597668847911802
+          ],
+          "max_biased_rate_by_joint_rad_s": [
+            0.7558323495237119,
+            1.54544725457518,
+            1.7689173447969941
+          ]
+        },
+        "reference": {
+          "control_hz": 50,
+          "window_s": [
+            0.0,
+            9.6
+          ],
+          "max_geometric_increment_rad": 0.02226202709993541,
+          "max_biased_increment_rad": 0.03594560512161582,
+          "max_geometric_rate_rad_s": 1.1131013549967705,
+          "max_biased_rate_rad_s": 1.797280256080791,
+          "biased_increment_above_nominal_slew_fraction": 0.0,
+          "nominal_command_slew_rad_s": 1.8,
+          "max_geometric_rate_by_joint_rad_s": [
+            0.7565259655280789,
+            0.877589899046044,
+            1.1131013549967705
+          ],
+          "max_biased_rate_by_joint_rad_s": [
+            0.7565259655280789,
+            1.5566899760733914,
+            1.797280256080791
+          ]
+        }
+      },
+      "limitations": [
+        "Nominal centred COM, no measured load/velocity input.",
+        "Existing attitude compensation can invalidate nominal support feasibility.",
+        "Inherited linear startup ramp has a derivative corner at 1.5 s; C2 applies to the periodic reference.",
+        "Foot recovery remains inherited C1; the full joint path is not claimed C2.",
+        "Servo saturation and actual contact require the paired physics receipt."
+      ]
+    },
+    {
+      "command": "right",
+      "payload_kg": 0.155,
+      "nominal_gate_passed": true,
+      "gates": {
+        "independent_triangle_margin": true,
+        "independent_raw_load_nonnegative": true,
+        "raw_moment_balance": true,
+        "clipped_moment_balance": true,
+        "IK_inside_original_limits": true,
+        "periodic_reference_C2": true
+      },
+      "independent_phase_samples": 2048,
+      "solver": {
+        "iterations": 6,
+        "active_constraints": 6,
+        "primal_violation_fraction": 8.578207588705311e-16,
+        "stationarity": 2.7400304247748863e-13,
+        "complementarity": 7.545184415410749e-13,
+        "objective": 38.20639180200629,
+        "refinements": 0,
+        "dense_validation_phases": 4096,
+        "dense_primal_violation_fraction": 0.0,
+        "constraint_count": 1028,
+        "load_margin_n": 0.1,
+        "coefficient_bound_mm": 15.0,
+        "objective_definition": "mean phase-derivative squared plus .1 mean position squared, divided by cycle_s squared; coefficients in mm",
+        "frame": "nominal zero-attitude body frame; centred COM"
+      },
+      "coefficients_mm": [
+        [
+          -1.1444163711431727,
+          0.39335110768755044,
+          1.3805913060730077,
+          1.7830067973128294,
+          2.424770314620609,
+          2.944584412507119,
+          3.5640565915461906,
+          4.030916379594004,
+          4.854399468032277,
+          4.050248146114278,
+          3.5960671628313676,
+          3.0075999162275693,
+          2.4750040323994966,
+          1.9227944620982669,
+          1.3699118999363975,
+          0.8396083498778992,
+          0.24328335721791916,
+          -0.07346672239198426,
+          -0.5209711245901403,
+          -1.1080481329526677,
+          -1.6372461164106298,
+          -2.198290353642392,
+          -2.7298046788316057,
+          -3.3118054686053,
+          -3.785684262855824,
+          -4.506696853086325,
+          -4.693660449678482,
+          -3.811270591821483,
+          -3.362219780022521,
+          -2.7118043399172578,
+          -2.187420280371633,
+          -1.5176384005852412
+        ],
+        [
+          -1.2052717809683386,
+          0.40166113927774916,
+          1.4392968347525894,
+          1.8721682177082002,
+          2.5525556055928575,
+          3.106828547997587,
+          3.764190655833339,
+          4.263681410799428,
+          5.1321109260926505,
+          4.317082147155823,
+          3.8647637107450805,
+          3.2717471903428645,
+          2.7408140363524467,
+          2.179648921287331,
+          1.6409746444702975,
+          1.071409718589372,
+          0.570162460838695,
+          -0.2039519302307724,
+          -0.8494156160839097,
+          -1.3633714511053583,
+          -1.926119105015644,
+          -2.475488539746685,
+          -3.0142722283524535,
+          -3.596701179674291,
+          -4.07103348655977,
+          -4.799349659445966,
+          -4.9761076647531155,
+          -4.046770874780329,
+          -3.5656846186483477,
+          -2.8763224495879314,
+          -2.317319103318866,
+          -1.6079561090251033
+        ]
+      ],
+      "minimum_three_stance_load_n": 0.10088442673404607,
+      "minimum_raw_scheduled_force_n": 0.0,
+      "maximum_raw_moment_nm": 1.7763568394002505e-15,
+      "maximum_clipped_moment_nm": 1.3322676295501878e-15,
+      "minimum_geometric_joint_limit_margin_rad": 0.4107830060749158,
+      "maximum_C2_two_sided_difference": [
+        8.462619385633807e-12,
+        1.0774133825776702e-10,
+        5.78884121194001e-10
+      ],
+      "peak_shift_m": 0.006674831387692888,
+      "rms_shift_velocity_m_s": 0.008732239466361112,
+      "peak_shift_velocity_m_s": 0.01955288368518185,
+      "peak_shift_acceleration_m_s2": 0.23339275678907453,
+      "attitude_sensitivity_not_a_gate": [
+        {
+          "attitude_rad": [
+            0.0,
+            0.0
+          ],
+          "minimum_raw_force_n": {
+            "planned": 0.0,
+            "reference": -0.5954236352619278
+          }
+        },
+        {
+          "attitude_rad": [
+            0.05,
+            0.0
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.15226924343537185,
+            "reference": -0.4403638223125874
+          }
+        },
+        {
+          "attitude_rad": [
+            -0.05,
+            0.0
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.14895618130778576,
+            "reference": -0.8571802644760558
+          }
+        },
+        {
+          "attitude_rad": [
+            0.0,
+            0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.1403261298581855,
+            "reference": -0.8485502130264502
+          }
+        },
+        {
+          "attitude_rad": [
+            0.0,
+            -0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.14363919198576447,
+            "reference": -0.4317337708629809
+          }
+        },
+        {
+          "attitude_rad": [
+            0.05,
+            0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.2820432027837869,
+            "reference": -0.5867117635584709
+          }
+        },
+        {
+          "attitude_rad": [
+            0.05,
+            -0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.40547764145375087,
+            "reference": -0.6935722203309673
+          }
+        },
+        {
+          "attitude_rad": [
+            -0.05,
+            0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.4021645793261639,
+            "reference": -1.1103886624944312
+          }
+        },
+        {
+          "attitude_rad": [
+            -0.05,
+            -0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.2565134442668189,
+            "reference": -0.6041355069653864
+          }
+        }
+      ],
+      "ramp_sensitivity_not_a_gate": [
+        {
+          "ramp": 0.0,
+          "minimum_three_stance_load_n": 0.0
+        },
+        {
+          "ramp": 0.25,
+          "minimum_three_stance_load_n": 0.025227443322954457
+        },
+        {
+          "ramp": 0.5,
+          "minimum_three_stance_load_n": 0.05091489239804581
+        },
+        {
+          "ramp": 0.75,
+          "minimum_three_stance_load_n": 0.07708628023768327
+        },
+        {
+          "ramp": 1.0,
+          "minimum_three_stance_load_n": 0.10376722939262173
+        }
+      ],
+      "50hz_demand": {
+        "planned": {
+          "control_hz": 50,
+          "window_s": [
+            0.0,
+            9.6
+          ],
+          "max_geometric_increment_rad": 0.023195337695824048,
+          "max_biased_increment_rad": 0.035378346895940105,
+          "max_geometric_rate_rad_s": 1.1597668847912024,
+          "max_biased_rate_rad_s": 1.7689173447970052,
+          "biased_increment_above_nominal_slew_fraction": 0.0,
+          "nominal_command_slew_rad_s": 1.8,
+          "max_geometric_rate_by_joint_rad_s": [
+            0.7558323495237156,
+            0.8290595546206203,
+            1.1597668847912024
+          ],
+          "max_biased_rate_by_joint_rad_s": [
+            0.7558323495237156,
+            1.545447254575194,
+            1.7689173447970052
+          ]
+        },
+        "reference": {
+          "control_hz": 50,
+          "window_s": [
+            0.0,
+            9.6
+          ],
+          "max_geometric_increment_rad": 0.022262027099936077,
+          "max_biased_increment_rad": 0.03594560512161715,
+          "max_geometric_rate_rad_s": 1.1131013549968038,
+          "max_biased_rate_rad_s": 1.7972802560808576,
+          "biased_increment_above_nominal_slew_fraction": 0.0,
+          "nominal_command_slew_rad_s": 1.8,
+          "max_geometric_rate_by_joint_rad_s": [
+            0.7565259655280987,
+            0.877589899046044,
+            1.1131013549968038
+          ],
+          "max_biased_rate_by_joint_rad_s": [
+            0.7565259655280987,
+            1.5566899760733914,
+            1.7972802560808576
+          ]
+        }
+      },
+      "limitations": [
+        "Nominal centred COM, no measured load/velocity input.",
+        "Existing attitude compensation can invalidate nominal support feasibility.",
+        "Inherited linear startup ramp has a derivative corner at 1.5 s; C2 applies to the periodic reference.",
+        "Foot recovery remains inherited C1; the full joint path is not claimed C2.",
+        "Servo saturation and actual contact require the paired physics receipt."
+      ]
+    },
+    {
+      "command": "clockwise",
+      "payload_kg": 0.155,
+      "nominal_gate_passed": true,
+      "gates": {
+        "independent_triangle_margin": true,
+        "independent_raw_load_nonnegative": true,
+        "raw_moment_balance": true,
+        "clipped_moment_balance": true,
+        "IK_inside_original_limits": true,
+        "periodic_reference_C2": true
+      },
+      "independent_phase_samples": 2048,
+      "solver": {
+        "iterations": 9,
+        "active_constraints": 8,
+        "primal_violation_fraction": 8.777700788442644e-16,
+        "stationarity": 2.028932708234464e-13,
+        "complementarity": 2.696840843682794e-13,
+        "objective": 5.400725964244084,
+        "refinements": 0,
+        "dense_validation_phases": 4096,
+        "dense_primal_violation_fraction": 0.0,
+        "constraint_count": 1028,
+        "load_margin_n": 0.1,
+        "coefficient_bound_mm": 15.0,
+        "objective_definition": "mean phase-derivative squared plus .1 mean position squared, divided by cycle_s squared; coefficients in mm",
+        "frame": "nominal zero-attitude body frame; centred COM"
+      },
+      "coefficients_mm": [
+        [
+          -0.7030388390476467,
+          0.284016237321703,
+          0.6665976920403889,
+          0.414028987973901,
+          0.41194945232250646,
+          0.3023759496080327,
+          0.24072461081899377,
+          0.1546447324650675,
+          0.0888810711242396,
+          -0.028553219038770727,
+          -0.12087618667077926,
+          -0.18022280039912353,
+          -0.26071446788544606,
+          -0.31363910969202813,
+          -0.42157767538309443,
+          -0.4047578611608946,
+          -0.700170437523493,
+          0.2866293681542498,
+          0.6691999051902995,
+          0.41719316542979534,
+          0.41552575211888154,
+          0.3062496238139847,
+          0.24536157343249165,
+          0.15886916852133304,
+          0.0956938875823452,
+          -0.03151996783908295,
+          -0.1277945129678173,
+          -0.18497322888192969,
+          -0.26570714794998906,
+          -0.31784746810734354,
+          -0.42544206900109405,
+          -0.4080939509825976
+        ],
+        [
+          3.6638578999173177,
+          4.758583655895651,
+          5.2483920732450295,
+          5.098329090053166,
+          5.201124277049116,
+          5.1964443555369515,
+          5.239504057308258,
+          5.2608874664868175,
+          5.297569338716466,
+          5.294709014283603,
+          5.287640604864868,
+          5.237729202966465,
+          5.213849913846444,
+          5.1609409970352385,
+          5.1644943597850475,
+          5.043007709266163,
+          5.235434043156731,
+          4.1399263717932016,
+          3.6483601310071725,
+          3.786435740297584,
+          3.6769490284199176,
+          3.6739602171460692,
+          3.624779204521243,
+          3.5981126440926925,
+          3.5562925993470857,
+          3.559552655848174,
+          3.5681894567398995,
+          3.6237738068884404,
+          3.652941544475919,
+          3.712422106447179,
+          3.71639927398793,
+          3.8455992089281956
+        ]
+      ],
+      "minimum_three_stance_load_n": 0.10008300891222657,
+      "minimum_raw_scheduled_force_n": 0.0,
+      "maximum_raw_moment_nm": 1.7763568394002505e-15,
+      "maximum_clipped_moment_nm": 1.3322676295501878e-15,
+      "minimum_geometric_joint_limit_margin_rad": 0.4089878954123449,
+      "maximum_C2_two_sided_difference": [
+        5.07863716359136e-12,
+        8.242778681832874e-11,
+        6.136244290466664e-10
+      ],
+      "peak_shift_m": 0.005295334235453457,
+      "rms_shift_velocity_m_s": 0.0032561945496808126,
+      "peak_shift_velocity_m_s": 0.011842927213980933,
+      "peak_shift_acceleration_m_s2": 0.18101420083527742,
+      "attitude_sensitivity_not_a_gate": [
+        {
+          "attitude_rad": [
+            0.0,
+            0.0
+          ],
+          "minimum_raw_force_n": {
+            "planned": 0.0,
+            "reference": -0.3219520304937413
+          }
+        },
+        {
+          "attitude_rad": [
+            0.05,
+            0.0
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.13403548449731684,
+            "reference": -0.07142988697998387
+          }
+        },
+        {
+          "attitude_rad": [
+            -0.05,
+            0.0
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.15306450601317323,
+            "reference": -0.5766403503814104
+          }
+        },
+        {
+          "attitude_rad": [
+            0.0,
+            0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.14324769262260872,
+            "reference": -0.5644988459462752
+          }
+        },
+        {
+          "attitude_rad": [
+            0.0,
+            -0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.14442035621779237,
+            "reference": -0.5685288582146191
+          }
+        },
+        {
+          "attitude_rad": [
+            0.05,
+            0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.3782243326068251,
+            "reference": -0.30973091522678065
+          }
+        },
+        {
+          "attitude_rad": [
+            0.05,
+            -0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.37911611591881034,
+            "reference": -0.31801659784113134
+          }
+        },
+        {
+          "attitude_rad": [
+            -0.05,
+            0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.3945223142360472,
+            "reference": -0.8192667766657635
+          }
+        },
+        {
+          "attitude_rad": [
+            -0.05,
+            -0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.39540107516701983,
+            "reference": -0.8190411185881086
+          }
+        }
+      ],
+      "ramp_sensitivity_not_a_gate": [
+        {
+          "ramp": 0.0,
+          "minimum_three_stance_load_n": 0.0
+        },
+        {
+          "ramp": 0.25,
+          "minimum_three_stance_load_n": 0.02214876832603042
+        },
+        {
+          "ramp": 0.5,
+          "minimum_three_stance_load_n": 0.04622490574689789
+        },
+        {
+          "ramp": 0.75,
+          "minimum_three_stance_load_n": 0.07225751157111428
+        },
+        {
+          "ramp": 1.0,
+          "minimum_three_stance_load_n": 0.10027700305318256
+        }
+      ],
+      "50hz_demand": {
+        "planned": {
+          "control_hz": 50,
+          "window_s": [
+            0.0,
+            9.6
+          ],
+          "max_geometric_increment_rad": 0.01733445614604623,
+          "max_biased_increment_rad": 0.03274478311140827,
+          "max_geometric_rate_rad_s": 0.8667228073023114,
+          "max_biased_rate_rad_s": 1.6372391555704136,
+          "biased_increment_above_nominal_slew_fraction": 0.0,
+          "nominal_command_slew_rad_s": 1.8,
+          "max_geometric_rate_by_joint_rad_s": [
+            0.7602466488478496,
+            0.6108035793583599,
+            0.8667228073023114
+          ],
+          "max_biased_rate_by_joint_rad_s": [
+            0.7602466488478496,
+            1.2883994344184135,
+            1.6372391555704136
+          ]
+        },
+        "reference": {
+          "control_hz": 50,
+          "window_s": [
+            0.0,
+            9.6
+          ],
+          "max_geometric_increment_rad": 0.016725237371858714,
+          "max_biased_increment_rad": 0.03132633439889254,
+          "max_geometric_rate_rad_s": 0.8362618685929357,
+          "max_biased_rate_rad_s": 1.566316719944627,
+          "biased_increment_above_nominal_slew_fraction": 0.0,
+          "nominal_command_slew_rad_s": 1.8,
+          "max_geometric_rate_by_joint_rad_s": [
+            0.7160632944268165,
+            0.6679441963625576,
+            0.8362618685929357
+          ],
+          "max_biased_rate_by_joint_rad_s": [
+            0.7160632944268165,
+            1.2912262674960928,
+            1.566316719944627
+          ]
+        }
+      },
+      "limitations": [
+        "Nominal centred COM, no measured load/velocity input.",
+        "Existing attitude compensation can invalidate nominal support feasibility.",
+        "Inherited linear startup ramp has a derivative corner at 1.5 s; C2 applies to the periodic reference.",
+        "Foot recovery remains inherited C1; the full joint path is not claimed C2.",
+        "Servo saturation and actual contact require the paired physics receipt."
+      ]
+    },
+    {
+      "command": "counterclockwise",
+      "payload_kg": 0.155,
+      "nominal_gate_passed": true,
+      "gates": {
+        "independent_triangle_margin": true,
+        "independent_raw_load_nonnegative": true,
+        "raw_moment_balance": true,
+        "clipped_moment_balance": true,
+        "IK_inside_original_limits": true,
+        "periodic_reference_C2": true
+      },
+      "independent_phase_samples": 2048,
+      "solver": {
+        "iterations": 9,
+        "active_constraints": 8,
+        "primal_violation_fraction": 2.0816681711721685e-16,
+        "stationarity": 2.481348460037225e-13,
+        "complementarity": 1.3846225267566825e-13,
+        "objective": 5.400725964243925,
+        "refinements": 0,
+        "dense_validation_phases": 4096,
+        "dense_primal_violation_fraction": 0.0,
+        "constraint_count": 1028,
+        "load_margin_n": 0.1,
+        "coefficient_bound_mm": 15.0,
+        "objective_definition": "mean phase-derivative squared plus .1 mean position squared, divided by cycle_s squared; coefficients in mm",
+        "frame": "nominal zero-attitude body frame; centred COM"
+      },
+      "coefficients_mm": [
+        [
+          -0.7001704375234263,
+          0.2866293681542915,
+          0.6691999051903226,
+          0.41719316542980067,
+          0.4155257521188691,
+          0.30624962381406373,
+          0.24536157343250498,
+          0.15886916852116784,
+          0.09569388758233988,
+          -0.03151996783927391,
+          -0.1277945129677791,
+          -0.18497322888204426,
+          -0.2657071479500841,
+          -0.3178474681075363,
+          -0.4254420690012095,
+          -0.40809395098275036,
+          -0.703038839047716,
+          0.2840162373215973,
+          0.6665976920403125,
+          0.4140289879739143,
+          0.4119494523224967,
+          0.30237594960811354,
+          0.24072461081911367,
+          0.15464473246516786,
+          0.08888107112433552,
+          -0.02855321903871566,
+          -0.12087618667069044,
+          -0.18022280039913685,
+          -0.2607144678854265,
+          -0.3136391096918807,
+          -0.4215776753831415,
+          -0.4047578611609737
+        ],
+        [
+          -5.235434043156746,
+          -4.139926371793264,
+          -3.6483601310072986,
+          -3.7864357402976876,
+          -3.676949028420003,
+          -3.673960217146025,
+          -3.6247792045212908,
+          -3.5981126440926956,
+          -3.5562925993470413,
+          -3.55955265584811,
+          -3.568189456739802,
+          -3.6237738068882637,
+          -3.652941544475731,
+          -3.7124221064470313,
+          -3.716399273987786,
+          -3.8455992089281206,
+          -3.663857899917339,
+          -4.758583655895613,
+          -5.248392073245037,
+          -5.09832909005328,
+          -5.2011242770492405,
+          -5.196444355537076,
+          -5.239504057308425,
+          -5.260887466486908,
+          -5.29756933871658,
+          -5.294709014283683,
+          -5.287640604864855,
+          -5.23772920296641,
+          -5.213849913846477,
+          -5.1609409970352065,
+          -5.164494359785138,
+          -5.043007709266193
+        ]
+      ],
+      "minimum_three_stance_load_n": 0.10008300891222033,
+      "minimum_raw_scheduled_force_n": 0.0,
+      "maximum_raw_moment_nm": 1.5543122344752192e-15,
+      "maximum_clipped_moment_nm": 1.5543122344752192e-15,
+      "minimum_geometric_joint_limit_margin_rad": 0.4089878954123458,
+      "maximum_C2_two_sided_difference": [
+        5.07863716359136e-12,
+        8.242778074679658e-11,
+        6.136242555743188e-10
+      ],
+      "peak_shift_m": 0.005295334235453549,
+      "rms_shift_velocity_m_s": 0.0032561945496807627,
+      "peak_shift_velocity_m_s": 0.011842927213980477,
+      "peak_shift_acceleration_m_s2": 0.18101420083526115,
+      "attitude_sensitivity_not_a_gate": [
+        {
+          "attitude_rad": [
+            0.0,
+            0.0
+          ],
+          "minimum_raw_force_n": {
+            "planned": 0.0,
+            "reference": -0.3219520304937413
+          }
+        },
+        {
+          "attitude_rad": [
+            0.05,
+            0.0
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.1530645060131821,
+            "reference": -0.5766403503814104
+          }
+        },
+        {
+          "attitude_rad": [
+            -0.05,
+            0.0
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.1340354844972973,
+            "reference": -0.0714298869799821
+          }
+        },
+        {
+          "attitude_rad": [
+            0.0,
+            0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.14324769262261228,
+            "reference": -0.5644988459462752
+          }
+        },
+        {
+          "attitude_rad": [
+            0.0,
+            -0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.14442035621777727,
+            "reference": -0.56852885821462
+          }
+        },
+        {
+          "attitude_rad": [
+            0.05,
+            0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.39452231423602946,
+            "reference": -0.8192667766657653
+          }
+        },
+        {
+          "attitude_rad": [
+            0.05,
+            -0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.3954010751670243,
+            "reference": -0.8190411185881095
+          }
+        },
+        {
+          "attitude_rad": [
+            -0.05,
+            0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.37822433260683397,
+            "reference": -0.30973091522678065
+          }
+        },
+        {
+          "attitude_rad": [
+            -0.05,
+            -0.05
+          ],
+          "minimum_raw_force_n": {
+            "planned": -0.37911611591879346,
+            "reference": -0.31801659784113134
+          }
+        }
+      ],
+      "ramp_sensitivity_not_a_gate": [
+        {
+          "ramp": 0.0,
+          "minimum_three_stance_load_n": 0.0
+        },
+        {
+          "ramp": 0.25,
+          "minimum_three_stance_load_n": 0.022148768326028252
+        },
+        {
+          "ramp": 0.5,
+          "minimum_three_stance_load_n": 0.046224905746896826
+        },
+        {
+          "ramp": 0.75,
+          "minimum_three_stance_load_n": 0.07225751157111017
+        },
+        {
+          "ramp": 1.0,
+          "minimum_three_stance_load_n": 0.10027700305317819
+        }
+      ],
+      "50hz_demand": {
+        "planned": {
+          "control_hz": 50,
+          "window_s": [
+            0.0,
+            9.6
+          ],
+          "max_geometric_increment_rad": 0.01733445614604756,
+          "max_biased_increment_rad": 0.03274478311140827,
+          "max_geometric_rate_rad_s": 0.866722807302378,
+          "max_biased_rate_rad_s": 1.6372391555704136,
+          "biased_increment_above_nominal_slew_fraction": 0.0,
+          "nominal_command_slew_rad_s": 1.8,
+          "max_geometric_rate_by_joint_rad_s": [
+            0.7602466488478927,
+            0.6108035793583544,
+            0.866722807302378
+          ],
+          "max_biased_rate_by_joint_rad_s": [
+            0.7602466488478927,
+            1.2883994344184495,
+            1.6372391555704136
+          ]
+        },
+        "reference": {
+          "control_hz": 50,
+          "window_s": [
+            0.0,
+            9.6
+          ],
+          "max_geometric_increment_rad": 0.016725237371858714,
+          "max_biased_increment_rad": 0.03132633439889254,
+          "max_geometric_rate_rad_s": 0.8362618685929357,
+          "max_biased_rate_rad_s": 1.566316719944627,
+          "biased_increment_above_nominal_slew_fraction": 0.0,
+          "nominal_command_slew_rad_s": 1.8,
+          "max_geometric_rate_by_joint_rad_s": [
+            0.7160632944268205,
+            0.6679441963625632,
+            0.8362618685929357
+          ],
+          "max_biased_rate_by_joint_rad_s": [
+            0.7160632944268205,
+            1.2912262674960928,
+            1.566316719944627
+          ]
+        }
+      },
+      "limitations": [
+        "Nominal centred COM, no measured load/velocity input.",
+        "Existing attitude compensation can invalidate nominal support feasibility.",
+        "Inherited linear startup ramp has a derivative corner at 1.5 s; C2 applies to the periodic reference.",
+        "Foot recovery remains inherited C1; the full joint path is not claimed C2.",
+        "Servo saturation and actual contact require the paired physics receipt."
+      ]
+    }
+  ]
+}

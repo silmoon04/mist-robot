@@ -1,0 +1,12 @@
+# Preserve evidence bytes; collapse generated receipts in GitHub code review.
+locomotion/runs/msi_20261012/** linguist-generated=true
+locomotion/runs/msi_20261013/** linguist-generated=true
+locomotion/reports/**/result_summary.json linguist-generated=true
+locomotion/reports/msi_cuda_20261012/pip-inspect.json linguist-generated=true
+locomotion/handoff/MSI_STATE.json linguist-generated=true
+# SB3 CSV receipts use the CSV dialect's CRLF; retain their original bytes.
+locomotion/runs/msi_20261012/**/monitor_*.monitor.csv whitespace=trailing-space,space-before-tab,cr-at-eol
+# NVIDIA's raw driver receipt retains its formatter's trailing spaces.
+locomotion/reports/msi_cuda_20261012/nvidia-smi.txt -whitespace
+# PowerShell's launcher receipt retains its recorded CRLF bytes.
+locomotion/runs/msi_20261012/remote_ui/launcher_checks.json whitespace=trailing-space,space-before-tab,cr-at-eol

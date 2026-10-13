@@ -1,0 +1,88 @@
+{
+  "recorded_utc": "2026-10-12T22:32:05.211150+00:00",
+  "scope": "Simulation and dry-run commissioning UI on the actual MSI; no physical motor commands",
+  "node_control_regressions": {
+    "passed": 13,
+    "failed": 0,
+    "command": "node --test locomotion/scripts/test_remote_ui.mjs"
+  },
+  "python_regressions": {
+    "session_passed": 5,
+    "support_passed": 7,
+    "failed": 0,
+    "command": ".venv-locomotion/bin/python -m unittest locomotion.scripts.test_remote_session locomotion.scripts.test_support_transfer locomotion.scripts.test_support_transfer_v2"
+  },
+  "browser": {
+    "desktop_simulation_client_width": 1425,
+    "desktop_joint_viewport": [
+      1280,
+      720
+    ],
+    "narrow_viewport": [
+      390,
+      844
+    ],
+    "narrow_client_width_each": 375,
+    "narrow_scroll_width_each": 375,
+    "simulation_mobile_movement_top_before_px": 1143.03125,
+    "simulation_mobile_movement_top_after_px": 551.916687,
+    "simulation_mobile_stop_rect_y_after_px": [
+      754.28125,
+      822.114586
+    ],
+    "simulation_mobile_stop_shortcut_font_px": 11,
+    "checks": [
+      "held W and Q release",
+      "reset refusal preserves running episode",
+      "default reset succeeds at rest",
+      "simulation and joint IK",
+      "preview enables sliders",
+      "FL yaw keyboard increment",
+      "editing slider suppresses Q gait",
+      "STOP and inspected-fault clear",
+      "live CAD frame decoded",
+      "named accessibility regions retained"
+    ],
+    "captured_console_errors_or_warnings": [],
+    "final_simulation_command": [
+      0,
+      0,
+      0
+    ],
+    "final_joint_preview_enabled": false,
+    "temporary_overrides_cleared": true,
+    "inspection_bound": "Initial desktop/narrow inspection; one layout correction and confirmation"
+  },
+  "detector": {
+    "runs": 1,
+    "findings": [
+      {
+        "code": "broken-image",
+        "resolution": "Dynamic frame image hidden until source assigned; live decoded frame verified"
+      },
+      {
+        "code": "undersized-ui-text",
+        "resolution": "Mobile shortcut raised from10px to11px; computed style verified"
+      }
+    ]
+  },
+  "source_sha256": {
+    "locomotion/Start MIST Remote.cmd": "44090cbe10d14312c3e6f9b76b427063ef8da1b4b3bd75a618599dc60e015300",
+    "locomotion/sim_remote.html": "e21b711feef931c011771f2d4cd0b87a1cc7ed7dd44c917f3eefc8ffabed2391",
+    "locomotion/hardware/remote.html": "fe5db252ebd86e4dbe5a502e037cc3dac35a2bd6ebc17116426c9be5e41ce27a",
+    "locomotion/scripts/launch_remote.ps1": "490ec1302e31b01c0ba86b667b35c3dcbbbe37cc7fa5a1caee80fca733f2f58b",
+    "locomotion/scripts/remote_session.py": "1b9aa352f558b4db1e4fbc27b58962779d1ec9966426db63ee2539a792e773b1",
+    "locomotion/scripts/package_simulation.py": "c63b46f919a94ff22dd39922ce6d675a0698a8f5842d5ac8f9062897738fafb7",
+    "locomotion/scripts/test_remote_session.py": "4ed62e6589a90c5bfe1508fe4e847a18e5880ef75537993a20ac97721534aab1",
+    "locomotion/scripts/test_remote_ui.mjs": "b82eec88e2abe4397a1a18d0e38360f0066ec33f2e677f11f3e28bc5310907ba"
+  },
+  "screenshots_sha256": {
+    "joints-desktop.jpg": "2d06d43bb892f0558ec9142a05dec4e5cd164bacf473d18644366125d7308a4e",
+    "joints-mobile.jpg": "f041b8f60916e438f26902365102cab8f7d2d5a061a9bb6965e6b321f10dec11",
+    "simulation-desktop.jpg": "212b0e03eaf7a22fc930075448390789d84344c0b39f3640b1bc1061373dbdef",
+    "simulation-mobile.jpg": "95be41289b582ba2dba8483ce4f3422c7fe2bd626ada5ea0cabce405fdb4e03a"
+  },
+  "frozen_source_identity": "8793d43d546c95c6fd695860305f96a0627e49be9ec81779e313b63d1b92e8c1",
+  "hardware_actuation": false,
+  "launcher_receipt": "locomotion/runs/msi_20261012/remote_ui/launcher_checks.json"
+}
